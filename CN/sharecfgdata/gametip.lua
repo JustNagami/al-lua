@@ -13164,11 +13164,17 @@ _G.pg.base.gametip.monthly_card_tip = {
 _G.pg.base.gametip.msgbox_repair = {
 	tip = "修复资源"
 }
+_G.pg.base.gametip.msgbox_repair_cipher = {
+	tip = "修复密语"
+}
 _G.pg.base.gametip.msgbox_repair_l2d = {
 	tip = "修复L2D"
 }
 _G.pg.base.gametip.msgbox_repair_painting = {
 	tip = "修复立绘"
+}
+_G.pg.base.gametip.msgbox_repair_title = {
+	tip = "信息"
 }
 _G.pg.base.gametip.msgbox_text_analyse = {
 	tip = "解 析"
@@ -19539,7 +19545,7 @@ _G.pg.base.gametip.world_boss_help_meta = {
  <color=#92fc63>请在参与作战时保持网络环境畅通</color>
 
 6.火力支援
-随着信标·META挑战的进行，从第31天开始，即2023.7.9~2023.8.31期间，舰队挑战「阿尔及利亚·META」时将会获得一次额外火力支援。火力支援会对敌人造成伤害，并为敌人施加一个持续伤害的特殊状态（不受任何加成效果影响）。随着本期信标·META开放的日期增加，火力支援提供的伤害也会增加。
+随着信标·META挑战的进行，从第31天开始，即2023.7.9~2023.8.31期间，舰队挑战「阿尔及利亚·META」时将会获得一次额外火力支援。火力支援会对所挑战的META角色造成伤害，并为敌人施加一个持续伤害的特殊状态（不受任何加成效果影响）。随着本期信标·META开放的日期增加，火力支援提供的伤害也会增加。
 ※此支援只会在指挥官自己发现的信标·META战斗中出现，每次挑战均会触发。]]
 		}
 	}
