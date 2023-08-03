@@ -12653,11 +12653,17 @@ _G.pg.base.gametip.monthly_card_tip = {
 _G.pg.base.gametip.msgbox_repair = {
 	tip = "Repair Assets"
 }
+_G.pg.base.gametip.msgbox_repair_cipher = {
+	tip = "Redownload Assets"
+}
 _G.pg.base.gametip.msgbox_repair_l2d = {
 	tip = "Repair Live2D"
 }
 _G.pg.base.gametip.msgbox_repair_painting = {
 	tip = "Download Art Asset"
+}
+_G.pg.base.gametip.msgbox_repair_title = {
+	tip = "Notice"
 }
 _G.pg.base.gametip.msgbox_text_analyse = {
 	tip = "Analyze"
