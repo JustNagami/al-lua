@@ -5412,6 +5412,9 @@ _G.pg.base.gametip.equip_part_tip = {
 _G.pg.base.gametip.equip_part_title = {
 	tip = "适用"
 }
+_G.pg.base.gametip.equip_skin_detail_count = {
+	tip = "拥有:"
+}
 _G.pg.base.gametip.equip_skin_detail_tip = {
 	tip = "可能获得以下外观装备"
 }
