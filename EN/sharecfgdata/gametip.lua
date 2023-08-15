@@ -5212,6 +5212,9 @@ _G.pg.base.gametip.equip_part_tip = {
 _G.pg.base.gametip.equip_part_title = {
 	tip = "Use"
 }
+_G.pg.base.gametip.equip_skin_detail_count = {
+	tip = "Owned:"
+}
 _G.pg.base.gametip.equip_skin_detail_tip = {
 	tip = "It contains Gear Skins listed below:"
 }

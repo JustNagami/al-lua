@@ -242646,7 +242646,8 @@ _G.pg.base.ship_data_statistics[499081] = {
 		{}
 	},
 	tag_list = {
-		"Plan-Class"
+		"Plan-Class",
+		"Z-Class"
 	}
 }
 _G.pg.base.ship_data_statistics[499082] = {
@@ -242769,7 +242770,8 @@ _G.pg.base.ship_data_statistics[499082] = {
 		{}
 	},
 	tag_list = {
-		"Plan-Class"
+		"Plan-Class",
+		"Z-Class"
 	}
 }
 _G.pg.base.ship_data_statistics[499083] = {
@@ -242892,7 +242894,8 @@ _G.pg.base.ship_data_statistics[499083] = {
 		{}
 	},
 	tag_list = {
-		"Plan-Class"
+		"Plan-Class",
+		"Z-Class"
 	}
 }
 _G.pg.base.ship_data_statistics[499084] = {
@@ -243015,7 +243018,8 @@ _G.pg.base.ship_data_statistics[499084] = {
 		{}
 	},
 	tag_list = {
-		"Plan-Class"
+		"Plan-Class",
+		"Z-Class"
 	}
 }
 _G.pg.base.ship_data_statistics[499091] = {
