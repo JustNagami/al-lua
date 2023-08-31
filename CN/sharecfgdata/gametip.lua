@@ -832,6 +832,9 @@ _G.pg.base.gametip.attr_oxy_max = {
 _G.pg.base.gametip.attr_reload = {
 	tip = "装填"
 }
+_G.pg.base.gametip.attr_speed = {
+	tip = "航速"
+}
 _G.pg.base.gametip.attr_torpedo = {
 	tip = "雷击"
 }
@@ -3104,16 +3107,16 @@ _G.pg.base.gametip.building_upgrade_tip = {
 	tip = "是否升级？升级会消耗对应材料"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "豪、英勇 建造追加！"
+	tip = "{namecode:453} 建造追加！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "爱斯基摩人 建造追加！"
+	tip = "{namecode:446} 建造追加！"
 }
 _G.pg.base.gametip.buildship_new_tip = {
 	tip = "克莱蒙梭、吉尚等角色 建造概率UP！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "英仙座、鹰 建造追加！"
+	tip = "{namecode:470}、{namecode:474} 等角色建造追加！"
 }
 _G.pg.base.gametip.buleprint_need_level_tip = {
 	tip = "需角色到达$1级"
@@ -3249,6 +3252,12 @@ _G.pg.base.gametip.caibulin_tip9 = {
 _G.pg.base.gametip.cannot_build_multiple_printblue = {
 	tip = "是否中止<color=#92fc63>$1</color>的研究，并开启<color=#92fc63>$2</color>的研究？开始研究后<color=#92fc63>24小时之内</color>无法更换其他研究对象"
 }
+_G.pg.base.gametip.card_battle_card_empty_ch = {
+	tip = "暂  无  待  抽  取  指  令"
+}
+_G.pg.base.gametip.card_battle_card_empty_en = {
+	tip = "- LIST IS EMPTY -"
+}
 _G.pg.base.gametip.card_pairs_help_tip = {
 	tip = {
 		{
@@ -3279,6 +3288,15 @@ _G.pg.base.gametip.card_pairs_help_tip = {
 }
 _G.pg.base.gametip.card_pairs_tips = {
 	tip = "再次进行游戏也无法获得任务道具了哟，是否开启新的一轮游戏？"
+}
+_G.pg.base.gametip.card_puzzel_goal_ch = {
+	tip = "关卡目标"
+}
+_G.pg.base.gametip.card_puzzel_goal_en = {
+	tip = "TARGET"
+}
+_G.pg.base.gametip.card_puzzle_deck = {
+	tip = "指令集"
 }
 _G.pg.base.gametip.cartoon_haveno = {
 	tip = "暂无符合条件的漫画"
@@ -9877,6 +9895,16 @@ _G.pg.base.gametip.help_shipinfo_attr = {
 			}
 		},
 		{
+			info = "       航速：角色的移动速度，影响其所在舰队的整体速度\n       ，同时影响其所在舰队在部分拥有移动限制的海域中\n       的移动距离",
+			icon = {
+				path = "attr_speed",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.6,
+				posX = 0
+			}
+		},
+		{
 			info = "       消耗：每次出击所需消耗的石油",
 			icon = {
 				path = "expend",
@@ -10785,6 +10813,9 @@ _G.pg.base.gametip.help_xinnian2022_z28 = {
 }
 _G.pg.base.gametip.hide_chat_warning = {
 	tip = "屏蔽聊天后将不会显示任何收到的聊天信息，是否确定？"
+}
+_G.pg.base.gametip.hit_preview = {
+	tip = "命中效果"
 }
 _G.pg.base.gametip.hololive_dalaozhang = {
 	tip = {
@@ -12943,9 +12974,9 @@ _G.pg.base.gametip.meta_help = {
 		{
 			info = [[
 1.<color=#92fc63>资讯同步</color>
-·<color=#92fc63>2023.6.8-2023.8.31</color>期间限时开放「阿尔及利亚·META」的「资讯同步」，通过「信标·META」战斗获取其同步值，达到一定同步值可以获取<color=#92fc63>「阿尔及利亚·META」角色</color>
+·<color=#92fc63>2023.8.31-2023.11.23</color>期间限时开放「貎·META」的「资讯同步」，通过「信标貎·META」战斗获取其同步值，达到一定同步值可以获取<color=#92fc63>「貎·META」角色</color>
 ·获得META角色后可以通过角色的<color=#92fc63>「资讯同步」</color>模块在<color=#92fc63>上述时间</color>内继续获取包含养成材料在内的丰厚奖励
-·注意：<color=#ff5c5c>「阿尔及利亚·META」的「资讯同步」将于时间结束后暂时关闭,已累计的同步值也会消失。</color>
+·注意：<color=#ff5c5c>「貎·META」的「资讯同步」将于时间结束后暂时关闭,已累计的同步值也会消失。</color>
 
 2.<color=#92fc63>能量激活</color>
 ·META角色达到指定等级后可以使用对应的角色结晶进行激活。激活后可以提升角色星级
@@ -15855,7 +15886,7 @@ _G.pg.base.gametip.ship_getShip_error_notFinish = {
 	tip = "建造尚未完成"
 }
 _G.pg.base.gametip.ship_hunting_level_tips = {
-	tip = "*当前狩猎范围等级仅包括突破、装备及指挥喵技能增加的狩猎范围等级，最大为Lv5"
+	tip = "当前狩猎范围等级仅包括突破、装备增加的狩猎范围等级，最大为Lv5"
 }
 _G.pg.base.gametip.ship_limit_notice = {
 	tip = "*不计算潜艇舰队的数据"
@@ -16312,6 +16343,9 @@ _G.pg.base.gametip.shipmodechange_reject_inchallenge = {
 }
 _G.pg.base.gametip.shipmodechange_reject_worldfleet_only = {
 	tip = "舰船为大世界舰队先锋/主力舰队的唯一角色，请调整编队阵容后重试"
+}
+_G.pg.base.gametip.shoot_preview = {
+	tip = "发射效果"
 }
 _G.pg.base.gametip.shopStreet_refresh_max_count = {
 	tip = "今天的刷新次数已达上限"
@@ -18934,6 +18968,9 @@ _G.pg.base.gametip.word_shipNation_link = {
 _G.pg.base.gametip.word_shipNation_meta = {
 	tip = "???"
 }
+_G.pg.base.gametip.word_shipNation_meta_index = {
+	tip = "META"
+}
 _G.pg.base.gametip.word_shipNation_mot = {
 	tip = "飓风"
 }
@@ -19696,7 +19733,7 @@ _G.pg.base.gametip.world_boss_help_meta = {
 			info = [[
 信标·META功能说明
 
-1. <color=#92fc63>2023.6.8-2023.8.31</color>期间限时开放「阿尔及利亚·META」的挑战，在此期间指挥官可挑战「阿尔及利亚·META」累计其同步值获取<color=#92fc63>「阿尔及利亚·META」角色</color>及其他丰厚奖励
+1. <color=#92fc63>2023.8.31-2023.11.23</color>期间限时开放「貎·META」的挑战，在此期间指挥官可挑战「貎·META」累计其同步值获取<color=#92fc63>「貎·META」角色</color>及其他丰厚奖励
 <color=#ff5c5c>注意：同步值将于时间结束后消失</color>
 
 2.「信标数据」获取与解析
@@ -19717,7 +19754,7 @@ _G.pg.base.gametip.world_boss_help_meta = {
 ·同一个信标最多能允许累计30位指挥官进行挑战
 
 5.战斗说明
-·挑战信标·META暂不可使用指挥喵与潜艇
+·挑战信标貎·META暂不可使用指挥喵与潜艇
 ·战斗结算时不会获得经验值，不会影响舰船心情值
 ·战斗中不可中途退出，如果出现网络波动导致掉线的情况：
 ①挑战自己解析的信标时将会消耗40点石油(非第一次挑战)，且不会计算已造成的伤害
@@ -19725,8 +19762,8 @@ _G.pg.base.gametip.world_boss_help_meta = {
  <color=#92fc63>请在参与作战时保持网络环境畅通</color>
 
 6.火力支援
-随着信标·META挑战的进行，从第31天开始，即2023.7.9~2023.8.31期间，舰队挑战「阿尔及利亚·META」时将会获得一次额外火力支援。火力支援会对敌人造成伤害，并为敌人施加一个持续伤害的特殊状态（不受任何加成效果影响）。随着本期信标·META开放的日期增加，火力支援提供的伤害也会增加。
-※此支援只会在指挥官自己发现的信标·META战斗中出现，每次挑战均会触发。]]
+随着信标貎·META挑战的进行，从第31天开始，即2023.10.1~2023.11.23期间，舰队挑战「貎·META」时将会获得一次额外火力支援。火力支援会对敌人造成伤害，并为敌人施加一个持续伤害的特殊状态（不受任何加成效果影响）。随着本期信标貎·META开放的日期增加，火力支援提供的伤害也会增加。
+※此支援只会在指挥官自己发现的信标貎·META战斗中出现，每次挑战均会触发。]]
 		}
 	}
 }
@@ -19990,6 +20027,9 @@ _G.pg.base.gametip.world_instruction_morale_3 = {
 _G.pg.base.gametip.world_instruction_morale_4 = {
 	tip = "※指令使用后，一段时间内无法使用"
 }
+_G.pg.base.gametip.world_instruction_port_goods_locked = {
+	tip = "安全海域进度解锁"
+}
 _G.pg.base.gametip.world_instruction_redeploy_1 = {
 	tip = "当前海域无法进行舰队部署，请前往我方港口海域"
 }
@@ -20158,6 +20198,9 @@ _G.pg.base.gametip.world_past_boss_item_info = {
 P.S.记录仪的记录容量有限，请务必及时前往解析
 每日获取上限:$1/$2
 记录容量上限：$3/$4]]
+}
+_G.pg.base.gametip.world_port_inbattle = {
+	tip = "当前舰队正在行动中，无法进入港口"
 }
 _G.pg.base.gametip.world_pressing = {
 	tip = "压制统计"
