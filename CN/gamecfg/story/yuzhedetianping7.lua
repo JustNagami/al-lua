@@ -465,7 +465,7 @@ return {
 			canMarkNode = {
 				"bolanhuichang",
 				{
-					1
+					3
 				}
 			},
 			painting = {
@@ -497,7 +497,7 @@ return {
 			canMarkNode = {
 				"bolanhuichang",
 				{
-					1
+					3
 				}
 			},
 			painting = {
@@ -522,7 +522,7 @@ return {
 			canMarkNode = {
 				"bolanhuichang",
 				{
-					1,
+					3,
 					2
 				}
 			},
@@ -547,7 +547,7 @@ return {
 			canMarkNode = {
 				"bolanhuichang",
 				{
-					1,
+					3,
 					2
 				}
 			},
@@ -572,7 +572,7 @@ return {
 			canMarkNode = {
 				"bolanhuichang",
 				{
-					1,
+					3,
 					2
 				}
 			},
@@ -598,7 +598,7 @@ return {
 			canMarkNode = {
 				"bolanhuichang",
 				{
-					1,
+					3,
 					2,
 					8
 				}
@@ -625,7 +625,7 @@ return {
 			canMarkNode = {
 				"bolanhuichang",
 				{
-					1,
+					3,
 					2,
 					8,
 					9
@@ -652,7 +652,7 @@ return {
 			canMarkNode = {
 				"bolanhuichang",
 				{
-					1,
+					3,
 					2,
 					8,
 					9
@@ -1491,7 +1491,7 @@ return {
 			actor = 307080,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "梦醒之后，妾身就在馆中做了准些备，总算没被打个措手不及。",
+			say = "梦醒之后，妾身就在馆中做了些准备，总算没被打个措手不及。",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -2136,7 +2136,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 403030,
-			say = "北方联合的话，她们的舰队原本在离开会场后向着皇家舰队的位置移动，似乎打算光辉的号召。",
+			say = "北方联合的话，她们的舰队原本在离开会场后向着皇家舰队的位置移动，似乎响应光辉的号召。",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -2208,7 +2208,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 403030,
-			say = "不得不说那位小姐还真是好运，躲过一劫啊……",
+			say = "不得不说那位镇海小姐还真是好运，躲过一劫啊……",
 			painting = {
 				alpha = 0.3,
 				time = 1

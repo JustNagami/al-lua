@@ -138298,7 +138298,7 @@ pg.base.furniture_data_template = {
 		level = 1,
 		advice = 0,
 		effect = "",
-		name = "典雅雕像·绫波",
+		name = "典雅雕像·{namecode:6}",
 		comfortable = 2,
 		spine_action_replace = "",
 		picture = "yh/diaoxiang4yh",
@@ -138415,7 +138415,7 @@ pg.base.furniture_data_template = {
 		picture = "yh/luodizhongyh",
 		canputon = 0,
 		id = 302113,
-		can_rotate = 0,
+		can_rotate = 1,
 		size = {
 			1,
 			1

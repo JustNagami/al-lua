@@ -24497,7 +24497,7 @@ pg.base.ship_data_group = {
 		type = 2,
 		redirect_id = 101,
 		hide = 0,
-		nationality = 9,
+		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
 		index_id = 516,
@@ -24921,20 +24921,9 @@ pg.base.ship_data_group = {
 		trans_skill = {},
 		description = {
 			{
-				"限时活动：穹顶下的圣咏曲",
+				"限时活动：愚者的天平",
 				{
 					""
-				},
-				0
-			},
-			{
-				"进行轻型舰建造",
-				{
-					"GETBOAT",
-					{
-						projectName = "light",
-						page = 1
-					}
 				},
 				0
 			}
