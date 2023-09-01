@@ -858,6 +858,9 @@ _G.pg.base.gametip.attr_oxy_max = {
 _G.pg.base.gametip.attr_reload = {
 	tip = "RLD"
 }
+_G.pg.base.gametip.attr_speed = {
+	tip = "SPD"
+}
 _G.pg.base.gametip.attr_torpedo = {
 	tip = "TRP"
 }
@@ -2957,16 +2960,16 @@ _G.pg.base.gametip.building_upgrade_tip = {
 	tip = "Are you sure you want to upgrade? Building materials will be consumed."
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Sovetskaya Rossiya added to standard build pool!"
+	tip = "Howe and Valiant added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Tashkent, Chapayev and others added to the standard build pool!"
+	tip = "Hermione added to the standard build pool!"
 }
 _G.pg.base.gametip.buildship_new_tip = {
 	tip = "Rate UP for Clemenceau, Guichen, and more!"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Intrepid and Nautilus added to standard build pool!"
+	tip = "Perseus and Eagle added to standard build pool!"
 }
 _G.pg.base.gametip.buleprint_need_level_tip = {
 	tip = "The corresponding ship will be unlocked at Level $1."
@@ -3080,6 +3083,12 @@ _G.pg.base.gametip.caibulin_tip9 = {
 _G.pg.base.gametip.cannot_build_multiple_printblue = {
 	tip = "Would you like to pause <color=#92fc63>$1</color>'s development and start on <color=#92fc63>$2</color> instead? Your development progress will be saved.\nOnce you start or resume development, you can not change which ship to develop for <color=#92fc63>24 hours</color>. "
 }
+_G.pg.base.gametip.card_battle_card_empty_ch = {
+	tip = "There are no Command cards in your deck."
+}
+_G.pg.base.gametip.card_battle_card_empty_en = {
+	tip = "- LIST IS EMPTY -"
+}
 _G.pg.base.gametip.card_pairs_help_tip = {
 	tip = {
 		{
@@ -3110,6 +3119,15 @@ _G.pg.base.gametip.card_pairs_help_tip = {
 }
 _G.pg.base.gametip.card_pairs_tips = {
 	tip = "You cannot acquire any more Mooncake today. Would you still like to play the game?"
+}
+_G.pg.base.gametip.card_puzzel_goal_ch = {
+	tip = "Objectives"
+}
+_G.pg.base.gametip.card_puzzel_goal_en = {
+	tip = "TARGET"
+}
+_G.pg.base.gametip.card_puzzle_deck = {
+	tip = "Deck"
 }
 _G.pg.base.gametip.cartoon_all = {
 	tip = "All"
@@ -9284,150 +9302,179 @@ NPC can’t participate Operation Siren or Guild activities.]]
 _G.pg.base.gametip.help_shipinfo_attr = {
 	tip = {
 		{
-			info = "1.Stats Details:"
+			info = "1. Stats Gain Display:"
 		},
 		{
-			info = "       HP: The ship's Health stat, defines how much damage she can take before sinking.",
+			info = " <color=#92fc63FF>Gear</color>: Displays the additional stats the ship gains from equipped gear."
+		},
+		{
+			info = " <color=#FFDE00FF>Tech</color>: Displays the additional stats the ship gains from Fleet Tech."
+		},
+		{
+			info = "2. Stats Details:"
+		},
+		{
+			info = "      HP: The ship's Health Points stat. Determines how much damage she can take before sinking.",
 			icon = {
 				path = "durability",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       FP: The ship's Firepower stat, defines the ship's damage with Artillery.",
+			info = "     FP: The ship's Firepower stat. Increases her damage dealt with artillery and cannon-based attacks.",
 			icon = {
 				path = "cannon",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       AA: The ship's Anti-Air stat, defines the ship's damage with Anti-Air Guns.",
+			info = "      AA: The ship's Anti-Air stat. Increases her damage dealt with Anti-Air Guns.",
 			icon = {
 				path = "antiaircraft",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       Armor Type: The ship's Armor thickness, defines the ship's degree of protection. \n(Greatest to least: Heavy>Medium>Light.)",
+			info = "      Armor Type: The ship's Armor thickness. Affects how much damage she takes from varying sources. (In general, in terms of protection, Heavy > Medium > Light.)",
 			icon = {
 				path = "armor",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       TRP: The ship's Torpedo stat, defines the ship's damage with Torpedoes.",
+			info = "     TRP: The ship's Torpedo stat. Increases her damage dealt with torpedo weapons. ",
 			icon = {
 				path = "torpedo",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       AVI: The ship's Aviation stat, defines the ship's damage with Aircraft.",
+			info = "      AVI: The ship's Aviation stat. Increases her damage dealt with aircraft.",
 			icon = {
 				path = "air",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       RLD: The ship's Reload stat, defines the ship's rate of fire with all weaponry.",
+			info = "      RLD: The ship's Reload stat. Affects how long her weapons take to load.",
 			icon = {
 				path = "reload",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       EVA: The ship's Evasion stat, defines the ship's chance to evade enemy attacks.",
+			info = "     EVA: The ship's Evasion stat. Affects her probability to evade incoming attacks.",
 			icon = {
 				path = "dodge",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       OIL: The ship's Oil Cost, defines how much Oil the ship consumes per battle.",
+			info = "      ACC: The ship's Accuracy stat. Affects her probability to land hits and score Critical Hits.",
+			icon = {
+				path = "hit",
+				atlas = "attricon",
+				posY = 6,
+				scale = 0.3,
+				posX = 0
+			}
+		},
+		{
+			info = "      SPD: The ship's Speed stat. Affects her movement speed on the battlefield and influences how many tiles your fleet can move in one turn on certain maps. \n ",
+			icon = {
+				path = "attr_speed",
+				atlas = "attricon",
+				posY = 6,
+				scale = 0.6,
+				posX = 0
+			}
+		},
+		{
+			info = "     Cost: The amount of Oil the ship consumes per battle.",
 			icon = {
 				path = "expend",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       ASW: The ship's Anti-Submarine Warfare stat, defines how much damage the ship's Anti-Sub weapons deal.",
+			info = "      ASW: The ship's Anti-Submarine Warfare stat. Increases her damage dealt with Anti-Sub weapons and affects her sonar detection range.",
 			icon = {
 				path = "antisub",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       OXY: The boat's Oxygen stat, defines how long she can stay underwater before she must resurface.",
+			info = "      OXY: The boat's Oxygen stat. Determines how long she can stay underwater before she must resurface.",
 			icon = {
 				path = "oxy_max",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       AMO: The boat's Ammunition stat, defines how many times a Submarine Fleet can attack and/or provide support. \nThe total number of times is equal to the Submarine Fleet's combined AMO stat.",
+			info = "      AMO: The boat's Ammunition stat. Determines how many times a Submarine Fleet can attack and/or provide support. The total number of times is equal to the Submarine Fleet's combined AMO stat.",
 			icon = {
 				path = "ammo",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       ASR: The boat's Attack/Support Range, defines how far the Submarine Fleet can move from its starting location to attack or provide support.",
+			info = "      ASR: The boat's Attack/Support Range. Determines how far the Submarine Fleet can move from its starting location to attack or provide support.",
 			icon = {
 				path = "hunt_range",
 				atlas = "attricon",
 				posY = 6,
-				scale = 0.66,
+				scale = 0.6,
 				posX = 0
 			}
 		},
 		{
-			info = "       LCK: The ship's Luck stat, influences the ship's chance of hitting the enemy and avoiding the enemy's attacks as well as her chance to land and avoid Critical Hits.",
+			info = "      LCK: The ship's Luck stat. Affects the ship's probability of landing and avoiding regular hits and Critical Hits.",
 			icon = {
 				path = "luck",
 				atlas = "attricon",
-				posY = 0,
-				scale = 1.1,
+				posY = 6,
+				scale = 1,
 				posX = 0
 			}
 		},
 		{
-			info = "2. Mood:\nShips with good moods receive increased EXP from battles.\nShips with bad moods lose affinity with further battles."
+			info = "3. Mood: \nShips with good moods receive increased EXP from battles. \nShips with bad moods lose Affinity with further battles."
 		}
 	}
 }
@@ -10302,6 +10349,9 @@ The Fireworks Workshop allows you to create your own unique fireworks and send t
 }
 _G.pg.base.gametip.hide_chat_warning = {
 	tip = "Turning off chat to hide messages."
+}
+_G.pg.base.gametip.hit_preview = {
+	tip = "Hitting Preview"
 }
 _G.pg.base.gametip.hololive_dalaozhang = {
 	tip = {
@@ -15681,7 +15731,7 @@ _G.pg.base.gametip.ship_getShip_error_notFinish = {
 	tip = "Construction not yet complete."
 }
 _G.pg.base.gametip.ship_hunting_level_tips = {
-	tip = "*Total ASR is the sum of ASR from limit break and gear."
+	tip = "Your listed ASR only includes the bonuses gained from Limit Breaks and equipment (level 5 is the max)."
 }
 _G.pg.base.gametip.ship_limit_notice = {
 	tip = "*The Submarine Fleet's stats do not count towards the Status Requirements. "
@@ -16148,6 +16198,9 @@ _G.pg.base.gametip.shipmodechange_reject_inchallenge = {
 }
 _G.pg.base.gametip.shipmodechange_reject_worldfleet_only = {
 	tip = "You cannot leave this fleet without at least 1 Vanguard/Main Fleet ship. Edit your fleet formation and try again."
+}
+_G.pg.base.gametip.shoot_preview = {
+	tip = "Firing Preview"
 }
 _G.pg.base.gametip.shoot_screen_fail = {
 	tip = "Screenshot Failed"
@@ -18842,6 +18895,9 @@ _G.pg.base.gametip.word_shipNation_link = {
 _G.pg.base.gametip.word_shipNation_meta = {
 	tip = "???"
 }
+_G.pg.base.gametip.word_shipNation_meta_index = {
+	tip = "META"
+}
 _G.pg.base.gametip.word_shipNation_mot = {
 	tip = "Tempesta"
 }
@@ -19622,9 +19678,9 @@ _G.pg.base.gametip.world_boss_help_meta = {
 			info = [[
 - META Showdown Overview -
 
-From <color=#92fc63>6/8/23 to 8/31/23</color>, challenge Algérie META
+From <color=#92fc63>8/31/23 to 11/22/23</color>, challenge Jintsuu META
 to earn Sync Points. Sync Points can be used
-to obtain the limited character, <color=#92fc63>Algérie META</color> as well
+to obtain the limited character, <color=#92fc63>Jintsuu META</color> as well
 as other great rewards.
 <color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>
 
@@ -19965,6 +20021,9 @@ _G.pg.base.gametip.world_instruction_morale_3 = {
 _G.pg.base.gametip.world_instruction_morale_4 = {
 	tip = "*You will not be able to use this command again for a period of time."
 }
+_G.pg.base.gametip.world_instruction_port_goods_locked = {
+	tip = "Area Capture Progress"
+}
 _G.pg.base.gametip.world_instruction_redeploy_1 = {
 	tip = "Fleet Redeployment can only be carried out in a port. "
 }
@@ -20134,6 +20193,9 @@ Unlock the Dossier Analysis feature in the META Lab and analyze coordinates to g
 You cannot analyze more coordinates while you have too many active META Showdowns.
 Daily Analysis Attempts: $1/$2
 META Coordinates Capacity: $3/$4]]
+}
+_G.pg.base.gametip.world_port_inbattle = {
+	tip = "Your fleet is engaged in battle and can't return to port."
 }
 _G.pg.base.gametip.world_pressing = {
 	tip = "Zones Cleared"
