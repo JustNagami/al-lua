@@ -11501,87 +11501,107 @@ _G.pg.base.item_data_statistics[30302] = {
 	display_icon = {
 		{
 			9,
-			22,
+			1,
 			1
 		},
 		{
 			9,
-			23,
+			2,
 			1
 		},
 		{
 			9,
-			24,
+			3,
 			1
 		},
 		{
 			9,
-			25,
+			4,
 			1
 		},
 		{
 			9,
-			26,
+			5,
 			1
 		},
 		{
 			9,
-			27,
+			6,
 			1
 		},
 		{
 			9,
-			28,
+			7,
 			1
 		},
 		{
 			9,
-			29,
+			8,
 			1
 		},
 		{
 			9,
-			30,
+			9,
 			1
 		},
 		{
 			9,
-			31,
+			10,
 			1
 		},
 		{
 			9,
-			32,
+			11,
 			1
 		},
 		{
 			9,
-			33,
+			12,
 			1
 		},
 		{
 			9,
-			34,
+			13,
 			1
 		},
 		{
 			9,
-			35,
+			14,
 			1
 		},
 		{
 			9,
-			36,
+			15,
 			1
 		},
 		{
 			9,
-			37,
+			16,
 			1
 		},
 		{
 			9,
-			38,
+			17,
+			1
+		},
+		{
+			9,
+			18,
+			1
+		},
+		{
+			9,
+			19,
+			1
+		},
+		{
+			9,
+			20,
+			1
+		},
+		{
+			9,
+			21,
 			1
 		}
 	},
@@ -197139,6 +197159,28 @@ _G.pg.base.item_data_statistics[59483] = {
 	is_world = 0,
 	icon = "Props/frame_chat_1",
 	id = 59483,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[59484] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Points",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_rv3",
+	id = 59484,
 	display_icon = {},
 	price = {},
 	index = {},
