@@ -1,110 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103090] = {
-		ship_group = 10309,
-		name = "Quincy",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "kunxi",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 103090,
-		voice_actor_2 = -1,
-		prefab = "kunxi",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "New Orleans-class heavy cruiser – Quincy, hull number CA-39.",
-		voice_actor = 144,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.19,
-					0.85,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.19,
-					0.78,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.27,
-					0.76,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.42,
-							2.12,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[103091] = {
 		ship_group = 10309,
 		name = "Sizzling Summer, Brisk Breeze",
@@ -3185,6 +3081,110 @@ pg.base.ship_skin_template_3 = {
 			ParamEyeBallY = {
 				-0.1,
 				0.1
+			}
+		}
+	},
+	[103248] = {
+		ship_group = 10324,
+		name = "Joyride of Love",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 8,
+		shop_id = 0,
+		painting = "bulaimodun_h",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9998,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = 1,
+		id = 103248,
+		voice_actor_2 = -1,
+		prefab = "bulaimodun_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Three, two, one, go! Did you get a pic of me tossing the bouquet, Commander? Ahahah! I'm postin' this to Juustagram later, so you should do the same! It'll be like... retaking our pledge of love♪",
+		voice_actor = 134,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.76,
+					0.867,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.764,
+					0.846,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.859,
+							2.284,
+							0.14
+						}
+					}
+				}
 			}
 		}
 	},
@@ -10738,6 +10738,105 @@ pg.base.ship_skin_template_3 = {
 						{
 							-0.551,
 							2.421,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107065] = {
+		ship_group = 10706,
+		name = "Heroic Finery",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1102",
+		l2d_ignore_drag = 0,
+		group_index = 5,
+		shop_id = 70375,
+		painting = "qiye_6",
+		illustrator = 8,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "135",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 107065,
+		voice_actor_2 = -1,
+		prefab = "qiye_6",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "My ballgown? I don't normally get to wear clothes like these, so it took me a while to change. Ah, let's hurry to the venue. We shouldn't keep everyone else waiting.",
+		voice_actor = 31,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.392,
+					1.136,
+					0
+				}
+			},
+			plane = {
+				{
+					1.359,
+					1.162,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.551,
+							2.329,
 							0
 						}
 					}

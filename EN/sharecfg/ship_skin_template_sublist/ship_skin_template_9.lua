@@ -6755,6 +6755,480 @@ pg.base.ship_skin_template_9 = {
 			}
 		}
 	},
+	[301890] = {
+		ship_group = 30189,
+		name = "Hatsuzuki",
+		hand_id = 14,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "chuyue",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 301890,
+		voice_actor_2 = -1,
+		prefab = "chuyue",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Akizuki-class destroyer – Hatsuzuki.",
+		voice_actor = 376,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.774,
+					1.185,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.716,
+					1.144,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.763,
+					1.155,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.4,
+							2.4,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[301891] = {
+		ship_group = 30189,
+		name = "August's First Romance",
+		l2d_se = "",
+		hand_id = 14,
+		bgm = "",
+		illustrator2 = -1,
+		special_effects = "",
+		desc = "Peace~♪ Do I look good in the pic? Don't I look so adorable you'll never wanna delete the photo, and have to stare at it every day to feel at ease? Heehee♪",
+		group_index = 1,
+		l2d_drag_rate = "",
+		painting = "chuyue_2",
+		gyro = 0,
+		rarity_bg = "",
+		l2d_ignore_drag = 0,
+		shop_type_id = 6,
+		prefab = "chuyue_2",
+		main_UI_FX = "",
+		lip_smoothing = 0,
+		time = "",
+		voice_actor = 376,
+		spine_offset = "",
+		bg = "117",
+		illustrator = -1,
+		l2d_para_range = "",
+		spine_action_offset = false,
+		lip_sync_gain = 0,
+		skin_type = 0,
+		bg_sp = "",
+		id = 301891,
+		voice_actor_2 = -1,
+		shop_id = 70902,
+		show_skin = "stand",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			0,
+			28,
+			0
+		},
+		live2d_offset_profile = {
+			0,
+			50,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.774,
+					1.185,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.716,
+					1.144,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.763,
+					1.155,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.4,
+							2.4,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		ship_l2d_id = {
+			3018911,
+			3018912,
+			3018913,
+			3018914,
+			3018915
+		}
+	},
+	[301900] = {
+		ship_group = 30190,
+		name = "Asanagi",
+		hand_id = 6,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "zhaozhi",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 301900,
+		voice_actor_2 = -1,
+		prefab = "zhaozhi",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Kamikaze-class destroyer – Asanagi.",
+		voice_actor = 382,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.089,
+					1.656,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.987,
+					1.305,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.915,
+					1.719,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.546,
+							2.491,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[301901] = {
+		ship_group = 30190,
+		name = "Lulled by Rough Seas",
+		hand_id = 6,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70904,
+		painting = "zhaozhi_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "133",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 301901,
+		voice_actor_2 = -1,
+		prefab = "zhaozhi_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "*yaaawn*... Goodness me, there I go falling asleep. You understand how pleasant the sea breeze is, don't you? YOU calling ME a slacker!",
+		voice_actor = 382,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.089,
+					1.656,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.987,
+					1.305,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.915,
+					1.719,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.546,
+							2.491,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[302010] = {
 		ship_group = 30201,
 		name = "Yuubari",
@@ -7904,6 +8378,230 @@ pg.base.ship_skin_template_9 = {
 							0.56,
 							2.57,
 							-0.58
+						}
+					}
+				}
+			}
+		}
+	},
+	[302060] = {
+		ship_group = 30206,
+		name = "Natori",
+		hand_id = 6,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "mingqu",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 302060,
+		voice_actor_2 = -1,
+		prefab = "mingqu",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Nagara-class light cruiser – Natori.",
+		voice_actor = 381,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.618,
+					1.599,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.593,
+					1.546,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.59,
+					1.557,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.661,
+							2.484,
+							-0.16
+						}
+					}
+				}
+			}
+		}
+	},
+	[302061] = {
+		ship_group = 30206,
+		name = "Beach Paradise",
+		hand_id = 6,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70903,
+		painting = "mingqu_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "106",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 302061,
+		voice_actor_2 = -1,
+		prefab = "mingqu_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Mmfhuhu~♡ What's the matter, Commander? Enraptured by my charms? Heehee, you're frozen in place! You can't begin to think of how to compliment me, can you? \"Enough staring, out with the compliments!\"",
+		voice_actor = 381,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.618,
+					1.599,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.593,
+					1.546,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.59,
+					1.557,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.661,
+							2.484,
+							-0.16
 						}
 					}
 				}
@@ -10279,588 +10977,6 @@ pg.base.ship_skin_template_9 = {
 					}
 				}
 			}
-		}
-	},
-	[302201] = {
-		ship_group = 30220,
-		name = "Christmas Eve Tease",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70279,
-		painting = "aheye_3",
-		illustrator = 41,
-		l2d_voice_calibrate = "",
-		shop_type_id = 1,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "125",
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 302201,
-		voice_actor_2 = -1,
-		prefab = "aheye_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Even though I'm not really into this whole \"Christmas\" thing, if it means I get to toy around with your heart by wearing this cute outfit of mine, then I suppose I would be interested. Hehe~",
-		voice_actor = 132,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.2,
-					1.108,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.161,
-					1.107,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.003,
-					0.002,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.13,
-					1.195,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.4,
-							2.51,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[302202] = {
-		ship_group = 30220,
-		name = "Dating Game?",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 2,
-		shop_id = 70299,
-		painting = "aheye_2",
-		illustrator = 41,
-		l2d_voice_calibrate = "",
-		shop_type_id = 9,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "113",
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 302202,
-		voice_actor_2 = -1,
-		prefab = "aheye_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "\"Oh my, you're also out for a stroll? Hehe, my name's Agano. And what might yours be?\" ...Jeez, Commander, take this more seriously. According to the setting, we just met for the first time.",
-		voice_actor = 132,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.2,
-					1.07,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.14,
-					0.97,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.03,
-					0.002,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.99,
-					1.08,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.4,
-							2.51,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[302203] = {
-		ship_group = 30220,
-		name = "Blue Butterfly's Confession",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 3,
-		shop_id = 70377,
-		painting = "aheye_4",
-		illustrator = 41,
-		l2d_voice_calibrate = "",
-		shop_type_id = 7,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "135",
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 302203,
-		voice_actor_2 = -1,
-		prefab = "aheye_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "The blunt approach is not my style, but I cannot have Noshiro think I only inch my way to success... Oh, I was just talking to myself, Commander. Hehe, so anyway, would you mind being my partner for tonight's party?",
-		voice_actor = 132,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.134,
-					1.07,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.14,
-					1.115,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.03,
-					0.002,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.082,
-					1.08,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.4,
-							2.51,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[302210] = {
-		ship_group = 30221,
-		name = "Noshiro",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "nengdai",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 302210,
-		voice_actor_2 = -1,
-		prefab = "nengdai",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Agano-class light cruiser number two – Noshiro.",
-		voice_actor = 147,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.13,
-					0.7,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.13,
-					0.7,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.164,
-					0.102,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.13,
-					0.7,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.4,
-							2.51,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[302211] = {
-		ship_group = 30221,
-		name = "Uncharted Festival Grounds?",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70283,
-		painting = "nengdai_2",
-		illustrator = -1,
-		shop_type_id = 2,
-		lip_smoothing = 0,
-		bg = "126",
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 302211,
-		voice_actor_2 = -1,
-		prefab = "nengdai_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Just as I thought, this is the perfect place for watching fireworks. You came here thinking that too, didn't you?",
-		voice_actor = 147,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			20,
-			50,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.13,
-					0.7,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.13,
-					0.7,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.164,
-					0.102,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.13,
-					0.7,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.4,
-							2.51,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_special",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			login = 8,
-			touch2 = 2.5,
-			home = 8
 		}
 	}
 }

@@ -154,6 +154,12 @@ pg.memory_group = setmetatable({
 		254,
 		255,
 		256,
+		257,
+		258,
+		259,
+		260,
+		261,
+		262,
 		501,
 		502,
 		503,
@@ -241,7 +247,8 @@ pg.memory_group = setmetatable({
 		587,
 		588,
 		589,
-		590
+		590,
+		591
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3659,6 +3666,133 @@ pg.base.memory_group = {
 			2957
 		}
 	},
+	[257] = {
+		id = 257,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5001,
+		title = "Effulgence Before Eclipse",
+		memories = {
+			2961,
+			2962,
+			2963,
+			2964,
+			2965,
+			2966,
+			2967,
+			2968,
+			2969,
+			2970,
+			2971,
+			2972,
+			2973,
+			2974,
+			2975,
+			2976,
+			2977,
+			2978,
+			2979,
+			2980,
+			2981,
+			2982,
+			2983,
+			2984,
+			2985,
+			2986,
+			2987,
+			2988,
+			2989,
+			2990,
+			2991,
+			2992,
+			2993,
+			2994
+		}
+	},
+	[258] = {
+		id = 258,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5009,
+		title = "Port Fashion Collection! Part 1",
+		memories = {
+			3001,
+			3002,
+			3003,
+			3004,
+			3005
+		}
+	},
+	[259] = {
+		id = 259,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 4990,
+		title = "The Spiriting-Away Incident?",
+		memories = {
+			3011,
+			3012,
+			3013,
+			3014,
+			3015,
+			3016,
+			3017,
+			3018,
+			3019,
+			3020,
+			3021,
+			3022
+		}
+	},
+	[260] = {
+		id = 260,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5015,
+		title = "Port Fashion Collection! Part 2",
+		memories = {
+			3031,
+			3032,
+			3033
+		}
+	},
+	[261] = {
+		id = 261,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5019,
+		title = "Port Fashion Collection! Racing Special",
+		memories = {
+			3041,
+			3042,
+			3043,
+			3044,
+			3045
+		}
+	},
+	[262] = {
+		id = 262,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5023,
+		title = "Royal Fortune's Secret Shipyard",
+		memories = {
+			3061,
+			3062,
+			3063,
+			3064,
+			3065,
+			3066,
+			3067,
+			3068
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -5166,6 +5300,23 @@ pg.base.memory_group = {
 			2945,
 			2946,
 			2947
+		}
+	},
+	[591] = {
+		id = 591,
+		subtype = 0,
+		icon = "title_chara_kelaimengsuo",
+		type = 3,
+		link_event = 0,
+		title = "Veiled in White",
+		memories = {
+			3051,
+			3052,
+			3053,
+			3054,
+			3055,
+			3056,
+			3057
 		}
 	}
 }

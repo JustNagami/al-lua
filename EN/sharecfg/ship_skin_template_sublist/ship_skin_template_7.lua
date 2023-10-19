@@ -1,119 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_7 = {
-	[205091] = {
-		ship_group = 20509,
-		name = "Noble Rouge",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70393,
-		painting = "hao_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 9,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "115",
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 205091,
-		voice_actor_2 = -1,
-		prefab = "hao_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Sorry to keep you waiting, but now I'm ready to– Commander? What's the matter? It'll get dark soon if you keep standing around like that.",
-		voice_actor = 116,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.172,
-					1.213,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.153,
-					1.214,
-					0
-				}
-			},
-			torpedo = {
-				{
-					-0.006,
-					0.002,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.136,
-					1.144,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.45,
-							2.26,
-							0.53
-						}
-					}
-				}
-			}
-		}
-	},
 	[205092] = {
 		ship_group = 20509,
 		name = "Pastry Princess",
@@ -1866,6 +1753,126 @@ pg.base.ship_skin_template_7 = {
 						{
 							0.52,
 							2.59,
+							-0.55
+						}
+					}
+				}
+			}
+		}
+	},
+	[206022] = {
+		ship_group = 20602,
+		name = "Cerulean Enthrallment",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 70907,
+		painting = "baiyanjuren_3",
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "146",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 206022,
+		voice_actor_2 = -1,
+		prefab = "baiyanjuren_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "\"Gaze upon this glorious dress. Admire its brilliance, tremble, and...\" If you don't mind, would you please take Argus' hand?",
+		voice_actor = 350,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.62,
+					1.17,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.62,
+					1.17,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.001,
+					0.006,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.59,
+					1.71,
+					0
+				}
+			},
+			plane = {
+				{
+					1.59,
+					1.71,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.723,
+							2.347,
 							-0.55
 						}
 					}
@@ -8783,6 +8790,112 @@ pg.base.ship_skin_template_7 = {
 			"mail",
 			"touch_body",
 			"touch_head"
+		}
+	},
+	[231210] = {
+		ship_group = 20121,
+		name = "A Different Dance",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1101",
+		l2d_ignore_drag = 0,
+		group_index = 10,
+		shop_id = 0,
+		painting = "biaoqiang_9",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "161",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 231210,
+		voice_actor_2 = -1,
+		prefab = "biaoqiang_9",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Tadah! I've got a banquet dress! Heehee~ I decided to go with something refined and voguish this time, as opposed to cute! I mean, it's a dress fit for a banquet, so I think it makes me look pretty grown-up.",
+		voice_actor = 23,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.18,
+					1.012,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.004,
+					0.016,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.188,
+					0.988,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.5,
+							2.34,
+							0
+						}
+					}
+				}
+			}
 		}
 	},
 	[236030] = {

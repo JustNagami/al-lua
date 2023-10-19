@@ -3535,6 +3535,345 @@ pg.pay_data_display = {
 			}
 		}
 	},
+	[55] = {
+		subject = "Autumn Classics Lucky Box ",
+		limit_group = 0,
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		limit_arg = 1,
+		name = "Autumn Classics Lucky Box ",
+		name_display = "Autumn Classics Lucky Box ",
+		type_order = 2,
+		extra_gem = 0,
+		id = 55,
+		money = 2999,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihejp6lf_l",
+		skin_inquire_relation = 69929,
+		id_str = "com.yostaren.azurlane.luckybag16",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "Contains a random character outfit, 2023 Gems, and a large amount of supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag16",
+		extra_service_item = {
+			{
+				2,
+				69929,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					9,
+					21
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					10,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69929,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40929,
+				1
+			}
+		}
+	},
+	[56] = {
+		subject = "Party Dress Lucky Box 2022 Rerun ",
+		limit_group = 0,
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		limit_arg = 1,
+		name = "Party Dress Lucky Box 2022 Rerun ",
+		name_display = "Party Dress Lucky Box 2022 Rerun ",
+		type_order = 2,
+		extra_gem = 0,
+		id = 56,
+		money = 2999,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihe8_l",
+		skin_inquire_relation = 69920,
+		id_str = "com.yostaren.azurlane.luckybag17",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "Contains a random character outfit, 2022 Gems, and a large amount of supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag17",
+		extra_service_item = {
+			{
+				2,
+				69920,
+				1
+			},
+			{
+				1,
+				14,
+				2022
+			},
+			{
+				2,
+				42046,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					9,
+					21
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					10,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69920,
+				1
+			},
+			{
+				1,
+				14,
+				2022
+			},
+			{
+				2,
+				42046,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40920,
+				1
+			}
+		}
+	},
+	[57] = {
+		subject = "Fashion Collection Lucky Bag ",
+		limit_group = 0,
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		limit_arg = 1,
+		name = "Fashion Collection Lucky Bag ",
+		name_display = "Fashion Collection Lucky Bag ",
+		type_order = 2,
+		extra_gem = 0,
+		id = 57,
+		money = 2999,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihejp6ss_l",
+		skin_inquire_relation = 69928,
+		id_str = "com.yostaren.azurlane.luckybag15",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "Contains a random character outfit, 2023 Gems, and a large amount of supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag15",
+		extra_service_item = {
+			{
+				2,
+				69928,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					9,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					10,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69928,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40928,
+				1
+			}
+		}
+	},
 	[1000] = {
 		subject = "Fair Winds Cruise Pass",
 		limit_group = 0,
@@ -4327,7 +4666,7 @@ pg.pay_data_display = {
 					1
 				},
 				{
-					1,
+					0,
 					0,
 					0
 				}
@@ -4429,6 +4768,81 @@ pg.pay_data_display = {
 		},
 		sub_display = {
 			7012,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1012] = {
+		subject = "Fair Winds Cruise Pass",
+		limit_group = 0,
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		limit_arg = 1,
+		name = "Fair Winds Cruise Pass (2023.10)",
+		name_display = "Fair Winds Cruise Pass",
+		type_order = 4,
+		extra_gem = 0,
+		id = 1012,
+		money = 999,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.passport15",
+		first_pay_double = 0,
+		extra_service = 4,
+		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
+		airijp_id = "com.yostaren.azurlane.passport15",
+		extra_service_item = {
+			{
+				1,
+				4013,
+				1500
+			},
+			{
+				8,
+				59494,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					11,
+					30
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4013,
+				1500
+			}
+		},
+		sub_display = {
+			7013,
 			1500
 		},
 		ignorePlatform = {},
@@ -9321,7 +9735,7 @@ pg.pay_data_display = {
 				{
 					2023,
 					4,
-					6
+					27
 				},
 				{
 					0,
@@ -9332,8 +9746,8 @@ pg.pay_data_display = {
 			{
 				{
 					2023,
-					6,
-					30
+					7,
+					12
 				},
 				{
 					23,
@@ -10198,6 +10612,9 @@ pg.pay_data_display = {
 		51,
 		52,
 		53,
+		55,
+		56,
+		57,
 		1000,
 		1001,
 		1002,
@@ -10210,6 +10627,7 @@ pg.pay_data_display = {
 		1009,
 		1010,
 		1011,
+		1012,
 		2001,
 		2002,
 		2003,

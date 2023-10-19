@@ -87,6 +87,90 @@ pg.map_event_list = {
 			"helpbg/battle_suligao_10"
 		}
 	},
+	[1501] = {
+		help_open = 1,
+		chapter_id = 1501,
+		event_list = {
+			853,
+			854,
+			855,
+			863
+		},
+		event_list_loop = {},
+		help_pictures = {
+			"helpbg/map15_help1",
+			"helpbg/map15_help2",
+			"helpbg/map15_help3",
+			"helpbg/map15_help4",
+			"helpbg/map15_help5",
+			"helpbg/map15_help6",
+			"helpbg/supportfleet_help1",
+			"helpbg/supportfleet_help2"
+		}
+	},
+	[1502] = {
+		help_open = 0,
+		chapter_id = 1502,
+		event_list = {
+			856,
+			857,
+			858,
+			864
+		},
+		event_list_loop = {},
+		help_pictures = {
+			"helpbg/map15_help1",
+			"helpbg/map15_help2",
+			"helpbg/map15_help3",
+			"helpbg/map15_help4",
+			"helpbg/map15_help5",
+			"helpbg/map15_help6",
+			"helpbg/supportfleet_help1",
+			"helpbg/supportfleet_help2"
+		}
+	},
+	[1503] = {
+		help_open = 0,
+		chapter_id = 1503,
+		event_list = {
+			859,
+			860,
+			865,
+			867
+		},
+		event_list_loop = {},
+		help_pictures = {
+			"helpbg/map15_help1",
+			"helpbg/map15_help2",
+			"helpbg/map15_help3",
+			"helpbg/map15_help4",
+			"helpbg/map15_help5",
+			"helpbg/map15_help6",
+			"helpbg/supportfleet_help1",
+			"helpbg/supportfleet_help2"
+		}
+	},
+	[1504] = {
+		help_open = 0,
+		chapter_id = 1504,
+		event_list = {
+			861,
+			862,
+			866,
+			868
+		},
+		event_list_loop = {},
+		help_pictures = {
+			"helpbg/map15_help1",
+			"helpbg/map15_help2",
+			"helpbg/map15_help3",
+			"helpbg/map15_help4",
+			"helpbg/map15_help5",
+			"helpbg/map15_help6",
+			"helpbg/supportfleet_help1",
+			"helpbg/supportfleet_help2"
+		}
+	},
 	[1160001] = {
 		help_open = 0,
 		chapter_id = 1160001,
@@ -3726,6 +3810,17 @@ pg.map_event_list = {
 			"helpbg/battle_faxiv2_2"
 		}
 	},
+	[1750041] = {
+		help_open = 0,
+		chapter_id = 1750041,
+		event_list = {
+			852
+		},
+		event_list_loop = {
+			852
+		},
+		help_pictures = {}
+	},
 	[2100243] = {
 		help_open = 1,
 		chapter_id = 2100243,
@@ -4169,6 +4264,10 @@ pg.map_event_list = {
 		1402,
 		1403,
 		1404,
+		1501,
+		1502,
+		1503,
+		1504,
 		1160001,
 		1160002,
 		1160003,
@@ -4391,6 +4490,7 @@ pg.map_event_list = {
 		1740025,
 		1740026,
 		1740041,
+		1750041,
 		2100243,
 		2100244,
 		2100245,

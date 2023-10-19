@@ -1,110 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_2 = {
-	[101490] = {
-		ship_group = 10149,
-		name = "Bristol",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "bulisituoer",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 101490,
-		voice_actor_2 = -1,
-		prefab = "bulisituoer",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Allen M. Sumner-class destroyer – Bristol, Hull Number DD-857.",
-		voice_actor = 302,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.12,
-					1.13,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.02,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0.067,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.4,
-							2.33,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[101491] = {
 		ship_group = 10149,
 		name = "Tales from the Empery",
@@ -9434,6 +9330,110 @@ pg.base.ship_skin_template_2 = {
 			}
 		}
 	},
+	[102310] = {
+		ship_group = 10231,
+		name = "Houston II",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "xiusidunII",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 102310,
+		voice_actor_2 = -1,
+		prefab = "xiusidunII",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Cleveland-class light cruiser – Houston II, Hull Number CL-81.",
+		voice_actor = 7,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.72,
+					1.58,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.7,
+					1.96,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.39,
+							-0.15
+						}
+					}
+				}
+			}
+		}
+	},
 	[103010] = {
 		ship_group = 10301,
 		name = "Pensacola",
@@ -11030,6 +11030,110 @@ pg.base.ship_skin_template_2 = {
 						{
 							-0.57,
 							2.33,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[103090] = {
+		ship_group = 10309,
+		name = "Quincy",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "kunxi",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 103090,
+		voice_actor_2 = -1,
+		prefab = "kunxi",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "New Orleans-class heavy cruiser – Quincy, hull number CA-39.",
+		voice_actor = 144,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.19,
+					0.85,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.19,
+					0.78,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					-0.27,
+					0.76,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.42,
+							2.12,
 							0
 						}
 					}

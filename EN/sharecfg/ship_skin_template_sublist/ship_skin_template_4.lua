@@ -1,105 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_4 = {
-	[107065] = {
-		ship_group = 10706,
-		name = "Heroic Finery",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1102",
-		l2d_ignore_drag = 0,
-		group_index = 5,
-		shop_id = 70375,
-		painting = "qiye_6",
-		illustrator = 8,
-		l2d_voice_calibrate = "",
-		shop_type_id = 7,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "135",
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 107065,
-		voice_actor_2 = -1,
-		prefab = "qiye_6",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "My ballgown? I don't normally get to wear clothes like these, so it took me a while to change. Ah, let's hurry to the venue. We shouldn't keep everyone else waiting.",
-		voice_actor = 31,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.392,
-					1.136,
-					0
-				}
-			},
-			plane = {
-				{
-					1.359,
-					1.162,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.551,
-							2.329,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[107066] = {
 		ship_group = 10706,
 		name = "Wind Catcher",
@@ -1526,6 +1427,103 @@ pg.base.ship_skin_template_4 = {
 			},
 			{
 				0.45
+			}
+		}
+	},
+	[107096] = {
+		ship_group = 10709,
+		name = "The Gale of Course 88",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 6,
+		shop_id = 70914,
+		painting = "aisaikesi_8",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 14,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 107096,
+		voice_actor_2 = -1,
+		prefab = "aisaikesi_8",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Cooldown lap completed! Did you see me on the racetrack, Commander? Heehee. Thanks for everything, from setting up the race to assigning racers and supporters!",
+		voice_actor = 149,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.048,
+					1.32,
+					0
+				}
+			},
+			plane = {
+				{
+					1.368,
+					0.472,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.86,
+							1.98,
+							0
+						}
+					}
+				}
 			}
 		}
 	},
@@ -5843,6 +5841,105 @@ pg.base.ship_skin_template_4 = {
 		main_UI_FX = "",
 		special_effects = "",
 		desc = "Phew~ Standing for a long time really wears you out... Hwah?! Commander, when'd you get there? Um, if you'd like, would you like to come exercise with me?",
+		voice_actor = 283,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.284,
+					0.819,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.64,
+							2.45,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[108072] = {
+		ship_group = 10807,
+		name = "Shining Blossom in the Deep Blue",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 70905,
+		painting = "yingwuluo_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "173",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 108072,
+		voice_actor_2 = -1,
+		prefab = "yingwuluo_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Commander~ Ehehe, can I introduce you to some of my new friends? Here's Miss Tropical Fish, and Mister Manta Ray... Oh, and Mister Dolphin too! Oh, umm, this friend here can be a bit mischievous at times, and often causes quite a bit of trouble...",
 		voice_actor = 283,
 		spine_offset = "",
 		gyro = 0,

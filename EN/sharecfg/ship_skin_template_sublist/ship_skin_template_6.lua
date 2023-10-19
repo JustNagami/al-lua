@@ -1,117 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_6 = {
-	[202229] = {
-		ship_group = 20222,
-		name = "Curlew (Retrofit)",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 9,
-		shop_id = 0,
-		painting = "biaoyu_g",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 9997,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_action_offset = false,
-		skin_type = 2,
-		id = 202229,
-		voice_actor_2 = -1,
-		prefab = "biaoyu_g",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "I am now more capable than ever of demonstrating the Royal Maids' style. Though I am not as talented as my sister, Curacoa, I sincerely hope you will find my service satisfactory. It is a great honour to work for you.",
-		voice_actor = 171,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.261,
-					0.962,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.014,
-					0.74,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.006,
-					0.751,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.554,
-							2.507,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[202200] = {
 		ship_group = 20220,
 		name = "Sirius",
@@ -10640,6 +10529,119 @@ pg.base.ship_skin_template_6 = {
 			}
 		}
 	},
+	[205065] = {
+		ship_group = 20506,
+		name = "A Knight's Song, a Lady's Night",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 5,
+		shop_id = 70909,
+		painting = "weiershiqinwang_5",
+		illustrator = 14,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "161",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 205065,
+		voice_actor_2 = -1,
+		prefab = "weiershiqinwang_5",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "I expected you sooner, Commander. I decided to practice the saxophone while I had some time alone... You shouldn't keep a lady waiting in the future. Heehee. Anyway, I suppose we could listen to a song before we set off, no?",
+		voice_actor = 12,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand2",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.951,
+					1.039,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.011,
+					1.111,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.009,
+					-0.019,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.987,
+					1.047,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.721,
+							2.307,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[205070] = {
 		ship_group = 20507,
 		name = "Duke of York",
@@ -11081,6 +11083,119 @@ pg.base.ship_skin_template_6 = {
 						{
 							-0.45,
 							2.315,
+							0.53
+						}
+					}
+				}
+			}
+		}
+	},
+	[205091] = {
+		ship_group = 20509,
+		name = "Noble Rouge",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70393,
+		painting = "hao_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "115",
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 205091,
+		voice_actor_2 = -1,
+		prefab = "hao_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Sorry to keep you waiting, but now I'm ready to– Commander? What's the matter? It'll get dark soon if you keep standing around like that.",
+		voice_actor = 116,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.172,
+					1.213,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.153,
+					1.214,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.006,
+					0.002,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.136,
+					1.144,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.26,
 							0.53
 						}
 					}
