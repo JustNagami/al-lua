@@ -1,6 +1,117 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_14 = {
+	[502018] = {
+		ship_group = 50201,
+		name = "凤冠霞帔",
+		hand_id = 9,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 8,
+		shop_id = 0,
+		painting = "yixian_h",
+		illustrator = 21,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9998,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = 1,
+		id = 502018,
+		voice_actor_2 = 197,
+		prefab = "yixian_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "呼…让您久等了，指挥官。逸仙不才，烦请指挥官多多包涵了——",
+		voice_actor = 74,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.064,
+					0.83,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.07,
+					0.921,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.005,
+					0.04,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.097,
+					0.961,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.946,
+							4.368,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[502019] = {
 		ship_group = 50201,
 		name = "逸仙.改",
@@ -6981,7 +7092,7 @@ pg.base.ship_skin_template_14 = {
 	},
 	[603020] = {
 		ship_group = 60302,
-		name = "扎拉",
+		name = "{namecode:526}",
 		hand_id = 13,
 		bgm = "",
 		l2d_drag_rate = "",
@@ -7005,7 +7116,7 @@ pg.base.ship_skin_template_14 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "扎拉级重巡洋舰—扎拉",
+		desc = "{namecode:526}级重巡洋舰—{namecode:526}",
 		voice_actor = 146,
 		spine_offset = "",
 		gyro = 0,
@@ -7256,7 +7367,7 @@ pg.base.ship_skin_template_14 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "扎拉级重巡洋舰—波拉",
+		desc = "{namecode:526}级重巡洋舰—波拉",
 		voice_actor = 146,
 		spine_offset = "",
 		gyro = 0,
@@ -7964,7 +8075,7 @@ pg.base.ship_skin_template_14 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "和扎拉她们不同，我本来就不太擅长舞蹈运动之类的……不过既然被伙伴们请求了，我会尽全力努力的！指挥官，请看着我吧！",
+		desc = "和{namecode:526}她们不同，我本来就不太擅长舞蹈运动之类的……不过既然被伙伴们请求了，我会尽全力努力的！指挥官，请看着我吧！",
 		voice_actor = 335,
 		spine_offset = "",
 		gyro = 0,
@@ -8190,7 +8301,7 @@ pg.base.ship_skin_template_14 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "扎拉级重巡洋舰—戈里齐亚",
+		desc = "{namecode:526}级重巡洋舰—戈里齐亚",
 		voice_actor = 368,
 		spine_offset = "",
 		gyro = 0,

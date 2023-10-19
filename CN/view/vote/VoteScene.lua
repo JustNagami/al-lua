@@ -1,0 +1,224 @@
+slot0 = class("VoteScene", import("..base.BaseUI"))
+slot0.ShipIndex = {
+	typeIndex = ShipIndexConst.TypeAll,
+	campIndex = ShipIndexConst.CampAll,
+	rarityIndex = ShipIndexConst.RarityAll
+}
+slot0.ShipIndexData = {
+	customPanels = {
+		typeIndex = {
+			blueSeleted = true,
+			mode = CustomIndexLayer.Mode.AND,
+			options = ShipIndexConst.TypeIndexs,
+			names = ShipIndexConst.TypeNames
+		},
+		campIndex = {
+			blueSeleted = true,
+			mode = CustomIndexLayer.Mode.AND,
+			options = ShipIndexConst.CampIndexs,
+			names = ShipIndexConst.CampNames
+		},
+		rarityIndex = {
+			blueSeleted = true,
+			mode = CustomIndexLayer.Mode.AND,
+			options = ShipIndexConst.RarityIndexs,
+			names = ShipIndexConst.RarityNames
+		}
+	},
+	groupList = {
+		{
+			dropdown = false,
+			titleTxt = "indexsort_index",
+			titleENTxt = "indexsort_indexeng",
+			tags = {
+				"typeIndex"
+			}
+		},
+		{
+			dropdown = false,
+			titleTxt = "indexsort_camp",
+			titleENTxt = "indexsort_campeng",
+			tags = {
+				"campIndex"
+			}
+		},
+		{
+			dropdown = false,
+			titleTxt = "indexsort_rarity",
+			titleENTxt = "indexsort_rarityeng",
+			tags = {
+				"rarityIndex"
+			}
+		}
+	}
+}
+
+slot0.getUIName = function(slot0)
+	return "VoteUI"
+end
+
+slot0.setVotes = function(slot0, slot1, slot2)
+	slot0.count = slot2
+	slot0.voteGroup = slot1
+	slot0.voteShips = slot0.voteGroup:getList()
+end
+
+slot0.init = function(slot0)
+	slot0.title = slot0:findTF("main/right_panel/title/main"):GetComponent(typeof(Text))
+	slot0.titleBg1 = slot0:findTF("main/right_panel/title/title_bg1")
+	slot0.titleBg2 = slot0:findTF("main/right_panel/title/title_bg2")
+	slot0.titleBg3 = slot0:findTF("main/right_panel/title/title_bg3")
+	slot0.subTitle = slot0:findTF("main/right_panel/title/Text"):GetComponent(typeof(Text))
+	slot0.tagtimeTF = slot0:findTF("main/right_panel/title/sub"):GetComponent(typeof(Text))
+	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back_btn")
+	slot0.helpBtn = slot0:findTF("main/right_panel/title/help")
+	slot0.filterBtn = slot0:findTF("main/right_panel/filter_bg/filter_btn")
+	slot0.urlBtn = slot0:findTF("main/right_panel/filter_bg/web_btn")
+	slot0.numberTxt = slot0:findTF("main/right_panel/filter_bg/Text"):GetComponent(typeof(Text))
+end
+
+slot0.didEnter = function(slot0)
+	uv0.PAGES = {
+		{
+			VotePreRaceShipPage,
+			VotePreRaceRankPage
+		},
+		{
+			VoteGroupRaceShipPage,
+			VoteGroupRaceRankPage
+		},
+		{
+			VoteGroupRaceShipPage,
+			VoteGroupRaceRankPage
+		},
+		{
+			VoteGroupRaceShipPage,
+			VoteGroupRaceRankPage
+		},
+		{
+			VoteFinalsRaceShipsPage,
+			VoteFinalsRaceRankPage
+		},
+		{
+			VoteGroupRaceShipPage,
+			VotePreRaceRankPage
+		}
+	}
+	slot1 = slot0.voteGroup:getConfig("type")
+	slot0.shipsPage = uv0.PAGES[slot1][1].New(slot0:findTF("main/right_panel"), slot0.event)
+
+	slot0.shipsPage:SetCallBack(function (slot0, slot1)
+		uv0:OnVote(slot0, slot1)
+	end)
+
+	slot0.rankPage = uv0.PAGES[slot1][2].New(slot0:findTF("main/left_panel"), slot0.event)
+	slot0.voteMsgBox = VoteDiaplayPage.New(slot0._tf, slot0.event)
+
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:emit(uv1.ON_BACK)
+	end, SFX_CANCEL)
+	onButton(slot0, slot0.urlBtn, function ()
+		Application.OpenURL(pg.gameset.vote_web_url.description)
+	end, SFX_PANEL)
+	onButton(slot0, slot0.helpBtn, function ()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip[uv0].tip
+		})
+	end, SFX_PANEL)
+	setActive(slot0.helpBtn, slot0.voteGroup:getConfig("help_text") and slot4 ~= "")
+	onButton(slot0, slot0.filterBtn, function ()
+		slot0 = Clone(uv0.ShipIndexData)
+		slot0.indexDatas = Clone(uv0.ShipIndex)
+
+		slot0.callback = function(slot0)
+			uv0.ShipIndex.typeIndex = slot0.typeIndex
+			uv0.ShipIndex.rarityIndex = slot0.rarityIndex
+			uv0.ShipIndex.campIndex = slot0.campIndex
+
+			uv1:initShips()
+		end
+
+		uv1:emit(VoteMediator.ON_FILTER, slot0)
+	end, SFX_PANEL)
+	slot0:updateMainview()
+	slot0:initTitles()
+	slot0:UpdateMode()
+end
+
+slot0.UpdateMode = function(slot0)
+	slot2 = slot0.voteGroup:IsPrevResurrectionRace()
+	slot3 = slot0.voteGroup:isFinalsRace()
+
+	setActive(slot0.filterBtn, true)
+	setActive(slot0.titleBg1, not slot0.voteGroup:isResurrectionRace() and not slot3 and not slot2)
+	setActive(slot0.titleBg2, slot1 or slot2)
+	setActive(slot0.titleBg3, slot3)
+end
+
+slot0.OnVote = function(slot0, slot1, slot2)
+	slot3 = slot1.voteShip
+	slot4 = slot0.voteGroup
+	slot6 = slot0.voteMsgBox
+
+	slot6:ExecuteAction("Open", slot3, slot4:GetRank(slot3), slot0.count, defaultValue(slot2, false), function (slot0)
+		if uv0.voteGroup:GetStage() ~= VoteGroup.VOTE_STAGE then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+
+			return
+		end
+
+		if slot0 <= uv1 then
+			uv0:emit(VoteMediator.ON_VOTE, uv0.voteGroup.id, uv2.group, slot0)
+		else
+			pg.TipsMgr.GetInstance():ShowTips(i18n("vote_not_enough"))
+		end
+	end)
+end
+
+slot0.updateMainview = function(slot0)
+	slot0:initShips()
+	slot0:initRanks()
+	slot0:updateNumber()
+end
+
+slot0.initRanks = function(slot0)
+	slot0.rankPage:ExecuteAction("Update", slot0.voteGroup)
+end
+
+slot0.initShips = function(slot0)
+	slot0.displays = {}
+
+	for slot4, slot5 in ipairs(slot0.voteShips) do
+		if uv0.ShipIndex.typeIndex == ShipIndexConst.TypeAll and uv0.ShipIndex.rarityIndex == ShipIndexConst.RarityAll and uv0.ShipIndex.campIndex == ShipIndexConst.CampAll then
+			table.insert(slot0.displays, slot5)
+		elseif ShipIndexConst.filterByType(slot5.shipVO, uv0.ShipIndex.typeIndex) and ShipIndexConst.filterByRarity(slot6, uv0.ShipIndex.rarityIndex) and ShipIndexConst.filterByCamp(slot6, uv0.ShipIndex.campIndex) then
+			table.insert(slot0.displays, slot5)
+		end
+	end
+
+	slot0.shipsPage:ExecuteAction("Update", slot0.voteGroup, slot0.displays, slot0.count)
+end
+
+slot0.initTitles = function(slot0)
+	slot1 = slot0.voteGroup:getConfig("time_vote")
+	slot0.tagtimeTF.text = setColorStr(slot0.voteGroup:getTimeDesc(), (slot0.voteGroup:isResurrectionRace() or slot0.voteGroup:IsPrevResurrectionRace()) and "#05494C" or COLOR_WHITE)
+
+	if not slot0.voteGroup:isFinalsRace() then
+		slot0.title.text = setColorStr(slot0.voteGroup:getConfig("name"), slot4)
+	end
+
+	slot0.subTitle.text = slot0.voteGroup:getConfig("desc")
+end
+
+slot0.updateNumber = function(slot0)
+	slot0.numberTxt.text = "X" .. slot0.count
+end
+
+slot0.willExit = function(slot0)
+	slot0.rankPage:Destroy()
+	slot0.shipsPage:Destroy()
+	slot0.voteMsgBox:Destroy()
+end
+
+return slot0

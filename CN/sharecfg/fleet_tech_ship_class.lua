@@ -158,7 +158,8 @@ pg.fleet_tech_ship_class = {
 			10214,
 			10215,
 			10223,
-			10225
+			10225,
+			10231
 		}
 	},
 	[10203] = {
@@ -3402,6 +3403,17 @@ pg.fleet_tech_ship_class = {
 			970602
 		}
 	},
+	[970603] = {
+		shiptype = 6,
+		name = "普林斯顿·META",
+		nation = 97,
+		id = 970603,
+		t_level_1 = 11,
+		t_level = 1,
+		ships = {
+			970603
+		}
+	},
 	[970701] = {
 		shiptype = 7,
 		name = "飞龙·META",
@@ -3742,6 +3754,7 @@ pg.fleet_tech_ship_class = {
 		970504,
 		970601,
 		970602,
+		970603,
 		970701,
 		970702,
 		970703,

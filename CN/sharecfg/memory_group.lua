@@ -166,6 +166,9 @@ pg.memory_group = setmetatable({
 		257,
 		258,
 		259,
+		260,
+		261,
+		262,
 		501,
 		502,
 		503,
@@ -253,7 +256,8 @@ pg.memory_group = setmetatable({
 		587,
 		588,
 		589,
-		590
+		590,
+		591
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3935,6 +3939,52 @@ pg.base.memory_group = {
 			3022
 		}
 	},
+	[260] = {
+		id = 260,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5015,
+		title = "港区时尚特刊：合订集[2]",
+		memories = {
+			3031,
+			3032,
+			3033
+		}
+	},
+	[261] = {
+		id = 261,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5019,
+		title = "港区时尚特刊：Race Begins！",
+		memories = {
+			3041,
+			3042,
+			3043,
+			3044,
+			3045
+		}
+	},
+	[262] = {
+		id = 262,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5023,
+		title = "皇家财富的秘密船厂",
+		memories = {
+			3061,
+			3062,
+			3063,
+			3064,
+			3065,
+			3066,
+			3067,
+			3068
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -5442,6 +5492,23 @@ pg.base.memory_group = {
 			2945,
 			2946,
 			2947
+		}
+	},
+	[591] = {
+		id = 591,
+		subtype = 0,
+		icon = "title_chara_kelaimengsuo",
+		type = 3,
+		link_event = 0,
+		title = "隐藏于纯白之下",
+		memories = {
+			3051,
+			3052,
+			3053,
+			3054,
+			3055,
+			3056,
+			3057
 		}
 	}
 }

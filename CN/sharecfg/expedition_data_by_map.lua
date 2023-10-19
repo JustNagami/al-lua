@@ -16,6 +16,7 @@ pg.expedition_data_by_map = setmetatable({
 		12,
 		13,
 		14,
+		15,
 		201,
 		202,
 		203,
@@ -28,6 +29,7 @@ pg.expedition_data_by_map = setmetatable({
 		210,
 		211,
 		212,
+		213,
 		10000,
 		70000,
 		80000,
@@ -1221,7 +1223,7 @@ pg.base.expedition_data_by_map = {
 		bg = "Map_12",
 		destory_icon_suffix = "blue",
 		animtor = 0,
-		bind_map = 0,
+		bind_map = 213,
 		clouds_pos = {
 			{
 				332,
@@ -1263,6 +1265,29 @@ pg.base.expedition_data_by_map = {
 		on_activity = 0,
 		ui_type = 1,
 		bg = "map_14",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {},
+		drop_by_map_display = {}
+	},
+	{
+		map = 15,
+		name = "恩加尼奥角海战",
+		level_limit = 80,
+		type = 1,
+		anchor = "",
+		title = "15",
+		enter_story = "",
+		bgm = "level",
+		ani_name = "map_15zhang",
+		ani_controller = "",
+		guide_id = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_15",
 		destory_icon_suffix = "blue",
 		animtor = 1,
 		bind_map = 0,
@@ -1816,6 +1841,50 @@ pg.base.expedition_data_by_map = {
 				-465
 			}
 		}
+	},
+	[213] = {
+		map = 213,
+		name = "马里亚纳风云下",
+		level_limit = 80,
+		type = 2,
+		anchor = "",
+		title = "13",
+		enter_story = "",
+		bgm = "level",
+		ani_name = "",
+		ani_controller = "",
+		guide_id = "",
+		cloud_suffix = "white",
+		uifx = "UIhuohua2",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_212",
+		destory_icon_suffix = "blue",
+		animtor = 0,
+		bind_map = 13,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		drop_by_map_display = {}
 	},
 	[10000] = {
 		map = 10000,

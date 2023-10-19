@@ -5067,6 +5067,232 @@ pg.pay_data_display = {
 			}
 		}
 	},
+	[55] = {
+		subject = "金秋庆典礼盒(2023)",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "金秋庆典礼盒(2023)",
+		name_display = "金秋庆典礼盒(2023)",
+		type_order = 2,
+		extra_gem = 0,
+		id = 55,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihejp6lf_l",
+		skin_inquire_relation = 69929,
+		id_str = "com.bilibili.blhx.zuanshi155",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2023钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond144",
+		extra_service_item = {
+			{
+				2,
+				69929,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					9,
+					21
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					10,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69929,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40929,
+				1
+			}
+		}
+	},
+	[56] = {
+		subject = "金秋庆典礼盒复刻(2022)",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "金秋庆典礼盒复刻(2022)",
+		name_display = "金秋庆典礼盒复刻(2022)",
+		type_order = 2,
+		extra_gem = 0,
+		id = 56,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihe8_l",
+		skin_inquire_relation = 69920,
+		id_str = "com.bilibili.blhx.zuanshi156",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2022钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond145",
+		extra_service_item = {
+			{
+				2,
+				69920,
+				1
+			},
+			{
+				1,
+				14,
+				2022
+			},
+			{
+				2,
+				42046,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					9,
+					21
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					10,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69920,
+				1
+			},
+			{
+				1,
+				14,
+				2022
+			},
+			{
+				2,
+				42046,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40920,
+				1
+			}
+		}
+	},
 	[57] = {
 		subject = "金秋礼盒2023",
 		limit_group = 0,
@@ -6074,6 +6300,81 @@ pg.pay_data_display = {
 		},
 		sub_display = {
 			7012,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1012] = {
+		subject = "特许巡游凭证",
+		limit_group = 0,
+		descrip_extra = "*需要通过任务达成对应巡游进度后才可获取",
+		type = 0,
+		limit_arg = 1,
+		name = "特许巡游凭证(2023.10)",
+		name_display = "特许巡游凭证",
+		type_order = 4,
+		extra_gem = 0,
+		id = 1012,
+		money = 68,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass14",
+		first_pay_double = 0,
+		extra_service = 4,
+		descrip = "可获得1500巡游点数，同时解锁特许巡游奖励·优斯伊丽限定换装和其他奖励",
+		airijp_id = "com.yostarjp.azurlane.seasonpass13",
+		extra_service_item = {
+			{
+				1,
+				4013,
+				1500
+			},
+			{
+				8,
+				59494,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					11,
+					30
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4013,
+				1500
+			}
+		},
+		sub_display = {
+			7013,
 			1500
 		},
 		ignorePlatform = {},
@@ -7432,6 +7733,8 @@ pg.pay_data_display = {
 		51,
 		52,
 		53,
+		55,
+		56,
 		57,
 		1000,
 		1001,
@@ -7445,6 +7748,7 @@ pg.pay_data_display = {
 		1009,
 		1010,
 		1011,
+		1012,
 		2001,
 		2002,
 		2003,

@@ -157,6 +157,10 @@ pg.furniture_data_template = setmetatable({
 			256,
 			257,
 			259,
+			260,
+			261,
+			262,
+			263,
 			100001,
 			100002,
 			100003,
@@ -210,6 +214,7 @@ pg.furniture_data_template = setmetatable({
 			100051,
 			100052,
 			100053,
+			100054,
 			200001,
 			200002,
 			200003,
@@ -5259,6 +5264,10 @@ pg.furniture_data_template = setmetatable({
 			256,
 			257,
 			259,
+			260,
+			261,
+			262,
+			263,
 			100001,
 			100002,
 			100003,
@@ -5312,6 +5321,7 @@ pg.furniture_data_template = setmetatable({
 			100051,
 			100052,
 			100053,
+			100054,
 			31101,
 			54101,
 			54102,
@@ -6230,6 +6240,8 @@ pg.furniture_data_template = setmetatable({
 			256,
 			257,
 			259,
+			260,
+			263,
 			100001,
 			100002,
 			100004,
@@ -6270,7 +6282,8 @@ pg.furniture_data_template = setmetatable({
 			100050,
 			100051,
 			100052,
-			100053
+			100053,
+			100054
 		},
 		[2] = {
 			120,
@@ -8142,6 +8155,8 @@ pg.furniture_data_template = setmetatable({
 			227,
 			228,
 			229,
+			261,
+			262,
 			1301,
 			1302,
 			1303,
@@ -9091,6 +9106,10 @@ pg.furniture_data_template = setmetatable({
 		256,
 		257,
 		259,
+		260,
+		261,
+		262,
+		263,
 		100001,
 		100002,
 		100003,
@@ -9144,6 +9163,7 @@ pg.furniture_data_template = setmetatable({
 		100051,
 		100052,
 		100053,
+		100054,
 		200001,
 		200002,
 		200003,
@@ -19291,6 +19311,190 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[260] = {
+		spine_extra = "",
+		describe = "梦里也许会有玉兔送来月饼！？",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "桂兔美梦床",
+		themeId = 0,
+		icon = "yuebingshuichuangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 6,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 260,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuebingshuichuang",
+				"normal"
+			},
+			[3] = {
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep"
+					}
+				},
+				{},
+				{
+					0
+				}
+			},
+			[4] = {},
+			[5] = {
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[261] = {
+		spine_extra = "",
+		describe = "",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 1,
+		themeId = 0,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "xinzexiqbanguahuaicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "特典挂画：{namecode:199}",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "chuanmo/xinzexiqbanguahua",
+		canputon = 0,
+		id = 261,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[262] = {
+		spine_extra = "",
+		describe = "",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 1,
+		themeId = 0,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "nengdaiqbanguahuaicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "特典挂画：{namecode:50}",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "chuanmo/nengdaiqbanguahua",
+		canputon = 0,
+		id = 262,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[263] = {
+		spine_extra = "",
+		describe = "驰骋赛场获得胜利的证明，巨大的奖杯象征着荣誉与实力。",
+		gain_by = "疾速赛道",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 1,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "saichangjiangbeiicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "胜利奖杯",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 263,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"saichangjiangbei",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
 	[100001] = {
 		belong = 1,
 		describe = "本ID禁用",
@@ -23132,6 +23336,98 @@ pg.base.furniture_data_template = {
 				"char2",
 				1
 			}
+		},
+		interAction_group = {}
+	},
+	[100054] = {
+		rarity = 4,
+		describe = "吃了就能逐渐理解一切！",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		belong = 1,
+		is_get_time_note = 0,
+		count = 1,
+		name = "魔法面包",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 0,
+		icon = "mofamianbaoicon",
+		deblocking = 1,
+		level = 1,
+		tag = 6,
+		effect = "",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100054,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mofamianbaoB",
+				"normal"
+			},
+			{
+				"mofamianbaoT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"stand2"
+					},
+					{
+						"yun"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	},
@@ -73422,7 +73718,7 @@ pg.base.furniture_data_template = {
 	},
 	[41113] = {
 		spine_extra = "",
-		describe = "严禁圣地亚哥靠近此树！",
+		describe = "严禁{namecode:524}靠近此树！",
 		gain_by = "",
 		type = 2,
 		dir = 0,

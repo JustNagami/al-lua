@@ -1,112 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_2 = {
-	[101491] = {
-		ship_group = 10149,
-		name = "东煌志怪谈",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70650,
-		painting = "bulisituoer_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 3,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "144",
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 101491,
-		voice_actor_2 = -1,
-		prefab = "bulisituoer_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "指挥官，春节快乐！东煌有很多神奇的传说呢！我们一起来好好调查一番吧！传说的背后，一定隐藏着更多奇妙的奥秘！",
-		voice_actor = 302,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.05,
-					1.01,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.93,
-					0.96,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0.067,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.43,
-							2.41,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[101500] = {
 		ship_group = 10150,
 		name = "哈曼II",
@@ -1980,7 +1874,7 @@ pg.base.ship_skin_template_2 = {
 	},
 	[102080] = {
 		ship_group = 10208,
-		name = "圣地亚哥",
+		name = "{namecode:524}",
 		hand_id = 13,
 		bgm = "",
 		l2d_drag_rate = "",
@@ -2004,7 +1898,7 @@ pg.base.ship_skin_template_2 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "亚特兰大级轻巡洋舰—圣地亚哥，舷号CL-53",
+		desc = "亚特兰大级轻巡洋舰—{namecode:524}，舷号CL-53",
 		voice_actor = 5,
 		spine_offset = "",
 		gyro = 0,
@@ -2126,7 +2020,7 @@ pg.base.ship_skin_template_2 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "圣诞快乐！偶像之圣地亚哥闪亮登场！指挥官，我的演唱会，一定要来噢！……地址！？那是什么？",
+		desc = "圣诞快乐！偶像之{namecode:524}闪亮登场！指挥官，我的演唱会，一定要来噢！……地址！？那是什么？",
 		voice_actor = 5,
 		spine_offset = "",
 		gyro = 0,
@@ -2232,7 +2126,7 @@ pg.base.ship_skin_template_2 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "只要有指挥官的爱之力，圣地亚哥一定能成为港区的No.1！…什么的No.1？不太清楚！总之一定可以的！",
+		desc = "只要有指挥官的爱之力，{namecode:524}一定能成为港区的No.1！…什么的No.1？不太清楚！总之一定可以的！",
 		voice_actor = 5,
 		spine_offset = "",
 		gyro = 0,
@@ -2325,7 +2219,7 @@ pg.base.ship_skin_template_2 = {
 	},
 	[102089] = {
 		ship_group = 10208,
-		name = "圣地亚哥.改",
+		name = "{namecode:528}",
 		hand_id = 13,
 		bgm = "",
 		l2d_drag_rate = "",
@@ -2348,7 +2242,7 @@ pg.base.ship_skin_template_2 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		shop_id = 0,
-		desc = "欸嘿⭐虽然搞不清楚发生了什么，不过圣地亚哥好像变厉害了呢！指挥官看到我的闪闪发光的“气场”了吗~",
+		desc = "欸嘿⭐虽然搞不清楚发生了什么，不过{namecode:524}好像变厉害了呢！指挥官看到我的闪闪发光的“气场”了吗~",
 		voice_actor = 5,
 		gyro = 0,
 		rarity_bg = "",
@@ -6334,7 +6228,7 @@ pg.base.ship_skin_template_2 = {
 	},
 	[102210] = {
 		ship_group = 10221,
-		name = "小圣地亚哥",
+		name = "{namecode:527}",
 		hand_id = 5,
 		bgm = "",
 		l2d_drag_rate = "",
@@ -6358,7 +6252,7 @@ pg.base.ship_skin_template_2 = {
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "亚特兰大级轻巡洋舰—圣地亚哥，舷号CL-53",
+		desc = "亚特兰大级轻巡洋舰—{namecode:524}，舷号CL-53",
 		voice_actor = 5,
 		spine_offset = "",
 		gyro = 0,
@@ -9324,6 +9218,110 @@ pg.base.ship_skin_template_2 = {
 			}
 		}
 	},
+	[102310] = {
+		ship_group = 10231,
+		name = "休斯敦II",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "xiusidunII",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 102310,
+		voice_actor_2 = -1,
+		prefab = "xiusidunII",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "克利夫兰级轻巡洋舰—休斯敦II，舷号CL-81",
+		voice_actor = 7,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.72,
+					1.58,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.7,
+					1.96,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.39,
+							-0.15
+						}
+					}
+				}
+			}
+		}
+	},
 	[103010] = {
 		ship_group = 10301,
 		name = "彭萨科拉",
@@ -11234,6 +11232,110 @@ pg.base.ship_skin_template_2 = {
 						{
 							-0.27,
 							2.14,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[103101] = {
+		ship_group = 10310,
+		name = "喵喵的美梦",
+		hand_id = 5,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70084,
+		painting = "Wensensi_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 20,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 103101,
+		voice_actor_2 = -1,
+		prefab = "Wensensi_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "呼呼……好舒服……嗯？是，是指挥官…喵？",
+		voice_actor = 144,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.34,
+					0.51,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.29,
+					0.5,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.35,
+					0.56,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.43,
+							2.13,
 							0
 						}
 					}
