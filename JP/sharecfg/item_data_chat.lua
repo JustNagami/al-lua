@@ -48,6 +48,14 @@ pg.item_data_chat = {
 		desc = "Fifth　Anniversary！\n<color=#A7A7AAFF>五周年記念イベントで開放可能</color>",
 		scene = {}
 	},
+	[106] = {
+		time_limit_type = 0,
+		name = "六周年記念",
+		id = 106,
+		time_second = 0,
+		desc = "Sixth　Anniversary！\n<color=#A7A7AAFF>六周年記念イベントで開放可能</color>",
+		scene = {}
+	},
 	[300] = {
 		time_limit_type = 1,
 		name = "カリスマ指揮官",
@@ -112,6 +120,14 @@ pg.item_data_chat = {
 		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（23.09.01-23.09.30）</color></size>",
 		scene = {}
 	},
+	[10005] = {
+		time_limit_type = 0,
+		name = "限界挑戦・てんびん座",
+		id = 10005,
+		time_second = 0,
+		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（23.10.01-23.10.31）</color></size>",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
@@ -119,6 +135,7 @@ pg.item_data_chat = {
 		103,
 		104,
 		105,
+		106,
 		300,
 		301,
 		602,
@@ -126,6 +143,7 @@ pg.item_data_chat = {
 		10001,
 		10002,
 		10003,
-		10004
+		10004,
+		10005
 	}
 }

@@ -63,6 +63,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>Fifth　Anniversary！</color>\n　五周年記念イベントで開放可能",
 		scene = {}
 	},
+	[108] = {
+		time_limit_type = 0,
+		name = "六周年記念",
+		gain_by = "",
+		id = 108,
+		time_second = 0,
+		desc = "<color=#ffffff>Sixth　Anniversary！</color>\n　六周年記念イベントで開放可能",
+		scene = {}
+	},
 	[201] = {
 		time_limit_type = 0,
 		name = "チャレンジャー",
@@ -408,10 +417,10 @@ pg.item_data_frame = {
 	[327] = {
 		time_limit_type = 0,
 		name = "須臾の紫藤",
-		gain_by = "",
+		gain_by = "須臾望月抄",
 		id = 327,
 		time_second = 0,
-		desc = "イベントで入手可能",
+		desc = "<color=#ffffff>「須臾の人生も代えがたし」</color>\n「須臾望月抄」に参加した指揮官に贈る",
 		scene = {}
 	},
 	[401] = {
@@ -504,6 +513,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>母港パーティーの参加記念。特別な日には参加者に特別な祝福を！</color>\n「宴会会場」イベントに参加した指揮官に贈る",
 		scene = {}
 	},
+	[605] = {
+		time_limit_type = 0,
+		name = "極速の証",
+		gain_by = "",
+		id = 605,
+		time_second = 0,
+		desc = "<color=#ffffff>最速で終点まで行き、レースの勝利を手にしよう</color>\n「極速レース」イベントに参加した指揮官に贈る",
+		scene = {}
+	},
 	[10001] = {
 		time_limit_type = 0,
 		name = "限界挑戦・ふたご座",
@@ -540,6 +558,15 @@ pg.item_data_frame = {
 		desc = "<size=24><color=#ffffff>「おとめ座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（23.09.01-23.09.30）</size>",
 		scene = {}
 	},
+	[10005] = {
+		time_limit_type = 0,
+		name = "限界挑戦・てんびん座",
+		gain_by = "",
+		id = 10005,
+		time_second = 0,
+		desc = "<size=24><color=#ffffff>「てんびん座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（23.10.01-23.10.31）</size>",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
@@ -548,6 +575,7 @@ pg.item_data_frame = {
 		104,
 		105,
 		107,
+		108,
 		201,
 		202,
 		203,
@@ -597,9 +625,11 @@ pg.item_data_frame = {
 		601,
 		602,
 		603,
+		605,
 		10001,
 		10002,
 		10003,
-		10004
+		10004,
+		10005
 	}
 }

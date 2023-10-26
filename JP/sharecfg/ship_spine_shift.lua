@@ -342,5 +342,27 @@ pg.ship_spine_shift = {
 			6,
 			-24
 		}
+	},
+	yingwuluo_3 = {
+		spine = "yingwuluo_3",
+		mainui_shift = {
+			-35,
+			10,
+			0
+		}
+	},
+	aisaikesi_8 = {
+		spine = "aisaikesi_8",
+		mainui_shift = {
+			-30,
+			-15
+		}
+	},
+	u410_3 = {
+		spine = "u410_3",
+		mainui_shift = {
+			-38.7,
+			8.3
+		}
 	}
 }

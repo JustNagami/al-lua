@@ -1,110 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103100] = {
-		ship_group = 10310,
-		name = "ヴィンセンス",
-		hand_id = 5,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "wensensi",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 103100,
-		voice_actor_2 = -1,
-		prefab = "wensensi",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "ニューオリンズ級重巡洋艦――ヴィンセンス（CA-44）",
-		voice_actor = 144,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.93,
-					0.7,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.95,
-					0.67,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.43,
-					0.93,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.27,
-							2.14,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[103101] = {
 		ship_group = 10310,
 		name = "スイートドリーム",
@@ -2980,6 +2876,110 @@ pg.base.ship_skin_template_3 = {
 			ParamEyeBallY = {
 				-0.1,
 				0.1
+			}
+		}
+	},
+	[103248] = {
+		ship_group = 10324,
+		name = "幸せトラッキング",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 8,
+		shop_id = 0,
+		painting = "bulaimodun_h",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9998,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = 1,
+		id = 103248,
+		voice_actor_2 = -1,
+		prefab = "bulaimodun_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "3、2、1、はい！指揮官、ブーケトスした瞬間をちゃんと撮れた？あはは、次の艦船通信はこれに決めたから、指揮官も同じのにしてねっ。アタシたちのもう一つの…「愛の誓い」なんだから♪",
+		voice_actor = 134,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.76,
+					0.867,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.764,
+					0.846,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.859,
+							2.284,
+							0.14
+						}
+					}
+				}
 			}
 		}
 	},
@@ -10849,6 +10849,103 @@ pg.base.ship_skin_template_3 = {
 						{
 							-0.51,
 							2.25,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107068] = {
+		ship_group = 10706,
+		name = "マリースター",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 8,
+		shop_id = 0,
+		painting = "qiye_h",
+		illustrator = 8,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9998,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_action_offset = false,
+		skin_type = 1,
+		id = 107068,
+		voice_actor_2 = -1,
+		prefab = "qiye_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ど、どうだ？ヘンじゃないかな…い、いや、別に嫌いではないぞ。むしろ私だってこれを着るのを憧れてたというか……ええと……",
+		voice_actor = 31,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					-1.22,
+					1.02,
+					0
+				}
+			},
+			plane = {
+				{
+					1,
+					1.92,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.35,
 							0
 						}
 					}

@@ -16,6 +16,7 @@ pg.expedition_data_by_map = setmetatable({
 		12,
 		13,
 		14,
+		15,
 		201,
 		202,
 		203,
@@ -28,6 +29,7 @@ pg.expedition_data_by_map = setmetatable({
 		210,
 		211,
 		212,
+		213,
 		10000,
 		70000,
 		90000,
@@ -336,6 +338,12 @@ pg.expedition_data_by_map = setmetatable({
 		1740012,
 		1740025,
 		1740026,
+		1750001,
+		1750002,
+		1750011,
+		1750012,
+		1750025,
+		1750026,
 		2100000,
 		2100001,
 		2100010,
@@ -1254,6 +1262,29 @@ pg.base.expedition_data_by_map = {
 		clouds_pos = {},
 		drop_by_map_display = {}
 	},
+	{
+		map = 15,
+		name = "エンガノ岬沖海戦",
+		level_limit = 80,
+		type = 1,
+		anchor = "",
+		title = "15",
+		enter_story = "",
+		bgm = "level",
+		ani_name = "map_15zhang",
+		ani_controller = "",
+		guide_id = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_15",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {},
+		drop_by_map_display = {}
+	},
 	[201] = {
 		map = 201,
 		name = "トラ！トラ！トラ！",
@@ -1801,6 +1832,50 @@ pg.base.expedition_data_by_map = {
 				-465
 			}
 		}
+	},
+	[213] = {
+		map = 213,
+		name = "風雲マリアナ・下",
+		level_limit = 80,
+		type = 2,
+		anchor = "",
+		title = "13",
+		enter_story = "",
+		bgm = "level",
+		ani_name = "",
+		ani_controller = "",
+		guide_id = "",
+		cloud_suffix = "white",
+		uifx = "UIhuohua2",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_212",
+		destory_icon_suffix = "blue",
+		animtor = 0,
+		bind_map = 13,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		drop_by_map_display = {}
 	},
 	[10000] = {
 		map = 10000,
@@ -15687,6 +15762,270 @@ pg.base.expedition_data_by_map = {
 		destory_icon_suffix = "blue",
 		animtor = 1,
 		bind_map = 1740012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1750001] = {
+		map = 1750001,
+		name = "須臾望月抄·前編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-unzen",
+		enter_story = "XUYUWANGYUECHAO1",
+		ani_name = "Map_1750001",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5001,
+		ui_type = 1,
+		bg = "Map_1750001",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1750011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1750002] = {
+		map = 1750002,
+		name = "須臾望月抄·後編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-sakuraholyplace",
+		enter_story = "XUYUWANGYUECHAO12",
+		ani_name = "Map_1750002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5001,
+		ui_type = 1,
+		bg = "Map_1750002",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1750012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1750011] = {
+		map = 1750011,
+		name = "須臾望月抄·前編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-unzen",
+		enter_story = "XUYUWANGYUECHAO1",
+		ani_name = "Map_1750003",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5001,
+		ui_type = 1,
+		bg = "Map_1750003",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1750001,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1750012] = {
+		map = 1750012,
+		name = "須臾望月抄·後編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-sakuraholyplace",
+		enter_story = "XUYUWANGYUECHAO12",
+		ani_name = "Map_1750004",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5001,
+		ui_type = 1,
+		bg = "Map_1750004",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1750002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1750025] = {
+		map = 1750025,
+		name = "須臾望月抄·SP|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-unzen-heart",
+		enter_story = "",
+		ani_name = "Map_1750004",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5001,
+		ui_type = 1,
+		bg = "Map_1750004",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1750012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1750026] = {
+		map = 1750026,
+		name = "須臾望月抄·EX|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-unzen",
+		enter_story = "",
+		ani_name = "Map_1750004",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5001,
+		ui_type = 1,
+		bg = "Map_1750004",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1750012,
 		clouds_pos = {
 			{
 				332,
