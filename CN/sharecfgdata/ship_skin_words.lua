@@ -40,7 +40,6 @@ _G.pg.base.ship_skin_words[100000] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[100001] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -74,7 +73,6 @@ _G.pg.base.ship_skin_words[100001] = {
 	detail = "那位绿色的猫好像说过，这套装备是“工作用”的buli。虽然不明白是什么意思，不过既然和姐姐那么像，那一定是很强的装备buli！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[100010] = {
 	feeling1 = "居然能让本大人不喜欢你，要从另一个角度夸奖你一下！但是本大人才不会怒斥你，哇哈哈！享受这种虚无感吧！",
 	feeling3 = "既然你这么有耐心，告诉你一个小秘密吧，妹妹虽然总是自称比我聪明，但她才是最笨的那一个。哇哈哈，这就是长姐的仁慈呀喵！",
@@ -108,7 +106,6 @@ _G.pg.base.ship_skin_words[100010] = {
 	detail = "这并不能证明你不是咸鱼purin！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[100020] = {
 	feeling1 = "即使指挥官变成了这样…布里也是不会放弃你的burin！快振作起来burin！",
 	feeling3 = "指挥官总是愿意和我玩，那我也要报答指挥官！这次，就破例把“超级喵喵1号”借给指挥官玩1个小时burin！不准拿去干坏事哦？",
@@ -160,7 +157,6 @@ _G.pg.base.ship_skin_words[100020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101020] = {
 	feeling1 = "指挥官…比风暴更让人感觉害怕……",
 	feeling3 = "指挥官，刚才杜威整理了一下指挥室，有感觉变得比较整齐了吗？有需要的话，房间也可以帮您整理哦",
@@ -228,7 +224,6 @@ _G.pg.base.ship_skin_words[101020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -262,7 +257,6 @@ _G.pg.base.ship_skin_words[101021] = {
 	detail = "这个绘本？这个是杜威画的，一个女孩在梦中追逐着自己憧憬的人的故事呢。指挥官，想看？要记得…对列克星敦小姐保密哦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -296,7 +290,6 @@ _G.pg.base.ship_skin_words[101022] = {
 	detail = "我也想给列克星敦小姐一个特别的圣诞礼物……指挥官觉得，怎样的礼物比较好呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101030] = {
 	feeling1 = "能让我安静地睡一会儿吗？",
 	feeling3 = "唔，怎么说呢……有空的话，一起午睡？",
@@ -330,7 +323,6 @@ _G.pg.base.ship_skin_words[101030] = {
 	detail = "我没什么可让你好奇的地方……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -364,7 +356,6 @@ _G.pg.base.ship_skin_words[101031] = {
 	detail = "欸…坐在购物车里有这么奇怪？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -398,7 +389,6 @@ _G.pg.base.ship_skin_words[101039] = {
 	detail = "呼啊……指挥官，我要睡个回笼觉，你随意…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101040] = {
 	feeling1 = "我最讨厌无精打采的人了！",
 	feeling3 = "身体？不用在意啦，只不过是换了半个身体而已，能吃能睡，没什么不对！",
@@ -432,7 +422,6 @@ _G.pg.base.ship_skin_words[101040] = {
 	detail = "什么啊，指挥官喜欢我这种有点肌肉的女孩子嘛？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -466,7 +455,6 @@ _G.pg.base.ship_skin_words[101041] = {
 	detail = "嘿嘿，我这个“作品”还挺不错的吧？啊，别告诉{namecode:98}哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101049] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -500,7 +488,6 @@ _G.pg.base.ship_skin_words[101049] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101050] = {
 	feeling1 = "小加加的照片再也不会给你看了！",
 	feeling3 = "指挥官，不是约好了一起观察小加加吗？别愣着了赶紧走吧",
@@ -534,7 +521,6 @@ _G.pg.base.ship_skin_words[101050] = {
 	detail = "哇，快看那个萌妹子~不、不是我呀！是那边那个！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -568,7 +554,6 @@ _G.pg.base.ship_skin_words[101051] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101060] = {
 	feeling1 = "我去给别人加油了，今天可能不回来了",
 	feeling3 = "指挥官看上去没什么精神耶，要不要克雷文给你摸摸头的鼓励呀？",
@@ -602,7 +587,6 @@ _G.pg.base.ship_skin_words[101060] = {
 	detail = "呜啊~指挥官！不、不要突然凑这么近！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -636,7 +620,6 @@ _G.pg.base.ship_skin_words[101061] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101070] = {
 	feeling1 = "（麦考尔只是继续舔冰棍，并不理你）",
 	feeling3 = "发呆的心得？大脑放空，什么都不去想，不过冰棒经常会掉就是了……",
@@ -670,7 +653,6 @@ _G.pg.base.ship_skin_words[101070] = {
 	detail = "麻烦能快点看么？我想去拿根新的冰棒了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101080] = {
 	feeling1 = "抱歉，我还要练习，先走了",
 	feeling3 = "指挥官，要我教你怎么样才能跑的更快吗？这门学问可是很深的",
@@ -704,7 +686,6 @@ _G.pg.base.ship_skin_words[101080] = {
 	detail = "唔，为什么……每次都趁着我热身的时候……你喜欢女孩子出汗的样子吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101090] = {
 	feeling1 = "对，对不起，我要去照顾妹妹了！",
 	feeling3 = "指挥官，能来帮我一下吗——谢谢，果然指挥官比我要有力气呀，稍微有点羡慕呢",
@@ -738,7 +719,6 @@ _G.pg.base.ship_skin_words[101090] = {
 	detail = "我跑得很快，它们打不到我的！唔……就算被普通的打一下的话也完全没问题……的吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101110] = {
 	feeling1 = "指挥官你这邪恶的化身！",
 	feeling3 = "正义的伙伴可是很难当的，不过指挥官有我奥斯本在一定没问题",
@@ -801,7 +781,6 @@ _G.pg.base.ship_skin_words[101110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101119] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -835,7 +814,6 @@ _G.pg.base.ship_skin_words[101119] = {
 	detail = "武器装备是正义的铁拳，正直勇敢是正义的内心！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101120] = {
 	feeling1 = "现在的指挥官真是无聊啊……",
 	feeling3 = "指挥官啊，我总是想捉弄你……你会不会讨厌我呢……",
@@ -869,7 +847,6 @@ _G.pg.base.ship_skin_words[101120] = {
 	detail = "别碰我的雷达，这可是晚上捉弄对面绅士的利器呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101130] = {
 	feeling1 = "叫错名字这种事情有意思么？",
 	feeling3 = "……被指挥官你叫多了总觉得奥利奥也不错了——女孩子都是甜甜的？……这算是夸奖吗（///）",
@@ -903,7 +880,6 @@ _G.pg.base.ship_skin_words[101130] = {
 	detail = "指挥官要好好整理装备哟！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101140] = {
 	feeling1 = "啧，能别来烦我吗？",
 	feeling3 = "指挥官你意外的安静欸，那我就多待会吧",
@@ -937,7 +913,6 @@ _G.pg.base.ship_skin_words[101140] = {
 	detail = "快点啦，摆姿势很累的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101150] = {
 	feeling1 = "指挥官好可怕……（发抖）",
 	feeling3 = "姐姐说……指挥官是值得信任的人……",
@@ -971,7 +946,6 @@ _G.pg.base.ship_skin_words[101150] = {
 	detail = "呀！不不…不要碰奇怪的地方啦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101160] = {
 	feeling1 = "你就是想要对美少女图谋不轨的化身吧……我本森今天就要代表月亮消灭你！",
 	feeling3 = "美少女就是我，我就是美少女，指挥官也这么觉得吧，yeah！",
@@ -1005,7 +979,6 @@ _G.pg.base.ship_skin_words[101160] = {
 	detail = "别捏我耳朵啦！才不是可拆卸的！惹急我了咬你哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101161] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1039,7 +1012,6 @@ _G.pg.base.ship_skin_words[101161] = {
 	detail = "这个是本森的南瓜法杖哦！只要念出对应的咒语，就能施放出能把怪物打倒的强力魔法！…哈哈，开玩笑的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101170] = {
 	feeling1 = "Zzzzzzzzz……",
 	feeling3 = "一开始，感觉指挥官有点无聊……不过仔细想想，我除了战斗也很没干劲，说不定我和指挥官很合得来喔……",
@@ -1090,7 +1062,6 @@ _G.pg.base.ship_skin_words[101170] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101171] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1124,7 +1095,6 @@ _G.pg.base.ship_skin_words[101171] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101172] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1158,7 +1128,6 @@ _G.pg.base.ship_skin_words[101172] = {
 	detail = "狗狗，狗狗不要拉着我跑……指挥官，遛狗好累……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101173] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1192,7 +1161,6 @@ _G.pg.base.ship_skin_words[101173] = {
 	detail = "新年…春节…有什么不同吗？拉菲不是很明白…不过，能好吃好睡的节日…就是好节日，嗯",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101174] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1226,7 +1194,6 @@ _G.pg.base.ship_skin_words[101174] = {
 	detail = "摆出这样的动作就可以了吗？…还有台词？那就……“萌萌～啾”…？感觉…很有标枪的风格呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101175] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1260,7 +1227,6 @@ _G.pg.base.ship_skin_words[101175] = {
 	detail = "和指挥官还有大家一起野餐，很开心……拉菲，看到大家都很和睦，很高兴……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101176] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1294,7 +1260,6 @@ _G.pg.base.ship_skin_words[101176] = {
 	detail = "标枪来找拉菲做偶像的时候，本森姐姐也在旁边，看到她的眼神，拉菲就知道，事情麻烦了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101177] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1328,7 +1293,6 @@ _G.pg.base.ship_skin_words[101177] = {
 	detail = "不行了…拉菲，需要休息…Zzzzz",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101178] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1362,7 +1326,6 @@ _G.pg.base.ship_skin_words[101178] = {
 	detail = "指挥官…无论拉菲变成怎么样都喜欢拉菲…？虽然不太明白，那应该就是指挥官会一直陪着拉菲的意思吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101179] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1396,7 +1359,6 @@ _G.pg.base.ship_skin_words[101179] = {
 	detail = "标枪，{namecode:6}，{namecode:408}……都是好朋友，想和她们，还有大家一直在一起",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101240] = {
 	feeling1 = "啊等等，我正在收拾一些道具，以后不会对指挥官恶作剧了，开心吗？",
 	feeling3 = "最近我恶作剧你都不生气了，总觉得有点寂寞呢……嗯？我才没有得了便宜还卖乖啦",
@@ -1439,7 +1401,6 @@ _G.pg.base.ship_skin_words[101240] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101249] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1473,7 +1434,6 @@ _G.pg.base.ship_skin_words[101249] = {
 	detail = "指挥官，你看起来很闲的样子嘛，来玩游戏吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101250] = {
 	feeling1 = "哈曼已经气都不想生了……",
 	feeling3 = "要是以为和哈曼关系有改善那就大错特错了！……不过只有一点的话，还是可以承认的………（小声）",
@@ -1532,7 +1492,6 @@ _G.pg.base.ship_skin_words[101250] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101251] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1566,7 +1525,6 @@ _G.pg.base.ship_skin_words[101251] = {
 	detail = "迷、迷上哈曼的泳装了吗？哼，今天就特别允许你多看几眼！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101252] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1600,7 +1558,6 @@ _G.pg.base.ship_skin_words[101252] = {
 	detail = "再看下去舞会都要结束了啦，笨蛋指挥官！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101253] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1634,7 +1591,6 @@ _G.pg.base.ship_skin_words[101253] = {
 	detail = "不要津津有味地盯着哈曼看啦！笨蛋！……要随时关注舞台的状况？那…果然还是不行！不许看！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101254] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1668,7 +1624,6 @@ _G.pg.base.ship_skin_words[101254] = {
 	detail = "想，想什么呢！我才不想把自己当成圣诞礼物的啦！…要，要不是实在想不出来送什么好的话，我才不会…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101259] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1702,7 +1657,6 @@ _G.pg.base.ship_skin_words[101259] = {
 	detail = "想要看多久啦，哈曼还要去找约克城姐姐呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101260] = {
 	feeling1 = "……指挥官，讨厌。（埃尔德里奇浑身发电不让你靠近她）",
 	feeling3 = "……指挥官，飞飞。（埃尔德里奇看起来很希望你抱她起来飞飞，但是她在发电！）",
@@ -1745,7 +1699,6 @@ _G.pg.base.ship_skin_words[101260] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101261] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1779,7 +1732,6 @@ _G.pg.base.ship_skin_words[101261] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101262] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1813,7 +1765,6 @@ _G.pg.base.ship_skin_words[101262] = {
 	detail = "指挥官……不和埃尔德里奇一起上课吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101263] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1847,7 +1798,6 @@ _G.pg.base.ship_skin_words[101263] = {
 	detail = "这件衣服，好看，但是不好抱抱，失望……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101264] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1881,7 +1831,6 @@ _G.pg.base.ship_skin_words[101264] = {
 	detail = "埃尔德里奇，是电气偶像……（埃尔德里奇身边的电气正规律地变化着）",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101265] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1915,7 +1864,6 @@ _G.pg.base.ship_skin_words[101265] = {
 	detail = "指挥官，吃月饼？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101270] = {
 	feeling1 = "指挥官是兔兔的敌人！",
 	feeling3 = "本森姐姐说贝利是兔兔星来的，贝利又不是小孩子了……但是但是，圣诞老人一定是存在的！",
@@ -1949,7 +1897,6 @@ _G.pg.base.ship_skin_words[101270] = {
 	detail = "唧……吱……嗷……唔，兔兔的叫声好难学！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101271] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -1983,7 +1930,6 @@ _G.pg.base.ship_skin_words[101271] = {
 	detail = "兔美，兔吉，听好了！今天我们的任务是从指挥官那里要来很多很多的糖果！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101272] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2017,7 +1963,6 @@ _G.pg.base.ship_skin_words[101272] = {
 	detail = "对了对了，指挥官，要不你也一起来当圣诞兔兔吧！把礼物送到人们手上，也是一件非常开心的事情哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101279] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2051,7 +1996,6 @@ _G.pg.base.ship_skin_words[101279] = {
 	detail = "兔美，兔吉，装备方面就麻烦你们了哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101290] = {
 	feeling1 = "糖果，不会再分给你了",
 	feeling3 = "指挥官，上次的巧克力还蛮好吃的，是在哪买的？",
@@ -2085,7 +2029,6 @@ _G.pg.base.ship_skin_words[101290] = {
 	detail = "指挥官也了解到糖果的魅力了吗？喏，这里的糖果想吃什么随便挑随便拿~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101291] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2119,7 +2062,6 @@ _G.pg.base.ship_skin_words[101291] = {
 	detail = "如果真的有“糖果魔法”的话，我就把全世界的炮弹都变成糖果！大家一起享受糖果，世界就能和平了吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101300] = {
 	feeling1 = "那、那个，可以不要盯着我看吗？",
 	feeling3 = "指、指挥官，请不要总做出一些让我困扰的事……",
@@ -2153,7 +2095,6 @@ _G.pg.base.ship_skin_words[101300] = {
 	detail = "有、有什么事是可以和指挥官一起做的吗……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101301] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2187,7 +2128,6 @@ _G.pg.base.ship_skin_words[101301] = {
 	detail = "悄悄给拉特福德塞一个苹果，她应该会高兴吧…还，还是换成糖果比较好？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101310] = {
 	feeling1 = "我不会从房间里出来的，绝不！",
 	feeling3 = "指、指挥官，现在很闲的话要不要一起去我的房间玩电子游戏……",
@@ -2230,7 +2170,6 @@ _G.pg.base.ship_skin_words[101310] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101311] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2264,7 +2203,6 @@ _G.pg.base.ship_skin_words[101311] = {
 	detail = "在战场上，护士一边忍着睡意一边救护再正常不过了，所以，我现在是在练习啦，哈~欠~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101312] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2298,7 +2236,6 @@ _G.pg.base.ship_skin_words[101312] = {
 	detail = "欸，圣诞节不放假吗……好吧，那我再睡五分钟，就五分钟……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101313] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2332,7 +2269,6 @@ _G.pg.base.ship_skin_words[101313] = {
 	detail = "这件泳衣穿起来有点紧呢…说起来，我明明不打算游泳，为什么要穿泳衣来着…唔，算了，就这样吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101314] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2366,7 +2302,6 @@ _G.pg.base.ship_skin_words[101314] = {
 	detail = "{namecode:98}的店里不仅提供巧克力，还有定制包装服务，真是非常方便呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101319] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2400,7 +2335,6 @@ _G.pg.base.ship_skin_words[101319] = {
 	detail = "不用出门就能处理的事务，倒是可以拜托给我",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101330] = {
 	feeling1 = "指挥官，笑一个嘛……",
 	feeling3 = "其实我是很灵活的呢！嘿，看我的反复横跳！……呼，呼，好累……要不行了……",
@@ -2434,7 +2368,6 @@ _G.pg.base.ship_skin_words[101330] = {
 	detail = "什么什么？要我做什么吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101331] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2468,7 +2401,6 @@ _G.pg.base.ship_skin_words[101331] = {
 	detail = "北卡罗来纳姐姐拜托我帮华盛顿姐姐画一张笑脸，但是华盛顿姐姐好像不愿意……啊，我懂了，华盛顿姐姐是害羞了吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101340] = {
 	feeling1 = "姐妹们都叫我不要靠近指挥官……为什么呢？",
 	feeling3 = "只要能晒着太阳，我就感到十分安心呢。指挥官，一起吧！",
@@ -2502,7 +2434,6 @@ _G.pg.base.ship_skin_words[101340] = {
 	detail = "呼啊~真舒服！今天的阳光也暖暖的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101350] = {
 	feeling1 = "像你这样的废柴指挥官，除了贝奇之外应该没人愿意照顾了吧？嚯嚯嚯，真是可怜呢！",
 	feeling3 = "哦？贝奇这身大衣很时髦对吧？指挥官穿上这种感觉的服装的话，或许也会变帅呢，哈哈哈！",
@@ -2550,7 +2481,6 @@ _G.pg.base.ship_skin_words[101350] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101351] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2584,7 +2514,6 @@ _G.pg.base.ship_skin_words[101351] = {
 	detail = "其实贝奇对机车…也不是很懂就是了。不过，一位皇家的朋友在这方面帮了我很多呢！要好好感谢她才行",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101352] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2618,7 +2547,6 @@ _G.pg.base.ship_skin_words[101352] = {
 	detail = "赢下比赛的时候，什么样的庆祝动作会更吸引人眼球呢？唔唔……指挥官！你也来想想吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101360] = {
 	feeling1 = "指挥官笨蛋笨蛋大笨蛋！（吐舌头，略略略）",
 	feeling3 = "指挥官，作为一个童星，镜头感可是很重要的。今天的我也很可爱吧！",
@@ -2664,7 +2592,6 @@ _G.pg.base.ship_skin_words[101360] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101361] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2698,7 +2625,6 @@ _G.pg.base.ship_skin_words[101361] = {
 	detail = "要仔细看看霍比有什么变化么？哼哼！指挥官，相机准备好哦，尽管瞧吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101370] = {
 	feeling1 = "指挥官，不喜欢我做的冰淇淋拌辣酱么……小气鬼。",
 	feeling3 = "来啦来啦~科尔克的袖子里藏着兔子哦，指挥官想不想看变戏法？呜哇……怎么兔子先生突然溜了。",
@@ -2744,7 +2670,6 @@ _G.pg.base.ship_skin_words[101370] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101371] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2778,7 +2703,6 @@ _G.pg.base.ship_skin_words[101371] = {
 	detail = "兔兔乖哦~嘿嘿，指挥官，我最喜欢和小动物待在一起啦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101380] = {
 	feeling1 = "无能者终将被时间所过滤，你也一样。",
 	feeling3 = "“战争结束之后的打算？”我没有考虑过这个问题，也从来没想过去考虑。不过，你为什么要突然问这个……",
@@ -2812,7 +2736,6 @@ _G.pg.base.ship_skin_words[101380] = {
 	detail = "你在看什么？赶紧回到自己的岗位上吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101382] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2846,7 +2769,6 @@ _G.pg.base.ship_skin_words[101382] = {
 	detail = "东煌和白鹰，还是有许多的不同呢。不过，无论在哪，大家对于美好明天的渴望都是一样的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101390] = {
 	feeling1 = "为不喜欢的人做饭原来是这么痛苦的事啊……",
 	feeling3 = "要是我不研究些奇怪的菜式就完美了？那可真是抱歉呢！不过我觉得呢，惊喜也是很重要的哦！",
@@ -2889,7 +2811,6 @@ _G.pg.base.ship_skin_words[101390] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101392] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -2923,7 +2844,6 @@ _G.pg.base.ship_skin_words[101392] = {
 	detail = "在东煌修行之后，我接触到了东煌悠久的历史文化，所以性格会比过去沉稳了一些，不过我还是我哦？欸，看厨艺就知道了…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101400] = {
 	feeling1 = "指挥官，听我说哦~再这样下去，我也要稍微离你远一点才好了……",
 	feeling3 = "和杜威比起来稍微有一点…哼，才不胖呢！真是的，不理指挥官了啦！",
@@ -2974,7 +2894,6 @@ _G.pg.base.ship_skin_words[101400] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101401] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3008,7 +2927,6 @@ _G.pg.base.ship_skin_words[101401] = {
 	detail = "肚子有点饿了…嗯，饼干和糖果，还有…不行不行，得给指挥官也留一份呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101410] = {
 	feeling1 = "现在的斯坦利正处于失望模式！哼！",
 	feeling3 = "虽然小海狸分队的其它同伴也很有趣，不过还是和指挥官在一起最开心！",
@@ -3051,7 +2969,6 @@ _G.pg.base.ship_skin_words[101410] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101420] = {
 	feeling1 = "啊，你继续窝着就好，我去锻炼了，拜拜",
 	feeling3 = "指挥官，下次休息日一起去买护具怎么样，有好的装备辅助，可是能让效果事半功倍的",
@@ -3094,7 +3011,6 @@ _G.pg.base.ship_skin_words[101420] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101421] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3128,7 +3044,6 @@ _G.pg.base.ship_skin_words[101421] = {
 	detail = "帮助大家的同时，能锻炼自己的身体。这份工作对我来说很棒。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101430] = {
 	feeling1 = "哼，等我变成了港区的明星，你就等着后悔吧！",
 	feeling3 = "要想从那么多的姐妹们中脱颖而出确实有些难呢……指挥官！你一定知道有什么办法的吧！",
@@ -3162,7 +3077,6 @@ _G.pg.base.ship_skin_words[101430] = {
 	detail = "果然，指挥官很在意我吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101431] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3196,7 +3110,6 @@ _G.pg.base.ship_skin_words[101431] = {
 	detail = "福星其实是个老爷爷？原来如此……欸欸欸欸！？那，那我还是不要做福星好了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101440] = {
 	feeling1 = "即使敌人是指挥官，我也不会手软的！",
 	feeling3 = "指挥官，库珀来了！来吧，无论什么样的敌人都给你打败！……把这些资料送过去？唔嗯嗯……真是的，不要小看库珀啊！",
@@ -3230,7 +3143,6 @@ _G.pg.base.ship_skin_words[101440] = {
 	detail = "有时候会想啊，其实我身上隐藏着非同寻常的力量，在大家陷入危难之中的时候挺身而出，拯救世界！…哈啊~如果那样该多酷啊！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101441] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3264,7 +3176,6 @@ _G.pg.base.ship_skin_words[101441] = {
 	detail = "没想到顶着太阳打网球会这么累……指挥官，你在看哪里？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101442] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3298,7 +3209,6 @@ _G.pg.base.ship_skin_words[101442] = {
 	detail = "呼哈~虽然外面很冷，但是这里却很温暖呢！严冬的壁炉真是太棒了~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101450] = {
 	feeling1 = "好啦好啦，心情不好就来撒撒娇吧~姐姐温暖的怀抱借给你哦~",
 	feeling3 = "呼~今天的训练顺利完成！接下来就是休息时间了。…啊，抓住指挥官！这个星星贴纸送给和我一起辛苦的你——就贴额头上好了~",
@@ -3367,7 +3277,6 @@ _G.pg.base.ship_skin_words[101450] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101451] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3401,7 +3310,6 @@ _G.pg.base.ship_skin_words[101451] = {
 	detail = "谢谢您光临本店！对了，还有就是…（小声）能不能帮我垫付一下这几杯柠檬汁的钱呀？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101460] = {
 	feeling1 = "没意思……我去别的地方了，有事叫我。",
 	feeling3 = "你说“为什么我只是在旁边看着”……因为你也没说让我帮忙呀？有事要拜托的话，说就好了嘛。眼神暗示这种我可不懂。",
@@ -3469,7 +3377,6 @@ _G.pg.base.ship_skin_words[101460] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101461] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3503,7 +3410,6 @@ _G.pg.base.ship_skin_words[101461] = {
 	detail = "兔子外套的下面是兔女郎装哦。外面和里面都是兔子…这样的感觉？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101470] = {
 	feeling1 = "果然，我不适合在这里…",
 	feeling3 = "指挥官，你对小熊感兴趣吗？那，我稍微为你介绍一下…？",
@@ -3546,7 +3452,6 @@ _G.pg.base.ship_skin_words[101470] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101471] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3580,7 +3485,6 @@ _G.pg.base.ship_skin_words[101471] = {
 	detail = "本森很热情地和我分享了许多“兔兔星人须知”什么的…不过…感觉那个和这个还是不太一样…吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101480] = {
 	feeling1 = "要是你的脑袋上有螺丝的话，我一定得拧开来看看里面是什么怪东西……",
 	feeling3 = "库珀，你上次说的什么“变身道具”已经做好了。……等等，艾伦，不要擅自往上面贴奇怪的贴纸！",
@@ -3639,7 +3543,6 @@ _G.pg.base.ship_skin_words[101480] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101481] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3673,7 +3576,6 @@ _G.pg.base.ship_skin_words[101481] = {
 	detail = "你的工作很简单，喝掉我做的饮料，然后把口味和感想告诉我就行。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101490] = {
 	feeling1 = "诅咒你下次探险的时候全身沾满海带……",
 	feeling3 = "指挥官，如果暂时没有什么需要我做的，我可以在港区里随便逛逛吗？…耶！DATA-857，我们出发！",
@@ -3724,7 +3626,6 @@ _G.pg.base.ship_skin_words[101490] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101491] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3758,7 +3659,6 @@ _G.pg.base.ship_skin_words[101491] = {
 	detail = "那个…太原！很抱歉又来打扰你了，不过我还想再借几本书！谢谢你了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[101500] = {
 	feeling1 = "哼，哈曼以后再也不会管你的事情了！",
 	feeling3 = "为什么最近哈曼突然开始经常盯着你……怎，怎么了！你想说哈曼是跟踪狂吗？！如果哈曼不好好盯着你，你趁机做各种奇怪的事情怎么办！",
@@ -3802,7 +3702,6 @@ _G.pg.base.ship_skin_words[101500] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[101501] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -3836,7 +3735,6 @@ _G.pg.base.ship_skin_words[101501] = {
 	detail = "你都盯着看了好久了，哈曼的泳装有那么好看吗？……为什么这次不说“变态”？你，你这家伙！你是在拿哈曼寻开心吗！？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102010] = {
 	feeling1 = "吃的？我自己有啦，不麻烦指挥官了",
 	feeling3 = "欸……有、有点肉的女孩子才可爱！指挥官你一定是这样想的对不对？！",
@@ -3870,7 +3768,6 @@ _G.pg.base.ship_skin_words[102010] = {
 	detail = "指挥官！才、才没有小肚子——啊！不要看！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102020] = {
 	feeling1 = "罗利可不是小孩子！！！",
 	feeling3 = "想了解我？嗯……您可能是第一个平等地对我这么说的人呢……稍微有点开心",
@@ -3904,7 +3801,6 @@ _G.pg.base.ship_skin_words[102020] = {
 	detail = "大家要是有什么不懂的话，要及时跟我提出来哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102030] = {
 	feeling1 = "我在考虑向您辞职，指挥官似乎并不值得我付出汗水",
 	feeling3 = "感觉最近比起外交事务，指挥官的私人事务反而处理的要多一点……您该不会是故意的吧？",
@@ -3938,7 +3834,6 @@ _G.pg.base.ship_skin_words[102030] = {
 	detail = "这些资料可是保密的，请您也不要外传",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102040] = {
 	feeling1 = "胆小鬼，离我远点！",
 	feeling3 = "怎么了？如果我可以的话就跟我商量吧！",
@@ -3989,7 +3884,6 @@ _G.pg.base.ship_skin_words[102040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102050] = {
 	feeling1 = "SG，快来保护我……",
 	feeling3 = "表情？啊……因为我离开的时候战况还是相当不利的呢……对于和平啊，欢笑啊之类的……稍微有些不适应，不过不用担心，海伦娜没问题的！",
@@ -4074,7 +3968,6 @@ _G.pg.base.ship_skin_words[102050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4108,7 +4001,6 @@ _G.pg.base.ship_skin_words[102051] = {
 	detail = "总觉得路易斯姐姐完全把我当成换装娃娃了…指挥官，这样真的可爱吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4142,7 +4034,6 @@ _G.pg.base.ship_skin_words[102052] = {
 	detail = "为了这一天，我特意向路易斯姐姐学了跳舞，因为太过笨手笨脚还被她笑话了好久呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102053] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4176,7 +4067,6 @@ _G.pg.base.ship_skin_words[102053] = {
 	detail = "泳装平常穿着还好，而且在沙滩上每个人都穿着泳衣，所以也没什么……但是一被指挥官看到，就会突然感觉害羞……真神奇呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102058] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4210,7 +4100,6 @@ _G.pg.base.ship_skin_words[102058] = {
 	detail = "以前我总是担心自己能不能做好，现在的话，“和指挥官一起就能做到”这样的想法变得越来越多了呢，呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102059] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4244,7 +4133,6 @@ _G.pg.base.ship_skin_words[102059] = {
 	detail = "最近我只要一主动做什么事，路易斯姐姐就会一边说“哎呀，女儿长大了”一边假装唉声叹气……真是的，欺负人……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102060] = {
 	feeling1 = "我不是你这种家伙的亲姐姐真是太好了……",
 	feeling3 = "大就是好，多就是美，你不觉得吗？……喂！你在看哪里？不够大还真是抱歉啊！",
@@ -4278,7 +4166,6 @@ _G.pg.base.ship_skin_words[102060] = {
 	detail = "啊，指挥官在盯着呢……要做出姐姐的样子才行！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102070] = {
 	feeling1 = "不要靠近我！——对不起……觉得指挥官有点可怕……",
 	feeling3 = "指挥官，今天能一起睡吗……和指挥官一起睡很安心……",
@@ -4312,7 +4199,6 @@ _G.pg.base.ship_skin_words[102070] = {
 	detail = "脚上的旧伤吗？嗯……虽然还是有点别扭，但是朱诺不会拖大家的后腿的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4346,7 +4232,6 @@ _G.pg.base.ship_skin_words[102071] = {
 	detail = "啊，湖水在太阳的照耀下熠熠生辉…好好看啊…！指挥官，我们去那边看看吧，呀！呜呜…对不起，裙子穿不惯差点摔倒了。谢谢指挥官扶住了我…！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102079] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4380,7 +4265,6 @@ _G.pg.base.ship_skin_words[102079] = {
 	detail = "强化了的装备…虽然还有不习惯的地方，但是朱诺不会拖后腿的…！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102080] = {
 	feeling1 = "指挥官不要靠近我，笨蛋会传染的！",
 	feeling3 = "喂喂，指挥官，来赛跑吧，赢了的人请吃饭！",
@@ -4431,7 +4315,6 @@ _G.pg.base.ship_skin_words[102080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4465,7 +4348,6 @@ _G.pg.base.ship_skin_words[102081] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102088] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4499,7 +4381,6 @@ _G.pg.base.ship_skin_words[102088] = {
 	detail = "{namecode:524}的婚纱最棒了！对吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102089] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4533,7 +4414,6 @@ _G.pg.base.ship_skin_words[102089] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102090] = {
 	feeling1 = "抱歉，还有姐妹在等我，没时间陪你",
 	feeling3 = "嗯……虽然我也不是强迫自己心胸宽广，不过指挥官这样能平等聊天的对象还真不多呢……",
@@ -4585,7 +4465,6 @@ _G.pg.base.ship_skin_words[102090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4619,7 +4498,6 @@ _G.pg.base.ship_skin_words[102091] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4653,7 +4531,6 @@ _G.pg.base.ship_skin_words[102092] = {
 	detail = "指挥官，不要慌，你的邀请优先级是最高的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102093] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4687,7 +4564,6 @@ _G.pg.base.ship_skin_words[102093] = {
 	detail = "指挥官喜欢听什么样的音乐？我的话，果然还是要能让人打起精神来的音乐才好呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102094] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4721,7 +4597,6 @@ _G.pg.base.ship_skin_words[102094] = {
 	detail = "我原本还不知道，原来重樱的羽板球，输掉的人要被人在脸上涂鸦作为惩罚啊…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102095] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4755,7 +4630,6 @@ _G.pg.base.ship_skin_words[102095] = {
 	detail = "指挥官旅游选择目的地时，看重的是什么呢？我的话是看重风景和珍奇的动植物！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102096] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4789,7 +4663,6 @@ _G.pg.base.ship_skin_words[102096] = {
 	detail = "一想到要面对所有演奏者，就难免有些紧张呢。不过，作为演奏时唯一背对观众的人，某种意义上指挥也是幸运的？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102098] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4823,7 +4696,6 @@ _G.pg.base.ship_skin_words[102098] = {
 	detail = "我的烦恼吗？现在没有呢。我不会隐瞒的啦！毕竟在现在的你面前，想藏住什么都是徒劳的呢，哈哈~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102100] = {
 	feeling1 = "哈啊……看来你也不过如此，有所期待是我的错",
 	feeling3 = "什么？没想到我居然会喜欢芭蕾舞？你什么意思？再笑我可锤你了哦？",
@@ -4866,7 +4738,6 @@ _G.pg.base.ship_skin_words[102100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4900,7 +4771,6 @@ _G.pg.base.ship_skin_words[102101] = {
 	detail = "大姐头这次突然提出来要大家各自做巧克力，为什么呢……算了，随便啦，毕竟是大姐头，一定也是为了我们好吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102102] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -4934,7 +4804,6 @@ _G.pg.base.ship_skin_words[102102] = {
 	detail = "老姐现在在做什么呢？虽然知道她肯定一如既往地精神…真想念老姐啊。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102110] = {
 	feeling1 = "看来要找下一个地方了呢……",
 	feeling3 = "指挥官~我刚刚对舰队熟悉起来，还有很多想知道的东西，能不能陪我出去走走呀？",
@@ -4968,7 +4837,6 @@ _G.pg.base.ship_skin_words[102110] = {
 	detail = "指挥官，有什么事吗~没事的话来聊聊天吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102120] = {
 	feeling1 = "指挥官也不过是这样的人吗……",
 	feeling3 = "总是被大家羡慕或者嫉妒，好像胸部比我本人还要重要一样，我倒是希望它能小一点，而且本来就不太方便……",
@@ -5019,7 +4887,6 @@ _G.pg.base.ship_skin_words[102120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5053,7 +4920,6 @@ _G.pg.base.ship_skin_words[102121] = {
 	detail = "和、和我一起吃午饭？真的吗？不会是在戏弄我吧？还、还是只是在垂涎海伦娜做的餐食？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102122] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5087,7 +4953,6 @@ _G.pg.base.ship_skin_words[102122] = {
 	detail = "指挥官你老实说，是不是你偷偷对我的主炮做了手脚？现在坦白还来得及……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102123] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5121,7 +4986,6 @@ _G.pg.base.ship_skin_words[102123] = {
 	detail = "什么圣诞特别款内衣，我就不该听路易斯的……幸好麋鹿服是全身的不会被人看到……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102124] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5155,7 +5019,6 @@ _G.pg.base.ship_skin_words[102124] = {
 	detail = "看什么看，喜欢祭典很奇怪吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102130] = {
 	feeling1 = "指挥官，至少请不要对海伦娜……",
 	feeling3 = "指挥官，我来帮你整理下卧室吧~咦，不可以！？",
@@ -5206,7 +5069,6 @@ _G.pg.base.ship_skin_words[102130] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102131] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5240,7 +5102,6 @@ _G.pg.base.ship_skin_words[102131] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102132] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5274,7 +5135,6 @@ _G.pg.base.ship_skin_words[102132] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102133] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5308,7 +5168,6 @@ _G.pg.base.ship_skin_words[102133] = {
 	detail = "指挥官，你该不会以为我穿高跟鞋开车吧？呵呵，虽然也不是做不到，不过车内有另一双鞋哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102140] = {
 	feeling1 = "大姐头果然看走眼了吗……",
 	feeling3 = "大姐头又厉害又酷，而且总是笑的很帅，就好像没有什么能打倒她一样，我的梦想就是有一天变成她那样",
@@ -5369,7 +5228,6 @@ _G.pg.base.ship_skin_words[102140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5403,7 +5261,6 @@ _G.pg.base.ship_skin_words[102141] = {
 	detail = "重樱的新年，和想象中的不太一样",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102142] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5437,7 +5294,6 @@ _G.pg.base.ship_skin_words[102142] = {
 	detail = "不过，平心而论，这个场景道具做得确实还挺逼真的，我刚看到的时候也大吃一惊…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102150] = {
 	feeling1 = "指挥官，你的气概呢！？",
 	feeling3 = "一心一意地磨练自身的技艺，专心致志地打倒眼前的敌人——仅仅做到这些就足够了吗？",
@@ -5480,7 +5336,6 @@ _G.pg.base.ship_skin_words[102150] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102160] = {
 	feeling1 = "哼，被我无视，是你咎由自取！",
 	feeling3 = "被我迷住也是没办法的事。行吧，就允许你多发一下呆~",
@@ -5525,7 +5380,6 @@ _G.pg.base.ship_skin_words[102160] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102161] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5559,7 +5413,6 @@ _G.pg.base.ship_skin_words[102161] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102162] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5593,7 +5446,6 @@ _G.pg.base.ship_skin_words[102162] = {
 	detail = "指挥官要来颗糖果吗？我从阿贝克隆比那里拿来的~（瞄）",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102163] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5627,7 +5479,6 @@ _G.pg.base.ship_skin_words[102163] = {
 	detail = "这、这个只是随便画画的…不准偷看少女的笔记本啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102180] = {
 	feeling1 = "我现在不累，不要碰我的脚哦。再碰就踢你！",
 	feeling3 = "就这样多陪我一下不也挺好嘛。好好看着我，别发呆！",
@@ -5673,7 +5524,6 @@ _G.pg.base.ship_skin_words[102180] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102181] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5707,7 +5557,6 @@ _G.pg.base.ship_skin_words[102181] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102182] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5741,7 +5590,6 @@ _G.pg.base.ship_skin_words[102182] = {
 	detail = "港区的冬天很冷呢～这种时候就要靠糖分补充卡路里熬过去！不会变胖的体质可是要好好利用才行的♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102190] = {
 	feeling1 = "跟指挥官相处好无聊，我要回去了！",
 	feeling3 = "指挥官，这个发型现在好像很流行哦，不过我还是喜欢这个，你觉得哪个比较好看？",
@@ -5784,7 +5632,6 @@ _G.pg.base.ship_skin_words[102190] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102200] = {
 	feeling1 = "大家在等我，指挥官拜拜~",
 	feeling3 = "嘿嘿，虽然指挥官很忙，却还愿意陪我们到处跑，从今天起，你就是我们探险队的名誉顾问啦！",
@@ -5827,7 +5674,6 @@ _G.pg.base.ship_skin_words[102200] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102210] = {
 	feeling1 = "指挥官，不要难过，比{namecode:524}笨并不是你的错",
 	feeling3 = "要是遇到了一些怎么样都忘不掉的问题要怎么办呢……啊，我知道了，这个时候只要找指挥官就好了吧！",
@@ -5878,7 +5724,6 @@ _G.pg.base.ship_skin_words[102210] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102220] = {
 	feeling1 = "果然变成这样子了吗。但是，我是不会放弃的！",
 	feeling3 = "我说话可能不太好听，但是，我想指挥官能明白我的意思的。呃……对，对吧，指挥官？",
@@ -5937,7 +5782,6 @@ _G.pg.base.ship_skin_words[102220] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102221] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -5971,7 +5815,6 @@ _G.pg.base.ship_skin_words[102221] = {
 	detail = "嗯！今天要尽情享受派对，不去考虑亚特兰大姐姐们的事情！…怎，怎么可能做得到啦，哎…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102230] = {
 	feeling1 = "指挥官，希望你能好好自我反省一下…",
 	feeling3 = "对自己太过严格了…？大概…是这样的吧…只是，为了早日驱除笼罩在这片大海上的黑暗，总要付出更多的努力才行",
@@ -6014,7 +5857,6 @@ _G.pg.base.ship_skin_words[102230] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102231] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6048,7 +5890,6 @@ _G.pg.base.ship_skin_words[102231] = {
 	detail = "自行车的维护也是很讲究的呢，不过这方面得到了{namecode:413}小姐的许多建议与帮助，真该好好感谢一下她才是……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102232] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6082,7 +5923,6 @@ _G.pg.base.ship_skin_words[102232] = {
 	detail = "适量的雪能够消除田地里的害虫，能为田地保暖，而又不会伤害农作物…原来如此，这就是新年“瑞雪”的由来吗。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102233] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6116,7 +5956,6 @@ _G.pg.base.ship_skin_words[102233] = {
 	detail = "听说帆板的最高记录时速超过了100公里。仅仅受风力推动就能达到那种速度……呼，就算是克利夫兰姐也未曾体会过吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102240] = {
 	feeling1 = "抱歉，这边很忙的，没时间管你",
 	feeling3 = "兴趣是盆栽这个会不会太老气了啊…怎么办呢…啊啊这种事谁知道啊！指挥官，这个自我介绍要怎么写才好？",
@@ -6150,7 +5989,6 @@ _G.pg.base.ship_skin_words[102240] = {
 	detail = "舞台上重要的是自信！只有认为自己能闪耀的人方能成功！嗯嗯，好像自己说了句很帅气的话！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102250] = {
 	feeling1 = "指挥官，如果你只是想无所事事度日的话，我可没工夫陪你",
 	feeling3 = "有时候，我也会和同伴们聊聊假期里该做的事…怎么，觉得这话由我说出口挺奇怪？该工作时就得努力工作，到假期时就该好好放松。我可不是什么工作狂哦？",
@@ -6194,7 +6032,6 @@ _G.pg.base.ship_skin_words[102250] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102251] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6228,7 +6065,6 @@ _G.pg.base.ship_skin_words[102251] = {
 	detail = "有同伴说这一身可以“俘获指挥官的心”，实际上如何呢？哈哈哈，开个玩笑",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102252] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6262,7 +6098,6 @@ _G.pg.base.ship_skin_words[102252] = {
 	detail = "虽然我对指挥官的想法没有变，不过，这身打扮果然还是太有魄力了吗…我可能也太入戏了点吧，哈哈……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102253] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6296,7 +6131,6 @@ _G.pg.base.ship_skin_words[102253] = {
 	detail = "若是错过，便是后悔也无法追回的刹那芳华…其实并不仅限于眼前的烟花呢。指挥官，当遇到这般转瞬即逝的美好时，可不要错过了哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102254] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6330,7 +6164,6 @@ _G.pg.base.ship_skin_words[102254] = {
 	detail = "不知道我演的是男角色还是女角色？是啊，正因为还没决定所以两边的台词我都读过了哦。没办法，谁让我穿男装也没问题呢，哈哈哈。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102260] = {
 	feeling1 = "原来近距离接触偶像会幻灭的说法是真的啊……唉……",
 	feeling3 = "以前我也有憧憬成为英雄而想锻炼自己的时候，但是这个……一点剧烈运动就会晃得很厉害……我好羡慕平胸的舰船们啊……",
@@ -6389,7 +6222,6 @@ _G.pg.base.ship_skin_words[102260] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102261] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6423,7 +6255,6 @@ _G.pg.base.ship_skin_words[102261] = {
 	detail = "原本，啦啦队长应该是交给克雷文这样资历更老的白鹰舰船的，但是她却主动让给了我……为了不辜负克雷文的心意，我一定会好好为大家加油的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102262] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6457,7 +6288,6 @@ _G.pg.base.ship_skin_words[102262] = {
 	detail = "为了找到合适的泳装，我还花了不少功夫……好在还是有适合这个尺寸的款式呢！不过腰的部分就没办法了…呜呜……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102263] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6491,7 +6321,6 @@ _G.pg.base.ship_skin_words[102263] = {
 	detail = "不忍心看到指挥官孤军奋战，却又不想让指挥官担心，于是选择隐去真实身份与恶势力开战，这就是vigilante·bunny·reno的来历！嗯嗯，不愧是我，这个设定简直完美~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102264] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6525,7 +6354,6 @@ _G.pg.base.ship_skin_words[102264] = {
 	detail = "“节日突然遭遇危机，隐藏在热闹观众中的超级英雄挺身而出！”这样的展开应该会很有意思吧！…唔，不过节日还是平平安安地比较好吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102270] = {
 	feeling1 = "指挥官好无聊啊，还是去找斐济玩吧",
 	feeling3 = "嗯……也不是刻意想要掩饰，过去是过去，现在是现在，而且我觉得奔放一点更适合我~所以说，请多指教啦~",
@@ -6581,7 +6409,6 @@ _G.pg.base.ship_skin_words[102270] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102271] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6615,7 +6442,6 @@ _G.pg.base.ship_skin_words[102271] = {
 	detail = "说起来，因为开始拳击的关系，我顺便学习了一下人体的肌肉分布，意外地相当深奥呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102272] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6649,7 +6475,6 @@ _G.pg.base.ship_skin_words[102272] = {
 	detail = "嗯~雪落下的速度是3公分每秒，如果保持现在的无风天气的话，明天的气温大约是……唔，指挥官？没什么~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102273] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6683,7 +6508,6 @@ _G.pg.base.ship_skin_words[102273] = {
 	detail = "为什么穿着东煌风的衣服？因为今天的节日是源自东煌的嘛～哈哈，我先拿块月饼——",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102274] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6717,7 +6541,6 @@ _G.pg.base.ship_skin_words[102274] = {
 	detail = "衬衫和毛线衫先不提，就连袜子都湿成一团了…脱了之后放哪好来着…指挥官知道吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102290] = {
 	feeling1 = "感觉指挥官好难懂……",
 	feeling3 = "每当遇到困难时，我总会告诉自己，再努力一下……指挥官，你也可以试试？",
@@ -6768,7 +6591,6 @@ _G.pg.base.ship_skin_words[102290] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[102291] = {
 	feeling1 = "感觉指挥官好难懂……",
 	feeling3 = "每当遇到困难时，我总会告诉自己，再努力一下……指挥官，你也可以试试？",
@@ -6802,7 +6624,6 @@ _G.pg.base.ship_skin_words[102291] = {
 	detail = "呼——呼——（{namecode:197}似乎在打盹）",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102292] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -6836,7 +6657,6 @@ _G.pg.base.ship_skin_words[102292] = {
 	detail = "很久以前，在离港区很远的地方有一座城堡，里面有一个能实现别人愿望女巫……啊，详细的就之后再和指挥官说吧……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102293] = {
 	feeling1 = "感觉指挥官好难懂……",
 	feeling3 = "每当遇到困难时，我总会告诉自己，再努力一下……指挥官，你也可以试试？",
@@ -6870,7 +6690,6 @@ _G.pg.base.ship_skin_words[102293] = {
 	detail = "呼——呼——（似乎是觉得热的缘故，{namecode:197}正用手上的扇子扇着风）",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[102310] = {
 	feeling1 = "是我记错了吗？我记忆中的指挥官明明更加……",
 	feeling3 = "（小声）不、不行，休斯敦，现在的你不能天天缠着指挥官一起玩了……欸？！没、没什么！指挥官，要一起散步吗？",
@@ -6913,7 +6732,6 @@ _G.pg.base.ship_skin_words[102310] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103010] = {
 	feeling1 = "指挥官，你完全不OK啊！",
 	feeling3 = "出去走走？OK啊，去哪里你来定吧，我都行，只要你高兴就好",
@@ -6947,7 +6765,6 @@ _G.pg.base.ship_skin_words[103010] = {
 	detail = "整备？OK，有什么奇怪的地方尽管说",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103020] = {
 	feeling1 = "指挥官的眼神，有点恶心……",
 	feeling3 = "指挥官，躺在沙滩上很没意思吧，快起来和我一起打排球！晒伤？没关系啊，彭萨科拉姐姐已经帮我涂过防晒油了",
@@ -6981,7 +6798,6 @@ _G.pg.base.ship_skin_words[103020] = {
 	detail = "即便只是静静躺在海面上，有时也会遇到好事呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103030] = {
 	feeling1 = "你这样会让我分神的，能不能安静一点？",
 	feeling3 = "我有一个比较吵闹的朋友，妹妹们也都比较活泼，像是指挥官这样也比较安静的朋友倒是比较少见……",
@@ -7015,7 +6831,6 @@ _G.pg.base.ship_skin_words[103030] = {
 	detail = "虽然装甲变厚了，但是却感觉暴露的更多了呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103040] = {
 	feeling1 = "指挥官，有关女人心你要学的还有很多呢……",
 	feeling3 = "不少人都不擅长应付姐姐我这样的，真亏你愿意和我做朋友呢……",
@@ -7049,7 +6864,6 @@ _G.pg.base.ship_skin_words[103040] = {
 	detail = "看多了冰冷的数字，想要看点柔软的东西吗~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103050] = {
 	feeling1 = "指挥官一点也不好玩……",
 	feeling3 = "呯！哒哒哒哒哒！……嗯，今天也玩的很痛快！果然还是和指挥官一起玩最开心了~",
@@ -7100,7 +6914,6 @@ _G.pg.base.ship_skin_words[103050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103060] = {
 	feeling1 = "别妨碍我沉迷印第！",
 	feeling3 = "指挥官，要一起来看印第小时候的照片吗？虽然就算你说不想看我也会给你看的",
@@ -7134,7 +6947,6 @@ _G.pg.base.ship_skin_words[103060] = {
 	detail = "呐呐~指挥官，我跟你讲，我妹妹她好可爱的！……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7168,7 +6980,6 @@ _G.pg.base.ship_skin_words[103061] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103069] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7202,7 +7013,6 @@ _G.pg.base.ship_skin_words[103069] = {
 	detail = "指挥官，你明白吗，印第她有这————么可爱！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103070] = {
 	feeling1 = "……（你并不清楚波利斯是真的没有反应还是只是不想理你）",
 	feeling3 = "姐姐……虽然总说我可爱，但她要是稍微花点时间在自己身上一定会非常受欢迎的……所以我一直觉得有些对不起姐姐……",
@@ -7261,7 +7071,6 @@ _G.pg.base.ship_skin_words[103070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7295,7 +7104,6 @@ _G.pg.base.ship_skin_words[103071] = {
 	detail = "指挥官又在看什么？…校服很适合？…似乎从指挥官身上感觉到了和姐姐一样的气息",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7329,7 +7137,6 @@ _G.pg.base.ship_skin_words[103072] = {
 	detail = "姐姐你跟人打招呼的时候好好打招呼就好…不用每次都介绍我啦……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103080] = {
 	feeling1 = "我有点生气了……明明说过了有什么事依赖我就好了的……",
 	feeling3 = "虽然和妹妹们相处得很好，我也很喜欢她们，不过有时候就是忍不住去想呢……如果，如果这一级还是叫阿斯托利亚级就好了呢……",
@@ -7363,7 +7170,6 @@ _G.pg.base.ship_skin_words[103080] = {
 	detail = "喽哈，指挥官很闲嘛",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7397,7 +7203,6 @@ _G.pg.base.ship_skin_words[103081] = {
 	detail = "指挥官，买台卡拉OK机放指挥室怎么样？工作娱乐两不误，嗯，感觉是个好主意呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103082] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7431,7 +7236,6 @@ _G.pg.base.ship_skin_words[103082] = {
 	detail = "要记住大家每个人的喜好还有点困难呢……不过能为大家服务我也很开心呢，所以我会加油的~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103090] = {
 	feeling1 = "即、即使是这样的指挥官，我也不会放弃帮助你的！大、大概…",
 	feeling3 = "伤害他人的时候，自己会比被伤害时还痛苦……咦，大家不都是这样吗？",
@@ -7465,7 +7269,6 @@ _G.pg.base.ship_skin_words[103090] = {
 	detail = "这样盯着我看，还挺让人害羞的……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7499,7 +7302,6 @@ _G.pg.base.ship_skin_words[103091] = {
 	detail = "我就坐这里帮大家看着东西就好了……运动什么的，我真的不行啦…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103100] = {
 	feeling1 = "指挥官？！好危险……",
 	feeling3 = "指挥官……不论对谁都很温柔…",
@@ -7533,7 +7335,6 @@ _G.pg.base.ship_skin_words[103100] = {
 	detail = "指挥官，要一起对着天上的云发会呆吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7567,7 +7368,6 @@ _G.pg.base.ship_skin_words[103101] = {
 	detail = "我喜欢做梦。梦里面什么都不用做……不用战斗，也不用悲伤……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103102] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7601,7 +7401,6 @@ _G.pg.base.ship_skin_words[103102] = {
 	detail = "要拍照吗？那我摆个pose喵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103110] = {
 	feeling1 = "啊，看来我的眼光有问题啊……找了这么个废柴……",
 	feeling3 = "好奇这根鞭子吗，其实只是过去随便买的，用着还挺顺手就一直用着了，用来指地图的时候还是挺好用的",
@@ -7661,7 +7460,6 @@ _G.pg.base.ship_skin_words[103110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7695,7 +7493,6 @@ _G.pg.base.ship_skin_words[103111] = {
 	detail = "礼仪啊，社交辞令啊，服装啊这些学起来可真是比战斗伤脑筋多了……哼，不过既然是自己选择参加的，我可不会放弃",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103112] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7729,7 +7526,6 @@ _G.pg.base.ship_skin_words[103112] = {
 	detail = "一味的黑暗只会引人不安，恰到好处的灯光才是绝妙的惊悚。指挥官，想好怎么布置万圣节的场景了吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103120] = {
 	feeling1 = "简直像小孩一样呢，指挥官…",
 	feeling3 = "平常的娱乐活动吗？好像也没有什么特别的…和姐妹们聊天、钓鱼、睡觉…之类的？",
@@ -7804,7 +7600,6 @@ _G.pg.base.ship_skin_words[103120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7838,7 +7633,6 @@ _G.pg.base.ship_skin_words[103121] = {
 	detail = "有个看起来是布偶的东西，眼睛好像闪了下红光……嗯……果然是喝太多了吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103130] = {
 	feeling1 = "和你聊天有点无趣啊……",
 	feeling3 = "其实港区里也有几个我比较在意的地方。现在就出发去探索吧！……工作？等下再做也不迟啦！",
@@ -7891,7 +7685,6 @@ _G.pg.base.ship_skin_words[103130] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103131] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7925,7 +7718,6 @@ _G.pg.base.ship_skin_words[103131] = {
 	detail = "我有听课啦！诺，这是笔记。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103132] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7959,7 +7751,6 @@ _G.pg.base.ship_skin_words[103132] = {
 	detail = "难得出来玩，指挥官也来试试滑板如何？先从简单的滑行开始吧！放心，我会在旁边好好看着你的。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103133] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -7993,7 +7784,6 @@ _G.pg.base.ship_skin_words[103133] = {
 	detail = "礼物袋散开了？噢！谢谢提醒！…唔，感觉好像袋子比之前看瘪了一些…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103138] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8027,7 +7817,6 @@ _G.pg.base.ship_skin_words[103138] = {
 	detail = "好疼！可恶，厨艺修行是什么鬼啦！文森斯那家伙，平时自己明明也都是微波炉叮一下就好了！…我做就是了！为了指挥官啊啊啊啊！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103140] = {
 	feeling1 = "要不要把你绑了沉海里反省反省呢……",
 	feeling3 = "今天做点什么好呢~要不，趁小布丁不注意的时候，给他制造点小麻烦？说不定很有趣呢！",
@@ -8102,7 +7891,6 @@ _G.pg.base.ship_skin_words[103140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8136,7 +7924,6 @@ _G.pg.base.ship_skin_words[103141] = {
 	detail = "呼呼~无论想要激情摇滚，还是怀旧爵士，都可以满足你！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103142] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8170,7 +7957,6 @@ _G.pg.base.ship_skin_words[103142] = {
 	detail = "这个Pose叫什么？唔~叫什么来着……算啦！只要开心就好，不要在意这些小事啦♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103160] = {
 	feeling1 = "指挥官，还是要更大度一点比较好啊",
 	feeling3 = "刻板的话就不用多说了，之后还需要我做什么呢？指挥官没问题的话，我什么忙都能帮的，尽管告诉我吧",
@@ -8221,7 +8007,6 @@ _G.pg.base.ship_skin_words[103160] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103161] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8255,7 +8040,6 @@ _G.pg.base.ship_skin_words[103161] = {
 	detail = "指挥官知道社团活动在哪里吗？用不用我带你去看看？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103162] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8289,7 +8073,6 @@ _G.pg.base.ship_skin_words[103162] = {
 	detail = "有种和平常不太一样的冷酷氛围？…多谢夸奖哈哈。大概是布莱默顿推荐的这套纹身贴纸带来的效果？也有点让自己看起来更强的意思在吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103163] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8323,7 +8106,6 @@ _G.pg.base.ship_skin_words[103163] = {
 	detail = "“多尝试些不同风格的打扮，会有别样的感触”…布莱默顿把这件礼服塞给我的时候是这么说的，不过…哈啊…我怎么觉得她只是图个有趣…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103164] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8357,7 +8139,6 @@ _G.pg.base.ship_skin_words[103164] = {
 	detail = "人生也不过是一场漫长的旅途，不求尽善尽美，但求一个尽力而为、无愧于心就好。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103165] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8391,7 +8172,6 @@ _G.pg.base.ship_skin_words[103165] = {
 	detail = "衣服托人改成方便行动的样式了。既然答应了来帮忙，就要尽全力。这也是为了不让自己留下遗憾。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103240] = {
 	feeling1 = "快点找回原来的你吧。要不，我把胸口借给你哭着发泄一下？",
 	feeling3 = "战斗以外喜欢做的事情？我每天都和大家打招呼，在社交网络上解决大家的烦恼…这样想的话，大概是人际交往？啊，又有新消息了呢，我先回复一下~",
@@ -8434,7 +8214,6 @@ _G.pg.base.ship_skin_words[103240] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103241] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8468,7 +8247,6 @@ _G.pg.base.ship_skin_words[103241] = {
 	detail = "啊，好热，好想回去泡个澡，然后直接倒在床上什么都不想就睡过去……啊，对了，社交网络——唉算了算了，今天就不更新了吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103242] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8502,7 +8280,6 @@ _G.pg.base.ship_skin_words[103242] = {
 	detail = "布莱默顿的烦恼咨询室，照常开放中♪指挥官有什么烦恼也欢迎再来找我哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103243] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8536,7 +8313,6 @@ _G.pg.base.ship_skin_words[103243] = {
 	detail = "你说我的那个账号？不用担心，我已经事先写好了，“今天要休息”。好啦，指挥官，把心思放回到今天的约会里面吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103244] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8570,7 +8346,6 @@ _G.pg.base.ship_skin_words[103244] = {
 	detail = "原来如此，为这个烦恼的话下次可以试试这样做……juus响了！啊，不用在意，现在指挥官这边更重要哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103248] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8604,7 +8379,6 @@ _G.pg.base.ship_skin_words[103248] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[103250] = {
 	feeling1 = "这么紧逼自己可没法引领大家啊。还是要放松一点比较好哦。",
 	feeling3 = "指挥官，这身衣服如何？你看，这里还有个开口…果、果然还是这样看起来更“可爱”吧…///",
@@ -8658,7 +8432,6 @@ _G.pg.base.ship_skin_words[103250] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103260] = {
 	feeling1 = "也许我们其实并不合拍……",
 	feeling3 = "指挥官，今天你……那个……工作做完了吗？啊，我不是监工的意思，我只是想打个招呼。我是不是，选了个不好的话题啊……",
@@ -8702,7 +8475,6 @@ _G.pg.base.ship_skin_words[103260] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[103261] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8736,7 +8508,6 @@ _G.pg.base.ship_skin_words[103261] = {
 	vote = "",
 	detail = "有些潜艇同伴们喜欢在泳池底下打闹，甚至还有把玩具鱼雷拿到泳池里的。哎，既羡慕又担心呢……"
 }
-
 _G.pg.base.ship_skin_words[105010] = {
 	feeling1 = "对你稍微有点失望……",
 	feeling3 = "指挥官，前阵子俄克拉荷马告诉了我个好地方，要不要去购物？哎呀，别愣着了，走走走",
@@ -8770,7 +8541,6 @@ _G.pg.base.ship_skin_words[105010] = {
 	detail = "这种时候，我就会莫名的喜欢你这点小心思…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8804,7 +8574,6 @@ _G.pg.base.ship_skin_words[105011] = {
 	detail = "被做衣服的姐妹问说礼服有什么需求，下意识回答了要注意“重点防护”，结果就变这样了……不过这身挺方便行动的，我挺中意就是了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8838,7 +8607,6 @@ _G.pg.base.ship_skin_words[105019] = {
 	detail = "指挥官，一起去骑马吗？不会也没关系，抱紧我的腰就好了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105020] = {
 	feeling1 = "我看走眼了呢……",
 	feeling3 = "指挥官指挥官，要和我去约会吗~我有收藏不少好店哦！",
@@ -8872,7 +8640,6 @@ _G.pg.base.ship_skin_words[105020] = {
 	detail = "咦？在看什么呢？我的脸上有什么吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8906,7 +8673,6 @@ _G.pg.base.ship_skin_words[105021] = {
 	detail = "虽然整个布景弄起来挺辛苦的，但是也很开心哦。下次想邀请姐姐一起穿穿看配套的衣服呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -8940,7 +8706,6 @@ _G.pg.base.ship_skin_words[105029] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105030] = {
 	feeling1 = "你还真是个胆小鬼啊……",
 	feeling3 = "想要和我站在一起？……你要想好，这可是非常，非常难的事",
@@ -9001,7 +8766,6 @@ _G.pg.base.ship_skin_words[105030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9035,7 +8799,6 @@ _G.pg.base.ship_skin_words[105031] = {
 	detail = "给我送便当来了？谢啦。记得给亚利桑那也来一份~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105040] = {
 	feeling1 = "哪里才是我的居所呢……",
 	feeling3 = "……谢谢你每次都听我说这么多话……我感觉好多了……",
@@ -9088,7 +8851,6 @@ _G.pg.base.ship_skin_words[105040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9122,7 +8884,6 @@ _G.pg.base.ship_skin_words[105041] = {
 	detail = "不管是过去还是现在，能在战斗之外用各种方式帮上大家，都是值得开心的事。嗯？只要我在这里，指挥官就会感到开心？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105070] = {
 	feeling1 = "你还真是扶不起啊……",
 	feeling3 = "指挥官，你太弱了，来跟我一起锻炼一下，我会把你打造成合格的指挥官的",
@@ -9156,7 +8917,6 @@ _G.pg.base.ship_skin_words[105070] = {
 	detail = "来，随便看，看够了记得做正事",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105080] = {
 	feeling1 = "指挥官，我一个人先去玩了哦~",
 	feeling3 = "哼~哼~哼~♪啊指挥官~我正想找你一起玩呢，你来得正好",
@@ -9190,7 +8950,6 @@ _G.pg.base.ship_skin_words[105080] = {
 	detail = "指挥官，我会不负众望好好加油的~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105090] = {
 	feeling1 = "指挥官，请不要…靠近我。",
 	feeling3 = "指挥官为什么要这么在意我呢？许多人都畏惧我，不愿意靠近我，大概，我早就已经习惯了吧。但是，最近突然觉得…有点寂寞呢。",
@@ -9224,7 +8983,6 @@ _G.pg.base.ship_skin_words[105090] = {
 	detail = "指挥官…能把您的目光从我的身上移开么？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105091] = {
 	feeling1 = "指挥官……本质上不是个坏孩子呢。",
 	feeling3 = "指挥官，夜晚一起去港口外转转如何？放心吧，我会好好保护您的。咦，在海上可没有“醉驾”这种说法哦，嘻嘻。",
@@ -9267,7 +9025,6 @@ _G.pg.base.ship_skin_words[105091] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9301,7 +9058,6 @@ _G.pg.base.ship_skin_words[105092] = {
 	detail = "指挥官，那个…一直盯着我看的话，我会很为难的。我和妹妹们不同，不习惯被人看着…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105100] = {
 	feeling1 = "唯懦弱者不可以效忠，我曾经听姐姐说过这句话呢",
 	feeling3 = "战争终究不是一个人的战斗，如果没有生死相依的同袍与终始支持的后方，战力再强也逃不过败亡的命运",
@@ -9344,7 +9100,6 @@ _G.pg.base.ship_skin_words[105100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105101] = {
 	feeling1 = "唯懦弱者不可以效忠，我曾经听姐姐说过这句话呢",
 	feeling3 = "战争终究不是一个人的战斗，如果没有生死相依的同袍与终始支持的后方，战力再强也逃不过败亡的命运",
@@ -9378,7 +9133,6 @@ _G.pg.base.ship_skin_words[105101] = {
 	detail = "无论下水还是竣工都是我更早，为什么一号舰却是姐姐？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105110] = {
 	feeling1 = "指挥官的怠惰差不多要超过我能忍受的底线了呢",
 	feeling3 = "Big Seven，是我引以为傲的称号。但是，航母们似乎要取代我们在海战中的地位了。我开始陷入迷惘：自己拥有的这份力量，如今究竟是为了什么而存在的？",
@@ -9412,7 +9166,6 @@ _G.pg.base.ship_skin_words[105110] = {
 	detail = "不用怀疑我的战斗能力，指挥官",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105111] = {
 	feeling1 = "指挥官好无趣啊",
 	feeling3 = "喜欢的事情就要大胆去做。如何，你有这种勇气吗？",
@@ -9463,7 +9216,6 @@ _G.pg.base.ship_skin_words[105111] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105112] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9497,7 +9249,6 @@ _G.pg.base.ship_skin_words[105112] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105119] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9531,7 +9282,6 @@ _G.pg.base.ship_skin_words[105119] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105120] = {
 	feeling1 = "指挥官，我要生气了哦？",
 	feeling3 = "只是外表的话，舰队里每个孩子都很可爱哦，但她们同时也都很有个性，说实话，姐姐稍微有些羡慕她们呢（托腮）",
@@ -9565,7 +9315,6 @@ _G.pg.base.ship_skin_words[105120] = {
 	detail = "被这么看着还是有些害羞呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9599,7 +9348,6 @@ _G.pg.base.ship_skin_words[105121] = {
 	detail = "平常是不是就穿着这个？这个嘛…就任指挥官想象咯~呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105130] = {
 	feeling1 = "你这家伙太弱了，我跟这种家伙可玩不来，再去练练吧",
 	feeling3 = "不对不对，这样的话不就和过去一样了吗……不用勉强？你这家伙有时候也会说些好话耶……欸，刚才笑的就很好？",
@@ -9633,7 +9381,6 @@ _G.pg.base.ship_skin_words[105130] = {
 	detail = "怎么，想看看我有多强吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105131] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9667,7 +9414,6 @@ _G.pg.base.ship_skin_words[105131] = {
 	detail = "吃好喝好，人就会自然地露出笑容吗。确实如你所说……也就是说不用练习也可以对吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105140] = {
 	feeling1 = "…………我会听从你的命令",
 	feeling3 = "我是为了实现指挥官的目标而存在的，除此之外我没有任何价值——裙子？那种轻飘飘的东西我没有穿过",
@@ -9751,7 +9497,6 @@ _G.pg.base.ship_skin_words[105140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9785,7 +9530,6 @@ _G.pg.base.ship_skin_words[105141] = {
 	detail = "欧若拉来邀请我一起合奏……稍微试一试吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105170] = {
 	feeling1 = "啊，让女孩子落泪可不行啊，指挥官。你该好好反省下自己了！",
 	feeling3 = "不知不觉间，大家也熟络起来了呢~下次想聊什么？舰装技术？还是日常生活？……欸，我来选吗？",
@@ -9870,7 +9614,6 @@ _G.pg.base.ship_skin_words[105170] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105171] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9904,7 +9647,6 @@ _G.pg.base.ship_skin_words[105171] = {
 	detail = "看入迷了吗？看入迷了才正常吧？指挥官以为我是谁啊～哈哈哈♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105172] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9938,7 +9680,6 @@ _G.pg.base.ship_skin_words[105172] = {
 	detail = "怎么了？啊，难道这泳装打扮让你看入迷了？不过既然是我，Honey看呆了也是理所当然的♪以及~选了这件泳衣的Honey，真是非常有眼光呢♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105178] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -9972,7 +9713,6 @@ _G.pg.base.ship_skin_words[105178] = {
 	detail = "♪~在津津有味地看着什么？当然是看Honey啦~难道只准你看我看到出神，不许让我看你看到发呆吗？呼呼~♡",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105190] = {
 	feeling1 = "指挥官的身体，有点弱呢。有好好吃饭吗？",
 	feeling3 = "总是在挑战自己做不到的事情的指挥官……很有趣呢。害得我也有点、想试试自己的极限在哪里了。",
@@ -10023,7 +9763,6 @@ _G.pg.base.ship_skin_words[105190] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105191] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10057,7 +9796,6 @@ _G.pg.base.ship_skin_words[105191] = {
 	detail = "看过瘾了的话，不给出足够的感想，我是不会让你走的哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[105200] = {
 	feeling1 = "…………你是谁来着？",
 	feeling3 = "和重樱的孩子们，成了好朋友。原本以为她们会讨厌我的。成为了朋友之后，感觉重樱也很有趣……",
@@ -10108,7 +9846,6 @@ _G.pg.base.ship_skin_words[105200] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[105201] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10142,7 +9879,6 @@ _G.pg.base.ship_skin_words[105201] = {
 	detail = "这些孩子们把长长的单子一张接一张地送了过来…哈啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[106010] = {
 	feeling1 = "指挥官看不到我，指挥官看不到我……",
 	feeling3 = "我的回答是……呜哇！吓你一跳！——欸……指挥官都不配合一下的嘛……",
@@ -10187,7 +9923,6 @@ _G.pg.base.ship_skin_words[106010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[106011] = {
 	feeling1 = "指挥官，私闯少女房间是犯法的哦，我要报警了",
 	feeling3 = "指挥官很闲嘛，要一起玩游戏吗？做模型也可以",
@@ -10221,7 +9956,6 @@ _G.pg.base.ship_skin_words[106011] = {
 	detail = "平时那是社交装甲……总之，要吃薯片吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[106013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10255,7 +9989,6 @@ _G.pg.base.ship_skin_words[106013] = {
 	detail = "原本想过在万圣节这天扮作幽灵吓一吓人，不过感觉太麻烦了…还是呆在房间里最舒服……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[106019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10289,7 +10022,6 @@ _G.pg.base.ship_skin_words[106019] = {
 	detail = "嗯？这样比较清爽，所以没问题！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[106020] = {
 	feeling1 = "指挥官真的能让我变强吗，我很怀疑……",
 	feeling3 = "指挥官总是能给我正确的意见，不愧是名教练！投手博格，一生都会追随您！",
@@ -10323,7 +10055,6 @@ _G.pg.base.ship_skin_words[106020] = {
 	detail = "请把我的数据牢记心底吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[106029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10357,7 +10088,6 @@ _G.pg.base.ship_skin_words[106029] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[106550] = {
 	feeling1 = "原来…指挥官才是这支舰队发展的最大阻碍吗…",
 	feeling3 = "我喜欢各种各样的小说和电影，扣人心弦的精彩情节，让人回味无穷。…嗯？喜欢什么样的主题？这个嘛…暂时保密？",
@@ -10417,7 +10147,6 @@ _G.pg.base.ship_skin_words[106550] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[106551] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10451,7 +10180,6 @@ _G.pg.base.ship_skin_words[106551] = {
 	detail = "啦啦操对我来说并不难。不过，像里诺队长那样大声为自己的偶像加油助威，我觉得…还是挺让人害羞的……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107010] = {
 	feeling1 = "没想到居然遇到了连我都没办法的学生……我还是去辞职吧……",
 	feeling3 = "最近居然有了点起色——欸？是因为我吗？喔……谢、谢谢……",
@@ -10485,7 +10213,6 @@ _G.pg.base.ship_skin_words[107010] = {
 	detail = "指挥官一直在看着我，是准备回答我提的问题吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10519,7 +10246,6 @@ _G.pg.base.ship_skin_words[107019] = {
 	detail = "指挥官，内心的疑惑只有求诸自己才能解答，盯着我看再久我也不会给你提示的~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107020] = {
 	feeling1 = "要是以为姐姐什么都会包容那可就大错特错了唷",
 	feeling3 = "最近梦到珊瑚海的时候身边总会出现指挥官的身影，让人安心了许多，为什么呢~",
@@ -10578,7 +10304,6 @@ _G.pg.base.ship_skin_words[107020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10612,7 +10337,6 @@ _G.pg.base.ship_skin_words[107021] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107030] = {
 	feeling1 = "恶作剧？已经不会对指挥官做了哦，因为没有兴致了",
 	feeling3 = "指挥官，萨拉妹妹和她的姐姐最大的差别是什么呢~答案就是萨拉妹妹今天的颜色哦~",
@@ -10700,7 +10424,6 @@ _G.pg.base.ship_skin_words[107030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10734,7 +10457,6 @@ _G.pg.base.ship_skin_words[107031] = {
 	detail = "谢谢指挥官的胸膛，我已经稍微打起精神了。作为这里唯一的白鹰舰船，我可不能一直消沉下去……萨拉托加，再出击！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10768,7 +10490,6 @@ _G.pg.base.ship_skin_words[107032] = {
 	detail = "穿成这个样子的话，有点不方便恶作剧了，怎么办才好呢…呜哇？！指挥官什么时候来的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107033] = {
 	feeling1 = "花Q～！花Q花Q！花～～Q～！",
 	feeling3 = "",
@@ -10802,7 +10523,6 @@ _G.pg.base.ship_skin_words[107033] = {
 	detail = "一开始的招呼对虚拟偶像来说是很重要的……长岛，有没有什么帅气的姿势推荐呀？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107034] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10836,7 +10556,6 @@ _G.pg.base.ship_skin_words[107034] = {
 	detail = "最近学习了许多跟海洋保护有关的知识呢！指挥官有什么想问的尽管问吧，萨拉老师会一一给你解答的！嘻嘻~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107035] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10870,7 +10589,6 @@ _G.pg.base.ship_skin_words[107035] = {
 	detail = "这是萨拉托加专门给指挥官准备的礼物哦！给~…才不是恶作剧什么的啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107036] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10904,7 +10622,6 @@ _G.pg.base.ship_skin_words[107036] = {
 	detail = "指挥官~能帮个忙吗？把这个冰锥像这样放在额头上…对对，就是这样！…好，先别动哦？…《冬天的独角兽》，拍照完成！哈哈~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107037] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10938,7 +10655,6 @@ _G.pg.base.ship_skin_words[107037] = {
 	detail = "其实野餐也不全是我准备的，这孩子也帮了不少忙哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107038] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -10972,7 +10688,6 @@ _G.pg.base.ship_skin_words[107038] = {
 	detail = "多把目光聚集在萨拉妹妹身上吧！就算你不刻意这么做，我也会用各种方式抓住你的眼睛和心的~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11006,7 +10721,6 @@ _G.pg.base.ship_skin_words[107039] = {
 	detail = "胜利pose和咒文可是魔法少女必备的东西~指挥官，来帮我一起想想",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107040] = {
 	feeling1 = "看来是我辞职的时候了……",
 	feeling3 = "指挥官是只要认真做就能做好的类型呢，稍微有些开心呐",
@@ -11040,7 +10754,6 @@ _G.pg.base.ship_skin_words[107040] = {
 	detail = "请认真点，不要盯着我奇怪的地方看！——欸……原、原来是在看小舰岛啊……啊哈哈……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107049] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11074,7 +10787,6 @@ _G.pg.base.ship_skin_words[107049] = {
 	detail = "指挥官呀，舰岛有这~~么好看吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107050] = {
 	feeling1 = "果然，指挥官也终将离我而去……",
 	feeling3 = "指挥官是个很奇怪的人……明明我不想再有悲伤的离别了，你却一而再再而三地闯进我的内心……",
@@ -11150,7 +10862,6 @@ _G.pg.base.ship_skin_words[107050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11184,7 +10895,6 @@ _G.pg.base.ship_skin_words[107051] = {
 	detail = "说起来，企业曾经劝告我说千万不要喝酒，指挥官，你说这是为什么呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11218,7 +10928,6 @@ _G.pg.base.ship_skin_words[107052] = {
 	detail = "教堂、神圣的水井、还有……指挥官，下一个地点是哪里呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107058] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11252,7 +10961,6 @@ _G.pg.base.ship_skin_words[107058] = {
 	detail = "猛烈的心跳仿佛乘着拂过湖面的幸福之风，传递到指挥官的耳畔一般……不，倒不如说希望指挥官能听到——请感受约克城的爱吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107060] = {
 	feeling1 = "…指挥官似乎欠缺勇敢呢",
 	feeling3 = "天上的光全都是星星，海上的光全都是敌人……指挥官，真的会有没有斗争的那一天吗？",
@@ -11381,7 +11089,6 @@ _G.pg.base.ship_skin_words[107060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11415,7 +11122,6 @@ _G.pg.base.ship_skin_words[107061] = {
 	detail = "我将牢记过去，并为未来考虑",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11449,7 +11155,6 @@ _G.pg.base.ship_skin_words[107062] = {
 	detail = "能够像这样享受安稳祥和的节日气氛，也是多亏了指挥官和港区所有人的不断努力呢…嗯",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107063] = {
 	feeling1 = "是不是应该义无反顾地继续前进呢…",
 	feeling3 = "",
@@ -11483,7 +11188,6 @@ _G.pg.base.ship_skin_words[107063] = {
 	detail = "指挥官，感觉还好吗？…“生生不息，繁荣昌盛”！呵呵",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107064] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11517,7 +11221,6 @@ _G.pg.base.ship_skin_words[107064] = {
 	detail = "只要是为了正义就不惜付诸武力，伤害她人…我不认为这样是正确的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107065] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11551,7 +11254,6 @@ _G.pg.base.ship_skin_words[107065] = {
 	detail = "说起来，刚才急急忙忙忘了问…指挥官，觉得我这一身怎么样？大黄蜂评价和指挥官的评价，我都想听听看呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107066] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11585,7 +11287,6 @@ _G.pg.base.ship_skin_words[107066] = {
 	detail = "啊，指挥官，我想听听你的意见…这个姿势…怎么样？我得努努力…至少不给指挥官抹黑才行。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107067] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11619,7 +11320,6 @@ _G.pg.base.ship_skin_words[107067] = {
 	detail = "多亏指挥官，我得以从战斗的喧嚣中抽身，明白了身处安静悠长时光中的意义。力量…就是为了这样的东西而存在的吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107068] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11653,7 +11353,6 @@ _G.pg.base.ship_skin_words[107068] = {
 	detail = "只要有你在身边，无论经受多少残酷的战斗，面临多少痛苦的分离，我都一定能够满怀希望地走下去吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107070] = {
 	feeling1 = "北安普顿，你在哪里~（大黄蜂并没有注意到你）",
 	feeling3 = "金发双马尾却不傲娇？那还真是抱歉，我大黄蜂可从来不知道别扭两个字怎么写！",
@@ -11737,7 +11436,6 @@ _G.pg.base.ship_skin_words[107070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11771,7 +11469,6 @@ _G.pg.base.ship_skin_words[107071] = {
 	detail = "“派对就应该放开了吃才对嘛～——吃多了怎么办？没关系，之后多运动就好了”怎么样？像不像企业姐？哈哈",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11805,7 +11502,6 @@ _G.pg.base.ship_skin_words[107072] = {
 	detail = "起司真好吃呀~话说指挥官，撒丁风味的披萨和白鹰风味的披萨，你更喜欢哪种？…我？我当然是全都喜欢啦，哈哈哈",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107073] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11839,7 +11535,6 @@ _G.pg.base.ship_skin_words[107073] = {
 	detail = "从刚才开始就盯着我看~莫非再次喜欢上现在的大黄蜂了？回答只有yes 和 对 二者其一哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107080] = {
 	feeling1 = "不想被我射中的话，就请离远点……",
 	feeling3 = "有人晚上看到屋顶上有鬼影？啊哈哈，那应该是我正在室外练习吧~晚上很舒服哦，没有人打扰，星星也很多，指挥官要不要也来试试？",
@@ -11873,7 +11568,6 @@ _G.pg.base.ship_skin_words[107080] = {
 	detail = "弓片……滑轮……减震器……嗯？指挥官有什么事吗？我忙着检查，你随意~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107090] = {
 	feeling1 = "原来企业前辈一直忍受着这样的指挥官……",
 	feeling3 = "嫉妒？不，我从未这么想过，前辈是值得我们每一个人尊敬的英雄。只是那种一直处在前辈光环之下的感觉，让我多少感到有些……",
@@ -11924,7 +11618,6 @@ _G.pg.base.ship_skin_words[107090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11958,7 +11651,6 @@ _G.pg.base.ship_skin_words[107091] = {
 	detail = "2448英里，仅仅一小段的景色就让人心旷神怡…即使没能跑完全程，能有这样的体验，已经让人非常满足了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -11992,7 +11684,6 @@ _G.pg.base.ship_skin_words[107092] = {
 	detail = "那个，指挥官，没有人往这边来吧？那，那就好。要是给企业前辈看到或者被香格里拉拍下来现在的样子……我，我得赶紧…呜，脑袋…欸！？香、香格里拉！？不行不行！不要拍啊啊啊啊啊啊！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107093] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12026,7 +11717,6 @@ _G.pg.base.ship_skin_words[107093] = {
 	detail = "第一，不要过于追求完美；第二，注意纸与笔墨与各方面的协调……唔…大概是这种感觉？嗯…好像也不太对…真难啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107094] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12060,7 +11750,6 @@ _G.pg.base.ship_skin_words[107094] = {
 	detail = "「潇洒的查明真相，这就是我，侦探空母埃塞克斯！」……嗯，标志性台词就这个吧…在无畏她们面前还是要帅气点",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107095] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12094,7 +11783,6 @@ _G.pg.base.ship_skin_words[107095] = {
 	detail = "呜呜…头好疼…总感觉我昨天好像做了什么不得了的事……指挥官，你有什么线索吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107096] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12128,7 +11816,6 @@ _G.pg.base.ship_skin_words[107096] = {
 	detail = "好热——正如大家的热烈应援一样啊，不过还是要在比赛中始终集中精神才行。呵呵，经过战斗等一系列磨炼，这种程度的我已经习以为常了，没问题的。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107100] = {
 	feeling1 = "这肯定是来自指挥官的试炼，为了看看约克城能不能自立。……不是吗？",
 	feeling3 = "咳咳。啊，我的身体没关系的。就是有些不知道以现在的这一身份该怎么和指挥官相处…真的没有不舒服哦？",
@@ -12182,7 +11869,6 @@ _G.pg.base.ship_skin_words[107100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12216,7 +11902,6 @@ _G.pg.base.ship_skin_words[107101] = {
 	detail = "伙伴们聚在海边呢。这边结束后我们也过去吧？和大家一起更能享受大海的乐趣呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107110] = {
 	feeling1 = "指挥官啊，你现在的所作所为，和懦夫可没有半点区别啊",
 	feeling3 = "哟，指挥官！下午好——啊好疼…是谁把推车放在这里的啊！我怎么又碰上这种倒霉的事情……呃，没，没什么。那个，我是说，有我的出击任务吗？",
@@ -12260,7 +11945,6 @@ _G.pg.base.ship_skin_words[107110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12294,7 +11978,6 @@ _G.pg.base.ship_skin_words[107111] = {
 	detail = "nice catch！和指挥官的配合感觉非常不错呢，怎么样，要不要来做我的专属捕手？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107120] = {
 	feeling1 = "指挥官到底是迟钝还是糊涂，真是搞不清楚呢……",
 	feeling3 = "嗯？难道比起粘人的大黄蜂，指挥官更喜欢有点闹别扭的大黄蜂吗？那还真是抱歉了，因为大黄蜂可不会…还是要看对方的啦。",
@@ -12347,7 +12030,6 @@ _G.pg.base.ship_skin_words[107120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12381,7 +12063,6 @@ _G.pg.base.ship_skin_words[107121] = {
 	detail = "啊呀，看来是迷上大黄蜂的泳衣打扮了吧？不用害羞也可以的哦？大黄蜂本来就打算夺走指挥官的心——开玩笑的♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107140] = {
 	feeling1 = "果然仅凭我已经无法帮助到指挥官了吗…",
 	feeling3 = "港区里有许多优秀的伙伴呢，我也…必须更加努力才行。",
@@ -12435,7 +12116,6 @@ _G.pg.base.ship_skin_words[107140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12469,7 +12149,6 @@ _G.pg.base.ship_skin_words[107141] = {
 	detail = "虽然已经排练过许多次，不过真的到上台的时候还是挺紧张的呢，我果然还是……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107142] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12503,7 +12182,6 @@ _G.pg.base.ship_skin_words[107142] = {
 	detail = "海边的阳光可晒了，所以少不了墨镜…嗯——莫非指挥官更耀眼？呵呵，刚才我夸得不错吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107170] = {
 	feeling1 = "我现在不想和你说话",
 	feeling3 = "…当我面无表情保持沉默的时候，并不是在生气，只是单纯地在想事情，或者在想该怎么表达所想的事情而已",
@@ -12555,7 +12233,6 @@ _G.pg.base.ship_skin_words[107170] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107171] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12589,7 +12266,6 @@ _G.pg.base.ship_skin_words[107171] = {
 	detail = "唔，这个游戏也玩得差不多了，再去找长岛推荐几款好了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107220] = {
 	feeling1 = "我就直接问了，你到底在打算什么？",
 	feeling3 = "轻型航母或许没有办法在战斗力上超越正规航母……不过只要您能认可我的实力，那便足够了。",
@@ -12652,7 +12328,6 @@ _G.pg.base.ship_skin_words[107220] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107221] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12686,7 +12361,6 @@ _G.pg.base.ship_skin_words[107221] = {
 	detail = "唔…宠物的话…放在宿舍里应该，没问题吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107222] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12720,7 +12394,6 @@ _G.pg.base.ship_skin_words[107222] = {
 	detail = "让指挥官一直帮我参谋，稍微有些不好意思啊…总之谢谢你了，帮大忙啦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107223] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12754,7 +12427,6 @@ _G.pg.base.ship_skin_words[107223] = {
 	detail = "同为航母，萨拉托加和列克星敦平时就经常有在锻炼，就给人一种身体非常柔软的感觉，果然不愧是偶像呢。所谓功夫不负有心人就是这么一回事吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107224] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12788,7 +12460,6 @@ _G.pg.base.ship_skin_words[107224] = {
 	detail = "会是谁特地把这个“啾啾娃娃机”放在海边的呢…“本产品由{namecode:98}倾情提供”…欸，原来背面写着这些吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107229] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12822,7 +12493,6 @@ _G.pg.base.ship_skin_words[107229] = {
 	detail = "我已经完全适应新装备了，或许你可以期待一下下次实战中我的表现，呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107230] = {
 	feeling1 = "看来还是听萨拉托加的指示比较好呢",
 	feeling3 = "我的爱好？看书，还有研究萨拉托加前辈的战斗方式吧…很奇怪吗？我认为萨拉托加前辈即使比起企业也不会输的",
@@ -12882,7 +12552,6 @@ _G.pg.base.ship_skin_words[107230] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107231] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12916,7 +12585,6 @@ _G.pg.base.ship_skin_words[107231] = {
 	detail = "从朋友那里得到的《萨拉托加夏日写真集——珍藏版》…哦？原来平日里的前辈是这个样子的啊。这种活泼又阳光，和大家大闹在一起的场景，稍微有些羡慕…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107232] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12950,7 +12618,6 @@ _G.pg.base.ship_skin_words[107232] = {
 	detail = "根据萨拉托加前辈的指导，这时候应该……呜哇？指挥官？！什么、什么事也没有！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107233] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -12984,7 +12651,6 @@ _G.pg.base.ship_skin_words[107233] = {
 	detail = "这次我也准备了给萨拉托加前辈的礼物。不过，感觉她收礼物的时候好像不是那么开心……为什么呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107270] = {
 	feeling1 = "……难不成你是在故意惹老师生气吗？",
 	feeling3 = "嗯，嗯~今天的工作处理得像模像样呢。怎样，在兰利的教导之下，切实感受到自己的进步了吧？",
@@ -13018,7 +12684,6 @@ _G.pg.base.ship_skin_words[107270] = {
 	detail = "一直用这样的眼神看着我……是有什么问题想咨询兰利老师吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107271] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13052,7 +12717,6 @@ _G.pg.base.ship_skin_words[107271] = {
 	detail = "劳逸结合也是非常重要的一环呢~难得的休息时间，就先不聊学习的问题啦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107290] = {
 	feeling1 = "废柴一样的指挥官，谁都不会喜欢吧…请振作一些，我会帮您重新回到正轨的！",
 	feeling3 = "休息日的时候怎么过…？自己一个人待着…吧？感觉那样最能放松自己呢。毕竟我也没有什么特别的爱好…啊哈哈……",
@@ -13086,7 +12750,6 @@ _G.pg.base.ship_skin_words[107290] = {
 	detail = "啊，指挥官来的正好，我正在给这孩子做检查呢，能来协助我一下吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107291] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13120,7 +12783,6 @@ _G.pg.base.ship_skin_words[107291] = {
 	detail = "说起来有点不好意思，我平时都是和这孩子一起休息的呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107380] = {
 	feeling1 = "您已经在失信名单上了，请好自为之吧，指挥官。",
 	feeling3 = "指挥官，即便是赶时间，也不应该进食垃圾食品，这样很伤身体，这是我做的三明治，请用这个吧。",
@@ -13171,7 +12833,6 @@ _G.pg.base.ship_skin_words[107380] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[107381] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13205,7 +12866,6 @@ _G.pg.base.ship_skin_words[107381] = {
 	detail = "指挥官送的这条披巾很温暖呢，嘻嘻，要不要试试这样……一起取暖呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107382] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13239,7 +12899,6 @@ _G.pg.base.ship_skin_words[107382] = {
 	detail = "想要记录故事，知识也是必须的。无论是关于船的知识，还是关于人的知识，甚至是关于这颗星球的知识——有没有人对指挥官这么说过呢？“学无止境”什么的，呵呵呵",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[107990] = {
 	feeling1 = "也许，指挥官才是需要好好学习的那位……？",
 	feeling3 = "为什么要成为最强？……因为，只有最强的英雄，才能打败强敌，保护同伴，终结纷争！",
@@ -13323,7 +12982,6 @@ _G.pg.base.ship_skin_words[107990] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[108010] = {
 	feeling1 = "你被开除鱼雷爱好者籍啦！",
 	feeling3 = "实际上{namecode:68}真的很强呢…果然那时候只是大意了吧。不过，毕竟偷袭才是我们潜艇的强项嘛～",
@@ -13357,7 +13015,6 @@ _G.pg.base.ship_skin_words[108010] = {
 	detail = "金属的色泽，冰凉的触感，还有水花和爆炸……指挥官，你不觉得鱼雷是最棒的吗！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108020] = {
 	feeling1 = "（扮鬼脸）笨——蛋！",
 	feeling3 = "说起来，刚刚游完泳，肩膀有点酸呢……要是有人能帮我放松一下肩膀的话，说不定我就能把这几天看到的指挥官的秘密都忘掉了呢~",
@@ -13408,7 +13065,6 @@ _G.pg.base.ship_skin_words[108020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[108021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13442,7 +13098,6 @@ _G.pg.base.ship_skin_words[108021] = {
 	detail = "要提醒大家小心拉炮？哼哼，请便~不过，拉炮我都藏在裙子下面了，指挥官是怎么知道的呢~…指挥官，你明白我的意思的吧？嘻嘻~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13476,7 +13131,6 @@ _G.pg.base.ship_skin_words[108022] = {
 	detail = "是不是把{namecode:196}也叫来帮忙比较好呢……不过要是我们一起玩嗨了的话，指挥官大概会承受不了吧？嘻嘻~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108030] = {
 	feeling1 = "我不喜欢你！",
 	feeling3 = "光靠勇气是不能轻松胜利的！…这时候就需要依靠指挥官的力量啦！指挥官，有你的指示，我们就能跨过一切困难！",
@@ -13519,7 +13173,6 @@ _G.pg.base.ship_skin_words[108030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[108031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13553,7 +13206,6 @@ _G.pg.base.ship_skin_words[108031] = {
 	detail = "这些零食是大青花鱼让我帮忙买的，鱼雷模型则是鲦鱼拜托的…便利店还真是什么都有呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13587,7 +13239,6 @@ _G.pg.base.ship_skin_words[108032] = {
 	detail = "指挥官，这个送给你！这是我特别订的手捧花！{namecode:95}小姐说，指挥官一定会喜欢这个的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108040] = {
 	feeling1 = "没事的，指挥官只要多晒晒太阳，把烦恼的事情都晒走，一定能振作起来的！",
 	feeling3 = "啊，发现指挥官啦！我抱！……这样会让指挥官很困扰？是，是我太用力了吗！不是的？那是因为什么呢？",
@@ -13640,7 +13291,6 @@ _G.pg.base.ship_skin_words[108040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[108041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13674,7 +13324,6 @@ _G.pg.base.ship_skin_words[108041] = {
 	detail = "我听说，发球的时候，脚抬得越高就越有力！……不是这样的吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108050] = {
 	feeling1 = "光辉她们都感到很难过哦？",
 	feeling3 = "哦，指挥官带慰问品来了？真细心啊~啊，在大家认真练习的时候摸鱼看外面的事情，要替我保密哦☆",
@@ -13717,7 +13366,6 @@ _G.pg.base.ship_skin_words[108050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[108060] = {
 	feeling1 = "哼哼，指挥官缺乏魅力是有原因的，要不要我来教你几招？乖乖准备好学费哦~（耳语）哈哈~",
 	feeling3 = "真想趁那位爱睡觉的大狐狸睡着的时候，埋进她的尾巴堆里呀。那样一定超级舒服吧~不过，打扰人家睡觉也不太好吧，嘻嘻~",
@@ -13772,7 +13420,6 @@ _G.pg.base.ship_skin_words[108060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[108061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13806,7 +13453,6 @@ _G.pg.base.ship_skin_words[108061] = {
 	detail = "被大青花鱼捉弄啦？跟我说说她又做了什么？我参考…不对，是帮你想想办法！嗯！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13840,7 +13486,6 @@ _G.pg.base.ship_skin_words[108062] = {
 	detail = "嗯？我的尾巴很显眼吗？平时我会把它藏好的~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108070] = {
 	feeling1 = "指挥官，你这样下去会越来越孤独的…",
 	feeling3 = "我没有跟着别人的恶趣味啦，更不是跟踪狂什么的…只是跟着指挥官比较有趣啦，所以就…嘿嘿。",
@@ -13874,7 +13519,6 @@ _G.pg.base.ship_skin_words[108070] = {
 	detail = "听说，潜艇就是人类模仿鹦鹉螺制造出来的。这么一想，有好多好多的发明都是从动物们身上得到的灵感呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13908,7 +13552,6 @@ _G.pg.base.ship_skin_words[108071] = {
 	detail = "兔女郎…是模仿兔兔的衣服呢，喜欢兔女郎的人一定也很喜欢兔子吧…欸，不是这样的吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[108072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -13942,7 +13585,6 @@ _G.pg.base.ship_skin_words[108072] = {
 	detail = "大海里很安静…而且，到处都是色彩斑斓的鱼先生和珊瑚…这种动静相宜的感觉~不觉得很好吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[112010] = {
 	feeling1 = "指挥官，作为让姐姐生气的代价，这一针会很痛哦",
 	feeling3 = "来了来了~总觉得指挥官最近越来越依赖我了，虽然被人信任是很高兴，不过要是把指挥官变成废柴就不好了……",
@@ -14001,7 +13643,6 @@ _G.pg.base.ship_skin_words[112010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[112011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14035,7 +13676,6 @@ _G.pg.base.ship_skin_words[112011] = {
 	detail = "虽然夏天对大家来说是假期，不过我的工作是全年无休的呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[131170] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14069,7 +13709,6 @@ _G.pg.base.ship_skin_words[131170] = {
 	detail = "面皮……把拉菲裹着……好舒服……指挥官……不要吃掉拉菲……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[131171] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14103,7 +13742,6 @@ _G.pg.base.ship_skin_words[131171] = {
 	detail = "回城镇后，拉菲要去酒馆大口喝酒，然后和{namecode:6}她们一起去商店买东西……指挥官也一起吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[131172] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14137,7 +13775,6 @@ _G.pg.base.ship_skin_words[131172] = {
 	detail = "好困…拉菲才没有想把指挥官当做大号抱枕……嗯，完全没有……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[137030] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14171,7 +13808,6 @@ _G.pg.base.ship_skin_words[137030] = {
 	detail = "给人看到自己漂亮大方的那一面！给更多的人看到杯面好吃的那一面！这才是宣传大使的工作哦♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[137060] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14205,7 +13841,413 @@ _G.pg.base.ship_skin_words[137060] = {
 	detail = "潜水服有点破损？我之后还是去修补一下吧，免得让女灶神她们担心...指挥官，谢谢你的提醒。",
 	couple_encourage = {}
 }
-
+_G.pg.base.ship_skin_words[199010] = {
+	feeling1 = "咦？聚会？没算上你哦，指挥官，请继续工作吧",
+	feeling3 = "虽然我很喜欢开派对，不过我从不会硬拉不喜欢集体活动的姐妹们来参加哦？但是，如果愿意来参加的话，即使不擅长交流的人，我保证也能让她找到乐趣~",
+	lose = "要是我的火力再强一点就好了……",
+	propose = "ok，心情整理完毕！果然，我也是对指挥官有意思的，不然，从一开始就不会来邀请你了嘛~话说回来，指挥官，今天起，我们除了派对，又有了一样要做的事呢，那就是——约会！",
+	expedition = "指挥官，委托完成咯？我觉得带点什么去犒劳委托组的姐妹们是个不错的主意！",
+	win_mvp = "胜利！回去可要好好庆祝一下~",
+	home = "指挥官，虽然战斗很重要，但是放松也很重要！",
+	mission = "新的任务！多找些姐妹们一起去吧！",
+	touch2 = "指挥官，如果你是故意的，我可要生气了",
+	voice_key_2 = -1,
+	skill = "让战场也热闹起来吧！",
+	drop_descrip = "轻巡洋舰—西雅图",
+	mail = "指挥官，有你的邮件！难道是派对的邀请？",
+	touch = "指挥官，来练习一下舞蹈吧～舞技好会更受欢迎哦？",
+	profile = "来了来了，那么，我叫西雅图——啊，确切地说，我其实没有名字，姑且是叫西雅图，嗨呀，这种小事就不要在意了。总之，作为伍斯特级的原型设计之一，亚特兰大级的改进型，我最擅长的就是防空了，天上飞的小家伙们就交给我吧！",
+	mission_complete = "任务完成！指挥官，我们来庆祝一下吧！",
+	feeling4 = "指挥官，现在你知道集体活动的魅力了吧？只要聚在一起，大家就会自然而然地增进关系。你看，现在我们不是已经成为朋友了吗？",
+	unlock = "就是你把我从沉睡之中唤醒的吗？……你好你好，幸会幸会～我叫西雅图，从今往后，请多指教啦！",
+	feeling5 = "看在我们交情的份上，指挥官你要是对哪个姐妹有意思，我也可以给你助攻一下哦？……咦，我？欸，啊，呃，不是，真……真的？",
+	main = "指挥官，你不会觉得只有一个秘书太冷清吗？我觉得多叫几个姐妹来一起担任秘书会比较热闹哦！|指挥官，今晚下班后有预定吗？我约了不少姐妹办派对，你要不要一起来？|虽然我的战斗经验不足，不过姐妹们都很愿意教导我，我会很快赶上来的~",
+	battle = "好～大家一起上吧！",
+	upgrade = "感觉现在我能把蚊子都给射下来！",
+	voice_key = 19901,
+	headtouch = "",
+	feeling2 = "指挥官，不要总是把工作啊，战斗啊挂在嘴边，稍微让自己喘一口气会比较好哦？总之，等会儿有个我发起的派对，你会来的，对吧？",
+	login = "指挥官，吃过了吗？没有的话先一起吃点什么吧~",
+	vote = "",
+	hp_warning = "大家再坚持一下！",
+	id = 199010,
+	detail = "派对，茶会，女子会，聚餐……ok，日程排得很满，完美！",
+	couple_encourage = {
+		{
+			{
+				10206,
+				10207,
+				10208
+			},
+			1,
+			"前辈，回港后来参加我的派对吧？",
+			0
+		},
+		{
+			{
+				30402
+			},
+			1,
+			"重樱的宴会，我很有兴趣！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[199011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "",
+	mission = "",
+	touch2 = "呀！？真是的，你是喝醉了吗？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "哦哦指挥官，来得正好！嘿嘿，这身礼服，怎么说…会不会有种太华丽的感觉？……不会？太好了！还想着我这么穿会不会不太合适呢，谢谢啦~",
+	mail = "",
+	touch = "指挥官想喝什么？如果不方便喝酒的话，来点软饮料也可以哦？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "哦哦指挥官，来得正好！嘿嘿，这身礼服，怎么说…会不会有种太华丽的感觉？……不会？太好了！还想着我这么穿会不会不太合适呢，谢谢啦~",
+	feeling5 = "虽然挺喜欢大家一起吵吵闹闹的宴会，但是偶尔有一次这种比较高雅的宴会也不错呢~还能像这样和最喜欢的指挥官两人独处…我…貌似有点喝醉了呢…呼……Zzz……",
+	main = "佐治亚，你想喝点什么？特调冰块可乐气泡酒？嚯~还是一如既往地口味独到啊~|啊，宴会就是要开心享受才对哦？一个人喝酒可不行呢~来吧来吧，到人多的地方去~|那边貌似有好几个不太习惯宴会的孩子呢…我去把她们引荐给大家认识下，稍等我一会哦，指挥官~",
+	battle = "哈哈！轰轰烈烈地上吧！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "哦哦！指挥官，欢迎来到美妙的宴会！今天的主角就是你我二人！嘿嘿，开玩笑的~",
+	vote = "",
+	hp_warning = "",
+	id = 199011,
+	detail = "小提琴什么的，只要拿在手上就有种很上流的感觉呢！哈哈，既然都拿出来了自然是要露一手的啦！用心听着吧~♪～",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[199012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "好的，这下圣诞派对的美食就准备得差不多了！",
+	mission = "",
+	touch2 = "指挥官！现在可不能捣乱！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "圣~诞~快~乐~！虽然想马上开始圣诞大派对，但是如你所见我还在为此准备中呢~再稍等片刻吧~",
+	mail = "",
+	touch = "把那边的盐递给我一下！谢啦！",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "圣~诞~快~乐~！虽然想马上开始圣诞大派对，但是如你所见我还在为此准备中呢~再稍等片刻吧~",
+	feeling5 = "",
+	main = "佐治亚！你要的姜饼好了！上面有我给你的惊喜！|嗯，我想想，我们现在还缺的是……一棵能够吸引所有人眼球的特别的圣诞树！|节日给了大家聚在一起享受快乐的理由。而我，这次就负责给这聚会搭起最好的舞台！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "哦哦！太好了，有指挥官的帮忙，我感觉进度快了一倍……不，是两倍！",
+	vote = "",
+	hp_warning = "",
+	id = 199012,
+	detail = "但凡是来参加派对的人，我一定会让她感受到白鹰对圣诞节满溢的热情！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[199013] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "放松休息固然重要，不过，正是这种时候才更要认真去照顾大家才行！",
+	mission = "新任务！倔强说的“咒语”就是拿来处理这个的吗？",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "我是来助人为乐的海之魔女西雅图！好啦，你有什么烦恼吗？无~论什么都可以和我说哦？作为代价——要来参加今天的宴会哦♪",
+	mail = "",
+	touch = "指挥官，牢牢抓住我的手哦！",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "我是来助人为乐的海之魔女西雅图！好啦，你有什么烦恼吗？无~论什么都可以和我说哦？作为代价——要来参加今天的宴会哦♪",
+	feeling5 = "",
+	main = "真是的，柴郡~不要在那偷懒啦！赶快来帮忙！佐治亚也是~快来快来~|布莱默顿真是个好人呀！会听人倾诉各种烦恼，如果指挥官有什么不方便在聚会上说的事，尽管去找她就好了！|果然大海真是有意思呀~为了大家能在大海玩的开心，我们也要加油才行呢！",
+	battle = "可不能继续潜在水里了呢！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官也想试试潜水？好~那就让西雅图来帮你吧！",
+	vote = "",
+	hp_warning = "",
+	id = 199013,
+	detail = "白天的游戏大赛和晚上的烧烤大会……果然有各种各样的活动才开心嘛！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[199020] = {
+	feeling1 = "看来指挥官并不足以拥有这份力量……",
+	feeling3 = "出击战斗固然让人热血沸腾，不过偶尔放松一下也是很重要的呢",
+	lose = "只能…暂时撤退了吗",
+	propose = "咳…没想到会是指挥官发起的直球进攻啊~？啊哈哈…我很高兴哦，看来环球之旅可以提前准备出发了呢~",
+	expedition = "委托组回来了呢。等等，把这些酸素可乐带给她们吧，慰劳将士的辛苦是指挥官应当做的事情",
+	win_mvp = "再坚固的装甲，也只有被巨炮击碎的命运！",
+	home = "嗯，出击辛苦了。喝瓶冰镇可乐放松下吧",
+	mission = "任务啊…如果是战斗任务就好了呢，嘿嘿~",
+	touch2 = "嚯~？看来指挥官是想要自告奋勇当炮靶呢…",
+	voice_key_2 = -1,
+	skill = "这巨炮的轰鸣就是你们最后的回忆！",
+	drop_descrip = "战列舰—佐治亚",
+	mail = "指挥官，你的信。如果方便的话，能把信封上的风景纪念邮票留给我吗？",
+	touch = "嚯~指挥官也觉得这巨炮很美吗？那就尽管欣赏个够吧~",
+	profile = "我是白鹰所属战列舰，佐治亚。比起那几位远房姐妹，我的主炮口径更大一些。而我，会用这主炮，粉碎挡在面前的所有敌人",
+	mission_complete = "没有报告过的任务，就不算完成。可别忘了啊，指挥官",
+	feeling4 = "下次有机会的话，就一起去旅行怎么样？有你同行的话，感觉会是段有趣的旅程呢",
+	unlock = "我是白鹰的佐治亚。安心吧，我会用巨炮为你带来胜利的",
+	feeling5 = "先从白鹰出发…然后到皇家和鸢尾…再是东煌…——嗯？我在计划我们的环球之旅哦。事到如今，指挥官不会说不愿意去了吧~？",
+	main = "我有个梦想，那就是有一天，大海上不再有硝烟，所有人都回到和平之中…|可乐真是很棒的饮料呢，啊，不过酸素可乐指挥官大概不能喝吧……|有机会的话，还是挺想去世界各个不同的地方看看的呢，重樱、东煌、皇家……干脆计划个环球旅行好像也不错？",
+	battle = "这次会是什么样的对手呢？希望不要辜负了我的期待啊",
+	upgrade = "下次的战斗，你会看到我的表现的",
+	voice_key = 19902,
+	headtouch = "佐治亚光线！…开玩笑的，只是普通的头饰而已，啊哈哈",
+	feeling2 = "桃子很不错的哦，营养又美味，指挥官要来一颗吗？",
+	login = "哼，来得正好。热身运动刚刚好，是要演习还是出击？",
+	vote = "",
+	hp_warning = "咕唔…装甲区损伤？！我会加倍奉还的！",
+	id = 199020,
+	detail = "定期的装备检查与维护可是非常重要的，指挥官，你也要来帮忙吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[199021] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "指挥官，这里的空气很不错，稍微休息一下吧",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "呀，指挥官，出来透透气吗？我？哈哈，我不太习惯宴会那种高雅的氛围，所以偷溜出来了……要一起走走吗？",
+	mail = "",
+	touch = "呜哇……！好险，谢谢你扶我，指挥官……我拿高跟鞋是真的没辙",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "呀，指挥官，出来透透气吗？我？哈哈，我不太习惯宴会那种高雅的氛围，所以偷溜出来了……要一起走走吗？",
+	feeling5 = "月色真美啊，指挥官……欸？啊，不，我不是那个意思……呃，不对，我也不是没有那个意思…啊哈哈…怎么说呢…有点不好意思啊……",
+	main = "呼，还是在这样的地方喝可乐适合我，指挥官，我包里带了一些，要喝吗？|指挥官，你不回去会场没有关系吗，还有很多人在等着你吧？|指挥官，不用担心，我很喜欢这支舰队，等一会儿，我也会回到会场去的",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "还是旁边没有人的时候能够放松下来啊～对吧，指挥官？",
+	vote = "",
+	hp_warning = "",
+	id = 199021,
+	detail = "这套礼服？啊，这是西雅图给我准备的……老实说，连我自己都不知道我还能打扮成这样……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[199022] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "嗯，出击辛苦了。要来根冰棒吗？我这里还有。",
+	mission = "",
+	touch2 = "嚯~？指挥官的心也随着来到海边放开了嘛，是不是需要给你一点“刺激”呢？比如这个遮阳伞什么的？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "嗯哼，阳光正好，海风也恰到好处。好啦，一起来享受夏天吧！你也很期待的吧，指挥官？",
+	mail = "",
+	touch = "看你露出一副“不知道眼睛往哪摆”的表情意外的有趣呢，哈哈哈！",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "嗯哼，阳光正好，海风也恰到好处。好啦，一起来享受夏天吧！你也很期待的吧，指挥官？",
+	feeling5 = "",
+	main = "怎么样，这个太阳眼镜造型很有趣吧？嘿嘿，我还挺喜欢的呢。|说到夏天，怎么能少了冰镇的可乐呢！你也来一瓶吧指挥官—哦，错了错了，嘿嘿，这个是酸素可乐，这个才是给指挥官的可乐。|趁着夏天还未过去，来计划个“世界沙滩之旅”好像也不错？",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "哦？来的正好，我正要把遮阳伞撑起来，来搭把手吧，指挥官。",
+	vote = "",
+	hp_warning = "",
+	id = 199022,
+	detail = "这件黑色薄纱是西雅图帮忙选的，那家伙虽然看起来大大咧咧的，却意外地对这些分外拿手呢…",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[199023] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "",
+	mission = "",
+	touch2 = "喂喂，衣服都要被你弄乱了啊",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "新年快乐，指挥官！据说重樱新年就得穿着这么华丽的衣服出门呢，要不陪我走走？…怎么了，发什么呆呢？不会是看呆了吧？哈哈哈哈！",
+	mail = "",
+	touch = "要好好带路哦？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "新年快乐，指挥官！据说重樱新年就得穿着这么华丽的衣服出门呢，要不陪我走走？…怎么了，发什么呆呢？不会是看呆了吧？哈哈哈哈！",
+	feeling5 = "",
+	main = "“桃太郎”好像是从桃子里生出来的欸！一定是很厉害的家伙！|西雅图，我好像收到了宴会的邀请，要在宴会上整点什么才艺呢，你有啥好主意不？至少得比“佐治亚光线！”更厉害的才好|指挥官，我刚搞了个结合重樱的茶和可乐的新感觉饮料！来试喝看看吧！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "今天你要去哪里逛逛？嘿嘿，我很期待哦。",
+	vote = "",
+	hp_warning = "",
+	id = 199023,
+	detail = "重樱的茶很好喝！不过，偶尔还是会想喝点可乐什么的呢…唔？和这一身不搭？想喝就是想喝，有什么办法嘛…",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[199030] = {
+	feeling1 = "摸摸，老师，好孩子，不哭…安克雷奇，不哭…笑笑，嗯…",
+	feeling3 = "老师…！小兔子，折好的…送给你…嗯！",
+	lose = "安克雷奇，输掉了……敌人，好可怕……",
+	propose = "在一起的…约定…？那，拉勾！…戒指？…要帮我戴上？嗯！…嘿，戴好了！安克雷奇…也做了一个…老师，戴上…嗯！",
+	expedition = "委托…？大家…是去了哪里？安克雷奇，想知道…可以吗？",
+	win_mvp = "赢了…！安克雷奇，好厉害…！",
+	home = "老师……去哪里了？安克雷奇，一个人…有点害怕…",
+	mission = "任务…没完成？安克雷奇，想帮忙…嗯！",
+	touch2 = "软软的…老师，喜欢…？",
+	voice_key_2 = -1,
+	skill = "安克雷奇，fight！",
+	drop_descrip = "重巡洋舰-—安克雷奇",
+	mail = "信件…？复杂的，看不懂…老师，看得懂…？",
+	touch = "安克雷奇，喜欢摸摸…老师，也喜欢摸摸…？",
+	profile = "安克雷奇…是白鹰重巡。和巴尔的摩她们…是朋友！和老师也是…嗯！最好的…！",
+	mission_complete = "任务…完成了？老师…好厉害！",
+	feeling4 = "老师…是特别的！安克雷奇…喜欢！……安克雷奇，也是特别的？…嗯！",
+	unlock = "指挥…官？老师…？嗯，老师！安克雷奇，喜欢老师…！",
+	feeling5 = "老师…和安克雷奇，一直在一起？…嗯！安克雷奇，和老师…女孩，和王子…一直，一直在一起…",
+	main = "外套…披上…脱下…再披上……嘿嘿~|漫画里，女孩子和王子…暖暖的……很喜欢…！|老师…很忙？安克雷奇，陪你…嗯！|",
+	battle = "…是敌人！老师，大家…一起…！",
+	upgrade = "安克雷奇…变厉害！",
+	voice_key = 19903,
+	headtouch = "头发…喜欢？老师的，我也摸摸看…",
+	feeling2 = "不认识的人，好多…老师，安克雷奇，有点怕…",
+	login = "老师…！安克雷奇，等到了…！",
+	vote = "",
+	hp_warning = "好痛…呜呜…疼痛，不要…",
+	id = 199030,
+	detail = "“老师”，比“指挥官”短，也好听…安克雷奇，喜欢…！老师…喜欢…？",
+	couple_encourage = {
+		{
+			{
+				10316
+			},
+			1,
+			"巴尔的摩…很酷！",
+			0
+		},
+		{
+			{
+				10311
+			},
+			1,
+			"威奇塔…很酷！",
+			0
+		},
+		{
+			{
+				10324
+			},
+			1,
+			"布莱默顿…也很酷！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[199031] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "“委托”…要等大家回来…对吧？",
+	win_mvp = "做到了！安克雷奇，真棒…！",
+	home = "老师，去哪里了…？安克雷奇，一个人，没法好好游…啊！老师！诶嘿嘿♪",
+	mission = "",
+	touch2 = "摸摸…老师…喜欢？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "嗯嗯…嘿咻…老师…？安克雷奇，做得对吗？游得还可以吗？那就好…掉到水里就糟糕了对吧…？",
+	mail = "“邮件”，不能掉到水里…嗯…做到了！",
+	touch = "湿透了…老师，没事吗…？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "嗯嗯…嘿咻…老师…？安克雷奇，做得对吗？游得还可以吗？那就好…掉到水里就糟糕了对吧…？",
+	feeling5 = "老师，安克雷奇的“指挥官”…不过，安克雷奇，喜欢老师…所以可以…一直叫“老师”吗…？安克雷奇，和老师在一起…♪",
+	main = "老师，在梦里，也会教安克雷奇很多吗…？诶嘿嘿~|巴尔的摩，好会游…！安克雷奇，能变得那么会游吗？诶嘿嘿，老师教我的话，一定…|鲨鱼，滑溜溜…安克雷奇，努力不掉下去！嗯！",
+	battle = "安克雷奇…不能掉下去，不能沉下去…！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "嘿咻…嗯…老师…？安克雷奇，做得好吗？蹬腿…好，好像又要掉下去了…",
+	vote = "",
+	hp_warning = "",
+	id = 199031,
+	detail = "教安克雷奇的…嗯…不叫“指挥官”应该叫“老师”！安克雷奇，喜欢老师！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[199040] = {
+	feeling1 = "指挥能力评价完毕……哪怕只是遵从命令都会有所损失。",
+	feeling3 = "指挥官个人的兴趣爱好…不错的切入点。那么基本信息就从伙伴那里打听……来，啊——这是我做的罗宋汤，用这个来确认你对味道的喜好。来，啊——",
+	lose = "战斗评价完毕。奇尔沙治，维持战斗速度，重整阵势，开始反复攻击。",
+	propose = "已确认生命体征信号。嗯？别担心，指挥官给了我这个之后，作为交换，我偷偷在指挥官身上放了生命体征监测仪而已。为了掌握你平时的健康状况，或是在紧急时刻能马上赶到，都少不了这个——不对吗？",
+	expedition = "确认委托组已归来。我去回收物资。",
+	win_mvp = "战斗评价完毕。奇尔沙治，继续下一个作战行动。",
+	home = "辛苦了，就这样休息下吧。战果？啊，说起来你也出击了。抱歉，也许我应该一同出战比较好？",
+	mission = "确认有尚未完成的任务。如果你不处理，我会自行判断将它从预定中删除，可以吗？",
+	touch2 = "在这个行动中，你自身的意志占了多少？",
+	voice_key_2 = -1,
+	skill = "冻结，随后炸裂吧！",
+	drop_descrip = "航空战列舰—奇尔沙治",
+	mail = "确认邮件已收到。请你也确认一下。",
+	touch = "我知道你在那里。那么，找我有什么事？",
+	profile = "我是白鹰所属的，具现化的特别计划舰奇尔沙治。我被设计为战舰和航空母舰的混合型，并内藏能应对任何战局、战场的力量。指挥官，希望你能充分利用我的战力",
+	mission_complete = "确认任务奖励已送达。我去回收。",
+	feeling4 = "用“约会”这种说法可能不大准确，但要了解指挥官的习惯和行为，确实通过“约会”更有效。这是今天的行程。过目一下再行动吧。",
+	unlock = "……启动完毕。我是混合假想的实体化·“X”，航空战舰奇尔沙治。从今天开始，我将在这港区中成为你的力量。那么，我应该归属于哪个分队，该往何处出击？",
+	feeling5 = "我信任着指挥官，而且想更多地了解指挥官。但是，因为我的能力不足，现在还缺乏一些用于理解指挥官意愿的必要情报…指挥官信任我吗？用同伴们的话来说，你\"喜欢\"我吗？",
+	main = "闲聊的话就放到工作结束后吧。我现在正在专心处理秘书舰的工作，请不要打扰我。|与其一直回头看，还是不停下脚步继续向前更好。即使要自我反省，不配合当时的形势来看也是没有意义的。|在战斗中，有时必须优先考虑战局，而非你的意志。即使你是指挥官，也可能不得不将决定权下放至战场，最好趁现在先习惯吧。|…………（奇尔沙治闭着眼，端正地坐在沙发上。也许她睡着了？）",
+	battle = "战力充足——向前突破！",
+	upgrade = "确认性能及舰队战力提升。今后请继续关照。",
+	voice_key = 19904,
+	headtouch = "……嗯？突然这是怎么了？",
+	feeling2 = "我认为与指挥官建立信任关系对我的战斗行动更有利。这就让我看一下你的日程——嗯？要了解对方首先需要收集信息，这不是常规手段么？",
+	login = "指挥官？抱歉，我先着手工作了…不用在意我，按计划进行你的工作吧",
+	vote = "",
+	hp_warning = "作战行动遭到阻碍……不算什么！",
+	id = 199040,
+	detail = "…………我并没有睡着，只是让大脑稍微休息一下而已。虽然让门就这样敞开着是我疏忽了，但不敲门就进来的指挥官也有责任呢。",
+	couple_encourage = {}
+}
 _G.pg.base.ship_skin_words[201010] = {
 	feeling1 = "你这宇宙超级无敌大变态！",
 	feeling3 = "别看我这样我可是大人了！——别随便摸我头，也别随便把我抱起来——我生气了，我真的要生气了哦！嘎、嘎喔！",
@@ -14239,7 +14281,6 @@ _G.pg.base.ship_skin_words[201010] = {
 	detail = "本、本小姐心情好…姑且就让你好好看着膜拜下……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14273,7 +14314,6 @@ _G.pg.base.ship_skin_words[201011] = {
 	detail = "指挥官，来参观我们的排练吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14307,7 +14347,6 @@ _G.pg.base.ship_skin_words[201019] = {
 	detail = "哼~？就这么想要瞻仰本小姐改造后的威容吗？真拿你没办法，就让你多看两眼好了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201020] = {
 	feeling1 = "能稍微安静点吗……",
 	feeling3 = "我有一个可以睡觉的好地方呢……指挥官要一起来偷懒吗？",
@@ -14341,7 +14380,6 @@ _G.pg.base.ship_skin_words[201020] = {
 	detail = "我的脸上有什么吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14375,7 +14413,6 @@ _G.pg.base.ship_skin_words[201021] = {
 	detail = "就算是我…也是会有所谓的“外出模式”的啦…虽然这样其实挺累的就是了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14409,7 +14446,6 @@ _G.pg.base.ship_skin_words[201022] = {
 	detail = "装饰这些灯姑且还是花费了不少精力呢…要好好欣赏哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14443,7 +14479,6 @@ _G.pg.base.ship_skin_words[201023] = {
 	detail = "照顾兔子，要比到处跑轻松呢……而且看着可爱的小生物，自己也会有种被治愈的感觉……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14477,7 +14512,6 @@ _G.pg.base.ship_skin_words[201029] = {
 	detail = "虽然样子改变了，不过指挥官对我还是和以前一样，太好了……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201030] = {
 	feeling1 = "原来熟悉只是错觉吗……抱歉",
 	feeling3 = "指挥官，要吃东西吗？我给你做哦~放心吧，你喜欢什么我都记下了",
@@ -14528,7 +14562,6 @@ _G.pg.base.ship_skin_words[201030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14562,7 +14595,6 @@ _G.pg.base.ship_skin_words[201031] = {
 	detail = "光荣小姐和阿卡司塔的便当…很好，两个人都带了便当呢。指挥官也没忘记带了吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14596,7 +14628,6 @@ _G.pg.base.ship_skin_words[201032] = {
 	detail = "对服装比较在意…？兔女郎DM！嘿嘿~不是显得有创意一点嘛？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14630,7 +14661,6 @@ _G.pg.base.ship_skin_words[201039] = {
 	detail = "指挥官也觉得改造后我的衣服要可爱了许多对吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201060] = {
 	feeling1 = "指挥官……讨厌我了吗……",
 	feeling3 = "发型吗？欸嘿嘿，这个是天生的呢，和狗狗一样，指挥官要摸摸看吗？",
@@ -14664,7 +14694,6 @@ _G.pg.base.ship_skin_words[201060] = {
 	detail = "指挥官指挥官，今天要一起出去玩吗！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201070] = {
 	feeling1 = "………………嗯？",
 	feeling3 = "单装炮原本是有4个的呢，为了反潜小A和小Y光荣退役了，现在只有小B和小X陪着我……寂寞……还是有一点的",
@@ -14698,7 +14727,6 @@ _G.pg.base.ship_skin_words[201070] = {
 	detail = "被指挥官重视虽然很高兴，不过请不要对我有奇怪的期待，嗯，奇怪的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201080] = {
 	feeling1 = "咱要回家，呜呜呜呜……",
 	feeling3 = "指挥官，你说像咱这样的小船，真的能成为偶像吗？",
@@ -14732,7 +14760,6 @@ _G.pg.base.ship_skin_words[201080] = {
 	detail = "指挥官~彗星是不是很闪闪……闪闪发亮呢！呜……好羞耻……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201089] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14766,7 +14793,6 @@ _G.pg.base.ship_skin_words[201089] = {
 	detail = "虽然独自训练的时候有些寂寞，但能在舞台上看到大家的笑容真的好开心！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201090] = {
 	feeling1 = "指挥官还没我成熟呢……",
 	feeling3 = "指挥官……那个……之前对你说了很过分的话……那个……对，对，对……呜——没什么啦，哼！",
@@ -14800,7 +14826,6 @@ _G.pg.base.ship_skin_words[201090] = {
 	detail = "用这种眼神看人家，一定是想乱七八糟的事情了吧。欸…那个…不是…呜哇！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201099] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14834,7 +14859,6 @@ _G.pg.base.ship_skin_words[201099] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201100] = {
 	feeling1 = "指、指挥官好可怕……小天鹅想回家……",
 	feeling3 = "小天鹅之前是不是……说了些难为情的话呢……",
@@ -14868,7 +14892,6 @@ _G.pg.base.ship_skin_words[201100] = {
 	detail = "呜~好害羞…为什么要人家在这里做指定的POSE……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14902,7 +14925,6 @@ _G.pg.base.ship_skin_words[201101] = {
 	detail = "这是胡德姐姐送给咱的泳装~好看吗？会不会有点不适合咱啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201102] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14936,7 +14958,6 @@ _G.pg.base.ship_skin_words[201102] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201103] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -14970,7 +14991,6 @@ _G.pg.base.ship_skin_words[201103] = {
 	detail = "新月和彗星选的这件衣服…好像有点太鲜艳了，会不会不太合适呀…啊，没、没什么",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201104] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15004,7 +15024,6 @@ _G.pg.base.ship_skin_words[201104] = {
 	detail = "尝试过后才知道，女仆小姐们都好能干呀……和她们相比，咱实在是……呜呜呜……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201105] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15038,7 +15057,6 @@ _G.pg.base.ship_skin_words[201105] = {
 	detail = "咱有点担心，会不会表现不好，丢了胡德姐姐和皇家的面子…欸？指挥官会给咱加油吗？那，那咱一定会努力的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201109] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15072,7 +15090,6 @@ _G.pg.base.ship_skin_words[201109] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201110] = {
 	feeling1 = "指挥官身上好难闻！",
 	feeling3 = "指挥官，脸上有脏东西喔，不要动，我来帮你舔掉……欸，为什么是舔？……那个，身体不由自主的就……",
@@ -15106,7 +15123,6 @@ _G.pg.base.ship_skin_words[201110] = {
 	detail = "姐姐说…我似乎看上去比较大一些呢……是哪里呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201119] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15140,7 +15156,6 @@ _G.pg.base.ship_skin_words[201119] = {
 	detail = "指挥官指挥官，你看我脖子上的铃铛，它的声音可好听啦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201120] = {
 	feeling1 = "命运……在将我们分开……",
 	feeling3 = "我、我以前也、想跟指挥官搭话的……那个……",
@@ -15183,7 +15198,6 @@ _G.pg.base.ship_skin_words[201120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15217,7 +15231,6 @@ _G.pg.base.ship_skin_words[201121] = {
 	detail = "总觉得这件礼服有些透明……是、是心理作用吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201129] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15251,7 +15264,6 @@ _G.pg.base.ship_skin_words[201129] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201130] = {
 	feeling1 = "指挥官再不打起精神，以后就不管你了哦~哈哈，骗你的！不过不要再让我失望了哦~",
 	feeling3 = "要学习的东西还有很多，而且，有指挥官在身边陪伴的话，就更有动力了～！",
@@ -15294,7 +15306,6 @@ _G.pg.base.ship_skin_words[201130] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201140] = {
 	feeling1 = "就算是宽容的萤火虫大人，对笨蛋也是绝不宽容的！",
 	feeling3 = "指挥官~~会被你攻略的是笨~蛋～笨——蛋！！",
@@ -15346,7 +15357,6 @@ _G.pg.base.ship_skin_words[201140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15380,7 +15390,6 @@ _G.pg.base.ship_skin_words[201141] = {
 	detail = "指挥官，是不是干了什么坏事呀~老实交代！不然的话…欸？下次陪我玩？呣呣，真拿你没办法啊~今天就放过你吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201160] = {
 	feeling1 = "我最讨厌不认真的人了！",
 	feeling3 = "茶会吗？非常抱歉，我还有训练没有完成……不过，能请您帮我带一块蛋糕吗？",
@@ -15431,7 +15440,6 @@ _G.pg.base.ship_skin_words[201160] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201200] = {
 	feeling1 = "……（猎人的小伙伴在冲你狂吠不止）",
 	feeling3 = "对于猎人而言，没有不能猎杀的猎物，只有不够充分的准备",
@@ -15474,7 +15482,6 @@ _G.pg.base.ship_skin_words[201200] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201210] = {
 	feeling1 = "指挥官，再不自重一点的话标枪可就真的不喜欢你了！",
 	feeling3 = "感觉和指挥官的距离越来越近了呢，嘻嘻，不过还要再努力一点哦~",
@@ -15533,7 +15540,6 @@ _G.pg.base.ship_skin_words[201210] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201211] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15567,7 +15573,6 @@ _G.pg.base.ship_skin_words[201211] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201212] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15601,7 +15606,6 @@ _G.pg.base.ship_skin_words[201212] = {
 	detail = "拉菲、23、{namecode:6}还有指挥官喜欢吃的东西我都准备好了，放心吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201213] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15635,7 +15639,6 @@ _G.pg.base.ship_skin_words[201213] = {
 	detail = "指挥官，你不觉得，拉菲酱她们的制服也很可爱吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201214] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15669,7 +15672,6 @@ _G.pg.base.ship_skin_words[201214] = {
 	detail = "♪~今天的便当做点什么好呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201215] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15703,7 +15705,6 @@ _G.pg.base.ship_skin_words[201215] = {
 	detail = "平常小熊造型的睡衣虽然也挺可爱的，不过偶尔换点不一样的也不错呢！嘿嘿~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201216] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15737,7 +15738,6 @@ _G.pg.base.ship_skin_words[201216] = {
 	detail = "嘿嘿，下次还要四个人一起在舞台上表演！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201217] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15771,7 +15771,6 @@ _G.pg.base.ship_skin_words[201217] = {
 	detail = "勇者的队伍一定会打倒魔王的！……说起来扮演魔王的是谁来着？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201218] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15805,7 +15804,6 @@ _G.pg.base.ship_skin_words[201218] = {
 	detail = "话说，指挥官，回想起来，在仪式上我该不会一直在傻笑吧……不过也没办法呢，那个时候实在是觉得太幸福啦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201219] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15839,7 +15837,6 @@ _G.pg.base.ship_skin_words[201219] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201220] = {
 	feeling1 = "指挥官……讨厌我了吗……",
 	feeling3 = "虽然我过去一直没有做出什么成绩，不过指挥官的家务之类的我一定没问题的！",
@@ -15873,7 +15870,6 @@ _G.pg.base.ship_skin_words[201220] = {
 	detail = "指挥官，这、这算是身体检查吗？……（小声）",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201221] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15907,7 +15903,6 @@ _G.pg.base.ship_skin_words[201221] = {
 	detail = "现、现在要检查吗…？(小声)在祭典吃得有点…——啊哇哇，没、没什么！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201230] = {
 	feeling1 = "哼，愚笨的下仆只配舔我的脚",
 	feeling3 = "呐，这么讨好人家，难道汝是萝莉控吗？真是禽兽呢。还要狡辩吗？床底下的H书，我可都翻过哦~",
@@ -15941,7 +15936,6 @@ _G.pg.base.ship_skin_words[201230] = {
 	detail = "怎么？对驱逐舰也会有什么奇怪的想法吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201231] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -15975,7 +15969,6 @@ _G.pg.base.ship_skin_words[201231] = {
 	detail = "指挥官，汝在盯着哪里看呢？胸部显小都是因为这身衣服的关系啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201232] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16009,7 +16002,6 @@ _G.pg.base.ship_skin_words[201232] = {
 	detail = "指挥官，想念人家无微不至的护理了吗~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201233] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16043,7 +16035,6 @@ _G.pg.base.ship_skin_words[201233] = {
 	detail = "重樱的浴衣？那是什么，对人家来说这一身才是祭典的正装哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201234] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16077,7 +16068,6 @@ _G.pg.base.ship_skin_words[201234] = {
 	detail = "汝觉得什么样的歌更适合人家呢…光说个“摇滚”可不够哦？可爱点的、还是帅点的，稍微说点具体些的印象♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201238] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16111,7 +16101,6 @@ _G.pg.base.ship_skin_words[201238] = {
 	detail = "总算到两人独处的时间了，亲~爱~的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201240] = {
 	feeling1 = "指挥官……讨厌我吗？",
 	feeling3 = "天、天后，我一个人面对指挥官也不会紧张啦，不用特意陪我……",
@@ -16162,7 +16151,6 @@ _G.pg.base.ship_skin_words[201240] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201241] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16196,7 +16184,6 @@ _G.pg.base.ship_skin_words[201241] = {
 	detail = "呼欸？我的拖鞋哪里去了…啊，就在我身后吗？谢谢指挥官……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201250] = {
 	feeling1 = "扭扭捏捏，不是个好人",
 	feeling3 = "指挥官，有一点你要搞清楚，我只是想到什么说什么，可不是毒舌，比如说“你是萝○控吧”就是我发自内心的想法",
@@ -16239,7 +16226,6 @@ _G.pg.base.ship_skin_words[201250] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201260] = {
 	feeling1 = "保护我……做不到吗……",
 	feeling3 = "约克公爵既威风又帅气，还……嘻嘻，原来指挥官也会嫉妒呀",
@@ -16273,7 +16259,6 @@ _G.pg.base.ship_skin_words[201260] = {
 	detail = "无论是谁，心底都期望着会有人保护自己吧……所以，你需要保护的，不单单只有我一个哦，指挥官——",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201261] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16307,7 +16292,6 @@ _G.pg.base.ship_skin_words[201261] = {
 	detail = "指挥官买单的超级豪华冰淇淋可丽饼，超——级美味的呢！谢谢啦！……对了，指挥官，你也来尝尝。来嘛，别害羞啦，啊——",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201270] = {
 	feeling1 = "赶快变回……原来那个指挥官啊……",
 	feeling3 = "和指挥官在一起，无论什么时候都很快乐~",
@@ -16341,7 +16325,6 @@ _G.pg.base.ship_skin_words[201270] = {
 	detail = "指挥官，和我在一起的时候快乐吗？……啊，对不起，请把这个无聊的问题忘掉吧——",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201290] = {
 	feeling1 = "听大家说，指挥官快要变成废柴了呢~废柴是什么意思呢？（歪头）哈哈，不管啦，我会努力让指挥官变得更好。首先，要每天坚持和我打招呼哦~（摸头）",
 	feeling3 = "现在就气喘吁吁可不行，指挥官，要经常锻炼哦~走吧，我陪你跑遍整个港区。",
@@ -16375,7 +16358,6 @@ _G.pg.base.ship_skin_words[201290] = {
 	detail = "威尔士亲王小姐对我说过，小小的身躯有时也蕴含着强大的潜力~哼哼，虽然不太懂这些话的意思，不过这是在夸我吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201320] = {
 	feeling1 = "指挥官好严肃，好没劲……",
 	feeling3 = "欸，我的宿舍怎么乱糟糟的？唔，因为我有时候太无聊了，就把很多家具拆开来看看，但是组装回去的时候就多了不少东西……这是为什么呢……",
@@ -16418,7 +16400,6 @@ _G.pg.base.ship_skin_words[201320] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201321] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16452,7 +16433,6 @@ _G.pg.base.ship_skin_words[201321] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201330] = {
 	feeling1 = "唔…再这样下去，就只有伊卡洛斯会愿意陪在指挥官身边了…",
 	feeling3 = "指挥官最近是不是有点努力过头了…？要注意适当的休息哦。一口气飞得太快太高的话，可是会被太阳融掉翅膀，掉到海里死掉的哦？…嗯？这个好像是哪里看到过的传说故事的情节呢",
@@ -16503,7 +16483,6 @@ _G.pg.base.ship_skin_words[201330] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201331] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16537,7 +16516,6 @@ _G.pg.base.ship_skin_words[201331] = {
 	detail = "应该换洗的衣服，日常用品，都提前帮指挥官准备好了。伊卡洛斯在这边的时候，你要照顾好自己哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201332] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16571,7 +16549,6 @@ _G.pg.base.ship_skin_words[201332] = {
 	detail = "之前虽然已经感叹过了，不过…能在港区里整出这样的场景，还真是厉害呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201333] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16605,7 +16582,6 @@ _G.pg.base.ship_skin_words[201333] = {
 	detail = "刚打扫了指挥官的房间。文件之类的都没有乱放，指挥官的防范意识真了不起~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201340] = {
 	feeling1 = "世界上有一些人，做了错事还能心安理得。我完全无法理解这些人，就像没法理解现在的你一样。",
 	feeling3 = "出击的时候小心别受伤了。你要是在病床上躺上个几天的话，我会很头疼的。",
@@ -16648,7 +16624,6 @@ _G.pg.base.ship_skin_words[201340] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201341] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16682,7 +16657,6 @@ _G.pg.base.ship_skin_words[201341] = {
 	detail = "女仆队的人手不够了，所以我来帮忙。你说女仆装吗？既然是做女仆的事，穿女仆装有什么问题么？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201350] = {
 	feeling1 = "“我果然还是什么都做不到……什么都帮不上……”",
 	feeling3 = "“贾维斯今天又对指挥官说了过分的话，明明和她自己的想法完全不一样……要是我对指挥官说那样的话……根，根本不可能做到的……”",
@@ -16716,7 +16690,6 @@ _G.pg.base.ship_skin_words[201350] = {
 	detail = "今天也发生了很多事情呢，都记下来吧……欸，指挥官？！这，这个是日记……对不起，这个不能给您看！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201351] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16750,7 +16723,6 @@ _G.pg.base.ship_skin_words[201351] = {
 	detail = "写进日记的话，感觉将来回头看时会害怕…总，总之写些不可怕的内容——“不小心撞到了指挥官，接着一起度过了万圣节…”ーー这样就好了吧…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201352] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16784,7 +16756,6 @@ _G.pg.base.ship_skin_words[201352] = {
 	detail = "指挥官，不能看那里！…呼…没，没什么！才没有把日记藏在那里…呜…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[201360] = {
 	feeling1 = "欸~这种程度就玩坏了吗？真无聊啊。算了算了，做些别的有趣的事情好了~",
 	feeling3 = "欸~指挥官又来了吗？该不会是遇到什么烦心事，又没有人可以诉苦，结果就到我这里来了？嘻嘻，指挥官真是可怜呢~",
@@ -16827,7 +16798,6 @@ _G.pg.base.ship_skin_words[201360] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[201361] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16861,7 +16831,6 @@ _G.pg.base.ship_skin_words[201361] = {
 	detail = "听说餐厅新出的那个限量款蓝莓蛋糕超级好吃，每天中午只要稍微慢一点去就买不到了呢。所以指挥官，拜·托·你·啦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202010] = {
 	feeling1 = "不掌握好和他人的距离可是很要命的哦，指挥官",
 	feeling3 = "想要附近走走又找不到人一起，指挥官你能陪我一下吗？",
@@ -16895,7 +16864,6 @@ _G.pg.base.ship_skin_words[202010] = {
 	detail = "嗯。那么，指挥官，拜托了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -16929,7 +16897,6 @@ _G.pg.base.ship_skin_words[202019] = {
 	detail = "嗯嗯，指挥官，再多依靠我一点也没关系唷",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202020] = {
 	feeling1 = "指挥官，你就继续以魔法师为目标努力吧！",
 	feeling3 = "现充什么的……呜呜~我是不行的……",
@@ -16963,7 +16930,6 @@ _G.pg.base.ship_skin_words[202020] = {
 	detail = "欸~喜欢吃土豆什么的…会和我的形象不配吗？！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17006,7 +16972,6 @@ _G.pg.base.ship_skin_words[202029] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202030] = {
 	feeling1 = "玩坏了吗……算了，找些新的玩具吧",
 	feeling3 = "呵呵呵，我越来越喜欢你了呢，你能让我愉悦到什么地步呢，亲爱的小·猪·仔~",
@@ -17075,7 +17040,6 @@ _G.pg.base.ship_skin_words[202030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17109,7 +17073,6 @@ _G.pg.base.ship_skin_words[202031] = {
 	detail = "宴会中不能离我太远，指挥官，你没有忘记吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17143,7 +17106,6 @@ _G.pg.base.ship_skin_words[202032] = {
 	detail = "我的气量可没有小到不允许其他人给你送巧克力哦？不如说，小猪仔越受欢迎，就越让人想好好地疼爱一番呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17177,7 +17139,6 @@ _G.pg.base.ship_skin_words[202039] = {
 	detail = "指挥官，今天你想尝试什么花样呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202040] = {
 	feeling1 = "啊啊…怎么会这样…主人果然是要把可怜的黛朵给……",
 	feeling3 = "女仆队的伙伴们有很多地方很迷糊，所以主人才会更加关心她们吧……相比之下，黛朵就……不，没什么！嫉妒姐妹舰什么的可不是女仆该做的事…！只是……（小声）迷糊属性什么的，不是很卑鄙吗…",
@@ -17221,7 +17182,6 @@ _G.pg.base.ship_skin_words[202040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17255,7 +17215,6 @@ _G.pg.base.ship_skin_words[202041] = {
 	detail = "主人，黛朵的这一件礼服如何？“衣服很好看”…莫非是说黛朵配不上这件衣服吗…主人是要扔掉黛朵吗……？！怎么会…呜呜主人…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202070] = {
 	feeling1 = "指挥官，弦绷得太紧的话，随时都可能断掉的哦？",
 	feeling3 = "指挥官，其实没必要让自己这么累的吧？比如……让女仆队的姐妹们来帮点忙之类的？",
@@ -17306,7 +17265,6 @@ _G.pg.base.ship_skin_words[202070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17340,7 +17298,6 @@ _G.pg.base.ship_skin_words[202071] = {
 	detail = "换上重樱的风格以后，就有点想听听重樱的曲子了呢，嘿嘿~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17374,7 +17331,6 @@ _G.pg.base.ship_skin_words[202072] = {
 	detail = "现在知道，沉浸在舒缓的音乐里休息是多么享受了吧？嘿嘿~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202078] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17408,7 +17364,6 @@ _G.pg.base.ship_skin_words[202078] = {
 	detail = "这样转一圈的话，衣服上的丝带看起来是不是像蝴蝶…指挥官？我说指挥官？这是怎么了…kandaile，是那个“看呆了”的意思吗…？？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202080] = {
 	feeling1 = "原来主人是类似害虫的构造吗，世上真是充满了不可思议的事呢",
 	feeling3 = "为了方便阅读，我把主人珍藏的书籍重新分类以后摆放了一遍，您可以回头检查一下我的成果",
@@ -17488,7 +17443,6 @@ _G.pg.base.ship_skin_words[202080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17522,7 +17476,6 @@ _G.pg.base.ship_skin_words[202081] = {
 	detail = "白天是女仆，夜晚是特工……吗，倒是很有皇家风范的想法呢，可惜这只是您的妄想",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202082] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17556,7 +17509,6 @@ _G.pg.base.ship_skin_words[202082] = {
 	detail = "确捷，祭典的时候不要呆在房间里，和大家一起出去玩。…和大家一起玩当然是很开心的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202083] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17590,7 +17542,6 @@ _G.pg.base.ship_skin_words[202083] = {
 	detail = "我的枪？请放心，藏在了没有人会发现的地方，如果发生什么事，我会保护您的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202084] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17624,7 +17575,6 @@ _G.pg.base.ship_skin_words[202084] = {
 	detail = "一起挑战这个迷宫的理由吗。比女仆还没用的主人，我想应该没有人会和这种人一起组队？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202090] = {
 	feeling1 = "主人，这样可不行哦？",
 	feeling3 = "哦——原来能率先行动照顾好主人的女仆，才算是更好的女仆…谢谢你格罗斯特！总之我先去打扫主人的房间了！",
@@ -17658,7 +17608,6 @@ _G.pg.base.ship_skin_words[202090] = {
 	detail = "主人，要多多依靠我哦！肯定有主人做不到而我能做到的事的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17692,7 +17641,6 @@ _G.pg.base.ship_skin_words[202091] = {
 	detail = "嗯嗯，这样不动就好…说起来打针之前要做什么呢？现在去找谢菲也来不及了…无所谓啦！反正也不是普通的护士而是魅魔护士，总会有办法的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17726,7 +17674,6 @@ _G.pg.base.ship_skin_words[202092] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202100] = {
 	feeling1 = "我不会对着木头谏言。",
 	feeling3 = "主人，为了健康，您该注意饮食均衡。觉得麻烦的话，就让我为您准备一日三餐吧，这也是女仆应该做的",
@@ -17777,7 +17724,6 @@ _G.pg.base.ship_skin_words[202100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17811,7 +17757,6 @@ _G.pg.base.ship_skin_words[202101] = {
 	detail = "哈啊…当初就不该答应斐济，让她帮我准备什么“节日服装”…“这里稍稍撩起来一点指挥官会更喜欢”什么的…这都什么跟什么啊…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202110] = {
 	feeling1 = "正因为是指挥官，才要更加防范……（盯）",
 	feeling3 = "又被贝法训斥了，什么出门记得关灯、水龙头也要好好拧紧。什么嘛，那家伙一点也不像妹妹！",
@@ -17878,7 +17823,6 @@ _G.pg.base.ship_skin_words[202110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17912,7 +17856,6 @@ _G.pg.base.ship_skin_words[202111] = {
 	detail = "呼……炼金术还真是深奥呢，不过，只要掌握了炼金术，贝法基金会……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202112] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -17946,7 +17889,6 @@ _G.pg.base.ship_skin_words[202112] = {
 	detail = "身为皇家女仆，怎么被区区的万圣节幽灵传闻给——哇啊！什什什么时候出现在我背后的！…别，别吓唬我啊！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202120] = {
 	feeling1 = "矫正主人也是女仆的义务呢……",
 	feeling3 = "稍微借用了一下舰队的渠道才入手的呢，来，请品尝吧——不知还合您的口味吗？",
@@ -18030,7 +17972,6 @@ _G.pg.base.ship_skin_words[202120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18064,7 +18005,6 @@ _G.pg.base.ship_skin_words[202121] = {
 	detail = "东煌的服饰，确实有相当的魅力呢，呵呵，或许可以考虑在女仆队里推广一下，您觉得呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202122] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18098,7 +18038,6 @@ _G.pg.base.ship_skin_words[202122] = {
 	detail = "只有平时坚持规律的生活，才能在突发意外时有冷静的判断，以及从容的行动…贝尔法斯特作为女仆，将对主人的生活方面进行全面支援",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202123] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18132,7 +18071,6 @@ _G.pg.base.ship_skin_words[202123] = {
 	detail = "为了主人与陛下，也为了不令华丽的宴会失色，无论合适都保持优雅的举止，是女仆应尽的义务",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202124] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18166,7 +18104,6 @@ _G.pg.base.ship_skin_words[202124] = {
 	detail = "主人想吃什么午餐呢？我为您准备了…——吃这个就可以？零食可不能当作正餐哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202125] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18200,7 +18137,6 @@ _G.pg.base.ship_skin_words[202125] = {
 	detail = "作为皇家女仆，无论是侍奉主人还是管理餐厅，都应当能够处理妥当，游刃有余。呵呵，如何，贝尔法斯特的服务还让主人满意吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202126] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18234,7 +18170,6 @@ _G.pg.base.ship_skin_words[202126] = {
 	detail = "指挥官有什么吩咐？无论节日还是平时，响应主人的需求都是女仆的本职。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202128] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18268,7 +18203,6 @@ _G.pg.base.ship_skin_words[202128] = {
 	detail = "我可不打算放弃女仆的职责哦？再说了，还有谁会比我更了解您呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202130] = {
 	feeling1 = "果然你这种指挥官我绝对无法认同！",
 	feeling3 = "别得意忘形了，我只是觉得你这里的点心不错，想得到我的承认你还早得很呢！",
@@ -18302,7 +18236,6 @@ _G.pg.base.ship_skin_words[202130] = {
 	detail = "…笨蛋！没人跟你说盯着女孩子看是很不礼貌的吗！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202140] = {
 	feeling1 = "明白了吧，命运也不是绝对的，我已经对指挥官没有感觉了哦~",
 	feeling3 = "虽然很喜欢指挥官，但也想和大家一起玩呢，好伤脑筋呀~",
@@ -18336,7 +18269,6 @@ _G.pg.base.ship_skin_words[202140] = {
 	detail = "真是的，再看着人家出神的话，我就去打报告了哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202150] = {
 	feeling1 = "指挥官，公共场合请不要做些让人困扰的事",
 	feeling3 = "名为欧若拉的女神据说别名“玫瑰色的手指”，虽然我没有那么厉害，不过手指上也有些种玫瑰时的余味，指挥官要闻一闻吗？",
@@ -18388,7 +18320,6 @@ _G.pg.base.ship_skin_words[202150] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202151] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18422,7 +18353,6 @@ _G.pg.base.ship_skin_words[202151] = {
 	detail = "稍微有些意外吗？呵呵，您往后还会知道更多的我哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202152] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18456,7 +18386,6 @@ _G.pg.base.ship_skin_words[202152] = {
 	detail = "指挥官，平时我会在广场演奏，有兴趣的话可以过来观赏哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202153] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18490,7 +18419,6 @@ _G.pg.base.ship_skin_words[202153] = {
 	detail = "除了戏曲，东煌五千年历史，还有许多让人着迷的东西呢！作为与东煌因缘颇深的舰船，我也想将这些古老文化的魅力，传递给更多的人",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202158] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18524,7 +18452,6 @@ _G.pg.base.ship_skin_words[202158] = {
 	detail = "指挥官应该已经知道了，晚餐时洗手盆里的玫瑰花瓣，是我种的玫瑰的哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202160] = {
 	feeling1 = "指挥官，找我有什么事吗？我很忙的",
 	feeling3 = "说起来，舰队里有没有你很在意的女孩子？要不要我给你助攻一下？不要害羞嘛，我不会把你说出去的~",
@@ -18558,7 +18485,6 @@ _G.pg.base.ship_skin_words[202160] = {
 	detail = "怎么啦指挥官，难道是想我了吗~哈哈，坐吧，我给你倒茶",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202161] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18592,7 +18518,6 @@ _G.pg.base.ship_skin_words[202161] = {
 	detail = "嘿嘿，指挥官觉得我这身搭配怎么样呢~？是不是感觉还不错呀？——眼睛不知道看哪里？啊哈哈…指挥官真是的~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202170] = {
 	feeling1 = "真是遗憾，boss，看来我们注视的远方并不相同……",
 	feeling3 = "正义的时代？我并没有渴求那种东西。有光就会有影，boss，所谓的恶并没有那么简单就可以根绝",
@@ -18643,7 +18568,6 @@ _G.pg.base.ship_skin_words[202170] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202171] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18677,7 +18601,6 @@ _G.pg.base.ship_skin_words[202171] = {
 	detail = "boss，有空陪我做一下摩托的改造吗，我有一些新的想法",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202172] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18711,7 +18634,6 @@ _G.pg.base.ship_skin_words[202172] = {
 	detail = "{namecode:98}说，这辆车送给我的代价是，我也要帮她“推销”。所以，boss你要不要也买一辆？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202180] = {
 	feeling1 = "唔，指挥官……比厨房的污垢还要棘手呢",
 	feeling3 = "冷静吗？唔，指挥官是个好人，而且这里有好多友善的姐姐，不像在船厂时，周围都是商船呢，这不是没有什么好慌张的吗？",
@@ -18745,7 +18667,6 @@ _G.pg.base.ship_skin_words[202180] = {
 	detail = "淑女要提裙行礼——欸，要双手？唔…失败了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202190] = {
 	feeling1 = "我并不擅长把握人与人之间的距离，如果让您产生了什么误解，我很抱歉。",
 	feeling3 = "天气预报似乎说一会要下雨，如果您要出门的话，请带上这把伞。",
@@ -18792,7 +18713,6 @@ _G.pg.base.ship_skin_words[202190] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202191] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18826,7 +18746,6 @@ _G.pg.base.ship_skin_words[202191] = {
 	detail = "港口里每天都会发生有趣的事情，平凡的日常什么的已经离我越来越远了……不过，这样的感觉也不坏呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202199] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -18860,211 +18779,6 @@ _G.pg.base.ship_skin_words[202199] = {
 	detail = "",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[202210] = {
-	feeling1 = "对不起，我觉得我们保持一些距离会比较好",
-	feeling3 = "下次大讲堂上课的时候，指挥官要不也来看看吧？这样对来参加的孩子们是一种鼓励呢",
-	lose = "颜面扫地啊…",
-	propose = "现在，我觉得没有什么事情能比被指挥官拥入怀中更加幸福了。以后还请多多指教了，我挚爱的主人～",
-	expedition = "让我去迎接委托归来的孩子们吧？",
-	win_mvp = "居然我是MVP…真不好意思～",
-	home = "出击辛苦了。要不要稍事休息，再考虑下一步的行动呢？时间还有得是，要好好珍惜你的身体才行呢",
-	mission = "任务拖着可不好哟，让我来给您规划一下完成的顺序吧？",
-	touch2 = "想向我撒娇吗？不过，在这里好像不太合适呢",
-	voice_key_2 = -1,
-	skill = "请放心吧，我一直在这里~",
-	drop_descrip = "谷物女神级轻巡洋舰—库拉索，舷号D41",
-	mail = "邮件来了，看起来没有什么坏消息呢",
-	touch = "如果有什么需要的话，尽管吩咐我就好了~",
-	profile = "我是皇家舰队的轻巡洋舰库拉索。生涯历经数次战争，作战经历还是很丰富的哟。现在的话…希望能多培养些孩子来继承我们的事业吧～",
-	mission_complete = "该安排领取任务奖励了哟，指挥官",
-	feeling4 = "有时候在想，女仆的工作如果能休息一天，做自己想做的事情的话——啊啦，看来今天能专心服侍指挥官您了呢",
-	unlock = "虽然是初次和您见面，但我的心底却有股亲切的感觉呢…我是库拉索，今后港区的各种事务，我都会妥善处理的，敬请期待～",
-	feeling5 = "指挥官的依赖是最让人开心的呢，无论是作为女仆，还是作为离指挥官最近的人…呵呵～这是今日的点心，请享用吧～",
-	main = "苍蝇？没关系，下一秒它们就要消失了呢~|有贝尔法斯特这样出色的后辈，我也要多加把劲才好呢~|办公室已经打扫干净了。我想对于指挥官来说，舒适的工作环境是必要的呢",
-	battle = "发扬皇家海军的优良传统，英勇向前吧～",
-	upgrade = "对空性能又加强了呢，真是太好了～",
-	voice_key = 20221,
-	headtouch = "",
-	feeling2 = "想要来点点心吗？这是以前上课的那些孩子也很喜欢的，请享用吧~",
-	login = "一切都准备就绪了哟，指挥官。请下达指令吧，我会好好安排孩子们完成这些任务的",
-	vote = "",
-	hp_warning = "一定要分出胜负吗…那我将倾尽全力！",
-	id = 202210,
-	detail = "女性的魅力也许就在镜头对准自己的时候……指挥官，我期待您能把我拍得好看一些哟",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[202211] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "东煌节日的各种习俗也挺复杂的呢，或许能和皇家女仆的礼仪比一下？呵呵~",
-	mission = "",
-	touch2 = "指挥官也变得大胆起来了呢。",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "身为女仆，竟然能穿上这么华丽的服饰…真是万分荣幸呢。指挥官对这身有何评价？眼睛不知道该往哪里看？哎呀，指挥官真是的~",
-	mail = "",
-	touch = "想在腿上躺一会吗？指挥官您的话，请便就是~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "身为女仆，竟然能穿上这么华丽的服饰…真是万分荣幸呢。指挥官对这身有何评价？眼睛不知道该往哪里看？哎呀，指挥官真是的~",
-	feeling5 = "",
-	main = "女仆的义务可不止限定在穿着女仆装的时候，有什么需求尽管和我说吧。|大家在帮忙春节的事情。我嘛，就借着这节日稍微偷下懒吧~|想知道东煌的美食与女仆的手艺会有怎样的火花吗？呵呵，敬请期待~",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "久违地享受下休息的时光吧，指挥官？",
-	vote = "",
-	hp_warning = "",
-	id = 202211,
-	detail = "这套东煌的服饰设计还真是大胆…穿久了女仆装还是有点不太习惯呢……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[202219] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "",
-	mission = "",
-	touch2 = "这些事还请放在工作完成之后吧~",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "如果能帮上指挥官和大家更多的话，那便再荣幸不过了。轻巡洋舰库拉索，将继续为指挥官与港区服务，敬请期待吧~",
-	mail = "",
-	touch = "无论什么时候，您都可以吩咐我的哦？指挥官",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "如果能帮上指挥官和大家更多的话，那便再荣幸不过了。轻巡洋舰库拉索，将继续为指挥官与港区服务，敬请期待吧~",
-	feeling5 = "",
-	main = "看到大家正在成长着的样子，我就十分安心了。|防空护航任务？那应该是我身为女仆之外最有自信的了。|这扫除过后一尘不染的办公室，真是令人心情愉悦呢。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "如果还在烦恼今天的安排的话，不如先来一杯热茶醒醒神吧？",
-	vote = "",
-	hp_warning = "",
-	id = 202219,
-	detail = "杓鹬总是板着脸呢……或许对于“女仆应有的姿态”这点她和我的理解不大一样……？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[202220] = {
-	feeling1 = "果然皇家的礼仪不是人人都能领悟的呢……",
-	feeling3 = "请您不要怪我太严厉，皇家的礼仪并不是那么容易就能掌握的东西。",
-	lose = "…看来我对自身的要求还不够……",
-	propose = "既然已经与您定下了誓约，那只由我单方面教您也不太符合礼仪了呢。想要您教导什么？这个嘛…主人，请您教教我，那名为“爱”的礼仪吧——",
-	expedition = "指挥官，委托已经完成，请随我前往迎接归来的各位，这也是必要的礼仪。",
-	win_mvp = "只要做到精益求精，胜利也是理所当然。",
-	home = "出击辛苦了，今天的红茶是按照您之前的要求准备的，请用吧",
-	mission = "新的任务发布下来了，请您尽快完成，让别人等待是很失礼的。",
-	touch2 = "指、指挥官，您这是要做什么…",
-	voice_key_2 = -1,
-	skill = "你们的歪曲，就由我来修正吧！",
-	drop_descrip = "谷物女神级轻巡洋舰—杓鹬，舷号D42",
-	mail = "这是您的信，请放心，在您查阅时我会回避的",
-	touch = "请随时注意您的站姿，保持自信，昂首挺胸，才能赢得他人的敬意。",
-	profile = "皇家谷物女神级轻巡洋舰之一，杓鹬是我的名字。C级轻巡洋舰？不，那是不准确的概括称呼，请不要随意使用。",
-	mission_complete = "一项任务已经完成，切记不可过分庆祝而失了风度，指挥官。",
-	feeling4 = "饮食要讲究场合，红茶也是如此。什么，您现在想喝……？好、好吧，毕竟是久违的放松了，不用那么拘谨也无所谓…",
-	unlock = "贵安，皇家女仆队，杓鹬向您报到。监督指挥官的礼仪作风是女仆的职责，我会帮助您成为从内到外的皇家绅士的，请为之努力吧。",
-	feeling5 = "和您在一起，总会让我想起和姐姐共处的时候，她每天都在教导我女仆的素养和矜持；不知道现在的我作为女仆…是不是跟姐姐一样优秀……",
-	main = "皇家的礼仪之中充满了社交与人生的哲学，请您务必牢记|我是完美的女仆？不，那一定是因为您还没见过我的姐姐…|最近您在礼仪方面进步很多呢，不过，可不能过分骄傲，指挥官。",
-	battle = "让敌人见识一下皇家女仆真正的姿态吧！",
-	upgrade = "又向真正完美的皇家女仆迈进了一步，谢谢你，指挥官",
-	voice_key = 20222,
-	headtouch = "",
-	feeling2 = "细节决定成败，礼仪如此，战斗亦如此。无论何时，您都不能忽视细节，指挥官。",
-	login = "欢迎回来，指挥官。您的领带歪了，绅士的衣装不可存在瑕疵，请让我为您戴正。",
-	vote = "",
-	hp_warning = "防、防空警报！",
-	id = 202220,
-	detail = "不管身处何时何地，都必须时刻牢记礼仪和规范，无论作为女仆还是作为军人，这都是十分重要的。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[202221] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "辛苦了，指挥官，今天要试试东煌的茶吗？",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "从节日习俗与服饰之中，能感受到东煌深厚的文化底蕴…看来有必要针对东煌的文化与礼节进行学习研究了。",
-	mail = "",
-	touch = "身为皇家女仆的我，穿着这东煌风格的服饰，是不是有文化结合的感觉呢？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "从节日习俗与服饰之中，能感受到东煌深厚的文化底蕴…看来有必要针对东煌的文化与礼节进行学习研究了。",
-	feeling5 = "",
-	main = "指挥官，就算是吃包子，也请您垫好餐巾|礼仪与文化是息息相关的，果然东煌与皇家还是有不少差异呢…|东煌的伙伴说可以教我几句春节的祝福语，等我学会了，就可以用东煌的语言来祝福您了",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "欢迎回来，指挥官。今天我要去东煌的朋友那里学习东煌节日的文化，您要和我一起去吗？",
-	vote = "",
-	hp_warning = "",
-	id = 202221,
-	detail = "",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[202229] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "出击辛苦了，这是按照您现在的心情准备的红茶——体察主人的心情和状态是女仆的专长，请放心饮用吧",
-	mission = "",
-	touch2 = "指、指挥官，您在做什么呢？！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "现在的我，似乎可以更好的向世人展现皇家女仆的风范了，虽然还比不上姐姐库拉索，不过我相信，现在的自己一定能够提供让指挥官满意的服务的，还请多多指教了",
-	mail = "",
-	touch = "根据大家的建议，我将女仆装的裙摆改短了一些，您觉得如何？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "现在的我，似乎可以更好的向世人展现皇家女仆的风范了，虽然还比不上姐姐库拉索，不过我相信，现在的自己一定能够提供让指挥官满意的服务的，还请多多指教了",
-	feeling5 = "",
-	main = "提高就是改变，而要达到完美就必须不断改变，希望您也能记住这句话呢，指挥官|新装备的日常养护是很费时的，这也许就是变强的代价吧|学习礼仪也是一种修行，严于律己，方能律人，一起努力吧，指挥官。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "",
-	vote = "",
-	hp_warning = "",
-	id = 202229,
-	detail = "您很在意我的新装备吗？请放心，它们不会妨碍到女仆的日常工作。",
-	couple_encourage = {}
-}
-
 _G.pg.base.ship_skin_words[202200] = {
 	feeling1 = "……请骄傲起来，我那令人遗憾的主人",
 	feeling3 = "我最骄傲的地方就在于能够找到并侍奉您，我骄傲的主人",
@@ -19098,7 +18812,6 @@ _G.pg.base.ship_skin_words[202200] = {
 	detail = "主人，今天想要探讨什么？文学名著？军事艺术？绘画雕塑？亦或是…“爱”的问题？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202201] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19132,7 +18845,6 @@ _G.pg.base.ship_skin_words[202201] = {
 	detail = "无论身着什么样的服饰，我都是您的女仆，全力实现您的期望，我骄傲的主人",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202202] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19166,7 +18878,6 @@ _G.pg.base.ship_skin_words[202202] = {
 	detail = "请放心，天狼星已经为这次海滩之行做了充分的准备。食物，饮料，杂志，防晒油，舰装和救生器材，还有……猫？为什么会在这……?不，没什么，我骄傲的主人。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202203] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19200,7 +18911,204 @@ _G.pg.base.ship_skin_words[202203] = {
 	detail = "尝试做了些东煌的料理，虽然结果……请放心，明年的这个时候，天狼星一定能做出让您赞不绝口的东煌美食的。",
 	couple_encourage = {}
 }
-
+_G.pg.base.ship_skin_words[202210] = {
+	feeling1 = "对不起，我觉得我们保持一些距离会比较好",
+	feeling3 = "下次大讲堂上课的时候，指挥官要不也来看看吧？这样对来参加的孩子们是一种鼓励呢",
+	lose = "颜面扫地啊…",
+	propose = "现在，我觉得没有什么事情能比被指挥官拥入怀中更加幸福了。以后还请多多指教了，我挚爱的主人～",
+	expedition = "让我去迎接委托归来的孩子们吧？",
+	win_mvp = "居然我是MVP…真不好意思～",
+	home = "出击辛苦了。要不要稍事休息，再考虑下一步的行动呢？时间还有得是，要好好珍惜你的身体才行呢",
+	mission = "任务拖着可不好哟，让我来给您规划一下完成的顺序吧？",
+	touch2 = "想向我撒娇吗？不过，在这里好像不太合适呢",
+	voice_key_2 = -1,
+	skill = "请放心吧，我一直在这里~",
+	drop_descrip = "谷物女神级轻巡洋舰—库拉索，舷号D41",
+	mail = "邮件来了，看起来没有什么坏消息呢",
+	touch = "如果有什么需要的话，尽管吩咐我就好了~",
+	profile = "我是皇家舰队的轻巡洋舰库拉索。生涯历经数次战争，作战经历还是很丰富的哟。现在的话…希望能多培养些孩子来继承我们的事业吧～",
+	mission_complete = "该安排领取任务奖励了哟，指挥官",
+	feeling4 = "有时候在想，女仆的工作如果能休息一天，做自己想做的事情的话——啊啦，看来今天能专心服侍指挥官您了呢",
+	unlock = "虽然是初次和您见面，但我的心底却有股亲切的感觉呢…我是库拉索，今后港区的各种事务，我都会妥善处理的，敬请期待～",
+	feeling5 = "指挥官的依赖是最让人开心的呢，无论是作为女仆，还是作为离指挥官最近的人…呵呵～这是今日的点心，请享用吧～",
+	main = "苍蝇？没关系，下一秒它们就要消失了呢~|有贝尔法斯特这样出色的后辈，我也要多加把劲才好呢~|办公室已经打扫干净了。我想对于指挥官来说，舒适的工作环境是必要的呢",
+	battle = "发扬皇家海军的优良传统，英勇向前吧～",
+	upgrade = "对空性能又加强了呢，真是太好了～",
+	voice_key = 20221,
+	headtouch = "",
+	feeling2 = "想要来点点心吗？这是以前上课的那些孩子也很喜欢的，请享用吧~",
+	login = "一切都准备就绪了哟，指挥官。请下达指令吧，我会好好安排孩子们完成这些任务的",
+	vote = "",
+	hp_warning = "一定要分出胜负吗…那我将倾尽全力！",
+	id = 202210,
+	detail = "女性的魅力也许就在镜头对准自己的时候……指挥官，我期待您能把我拍得好看一些哟",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[202211] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "东煌节日的各种习俗也挺复杂的呢，或许能和皇家女仆的礼仪比一下？呵呵~",
+	mission = "",
+	touch2 = "指挥官也变得大胆起来了呢。",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "身为女仆，竟然能穿上这么华丽的服饰…真是万分荣幸呢。指挥官对这身有何评价？眼睛不知道该往哪里看？哎呀，指挥官真是的~",
+	mail = "",
+	touch = "想在腿上躺一会吗？指挥官您的话，请便就是~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "身为女仆，竟然能穿上这么华丽的服饰…真是万分荣幸呢。指挥官对这身有何评价？眼睛不知道该往哪里看？哎呀，指挥官真是的~",
+	feeling5 = "",
+	main = "女仆的义务可不止限定在穿着女仆装的时候，有什么需求尽管和我说吧。|大家在帮忙春节的事情。我嘛，就借着这节日稍微偷下懒吧~|想知道东煌的美食与女仆的手艺会有怎样的火花吗？呵呵，敬请期待~",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "久违地享受下休息的时光吧，指挥官？",
+	vote = "",
+	hp_warning = "",
+	id = 202211,
+	detail = "这套东煌的服饰设计还真是大胆…穿久了女仆装还是有点不太习惯呢……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[202219] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "",
+	mission = "",
+	touch2 = "这些事还请放在工作完成之后吧~",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "如果能帮上指挥官和大家更多的话，那便再荣幸不过了。轻巡洋舰库拉索，将继续为指挥官与港区服务，敬请期待吧~",
+	mail = "",
+	touch = "无论什么时候，您都可以吩咐我的哦？指挥官",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "如果能帮上指挥官和大家更多的话，那便再荣幸不过了。轻巡洋舰库拉索，将继续为指挥官与港区服务，敬请期待吧~",
+	feeling5 = "",
+	main = "看到大家正在成长着的样子，我就十分安心了。|防空护航任务？那应该是我身为女仆之外最有自信的了。|这扫除过后一尘不染的办公室，真是令人心情愉悦呢。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "如果还在烦恼今天的安排的话，不如先来一杯热茶醒醒神吧？",
+	vote = "",
+	hp_warning = "",
+	id = 202219,
+	detail = "杓鹬总是板着脸呢……或许对于“女仆应有的姿态”这点她和我的理解不大一样……？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[202220] = {
+	feeling1 = "果然皇家的礼仪不是人人都能领悟的呢……",
+	feeling3 = "请您不要怪我太严厉，皇家的礼仪并不是那么容易就能掌握的东西。",
+	lose = "…看来我对自身的要求还不够……",
+	propose = "既然已经与您定下了誓约，那只由我单方面教您也不太符合礼仪了呢。想要您教导什么？这个嘛…主人，请您教教我，那名为“爱”的礼仪吧——",
+	expedition = "指挥官，委托已经完成，请随我前往迎接归来的各位，这也是必要的礼仪。",
+	win_mvp = "只要做到精益求精，胜利也是理所当然。",
+	home = "出击辛苦了，今天的红茶是按照您之前的要求准备的，请用吧",
+	mission = "新的任务发布下来了，请您尽快完成，让别人等待是很失礼的。",
+	touch2 = "指、指挥官，您这是要做什么…",
+	voice_key_2 = -1,
+	skill = "你们的歪曲，就由我来修正吧！",
+	drop_descrip = "谷物女神级轻巡洋舰—杓鹬，舷号D42",
+	mail = "这是您的信，请放心，在您查阅时我会回避的",
+	touch = "请随时注意您的站姿，保持自信，昂首挺胸，才能赢得他人的敬意。",
+	profile = "皇家谷物女神级轻巡洋舰之一，杓鹬是我的名字。C级轻巡洋舰？不，那是不准确的概括称呼，请不要随意使用。",
+	mission_complete = "一项任务已经完成，切记不可过分庆祝而失了风度，指挥官。",
+	feeling4 = "饮食要讲究场合，红茶也是如此。什么，您现在想喝……？好、好吧，毕竟是久违的放松了，不用那么拘谨也无所谓…",
+	unlock = "贵安，皇家女仆队，杓鹬向您报到。监督指挥官的礼仪作风是女仆的职责，我会帮助您成为从内到外的皇家绅士的，请为之努力吧。",
+	feeling5 = "和您在一起，总会让我想起和姐姐共处的时候，她每天都在教导我女仆的素养和矜持；不知道现在的我作为女仆…是不是跟姐姐一样优秀……",
+	main = "皇家的礼仪之中充满了社交与人生的哲学，请您务必牢记|我是完美的女仆？不，那一定是因为您还没见过我的姐姐…|最近您在礼仪方面进步很多呢，不过，可不能过分骄傲，指挥官。",
+	battle = "让敌人见识一下皇家女仆真正的姿态吧！",
+	upgrade = "又向真正完美的皇家女仆迈进了一步，谢谢你，指挥官",
+	voice_key = 20222,
+	headtouch = "",
+	feeling2 = "细节决定成败，礼仪如此，战斗亦如此。无论何时，您都不能忽视细节，指挥官。",
+	login = "欢迎回来，指挥官。您的领带歪了，绅士的衣装不可存在瑕疵，请让我为您戴正。",
+	vote = "",
+	hp_warning = "防、防空警报！",
+	id = 202220,
+	detail = "不管身处何时何地，都必须时刻牢记礼仪和规范，无论作为女仆还是作为军人，这都是十分重要的。",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[202221] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "辛苦了，指挥官，今天要试试东煌的茶吗？",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "从节日习俗与服饰之中，能感受到东煌深厚的文化底蕴…看来有必要针对东煌的文化与礼节进行学习研究了。",
+	mail = "",
+	touch = "身为皇家女仆的我，穿着这东煌风格的服饰，是不是有文化结合的感觉呢？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "从节日习俗与服饰之中，能感受到东煌深厚的文化底蕴…看来有必要针对东煌的文化与礼节进行学习研究了。",
+	feeling5 = "",
+	main = "指挥官，就算是吃包子，也请您垫好餐巾|礼仪与文化是息息相关的，果然东煌与皇家还是有不少差异呢…|东煌的伙伴说可以教我几句春节的祝福语，等我学会了，就可以用东煌的语言来祝福您了",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "欢迎回来，指挥官。今天我要去东煌的朋友那里学习东煌节日的文化，您要和我一起去吗？",
+	vote = "",
+	hp_warning = "",
+	id = 202221,
+	detail = "",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[202229] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "出击辛苦了，这是按照您现在的心情准备的红茶——体察主人的心情和状态是女仆的专长，请放心饮用吧",
+	mission = "",
+	touch2 = "指、指挥官，您在做什么呢？！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "现在的我，似乎可以更好的向世人展现皇家女仆的风范了，虽然还比不上姐姐库拉索，不过我相信，现在的自己一定能够提供让指挥官满意的服务的，还请多多指教了",
+	mail = "",
+	touch = "根据大家的建议，我将女仆装的裙摆改短了一些，您觉得如何？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "现在的我，似乎可以更好的向世人展现皇家女仆的风范了，虽然还比不上姐姐库拉索，不过我相信，现在的自己一定能够提供让指挥官满意的服务的，还请多多指教了",
+	feeling5 = "",
+	main = "提高就是改变，而要达到完美就必须不断改变，希望您也能记住这句话呢，指挥官|新装备的日常养护是很费时的，这也许就是变强的代价吧|学习礼仪也是一种修行，严于律己，方能律人，一起努力吧，指挥官。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "",
+	vote = "",
+	hp_warning = "",
+	id = 202229,
+	detail = "您很在意我的新装备吗？请放心，它们不会妨碍到女仆的日常工作。",
+	couple_encourage = {}
+}
 _G.pg.base.ship_skin_words[202230] = {
 	feeling1 = "果然，我这样的人只配遇到同样糟糕的人…",
 	feeling3 = "斐济总是说“确捷你应该再多笑一笑”，我应该怎么做才好呢……啊，对不起，因为这种无聊的事来问指挥官…",
@@ -19243,7 +19151,6 @@ _G.pg.base.ship_skin_words[202230] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202231] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19277,7 +19184,6 @@ _G.pg.base.ship_skin_words[202231] = {
 	detail = "独角兽小姐，这道题要这样解…啊，指挥官，非常抱歉，我正在教她们解题。请您先随意休息一下吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202232] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19311,7 +19217,6 @@ _G.pg.base.ship_skin_words[202232] = {
 	detail = "唔…我应该做些什么好呢？要不还是看看哪里需要人手吧…什么都不做的话，心里总有些过意不去……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202233] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19345,7 +19250,6 @@ _G.pg.base.ship_skin_words[202233] = {
 	detail = "发箍像这样…发型…也尝试个不一样的，嗯…像这样绑起来…双马尾之类的…也不错？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202240] = {
 	feeling1 = "指挥官，你也是……我的敌人吗？",
 	feeling3 = "指挥官，您一直在笑哦？是遇到了什么开心的事情吗？能不能，也和我说说呢？",
@@ -19390,7 +19294,6 @@ _G.pg.base.ship_skin_words[202240] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202241] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19424,7 +19327,6 @@ _G.pg.base.ship_skin_words[202241] = {
 	detail = "啊，已经这个时间了吗？我准备了一些简单的食物呢。指挥官，让大家过来休息一下怎样？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202242] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19458,7 +19360,6 @@ _G.pg.base.ship_skin_words[202242] = {
 	detail = "一直坐着的话，腿会有些酸。像这样子伸展一下的话——嗯嗯，感觉就会舒服多了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202243] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19492,7 +19393,6 @@ _G.pg.base.ship_skin_words[202243] = {
 	detail = "那个，之前不小心把指挥官弄湿的事情，非常抱歉…下次我一定会注意的。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202244] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19526,7 +19426,6 @@ _G.pg.base.ship_skin_words[202244] = {
 	detail = "唔，要聊聊天吗？我不太会准备话题…顺其自然就好？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202250] = {
 	feeling1 = "在让其她成员伤心之前，就先让我先行把主人处理了吧。",
 	feeling3 = "我弹奏得很好吗？只要指挥官愿意，您也可以像我一样——前提是每天都记得练习。",
@@ -19572,7 +19471,6 @@ _G.pg.base.ship_skin_words[202250] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202260] = {
 	feeling1 = "为了我能正常完成女仆的工作，希望指挥官不要进入我周边三米以内的区域。",
 	feeling3 = "指挥官，床单的颜色是要白色还是……绿色？跟我眼睛的颜色一样？这、这样啊。",
@@ -19626,7 +19524,6 @@ _G.pg.base.ship_skin_words[202260] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202261] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19660,7 +19557,6 @@ _G.pg.base.ship_skin_words[202261] = {
 	detail = "企业吗？我知道哦。是曾经与我在比斯开湾一起奋战过的那孩子吧？啊，是不同的企业吗？…我、我知道的啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202270] = {
 	feeling1 = "指挥官…为什么这么顽固呢…",
 	feeling3 = "指挥官，你今天打算加班吗？这样的话，我稍后准备一壶咖啡带去办公室吧。欸？没关系，不麻烦的。即使没有要交给我的工作，只是在你身边陪着你也好呀~",
@@ -19711,7 +19607,6 @@ _G.pg.base.ship_skin_words[202270] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202271] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19745,7 +19640,6 @@ _G.pg.base.ship_skin_words[202271] = {
 	detail = "就算是舰船也是会生病的呢…指挥官也要注意自己的身体哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202272] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19779,7 +19673,6 @@ _G.pg.base.ship_skin_words[202272] = {
 	detail = "这件泳装其实是趁着打折的时候买的呢，呵呵，你能喜欢真是太好了~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202273] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19813,7 +19706,6 @@ _G.pg.base.ship_skin_words[202273] = {
 	detail = "想着是指挥官一起享用茶点，就稍微打扮了一下，会不会不太合适呢…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202274] = {
 	feeling1 = "能治好的药…一定有的！指挥官还不是无可救药…放心吧！",
 	feeling3 = "",
@@ -19847,7 +19739,6 @@ _G.pg.base.ship_skin_words[202274] = {
 	detail = "女仆队的伙伴们准备的这身东煌服装，看起来怎么样？希望指挥官也能喜欢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202278] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -19881,7 +19772,6 @@ _G.pg.base.ship_skin_words[202278] = {
 	detail = "我从未想过自己有一天能穿上这样的服装，以这样的身份面对指挥官。现在的我，真的非常、非常地幸福呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202280] = {
 	feeling1 = "黛朵让主人失望了吗…？黛朵真是没用的女仆……",
 	feeling3 = "偶像服很合适…谢谢主人的赞赏！！…啊、难道这是表示黛朵作为女仆不及格…！？主人，难道…难道要抛弃黛朵了………！？",
@@ -19932,7 +19822,6 @@ _G.pg.base.ship_skin_words[202280] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202290] = {
 	feeling1 = "指挥官好像…变得有些奇怪？",
 	feeling3 = "现在完不成的工作，稍微放一放，也许就不再需要做了呢，嗯。",
@@ -20000,7 +19889,6 @@ _G.pg.base.ship_skin_words[202290] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202291] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20034,7 +19922,6 @@ _G.pg.base.ship_skin_words[202291] = {
 	detail = "这个“香炉”也是欧若拉推荐给我的，据说能缓解疲劳呢。指挥官也来这里稍坐一会，缓解下疲劳吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202292] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20068,7 +19955,6 @@ _G.pg.base.ship_skin_words[202292] = {
 	detail = "这是您点的东西。还冻着…？嗯，没有解冻哦？…因为您也没说过要解冻…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202300] = {
 	feeling1 = "主，主人会抛下大家吗ー？？",
 	feeling3 = "确实，“无论何时无论何处”这种说法有点夸张了…可是我想着无论何时，只要被主人传唤了都能侍奉…抱歉…",
@@ -20102,7 +19988,6 @@ _G.pg.base.ship_skin_words[202300] = {
 	detail = "主人，出门时穿的披肩需要换新的吗？…啊，那样的话请交给我吧！因为…我可擅长缝纫了呢♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202301] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20136,7 +20021,6 @@ _G.pg.base.ship_skin_words[202301] = {
 	detail = "这间房充满了东煌的风情呢～嗯ー虽然不懂具体的内容，不过安稳舒适的氛围挺不错的吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202302] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20170,7 +20054,6 @@ _G.pg.base.ship_skin_words[202302] = {
 	detail = "嗯…明明没怎么走动，脚却有点疼……穿不习惯的礼服真的辛苦呢。天狼星、还有黑太子她们不要紧吧…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202303] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20204,7 +20087,6 @@ _G.pg.base.ship_skin_words[202303] = {
 	detail = "呼……海风真舒服啊，主人。下次和大小姐们一起在这里……嗯…做些什么好呢？比如…篝火之类的？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202310] = {
 	feeling1 = "唯有自重之人才有挥剑决斗的资格。阁下，您暂时还不配。",
 	feeling3 = "当我挥剑之时，眼中只有对手。对我而言，在那个瞬间，除了拼尽全力赢下对手，任何身外之物皆为浮云。",
@@ -20247,7 +20129,6 @@ _G.pg.base.ship_skin_words[202310] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202311] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20281,7 +20162,6 @@ _G.pg.base.ship_skin_words[202311] = {
 	detail = "我比较好奇黛朵她们平时的工作，便决定尝试一下。现在看来，虽然女仆的工作难度并不高，但繁琐程度不亚于一场大混战呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[202320] = {
 	feeling1 = "我之所以侍奉你，只是因为你是主人而已，请不要想太多了。",
 	feeling3 = "您有在意的对象，么？好的，我会为您收集相关的情报，请告诉我对象的名字。虽然这么做其实不太好，但既然是主人的命令……不能说吗？我明白了……",
@@ -20324,7 +20204,6 @@ _G.pg.base.ship_skin_words[202320] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202330] = {
 	feeling1 = "不用担心我会离开，照顾废柴主人也是女仆的职责之一呢。",
 	feeling3 = "怎么了，主人？是不小心犯了什么错吗？没关系，说出来吧，我会帮您想办法的。您在大家的心目中永远是伟大的指挥官。",
@@ -20376,7 +20255,6 @@ _G.pg.base.ship_skin_words[202330] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[202331] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20410,7 +20288,6 @@ _G.pg.base.ship_skin_words[202331] = {
 	detail = "我是您的女仆，照您喜欢的使唤我就可以了，不用有所顾忌的哦。还是说，其实主人你想试试——被使唤的感觉？呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203010] = {
 	feeling1 = "阁下，请你去别的地方随便做些什么吧，我会把事情都处理好的",
 	feeling3 = "阁下，要一起喝茶吗？不过要是工作还没做完的话，就请先努力吧。当然，我会陪着你的",
@@ -20473,7 +20350,6 @@ _G.pg.base.ship_skin_words[203010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[203011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20507,7 +20383,6 @@ _G.pg.base.ship_skin_words[203011] = {
 	detail = "从战绩确认到燃料弹药订单，以及下一个海域的信息整理……抱歉，我想尽可能地为阁下出力，因此加了班…这，这算是公私混淆…吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203018] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20541,7 +20416,6 @@ _G.pg.base.ship_skin_words[203018] = {
 	detail = "让我一直穿着这一身衣服，阁下有些坏心眼呢……就当是宠一会阁下好了~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20575,7 +20449,6 @@ _G.pg.base.ship_skin_words[203019] = {
 	detail = "虽然可以换回原来的衣服，不过，我其实一直有些憧憬这样的穿衣风格呢。阁下希望我换回去吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203020] = {
 	feeling1 = "指挥官，碍事，请让一让（笑）",
 	feeling3 = "指挥官虽然是个好人而且又很有未来不过冷静想想觉得太快了所以对不起！",
@@ -20609,7 +20482,6 @@ _G.pg.base.ship_skin_words[203020] = {
 	detail = "指挥官很闲嘛~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20643,7 +20515,6 @@ _G.pg.base.ship_skin_words[203029] = {
 	detail = "指挥官很闲的样子嘛·~会被苏塞克斯念叨的哦？那孩子真是不懂啊~明明稍微有点废柴的部分才更棒啊~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203030] = {
 	feeling1 = "Disappointed……指挥官和肯特合不来啊",
 	feeling3 = "Hey，指挥官！啊，没事没事你继续做自己的事就好了，我看着指挥官就很开心啦",
@@ -20677,7 +20548,6 @@ _G.pg.base.ship_skin_words[203030] = {
 	detail = "Errr，华丽的无视掉我的装甲和火力吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203040] = {
 	feeling1 = "……天空真蓝呢",
 	feeling3 = "侦查可是很重要的事！欸，走神？说、说什么呢，我只是在观、观察天气而已",
@@ -20711,7 +20581,6 @@ _G.pg.base.ship_skin_words[203040] = {
 	detail = "近代化改造前后的数据可是差很多的呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203049] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20745,7 +20614,6 @@ _G.pg.base.ship_skin_words[203049] = {
 	detail = "现在我可比以前能干多啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203050] = {
 	feeling1 = "呜……",
 	feeling3 = "指挥官……能再给诺福克讲故事吗……这次我带了想听的故事书……",
@@ -20779,7 +20647,6 @@ _G.pg.base.ship_skin_words[203050] = {
 	detail = "好害羞……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203060] = {
 	feeling1 = "果然我离姐姐还差远了…………",
 	feeling3 = "我这样也很好？哎呀指挥官真是会说好话呢，比起姐姐，我只不过是丑小鸭而已",
@@ -20813,7 +20680,6 @@ _G.pg.base.ship_skin_words[203060] = {
 	detail = "比起我这样的，果然还是姐姐比较可爱呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203070] = {
 	feeling1 = "力量<Force>的吸引消失了……你原来只是赝品<Faker>吗……",
 	feeling3 = "……力量<Friendship>之间的吸引越来越大了，握住我的手，让它们好好交流吧",
@@ -20864,7 +20730,6 @@ _G.pg.base.ship_skin_words[203070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[203071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20898,7 +20763,6 @@ _G.pg.base.ship_skin_words[203071] = {
 	detail = "空教室突然出现的人影，是沉默的黄色妖精（fairy wisp）；图书馆遁入魔道（alchemy）的女仆；那个在流传于所有运动社团的传说，并不是分身，而是真正的王者（Ace）……幕后黑手（Mastermind）并没有出现，是我调查的方向出错了吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20932,7 +20796,6 @@ _G.pg.base.ship_skin_words[203072] = {
 	detail = "牙买加、{namecode:411}……在长久的战斗中，我结识了许许多多志同道合的同伴（companion）。现在的我，已经不是一个人在对抗宿命（Fortune）了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203078] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -20966,7 +20829,6 @@ _G.pg.base.ship_skin_words[203078] = {
 	detail = "作为契约仪式的一部分~指挥官，就用这个“灵魂之弦”<Soul String>将我们的灵魂连在一起吧！这样我们之间的羁绊就——指挥官，怎么了？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203079] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21000,7 +20862,6 @@ _G.pg.base.ship_skin_words[203079] = {
 	detail = "如果这份力量（Force）有它存在的意义的话，那就一定是让我继续战斗下去，直到跨越我的宿命（Fortune）为止。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203080] = {
 	feeling1 = "请不要让皇室蒙羞！",
 	feeling3 = "生在皇家就意味着我的命运不受自己掌控，能遇到你这样优秀的指挥官真是太好了",
@@ -21043,7 +20904,6 @@ _G.pg.base.ship_skin_words[203080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[203081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21077,7 +20937,6 @@ _G.pg.base.ship_skin_words[203081] = {
 	detail = "刚刚约克姐姐在看蔷薇的时候，好像还说着什么“Bloody Rose”…她还是老样子啊。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203089] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21111,7 +20970,6 @@ _G.pg.base.ship_skin_words[203089] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203090] = {
 	feeling1 = "姐姐就是就是太好说话，才把你这种人都给惯坏了",
 	feeling3 = "姐姐是会对谁都会付出很多的，即使是不值得付出的人……嗯？不是在说你啦…还是说，你觉得自己是那样的人？",
@@ -21162,7 +21020,6 @@ _G.pg.base.ship_skin_words[203090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[203091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21196,7 +21053,6 @@ _G.pg.base.ship_skin_words[203091] = {
 	detail = "姐姐觉得泳装太暴露了，总是不愿意穿。哈……我偶尔也会觉得，姐姐应该学习一下什罗普郡的大胆…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21230,7 +21086,6 @@ _G.pg.base.ship_skin_words[203092] = {
 	detail = "声望小姐，宴会的警备工作交给女仆队的各位就好了…指挥官也给我在这里待着！真是的，你不在这大家还怎么开宴会啊！？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[203100] = {
 	feeling1 = "明明喜欢上亲爱的了……",
 	feeling3 = "先加盐？加糖？还是先把底料搅拌好？啊，还有德雷克姐姐给的水灵灵的水果！亲爱的觉得从哪一步开始比较好？",
@@ -21264,7 +21119,6 @@ _G.pg.base.ship_skin_words[203100] = {
 	detail = "亲爱的~抱…柴郡和亲爱的拥抱了之后就会变困呢…哈啊…Zzzzz",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[204010] = {
 	feeling1 = "指挥官，你这样下去是不行的",
 	feeling3 = "指挥官，你总是叫我出来陪你散步，是遇上什么烦心事了么？",
@@ -21323,7 +21177,6 @@ _G.pg.base.ship_skin_words[204010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[204020] = {
 	feeling1 = "指挥官身边一点也不好玩，我要出门了！",
 	feeling3 = "姐姐老批评我太冲动，不过对我来说动脑子太麻烦了，而且现在有指挥官在，动脑的事都交给你就好啦！",
@@ -21357,7 +21210,6 @@ _G.pg.base.ship_skin_words[204020] = {
 	detail = "Hi！指挥官！为了方便行动我就少穿一些啦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[204030] = {
 	feeling1 = "唉……看来不下猛药不行了呢",
 	feeling3 = "虽然我常把时刻保持优雅挂在嘴边，但是这并不意味着指挥官需要配合我，您平常的样子才是最有魅力的",
@@ -21424,7 +21276,6 @@ _G.pg.base.ship_skin_words[204030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[204031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21458,7 +21309,6 @@ _G.pg.base.ship_skin_words[204031] = {
 	detail = "我照耀着太阳？心情大好~这份赞美我就收下了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[204032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21492,7 +21342,6 @@ _G.pg.base.ship_skin_words[204032] = {
 	detail = "居然还有蔷薇样式的皇家风纹饰…真是太棒了！得好好感谢制作了这件“友禅”的人才行呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[204033] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21526,7 +21375,6 @@ _G.pg.base.ship_skin_words[204033] = {
 	detail = "与隆重而庞大的帝国巡游相比，二人独行的约会能让我放松下来，更多地着眼于身边……嗯？指挥官，莫非你对“约会”的说法有些在意？呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[204034] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21560,7 +21408,6 @@ _G.pg.base.ship_skin_words[204034] = {
 	detail = "骑马是身为皇家淑女的修养，并不是值得夸赞的事情……其他伙伴们也很吃惊吗？哎，指挥官也是吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[204038] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21594,7 +21441,6 @@ _G.pg.base.ship_skin_words[204038] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[204040] = {
 	feeling1 = "指挥官，要振作起来！无论如何，我都是不会抛弃你的！",
 	feeling3 = "休息和工作同样重要。就算以骑士的标准来看，指挥官每天也太辛苦了。这份工作结束之后，快去放松一下吧。",
@@ -21628,7 +21474,6 @@ _G.pg.base.ship_skin_words[204040] = {
 	detail = "指挥官，我找到了一本和骑士有关的书，但是上面有好多我不理解的内容，我可以向您请教吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205010] = {
 	feeling1 = "你这个没用的臣子，本王要辞了你！",
 	feeling3 = "本王只是比较喜欢这里的环境才过来坐坐，你可别会错意了！",
@@ -21706,7 +21551,6 @@ _G.pg.base.ship_skin_words[205010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21740,7 +21584,6 @@ _G.pg.base.ship_skin_words[205011] = {
 	detail = "特别允许你赞美本王吧！快组织你的语言，仆从!",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21774,7 +21617,6 @@ _G.pg.base.ship_skin_words[205012] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21808,7 +21650,6 @@ _G.pg.base.ship_skin_words[205013] = {
 	detail = "仆从，社团活动选什么比较好？偶像之类听起来就很可疑的还是算了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205014] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21842,7 +21683,6 @@ _G.pg.base.ship_skin_words[205014] = {
 	detail = "“不要被金运这种虚幻的东西迷惑双眼，能赚钱的方法还有许多”……说得不错嘛，厌战。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205015] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21876,7 +21716,6 @@ _G.pg.base.ship_skin_words[205015] = {
 	detail = "等等，这不意味着你就是我的主人了，应该我是你的主人才对！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205016] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -21910,7 +21749,6 @@ _G.pg.base.ship_skin_words[205016] = {
 	detail = "哼！身为高贵的女王，我怎么可能和庶民一起游泳呢！……才，才不是旱鸭子！那看看谁最先游到那块岩石那里吧！现在就证明给你看，我可是会游泳的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205020] = {
 	feeling1 = "请你不要摆出一副好像你和我很熟的样子",
 	feeling3 = "没有什么贵族气质吗？不像胡德她们那样还真是对不起呢……我才没有在说欧派……",
@@ -21994,7 +21832,6 @@ _G.pg.base.ship_skin_words[205020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22028,7 +21865,6 @@ _G.pg.base.ship_skin_words[205021] = {
 	detail = "陛下房门上的圣诞节花圈……嗯嗯，贝法告诉我用贝壳做的就好！指挥官，赶快出海去捡一些吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22062,7 +21898,6 @@ _G.pg.base.ship_skin_words[205022] = {
 	detail = "不要被名字迷惑了双眼。无论何时何地，即便是在舞台之上，我都会准备好为了陛下全力而战的。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22096,7 +21931,6 @@ _G.pg.base.ship_skin_words[205029] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205030] = {
 	feeling1 = "我已经不知道说你什么好了……哈……",
 	feeling3 = "这点成绩就想让我……这都是你做的？…………笑什么笑，这一次就破例承认你干得不错好了，哼！",
@@ -22155,7 +21989,6 @@ _G.pg.base.ship_skin_words[205030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22189,7 +22022,6 @@ _G.pg.base.ship_skin_words[205031] = {
 	detail = "我本来完全没有穿的意思的，只是好奇才……我穿着很漂亮？……谢、谢谢——你这家伙，少得意忘形了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22223,7 +22055,6 @@ _G.pg.base.ship_skin_words[205032] = {
 	detail = "罗德尼的话，和科罗拉多她们一起去射击了。如果在意的话去看看呗？…你，你以为我会被人群冲散然后走丢吗？！而且你看啦！手，手正牵着呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22257,7 +22088,6 @@ _G.pg.base.ship_skin_words[205039] = {
 	detail = "没想到指挥官竟然有这样的癖好…单纯只是我不了解而已吗？也不想去问罗德尼…嗯，干脆再推倒指挥官一次…吓！？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205040] = {
 	feeling1 = "就算是罗德尼也有点失望了呢……",
 	feeling3 = "指挥官真是很温柔呢，一起散步时总是会照顾我放慢速度，这种细节，我很感动哦",
@@ -22316,7 +22146,6 @@ _G.pg.base.ship_skin_words[205040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22350,7 +22179,6 @@ _G.pg.base.ship_skin_words[205041] = {
 	detail = "嘻嘻，指挥官~不要害羞嘛。来，再往这边靠靠~怎么样，我的手是不是很凉？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22384,7 +22212,6 @@ _G.pg.base.ship_skin_words[205042] = {
 	detail = "收银机的使用…也是一门学问呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205043] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22418,7 +22245,6 @@ _G.pg.base.ship_skin_words[205043] = {
 	detail = "拿个扇子会比较好？…像这样吗？（快门声）嗯嗯，不愧是指挥官！{namecode:98}也说照片一下就更有味道了，可开心了呢，呵呵。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205048] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22452,7 +22278,6 @@ _G.pg.base.ship_skin_words[205048] = {
 	detail = "今天的工作怎么办，明天的晚餐吃什么……呵呵~对我来说，为指挥官烦恼的事越多，幸福也就越多~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205050] = {
 	feeling1 = "指挥官，我喜欢有个性或者会做饭的人，而你，不行",
 	feeling3 = "呵呵，指挥官，怎么样，我的厨艺令你满意吗？尽管吃吧，看到你这么满足，我也很高兴",
@@ -22503,7 +22328,6 @@ _G.pg.base.ship_skin_words[205050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22537,7 +22361,6 @@ _G.pg.base.ship_skin_words[205051] = {
 	detail = "唔…？衣服好像有些太紧了，指挥官，能不能帮我松一下背后的拉链？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205060] = {
 	feeling1 = "请离我远点，你没有资格驱使我……",
 	feeling3 = "你永远不知道有多少计划、希望和努力会随着你的逝去而沉入大海，所以，可别随便死了，指挥官",
@@ -22620,7 +22443,6 @@ _G.pg.base.ship_skin_words[205060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22654,7 +22476,6 @@ _G.pg.base.ship_skin_words[205061] = {
 	detail = "无论何时，对美丽的少女视而不见都不是绅士的作为",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22688,7 +22509,6 @@ _G.pg.base.ship_skin_words[205062] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205064] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22722,7 +22542,6 @@ _G.pg.base.ship_skin_words[205064] = {
 	detail = "命运是很容易脱离轨迹的——在比赛里驶出赛道有时也会很危险呢。指挥官，观战的时候注意一些",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205065] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22756,7 +22575,6 @@ _G.pg.base.ship_skin_words[205065] = {
 	detail = "这黑色礼服，宛如身着镶嵌着闪烁银河的暗夜——以约克的方式来说就是这样吧。指挥官，夸赞礼服也不错，但要适度哦，不然我都要不好意思了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205070] = {
 	feeling1 = "稍微粗暴一点……也没关系吧",
 	feeling3 = "汝的面庞无时无刻不在诱惑着余，呐，汝的鲜血，究竟能甜美到什么地步呢？",
@@ -22807,7 +22625,6 @@ _G.pg.base.ship_skin_words[205070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22841,7 +22658,6 @@ _G.pg.base.ship_skin_words[205072] = {
 	detail = "呵呵，汝的心跳声清晰可闻呢，噗通、噗通…如此健康，如此动听…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205073] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22875,7 +22691,6 @@ _G.pg.base.ship_skin_words[205073] = {
 	detail = "会被人夺走的爱并非余所好。只有汝完全成为余之所有，才值得让余花出十分的时间相伴——",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205090] = {
 	feeling1 = "以为善意必定能得到善意的回应…我还是太天真了么",
 	feeling3 = "指挥官心情不好？还是累了？这种时候，来点小饼干就好了。心情和精神都可以很快恢复的哦。",
@@ -22936,7 +22751,6 @@ _G.pg.base.ship_skin_words[205090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -22970,7 +22784,6 @@ _G.pg.base.ship_skin_words[205091] = {
 	detail = "这就是传说中的“有美味点心的小店”吗？马上买点试试吧？指挥官，我已经等不及了~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23004,7 +22817,6 @@ _G.pg.base.ship_skin_words[205092] = {
 	detail = "那什么…谁来救救我呀？乔治？或者…指挥官？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205093] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23038,7 +22850,6 @@ _G.pg.base.ship_skin_words[205093] = {
 	detail = "这身打扮，会不会显得太隆重了？因为我很重视今天呢。嗯？为什么？…嗯…为什么呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205100] = {
 	feeling1 = "本来还对你有点期待的…",
 	feeling3 = "没、没想到侍从你的棋艺还挺厉害的啊。以、以后我就稍微认真点对付你吧！",
@@ -23090,7 +22901,6 @@ _G.pg.base.ship_skin_words[205100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23124,7 +22934,6 @@ _G.pg.base.ship_skin_words[205101] = {
 	detail = "侍从，其实你很享受这样被照顾的感觉吧？呣呣…总感觉不太公平…这样吧！下次我来做病人，侍从你来当医生照顾我，怎么样？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205102] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23158,7 +22967,6 @@ _G.pg.base.ship_skin_words[205102] = {
 	detail = "哦嚯嚯嚯~伊丽莎白终于还是被我用激将法引上了钩，然后输掉了赌约，拱手把她的皇冠让给了我！红白玫瑰之争，最后是我赢了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205110] = {
 	feeling1 = "请不要灰心，只要您能重新改过，一定有能再次被大家接纳的那一天的！",
 	feeling3 = "守护弱者是皇家骑士的天职。啊，我不是说指挥官弱，只是在战场上，指挥官更像是要被守护的那一方呢~",
@@ -23209,7 +23017,6 @@ _G.pg.base.ship_skin_words[205110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23243,7 +23050,6 @@ _G.pg.base.ship_skin_words[205111] = {
 	detail = "女仆队与皇家骑士一样，都在守护着大家，只是方式不同而已，体验过以后，对这点有了更深的理解呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205130] = {
 	feeling1 = "唉…做不到就老老实实说做不到，然后换别人来做才对。没出息的人，即使逞强也只会让人看着更可怜而已。",
 	feeling3 = "指挥官，就算是近卫骑士，也没道理整天窝在港区。差不多让我出击——唉…不行，压力又堆积起来了…",
@@ -23294,7 +23100,6 @@ _G.pg.base.ship_skin_words[205130] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205131] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23328,7 +23133,6 @@ _G.pg.base.ship_skin_words[205131] = {
 	detail = "我既不擅长打扫，也做不好饭，让这样的我当女仆有什么意义吗？啊，你该不会是有什么奇怪的想法吧……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[205140] = {
 	feeling1 = "一定是因为我拖了指挥官的后腿，指挥官才会变成这样的吧……",
 	feeling3 = "之后的巡逻任务，好像凭借我的航速也能顺利完成。希望巡逻顺利，希望不会遇到潜艇，希望不会遇到潜艇……",
@@ -23379,7 +23183,6 @@ _G.pg.base.ship_skin_words[205140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[205141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23413,7 +23216,6 @@ _G.pg.base.ship_skin_words[205141] = {
 	detail = "体育课对我而言是噩梦般的存在。我不想在接力跑上拖队伍的后腿，也不想被不知道哪里飞来的棒球击中……要是能翘掉就好了……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206010] = {
 	feeling1 = "指挥官，你要堕落成黑暗决斗者了吗……那我只能打倒你了",
 	feeling3 = "决斗之外的兴趣吗……我倒是没有想过，指挥官愿意教我吗？",
@@ -23464,7 +23266,6 @@ _G.pg.base.ship_skin_words[206010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[206019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23498,7 +23299,6 @@ _G.pg.base.ship_skin_words[206019] = {
 	detail = "对真正的决斗者来说，没有什么是偶然的，指挥官",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206020] = {
 	feeling1 = "…！没什么事的话我就告退了！呼……",
 	feeling3 = "休假时由您领路吗？好的，如果不是太麻烦指挥官的话，我就恭敬不如从命了。啊，还有就是，希望在门限前能送我回宿舍……",
@@ -23543,7 +23343,6 @@ _G.pg.base.ship_skin_words[206020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[206021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23577,7 +23376,6 @@ _G.pg.base.ship_skin_words[206021] = {
 	detail = "担当学园活动的主办真的很辛苦呢，而且总是睡不够…哈啊啊（呵欠）…啊，不行，工作还没做完呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23611,7 +23409,6 @@ _G.pg.base.ship_skin_words[206022] = {
 	detail = "「请看。正在准备参加派对的百眼巨人，庄重而又优雅的身姿——」……对着指挥官练习礼仪的话，会让我很安心呢。呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206030] = {
 	feeling1 = "哥哥…差劲…",
 	feeling3 = "遇到危险的时候，优酱会保护我的——有哥哥在就不会有危险？嘻嘻，哥哥好像独角兽的骑士呢…",
@@ -23677,7 +23474,6 @@ _G.pg.base.ship_skin_words[206030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[206031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23711,7 +23507,6 @@ _G.pg.base.ship_skin_words[206031] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23745,7 +23540,6 @@ _G.pg.base.ship_skin_words[206032] = {
 	detail = "哥、哥哥…请不要一直盯着独角兽看…呜…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206033] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23779,7 +23573,6 @@ _G.pg.base.ship_skin_words[206033] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206034] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23813,7 +23606,6 @@ _G.pg.base.ship_skin_words[206034] = {
 	detail = "福袋？是、是给独角兽的吗？…谢、谢谢哥哥！不知道里面有什么呢…嘻嘻…好期待",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206035] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23847,7 +23639,6 @@ _G.pg.base.ship_skin_words[206035] = {
 	detail = "多亏了哥哥、光辉姐姐…还有许多许多人的温柔相助。独角兽才能像这样…站在这里唱歌……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206036] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23881,7 +23672,6 @@ _G.pg.base.ship_skin_words[206036] = {
 	detail = "独角兽很健康，不会吃坏肚子的…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206037] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23915,7 +23705,6 @@ _G.pg.base.ship_skin_words[206037] = {
 	detail = "贾维斯小姐的“病号餐”是我见过最豪华的…如果…独角兽也能做…然后再亲手喂给哥哥……啊呜///",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206038] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23949,7 +23738,6 @@ _G.pg.base.ship_skin_words[206038] = {
 	detail = "哥哥…已经很了解独角兽了呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -23983,7 +23771,6 @@ _G.pg.base.ship_skin_words[206039] = {
 	detail = "光辉姐姐夸独角兽变得更成熟了…哥哥也是这么觉得的吗？嘻嘻…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206040] = {
 	feeling1 = "我所憧憬的舰队，不该是这样的……",
 	feeling3 = "欸，对驱逐前辈们也使用敬语吓到她们了吗……唔，但是对我来说，果然还是值得尊敬的前辈呢",
@@ -24026,7 +23813,6 @@ _G.pg.base.ship_skin_words[206040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[206041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24060,7 +23846,6 @@ _G.pg.base.ship_skin_words[206041] = {
 	detail = "前辈们都夸我的身材非常的匀称，总觉得有点不好意思呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24094,7 +23879,6 @@ _G.pg.base.ship_skin_words[206042] = {
 	detail = "想要欣赏我的舞姿吗…？虽、虽然还不太熟练，不过指挥官想看的话……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206050] = {
 	feeling1 = "最近的指挥官，状态有些不好呢。有什么烦恼，向我倾诉也是可以的哦？",
 	feeling3 = "每次出航时，总会有一些海鸥在头顶上飞翔呢，据说这是航行安全的意象喔~每次看到这些小家伙们的身姿总会感到心情舒畅呢~",
@@ -24128,7 +23912,6 @@ _G.pg.base.ship_skin_words[206050] = {
 	detail = "指挥官，往红茶里加牛奶也是一种不错的选择哦~有机会的话务必尝试一下。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206051] = {
 	feeling1 = "现在的指挥官就如同放久了的绿茶一样苦涩呢…",
 	feeling3 = "",
@@ -24162,7 +23945,6 @@ _G.pg.base.ship_skin_words[206051] = {
 	detail = "来到东煌后，觉得除了皇家的红茶，偶尔感受一下绿茶的清香回味也非常不错呢～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206052] = {
 	feeling1 = "指挥官？偶尔做点别的事换换心情比较好哦？",
 	feeling3 = "",
@@ -24196,7 +23978,6 @@ _G.pg.base.ship_skin_words[206052] = {
 	detail = "我们毕竟是驰骋于世界各大海域的舰船。作为排解无聊的手段，随身带个游戏机什么的也算不错不是嘛~？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206060] = {
 	feeling1 = "指挥官，就像腌熟了的鲱鱼罐头一样呢…",
 	feeling3 = "大家…都能好好说出想说的话呢……没什么，你好，指挥官。",
@@ -24239,7 +24020,6 @@ _G.pg.base.ship_skin_words[206060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[206061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24273,7 +24053,6 @@ _G.pg.base.ship_skin_words[206061] = {
 	detail = "无论是打针、包扎，还是护理，我都有在练习哦。指挥官，下次能当我的练习对象吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206070] = {
 	feeling1 = "阿尔比恩对待指挥官的方式，到底是哪里错了呢……？",
 	feeling3 = "嗯…称呼驱逐舰的前辈们时用别的名称比较好吗…还有特别计划舰的前辈们也是…虽说都是前辈，这该怎么是好呢……",
@@ -24324,7 +24103,6 @@ _G.pg.base.ship_skin_words[206070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[206071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24358,7 +24136,6 @@ _G.pg.base.ship_skin_words[206071] = {
 	detail = "让，让您看到丢人的一面了……要是指挥官允许的话，我再入戏一点也可以哦？然后我会努力踩踏指挥官…只是演戏而已哦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206080] = {
 	feeling1 = "怪物先生，不要得意。忒修斯会代替大家击退你的哦？",
 	feeling3 = "指挥官一起如何？在森林里办茶会也不错吧？……野餐？嗯，被这么一说，也确实像是野餐…",
@@ -24392,7 +24169,6 @@ _G.pg.base.ship_skin_words[206080] = {
 	detail = "好奇女孩子的秘密，窥探忒修斯房内的坏猫咪……抓到你了♪嗯？指挥官？刚才说的不是指挥官，是这孩子哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[206081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24426,7 +24202,6 @@ _G.pg.base.ship_skin_words[206081] = {
 	detail = "指挥官，好好看着我的服务哦！哇，要保持平衡有点难……女仆队的伙伴们是不是就能做到呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207010] = {
 	feeling1 = "你现在的模样，真的对得起对你付出那么多的大家吗？好好反省一下吧！",
 	feeling3 = "皇家有挺多茶会点心会之类的呢。总不去的话，感觉太不合群。去的话，什么都不吃好像也挺奇怪…放开来吃就好了？开、开什么玩笑！那些可都是卡路、…啊…咳咳，没，没什么，稍微有些失态了，抱歉。",
@@ -24477,7 +24252,6 @@ _G.pg.base.ship_skin_words[207010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24511,7 +24285,6 @@ _G.pg.base.ship_skin_words[207011] = {
 	detail = "为了这次的港区医院特别演习，我可是做了很多的准备哦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207020] = {
 	feeling1 = "果然指挥官完全比不上驱逐妹妹们……",
 	feeling3 = "本人一开始还在想终于要被指挥官送去海军法庭了，能被接受真是太好了——没什么丢人的？……指挥官，皇家方舟将一生追随你！",
@@ -24563,7 +24336,6 @@ _G.pg.base.ship_skin_words[207020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24597,7 +24369,6 @@ _G.pg.base.ship_skin_words[207021] = {
 	detail = "驱逐妹妹们单独在沙滩边玩很危险的，本人建议每天定一个时间段专门让她们一起在沙滩玩！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24631,7 +24402,6 @@ _G.pg.base.ship_skin_words[207022] = {
 	detail = "你是要看这个相机的内容吗？那……请放心，等晚会结束之后，本人会把照片悉数上交的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24665,7 +24435,6 @@ _G.pg.base.ship_skin_words[207023] = {
 	detail = "这把枪也能用来发射礼炮。在晚宴上，本人会让它派上用场的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24699,7 +24468,6 @@ _G.pg.base.ship_skin_words[207024] = {
 	detail = "这家店我也来过几次……可能是因为平时的行为吧，我从来没被安排坐在和驱逐舰妹妹们相近的座位上……不过不要紧，我也早就料想到了这种情况。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207028] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24733,7 +24501,6 @@ _G.pg.base.ship_skin_words[207028] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24767,7 +24534,6 @@ _G.pg.base.ship_skin_words[207029] = {
 	detail = "人们都有自己所珍重的，想守护的，不想失去的事物。指挥官，你所珍重的事物，就让本人与你一同守护吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207030] = {
 	feeling1 = "连光辉都无法触及指挥官心中的黑暗吗……",
 	feeling3 = "指挥官，别看我这样，我意外的喜欢夜袭哦……真是的，不是指那方面啦~不过您呢，喜欢吗？",
@@ -24818,7 +24584,6 @@ _G.pg.base.ship_skin_words[207030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24852,7 +24617,6 @@ _G.pg.base.ship_skin_words[207031] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24886,7 +24650,6 @@ _G.pg.base.ship_skin_words[207032] = {
 	detail = "穿着和平时不同的服装在指挥官面前，总觉得有点心跳加速的感觉呢～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207033] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24920,7 +24683,6 @@ _G.pg.base.ship_skin_words[207033] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207035] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24954,7 +24716,6 @@ _G.pg.base.ship_skin_words[207035] = {
 	detail = "虽然春节对很多人来说是异国的节日，不过，如今大家都能自然地享受节日的欢愉~正因为指挥官您的努力，才有了今天这样和谐的光景，呵呵",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207036] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -24988,7 +24749,6 @@ _G.pg.base.ship_skin_words[207036] = {
 	detail = "无论指挥官前往何方，这份旋律也将与您同在……我找可畏录好音了。指挥官，记得跟妹妹她说一声哦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207038] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25022,7 +24782,6 @@ _G.pg.base.ship_skin_words[207038] = {
 	detail = "指挥官，无论您前往哪里，光辉都会永远在您身边",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207040] = {
 	feeling1 = "揍你啰——！",
 	feeling3 = "围剿{namecode:435}和钨作战？我只是一时兴起帮了点忙啦，可没有什么成为武勋舰的打算…",
@@ -25092,7 +24851,6 @@ _G.pg.base.ship_skin_words[207040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25126,7 +24884,6 @@ _G.pg.base.ship_skin_words[207041] = {
 	detail = "需要美丽的胜利给你建言吗？无论是时尚打扮还是恋爱烦恼哦，都可以跟我说，我会好好回答你的～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25160,7 +24917,6 @@ _G.pg.base.ship_skin_words[207042] = {
 	detail = "给你几条建议吧。邀请要趁早，宴席要摆大，余兴节目要和大家商量好，服装要够吸引眼球——就像我这身这样♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207050] = {
 	feeling1 = "抱歉，我得了指挥官一靠近就会头疼的病，可以稍微离我远一点吗？",
 	feeling3 = "不光是光辉姐姐和胜利姐姐，竟然能把这么多舰船团结在一起，指挥官真是有包容力呢。作为友好的象征…呵呵…这块蛋糕，请享用吧？",
@@ -25211,7 +24967,6 @@ _G.pg.base.ship_skin_words[207050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25245,7 +25000,6 @@ _G.pg.base.ship_skin_words[207051] = {
 	detail = "指挥官，热身运动都做好了吧？…很好，下水游泳去吧♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25279,7 +25033,6 @@ _G.pg.base.ship_skin_words[207052] = {
 	detail = "指挥官，你觉得可畏这一身如何？嗯，多亏了黛朵她们，我才能顺利穿上这件礼服呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207060] = {
 	feeling1 = "指挥官，你让我觉得有点不舒服",
 	feeling3 = "看到天上的孩子们很辛苦，所以想让它们休息一会……指挥官，在战争中，真的没有温柔存在的余裕吗？",
@@ -25322,7 +25075,6 @@ _G.pg.base.ship_skin_words[207060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25356,7 +25108,6 @@ _G.pg.base.ship_skin_words[207061] = {
 	detail = "失败和挫折也能让人学习到东西…吗？谢谢指挥官，我现在感觉好多了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25390,7 +25141,6 @@ _G.pg.base.ship_skin_words[207062] = {
 	detail = "光荣，无论何时都会努力成为指挥官的荣光！…呜，这个样子果然没有什么说服力吗…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207070] = {
 	feeling1 = "倘若你选择了黑暗，那些视你为心中光明的孩子们又将何去何从呢？",
 	feeling3 = "我想要的不是战无不胜的圣像，而是能回应我的愿望、感情、欲望以及期待的存在。也就是说……没错。如果指挥官不知道该怎么做好的话，试着从现在就开始按我说的做吧？呵呵~",
@@ -25436,7 +25186,6 @@ _G.pg.base.ship_skin_words[207070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25470,7 +25219,6 @@ _G.pg.base.ship_skin_words[207071] = {
 	detail = "指挥官觉得老师和学生里，哪边比较好？我嘛……在大家眼里值得信赖的指挥官，其实是一个对老师有着非分之想的坏孩子——想想看就觉得很刺激呢♥",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207090] = {
 	feeling1 = "爱与和平的愿望，就连最亲近的指挥官也没能感受到吗，呜呜……",
 	feeling3 = "啊，指挥官，不要动！（摸索）用光辉的手帕……这样……嘿嘿，指挥官，帮你擦掉嘴边剩下的蛋糕啦！",
@@ -25543,7 +25291,6 @@ _G.pg.base.ship_skin_words[207090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207110] = {
 	feeling1 = "希望光辉的歌能把指挥官呼唤回来……",
 	feeling3 = "经过指挥官的指点，这次参考了一下天鹅她们推荐的歌。轻柔的旋律，和治愈人心的歌声……偶像果然能给人们带来笑容呢",
@@ -25586,7 +25333,6 @@ _G.pg.base.ship_skin_words[207110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207120] = {
 	feeling1 = "白白对你抱有期待了呢……",
 	feeling3 = "兴趣？嗯…一时还真没想到什么…比起找事情做，我还是更喜欢想办法让自己什么都不用做呢…",
@@ -25640,7 +25386,6 @@ _G.pg.base.ship_skin_words[207120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[207121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25674,7 +25419,6 @@ _G.pg.base.ship_skin_words[207121] = {
 	detail = "皇家女仆的必修课就是泡红茶了吧。在这点上，我还是有自信的。当然了，一天最多泡一次，不能再多了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[207130] = {
 	feeling1 = "对，对不起！我，我会听话的，求求你不要生气……",
 	feeling3 = "当皇家淑女累吗？还好吧，也就是平时要注意礼仪，保持优雅，以及注意各种各样细节……其实真的很累的！可畏只想躺在沙发上吃吃点心——咳咳！没，没什么！",
@@ -25727,7 +25471,6 @@ _G.pg.base.ship_skin_words[207130] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[213010] = {
 	feeling1 = "指挥官，你如果想堕入黑暗，就请做好被黑暗界收割的准备吧……",
 	feeling3 = "每当害怕的时候，只要想着还有妹妹在就能坚持下去了，某种意义上来说妹妹虽然不能没有我，我也不能没有她呢",
@@ -25794,7 +25537,6 @@ _G.pg.base.ship_skin_words[213010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[213011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25828,7 +25570,6 @@ _G.pg.base.ship_skin_words[213011] = {
 	detail = "我依然只是影子，只是现在多了个小小的愿望而已",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[213012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25862,7 +25603,6 @@ _G.pg.base.ship_skin_words[213012] = {
 	detail = "恐怖看上去非常希望我能和她一起参加万圣前夜的派对…不过…我……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[213020] = {
 	feeling1 = "恐怖，开始觉得指挥官有点恐怖了……",
 	feeling3 = "我只记得张开眼的时候姐姐就在身边了……从那之后她一直和我在一起，所以姐姐是我唯一的亲人……",
@@ -25913,7 +25653,6 @@ _G.pg.base.ship_skin_words[213020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[213021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -25947,7 +25686,6 @@ _G.pg.base.ship_skin_words[213021] = {
 	detail = "「我自长眠中苏醒，来索取你的灵魂」……这样子的台词，有没有一点姐姐的感觉？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[213040] = {
 	feeling1 = "嘻嘻，指挥官，Mark I也可以当“质量兵器”用哦？像这样——（哐！）",
 	feeling3 = "指挥官，指·挥·官~指-挥-官！欸？没事啦，我就是想看看你的脸，嘻嘻~",
@@ -25999,7 +25737,6 @@ _G.pg.base.ship_skin_words[213040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[213041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26033,7 +25770,6 @@ _G.pg.base.ship_skin_words[213041] = {
 	detail = "trick or treat！指挥官，不给糖果就捣乱哦！给糖果的话……那就看我的心情！哈哈哈！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[213042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26067,7 +25803,6 @@ _G.pg.base.ship_skin_words[213042] = {
 	detail = "深色不透明的胡萝卜汁可是最好的掩护了，不管往里面加些什么都不容易被看出来呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[231210] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26101,7 +25836,6 @@ _G.pg.base.ship_skin_words[231210] = {
 	detail = "诶？可爱？真是的～换了和平时感觉不一样的一身，比起可爱还是想听点漂亮啊合身啊这样的啦！虽、虽然被夸奖还是很开心就是了……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[236030] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26135,7 +25869,580 @@ _G.pg.base.ship_skin_words[236030] = {
 	detail = "这次的晚会，一定要鼓起勇气邀请哥哥一起……欸，欸？哥哥…听到了？呜呜……",
 	couple_encourage = {}
 }
-
+_G.pg.base.ship_skin_words[299010] = {
+	feeling1 = "指挥官，你知道我原本对你有多么期待吗？很遗憾，你永远不会知道了~",
+	feeling3 = "正确答案是——从现在开始努力不让这种情况发生~嘻嘻，指挥官，想要哄我的话，还要多动动脑子才行哦~",
+	lose = "……下次，不会犯这种错误了",
+	propose = "“你是我的全部”你觉得我会被这种话骗倒吗？……其实现在的话确实会被骗倒也说不定哦～不过前提是说十遍，不对，说一百遍好了~",
+	expedition = "指挥官，允许你暂时离开我去迎接委托回来的姐妹们哦",
+	win_mvp = "嗯哼，允许你多夸我两句",
+	home = "这不是平安回来了，干得不错嘛",
+	mission = "指挥官，任务堆积了不少呢，我不太喜欢懒惰的人哦",
+	touch2 = "不行哦指挥官，这样是获得不了我的心的~",
+	voice_key_2 = -1,
+	skill = "我可没有和敌人玩耍的兴趣哦",
+	drop_descrip = "轻巡洋舰—海王星",
+	mail = "指挥官，有你的信件。嗯？我什么都没做哦~",
+	touch = "想要和我玩游戏？可以啊，不过我不会放水的哦？",
+	profile = "我的来历？嗯哼，不知道也是没办法的事，只存在于设计中的大型轻巡洋舰，海王星，正是本小姐。虽然对战场没有那么熟悉，不过性能可是顶尖的，这一点，就让我用事实来证明吧~",
+	mission_complete = "指挥官，任务奖励都不领，难道在等着我催你吗",
+	feeling4 = "不过我一直觉得，真正聪明的人，是会适当地依赖别人的哦，这样对自己对对方都好，所以指挥官，喂我蛋糕~",
+	unlock = "我是谁？我是大型轻巡洋舰海王星哦，是不是觉得有些陌生？嗯哼，放心，从今往后会让你想忘也忘不了的~请多指教",
+	feeling5 = "指挥官，红茶泡好了吗？约会地点看好了吗？衣服选好了的话帮我穿上~欸，“为什么不自己穿？”？讨厌啦，这是爱哦，爱~♡",
+	main = "和其他姐妹们相比，这里才是我的处女战场，稍微有些想挑战看看所谓经验的差距呢~|指挥官，你要是说“拜托了，海王星大人”的话，说不定会有好事发生哦|指挥官，想要吃我亲手做的蛋糕的话，就请泡出好喝的红茶吧~",
+	battle = "这就是战场吗……嗯哼，有点意思",
+	upgrade = "理所当然~",
+	voice_key = 29901,
+	headtouch = "",
+	feeling2 = "指挥官，如果未来你面临只有牺牲我才能获得和平的情况，你会选我，还是和平呢？",
+	login = "不行哦指挥官，让我等这么久",
+	vote = "",
+	hp_warning = "稍微有些小看了战场呢……",
+	id = 299010,
+	detail = "手里这个？哼哼，这个是海神三叉戟哦，很帅对吧~",
+	couple_encourage = {
+		{
+			{
+				20203
+			},
+			1,
+			"我、我可不会做到这份上",
+			0
+		},
+		{
+			{
+				20212
+			},
+			1,
+			"一决胜负吧！女仆长小姐♪",
+			0
+		},
+		{
+			{
+				20208,
+				20226,
+				20219,
+				20211,
+				20212,
+				20218,
+				20220,
+				20221,
+				20222,
+				20304
+			},
+			1,
+			"让我见识下女仆队的战斗方式吧♪",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[299011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "解决了解决了~继续我们的圣诞派对吧~",
+	home = "",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "哼哼，平时都把光芒让给别的孩子，偶尔也要换上可爱的衣服让指挥官记起我呢，圣诞快乐哦，指挥官~",
+	mail = "指挥官，猜猜哪个盒子里才是新邮件呢~",
+	touch = "指挥官，能帮我搬一下这些礼物去西雅图的宴会上吗？这些都是我为大家准备的呢~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "哼哼，平时都把光芒让给别的孩子，偶尔也要换上可爱的衣服让指挥官记起我呢，圣诞快乐哦，指挥官~",
+	feeling5 = "",
+	main = "指挥官，你要是在今天说“求求你了，海王星大人”的话，说不定会有超级好的事情发生哦|指挥官，没有忘记吧，想要从我这里获得礼物的话，首先，要给出让我满意的礼物哦~|加入舰队以后，我也交到了不少朋友，尤其是什罗普郡，她不仅是好朋友，也是好对手呢~",
+	battle = "真是不解风情的家伙们呢……",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官，Merry Christmas~",
+	vote = "",
+	hp_warning = "",
+	id = 299011,
+	detail = "平时尽是战斗、出击、任务什么的，能有些像这样能够换上漂亮衣服欢度节日的时候，感觉也不坏呢",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "是太过在意优雅了吗…",
+	propose = "",
+	expedition = "",
+	win_mvp = "不客气♪也多亏了指挥官。",
+	home = "欢迎回来。那么，继续牵着我的手……啊，海神三叉戟碍事了吗？",
+	mission = "",
+	touch2 = "不行哦指挥官，什么事都要讲究先后顺序哦？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "欢迎赴宴哦，指挥官~在这个美丽的会场不是由皇家女仆队，而是我——海王星来为你带路哦。呵呵♪",
+	mail = "",
+	touch = "是的，宴会会场在这里哦。呵呵♪",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "欢迎赴宴哦，指挥官~在这个美丽的会场不是由皇家女仆队，而是我——海王星来为你带路哦。呵呵♪",
+	feeling5 = "",
+	main = "不行哦指挥官，让除了我以外的姐妹陪你……开玩笑的♪我就在这等你，加油和大家问候哦~|指挥官，要让我带你去想去的地方的暗号，没忘记吧？对，就是“拜托了海王星大人”哦♪|卡律布狄斯她有着不像是女仆队的风范呢……我是不是也该摆一摆架子，试着让指挥官为我做这做那比较好呢？",
+	battle = "不行哦，跟指挥官为敌什么的♪",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "不行哦指挥官，身为主宾更不应该迟到呢。我可是在这里等了很久了。呵呵♪",
+	vote = "",
+	hp_warning = "",
+	id = 299012,
+	detail = "我知道其实指挥官经常和女仆队的成员们一起参加宴会呢。呵呵，要说这种时候的举止应对，不觉得我比那些孩子擅长得多吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299020] = {
+	feeling1 = "无论如何，我都永远比不上那些KGV吗！？",
+	feeling3 = "爱是不应期待回报的，所以，无论皇家对我做过什么，我对皇家的感情都不会改变",
+	lose = "又要……被放弃了吗？",
+	propose = "我很幸福喔，即使这个世界不再需要我，你也会需要我，这对我已经足够了……指挥官，或许我是为了与你相爱，才来到这里的吧",
+	expedition = "指挥官，建造我花费了多少物资？放心，无论花费了多少我都一定能加倍回报你！",
+	win_mvp = "相信我，我会永远胜利下去！",
+	home = "前来迎接的人好多呢，真好啊，如果是我一个人回港，会有人前来迎接……吗？",
+	mission = "这份任务请交给我，我会证明自己的优秀！",
+	touch2 = "请不要沾染上那些KGV的恶习",
+	voice_key_2 = -1,
+	skill = "女王可无法号令我",
+	drop_descrip = "战列舰—君主",
+	mail = "是关于战争的邮件，指挥官，请检阅",
+	touch = "指挥官？需要我了吗？",
+	profile = "皇家海军战列舰君主号，英王乔治五世级战列舰的废弃方案之一。她们即使已经落伍，即便存在瑕疵，也可以理所当然地继续存在着呢……",
+	mission_complete = "我不是理所应当就可以存在的，所以理所当然要比它们更加优秀",
+	feeling4 = "看到了那些KGV的灿烂笑容，稍微有些觉得自己当初被放弃并不完全没有价值",
+	unlock = "初次见面，我是战列舰君主，皇家已经凄惨到要求助于曾被抛弃的我了吗？",
+	feeling5 = "指挥官，你在我的心中，自始至终永远都是最重要最特殊的存在喔！",
+	main = "威尔士和约克……我既厌恶夺去了我存在位置的她们，又喜爱秉承我的消失而生的她们|如果我有妹妹，会为她取什么名字呢……“威尔士亲王”或许真的不错呢|我会使整个世界知晓，当初没有选择我是多么地愚蠢！",
+	battle = "请放心，我会将这支舰队完整地带回来的！",
+	upgrade = "哼，果然，我才是最强的KGV方案",
+	voice_key = 29902,
+	headtouch = "",
+	feeling2 = "在被所有人抛弃后，我凭恃着“自己是最优秀的KGV方案”这股信念，一直坚持到了现在……",
+	login = "欢迎回来，我比威尔士与约克更加优秀，指挥官，这是我们的共识吧？",
+	vote = "",
+	hp_warning = "哼！如果是威尔士，现在已经回归大海了吧",
+	id = 299020,
+	detail = "对我而言，你是这个世界上唯一特殊的存在……在遇到你之前，没有任何人对我有过任何期待",
+	couple_encourage = {
+		{
+			{
+				20506
+			},
+			1,
+			"我的名字会是乔治、伊丽莎白、爱德华，但决不会是威尔士！",
+			0
+		},
+		{
+			{
+				20507
+			},
+			1,
+			"或许在某个世界，我是你真正的姐姐也说不定……",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[299021] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "",
+	mission = "",
+	touch2 = "就称赞一下你的勇气吧，想要被刺还是被踩？还是吃一发炮击？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "哼，服饰不过是衬托，真正的高贵应当来源于自身。你不这么认为吗，指挥官？",
+	mail = "",
+	touch = "衣服很适合我？哼，指挥官也学会了威尔士那般的花言巧语啊，不过姑且…还是谢谢了…",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "哼，服饰不过是衬托，真正的高贵应当来源于自身。你不这么认为吗，指挥官？",
+	feeling5 = "",
+	main = "nil|要我教你皇家的宫廷舞怎么跳吗？|华服属于节日，不过对我来说，存在于此的每一天，都是值得欢庆的节日",
+	battle = "就让你们见识一下，什么是皇家式的优雅从容吧",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "你在发什么呆，指挥官？今天还有许多事情在等着你呢",
+	vote = "",
+	hp_warning = "",
+	id = 299021,
+	detail = "抬头挺胸，指挥官。你可是我唯一认同的存在—不知道视线该看哪里？？那就看着我的眼睛吧",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299022] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "",
+	mission = "",
+	touch2 = "你也沾染上了威尔士那般的恶习了吗，指挥官",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "这次是东方的服饰吗…哼，对我来说，无论什么样的服装都一样，不过既然是特意为我准备的衣服，若是不表达几分感谢与欣喜，岂不是太不解风情了。感谢",
+	mail = "",
+	touch = "想让我陪你一会？这种事早点说不就好了",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "这次是东方的服饰吗…哼，对我来说，无论什么样的服装都一样，不过既然是特意为我准备的衣服，若是不表达几分感谢与欣喜，岂不是太不解风情了。感谢",
+	feeling5 = "",
+	main = "啧，威尔士，不需要你一一介绍东煌的习俗，这些东西我会自己去了解|新年的愿望么，当然是要证明你当初选择我是多么有价值了，这一点是不会改变的|作为皇家的一员存在于此，还能领略到异乡的节日与文化，想一想还真令人感慨啊",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "难得的节日，你也不必那么辛苦，把事务暂时交给我，好好休息一下也无妨",
+	vote = "",
+	hp_warning = "",
+	id = 299022,
+	detail = "“为节日留下点美好的回忆”？哼，那家伙还是一如既往地油嘴滑舌",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299030] = {
+	feeling1 = "呜…这就是我第一个喜欢上的人的真面目吗？",
+	feeling3 = "听我说啊，上次和重樱的舰船一起玩的时候，我摸到了真的猫耳哦！货真价实的呢！嘿嘿，很羡慕吧？…早就摸过了？真是的，你就不能满足一下我的虚荣心嘛……",
+	lose = "趁敌人没注意到的时候，赶紧溜走吧？",
+	propose = "既然亲爱的都这么表现出对柴郡的重视了，嘻嘻~那作为回报，接下来，我要说一百遍“我喜欢你”！我要开始啦，你可要听清楚了！在听完之前，哪里也不许去哦！亲爱的~",
+	expedition = "委托队回来啦！一起去迎接她们吧？啊，对了，顺便带上一些慰问品吧！",
+	win_mvp = "赢啦，亲爱的，我们赢啦！耶~！",
+	home = "亲爱的，你回来啦！出击没有受伤吧？没有遇到很难缠的敌人吧？没有突然对别的女孩子心动吧？嘿嘿，那就好~",
+	mission = "没有什么任务是能难倒亲爱的和我两个人的！",
+	touch2 = "呀~真是的，不允许偷袭啦！明明只要和我说一声就好了嘛。",
+	voice_key_2 = -1,
+	skill = "这是爱的一击哦！",
+	drop_descrip = "重巡洋舰-—柴郡",
+	mail = "有你的信件哦！是啥内容呢？让我也看看嘛~",
+	touch = "嗯哼？亲爱的，在想什么呢？嘻嘻，想法都写在脸上了哦~",
+	profile = "我是皇家所属的重巡洋舰，柴郡号！不过，直到见到亲爱的以前，我一直都是只存在于想象之中的舰船呢。所以，我的这副身心，都是属于亲爱的你的呢！",
+	mission_complete = "任务完成啦！这些任务对我们来说会不会简单了点？",
+	feeling4 = "亲爱的，你会因为我平时的攻势太猛烈了而觉得厌烦吗？如果真的是这样的话，那我就……我就用更加直接的行动，让亲爱的不得不接受我的爱意！首先是这个——飞扑攻击，嘿~！",
+	unlock = "呼啊——感觉像是睡了很久醒过来一样呢~嗯哼？就是你唤醒我吧？那，从今天起，你就是我的亲爱的啦！为什么？因为我对带我来到这个世界的你一见钟情啦！",
+	feeling5 = "如果没有你的话，我可能永远都见识不到这个美丽的世界，遇不见那么多可爱的伙伴们，也体验不到如此幸福的感情…所以，我…看招，嘿！抱住你了！亲爱的，最喜欢你啦！嘿嘿~",
+	main = "亲爱的，皇家的舰船之间有没有什么好玩的事情？别的阵营的也可以啦，都和我说说嘛~|柴郡才不是猫呢！虽然是像猫一样可爱不过总归不是猫啦！|这是主人您的红茶，请用…这是我和女仆队的成员学的，怎么样，像吗？嘿嘿~",
+	battle = "猜猜看，今天为你们准备的主菜是鱼雷呢，还是炮弹呢~？",
+	upgrade = "嘿嘿，谢谢亲爱的啦~",
+	voice_key = 29903,
+	headtouch = "我很喜欢猫耳的发饰呢！亲爱的，你要不也戴戴试试看？欸，就戴一下嘛，让我看一眼就好了啦！",
+	feeling2 = "啊，亲爱的，你去哪里了？如果是去了好玩的地方却不带上我的话，我就要生气啦！",
+	login = "亲~爱~的~！嘿，我抱！……这样的迎接过于热情了？嘿嘿，因为是亲爱的，所以免不了有些激动嘛！",
+	vote = "",
+	hp_warning = "啊疼疼疼！……但是，为了亲爱的，我是不会输的！",
+	id = 299030,
+	detail = "为什么对亲爱的一见钟情了？据说动物会把它们第一眼看到的生物视为“爱人”呢~是“父母”而不是“爱人”？哎呀，这不是重点啦~总之，从我见到的第一面起，亲爱的就是亲爱的啦！",
+	couple_encourage = {
+		{
+			{
+				29901
+			},
+			1,
+			"欲擒故纵是有可能会把对方吓走的哦？",
+			0
+		},
+		{
+			{
+				31201,
+				30116,
+				30113,
+				30121,
+				30126,
+				30163
+			},
+			1,
+			"哇！我、我可以摸摸看吗？",
+			0
+		},
+		{
+			{
+				10124,
+				10125
+			},
+			1,
+			"耶~是柴郡赢了！",
+			0
+		},
+		{
+			{
+				20204,
+				20208,
+				20210,
+				20212,
+				20220,
+				20222
+			},
+			1,
+			"多教教我嘛！",
+			0
+		},
+		{
+			{
+				19901
+			},
+			1,
+			"开party啦！！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[299031] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "没想到除了我以外还有那么多可爱的女孩子…努唔唔！论可爱和性感，我都是不会输的！…亲爱的，你也是这么想的，对吧！",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "亲爱的，精神一点嘛！难得的海边约会，怎么能无精打采的！…只是在海滩边和大家玩而不是约会？哎呀，有什么区别嘛！好啦，我们出发吧！",
+	mail = "",
+	touch = "想休息吗？可以啊！那，亲爱的是想睡在我的膝枕上呢，还是肚子上呢？嘻嘻~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "亲爱的，精神一点嘛！难得的海边约会，怎么能无精打采的！…只是在海滩边和大家玩而不是约会？哎呀，有什么区别嘛！好啦，我们出发吧！",
+	feeling5 = "",
+	main = "你说这张躺椅只够躺一个人？挤一挤就好啦！我不介意和亲爱的一起的~|累了还有冰镇汽水可以喝呢。咕嘟——咕嘟——哈啊~！这种清凉的感觉，真的是太~棒了！|嗯？问我要不要钓鱼？啊，我的话就算了！因为，钓鱼是要花很长时间的吧？怎么能把两人重要的时间用在上面呢！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "亲爱的，打起精神来了吗？好，那么就开始今天甜蜜的海滩约会吧！",
+	vote = "",
+	hp_warning = "",
+	id = 299031,
+	detail = "啊，我只是稍微分了会神，亲爱的你就不见了！老实交代，是，是不是偷偷去和别的女孩子玩了！我，我也不是那么小气的人啦……只是，至、至少也和我说一声嘛！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299032] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托队回来啦！不知道德雷克有没有一起？",
+	win_mvp = "亲爱的~太棒啦♪",
+	home = "亲爱的觉得其他小伙伴们的服装怎么样呀？有没有想看柴郡穿哪套？现在这套就很棒？呀~亲爱的真是的~♡",
+	mission = "",
+	touch2 = "亲爱的的话，这点肌肤接触OK的♪",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "柴郡也来献唱一曲吧~咳咳~……唔，说起来，柴郡好像不会唱东煌的歌欸？",
+	mail = "",
+	touch = "有什么想要柴郡做的事情吗？",
+	profile = "",
+	mission_complete = "任务完成啦！亲爱的，快确认奖励吧~♪",
+	feeling4 = "",
+	unlock = "柴郡也来献唱一曲吧~咳咳~……唔，说起来，柴郡好像不会唱东煌的歌欸？",
+	feeling5 = "",
+	main = "亲·爱·的~我蹭我蹭~嘿嘿，和亲爱的在一起真开心~♡|开叉很Sexy，化妆很Fashion，耳朵自然是无比Cute♪亲爱的觉得呢？|亲爱的~放松放松~今天是放下工作，和柴郡一起游玩的时间哦？",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "亲~爱~的~！…啊，不行，柴郡现在可是东煌淑女，得再“得体”一些才行♪",
+	vote = "",
+	hp_warning = "",
+	id = 299032,
+	detail = "亲爱的~欢迎你的到来~♪无论想听什么想看什么都尽管跟柴郡说吧♡",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299033] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "亲爱的，能帮我提下裙子吗？这段路不是很好走呢……嗯嗯，谢啦~",
+	mission = "",
+	touch2 = "呀！亲爱的怎么老喜欢偷袭啦！真是的~",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "“亲爱的，我来接你了~”…一般来说我才是要被接的那个？这不重要啦，重要的是接下来和亲爱的一起度过的时光哦~♪",
+	mail = "",
+	touch = "被柴郡迷到目不转睛了吗？嗯嗯，喜欢就多看看~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "“亲爱的，我来接你了~”…一般来说我才是要被接的那个？这不重要啦，重要的是接下来和亲爱的一起度过的时光哦~♪",
+	feeling5 = "",
+	main = "你说，在森林里会不会碰到一些有趣的东西？比如说……雪之精灵之类的！童话里不就有这样的嘛~|亲爱的，快看快看！这里有一片十二角星的雪花哦！啊，化掉了……|搭手礼…是要怎么样来着？唔，感觉好麻烦。我和亲爱的还是简单随意的牵手就好啦！嘿嘿~蹭蹭~",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "亲爱的，我们快出发吧！这孩子已经有些按捺不住了呢~",
+	vote = "",
+	hp_warning = "",
+	id = 299033,
+	detail = "如果柴郡是宫殿里的公主的话……亲爱的一定会骑着白马来接我的，对吧对吧！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299040] = {
+	feeling1 = "若只是几次无心之过，我是不会放在心上的，但如果你还是这样一意孤行，那就别怪我不留情面了。",
+	feeling3 = "你对冒险也有兴趣吗？太好了，我正愁缺个伴呢，说吧，你想要的是寻找大海中的黄金秘宝，还是探寻远方的神秘国度？",
+	lose = "今天的所有屈辱，我都会铭记在心的…走着瞧吧！",
+	propose = "你不觉得奇妙吗？这种既不是“被征服”也不是“不甘心”，单纯感到“羞耻”的感觉……都是因为你，我都变得不像我了。虽然我也不讨厌这样的状态…就是了。你能理解吗？",
+	expedition = "果然老老实实地做委托没有直接从敌人手里掠夺来得过瘾啊…啊，没什么。",
+	win_mvp = "胜利，无论何时都让人倍感愉快啊，哈哈！",
+	home = "作战辛苦了，正好我准备了些新鲜的葡萄，要来一颗吗？…那好，接好了！嘿！",
+	mission = "按部就班地做任务可不是我的风格，嗯…先看看有多少报酬吧！",
+	touch2 = "嚯~？你胆子还不小嘛~！",
+	voice_key_2 = -1,
+	skill = "可别怪我无情了！",
+	drop_descrip = "重巡洋舰-—德雷克",
+	mail = "信件，会不会发现了哪里有宝藏的消息呢，哈哈。",
+	touch = "我喜欢直白的人，所以有什么事尽管直接说出来就好。",
+	profile = "我是皇家海军的重巡洋舰·德雷克。也许你对我的存在还感到比较陌生，不过没关系，在以后的战斗里，我的9.2寸炮会给你留下足够充分的深刻印象的！",
+	mission_complete = "虽然任务报酬还不少，不过像这样由上面施予的奖励总感觉少了点什么呢…",
+	feeling4 = "唔…一起探险是挺好的，不过，最近出去的地方是不是都太近了点？不是港区内就是近海……老实说，有点无趣啊。下次，我带你去大海更深的地方吧？",
+	unlock = "你就是指挥官吧？看起来不错~皇家海军重巡德雷克，现在加入你的麾下！姑且问一句，出击的许可，应该已经准备好了吧？",
+	feeling5 = "原来如此，你并不在乎旅行的终点，而更加在意同行的伙伴吗。也就是说，只要和我一起，无论去哪都没问题！是这样吧，哈哈哈…唔？等等，这意思不就是…",
+	main = "武装舰船的是装甲、火炮和鱼雷，而武装人的，则是胆识、见识与学识。|我不讨厌礼节，也不反对适当的仪式感，不过，繁文缛节的东西，能少点还是尽量少点好。|比起榨好的苹果汁，还是沾着露水的新鲜苹果更诱人，你也是这么觉得的吧！",
+	battle = "哼哼哼，放开了大干一场吧！",
+	upgrade = "感觉炮管能发出更让人愉快的声音了，哈哈！",
+	voice_key = 29904,
+	headtouch = "",
+	feeling2 = "战场上无需拘泥于手段，无论是靠小伎俩，还是正面进攻，站到最后的胜者才有资格谈论正义，如此而已。",
+	login = "来了啊。今天先做点什么？先研究下作战也好，要直接先出击也是没问题的哦？",
+	vote = "",
+	hp_warning = "嘁，对面的有两下子嘛！",
+	id = 299040,
+	detail = "任何伟大的事迹都必定有它的起点，但惟有坚持到最后才能获得真正的荣耀——所以继续努力吧！",
+	couple_encourage = {
+		{
+			{
+				90501
+			},
+			1,
+			"比比看谁能夺得更多的战果吧！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[299041] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "运动过后的冰镇西瓜，呼呼…还有比这更棒的享受吗？指挥官，你要是不吃的话，我可就不客气了。",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "呼…这么游着感觉还是不太过瘾啊。你也别在那傻看着，来陪我游会泳吧？",
+	mail = "",
+	touch = "嚯嚯~确实感觉肩膀有些酸了呢，你还挺上道的嘛，指挥官。",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "呼…这么游着感觉还是不太过瘾啊。你也别在那傻看着，来陪我游会泳吧？",
+	feeling5 = "",
+	main = "唔，都说了别一直在那傻看着呀，我都要感觉不自在起来了…|哈哈哈，这点小小的颠簸就受不了了，看来这小家伙还需要锻炼啊！|呼…还是不太过瘾啊，我再游几个来回好了。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "本以为所谓“很适合游泳的地方”应该是哪个更宽广的海边，没想到只是这么个小小的露天泳池…不过算了，作为打发时间的地方来说倒也足够了。",
+	vote = "",
+	hp_warning = "",
+	id = 299041,
+	detail = "这个泳池貌似还有人工造浪的功能？呵呵，比想象中的有趣些嘛！我看看最大能到达什么程度…",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299050] = {
+	feeling1 = "指挥官大人，请高兴起来。指挥官大人还有我普利茅斯可以依靠的。",
+	feeling3 = "我对女仆队的事情不是很清楚。我认为既然同样是辅佐指挥官大人，应该跟我没什么不同。指挥官大人也是这么想的吗？",
+	lose = "输了，指挥官大人。这有些难堪。",
+	propose = "指挥官大人，请高兴起来吧。从今天起我就是指挥官的专属舰了。专属意味着特别……也就是说我成为了指挥官大人特别的舰船。今天我可以不顾指挥官大人，自己先感到高兴吗？呵呵呵~",
+	expedition = "军事委托完成了。指挥官大人，恭喜您。",
+	win_mvp = "我们赢了。指挥官，希望您能高兴。",
+	home = "指挥官大人，这是普利茅斯准备的慰劳品，今天是撒丁风格的全套大餐。希望您能高兴……做过头了吗？",
+	mission = "新任务来了。指挥官大人，请交给我……您要自己做吗？",
+	touch2 = "是，随您喜欢。只要能让指挥官大人高兴就好。",
+	voice_key_2 = -1,
+	skill = "容我失礼了。",
+	drop_descrip = "轻巡洋舰—普利茅斯",
+	mail = "指挥官大人，是新的邮件，希望您能高兴。",
+	touch = "要听普利茅斯唱歌吗？那么请选曲——如果是普利茅斯不会的曲子，普利茅斯会去学来唱给您听。",
+	profile = "我是作为爱丁堡级的另外方案的特别计划舰，普利茅斯。谢谢指挥官大人让我现身于此港区，请尽情驱使我吧。",
+	mission_complete = "是任务的报酬，这就打开——用炮击的话会毁掉是吧。明白了。",
+	feeling4 = "指挥官大人，请高兴起来。我，从今天起将协助女仆队的工作。和伙伴在一起就能更好地辅佐指挥官大人了，真令人高兴。",
+	unlock = "向令我得以具现的指挥官大人问好。我是普利茅斯，于此时此地静候指挥官大人的命令。希望这被祝福的相遇能让您感到高兴。",
+	feeling5 = "指挥官大人，今天您想做什么呢？只要是您希望的，除了支援您，无论是侍奉和辅佐都没问题，当然爱您也不在话下……希望您能高兴。普利茅斯为了指挥官大人做任何事都可以。",
+	main = "啊，请小心。爱丁堡小姐，如传闻一样有点冒失呢。|是要销毁资料吗。（爆炸声）……好了，用刚才的攻击让资料都化成灰了，希望您能高兴。|工作不顺利吗？那我讲个童话故事给您听吧。很久很久以前……",
+	battle = "我来做你的对手吧。",
+	upgrade = "变强了。恭喜您。指挥官大人，这下普利茅斯就更“好用”了。",
+	voice_key = 29905,
+	headtouch = "谢谢您摸我的头。",
+	feeling2 = "请依靠我吧，指挥官大人。我，普利茅斯在此的理由，就是为了辅佐大家的指挥官大人。",
+	login = "愿您心情愉快，指挥官大人，是令人神清气爽的早上呢。今天从什么开始着手呢？",
+	vote = "",
+	hp_warning = "让您看到丢人的样子了……",
+	id = 299050,
+	detail = "贵安。看来今天我也能顺利和指挥官大人共度一日。嗯，希望您能高兴。",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[299051] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "无论是清凉的波澜，还是胜利的余韵，都请您尽情沉浸其中吧，指挥官大人。",
+	home = "出击辛苦了。指挥官大人，要不要普利茅斯去拿点什么东西过来呢？能泳池里享受的东西，比如玩具、水果、以及酒……不对吗？",
+	mission = "",
+	touch2 = "请用普利茅斯来让您心情愉快起来吧，指挥官大人。",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "指挥官大人，愿您心情愉快。普利茅斯相信，这片清凉一定能让您获得十分的满足。嗯，请和普利茅斯一起享受吧。",
+	mail = "",
+	touch = "是，一起休息吧。",
+	profile = "",
+	mission_complete = "任务报酬来了，请高兴起来吧，指挥官大人。",
+	feeling4 = "",
+	unlock = "指挥官大人，愿您心情愉快。普利茅斯相信，这片清凉一定能让您获得十分的满足。嗯，请和普利茅斯一起享受吧。",
+	feeling5 = "",
+	main = "感到焦虑的话，可以和普利茅斯一起放松的泡在这片水里，让身体和大脑冷静下来哦，指挥官大人。|推荐的歌吗？嗯，{namecode:464}教给我的“轰隆隆”的感觉的歌……现在先不用唱给您听吗？|想要游泳吗？那我这就把泳池扩大一些——不好意思，能请您躲开一下主炮的弹道吗？…啊，抱歉，失态了……",
+	battle = "稍微有点害羞呢…",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "请高兴起来吧，指挥官大人，今天也是艳阳高照——也就是说，是适合泡泳池的日子呢。",
+	vote = "",
+	hp_warning = "",
+	id = 299051,
+	detail = "普利茅斯的泳装，不知道您是否满意呢？如果您想要换一身的话也请尽管吩咐。女、女仆和兔女郎什么的也可以……只要能让您心情愉快就好…？",
+	couple_encourage = {}
+}
 _G.pg.base.ship_skin_words[301010] = {
 	feeling1 = "原本以为指挥官是能理解我的……",
 	feeling3 = "妹妹们不知道现在过得怎么样…不过既然是我的妹妹，肯定在哪里坚强地生活着吧～嗯！",
@@ -26178,7 +26485,6 @@ _G.pg.base.ship_skin_words[301010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26212,7 +26518,6 @@ _G.pg.base.ship_skin_words[301011] = {
 	detail = "我没有赖床啦，只是一沉浸到自己喜欢的事中，做着做着就忘了时间……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26246,7 +26551,6 @@ _G.pg.base.ship_skin_words[301012] = {
 	detail = "呜…感觉意识…要飞走了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26280,7 +26584,6 @@ _G.pg.base.ship_skin_words[301013] = {
 	detail = "乐器意外地有趣呢指挥官，我要去安利给其他姐妹们~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301014] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26314,7 +26617,6 @@ _G.pg.base.ship_skin_words[301014] = {
 	detail = "我可是背负着整个特型驱逐的希望呢，不好好表现可不行呀！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301015] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26348,7 +26650,6 @@ _G.pg.base.ship_skin_words[301015] = {
 	detail = "要是也能让其它特型驱逐舰也看到我活跃的样子就好了呢~“认真努力的{namecode:2}姐”——这样的感觉？嘿嘿……哇！对，对不起，我发了会呆！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301020] = {
 	feeling1 = "（盖住耳朵）我、我不想听到你的声音…",
 	feeling3 = "人多的时候，各种各样的声音传到耳朵里，头会疼…还是安静的地方适合{namecode:3}。",
@@ -26407,7 +26708,6 @@ _G.pg.base.ship_skin_words[301020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26441,7 +26741,6 @@ _G.pg.base.ship_skin_words[301021] = {
 	detail = "今天轮到{namecode:3}照顾兔兔们了，嗯…是照顾兔子的，不是被照顾的那一方。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301040] = {
 	feeling1 = "指挥官，是可怕的人……不想靠近……",
 	feeling3 = "指挥官，今天{namecode:5}帮上舰队的忙了吗？……做得很不错？嗯！{namecode:5}、{namecode:5}会继续加油的……！",
@@ -26508,7 +26807,6 @@ _G.pg.base.ship_skin_words[301040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26542,7 +26840,6 @@ _G.pg.base.ship_skin_words[301041] = {
 	detail = "切菜时要小心切到手…不然被指挥官看到了肯定会担心的…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301050] = {
 	feeling1 = "……不是很想靠近指挥官……",
 	feeling3 = "指挥官……你一直说{namecode:6}的耳朵可爱，但是为什么不摸摸看呢？",
@@ -26611,7 +26908,6 @@ _G.pg.base.ship_skin_words[301050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26645,7 +26941,6 @@ _G.pg.base.ship_skin_words[301051] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301053] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26679,7 +26974,6 @@ _G.pg.base.ship_skin_words[301053] = {
 	detail = "戴上耳机后，感觉全世界就只剩下音乐，还有……眼前的人",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301054] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26713,7 +27007,6 @@ _G.pg.base.ship_skin_words[301054] = {
 	detail = "东煌风格的衣服，轻巧，感觉不坏…很可爱？谢谢…的说。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301055] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26747,7 +27040,6 @@ _G.pg.base.ship_skin_words[301055] = {
 	detail = "见习服务生，是{namecode:6}没有经历过的体验，感觉很新鲜…的说",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301056] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26781,7 +27073,6 @@ _G.pg.base.ship_skin_words[301056] = {
 	detail = "虽然和{namecode:92}定了潜入作战用的代号，不过大家似乎都不怎么用，有点困扰的说…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301057] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26815,7 +27106,6 @@ _G.pg.base.ship_skin_words[301057] = {
 	detail = "{namecode:408}，很关心大家……明明自己也有活动，还会帮大家做日程安排，很可靠",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301058] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26849,7 +27139,6 @@ _G.pg.base.ship_skin_words[301058] = {
 	detail = "现在的话，能感觉到自己不是孤单一人…因为指挥官一直在这里",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301059] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26883,7 +27172,6 @@ _G.pg.base.ship_skin_words[301059] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301090] = {
 	feeling1 = "指挥官阁下，请振作起来！",
 	feeling3 = "指挥官，想看看我真正的右眼吗？",
@@ -26934,7 +27222,6 @@ _G.pg.base.ship_skin_words[301090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -26968,7 +27255,6 @@ _G.pg.base.ship_skin_words[301091] = {
 	detail = "白熊君们是我在旅途中交到的新朋友，指挥官也要和它们好好相处哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27002,7 +27288,6 @@ _G.pg.base.ship_skin_words[301092] = {
 	detail = "和伙伴已经共同驰骋许多的公路了呢，唔…下次叫上港区其他同伴一起去兜风感觉好像也不错！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301093] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27036,7 +27321,6 @@ _G.pg.base.ship_skin_words[301093] = {
 	detail = "只要能发挥在下身为忍者的特长，这点障碍不算什么！…这次不会弄错方向的啦…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301094] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27070,7 +27354,6 @@ _G.pg.base.ship_skin_words[301094] = {
 	detail = "{namecode:14}的大象好灵活啊…诶嘿嘿，在下也扔个球试试吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301100] = {
 	feeling1 = "看来只有物理上的方法能让指挥官醒悟过来了呢……真是糟透了",
 	feeling3 = "{namecode:11}姐姐一直想重建第六驱逐队呢……我觉得嘛，只要大家都在一起，名号什么的就不用在意那么多的啦!",
@@ -27155,7 +27438,6 @@ _G.pg.base.ship_skin_words[301100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27189,7 +27471,6 @@ _G.pg.base.ship_skin_words[301101] = {
 	detail = "哎呀，确实是让大家久等了呢，{namecode:12}也觉得非常对不住呢，不过，既然都来了，就开心点吧~向前看向前看~嘿嘿！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301110] = {
 	feeling1 = "原来如此，从这里溜出去顺着洋流就能回到东京老家吗……",
 	feeling3 = "明天是{namecode:13}酱的生日，指挥官有准备礼物吗？诶？没听说过？总之……那个项链好像很不错啊，当做礼物的话舰船一定会很高兴的！",
@@ -27232,7 +27513,6 @@ _G.pg.base.ship_skin_words[301110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27266,7 +27546,6 @@ _G.pg.base.ship_skin_words[301111] = {
 	detail = "如果一定要吃，希望指挥官能一口……不、不对！果、果然还是放{namecode:13}一马比较好！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301112] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27300,7 +27579,6 @@ _G.pg.base.ship_skin_words[301112] = {
 	detail = "指挥官，买了{namecode:13}的浴衣的话，把{namecode:14}的浴衣也一起买了吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301113] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27334,7 +27612,6 @@ _G.pg.base.ship_skin_words[301113] = {
 	detail = "指挥官，请把{namecode:14}的礼服也买下来吧。这样{namecode:13}和{namecode:14}合在一起就有一对完整的翅膀了哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301120] = {
 	feeling1 = "不管指挥官先生变成什么样，{namecode:14}都会陪着你哦",
 	feeling3 = "痛苦的事情说出来就少一半，快乐的事情说出来就多一份。所以什么事都可以和{namecode:14}说哦",
@@ -27385,7 +27662,6 @@ _G.pg.base.ship_skin_words[301120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27419,7 +27695,6 @@ _G.pg.base.ship_skin_words[301121] = {
 	detail = "指挥官先生，吃掉{namecode:14}以后……要打起精神噢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301122] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27453,7 +27728,6 @@ _G.pg.base.ship_skin_words[301122] = {
 	detail = "指挥官先生，不会是听了{namecode:13}的话才给{namecode:14}买的新衣服吧？{namecode:14}其实不怎么在意的哦？嗯…不怎么在意…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301123] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27487,7 +27761,6 @@ _G.pg.base.ship_skin_words[301123] = {
 	detail = "{namecode:13}和{namecode:14}的翅膀，合在一起的话画面会有点窄呢…指挥官先生也可以试试“改图”哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301130] = {
 	feeling1 = "糟了……怎么会迷路到指挥官旁边……跑吧……（小声）",
 	feeling3 = "唔……？指挥官？最近回过神来总是会在指挥官旁边，指挥官身上有什么魔力吗？",
@@ -27521,7 +27794,6 @@ _G.pg.base.ship_skin_words[301130] = {
 	detail = "指挥官在看什么呢？咦？告诉人家啦……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301131] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27555,7 +27827,6 @@ _G.pg.base.ship_skin_words[301131] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301140] = {
 	feeling1 = "哼（{namecode:16}对你的投喂毫不理睬）",
 	feeling3 = "嗷呜，今天咬谁！怎么样，是不是超凶？……好耶，这样姐妹们就不会说我战斗之外像条小狗了！",
@@ -27607,7 +27878,6 @@ _G.pg.base.ship_skin_words[301140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27641,7 +27911,6 @@ _G.pg.base.ship_skin_words[301141] = {
 	detail = "冷？我完全不冷！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301142] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27675,7 +27944,6 @@ _G.pg.base.ship_skin_words[301142] = {
 	detail = "当店员后，我学到了一件事，原来肉包的种类也有那么多",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301143] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27709,7 +27977,6 @@ _G.pg.base.ship_skin_words[301143] = {
 	detail = "指挥官，快看，{namecode:16}的战利品！晚会上有很多很多好吃的肉，实在是太棒啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301144] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27743,7 +28010,6 @@ _G.pg.base.ship_skin_words[301144] = {
 	detail = "“给圣诞老人的信”？我要写我要写！“想要好多好多的，吃不完的肉…”嗯，写好了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301148] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27777,7 +28043,6 @@ _G.pg.base.ship_skin_words[301148] = {
 	detail = "不知道为什么，穿着这件衣服的时候总觉得指挥官就在身边一样",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301149] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27811,7 +28076,6 @@ _G.pg.base.ship_skin_words[301149] = {
 	detail = "手？哦、哦…不对这是在做什么！？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301150] = {
 	feeling1 = "你就被噩运笼罩着吧，笨蛋！",
 	feeling3 = "所谓幸运呢，就是不经意间获得的才叫幸运哦，比如说，嘿！（跳）……指挥官，看到人家的胖次颜色了吗~",
@@ -27863,7 +28127,6 @@ _G.pg.base.ship_skin_words[301150] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301151] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27897,7 +28160,6 @@ _G.pg.base.ship_skin_words[301151] = {
 	detail = "你以为夸奖我泳装好看，我就不会咬你了吗？呜嗷！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301152] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27931,7 +28193,6 @@ _G.pg.base.ship_skin_words[301152] = {
 	detail = "{namecode:79}姐姐一直叮嘱我不要做奇怪的事，{namecode:17}又不是小孩子了……相比之下，我有些担心{namecode:79}姐姐会不会遇上麻烦……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301153] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27965,7 +28226,6 @@ _G.pg.base.ship_skin_words[301153] = {
 	detail = "{namecode:17}大人的幸运巧克力，可不是光看就能学会的哦！哼哼，就让你看个够好了♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301159] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -27999,7 +28259,6 @@ _G.pg.base.ship_skin_words[301159] = {
 	detail = "在看哪里啊？笨·蛋·指·挥·官？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301160] = {
 	feeling1 = "你配不上{namecode:22}大人的运气呢~",
 	feeling3 = "你要去游乐园？哼，那种地方我成熟的{namecode:22}大人怎么可能喜欢……欸，只是跟我说一声？等等，等等等等，让我们好好谈谈吧，游乐园也是有可取之处的",
@@ -28033,7 +28292,6 @@ _G.pg.base.ship_skin_words[301160] = {
 	detail = "{namecode:22}大人的英姿就随你看个高兴吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301161] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28067,7 +28325,6 @@ _G.pg.base.ship_skin_words[301161] = {
 	detail = "虽然这套洋装很合身，但是荡秋千的时候总觉得有点碍事，唔唔……难以抉择！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301162] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28101,7 +28358,6 @@ _G.pg.base.ship_skin_words[301162] = {
 	detail = "Zzz……哈啊！不小心睡着了…和马拉尼那家伙准备了一晚上吃的……为什么普通的料理会被她做的那么复杂啊！？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301168] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28135,7 +28391,6 @@ _G.pg.base.ship_skin_words[301168] = {
 	detail = "看到指挥官就想上去蹭蹭呢——诶嘿嘿，好舒服~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301170] = {
 	feeling1 = "你已经不再是吾辈的目标了，闪开！",
 	feeling3 = "虽然吾辈并没有特别突出的能力，不过吾辈有自信不会输给其他姐妹，为什么？哼哼，因为吾辈是{namecode:19}啊！",
@@ -28169,7 +28424,6 @@ _G.pg.base.ship_skin_words[301170] = {
 	detail = "唔~再用这种失礼的眼神看吾辈，吾辈要生气了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301171] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28203,7 +28457,6 @@ _G.pg.base.ship_skin_words[301171] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301179] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28237,7 +28490,6 @@ _G.pg.base.ship_skin_words[301179] = {
 	detail = "哼哼，用这种眼神看着吾辈，是被吾辈的魅力所折服了吗，指挥官~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301180] = {
 	feeling1 = "无可救药……",
 	feeling3 = "我会在夜深人静的时候来吃掉指挥官你的灵魂……真信了？笨蛋，倒不如说我帮你赶走了好几只这样的东西……",
@@ -28280,7 +28532,6 @@ _G.pg.base.ship_skin_words[301180] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301181] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28314,7 +28565,6 @@ _G.pg.base.ship_skin_words[301181] = {
 	detail = "哦？指挥官是来帮忙的吗？太好了，作为回报，月饼就给你打个八折吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301189] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28348,7 +28598,6 @@ _G.pg.base.ship_skin_words[301189] = {
 	detail = "指挥官你看，我现在的鬼火是不是比之前更华丽了？这就是金钱的力量...开玩笑的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301200] = {
 	feeling1 = "……在你身边我睡不着……",
 	feeling3 = "{namecode:130}……这一次我一定会对你伸出手！",
@@ -28407,7 +28656,6 @@ _G.pg.base.ship_skin_words[301200] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301210] = {
 	feeling1 = "指、指挥官，再靠近我就开、开炮了！",
 	feeling3 = "指挥官，能、能和我一起练习对话吗……我也想和舰队的大家交朋友……",
@@ -28451,7 +28699,6 @@ _G.pg.base.ship_skin_words[301210] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301211] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28485,7 +28732,6 @@ _G.pg.base.ship_skin_words[301211] = {
 	detail = "这个是……雪做的小兔子，但是还没有完成……雪能够变成各种各样的样子，感觉很有趣……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301212] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28519,7 +28765,6 @@ _G.pg.base.ship_skin_words[301212] = {
 	detail = "明明只是换了身衣服，却感觉似乎世界都明亮了起来…真是太厉害了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301219] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28553,7 +28798,6 @@ _G.pg.base.ship_skin_words[301219] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301230] = {
 	feeling1 = "哎呀呀，指挥官……有点不行呢",
 	feeling3 = "能和指挥官成为朋友，真的太好了！",
@@ -28596,7 +28840,6 @@ _G.pg.base.ship_skin_words[301230] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301231] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28630,7 +28873,6 @@ _G.pg.base.ship_skin_words[301231] = {
 	detail = "就算是忙着派送礼物，也不能忽略了尾巴的护理呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301232] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28664,7 +28906,6 @@ _G.pg.base.ship_skin_words[301232] = {
 	detail = "哎~阳光真好，太阳真好~好想就这么睡一下午啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301240] = {
 	feeling1 = "可惜…指挥官已经没有嘲弄的价值了呢~",
 	feeling3 = "啊，难道你是打算攻略我吗？放弃吧，没可能的~",
@@ -28707,7 +28948,6 @@ _G.pg.base.ship_skin_words[301240] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301242] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28741,7 +28981,6 @@ _G.pg.base.ship_skin_words[301242] = {
 	detail = "指挥官，要多注意那些容易落单的同伴哦。{namecode:180}之类的……嗯？那孩子没关系？……是我多虑了？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301249] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28775,7 +29014,6 @@ _G.pg.base.ship_skin_words[301249] = {
 	detail = "~来到这个港区，又得到了改造…看来我的运气也不算太差呢，呼呼~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301250] = {
 	feeling1 = "当了指挥官也有反抗期这种东西吗？",
 	feeling3 = "虽然{namecode:32}有时候太粘人了，不过这正是所谓妹妹的可爱之处呢…指挥官，如果我也很黏你，你会觉得高兴吗？",
@@ -28834,7 +29072,6 @@ _G.pg.base.ship_skin_words[301250] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301251] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28868,7 +29105,6 @@ _G.pg.base.ship_skin_words[301251] = {
 	detail = "究竟是谁跟{namecode:32}灌输了“大人的世界”什么的奇怪观念…指挥官，不会是你吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301259] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -28902,7 +29138,6 @@ _G.pg.base.ship_skin_words[301259] = {
 	detail = "{namecode:32}比以前自立了很多了，不过，遇到困难的时候，还是会拉着我的衣角求助呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301260] = {
 	feeling1 = "指挥官大人，关于明天的事项—嗯，我想一次确认完毕…",
 	feeling3 = "啊，是指挥官大人！黑烟？我不太清楚，刚才我在挑战炸可乐饼",
@@ -28948,7 +29183,6 @@ _G.pg.base.ship_skin_words[301260] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301261] = {
 	feeling1 = "",
 	feeling3 = "这是我用从皇家学来的方法烘焙的蛋糕，这次绝对绝对是成功了的哦！",
@@ -28982,7 +29216,6 @@ _G.pg.base.ship_skin_words[301261] = {
 	detail = "指挥官大人，我从贝尔法斯特小姐身上学到了很多……如果姐姐看到了现在的我，会不会大吃一惊呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301262] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29016,7 +29249,6 @@ _G.pg.base.ship_skin_words[301262] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301263] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29050,7 +29282,6 @@ _G.pg.base.ship_skin_words[301263] = {
 	detail = "女孩子每换一套衣服，都会让大家产生不同的印象吧？要是姐姐也多穿上些新衣服该多好啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301264] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29084,7 +29315,6 @@ _G.pg.base.ship_skin_words[301264] = {
 	detail = "不知道{namecode:31}姐姐会不会喜欢这个达摩套娃…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301265] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29118,7 +29348,6 @@ _G.pg.base.ship_skin_words[301265] = {
 	detail = "指挥官大人，您觉得沙滩游戏的经典项目是什么？…想问{namecode:32}的想法吗？那个，我…我喜欢小孩子玩的那种…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301269] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29152,7 +29381,6 @@ _G.pg.base.ship_skin_words[301269] = {
 	detail = "指挥官大人，请用！姐姐最喜欢这种茶点了，不知道指挥官大人意下如何呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301270] = {
 	feeling1 = "……请下令",
 	feeling3 = "主上想要和我进行的“交谈”也好，“游戏”也好，我都……不太理解，但是……并不讨厌",
@@ -29195,7 +29423,6 @@ _G.pg.base.ship_skin_words[301270] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301280] = {
 	feeling1 = "无论指挥官变成什么样，{namecode:21}也会追随下去吧，但我不能容忍这种事，为了{namecode:21}，醒悟吧，指挥官！",
 	feeling3 = "姐姐在忍者里大概也是数一数二的死脑筋……所以我就选了给大家带来笑容的人偶戏希望有一天也能让她笑一笑，不过目前还没收到效果……",
@@ -29229,7 +29456,6 @@ _G.pg.base.ship_skin_words[301280] = {
 	detail = "指挥官，你看我手势像不像忍者～这可是从{namecode:21}那里学来的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301290] = {
 	feeling1 = "只要你能够改正错误的话，我还是能原谅你的！",
 	feeling3 = "虽然经常被说太鲁莽…不过，有冲劲不也是一件好事吗？如果在战斗中没有全力以赴的话，反而很容易留下遗憾不是吗？嘿嘿~",
@@ -29408,7 +29634,6 @@ _G.pg.base.ship_skin_words[301290] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301291] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29442,7 +29667,6 @@ _G.pg.base.ship_skin_words[301291] = {
 	detail = "舰船悬赏令发布啦！指挥官不来参加一下吗？这可是能够获得各种各样宝物的机会哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301292] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29476,7 +29700,6 @@ _G.pg.base.ship_skin_words[301292] = {
 	detail = "话说这个布景也太大了~{namecode:18}都跑成这样了还完全找不到出口……诶，我只是在不停地原地打转吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301293] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29510,7 +29733,6 @@ _G.pg.base.ship_skin_words[301293] = {
 	detail = "指挥官，快去海里玩吧！这可是尽情享受的好机会哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301294] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29544,7 +29766,6 @@ _G.pg.base.ship_skin_words[301294] = {
 	detail = "指挥官要不要也来尝尝月饼？这是伙伴们特意为了今天准备的哦～味道的话{namecode:18}保证绝对好吃！来一个吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301300] = {
 	feeling1 = "指挥官…意外地没什么意思呢……",
 	feeling3 = "嗯？平时的兴趣？吃饭睡觉逗指挥官？啊哈哈，没错，就是喜欢看指挥官这种一脸困扰的表情～",
@@ -29587,7 +29808,6 @@ _G.pg.base.ship_skin_words[301300] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301309] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29621,7 +29841,6 @@ _G.pg.base.ship_skin_words[301309] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301310] = {
 	feeling1 = "哈啊…究竟是哪里的教育出了问题呢…",
 	feeling3 = "嗯…对于现代的电子机械什么的，果然还是不太擅长呢…指挥官能教教我怎么用吗？",
@@ -29655,7 +29874,6 @@ _G.pg.base.ship_skin_words[301310] = {
 	detail = "不知道我家的姐妹们有没有照顾好自己，好担心啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301319] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29689,7 +29907,6 @@ _G.pg.base.ship_skin_words[301319] = {
 	detail = "天气冷的时候总觉得用不太上呢这把扇子……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301320] = {
 	feeling1 = "{namecode:34}在哪儿呢……好想她呀",
 	feeling3 = "指挥官~一~起~来~玩~吧！要玩什么好呢！指挥官来选吧！",
@@ -29723,7 +29940,6 @@ _G.pg.base.ship_skin_words[301320] = {
 	detail = "糖果是最好吃的零食！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301321] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29757,7 +29973,6 @@ _G.pg.base.ship_skin_words[301321] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301322] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29791,7 +30006,6 @@ _G.pg.base.ship_skin_words[301322] = {
 	detail = "巧克力香蕉~章鱼烧~都好吃~和糖果比…？就差一丢丢吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301323] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29825,7 +30039,6 @@ _G.pg.base.ship_skin_words[301323] = {
 	detail = "据说东煌的春节其实是“打怪兽”的日子呢！{namecode:33}也要一起打小怪兽！…嗯？是长春她们告诉{namecode:33}的哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301329] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29859,7 +30072,6 @@ _G.pg.base.ship_skin_words[301329] = {
 	detail = "这些糖是给{namecode:34}的，这些糖是给指挥官的，这些糖是我自己的，嗯嗯~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301330] = {
 	feeling1 = "呜呜呜，{namecode:34}要被吃掉了……",
 	feeling3 = "我……是{namecode:33}级里最早掉队的……一直很怕生，也很想念大家……",
@@ -29893,7 +30105,6 @@ _G.pg.base.ship_skin_words[301330] = {
 	detail = "真羡慕{namecode:33}那么开朗……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301331] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29927,7 +30138,6 @@ _G.pg.base.ship_skin_words[301331] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301339] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -29961,7 +30171,6 @@ _G.pg.base.ship_skin_words[301339] = {
 	detail = "{namecode:34}……一直被大家照顾着。{namecode:34}很开心，但是，{namecode:34}不能总给大家添麻烦……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301350] = {
 	feeling1 = "哇啊，指挥官出现了！快跑！",
 	feeling3 = "指挥官，快来帮帮我~我又丢东西啦！！",
@@ -29995,7 +30204,6 @@ _G.pg.base.ship_skin_words[301350] = {
 	detail = "指挥官，大事不好了！有蟑螂，快帮忙解决掉！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301351] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30029,7 +30237,6 @@ _G.pg.base.ship_skin_words[301351] = {
 	detail = "指挥官，我做了一个梦，梦里大家手拉着手一起玩，不用打来打去，好开心呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301370] = {
 	feeling1 = "{namecode:133}会努力完成任务的，请指挥官放心",
 	feeling3 = "我家的姐妹们都笨笨的，特别好欺负，指挥官下次我表演给你看~啊不过，要是别人捉弄她们的话，我可是要生气的",
@@ -30063,7 +30270,6 @@ _G.pg.base.ship_skin_words[301370] = {
 	detail = "指挥官，我还没做坏事哟？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301380] = {
 	feeling1 = "大家都说不要靠近指挥官……",
 	feeling3 = "指挥官，请和我交往吧……嗯？不是交朋友的意思吗？",
@@ -30097,7 +30303,6 @@ _G.pg.base.ship_skin_words[301380] = {
 	detail = "该，该不会我又弄错什么了吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301381] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30131,7 +30336,6 @@ _G.pg.base.ship_skin_words[301381] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301390] = {
 	feeling1 = "哈啊……好无聊哦。指挥官如果不做点有趣的事情，p子就要因为无聊而大叫了哦？",
 	feeling3 = "嗯？《狼来了》的故事？呢嘻嘻，是让{namecode:160}不要光是口头上说说，偶尔也要真的拉响一次p子的意思吗？",
@@ -30180,7 +30384,6 @@ _G.pg.base.ship_skin_words[301390] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301391] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30214,7 +30417,6 @@ _G.pg.base.ship_skin_words[301391] = {
 	detail = "虽然是女仆，但是戴着喵喵手套，所以女仆的工作都做不了呢，真遗憾~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301410] = {
 	feeling1 = "啊——呜（{namecode:126}并没有理会你）",
 	feeling3 = "穿衣服好麻烦，讨厌衣服……{namecode:126}只要有鲷鱼烧就好了",
@@ -30248,7 +30450,6 @@ _G.pg.base.ship_skin_words[301410] = {
 	detail = "指挥官，鲷鱼烧还有很多，不用担心",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301411] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30282,7 +30483,6 @@ _G.pg.base.ship_skin_words[301411] = {
 	detail = "{namecode:126}不喜欢换麻烦的衣服，但是大家都想看{namecode:126}穿上它，所以{namecode:126}变成了僵尸。我跳~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301470] = {
 	feeling1 = "对不起，是我帮不上指挥官大人的忙……",
 	feeling3 = "指挥官大人，那个…要一起来喂海鸥吗？我把面包屑分给你……呀！对，对不起，面包屑撒掉了……",
@@ -30342,7 +30542,6 @@ _G.pg.base.ship_skin_words[301470] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301471] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30376,7 +30575,6 @@ _G.pg.base.ship_skin_words[301471] = {
 	detail = "不知道这样的{namecode:150}，能不能给指挥官大人一点治愈的感觉呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301472] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30410,7 +30608,6 @@ _G.pg.base.ship_skin_words[301472] = {
 	detail = "哇啊…指挥官大人，面包屑把海鸥们吸引过来了呢！好可爱…可以摸摸它们吗…啊！对，对不起，我开心过头了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301480] = {
 	feeling1 = "吓！——（{namecode:207}对你十分戒备）",
 	feeling3 = "指挥官！来陪{namecode:207}玩吧！把{namecode:150}和{namecode:158}也一起喊上！",
@@ -30462,7 +30659,6 @@ _G.pg.base.ship_skin_words[301480] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301481] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30496,7 +30692,6 @@ _G.pg.base.ship_skin_words[301481] = {
 	detail = "我要准备一个超级厉害的魔术，等到晚会的时候让所有人大吃一惊！不过，什么样的魔术才算“超级厉害”呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301490] = {
 	feeling1 = "你果然没有超出我的预期呢，指挥官",
 	feeling3 = "指挥官也是经历过战场的人，为什么还能够相信那些天真的东西呢？正义、爱、与和平什么的……",
@@ -30556,7 +30751,6 @@ _G.pg.base.ship_skin_words[301490] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301491] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30590,7 +30784,6 @@ _G.pg.base.ship_skin_words[301491] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301498] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30624,7 +30817,6 @@ _G.pg.base.ship_skin_words[301498] = {
 	detail = "偶尔也要去看看{namecode:74}大人。和我不一样，你的话，应该能为她排解不少寂寞吧。…没关系的，我知道你也会来看我的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301540] = {
 	feeling1 = "大家都好像在说指挥官的坏话…指挥官真有那么差劲么…",
 	feeling3 = "呜…夜、夜路果然还是有点…指挥官…如果工作结束晚了，可以陪我走回宿舍吗？",
@@ -30667,7 +30859,6 @@ _G.pg.base.ship_skin_words[301540] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301541] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30701,7 +30892,6 @@ _G.pg.base.ship_skin_words[301541] = {
 	detail = "给大家的礼物要用什么样的包装呢…呜…指挥官能帮忙一起想想吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301560] = {
 	feeling1 = "果然是{namecode:125}太没用了……",
 	feeling3 = "为了不给大家拖后腿，{namecode:125}一直想努力，但是一直不知道该怎么做，反而更容易出错了…",
@@ -30735,7 +30925,6 @@ _G.pg.base.ship_skin_words[301560] = {
 	detail = "指、指挥官，{namecode:125}没有让你失望……吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301570] = {
 	feeling1 = "殿下一定是中了什么诅咒……",
 	feeling3 = "呜呜，头，头发又乱了呢……{namecode:78}姐也不在……要，要帮我梳吗？谢，谢谢殿下！",
@@ -30769,7 +30958,6 @@ _G.pg.base.ship_skin_words[301570] = {
 	detail = "呀！殿，殿下是什么时候过来的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301571] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30803,7 +30991,6 @@ _G.pg.base.ship_skin_words[301571] = {
 	detail = "那个，殿下…像这样一直盯着我看，我会不好意思的……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301580] = {
 	feeling1 = "你最好离我远点。",
 	feeling3 = "{namecode:157}总是不够勇敢，虽然我也知道不能老是帮着她，但每次一看到她那样我就忍不住…",
@@ -30837,7 +31024,6 @@ _G.pg.base.ship_skin_words[301580] = {
 	detail = "一个人能做到的事终究是有限的。所以指挥官，不要客气，需要我的力量的时候就和我说吧，我会帮助你的。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301581] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30871,7 +31057,6 @@ _G.pg.base.ship_skin_words[301581] = {
 	detail = "{namecode:157}给了我一个她说能带来好运的御守……如果能显灵就太好了呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301582] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30905,7 +31090,6 @@ _G.pg.base.ship_skin_words[301582] = {
 	detail = "传说放鞭炮是为了驱逐一个叫做“年”的怪兽，不过，为什么怪兽只在春节这个时间过来呢……？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301590] = {
 	feeling1 = "离我远点，笨蛋会传染的",
 	feeling3 = "{namecode:128}和{namecode:127}两个丫头都轻飘飘的，一点也没有武将的风范和气度，还是要我这个大姐来撑场面，真是让人头疼……",
@@ -30949,7 +31133,6 @@ _G.pg.base.ship_skin_words[301590] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301591] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -30983,7 +31166,6 @@ _G.pg.base.ship_skin_words[301591] = {
 	detail = "看到家纹你就该知道这件衣服也是我设计的了，你觉得好看吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301592] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31017,7 +31199,6 @@ _G.pg.base.ship_skin_words[301592] = {
 	detail = "音乐当然也是战国时期就有的东西……你说乐队这个太现代了？哼，这叫与时俱进。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301600] = {
 	feeling1 = "走开，我不要跟尼玩了，{namecode:128}，{namecode:128}尼在哪儿？",
 	feeling3 = "西军突击！拿下东军！让我看看，接下来是……哇呀呀，小早川秀秋被策反啦！大将尼好坏，我要，我要，呜呜呜呜……",
@@ -31060,7 +31241,6 @@ _G.pg.base.ship_skin_words[301600] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301601] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31094,7 +31274,6 @@ _G.pg.base.ship_skin_words[301601] = {
 	detail = "大将大将，我要压岁钱！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301602] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31128,7 +31307,6 @@ _G.pg.base.ship_skin_words[301602] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301610] = {
 	feeling1 = "指挥官，有勇无谋……",
 	feeling3 = "我期待着第十七驱逐队能在这里团聚……",
@@ -31162,7 +31340,6 @@ _G.pg.base.ship_skin_words[301610] = {
 	detail = "这一次——一定要守护好同伴！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301611] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31196,7 +31373,6 @@ _G.pg.base.ship_skin_words[301611] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301612] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31230,7 +31406,6 @@ _G.pg.base.ship_skin_words[301612] = {
 	detail = "我负责做菜，{namecode:127}负责打扫。…只有我们两个人会不会很辛苦？还有这些孩子们帮忙所以不要紧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301619] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31264,7 +31439,6 @@ _G.pg.base.ship_skin_words[301619] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301620] = {
 	feeling1 = "指挥官先生……盯——",
 	feeling3 = "谷风只有白天才会存在，但我可不是哟～",
@@ -31307,7 +31481,6 @@ _G.pg.base.ship_skin_words[301620] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301621] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31341,7 +31514,6 @@ _G.pg.base.ship_skin_words[301621] = {
 	detail = "指挥官也要一起去海边玩吗？我们一起来堆城堡",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301622] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31375,7 +31547,6 @@ _G.pg.base.ship_skin_words[301622] = {
 	detail = "{namecode:128}负责接待，我负责打扫。不止我们2人哦？还有很多小伙伴来帮忙，因此女仆店才可以正常运转。指挥官觉得怎么样呢？……有，有正常运转对吧…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301629] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31409,7 +31580,6 @@ _G.pg.base.ship_skin_words[301629] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301630] = {
 	feeling1 = "{namecode:148}…你在哪呀？",
 	feeling3 = "昨天又做噩梦了。指挥官今天晚上能陪我一起睡吗？{namecode:145}很怕……怕梦见黑色的海底，怕看到什么都做不到的自己…",
@@ -31468,7 +31638,6 @@ _G.pg.base.ship_skin_words[301630] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301631] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31502,7 +31671,6 @@ _G.pg.base.ship_skin_words[301631] = {
 	detail = "不知道在学校能不能找到{namecode:148}呢…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301632] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31536,7 +31704,6 @@ _G.pg.base.ship_skin_words[301632] = {
 	detail = "呼…呼…指挥官也要来一点热茶吗？像这样握着…呼呼一下，暖暖的很舒服哦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301633] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31570,7 +31737,6 @@ _G.pg.base.ship_skin_words[301633] = {
 	detail = "咚，咚咚…随着鼓点…嘿咻…啊。指挥官，没事吗…？{namecode:145}，应该不重吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301640] = {
 	feeling1 = "果然跟指挥官还是无法心意相通吗…",
 	feeling3 = "无论男女，只要是优秀又可爱的孩子，我都会动心哟。重要的不是性别，而是内在呢~",
@@ -31622,7 +31788,6 @@ _G.pg.base.ship_skin_words[301640] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301641] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31656,7 +31821,6 @@ _G.pg.base.ship_skin_words[301641] = {
 	detail = "这件衣服果然有些太紧了呢……来年换一件新的好了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301642] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31690,7 +31854,6 @@ _G.pg.base.ship_skin_words[301642] = {
 	detail = "{namecode:145}，还没来呢…不会被什么坏人给拐跑了吧…指挥官，我是不是有点想多了？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301643] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31724,7 +31887,6 @@ _G.pg.base.ship_skin_words[301643] = {
 	detail = "被那么多穿着可爱的节日服装的女孩子们包围着，指挥官…稍微瞄几眼也没关系哦？呵呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301644] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31758,7 +31920,6 @@ _G.pg.base.ship_skin_words[301644] = {
 	detail = "这套定制的制服很适合大家，看上去十分可爱~对指挥官和我而言，都算是享了眼福呢♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301650] = {
 	feeling1 = "咱和指挥官无法成为朋友呢……",
 	feeling3 = "咱以前失去过不少朋友呢，{namecode:145}她们，{namecode:149}、{namecode:150}……所以咱就好害怕，害怕失去朋友，然后想要为朋友做到更多……",
@@ -31792,7 +31953,6 @@ _G.pg.base.ship_skin_words[301650] = {
 	detail = "指挥官，有什么事尽管叫咱哦，咱最喜欢被拜托了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301651] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31826,7 +31986,6 @@ _G.pg.base.ship_skin_words[301651] = {
 	detail = "蝴蝶翩翩~飞呀飞呀~啊，啾啾们也在追蝴蝶",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301660] = {
 	feeling1 = "{namecode:145}亲？别怕别怕。指挥官，失陪了，我得陪陪她——",
 	feeling3 = "又做噩梦了？别怕别怕……指挥官，一切都会好的。",
@@ -31879,7 +32038,6 @@ _G.pg.base.ship_skin_words[301660] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301661] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -31913,7 +32071,6 @@ _G.pg.base.ship_skin_words[301661] = {
 	detail = "水中倒映的光彩，转瞬即逝的烟花…美丽…又让人觉得有点悲伤…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301720] = {
 	feeling1 = "好无聊……",
 	feeling3 = "大大的指挥喵，蹭蹭…不对…戳戳…肌肉…可爱！",
@@ -31972,7 +32129,6 @@ _G.pg.base.ship_skin_words[301720] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301721] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32006,7 +32162,6 @@ _G.pg.base.ship_skin_words[301721] = {
 	detail = "指挥官，来和{namecode:184}…一起滑雪啾…啾啾也一起…！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301790] = {
 	feeling1 = "趁其它人对你的评价进一步降低之前，赶紧认识到自己的问题吧",
 	feeling3 = "对待性格各异的同伴就要用不同的相处方式。这可不是善变，只是一点拉近关系的技巧而已。",
@@ -32059,7 +32214,6 @@ _G.pg.base.ship_skin_words[301790] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301800] = {
 	feeling1 = "欸……不要来烦我",
 	feeling3 = "呜呜，又摔跤了……指挥官，能背我回去吗？",
@@ -32093,7 +32247,6 @@ _G.pg.base.ship_skin_words[301800] = {
 	detail = "一直从事物资运输？不要那么说嘛，我也有好好战斗过啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301801] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32127,7 +32280,6 @@ _G.pg.base.ship_skin_words[301801] = {
 	detail = "今天跑步的时候又不小心摔跤了……不过有{namecode:128}的帮助，现在已经不疼了呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301810] = {
 	feeling1 = "指挥官，不要难过，{namecode:180}做你的好朋友。",
 	feeling3 = "指挥官是{namecode:180}的好朋友，{namecode:180}和噗噗会一直陪着指挥官的。",
@@ -32187,7 +32339,6 @@ _G.pg.base.ship_skin_words[301810] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301811] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32221,7 +32372,6 @@ _G.pg.base.ship_skin_words[301811] = {
 	detail = "{namecode:20}送的年糕，还有很多。指挥官，要吃？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301812] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32255,7 +32405,6 @@ _G.pg.base.ship_skin_words[301812] = {
 	detail = "欸…书包拉链开了？…一定是噗噗的恶作剧，才不是因为睡过头出门太赶没注意…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301819] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32289,7 +32438,6 @@ _G.pg.base.ship_skin_words[301819] = {
 	detail = "因为{namecode:180}能看到，所以噗噗不再孤独了，{namecode:180}也…多了许多好朋友，嗯，能看到，是好事。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301820] = {
 	feeling1 = "指挥官，{namecode:29}不想看到您就这么被大家疏远。但是再这样下去的话，恐怕{namecode:29}也没法帮到您了…",
 	feeling3 = "说起来有些惭愧，每次想试着自己种点什么的时候，都会演变成纠结养究竟种哪种花，结果最后还是没能动手……指挥官有喜欢的花吗？这次我想给自己下定决心试一试呢。",
@@ -32342,7 +32490,6 @@ _G.pg.base.ship_skin_words[301820] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301821] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32376,7 +32523,6 @@ _G.pg.base.ship_skin_words[301821] = {
 	detail = "盛夏，真是不可思议…本应已经熟悉无比的场所，只是换了件泳装，像这样指挥官一起看着云彩，就有一种不可思议的新奇感……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301822] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32410,7 +32556,6 @@ _G.pg.base.ship_skin_words[301822] = {
 	detail = "东煌的服饰花纹非常好看呢。…要选什么谢礼送给帮忙选了这身的欧若拉小姐才好呢…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301830] = {
 	feeling1 = "指挥官，遇到烦恼和不顺心的事，随时都可以向我倾诉哦，我会一直等着你的......",
 	feeling3 = "我的尾巴是暖暖的毛茸茸的那种，{namecode:141}的可能更有点光滑的感觉…还有{namecode:129}的那种细细的和{namecode:18}的一丁点的…嗯，各种各样的都有呢！",
@@ -32465,7 +32610,6 @@ _G.pg.base.ship_skin_words[301830] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301831] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32499,7 +32643,6 @@ _G.pg.base.ship_skin_words[301831] = {
 	detail = "女仆是能为大家带来幸福的存在，所以我也想要尝试一下~不过看起来还需要多努力一下才行呢.....",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301832] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32533,7 +32676,6 @@ _G.pg.base.ship_skin_words[301832] = {
 	detail = "看着{namecode:185}就有一股安心感？虽然越来越搞不明白了，不过指挥官觉得高兴就好。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301833] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32567,7 +32709,6 @@ _G.pg.base.ship_skin_words[301833] = {
 	detail = "{namecode:185}的声音听着很治愈？太，太好了…之前的努力练习总算没有白费！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301838] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32601,7 +32742,6 @@ _G.pg.base.ship_skin_words[301838] = {
 	detail = "{namecode:185}一直在你身边哦。过去如此，将来也如是。因为{namecode:185}的幸福就是让指挥官感到幸福~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301840] = {
 	feeling1 = "指挥官，我要讨厌你了哦？",
 	feeling3 = "指挥官，有什么事也可以尽管来拜托我哦！…欸？偶尔依赖依赖指挥官也没关系…？",
@@ -32663,7 +32803,6 @@ _G.pg.base.ship_skin_words[301840] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301841] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32697,7 +32836,6 @@ _G.pg.base.ship_skin_words[301841] = {
 	detail = "嘿嘿，现在的{namecode:27}是不是人如其名，给人一种“清凉”的感觉呢~？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301842] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32731,7 +32869,6 @@ _G.pg.base.ship_skin_words[301842] = {
 	detail = "武人以伤疤为勋章…不是说脸上这个涂鸦啦！……呜，我会努力特训再回来报仇的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301850] = {
 	feeling1 = "算了，也不期待你能有什么变化了…这样就好。",
 	feeling3 = "外出要护卫？好。…等等，为什么在自家的港区里走动还需要护卫？",
@@ -32774,7 +32911,6 @@ _G.pg.base.ship_skin_words[301850] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301851] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32808,7 +32944,6 @@ _G.pg.base.ship_skin_words[301851] = {
 	detail = "好好看着吧指挥官，这就是我全心全意的一击——又失败了？！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301852] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32842,7 +32977,6 @@ _G.pg.base.ship_skin_words[301852] = {
 	detail = "看似用墨水随意点缀的图画，却真切地让人感受到了梅花的神韵……真是一幅颇有意境的水墨画啊",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301860] = {
 	feeling1 = "果然…大家都是注定孤独的吧…我也好，指挥官也好…",
 	feeling3 = "嗯，指挥官不是奇怪的人，可以和你做朋友。…其实是{namecode:203}自己想交朋友？…才、才不回答你。",
@@ -32893,7 +33027,6 @@ _G.pg.base.ship_skin_words[301860] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301861] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32927,7 +33060,6 @@ _G.pg.base.ship_skin_words[301861] = {
 	detail = "我又练习了一下，指挥官…要听听看吗？…还是算了……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301862] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -32961,7 +33093,6 @@ _G.pg.base.ship_skin_words[301862] = {
 	detail = "为什么我一个人在这里？想着在这里说不定可以和指挥官二人独处……什么都没有，才不告诉指挥官呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301880] = {
 	feeling1 = "为什么要抛下{namecode:225}一个人？是我做错了什么吗……",
 	feeling3 = "得到了强大的力量以后，就忘记同伴，失却本心，变成了贪婪的野心家…许多故事里都有这样的反派呢。这样的坏蛋，要是让{namecode:225}遇到了，哼哼~",
@@ -33015,7 +33146,6 @@ _G.pg.base.ship_skin_words[301880] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301881] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33049,7 +33179,6 @@ _G.pg.base.ship_skin_words[301881] = {
 	detail = "只要表现得好，{namecode:84}大人就会摸摸我的头奖励我！我今天收到了很多很多的奖励哦！……阁下也要给我奖励吗？太好了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301890] = {
 	feeling1 = "诶，指挥官不理{namecode:189}了吗...为什么…指挥官？嗯，{namecode:189}不太明白，是不是道歉比较好...？",
 	feeling3 = "难道你真的以为{namecode:189}会离开吗？啊，嗯...对不起哦？我只是想捉弄下指挥官，并没有真的想让指挥官困扰...呜呜...",
@@ -33109,7 +33238,6 @@ _G.pg.base.ship_skin_words[301890] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[301891] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33143,7 +33271,6 @@ _G.pg.base.ship_skin_words[301891] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301900] = {
 	feeling1 = "嗯……可别让我太失望了啊。我要说的就这些。",
 	feeling3 = "工作就要干脆利落地解决掉。怕什么，有我在帮你呢，这有什么好头疼的。平时就可以多多依赖我的。",
@@ -33177,7 +33304,6 @@ _G.pg.base.ship_skin_words[301900] = {
 	detail = "哼，我可是光荣的{namecode:124}型的一员！如果不学着像周围人一样好好尊敬我的话，我就给你来那么一下子……嗯，你准备了团子，问我要不要一起吃？你、你还挺有眼力见的嘛。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[301901] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33211,7 +33337,6 @@ _G.pg.base.ship_skin_words[301901] = {
 	detail = "又不是整天都要战斗。你要懂得如何放松才是。作为统领舰队、纵横大海之人，你应该懂得如何享受大海的乐趣才对。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302010] = {
 	feeling1 = "主人，能请你不要靠近{namecode:37}吗？",
 	feeling3 = "比起出征{namecode:37}更喜欢呆在港口，这里才是{namecode:37}的家呢。有碧蓝的海面和温暖的太阳……呜…呼呼…",
@@ -33245,7 +33370,6 @@ _G.pg.base.ship_skin_words[302010] = {
 	detail = "无论是锅炉还是别的什么，{namecode:37}可都是最先进的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33279,7 +33403,6 @@ _G.pg.base.ship_skin_words[302019] = {
 	detail = "{namecode:98}非常热心地给{namecode:37}的研究提供了很多帮助，但总觉得她好像有什么别的目的…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302040] = {
 	feeling1 = "指挥官，请打起精神……",
 	feeling3 = "指挥官~哎？没事啦，就是突然想打个招呼，嘿嘿~",
@@ -33322,7 +33445,6 @@ _G.pg.base.ship_skin_words[302040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33356,7 +33478,6 @@ _G.pg.base.ship_skin_words[302041] = {
 	detail = "指挥官春节期间有什么想做的事吗？我的话，想要躺在房间里喝着茶看着书，悠悠哉哉地度过呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302050] = {
 	feeling1 = "指挥官是恶鬼吗？",
 	feeling3 = "诶？半夜去探险？那个……果然还是不好吧？不，我可不是在害怕！",
@@ -33390,7 +33511,6 @@ _G.pg.base.ship_skin_words[302050] = {
 	detail = "呜呜…太好了，指挥官还是这么温柔",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33424,7 +33544,6 @@ _G.pg.base.ship_skin_words[302051] = {
 	detail = "万圣夜的鬼怪真的都是扮的吗？……真的没有什么奇怪的东西混进去吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33458,7 +33577,6 @@ _G.pg.base.ship_skin_words[302052] = {
 	detail = "{namecode:46}姐和{namecode:47}要在半夜扮成圣诞老人给孩子们派发礼物。因，因为夜里黑乎乎的很可怕，所以我没和她们一起……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302053] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33492,7 +33610,6 @@ _G.pg.base.ship_skin_words[302053] = {
 	detail = "没想到穿人偶装是这么辛苦的一件事情…{namecode:2}竟然能穿那么久，真是太厉害了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302054] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33526,7 +33643,6 @@ _G.pg.base.ship_skin_words[302054] = {
 	detail = "比起其他孩子的“马”，我的“马”好像健壮不少……这样的话就算是我说不定也能赢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302059] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33560,7 +33676,6 @@ _G.pg.base.ship_skin_words[302059] = {
 	detail = "指挥官，对我一直都很温柔呢。谢谢你。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302060] = {
 	feeling1 = "你说的话都是空口骗人的，我才不信你……",
 	feeling3 = "嗯嗯，你终于认识到我的力量了吧。没错！只要用我的力量，就能让商店新玩具的价格翻三倍！…嗯？你说这有什么用？",
@@ -33627,7 +33742,6 @@ _G.pg.base.ship_skin_words[302060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33661,7 +33775,6 @@ _G.pg.base.ship_skin_words[302061] = {
 	detail = "主城建完了，这样下去沙堡比赛我肯定稳赢了…嘻嘻嘻，接下来就只要笑看别的小组——“那边有个大浪快过来了！小心！”",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302070] = {
 	feeling1 = "难道说…占卜里说的灾星就是指挥官吗……",
 	feeling3 = "是说“她”的事情吗？啊，也就是我的事情呢……嗯，用指挥官能理解的话来说，她就像是式神一样的存在吧。",
@@ -33720,7 +33833,6 @@ _G.pg.base.ship_skin_words[302070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33754,7 +33866,6 @@ _G.pg.base.ship_skin_words[302071] = {
 	detail = "总感觉穿成这样，我才是要被驱邪的那一边呢……指挥官觉得呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302080] = {
 	feeling1 = "懦夫，永远也没法驾驭恶鬼。",
 	feeling3 = "哼，虽然{namecode:46}她们有各种一言难尽的地方，不过你还是能好好让她们派上用场呢，我替她们谢谢你了。——什么，我也有些一言难尽的地方……哪里？快给我详细说说！",
@@ -33813,7 +33924,6 @@ _G.pg.base.ship_skin_words[302080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33847,7 +33957,6 @@ _G.pg.base.ship_skin_words[302081] = {
 	detail = "{namecode:66}殿下的那个可不能算是社团活动啊…不，也没什么理由，我只是因为喜欢才参加社团活动的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302082] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33881,7 +33990,6 @@ _G.pg.base.ship_skin_words[302082] = {
 	detail = "要看的话，牌给你看好了…像这样一直盯着我…是不会有结果的…还是，你是在对我使用心理战术吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302089] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33915,7 +34023,6 @@ _G.pg.base.ship_skin_words[302089] = {
 	detail = "鬼面？在领口这里。为了更好地战斗，总得抛弃点华而不实的东西。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302090] = {
 	feeling1 = "别碰我……",
 	feeling3 = "看起来像是好战分子？这样吗……不过比起战斗，我更喜欢护卫之类的任务",
@@ -33949,7 +34056,6 @@ _G.pg.base.ship_skin_words[302090] = {
 	detail = "指挥官，别太勉强自己",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302099] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -33983,7 +34089,6 @@ _G.pg.base.ship_skin_words[302099] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302100] = {
 	feeling1 = "反正，我这种倒霉的家伙，也只能摊上这样的指挥官了……",
 	feeling3 = "说到我的角……虽然不是很在意，但是额头长角不是会比较显眼吗，我实在是不太习惯在人群里被大家注目这种事……哈……",
@@ -34042,7 +34147,6 @@ _G.pg.base.ship_skin_words[302100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302109] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34076,7 +34180,6 @@ _G.pg.base.ship_skin_words[302109] = {
 	detail = "现在不说话看起来更酷了？……算了，就这样吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302110] = {
 	feeling1 = "看来要提醒姐姐，这不是个值得信赖的指挥官了……",
 	feeling3 = "我们{namecode:57}型四个都隶属于第七战队，不过{namecode:60}和{namecode:59}她们两个要晚一点出生，所以我和姐姐比较亲近一点吧……而且姐姐也……比较需要照顾",
@@ -34119,7 +34222,6 @@ _G.pg.base.ship_skin_words[302110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34153,7 +34255,6 @@ _G.pg.base.ship_skin_words[302111] = {
 	detail = "指挥官的视线吗……虽然会在意，不过并不像{namecode:59}所说的那样……！一回想起来突然就更在意了……///",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302120] = {
 	feeling1 = "是时候离开了",
 	feeling3 = "看到不平事我就要用拳头管一管，这是我的生存方式。不过我也知道会给其他人添麻烦，所以一直尽量不和人扯上关系",
@@ -34213,7 +34314,6 @@ _G.pg.base.ship_skin_words[302120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302129] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34247,7 +34347,6 @@ _G.pg.base.ship_skin_words[302129] = {
 	detail = "嗯？我在练习下次出击的pose，气势也是很重要的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302130] = {
 	feeling1 = "舰队的事务就请交给我吧",
 	feeling3 = "指挥官，虽然尊重我的意见是好事，不过您只要贯彻自己的想法就好，而且如果我不赞同您的话，是不会站在您身边的，呵呵",
@@ -34281,7 +34380,6 @@ _G.pg.base.ship_skin_words[302130] = {
 	detail = "接下来的作战，资源分配，还有……嗯？这不是指挥官吗，请随意",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302131] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34315,7 +34413,6 @@ _G.pg.base.ship_skin_words[302131] = {
 	detail = "说是放松，其实在海边也都在想舰队的事务就是了……我也真是劳碌命呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302132] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34349,7 +34446,6 @@ _G.pg.base.ship_skin_words[302132] = {
 	detail = "说起大灰狼的作战…感觉总是在关键时刻掉以轻心呢。比如，如果不吃掉外婆，就能把留下的外婆直接当作诱饵利用了吧……呵呵，只是玩笑而已。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302139] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34383,7 +34479,6 @@ _G.pg.base.ship_skin_words[302139] = {
 	detail = "指挥官，有什么战术要和我讨论的吗？或者坐下来聊天也可以",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302140] = {
 	feeling1 = "姐姐们之所以会选择指挥官，难道只是因为指挥官什么都不会，正好能让她们可以自由发挥……？真奇怪…",
 	feeling3 = "欸？爱好啊……我倒是没想过呢，对我来说，读书和训练都挺开心哦，指挥官也来一起努力怎么样，嘻嘻？",
@@ -34427,7 +34522,6 @@ _G.pg.base.ship_skin_words[302140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34461,7 +34555,6 @@ _G.pg.base.ship_skin_words[302141] = {
 	detail = "听说冲浪不仅可以锻炼运动神经，还能增强平衡感呢！要不试试看好了~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302200] = {
 	feeling1 = "抱歉，指挥官你呼出的空气让我有些不快呢~",
 	feeling3 = "指挥官，来聊聊天吧，我也想知道我的指挥官是个怎么样的人~",
@@ -34512,7 +34605,6 @@ _G.pg.base.ship_skin_words[302200] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302201] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34546,7 +34638,6 @@ _G.pg.base.ship_skin_words[302201] = {
 	detail = "指挥官，你觉得，是这个姿势比较好看呢，还是双手抱胸比较好呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302202] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34580,7 +34671,6 @@ _G.pg.base.ship_skin_words[302202] = {
 	detail = "在公园的长凳上，坐着一个正在吃可丽饼，看起来有些寂寞的超可爱女孩子，不主动出击的，也只有指挥官这样的胆小鬼了呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302203] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34614,7 +34704,6 @@ _G.pg.base.ship_skin_words[302203] = {
 	detail = "虽然做好了心理准备，不过劲敌真是不少…这下要花点心思了（小声）…唔？呵呵，没什么，我只是在想吊灯真华丽呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302210] = {
 	feeling1 = "指挥官，你太浮躁了。试着沉静下来反省一下自己如何？",
 	feeling3 = "{namecode:49}姐姐邀请我一起训练…唔…总觉得她又想要捉弄我了…不过推辞的话，好像又没有什么说得过去的理由…对了，指挥官，要不你在那个时间段给我安排一点工作吧！",
@@ -34666,7 +34755,6 @@ _G.pg.base.ship_skin_words[302210] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302211] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34700,7 +34788,6 @@ _G.pg.base.ship_skin_words[302211] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302212] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34734,7 +34821,6 @@ _G.pg.base.ship_skin_words[302212] = {
 	detail = "无须担心，准备和打招呼这类宴会上要干的事情都已经做完了。之后只要在这慢慢欣赏风景就好。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302213] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34768,7 +34854,6 @@ _G.pg.base.ship_skin_words[302213] = {
 	detail = "我喜欢安静、能让人心安的地方——清风低吟，流水潺潺，春天来访，还有指挥官……没、没什么！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302214] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34802,7 +34887,6 @@ _G.pg.base.ship_skin_words[302214] = {
 	detail = "{namecode:49}想要的点心配方，指挥官需要的任务文件，然后是{namecode:39}她们的…呼……还真是挺忙的呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302215] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34836,7 +34920,6 @@ _G.pg.base.ship_skin_words[302215] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302216] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34870,7 +34953,6 @@ _G.pg.base.ship_skin_words[302216] = {
 	detail = "除了像这样穿着泳装玩耍外，我也喜欢单纯地光脚在沙滩上散步。如果你方便的话…那个，下次可以两个人一起试试看的…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302218] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34904,7 +34986,6 @@ _G.pg.base.ship_skin_words[302218] = {
 	detail = "虽然{namecode:49}说华丽感很重要，但这辆马车是不是有些过头了…当然，我的话，只要你觉得合适就好，呼呼…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302230] = {
 	feeling1 = "都说了别来管我了吧？我讨厌不听我说话的人哦？",
 	feeling3 = "♪～又来见我了吗？诶嘿嘿，要是被{namecode:50}姐知道然后吃醋了我可不管哦？请坐请坐，我去把茶和点心拿过来——是我最喜欢的重樱点心哦！",
@@ -34948,7 +35029,6 @@ _G.pg.base.ship_skin_words[302230] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[302231] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -34982,7 +35062,6 @@ _G.pg.base.ship_skin_words[302231] = {
 	detail = "有这么多重樱点心，好幸福~你也来和{namecode:226}一起变幸福吧？来，请享用这个♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302232] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35016,7 +35095,6 @@ _G.pg.base.ship_skin_words[302232] = {
 	detail = "又来见{namecode:226}了呢！不去找{namecode:50}姐，而是来找我玩吗？诶嘿嘿，说得让你有罪恶感了？没关系的哦～陪{namecode:226}玩了之后，再一起去找{namecode:50}姐吧♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[302233] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35050,7 +35128,6 @@ _G.pg.base.ship_skin_words[302233] = {
 	detail = "在这么大的音乐厅里唱歌或演奏时，应该挺紧张的吧？{namecode:226}因为有指挥官在一起，所以一点都不紧张呢～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303010] = {
 	feeling1 = "（{namecode:53}从你身边毫无停顿地跑了过去）",
 	feeling3 = "指挥官~哎呀！……嘿嘿，谢谢，差点又摔倒了，我其实还挺在乎自己冒失这个属性的，不过来到舰队后过的太高兴就不小心懈怠了",
@@ -35084,7 +35161,6 @@ _G.pg.base.ship_skin_words[303010] = {
 	detail = "有点无聊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35127,7 +35203,6 @@ _G.pg.base.ship_skin_words[303019] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303020] = {
 	feeling1 = "看来你这辈子都得不到我的承认了呢",
 	feeling3 = "这个姿势手要这样摆好……怎么，这点肢体接触你也要害羞吗？……是我在脸红？说什么蠢话！",
@@ -35161,7 +35236,6 @@ _G.pg.base.ship_skin_words[303020] = {
 	detail = "有什么想说的就直说",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35195,7 +35269,6 @@ _G.pg.base.ship_skin_words[303029] = {
 	detail = "有什么事，难道想听我说教吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303030] = {
 	feeling1 = "要不要去海外取材呢~",
 	feeling3 = "指挥官，我来舰队有些日子了，对大家也做了不少取材，一开始还觉得说不定是什么坏人，结果你被大家信任着呢，很厉害嘛~",
@@ -35264,7 +35337,6 @@ _G.pg.base.ship_skin_words[303030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303040] = {
 	feeling1 = "指挥官想做什么就做什么吧",
 	feeling3 = "姐姐虽然是那个样子，其实心里一直很愧疚呢",
@@ -35307,7 +35379,6 @@ _G.pg.base.ship_skin_words[303040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303060] = {
 	feeling1 = "抱歉，对像你这样的人，我有点…",
 	feeling3 = "指挥官对我手里的情报感兴趣吗~？比如说…港区的大家对指挥官的好感度之类的？呵呵~",
@@ -35378,7 +35449,6 @@ _G.pg.base.ship_skin_words[303060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303070] = {
 	feeling1 = "指挥官也太散漫了！",
 	feeling3 = "指挥官，适当地休息一下吧，精力枯竭的话工作效率也会下降的。膝枕……吗？没问题，不过这样真的能恢复精力吗？",
@@ -35412,7 +35482,6 @@ _G.pg.base.ship_skin_words[303070] = {
 	detail = "指挥官，充足的情报是胜利的开始",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303080] = {
 	feeling1 = "我没在和你说话！",
 	feeling3 = "努力？不，天资聪颖如我并不需要努力哦。只要还在呼吸，我就会变得更强哦",
@@ -35446,7 +35515,6 @@ _G.pg.base.ship_skin_words[303080] = {
 	detail = "怎么，想成为我的裙下之臣吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303089] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35480,7 +35548,6 @@ _G.pg.base.ship_skin_words[303089] = {
 	detail = "慰劳品？我没说要你买啊？……啊～看来是替我跑腿多了，都成习惯了呢。那……我就不客气了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303090] = {
 	feeling1 = "指挥官大人，如果不喜欢和我待着的话，可以说出来……",
 	feeling3 = "虽然我手不太灵巧，虽然叠出的纸鹤已经不能算“纸鹤”了……但我还是要给您。总感觉应该这样做……",
@@ -35523,7 +35590,6 @@ _G.pg.base.ship_skin_words[303090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35557,7 +35623,6 @@ _G.pg.base.ship_skin_words[303091] = {
 	detail = "不要勉强自己…{namecode:63}姐姐这么说过。指挥官大人没有勉强自己吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35591,7 +35656,6 @@ _G.pg.base.ship_skin_words[303092] = {
 	detail = "原本我带了耳机，准备在休息的时候也听下{namecode:63}姐的…不对，听音乐放松一下。不过现在听着海浪的声音感觉更舒服呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303100] = {
 	feeling1 = "……干掉指挥官吧。开玩笑的，要是这么对待指挥官，只会让大家伤心",
 	feeling3 = "嗯，今天负责指挥官的深夜警卫——诶？你，你还没睡吗？！跟我听说的不一样……{namecode:65}，{namecode:65}这是……在，在找一起玩游戏的人！",
@@ -35650,7 +35714,6 @@ _G.pg.base.ship_skin_words[303100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35684,7 +35747,6 @@ _G.pg.base.ship_skin_words[303101] = {
 	detail = "裙子？嗯，裙子……裙子！别，别看了！…呜哇，这可怎么是好…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303102] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35718,7 +35780,6 @@ _G.pg.base.ship_skin_words[303102] = {
 	detail = "这样子一动起来，会被看到的对吧……虽然觉得{namecode:65}也没什么值得看的就是了……唔唔////",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303110] = {
 	feeling1 = "刀剑无眼，还请不要随意靠近我身边",
 	feeling3 = "偶尔放下其他事情，像这样和指挥官说说话好像也不错呢",
@@ -35770,7 +35831,6 @@ _G.pg.base.ship_skin_words[303110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303112] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35804,7 +35864,6 @@ _G.pg.base.ship_skin_words[303112] = {
 	detail = "居然会输给萨拉小姐…至少在沙滩排球上，我一定要赢回来！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303113] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35838,7 +35897,6 @@ _G.pg.base.ship_skin_words[303113] = {
 	detail = "喂！不许把沾了墨水的脚踩在纸上！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303114] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35872,7 +35930,6 @@ _G.pg.base.ship_skin_words[303114] = {
 	detail = "学院生活也是港区任务重要的一环，所谓日益精进，想必也包括在学院的学习吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303115] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35906,7 +35963,6 @@ _G.pg.base.ship_skin_words[303115] = {
 	detail = "无论是什么任务，只要接下来了，就必须全力以赴的完成——不、不过指挥官，能不要像这样一直盯着我看吗，有点…害羞……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303118] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -35940,7 +35996,6 @@ _G.pg.base.ship_skin_words[303118] = {
 	detail = "虽然穿上了嫁衣，不过刀依然被我带在了身边，只不过藏在了你看不到的地方而已",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303120] = {
 	feeling1 = "对于不听话的指挥官…是不是该来点惩罚了呢…呵呵呵……",
 	feeling3 = "指挥官，要姐姐给你掏耳朵吗~来，不要客气，尽管交给姐姐我吧~",
@@ -35999,7 +36054,6 @@ _G.pg.base.ship_skin_words[303120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36033,7 +36087,6 @@ _G.pg.base.ship_skin_words[303121] = {
 	detail = "啊啦，指挥官，在看哪里呢~我要不要再低点头~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303122] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36067,7 +36120,6 @@ _G.pg.base.ship_skin_words[303122] = {
 	detail = "指挥官，要来摸摸小狗吗？它似乎挺喜欢你的呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303123] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36101,7 +36153,6 @@ _G.pg.base.ship_skin_words[303123] = {
 	detail = "既然都换上了校服，感觉称呼也要换一下了呢…指挥官，叫我“学姐”就可以了哟？嘻嘻…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303124] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36135,7 +36186,6 @@ _G.pg.base.ship_skin_words[303124] = {
 	detail = "虽说风格就是这样，不过这套衣服的露出度也是格外的高呢……嘻嘻，直白的指挥官，姐姐并不讨厌哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303128] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36169,7 +36219,6 @@ _G.pg.base.ship_skin_words[303128] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303130] = {
 	feeling1 = "靠近我的话，就斩了你",
 	feeling3 = "喂，说过别靠近我的——想了解我？……啧，随你喜欢吧",
@@ -36203,7 +36252,6 @@ _G.pg.base.ship_skin_words[303130] = {
 	detail = "可以不要一直盯着我看吗…？剑会忍不住斩下去的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303140] = {
 	feeling1 = "一起打起精神来吧，指挥官！",
 	feeling3 = "指挥官，今晚想吃什么？唔，我来决定吗…奶油炖菜和炸猪排如何？",
@@ -36254,7 +36302,6 @@ _G.pg.base.ship_skin_words[303140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36288,7 +36335,6 @@ _G.pg.base.ship_skin_words[303141] = {
 	detail = "♪～只要想到指挥官会来视察，就算是杂事感觉也能更加努力完成了！…至于努力之后会有什么变化…嗯~能让指挥官高兴就好了~♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303170] = {
 	feeling1 = "{namecode:57}姐是自我评价太低，不过指挥官的话，大概要变成他人评价低了呢……",
 	feeling3 = "指挥官是对{namecode:59}自身感兴趣吗？说给您听自然是没问题的……真的光说明就可以了吗？",
@@ -36341,7 +36387,6 @@ _G.pg.base.ship_skin_words[303170] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303180] = {
 	feeling1 = "指挥官…不太行啊感觉~啊不是批评你啦，只不过我也有点小想法而已～",
 	feeling3 = "指挥官～{namecode:60}一个人好寂寞啊～什么都行来玩玩吧～ 找别人？好过分！{namecode:60}就是想找指挥官玩嘛～来啦来啦！",
@@ -36400,7 +36445,6 @@ _G.pg.base.ship_skin_words[303180] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[303181] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36434,7 +36478,6 @@ _G.pg.base.ship_skin_words[303181] = {
 	detail = "露出度太高？没感觉哦～你看潜艇小伙伴们的衣服不是更危险～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303182] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36468,7 +36511,6 @@ _G.pg.base.ship_skin_words[303182] = {
 	detail = "唔～糟了，被指挥官把最好的牌抽走了！…你是不是作弊了啊指挥官，为什么总能抽到好牌的?",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303183] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36502,7 +36544,6 @@ _G.pg.base.ship_skin_words[303183] = {
 	detail = "在期待着{namecode:60}之后的谁呢？啊哈哈☆我并没有吃醋哦？毕竟是指挥官嘛，估计可以报上二、三十个名字吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303190] = {
 	feeling1 = "此等不义之辈，考虑诛杀之也不为过……此乃妄言。请好好振作吧，指挥官大人。",
 	feeling3 = "想知道{namecode:294}有什么想要的吗？我想想……嗯……说来……虽想不到我想要什么，却也不想被认为太无欲无求……此等情形……让人如何是好……",
@@ -36536,7 +36577,6 @@ _G.pg.base.ship_skin_words[303190] = {
 	detail = "啊，{namecode:294}很健康哦。本来就习惯了云游四方，餐风饮露，纵使数日不吃不喝也无妨——伙伴们会担心我吗？这样啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[303191] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36570,7 +36610,6 @@ _G.pg.base.ship_skin_words[303191] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304010] = {
 	feeling1 = "你不配拥有胜利！",
 	feeling3 = "{namecode:96}一个人出击没问题吧……嗯，这个距离应该不会被她发现",
@@ -36639,7 +36678,6 @@ _G.pg.base.ship_skin_words[304010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[304011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36673,7 +36711,6 @@ _G.pg.base.ship_skin_words[304011] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36707,7 +36744,6 @@ _G.pg.base.ship_skin_words[304012] = {
 	detail = "这个操作台可是{namecode:98}她们心血的结晶呢。指挥官有机会可以试试？当然，没机会使用自然是最好的，呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36741,7 +36777,6 @@ _G.pg.base.ship_skin_words[304013] = {
 	detail = "和指挥官并肩一同悠闲地欣赏风景…感觉也不错呢。对了，能跟我说说{namecode:71}提过的那个能看到好风景的地方么？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304020] = {
 	feeling1 = "真遗憾……",
 	feeling3 = "{namecode:73}她……还真是受欢迎啊……",
@@ -36784,7 +36819,6 @@ _G.pg.base.ship_skin_words[304020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[304021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36818,7 +36852,6 @@ _G.pg.base.ship_skin_words[304021] = {
 	detail = "指挥官想要睡哪个枕头？软的这个？还是硬的这个？还是说…想要睡在我的膝枕上呢～呵呵",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36852,7 +36885,6 @@ _G.pg.base.ship_skin_words[304022] = {
 	detail = "没想到，春节的晚会会有这么多的节目呢…果然大家还是喜欢热闹的啊，呵呵",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36886,7 +36918,6 @@ _G.pg.base.ship_skin_words[304023] = {
 	detail = "指挥官是在看我堆的炮塔城堡吗？呵呵，多亏了今天的好天气，才能堆出这么棒的作品呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304030] = {
 	feeling1 = "死心吧——",
 	feeling3 = "激战之后，就应该吃一桶热腾腾的大米饭呢",
@@ -36954,7 +36985,6 @@ _G.pg.base.ship_skin_words[304030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[304031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -36988,7 +37018,6 @@ _G.pg.base.ship_skin_words[304031] = {
 	detail = "和{namecode:73}走在一起时，总会引起过多的关注…哈啊…受欢迎也不净是好事啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37022,7 +37051,6 @@ _G.pg.base.ship_skin_words[304032] = {
 	detail = "呜哇，{namecode:73}的人气果然不一般啊…为什么那么多姐妹找她跳舞啊？！唔……我还是先不去找她了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304033] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37056,7 +37084,6 @@ _G.pg.base.ship_skin_words[304033] = {
 	detail = "虽然对这身打扮没什么自信，不过，能得到指挥官的好评真是太好了。虽然比不上其他同伴，但在指挥官这还是拿到了及格分吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304040] = {
 	feeling1 = "指挥官肯定有什么苦衷的吧！",
 	feeling3 = "其实我和{namecode:72}算是双胞胎姐妹，而且对我来说，她更像个让人不省心的妹妹呢",
@@ -37123,7 +37150,6 @@ _G.pg.base.ship_skin_words[304040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[304041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37157,7 +37183,6 @@ _G.pg.base.ship_skin_words[304041] = {
 	detail = "指挥官，放学后一起去赏花如何？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37191,7 +37216,6 @@ _G.pg.base.ship_skin_words[304042] = {
 	detail = "嗯…这个其实是一本杂志上推荐的搭配呢，{namecode:70}姐说是白鹰风的那种…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304043] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37225,7 +37249,6 @@ _G.pg.base.ship_skin_words[304043] = {
 	detail = "枪比刀剑更强大！…不过，在主炮面前都不算什么了吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304044] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37259,7 +37282,6 @@ _G.pg.base.ship_skin_words[304044] = {
 	detail = "光是看着没什么意思吧？这里有多的纸笔，指挥官也来画点什么吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304050] = {
 	feeling1 = "明主难寻呢……",
 	feeling3 = "策略只能弥补有限的实力之差，所以…咳咳…让自己变强才是最重要的，主上",
@@ -37310,7 +37332,6 @@ _G.pg.base.ship_skin_words[304050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[304051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37344,7 +37365,6 @@ _G.pg.base.ship_skin_words[304051] = {
 	detail = "有话要转达给{namecode:91}？若主上希望，我自然愿意转达，不过由您自己去跟她说或许，效果会更好呢。而且，对您来说，这样也更有意思…不对吗？呵呵呵",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37378,7 +37398,6 @@ _G.pg.base.ship_skin_words[304052] = {
 	detail = "和{namecode:91}已经见过面了？呵呵，那就好。那孩子只要主上不在就静不下来…不是说那孩子比较容易认死理，而是她说不定和{namecode:74}一样，总是想背负整个重樱。因此主上，请好好引导{namecode:91}吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[304060] = {
 	feeling1 = "{namecode:70}姐姐！我，我不想再见到这个指挥官了！",
 	feeling3 = "喂……不对……那、那个，指挥官，{namecode:71}遇到了不懂的地方，可以教教{namecode:71}吗？",
@@ -37445,7 +37464,6 @@ _G.pg.base.ship_skin_words[304060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[304070] = {
 	feeling1 = "主上是不是因为最近身体不好，影响精神了呢……",
 	feeling3 = "希望{namecode:161}健健康康的，这个…作为主上的部下和舰船，健康管理自然是很重要的……{namecode:161}需要做一些更特别的事吗？",
@@ -37499,7 +37517,6 @@ _G.pg.base.ship_skin_words[304070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305010] = {
 	feeling1 = "殿下是祸津日神的化身吗……！",
 	feeling3 = "殿下最近有些疲惫呢，过度工作可不是好习惯，请来我这边，我为您做一些能消除疲劳的仪式吧",
@@ -37542,7 +37559,6 @@ _G.pg.base.ship_skin_words[305010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37576,7 +37592,6 @@ _G.pg.base.ship_skin_words[305011] = {
 	detail = "殿下，要一起出门散步吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305012] = {
 	feeling1 = "殿下，是对我厌倦了吗…？",
 	feeling3 = "",
@@ -37610,7 +37625,6 @@ _G.pg.base.ship_skin_words[305012] = {
 	detail = "和殿下一起的时候，感觉厄运都不翼而飞了…殿下，谢谢您",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37644,7 +37658,6 @@ _G.pg.base.ship_skin_words[305019] = {
 	detail = "其实我有好多想尝试的事呢，比如像{namecode:79}那样活蹦乱跳的……欸，杀伤力太大？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305020] = {
 	feeling1 = "殿下好无趣……我不要找殿下玩了……",
 	feeling3 = "虽然我也很喜欢姐姐，不过姐姐太安静啦，还是殿下好，会陪我玩！",
@@ -37687,7 +37700,6 @@ _G.pg.base.ship_skin_words[305020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37721,7 +37733,6 @@ _G.pg.base.ship_skin_words[305021] = {
 	detail = "殿下，听说鲤鱼旗象征多子多福，于是我就带过来了~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37755,7 +37766,6 @@ _G.pg.base.ship_skin_words[305022] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37789,7 +37799,6 @@ _G.pg.base.ship_skin_words[305023] = {
 	detail = "宴会好有趣呀，等到重樱举办祭典的时候，我也要邀请其他阵营的姐妹来参加~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37823,7 +37832,6 @@ _G.pg.base.ship_skin_words[305024] = {
 	detail = "这个衣服是{namecode:78}姐准备的！诶嘿嘿，{namecode:79}今天会和{namecode:2}酱一起加油！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305025] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37857,7 +37865,6 @@ _G.pg.base.ship_skin_words[305025] = {
 	detail = "嘿嘿…我要把这里的空气装起来，然后带回去让大家也感受一下这边的氛围！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305026] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37891,7 +37898,6 @@ _G.pg.base.ship_skin_words[305026] = {
 	detail = "殿下殿下，其他阵营的伙伴们教给了我许多有趣的事情呢，作为答谢，我也教给了她们许多重樱传统的游戏玩法~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305028] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37925,7 +37931,6 @@ _G.pg.base.ship_skin_words[305028] = {
 	detail = "殿下殿下，我来给你跳一支神乐舞吧！这是之前姐姐教我的能祛除厄运的神乐舞呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -37959,7 +37964,6 @@ _G.pg.base.ship_skin_words[305029] = {
 	detail = "我有帮上你的忙吗，殿下？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305030] = {
 	feeling1 = "你是陆军吗！？",
 	feeling3 = "比起那时候，现在的娱乐生活可是丰富多了～指挥官，干杯！",
@@ -37993,7 +37997,6 @@ _G.pg.base.ship_skin_words[305030] = {
 	detail = "指挥官，我来教你弹幕射击法吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38027,7 +38030,6 @@ _G.pg.base.ship_skin_words[305039] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305040] = {
 	feeling1 = "指挥官，刀剑无眼，还请小心",
 	feeling3 = "嘿嘿，指挥官，你喝完酒后也挺可爱的嘛，我捏～",
@@ -38061,7 +38063,6 @@ _G.pg.base.ship_skin_words[305040] = {
 	detail = "指挥官，想和我较量下格斗技巧吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305049] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38095,7 +38096,6 @@ _G.pg.base.ship_skin_words[305049] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305050] = {
 	feeling1 = "汝的愿望…就是让吾做和过去一样的事吗？吾…知道了",
 	feeling3 = "多和大家在一起？即使和她们在一起吾也不知道做什么，而且吾看得出来，她们在畏惧吾……汝在做什么，为什么要把吾的舰装脱下来……",
@@ -38200,7 +38200,6 @@ _G.pg.base.ship_skin_words[305050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38234,7 +38233,6 @@ _G.pg.base.ship_skin_words[305051] = {
 	detail = "指挥官，汝休息的时候都在做些什么，也和吾说说吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38268,7 +38266,6 @@ _G.pg.base.ship_skin_words[305052] = {
 	detail = "也、也不用那么急着走吧…？这里又宽阔，又安静，还有暖气…想要埋在这孩子身上蹭蹭也是可以的哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305053] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38302,7 +38299,6 @@ _G.pg.base.ship_skin_words[305053] = {
 	detail = "听说睡衣派对有进行大家互相扔枕头的“运动”的习俗，哼哼，就趁这机会让大家见识下身为Big7的吾之实力吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305054] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38336,7 +38332,6 @@ _G.pg.base.ship_skin_words[305054] = {
 	detail = "对汝挑选的衣服，吾没什么意见…不过这一身，{namecode:75}姑且不论，被其他孩子看到会的话，会产生误会的吧？比，比如……汝让我换上这身是有什么打算之类的……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305058] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38370,7 +38365,6 @@ _G.pg.base.ship_skin_words[305058] = {
 	detail = "在这里，吾才能够露出发自内心的笑容…吾喜欢这里！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305060] = {
 	feeling1 = "指挥官…为什么呢？",
 	feeling3 = "我知道的哟，有些事情搞明白了反而会让人更难过…但是我还是想弄明白～而且～有更多知道了会让人开心的事呀～",
@@ -38413,7 +38407,6 @@ _G.pg.base.ship_skin_words[305060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38447,7 +38440,6 @@ _G.pg.base.ship_skin_words[305061] = {
 	detail = "指挥官，为什么战国也好，现在也好，大家总是打来打去的呀？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38481,7 +38473,6 @@ _G.pg.base.ship_skin_words[305062] = {
 	detail = "指挥官，来帮帮女仆店的忙……不对！指挥官是客人所以不行！稍等一下！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305070] = {
 	feeling1 = "你不是我追求的强者…",
 	feeling3 = "为什么想要变强？这种事不需要理由吧，不过硬要说的话，想要赢过{namecode:161}吧",
@@ -38524,7 +38515,6 @@ _G.pg.base.ship_skin_words[305070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305080] = {
 	feeling1 = "弱者就好好待在岸上吧。巨浪袭来的时候，我可没工夫照顾你。",
 	feeling3 = "在我们重樱的舰船面前也毫无惧色，指挥官你倒也是个十足的怪人…不过，跟你如此交谈也确实很愉快，所以，今天来聊些什么呢？",
@@ -38575,7 +38565,6 @@ _G.pg.base.ship_skin_words[305080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38609,7 +38598,6 @@ _G.pg.base.ship_skin_words[305081] = {
 	detail = "{namecode:161}，身体不大好的话还是不要游太多了……明明生为舰船，真是可惜",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305100] = {
 	feeling1 = "你若仍要一意孤行，我便不再阻拦…但是，“水可载舟，亦可覆舟”之理，望汝三思…",
 	feeling3 = "很少见我生气…？呵呵，即便温顺如白兔亦有暴怒之时，从外表擅断他人可是会吃亏的哦？当然，想让我动怒的话需要的本事可不一般就是了。",
@@ -38676,7 +38664,6 @@ _G.pg.base.ship_skin_words[305100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38710,7 +38697,6 @@ _G.pg.base.ship_skin_words[305101] = {
 	detail = "指挥官，要不要考虑去店里帮忙？或者就坐在这里也行。一直在视线内找不到你的话，挺让人担心的……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305110] = {
 	feeling1 = "昭和的笨蛋！",
 	feeling3 = "如果没有想好如何结束战争，就不该挑起战争！",
@@ -38777,7 +38763,6 @@ _G.pg.base.ship_skin_words[305110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38811,7 +38796,6 @@ _G.pg.base.ship_skin_words[305111] = {
 	detail = "嗯~真是舒服的风，是个适合启程的日子呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305112] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38845,7 +38829,6 @@ _G.pg.base.ship_skin_words[305112] = {
 	detail = "不管在什么时代，樱花的盛放都一样美丽呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305113] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38879,7 +38862,6 @@ _G.pg.base.ship_skin_words[305113] = {
 	detail = "{namecode:70}偶尔会来找我坐坐，我们会聊些皇家的话题。…指挥官下次有时间的话，要不要一起加入呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305114] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38913,7 +38895,6 @@ _G.pg.base.ship_skin_words[305114] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305115] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38947,7 +38928,6 @@ _G.pg.base.ship_skin_words[305115] = {
 	detail = "“和其他的伙伴相比颜色相异，不过很适合我”……感觉你越来越会说话了？呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305118] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -38981,7 +38961,6 @@ _G.pg.base.ship_skin_words[305118] = {
 	detail = "来的正好，唔…尺寸这样应该就差不多了…为将之人不能轻视积蓄。上战场衣服难免会有所破损，还是要趁着平时多准备几套才是啊",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305120] = {
 	feeling1 = "嘁，当你的手下真没意思……",
 	feeling3 = "嗯——好！就让我{namecode:80}来陪你锻炼锻炼！别老在室内待着，多出来动动吧，挥挥木刀什么的也好！",
@@ -39041,7 +39020,6 @@ _G.pg.base.ship_skin_words[305120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39075,7 +39053,6 @@ _G.pg.base.ship_skin_words[305121] = {
 	detail = "{namecode:175}又不见了啊，肯定是说着“我是低调的室内派，才不要在这种引人注目的地方待着”什么的又躲哪个角落去了吧。难得的夏天，放开点不好吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305130] = {
 	feeling1 = "现在的你让我有点心情复杂呢…怎么说呢，别让我太失望吧。",
 	feeling3 = "如果我不是现在这个身份的话，你觉得我会在做什么呢？我想开店什么的应该蛮有趣的。比如卖些当季水果…你如果也有兴趣的话要一起吗？我可以帮忙哦。",
@@ -39126,7 +39103,6 @@ _G.pg.base.ship_skin_words[305130] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305131] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39160,7 +39136,6 @@ _G.pg.base.ship_skin_words[305131] = {
 	detail = "邀请{namecode:80}她们一起出去玩也不错，不过先休息一会儿再去吧？你想要什么，这些孩子们都会准备好的♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305140] = {
 	feeling1 = "哈啊…无论在哪都一样没什么好事呢…至少请让我轻松一点吧…",
 	feeling3 = "比、比起我，请多关心关心其他人！不用像这样隔三岔五就来嘘寒问暖一下啦，我没问题的！",
@@ -39243,7 +39218,6 @@ _G.pg.base.ship_skin_words[305140] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[305141] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39277,7 +39251,6 @@ _G.pg.base.ship_skin_words[305141] = {
 	detail = "虽然不怎么能喝酒，不过出于社交考虑，还是不得不多少喝一些。指挥官呢？想要软饮料的话我可以马上给你准备一下哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305142] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39311,7 +39284,6 @@ _G.pg.base.ship_skin_words[305142] = {
 	detail = "{namecode:18}那家伙，又跑哪去了…不是她自己说要我帮她补课一下的嘛…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[305143] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39345,7 +39317,6 @@ _G.pg.base.ship_skin_words[305143] = {
 	detail = "{namecode:80}那家伙去哪了…算了，反正肯定在边喝着酒边过着充实的圣诞节吧。我和她那种人可不一样，呵呵。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306010] = {
 	feeling1 = "肮脏——不、我不是在说你哦",
 	feeling3 = "眼罩？知名的海盗不都是这样打扮的吗？",
@@ -39379,7 +39350,6 @@ _G.pg.base.ship_skin_words[306010] = {
 	detail = "怎么，要邀我一起共进午餐吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306020] = {
 	feeling1 = "指挥官难道想和{namecode:86}分手！？",
 	feeling3 = "指挥官的喜好，{namecode:86}全都了如指掌哦",
@@ -39413,7 +39383,6 @@ _G.pg.base.ship_skin_words[306020] = {
 	detail = "我的命运……一直和指挥官的交缠在一起呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306030] = {
 	feeling1 = "指挥官，有什么事吗？",
 	feeling3 = "我看起来有点像花魁？呵呵，那么……官人，今夜便是我们最后一场幽会，请好好感受咱的温暖，然后忘了咱吧——这样如何？",
@@ -39447,7 +39416,6 @@ _G.pg.base.ship_skin_words[306030] = {
 	detail = "指挥官有时候就像个孩子一样……过来吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39481,7 +39449,6 @@ _G.pg.base.ship_skin_words[306031] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306050] = {
 	feeling1 = "指挥官也把吾当小孩子……吾好伤心",
 	feeling3 = "吾对珊瑚海倒是没什么怨念，书上说大人就是要接受自己的失败，吾也就觉得不是什么大事了——欸，很了不起吗？",
@@ -39515,7 +39482,6 @@ _G.pg.base.ship_skin_words[306050] = {
 	detail = "吾常被大家说以后肯定能成为大美女呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39549,7 +39515,6 @@ _G.pg.base.ship_skin_words[306051] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306059] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39583,7 +39548,6 @@ _G.pg.base.ship_skin_words[306059] = {
 	detail = "不要露出那种眼神……吾以后肯定还会继续成长的……一定……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306060] = {
 	feeling1 = "无论哪里的参谋和上级都是一样的呢……",
 	feeling3 = "主公，再多依赖吾一些也没关系。只要是主公的命令，无论什么吾都会执行",
@@ -39617,7 +39581,6 @@ _G.pg.base.ship_skin_words[306060] = {
 	detail = "不战斗的话是活不下去的！主公！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39651,7 +39614,6 @@ _G.pg.base.ship_skin_words[306061] = {
 	detail = "虽然早已习惯月月火水木金金的生活，但是这样的……似乎也不坏呢，主公",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39685,7 +39647,6 @@ _G.pg.base.ship_skin_words[306062] = {
 	detail = "吾使用的角色，是跟吾一样勇猛的武士哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306070] = {
 	feeling1 = "总觉得指挥官散发着一股让人不想靠近的气息呢…",
 	feeling3 = "对于她人的批评或赞赏，指挥官是什么想法呢？没什么，我只是稍微有点好奇，不必在意…",
@@ -39752,7 +39713,6 @@ _G.pg.base.ship_skin_words[306070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[306071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39786,7 +39746,6 @@ _G.pg.base.ship_skin_words[306071] = {
 	detail = "舰载机的控制就靠这些符咒了…身为航母可不能冲到敌人堆里战斗呢。刀剑什么…预防万一用…吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306080] = {
 	feeling1 = "指挥官，能离{namecode:104}远一点吗？越远越好…",
 	feeling3 = "有一个老是缠着自己撒娇的妹妹还真是…倒也不是讨厌…嗯…怎么说呢……",
@@ -39845,7 +39804,6 @@ _G.pg.base.ship_skin_words[306080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[306081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39879,7 +39837,6 @@ _G.pg.base.ship_skin_words[306081] = {
 	detail = "呼…来到海边，大家都闹腾起来了呢…嗯…希望能平安顺利地度过今天，不要有飞过来的排球，也不要有突然出现的舰载机……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306082] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39913,7 +39870,6 @@ _G.pg.base.ship_skin_words[306082] = {
 	detail = "{namecode:104}会穿什么衣服来呢，有点期待……一起拍照……嗯，想一起拍照。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[306090] = {
 	feeling1 = "指挥官，请离{namecode:103}姐远一点，越远越好…",
 	feeling3 = "指挥官，你想摸摸{namecode:103}姐那超级柔顺的头发吗？虽然她平时看起来有点凶凶的，不过只要你好好拜托的话，她一定不会拒绝的！",
@@ -39956,7 +39912,6 @@ _G.pg.base.ship_skin_words[306090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[306091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -39990,7 +39945,6 @@ _G.pg.base.ship_skin_words[306091] = {
 	detail = "指挥官，接招~水炮攻击~！…啊，嘴里进海水了？哎呀，不好意思啦——那个，顺便问一句，海水味道好吗？啊哈哈~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307010] = {
 	feeling1 = "只要把指挥官切成几块保存在身边，指挥官就不会老是让{namecode:91}伤心了呢……呵呵呵……",
 	feeling3 = "指挥官是我一个人的哦，即使您要管理舰队，只有这一点请不要忘了……不然的话……",
@@ -40065,7 +40019,6 @@ _G.pg.base.ship_skin_words[307010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40099,7 +40052,6 @@ _G.pg.base.ship_skin_words[307011] = {
 	detail = "这是{namecode:91}精心挑选的泳装哦~怎么样，指挥官对{namecode:91}的爱意变深了吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40133,7 +40085,6 @@ _G.pg.base.ship_skin_words[307012] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40167,7 +40118,6 @@ _G.pg.base.ship_skin_words[307013] = {
 	detail = "宴会上指挥官很忙，这点{namecode:91}理解的哦~所以只要在最后来找{namecode:91}就好，这样宴会之后指挥官的全部时间，就能由{namecode:91}独占了~呵呵呵♡",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307014] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40201,7 +40151,6 @@ _G.pg.base.ship_skin_words[307014] = {
 	detail = "今晚指挥官能见到的只有{namecode:91}哦。团圆相乐…？难道跟{namecode:91}团圆相乐还不够吗？呵呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307015] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40235,7 +40184,6 @@ _G.pg.base.ship_skin_words[307015] = {
 	detail = "稍作休息吧？不用着急，指挥官的旅途还远未结束。嗯，对{namecode:91}而言，这是十分开心的事……♡",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307018] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40269,7 +40217,6 @@ _G.pg.base.ship_skin_words[307018] = {
 	detail = "指挥官每时每刻都要和{namecode:91}在一起，绝对绝对，不能离开{namecode:91}哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307020] = {
 	feeling1 = "看来你不是我追求的勇者…",
 	feeling3 = "如果有一天你输了，那只能说明你太弱了，弱者被淘汰也是正常，不过，谁让你是我的人呢，只好由我来替你报仇了",
@@ -40351,7 +40298,6 @@ _G.pg.base.ship_skin_words[307020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40385,7 +40331,6 @@ _G.pg.base.ship_skin_words[307021] = {
 	detail = "指挥官，我和姐姐谁的泳装你更喜欢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40419,7 +40364,6 @@ _G.pg.base.ship_skin_words[307022] = {
 	detail = "指挥官，这么有空的话，不妨来帮忙布置一下装饰如何？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40453,7 +40397,6 @@ _G.pg.base.ship_skin_words[307023] = {
 	detail = "和大家都打完招呼了吗？都说了我这你放到最后就行，毕竟有那么多人需要你…算了，来都来了，想转换下心情的话，就在这休息会吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40487,7 +40430,6 @@ _G.pg.base.ship_skin_words[307024] = {
 	detail = "这件“友禅”饱含着匠人的努力。我想，这就是人们所说的“浪漫”吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307025] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40521,7 +40463,6 @@ _G.pg.base.ship_skin_words[307025] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307026] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40555,7 +40496,6 @@ _G.pg.base.ship_skin_words[307026] = {
 	detail = "跳舞的练习吗…？嗯，私下里有练习——哼哼，边迈着舞步边葬送敌人也不失为一种乐趣。指挥官，尽情期待吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307028] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40589,7 +40529,6 @@ _G.pg.base.ship_skin_words[307028] = {
 	detail = "你的表情，就像被狐狸魅惑了的书生一样呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307030] = {
 	feeling1 = "请好好完成工作",
 	feeling3 = "我的过去？那可没有什么好听的，不过指挥官要是感兴趣，那就一边聊一边来一局吧",
@@ -40640,7 +40579,6 @@ _G.pg.base.ship_skin_words[307030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40674,7 +40612,6 @@ _G.pg.base.ship_skin_words[307031] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40708,7 +40645,6 @@ _G.pg.base.ship_skin_words[307032] = {
 	detail = "我虽然是风纪委员，但可不想成为那种拘泥刻板令人讨厌的人",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40742,7 +40678,6 @@ _G.pg.base.ship_skin_words[307039] = {
 	detail = "不管面对什么情况，自己的判断都是最重要的哦，指挥官。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307040] = {
 	feeling1 = "哈！（拳头停在你的脸颊旁边）离我远点",
 	feeling3 = "要说女子力……你不觉得姐姐那样有点不近人情的感觉反而有魅力吗？还有姐姐的脚踝也超棒的！我要是有一天也能像姐姐一样就好了",
@@ -40793,7 +40728,6 @@ _G.pg.base.ship_skin_words[307040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40827,7 +40761,6 @@ _G.pg.base.ship_skin_words[307041] = {
 	detail = "虽然自称不良少女，但到底应该怎么做呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307049] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40861,7 +40794,6 @@ _G.pg.base.ship_skin_words[307049] = {
 	detail = "大家都说我变得更酷了。我是很高兴的啦，但是……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307050] = {
 	feeling1 = "我似乎看到指挥官被{namecode:91}前·辈砍杀的未来了呢",
 	feeling3 = "对一二航战的不满？当然有啦——自说自话地抛弃了妹妹的姐姐，不可能不遭妹妹怨恨吧",
@@ -40936,7 +40868,6 @@ _G.pg.base.ship_skin_words[307050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -40970,7 +40901,6 @@ _G.pg.base.ship_skin_words[307051] = {
 	detail = "花会凋零，叶会枯萎，舞会也会落下帷幕……不过现在，还是忘掉这些，享受快乐吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41004,7 +40934,6 @@ _G.pg.base.ship_skin_words[307052] = {
 	detail = "{namecode:96}…感觉那孩子会不太适应这样的场面呢，指挥官，拜托你帮我多照顾一下她哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307060] = {
 	feeling1 = "指挥官，你想体验一下——马里亚纳海战时我的心情吗？",
 	feeling3 = "我的命运一直和列克星敦纠缠在一起……啊，指挥官，这句话不要告诉萨拉小姐，我可拿她没辙……",
@@ -41079,7 +41008,6 @@ _G.pg.base.ship_skin_words[307060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41113,7 +41041,6 @@ _G.pg.base.ship_skin_words[307061] = {
 	detail = "和平时感觉不太一样？嘿嘿，这个当是在夸我没问题吧？其实我偶尔也会想换一身啦，就当是转换心情了呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41147,7 +41074,6 @@ _G.pg.base.ship_skin_words[307062] = {
 	detail = "啊，说起来，{namecode:95}姐也答应了这个工作吧？虽然衣服款式和我的好像差不多，不过穿在{namecode:95}姐身上就是有不一样的感觉呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307070] = {
 	feeling1 = "一定是那些害虫……（咬牙）指挥官大人，等着哦，{namecode:97}这就去把您身边那些害虫全都清理掉……",
 	feeling3 = "——那孩子送的礼物？啊，我处理掉了呢。这不是理所当然的吗？只有{namecode:97}送的东西能留在您的桌上啊~",
@@ -41193,7 +41119,6 @@ _G.pg.base.ship_skin_words[307070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41227,7 +41152,6 @@ _G.pg.base.ship_skin_words[307071] = {
 	detail = "真羡慕你呢，小猫咪。{namecode:97}要是变成你，就能一直被指挥官大人抱在怀里了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41261,7 +41185,6 @@ _G.pg.base.ship_skin_words[307072] = {
 	detail = "这一身旗袍，原本是想要向逸仙师父借的，但是，师父那里没有适合{namecode:97}的尺码呢，最后只好重新定制了一套",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307073] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41295,7 +41218,6 @@ _G.pg.base.ship_skin_words[307073] = {
 	detail = "指挥官要不要干脆开车参加比赛好了？为了指挥官拿到冠军，{namecode:97}可以把其他参赛者全都给……不行…吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307074] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41329,7 +41251,6 @@ _G.pg.base.ship_skin_words[307074] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307075] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41363,7 +41284,6 @@ _G.pg.base.ship_skin_words[307075] = {
 	detail = "{namecode:97}已经把海边这一片包下来了哦？对，也就是说指挥官大人不管去哪里都无法从{namecode:97}这里逃脱——呵呵，开玩笑的~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307078] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41397,7 +41317,6 @@ _G.pg.base.ship_skin_words[307078] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307080] = {
 	feeling1 = "在汝身旁，妾身看不到任何的光芒…",
 	feeling3 = "知晓命运，却无力改变；与一无所知，亦不知改变，究竟何者更加不幸呢…",
@@ -41431,7 +41350,6 @@ _G.pg.base.ship_skin_words[307080] = {
 	detail = "Zzzzz…真正的强大，足以挣脱命运的束缚…然而真的是那样吗…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41465,7 +41383,6 @@ _G.pg.base.ship_skin_words[307081] = {
 	detail = "亘古不变的星空…兀自圆缺的明月…与之相比，地上的一切，当真宛若梦幻泡影，转瞬即逝……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307082] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41499,7 +41416,6 @@ _G.pg.base.ship_skin_words[307082] = {
 	detail = "今天汝所选择的服饰……虽然美丽，不过如此般展现妾身之肤……就算是规定，也还是会害羞呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307083] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41533,7 +41449,6 @@ _G.pg.base.ship_skin_words[307083] = {
 	detail = "嗯…汝所盼之霓裳固然美丽，奈何即便未宽衣解带，稍有动静便会衣履凌乱……甚是令人面红耳热…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307090] = {
 	feeling1 = "看起来，是我以前对你太宽容了呢……",
 	feeling3 = "区区手下，想不到居然还挺受欢迎的…唔唔…这股焦急的感觉是怎么回事……",
@@ -41567,7 +41482,6 @@ _G.pg.base.ship_skin_words[307090] = {
 	detail = "被手下当成宝物呵护的感觉也不坏呢，呵呵呵",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307100] = {
 	feeling1 = "向{namecode:91}谢罪时的悲鸣…也许也能成为不错的音乐吧…呵呵",
 	feeling3 = "只要指挥官希望，{namecode:91}可以永远只为指挥官演出~没错，{namecode:91}的舞台，可以永远变成指挥官专属的舞台♡",
@@ -41613,7 +41527,6 @@ _G.pg.base.ship_skin_words[307100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307110] = {
 	feeling1 = "难道说{namecode:97}不适合当偶像吗…？！",
 	feeling3 = "指挥官大人♡{namecode:97}因为练习现在全身肌肉酸痛~能不能送人家回宿舍呢……不，干脆送人家回指挥官房间休息吧~",
@@ -41656,7 +41569,6 @@ _G.pg.base.ship_skin_words[307110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307120] = {
 	feeling1 = "不行啊指挥官，身为舰队的总大将，怎么能颓废成这个样子呢？",
 	feeling3 = "指挥官，你准备去做什么呀？去检查塞满了各种装备的仓库？还是只想随便走走散个步？啊！难道是赶着和谁约会…那个你有在听吧？",
@@ -41707,7 +41619,6 @@ _G.pg.base.ship_skin_words[307120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[307121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41741,7 +41652,6 @@ _G.pg.base.ship_skin_words[307121] = {
 	detail = "所以你来这里是为了找人聊天吗？让我陪你当然是可以的啦，不过指挥官还是多和各种各样的孩子们聊天加深友谊比较好哦！…不过要小心{namecode:86}啊！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307122] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41775,7 +41685,6 @@ _G.pg.base.ship_skin_words[307122] = {
 	detail = "这里没有其他伙伴，那就由我来陪指挥官聊个痛快吧！……嗯？指挥官不起个话头么？如果让{namecode:208}来的话，可能会停不下来哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[307130] = {
 	feeling1 = "是{namecode:97}的爱还不够吗？没关系的，{namecode:97}还能准备更多更多的爱……",
 	feeling3 = "有什么办法可以得到指挥官的钥匙……啊，指挥官～{namecode:97}有东西忘在指挥室了，能借钥匙去取一下吗？很快就回来～",
@@ -41818,7 +41727,6 @@ _G.pg.base.ship_skin_words[307130] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[308010] = {
 	feeling1 = "一定是人家还不够努力呢……",
 	feeling3 = "要按摩吗？要捶背吗？还是要在人家的膝枕上睡一会呢？诶嘿嘿~",
@@ -41870,7 +41778,6 @@ _G.pg.base.ship_skin_words[308010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[308011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41904,7 +41811,6 @@ _G.pg.base.ship_skin_words[308011] = {
 	detail = "多交点朋友？无所谓的啦~只要有指挥官陪着，人家就心满意足了呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41938,7 +41844,6 @@ _G.pg.base.ship_skin_words[308012] = {
 	detail = "还是抱着“鱼雷先生”睡比较舒服呢~欸嘿嘿~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -41972,7 +41877,6 @@ _G.pg.base.ship_skin_words[308013] = {
 	detail = "被人家的新衣服迷住了吗？欸嘿嘿，指挥官喜欢的话就多多看看吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308020] = {
 	feeling1 = "指挥官？不对，是空气吧，哈哈。",
 	feeling3 = "指挥官，要来比赛憋气吗？输了的人要帮赢了的人按摩，怎么样？",
@@ -42023,7 +41927,6 @@ _G.pg.base.ship_skin_words[308020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[308021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42057,7 +41960,6 @@ _G.pg.base.ship_skin_words[308021] = {
 	detail = "比起在学校上课，还是出海好玩呢…听说更深的地方还有大家都不知道的怪物呢，好想去看看啊~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42091,7 +41993,6 @@ _G.pg.base.ship_skin_words[308022] = {
 	detail = "唔唔……说起头发，我总觉得好像哪里还有点不舒服。指挥官，能帮我梳理一下吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308030] = {
 	feeling1 = "这支舰队，也只是为了战争而存在的吗……",
 	feeling3 = "—不靠自己迈出这一步，永远不会有好的结果……吗？嗯…果然还是去和她好好聊一聊吧",
@@ -42125,7 +42026,6 @@ _G.pg.base.ship_skin_words[308030] = {
 	detail = "我喜欢宁静的夜晚，因为没那么容易让人发现我的存在",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308040] = {
 	feeling1 = "指挥官大人，虽然万分抱歉，但我还是不得不提醒您…您的懒散已经影响到了他人…",
 	feeling3 = "…今天指挥官大人不来吗……寂寞的要死掉了…——指挥、指挥官！？听到刚才的话了？？",
@@ -42168,7 +42068,6 @@ _G.pg.base.ship_skin_words[308040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[308041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42202,7 +42101,6 @@ _G.pg.base.ship_skin_words[308041] = {
 	detail = "擅长的科目？什么科目都没问题。诶嘿嘿，尽管交给我就好",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42236,7 +42134,6 @@ _G.pg.base.ship_skin_words[308042] = {
 	detail = "“秘、秘技，舞龙！”…啊呜，好像怎么也做不好…指挥官大人，是不是让妹妹和我换一下比较好……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308050] = {
 	feeling1 = "请让我一个人待着就好…",
 	feeling3 = "舰队里的大家关系都好好呀…呼呼…—欸？没、没什么，我是说，请让我一个人就好……",
@@ -42279,7 +42176,6 @@ _G.pg.base.ship_skin_words[308050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[308051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42313,7 +42209,6 @@ _G.pg.base.ship_skin_words[308051] = {
 	detail = "港区的伙伴之间，在手机上也有许多群组呢……大家经常会在里面发布照片，指挥官也可以看看",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[308060] = {
 	feeling1 = "我最讨厌你了！离我远点！",
 	feeling3 = "{namecode:251}！别拿甲标的挠我痒！欸，。你不是{namecode:251}！？",
@@ -42356,7 +42251,6 @@ _G.pg.base.ship_skin_words[308060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[308061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42390,7 +42284,6 @@ _G.pg.base.ship_skin_words[308061] = {
 	detail = "章鱼烧！团子！苹果糖！…嚼嚼嚼嚼……咳、咳咳！给、给我水…！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[312010] = {
 	feeling1 = "喵？！（受惊的{namecode:98}迅速躲远，躲在墙后观察着你）",
 	feeling3 = "指挥官，{namecode:98}困了……（{namecode:98}毫不理会你的反应直接蜷缩在你的腿上睡了起来）",
@@ -42424,7 +42317,6 @@ _G.pg.base.ship_skin_words[312010] = {
 	detail = "指挥官，要不要让我帮你做下身体检查？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[312011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42458,7 +42350,6 @@ _G.pg.base.ship_skin_words[312011] = {
 	detail = "指挥官要买东西喵？！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[312012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42492,7 +42383,6 @@ _G.pg.base.ship_skin_words[312012] = {
 	detail = "唔唔，不过…这套衣服的花费比预想的多，看来又得想些新的促销方法了喵…——喵？！指挥官？！欢、欢迎喵！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[312013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42526,7 +42416,6 @@ _G.pg.base.ship_skin_words[312013] = {
 	detail = "画画……啊，板子笔芯快要磨掉了喵。看来得让{namecode:20}订点新的了喵",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[312014] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42560,7 +42449,6 @@ _G.pg.base.ship_skin_words[312014] = {
 	detail = "呼呼，今天的销售额又刷新记录了喵！{namecode:98}果然还是很能干的喵！也要感谢指挥官喵！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[312018] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42594,7 +42482,6 @@ _G.pg.base.ship_skin_words[312018] = {
 	detail = "这套{namecode:98}专属白无垢是世上独一无二的限量款喵，只有指挥官拥有喵！——其他的“稍微”限量些的服装可以在{namecode:98}的店里找喵♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[317010] = {
 	feeling1 = "指挥官果然也不理解我呢……",
 	feeling3 = "指挥官果然也觉得我的兴趣有些古怪吗？呵呵，这也是没有办法的事。但是呢，指挥官，在我有限的潜艇生涯中，我注意到了，潜艇的力量，是有极限的……",
@@ -42628,7 +42515,6 @@ _G.pg.base.ship_skin_words[317010] = {
 	detail = "指挥官，光靠潜艇，能做的事是有限的，要左右战局，最终还是要依靠天空的力量啊",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[319010] = {
 	feeling1 = "哪怕再多的物资，指挥官大概也无法运用好吧……",
 	feeling3 = "有些驱逐舰们喜欢和我玩游戏。嗯，就是那种，让她们坐在我的肩膀上，扮演大机器人之类的游戏…还是挺有趣的呢，嗯♪",
@@ -42671,7 +42557,6 @@ _G.pg.base.ship_skin_words[319010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[319011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42705,7 +42590,6 @@ _G.pg.base.ship_skin_words[319011] = {
 	detail = "要说这个温泉什么不足的话，就是太小了些…一不小心就很容易滑倒、或者是碰到什么东西…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[319012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42739,7 +42623,6 @@ _G.pg.base.ship_skin_words[319012] = {
 	detail = "女仆小姐的工作比想象的难好多……如果是重活和简单的家务我倒是不在话下，不过像这样正式的打扫我就做不好了呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[319013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42773,7 +42656,6 @@ _G.pg.base.ship_skin_words[319013] = {
 	detail = "幸好指挥官对乐器很了解～{namecode:188}总是弄不清正确的演奏姿势，所以一直都没办法完美地弹奏出来——不，不是姿势的问题吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[331050] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42807,7 +42689,6 @@ _G.pg.base.ship_skin_words[331050] = {
 	detail = "{namecode:2}在神社抽到了“凶”，不过，她好像不怎么在意。…我？“小吉”，有点高兴",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[331051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42841,7 +42722,6 @@ _G.pg.base.ship_skin_words[331051] = {
 	detail = "指挥官，一会要跳舞吗？{namecode:6}不大会跳…只能加油了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[331052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42875,7 +42755,6 @@ _G.pg.base.ship_skin_words[331052] = {
 	detail = "这次有好好调试过网络了。不会给大家添麻烦了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[331053] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42909,7 +42788,6 @@ _G.pg.base.ship_skin_words[331053] = {
 	detail = "用轻功飞起来，或者发出个剑气之类的…不知道别人行不行，但是对{namecode:6}有点些困难的说…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[331054] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42943,7 +42821,6 @@ _G.pg.base.ship_skin_words[331054] = {
 	detail = "{namecode:6}有一次不小心弄错了客人的订单……本来以为会被{namecode:408}批评的，结果被安慰了……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[331055] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -42977,7 +42854,6 @@ _G.pg.base.ship_skin_words[331055] = {
 	detail = "我很清楚迷宫的构造。{namecode:6}的方向感已经和L.I.小姐一起在游戏里锻炼得炉火纯青了，可以尽情依靠我的说。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[331056] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43011,7 +42887,642 @@ _G.pg.base.ship_skin_words[331056] = {
 	detail = "指挥官，一会要跳舞吗？…嗯，按照音乐节拍踏步子，也就是当成音游来跳的话，{namecode:6}也能跳好的。没关系的说！",
 	couple_encourage = {}
 }
-
+_G.pg.base.ship_skin_words[399010] = {
+	feeling1 = "早知会遇到你这样的人，这个世间不来也罢……",
+	feeling3 = "帅气……吗？我倒是更加羡慕总是笑容满面的大家……和她们相比，我只是不知道怎么表露感情而已",
+	lose = "呜…需要加倍修行了…",
+	propose = "我过去从不知道，心意得到回应，是一件这么幸福的事情…请不要看我，主上…我现在的表情一定很奇怪…",
+	expedition = "主上，委托……唔，是叫这个吗？总之完成了",
+	win_mvp = "雕虫小技，见笑了",
+	home = "主上，受伤了的话请用我的艾草吧，我还有很多喔",
+	mission = "有任务…需要我也一同出击吗？",
+	touch2 = "烦恼退却，六根清净……呀！主、主上……",
+	voice_key_2 = -1,
+	skill = "{namecode:152}之山岳……尽在这一剑之中",
+	drop_descrip = "重巡洋舰-—{namecode:152}",
+	mail = "主上，你的信件…诶？念给你听？那种害羞的事情…",
+	touch = "展示一下剑术吗？对不起，被人这么看着有点……",
+	profile = "主上对我感到好奇吗？不过过去我不曾来到世间，也就没有值得一提的事迹……唔，喜欢和歌，擅长剑术，这样可以吗？还有……我不太习惯和人相处……",
+	mission_complete = "主上，那边好像堆了好多东西？喔，那就是奖励吗？",
+	feeling4 = "而且和大家相处之后我才更加体会到，想要正确地表达自己的想法是一件很难的事，比如说喜悦，比如说……爱慕",
+	unlock = "将我从亘久之梦中唤醒的是你吗？在下{namecode:152}，虽然仍是修行之身，若不嫌弃，任凭差遣",
+	feeling5 = "伊吹山的艾草，常被用来比喻安静燃烧的恋心，就好比现在…指挥官能感觉到吗？{namecode:152}的…心",
+	main = "只有我和主上两个人…总觉得有点…害羞|主上，要是暂时没有事，我能去冥想一下吗？|为了精进剑术，每天必须至少空挥千回……请放心，在主上离开的时候我已经完成了",
+	battle = "战场无情…{namecode:152}，出击！",
+	upgrade = "这就是…变强的感觉？感激不尽",
+	voice_key = 39901,
+	headtouch = "",
+	feeling2 = "我喜欢在高山之上，坐看浮云悠悠的生活……不过来到这里后我知道，我也不讨厌和大家一起的生活",
+	login = "主上，外出辛苦了",
+	vote = "",
+	hp_warning = "背水一战……求之不得！",
+	id = 399010,
+	detail = "主上，欢迎……没有什么好招待的，只有茶可以吗？",
+	couple_encourage = {
+		{
+			{
+				299010,
+				299020,
+				399010,
+				399020,
+				499010,
+				899010,
+				199010,
+				199020,
+				399030,
+				399040,
+				499020,
+				999010
+			},
+			1,
+			"不才伊吹…将会全力配合各位的！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[399011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "外面在下雪呢……主上，我给您再添一件毛衣吧",
+	mission = "",
+	touch2 = "主、主上，手好冷……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "主上，下雪了呢……不介意的话，请来{namecode:152}的伞下躲一躲吧",
+	mail = "",
+	touch = "主上……有想去的地方吗？我会陪您一起去的",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "主上，下雪了呢……不介意的话，请来{namecode:152}的伞下躲一躲吧",
+	feeling5 = "在永梦之中，冬天是安静的，冰冷的。但在这里，在主上身边，冬天依然是温暖的……主上，我能和您……牵手吗？",
+	main = "阿嚏！……打喷嚏的样子很可爱？请、请不要笑话我了……|这就是真正的雪……真漂亮啊|冬天会有很热闹的祭典吗？……稍微……有些感兴趣",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "主上，要一起外出吗？",
+	vote = "",
+	hp_warning = "",
+	id = 399011,
+	detail = "这一身衣服，不好好感谢{namecode:89}小姐可不行呢……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "主上，请用蛋糕，甜甜的很好吃哦",
+	mission = "",
+	touch2 = "果、果然是{namecode:152}不适合这样的衣服吗？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "这是我第一次穿像这样的洋装…那个，主上…您觉得这身适合{namecode:152}吗？",
+	mail = "",
+	touch = "风儿像这样吹在脸上，感觉很舒服呢，主上",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "这是我第一次穿像这样的洋装…那个，主上…您觉得这身适合{namecode:152}吗？",
+	feeling5 = "",
+	main = "果然宴会上尽是一些不太明白的事情呢…啊，请不要误会，我只是觉得…要修行学习的东西还有很多呢|其实，我是被西雅图小姐邀请来的……西雅图小姐，真是一位很有活力的人呢|虽然我更喜欢安静的一隅，不过…像这样大家一起其乐融融聊天的环境，感觉，也不讨厌",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "「宴会」具体要做些什么，还是不太清楚呢…主上，我能跟着你吗？",
+	vote = "",
+	hp_warning = "",
+	id = 399012,
+	detail = "他乡的茶与酒，也别有一番滋味呢",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399013] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "东煌的春节，真是热闹呢，这种热闹，带着更加纯粹的欢腾，和更加接近世俗的喧嚣……我……说不定很喜欢这种感觉呢",
+	mail = "",
+	touch = "到这个时节，天气已经没有那么寒冷了，再过不久，春天就要来了…原来如此，所以才是“春节”的“春联”啊……",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "东煌的春节，真是热闹呢，这种热闹，带着更加纯粹的欢腾，和更加接近世俗的喧嚣……我……说不定很喜欢这种感觉呢",
+	feeling5 = "",
+	main = "那个，主上，其实我报名了晚会，表演的节目是剑舞……这还是我第一次主动把自己的技艺展现给舰队的各位呢，稍微有些紧张|主上，{namecode:98}小姐的店里似乎在贩卖一种叫做“鞭炮”的东西呢，据说和烟花类似，我想买一些来放，您要一起来吗？|主上，那些贴在墙两边的是……？……啊，那个叫做“春联”吗，那个，您能给我解释一下上面写的内容吗？稍微有些好奇",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "港区到处都挂满了灯笼和红色的装饰，真漂亮呢",
+	vote = "",
+	hp_warning = "",
+	id = 399013,
+	detail = "欸？感觉我比平时放得开吗？……是呢，或许是受到春节气氛的影响吧，总觉得情绪比平时要高昂呢…那个，会显得很奇怪吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399014] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "",
+	mission = "",
+	touch2 = "主上！？难、难道{namecode:152}犯了什么错误？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "您辛苦了，主上。{namecode:152}已经换好衣服了，这样便算是遵照您“一起休息会”的命令了吧…然后呢，{namecode:152}需要做些什么？",
+	mail = "主上，新的邮件来了。…需、需要{namecode:152}为您读一下…？",
+	touch = "主上，需要{namecode:152}做些什么…？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "您辛苦了，主上。{namecode:152}已经换好衣服了，这样便算是遵照您“一起休息会”的命令了吧…然后呢，{namecode:152}需要做些什么？",
+	feeling5 = "主上，给您倒杯茶。…呼…明明我们什么都没做，只是在一起消磨时间，为什么{namecode:152}会有种非常充实，甚至充满到溢出来的感觉……主上，{namecode:152}的这种感觉，就是“恋爱”吗…？",
+	main = "nil|主上，{namecode:152}稍微冥想一会…欸，要、要陪您聊一会天…吗？|主上，可以的话给{namecode:152}安排点事情做吧…这样光是坐着总感觉有点…不安……",
+	battle = "主上由{namecode:152}守护！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "主上……？",
+	feeling2 = "",
+	login = "嘿咻…嗯，主上请坐这边，好好放松一下吧。",
+	vote = "",
+	hp_warning = "",
+	id = 399014,
+	detail = "主上，{namecode:152}新采的茶是否合您的口味？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399020] = {
+	feeling1 = "你没有让我举刀的资格……",
+	feeling3 = "哈啊…为什么指挥官老是露出这副不争气的表情呢？让人忍不住…想训斥一番…",
+	lose = "咕…我还能…战斗！",
+	propose = "又是这副不争气的表情，真拿你没办法…就稍微承认一点你的努力…和才能吧！{namecode:151}，以此刀起誓，愿与你生死与共，携手同行——",
+	expedition = "委托完成…不妨自己尝试出击一次如何？",
+	win_mvp = "胜利？那是理所当然的吧！",
+	home = "回来了？可没时间给你浪费，开始这回的战术研讨吧——",
+	mission = "还打算放着未完成的任务多久呢，指挥官？",
+	touch2 = "…斩、斩了你！",
+	voice_key_2 = -1,
+	skill = "这就是…我的全力！",
+	drop_descrip = "战列舰-—{namecode:151}",
+	mail = "信件，不及时查阅的话，对发件的人，也是一种不敬，你不觉得吗？",
+	touch = "指挥官应该没有闲到可以一直找我说话吧？",
+	profile = "重樱舰队、战舰{namecode:151}，作为{namecode:83}级的设计方案之一而生，却未曾真正问世…不过若因此而小看我的话，就准备尝尝主炮齐射的滋味吧",
+	mission_complete = "任务完成…究竟什么时候，指挥官才可能自己注意到这些事情呢？",
+	feeling4 = "最近的指挥官似乎稍微进步一点了嘛…哼，姑且承认你的努力吧",
+	unlock = "战舰{namecode:151}，报到。你就是指挥官？看起来不甚可靠呢…听好了，如果拖后腿的话，我可不会轻饶你！",
+	feeling5 = "武之道乃孤独之道，我原本一直这么认为…不过若是与指挥官同行的话，似乎…也不错呢",
+	main = "爱刀每天都要花费时间进行保养，这不是理所当然的吗？|姐妹…吗？作为{namecode:151}级的独女，多少…还是有点羡慕…|变强吧，指挥官。强大到足以保护自己，足以保护我们所有人，到那时候我就…",
+	battle = "全员列阵！目标，前方敌舰！",
+	upgrade = "刀刃…更加锐利了——",
+	voice_key = 39902,
+	headtouch = "",
+	feeling2 = "这把刀就如同我的分身，轻易触碰的话，可是会受伤的",
+	login = "还是一如既往的磨蹭啊，还要让我在这里等多久呢？",
+	vote = "",
+	hp_warning = "准、准备灭火…！",
+	id = 399020,
+	detail = "与其在这看着我发呆，不如多干点其他正事如何？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399021] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "胜利之后的战场，何等绝景，何等绝景",
+	home = "",
+	mission = "",
+	touch2 = "指挥官，想尝尝木屐踢脸的感觉吗？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "想要看我的歌舞？品味倒是不错…指挥官，那就为我准备一个最好的舞台吧",
+	mail = "",
+	touch = "…喝醉了？区区这么一点酒，怎么可能…嗝",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "想要看我的歌舞？品味倒是不错…指挥官，那就为我准备一个最好的舞台吧",
+	feeling5 = "",
+	main = "歌舞与武道是共通的，无数的磨练，只为了最美丽、最闪耀的那一瞬间…|指挥官，视线全在我身上的话…工作没有关系吗？|佳肴和闲游吗……难得的正月，偶尔放纵一下也无妨吧。呵呵",
+	battle = "不曾知晓的话就告诉你们吧，我乃{namecode:151}！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "",
+	vote = "",
+	hp_warning = "",
+	id = 399021,
+	detail = "我的名字和歌舞伎有缘？……啊，这个意思吗……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399030] = {
+	feeling1 = "如果指挥官非要荒废自己的才能，那么很快就会变成废材吧…",
+	feeling3 = "{namecode:26}级的姐姐们每次见面都会给{namecode:164}很多零食。分一些给指挥官也可以的…",
+	lose = "这不可能…一定哪里计算有误…",
+	propose = "只要在指挥官身边，心情也会变得安稳起来…所以，{namecode:164}想一直待在指挥官的身边…可以的话就拉钩？{namecode:26}级的姐姐们教我的，像指挥官这样出众的人，只要拉钩就会一直信守承诺",
+	expedition = "委托组的大家应该带回了很多好东西，指挥官去看看吧…",
+	win_mvp = "一场胜利不足以骄傲，准备下一场吧",
+	home = "指挥官辛苦了……接下来的事就交给{namecode:164}来处理吧，不会辜负指挥官期许的",
+	mission = "指挥官，振作起来，不能丢下这些任务不管",
+	touch2 = "虽然不知道该不该阻止指挥官……总之，请停止无礼的举动",
+	voice_key_2 = -1,
+	skill = "看招！会心一击！",
+	drop_descrip = "驱逐舰—{namecode:164}",
+	mail = "快查看下邮件吧，{namecode:164}预感到会有好事发生",
+	touch = "身体娇小也是有好处的…哼哼，要玩躲避球的话，指挥官别想击中我",
+	profile = "超{namecode:26}级驱逐舰、{namecode:164}…就是我。以前没能活跃在战场上，不过现在展示自己的实力还来得及。就让大家好好见识下如今{namecode:164}的装备性能和绝佳机动性吧",
+	mission_complete = "有付出就会有回报。指挥官这么努力，奖赏也自然不会溜走",
+	feeling4 = "有点怕黑……就让{namecode:164}慢慢跟在指挥官的身后吧（扯住衣角）",
+	unlock = "{namecode:164}已经准备就绪……今后由我来协助作战指挥的话，指挥官就可以清闲一些了",
+	feeling5 = "哈……（打呵欠）现在{namecode:164}有些困了，指挥官不会袖手旁观的……嗯，{namecode:164}的直觉一向很灵验，指挥官一定会把我抱回床上",
+	main = "经常受到{namecode:26}级姐姐们的照顾，{namecode:164}会好好回报她们的期待，也会努力保护好大家。|相比于浴血奋战，坐镇后方运筹帷幄的感觉好像更棒…不过请相信{namecode:164}的实力，就算是直接出击作战，{namecode:164}也是很强的|真正的实力，源于内心的勇气。可不要小看了{namecode:164}的能耐",
+	battle = "{namecode:164}已经预料到敌人的动向了…大家，快跟在{namecode:164}身后前进",
+	upgrade = "希望力量增强后，{namecode:164}也能保持清醒的头脑",
+	voice_key = 39903,
+	headtouch = "",
+	feeling2 = "想让我展示一下刀法？以后有机会，会给指挥官演示的",
+	login = "刚好指挥官回来了…{namecode:164}正要训练刀柄上的小家伙，要让它的站姿具有大将之风才好",
+	vote = "",
+	hp_warning = "知难而进，不是明智之选…不过现在也只能拼了！",
+	id = 399030,
+	detail = "指挥作战的将领都会配备一把适合自己的刀…所以放心吧，这柄刀一点都不沉",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399031] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "射击、捞金鱼…这些对{namecode:164}来说都是小菜一碟呢。指挥官也觉得{namecode:164}很厉害吧！",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "{namecode:164}，准备就绪——指挥官，和{namecode:164}一起制霸祭典吧！…不过在那之前，可以先吃点东西吗？",
+	mail = "",
+	touch = "哼哼，指挥官想要在祭典游戏上挑战{namecode:164}吗？尽管放马过来吧。",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "{namecode:164}，准备就绪——指挥官，和{namecode:164}一起制霸祭典吧！…不过在那之前，可以先吃点东西吗？",
+	feeling5 = "",
+	main = "只要提前预测到金鱼的运动方向，捞金鱼也就没有什么难的了|难得的祭典，今天就稍微放松一下好了…不过，明天开始就要更加努力了呢，指挥官|看在指挥官陪我来逛祭典的份上，就分你一点吃的吧。喏，要苹果糖吗？还是章鱼烧？",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "小家伙也等不及了，我们这就出发吧，指挥官，祭典可不会等我们呢。",
+	vote = "",
+	hp_warning = "",
+	id = 399031,
+	detail = "苹果糖！章鱼烧！…呣呣…竟然还有炒面！指挥官，帮我拿一下…啊，那个我也要！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399033] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "完，完了，这下全穿帮了……",
+	propose = "",
+	expedition = "",
+	win_mvp = "就用{namecode:164}准备好的彩带来庆祝吧！",
+	home = "在后台觉得无聊的话，要不要来和{namecode:164}玩海盗桶游戏？哼哼，{namecode:164}是不会输的。",
+	mission = "",
+	touch2 = "等、等一下？！这里可变不出什么东西吧？！不对你就是故意的！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "嗯，状态不错！照这个感觉，{namecode:164}一定能在正式的演出上大获成功！小家伙，你也表现得很棒哦！指挥官，觉得{namecode:164}的彩排表演如何？",
+	mail = "",
+	touch = "指挥官，有没有什么新的魔术点子？快和{namecode:164}说说——",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "嗯，状态不错！照这个感觉，{namecode:164}一定能在正式的演出上大获成功！小家伙，你也表现得很棒哦！指挥官，觉得{namecode:164}的彩排表演如何？",
+	feeling5 = "",
+	main = "这个魔术箱……我知道的！就算把里面的人锯成两半，也能完好如初地拼回来。指挥官，你躺里面，我们来试试吧！…唔，不是这样的吗？|{namecode:29}，接下来从这几张扑克里面选一张就好……那个，都只是普通的扑克牌，不用纠结的哦？|鸽子魔术大家都见过不少了，有没有其它小巧的适合用来表演的……我想到了！指挥官，我们去找{namecode:27}借她的噗太一用吧！",
+	battle = "哼哼，看{namecode:164}怎样华丽地扰乱敌人的视线吧。",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官，你来得正好！快帮我抓住这几只乱飞的魔术鸽！……呼，怎么突然就不听话了呢……",
+	vote = "",
+	hp_warning = "",
+	id = 399033,
+	detail = "指挥官，来配合我试试这个从大家面前消失的戏法吧！单、单人表演的话，舞台暗格有点…我怕黑…",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399040] = {
+	feeling1 = "指挥官，我很担心你的近况……不要再这样下去了，好吗？",
+	feeling3 = "想要和重樱、还有港区的各位都搞好关系呢～不如办个交流会如何…？就由我来准备饮品和点心吧～呵呵～",
+	lose = "失败了…该怎么和指挥官交代好呢…",
+	propose = "指挥官的心意，我已经完全明白了。从此刻起，我会用未来的全部时光去爱着您的…呼…虽然是自己说出来的，不过还是有点害羞呢…嘻嘻…",
+	expedition = "委托组的大家已经回港了，指挥官，要我代为清点物资么？",
+	win_mvp = "这是大家一起努力的结果，我只不过是其中的一份子~",
+	home = "欢迎回来~指挥官，喝杯茶，吃点点心休息一下吧？",
+	mission = "遇到了困难的任务吗？我来帮你吧",
+	touch2 = "指挥官，还请你注意下场合呢……",
+	voice_key_2 = -1,
+	skill = "接下来到我了呢~",
+	drop_descrip = "超甲巡—{namecode:165}",
+	mail = "邮件我已经帮指挥官收好了，快看看吧~",
+	touch = "哎呀？指挥官想要摸摸我吗？还是想要被我摸摸？无论哪种，都可以直接跟我说哦？",
+	profile = "我是大型巡洋舰{namecode:165}号，作为夜间雷击战的支援火力旗舰设计，可惜当初并没有被投入到实战中来…擅长夜战指挥，不过雷击战的话就有点…啊哈哈……",
+	mission_complete = "任务的奖励有好多……真不愧是指挥官呢~",
+	feeling4 = "指挥官，你知道吗？无忧无虑，充满幸福的笑脸是这个世界上最可爱的东西呢。大家的，和指挥官的笑脸，我想就这样守护下去……",
+	unlock = "大型巡洋舰·{namecode:165}，前来报道。虽然资历尚浅，不过还是希望指挥官能多依赖我一点呢~我会尽全力保护好指挥官的~",
+	feeling5 = "指挥官累了吗？呵呵，请安心地躺下，让{namecode:165}给你掏掏耳朵，或者揉一揉肩膀放松一下吧～？",
+	main = "和大家一起出海的时候，我的防护能力就能派上用场了呢！|炮击的精准度吗？过奖了呢~但是，比起天赋，不断练习才是更重要的。|指挥官，需要{namecode:165}做什么事吗？",
+	battle = "由我来指挥吗…？虽然不敢保证结果，但是我会尽全力的！",
+	upgrade = "嗯嗯，就是这个感觉~",
+	voice_key = 39904,
+	headtouch = "",
+	feeling2 = "我对这里还不是太熟悉……能耽误指挥官一点时间，稍微陪我在港区里走走吗？",
+	login = "让我们开始今天的工作吧？放心，我会一直陪在你身边的~",
+	vote = "",
+	hp_warning = "这点损伤，还不要紧……",
+	id = 399040,
+	detail = "我想积累更多经验，尽快跟上伙伴们的脚步。所以，无论什么事情都行，还请尽管吩咐我吧~",
+	couple_encourage = {
+		{
+			{
+				40304
+			},
+			1,
+			"{namecode:429}小姐，还是稍微谨慎点比较……",
+			0
+		},
+		{
+			{
+				30401
+			},
+			1,
+			"和{namecode:70}姐比起来，我还差得很远呢",
+			0
+		},
+		{
+			{
+				39903
+			},
+			1,
+			"{namecode:164}，不要迷路了哦？",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[399041] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "指挥官介意单独陪我一下吗？一小会就好，有时候也想享受下单独占有指挥官的感觉呢…呵呵，开玩笑的~",
+	mission = "",
+	touch2 = "不能做这样的事。至少，现在不行哦。",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "指挥官？我，我还没整理好衣服，头发也有些乱……对不起，能稍微等我一会吗？",
+	mail = "",
+	touch = "能有指挥官陪在身边，我感到非常开心哦",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "指挥官？我，我还没整理好衣服，头发也有些乱……对不起，能稍微等我一会吗？",
+	feeling5 = "累了吗？就算是再让人兴奋的节日，当疲倦袭来的时候指挥官也只能乖乖认输呢~就请在{namecode:165}的怀中，静静地休息休息一会吧~",
+	main = "我听说东煌的传统小吃汤圆是团圆的象征。不过，吃掉它的话，不就是把“团圆”吃掉了吗…？|东煌的友人们带着大家写了不少“福”字，我也写了一幅，不过好像一般般呢……|办公室的装饰需要帮忙吗？我也想亲手布置试试看。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官，春节的夜晚很热闹，不过，在外面逛的时候，要小心别感冒了哦。",
+	vote = "",
+	hp_warning = "",
+	id = 399041,
+	detail = "虽说是为了拍照留念，不过一直保持这样的姿势，还是有些辛苦呢……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399048] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "出击辛苦了~请在这坐下，我来帮你捏捏肩膀吧~——嘿咻…这个力度是不是正好呢~？",
+	mission = "",
+	touch2 = "指挥官真是爱撒娇呢…///",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "能穿上这样一身白纱，仿佛是做梦一样呢…呵呵，不过，更重要的是之后的共同生活！指挥官，敬请期待我的“新娘修行”成果吧~",
+	mail = "",
+	touch = "那，既然指挥官摸完了，该轮到我来摸摸你了吧？呵呵~开玩笑的~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "能穿上这样一身白纱，仿佛是做梦一样呢…呵呵，不过，更重要的是之后的共同生活！指挥官，敬请期待我的“新娘修行”成果吧~",
+	feeling5 = "对我来说，幸福就是每天的彼此陪伴，日常的温柔倾诉…我现在觉得非常幸福哦~指挥官呢？有{namecode:165}陪伴身边，你…感到幸福吗？",
+	main = "虽然对自己的防护能力很有自信，不过，为了不让指挥官担心，我会谨慎行事的~|指挥官，请喝茶！呵呵，这也是和{namecode:70}请教过并且不断练习后的成果哦~|无论开心还是不开心的事，都请尽管向我倾诉吧，我会一直在你的身边，听你说话的~",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "欢迎回来，指挥官。放心吧，我会一如既往地陪在你身边的~",
+	vote = "",
+	hp_warning = "",
+	id = 399048,
+	detail = "今天向{namecode:71}学习了新的菜式呢~指挥官，敬请期待明天的便当吧~呵呵~",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399050] = {
+	feeling1 = "哼，末等之流，离我远点。",
+	feeling3 = "做得不错，看来你有与我携手并进的资格…哼，如果被我发现你贪图安逸而退步的话，我会比谁都快地抛弃你在一边的。",
+	lose = "赶、赶紧撤退！……我的刀呢！？",
+	propose = "哼，别想那么简单让我老实听你……等等，我的刀！你，你什么时候拿走的？！我听你的总行了吧？！快还给我！哎，彻底输了…但，感觉倒也不坏就是了…",
+	expedition = "我说怎么这么大动静，原来是委托队回来了啊。要去迎接？哦，那走吧。",
+	win_mvp = "就凭你们这种货色也想战胜{namecode:204}？可笑！",
+	home = "我的刀…我的刀……呼~还是拿在手上安心……嗯？你在这干嘛？现在不是发呆的时间吧？",
+	mission = "任务？我不想在小事上浪费我的时间，你想办法自己解决吧。",
+	touch2 = "看来你是吃了豹子胆啊……喂，我叫你住手没听到吗！",
+	voice_key_2 = -1,
+	skill = "降临吧，天罚！",
+	drop_descrip = "航空母舰—{namecode:204}",
+	mail = "新的信件……不是挑战书？没意思。",
+	touch = "干嘛？有话就说，别磨磨唧唧的。",
+	profile = "我是重樱航空母舰{namecode:204}。任何人若是对我的实力有所质疑，欢迎她们随时来挑战我，我会告诉她们什么叫做“碾压”。",
+	mission_complete = "不错。能把这些小事完成的井然有序，值得夸奖。",
+	feeling4 = "（小声）你有见到我的刀吗？我明明放在手边的，一觉醒来之后就找不到了……总，总之，再这样下去会变得很麻烦，所以快帮帮我！",
+	unlock = "你就是指挥官吗？我的名字是{namecode:204}。任何想要掌控我的努力都将是徒劳的，牢记在心吧！",
+	feeling5 = "哎，既然丢人的一面被你知道了，那就只好时刻都盯着你避免泄密了。从今天起，你所有的行动我都要跟着。……一起出去玩？当然包括在内。…等下，总觉得有哪里不对……",
+	main = "来这里之后，能切磋的对手多了不少，甚是愉快啊。…朋友？哼，对我来说有一两个就够了。|武器是我的灵魂。若是手中空空如也，恐怕……不，没什么。|闲着的时候姑且是做了几个饭团，你要是饿的话就拿去吃吧。",
+	battle = "我倒要看看，何人竟敢与我{namecode:204}为敌！",
+	upgrade = "这下，与其他人的差距要拉得更开了啊……",
+	voice_key = 39905,
+	headtouch = "随便摸我的头，你就不怕被我斩了？",
+	feeling2 = "做得好就夸，做不好就批评，一码归一码，这就是我的原则。我会做好我自己的事，你不需要担心我。",
+	login = "不错，准点来了嘛。我还以为你会睡个懒觉啥的。",
+	vote = "",
+	hp_warning = "竟然伤到我{namecode:204}……！？",
+	id = 399050,
+	detail = "房间有点乱？这有什么关系。反正每样东西要找的时候我都能找到，这不就够了？",
+	couple_encourage = {
+		{
+			{
+				30602,
+				30701,
+				30707
+			},
+			1,
+			"不是很好相处啊……",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[399051] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "呣呣……噢，指挥官你回来得正好。快帮我想几个新菜品！",
+	mission = "来新订单了？行，马上就做好！",
+	touch2 = "你是不是想变成生鱼片了？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "这位客人，您点的刺身拼盘好了！…离得太近了？怎么，本{namecode:204}亲自给你上菜，你还找起茬来了？……嗯，这就对了，乖乖接受就好了~",
+	mail = "新的信件……是竞争对手寄过来的挑战书么？",
+	touch = "别随便碰我的刀！…咳咳，抱歉，有些激动了。没吓到你吧？",
+	profile = "",
+	mission_complete = "哦？你的任务完成了？正好我这边的订单也完成了呢！",
+	feeling4 = "",
+	unlock = "这位客人，您点的刺身拼盘好了！…离得太近了？怎么，本{namecode:204}亲自给你上菜，你还找起茬来了？……嗯，这就对了，乖乖接受就好了~",
+	feeling5 = "",
+	main = "怎么，那边那桌是有什么事吗！……生鱼片少了一份么。哦，知道了，我这就切好送过来。|觉得刀工这种精细活我应该不擅长？哈哈，那你就大错特错了！现在就示范给你看，什么叫做又快又准的刀法！|我说，要不干脆你来给我打打下手吧？你这么能干，肯定能帮上我不少忙的！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "唔…嗯？……这个讨厌的感觉是……呀！？我、我的刀…？谢谢…咳咳！好啦，指挥官，该开工了！",
+	vote = "",
+	hp_warning = "",
+	id = 399051,
+	detail = "多亏了小伙伴们帮忙，厨房才能这么整洁呢。虽然稍微乱一点对我来说也没什么区别就是了，哈哈",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399052] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托组回来了？叫她们过来，一起听我演奏吧。",
+	win_mvp = "",
+	home = "刀刀刀刀去哪了？！这下可搞不了什么音乐了……哼！居然妄想利用{namecode:204}我的弱点，真是胆大包天！不会让你得逞的！",
+	mission = "",
+	touch2 = "刀可不在这里！…你不是来找刀的吗？！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "刀是在…好的。哼，是你啊。本想着你每天都和我们奋战沙场，没想到你还懂音律。来，就先用这首曲子来测测你的品味吧！",
+	mail = "",
+	touch = "♪～猜猜这是什么曲子吧。…可不是即兴演奏！",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "刀是在…好的。哼，是你啊。本想着你每天都和我们奋战沙场，没想到你还懂音律。来，就先用这首曲子来测测你的品味吧！",
+	feeling5 = "",
+	main = "刀，刀的话无需担心！你只需要专注于我奏出的旋律！明白了吗！？|什么？很吵？哼，你果然是个不懂风雅的粗人。就算再怎么驰骋沙场，也不能忘记磨炼高雅情操！|真想喝一杯……啧，这里连能当做下酒菜的东西都没有吗。没办法，我出一趟门采购吧。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "哼哼，刚才的曲子如何？嗯，无话可说么。是因为太好听连话都说不出来了吗？对吧？",
+	vote = "",
+	hp_warning = "",
+	id = 399052,
+	detail = "不愧是宴会会场，安排得井井有条嘛。哼，反正也会被醉酒的家伙们搞得一塌糊涂，就算再努力整理也没用——你不觉得吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[399060] = {
+	feeling1 = "惹怒龙会怎样——指挥官不会为了满足好奇心特地付诸行动的…对吧？",
+	feeling3 = "感觉你还是有些拘谨。如果你不改变，那我也会配合你，以更具威严的方式接触你——（咕噜咕噜…）这，这不是肚子叫的声音…是，是雷声啦。",
+	lose = "邪气比预想的还……咕呜……",
+	propose = "如果交换了誓约，那我们之间就是斩也斩不断的关系——这既是恩赐，也是诅咒。这样也可以吗？…是吗？呵呵，那下一步该怎么做？接吻？拥抱？还是…？",
+	expedition = "军事委托。原来如此？是要为我献上贡品吗？",
+	win_mvp = "敬畏吧，恐惧吧，狂暴汹涌的龙神之岚——式神沾上水变回纸了呢…啊哈哈哈……",
+	home = "辛苦了，指挥官。是场不错的战斗？啊，并不是我的功劳，所以不必这么毕恭毕敬啦。",
+	mission = "要完成任务才行。指挥官，加油吧。",
+	touch2 = "嗯——该不该降灾呢…",
+	voice_key_2 = -1,
+	skill = "水龙式纸，示显神威——",
+	drop_descrip = "轻巡洋舰—四万十",
+	mail = "信件？会有人送来吗…",
+	touch = "有事相求于龙神大人？是想让我降雨吗？",
+	profile = "我是重樱所属的轻巡洋舰，{namecode:292}。作为愿望具现的特别计划舰，以及被解封的龙之传承，我将加入指挥官的舰队——嗯，那个…可以称我为龙神大人哦…？",
+	mission_complete = "任务完成了？这样啊，辛苦了。",
+	feeling4 = "嗯嗯，只要平常地吃零食聊天就好了。即使我是龙神大人，现在也仅仅是和你聊天的小伙伴而已。而且，只要你希望，和你约会也是可以的……那，那个，刚刚的话我是认真的哦？",
+	unlock = "不入之封已解，向觉醒的伟大龙神畏威崇敬吧——呵呵，倒也不必如此拘谨。我是{namecode:292}，是愿望具现的幻想之一。指挥官，还请多多关照了。",
+	feeling5 = "今天一整天的我是来和指挥官约会的，没什么威严的龙神大人哦。来，带路吧。我这是第一次，就算想摆架子也做不到呢——呵呵，多少知道该怎么和龙神大人相处了吗？",
+	main = "你问我想要什么贡品？既然你都这样说了，那就指挥官喜欢的零食…没什么。咳，什么零食都可以的。|工作还没结束吧？只剩下一点了，坚持下吧？…如果偷懒的话，我可是会降灾的哦？|我多少能理解御狐大人的烦恼。虽然多亏了指挥官我现在挺轻松的，但是为众人所尊崇真的很累…而且一直被叫做龙神大人，也是也挺难为情的。|嗯，叠好了。啊，这个不是普通的纸飞机而是式纸……不过现在确实就和指挥官说的一样，只是普通的纸飞机呢……唔……",
+	battle = "尝尝龙神的炮击吧——",
+	upgrade = "要让我变强吗？那我就能毫无保留地使用这份力量了？",
+	voice_key = 39906,
+	headtouch = "…？",
+	feeling2 = "你应该做的事，应该采取的态度只能二者择其一——要么不想我降灾，畏惧尊崇这龙神的力量，要么作为指挥官信任并依赖你的舰船{namecode:292}。随你选择，何种我都并不介意",
+	login = "咳。指挥官，说出汝所祈愿之事吧…嗯？为什么不说呢？想让秘书舰闲着吗？",
+	vote = "",
+	hp_warning = "触我逆鳞之惩戒，就此降下——",
+	id = 399060,
+	detail = "随意点便好。这里毕竟是指挥官你的港区，也就是说即使是龙神大人的房间，也不过是你家的——虽然不能真的当成自己家，不过还是放松点啦，不用紧张的。",
+	couple_encourage = {
+		{
+			{
+				39905
+			},
+			1,
+			"刀可要牢牢握住哦。呵呵～",
+			0
+		},
+		{
+			{
+				90103,
+				80108,
+				60110
+			},
+			1,
+			"就那么讨厌青椒吗…？",
+			0
+		}
+	}
+}
 _G.pg.base.ship_skin_words[401010] = {
 	feeling1 = "不行啊指挥官，你完全不开心啊",
 	feeling3 = "生涯短暂啊，指挥官，我想尽全力的活着。作为我的伙伴，你可不能落后，来，笑一个！",
@@ -43062,7 +43573,6 @@ _G.pg.base.ship_skin_words[401010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43096,7 +43606,6 @@ _G.pg.base.ship_skin_words[401011] = {
 	detail = "带武器去学校只是防身啦，总有些不知眉眼高低的人想挑衅{namecode:400}大人！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43130,7 +43639,6 @@ _G.pg.base.ship_skin_words[401019] = {
 	detail = "哼哼，{namecode:400}大人还可以变得更快更强！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401020] = {
 	feeling1 = "我就算了，请您尽量离{namecode:400}远一点",
 	feeling3 = "指挥官，又来找我聊天吗，想必您已经对我有所了解，我可不会为了顾及您的感受而说好话哦？还是说，您其实很享受这种感觉？",
@@ -43186,7 +43694,6 @@ _G.pg.base.ship_skin_words[401020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43220,7 +43727,6 @@ _G.pg.base.ship_skin_words[401021] = {
 	detail = "居然想要知道我平时在做些什么，指挥官您的好奇心还真是旺盛呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43254,7 +43760,6 @@ _G.pg.base.ship_skin_words[401022] = {
 	detail = "像这样两个人一起…怎么看都是“约会”呢，嗯。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401160] = {
 	feeling1 = "喂，告诉我是谁欺负你了？不要怕，我这就去帮你出了这口气！",
 	feeling3 = "坏人也分坏的程度。有的坏人说两句就能改正，有的坏人得拿拳头“威吓”才行，还有的坏人你越吓他反而越嚣张…这是我总结的规律！",
@@ -43313,7 +43818,6 @@ _G.pg.base.ship_skin_words[401160] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401161] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43347,7 +43851,6 @@ _G.pg.base.ship_skin_words[401161] = {
 	detail = "博格！投个高难度的球给我……等、等一下，没必要扔那么快吧？！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401180] = {
 	feeling1 = "{namecode:404}的笑容传达不到指挥官的心里呢……",
 	feeling3 = "虽然笑容是好事，但是面对残忍的事却能笑出来的人果然很可怕呢",
@@ -43381,7 +43884,6 @@ _G.pg.base.ship_skin_words[401180] = {
 	detail = "指挥官，来，跟我一起——笑一个~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401190] = {
 	feeling1 = "现在的指挥官是0分！",
 	feeling3 = "指挥官，如果下次战斗我拿到了mvp，休息日的时候能不能陪我去水上乐园呢？",
@@ -43415,7 +43917,6 @@ _G.pg.base.ship_skin_words[401190] = {
 	detail = "有什么疑问吗，指挥官？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401200] = {
 	feeling1 = "看到你跑步积累的疲劳全涌上来了！指挥官，再见，我去休息了",
 	feeling3 = "怎么啦？有什么烦心事？一起跑个马拉松的话心情肯定会变轻松的",
@@ -43449,7 +43950,6 @@ _G.pg.base.ship_skin_words[401200] = {
 	detail = "烦恼和痛苦都biu~地飞走了！怎么样，指挥官，开心了吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401210] = {
 	feeling1 = "我现在心情很差，不要靠近我！",
 	feeling3 = "喜欢什么东西？我为什么要告诉你？不过昨天的马卡龙味道倒还不坏……",
@@ -43483,7 +43983,6 @@ _G.pg.base.ship_skin_words[401210] = {
 	detail = "我脸上有什么东西吗？不要一直盯着我看啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401230] = {
 	feeling1 = "指挥官，我要学习了，能不要打扰我吗？",
 	feeling3 = "有点累了吗，嗯，休息也是很重要的。膝枕？真是没办法，就一会儿喔",
@@ -43526,7 +44025,6 @@ _G.pg.base.ship_skin_words[401230] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401231] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43560,7 +44058,6 @@ _G.pg.base.ship_skin_words[401231] = {
 	detail = "都记住了吗？这些内容之后会出测验哦？不及格的话——",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401232] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43594,7 +44091,6 @@ _G.pg.base.ship_skin_words[401232] = {
 	detail = "欸？被可爱的泳装吸引了注意力所以忽略了球？真、真是的，都在干什么啊指挥官！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401233] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43628,7 +44124,6 @@ _G.pg.base.ship_skin_words[401233] = {
 	detail = "呼……保持笑容可真是一件麻烦的事情，感觉嘴角都僵了……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401234] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43662,7 +44157,6 @@ _G.pg.base.ship_skin_words[401234] = {
 	detail = "我的笑容变多了吗？嗯……那一定是因为，指挥官逐渐变得可靠了吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401235] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43696,7 +44190,6 @@ _G.pg.base.ship_skin_words[401235] = {
 	detail = "{namecode:428}小姐，又在调戏店员了…呜呜，胃好疼",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401236] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43730,7 +44223,6 @@ _G.pg.base.ship_skin_words[401236] = {
 	detail = "我并不讨厌一边做经纪人一边做偶像的感觉呢，不如说，或许这样才适合我也说不定",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401237] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43764,7 +44256,6 @@ _G.pg.base.ship_skin_words[401237] = {
 	detail = "呼…果然看着印刷的书本就有种沉下心来的感觉呢…指挥官也来一起看看书如何？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401238] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43798,7 +44289,6 @@ _G.pg.base.ship_skin_words[401238] = {
 	detail = "真是的，你这样一直看着我，我要怎么静下心来看书啦…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401239] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43832,7 +44322,6 @@ _G.pg.base.ship_skin_words[401239] = {
 	detail = "嗯，这样就完成得差不多了…好，去找标枪她们玩——欸，指、指挥官？！咳咳，正好，这里有一些文件……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401240] = {
 	feeling1 = "汝可知…堕落至极的凡人会有什么样的下场？",
 	feeling3 = "无论何种对手，感受到到吾之威势都会吓得落荒而逃！…为何汝对吾却没有任何惧意？",
@@ -43907,7 +44396,6 @@ _G.pg.base.ship_skin_words[401240] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401241] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43941,7 +44429,6 @@ _G.pg.base.ship_skin_words[401241] = {
 	detail = "即便是“新年”，也不能丢失了身为“魔王”的威仪，所以这对巨爪是绝对不能脱下的！至于拿东西什么的…就是你的任务了，凡人！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401242] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -43975,7 +44462,6 @@ _G.pg.base.ship_skin_words[401242] = {
 	detail = "既然对手是人类，不把巨爪改成绷带让着点那可就谈不上是公平比赛了…才不是因为搞坏了很多副球拍什么的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401250] = {
 	feeling1 = "安可先生……我想离开这里……",
 	feeling3 = "现在大家都觉得我是一个认真，负责的人，都愿意和我一起出击，执行委托。指挥官也觉得有我在就能够放心了。安可先生，我做到了呢！",
@@ -44018,7 +44504,6 @@ _G.pg.base.ship_skin_words[401250] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401251] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44052,7 +44537,6 @@ _G.pg.base.ship_skin_words[401251] = {
 	detail = "安可先生也要晒下太阳呢，不然就要发霉了……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401260] = {
 	feeling1 = "指挥官，不合格！",
 	feeling3 = "嗯，今天指挥官做得很好，以后再接再厉！……这样指挥官就能理解我表达称赞的意思了吧。",
@@ -44095,7 +44579,6 @@ _G.pg.base.ship_skin_words[401260] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401261] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44129,7 +44612,6 @@ _G.pg.base.ship_skin_words[401261] = {
 	detail = "{namecode:432}姐姐很喜欢这个脆脆的尖角呢，指挥官也喜欢吗？那…张开嘴我给你塞几个！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401280] = {
 	feeling1 = "在指挥官改正错误，被大家重新接纳之前，我会一直照顾你的。所以，不要放弃自己哦！",
 	feeling3 = "想要请个假休息一小会？可以哦，理由我来帮你想吧。不过，指挥官的工作，我可能没法帮上忙呢…之后一定要记得补上哦？",
@@ -44204,7 +44686,6 @@ _G.pg.base.ship_skin_words[401280] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401281] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44238,7 +44719,6 @@ _G.pg.base.ship_skin_words[401281] = {
 	detail = "是先去神社祈福呢，还是先陪同伴打羽毛毽呢…唔唔，新年想做的事有好多好多啊。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401282] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44272,7 +44752,6 @@ _G.pg.base.ship_skin_words[401282] = {
 	detail = "这样被动物们包围着，不禁想让更多的动物们过来了呢。要不就叫“动物村”之类的？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401350] = {
 	feeling1 = "你不是我期望的指挥官呢……",
 	feeling3 = "指挥官就像舰队的偶像一样，光是存在就能给大家带来希望，我也想变成这样的偶像呢！",
@@ -44306,7 +44785,6 @@ _G.pg.base.ship_skin_words[401350] = {
 	detail = "咦，指挥官你怎么在我房间？……欸？！原来是我走错了吗！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401351] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44340,7 +44818,6 @@ _G.pg.base.ship_skin_words[401351] = {
 	detail = "欸嘿，无论穿着怎样的衣服，都完~全不影响小35百分百发挥自己的能歌善舞哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401360] = {
 	feeling1 = "我已经看到了，指挥官终将破碎的宿命！",
 	feeling3 = "哼哼～就让恶魔之力也寄宿在你的身上吧——不要动，还没画完呢！",
@@ -44383,7 +44860,6 @@ _G.pg.base.ship_skin_words[401360] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401460] = {
 	feeling1 = "这里或许并没有我渴求的东西……",
 	feeling3 = "亲友、敌人、喜好、厌憎……来到这里之前，我什么都不曾拥有",
@@ -44442,7 +44918,6 @@ _G.pg.base.ship_skin_words[401460] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[401461] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44476,7 +44951,6 @@ _G.pg.base.ship_skin_words[401461] = {
 	detail = "潮起，潮落，留下了这个难忘的夏天。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401462] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44510,7 +44984,6 @@ _G.pg.base.ship_skin_words[401462] = {
 	detail = "我也想如猎豹一样跑得更快，想像鸟儿那般飞得更高。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401463] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44544,7 +45017,6 @@ _G.pg.base.ship_skin_words[401463] = {
 	detail = "无数日夜的努力，只为舞台上闪耀的一瞬，如同流星跨越苍穹，留在人们眼中的却只有刹那的光芒。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401464] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44578,7 +45050,6 @@ _G.pg.base.ship_skin_words[401464] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401465] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44612,7 +45083,6 @@ _G.pg.base.ship_skin_words[401465] = {
 	detail = "如果连{namecode:435}大人的雕像都清理不干净的话…就没颜面面对铁血的诸位了…不过，战斗才刚刚开始…！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401990] = {
 	feeling1 = "哎，没想到指挥官就这点能耐，和名气完全不符啊……",
 	feeling3 = "如果别的舰船也能像潜艇那样，能随意在海中行动就好了。常年在陆地上的指挥官，没法理解这种能自由自在遨游的感觉吧？呵呵～",
@@ -44646,7 +45116,6 @@ _G.pg.base.ship_skin_words[401990] = {
 	detail = "为什么一直盯着我看……哦，我懂了，是被我吸引得目不转睛了吧？真是不坦率～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[401991] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44680,7 +45149,6 @@ _G.pg.base.ship_skin_words[401991] = {
 	detail = "要是被我知道了这是谁的恶作剧，我一定要给她点颜色瞧瞧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402010] = {
 	feeling1 = "好了，接下来是惩罚时间",
 	feeling3 = "本来还以为指挥官是更老实的孩子呢，不过这样也不赖就是了…从调教的意义上，呵呵呵…",
@@ -44714,7 +45182,6 @@ _G.pg.base.ship_skin_words[402010] = {
 	detail = "听好了，太拘泥于面板上的数字可是会吃大亏的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402020] = {
 	feeling1 = "不想跟指挥官玩……",
 	feeling3 = "我既不喜欢宅在房间里，也不喜欢怠惰（Truant）那家伙……这么想，难不成这就是宿命……",
@@ -44748,7 +45215,6 @@ _G.pg.base.ship_skin_words[402020] = {
 	detail = "啊哈哈，指挥官对我这么有兴趣吗～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44782,7 +45248,6 @@ _G.pg.base.ship_skin_words[402029] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402030] = {
 	feeling1 = "职场骚扰可是犯罪哦，指挥官",
 	feeling3 = "您是平易近人的上级真是太好了……我对于那种暴躁的有点不会应对呢……",
@@ -44816,7 +45281,6 @@ _G.pg.base.ship_skin_words[402030] = {
 	detail = "指挥官想要了解什么数据？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44850,7 +45314,6 @@ _G.pg.base.ship_skin_words[402039] = {
 	detail = "除了数据，有其他任何想要了解的，也可以尽管问我哦，指挥官？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402040] = {
 	feeling1 = "不、不要过来！",
 	feeling3 = "习惯之后就不会晕倒了，而且……跟指挥官在一起很……开心",
@@ -44884,7 +45347,6 @@ _G.pg.base.ship_skin_words[402040] = {
 	detail = "指，指挥官，请不要一直盯着我……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44918,7 +45380,6 @@ _G.pg.base.ship_skin_words[402041] = {
 	detail = "指挥官…比，比起我，还是请多看看传单吧…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402049] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -44952,7 +45413,6 @@ _G.pg.base.ship_skin_words[402049] = {
 	detail = "鱼鱼虽然表现得很凶，其实很温柔的！额，不过好像只有对我时是这样……不好意思……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402050] = {
 	feeling1 = "指挥官…还真是碍眼啊……",
 	feeling3 = "想学习烤肠的做法？没问题哦。不过，事先说好，我可是很严格……等等，这该不会是指挥官用来接近我的手段吧？！",
@@ -44995,7 +45455,39 @@ _G.pg.base.ship_skin_words[402050] = {
 		}
 	}
 }
-
+_G.pg.base.ship_skin_words[402051] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "指挥官，再坚持会，我们到了下一个目的地再休息吧？",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "竟然这么爽快就答应了一起旅行的请求，指挥官肯定另有打算…啊，我的意思是，如果指挥官准备好了的话，随时都可以出发哦？",
+	mail = "指挥官，我们要不要也写个明信片什么的呢？",
+	touch = "要、要牵手吗？…真的只是为了防止走散而已吗…？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "竟然这么爽快就答应了一起旅行的请求，指挥官肯定另有打算…啊，我的意思是，如果指挥官准备好了的话，随时都可以出发哦？",
+	feeling5 = "",
+	main = "要是{namecode:424}也一起就好了呢…不过，人太多的地方她可能也不太能适应得了…？|重樱也有很多特别的美食呢，下次跟重樱的伙伴们讨教下制作方法好了…|这套重樱风格的服饰，还是挺好看的呢…啊？！指挥官，您刚才是不是盯着什么奇怪的地方看了！？",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官准备好了的话，我们就出发吧？今天有很多地方要去呢。",
+	vote = "",
+	hp_warning = "",
+	id = 402051,
+	detail = "唔…指挥官，一起帮忙看下，带点什么特产给铁血的同伴们比较好？",
+	couple_encourage = {}
+}
 _G.pg.base.ship_skin_words[402060] = {
 	feeling1 = "喂，你惹我生气了。不早点改正错误的话，后果很严重的！",
 	feeling3 = "你说…这是为了报答上次帮你处理公务特地泡的咖啡…嗯！那我就欣然收下啦！再让我加点牛奶——",
@@ -45049,7 +45541,6 @@ _G.pg.base.ship_skin_words[402060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[402061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45083,7 +45574,6 @@ _G.pg.base.ship_skin_words[402061] = {
 	detail = "不管你再怎么可爱，闯祸了就是闯祸了，明白吗！明白了的话，下次就小心点！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45117,41 +45607,6 @@ _G.pg.base.ship_skin_words[402062] = {
 	detail = "海风拂面，空中海鸟在飞翔……漫画中经常看到的场景果然是真的呢。好的，指挥官，下次除了出海我们也挑战下爬山吧！",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[402051] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "指挥官，再坚持会，我们到了下一个目的地再休息吧？",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "竟然这么爽快就答应了一起旅行的请求，指挥官肯定另有打算…啊，我的意思是，如果指挥官准备好了的话，随时都可以出发哦？",
-	mail = "指挥官，我们要不要也写个明信片什么的呢？",
-	touch = "要、要牵手吗？…真的只是为了防止走散而已吗…？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "竟然这么爽快就答应了一起旅行的请求，指挥官肯定另有打算…啊，我的意思是，如果指挥官准备好了的话，随时都可以出发哦？",
-	feeling5 = "",
-	main = "要是{namecode:424}也一起就好了呢…不过，人太多的地方她可能也不太能适应得了…？|重樱也有很多特别的美食呢，下次跟重樱的伙伴们讨教下制作方法好了…|这套重樱风格的服饰，还是挺好看的呢…啊？！指挥官，您刚才是不是盯着什么奇怪的地方看了！？",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官准备好了的话，我们就出发吧？今天有很多地方要去呢。",
-	vote = "",
-	hp_warning = "",
-	id = 402051,
-	detail = "唔…指挥官，一起帮忙看下，带点什么特产给铁血的同伴们比较好？",
-	couple_encourage = {}
-}
-
 _G.pg.base.ship_skin_words[402070] = {
 	feeling1 = "唔……莫非是我不小心玩坏了吗？真可惜啊……那么可爱的人类，很难再找到第二个了呢……",
 	feeling3 = "看人类你的样子，似乎是不打算乖乖就范呢~「我啊，其实挺喜欢欣赏猎物挣扎时的表情呢~呵呵呵~」",
@@ -45185,7 +45640,6 @@ _G.pg.base.ship_skin_words[402070] = {
 	detail = "「不要以为我会对一个普通的人类感兴趣哦」从你的身上，嗅到了我喜欢的，如同含苞待放的蓓蕾一般，青涩而甘甜的气味呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45219,7 +45673,6 @@ _G.pg.base.ship_skin_words[402071] = {
 	detail = "……入戏太深了么？呵呵呵~我可爱的人类啊，这不过是将对你的所有权，换了一套方式表达而已。戏里戏外，我分得很清楚哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45253,7 +45706,6 @@ _G.pg.base.ship_skin_words[402072] = {
 	detail = "人类散发出的香味，是胜于此处一切的甘美。{namecode:448}最喜欢这香味，以及人类你了~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402080] = {
 	feeling1 = "这肯定是期待了是个好指挥官的我的错呢……",
 	feeling3 = "反正我的攻击肯定打不中，就算打2倍…3倍的数量…肯定也打不中，还会浪费弹药…唉…",
@@ -45287,7 +45739,6 @@ _G.pg.base.ship_skin_words[402080] = {
 	detail = "指挥官？没事吧？没受伤吧？我，我刚在指挥官过来的路上不小心担心了下你………",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45321,7 +45772,6 @@ _G.pg.base.ship_skin_words[402081] = {
 	detail = "我是厄运之子，是诅咒你的存在——这样的设定更合理呢。指挥官也这么认为吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402082] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45355,7 +45805,6 @@ _G.pg.base.ship_skin_words[402082] = {
 	detail = "如果我在梦里许下什么奇怪的心愿的话，肯定会给指挥官添麻烦的吧……梦里的话没关系？也许是这样，但醒来时早就忘了自己许过什么愿了，不好说是不是没关系的呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[402100] = {
 	feeling1 = "终究不过是人类。比起支配别人，还是被谁支配更适合你。老实点！",
 	feeling3 = "作为普通人，你干得算是不错了。我是承认这一点的，也因此听从你的命令。但那又怎么样？难道你并不打算将我作为部下，而是作为一个个体听命于你吗？",
@@ -45406,7 +45855,6 @@ _G.pg.base.ship_skin_words[402100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[402101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45440,7 +45888,6 @@ _G.pg.base.ship_skin_words[402101] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403010] = {
 	feeling1 = "垃圾！别出现在我的视线中！",
 	feeling3 = "哈？担心我？被你这种人担心可高兴不起来",
@@ -45489,7 +45936,6 @@ _G.pg.base.ship_skin_words[403010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[403012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45523,7 +45969,6 @@ _G.pg.base.ship_skin_words[403012] = {
 	detail = "从刚刚开始就一直能感觉到视线…差，差不多该别盯着我看了。…哈？！？！什么叫看入迷了……你这笨蛋突然说什么呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403020] = {
 	feeling1 = "即使是这样的指挥官，我也喜欢！",
 	feeling3 = "呀吼~待在指挥官的身边，总感觉自己可以飞到天上！啊，说起来舰装本来就浮着嘛♪",
@@ -45574,7 +46019,6 @@ _G.pg.base.ship_skin_words[403020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[403021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45608,7 +46052,6 @@ _G.pg.base.ship_skin_words[403021] = {
 	detail = "指挥官，我现在起跳了，要好好接住我哦—！……啊哈☆nice catch！最喜欢指挥官了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403030] = {
 	feeling1 = "能从我的眼前消失吗？有点碍眼呢……",
 	feeling3 = "指挥官，我喜欢你哦~——开玩笑的，心跳加速了吗～？",
@@ -45677,7 +46120,6 @@ _G.pg.base.ship_skin_words[403030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[403031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45711,7 +46153,6 @@ _G.pg.base.ship_skin_words[403031] = {
 	detail = "呜哇，和威尔士玩了一天，皮肤都被晒黑了……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45745,7 +46186,6 @@ _G.pg.base.ship_skin_words[403032] = {
 	detail = "Frohes neues Jahr~这是我们铁血的新年快乐哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403033] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45779,7 +46219,6 @@ _G.pg.base.ship_skin_words[403033] = {
 	detail = "呵呵…指挥官，露出了不争气的表情呢…脸这么红，难道是喝醉了吗~？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403034] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45813,7 +46252,6 @@ _G.pg.base.ship_skin_words[403034] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403035] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45847,7 +46285,6 @@ _G.pg.base.ship_skin_words[403035] = {
 	detail = "想让我改个称呼吗？那么，「mein Schatz♡」——这个如何？呵呵呵♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403038] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45881,7 +46318,6 @@ _G.pg.base.ship_skin_words[403038] = {
 	detail = "在铁血，人们也会用动物名来称呼爱人哦，小熊或是小兔子什么的。你希望我叫你小熊还是小兔呢，指挥官？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403040] = {
 	feeling1 = "对你没兴趣了……找点新的宠物好了",
 	feeling3 = "区区低等动物，尽全力去找些能让我开心的东西吧，哈哈哈",
@@ -45915,7 +46351,6 @@ _G.pg.base.ship_skin_words[403040] = {
 	detail = "果然这种时候不管怎样都要给你点处罚呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45949,7 +46384,6 @@ _G.pg.base.ship_skin_words[403041] = {
 	detail = "眷属，过来……别害怕，这些小家伙不会伤害你的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -45983,7 +46417,6 @@ _G.pg.base.ship_skin_words[403042] = {
 	detail = "仆人，不要偷懒，要把防晒霜涂均匀才行!",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403043] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46017,7 +46450,6 @@ _G.pg.base.ship_skin_words[403043] = {
 	detail = "仆人的东西，就是我的东西，所以仆人的舰队越强大，不就是代表着我的实力更加强大？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403044] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46051,7 +46483,6 @@ _G.pg.base.ship_skin_words[403044] = {
 	detail = "这些装饰看起来还是挺气派的…哼哼，加上我坐在其中，就显得更加高贵了。低等动物，你也是这样觉得的吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403050] = {
 	feeling1 = "无论是什么样的指挥官，{namecode:431}都会为其效劳……",
 	feeling3 = "我的双手，是为了紧紧抓住胜利而存在的……即使无法再拥抱重要之人，那也无可奈何",
@@ -46111,7 +46542,6 @@ _G.pg.base.ship_skin_words[403050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[403051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46145,7 +46575,6 @@ _G.pg.base.ship_skin_words[403051] = {
 	detail = "我还在努力学习战斗以外的事情，生活并不比战斗更轻松呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46179,7 +46608,6 @@ _G.pg.base.ship_skin_words[403052] = {
 	detail = "我终于可以练习烹饪了，这里的大家都很温柔，我想回报这份温柔",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403053] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46213,7 +46641,6 @@ _G.pg.base.ship_skin_words[403053] = {
 	detail = "交谊舞？对不起，我不是很了解……跟着指挥官的步伐就好了吗？那，那我努力试试看…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403054] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46247,7 +46674,6 @@ _G.pg.base.ship_skin_words[403054] = {
 	detail = "说着什么“为了铁血的荣耀”把这样的事情塞给我，明明姐姐也可以的……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403070] = {
 	feeling1 = "哈？跟你这种废物怎么可能合作啊！",
 	feeling3 = "日程表给你——哈！？这种管理的工作谁都能做吧！才不是专门留给你的呢！",
@@ -46293,7 +46719,6 @@ _G.pg.base.ship_skin_words[403070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[403080] = {
 	feeling1 = "指挥官也想成为“敌人”吗…？呵呵呵，哈哈哈哈哈……！！！",
 	feeling3 = "一直在搞偶像活动，总感觉内心某处有种莫名的空虚感…是不是因为战斗…不，应该说击沉敌人的机会变少了？",
@@ -46327,7 +46752,6 @@ _G.pg.base.ship_skin_words[403080] = {
 	detail = "虽然大家一起进行偶像活动是挺有意思的，不过…是不是有点忽略了兵装实验的事情？嗯…不要太在意细节比较好？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403090] = {
 	feeling1 = "虽然不知道指挥官是遇到了什么事才会变成现在这样…不过，如果一定要有人拉一把才能振作的话，就让我来吧！什么也不要说，抓紧我的手！",
 	feeling3 = "听港区里的舰船同伴们讲她们的故事，确实挺有意思的呢~若是我也有这么多的“经历”的话，现在会变成什么模样呢？光是想象都觉得挺有趣的啊~",
@@ -46380,7 +46804,6 @@ _G.pg.base.ship_skin_words[403090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[403091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46414,7 +46837,6 @@ _G.pg.base.ship_skin_words[403091] = {
 	detail = "小铁？难得的节日，就让它自己去外面玩了~放心啦，那孩子其实很乖的~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46448,7 +46870,6 @@ _G.pg.base.ship_skin_words[403092] = {
 	detail = "如果指挥官真的溺水了，我会去救你的，但是也不要放弃自救！看好了，我这就手把手地教教你～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403093] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46482,7 +46903,6 @@ _G.pg.base.ship_skin_words[403093] = {
 	detail = "布景的用品破破烂烂的，但这并不都是我做的哦？应该说是小铁胡闹的后果…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403094] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46516,7 +46936,6 @@ _G.pg.base.ship_skin_words[403094] = {
 	detail = "当偶像的伙伴们平时就在大家面前唱歌对吧？好厉害——！指挥官，那我也能当偶像吗？和我想的不太一样？到底行不行嘛——！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403100] = {
 	feeling1 = "指挥官好无聊……我去找别的同伴玩了！",
 	feeling3 = "喂——！指挥官，你要的资料拿过来了~比预想中的要晚？嗯……路上陪{namecode:447}跑了两圈，和{namecode:454}一起逗了逗小铁，然后还有……所以就晚了点呢~",
@@ -46559,7 +46978,6 @@ _G.pg.base.ship_skin_words[403100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[403101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46593,7 +47011,6 @@ _G.pg.base.ship_skin_words[403101] = {
 	detail = "说起来，我为什么会躺在吧台上来着？……啊，好像是打烊之后有些累就……呼……好像还有点……困……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403110] = {
 	feeling1 = "呵呵呵，即使你悲惨无能，什么都做不到，对我而言你也是最合适的哦。",
 	feeling3 = "你有只有你才能做到的事，所以全部依靠我可不大好。但是呢…就算你成为我的牵线木偶，我也不会困扰哦？",
@@ -46627,7 +47044,6 @@ _G.pg.base.ship_skin_words[403110] = {
 	detail = "将我作为你的部下…作为你发挥力量而用的道具来对待就好。呵呵，请多关照♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46661,7 +47077,6 @@ _G.pg.base.ship_skin_words[403111] = {
 	detail = "像这样饰演着宛如支配你的角色，也有出乎意料开心的地方呢。感谢这场短暂的美梦，指挥官。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403120] = {
 	feeling1 = "唉…真是大失所望…",
 	feeling3 = "指挥官，从我睡午觉到醒来为止都一直在工作呢。有好好休息吗…嗯，总算是不至于让我担心呢。",
@@ -46695,7 +47110,6 @@ _G.pg.base.ship_skin_words[403120] = {
 	detail = "看着{namecode:426}时，有时会觉得我才是大人呢…是错觉么？你看，说着{namecode:426}就又闹别扭了♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[403130] = {
 	feeling1 = "指挥官，不要抛下我……求你了……",
 	feeling3 = "阿贾克斯姐姐会陪我玩，是个好人！不过{namecode:429}姐姐说她是个很坏的人……对了对了！阿贾克斯姐姐说的“小猪仔”是什么意思呀？",
@@ -46754,7 +47168,6 @@ _G.pg.base.ship_skin_words[403130] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[404010] = {
 	feeling1 = "缺乏勇气的人没有站上战场的资格!",
 	feeling3 = "你的舰队真是个不错的地方……在这里的话，也许我可以努力一下",
@@ -46788,7 +47201,6 @@ _G.pg.base.ship_skin_words[404010] = {
 	detail = "没有受过伤的人，才会讥笑别人的伤痕！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46822,7 +47234,6 @@ _G.pg.base.ship_skin_words[404011] = {
 	detail = "{namecode:434}硬把这身旗袍塞给我，还说“姐姐应该考虑点战斗之外的事情”。我好像也没有拒绝她的理由，所以——我就变成了你现在看到的这个样子。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404020] = {
 	feeling1 = "我以为你是位更加聪慧的指挥官……",
 	feeling3 = "“丑陋的姐妹”……虽然算是对我们成果的赞美，不过果然还是有点伤人，指挥官，我丑吗？",
@@ -46856,7 +47267,6 @@ _G.pg.base.ship_skin_words[404020] = {
 	detail = "我的职责就是支援总是冲过头的姐姐…不过…有时候也会感到有些麻烦呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46890,7 +47300,6 @@ _G.pg.base.ship_skin_words[404021] = {
 	detail = "万圣节的魔女实在太多了，于是我试着选择了稍微有些不一样的装扮。看指挥官这么感兴趣的样子，看来是选对了呢，呼呼…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404030] = {
 	feeling1 = "都是因为我没用…长官，十分抱歉…！",
 	feeling3 = "我并非质疑长官的决定。只是…有些担心自己现在做的事情，是否就是长官所希望的……这些想法不会影响到任务的，请放心！",
@@ -46933,7 +47342,6 @@ _G.pg.base.ship_skin_words[404030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[404031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -46967,7 +47375,6 @@ _G.pg.base.ship_skin_words[404031] = {
 	detail = "如果战斗结束了，吸血鬼猎人的使命也就到此为止了…这身体，不，这份力量真的希望那样吗",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47001,7 +47408,6 @@ _G.pg.base.ship_skin_words[404032] = {
 	detail = "要论华丽的话，怎么看都要逊色于其他伙伴……长官所期望的我，到底是怎样的呢……？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404040] = {
 	feeling1 = "哈啊……好无聊，这里实在是无聊透了。",
 	feeling3 = "日程表？原来如此，你的日子是被各种计划赶着过的啊……哎，都有点同情你了。能让我看看都是些什么计划么？",
@@ -47068,7 +47474,6 @@ _G.pg.base.ship_skin_words[404040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[404041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47102,7 +47507,6 @@ _G.pg.base.ship_skin_words[404041] = {
 	detail = "你不觉得，这身衣服很有礼服的感觉吗？要不，现在试着邀请我跳一支舞吧？答不答应你取决于你的诚意够不够~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47136,7 +47540,6 @@ _G.pg.base.ship_skin_words[404042] = {
 	detail = "下次也邀请{namecode:460}她们一起？那应该不是{namecode:461}，而是指挥官应该做的事吧？我想邀请的归根结底只有指挥官一个人呢~呵呵。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404048] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47170,7 +47573,6 @@ _G.pg.base.ship_skin_words[404048] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[404050] = {
 	feeling1 = "再这么软弱下去，我只会越来越看不起你的。",
 	feeling3 = "我向往过去，是因为那是我不曾拥有过的东西。“倘若那时我便已诞生，会不会改变些什么”……会这样想，也是人之常情吧。",
@@ -47213,7 +47615,6 @@ _G.pg.base.ship_skin_words[404050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[404051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47247,7 +47648,6 @@ _G.pg.base.ship_skin_words[404051] = {
 	detail = "绑着双手跑步就算了，还要跳起来叼住面包……这所谓的“趣味运动会”，该不会是对观众而言的吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405010] = {
 	feeling1 = "请让我一个人静一静",
 	feeling3 = "你是个不错的指挥官呢……怎么了，我夸人很少见吗？……是你太大惊小怪了",
@@ -47306,7 +47706,6 @@ _G.pg.base.ship_skin_words[405010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[405011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47340,7 +47739,6 @@ _G.pg.base.ship_skin_words[405011] = {
 	detail = "抱歉，指挥官，是不是感觉和平时的我差很多？事实上我有时候也会想，到底哪边才是真的我呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47374,7 +47772,6 @@ _G.pg.base.ship_skin_words[405012] = {
 	detail = "某种程度上来说，相比考虑研究或铁血的事情，现在这样多少算是难得的放松。要是你也能在这边得到放松就太好了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405020] = {
 	feeling1 = "结果……你也不过是个无法驱使我的无能指挥官吗……",
 	feeling3 = "一无所有，方能无所畏惧。但是这样的勇敢无畏，真的是值得夸耀的吗…？",
@@ -47417,7 +47814,6 @@ _G.pg.base.ship_skin_words[405020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[405021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47451,7 +47847,6 @@ _G.pg.base.ship_skin_words[405021] = {
 	detail = "平日的战斗正是为了这片刻的安宁——而正是有休息，才能让我们的斗志更加昂扬",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47485,7 +47880,6 @@ _G.pg.base.ship_skin_words[405022] = {
 	detail = "其实，我也不知道和姐姐有什么可以聊的话题…不过，这一次，我们不缺时间。所以总会有话题的，不是吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47519,7 +47913,6 @@ _G.pg.base.ship_skin_words[405023] = {
 	detail = "听重樱的各位说，松树有“大家的依靠”这样的含义。感觉…就像指挥官一样，无论对大家，还是对我……呵呵，没什么。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47553,7 +47946,6 @@ _G.pg.base.ship_skin_words[405024] = {
 	detail = "难以想象姐姐约会的样子…抱歉，明明是我约指挥官来的，却没想到我们姐妹俩都如此笨拙…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405030] = {
 	feeling1 = "自己弄的烂摊子，自己收拾去，别指望我会帮你。",
 	feeling3 = "为了你去做什么，和信任是两回事。你既然能同时指挥……咳，被这么多人所倾慕，不可能不理解这个吧。",
@@ -47604,7 +47996,6 @@ _G.pg.base.ship_skin_words[405030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[405031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47638,7 +48029,6 @@ _G.pg.base.ship_skin_words[405031] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47672,7 +48062,6 @@ _G.pg.base.ship_skin_words[405032] = {
 	detail = "听好了？比赛时不要过分关心他人。不要想着超越别人，首先要创造出能坚持自己跑法的环境——即使输了比赛，也不要留下遗憾",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405040] = {
 	feeling1 = "作为下属，我仍会支持你的行动。不过，你最好不要指望我能给你好脸色。",
 	feeling3 = "虽然并非所有的决策我都百分之百认可，但我很欣赏你果断的处事风格。身为舰队的指挥官，就该有这样的手腕。",
@@ -47706,7 +48095,6 @@ _G.pg.base.ship_skin_words[405040] = {
 	detail = "一切事件的发生皆有其因果所在。只要不会波及无辜之人，在完全弄清原委之前，我会选择观望。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47740,7 +48128,6 @@ _G.pg.base.ship_skin_words[405041] = {
 	detail = "这场景未免也太大了……哈哈，我倒是没意见，就是希望布置场景的人也能来体验一下打扫的感觉。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[405050] = {
 	feeling1 = "我曾认定你是一位英明的领导者，并希望以你为榜样。现在想来，是我看错人了吧……",
 	feeling3 = "有时候我会想，如果你是我的对手，我该怎么办。这大概算是一种“假想敌训练”吧。思前想后，我得出的结论就是——还好我们是站在同一边的人。",
@@ -47832,7 +48219,6 @@ _G.pg.base.ship_skin_words[405050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[405051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47866,7 +48252,6 @@ _G.pg.base.ship_skin_words[405051] = {
 	detail = "今天的泳池已经被我包场了。我偶尔也有不想被人打扰的时候，尤其是现在……你能明白我的意思吧……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[406010] = {
 	feeling1 = "给你点忠告吧，指挥官。状态不好的时候就请个假，睡个回笼觉，而不是把不好的状态暴露给所有人。",
 	feeling3 = "{namecode:471}虽然优秀，但多少有些太紧绷了。偶尔还是要抛开“时间”、“计划”这些烦人的词语，让自己放松一下才是。",
@@ -47918,7 +48303,6 @@ _G.pg.base.ship_skin_words[406010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[406011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47952,7 +48336,6 @@ _G.pg.base.ship_skin_words[406011] = {
 	detail = "不要急躁，先坐下来，享受一杯浓茶，或是一本好书如何？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[406012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -47986,7 +48369,6 @@ _G.pg.base.ship_skin_words[406012] = {
 	detail = "我花了很长的时间耐心挑选，才选择了这身礼服。看指挥官的反应，应该是没有白花这些时间了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[406013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48020,7 +48402,6 @@ _G.pg.base.ship_skin_words[406013] = {
 	detail = "那么在教你冲浪前，先穿上这个吧。是让{namecode:98}做的“冲浪板使用姿势矫正机”。只要有这个就能让身体记住怎么乘浪了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[406020] = {
 	feeling1 = "指挥官真是低等生物呢。",
 	feeling3 = "只要把这样的工作丢给指挥官，指挥官就会伤脑筋…会非常伤脑筋的！真的可以给指挥官这么添麻烦吗…？",
@@ -48084,7 +48465,6 @@ _G.pg.base.ship_skin_words[406020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[406021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48118,7 +48498,6 @@ _G.pg.base.ship_skin_words[406021] = {
 	detail = "没有餐刀…？啊！是哦！是我没做好！来吧来吧指挥官好好说教我……咦，不说教吗？！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[406022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48152,7 +48531,6 @@ _G.pg.base.ship_skin_words[406022] = {
 	detail = "呵呵，今天这身打扮如何？既合适又可爱？……谢，谢谢……////",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[406030] = {
 	feeling1 = "因为是坏心眼的指挥官，所以大家肯定也不喜欢呢。呵呵~",
 	feeling3 = "输入“{namecode:491}和指挥官的关系”…呵呵，似乎还没有人注意到呢。吓？！指挥官？不要突然进来人家房间啦！",
@@ -48203,7 +48581,6 @@ _G.pg.base.ship_skin_words[406030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[406031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48237,7 +48614,6 @@ _G.pg.base.ship_skin_words[406031] = {
 	detail = "哈啊…真的好热啊…说起来指挥官每年夏天都是怎么度过的呀？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[407010] = {
 	feeling1 = "不是你吗……",
 	feeling3 = "向神明祈祷真的有用吗？主真的会有所回应吗？Nein，神之所以为神，就是因为没有仁慈",
@@ -48271,7 +48647,6 @@ _G.pg.base.ship_skin_words[407010] = {
 	detail = "如果世上存在神，那就从它开始杀起吧……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[407011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48305,7 +48680,6 @@ _G.pg.base.ship_skin_words[407011] = {
 	detail = "话说回来，夏季除了穿上这身布料节省的衣服以外，还应该做些什么？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[407020] = {
 	feeling1 = "哼，不要靠近我，我要靠自己找到回家的方法！",
 	feeling3 = "你这家伙，想要我帮你忙可以早点说呀……天天能吃到这么美味的蛋糕的话……我也不是不能在这里停留一段时间的嘛！",
@@ -48363,7 +48737,6 @@ _G.pg.base.ship_skin_words[407020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[407030] = {
 	feeling1 = "你…不值得我花费时间。",
 	feeling3 = "指挥官，你房间的时钟慢了两分钟。不过没关系，我已经把它拆卸下来修理好了。可不能拿“时钟慢了”做迟到的理由了哦？呵呵~",
@@ -48426,7 +48799,6 @@ _G.pg.base.ship_skin_words[407030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[407031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48460,7 +48832,6 @@ _G.pg.base.ship_skin_words[407031] = {
 	detail = "分分秒秒的时间，积累成了年岁的变化，岁月沉淀，终会成就名为“历史”的财富，呼呼，有意思，真有意思~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[407032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48494,7 +48865,6 @@ _G.pg.base.ship_skin_words[407032] = {
 	detail = "有空的话就看看书吧。以这种方式去浏览，并体验那些铭刻在时间中的记忆，就如同得到了时间本身一样。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408010] = {
 	feeling1 = "Enttäuscht…",
 	feeling3 = "不是我自夸，我还是有不少战果的呢～嘿嘿，所以再多夸夸我也没关系哟",
@@ -48528,7 +48898,6 @@ _G.pg.base.ship_skin_words[408010] = {
 	detail = "哇！有没有吓一跳呢，指挥官？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48562,7 +48931,6 @@ _G.pg.base.ship_skin_words[408011] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48596,7 +48964,6 @@ _G.pg.base.ship_skin_words[408012] = {
 	detail = "我也会做简单的灯笼哦，你看我手里的这个——就是东煌的姐姐们教我做的呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408020] = {
 	feeling1 = "我得和你保持距离……",
 	feeling3 = "不过，指挥官的事情我也帮不上什么忙……总是呆在这里的话……没问题吗？",
@@ -48640,7 +49007,6 @@ _G.pg.base.ship_skin_words[408020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[408021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48674,7 +49040,6 @@ _G.pg.base.ship_skin_words[408021] = {
 	detail = "我不想和别人一起出行，总感觉不太自在…但是一个人逛的话，迷路就麻烦了…所以指挥官，你今天有空吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48708,7 +49073,6 @@ _G.pg.base.ship_skin_words[408022] = {
 	detail = "唔…？需要出击了吗？马上就位……这身礼服很方便行动，没关系的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48742,7 +49106,6 @@ _G.pg.base.ship_skin_words[408023] = {
 	detail = "为什么穿着女仆装…？嗯，因为这个主题概念，不是就应该这么穿吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48776,7 +49139,6 @@ _G.pg.base.ship_skin_words[408024] = {
 	detail = "我乃吸血鬼之眷属{namecode:413}……呃，这种的实在有些羞耻……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408025] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48810,7 +49172,6 @@ _G.pg.base.ship_skin_words[408025] = {
 	detail = "{namecode:461}负责厨房，我在这准备食材。挺轻松的，不错…不是吗？厨房比这里累多了呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408030] = {
 	feeling1 = "遇到这样的指挥官，果然我是个不幸的人……",
 	feeling3 = "指挥官愿意和我做朋友吗？但是我运气很不好，说不定会连累指挥官…唔，为什么揉我的头？",
@@ -48844,7 +49205,6 @@ _G.pg.base.ship_skin_words[408030] = {
 	detail = "据说一分钱硬币有招来幸运的效果…但是我收集了一整个小猪储蓄罐的硬币，感觉…毫无变化…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408040] = {
 	feeling1 = "求你了，不要再露出那样的表情了……可以吗？",
 	feeling3 = "指挥官，要看看我的潜泳表演吗？哼哼，这个可是连大姐都夸赞过的，我的绝对自信之作！",
@@ -48903,7 +49263,6 @@ _G.pg.base.ship_skin_words[408040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[408041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -48937,7 +49296,6 @@ _G.pg.base.ship_skin_words[408041] = {
 	detail = "对了指挥官，要不我们去厨房看看？……欸，那里的大家都在忙吗？确实不应该打扰她们呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408050] = {
 	feeling1 = "嗯…其他的伙伴还在等我，指挥官，我先告辞了——",
 	feeling3 = "悄悄潜伏，等待机会，然后奇袭命中，哈哈，抓住你啦，指挥官！",
@@ -48983,7 +49341,6 @@ _G.pg.base.ship_skin_words[408050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[408051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49017,7 +49374,6 @@ _G.pg.base.ship_skin_words[408051] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49051,7 +49407,6 @@ _G.pg.base.ship_skin_words[408052] = {
 	detail = "我的打扮？试着往东煌的风格靠了靠~怎么样？合适不？嘿嘿~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408060] = {
 	feeling1 = "我去兜风啦，拜拜~",
 	feeling3 = "真想和其他阵营的潜艇们来一场激动人心的竞速大会，那一定超刺激的，指挥官，帮我个忙呗？",
@@ -49085,7 +49440,6 @@ _G.pg.base.ship_skin_words[408060] = {
 	detail = "听说白鹰有外号叫“海上骑士”的人吗？这个称号不错欸……指挥官，你觉得我叫“海底骑士”怎么样？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49119,7 +49473,6 @@ _G.pg.base.ship_skin_words[408061] = {
 	detail = "偶尔像这样坐下来安静地听音乐，感觉也不坏呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408070] = {
 	feeling1 = "真是个不中用的指挥官啊~不过，不中用的指挥官感觉…也挺可爱的？",
 	feeling3 = "嗯哼？干的还不错~看来我们之间能够构筑不错的信赖关系啊~",
@@ -49153,7 +49506,6 @@ _G.pg.base.ship_skin_words[408070] = {
 	detail = "哼哼，指挥官刚刚…又在偷偷地盯着我看了吧？我早就发现啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408080] = {
 	feeling1 = "指挥官，不陪我玩……",
 	feeling3 = "大家好像都很喜欢玩{namecode:420}的头发。这是天生的，{namecode:420}是天生的大鲨鱼，嘎哦！",
@@ -49187,7 +49539,6 @@ _G.pg.base.ship_skin_words[408080] = {
 	detail = "头发才不是大蒜，是鲨鱼，可怕的鲨鱼，嘎哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49221,7 +49572,6 @@ _G.pg.base.ship_skin_words[408081] = {
 	detail = "帽子才不是大蒜，是鲨鱼，可怕的鲨鱼，嘎哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408082] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49255,7 +49605,6 @@ _G.pg.base.ship_skin_words[408082] = {
 	detail = "{namecode:420}，头上开花了。……呣…才不是蒜头开花…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408083] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49289,7 +49638,6 @@ _G.pg.base.ship_skin_words[408083] = {
 	detail = "是“Girlish”，不是“Garlic”。呣…咬你哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408084] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49323,7 +49671,6 @@ _G.pg.base.ship_skin_words[408084] = {
 	detail = "唔…又没有打赢大斗犬…指挥官，来陪{namecode:420}特训，下次一定要在她脸上多画几笔",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408085] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49357,7 +49704,6 @@ _G.pg.base.ship_skin_words[408085] = {
 	detail = "指挥官冷吗？大衣给你穿—…阿嚏！呜呜…嘎，嘎哦……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408090] = {
 	feeling1 = "像你这样的，大概只适合被扔到海里喂鲨鱼了。开玩笑的",
 	feeling3 = "怎么？对潜艇的战斗体验感兴趣？那下次跟着我们一起出战看看嘛？……啊，指挥官没办法像我们这么长时间潜水呢，要不，你先练习练习潜水技巧？",
@@ -49407,7 +49753,6 @@ _G.pg.base.ship_skin_words[408090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[408091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49441,7 +49786,6 @@ _G.pg.base.ship_skin_words[408091] = {
 	detail = "这一身穿着很舒服的哦，活动起来也很方便。反正是在自己房间里，而且，给你看到也没什么关系就是。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408092] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49475,7 +49819,6 @@ _G.pg.base.ship_skin_words[408092] = {
 	detail = "怎么了？是看运动中的U艇看入神了吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408100] = {
 	feeling1 = "我走了！不回来了！略略略~",
 	feeling3 = "我的舰装很大，能坐下两个人哦！要试试吗？可以带你去很远很远的地方哦~",
@@ -49526,7 +49869,6 @@ _G.pg.base.ship_skin_words[408100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[408101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49560,7 +49902,6 @@ _G.pg.base.ship_skin_words[408101] = {
 	detail = "“那么，客人且就座，待小女子为您独奏一曲”…嗯哼，不愧是我，学得有模有样的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408110] = {
 	feeling1 = "指挥官…好像不太会与人相处呢，这可怎么办才好…",
 	feeling3 = "对潜艇来说，最不缺的品质就是“耐心”了。指挥官呢？你愿意为了重要的人等待多久呢？",
@@ -49620,7 +49961,6 @@ _G.pg.base.ship_skin_words[408110] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[408111] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49654,7 +49994,6 @@ _G.pg.base.ship_skin_words[408111] = {
 	detail = "在烦恼过节送礼吗？那，指挥官亲自写的贺卡怎么样？重要的是心意嘛~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408112] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49688,7 +50027,6 @@ _G.pg.base.ship_skin_words[408112] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[408120] = {
 	feeling1 = "指挥官，想让我原谅你的话，就拿出诚意来吧~比方说，从现在开始试着改善大家对你的评价吧！",
 	feeling3 = "要是有个按一下能解决一天分量工作的按钮就好了呢~这样的话，我每天就帮指挥官按……啊按多了可不行哦指挥官，不能太贪心，一天只能按一次！",
@@ -49741,7 +50079,6 @@ _G.pg.base.ship_skin_words[408120] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[408121] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49775,7 +50112,6 @@ _G.pg.base.ship_skin_words[408121] = {
 	detail = "“自助饮料机”……只要按这个按钮饮料就会出来了对吧！我按——啊啊啊忘记要拿杯子接着了！！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[431230] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49809,7 +50145,6 @@ _G.pg.base.ship_skin_words[431230] = {
 	detail = "下次一定要让{namecode:98}把这些孩子们带走…唔，感觉好可怜，还是不要吧…好纠结……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[431231] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49843,7 +50178,6 @@ _G.pg.base.ship_skin_words[431231] = {
 	detail = "薯条要附赠番茄酱，炸鸡块要附赠糖醋酱......{namecode:6}、拉菲，一定要记住哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[431232] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49877,7 +50211,6 @@ _G.pg.base.ship_skin_words[431232] = {
 	detail = "无论是重新开始锻造装备，还是买别的，都需要资金呢…怎么才能赚大钱呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[431233] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -49911,7 +50244,723 @@ _G.pg.base.ship_skin_words[431233] = {
 	detail = "衣服，确认。发型，确认。配饰，确认……诶？希望我放松一点？不行哦指挥官，舞会也要做到百分百的准备才行！",
 	couple_encourage = {}
 }
-
+_G.pg.base.ship_skin_words[499010] = {
+	feeling1 = "指挥官……不可原谅！",
+	feeling3 = "在战场上互相杀戮是我们的使命……所以，稍微有点沉溺其中也很正常吧",
+	lose = "唔唔，今天的战术是佯败设伏吗？",
+	propose = "谢谢你哦，不过呢，最终填补了我内心空虚的既不是杀戮的愉悦也不是爱情的甜蜜，而是嫉妒的愤恨呢！指挥官，现在我对他人的妒恨与对你的爱一样多喔……真是——不可原谅呢！",
+	expedition = "委托队的孩子们，真的很努力了呢……好啦，排好队我会一个个拥抱过去的~",
+	win_mvp = "都看到我了，竟然还不干脆自沉，非要劳我出手，真是——不可原谅！",
+	home = "我也想出航去击沉敌人呢…呵呵，击沉得越多，自己不就显得越有用嘛～",
+	mission = "这次会是什么样的任务呢？稍微有点期待起来了",
+	touch2 = "唔，指挥官也想和我拥抱吗？好好~",
+	voice_key_2 = -1,
+	skill = "不要…小看了我啊！！",
+	drop_descrip = "重巡洋舰-—{namecode:439}",
+	mail = "邮件里没有不好的消息吧？",
+	touch = "指挥官，请张嘴……我做的菜肴味道如何？和昨天相比有进步吗？",
+	profile = "铁血巡洋舰{namecode:439}号，历史中仅停留在设计构想阶段。指挥官，我看到了哟——你的内心中有和我相似的部分喔",
+	mission_complete = "下一个任务，也一同加油吧",
+	feeling4 = "啊啊…用舰炮将敌人轰杀、撕裂的那种感觉…真是太棒了…指挥官，你也明白那种感觉吧？",
+	unlock = "真没想到竟然是我来到这里……你好，我是{namecode:439}，现在对这里还不太熟悉，可以请你带我参观一下吗？",
+	feeling5 = "呵呵，和你在一起的时候，内心比在战场上疯狂杀戮还要充实，这就是爱情的力量吗？不过……",
+	main = "每当看到美丽的事物在战场上凋零，我就……|想要治愈指挥官的心，唔……该怎么办呢？|闲暇时的兴趣？我喜欢放生喔",
+	battle = "呵呵，看到我后才打算逃跑，还逃得掉吗？",
+	upgrade = "谢谢你喔，指挥官",
+	voice_key = 49901,
+	headtouch = "",
+	feeling2 = "港区的生活？各方面都无可挑剔喔，只是……是不是有点太过平和了？",
+	login = "这里的港区好和平呢，大家也都是易于相处的人……",
+	vote = "",
+	hp_warning = "击伤了我……不可原谅！",
+	id = 499010,
+	detail = "指挥官在工作外有什么兴趣呢？一起去放松一下怎么样？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "呵呵呵…这边也是一场不错的“盛宴”呢",
+	home = "",
+	mission = "",
+	touch2 = "指挥官…再靠近一点也没关系哦…？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "和平的港区，温馨的宴席，欢笑的同伴…真是美好…不过，也真是无趣呢……",
+	mail = "",
+	touch = "指挥官玩得开心吗？…我吗？只要看着指挥官就很开心了~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "和平的港区，温馨的宴席，欢笑的同伴…真是美好…不过，也真是无趣呢……",
+	feeling5 = "",
+	main = "越是美好的事物，就越让人想要毁坏呢……|指挥官，我特意挑选的礼服，有治愈你的心吗？|…这种和乐融融的气氛反而容易让人累积不少压力呢…指挥官，等会可以让我出击吗？",
+	battle = "来得正好，稍微让我“减压”一下吧…！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "呼呼…难得的热闹晚宴，让我们好好享受吧，指挥官",
+	vote = "",
+	hp_warning = "",
+	id = 499011,
+	detail = "特意准备的礼服确实吸引到了指挥官的目光，但是…想到其他舰船也一样，我就……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "从这里可以看到委托组的伙伴们哦？怎么办？要去迎接她们吗？",
+	win_mvp = "呵呵，彻底“转换心情”了~",
+	home = "欢迎回来~给你治愈的拥抱♪",
+	mission = "",
+	touch2 = "没有别人在哦～♥",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "离开热闹的派对会场，然后像这样与指挥官二人独处…指挥官接下来要做点什么来“转换心情”呢？我很期待哦~",
+	mail = "",
+	touch = "想回去了吗？那么，请去治愈疲累的心吧♪",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "离开热闹的派对会场，然后像这样与指挥官二人独处…指挥官接下来要做点什么来“转换心情”呢？我很期待哦~",
+	feeling5 = "原来如此，这就是指挥官所说的“转换心情”么…既消减了无聊，还能和指挥官在一起，感觉真是不错，不过…（小声）想管住我的指挥官，果然不能原谅呢♡",
+	main = "欣赏风景是不错，不过总是看着港区的景色，难免有些腻了呢~果然还是战场的风景好呀…啊啊…无论何时看都不会腻呢…|呵呵，不用担心，我哪里都不会去的~毕竟带我来这的可是指挥官呢，对吧？|难得有钢琴在这里，能陪我练习唱歌吗？什么都不做的话，总觉得有些静不下心呢，呵呵~",
+	battle = "竟敢打扰我和指挥官在一起的时间…不可原谅！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "其实我也刚开始觉得派对有些乏味了呢。谢谢你，指挥官♪",
+	vote = "",
+	hp_warning = "",
+	id = 499012,
+	detail = "派对上的饮料，还有{namecode:479}赞不绝口的咖啡都挺不错的，不过…我还是更喜欢铁血的啤酒呢。指挥官喜欢什么呢？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499020] = {
+	feeling1 = "有在认真反省了吗？",
+	feeling3 = "在战场上，勇气并没有意义，谁更接近拉普拉斯的恶魔，谁就更接近胜利",
+	lose = "那么，请静待下次演奏吧",
+	propose = "以后，悲伤也好、喜悦也好、痛苦也好、欢愉也好，无论发生什么，都来依靠我吧，我会一直、一直理解你、包容你、支持你的喔……",
+	expedition = "要好好欢迎认真完成了委托的孩子们哟",
+	win_mvp = "真遗憾，安可演奏还没有开始呢",
+	home = "欢迎回来，无论遇到什么事，都可以向我报告",
+	mission = "无论想要什么，我都可以帮你拿到",
+	touch2 = "仿佛变回了小孩子呢……真可爱",
+	voice_key_2 = -1,
+	skill = "第九交响曲，合唱！",
+	drop_descrip = "战列舰—{namecode:440}",
+	mail = "那么，我来唱给你听吧",
+	touch = "害怕的时候，就躲到我身后吧",
+	profile = "铁血海军{namecode:440}号战列舰，H计划的产物之一。我的孩子，如果失眠的话，就让我为你唱首摇篮曲吧",
+	mission_complete = "那么，想要什么奖励呢？",
+	feeling4 = "比起战斗，我更喜欢像现在这样，来、张开嘴，啊~~",
+	unlock = "欢迎你的到来，我的孩子，你希望我赠予你什么？黄金、荣耀，还是青春？",
+	feeling5 = "尽情地向我撒娇吧，更多地、更多地……",
+	main = "战斗时压抑的感情，就在演奏中释放出来吧|战场上的我理性得几近残酷？我姑且把它当做一种夸奖吧|即便不小心惹怒了我，只要好好道歉，我还是会原谅你的",
+	battle = "聆听我的演奏，献上痛恶、深惧与绝望吧！",
+	upgrade = "感觉能奏出更精妙的乐曲了呢",
+	voice_key = 49902,
+	headtouch = "",
+	feeling2 = "我是本不应出现的存在，不过，既然我已存在于此，那么其中必然蕴藏着某种合理性…",
+	login = "快拉开今日的帷幕吧，奏者们早已急不可耐了！",
+	vote = "",
+	hp_warning = "再稍微，忍耐一下喔",
+	id = 499020,
+	detail = "我的孩子，若想取得彻底的胜利，必须保持绝对的理性",
+	couple_encourage = {
+		{
+			{
+				40146
+			},
+			1,
+			"偶尔也来向我撒撒娇嘛",
+			0
+		},
+		{
+			{
+				40502
+			},
+			1,
+			"我的指挥无法让你的才能淋漓尽致地展现出来吗……",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[499021] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "欢迎回来。我准备了饮料，一边暖暖身子一边报告吧",
+	mission = "",
+	touch2 = "你喜欢这里吗，孩子？呵呵呵",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "这就是重樱称作“和服”的装扮吧。质地非常舒服，色调也很高雅——穿法？孩子，你说的是什么呢？",
+	mail = "",
+	touch = "与人拥抱的触感，是肌肤的温热——你明白的吧，孩子",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "这就是重樱称作“和服”的装扮吧。质地非常舒服，色调也很高雅——穿法？孩子，你说的是什么呢？",
+	feeling5 = "",
+	main = "重樱的雅乐，所谓“幽玄”…究竟代表着怎么样一种感情…我非常感兴趣呢|感情的压抑与释放，可以是毒也可以是药。合理地控制自己的状态，对于提高效率很有帮助哦|孩子，能帮我穿上这件衣服吗？",
+	battle = "与虚无的交响一起消失殆尽吧——！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "这应该是由我对你做的才对吧？孩子",
+	feeling2 = "",
+	login = "一直站在那儿很冷吧？过来吧，孩子",
+	vote = "",
+	hp_warning = "",
+	id = 499021,
+	detail = "人类的欲望是无限的。没错…就像这巨大的舰装一般…追求更巨大的形态、更强大的力量…更多的炮塔…以及更伟大的荣光——",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499028] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "不急着报告，先让我看看你…嗯，很好，没有什么异常~那么，有什么要和我说的吗？",
+	mission = "",
+	touch2 = "呵呵，真是调皮的孩子呢，没关系，我会包容你的一切的",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "啊啊…真是如梦境一般的展开呢…让我们把这美妙的乐章永远、永远续写下去吧，我的孩子？",
+	mail = "",
+	touch = "呵呵，渴望与挚爱接触的温暖了吗？来吧，你可以再靠近一些，我的孩子",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "啊啊…真是如梦境一般的展开呢…让我们把这美妙的乐章永远、永远续写下去吧，我的孩子？",
+	feeling5 = "我会接纳你的全部，并且为你铲除挡在面前的一切…所以，尽情地向我撒娇吧，更多地、更多地…",
+	main = "我的孩子，遇到什么难题了吗？告诉我，我来把一切解决。|把冷酷的理性都留给战场上的对手，在我的面前，你无需压抑自己，只要尽情地撒娇就好了，我的孩子……|累了么？那么，就在我这里躺一会吧…嗯~好孩子好孩子~尽管睡吧，无论你想睡到什么时候…我都会一直在这里的",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "今天想听我为你演奏什么呢，我的孩子？",
+	vote = "",
+	hp_warning = "",
+	id = 499028,
+	detail = "希望从你那得到什么？呵…对我来说，世界上最美妙的宝物，就是现在的你哦，我的孩子？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499030] = {
+	feeling1 = "结果第一个指挥官就是这个样子……我还真是可怜啊。",
+	feeling3 = "实战经验不足，就用更多的实战去弥补。指挥官，请不用顾忌我的言辞，指派我去参与作战吧。",
+	lose = "哼，就当是积累实战经验吧。",
+	propose = "对我来说，存在的意义早已不再停留于战斗。我的存在，我的命运，早已经和你紧紧地系在了一起了呢。我的心永远属于你，我的指挥官。",
+	expedition = "失陪了，我去迎接一下委托归来的她们。",
+	win_mvp = "有我在，这不是理所当然的吗？",
+	home = "装备也需要维护一下了呢。",
+	mission = "难道你要把这些任务一直留着吗？",
+	touch2 = "正好，拿你来试试主炮吧。",
+	voice_key_2 = -1,
+	skill = "就是现在，主炮齐射！",
+	drop_descrip = "轻巡洋舰——{namecode:479}",
+	mail = "有新的信件，你该不会忘了吧？",
+	touch = "怎么了？莫非你是在向我寻求安慰？",
+	profile = "我是{namecode:479}号巡洋舰。原本，我应当作为{namecode:425}级的后续舰型诞生，然而因为种种原因，我的建造最终被取消。这么说的话，你应该就能明白了吧。",
+	mission_complete = "任务的奖励……你还要放多久呢？",
+	feeling4 = "如果说之前是为了证明自己而战，那我现在更愿意为你而战。指挥官，我想向别人证明，你是一个值得钦佩的人。",
+	unlock = "我是巡洋舰{namecode:479}。看起来，你就是我的第一个指挥官了啊。可别让我失望！",
+	feeling5 = "你是我第一个，也是我最后一个效忠的指挥官。不仅如此，你是我唯一一个想要走近得更近的人……",
+	main = "你在干什么！？牛奶可是对咖啡的亵渎！砂糖也一样！|难以置信……那么大的办公室居然连一台咖啡机都没有……|如果能够在大战中顺利诞生，我能够做到什么事呢……算了，反正都过去了。",
+	battle = "可不要拖了我的后腿。",
+	upgrade = "哼，有点想在实战中看看效果了呢。",
+	voice_key = 49903,
+	headtouch = "",
+	feeling2 = "既然降生于世，我就要做些什么。不然，我将无颜面对那些设计我和建造我的人们。",
+	login = "让我的等待变得有些意义起来吧，指挥官。",
+	vote = "",
+	hp_warning = "怎么装备有些不听使唤了……",
+	id = 499030,
+	detail = "战绩么……那种东西从今天算起就好了。",
+	couple_encourage = {
+		{
+			{
+				49901,
+				49902,
+				49904
+			},
+			1,
+			"这才是铁血真正的实力！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[499032] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "是我过于懈怠了么……",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "指挥官，你刚刚到哪里去了？这种时候劳累自己，不就违背了要好好放松的初衷了么。",
+	mission = "任务啊……先暂时放一放吧。休息好了再做也不迟。",
+	touch2 = "等，等一下！你这样子的话会……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "哦？这么快就来了么。稍等一下……啊，你不用走也没关系的，我马上就弄好了……",
+	mail = "有新的信件。已经托人放到指挥室了，之后再去看吧。",
+	touch = "你已经做得很好了，现在就尽情地休息吧。",
+	profile = "",
+	mission_complete = "已经完成任务了吗？这下就能更加放心地休息了。",
+	feeling4 = "",
+	unlock = "哦？这么快就来了么。稍等一下……啊，你不用走也没关系的，我马上就弄好了……",
+	feeling5 = "",
+	main = "嗯唔唔唔……这个带子，要收紧点还真不容易。不系好的话衣服又会……|虽然没法把整个咖啡机带到温泉池旁边，不过我还是准备了咖啡的——当然是黑咖啡。|镜子？温泉的水汽都蔓延到房间里了么……不是这个意思？你是指……啊……",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "多等你一会也没关系，因为我知道，你是不会失约的人。",
+	vote = "",
+	hp_warning = "",
+	id = 499032,
+	detail = "之前{namecode:450}说想把舰装带到温泉池里玩，被我和{namecode:428}阻止了。至于{namecode:426}，似乎很不想和我们一起泡的样子……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499040] = {
+	feeling1 = "比起令我失望，我更加好奇的是，你这样的人是怎么成为指挥官的。",
+	feeling3 = "你会为逝去的战友悲伤吗？但是，如果大家都顾着悲伤，因此犹豫不决的话，这场战争就无法取得胜利。",
+	lose = "不可能……我的计划不可能出现差错……",
+	propose = "我明白了，我会一直在你身边辅佐你的。所以就……等等，那个难道是……这，这和说好的不一样啊？我也不是说讨厌，只是还没准备好……总之，给，给我一点思考的时间——",
+	expedition = "委托的队伍回来了。很好，一切都和计划一致。",
+	win_mvp = "这场胜利，从一开始便是我等囊中之物。",
+	home = "战争可不会给人喘息的时间，指挥官。",
+	mission = "有任务，指挥官，拖延可不是明智的选择哦？",
+	touch2 = "接下来的话就等到军事法庭上再说吧。",
+	voice_key_2 = -1,
+	skill = "你们已经没有回头路了！",
+	drop_descrip = "战列巡洋舰——{namecode:486}",
+	mail = "有邮件，是新的情报吗？",
+	touch = "嗯？难道计划有变动吗？",
+	profile = "我名为{namecode:486}，曾经是只存在于铁血构想中的舰船。而如今…既然命运将我带来到了你的面前，那么我的使命就是辅佐你，实现你的夙愿。",
+	mission_complete = "任务完成了，着手下一个任务吧，指挥官。",
+	feeling4 = "无论是工作还是战斗，我们之间的配合都变得越来越默契了。但是这样下去的话，我会不会变得有点依赖指挥官了……",
+	unlock = "叫醒我的人就是你吗…？铁血战舰，{namecode:486}，乐意为你效劳。",
+	feeling5 = "过于依赖一个人可不是一件好事。过深的羁绊在战争中往往会成为桎梏，甚至让人做出不理智的判断，破坏原本的计划。有点奇怪，我为什么要和你强调这些……",
+	main = "{namecode:433}级……有机会的话真想和那对姐妹聊聊呢。|计划往往赶不上变化，指挥官，任何事情都值得再三思考。|不要轻易地去怪罪他人，有可能只是因为你没有看清全部。",
+	battle = "现在逃跑还来得及——",
+	upgrade = "只有实力增加了，计划的不安因素才能减少。",
+	voice_key = 49904,
+	headtouch = "",
+	feeling2 = "实力？确实，光是一个响亮的名字不足以说明战士的实力。不过放心吧，时间会证明你的这种担心是多余的。",
+	login = "欢迎回来，指挥官，规划好接下来要做什么了吗？",
+	vote = "",
+	hp_warning = "准备启动应急方案…！",
+	id = 499040,
+	detail = "奇怪，为什么港口里的大家都一副轻松的样子……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499041] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "全力以赴地投入到某项事物中，便是战斗——无论是在战场上倾泻火力，还是于纸上挥洒笔墨，都是如此。",
+	mission = "",
+	touch2 = "不要在人集中精神的时候来打扰！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "没想到本应与这类“艺术嗜好”无缘的我，竟然有机会像这样尽情地挥洒笔墨…如何，虽然是东方的艺术，但也还算无损我的名字之威吧？",
+	mail = "",
+	touch = "",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "没想到本应与这类“艺术嗜好”无缘的我，竟然有机会像这样尽情地挥洒笔墨…如何，虽然是东方的艺术，但也还算无损我的名字之威吧？",
+	feeling5 = "",
+	main = "{namecode:434}，光是捣弄数据可体验不到艺术的乐趣啊，关于这一点你反而可以向{namecode:433}好好学学呢。|{namecode:436}，你可知{namecode:435}去了哪？啊，没什么，既然你有把握我就放心了。|雪与梅…吗？虽然不是我见惯的风景，不过，可以肯定，眼前这美丽的风景，必将在我的记忆中长存。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "欢迎回来，指挥官，休息日就尽管投身于爱好之中吧。",
+	vote = "",
+	hp_warning = "",
+	id = 499041,
+	detail = "奇怪，为什么港口里的大家都一副轻松的样子…是我平时太紧张了…吗",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499050] = {
+	feeling1 = "我可不会同情自甘堕落的灵魂哦？",
+	feeling3 = "指挥官，过来吧。要做什么？当然是 要你陪我喝几杯。安心吧，就算你醉了在我面前说胡话，我也不会介意的。",
+	lose = "我不会容许任何人在我面前抢走胜利的果实…等着瞧吧！",
+	propose = "誓约的证明？你喜欢这种形式上的东西吗？那样的话…不光是形式上的，我会给你更多实际上的束缚…呵呵呵，不如现在就让你见识一下吧~",
+	expedition = "委托完成了哦。难道你打算让同伴们在港口干等着吗？",
+	win_mvp = "弱小的水花，在巨浪面前不值一提。哼哼，啊哈哈哈！",
+	home = "虽然很想让你就这么休息，不过看桌上的文件数量…好像不太行哦？",
+	mission = "还有没完成的任务哦。你也不想被别人说成无能的指挥官吧？",
+	touch2 = "你还真敢啊。…喂，还来？！",
+	voice_key_2 = -1,
+	skill = "哈哈哈哈！被荒海之神的巨口吞噬吧！",
+	drop_descrip = "大型重巡洋舰-—{namecode:480}",
+	mail = "来自远方的信件…姑且还是看看吧。",
+	touch = "你想要…再靠近一点？",
+	profile = "我的名字，来源于传说中的深海之神。不过，比起那位呼风唤雨，支配波涛的海神，我的手段可温柔得多了哦~",
+	mission_complete = "不错，这才算是合格的指挥官。",
+	feeling4 = "我知道你想引起我的兴趣，但难不成你要一直盯着我吗？呵呵，你也算有所成长了呢……等等，你，你该不会是认真的吧！？",
+	unlock = "大型巡洋舰，{namecode:480}。指挥官，想要我为你驱使海浪吗？好啊，那就让我先看看你的能耐吧。",
+	feeling5 = "既然是想要挑战我，那我就不得不以深渊之神的名义将你彻底吞噬了——来呀，怎么不动了？不是说要把我……呀！？",
+	main = "喝酒的理由？只要有宴席，大家能开怀畅饮不就行了吗？|你喜欢看大海狂暴的那一面吗？那可是夹杂着暴风雨的，汹涌的海洋哦。|…嗯？难道是我让你分心了吗？",
+	battle = "咬碎你们！哈哈哈哈！",
+	upgrade = "为庆祝而饮一杯吧。……噗哈~",
+	voice_key = 49905,
+	headtouch = "……哈！？",
+	feeling2 = "我感兴趣的事情？呵呵呵~强大的对手、美味的酒、狂风暴雨的海洋，还有……你就这么想引起我的注意吗？",
+	login = "让我们看看是谁来了？哦，原来是你啊——那就…工作加油吧。",
+	vote = "",
+	hp_warning = "哦？小把戏被看穿了吗？",
+	id = 499050,
+	detail = "这孩子有时候会异常活泼，照顾的时候小心点哦，指挥官。",
+	couple_encourage = {
+		{
+			{
+				29901
+			},
+			1,
+			"还是稍微稳重得体些比较好哦。",
+			0
+		},
+		{
+			{
+				40301,
+				70301
+			},
+			1,
+			"凯旋之后再来痛饮吧。",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[499051] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托完成了。…你不会想要我去迎接吧……",
+	win_mvp = "",
+	home = "算好指挥官回来的时间，把茶水和点心备上……很好，这样就没问题了，应该？",
+	mission = "",
+	touch2 = "……！？早知道就不当什么女仆了！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "哼，区区的女仆工作，交给我就是小事一件……嗯！？你…一直在看着吗？！",
+	mail = "",
+	touch = "……呜!?",
+	profile = "",
+	mission_complete = "任务结束了。去拿你的报酬吧。",
+	feeling4 = "",
+	unlock = "哼，区区女仆工作，交给我就是小事一桩……嗯！？你一直在看着吗？！",
+	feeling5 = "",
+	main = "这小家伙……碍着我了，闪一边去！被我压着就一点也动不了了吗？|扫除是宴会准备的一环？反正之后都会弄得乱七八糟的，为什么现在要……|{namecode:483}好像乐在其中呢……光是“被当成女仆”这事我就很不甘心！你有在听吗？",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "是你啊。咳、早上好，主……果然还是算了！",
+	vote = "",
+	hp_warning = "",
+	id = 499051,
+	detail = "这些文件让我来整理？你把我{namecode:480}当成什么了？…再说，就算真的交给我也不一定就能做好就是了…！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499052] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托完成了哦。去吧，别冷落了在节日还在辛苦付出的同伴们。",
+	win_mvp = "",
+	home = "叱咤海洋的猛兽，也有需要休息的时刻。正好屋内有静心养神的香薰，到我身边来好好坐会吧？",
+	mission = "正值佳节时，指挥官却因任务而无法抽身……这种事情我可不允许，我也来帮你一把好了。",
+	touch2 = "等，等一下？！都怪你，墨汁沾到上面了……我，我自己擦就行了！！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "新装饰，新服装，还有各种各样的准备…这就是东煌“春节”的一角么。去忙你要做的事吧，我知道这个节日的准备少不了你。不过…可不要让我等太久哦？呵呵~",
+	mail = "",
+	touch = "要出去走走吗？好啊。那就帮我把鞋子穿上吧？",
+	profile = "",
+	mission_complete = "任务完成了，接下来就该专心享受节日了。",
+	feeling4 = "",
+	unlock = "新装饰，新服装，还有各种各样的准备…这就是东煌“春节”的一角么。去忙你要做的事吧，我知道这个节日的准备少不了你。不过…可不要让我等太久哦？呵呵~",
+	feeling5 = "",
+	main = "毛笔……应该怎么握来着？这样？还是……这样？嗯……我知道你会这个，别光看着了，快来教教我！|原来“舞龙”是这样的啊……当初听到这个名字时，我还以为要弄一个像铁血舰装那样“龙”呢。|{namecode:462}，这些是你收藏的东煌古玩么。这个碗确实做工精致……你的品位还挺不错的。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "喂，角上的挂饰不是拿来玩的！",
+	feeling2 = "",
+	login = "回来了？呵呵，是想我了么？还是只是单纯的累了？",
+	vote = "",
+	hp_warning = "",
+	id = 499052,
+	detail = "听说龙在东煌中享有非常神圣的地位。不过，为何它在十二生肖之中仅仅排在第五位？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499060] = {
+	feeling1 = "对于不能战斗的人，我无话可说。",
+	feeling3 = "{namecode:438}和我都知道，你是试图反抗命运的弱小而凄惨的存在。不过我想，你应该不会就这样乖乖接受命运审判的吧？",
+	lose = "坠落亦不可避…么。",
+	propose = "没想到，你会亲手给你赢过我的可能性判处死刑…也好，你就在这名为“爱”的牢笼里，继续反抗我吧。就这样作为取悦我的存在，永远的在我身边吧，“亲爱的”——",
+	expedition = "委托组的伙伴们回来了哦，该做点什么，你应该知道的吧？",
+	win_mvp = "这便是你所期望的胜利。并没有那么困难，不是吗？",
+	home = "不错的战斗，指挥官。我很期待，你什么时候能向我发起挑战。",
+	mission = "这点程度的任务，这点小小的障碍，不可能难倒你的吧。",
+	touch2 = "还是没能抵抗自我么…就这样沉溺于败北的幸福之中吧。",
+	voice_key_2 = -1,
+	skill = "没人能逃离魔女的掌控——",
+	drop_descrip = "航空母舰—{namecode:481}",
+	mail = "新的邮件，尽快阅读吧。",
+	touch = "想向魔女咨询什么？",
+	profile = "铁血航母，{namecode:481}。我是你的舰船，亦是束缚你的存在。牢牢记住吧，我的“指挥官”，我的使魔。",
+	mission_complete = "任务完成。恭喜你，又往那迷人而危险的高峰前进了一小步。",
+	feeling4 = "让你想要超越我，压倒我——对你施加了这般“枷锁”的我，才是一开始就被你吸引了的存在…就让我看看吧，你那凄惨悲哀的“可能性”。",
+	unlock = "终于来了，我的使魔。…不，我的“指挥官”。我是“魔女”{namecode:481}，在此等候你多时了。",
+	feeling5 = "人是无法战胜自己的感情的…正如我无法抑制对你的爱一般，你也无法拒绝我的感情。继续挣扎、抵抗吧，这正是连接着你我的，永恒羁绊。",
+	main = "想知道“魔女”都有哪些手段？安心吧，你会有机会见识到的。|如此安静…是暂时放弃反抗了么？你若是就这样轻易地顺从，那也太无趣了。|像这样一直盯着人看的话，很容易就会被看透内心的哦，指挥官。",
+	battle = "匍匐在我等身前吧——",
+	upgrade = "规则，强化。",
+	voice_key = 49906,
+	headtouch = "",
+	feeling2 = "享受努力后的甘甜，或是舔舐堕落后的苦涩，皆由你决定，因你所望，指挥官。",
+	login = "安静。…这孩子因为你的到来而有点躁动起来了，不用在意。",
+	vote = "",
+	hp_warning = "别心急，还不到哀悼的时候。",
+	id = 499060,
+	detail = "想试着当个叛逆的孩子亦不无不可。我很期待，看到你失败时那不甘心的表情呢。",
+	couple_encourage = {
+		{
+			{
+				49905
+			},
+			1,
+			"看来“魔法”还是你擅长",
+			0
+		},
+		{
+			{
+				40703
+			},
+			1,
+			"真是令人感叹的活力…",
+			0
+		},
+		{
+			{
+				40701
+			},
+			1,
+			"让我看看“终焉”应有的姿态吧。",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[499061] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "…没弄清自己的立场，万分…抱歉……",
+	propose = "",
+	expedition = "",
+	win_mvp = "是你所期望的胜利哦，“主人”。呼呼…",
+	home = "欢迎回来，“主人”。什么都…可以命令{namecode:482}…",
+	mission = "",
+	touch2 = "没错，尽情地向你的女仆撒娇吧。“主人”",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "头发再稍微像这样…呼，好了。不需要劳烦你帮忙，现在你才是主人，我只是“侍奉你的存在”，你就好好享受一番这短暂的美梦吧，呵呵。",
+	mail = "请…确认邮件…",
+	touch = "好的，「主人」……",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "头发再稍微像这样…呼，好了。不需要劳烦你帮忙，现在你才是主人，我只是“侍奉你的存在”，你就好好享受一番这短暂的美梦吧，呵呵。",
+	feeling5 = "",
+	main = "如果满足于现在的关系的话，是无法让我服从的哦。就算你希望永远如此，也总有一天会恢复原状。|主人，我知道你不会满足于就这样看着的呢。|并非你赢了我，而是我“特意输给了你”哦。呵呵呵…♡",
+	battle = "在无法醒来的梦里永远挣扎吧",
+	upgrade = "只有这份力量是现实呢。",
+	voice_key = 0,
+	headtouch = "是，无论什么都请吩咐…",
+	feeling2 = "",
+	login = "你来了，我的使魔兼“主人”。今天你会向我灌输什么样的希望，想法和愿望呢…呵呵呵，在这场梦醒来之前，就让我来为你实现它们吧。",
+	vote = "",
+	hp_warning = "",
+	id = 499061,
+	detail = "仅限现在，无论你做什么都可以。现在你对这虚假的屈服有多满足，等梦醒后你感到的遗憾，后悔和不甘——就有多满足我。",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499070] = {
+	feeling1 = "随便哪里都好，快给我消失。你太碍眼了。",
+	feeling3 = "哼，我对你有了一点点兴趣，看得出来你还是有些努力的。不过，既然你是被我称作指挥官的人，这也是理所应当就是了。",
+	lose = "以为这就能让我知难而退的话，那就大错特错了！",
+	propose = "誓约？你在说什么？这是你没规没矩，单方面“希望和我立下誓约”的行为，自然无论同意还是拒绝都随我……想让我怎么做的话，就再大喊1遍吧！可不准逃哦！",
+	expedition = "委托组回来了，让我看看有什么好的贡品。",
+	win_mvp = "我是MVP——太理所应当了反倒没什么可高兴的。",
+	home = "回来了啊。看来你还有点指挥官样子的嘛♪",
+	mission = "任务啊……随你便了，跟我没关系。",
+	touch2 = "呀？！别碰我！",
+	voice_key_2 = -1,
+	skill = "哈哈哈哈！碾碎你！",
+	drop_descrip = "战列巡洋舰—{namecode:484}",
+	mail = "邮件啊……看来跟我无关。",
+	touch = "在看什么有趣的？拿过来吧？我也想看看。",
+	profile = "我是铁血所属的特别计划舰，{namecode:484}。我想做什么就做什么。哼，我又强又伟大，就算任性也是理所应当的吧？因此我可不是听从你的命令，而是大发慈悲地帮你做事而已！",
+	mission_complete = "任务的报酬由我收下了♪。什么嘛，只是清单而已啊",
+	feeling4 = "你不属于任何人，只属于我{namecode:484}。这也是当然吧，因为本小姐可是认同你为“指挥官”了——还是说有什么意见吗？你从一开始就没有拒绝权哦！",
+	unlock = "你就是自称指挥官的人啊……哼！什么指挥官嘛，那个位置是我的了！快闪一边去♪",
+	feeling5 = "居然还敢说让我成为你的人……？虾兵蟹将就别得意忘形了。你是属于我的。无论谁！说了什么！你都是我的！",
+	main = "茶会？为什么我要应酬那种东西？倒是你，比起其他孩子应该多来陪着我才是♪|……啊。你问这好吃的糖果吗…从驱逐舰的孩子那拿来的。不会给你的哦。|这么简单的工作也不会吗？就这样还好意思叫自己指挥官……还不如我替你当更好呢。",
+	battle = "胜利是我的！",
+	upgrade = "这也是应该吧？因为我是最强的♪",
+	voice_key = 49907,
+	headtouch = "（吐舌头）呸——><",
+	feeling2 = "感恩戴德吧。连你这样的无名小卒，本小姐都忍耐着叫你指挥官呢♪",
+	login = "好慢！让我等着是什么意思啊？果然是想要我让你辞职吗？",
+	vote = "",
+	hp_warning = "明明我是最强的……！",
+	id = 499070,
+	detail = "舰装的调整就像这样……啊不许乱动！听我命令！真是的……你也别在一旁看着快来帮我！这是你的分内之事吧！",
+	couple_encourage = {
+		{
+			{
+				40304,
+				49902
+			},
+			1,
+			"那家伙可是我的！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[499071] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "输，输了？本小姐输了？不是吧……",
+	propose = "",
+	expedition = "",
+	win_mvp = "哼，赢了！MVP的我肯定是有奖励的对吧！",
+	home = "明明是自己的港区却搞不懂发生了什么……指挥官也不在，早知道就不来了……呀？！指，指挥官？！",
+	mission = "",
+	touch2 = "你、你对我这身有什么意见吗！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "这就是东煌的“春节”啊~明明还是冬天，为什么庆祝的是春天？而且指挥官也是的，为什么要配合准备这么大规模的——哇？！刚，刚才的是什么？！",
+	mail = "",
+	touch = "指挥官那家伙，跑到哪里去了……呜哇！我我我刚才才没有叫指挥官你呢！不许随便搭茬！",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "这就是东煌的“春节”啊~明明还是冬天，为什么庆祝的是春天？而且指挥官也是的，为什么要配合准备这么大规模的——哇？！刚，刚才的是什么？！",
+	feeling5 = "既然你是我的，当然有要让我开心的义务！就是这样！无名小卒要好好带{namecode:485}小姐我逛春节的港区！牵着我的手，走在前面！这可是你的职责！",
+	main = "去看下{namecode:480}说的，在天上飞的狮子好了……本小姐说在天上飞就是在天上飞！当然，你也要和我一起来！|压岁钱？平时运营着港区结果自己却囊中羞涩吗？……嗯？是要给我的？我才不要呢！|总是不理我的笨蛋，看招！哈哈，被爆竹吓得抱头鼠窜吧！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "“春节”要用鲤鱼装饰，然后那个鲤鱼变成龙……真是搞不懂。说起来为什么鲤鱼会变成龙——哇？！怎，怎么回事？！",
+	vote = "",
+	hp_warning = "",
+	id = 499071,
+	detail = "因为你是我的，所以你努力准备的东西也是我的！（咬咬）这是……山楂串？酸酸甜甜的，还挺好吃的嘛……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499080] = {
+	feeling1 = "什么啊，只是个没意思的灰尘而已。算了算了，本小姐对你没兴趣了，灰尘就要像灰尘一样在一边落着去啊",
+	feeling3 = "哦？居然对本小姐的诱惑不为所动，是在硬撑呢还是单纯的无能呢？（为什么效果不好？是我做得还不够吗？还是哪个环节出了问题？）",
+	lose = "这，这次的失败是有深层而不可预知的因素在里面……你明白就行。",
+	propose = "真是美妙啊，这种被认同的感觉，比看着不知道哪来的杂鱼求饶还要美妙上一千倍……为什么本小姐没能早点注意到呢？你说是吧…指挥官，和{namecode:519}一同坠入那梦幻而迷人的深渊吧～",
+	expedition = "委托物资已经清点完了。本小姐姑且也是出了点力的，你要怎么补偿我呢？",
+	win_mvp = "区区蝼蚁也想赢本小姐？呵呵呵～",
+	home = "出击辛苦了哦，本小姐就勉为其难地好好戳一戳你那钝感的身体吧。（哼哼，你肯定经不住这招的～）",
+	mission = "任务有点多？行吧，本小姐就大发慈悲帮帮你这可怜又愚蠢的家伙好了。不过，这人情后面可是要还的哦？",
+	touch2 = "终于要承认自己的脑袋和猴子一样了？嘻嘻～",
+	voice_key_2 = -1,
+	skill = "不堪一击！",
+	drop_descrip = "驱逐舰—菲利克斯·舒尔茨",
+	mail = "连信都要本小姐帮你取吗？算了，趁本小姐心情好，无偿帮你一回。",
+	touch = "对本小姐好奇吗？这样啊，那就把你那无珠的眼睛睁大点看哦～（你能经得住我的诱惑吗？呼呼～）",
+	profile = "{namecode:518}，铁血的特别计划舰之一。想让本小姐成为你的助力吗？很简单，让本小姐觉得开心就可以了。我没有说让你无条件服从之类的话，已经很大度了哦？",
+	mission_complete = "嗯~哼——任务完成了。总算不是一个完全无能的家伙了呢，本小姐对你的好感度上升了哦。",
+	feeling4 = "（仔细想想，指挥官确实是个不错的家伙呢……不对，我在想什么呢。如果承认指挥官岂不就完蛋了。但……）欸？咳咳，没什么，本小姐在想什么与你无关吧？",
+	unlock = "哦？你好呀，指挥官。大费周章地把我唤来此处，却又用这种小伎俩把我束缚住，真是难为你了呢。等着吧，本小姐马上就会让你这愚钝之人跪倒的哦",
+	feeling5 = "啊……是本小姐输了。没能征服指挥官，反倒差点就要承认你了。不过这样一来，本小姐就能更加不择手段地进攻了～要么屈服，要么彻底接受我。在这之前我是绝对不会停止的！",
+	main = "明天是晴天吗？真可惜，少了个能让指挥官在这里守着本小姐的理由呢。|嗯？你说什么？本小姐没听清。能不能凑近一点呀？|（在认真工作啊……想想有没有能让指挥官更加听我话的办法……）嗯？怎么了？什么事都没有哦～",
+	battle = "那就给这些无礼者们一点教训好了。",
+	upgrade = "嗯哼～本小姐现在心情不错～",
+	voice_key = 49908,
+	headtouch = "本小姐高贵的额头岂是你这种人可以随便触碰的？不过，这次就原谅你的无知好了～",
+	feeling2 = "人不过也就是一种野兽罢了。本小姐要将你心中的野兽驱使出来，然后站在高处，看着你跪倒在地摇尾乞怜。哼哼～",
+	login = "这么快就想我了？总不能只是因为杂事回来得这么早吧？",
+	vote = "",
+	hp_warning = "你，你别光看着，快用你那废物脑子想想啊？",
+	id = 499080,
+	detail = "本小姐喜欢吃苹果。特别是那种切得碎碎的，一口一块的那种。就像这样哦——啊～呜～你也想要吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[499090] = {
+	feeling1 = "罢了，我就当这契约没存在过吧。我会记住你现在所做的一切，并在某一日悉数奉还。",
+	feeling3 = "特地叫我出来不是为了公务。那也就是说这个行为完全处于你作为个体的欲求吧。…很好，我也就不必拘泥于“指挥官的舰船”，而可以向你展示一下{namecode:521}这一个个体的本性了呢",
+	lose = "哼，不错的对手。希望下次再交手时，也不会让我失望。",
+	propose = "不满足于现有的契约，妄图用更进一步的手段将我束缚？契约者，你的胆子真的是越来越大了。好啊，我就如你所愿，答应你的请求。以及，接下来就做好随时被我吃掉的准备吧，呵呵呵～",
+	expedition = "委托的物资送到了？交给其他人去做吧。你没有时间做到任何事都亲力亲为。",
+	win_mvp = "对图谋不轨者而言，痛苦是最好的课程。",
+	home = "契约者，还在想着刚刚的战斗？是有让你在意的对手，还是对我的表现有所不满？",
+	mission = "去完成你该完成的事吧，契约者。我当然指的是那些任务。",
+	touch2 = "该让你长点记性了啊，契约者。",
+	voice_key_2 = -1,
+	skill = "向我俯首，虫子们！",
+	drop_descrip = "重巡洋舰—兴登堡",
+	mail = "契约者，早点查看信箱。这种事情不该由人提醒你。",
+	touch = "趁我还对你要说什么感兴趣前，把话讲清楚。",
+	profile = "铁血巡洋舰，{namecode:521}。似乎像我这样的舰船被称为“特别计划舰”？无所谓。向我证明你的能力，填充我无聊的时光，我自会遵守与你的契约。",
+	mission_complete = "任务完成了。对着如此小事就盼望着对方有所回报，我记得并没有和这样的家伙签订契约吧？",
+	feeling4 = "当你试图控制恶魔的时候，是否已经被恶魔所控制了呢？自己去寻找问题的答案吧，契约者，我在终点等着你。呵，我可不是什么蛊惑人心的存在，这是你自己选择的路。",
+	unlock = "将我召唤至此的，就是你？凡人，你就是我的指挥官么？……行吧，我就姑且承认，这份“指挥官和舰船”的契约好了。",
+	feeling5 = "我很高兴你走到这一步，誓约者。过程无关紧要，重要的只有结果——那就是你已经被我支配的这个事实。怎么，心怀不甘么？屈服于我，又有什么不好的呢？",
+	main = "契约者，你与其它舰船又是靠什么维系的？信任？交易？……原来如此，有点意思。|无聊的时光总是充斥着生活。契约者，如果你不能想办法缓解我的乏闷，我就只能从你身上寻乐了。|你说想喝点什么？哼，我并不讨厌别人投我所好。来点咖啡吧，不要太苦的。",
+	battle = "勇气是你们的起点，亦是你们的末路。",
+	upgrade = "也别忘了提升你自己，契约者。",
+	voice_key = 49909,
+	headtouch = "角？要看随你喜欢。不过，敢摸的话，你是知道后果的。",
+	feeling2 = "有事找我？我以为你会因为畏惧我，对我避而不见。那就正好借这个机会，让我了解一下你吧，契约者。",
+	login = "契约者啊，为日常奔波，就是你选择的命运么？",
+	vote = "",
+	hp_warning = "能让我兴奋起来……哼，有两下子。",
+	id = 499090,
+	detail = "尾巴？翅膀？这些就如此值得关注么。有时候真是搞不懂你，契约者。",
+	couple_encourage = {
+		{
+			{
+				49901
+			},
+			1,
+			"你的身上有危险的气息啊。",
+			0
+		}
+	}
+}
 _G.pg.base.ship_skin_words[501010] = {
 	feeling1 = "指挥官，我在渤海湾养的山楂到花期了，可以回去看看吗？",
 	feeling3 = "即使有一天不再需要我去战斗，我也想永远守望着渤海，永远眺望着被晚霞染红的海面……",
@@ -49970,7 +51019,6 @@ _G.pg.base.ship_skin_words[501010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[501011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50004,7 +51052,6 @@ _G.pg.base.ship_skin_words[501011] = {
 	detail = "我现在有一个梦想，那就是有一天能和妹妹们组个乐队一起演奏，不过…感觉还是有点遥远呢，啊哈哈……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[501012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50038,7 +51085,6 @@ _G.pg.base.ship_skin_words[501012] = {
 	detail = "还有咸味的啾啾奶茶？辣、辣的也有吗？不行！哪有这么糟蹋饮品的……“珍珠”也一样！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[501019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50072,7 +51118,6 @@ _G.pg.base.ship_skin_words[501019] = {
 	detail = "抚顺比较冲动，长春鬼点子多，太原则是还要再勇敢一点…——我？呼呼～指挥官觉得呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[501020] = {
 	feeling1 = "哇，长春、太原，指挥官来了！",
 	feeling3 = "指挥官，这是我做的火箭，很漂亮吧！指挥官如果坐上去的话，一定能飞到比天空还高的地方吧！下来？放心，我和长春会在下面接着你的啦",
@@ -50123,7 +51168,6 @@ _G.pg.base.ship_skin_words[501020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[501021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50157,7 +51201,6 @@ _G.pg.base.ship_skin_words[501021] = {
 	detail = "“港区春节的不可思议之神秘消失的包子”……已经有这样的传闻吗？真不愧是我！……我，我后面会解释清楚的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[501030] = {
 	feeling1 = "指挥官……那样是不行的呢",
 	feeling3 = "诶，指挥官也在这里呀。秘密基地？诶嘿嘿，我不太清楚呢~说回来，指挥官看到我的点心了吗？不，那东西可不能吃",
@@ -50208,7 +51251,6 @@ _G.pg.base.ship_skin_words[501030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[501031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50242,7 +51284,6 @@ _G.pg.base.ship_skin_words[501031] = {
 	detail = "抚顺姐姐似乎是打算用爆竹炸开海底火山，把整片海洋变成温泉……幸好结果只是海水稍微变温暖了一些~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[501032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50276,7 +51317,6 @@ _G.pg.base.ship_skin_words[501032] = {
 	detail = "今天的长春不是老虎而是兔子哦。这双毛茸茸大耳朵还能在必要时刻拉下来捂住耳朵~当然，太用力的话是会扯掉的……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[501039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50310,7 +51350,6 @@ _G.pg.base.ship_skin_words[501039] = {
 	detail = "用打游戏来比喻的话，我们现在可是可是获得了非常高级的装备呢。指挥官可以再多依赖我们一些哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[501040] = {
 	feeling1 = "鞍山姐，我、我有点害怕……",
 	feeling3 = "除了姐姐们外，指挥官是我的第一个朋友，所，所以指挥官千万不要去坐抚顺姐的自制导弹！",
@@ -50361,7 +51400,6 @@ _G.pg.base.ship_skin_words[501040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[501041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50395,7 +51433,6 @@ _G.pg.base.ship_skin_words[501041] = {
 	detail = "指挥官，你知道吗？东煌有关于一种叫“年”的怪兽的古老传说哦。每逢春节，家家户户都会贴红对联，放爆竹来驱赶它呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502010] = {
 	feeling1 = "指挥官……似乎不是我在等的那个人呢",
 	feeling3 = "能够回到指挥官身边，真的是太好了",
@@ -50439,7 +51476,6 @@ _G.pg.base.ship_skin_words[502010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[502011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50473,7 +51509,6 @@ _G.pg.base.ship_skin_words[502011] = {
 	detail = "说来难堪，无意中被镇海知道与您有约后，她不由分说拉着我换了一套梳妆……您觉得合适吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50507,7 +51542,6 @@ _G.pg.base.ship_skin_words[502012] = {
 	detail = "潺潺的流水声，与大自然的气息，令人心旷神怡……啊，稍微发了会呆，还请不要见笑……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502018] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50541,7 +51575,6 @@ _G.pg.base.ship_skin_words[502018] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50575,7 +51608,6 @@ _G.pg.base.ship_skin_words[502019] = {
 	detail = "如果我说对指挥官还有一些想了解的地方……您会介意吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502020] = {
 	feeling1 = "我才不吃你给的包子！",
 	feeling3 = "指挥官，你不要老是在说正事的时候用包子想蒙混过去，我看起来有那么好收买吗！——唔呜呜！……好吃",
@@ -50618,7 +51650,6 @@ _G.pg.base.ship_skin_words[502020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[502021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50652,7 +51683,6 @@ _G.pg.base.ship_skin_words[502021] = {
 	detail = "为什么会迷路呢……海图应该是没问题的啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50686,7 +51716,6 @@ _G.pg.base.ship_skin_words[502022] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50720,7 +51749,6 @@ _G.pg.base.ship_skin_words[502023] = {
 	detail = "这只是工作，我可没有很喜欢做偶像的感觉！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50754,7 +51782,6 @@ _G.pg.base.ship_skin_words[502024] = {
 	detail = "平海也就算了，指挥官你该不会也根本没想过行程的事把……算了，还是我来吧",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502025] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50788,7 +51815,6 @@ _G.pg.base.ship_skin_words[502025] = {
 	detail = "这个大蛋糕是逸仙姐、平海、我还有其他朋友们为晚会特意准备的，保证所有人都能尽情享受宴会的充足分量哦！...不过比起大蛋糕，大包子不是更有创意吗……没，没什么！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502026] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50822,7 +51848,6 @@ _G.pg.base.ship_skin_words[502026] = {
 	detail = "原来大熊猫是杂食的啊…之前都不知道，印象里只有它们吃着竹子的样子呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50856,7 +51881,6 @@ _G.pg.base.ship_skin_words[502029] = {
 	detail = "为了节省支出，果然还是自己下厨最实惠……指挥官，来试吃一下",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502030] = {
 	feeling1 = "指挥官……就是姐姐说的坏人吗……",
 	feeling3 = "姐姐说不能随便和指挥官独处——姐姐要独占包子？！平海以后会多来找指挥官的！",
@@ -50899,7 +51923,6 @@ _G.pg.base.ship_skin_words[502030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[502031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50933,7 +51956,6 @@ _G.pg.base.ship_skin_words[502031] = {
 	detail = "我和姐姐迷路到的岛上有好多好奇怪的东西……唔，具体奇怪在哪里？总之就是很奇怪啦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -50967,7 +51989,6 @@ _G.pg.base.ship_skin_words[502032] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502033] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51001,7 +52022,6 @@ _G.pg.base.ship_skin_words[502033] = {
 	detail = "姐姐好像很喜欢偶像的衣服",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502034] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51035,7 +52055,6 @@ _G.pg.base.ship_skin_words[502034] = {
 	detail = "姐姐制定了一份好详细的行程表，平海一看就想睡觉……不过，那些地方应该都有好多好吃的吧？那平海也去",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502035] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51069,7 +52088,6 @@ _G.pg.base.ship_skin_words[502035] = {
 	detail = "平海的蛋糕和姐姐的一样，是和大家一起努力准备的。草莓味的大蛋糕......如果让平海一个人吃的话，能吃上多少天呢，嘿嘿嘿.....",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502036] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51103,7 +52121,6 @@ _G.pg.base.ship_skin_words[502036] = {
 	detail = "指挥官，要不……我们也在港区里多养几只大熊猫吧！…唔，不行吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502039] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51137,7 +52154,6 @@ _G.pg.base.ship_skin_words[502039] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502040] = {
 	feeling1 = "……应瑞对指挥官没有什么想说的。",
 	feeling3 = "肇和是不是跟您告状，说我逼她干活了？可不能轻信了她的话哦，我只是让一直以各种理由逃避家务的姐姐稍微面对一下现实而已，呵呵。",
@@ -51195,7 +52211,6 @@ _G.pg.base.ship_skin_words[502040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[502041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51229,7 +52244,6 @@ _G.pg.base.ship_skin_words[502041] = {
 	detail = "今年的春联交给我和肇和了。我负责写，她负责想，是不是很合适的分工呢？看肇和为了想春联而烦恼的样子，还是挺有意思的，呵呵~等她再烦恼会再帮她一起想吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51263,7 +52277,6 @@ _G.pg.base.ship_skin_words[502042] = {
 	detail = "今年春联的构思交给海天了，我负责写，装饰就交给了肇和。对姐姐来说，纯体力活应该不难吧？呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502050] = {
 	feeling1 = "我和你可不熟！",
 	feeling3 = "指挥官！应瑞她…她拿不给我吃宁海蒸的包子威胁我！要我今天帮她打扫房间！快帮帮我想想办法啦！",
@@ -51317,7 +52330,6 @@ _G.pg.base.ship_skin_words[502050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[502051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51351,7 +52363,6 @@ _G.pg.base.ship_skin_words[502051] = {
 	detail = "明明知道我不擅长这些文字类的东西，还把想春联的任务推给我，应瑞那家伙…要不是看在她是妹妹的份上…指挥官！你、你也来帮我想一想啦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51385,7 +52396,6 @@ _G.pg.base.ship_skin_words[502052] = {
 	detail = "唔唔唔这小家伙到底是怎么回事啦！简直就像是刻意避着我一样……我早该意识到，应瑞把装饰这种看起来简单的活交给我是另有目的的！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502070] = {
 	feeling1 = "请不要打扰我，让我一个人静静吧。",
 	feeling3 = "诗词风格万万千千，既有豪迈不羁的壮阔波澜，也有温婉含蓄的小家碧玉。指挥官更喜欢哪种呢？",
@@ -51428,7 +52438,6 @@ _G.pg.base.ship_skin_words[502070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[502071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51462,7 +52471,6 @@ _G.pg.base.ship_skin_words[502071] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51496,7 +52504,6 @@ _G.pg.base.ship_skin_words[502072] = {
 	detail = "我对琵琶算是略知一二吧。不过，要保持这个姿势弹的话，还是有点难……而且很害羞……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[502080] = {
 	feeling1 = "哼，你的所作所为，我全都记住了！！！",
 	feeling3 = "遇到纠结的问题的时候，就应该像舞枪一样行云流水地把它们统统击碎！就像这样…嘿！哈！",
@@ -51539,7 +52546,6 @@ _G.pg.base.ship_skin_words[502080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[502081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51573,7 +52579,6 @@ _G.pg.base.ship_skin_words[502081] = {
 	detail = "这时候应该做这个动作才对…？啊！指挥官原来你在呀！正好帮我看一下舞蹈动作吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[506010] = {
 	feeling1 = "似乎我对你的期待有些过高了。",
 	feeling3 = "战争并非公平的棋局。倘若能趁着对方不注意，先思考·理解·下个两三手——胜利就是这么来的哦。",
@@ -51618,7 +52623,6 @@ _G.pg.base.ship_skin_words[506010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[506011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51652,7 +52656,6 @@ _G.pg.base.ship_skin_words[506011] = {
 	detail = "对我的收藏感兴趣吗？呵呵，里屋还有不少，不如随我一起去欣赏一下如何？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[506012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51686,7 +52689,6 @@ _G.pg.base.ship_skin_words[506012] = {
 	detail = "炎夏之时浸在清凉的水中，确实是至高无上的享受呢。你若是不介意打湿衣服，也可以来试试哦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[506020] = {
 	feeling1 = "不管怎么说，日子还是得过下去。得过且过吧……",
 	feeling3 = "前阵子和同伴们去了鬼屋。要说体验如何的话……比起鬼怪，看同伴们惊慌失措的样子更有趣一些~指挥官呢，你会怕那些妖魔鬼怪吗？",
@@ -51729,7 +52731,6 @@ _G.pg.base.ship_skin_words[506020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[506021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51763,7 +52764,6 @@ _G.pg.base.ship_skin_words[506021] = {
 	detail = "嗯？这身装扮有些大胆了？唔，姑且是选了和其他同伴们差不多程度的服装……而且，偶尔来点不一样的，也挺好的不是吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[519010] = {
 	feeling1 = "俗话说日久见人心。指挥官，就算平日里伪装得再好，您迟早会露出破绽的。",
 	feeling3 = "您认识的同伴里，有对东煌的收藏品感兴趣的么？如果方便的话，不妨向我介绍一下吧。",
@@ -51806,7 +52806,6 @@ _G.pg.base.ship_skin_words[519010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[519011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -51840,7 +52839,6 @@ _G.pg.base.ship_skin_words[519011] = {
 	detail = "为什么不用现成的包子皮，而是用面粉从头做起？……是为了“仪式感”？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[520000] = {
 	feeling1 = "指挥官，我在渤海湾养的山楂到花期了，可以回去看看吗？",
 	feeling3 = "即使有一天不再需要我去战斗，我也想永远守望着渤海，永远眺望着被晚霞染红的海面……",
@@ -51899,7 +52897,6 @@ _G.pg.base.ship_skin_words[520000] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[521000] = {
 	feeling1 = "指挥官，我在渤海湾养的山楂到花期了，可以回去看看吗？",
 	feeling3 = "即使有一天不再需要我去战斗，我也想永远守望着渤海，永远眺望着被晚霞染红的海面……",
@@ -51958,7 +52955,105 @@ _G.pg.base.ship_skin_words[521000] = {
 		}
 	}
 }
-
+_G.pg.base.ship_skin_words[599010] = {
+	feeling1 = "兵熊熊一个，将熊熊一窝，你可是指挥官，给我打起精神来！",
+	feeling3 = "你休息的时候会做什么？我的话…大概会拉上同伴出去吹吹风，顺便整点小酒小吃什么的，感觉可棒了！嗯嗯，择日不如撞日，不如我们现在就去吧！",
+	lose = "你们先走，这里交给我！",
+	propose = "看来你已经想好了呢。只是现在这场面实在是有点冷清呢……等之后选个良辰吉日，办一场把所有同伴都请上的宴会好了。我要告诉所有人，你就是我{namecode:224}的爱人！",
+	expedition = "哦！看样子是远征的同伴们回来了！指挥官，这就安排一场接风宴吧！",
+	win_mvp = "哼，太弱了，还不够给我搓背的。",
+	home = "出去忙了这么久，指挥官也累了吧？要不要我带你去放松放松？搓个澡还是按个摩什么的？",
+	mission = "有新任务？包在我身上，看我帮你安排得明明白白！",
+	touch2 = "嚯？胆子挺肥啊，就不怕我揍你一顿？",
+	voice_key_2 = 599012,
+	skill = "吃我一炮！",
+	drop_descrip = "轻巡洋舰—{namecode:224}",
+	mail = "顺手把你的邮件捎过来了，记得及时看哦！",
+	touch = "要是闲得厉害，要不我给你整段相声？哈哈，除了打仗之外，我还是有些其他小特长的。",
+	profile = "我是东煌的轻巡洋舰{namecode:224}。怎么，觉得我的出现有点出乎意料？哈哈！生活总得需要点惊喜不是么？总而言之，我和我的火炮不会让你失望的！",
+	mission_complete = "干得不赖嘛！接下来你只管休息就好，奖励的分配交给我吧。",
+	feeling4 = "指挥官，走，我们出门兜风去！去哪？我想想…出去找找敌人揍一顿怎么样？欸？危险？哎呀没事的，有我在，你就放一万个心吧。",
+	unlock = "我是东煌的轻巡洋舰，{namecode:224}。你就是这里的指挥官？嗯哼…精气神不错，体魄也不错，很好！以后你就跟我混吧！",
+	feeling5 = "我说指挥官啊，你要不就从了我吧。以后我们刀山火海一起闯，荣华富贵一起享，要真碰上危险了还有我罩着你。所谓轰轰烈烈的爱情，不就应该是这样的么？哈哈！",
+	main = "指挥官，工作结束后，一起去整两瓶小酒怎么样？当然了，喝点别的也行。忙碌了一天，总得好好犒劳自己，不是么？|海天总和我唠叨什么“食不厌精，脍不厌细”之类的，明明她自己放起辣椒来也不带眨眼的。要我说，最重要的还是量大管饱！|镇海喜欢谋而后动，任何事都得先思忖几分。至于我嘛……当然是先行动起来再说啦！",
+	battle = "大家跟我上！",
+	upgrade = "哈哈，有点手痒难耐了呢！",
+	voice_key = 59901,
+	headtouch = "",
+	feeling2 = "有时间的话，陪我聊聊呗？不用害羞，敞开来聊就行，熟悉一个人最好的方式就是和他聊上一整天！",
+	login = "你好啊指挥官，今天有什么要帮忙的？尽管开口就行！",
+	vote = "",
+	hp_warning = "有本事就冲着我来！",
+	id = 599010,
+	detail = "指挥官，不用客气，有什么事情敞开了说就行，别整那些弯弯绕绕的！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[599011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托的队伍好像回来了。不如把她们也邀请过来吧？多点人，热闹点好！",
+	win_mvp = "",
+	home = "待在澡堂里就想多泡一会，待在海里时就想游几下——人在的环境不同，动力也会随之改变呢。",
+	mission = "",
+	touch2 = "这光天化日之下的……不太好吧……",
+	voice_key_2 = 0,
+	skill = "",
+	drop_descrip = "呼——天气正好，海风吹着也很舒服。指挥官，都来到这了，就别惦记着你的指挥室和桌上的文件了，好好享受来之不易的海边时光吧！",
+	mail = "",
+	touch = "哦？要来打水仗吗？那我可就不让着你了啊！看招~",
+	profile = "",
+	mission_complete = "任务的奖励……哦？居然还有冰镇西瓜？正好手头缺点降暑的东西，真是及时雨啊！",
+	feeling4 = "",
+	unlock = "呼——天气正好，海风吹着也很舒服。指挥官，都来到这了，就别惦记着你的指挥室和桌上的文件了，好好享受来之不易的海边时光吧！",
+	feeling5 = "",
+	main = "那边的是“四大金刚”吗？她们好像在合作堆沙堡……要不我们也来堆一个？|听说只要把薯条放在手上，海鸥们就会迫不及待地飞过来吃。对了，你有薯条么？试试？|如果把这海滩包下来，就我们俩的话……嗯？会被其他同伴们盯上，不太好吗？这样啊……你也不容易呢。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "喂，指挥官！竟然让我等你这么久，胆子不小嘛。哈哈，说笑的，来了就好！",
+	vote = "",
+	hp_warning = "",
+	id = 599011,
+	detail = "没关系，想看的话就大大方方地看，泳装穿出来不就是给指挥官你看的嘛！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[599018] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "哼，就算今天我倒在这里，也别想动我同伴一根毫毛！",
+	propose = "",
+	expedition = "委托组回来了！我看看……好嘞！这下可以备点不错的下酒菜了。",
+	win_mvp = "大胜而归！回去就开一场庆功宴吧！",
+	home = "瞧你在外面被风吹雨打的，你不心疼我还心疼呢。赶紧洗个热水澡吧？",
+	mission = "新任务来了。就当是放松，动一动如何？一直坐在办公桌前可是会生锈的。",
+	touch2 = "哦？你要是这么主动，那我可就不客气了~",
+	voice_key_2 = 0,
+	skill = "",
+	drop_descrip = "让你久等了，指挥官。你觉得这身还行么？穿成这样有些难为情啊……不过，你觉得合适就好。",
+	mail = "",
+	touch = "如果你希望我留下陪你，我就在这，哪也不去。",
+	profile = "",
+	mission_complete = "任务结束了。我跟指挥官很有默契呢。照着这个势头把报酬也确认了吧。",
+	feeling4 = "",
+	unlock = "让你久等了，指挥官。你觉得这身还行么？穿成这样有些难为情啊……不过，你觉得合适就好。",
+	feeling5 = "我听说那个叫什么“约会”的可以给两个人的感情升温……这样吧，你选个餐馆，我把它包下来，我们一起去那里吃香喝辣！……不太对？是我理解错了吗？我还参考了下那些小说……",
+	main = "也许轰轰烈烈的爱情，最后都会随时间趋于平淡吧……不不不这怎么行！指挥官，下次的誓约纪念日，我们搞点大动静吧！|本来说好了刀山火海一起闯，但我又不愿让你趟这些难关，生怕你受伤……哎，感情这东西可真是充满矛盾。|有什么想吃的么？明天我带你去最好的餐厅！身为我{namecode:224}的爱人，怎么能在吃上面被亏待呢？哈哈！",
+	battle = "我来打头阵！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "要开始忙今天的事了？先说好，有啥困难不许藏着掖着。都是自家人，担子自然得一起挑。",
+	vote = "",
+	hp_warning = "",
+	id = 599018,
+	detail = "说起来，你觉得现在的我和平时有什么不同么？比方说，变得更有女人味一点……之类的？",
+	couple_encourage = {}
+}
 _G.pg.base.ship_skin_words[601020] = {
 	feeling1 = "指挥官，属下认为……不，没什么，属下会听从您的命令。",
 	feeling3 = "指挥官，如果您要外出的话，请务必让属下负责您的安全！",
@@ -51992,7 +53087,6 @@ _G.pg.base.ship_skin_words[601020] = {
 	detail = "指挥官，属下正在巡逻，有什么要吩咐的吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52026,7 +53120,6 @@ _G.pg.base.ship_skin_words[601021] = {
 	detail = "不知是不是换上这身的原因，心情上也有些不一样了，该说是清爽的开放感呢，还是毫无防备的不安感呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601030] = {
 	feeling1 = "果然…已经无可救药了呢…指挥官……",
 	feeling3 = "我的家乡？在利沃诺哦，撒丁王国西海岸一个漂亮的古城。有机会的话和我一起去看看吧，指挥官！",
@@ -52077,7 +53170,6 @@ _G.pg.base.ship_skin_words[601030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[601032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52111,7 +53203,6 @@ _G.pg.base.ship_skin_words[601032] = {
 	detail = "今天的饮料我请客，不用客气，尽情地喝吧！……欸，是，是免费的吗？！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601040] = {
 	feeling1 = "要保持距离，要保持距离……",
 	feeling3 = "指挥官…请确认一下这个。是，是一点最近委托结果的总结…应该能，能帮上点忙？",
@@ -52154,7 +53245,6 @@ _G.pg.base.ship_skin_words[601040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[601041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52188,7 +53278,6 @@ _G.pg.base.ship_skin_words[601041] = {
 	detail = "虽然做不到维内托大人的那个角斗场那样，不过斜塔、神殿或者教堂…堆出大概样子的话应该没问题！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601050] = {
 	feeling1 = "我敲我敲！唔唔唔！我要敲到指挥官改正错误为止！",
 	feeling3 = "指挥官，我来找你玩了！是休息时间吧？嘿嘿，这个西北风姐姐做的指挥官的…行程表？果然写得没错呢！",
@@ -52222,7 +53311,6 @@ _G.pg.base.ship_skin_words[601050] = {
 	detail = "有西南风在，西北风姐姐一定能交到很多朋友的！……对了对了，指挥官和西北风姐姐相处还顺利吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52256,7 +53344,6 @@ _G.pg.base.ship_skin_words[601051] = {
 	detail = "沙堡要怎么堆来着？先这样吗？然后还要这样…唔唔唔，太麻烦了还是算了！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601060] = {
 	feeling1 = "我要把你抛下，自己去航行了！",
 	feeling3 = "指挥官！地图上这个空空的地方，说不定还有我们没发现的新地方哦！下次就去这里探险吧！",
@@ -52308,7 +53395,6 @@ _G.pg.base.ship_skin_words[601060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[601061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52342,7 +53428,6 @@ _G.pg.base.ship_skin_words[601061] = {
 	detail = "待会要吃西瓜哦！指挥官也一起来！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601070] = {
 	feeling1 = "如果在有些废柴的指挥官身边做出成绩的话……那不就更能衬托出我的伟大之处了？好像不是一件坏事呢！",
 	feeling3 = "指挥官，你来得正好！那个，就是……这几件事想请你帮下忙！这些是我接下来后发现时间上来不及做的委托……这，这是为了舰队的大家，绝对不是为了我自己的面子哦？！",
@@ -52387,7 +53472,6 @@ _G.pg.base.ship_skin_words[601070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[601071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52421,7 +53505,6 @@ _G.pg.base.ship_skin_words[601071] = {
 	detail = "（小声）居然被指挥官看到了这幅丢人的样子，早知道就把支架拿下来藏起来了……咳咳，没，没什么哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601080] = {
 	feeling1 = "对，对不起！如果是我平时的取材冒犯到你了，我以后就再也不做了！",
 	feeling3 = "指挥官，悄悄告诉你，现在有关指挥官的情报可是值——这个数哦！想知道为什么是这个数的话～就让我再取点材吧！",
@@ -52472,7 +53555,6 @@ _G.pg.base.ship_skin_words[601080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[601081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52506,7 +53588,6 @@ _G.pg.base.ship_skin_words[601081] = {
 	detail = "怎么样，阿尔弗雷多跳舞好看吗？为了能顺利融入大家，不为人知地取材，我特地向撒丁的同伴们请教了舞步呢！……不过，我是不是有些做过头了？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601090] = {
 	feeling1 = "对不起，请让我一个人静静……",
 	feeling3 = "望远镜能让我在很远的地方就看清在意的东西……嗯，在很远的，不会打扰任何人的地方就能看到。",
@@ -52549,7 +53630,6 @@ _G.pg.base.ship_skin_words[601090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[601091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52583,7 +53663,6 @@ _G.pg.base.ship_skin_words[601091] = {
 	detail = "指挥官，能和阿尔弗雷多商量下，舞台取材的时候把我放在画面里不显眼的位置里吗？我，我不想太惹人注目……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[601100] = {
 	feeling1 = "难，难道指挥官其实是洋葱怪人派来的坏蛋？！",
 	feeling3 = "指挥官，看！这是白兔子，这是黑兔子，这是黑白兔公爵！还有猫猫队长和啾啾卫队！大家一起来陪指挥官玩吧！",
@@ -52637,7 +53716,6 @@ _G.pg.base.ship_skin_words[601100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[601101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52671,7 +53749,6 @@ _G.pg.base.ship_skin_words[601101] = {
 	detail = "指挥官来写剧本，阿蒂利奥负责画画，我们一起来编一个美好的故事吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[602010] = {
 	feeling1 = "看来你只是个毫无自尊之心的三流之人。走开点！",
 	feeling3 = "无需为困苦之境而烦恼，指挥官阁下。你的部下会全心全意地帮助你的。",
@@ -52705,7 +53782,6 @@ _G.pg.base.ship_skin_words[602010] = {
 	detail = "我便是条约型巡洋舰的最终形态。只要所有性能都得到强化了的本阿布鲁齐公爵参加战斗，那胜利就是必然的。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[602011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52739,7 +53815,6 @@ _G.pg.base.ship_skin_words[602011] = {
 	detail = "嚯，居然盯着我的姐妹看得这么入神，指挥官也算得上是“英雄本色”了啊。哈哈",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[602020] = {
 	feeling1 = "说是指挥官也不过就这嘛，哼。",
 	feeling3 = "其实我也并非不擅长贵族的职责之类的……不然就显得我像笨蛋一样了嘛。指挥官没想过过得轻松点吗？",
@@ -52791,7 +53866,6 @@ _G.pg.base.ship_skin_words[602020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[602021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52825,7 +53899,6 @@ _G.pg.base.ship_skin_words[602021] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603010] = {
 	feeling1 = "指挥官，不要灰心。只要你愿意改正，还是可以拾回大家对你的信任的！",
 	feeling3 = "我泡了一杯消解疲劳咖啡，指挥官请用吧。……味道很奇怪？我尝尝——好咸！难道是我把盐当成糖加进去了……",
@@ -52859,7 +53932,6 @@ _G.pg.base.ship_skin_words[603010] = {
 	detail = "那个……我刚刚，是要做什么来着？指挥官有头绪吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52893,7 +53965,6 @@ _G.pg.base.ship_skin_words[603011] = {
 	detail = "晒痕？啊，确实该注意一下呢…指挥官，能帮我涂下防晒油吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603020] = {
 	feeling1 = "不行啊…这样的指挥官，一点吸引人的地方都没有…",
 	feeling3 = "别看波拉看起来那样，其实是个很容易受伤的孩子呢…要是有谁敢欺负她或者…就算是指挥官，我也不会轻易原谅的哦？",
@@ -52936,7 +54007,6 @@ _G.pg.base.ship_skin_words[603020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[603021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -52970,7 +54040,6 @@ _G.pg.base.ship_skin_words[603021] = {
 	detail = "热身运动做好了吗？如果在水中抽筋就糟糕了呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603030] = {
 	feeling1 = "这样的指挥官，或许需要“再教育”一下才行呢",
 	feeling3 = "指挥官，您不必有太多的顾虑，只要做您想做的事情就好，杂鱼们都交给我来对付吧",
@@ -53013,7 +54082,6 @@ _G.pg.base.ship_skin_words[603030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[603031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53047,7 +54115,6 @@ _G.pg.base.ship_skin_words[603031] = {
 	detail = "指挥官，光是看着是不是感到不够啦～裁判就拜托你了。姐姐也没问题吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603040] = {
 	feeling1 = "这下满意了吗？呼…接下来轮到我了。我会好好管教你的，做好觉悟吧。",
 	feeling3 = "工作做完了？这样。吃完饭后就去洗澡吧。对于消除一天的疲劳来说，这是最有效的方法。",
@@ -53090,7 +54157,6 @@ _G.pg.base.ship_skin_words[603040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[603041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53124,7 +54190,6 @@ _G.pg.base.ship_skin_words[603041] = {
 	detail = "在学校穿制服是理所应当的…不过，指挥官觉得这样子好吗？我总是有种微妙的，心神不宁的感觉…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53158,7 +54223,6 @@ _G.pg.base.ship_skin_words[603042] = {
 	detail = "虽然一直以来待你严厉…不过…其实还是想谢谢指挥官的。一起泡澡就能直率地说出心里话，维内托小姐也这么说了对吧…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603050] = {
 	feeling1 = "请离开大家！现在的你，没有被伙伴们辅佐的价值！",
 	feeling3 = "果然还是放心不下我吗？谢谢您的关心。果然如{namecode:526}她们所说，我会无意中跟别人拉开距离呢……",
@@ -53192,7 +54256,6 @@ _G.pg.base.ship_skin_words[603050] = {
 	detail = "如果我可以的话…不嫌弃我的话，什么都可以交给我的。啊，我的意思是如果交给我也无妨的话……要是会给您添麻烦，也不用勉强的。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53226,7 +54289,6 @@ _G.pg.base.ship_skin_words[603051] = {
 	detail = "是天鹅湖呢……说起来，这个故事有一个最终谁都没有被救赎的版本。要是看了那个版本的话，我大概会忍不住眼泪吧……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53260,7 +54322,6 @@ _G.pg.base.ship_skin_words[603052] = {
 	detail = "说起港区的宝藏，好像海盗伙伴挺在意的呢。不过既然是指挥官知道的港区财物，那就算不上是隐藏的宝藏了呢，呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[603060] = {
 	feeling1 = "这就是指挥官大人…这就是戈里齐亚想得到关注的人…呜……",
 	feeling3 = "难，难道你觉得戈里齐亚很容易追到手吗？别误会了！别以为指挥官大人稍微关注下我就…也就是说，要更加，更多方面地关心我，我才会变得坦率！",
@@ -53304,7 +54365,6 @@ _G.pg.base.ship_skin_words[603060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[603061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53338,7 +54398,6 @@ _G.pg.base.ship_skin_words[603061] = {
 	detail = "指挥官大人，如果工作很多的话，我不介意帮忙哦？一定要告诉戈里齐亚哦？就算做不完——也一定要两个人一起留下来做哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605010] = {
 	feeling1 = "看来，有必要重新考虑撒丁帝国的未来了呢……",
 	feeling3 = "为了将撒丁帝国的威光弘扬光大，需要我们每一个人都要努力——指挥官也要加油哦。呵呵",
@@ -53402,7 +54461,6 @@ _G.pg.base.ship_skin_words[605010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[605011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53436,7 +54494,6 @@ _G.pg.base.ship_skin_words[605011] = {
 	detail = "在舰船上作为舰船看海……感觉是个不错的冷笑话呢，回去说给利托里奥听好了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605020] = {
 	feeling1 = "抱歉，指挥官。原本，我以为我的存在能成为你前进的动力，没想到，却成为了让你停滞的理由…",
 	feeling3 = "指挥官，你应该自信一点。因为，我信任着身为我的指挥官的你，也就是说，你可是被世界上最闪耀的舰船信任着，不是吗？",
@@ -53470,7 +54527,6 @@ _G.pg.base.ship_skin_words[605020] = {
 	detail = "维内托在总旗舰这个位置上还是做得挺不错的…不过，想要更进一步的话，还是需要向我学习呢，哈哈哈哈",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53504,7 +54560,6 @@ _G.pg.base.ship_skin_words[605021] = {
 	detail = "维内托？指挥官，奉劝你不要太过期待——不，我并不是说她的泳装，而是，她可是会花一整天在用沙子堆角斗场的天才",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53538,7 +54593,6 @@ _G.pg.base.ship_skin_words[605022] = {
 	detail = "反正维内托那个家伙只会想到和其他人一起泡澡这种可爱的方式。外交这种事还是应该交给适合的人来做，不是吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53572,7 +54626,6 @@ _G.pg.base.ship_skin_words[605023] = {
 	detail = "于平稳的日常中静静流淌的时间…让大家能够安心地渡过每一天，也是我的义务呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53606,7 +54659,6 @@ _G.pg.base.ship_skin_words[605024] = {
 	detail = "要是有伞就好了？……先不说这么大的雨撑伞有没有用吧。这天然的二人独处的机会，你就不想再多享受一会么？呵呵～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605030] = {
 	feeling1 = "无能者、令人生厌者、蛮族，你觉得哪个更适合现在的你？",
 	feeling3 = "征服领土与征服人民，你觉得哪个更有满足感？……都不么，还真是个贪婪的人啊。",
@@ -53657,7 +54709,6 @@ _G.pg.base.ship_skin_words[605030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[605031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53691,7 +54742,6 @@ _G.pg.base.ship_skin_words[605031] = {
 	detail = "舞蹈结束后，消除疲惫的最好方式自然是泡澡。对了，我不是说我之后的事，而是说“我们”之后要做的事。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605050] = {
 	feeling1 = "总有一天，你会因为你的狂妄而付出惨重的代价。",
 	feeling3 = "指挥官，当你望着夜空的时候，你会想什么呢？我总能听到，流星坠落的声音。",
@@ -53750,7 +54800,6 @@ _G.pg.base.ship_skin_words[605050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[605051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53784,7 +54833,6 @@ _G.pg.base.ship_skin_words[605051] = {
 	detail = "平时一个个看起来安分守己的，到了海滩上一个比一个活跃…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605060] = {
 	feeling1 = "你没有能与指挥官之位相匹配的魄力呢。",
 	feeling3 = "如果有人不服从命令的，给她一点教训就会懂事了吧。…不能这么简单粗暴吗？我还以为这会是个好建议来着…",
@@ -53835,7 +54883,6 @@ _G.pg.base.ship_skin_words[605060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[605061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53869,7 +54916,6 @@ _G.pg.base.ship_skin_words[605061] = {
 	detail = "要我帮你制定一个锻炼计划吗？唔，我想想，首先是一百个俯卧撑，然后一百个仰卧起坐，接着……欸，不用了吗？为什么啊？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53903,7 +54949,6 @@ _G.pg.base.ship_skin_words[605062] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605070] = {
 	feeling1 = "指挥官，您是遇到什么事了？就连我也不能为您分忧么……",
 	feeling3 = "指挥官，您是在烦恼什么事情吗？憋着可不好哦。“被看出来了？”呵呵～因为我有心事的时候，也会露出和您现在一样的表情呢。",
@@ -53937,7 +54982,6 @@ _G.pg.base.ship_skin_words[605070] = {
 	detail = "呼……指挥官，我现在看起来怎么样？要是在后辈们面前露出疲态可就不好了……毕竟，身为前辈要做好榜样才行。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[605071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -53971,7 +55015,6 @@ _G.pg.base.ship_skin_words[605071] = {
 	detail = "感谢您选择这次航班……呼，介绍词应该是这种感觉的？担任不熟悉的工作时，难免担心自己不小心出丑呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[607010] = {
 	feeling1 = "指挥官大人，你没事吧？…嗯，这样子做的话，一定就能让指挥官先生恢复了吧！",
 	feeling3 = "{namecode:438}小姐吗？我和她在舰历上有很多相似之处，所以“吾也与你一般，想同她搞好关系”…呵呵~",
@@ -54041,7 +55084,6 @@ _G.pg.base.ship_skin_words[607010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[607011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54075,7 +55117,6 @@ _G.pg.base.ship_skin_words[607011] = {
 	detail = "怎么了，指挥官大人？目不转睛地盯着穿着泳装的淑女……可是会被误解的哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[607012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54109,7 +55150,6 @@ _G.pg.base.ship_skin_words[607012] = {
 	detail = "呵呵，这个红茶味道怎么样？为了能随时招待指挥官大人，天鹰可是非常、非常地努力了哦♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[607020] = {
 	feeling1 = "退下吧。不需要背叛伙伴的人",
 	feeling3 = "终于下定决心要向我宣誓忠诚了么？嗯？确实指挥官也和我一样了不起……那只要互相宣誓忠诚就好了吧？",
@@ -54160,7 +55200,6 @@ _G.pg.base.ship_skin_words[607020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[607021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54194,7 +55233,6 @@ _G.pg.base.ship_skin_words[607021] = {
 	detail = "指挥官也喜欢读书么？…嗯，我也是。读书就能做舒服的梦所以喜欢，指挥官呢？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[608010] = {
 	feeling1 = "指挥官…竟然比我还要废…唔呼呼…",
 	feeling3 = "{namecode:37}托你带句谢谢？只是顺手帮她那想了下新装备的改造方案而已…欸？还要帮忙？算、算了吧…",
@@ -54245,7 +55283,6 @@ _G.pg.base.ship_skin_words[608010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[608011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54279,7 +55316,6 @@ _G.pg.base.ship_skin_words[608011] = {
 	detail = "指挥官，我想喝椰子汁……作为报酬，这些漂亮的贝壳随你挑……这个“交易”怎么看都是指挥官赚对吧？唔呼呼……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[608020] = {
 	feeling1 = "是不是做一个指挥官一靠近就会报警的装置比较好呢……",
 	feeling3 = "每当灵感来临时，我就会把它们变成设计图，然后放到我的背包里！重要的灵感可要好好保存好才行！",
@@ -54313,7 +55349,6 @@ _G.pg.base.ship_skin_words[608020] = {
 	detail = "指挥官，快来看看我新发明的高速自动卷面器！每次吃饭节省两分钟，按照每天两顿饭计算，一年可以节约1460分钟！很厉害吧~！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[608021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54347,7 +55382,89 @@ _G.pg.base.ship_skin_words[608021] = {
 	detail = "舞蹈和新发明有一个共同点，那就是部分灵感都是来自于各种各样的动物！说不定跳舞也能给我带来新的灵感~",
 	couple_encourage = {}
 }
-
+_G.pg.base.ship_skin_words[699010] = {
+	feeling1 = "哼，扶不起的家伙。要不是受这规则所限，我早就已经……",
+	feeling3 = "你的见识与眼界…确实与那些无聊的凡俗有所不同。不过，多少再多点“野心”就好了…",
+	lose = "可恶，今日我等蒙受的羞耻，他日一定要百倍讨回！",
+	propose = "按理说，心怀大志之人，不应被誓约这类事物所束缚，不过…既然对象是你，就稍微“迁就”下吧，在我们一同实现野心之前，可不要擅自消失了哦？",
+	expedition = "委托队伍回归了啊。指挥官，你应当同她们一起出行，看看远处那些风景。",
+	win_mvp = "啊？对面这就投降了？是我们做的吗？真伤脑筋啊~",
+	home = "我一直认为，秘书舰应当被赋予代为行事的权利——啊，当然是你不在的时候。",
+	mission = "任务？这点小事拖着可不好，迅速解决掉吧。",
+	touch2 = "啧，凡夫俗子的幼稚爱好……",
+	voice_key_2 = -1,
+	skill = "低头，然后臣服于我吧！",
+	drop_descrip = "战列舰-—马可波罗",
+	mail = "信件？是来议和的？那条件得由我们说了算。",
+	touch = "说吧，打扰我所为何事？",
+	profile = "我是撒丁帝国的战列舰，马可波罗。我不介意你拿我和维内托她们作比较，不过你要明确一点——如果我在那个位置，我会比她们做得更优秀。",
+	mission_complete = "琐事处理完了？很好，把精力放回更重要的事情上吧。",
+	feeling4 = "坐拥一个实力如此雄厚的舰队，你真的没有一点别的想法吗？真是让人惊讶…",
+	unlock = "唤醒我之人，做好付出相应代价的觉悟了吗？很好，我赞赏你的勇气！我乃马可波罗，让我们一起为弘扬帝国威光奋战吧！",
+	feeling5 = "你啊，没人说过要把“马克·波罗”，把我的名声发扬光大吧？！你这…你这…也太野心过头了吧？！",
+	main = "既然好的东西总会被人收入囊中，与其拱手让人，不如由我们来接收，不是吗？|东煌…那可是个遍地黄金的好地方！有机会的话再让我跟你好好说说吧！|从地图上看，这港区果然还是太小了…你啊，就不想再扩张下地盘吗？",
+	battle = "启程吧，战士们。为了荣光的复兴！",
+	upgrade = "不错！你也认识到了，只有更强的人才有配索求更多的利益。",
+	voice_key = 69901,
+	headtouch = "",
+	feeling2 = "没有畏惧我，而是试图靠近我，了解我吗？哼，随你便吧。",
+	login = "看来你已经有为事业而牺牲自己时间的觉悟了，不错！",
+	vote = "",
+	hp_warning = "危机也是转机，再来！",
+	id = 699010,
+	detail = "我不介意你做我的鲁思梯谦。倒不如说，我很享受这种被别人记录的感觉。哦对，失败的记录就不用写进去了。",
+	couple_encourage = {
+		{
+			{
+				60501
+			},
+			1,
+			"优柔寡断可当不了一个好的领导者哦。",
+			0
+		},
+		{
+			{
+				6
+			},
+			5,
+			"为了重振撒丁的荣光！",
+			3
+		}
+	}
+}
+_G.pg.base.ship_skin_words[699011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托组回来了。指挥官打算怎么迎接？",
+	win_mvp = "今天就由我来代替指挥官率先举杯吧！",
+	home = "哪会有主人不让仆人…女仆代办工作的？好了，这些工作我已经替你完成了。",
+	mission = "新任务来了哦？原来如此，女仆也负责提醒这个呢…",
+	touch2 = "哇！？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "要我当你的女仆？嗯哼，不愧是我看中的指挥官，这份勃勃野心非常棒！…哎，只是临时的吗？",
+	mail = "邮件放在那边了，就在你最容易够得到的地方。",
+	touch = "起居寝食礼仪杂务参谋战斗，无论什么都交给我吧！",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "要我当你的女仆？嗯哼，不愧是我看中的指挥官，这份勃勃野心非常棒！…哎，只是临时的吗？",
+	feeling5 = "",
+	main = "安克雷奇，我来教你个新魔术吧？把这张扑克像这样…嘿！就消失了~嗯？指挥官，不可以透露魔术原理哦？|港区到底有多少女仆呢…其中负责指挥室和指挥官房间的又是…算啦，不想这些没用的了！|指挥官偷懒的时候应该要…“矫正主人是女仆的职责！”这么说对吧？哼哼，知道就好！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "♪～怎么还没有给女仆的命令？你比我想象还不像个主人啊~",
+	vote = "",
+	hp_warning = "",
+	id = 699011,
+	detail = "听说指挥官的女仆，能在指挥官身边随侍的职位其实是相当有价值的呢。就是说，我现在这样会得到许多同伴的羡慕对吧？呵呵，呵呵呵呵呵♪",
+	couple_encourage = {}
+}
 _G.pg.base.ship_skin_words[701020] = {
 	feeling1 = "指挥官同志真奇怪，大家都说不要和奇怪的人说话，不过那样的话，指挥官会很寂寞的吧…？",
 	feeling3 = "虽然大家总是让我小心身边奇怪的人，但是指挥官同志应该不算是奇怪的人？唔，所以吃一点应该不会有问题吧",
@@ -54391,7 +55508,6 @@ _G.pg.base.ship_skin_words[701020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54425,7 +55541,6 @@ _G.pg.base.ship_skin_words[701021] = {
 	detail = "等一下哦。嘿咻…嗯，欢迎来到威严的房间。…唔？这孩子好像很害怕？为什么？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54459,7 +55574,6 @@ _G.pg.base.ship_skin_words[701022] = {
 	detail = "кролик今天放假，下次再见到的时候就是更强的кролик了。嗯，相信威严吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54493,7 +55607,6 @@ _G.pg.base.ship_skin_words[701023] = {
 	detail = "这些孩子们的机器人也是{namecode:98}做的？哼哼，看来贪财的猫也有派上用场的时候。小道具赞助，非常感谢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54527,7 +55640,6 @@ _G.pg.base.ship_skin_words[701024] = {
 	detail = "头发是长春帮我绑的，说是这样和衣服更搭。指挥官同志，你觉得威严这样好看吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701025] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54561,7 +55673,6 @@ _G.pg.base.ship_skin_words[701025] = {
 	detail = "咕嘟咕嘟…呼哇——喝了冰水后清爽多了。指挥官同志为什么在这里？嗯？因为担心威严？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701030] = {
 	feeling1 = "唉，指挥官同志真是个无趣的人啊。这样可不招人喜欢哦。",
 	feeling3 = "啊哈哈哈…指挥官同志，我们已经是好朋友了对吧，所以等一下大家来算账的时候能不能把我的也……欸？怎么指挥官同志先跑了啊！",
@@ -54604,7 +55715,6 @@ _G.pg.base.ship_skin_words[701030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54638,7 +55748,6 @@ _G.pg.base.ship_skin_words[701031] = {
 	detail = "肃静！你的典狱长来巡视啦♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701040] = {
 	feeling1 = "不要靠近塔什干，你这个讨厌鬼！",
 	feeling3 = "凭着“天蓝色的巡洋舰”这样的称号就擅自认为塔什干是可爱听话的好孩子，和塔什干接触以后又擅自失望…困扰的可是塔什干，你不觉得吗，同志酱？",
@@ -54690,7 +55799,6 @@ _G.pg.base.ship_skin_words[701040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54724,7 +55832,6 @@ _G.pg.base.ship_skin_words[701041] = {
 	detail = "同志酱，塔什干得保持这个状态到什么时候？…这样…欸？要一直这样！？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54758,7 +55865,6 @@ _G.pg.base.ship_skin_words[701042] = {
 	detail = "这么穿很“危险”？塔什干不是什么危险人物…还是说，危险的是同志酱？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701050] = {
 	feeling1 = "塔什干自己也能行。…不需要同志酱的帮助。",
 	feeling3 = "同志酱担心塔什干和大家的团队配合？哼，不用担心，北方联合的每个人都很擅长集体表演的。",
@@ -54801,7 +55907,6 @@ _G.pg.base.ship_skin_words[701050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701060] = {
 	feeling1 = "讨厌你！别过来！不然我要拿雪球砸你了！",
 	feeling3 = "必杀~雪球冻脖！这样就能让指挥官精神起来了，这是明斯克说的哦！…唔，指挥官…不会生气了吧？",
@@ -54844,7 +55949,6 @@ _G.pg.base.ship_skin_words[701060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54878,7 +55982,6 @@ _G.pg.base.ship_skin_words[701061] = {
 	detail = "唔，水星姐姐有点强啊，对战游戏总是赢不了她…指挥官，快陪我再“特训”一下！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701070] = {
 	feeling1 = "…你怎么还在这里？",
 	feeling3 = "就算你能瞒过善良的洪亮，也骗不过雷鸣。如果让雷鸣发现什么奇怪的举动，就用这家伙好好提醒你。嗯，就这样。",
@@ -54947,7 +56050,6 @@ _G.pg.base.ship_skin_words[701070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -54981,7 +56083,6 @@ _G.pg.base.ship_skin_words[701071] = {
 	detail = "洪亮在找雷鸣？唔…今天不太想出门，但是拒绝也…装病怎么样？果然不行么…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701080] = {
 	feeling1 = "指挥官同志…是不听话的坏孩子呀…",
 	feeling3 = "指挥官同志和雷鸣相处得还好吗？虽然看起来有点难以接近，但只要耐心一点，一定能和她搞好关系的！",
@@ -55051,7 +56152,6 @@ _G.pg.base.ship_skin_words[701080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55085,7 +56185,6 @@ _G.pg.base.ship_skin_words[701081] = {
 	detail = "哇，指挥官同志是怎样让纸飞机飞得这么远的呀？好厉害~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701090] = {
 	feeling1 = "坏掉的机械可以由别人修理，但做错事的指挥官同志必须要自己认真反省才行！",
 	feeling3 = "嘿，我敲！你问我在做什么…我在调整我的舰装哦！磨损的部分不用担心，一会再抛光就好了！哈哈哈哈！",
@@ -55137,7 +56236,6 @@ _G.pg.base.ship_skin_words[701090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55171,7 +56269,6 @@ _G.pg.base.ship_skin_words[701091] = {
 	detail = "唔哦？！把给指挥官同志泡的咖啡弄洒了？！这下糟糕了，非常地糟糕！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701100] = {
 	feeling1 = "是基辅让同志伤心了吗？如果基辅离开了的话，指挥官就会高兴起来了吗？",
 	feeling3 = "和基辅说话的同伴，渐渐地变多了……欸，是指挥官邀请的吗？谢谢…这样就可以了吧？",
@@ -55214,7 +56311,6 @@ _G.pg.base.ship_skin_words[701100] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[701101] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55248,7 +56344,6 @@ _G.pg.base.ship_skin_words[701101] = {
 	detail = "有了黑色的服装，基辅在这里不容易被发现。不过，显眼的头发，好像没办法都遮住……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[701102] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55282,7 +56377,6 @@ _G.pg.base.ship_skin_words[701102] = {
 	detail = "原本很冷的天，有指挥官在身边，好像变得暖和起来了……“这样啊，这就是指挥官的力量吧。”刚才试着模仿了下塔什干…怎么样？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702010] = {
 	feeling1 = "指挥官心中的黑暗……连我都无能为力吗",
 	feeling3 = "我的故乡？那里很美哦，不过指挥官去可能要做好保暖措施……我的话就算不穿衣服也不怕的，呵呵，您…想看看？",
@@ -55345,7 +56439,6 @@ _G.pg.base.ship_skin_words[702010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[702011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55379,7 +56472,6 @@ _G.pg.base.ship_skin_words[702011] = {
 	detail = "扮演公主还是挺有新鲜感的呢，呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55413,7 +56505,6 @@ _G.pg.base.ship_skin_words[702012] = {
 	detail = "这些黑手党的言行举动……适合我吗？{namecode:82}和甘古特，大家都说我不太适合呢…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702020] = {
 	feeling1 = "……坏心眼",
 	feeling3 = "哈啊啊…嗯？床单和软绵绵的枕头？哼~想得还真周到，辛苦你啦♪这下就能安心午睡了！那就…呼……Zzz……",
@@ -55457,7 +56548,6 @@ _G.pg.base.ship_skin_words[702020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[702021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55491,7 +56581,6 @@ _G.pg.base.ship_skin_words[702021] = {
 	detail = "奴唔唔…这个演习用的铁栏，也太坚固了吧？喂，甘古特，能不能快点来帮帮我啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55525,7 +56614,6 @@ _G.pg.base.ship_skin_words[702022] = {
 	detail = "好想一辈子埋在这个沙发里啊~太不健康了？欸~那就靠指挥官来照顾我好了~♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55559,7 +56647,6 @@ _G.pg.base.ship_skin_words[702023] = {
 	detail = "发个表情~不可以看了不回信哦！哈哈~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702024] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55593,7 +56680,6 @@ _G.pg.base.ship_skin_words[702024] = {
 	detail = "吃了甜的就会变困呢~指挥官，一起来枕头上滚来滚去吧？…还要继续吃吗…？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55627,7 +56713,6 @@ _G.pg.base.ship_skin_words[702029] = {
 	detail = "经过现代化改造？的我，无论从性能还是舰历还是可爱程度来说，都不会输给其他舰船哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702030] = {
 	feeling1 = "是不是给指挥官一些更严厉的“教育”比较好呢…嗯…真难办啊…",
 	feeling3 = "和部下的交流吗…没错，对于彼此托付性命的同伴来说，信赖是最重要的。希望指挥官能像我信赖你一样地信赖我呢",
@@ -55661,7 +56746,6 @@ _G.pg.base.ship_skin_words[702030] = {
 	detail = "指挥官，来聊聊天吧？互相了解才是最重要的，不是吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702031] = {
 	feeling1 = "指挥官才是需要在这边受训的人呢…",
 	feeling3 = "",
@@ -55695,7 +56779,6 @@ _G.pg.base.ship_skin_words[702031] = {
 	detail = "明明随时都能出去，为什么我还要留在这……指挥官？没、没什么，我什么都没说…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55729,7 +56812,6 @@ _G.pg.base.ship_skin_words[702032] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702033] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55763,7 +56845,6 @@ _G.pg.base.ship_skin_words[702033] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702034] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55797,7 +56878,6 @@ _G.pg.base.ship_skin_words[702034] = {
 	detail = "说到指挥者，似乎有着掌控演奏者的印象呢。指挥官呢？一同演奏乐章的你，直到最后都会好好陪伴着我吗？呵呵～",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702040] = {
 	feeling1 = "很抱歉，我想你已经不配被称为“同志”了。",
 	feeling3 = "对，你做得很好，Товарищ Офицер(指挥官同志)，自己选择的道路就应该贯彻下去，来吧，让我们看看我们还能走多远！",
@@ -55857,7 +56937,6 @@ _G.pg.base.ship_skin_words[702040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[702041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55891,7 +56970,6 @@ _G.pg.base.ship_skin_words[702041] = {
 	detail = "暂时的停歇是为了更好的前进，不过，可别松懈过头了哦，Товарищ Офицер（指挥官同志）。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55925,7 +57003,6 @@ _G.pg.base.ship_skin_words[702042] = {
 	detail = "该怎么惩罚干坏事的小家伙呢…也没什么，只是让这孩子帮点小忙而已。指挥官要不也偶尔来帮帮忙，顺便锻炼下身体？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702043] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -55959,7 +57036,6 @@ _G.pg.base.ship_skin_words[702043] = {
 	detail = "嗯，准备好了…指挥官同志，发号吧！然后亲眼确认我的伟业，以及我们的极限吧！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702050] = {
 	feeling1 = "……果然还是像恰巴耶夫一样，调教一下比较妥当呢。",
 	feeling3 = "又在这遇见了呢。不要紧吗？不冷吗？不仅是身体，我希望指挥官的心也一直都温暖健康呢。呵呵。",
@@ -56002,7 +57078,6 @@ _G.pg.base.ship_skin_words[702050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[702051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56036,7 +57111,6 @@ _G.pg.base.ship_skin_words[702051] = {
 	detail = "还是很在意绷带啊。抱歉，这个是准备装饰的时候不小心撞到的…让你担心了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702060] = {
 	feeling1 = "真的没问题吗？稍微有些担心你呢…",
 	feeling3 = "…哎呀，不好意思，刚顾着和小伙伴聊天，结果把指挥官跟丢了…果然还是给指挥官同志添麻烦了吧…",
@@ -56070,7 +57144,6 @@ _G.pg.base.ship_skin_words[702060] = {
 	detail = "这个尾巴不错吧？软绵绵轻飘飘摸起来很舒服的哦~嘻嘻，是我亲手制作的呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56104,7 +57177,6 @@ _G.pg.base.ship_skin_words[702061] = {
 	detail = "今天待在房间里没什么事，就不用特意换衣服了呢~指挥官同志也是，再随意一点也没关系哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[702070] = {
 	feeling1 = "指挥官同志，我觉得，我们还是有些合不来……抱歉。",
 	feeling3 = "我平时会看一些兵法书，它们能在我制定计划时提供一些灵感。指挥官同志感兴趣的话，我可以借你几本？比如这本《用距离感吸引你在意的——》……啊不好意思拿错了。",
@@ -56147,7 +57219,6 @@ _G.pg.base.ship_skin_words[702070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[702071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56181,7 +57252,6 @@ _G.pg.base.ship_skin_words[702071] = {
 	detail = "甘古特和塞瓦斯托波尔好像拿着伏特加去房间里了。她们该不会是想边泡温泉边又比酒量……唉。指挥官同志，一会去劝劝她们吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[703010] = {
 	feeling1 = "在发出指示之前先用脑子好好想想，我不想跟着连这种事都做不到的指挥官。",
 	feeling3 = "不想整天被我训，就自己把工作都做好来！你啊…不会是觉得被我念叨很开心吧？",
@@ -56242,7 +57312,6 @@ _G.pg.base.ship_skin_words[703010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[703011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56276,7 +57345,6 @@ _G.pg.base.ship_skin_words[703011] = {
 	detail = "你的责任可不仅仅是率领舰队，无论路上有多少艰难险阻，都得背负着大家的信念不断前进——当然，我会在一旁守护着你的。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[703012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56310,7 +57378,6 @@ _G.pg.base.ship_skin_words[703012] = {
 	detail = "无论什么工作，只有尽全力做好了才能衔接好后续的事务……如果你忘了这一点，忘一次，我就提醒你一次。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[703020] = {
 	feeling1 = "离我远一点。",
 	feeling3 = "与其说孤独，不如说我一直习惯避开人群。我的行事准则冷血而残酷，软弱和胆小的人最好不要和我为伍，那会伤害到她们。",
@@ -56362,7 +57429,6 @@ _G.pg.base.ship_skin_words[703020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[703021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56396,7 +57462,6 @@ _G.pg.base.ship_skin_words[703021] = {
 	detail = "……冷？我不怕，即使把这温泉换成冰河，我也能泡进去。倒是你，别泡了温泉之后就得意忘形，忘了晚上的寒风了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[705010] = {
 	feeling1 = "将莽撞当作勇气的人是没有未来的，同志啊",
 	feeling3 = "同志啊，希望你不要误会，这不仅仅是我们的战斗，更是你的战斗。不要仅满足于现状，我们要一起不断精进才行",
@@ -56447,7 +57512,6 @@ _G.pg.base.ship_skin_words[705010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[705011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56481,7 +57545,6 @@ _G.pg.base.ship_skin_words[705011] = {
 	detail = "同志啊，现在认罪还太早了！得全力抵抗，拼命逃跑直到最后一刻才行！这样你才能获得真正的成长！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[705012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56515,7 +57578,6 @@ _G.pg.base.ship_skin_words[705012] = {
 	detail = "同志啊，看了这些杂志上记载的故事吗？就是有这些努力的人们在，我们的时代才能变得越来越好啊！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[705040] = {
 	feeling1 = "罢了，我对你的事情一概不关心，别碍着我就好。",
 	feeling3 = "哦？看来你是不顾赌局的输赢，也要求助于我了吗？哈哈，反正也是一时兴起的赌局，就不计较输赢了！说吧，指挥官同志，需要我帮忙做什么？",
@@ -56558,7 +57620,6 @@ _G.pg.base.ship_skin_words[705040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[705041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56592,7 +57653,6 @@ _G.pg.base.ship_skin_words[705041] = {
 	detail = "指挥官喜欢看什么书？只是有点好奇，顺便看看下次给苏维埃罗西亚她们也推荐下。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[705050] = {
 	feeling1 = "这般消极的态度可不行。让我来进行强制矫正吧",
 	feeling3 = "指挥官同志，怎么了？不仅想与北方联合的一员，更想与作为个人的我加深感情？哼，主观的选择倒也不让人讨厌就是",
@@ -56654,7 +57714,6 @@ _G.pg.base.ship_skin_words[705050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[705051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56688,7 +57747,6 @@ _G.pg.base.ship_skin_words[705051] = {
 	detail = "高效的清除方法…啊，我说的是垃圾，不用露出这么担心的表情",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[705060] = {
 	feeling1 = "你还不够资格当指挥官，回炉重造吧！",
 	feeling3 = "唔…感觉有些累了…嗯？是指挥官啊，你最近工作也挺繁重的吧。不要太勉强自己哦？",
@@ -56739,7 +57797,6 @@ _G.pg.base.ship_skin_words[705060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[705061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56773,7 +57830,6 @@ _G.pg.base.ship_skin_words[705061] = {
 	detail = "看我如何华丽的拿走宝物吧！哼哼，可别小瞧皇家的优雅和北方联合的技巧哦。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[705070] = {
 	feeling1 = "你这家伙当个仆人是够格，不过对革命的理解还不够呢…",
 	feeling3 = "虽然不知道那些榆木军人是怎么评价的同志你的，不过你还是能当个不错的酒友呢。哼哼，今后也不要骄傲，继续努力吧。",
@@ -56833,7 +57889,6 @@ _G.pg.base.ship_skin_words[705070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[705071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56867,7 +57922,6 @@ _G.pg.base.ship_skin_words[705071] = {
 	detail = "说起来这身打扮是什么时…泡、泡温泉的时候要打扮成相应的样子才是！你看，这边的带子什么的，都好好系着对吧！？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[707010] = {
 	feeling1 = "好孩子可不能给伙伴添麻烦哦？对吧？",
 	feeling3 = "指挥官～要来杯伏特加吗…啊，现在在工作所以不能喝呢。那工作完了后我再来问吧♪",
@@ -56922,7 +57976,6 @@ _G.pg.base.ship_skin_words[707010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[707011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -56956,7 +58009,6 @@ _G.pg.base.ship_skin_words[707011] = {
 	detail = "好，这下一定要抓到证据。指挥官请从那边包抄。然后…这个给你，饿了的话可以拿来垫垫肚子。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[718010] = {
 	feeling1 = "指挥官同志，想要重新争取我的信任的话，你恐怕得下点功夫了啊。",
 	feeling3 = "一个人的力量是有限的，因此我有很多能帮我处理各种各样事务的“友人”。指挥官同志，我也是你的友人，有什么觉得自己难以做到的，就来依靠我吧。",
@@ -57013,7 +58065,6 @@ _G.pg.base.ship_skin_words[718010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[718011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57047,7 +58098,72 @@ _G.pg.base.ship_skin_words[718011] = {
 	detail = "啾啾们成为了人质？没办法，只能动用最终手段了…所有人，做好突击的准备！",
 	couple_encourage = {}
 }
-
+_G.pg.base.ship_skin_words[799010] = {
+	feeling1 = "我都有点好奇，到底是怎么做到能连续失败到这种程度的。真是糟糕。",
+	feeling3 = "啊…！什么啊，又是停电……啊并不是港区设施，而是我工作间出了问题。因为捣腾了挺多地方所以不太稳定……在恢复前指挥官就随便坐坐吧。",
+	lose = "啧，我可讨厌写检讨书了……！",
+	propose = "戒指啊……可以理解为收下这个的话，指挥官就欠我人情了吗？我当然乐意收下。因为跟指挥官有特殊关系的话，这样一来……就能更方便地调查你的身心了♡",
+	expedition = "委托结束了。差不多就这样吧，没什么特别的。",
+	win_mvp = "结束了？那就接着下一处吧。毕竟待在这不动也不会有工资。",
+	home = "看来是平安回来了。总结战斗的资料在这里。数据我已经整理好了，开会就交给你了。",
+	mission = "给指挥官的任务指令来了。先不论研究，实在不想为这种工作加班呢。",
+	touch2 = "是压力太大了吗？呵呵♡",
+	voice_key_2 = -1,
+	skill = "这下如何？",
+	drop_descrip = "航空母舰—契卡洛夫",
+	mail = "指挥官，有邮件，确认下吧。",
+	touch = "怎么了？要把咖啡端来吗？",
+	profile = "我是71B计划航母契卡洛夫。只要给工资我就会好好工作，而我要是提什么要求的话也会准备好相应的奖励——希望我们能构筑彼此双赢的关系吧。",
+	mission_complete = "任务结束。不知道今天能不能早点回到工作间……",
+	feeling4 = "指挥官还挺有胆量的嘛。你说什么意思吗？毕竟在这种地方跟我二人独处有多危险……你不可能没注意到吧？",
+	unlock = "打招呼是吧，知道了知道了……我是北方联合所属的计划舰契卡洛夫。这样可以了吗？就时间上而言，还是继续回去工作对我们双方来说更有意义吧？",
+	feeling5 = "我就直说了。我对指挥官还挺……不，是很有兴趣。你看，你是指挥港区舰船们的存在，不觉得从内到外仔细调查你机会很难得吗？呵呵♡",
+	main = "唉……要是这里有伏特加就好了……指挥室跟作业现场还是不一样啊，规矩之类的实在太死板了。|我对指挥官平时怎么选秘书舰感兴趣呢。难道是看外表决定的…？就算真是这样，也可以老实告诉我的哦♡|除了事务工作外，如果数据分析之类的也能交给我做就好了。本来工作就很无聊，要是能做些擅长的事大概还能多坚持会。",
+	battle = "还是要时不时来下前线才行啊……！",
+	upgrade = "欸——还有这种方式啊。",
+	voice_key = 79901,
+	headtouch = "",
+	feeling2 = "平时我就住在这个工作间。反正有可以睡觉的地方，三餐的话点外卖就好。指挥官要不也住一次试试吧？",
+	login = "哎呀，挺勤奋的嘛。那么我也要好好做好这份秘书舰的工作了。",
+	vote = "",
+	hp_warning = "真让我费事……！",
+	id = 799010,
+	detail = "你就是来聊天的对吧？要是真有事也不用我先开口了。我现在很忙所以就这么听着了，你有什么说就是。",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[799011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托组回来了。啊，她们和其他伙伴汇合了呢。指挥官不去吗？",
+	win_mvp = "奖励的话……之后能让我好好研究指挥官的身体吗？不可以？",
+	home = "是和同伴们玩了一阵子么？那就好好休息吧。",
+	mission = "在做任务的时候能冒出新的想法就好了。",
+	touch2 = "“来契卡洛夫老师的怀里吧♡”……呵呵~",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "不去海边，来这样的地方做什么呢？明明是假日，却没有和伙伴们在一起，反而是来看契卡洛夫——也没什么哦。所谓休息日，就是可以各自决定要做什么的日子对吧？",
+	mail = "",
+	touch = "是想开瓶伏特加的心情呢。",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "不去海边，来这样的地方做什么呢？明明是假日，却没有和伙伴们在一起，反而是来看契卡洛夫——也没什么哦。所谓休息日，就是可以各自决定要做什么的日子对吧？",
+	feeling5 = "",
+	main = "从视线到被问感想时的反应——指挥官对泳装的爱好，我好好观察了一番呢，呵呵。|还在工作吗？明明是假日，真是勤奋。……不要紧，我知道你是为了大家，之后我会好好慰劳你的。|平时北方联合里不少伙伴们都穿得厚实，所以能看到泳衣装扮算是眼福吧？当然是对指挥官而言的。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "一起欣赏落日——这也挺不错的不是么？",
+	vote = "",
+	hp_warning = "",
+	id = 799011,
+	detail = "海风是不错，不过日晒有点受不了。习惯了在工作间过日子，也难怪会变得不擅长应付太阳。指挥官也是，别在指挥室待太久了。",
+	couple_encourage = {}
+}
 _G.pg.base.ship_skin_words[801010] = {
 	feeling1 = "指挥官原来…是这样的人啊…",
 	feeling3 = "为了各自的理想与抱负，即使是至亲之人，也可能分道扬镳，甚至兵戎相见，真是…令人悲伤",
@@ -57098,7 +58214,6 @@ _G.pg.base.ship_skin_words[801010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[801020] = {
 	feeling1 = "如果姐姐们知道了我选择效忠的是这样的对象，不知道会斥责我，还是怜悯我呢…",
 	feeling3 = "为什么平时要练习剑术？虽然出击的时候不一定用得上，但是能让自己一直保持在最佳状态，对战斗是有利无弊的",
@@ -57141,7 +58256,6 @@ _G.pg.base.ship_skin_words[801020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[801021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57175,7 +58289,6 @@ _G.pg.base.ship_skin_words[801021] = {
 	detail = "嗯？要来点新鲜的水果吗，指挥官？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57209,7 +58322,6 @@ _G.pg.base.ship_skin_words[801022] = {
 	detail = "我参加了剑道社。这样在学习之余，我也能与同伴们一起练习剑术，提升自己的实力了——呃？这个剑不一样吗！？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801023] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57243,7 +58355,6 @@ _G.pg.base.ship_skin_words[801023] = {
 	detail = "勒马尔在哪里？真是的，又不做作业—我要好好说说她…指挥官也是，也来好好教训一下…欸，奇怪？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801028] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57277,7 +58388,6 @@ _G.pg.base.ship_skin_words[801028] = {
 	detail = "包围仪式现场的繁多花朵，光看着就让人充满了幸福感呢，诶嘿嘿~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801029] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57311,7 +58421,6 @@ _G.pg.base.ship_skin_words[801029] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801030] = {
 	feeling1 = "这样下去的话指挥官会没有朋友的！",
 	feeling3 = "我约了朋友们一起在休息区玩游戏呢。指挥官也一起来吧！",
@@ -57354,7 +58463,6 @@ _G.pg.base.ship_skin_words[801030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[801031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57388,7 +58496,6 @@ _G.pg.base.ship_skin_words[801031] = {
 	detail = "指挥官，觉得我的泳装怎么样？啊，顺便一提，倔强她的泳装也是我帮忙选的哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801032] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57422,7 +58529,6 @@ _G.pg.base.ship_skin_words[801032] = {
 	detail = "这个棒棒糖是之前{namecode:33}给我的！啊，要对敦刻尔克保密哦？不然下次她就得做一堆糖出来了~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801040] = {
 	feeling1 = "能不能把指挥官变成透明人呢……",
 	feeling3 = "指挥官，看着这个小球。左边……右边……左边……右边……唔…催眠术失败了吗…？",
@@ -57465,7 +58571,6 @@ _G.pg.base.ship_skin_words[801040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[801041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57499,7 +58604,6 @@ _G.pg.base.ship_skin_words[801041] = {
 	detail = "指挥官，一直盯着女生的泳装看，可不是什么绅士的行为。而且，这样很让人害羞……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801070] = {
 	feeling1 = "要忏悔的话，请移步到枢机卿大人那里。",
 	feeling3 = "只是闲聊么？那，生命，爱情，和自由，对您而言哪个是最重要的呢？呵呵呵，不用着急回答。我就是想看看指挥官大人纠结烦恼的样子才这么问的。",
@@ -57558,7 +58662,6 @@ _G.pg.base.ship_skin_words[801070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[801071] = {
 	feeling1 = "Zzzzz",
 	feeling3 = "Zzzzz",
@@ -57592,7 +58695,6 @@ _G.pg.base.ship_skin_words[801071] = {
 	detail = "姐姐、妹妹们…要一直在一起……Zzzzz…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801072] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57626,7 +58728,6 @@ _G.pg.base.ship_skin_words[801072] = {
 	detail = "对于不擅长运动的我来说，像这样随波逐流便是我享受大海的方式哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801080] = {
 	feeling1 = "一起成为能独当一面的人吧！我要做能独当一面的护教骑士，指挥官也要做能独当一面的指挥官才行！",
 	feeling3 = "指挥官，如果战斗前觉得不安，只要这样做就好——一起握着手，“自由鸢尾庇佑”…嗯！",
@@ -57693,7 +58794,6 @@ _G.pg.base.ship_skin_words[801080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[801081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57727,7 +58827,6 @@ _G.pg.base.ship_skin_words[801081] = {
 	detail = "那个可疑的影子不是幽灵，而是啾啾吗？怎怎怎怎、怎么可能！区区啾啾怎么可能吓到我嘛！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[801082] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57761,7 +58860,6 @@ _G.pg.base.ship_skin_words[801082] = {
 	detail = "能被这么多甜点包围着的我超级幸福！而且最重要的是，这些都是黎塞留大人赐予我的！哼哼♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[802010] = {
 	feeling1 = "从你的身上感受不到热情呢……",
 	feeling3 = "只有细心留意，才能发掘生活中的美。而珍惜这些细小的美好，我觉得，就是浪漫的本质哦",
@@ -57795,7 +58893,6 @@ _G.pg.base.ship_skin_words[802010] = {
 	detail = "舞蹈能给大家带来欢乐，所以我喜欢跳舞~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[802011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57829,7 +58926,6 @@ _G.pg.base.ship_skin_words[802011] = {
 	detail = "指挥官，来玩沙滩排球吗？我很擅长哦~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[802012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57863,7 +58959,6 @@ _G.pg.base.ship_skin_words[802012] = {
 	detail = "无论衣装朴素亦或华丽，只要用心体会，就一定能发现其中独特的浪漫！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[802013] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57897,7 +58992,6 @@ _G.pg.base.ship_skin_words[802013] = {
 	detail = "并非只有鲜艳的花朵才能站在舞台的中心，挺拔的绿叶一样也能成为主角哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[802019] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -57931,7 +59025,6 @@ _G.pg.base.ship_skin_words[802019] = {
 	detail = "现在的我，一定能为更多的人带去美妙的舞蹈",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[802020] = {
 	feeling1 = "若你是魔鬼，我将用此剑斩下你。若你只是误入了歧途，那就赶紧醒悟过来吧！",
 	feeling3 = "我手中的剑，并非为独自挥舞而生。它为你而挥，为鸢尾而挥，也为这舰队所有人而挥。",
@@ -57974,7 +59067,6 @@ _G.pg.base.ship_skin_words[802020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[802021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58008,7 +59100,6 @@ _G.pg.base.ship_skin_words[802021] = {
 	detail = "港区里居然能构建出这么逼真的场景，真是令人吃惊…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[802030] = {
 	feeling1 = "呵呵，如果是指挥官，这种程度的应该很快就能振作起来吧…？",
 	feeling3 = "关于我房间里有个奇怪大锅的传言…？嗯，确实有一个用来煮草药的大锅…不过，不知道引起传言的是哪一部分呢？是因为大锅，还是因为吉尚——呵呵，很在意吗？",
@@ -58061,7 +59152,6 @@ _G.pg.base.ship_skin_words[802030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[802031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58095,7 +59185,6 @@ _G.pg.base.ship_skin_words[802031] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[803010] = {
 	feeling1 = "我可不想生指挥官的气。好好振作吧。",
 	feeling3 = "帮忙工作或者在战斗中保护你...嗯——我能为指挥官做的事情，好像和其他的伙伴们没有什么区别...该怎么办呢...",
@@ -58138,7 +59227,6 @@ _G.pg.base.ship_skin_words[803010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[803011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58172,7 +59260,6 @@ _G.pg.base.ship_skin_words[803011] = {
 	detail = "指挥官，怎么样？这幅打扮的姐姐可不常看到吧？哼哼，其实我跟福煦还有阿尔及利亚她们一样，也很注重打扮呢♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[805010] = {
 	feeling1 = "不思进取者，终将步向破灭。好好记住这点吧。",
 	feeling3 = "你来了，指挥官，请坐吧，想喝点什么？…不用太过拘谨，即便是我，在工作与教务之外，也有像这样与常人无二的生活。即使是最虔诚的教徒，也不能光靠信仰生存，她们同样需要食物与美酒",
@@ -58262,7 +59349,6 @@ _G.pg.base.ship_skin_words[805010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[805011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58296,7 +59382,6 @@ _G.pg.base.ship_skin_words[805011] = {
 	detail = "鸢尾的教义里并没有规定人不需休息。今天大家就尽情放松，把这样的日子当成来自神的祝福就好",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[805012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58330,7 +59415,6 @@ _G.pg.base.ship_skin_words[805012] = {
 	detail = "相信我，跟随我，你会得到你想要的。祈祷，并且寻找吧，光明的大道，手中的幸福，崭新的一天，都将呈现在你眼前。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[805020] = {
 	feeling1 = "请不要误入歧途。如果不得不对您出手，我不会手下留情。",
 	feeling3 = "正是因为倾注了心血，仪式和典礼往往容易变得愈加繁琐。即使内心明白无需如此，但却还是难以压抑那虚荣之心——人或许就是这样的生物吧。",
@@ -58364,7 +59448,6 @@ _G.pg.base.ship_skin_words[805020] = {
 	detail = "我觉得不会有太多人需要……但如果港区的同伴们如果想忏悔……不，咨询的话，随时欢迎找我。嗯？已经有同伴开始做类似的事了……？那真是太好了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[805021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58398,7 +59481,6 @@ _G.pg.base.ship_skin_words[805021] = {
 	detail = "原来这种锻炼，被称为“控制术”啊，通过合理的姿势和运动来练习支配肌肉和精神——真是深奥啊。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[807010] = {
 	feeling1 = "您是我见过最英明的指挥官，您的所作所为都是对的——在指挥官大人梦里的话，我也许会这么说呢。",
 	feeling3 = "“魔导书”？倔强是这么向您介绍的啊，真是有趣的说法呢~很抱歉，指挥官大人。我突然想起了一件急事，请允许我先离开一下。",
@@ -58460,7 +59542,6 @@ _G.pg.base.ship_skin_words[807010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[807011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58494,7 +59575,6 @@ _G.pg.base.ship_skin_words[807011] = {
 	detail = "大家都以自己的方式在享受着盛夏的海滩呢，指挥官大人也去加入她们如何？堆沙堡或是打排球什么的…我？我的话，还是在这里看着大家就好",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[807020] = {
 	feeling1 = "遇见指挥官后，不详的征兆变多了，这到底是为什么……",
 	feeling3 = "这些是今天的“幸运物品”，请带上它们吧……真的很灵验的哦，一定能为指挥官带来好运的！",
@@ -58547,7 +59627,6 @@ _G.pg.base.ship_skin_words[807020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[807021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58581,7 +59660,6 @@ _G.pg.base.ship_skin_words[807021] = {
 	detail = "这个姿势稍微有些羞耻……啊，也、也不是让您移开目光的意思……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[808010] = {
 	feeling1 = "啊，指挥官，你继续工作吧，我没有指挥官在身边也比较开心哦",
 	feeling3 = "嘿，指挥官，一起出去玩吗？就逛逛街，散散步，躺在草地上睡午觉什么的~",
@@ -58615,7 +59693,6 @@ _G.pg.base.ship_skin_words[808010] = {
 	detail = "指挥官，来制作属于我们舰队的旗帜吧~就像我这面代表自由鸢尾的旗帜一样",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[808011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58649,7 +59726,6 @@ _G.pg.base.ship_skin_words[808011] = {
 	detail = "这个摩托真的很不错呢！好骑结实价格又实惠～感谢感谢♪",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[808012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -58683,1895 +59759,287 @@ _G.pg.base.ship_skin_words[808012] = {
 	detail = "虽然身为潜艇，平时都会和海水打交道，不过能和沙滩亲密接触的机会可不常有呢…所以，能享受的时候还是要好好享受才行~",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[901010] = {
-	feeling1 = "啊，是指挥官！我、我还是自己去跑步锻炼吧！",
-	feeling3 = "指挥官愿意教我学习吗？哇！谢谢指挥官！我一定会……欸欸欸，要学这么多东西吗！我、我忽然肚子疼了！",
-	lose = "糟了，快撤快撤！",
-	propose = "唔……这种场合应该怎么办才好来着，我完全不知道耶…那、那个，总、总而言之，未来也请，那个，请多多指教！",
-	expedition = "大家回来了。我这就跑过去接她们，嘿~",
-	win_mvp = "我是第一吗？太好了！嘿嘿~",
-	home = "指挥官，不流点汗的话可是要变胖的！",
-	mission = "还有任务呢。要跑腿的话，尽管和我说吧！",
-	touch2 = "这，这里也要按摩吗？感觉……有点奇怪啊……",
+_G.pg.base.ship_skin_words[899010] = {
+	feeling1 = "这里的同僚皆是义人，唯独你不是。接受神的审判吧，罪人",
+	feeling3 = "在这里的同僚们总是那么阳光，似乎没有什么能让她们烦恼，这里就是属于她们的迦南吗……",
+	lose = "我的神，为什么背弃我……",
+	propose = "你的身边将是我的归所，你的胜利将是我的荣光，你的喜悦将是我唯一的动力。感谢神将我送到了你的面前，我的先知，我的爱人，我的……光",
+	expedition = "指挥官，我看到委托的同僚们返回了",
+	win_mvp = "尘归尘，土归土……",
+	home = "战士承受苦难，不过大家都挺了过来",
+	mission = "指挥官，虽然不是神的旨意，不过军部的任务下达了",
+	touch2 = "指挥官，请自重……",
 	voice_key_2 = -1,
-	skill = "我要上咯~！",
-	drop_descrip = "维希教廷机敏级驱逐舰—勒马尔",
-	mail = "有信件！我已经拿过来啦，嘿嘿~",
-	touch = "正好肩膀酸了呢……谢谢指挥官啦！",
-	profile = "我是机敏级的驱逐舰，同时也是维希教廷的见习骑士，勒马尔。一直在为维希教廷服务，最后为了不让铁血得逞而被白鹰在港口击沉…",
-	mission_complete = "任务完成！……嗯，还有奖励的吗？",
-	feeling4 = "好像有点明白了，又好像还是不明白……不过指挥官愿意教我这个笨蛋好开心呀，谢谢指挥官~",
-	unlock = "嗯？你是……啊，对了，是指挥官！我是机敏级驱逐舰勒马尔，以后请多多指教啦！",
-	feeling5 = "虽然书上的知识还是不太明白，不过有一件事我现在明白了，那就是，只要是有关指挥官的事，我就能发挥出200%的力量！",
-	main = "指挥官，我来教你一些可以坐着舒活筋骨的动作吧~|当指挥官可真不容易啊，要看这个还要安排那个的，换了我肯定一下就晕了……|唔，学习好痛苦…书上的字明明每个都认识，组合起来就完全看不懂了呢",
-	battle = "准备活动完成！要上了！",
-	upgrade = "又变强了呢，谢谢指挥官~",
-	voice_key = 90101,
+	skill = "神爱世人",
+	drop_descrip = "重巡洋舰-—路易九世",
+	mail = "指挥官，信件不拆封没有关系吗",
+	touch = "以战止战，这是我唯一能做的",
+	profile = "因为故土突逢苦难，我的诞生被迫取消。而神说，你的使命留待来日。所以我出现在了这里。指挥官，你将为我指引方向，而我，则为你扫平前路",
+	mission_complete = "奖励吗……虽然都是些不错的东西，不过我没有兴趣",
+	feeling4 = "我能感觉到我正在被这支舰队接纳，但是这里真的是我的应许之地吗……我并不是怀疑，只是觉得，应该还有更深的含义",
+	unlock = "很荣幸见到你，我的先知，我的引路人，我的指挥官。路易九世，听从神的旨意来到你的麾下，只要不违背公理道德，我手中之枪，任凭驱使",
+	feeling5 = "我明白了，指挥官，现在我能体会到和同僚们一样……不，甚至在那之上的充实感。迦南并不是这里，而是你的身边",
+	main = "指挥官，你的时间不应该花在这里，杂务就交给我吧|指挥官，同僚之间如果有什么纠纷，就交给我来仲裁吧，那是我的强项|战斗的胜利是我的终点，但指挥官，你应该将目光放在更高更远的地方",
+	battle = "赐你们平等的毁灭",
+	upgrade = "为了我们的使命……",
+	voice_key = 89901,
 	headtouch = "",
-	feeling2 = "都说一名优秀的骑士，不仅要有保护他人的力量，也要通过学习让自己拥有强大的内心……可是我翻书就犯困，怎么办呀",
-	login = "指挥官，你终于来啦，今天我的训练任务是什么？",
+	feeling2 = "这里就是我未来的容身之所吗……那么，这里究竟是索多玛，还是迦南呢……",
+	login = "bonjour，指挥官，告诉我，接下来我该做什么？",
 	vote = "",
-	hp_warning = "唔，这点小伤，忍一忍就过去了！",
-	id = 901010,
-	detail = "其实我挺羡慕福尔班的，虽然她当时也无法行动，至少比我要好…",
-	couple_encourage = {
-		{
-			{
-				80102
-			},
-			1,
-			"福尔班，我先上喽？",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[901011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "要是因为我是轻装就大意的话，下场就是这样了呢~",
-	home = "嘿嘿，指挥官忙完了吗？那就准备出发吧~——去哪？当然是海边啦~",
-	mission = "",
-	touch2 = "这、这里也不需要防晒啦，指挥官…",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "夏天~夏天来了哟指挥官！一起来海边玩水吧~水枪大战我可是很强的哟~",
-	mail = "",
-	touch = "防晒霜？那种东西不需要啦~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "夏天~夏天来了哟指挥官！一起来海边玩水吧~水枪大战我可是很强的哟~",
-	feeling5 = "",
-	main = "指挥官~要不要一起吃西瓜呀~？|就算是夏天，也不能整天窝在空调房里哟~一起出去外面玩吧~|指挥官也来把自己晒黑吧，这样我们就一样了呢，嘻嘻~",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，难得的夏天，可不能那么没精神哦~一起享受阳光和沙滩吧~",
-	vote = "",
-	hp_warning = "",
-	id = 901011,
-	detail = "这个不只是游泳圈，还是水炮的“弹药舱”呢，嘿嘿，你想尝尝威力吗，指挥官？",
+	hp_warning = "这也是神的考验……",
+	id = 899010,
+	detail = "指挥官，你也要来向神祷告吗？",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[901012] = {
+_G.pg.base.ship_skin_words[899011] = {
 	feeling1 = "",
 	feeling3 = "",
 	lose = "",
 	propose = "",
 	expedition = "",
 	win_mvp = "",
-	home = "不，不行了……课本上的东西完全看不进去……",
-	mission = "",
-	touch2 = "我现在不需要按摩啦……",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "喂——看这边看这边！嘿嘿，能在学园里遇到指挥官真巧呢~指挥官这是要去哪里呀？",
-	mail = "",
-	touch = "再大的风我也不怕！",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "喂——看这边看这边！嘿嘿，能在学园里遇到指挥官真巧呢~指挥官这是要去哪里呀？",
-	feeling5 = "",
-	main = "指挥官，多安排一些体育课嘛！那……那当然是因为运动很重要啦！|休息的时候，听点音乐能让人心情更舒畅！指挥官，你要一起吗？|诶？福尔班又拿着学习资料来了吗？有，有没有地方能藏一下——",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "今天的校园生活也要加油！",
-	vote = "",
-	hp_warning = "",
-	id = 901012,
-	detail = "说到校园生活，那一定就是迎着阳光在操场上奔跑了，对吧！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901013] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "也许是好好热过身的缘故吧~嘿嘿~",
-	home = "指挥官看上去有些累呢。要不稍微做做伸展运动吧！适当动动还能转换心情哦。",
-	mission = "",
-	touch2 = "这，这也是练习的一部分吗…？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "指挥官，谢谢你来接我！平时很难有机会穿得这么正式呢，活动起来也感觉不太方便…啊，不过我会加油的——",
-	mail = "",
-	touch = "香槟的拿法应该是这样的，对吗？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "指挥官，谢谢你来接我！平时很难有机会穿得这么正式呢，活动起来也感觉不太方便…啊，不过我会加油的——",
-	feeling5 = "",
-	main = "不行了……一读关于礼仪的书就好困……欸，指挥官会陪我做礼仪举止的练习吗？太好了！|说起来，指挥官你有看到福尔班吗？她明明不能喝还老是喜欢勉强…唔，有种不祥的预感…|呼…总算是和大家都打过一圈招呼了。我紧张得都全身僵硬了，指挥官竟然能应对得这么自然…果然好厉害！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官早上好！今天要从什么工作开始呢？",
-	vote = "",
-	hp_warning = "",
-	id = 901013,
-	detail = "在电影里好像会这样转圈圈对吧？指挥官，怎么样？希望我学得像……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901019] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "那么，摆个胜利的pose……欸，大家等等我嘛！",
-	home = "欢迎回来，指挥官！来准备下一次出击吧~？",
+	home = "比起像一尊雕塑一样坐在这里，我更想与你一起踏上战场，指挥官",
 	mission = "",
 	touch2 = "",
 	voice_key_2 = -1,
 	skill = "",
-	drop_descrip = "改·造·完·成！得到全新力量的勒马尔，前来报道~嘿嘿，指挥官，我是不是看起来更可靠了呢~？",
+	drop_descrip = "恕我直言，指挥官，华服与王座与我并不相称，虽然继承了路易九世之名，但我只是一名战士——好吧，你似乎很喜欢的样子，我就悉听遵命吧",
 	mail = "",
-	touch = "嘿嘿，换我给指挥官按按肩膀怎么样？",
+	touch = "武器就在我的身边，如果要上战场，我随时都可以",
 	profile = "",
 	mission_complete = "",
 	feeling4 = "",
-	unlock = "改·造·完·成！得到全新力量的勒马尔，前来报道~嘿嘿，指挥官，我是不是看起来更可靠了呢~？",
-	feeling5 = "",
-	main = "嘿嘿，指挥官，这个姿势是不是很帅？我从动画里学来的哦|委托也好，出击也好，都尽管来吧~现在的我不会让指挥官失望的~|有什么需要我做的吗？能帮指挥官再多分担点就好了呢~",
+	unlock = "恕我直言，指挥官，华服与王座与我并不相称，虽然继承了路易九世之名，但我只是一名战士——好吧，你似乎很喜欢的样子，我就悉听遵命吧",
+	feeling5 = "外在的修饰对一名战士而言毫无意义——本该是这样的。但神同样承认爱情，鼓励爱情。而我既是你的战士，也是你的爱人，那么，如果能让你喜悦，我愿意做任何事",
+	main = "指挥官，现在的我有这么惹人注目吗？我能感受到你的视线——不，我对此并不反感|坐在这里仲裁同僚之间的纠纷？那就…失礼了，让我先好好听听她们所言所感吧。|指挥官，你是这里的统帅，我想这王座应当由你来坐才最合适",
 	battle = "",
 	upgrade = "",
 	voice_key = 0,
 	headtouch = "",
 	feeling2 = "",
-	login = "鱼雷和炮弹都准备就绪啦~指挥官，我随时可以出击哟~",
+	login = "指挥官，让我一个人坐在这里是一种煎熬",
 	vote = "",
 	hp_warning = "",
-	id = 901019,
-	detail = "指挥官，又想来欣赏我全炮门雷舱全开的英姿了吗？嘿嘿，真是没办法呢~",
+	id = 899011,
+	detail = "我并不是反感做这样的事，我只是并不能理解这么做的意义，难道我仅仅坐在这里就能让你获得快乐吗？",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[901020] = {
-	feeling1 = "指挥官，能安静一些吗，思路要被打断了。",
-	feeling3 = "我的坏习惯是一旦开始想事情，很容易无视周围环境陷入沉思之中。这样的话，没有办法成为可以照顾他人的成熟女性吧......",
-	lose = "嗯…果然，刚才那一发炮弹应该再右移一点比较好…啊，对不起，已经要撤退了对吧…！",
-	propose = "指挥官喜欢现在这样的我吗？嗯，我也喜欢现在这样的指挥官哦。但是，总觉得一直在被指挥官单方面照顾......我一定会努力成为成熟的女性，成为可以照顾指挥官的人！",
-	expedition = "差点忘记了。指挥官，远征完成了哦。",
-	win_mvp = "……啊，抱歉，谁是MVP来着？欸，我是MVP？",
-	home = "该用什么样的方式欢迎指挥官回来比较好呢…",
-	mission = "上次任务得到的奖励，要怎么使用比较好呢…咦，又有新的任务发下来了吗？",
-	touch2 = "唔…按照沃克兰推荐的书来说…这种时候应该是…证据确凿，人赃俱获…吧？",
-	voice_key_2 = -1,
-	skill = "这种情况下应该…这样！",
-	drop_descrip = "维希教廷沃克兰级驱逐舰—塔尔图",
-	mail = "啊…对了，我是来给指挥官送信的",
-	touch = "……啊！指挥官，关于前面你问的的那个问题…欸？已经没问题了吗？这样啊…",
-	profile = "我是维希教廷的塔尔图，在战争中一直在陆间海服役，也参与了皇家发动的那场战役，最后在土伦和其他姐妹们一同迎来了结局…嗯？我对过去没有什么特别的想法呢…“重要的是现在！”如果是沃克兰的话，大概会这么说吧，呵呵…",
-	mission_complete = "任务完成。报告的排序，应该按照优先级、完成时间、还是报酬多少呢，唔.......",
-	feeling4 = "指挥官一直都在配合着我的节奏聊天呢……谢谢你。不过，有时候也请直接地打断我，如果是指挥官的话，我是不会生气的…",
-	unlock = "你好，指挥官，我是沃克兰级的塔尔图…—啊，抱歉，我只是在想，这座港口真大呢…",
-	feeling5 = "最近，只要一想到指挥官的事，就会陷入比以往更久的深思之中。感觉状况更严重了.....唔—啊！抱歉，指挥官，我又走神了…",
-	main = "指挥官，你觉得我能够成为敦刻尔克那样可以照顾别人的成熟女性么？|沃克兰说想要成为成熟的女性，首先要有成熟的精神，于是推荐我多读读推理小说，实际读过以后，其实还挺有趣的呢，呵呵|沃克兰很喜欢运动呢。运动，疲劳，休息，营养，糖分……唔，有点想吃敦刻尔克做的甜点了",
-	battle = "集中精神…！",
-	upgrade = "感觉，好像变得厉害了一点",
-	voice_key = 90102,
-	headtouch = "",
-	feeling2 = "疼--！原来是树枝...啊，指挥官，早上好。嗯？我只是在散步的时候想事情入迷了。请不要在意，对我来说，这是很常有的事。",
-	login = "啊，指挥官，你好。我正在想你怎么还没有来呢",
-	vote = "",
-	hp_warning = "唔，要更加集中注意力！",
-	id = 901020,
-	detail = "照顾人的敦刻尔克，优雅大方的阿尔及利亚，正气凛然的黎塞留…大家都是充满成熟魅力的女性呢，嗯，我也要以她们为目标，努力加油才行！",
-	couple_encourage = {
-		{
-			{
-				90103
-			},
-			1,
-			"沃克兰，不要逞强哦",
-			0
-		},
-		{
-			{
-				90401
-			},
-			1,
-			"和敦刻尔克一起……要、要加油！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[901021] = {
+_G.pg.base.ship_skin_words[899012] = {
 	feeling1 = "",
 	feeling3 = "",
 	lose = "",
 	propose = "",
-	expedition = "",
-	win_mvp = "想吃敦刻尔克做的甜甜圈…",
-	home = "",
-	mission = "",
-	touch2 = "怎么了，指挥官？棒冰？…啊，滴下来了，好冰！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "指挥官不去海里玩吗？……嗯？我就不去了。之前有过因为走神而被海浪冲到远方的经历，被沃克兰笑了好久啊……嗯，我坐在这里就好",
-	mail = "唔，和指挥官聊的太开心好像忘了一件事……啊，是新的信件！",
-	touch = "",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "指挥官不去海里玩吗？……嗯？我就不去了。之前有过因为走神而被海浪冲到远方的经历，被沃克兰笑了好久啊……嗯，我坐在这里就好",
-	feeling5 = "",
-	main = "指挥官，我和白鹰的麦考尔还有皇家的萨福克成为朋友了，大家都是很有趣的人呢。|沃克兰，这次我是绝对不会下水的，我要一直待在岸上，就这样度过美好的一天。|指挥官不穿泳装吗？唔，嗯，我有点在意，很想看……",
-	battle = "才不会被浪吹走呢…！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "啊，指挥官，你好。要吃棒冰吗？",
-	vote = "",
-	hp_warning = "",
-	id = 901021,
-	detail = "啊，指挥官，我正在回忆最近读过的一本，关于发生在沙滩上的凶杀案的侦探小说呢",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901030] = {
-	feeling1 = "指挥官，你知道吗，我最讨厌的，就是没有自知之明的人了",
-	feeling3 = "话说，以前塔尔图来向我咨询如何成为成熟女性时，我随口给了让她多看推理小说的建议，结果她真的听进去了……感觉，有点对不起她……",
-	lose = "欸，指挥官，你难道在征求我的意见？这种事交给指挥官解决就好啦！",
-	propose = "欸，指挥官，你之前说要和我契约难道是来真的？……欸，虽然我也不是说哎呀一定是骗人的，是玩笑……但是，你确定你知道自己在说什么吧？",
-	expedition = "接下来是委托完成，的，通，知——！唔唔，好啦，普通地迎接大家就行了对吧",
-	win_mvp = "第一名！让我摆个超帅的pose！……呜哇，大家的眼神好伤人！",
-	home = "指挥官，来，让我摸摸你的头奖励你……呀哈哈，不要露出那副表情嘛~",
-	mission = "任务？哼哼，终于到了我出场的时候了吗！",
-	touch2 = "指挥官，我稍微有点受到了惊吓……",
-	voice_key_2 = -1,
-	skill = "我还蛮厉害哦，大概！",
-	drop_descrip = "维希教廷沃克兰级驱逐舰—沃克兰",
-	mail = "邮件？啊，我这就去拿！",
-	touch = "干嘛干嘛，有重要的事拜托我吗？",
-	profile = "（虽然很想做个超帅的自我介绍，但是我的舰历确实没有什么值得一提的呢，除了护送过敦刻尔克和阿尔及利亚……）嗯，这样吧，我是维希教廷的沃克兰，将来会成为很厉害的舰船！怎么样！",
-	mission_complete = "指挥官，任务报酬一定有很多吧！？欸，没有吗！",
-	feeling4 = "是不是真的笨蛋先不提，偶尔装傻是有好处的哦，这样的话，在聪明的时候就会让大家觉得，哇，沃克兰好像很聪明！……应该有吧？！",
-	unlock = "锵锵锵锵！沃克兰级大型驱逐舰一号舰，沃克兰，闪亮登场~欸，指挥官，不要露出那种表情嘛，我可是很厉害的哦！大概！",
-	feeling5 = "不过，老实说，当个笨蛋有时候很快乐哦，不用去想复杂的事情，而且还能给大家带来欢乐，推荐指挥官你要是累了的话也来试试~",
-	main = "指挥官，你好像很无聊的样子，我来给你表演个舞枪才艺吧！嘿呀！哇，指挥官当心！|指挥官，我可不可以拜托你一件事？唔，就是，那个……晚饭的青椒可不可以去掉？|嗯嗯，嗯嗯嗯，哦哦，原来如此，我完全听明白了，指挥官，交给我吧！——才怪啊！",
-	battle = "让你们见识一下大型！驱逐舰的实力！",
-	upgrade = "该不会……我的工作也变多了吧……",
-	voice_key = 90103,
-	headtouch = "诶嘿嘿嘿嘿嘿……",
-	feeling2 = "哼哼哼，敦刻尔克的蛋糕~今天会是什么样的呢~指挥官也猜猜看吧",
-	login = "指挥官，你走之前不是说好要给带点心的吗？我的点心呢！",
-	vote = "",
-	hp_warning = "冷静，先寻找机会……",
-	id = 901030,
-	detail = "指挥官，你能不能不要突然出现，很吓人的",
-	couple_encourage = {
-		{
-			{
-				90102
-			},
-			1,
-			"塔尔图，借你的书看完了吗？",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[901031] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
+	expedition = "指挥官，执行委托的战友们归来了，让她们去享受春节，剩下的工作就由我们接手吧。",
 	win_mvp = "",
-	home = "",
-	mission = "",
-	touch2 = "和塔尔图比的话那我确实……等等你在干啥啊！",
+	home = "神会看见你的所为，此刻的辛劳必将换来未来的成功。",
+	mission = "今天的任务下来了，让我们两人尽快解决吧。",
+	touch2 = "咳、咳咳！",
 	voice_key_2 = -1,
 	skill = "",
-	drop_descrip = "指挥官！真是的，明明今天不上班在干什么呢！不是说好了今天要放空大脑玩个痛快吗！快点一起去海里吧！",
-	mail = "",
-	touch = "嘻嘻，怎么样，沃克兰的泳装？……嗯，该凸的地方没有凸对吧，我知道的……",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "指挥官！真是的，明明今天放假在干什么呢！不是说好了今天要放空大脑玩个痛快吗！快点一起去海边玩吧！ ",
-	feeling5 = "",
-	main = "大家真可爱呢~咻~嗯？沃克兰也很可爱？咻，咻|不去考虑工作玩个痛快很棒吧？咦，那个皇家骑士队的舰船，好像叫南什么的，不是应该在值班吗，怎么毫无违和感地混了进来……|沙滩烧烤！真棒啊！烤蔬菜的话……嗯，青椒就交给别的舰船了！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "",
-	vote = "",
-	hp_warning = "",
-	id = 901031,
-	detail = "塔尔图，不会不小心被海浪冲走了吧……不，应该不可能",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901032] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "我感觉现在还是赶紧撤退比较好！呼，幸好穿的礼服还算是便于行动…",
-	propose = "",
-	expedition = "",
-	win_mvp = "第一名！为我献上一曲吧！…啊，咦？大家都去哪了？",
-	home = "",
-	mission = "",
-	touch2 = "哼，反正是在想着塔尔图那样的对吧。呣",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "嗯嗯，我听到了哦，这个祝福的旋律~接下来，跟随我的指挥继续升调——指挥官？你问我在做什么…呃…那什么…啊哈哈哈…",
-	mail = "",
-	touch = "要点什么？曲子？吃的？还是沃克兰的闲聊服务？嘿嘿~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "嗯嗯，我听到了哦，这个祝福的旋律~接下来，跟随我的指挥继续升调——指挥官？你问我在做什么…呃…那什么…啊哈哈哈…",
-	feeling5 = "",
-	main = "像这样配合着音乐……啊，指挥官！大家都说这个动作“很有大人的感觉”哦！嘿嘿~|明白了！这种时候就要放点让人放松的曲子！……指挥官！现在还在工作中啊！别睡着了啊！|nil",
-	battle = "开始演奏吧！…已经开始了！？",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "锵锵，是穿着礼服的沃克兰哦！指挥官，今天也请多关照啦♪",
-	vote = "",
-	hp_warning = "",
-	id = 901032,
-	detail = "指挥官也好塔尔图也好，居然都听睡着了！太过分了！…虽然我也没在演奏就是了…真是的！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901033] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "糟了！该“逃跑”了！",
-	propose = "",
-	expedition = "",
-	win_mvp = "有没有什么掉落品呢——？让我把这些都抢走 ！",
-	home = "欢迎回来！有什么收获吗？什么都没有的话，可是会被英雄她笑话的哦？",
-	mission = "",
-	touch2 = "呜哇！这可不是盗贼的技能啊——！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "（哐当）又找到金币了！指挥官，快看快看！敲碎罐子后又找到几枚了！你好像有些担心？嘻嘻，盗贼的规则就是“不守规则”嘛♪",
-	mail = "",
-	touch = "想这么简单就碰到我，你还是太天真啦！",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "（哐当）又找到金币了！指挥官，快看快看！敲碎罐子后又找到几枚了！你好像有些担心？嘻嘻，盗贼的规则就是“不守规则”嘛♪",
-	feeling5 = "",
-	main = "玩盗贼玩得越来越得心应手了呢！这下道具的获得率大概也会变高吧！哼哼♪|有只能从刚才的敌人身上偷到的道具吗！？诶，怎么不早点告诉我嘛！这可没法重来呀。|蹑手蹑脚，蹑手蹑脚…应该不会被谁发现吧。那就让我都看看有些什么吧…嘻嘻~",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "啊，既然指挥官也会突然开门进来，看来是“摸清”这个世界的玩法了呢！",
-	vote = "",
-	hp_warning = "",
-	id = 901033,
-	detail = "仔细想想，这里可以随便进人家家里翻找衣柜，敲碎罐子等等，真是无法无天的世界呢……这些都只限于游戏之中哦？啊哈哈……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901040] = {
-	feeling1 = "都是凯尔圣的缘故，指挥官才变得如此肆意而为…呜呜，都怪我祈祷得不够……",
-	feeling3 = "塔尔图偶尔会问我如何才能成为充满魅力又温柔的女性。指挥官有什么建议吗？我不太明白……",
-	lose = "果，果然这样的身体是……",
-	propose = "将祈祷献给荣光照耀的鸢尾。愿凯尔圣和指挥官能获赐永恒的幸福……亲爱的指挥官，从今往后，也请多多指教了。",
-	expedition = "委托的伙伴们回来了。",
-	win_mvp = "是鸢尾带领我们取得了胜利，谨以此呈上谢意……",
-	home = "感谢上天引领指挥官平安返回港区……指挥官也和我一起祈祷……怎、怎么样？",
-	mission = "任务清单在这里——对，对不起，我不是故意碰到您的手的……///",
-	touch2 = "果，果然因为这样的身体扰乱了指挥官的心吗…",
-	voice_key_2 = -1,
-	skill = "圣光，于此显现…！",
-	drop_descrip = "沃克兰级驱逐舰—凯尔圣",
-	mail = "好像有来信。指挥官，能请您确认吗…？",
-	touch = "如果可以的话，能让我听听指挥官的烦恼吗…？虽然不能保证解决，但至少祈祷的话……",
-	profile = "我是维希教廷所属的沃克兰级大型驱逐舰凯尔圣。在那次大战中，我和塔尔图等人在土伦…呜呜，果然是我祈祷得不够吗……",
-	mission_complete = "祝贺您完成了任务，指挥官…报酬要怎么处理呢？",
-	feeling4 = "在指挥官看来，我已经很有魅力了吗…？我当然很开心，但如果因此妨碍到指挥官工作的话，那就……不，不要紧吗？",
-	unlock = "我是沃克兰级大型驱逐舰凯尔圣。愿鸢尾庇佑指挥官…许多不足之处，还请您多多指导…",
-	feeling5 = "我的魅力能让指挥官工作得更顺利…我，我明白了。只要指挥官想的话，随时都可以叫我。无论是祈祷还是帮忙，我都乐意而为。",
-	main = "资料放在这里就好吗？嘿咻…愿指挥官工作顺利——|如果凯尔圣打扰到您的话，请随时告诉我…那个，我是指，如果是指挥官不知道把视线放哪好而困扰这件事…|被指挥官看着，就会手足无措…抱歉，都怪我还没习惯……",
-	battle = "愿鸢尾指引我们……！",
-	upgrade = "感谢指挥官…愿鸢尾的庇佑与你同在。",
-	voice_key = 90104,
-	headtouch = "",
-	feeling2 = "和伙伴们相比，我好像没什么能帮到指挥官的…要是能通过祈祷赐予祝福就好了……",
-	login = "清崇尊贵的鸢尾，我向您祈祷。请赐予我们平安的一天，并且愿神圣的庇佑与指挥官同在——",
-	vote = "",
-	hp_warning = "只要继续祈祷……！",
-	id = 901040,
-	detail = "祈祷的话，黎明前、日出时、从早上到下午每隔几小时、最后是傍晚和睡前……大概会进行8次吧…？",
-	couple_encourage = {
-		{
-			{
-				90103
-			},
-			1,
-			"并不是我自己想长得这么大的…",
-			0
-		},
-		{
-			{
-				90102
-			},
-			1,
-			"变成熟的方法？这么问我我也…",
-			0
-		},
-		{
-			{
-				10212
-			},
-			1,
-			"比起惹眼，不方便行动让我更讨厌…",
-			0
-		},
-		{
-			{
-				20707
-			},
-			1,
-			"怨仇小姐，怎么才能如此自信呢……？",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[901041] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "指挥官，要…继续下去吗？啊，我是说跑步，不是祈祷！真是抱歉，您才刚回来就…",
-	mission = "",
-	touch2 = "因为出汗变得比平常更沉了……啊呜……",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "呼…指挥官？能在这里遇见也是上天的旨意吧……突、突然搭话实在不好意思。您打算继续吗？如果愿意的话，要不要和我一起跑呢…",
-	mail = "",
-	touch = "有什么想顺路逛逛的地方吗…？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "呼…指挥官？能在这里遇见也是上天的旨意吧……突、突然搭话实在不好意思。您打算继续吗？如果愿意的话，要不要和我一起跑呢…",
-	feeling5 = "",
-	main = "跑步是因为嗯，减肥…是的，因为身子挺沉的…指挥官呢？|听音乐工作就会更顺利吗？那么…啊，刚好马赛曲小姐推荐了我赞美歌。可以请您…听听看吗…？|敦刻尔克小姐的点心…确实是难以抵挡的诱惑…一旦开始吃就停不下来，最后会坠落到糖分超标的地狱…啊呜…",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "呼…哈…向鸢尾祈祷，请赐予我们安宁的一天，并赐予指挥官源源不绝的活力——",
-	vote = "",
-	hp_warning = "",
-	id = 901041,
-	detail = "跑步后是日常的祈祷…指挥官是要——回，回办公室吗？这，这样啊…指挥官一早上就这么忙的话我还是…我，我可以一起吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901110] = {
-	feeling1 = "……（恶毒好像睡着了）",
-	feeling3 = "虽、虽然说尽管吩咐了…但是你给的活也太多了吧……不行了要累死了……我要请假……",
-	lose = "我还没输……我还没输！",
-	propose = "维希教廷的守护之刃，我、驱逐舰恶毒，保证今后将永远保护您，向您贡献我永远的爱——累、累死了………指挥官，我们能不能早点回去啊……",
-	expedition = "大家都回来了。赶快去港口看看吧",
-	win_mvp = "碍事的家伙已经清除了。",
-	home = "照着凯旋教的泡了一杯红茶……暴露了吗。没错，就是个茶包而已。你喝就好。",
-	mission = "有新的指示，指挥官。",
-	touch2 = "哇！要干什么啊！",
-	voice_key_2 = -1,
-	skill = "消失吧！！",
-	drop_descrip = "维希教廷空想级驱逐舰—恶毒",
-	mail = "有你的信……没有我的吗？",
-	touch = "优雅什么的…太累人了……哇！？有、有什么吩咐吗！",
-	profile = "我是隶属于维希教廷的空想级驱逐舰恶毒，曾部署于布雷斯特的第八分队…与姐妹们共同作战。但是在那之后，凯旋她选择了和我们不一样的道路……嗯，不用勉强",
-	mission_complete = "指挥官，上面的奖励发下来了。",
-	feeling4 = "今、今天我很努力工作了，能不能早点下班……谢谢指挥官！看来今天能回家多睡几个小时了！…额，对不起，我有点太兴奋了",
-	unlock = "吾乃逐浪之空想，守护教廷的恶毒之刃——超级驱逐舰“恶毒”，听候差遣",
-	feeling5 = "指挥官，咳咳，今天能不能……一起早点下班？啊不是累了！我的意思是今、今天能不能一起找个地方约、约会什么的……？",
-	main = "徒有速度，缺乏火力，是打败不了敌人的。|好累啊……秘书舰什么的……啊！没什么！|敦刻尔克小姐做的点心……呼呼呼……不对不对！现在还是工作时间啊！",
-	battle = "维希教廷的守护之刃，前进！",
-	upgrade = "不能不努力了呢",
-	voice_key = 90111,
-	headtouch = "",
-	feeling2 = "维希教廷的恶毒之刃，指挥官的秘书舰，驱逐舰恶毒。请尽管吩咐",
-	login = "驱逐舰恶毒，随时听候差遣。——哈啊…困了…",
-	vote = "",
-	hp_warning = "难缠的家伙……",
-	id = 901110,
-	detail = "哈啊…好困…好想在床上滚来滚去……Zzzzz……额！？有、有什么事吗！？",
-	couple_encourage = {
-		{
-			{
-				80101
-			},
-			1,
-			"凯旋……你回来了。",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[901111] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "今天看来不适合工作……早点回去休息……",
-	propose = "",
-	expedition = "",
-	win_mvp = "歼灭完成。……不对！我不是说了今天不加油工作的吗！",
-	home = "",
-	mission = "",
-	touch2 = "哇！？……真是的，又被指挥官给弄醒了！本来好不容易就快要睡着了的……",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "指挥官，早～嗯，今天是神也要休息的日子，所以就算你把凯旋拉出来逼我干活，我也是绝对不会努力的",
+	drop_descrip = "指挥官，今天的下一个行程是……嗯，鸢尾的圣骑士以勤勉为美德，无论是平时还是节日，身着鸢尾之正装或是东煌的礼服，都不会对祈祷与战斗，以及身为你部下的工作造成任何影响。",
 	mail = "",
 	touch = "",
 	profile = "",
 	mission_complete = "",
 	feeling4 = "",
-	unlock = "指挥官，早～嗯，今天是神也要休息的日子，所以就算你把凯旋拉出来逼我干活，我也是绝对不会努力的",
+	unlock = "指挥官，今天的下一个行程是……嗯，鸢尾的圣骑士以勤勉为美德，无论是平时还是节日，身着鸢尾之正装或是东煌的礼服，都不会对祈祷与战斗，以及身为你部下的工作造成任何影响。",
 	feeling5 = "",
-	main = "好累…懒得动了……指挥官，有事也别叫我哈……|指挥官，我把咖啡拿过来了！……怎、怎么可能……难道你看出来我偷偷往里放了会让人犯困的感冒药么！？|啊啊今天不想干活了啦…指挥官～歇一会吧！嗯！就一会！",
-	battle = "给你们见识下空想级的厉害！",
+	main = "东煌的春节么…庆祝新年无论对谁都是不可少的，完成手头的工作后就好好休息一下吧。|加利索尼埃…似乎很享受假日的样子…不，她的话，对什么都能很享受吧，各种意义上来说。|和平的生活是令人喜悦的。若所有人都能遵照神之教诲行事的话，便不需要仲裁之人的存在了吧。",
+	battle = "被鸢尾之光净化吧！",
 	upgrade = "",
 	voice_key = 0,
 	headtouch = "",
 	feeling2 = "",
-	login = "",
+	login = "Bonjour，指挥官。先决定下今天要先完成的事务吧。",
 	vote = "",
 	hp_warning = "",
-	id = 901111,
-	detail = "",
+	id = 899012,
+	detail = "今年也好好努力吧，不要辜负了大家竭尽心力的各种准备。",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[901112] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "好热……为什么这么热还要出击啊！",
-	propose = "",
-	expedition = "",
-	win_mvp = "指挥官，我们赶快回去吹空调吧！",
-	home = "指挥官在努力工作，我却在偷懒…呼呼呼…",
-	mission = "任务？不去……有冰淇淋？我去！",
-	touch2 = "太邋遢了？……唔，反正指挥官早就知道了……",
+_G.pg.base.ship_skin_words[899020] = {
+	feeling1 = "为何，要给与我虚假的光明？",
+	feeling3 = "树木为了抵御风雨而深扎土壤，鱼儿为了种族存续逆流而上。即便知晓己身终归虚无，万物仍会奋力抵抗命运——",
+	lose = "此处…还不是终点。",
+	propose = "即使世界失去言语，我仍会倾听你的呼吸；即便世界失去色彩，我仍会注视你的脸庞。没有任何事物，能将你从我心中抹去分毫。…你给了我心灵的温暖，我会予你永恒的守护。这是…我的意志。",
+	expedition = "鸟儿们的啼鸣近了——她们要归巢了。",
+	win_mvp = "使命，必须得到践行。",
+	home = "暂时，让脑海里只留下白兰地的醇香吧。世界需要“暂时”，人人都需要“暂时”。",
+	mission = "不奋力挥舞双翼，便无法触及蓝天。不奋勇滑动双桨，便无法到达彼岸。",
+	touch2 = "指挥官的所为——是最原始，也最为人忌惮的…冲动。",
 	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "居然能找到我的秘密基地，指挥官也很能干呢……但是很遗憾，我是不会跟你回去工作的，我要……呼啊……在这里睡一整天…",
-	mail = "",
-	touch = "游泳？指挥官，不是我自夸，我就给你表演一个随波漂浮吧",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "居然能找到我的秘密基地，指挥官也很能干呢……但是很遗憾，我是不会跟你回去工作的，我要……呼啊……在这里睡一整天…",
-	feeling5 = "唔欸？要回去了吗？……什么！已经傍晚了吗！睡了一天，好累哦……糟了，没力气了，指挥官，帮帮我……",
-	main = "指挥官为什么不能变成空调呢，那样我一定会对指挥官……Zzzzz|呼啊……指挥官，我要睡午觉了，不准吵我，有任务也不要叫我……可乐不要喝完哦，还有薯片……唔……|那边的难道是……可怖！？指挥官，快让我躲一下，被那个家伙找到我一天的睡觉计划就泡汤了！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
+	skill = "于深邃的蓝色中沉睡吧。",
+	drop_descrip = "战列舰——香槟",
+	mail = "报信人带来了远方的呼唤。是喜？是悲？还是，一如既往？",
+	touch = "互相碰触的温暖…令人难忘。",
+	profile = "不曾有过使命，不曾有过功名。我本是虚无，却具现于此世。我的指挥官，愿香槟能成为胜者的佳酿。",
+	mission_complete = "最美的鸢尾花，会绽放在最辛勤的园丁的泥土上。",
+	feeling4 = "守护舰队必要之武装——装甲、主炮、鱼雷——指挥官皆无法装备。是故，身为舰船的我，才更应履行使命，守护舰队与指挥官。",
+	unlock = "自由鸢尾、香槟。指挥官，请给予我使命，请给予我存在的理由。",
+	feeling5 = "若无力之人都试图反抗宿命，手握力量之人便更不能袖手旁观。指挥官之光辉、温暖、感情——值得我献上全部保护。",
+	main = "指挥官，你在思考什么？生存的意义、亦或是…？|潮起潮落，浪涌浪跌，此乃自然之理，随波逐流也许正是你我的宿命。|与这支舰队共存，就是我的使命——是你给予了我这个使命。",
+	battle = "为舰队而战，便是我的使命。",
+	upgrade = "利刃终会锈蚀，一味追求强大，又有何意义？",
+	voice_key = 89902,
 	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，冰淇淋……",
+	feeling2 = "世界如同平静的巨大湖泊。投以卵石，至多激起些许涟漪，而后终将重归永恒的平静。",
+	login = "告诉我，你需要的，你期望我做的一切。",
 	vote = "",
-	hp_warning = "",
-	id = 901112,
-	detail = "唔，吊床虽然很舒服，但不能滚来滚去啊…啧，设计失误了…",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901113] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "早知道就不出来了…",
-	propose = "",
-	expedition = "迎接委托的同伴？你看，我都穿成这样了，再让我去是不是有点…所以，你一个人去就好了！",
-	win_mvp = "赢了？…那回去休息吧。",
-	home = "我今天的“计划休息时间”还差几个小时，所以…请自便…",
-	mission = "",
-	touch2 = "哇！别乱碰啦，吓我一跳……",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "呼…嗯？是指挥官呀，我正打算躺会呢…这身？嗯，穿着挺舒服的，还很凉快哦。没什么事的话，我就继续躺了。晚安…",
-	mail = "",
-	touch = "唔…有什么事吗…？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "呼…嗯？是指挥官呀，我正打算躺会呢…这身？嗯，穿着挺舒服的，还很凉快哦。没什么事的话，我就继续躺了。晚安…",
-	feeling5 = "",
-	main = "凯旋来找我了？哼，反正肯定又是吓唬人的吧，我才不信。|舒服的新睡衣，还有舒服的沙发，不用来睡觉就太不划算了…Zzzzz|差不多到午休的时间了吧…唔，还有工作吗？能不能放到明天再做呀…",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "你来了啊，指挥官。嗯…随意就好…我就不招待了…",
-	vote = "",
-	hp_warning = "",
-	id = 901113,
-	detail = "这衣服滑溜溜…挺适合滚来滚去的……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901120] = {
-	feeling1 = "这是…表示我可以尽情偷懒的意思吧…",
-	feeling3 = "又要练习又要接通告又要锻炼又要排舞……要做的事情也太多了吧！不行了撑不下去了…光是看行程表就感觉累死了…我要休息了……",
-	lose = "没有让人悔恨的空闲啊…！",
-	propose = "因为有鸢尾的同伴们和指挥官，才有现在这般优雅的舞台。来吧，将誓约的戒指献给恶毒，让这闪耀的光芒成为…成为永恒！",
-	expedition = "委托组回来了哦。……啊！也就是说可以休息了对吧！",
-	win_mvp = "为鸢尾之光而喝彩、而感动吧！",
-	home = "辛苦了。来一杯优雅的红茶如何？",
-	mission = "通告…希望能高效又快速地全部搞定啊…",
-	touch2 = "哇！你、你要干嘛！",
-	voice_key_2 = -1,
-	skill = "光啊！",
-	drop_descrip = "吾乃逐浪之空想，守护教廷之利剑——恶毒，以偶像之姿登场，愿以祈愿之歌为你带来心灵之治愈。",
-	mail = "有工作信件，请确认。",
-	touch = "谢谢指挥官一直以来的支持~",
-	profile = "我是空想级驱逐舰·恶毒。哼哼…偶像任务，一定会做到最好给你看的。我、我可没有对这个兴致满满的哦？",
-	mission_complete = " 终、终于都完成了…优雅地把奖励给领了吧…",
-	feeling4 = "哈啊…哈啊……怎么样！看到恶毒的表现了吗！觉得不错的话就让我休息！没错！我要休息！或者等休息的时候给我准备好吃的点心也行！",
-	unlock = "吾乃逐浪之空想，守护教廷之利剑——恶毒，以偶像之姿登场，愿以祈愿之歌为你带来心灵之治愈。",
-	feeling5 = "指挥官，这边结束以后约会的约定，很抱歉果然还是在房间里就……咦，可以吗！？太好啦~可以在房间里滚来滚……咳咳，要先集中在舞台上、没错！",
-	main = "偶像，是受人崇拜的存在。所以不能轻易做出缩短距离感的行为。|虽然{namecode:523}说随心所欲就好…不过，唔…凯旋和黎塞留她们期待的眼神让人感到好刺痛…|皇家的那孩子，不仅纯真无邪，唱也是“祈愿”的歌呢。呵呵，我是不会输给她的~",
-	battle = "将祈愿传达过去吧！",
-	upgrade = "鸢尾之奇迹，显现于此！",
-	voice_key = 90112,
-	headtouch = "…？这是做什么？",
-	feeling2 = "我是闪耀的鸢尾偶像·恶毒——为我提供优雅的指引吧，指挥官。",
-	login = "早上好，今天的练习内容是什么？",
-	vote = "",
-	hp_warning = "我可不像埃米尔那么能跳啊…！",
-	id = 901120,
-	detail = "虽然并非本意，终归是参与了偶像任务。尽情欣赏来自鸢尾的优雅演出吧。",
+	hp_warning = "伤痕，终会成为甲胄。",
+	id = 899020,
+	detail = "指挥官，告诉我你所追求的终点——是无人能及的丰功伟业，君临世界的顶点，亦或只是经营好属于自己的一隅天地？",
 	couple_encourage = {
 		{
 			{
-				89902
+				40146
 			},
 			1,
-			"麻烦歌词写得好懂一点！",
+			"只要你想要看见，世界就是五彩的颜色。",
 			0
 		},
 		{
 			{
-				90503
+				99901
 			},
 			1,
-			"一起在舞台上加油吧！",
-			0
-		},
-		{
-			{
-				90501
-			},
-			1,
-			"随心所欲…果然很棒吧…！",
+			"凝视、倾听，这个世界，满溢着感情。",
 			0
 		}
 	}
 }
-
-_G.pg.base.ship_skin_words[901130] = {
-	feeling1 = "哼，像你这样的人，遇到真正的困难时肯定只会夹着尾巴逃跑。",
-	feeling3 = "凯旋和恶毒都是值得你学习的榜样。至于可怖……唔，虽然她很聪明，但你可不要像她那样，时不时就问一些很难回答的问题……",
-	lose = "咕呜…我身为骑士的尊严…",
-	propose = "唔……成为专属骑士还需要这样的仪式吗？还要戴上这个戒指……我知道了。接下来是宣誓效忠吗？……牵手？约会？等等等等，你在说什么？我，我该不会是被骗了吧？！",
-	expedition = "委托物资已经清点好了。多亏了不屈？小菜一…哼，这是理所当然的！",
-	win_mvp = "mvp？太好啦！…咳咳，努力得到回报，这是每个骑士梦寐以求的。",
-	home = "战场指挥非常精彩！不过想让我心服口服的话，就一直这么保持下去吧！",
-	mission = "骄傲的骑士可不会允许自己还有没完成的任务！",
-	touch2 = "你你你你这无礼之徒！",
-	voice_key_2 = -1,
-	skill = "以教廷之名，判决！",
-	drop_descrip = "空想级驱逐舰—不屈",
-	mail = "新的信件到了。嗯，这个火漆印倒是蛮精致的……",
-	touch = "哼哼，就允许你尽情瞻仰我的骑枪吧！这可是骑士荣耀的象征！",
-	profile = "吾乃教廷之骑士不屈，空想级大型驱逐舰。高傲的骑士不会允许自己低头，而我正如我的名字一般，永远不会向敌人屈服！",
-	mission_complete = "任务完成了。等等，奖励居然只有这么点……没、没什么。",
-	feeling4 = "哼，看来你确实有些能耐…怎么了？“这段时间监督你辛苦了？”倒也没有，在你身边还蛮开心……不、不对，阿谀奉承对教廷骑士可不管用！",
-	unlock = "吾乃维希教廷之骑士，空想级大型驱逐舰，不屈！指挥官啊，你是否拥有与身份相称的荣誉之心？哼哼，不必现在回答我，相处之后我自会得到答案。",
-	feeling5 = "嗯，我已经完全认可你了！我愿意成为你专属的骑士，我的忠诚、我的身与我的心都献给你……怎么了？对认同了你的教廷骑士而言，这不是很正常的宣言吗！",
-	main = "恶毒是我的榜样，她无论在何时都能保持风度与优雅……你那微妙的表情是什么意思？|工作完成的奖励？我要马卡……咳咳，骄傲的骑士从来不索求报酬。|虽说空想级以速度著称，但若是敌人忽略了我的火力，那它们将因此付出惨重的代价！",
-	battle = "不自量力的敌人，就让我来给你们点教训吧！",
-	upgrade = "精良的装备与优秀的骑士，二者是相辅相成的！",
-	voice_key = 90113,
-	headtouch = "哼，你以为这样就能讨好我吗？唔…呼……",
-	feeling2 = "想让我认可你的话，就展示出你的责任感与荣誉心吧。我身为骄傲的教廷骑士，绝不会食言。",
-	login = "来得太晚了！身为舰队指挥官，必须要有每天第一时间回到指挥室的觉悟才行！",
-	vote = "",
-	hp_warning = "我可是……骄傲的教廷骑士！",
-	id = 901130,
-	detail = "黑色的骑枪？哼，只有这种充满威严与压迫感的装备才配得上我！",
-	couple_encourage = {
-		{
-			{
-				90111
-			},
-			1,
-			"一起战斗吧，恶毒！",
-			0
-		},
-		{
-			{
-				80101
-			},
-			1,
-			"“noblesse oblige”，说得没错！",
-			0
-		},
-		{
-			{
-				80107
-			},
-			1,
-			"是、是不好对付的人……",
-			0
-		},
-		{
-			{
-				80108
-			},
-			1,
-			"哼哼，还是我的更大一点！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[901131] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "是因为扮演了柔弱的角色，所以我也变弱了么……",
-	propose = "",
-	expedition = "委托的同伴们已经回来了。指挥官可别把她们忘了哦？",
-	win_mvp = "这就是轻视教廷骑士的代价！",
-	home = "“请问你是我的外婆吗？”小红帽真是天真啊……要是换成我，肯定会说“我一眼看出你就是坏蛋，看我这就打倒你！”",
-	mission = "新的任务么……唔，至少比演不擅长的角色要简单吧。",
-	touch2 = "我，我也是会生气的！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "身为堂堂骄傲的教廷骑士，居然要扮演一个手无寸铁的柔弱少女……你说为什么现在躺在这里——因为恶毒说，要这样才能找到“柔弱少女”的感觉……",
-	mail = "",
-	touch = "指挥官，要吃苹果吗？……不是童话里的毒苹果，是甜甜的好吃的苹果！",
-	profile = "",
-	mission_complete = "任务已经完成了吗？还想等着排练结束了再帮忙的……",
-	feeling4 = "",
-	unlock = "身为堂堂骄傲的教廷骑士，居然要扮演一个手无寸铁的柔弱少女……你说为什么现在躺在这里——因为恶毒说，要这样才能找到“柔弱少女”的感觉……",
-	feeling5 = "如果我只是柔弱的少女，没有能贡献给你的力量，甚至只会成为你的累赘……你还会同意让我留在你身边吗？……只要由你成为我的剑就好了？我，我可没有觉得高兴……///",
-	main = "比起柔弱的少女，明明我更适合“英勇的骑士”这样的角色。不过既然恶毒说现在的角色更好，一定也有她的道理。|指挥官，“柔弱感”应该怎么表现？我不太清楚……毕竟平时我遇到坏人时，第一时间想着的都是用骑枪把他们打跑。|恶毒说她最想演的角色是“睡美人”。擅长假睡的她确实很适合呢。",
-	battle = "哼哼，可不要因为我演的角色柔弱就轻视我哦！",
-	upgrade = "好像确实有了那么一点力量……",
-	voice_key = 0,
-	headtouch = "头、头发会变乱的……",
-	feeling2 = "",
-	login = "松松软软的感觉，好舒服……呼……呼……欸？糟、糟了！抱歉指挥官，我差点就睡着了……",
-	vote = "",
-	hp_warning = "",
-	id = 901131,
-	detail = "恶毒，我们真的只要待在这里什么都不做就行了？“这是扮演里重要的一环”……嗯，我明白了！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[901132] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "看吧！庆功宴的佳肴也将由维希教廷的黑色骑枪，不屈送达！",
-	home = "从那条路走能更快送到吗？帮大忙了！你的指挥无论是在战场还是在港区都十分可靠！",
-	mission = "任务和东煌佳肴一样，趁早开动最好。",
-	touch2 = "你！要是把外卖打翻了你该怎么赔我！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "嗯嗯…这个距离的话还是跑过去最快。下雪了吗？哼，不惧风雨的骄傲教廷骑士，才不会让下雪这种小事妨碍到我！我出发了！",
-	mail = "来新消息了…？啊，是给你的。",
-	touch = "要给我好评？嗯，如果能给教廷骑士的荣誉锦上添花的话，我就心怀感激地收下了——原来是指外卖的好评吗！？",
-	profile = "",
-	mission_complete = "任务的报酬给你送来了，快趁热确认吧。",
-	feeling4 = "",
-	unlock = "嗯嗯…这个距离的话还是跑过去最快。下雪了吗？哼，不惧风雨的骄傲教廷骑士，才不会让下雪这种小事妨碍到我！我出发了！",
-	feeling5 = "",
-	main = "优雅的空想级，无论什么任务都能大显身手！…就算送外卖也是任务！哼！|要和我一起送吗？没，没事的！就这些量的话我还搬得动！……实在要帮忙的话等我向你求助了再说吧！|恶毒的订单，光今天就已经是第三次了……不愧是东煌的节日，要优雅地度过也不容易啊…",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "哈啊…哈啊…咳咳！比，比预定时间更快到达指挥室了！快趁热吃吧！",
-	vote = "",
-	hp_warning = "",
-	id = 901132,
-	detail = "…阿，阿嚏！你说为什么下雪还穿这样？这是贤姐可怖给的建议……聪，聪明如她，肯定没错的！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[902010] = {
-	feeling1 = "指挥官如果不想做了，我有个更合适的地方推荐你去哦",
-	feeling3 = "敦刻尔克做了慕斯蛋糕，我给你带了一个来——这么看着我干嘛，想感谢不如去谢做出这些美味甜点的人。",
-	lose = "啊，失败了……算啦，鼓足气势再打一次吧！",
-	propose = "哈哈哈~我就喜欢指挥官你这么直接的人！以后如果谁敢欺负指挥官，就让我来三两下帮你解决吧！",
-	expedition = "委托队伍回来了？刚好有些无聊，我替你去迎接吧！",
-	win_mvp = "啊哈哈！这次玩得很尽兴！",
-	home = "停~除了指挥官谁都不能进这里~——啊，是指挥官你啊，那没事了。",
-	mission = "任务很难？自己想办法去，我又没办法帮你在任务书上划勾。",
-	touch2 = "我可不是那些教廷骑士。指挥官，想体验一下我的本职工作么？",
-	voice_key_2 = -1,
-	skill = "消失吧！！",
-	drop_descrip = "维希教廷拉·加利索尼埃级轻巡洋舰—拉·加利索尼埃",
-	mail = "喂，有你的邮件！再不拿被风吹走了可不关我事啊。",
-	touch = "你想摸摸它？之后被划伤了可别怪我。",
-	profile = "战争爆发之后，我成为了“公海舰队”的一员。不过因为燃料的问题，实际我上一次都没去过公海呢，哈哈！至于之后的事情，就没什么好说的了。或许你可以问问敦刻尔克？",
-	mission_complete = "任务完成了？比我估计花的时间短呢……或许是我小看你了？",
-	feeling4 = "不光是鱼雷火炮，偶尔聊聊冷兵器或者别的什么话题不也挺有趣嘛？看起来你也不是那么无趣的人，下次有空再一起聊天啦！",
-	unlock = "维希，撒丁，铁血……然后是你这里么？算了，随便啦，只要能让我开心，哪里都是一样的啦。就是这样，维希所属拉·加利索尼埃，请多多关照咯。",
-	feeling5 = "我就直说了吧，指挥官。我很喜欢你，有兴趣来和我一起弄点大动静吗？…开玩笑的~像这样每天在一起就已经很开心啦！",
-	main = "噢，看啊，办公室里只剩一位忙碌的指挥官和另一个快无聊到死的人了呢，哈啊…|只要能解决敌人，不论用炮火还是斧头都一样吧，指挥官，拘泥于形式可不好哦。|我不怎么喜欢计划这东西。地球转得那么快，计划怎么赶得上变化呢？",
-	battle = "要让我玩得尽兴才行…哦！",
-	upgrade = "有点怀念起在布雷斯特的时光了呢。",
-	voice_key = 90201,
-	headtouch = "",
-	feeling2 = "哎，今天也是无聊的一天吗……",
-	login = "终于回来啦？你不在，我都快无聊死了。喂，找点什么事情让我做吧？",
-	vote = "",
-	hp_warning = "对嘛！这样才对嘛！再让我兴奋一点吧！",
-	id = 902010,
-	detail = "嗯？你是对我手上的东西感兴趣呢，还是说…对我感兴趣呢？",
-	couple_encourage = {
-		{
-			{
-				90401
-			},
-			1,
-			"这张战斗结束之后，再做点慕斯蛋糕给我吃吧~",
-			0
-		},
-		{
-			{
-				80501
-			},
-			1,
-			"没想到还能有并肩战斗的机会啊，枢机主教阁下",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[902011] = {
+_G.pg.base.ship_skin_words[899021] = {
 	feeling1 = "",
 	feeling3 = "",
 	lose = "",
 	propose = "",
 	expedition = "",
 	win_mvp = "",
-	home = "啊，指挥官，你回来的正好！能到泳池里帮我把那个皮球扔给我吗？谢啦~",
+	home = "告诉我，这身祝祭之服的意义。告诉我，此刻我应采取的行动。",
 	mission = "",
-	touch2 = "啊哈哈，是不是想让我帮你来做憋气练习呀？指挥官？",
+	touch2 = "受欲望驱使是动物的本能，因好奇而挑战禁忌，乃是人类的本心…",
 	voice_key_2 = -1,
 	skill = "",
-	drop_descrip = "呼~果然夏天要有游泳池才算完整呢！喂，那边傻站着的指挥官，不下水享受一下吗？",
-	mail = "",
-	touch = "哦？指挥官是想要吓我一跳吗？很遗憾，被我发现了呢~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "呼~果然夏天要有游泳池才算完整呢！喂，那边傻站着的指挥官，不下水享受一下吗？",
-	feeling5 = "",
-	main = "也没有人规定游泳池里一定要游泳，对吧？只玩玩水不也挺好的嘛~|指挥官，看招——！怎么样，充分感受到这不同于夏天的凉意了吧？|唔唔，这种手上少了点什么的感觉，总让我有点不舒服呢……",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "准备活动？我不需要啦~反正我就在这里玩玩水，不会有问题的。",
-	vote = "",
-	hp_warning = "",
-	id = 902011,
-	detail = "如果指挥官意外溺水了的话，我会第一时间把游泳圈给你扔过去的！指挥官身手那么敏捷，到时候肯定能接住的啦~",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[902012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "节日的氛围真浓厚啊！你觉得呢？",
-	mission = "",
-	touch2 = "这里不是能解开的地方啦！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "新春愉快，来试试交杯酒吧~嗯？不应该叫交杯酒吗？东煌的文化博大精深，我还没有掌握好呢~",
-	mail = "",
-	touch = "嗯？要把我正式介绍给家人好友吗？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "新春愉快，来试试交杯酒吧~嗯？不应该叫交杯酒吗？东煌的文化博大精深，我还没有掌握好呢~",
-	feeling5 = "",
-	main = "指挥官，“红包”准备好了吗？诶~里面装的是压岁钱啊……好无聊，我还以为会是什么特别的小物件呢！|团圆饭、守岁、春联……按照东煌的风俗，还有“拜年”吧？出发吧指挥官，带我出门是绝对不会让你丢脸的！|指挥官，和敦刻尔克她们一起庆祝节日吧！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，你晾着我很久了！再这么下去，我会无聊到发霉的！",
-	vote = "",
-	hp_warning = "",
-	id = 902012,
-	detail = "旗袍的构造很有趣~不过，你也不用一直盯着看吧…",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[902013] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "trick or treat！…只有小孩子才说这个？我不管，快把糖果给我！",
-	mission = "",
-	touch2 = "虽然打扮成这样，但我本职工作的手腕可没落下哦？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "我是会魔法的黑猫，不听话的话就把你变成一颗南瓜！嗯…万圣节，是这样的感觉吗？算了，随便啦，一起来找点节日的乐子吧，指挥官。",
-	mail = "",
-	touch = "喵~…是不是这样叫一声更有猫的感觉？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "我是会魔法的黑猫，不听话的话就把你变成一颗南瓜！嗯…万圣节，是这样的感觉吗？算了，随便啦，一起来找点节日的乐子吧，指挥官。",
-	feeling5 = "",
-	main = "指挥官，再发呆下去，我就自己去找其他小伙伴玩了哦？|万圣节要给孩子们发糖吗？唔…能不能把这几个口味的留点给我？|扮鬼吓人好像挺有趣的欸，这就是万圣节的乐趣吗~？…唔？这一身并不吓人？",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "终于来了？想要怎么出去吓人了吗？",
-	vote = "",
-	hp_warning = "",
-	id = 902013,
-	detail = "好像很多小伙伴都喜欢猫呢，阿尔及利亚也好，黎塞留也好…指挥官呢，喜欢吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[902020] = {
-	feeling1 = "指挥官，您是我最不愿意与之为敌的人……请不要再这样下去了。",
-	feeling3 = "“自由鸢尾”与“维希教廷”，它们本都是鸢尾教国的一部分……还好，在这个港区里，大家又团结在了一起。谢谢你，指挥官。",
-	lose = "对不起，我失败了……让您失望了。",
-	propose = "以此剑为誓，任何伤害指挥官的人，都将遭到圣裁……鸢尾的战斗天使，绝对不会让任何人伤及我爱人的一分一毫。这是我的誓言，我会遵守这份承诺，直至永恒。",
-	expedition = "委托已经完成了，大家作战辛苦了……嗯？这些物资不是冒着危险从敌人手中抢下来的么？",
-	win_mvp = "鸢尾之刃，斩尽一切与教国为敌之人。",
-	home = "原来您是这样提振士气的……真不愧为“指挥官”。",
-	mission = "新的任务？我能为您做些什么？",
-	touch2 = "嗯？我不明白您的意思……？",
-	voice_key_2 = -1,
-	skill = "Marchons！",
-	drop_descrip = "拉·加利索尼埃级轻巡洋舰—马赛曲",
-	mail = "指挥官，有您的信。需要用剑帮您拆开吗？",
-	touch = "为了鸢尾，为了正义与和平，我愿意听从您的命令。",
-	profile = "拉·加利索尼埃级巡洋舰马赛曲，鸢尾教国的战斗天使。我不知疲倦，不惧痛苦，为和平与正义而挥剑。纵使世间依旧存有不公……但终有一天，它们将被战胜。",
-	mission_complete = "任务完成了。请允许我在领取报酬的路上护卫您。",
-	feeling4 = "我从未考虑过战斗之外的事……如果您愿意教我的话，我会非常感激。只是……应该从哪里开始？因为，这一切对我都非常陌生……",
-	unlock = "鸢尾教国所属，战斗天使马赛曲。请说出您的命令吧，指挥官。",
-	feeling5 = "对、对不起，这段时间实在是给您添了太多麻烦……不过，我也从来没有过如此开心。可以的话，我希望这样的时光，还能一直继续下去……",
-	main = "对不起，被您任命为秘书的我却帮不上忙……如果我能够知道更多战斗以外的知识就好了……|加利索尼埃吗？她确实有时让人头疼……不过不用怕，她打不过我。|科研部门目前在忙吗？看来只能等到下次了……啊，没什么，只是有些想请教的事。",
-	battle = "威胁教国之人，必须排除。",
-	upgrade = "和平与正义，无法只靠理想推动……",
-	voice_key = 90202,
-	headtouch = "",
-	feeling2 = "正如我被赋予的名字那样，我希望我的存在能鼓舞所有同伴们。高举旗帜，冲锋在前，为众人开辟道路。这即是贯彻神圣的意志，引领胜利的天使的使命。",
-	login = "指挥官，马赛曲恭迎您的到来。",
-	vote = "",
-	hp_warning = "我会战斗到底……！",
-	id = 902020,
-	detail = "激昂的音乐能够提振军心。指挥官，我想把这振奋的旋律带到战场上。就是战斗的时候放音乐的意思，用我的舰装就能做到……会很奇怪吗？",
-	couple_encourage = {
-		{
-			{
-				90201
-			},
-			1,
-			"加利索尼埃，请严肃起来！",
-			0
-		},
-		{
-			{
-				80501
-			},
-			1,
-			"很荣幸与您并肩战斗，黎塞留主教。",
-			0
-		},
-		{
-			{
-				90701
-			},
-			1,
-			"你一半我一半，速战速决。",
-			0
-		},
-		{
-			{
-				80202
-			},
-			1,
-			"贞德，一同为教国而战吧！",
-			0
-		},
-		{
-			{
-				49902
-			},
-			1,
-			"这一次……你站在了教国的一方么。",
-			0
-		},
-		{
-			{
-				90502
-			},
-			1,
-			"如您所坚信的那样，希望终于来临了……！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[902021] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "呼。愿鸢尾的祝福同在——",
-	home = "嗯，先这样……呀！？哈啊哈啊…啊，指挥官，谢谢您。又一次顺利地完成作战了呢。",
-	mission = "",
-	touch2 = "明明有指挥官帮忙……嗯嗯……还是好难……",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "好的，向球的这个位置下蹲……嗯！？不，不要紧！战斗天使马赛曲，不会输给这点程度的训练……呀！？",
-	mail = "",
-	touch = "呼…抱歉。我这就擦汗……",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "好的，向球的这个位置下蹲……嗯！？不，不要紧！战斗天使马赛曲，不会输给这点程度的训练……呀！？",
-	feeling5 = "",
-	main = "如果可以展开翅膀就不会出那样的洋相了——您说那样的话就谈不上训练了？遵命…|嗯嗯…指挥官，这样可以吗？是，关于姿势方面…还请您尽情指导…|有好多伙伴一边听音乐一边训练。呵呵，有点好奇她们都在听什么呢。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "今天也一起训练吗？希望马赛曲没有给指挥官添麻烦……",
-	vote = "",
-	hp_warning = "",
-	id = 902021,
-	detail = "除了使用舰装的战斗之外，为了应对各种状况，身体锻炼也是必要的——诚如您所言。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[903010] = {
-	feeling1 = "这样的意志是没法带着大家获得胜利的呢…",
-	feeling3 = "在我面前不用那么拘谨的哦！稍微放松一些也是可以的~",
-	lose = "这种程度的强化果然还是不行呢…",
-	propose = "其实，我开始还是稍微有些紧张的……不过一看到指挥官，先前的不安就都被抛到脑后去啦~嗯，我的回答是“我愿意”哦！",
-	expedition = "有新的物资送达了，指挥官要亲自检查吗？",
-	win_mvp = "怎么样？这就是“福煦级”的实力哦！尽管依赖我吧~",
-	home = "总算回来啦指挥官！可不能因为工作破坏了正常的饭点！实在抽不出空的话，我按时给你提前准备好吃的吧！",
-	mission = "优秀指挥官的良好品德之一——按时完成任务。指挥官，要加把劲才行呢。",
-	touch2 = "呜哇？！不、不带这么撒娇的啦！",
-	voice_key_2 = -1,
-	skill = "休想逃走，主炮齐射！",
-	drop_descrip = "维希教廷絮弗伦级重巡洋舰—福煦",
-	mail = "新邮件来了！要帮你先拆了吗~指挥官？",
-	touch = "遇到困难了吗？尽管跟姐姐说，姐姐会想办法帮你的~",
-	profile = "我是福煦，虽说是絮弗伦级的三号舰，但和同级的姐妹舰们还是相差很大的，甚至直接算作“福煦”级都不为过呢！我擅长的事情有很多，就不特地说啦~",
-	mission_complete = "任务的奖励替你拿回来了。你欠我一个人情哦~",
-	feeling4 = "指挥官是不是又通宵加班了？啊，三餐也没有按时吃！这样可不行呀！…好，以后就让姐姐我来监督你吧！",
-	unlock = "你好~你就是指挥官吧？我是絮弗伦级的福煦~我在战略方面的知识可是很充足的哦，希望能够帮上忙~请多指教啦。",
-	feeling5 = "指挥官，今天要和福煦一起共进晚餐哦！哎呀，我不是说了要监督你的嘛~指挥官不是那种会拒绝的无情之人的，对吧~？",
-	main = "不能掉以轻心！“这不是和平，而是漫长的休战”…哈哈，是不是有种战略家的感觉？|规律的作息是高效工作的保证，不可以经常熬夜哦，指挥官？|阿尔及利亚？只要往她手里塞只猫，接下来的对话就很简单了呢~",
-	battle = "只有拥有征服的决心才能取胜！福煦，出击！",
-	upgrade = "还可以再多来一点~",
-	voice_key = 90301,
-	headtouch = "呣…发型都被你弄乱了！…哈哈，开玩笑的，我没生气啦~",
-	feeling2 = "百发百中的福煦式飞刀！…要是能这样就好了~",
-	login = "指挥官，要处理的文件已经整理好放桌上了，…不要那么消沉啦，我会帮忙的！",
-	vote = "",
-	hp_warning = "不要怕，福煦在这里！",
-	id = 903010,
-	detail = "指挥官，能陪我做件事吗？…把这个苹果放在你的头上，然后…欸，别跑嘛！我只是开个玩笑而已啦~",
-	couple_encourage = {
-		{
-			{
-				90302
-			},
-			1,
-			"一切按照计划进行哦~",
-			0
-		},
-		{
-			{
-				40305
-			},
-			1,
-			"别那么严肃啦，我们现在可是同伴！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[903011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "不知道指挥官会给我什么样的奖励呢~？",
-	home = "等你等得有点久了哦，指挥官？嘻嘻，说笑的，出击辛苦啦♪是不是找个地方稍微休息一下比较好？",
-	mission = "",
-	touch2 = "等下…你也太心急了吧…？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "呀，指挥官，是不是等很久了？抱歉抱歉…不过毕竟…淑女挑选衣服总是要花些时间的嘛~好啦，差不多可以出发啦♪",
-	mail = "",
-	touch = "这附近的景色…怎么样？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "呀，指挥官，是不是等很久了？抱歉抱歉…不过毕竟…淑女挑选衣服总是要花些时间的嘛~好啦，差不多可以出发啦♪",
-	feeling5 = "",
-	main = "为了补偿指挥官的等待，今天一定要玩得开心一点！|带你去阿尔及利亚她们推荐给我的店看看吧~放心，是指挥官进去也没问题的店啦！|护身用的装备我姑且也带着哦。嘻嘻，抱歉啦指挥官，把你耍帅的机会都抢走啦~",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "让我来选约会路线？…唔，失策…下意思地想着全程由指挥官指引和护卫了…",
-	vote = "",
-	hp_warning = "",
-	id = 903011,
-	detail = "就算是我也是会做点打扮的好吧。还是说…指挥官你根本没把我当成淑女？哼。……哈哈哈，别露出这种表情嘛，刚刚是开玩笑的啦♪",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[903012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "光荣地成为鸢尾和我的指挥官共同的基石吧。呵呵呵 。",
-	home = "指挥官，请指示。啊，说错了…主人，请尽管向我福煦吩咐些什么吧。",
-	mission = "",
-	touch2 = "哈哈哈，明明还不如平时显眼来着……",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "主人，今天的心情如何？你忠诚的管家福煦，随时等待你的指示。——哈哈哈，看起来很有那种感觉吧♪",
+	drop_descrip = "并非将希望寄托于命运，只是将此身沐浴于祝祭的暖风。希求瑞兆乃人之常情，与信仰并无违背。",
 	mail = "",
 	touch = "",
 	profile = "",
 	mission_complete = "",
 	feeling4 = "",
-	unlock = "主人，今天的心情如何？你忠诚的管家福煦，随时等待你的指示。——哈哈哈，看起来很有那种感觉吧♪",
+	unlock = "并非将希望寄托于命运，只是将此身沐浴于祝祭的暖风。希求瑞兆乃人之常情，与信仰并无违背。",
 	feeling5 = "",
-	main = "大概得让敦刻尔克准备点点心才行呢…|阿尔及利亚小姐，茶要怎么样的呢？——怎么样？感觉很不错吧？|我也想试试看穿女仆装呢…这个下次得问问皇家的孩子们…",
+	main = "群山、飞鸟、果实，此乃告知春之来访的喜乐之梦。|维系的思念如同绵绵粉雪，“感情”的邀约宛若和煦春风。…和平的祭典，令人感到无比欢欣。|枢机卿的爱书，乃香槟所荐。想要满足好奇心，人与舰船皆是如此。",
 	battle = "",
 	upgrade = "",
 	voice_key = 0,
-	headtouch = "",
+	headtouch = "……？想知晓，我所做的梦吗？",
 	feeling2 = "",
-	login = "那么今天也为了指挥官的事而尽力吧。穿着这身打扮时总感觉很有干劲呢！",
+	login = "于新年之夜所求之物——乃静谧的安眠，与念想的七彩之梦，如此而已。",
 	vote = "",
 	hp_warning = "",
-	id = 903012,
-	detail = "今天要参加大小姐们的茶会吗？我觉得不用客气，直接去就好了？指挥官？",
+	id = 899021,
+	detail = "回归童心，嬉戏至暮色黄昏，亦是享受祝祭之法。不过，我并不了解此番嬉戏之准则……",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[903020] = {
-	feeling1 = "指挥官，我正在寻找指挥官退役所需的材料证明，您不会已经准备好了吧？",
-	feeling3 = "指挥官，要来一杯红酒么？不大会喝酒？没关系的，不要急着咽下去，细细地、细细地品尝——就能感觉到那种热情和清凉交织的…成熟而美味的感觉了吧",
-	lose = "失败了么......没关系，指挥官不用消沉。下次做好更充分的准备之后再来招待它们吧。",
-	propose = "谢谢您。从此刻开始，我的力量、我的身心、还有我的一切，就全部为您所有了。呵呵呵，从今天开始，让我们一点一点、一点一点地品尝生活中的甜蜜吧——我的伙伴，我的挚爱",
-	expedition = "指挥官，执行委托任务的舰队已经回来了。呵呵，让我猜猜，重要物资被藏在哪一艘船上了呢~",
-	win_mvp = "如果能早点认清形势就不用变成这样了，现在又是何苦呢？",
-	home = "指挥作战辛苦了，指挥官。来杯刚泡好的咖啡如何？",
-	mission = "指挥官，又有新的任务下发下来了。嗯？如果忙不开的话，我可以帮您申请延长任务期限哦",
-	touch2 = "指挥官，得寸进尺在战场上是正确的选择。在女性身上可就不一定了哦？",
-	voice_key_2 = -1,
-	skill = "事到如今，想要逃跑也来不及了哦",
-	drop_descrip = "维希教廷阿尔及利亚级重巡洋舰—阿尔及利亚",
-	mail = "世间悲喜，人情冷暖都隐藏在了信件之中。阅读信件某种程度上来说也是充满心跳的行动呢。指挥官，有新的信件来了哦？",
-	touch = "嗯，指挥官想要偷懒一会儿么？没关系，我不会把这个把柄告诉其他人的。",
-	profile = "我曾是鸢尾教国所属地间海第一巡洋舰队的旗舰，然后作为维希教廷的骑士留了下来。至于后来的事，史书里应该都有记载吧。对于条约下最优秀的重型巡洋舰来说，确实是段颇为有趣的经历，指挥官也这么觉得吧？",
-	mission_complete = "任务完成了么？指挥官辛苦了。之后的报告整理就交给我，您可以趁机去休息一下",
-	feeling4 = "其实我也很喜欢可爱的小东西的呢。小饰品，还有那些圆圆的摸起来软软的小猫们……成熟的大人拥有一些可爱的爱好的，像是做一些小点心什么的——这样不也很好吗~？",
-	unlock = "Bonjour，很荣幸见到您。我是维希教廷所属，重型巡洋舰阿尔及利亚，从今日开始配属在您的港区。如果不介意的话，指挥官，让我们交个朋友吧？",
-	feeling5 = "指挥官想要成为我的依靠么？呵呵，如果是指挥官的话，确实值得人全心依赖，并且全力奉献出自己的一切呢…就让我期待下指挥官会有什么具体的表现吧~？",
-	main = "就算没有功绩，没有奖章。我依然是强大的，这份力量就是最好的证明。|指挥官，要来一杯红酒么。啊，我是指，在工作完成之后，要来一杯红酒么~|黄金？指挥官对这个话题感兴趣么。那要从鸢尾教国的时候开始说起了.......|平时我喜欢偶尔去逛一逛猫咖呢……说起来，这个母港也有很多可爱的孩子啊。真不错。……嗯！|皇家以前也曾是一起战斗的伙伴，然后……昨日之敌亦会是今日之友，人生真是有意思呢。呵呵",
-	battle = "希望会是一场不辜负期待的战斗呢…呵呵~",
-	upgrade = "就这样一口气突破条约的限制好像也不错呢~",
-	voice_key = 90302,
-	headtouch = "这是…要测体温吗？",
-	feeling2 = "您好像有些畏惧我？请放松下来指挥官。我们是朋友，我是不会伤害您的。",
-	login = "指挥官，既然我们是朋友，再让我多等一会也是没关系的哦？",
-	vote = "",
-	hp_warning = "......条约的限制，还真是不太方便啊",
-	id = 903020,
-	detail = "指挥官，如果想了解历史与真实之间的区别，有些事情还是需要自己去寻找答案的哦？",
-	couple_encourage = {
-		{
-			{
-				90103,
-				90101
-			},
-			1,
-			"不要害怕，就算是末日审判来临，教廷骑士也要英勇的面对它！",
-			0
-		},
-		{
-			{
-				60302
-			},
-			1,
-			"机会终于来了。{namecode:526}，要来比试一下么？",
-			0
-		},
-		{
-			{
-				10117,
-				70102,
-				70501
-			},
-			1,
-			"请问，那瓶可以让我也品尝一下吗？",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[903021] = {
+_G.pg.base.ship_skin_words[899028] = {
 	feeling1 = "",
 	feeling3 = "",
-	lose = "",
+	lose = "誓言不破，故香槟之守护长存。",
 	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "红酒…在这里有些不合氛围呢。作为替代…指挥官，要来一杯冰镇西瓜汁么？",
+	expedition = "耳畔传来恋人的甜言蜜语——当一同准备出门迎接。",
+	win_mvp = "不复翩然浮沫之虚，愿此胜利长久纪存。",
+	home = "告诉我。圣洁洗礼的沐浴，餍足味蕾的丰饶，沉溺梦幻的幽期。",
 	mission = "",
-	touch2 = "…！？这身打扮给指挥官也带来困扰了吗…",
+	touch2 = "知悉此情之长久，仍寻求片刻欢愉——香槟所行，皆为实现指挥官所愿。",
 	voice_key_2 = -1,
 	skill = "",
-	drop_descrip = "日光浴晒得还舒服么，指挥官？呵呵～您已经在沙滩上休息了有些时候了，是时候继续和大家享受夏日的美好时光了吧？",
-	mail = "",
-	touch = "指挥官想喝椰子汁？我去帮您拿过来，稍等一下哦~",
+	drop_descrip = "颂扬之歌献予尊崇鸢尾，鸣奏之乐凝为清澈祈祷。赐福所求并非礼拜之仪，永存羁绊方乃人之伟业——",
+	mail = "信件往来——欢喜、空虚、自豪、不甘——皆由指挥官回复所致。",
+	touch = "指挥官之体温，心跳，五感所触，皆诱香槟喜不自胜。",
 	profile = "",
 	mission_complete = "",
 	feeling4 = "",
-	unlock = "日光浴晒得还舒服么，指挥官？呵呵～您已经在沙滩上休息了有些时候了，是时候继续和大家享受夏日的美好时光了吧？",
-	feeling5 = "把指挥官就这样埋在沙子下面，这样就能在指挥官不能动的时候随心所欲的……指挥官莫非对我也是这么想的？呵呵呵",
-	main = "指挥官，给，遮阳帽~做好充分的夏日对策，才能更好地享受夏日生活哦。|皇家对抗维希教廷的排球比赛？听起来很有趣呀~指挥官，我们一起去“观战”吧。|nil|“将烦恼写在沙上，让它随风浪而去”…指挥官，你也想在沙滩上写些什么吗？|呼…果然还是有点热呢…指挥官也不要勉强，若是身体不舒服请告诉我哦",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "还没完全清醒过来么？日光浴虽然舒适，晒的时间太长的话，小心在沙滩外的地方变得格外显眼哦？",
-	vote = "",
-	hp_warning = "",
-	id = 903021,
-	detail = "能被那么多女孩子包围着，真是一件幸福的事啊。指挥官，您会选择将目光停留在谁身上呢~？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[903022] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "累了么？呵呵，想喝什么的话，我让这些小小“侍从”拿给你。",
-	mission = "",
-	touch2 = "我要叫我的“护卫队”了哦？呵呵，玩笑而已~",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "来的不是爱丽丝，而是指挥官啊。你也是来反抗我的么？这样的话，就不得不审判你了呢…——怎么样，我的演技如何？呵呵~",
-	mail = "",
-	touch = "呵呵，想体验一下当“暴君”的感觉的话，这王座让给你坐坐也不是不行哦？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "来的不是爱丽丝，而是指挥官啊。你也是来反抗我的么？这样的话，就不得不审判你了呢…——怎么样，我的演技如何？呵呵~",
+	unlock = "颂扬之歌献予尊崇鸢尾，鸣奏之乐凝为清澈祈祷。赐福所求并非礼拜之仪，永存羁绊方乃人之伟业——",
 	feeling5 = "",
-	main = "想要扮演好恶役可不容易。究竟是让大家喜欢你算成功、还是让大家讨厌你算成功呢？|明明应该是引导别人的小兔子，却自己迷失在了布景里……指挥官，不去帮她一把吗？|正义与善良战胜了不公与邪恶……对于童话而言，这应该是最好的结局了。充满纯真的故事，就应当美好地结束。",
-	battle = "",
+	main = "生命无常短暂，坚船的龙骨也非永存不灭。耽溺一时的幸福，实乃定命之人无法逃脱的宿命。|盈满空杯，为香槟之责。提醒时刻，督促休息，皆如是——|世代传颂的赞美诗当为真心。香槟，为伟业奉上称赞，为爱恋赋予永恒。",
+	battle = "此身皆为指挥官而战——便是香槟所定之信条。",
 	upgrade = "",
 	voice_key = 0,
 	headtouch = "",
 	feeling2 = "",
-	login = "等你很久了，指挥官。接下来的剧情该怎么进行，你想好了么？",
+	login = "感慨，知觉。相系之心的鼓动怦然，触碰双唇的润然柔香。",
 	vote = "",
 	hp_warning = "",
-	id = 903022,
-	detail = "柴郡猫…？嘴巴虽然有些可怕，不过还是很可爱的哦。不过，我现在是不是应该讨厌它才对？",
+	id = 899028,
+	detail = "誓约无谓称颂。恋慕、忠诚、肩负使命、信仰教条——现在的香槟乃守护身为人之幸福的存在。",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[904010] = {
-	feeling1 = "指挥官，好久不见，我过得很好，不劳费心",
-	feeling3 = "那个时候，大家都是身不由己…我完全没有责怪皇家各位的意思，倒不如说，如果这样能够让她们稍微原谅我的话，也是一件好事",
-	lose = "没关系…这次的失败不代表结束",
-	propose = "正是过去的苦难，成就了当下的我，所以我不会说“如果早点与你相遇”之类的话。但是未来，希望能有你的怀抱给予我安心于温暖。指挥官，我能待在你的身边吗？",
-	expedition = "哎呀，委托组回来了吗，正好请她们尝尝我刚做的点心吧",
-	win_mvp = "保持这个势头继续前进吧",
-	home = "指挥官，来尝一尝刚刚烘焙好的蛋糕吗？",
-	mission = "新的任务……还有不少呢，努力虽然是好事，可不要累着自己",
-	touch2 = "真是拿你没办法呢…",
+_G.pg.base.ship_skin_words[899030] = {
+	feeling1 = "你的故事不该在此画下句点，请振作起来，继续前进吧。",
+	feeling3 = "故事中的贤者，甚至能够预测他人的命运。虽然我没有这样的能力，不过见证了您的故事的我，始终相信您会是一位伟大的英雄哦。",
+	lose = "挫折，也是英雄故事不可缺少的一部分呢…",
+	propose = "没想到最后，吟唱英雄诗篇的诗人，也成了故事的一部分呢。让我们并肩同行，一起谱写未来的幸福之诗吧——",
+	expedition = "远征的伙伴已经归来，不知道这次她们会带回来什么样的故事呢？",
+	win_mvp = "为英雄谱写的诗歌，如今又可以添上新的篇章了。",
+	home = "英雄的凯旋…诗歌的灵感涌上来了呢。",
+	mission = "不用心急，英雄大人，按照平时的步调来一步步完成任务就好。",
+	touch2 = "哎呀…在英雄的诗篇中，也不乏这样的“逸闻轶事”呢…",
 	voice_key_2 = -1,
-	skill = "和平常一样应该就好…",
-	drop_descrip = "敦刻尔克级战列巡洋舰—敦刻尔克",
-	mail = "指挥官，邮件分类好了，不要忘了查看",
-	touch = "指挥官，一起来做甜点吗？我们国家的甜点可是世界闻名的哦",
-	profile = "我是隶属于维希教廷第一线总队的敦刻尔克号。如你所知道的，我的舰历毫无光彩之处，我不会遮掩，因为这是事实。但如果你仍然愿意用我，我想，我不会让你失望",
-	mission_complete = "嗯？啊，任务奖励发放了呢，指挥官，我去吧",
-	feeling4 = "指挥官你很喜欢跟我聊天呢，跟我聊天很有趣吗？呵呵，你的喜好我也都记住了，在那儿坐会儿吧，我这就把蛋糕端出来",
-	unlock = "大家站在同一战线上的这一天终于来临了吗…你好，指挥官，我是敦刻尔克，请让我也为这支梦幻般的舰队出一份力吧",
-	feeling5 = "真正的坚强，不应只是默默忍受苦难，也应包含依赖他人的勇气…所以指挥官，难过时就告诉我吧。我想哭的时候，也一定会毫不犹豫投入你的怀抱的",
-	main = "世上确实有许多无可奈何的事，但这并不是放弃希望和追求美好事物的理由|虽然呆在船坞里的感觉并不好受，不过代替我率领舰队的斯特拉斯堡一定更难受吧…要是陆军的孩子们再多坚持一下…唉|哈…甜食真是能让人感到幸福的东西呢……啊，指、指挥官，你听到了吗？",
-	battle = "抱歉，对敌人我是不会手下留情的",
-	upgrade = "应该能稍微帮上忙吧",
-	voice_key = 90401,
-	headtouch = "",
-	feeling2 = "指挥官，你来了吗，稍等，甜点已经准备好了，我去泡茶，今天就来稍微聊聊天吧",
-	login = "指挥官，休息得还好吗？",
+	skill = "反派该退场了…！",
+	drop_descrip = "大型巡洋舰—布雷斯特",
+	mail = "新的信件来了呢。",
+	touch = "嗯…？需要我的建议吗，英雄大人？",
+	profile = "自由鸢尾的大型巡洋舰，布雷斯特。我喜欢倾听大地与海洋之上发生的故事，再将其编织成诗歌，分享给更多的人。英雄大人，我很期待你能带来更多的故事。",
+	mission_complete = "任务奖励一直在那里，稍微放一放也不会消失的，不用着急。",
+	feeling4 = "故事中的吟游诗人走遍世界，向世人们传诵英雄的诗篇。我为你的故事所谱写的英雄诗歌，总有一天也能够传遍全世界的吧。",
+	unlock = "你就是英雄大人？我是来自自由鸢尾的布雷斯特哦，既然缘分指引你我相遇，那就让我们好好相处吧。",
+	feeling5 = "英雄的故事虽然充满传奇色彩，但凡人之躯终有劳累之时。若是感到疲倦了，不妨稍作休息，我会用最棒的琴声和诗歌来招待你的。",
+	main = "将前进的脚步放慢些如何，英雄大人？美丽的自然与牵挂您的同伴…值得您驻足留念的事物，还有许多许多呢。|每一个生命都是美妙的诗篇，无论是波澜壮阔的动人史诗，还是平缓和煦的温柔歌谣，都会被包容一切的大地与海洋所铭记。|喝什么茶？嗯…感觉都可以吧……吃什么点心？唔…感觉也都行呢……",
+	battle = "祝各位好运，出征吧——",
+	upgrade = "感觉能弹奏出更棒的音色了呢。",
+	voice_key = 89903,
+	headtouch = "嗯？这是打算安慰我吗？",
+	feeling2 = "我从许多不同的人口中，听到了各种不一样的关于英雄大人的故事。你自己眼中的自己的故事，又是什么样的呢？",
+	login = "今天的你，又会编织出什么样的英雄故事呢？",
 	vote = "",
-	hp_warning = "才刚刚开始呢…",
-	id = 904010,
-	detail = "马卡龙还是蒙布朗呢，真难选啊……啊，指挥官，你来的正好，来帮我挑今天做什么点心吧",
+	hp_warning = "还没到需要着急的时候呢。",
+	id = 899030,
+	detail = "呼……嗯？是英雄大人啊，我没事，只是突然想到了些创作诗歌的灵感…需要消化一下而已——",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[904011] = {
+_G.pg.base.ship_skin_words[899031] = {
 	feeling1 = "",
 	feeling3 = "",
 	lose = "",
 	propose = "",
-	expedition = "",
-	win_mvp = "大家吃甜甜圈吗？我做了很多呢",
-	home = "指挥官想吃冰淇淋吗？有很多口味可以选哟",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "久违的夏天…真是不错呢。阳光、沙滩和大海…还有大家的笑容。机会难得，要一起吃点甜甜圈吗，指挥官？",
-	mail = "",
-	touch = "指挥官要来一起看大海吗，心情会变得平静哦",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "久违的夏天…真是不错呢。阳光、沙滩和大海…还有大家的笑容。机会难得，要一起吃点甜甜圈吗，指挥官？",
-	feeling5 = "",
-	main = "冰淇淋做的甜品虽然好吃，但是太容易化了……看来要随身带个冰箱了|像这样优哉游哉地坐在沙滩上看风景，感觉是很久没有过的体验了呢…|指挥官，泳装换好了吗，妹妹们在招呼我们呢，一起过去玩一会儿吧",
-	battle = "敌人啊……真是煞风景呢",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，泳装换好了么~？",
-	vote = "",
-	hp_warning = "",
-	id = 904011,
-	detail = "看着大家其乐融融地在沙滩上一起游玩，没有比这更令人开心的事了",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[904012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "指挥官，委托完成了哦……呵呵，无论何时何地，我首先都是你的秘书舰呢",
+	expedition = "粼粼的波涛所传达而来的故事是……委托的伙伴们回来了，英雄大人。",
 	win_mvp = "",
-	home = "不用这么急也没关系，指挥官，我会等你的",
-	mission = "是紧急的任务吗？那我陪你一起去吧",
-	touch2 = "",
+	home = "深海的冒险之旅……也能写出很有意思的诗歌呢，英雄大人。",
+	mission = "有没有调查这片遗迹的任务呢？",
+	touch2 = "哎呀呀…突然怎么了？",
 	voice_key_2 = -1,
 	skill = "",
-	drop_descrip = "指挥官，这家店的氛围你喜欢吗？这是我很中意的一家店，甜点十分美味哦，要尝尝看吗？",
-	mail = "是新的情报吗？不用顾虑我，赶快确认一下吧",
-	touch = "指挥官，不要急，我们的时间还有很长，做什么都来得及",
-	profile = "",
-	mission_complete = "指挥官，任务奖励发放了呢，要先返回办公室一趟吗？",
-	feeling4 = "",
-	unlock = "指挥官，这家店的氛围你喜欢吗？这是我很中意的一家店，甜点十分美味哦，要尝尝看吗？",
-	feeling5 = "和煦的日光，安静的氛围，悠扬的音乐，和重要之人无忧无虑的聊天。如果这是梦，那我希望永远都不会醒来……",
-	main = "……官，指挥官！真是的，又在看着我发呆了，我就有那么好看吗，饮料的冰都要化了哦？|指挥官，等一会儿我们去稍微走走吧。难得的约会，光是坐着聊天稍微有些浪费呢|像这样坐在这里，经常会不自觉地忘了自己舰船的身份……不过，为了这样的时光而奋斗，也是个不错的动力呢，对吧，指挥官？",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，你来啦？嗯？没事的，我也是刚到没多久呢",
-	vote = "",
-	hp_warning = "",
-	id = 904012,
-	detail = "指挥官最喜欢我做的哪一种甜点呢？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[905010] = {
-	feeling1 = "想把狼像狗一样饲养倒也无所谓，被咬的时候可别哭鼻子哦？",
-	feeling3 = "不要露出那种表情……只要你不选择背叛我，我也绝不会背叛你。",
-	lose = "我会很快让你们知道…这份屈辱的利息有多重！",
-	propose = "我所行走的道路，是条绝不会被赞许、看不见未来的泥泞之道，即便如此你也要与我一同前行吗？……哼，真是个愚蠢的家伙啊。那份愚蠢的信任——就让我用余下的生命来回报吧。",
-	expedition = "吵吵闹闹的家伙们回来了呢。",
-	win_mvp = "你们的努力令人感动——可惜选错了对手",
-	home = "狩猎结束了？我在场的话，那种战斗一瞬间就会分出胜负了。",
-	mission = "工作就是工作，光发牢骚数量也不会减少。",
-	touch2 = "……待会可别后悔哦？",
-	voice_key_2 = -1,
-	skill = "游戏就到此为止了！",
-	drop_descrip = "黎塞留级战列舰—{namecode:523}",
-	mail = "看到有你的信，我顺手带过来了。",
-	touch = "别向我撒娇。",
-	profile = "我是战列舰{namecode:523}号，这名字源于“受人敬仰”的某位私掠船船长……嗯？你问私掠船是什么？哼，就是打着国家大义名号，公然抢劫的海盗船啊。",
-	mission_complete = "……哼，真是寒酸的报酬啊。",
-	feeling4 = "你要是受伤了，其他人会很罗嗦的……把我当作盾牌使用吧。",
-	unlock = "我是{namecode:523}，七大洋上最新也是最后的战列舰。今后就是由你来决定我的航向吗……哼，就让我看看你有多少能耐吧",
-	feeling5 = "有你在附近的话，好像连空气都会放松下来……我可能、要稍微睡一会………………………不要走开。",
-	main = "战列舰的时代结束了？哼，那又如何，我的时代才刚刚开幕。|信仰也好理念也好，整天挂在嘴边也就只是梦话罢了。|为什么总有傻瓜向永远不会给予回应的东西祈祷？",
-	battle = "不用讲究无聊的骑士道精神，你们一起上吧",
-	upgrade = "感觉不错。想试试吗？",
-	voice_key = 90501,
-	headtouch = "",
-	feeling2 = "你的笑容让我想起某个人……某个，我想要憎恨的人。",
-	login = "你这家伙……意外地忙碌啊。有什么我能做的就说一声吧。",
-	vote = "",
-	hp_warning = "就这点能耐吗？",
-	id = 905010,
-	detail = "随便刺探个人情报的家伙，被绑在炮管上也别抱怨啊。",
-	couple_encourage = {
-		{
-			{
-				80501
-			},
-			1,
-			"停止祈祷吧——战斗开始了。",
-			0
-		},
-		{
-			{
-				10519
-			},
-			1,
-			"这回可不会落后了！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[905011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "哼，总好过参加宴会……",
-	propose = "",
-	expedition = "委托完成了？我也一起去接她们吧，正好透透气",
-	win_mvp = "呼，还是战场的风比较舒服啊",
-	home = "刚从战场回来？敬你一杯",
-	mission = "这个时候了还有任务？……要我帮忙吗？",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "来这样的角落找一个独自喝酒的人，可不是身为今夜的主角该做的事——好吧，来都来了，喝一杯？",
-	mail = "",
-	touch = "干杯——哼，托作为某个人妹妹的福，我即使不想，也早就习惯了这种场合",
-	profile = "",
-	mission_complete = "好了，那些东西都先放放，过来喝一杯如何？",
-	feeling4 = "",
-	unlock = "来这样的角落找一个独自喝酒的人，可不是身为今夜的主角该做的事——好吧，来都来了，喝一杯？",
-	feeling5 = "我讨厌繁文缛节，更不喜欢花瓶一样站在这里让人参观……这一切都是因为你，是你让我觉得，为你做这些是理所当然——你犯了重罪，Mon amour……",
-	main = "放开一切，纵情欢歌，这才是所谓的宴会。这里的空气太高贵了，高贵到酒都变难喝了|这场宴会唯一的优点，就是每个人脸上的笑容都是真实的——我在夸你，听不出来吗？|指挥官，我可不会说些好话来取悦你……算了，我们也不是第一天认识，不是吗？",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "你……似乎很无聊，指挥官。哼，真巧，我也正无聊",
-	vote = "",
-	hp_warning = "",
-	id = 905011,
-	detail = "比起某个人，我倒是更愿意听敦刻尔克的，毕竟敦刻尔克会听人话，也会说人话",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[905012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "别一回来就往我这里跑，我可不想这里变成派对场地",
-	mission = "",
-	touch2 = "没人会来不意味着只有你可以为所欲为——我也可以，明白吗？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "你这家伙，知道擅自闯进海盗的秘密基地会有什么后果吧？……哼，好吧，我也是偶然发现的这里，别告诉别人",
-	mail = "",
-	touch = "……！用冰可乐搞突然袭击，你这家伙，最近胆子越来越大了啊",
+	drop_descrip = "“谨将此诗献给拯救了碧蓝之海的英雄大人”——嗯，这样布雷斯特的诗歌就完成了。哎呀，既然都来到这里了，不妨我们再接着探索一下这个海底遗迹吧？英雄大人？",
+	mail = "有新的邮件……嗯，这样一来就可以不弄湿地拆封它了。",
+	touch = "本想带一些漂亮的珊瑚回去做纪念品，不过还是作为回忆放在心里就好。",
 	profile = "",
 	mission_complete = "",
 	feeling4 = "",
-	unlock = "你这家伙，知道擅自闯进海盗的秘密基地会有什么后果吧？……哼，好吧，我也是偶然发现的这里，别告诉别人",
-	feeling5 = "……嗯，啊，阳光真刺眼。……嗯？你还没走吗？……也不用一直待在我身边……啧，你这家伙，总是知道怎么让我高兴，真是令人生气",
-	main = "吊床只有一张，想休息自己想办法，我可不是你的保姆|竟然把工作也带到这里来做，你就这么喜欢这个地方吗？……喜欢和我相处？啧……|…咳咳咳！什么玩意…这不是絮库夫吗，啧，这家伙是怎么找到这里还睡得这么香的？真是麻烦的家伙",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "别乱动我的东西，小心我把你轰飞",
-	vote = "",
-	hp_warning = "",
-	id = 905012,
-	detail = "寻宝？哼，近海能有什么宝藏，等哪天解决了塞壬，我带你体会一下真正的寻宝",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[905013] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "别以为我{namecode:523}会小看任何对手！",
-	home = "结束了？想要见你的同伴们都排起队了。…我可不是啊……",
-	mission = "",
-	touch2 = "……！？你干嘛？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "Bonne année…唔，这种情况下应该说“新年好”才对吧。又平安无事地迎来新的一年了啊…得好好感谢你过去这一年的努力才是。",
-	mail = "",
-	touch = "想看我挥舞这玩意儿吗？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "Bonne année…唔，这种情况下应该说“新年好”才对吧。又平安无事地迎来新的一年了啊…得好好感谢你过去这一年的努力才是。",
-	feeling5 = "并不是我松懈了，只是太习惯了你在身边而已。…不过我倒是不讨厌这种感觉，甚至感觉挺不错的。令我不自觉想要依靠——你就是如此重要的存在啊。",
-	main = "打羽板球？有意思，就让这羽球一直飞到海平线的尽头吧！|什么都不做小家伙们就会自己蹭上来，真想要摸的时候又…真是的…唔，我可不需要你的同情|敦刻尔克新做的日式点心？谢谢。她手脚还真快。",
-	battle = "全舰，持刀突击！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "……呼",
-	feeling2 = "",
-	login = "今天也要干活吗？有什么我能帮忙的就说一声吧。",
-	vote = "",
-	hp_warning = "",
-	id = 905013,
-	detail = "衣服难穿？…比起真正的宫廷礼服，这都算小意思了。比起那种，还是这身相对轻便的打扮更适合我，你也这么觉得吧？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[905020] = {
-	feeling1 = "所以你在大家面前的好形象都是你刻意捏造的人设？哎，这反而有点无趣了啊……",
-	feeling3 = "对我仍然有所戒备啊。我猜，是{namecode:523}提醒你的？……哈哈，我就知道是她。话说，你和她是怎么搞好关系的？要对付她那样的人可不简单。",
-	lose = "啊哈哈，输了啊……说起来，其实我是个有点记仇的人呢。",
-	propose = "我可是一位不折不扣的坏女人。像是精心排好约会的日程，刻意制造出只有两个人在的时间，装作无心却在意着你今天见了谁……这样那样的事情，我都有可能做得出来哦？……所以，做好心理准备了么？",
-	expedition = "把这些慰问品给归港的委托队送去吧。嗯？你好奇是什么时候准备的？这不重要，不是么？呵呵～",
-	win_mvp = "胜利的砝码又多了一枚，局势已然向我们倾斜。",
-	home = "要总结一下刚刚的作战么？你若有空的话，我们不妨再推演一遍别的可能性？",
-	mission = "还有任务尚未完成。我想，你应该已经把它们列入计划事项中了吧？",
-	touch2 = "嗯？指挥官，你就这么想亲自将把柄递到我的手上么？",
-	voice_key_2 = -1,
-	skill = "等待，并心怀希望吧。",
-	drop_descrip = "黎塞留级战列舰—克莱蒙梭",
-	mail = "有新的来信。不是紧急事项，忙完手头的东西再查看也不迟。",
-	touch = "指挥官，你现在正一副“我有话想说”的表情哦？",
-	profile = "黎塞留级未完成的第三艘，克莱蒙梭。相比大名鼎鼎的黎塞留与{namecode:523}，我曾在襁褓中被无奈遗弃。我没有名声，亦无过往，这也是我最大的优点——这样，就不会有人在意站在幕后的我了。",
-	mission_complete = "任务已经完成了。有条不紊地解决计划中的事项，这便是工作状态的你么。",
-	feeling4 = "不介意把你的兴趣爱好告诉我吧？这样，我才能“投其所好”，不是么？你要是觉得没法坦率地说出口的话，那我就只好和同伴打听了。",
-	unlock = "维希教廷战列舰克莱蒙梭，很高兴能与指挥官你共事。相对事迹早已无人不晓的你而言，我算是陌生的一方吧。在正式合作之前，你有什么想问我的么？",
-	feeling5 = "这港区有如一座修罗场，如此多的同伴都对指挥官虎视眈眈，不下点功夫可没法得到青睐呢，哈哈。至于我的话……你觉得我的胜算又有几成呢？",
-	main = "指挥官既是舞台上的领导者，也是幕后的参谋家。你更喜欢哪一个身份？又或者，其实你只想做一个观众？|在皇家享受茶会，再到北方联合饮下热情的伏特加——即使是刻板印象，对拉近距离而言却极其有效。不过伏特加确实有点……|单纯是单纯者的蓝天，精明者亦有精明者的城府。我从不轻易地对他人下定论，毕竟朋友也有很多种相处的方式，不是么？",
-	battle = "一出好戏，即将开场——",
-	upgrade = "也别忘了提升下自己哦，指挥官？",
-	voice_key = 90502,
-	headtouch = "",
-	feeling2 = "你是令人众星捧月的指挥官，却又没有被神话为让人顶礼膜拜的大理石雕像。是因为你和大家走得很近么？嗯……值得思考呢。",
-	login = "欢迎回来，日理万机的指挥官。 有没有什么需要我协助的？",
-	vote = "",
-	hp_warning = "哎呀呀，大意了呢。",
-	id = 905020,
-	detail = "当我想陪那些可爱的小指挥喵们玩时，它们便会自己过来。而当我想做别的事了，它们也会识趣地散开。嗯……大概这是我能让黎塞留和{namecode:523}羡慕的地方？",
-	couple_encourage = {
-		{
-			{
-				80501
-			},
-			1,
-			"谢谢你的祈祷，黎塞留。现在，一起齐心消灭眼前的敌人吧。",
-			0
-		},
-		{
-			{
-				90501
-			},
-			1,
-			"{namecode:523}，总板着脸可不好哦。",
-			0
-		},
-		{
-			{
-				69901
-			},
-			1,
-			"切勿莽撞行事哦，马可波罗阁下？",
-			0
-		},
-		{
-			{
-				90202
-			},
-			1,
-			"马赛曲，消灭鸢尾的敌人！",
-			0
-		},
-		{
-			{
-				90201,
-				90701,
-				80107
-			},
-			3,
-			"用审判庭的方式取得胜利吧！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[905021] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托物资送到了吗？正好，看看里面有没有什么能派上用场的。",
-	win_mvp = "呼——麻烦解决。怎么能被这些闲杂人等打扰了我们的休闲时光。",
-	home = "",
-	mission = "",
-	touch2 = "哎呀，指挥官，你的手好像不怎么安分呢。",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "天气正好，风速尚可，是个适合打高尔夫的日子……指挥官，我邀请你过来可不只是看风景的哦？做好今天任性一整天的准备吧。",
-	mail = "",
-	touch = "",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "天气正好，风速尚可，是个适合打高尔夫的日子……指挥官，我邀请你过来可不只是看风景的哦？做好今天任性一整天的准备吧。",
-	feeling5 = "在你的身边时，总有一种能让人放空思绪的安心感……你也一样？呵呵，说不定这只是我用来哄你开心的话哦？你啊，可不能被其他坏女人的甜言蜜语给骗了。",
-	main = "嗯？我在测风速哦。或者说……我在感受这和煦的风？|不必在意那么多，尽情挥出自己想打的一杆就好。既然不是比赛，随意点，尽可能放轻松吧。|黎塞留和{namecode:523}，一位犹豫半天，生怕一挥杆那球就不见了；另一位完全不在乎打到哪，每一杆都抡圆了手臂——真有趣啊。",
-	battle = "难得的闲情逸致，不得不中断了啊。",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "那就先从这里开始吧？看看今天指挥官的手感如何。",
-	vote = "",
-	hp_warning = "",
-	id = 905021,
-	detail = "如果觉得抡球杆抡累了，不妨坐在车上兜兜风，欣赏一下风景？当然，司机的工作就交给指挥官你了。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[905030] = {
-	feeling1 = "条件触发：逻辑判断主人缺乏培养加斯科涅的能力。自主培育计划启动，请主人不要打扰加斯科涅",
-	feeling3 = "主人，提问，站在舞台上时，加斯科涅明显感觉到“情感”产生了巨大的起伏，这是为什么？",
-	lose = "主人，请中止本方案的实行，加斯科涅请求标准形态的切换",
-	propose = "偶像的意义，是通往明天的希望，是永不褪色的笑容，是青春，是热情——加斯科涅现在明白了，在战斗之外，也有许多有意义的事情。谢谢，我最亲爱的主人",
-	expedition = "提案，让加斯科涅去港口为返回的委托组表演节目",
-	win_mvp = "最新作战方案，确认执行有效。加斯科涅，将继续在战场上歌唱",
-	home = "报告，加斯科涅刚刚完成了一项课程，请主人检查",
-	mission = "摄影、演出、电台，请决定加斯科涅今日的活动",
-	touch2 = "警告，偶像不需要进行过度的身体接触。故意的接触被视为“骚扰”的可能性较高",
-	voice_key_2 = -1,
-	skill = "都来听加斯科涅的歌吧！",
-	drop_descrip = "加斯科涅，再着装完毕。指令修改：将歌声带给所有人——如您所愿，主人",
-	mail = "主人，是新的试镜邀请，请决定加斯科涅是否前往",
-	touch = "加斯科涅正在进行今日的课程",
-	profile = "提示，本形态为加斯科涅的特别方案。为了更好地适应在战斗的同时进行歌唱活动，而进行了特殊的参数调整以及舰装改良，因此各种参数不具有参考价值。如果想要了解加斯科涅，请参考标准形态的档案资料",
-	mission_complete = "报告，通过偶像活动，加斯科涅的偶像能力得到了提升",
-	feeling4 = "偶像活动，确定有战略上的意义。申请完成今日的作战任务后，继续进行偶像活动。",
-	unlock = "加斯科涅，再着装完毕。指令修改：将歌声带给所有人——如您所愿，主人",
-	feeling5 = "加斯科涅，已对“偶像”的定义有了完全的理解。现判断需要在进行“感情”功能的开放，以及对自身各种机能进行调整。主人，“请多多关照”",
-	main = "数据库中，存在歌声拯救世界的记录，逻辑判定为加斯科涅的最终目标|在歌唱中融入“感情”的行为，加斯科涅无法理解其中意图。蕴含“感情”的歌声，才能真正打动人心。主人，请对加斯科涅的歌声进行评价|加斯科涅，由于存在感情模块，实际属性和宣传材料中的“冷淡系”有所偏差",
-	battle = "作战方案——代号歌姬，启动",
-	upgrade = "提示，本强化方案对偶像活动没有帮助",
-	voice_key = 90503,
-	headtouch = "",
-	feeling2 = "报告，加斯科涅已经将有关偶像的资料完整学习了一遍，对偶像的职能产生了新的理解。偶像，能够用歌声中止战争，很强大",
-	login = "唱功，舞技，魅力——主人，请设定加斯科涅今日的课程安排",
-	vote = "",
-	hp_warning = "战斗方案，切换完成",
-	id = 905030,
-	detail = "提问，主人喜欢什么样的歌曲？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[907010] = {
-	feeling1 = "请不要逼我对您展开“另一边”的工作。大家会伤心的。",
-	feeling3 = "不仅是“战斗”，还希望我和其他伙伴好好相处吗？明白了。既然统率港区的您这么说，我照办就是。",
-	lose = "……不过是名为败北的试炼罢了。",
-	propose = "以鸢尾之名，与你立下永远的誓约……这下我就失去制裁你的资格了呢。不过这也没什么。我会充分用好这份刚获得的，爱你的资格的。",
-	expedition = "委托组回来了。一切皆从鸢尾所愿。",
-	win_mvp = "忏悔之时已至，休想苟延残喘。你们的残骸将成为我等胜利的基石。",
-	home = "就由我代替鸢尾，裁定您的战果吧……辛苦了，是场漂亮的胜利。",
-	mission = "任务来了。我会根据您完成任务的进度下达裁决。",
-	touch2 = "……接受制裁吧。",
-	voice_key_2 = -1,
-	skill = "汝，有罪！",
-	drop_descrip = "霞飞级航空母舰—霞飞",
-	mail = "看来是新邮件。确认下吧。",
-	touch = "怎么了？",
-	profile = "我是航空母舰霞飞，在大战中为了对抗铁血的航母而生，但由于种种曲折，经历了数次开工和中止，最终依然没能下水，——这肯定也是上天给予我的试炼吧。",
-	mission_complete = "任务奖励下发了。接受吧，不要贪心。",
-	feeling4 = "不但要好好相处，还要一起享受乐趣吗？对我而言所谓“乐趣”自然也包括“另一边”的工作…开玩笑的。你现在的反应十分有趣呢，呵呵～",
-	unlock = "我是鸢尾的航母，霞飞。您就是这个港区的指挥官对吧。呼呼呼…愿您也能得到鸢尾的庇佑。",
-	feeling5 = "我不喜欢弯弯绕绕，下次休假的时候一起去约会如何？如果不答应我的邀请——呼呼，你就要好好想下怎么让我开心了哦，指挥官。",
-	main = "作为制裁罪恶之人，某种意义上我憎恨着所有人。因为人生而有罪。|手停下来了哦？您尚有应尽的职责未完成吧？|我并不会裁决您行动的善恶，因为是我的职责是裁决您的存在本身。",
-	battle = "我将会代替圣座降下制裁。",
-	upgrade = "谨遵鸢尾所望。",
-	voice_key = 90701,
-	headtouch = "",
-	feeling2 = "在港区无需制裁，只要“战斗”是吧。放心吧，我不会做什么让您担心的事。",
-	login = "做完晨间祷告了吗？……啊，抱歉，向您要求这点确实有些苛刻了。",
-	vote = "",
-	hp_warning = "只要我等羽翼未断……！",
-	id = 907010,
-	detail = "我存在的意义，便是制裁“罪人”。至于你的话……嗯，现在下结论还为时过早。",
-	couple_encourage = {
-		{
-			{
-				80701
-			},
-			1,
-			"将“秘仪”展示给你看吧",
-			0
-		},
-		{
-			{
-				40701,
-				40703
-			},
-			1,
-			"看看我有没有作为对手的资格吧。",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[907011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "这面手镜告诉我指挥官回来了……呵呵，开玩笑的",
-	mission = "任务来了。您意下如何？",
-	touch2 = "看来您是饥饿的大灰狼呢。呵呵呵~",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "打算把我从这里救出来吗？那么，你做好接吻的准备了吗，指挥官？虽然我醒着，嗯……这算是一种仪式吧？",
-	mail = "",
-	touch = "是作为王子殿下吗？可以哦。",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "打算把我从这里救出来吗？那么，你做好接吻的准备了吗，指挥官？虽然我醒着，嗯……这算是一种仪式吧？",
+	unlock = "“谨将此诗献给拯救了碧蓝之海的英雄大人”——嗯，这样布雷斯特的诗歌就完成了。哎呀，既然都来到这里了，不妨我们再接着探索一下这个海底遗迹吧？英雄大人？",
 	feeling5 = "",
-	main = "就算吃了毒苹果我也不会倒下的。和您不一样，我身体素质比较好哦。|“七个小矮人”……我想想，或许让港区里的那些孩子们扮演会比较合适？|说起来，没想到阿尔及利亚能演好那个角色。嗯，我也没觉得自己演好了公主这个角色呢。",
+	main = "也想把这片遗迹的风景告诉黎塞留她们呢～要不要试着作一首赞颂美景的赞美诗？|冒险团吗？我的职业肯定是贤者——啊，不用担心。以英雄大人您的勇气，一定可以担当好前卫的。|包含危险的地方在内，都属于我们要守护的大海。就如同您虽有一些小缺点，但也是我所喜欢的英雄大人一样哦～",
 	battle = "",
 	upgrade = "",
 	voice_key = 0,
 	headtouch = "",
 	feeling2 = "",
-	login = "欢迎回来。今天你扮演的是哪位呢？小矮人？还是王子？",
+	login = "光乘船俯瞰海面的话是不够的哦。这蔚蓝的大海里，可是包含着字面意义上“无比深邃”的秘密呢。",
 	vote = "",
 	hp_warning = "",
-	id = 907011,
-	detail = "就算我被人追杀，我也会尽全力反击的。那样生存率更高呢。",
+	id = 899031,
+	detail = "到各种各样的地方旅行，拓展自己的见识才是宽阔自己心胸的秘诀。不管是欣赏大自然的美景，还是像这样探访历史遗迹都是很好的～",
 	couple_encourage = {}
 }
-
-_G.pg.base.ship_skin_words[907012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托组回来了。将泡温泉的特产作为慰劳品带回去吧。",
-	win_mvp = "身子暖起来了，不错。",
-	home = "虽非本意，我也脱下衣物吧。和教廷的规矩一样，入浴的礼仪也必须遵守才行。",
-	mission = "",
-	touch2 = "呵呵，仅有舒服的温泉还无法满足您么？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "感觉神清气爽多了？虽非神圣的仪式，不过如果这温泉能治愈您，鸢尾也会十分高兴的。觉得还不够吗？那么…一起再泡一遍？",
-	mail = "加利索尼埃好像把新邮件送来了…我只把邮件拿来吧？",
-	touch = "呼……向引导我们来到如此美好的温泉相聚的鸢尾花致以谢意",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "感觉神清气爽多了？虽非神圣的仪式，不过如果这温泉能治愈您，鸢尾也会十分高兴的。觉得还不够吗？那么…一起再泡一遍？",
-	feeling5 = "",
-	main = "无需担心我的翅膀。由秘仪所现的神圣象征，当由信仰之心而非流水洗净。|只要身处此地，您便可坚守不犯「偷窥」之罪。这并非监视，而是希望您能保持自制。|您说比起酷暑的深山，在极寒之地的温泉更令人心怀感激。是啊，趁人之虚的享乐可是会可怕好几倍呢。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "欢迎回来，先沐浴一下再回去工作吧。",
-	vote = "",
-	hp_warning = "",
-	id = 907012,
-	detail = "您问开心吗？嗯，很开心哦。被治愈很开心，在这之后想象歼灭敌人的场景也很开心。您呢？开心吗？",
-	couple_encourage = {}
-}
-
 _G.pg.base.ship_skin_words[900001] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -60605,7 +60073,6 @@ _G.pg.base.ship_skin_words[900001] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900002] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -60639,7 +60106,6 @@ _G.pg.base.ship_skin_words[900002] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900003] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -60673,7 +60139,6 @@ _G.pg.base.ship_skin_words[900003] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900004] = {
 	feeling1 = "指挥官，您叫我吗……呀！……谢谢您扶住我……",
 	feeling3 = "指挥官，要是哪一天我又迷路了，您能找到我吗……一定能？谢谢，我好开心！",
@@ -60707,7 +60172,6 @@ _G.pg.base.ship_skin_words[900004] = {
 	detail = "在进行现代化改装前，可能数据要比这差多了呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900005] = {
 	feeling1 = "指挥官……叫诺福克来有什么事吗……想做的事……？想……听指挥官讲故事……可以吗？",
 	feeling3 = "指挥官……诺福克怕黑，睡不着……能和指挥官一起睡吗……？",
@@ -60741,7 +60205,6 @@ _G.pg.base.ship_skin_words[900005] = {
 	detail = "好害羞……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900006] = {
 	feeling1 = "指挥官，这么好的下午，不来聊聊天吗……嗯，好吧，那我就说说和声望的故事吧",
 	feeling3 = "嗯？太近了？虽然淑女要随时保持优雅，但是淑女对于钟情的对象也会勇敢发起攻势哦？",
@@ -60808,7 +60271,6 @@ _G.pg.base.ship_skin_words[900006] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900007] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -60842,7 +60304,6 @@ _G.pg.base.ship_skin_words[900007] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900040] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -60876,7 +60337,6 @@ _G.pg.base.ship_skin_words[900040] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -60910,7 +60370,6 @@ _G.pg.base.ship_skin_words[900041] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900042] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -60944,7 +60403,6 @@ _G.pg.base.ship_skin_words[900042] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900043] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -60978,7 +60436,6 @@ _G.pg.base.ship_skin_words[900043] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900044] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61012,7 +60469,6 @@ _G.pg.base.ship_skin_words[900044] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900045] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61046,7 +60502,6 @@ _G.pg.base.ship_skin_words[900045] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900046] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61080,7 +60535,6 @@ _G.pg.base.ship_skin_words[900046] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900132] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61114,7 +60568,6 @@ _G.pg.base.ship_skin_words[900132] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900133] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61148,7 +60601,6 @@ _G.pg.base.ship_skin_words[900133] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900134] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61182,7 +60634,6 @@ _G.pg.base.ship_skin_words[900134] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900135] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61216,7 +60667,6 @@ _G.pg.base.ship_skin_words[900135] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900161] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61250,7 +60700,6 @@ _G.pg.base.ship_skin_words[900161] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900162] = {
 	feeling1 = "",
 	feeling3 = "诶，指挥官也在这里呀。秘密基地？诶嘿嘿，我不太清楚呢~说回来，指挥官看到我的点心了吗？不，那东西可不能吃",
@@ -61284,7 +60733,6 @@ _G.pg.base.ship_skin_words[900162] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900180] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61318,7 +60766,6 @@ _G.pg.base.ship_skin_words[900180] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900181] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61352,7 +60799,6 @@ _G.pg.base.ship_skin_words[900181] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900182] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61386,7 +60832,6 @@ _G.pg.base.ship_skin_words[900182] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900183] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -61420,7 +60865,6 @@ _G.pg.base.ship_skin_words[900183] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900184] = {
 	feeling1 = "…指挥官似乎欠缺勇敢呢",
 	feeling3 = "天上的光全都是星星，海上的光全都是敌人……指挥官，真的会有没有斗争的那一天吗？",
@@ -61506,7 +60950,6 @@ _G.pg.base.ship_skin_words[900184] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900185] = {
 	feeling1 = "指挥官，你的气概呢！？",
 	feeling3 = "一心一意地磨练自身的技艺，专心致志地打倒眼前的敌人——仅仅做到这些就足够了吗？",
@@ -61549,7 +60992,6 @@ _G.pg.base.ship_skin_words[900185] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900186] = {
 	feeling1 = "哈啊……看来你也不过如此，有所期待是我的错",
 	feeling3 = "什么？没想到我居然会喜欢芭蕾舞？你什么意思？再笑我可锤你了哦？",
@@ -61592,7 +61034,6 @@ _G.pg.base.ship_skin_words[900186] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900187] = {
 	feeling1 = "大姐头果然看走眼了吗……",
 	feeling3 = "大姐头又厉害又酷，而且总是笑的很帅，就好像没有什么能打倒她一样，我的梦想就是有一天变成她那样",
@@ -61635,7 +61076,6 @@ _G.pg.base.ship_skin_words[900187] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900188] = {
 	feeling1 = "抱歉，还有姐妹在等我，没时间陪你",
 	feeling3 = "嗯……虽然我也不是强迫自己心胸宽广，不过指挥官这样能平等聊天的对象还真不多呢……",
@@ -61687,7 +61127,6 @@ _G.pg.base.ship_skin_words[900188] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900235] = {
 	feeling1 = "哇——！指挥官是笨蛋，笨~蛋，笨——蛋！",
 	feeling3 = "虽然能让大家变强很高兴，但是和指挥官一起玩也很高兴buli！作为报答，布里也让指挥官变强吧！……欸，不行吗？！",
@@ -61721,7 +61160,6 @@ _G.pg.base.ship_skin_words[900235] = {
 	detail = "buli？——buli？这在哪，要做什么？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900240] = {
 	feeling1 = "Zzzzzzzzz……",
 	feeling3 = "一开始，感觉指挥官有点无聊……不过仔细想想，我除了战斗也很没干劲，说不定我和指挥官很合得来喔……",
@@ -61772,7 +61210,6 @@ _G.pg.base.ship_skin_words[900240] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900241] = {
 	feeling1 = "指挥官，再不自重一点的话标枪可就真的不喜欢你了！",
 	feeling3 = "感觉和指挥官的距离越来越近了呢，嘻嘻，不过还要再努力一点哦~",
@@ -61831,7 +61268,6 @@ _G.pg.base.ship_skin_words[900241] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900242] = {
 	feeling1 = "指挥官，我要学习了，能不要打扰我吗？",
 	feeling3 = "有点累了吗，嗯，休息也是很重要的。膝枕？真是没办法，就一会儿喔",
@@ -61874,7 +61310,6 @@ _G.pg.base.ship_skin_words[900242] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900243] = {
 	feeling1 = "……不是很想靠近指挥官……",
 	feeling3 = "指挥官……你一直说{namecode:6}的耳朵可爱，但是为什么不摸摸看呢？",
@@ -61943,7 +61378,6 @@ _G.pg.base.ship_skin_words[900243] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900244] = {
 	feeling1 = "结果……你也不过是个无法驱使我的无能指挥官吗……",
 	feeling3 = "一无所有，方能无所畏惧。但是这样的勇敢无畏，真的是值得夸耀的吗…？",
@@ -61986,7 +61420,6 @@ _G.pg.base.ship_skin_words[900244] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900245] = {
 	feeling1 = "不是你吗……",
 	feeling3 = "向神明祈祷真的有用吗？主真的会有所回应吗？Nein，神之所以为神，就是因为没有仁慈",
@@ -62020,7 +61453,6 @@ _G.pg.base.ship_skin_words[900245] = {
 	detail = "如果世上存在神，那就从它开始杀起吧……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900246] = {
 	feeling1 = "我以为你是位更加聪慧的指挥官……",
 	feeling3 = "“丑陋的姐妹”……虽然算是对我们成果的赞美，不过果然还是有点伤人，指挥官，我丑吗？",
@@ -62054,7 +61486,6 @@ _G.pg.base.ship_skin_words[900246] = {
 	detail = "我的职责就是支援总是冲过头的姐姐…不过…有时候也会感到有些麻烦呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900247] = {
 	feeling1 = "我似乎看到指挥官被{namecode:91}前·辈砍杀的未来了呢",
 	feeling3 = "对一二航战的不满？当然有啦——自说自话地抛弃了妹妹的姐姐，不可能不遭妹妹怨恨吧",
@@ -62129,7 +61560,6 @@ _G.pg.base.ship_skin_words[900247] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900248] = {
 	feeling1 = "指挥官，你想体验一下——马里亚纳海战时我的心情吗？",
 	feeling3 = "我的命运一直和列克星敦纠缠在一起……啊，指挥官，这句话不要告诉萨拉小姐，我可拿她没辙……",
@@ -62204,7 +61634,6 @@ _G.pg.base.ship_skin_words[900248] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900249] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -62238,7 +61667,6 @@ _G.pg.base.ship_skin_words[900249] = {
 	detail = "我有帮上你的忙吗，殿下？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900250] = {
 	feeling1 = "指挥官，我要生气了哦？",
 	feeling3 = "只是外表的话，舰队里每个孩子都很可爱哦，但她们同时也都很有个性，说实话，姐姐稍微有些羡慕她们呢（托腮）",
@@ -62272,7 +61700,6 @@ _G.pg.base.ship_skin_words[900250] = {
 	detail = "被这么看着还是有些害羞呢……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900251] = {
 	feeling1 = "你这家伙太弱了，我跟这种家伙可玩不来，再去练练吧",
 	feeling3 = "不对不对，这样的话不就和过去一样了吗……不用勉强？你这家伙有时候也会说些好话耶……欸，刚才笑的就很好？",
@@ -62306,7 +61733,6 @@ _G.pg.base.ship_skin_words[900251] = {
 	detail = "怎么，想看看我有多强吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900252] = {
 	feeling1 = "…指挥官似乎欠缺勇敢呢",
 	feeling3 = "天上的光全都是星星，海上的光全都是敌人……指挥官，真的会有没有斗争的那一天吗？",
@@ -62435,7 +61861,6 @@ _G.pg.base.ship_skin_words[900252] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900253] = {
 	feeling1 = "稍微粗暴一点……也没关系吧",
 	feeling3 = "汝的面庞无时无刻不在诱惑着余，呐，汝的鲜血，究竟能甜美到什么地步呢？",
@@ -62486,7 +61911,6 @@ _G.pg.base.ship_skin_words[900253] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900254] = {
 	feeling1 = "揍你啰——！",
 	feeling3 = "围剿{namecode:435}和钨作战？我只是一时兴起帮了点忙啦，可没有什么成为武勋舰的打算…",
@@ -62537,7 +61961,6 @@ _G.pg.base.ship_skin_words[900254] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900255] = {
 	feeling1 = "昭和的笨蛋！",
 	feeling3 = "如果没有想好如何结束战争，就不该挑起战争！",
@@ -62604,7 +62027,6 @@ _G.pg.base.ship_skin_words[900255] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900256] = {
 	feeling1 = "指挥官的身体，有点弱呢。有好好吃饭吗？",
 	feeling3 = "总是在挑战自己做不到的事情的指挥官……很有趣呢。害得我也有点、想试试自己的极限在哪里了。",
@@ -62655,7 +62077,6 @@ _G.pg.base.ship_skin_words[900256] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900257] = {
 	feeling1 = "唉……看来不下猛药不行了呢",
 	feeling3 = "虽然我常把时刻保持优雅挂在嘴边，但是这并不意味着指挥官需要配合我，您平常的样子才是最有魅力的",
@@ -62722,7 +62143,6 @@ _G.pg.base.ship_skin_words[900257] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900258] = {
 	feeling1 = "果然指挥官完全比不上驱逐妹妹们……",
 	feeling3 = "本人一开始还在想终于要被指挥官送去海军法庭了，能被接受真是太好了——没什么丢人的？……指挥官，皇家方舟将一生追随你！",
@@ -62774,7 +62194,6 @@ _G.pg.base.ship_skin_words[900258] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900259] = {
 	feeling1 = "只要把指挥官切成几块保存在身边，指挥官就不会老是让{namecode:91}伤心了呢……呵呵呵……",
 	feeling3 = "指挥官是我一个人的哦，即使您要管理舰队，只有这一点请不要忘了……不然的话……",
@@ -62849,7 +62268,6 @@ _G.pg.base.ship_skin_words[900259] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900260] = {
 	feeling1 = "看来你不是我追求的勇者…",
 	feeling3 = "如果有一天你输了，那只能说明你太弱了，弱者被淘汰也是正常，不过，谁让你是我的人呢，只好由我来替你报仇了",
@@ -62931,7 +62349,6 @@ _G.pg.base.ship_skin_words[900260] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900261] = {
 	feeling1 = "指挥官，你这样下去是不行的",
 	feeling3 = "指挥官，你总是叫我出来陪你散步，是遇上什么烦心事了么？",
@@ -62990,7 +62407,6 @@ _G.pg.base.ship_skin_words[900261] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900262] = {
 	feeling1 = "指挥官，我喜欢有个性或者会做饭的人，而你，不行",
 	feeling3 = "呵呵，指挥官，怎么样，我的厨艺令你满意吗？尽管吃吧，看到你这么满足，我也很高兴",
@@ -63041,7 +62457,6 @@ _G.pg.base.ship_skin_words[900262] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900263] = {
 	feeling1 = "请你不要摆出一副好像你和我很熟的样子",
 	feeling3 = "没有什么贵族气质吗？不像胡德她们那样还真是对不起呢……我才没有在说欧派……",
@@ -63117,7 +62532,6 @@ _G.pg.base.ship_skin_words[900263] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900264] = {
 	feeling1 = "连光辉都无法触及指挥官心中的黑暗吗……",
 	feeling3 = "指挥官，别看我这样，我意外的喜欢夜袭哦……真是的，不是指那方面啦~不过您呢，喜欢吗？",
@@ -63168,7 +62582,6 @@ _G.pg.base.ship_skin_words[900264] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900265] = {
 	feeling1 = "抱歉，我得了指挥官一靠近就会头疼的病，可以稍微离我远一点吗？",
 	feeling3 = "不光是光辉姐姐和胜利姐姐，竟然能把这么多舰船团结在一起，指挥官真是有包容力呢。作为友好的象征…呵呵…这块蛋糕，请享用吧？",
@@ -63219,7 +62632,6 @@ _G.pg.base.ship_skin_words[900265] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900266] = {
 	feeling1 = "这般消极的态度可不行。让我来进行强制矫正吧",
 	feeling3 = "指挥官同志，怎么了？不仅想与北方联合的一员，更想与作为个人的我加深感情？哼，主观的选择倒也不让人讨厌就是",
@@ -63281,7 +62693,6 @@ _G.pg.base.ship_skin_words[900266] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900267] = {
 	feeling1 = "将莽撞当作勇气的人是没有未来的，同志啊",
 	feeling3 = "同志啊，希望你不要误会，这不仅仅是我们的战斗，更是你的战斗。不要仅满足于现状，我们要一起不断精进才行",
@@ -63332,7 +62743,6 @@ _G.pg.base.ship_skin_words[900267] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900268] = {
 	feeling1 = "恶作剧？已经不会对指挥官做了哦，因为没有兴致了",
 	feeling3 = "指挥官，萨拉妹妹和她的姐姐最大的差别是什么呢~答案就是萨拉妹妹今天的颜色哦~",
@@ -63420,7 +62830,6 @@ _G.pg.base.ship_skin_words[900268] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900269] = {
 	feeling1 = "原来企业前辈一直忍受着这样的指挥官……",
 	feeling3 = "嫉妒？不，我从未这么想过，前辈是值得我们每一个人尊敬的英雄。只是那种一直处在前辈光环之下的感觉，让我多少感到有些……",
@@ -63471,7 +62880,6 @@ _G.pg.base.ship_skin_words[900269] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900270] = {
 	feeling1 = "指挥官啊，你现在的所作所为，和懦夫可没有半点区别啊",
 	feeling3 = "哟，指挥官！下午好——啊好疼…是谁把推车放在这里的啊！我怎么又碰上这种倒霉的事情……呃，没，没什么。那个，我是说，有我的出击任务吗？",
@@ -63515,7 +62923,6 @@ _G.pg.base.ship_skin_words[900270] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900271] = {
 	feeling1 = "我现在不想和你说话",
 	feeling3 = "…当我面无表情保持沉默的时候，并不是在生气，只是单纯地在想事情，或者在想该怎么表达所想的事情而已",
@@ -63567,7 +62974,6 @@ _G.pg.base.ship_skin_words[900271] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900272] = {
 	feeling1 = "不思进取者，终将步向破灭。好好记住这点吧。",
 	feeling3 = "你来了，指挥官，请坐吧，想喝点什么？…不用太过拘谨，即便是我，在工作与教务之外，也有像这样与常人无二的生活。即使是最虔诚的教徒，也不能光靠信仰生存，她们同样需要食物与美酒",
@@ -63648,7 +63054,6 @@ _G.pg.base.ship_skin_words[900272] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900273] = {
 	feeling1 = "您是我见过最英明的指挥官，您的所作所为都是对的——在指挥官大人梦里的话，我也许会这么说呢。",
 	feeling3 = "“魔导书”？倔强是这么向您介绍的啊，真是有趣的说法呢~很抱歉，指挥官大人。我突然想起了一件急事，请允许我先离开一下。",
@@ -63710,7 +63115,6 @@ _G.pg.base.ship_skin_words[900273] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900274] = {
 	feeling1 = "以为善意必定能得到善意的回应…我还是太天真了么",
 	feeling3 = "指挥官心情不好？还是累了？这种时候，来点小饼干就好了。心情和精神都可以很快恢复的哦。",
@@ -63771,7 +63175,6 @@ _G.pg.base.ship_skin_words[900274] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900275] = {
 	feeling1 = "本来还对你有点期待的…",
 	feeling3 = "没、没想到侍从你的棋艺还挺厉害的啊。以、以后我就稍微认真点对付你吧！",
@@ -63823,7 +63226,6 @@ _G.pg.base.ship_skin_words[900275] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900276] = {
 	feeling1 = "指挥官，就像腌熟了的鲱鱼罐头一样呢…",
 	feeling3 = "大家…都能好好说出想说的话呢……没什么，你好，指挥官。",
@@ -63866,7 +63268,6 @@ _G.pg.base.ship_skin_words[900276] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900277] = {
 	feeling1 = "你现在的模样，真的对得起对你付出那么多的大家吗？好好反省一下吧！",
 	feeling3 = "皇家有挺多茶会点心会之类的呢。总不去的话，感觉太不合群。去的话，什么都不吃好像也挺奇怪…放开来吃就好了？开、开什么玩笑！那些可都是卡路、…啊…咳咳，没，没什么，稍微有些失态了，抱歉。",
@@ -63917,7 +63318,6 @@ _G.pg.base.ship_skin_words[900277] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900278] = {
 	feeling1 = "汝的愿望…就是让吾做和过去一样的事吗？吾…知道了",
 	feeling3 = "多和大家在一起？即使和她们在一起吾也不知道做什么，而且吾看得出来，她们在畏惧吾……汝在做什么，为什么要把吾的舰装脱下来……",
@@ -64022,7 +63422,6 @@ _G.pg.base.ship_skin_words[900278] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900279] = {
 	feeling1 = "看来是我辞职的时候了……",
 	feeling3 = "指挥官是只要认真做就能做好的类型呢，稍微有些开心呐",
@@ -64056,7 +63455,6 @@ _G.pg.base.ship_skin_words[900279] = {
 	detail = "请认真点，不要盯着我奇怪的地方看！——欸……原、原来是在看小舰岛啊……啊哈哈……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900280] = {
 	feeling1 = "你不是我追求的强者…",
 	feeling3 = "为什么想要变强？这种事不需要理由吧，不过硬要说的话，想要赢过{namecode:161}吧",
@@ -64099,7 +63497,6 @@ _G.pg.base.ship_skin_words[900280] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900281] = {
 	feeling1 = "指挥官，有什么事吗？",
 	feeling3 = "我看起来有点像花魁？呵呵，那么……官人，今夜便是我们最后一场幽会，请好好感受咱的温暖，然后忘了咱吧——这样如何？",
@@ -64133,7 +63530,6 @@ _G.pg.base.ship_skin_words[900281] = {
 	detail = "指挥官有时候就像个孩子一样……过来吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900282] = {
 	feeling1 = "就算是罗德尼也有点失望了呢……",
 	feeling3 = "指挥官真是很温柔呢，一起散步时总是会照顾我放慢速度，这种细节，我很感动哦",
@@ -64192,7 +63588,6 @@ _G.pg.base.ship_skin_words[900282] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900283] = {
 	feeling1 = "殿下好无趣……我不要找殿下玩了……",
 	feeling3 = "虽然我也很喜欢姐姐，不过姐姐太安静啦，还是殿下好，会陪我玩！",
@@ -64235,7 +63630,6 @@ _G.pg.base.ship_skin_words[900283] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900290] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -64269,7 +63663,6 @@ _G.pg.base.ship_skin_words[900290] = {
 	vote = "",
 	detail = ""
 }
-
 _G.pg.base.ship_skin_words[900291] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -64303,7 +63696,6 @@ _G.pg.base.ship_skin_words[900291] = {
 	vote = "",
 	detail = ""
 }
-
 _G.pg.base.ship_skin_words[900292] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -64337,7 +63729,6 @@ _G.pg.base.ship_skin_words[900292] = {
 	vote = "",
 	detail = ""
 }
-
 _G.pg.base.ship_skin_words[900293] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -64371,7 +63762,6 @@ _G.pg.base.ship_skin_words[900293] = {
 	vote = "",
 	detail = ""
 }
-
 _G.pg.base.ship_skin_words[900310] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -64405,7 +63795,6 @@ _G.pg.base.ship_skin_words[900310] = {
 	detail = "那位绿色的猫好像说过，这套装备是“工作用”的buli。虽然不明白是什么意思，不过既然和姐姐那么像，那一定是很强的装备buli！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900311] = {
 	feeling1 = "居然能让本大人不喜欢你，要从另一个角度夸奖你一下！但是本大人才不会怒斥你，哇哈哈！享受这种虚无感吧！",
 	feeling3 = "既然你这么有耐心，告诉你一个小秘密吧，妹妹虽然总是自称比我聪明，但她才是最笨的那一个。哇哈哈，这就是长姐的仁慈呀喵！",
@@ -64439,7 +63828,6 @@ _G.pg.base.ship_skin_words[900311] = {
 	detail = "这并不能证明你不是咸鱼purin！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900324] = {
 	feeling1 = "居然能让本大人不喜欢你，要从另一个角度夸奖你一下！但是本大人才不会怒斥你，哇哈哈！享受这种虚无感吧！",
 	feeling3 = "既然你这么有耐心，告诉你一个小秘密吧，妹妹虽然总是自称比我聪明，但她才是最笨的那一个。哇哈哈，这就是长姐的仁慈呀喵！",
@@ -64473,7 +63861,6 @@ _G.pg.base.ship_skin_words[900324] = {
 	detail = "这并不能证明你不是咸鱼purin！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900350] = {
 	feeling1 = "舰队的事务就请交给我吧",
 	feeling3 = "指挥官，虽然尊重我的意见是好事，不过您只要贯彻自己的想法就好，而且如果我不赞同您的话，是不会站在您身边的，呵呵",
@@ -64507,7 +63894,6 @@ _G.pg.base.ship_skin_words[900350] = {
 	detail = "接下来的作战，资源分配，还有……嗯？这不是指挥官吗，请随意",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[900351] = {
 	feeling1 = "啊，让女孩子落泪可不行啊，指挥官。你该好好反省下自己了！",
 	feeling3 = "不知不觉间，大家也熟络起来了呢~下次想聊什么？舰装技术？还是日常生活？……欸，我来选吗？",
@@ -64592,7 +63978,6 @@ _G.pg.base.ship_skin_words[900351] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900352] = {
 	feeling1 = "啊，让女孩子落泪可不行啊，指挥官。你该好好反省下自己了！",
 	feeling3 = "不知不觉间，大家也熟络起来了呢~下次想聊什么？舰装技术？还是日常生活？……欸，我来选吗？",
@@ -64677,7 +64062,6 @@ _G.pg.base.ship_skin_words[900352] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900353] = {
 	feeling1 = "啊，让女孩子落泪可不行啊，指挥官。你该好好反省下自己了！",
 	feeling3 = "不知不觉间，大家也熟络起来了呢~下次想聊什么？舰装技术？还是日常生活？……欸，我来选吗？",
@@ -64762,7 +64146,6 @@ _G.pg.base.ship_skin_words[900353] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[900354] = {
 	feeling1 = "啊，让女孩子落泪可不行啊，指挥官。你该好好反省下自己了！",
 	feeling3 = "不知不觉间，大家也熟络起来了呢~下次想聊什么？舰装技术？还是日常生活？……欸，我来选吗？",
@@ -64847,7 +64230,1956 @@ _G.pg.base.ship_skin_words[900354] = {
 		}
 	}
 }
-
+_G.pg.base.ship_skin_words[901010] = {
+	feeling1 = "啊，是指挥官！我、我还是自己去跑步锻炼吧！",
+	feeling3 = "指挥官愿意教我学习吗？哇！谢谢指挥官！我一定会……欸欸欸，要学这么多东西吗！我、我忽然肚子疼了！",
+	lose = "糟了，快撤快撤！",
+	propose = "唔……这种场合应该怎么办才好来着，我完全不知道耶…那、那个，总、总而言之，未来也请，那个，请多多指教！",
+	expedition = "大家回来了。我这就跑过去接她们，嘿~",
+	win_mvp = "我是第一吗？太好了！嘿嘿~",
+	home = "指挥官，不流点汗的话可是要变胖的！",
+	mission = "还有任务呢。要跑腿的话，尽管和我说吧！",
+	touch2 = "这，这里也要按摩吗？感觉……有点奇怪啊……",
+	voice_key_2 = -1,
+	skill = "我要上咯~！",
+	drop_descrip = "维希教廷机敏级驱逐舰—勒马尔",
+	mail = "有信件！我已经拿过来啦，嘿嘿~",
+	touch = "正好肩膀酸了呢……谢谢指挥官啦！",
+	profile = "我是机敏级的驱逐舰，同时也是维希教廷的见习骑士，勒马尔。一直在为维希教廷服务，最后为了不让铁血得逞而被白鹰在港口击沉…",
+	mission_complete = "任务完成！……嗯，还有奖励的吗？",
+	feeling4 = "好像有点明白了，又好像还是不明白……不过指挥官愿意教我这个笨蛋好开心呀，谢谢指挥官~",
+	unlock = "嗯？你是……啊，对了，是指挥官！我是机敏级驱逐舰勒马尔，以后请多多指教啦！",
+	feeling5 = "虽然书上的知识还是不太明白，不过有一件事我现在明白了，那就是，只要是有关指挥官的事，我就能发挥出200%的力量！",
+	main = "指挥官，我来教你一些可以坐着舒活筋骨的动作吧~|当指挥官可真不容易啊，要看这个还要安排那个的，换了我肯定一下就晕了……|唔，学习好痛苦…书上的字明明每个都认识，组合起来就完全看不懂了呢",
+	battle = "准备活动完成！要上了！",
+	upgrade = "又变强了呢，谢谢指挥官~",
+	voice_key = 90101,
+	headtouch = "",
+	feeling2 = "都说一名优秀的骑士，不仅要有保护他人的力量，也要通过学习让自己拥有强大的内心……可是我翻书就犯困，怎么办呀",
+	login = "指挥官，你终于来啦，今天我的训练任务是什么？",
+	vote = "",
+	hp_warning = "唔，这点小伤，忍一忍就过去了！",
+	id = 901010,
+	detail = "其实我挺羡慕福尔班的，虽然她当时也无法行动，至少比我要好…",
+	couple_encourage = {
+		{
+			{
+				80102
+			},
+			1,
+			"福尔班，我先上喽？",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[901011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "要是因为我是轻装就大意的话，下场就是这样了呢~",
+	home = "嘿嘿，指挥官忙完了吗？那就准备出发吧~——去哪？当然是海边啦~",
+	mission = "",
+	touch2 = "这、这里也不需要防晒啦，指挥官…",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "夏天~夏天来了哟指挥官！一起来海边玩水吧~水枪大战我可是很强的哟~",
+	mail = "",
+	touch = "防晒霜？那种东西不需要啦~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "夏天~夏天来了哟指挥官！一起来海边玩水吧~水枪大战我可是很强的哟~",
+	feeling5 = "",
+	main = "指挥官~要不要一起吃西瓜呀~？|就算是夏天，也不能整天窝在空调房里哟~一起出去外面玩吧~|指挥官也来把自己晒黑吧，这样我们就一样了呢，嘻嘻~",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官，难得的夏天，可不能那么没精神哦~一起享受阳光和沙滩吧~",
+	vote = "",
+	hp_warning = "",
+	id = 901011,
+	detail = "这个不只是游泳圈，还是水炮的“弹药舱”呢，嘿嘿，你想尝尝威力吗，指挥官？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "不，不行了……课本上的东西完全看不进去……",
+	mission = "",
+	touch2 = "我现在不需要按摩啦……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "喂——看这边看这边！嘿嘿，能在学园里遇到指挥官真巧呢~指挥官这是要去哪里呀？",
+	mail = "",
+	touch = "再大的风我也不怕！",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "喂——看这边看这边！嘿嘿，能在学园里遇到指挥官真巧呢~指挥官这是要去哪里呀？",
+	feeling5 = "",
+	main = "指挥官，多安排一些体育课嘛！那……那当然是因为运动很重要啦！|休息的时候，听点音乐能让人心情更舒畅！指挥官，你要一起吗？|诶？福尔班又拿着学习资料来了吗？有，有没有地方能藏一下——",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "今天的校园生活也要加油！",
+	vote = "",
+	hp_warning = "",
+	id = 901012,
+	detail = "说到校园生活，那一定就是迎着阳光在操场上奔跑了，对吧！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901013] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "也许是好好热过身的缘故吧~嘿嘿~",
+	home = "指挥官看上去有些累呢。要不稍微做做伸展运动吧！适当动动还能转换心情哦。",
+	mission = "",
+	touch2 = "这，这也是练习的一部分吗…？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "指挥官，谢谢你来接我！平时很难有机会穿得这么正式呢，活动起来也感觉不太方便…啊，不过我会加油的——",
+	mail = "",
+	touch = "香槟的拿法应该是这样的，对吗？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "指挥官，谢谢你来接我！平时很难有机会穿得这么正式呢，活动起来也感觉不太方便…啊，不过我会加油的——",
+	feeling5 = "",
+	main = "不行了……一读关于礼仪的书就好困……欸，指挥官会陪我做礼仪举止的练习吗？太好了！|说起来，指挥官你有看到福尔班吗？她明明不能喝还老是喜欢勉强…唔，有种不祥的预感…|呼…总算是和大家都打过一圈招呼了。我紧张得都全身僵硬了，指挥官竟然能应对得这么自然…果然好厉害！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官早上好！今天要从什么工作开始呢？",
+	vote = "",
+	hp_warning = "",
+	id = 901013,
+	detail = "在电影里好像会这样转圈圈对吧？指挥官，怎么样？希望我学得像……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901019] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "那么，摆个胜利的pose……欸，大家等等我嘛！",
+	home = "欢迎回来，指挥官！来准备下一次出击吧~？",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "改·造·完·成！得到全新力量的勒马尔，前来报道~嘿嘿，指挥官，我是不是看起来更可靠了呢~？",
+	mail = "",
+	touch = "嘿嘿，换我给指挥官按按肩膀怎么样？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "改·造·完·成！得到全新力量的勒马尔，前来报道~嘿嘿，指挥官，我是不是看起来更可靠了呢~？",
+	feeling5 = "",
+	main = "嘿嘿，指挥官，这个姿势是不是很帅？我从动画里学来的哦|委托也好，出击也好，都尽管来吧~现在的我不会让指挥官失望的~|有什么需要我做的吗？能帮指挥官再多分担点就好了呢~",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "鱼雷和炮弹都准备就绪啦~指挥官，我随时可以出击哟~",
+	vote = "",
+	hp_warning = "",
+	id = 901019,
+	detail = "指挥官，又想来欣赏我全炮门雷舱全开的英姿了吗？嘿嘿，真是没办法呢~",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901020] = {
+	feeling1 = "指挥官，能安静一些吗，思路要被打断了。",
+	feeling3 = "我的坏习惯是一旦开始想事情，很容易无视周围环境陷入沉思之中。这样的话，没有办法成为可以照顾他人的成熟女性吧......",
+	lose = "嗯…果然，刚才那一发炮弹应该再右移一点比较好…啊，对不起，已经要撤退了对吧…！",
+	propose = "指挥官喜欢现在这样的我吗？嗯，我也喜欢现在这样的指挥官哦。但是，总觉得一直在被指挥官单方面照顾......我一定会努力成为成熟的女性，成为可以照顾指挥官的人！",
+	expedition = "差点忘记了。指挥官，远征完成了哦。",
+	win_mvp = "……啊，抱歉，谁是MVP来着？欸，我是MVP？",
+	home = "该用什么样的方式欢迎指挥官回来比较好呢…",
+	mission = "上次任务得到的奖励，要怎么使用比较好呢…咦，又有新的任务发下来了吗？",
+	touch2 = "唔…按照沃克兰推荐的书来说…这种时候应该是…证据确凿，人赃俱获…吧？",
+	voice_key_2 = -1,
+	skill = "这种情况下应该…这样！",
+	drop_descrip = "维希教廷沃克兰级驱逐舰—塔尔图",
+	mail = "啊…对了，我是来给指挥官送信的",
+	touch = "……啊！指挥官，关于前面你问的的那个问题…欸？已经没问题了吗？这样啊…",
+	profile = "我是维希教廷的塔尔图，在战争中一直在陆间海服役，也参与了皇家发动的那场战役，最后在土伦和其他姐妹们一同迎来了结局…嗯？我对过去没有什么特别的想法呢…“重要的是现在！”如果是沃克兰的话，大概会这么说吧，呵呵…",
+	mission_complete = "任务完成。报告的排序，应该按照优先级、完成时间、还是报酬多少呢，唔.......",
+	feeling4 = "指挥官一直都在配合着我的节奏聊天呢……谢谢你。不过，有时候也请直接地打断我，如果是指挥官的话，我是不会生气的…",
+	unlock = "你好，指挥官，我是沃克兰级的塔尔图…—啊，抱歉，我只是在想，这座港口真大呢…",
+	feeling5 = "最近，只要一想到指挥官的事，就会陷入比以往更久的深思之中。感觉状况更严重了.....唔—啊！抱歉，指挥官，我又走神了…",
+	main = "指挥官，你觉得我能够成为敦刻尔克那样可以照顾别人的成熟女性么？|沃克兰说想要成为成熟的女性，首先要有成熟的精神，于是推荐我多读读推理小说，实际读过以后，其实还挺有趣的呢，呵呵|沃克兰很喜欢运动呢。运动，疲劳，休息，营养，糖分……唔，有点想吃敦刻尔克做的甜点了",
+	battle = "集中精神…！",
+	upgrade = "感觉，好像变得厉害了一点",
+	voice_key = 90102,
+	headtouch = "",
+	feeling2 = "疼--！原来是树枝...啊，指挥官，早上好。嗯？我只是在散步的时候想事情入迷了。请不要在意，对我来说，这是很常有的事。",
+	login = "啊，指挥官，你好。我正在想你怎么还没有来呢",
+	vote = "",
+	hp_warning = "唔，要更加集中注意力！",
+	id = 901020,
+	detail = "照顾人的敦刻尔克，优雅大方的阿尔及利亚，正气凛然的黎塞留…大家都是充满成熟魅力的女性呢，嗯，我也要以她们为目标，努力加油才行！",
+	couple_encourage = {
+		{
+			{
+				90103
+			},
+			1,
+			"沃克兰，不要逞强哦",
+			0
+		},
+		{
+			{
+				90401
+			},
+			1,
+			"和敦刻尔克一起……要、要加油！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[901021] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "想吃敦刻尔克做的甜甜圈…",
+	home = "",
+	mission = "",
+	touch2 = "怎么了，指挥官？棒冰？…啊，滴下来了，好冰！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "指挥官不去海里玩吗？……嗯？我就不去了。之前有过因为走神而被海浪冲到远方的经历，被沃克兰笑了好久啊……嗯，我坐在这里就好",
+	mail = "唔，和指挥官聊的太开心好像忘了一件事……啊，是新的信件！",
+	touch = "",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "指挥官不去海里玩吗？……嗯？我就不去了。之前有过因为走神而被海浪冲到远方的经历，被沃克兰笑了好久啊……嗯，我坐在这里就好",
+	feeling5 = "",
+	main = "指挥官，我和白鹰的麦考尔还有皇家的萨福克成为朋友了，大家都是很有趣的人呢。|沃克兰，这次我是绝对不会下水的，我要一直待在岸上，就这样度过美好的一天。|指挥官不穿泳装吗？唔，嗯，我有点在意，很想看……",
+	battle = "才不会被浪吹走呢…！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "啊，指挥官，你好。要吃棒冰吗？",
+	vote = "",
+	hp_warning = "",
+	id = 901021,
+	detail = "啊，指挥官，我正在回忆最近读过的一本，关于发生在沙滩上的凶杀案的侦探小说呢",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901030] = {
+	feeling1 = "指挥官，你知道吗，我最讨厌的，就是没有自知之明的人了",
+	feeling3 = "话说，以前塔尔图来向我咨询如何成为成熟女性时，我随口给了让她多看推理小说的建议，结果她真的听进去了……感觉，有点对不起她……",
+	lose = "欸，指挥官，你难道在征求我的意见？这种事交给指挥官解决就好啦！",
+	propose = "欸，指挥官，你之前说要和我契约难道是来真的？……欸，虽然我也不是说哎呀一定是骗人的，是玩笑……但是，你确定你知道自己在说什么吧？",
+	expedition = "接下来是委托完成，的，通，知——！唔唔，好啦，普通地迎接大家就行了对吧",
+	win_mvp = "第一名！让我摆个超帅的pose！……呜哇，大家的眼神好伤人！",
+	home = "指挥官，来，让我摸摸你的头奖励你……呀哈哈，不要露出那副表情嘛~",
+	mission = "任务？哼哼，终于到了我出场的时候了吗！",
+	touch2 = "指挥官，我稍微有点受到了惊吓……",
+	voice_key_2 = -1,
+	skill = "我还蛮厉害哦，大概！",
+	drop_descrip = "维希教廷沃克兰级驱逐舰—沃克兰",
+	mail = "邮件？啊，我这就去拿！",
+	touch = "干嘛干嘛，有重要的事拜托我吗？",
+	profile = "（虽然很想做个超帅的自我介绍，但是我的舰历确实没有什么值得一提的呢，除了护送过敦刻尔克和阿尔及利亚……）嗯，这样吧，我是维希教廷的沃克兰，将来会成为很厉害的舰船！怎么样！",
+	mission_complete = "指挥官，任务报酬一定有很多吧！？欸，没有吗！",
+	feeling4 = "是不是真的笨蛋先不提，偶尔装傻是有好处的哦，这样的话，在聪明的时候就会让大家觉得，哇，沃克兰好像很聪明！……应该有吧？！",
+	unlock = "锵锵锵锵！沃克兰级大型驱逐舰一号舰，沃克兰，闪亮登场~欸，指挥官，不要露出那种表情嘛，我可是很厉害的哦！大概！",
+	feeling5 = "不过，老实说，当个笨蛋有时候很快乐哦，不用去想复杂的事情，而且还能给大家带来欢乐，推荐指挥官你要是累了的话也来试试~",
+	main = "指挥官，你好像很无聊的样子，我来给你表演个舞枪才艺吧！嘿呀！哇，指挥官当心！|指挥官，我可不可以拜托你一件事？唔，就是，那个……晚饭的青椒可不可以去掉？|嗯嗯，嗯嗯嗯，哦哦，原来如此，我完全听明白了，指挥官，交给我吧！——才怪啊！",
+	battle = "让你们见识一下大型！驱逐舰的实力！",
+	upgrade = "该不会……我的工作也变多了吧……",
+	voice_key = 90103,
+	headtouch = "诶嘿嘿嘿嘿嘿……",
+	feeling2 = "哼哼哼，敦刻尔克的蛋糕~今天会是什么样的呢~指挥官也猜猜看吧",
+	login = "指挥官，你走之前不是说好要给带点心的吗？我的点心呢！",
+	vote = "",
+	hp_warning = "冷静，先寻找机会……",
+	id = 901030,
+	detail = "指挥官，你能不能不要突然出现，很吓人的",
+	couple_encourage = {
+		{
+			{
+				90102
+			},
+			1,
+			"塔尔图，借你的书看完了吗？",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[901031] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "",
+	mission = "",
+	touch2 = "和塔尔图比的话那我确实……等等你在干啥啊！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "指挥官！真是的，明明今天不上班在干什么呢！不是说好了今天要放空大脑玩个痛快吗！快点一起去海里吧！",
+	mail = "",
+	touch = "嘻嘻，怎么样，沃克兰的泳装？……嗯，该凸的地方没有凸对吧，我知道的……",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "指挥官！真是的，明明今天放假在干什么呢！不是说好了今天要放空大脑玩个痛快吗！快点一起去海边玩吧！ ",
+	feeling5 = "",
+	main = "大家真可爱呢~咻~嗯？沃克兰也很可爱？咻，咻|不去考虑工作玩个痛快很棒吧？咦，那个皇家骑士队的舰船，好像叫南什么的，不是应该在值班吗，怎么毫无违和感地混了进来……|沙滩烧烤！真棒啊！烤蔬菜的话……嗯，青椒就交给别的舰船了！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "",
+	vote = "",
+	hp_warning = "",
+	id = 901031,
+	detail = "塔尔图，不会不小心被海浪冲走了吧……不，应该不可能",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901032] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "我感觉现在还是赶紧撤退比较好！呼，幸好穿的礼服还算是便于行动…",
+	propose = "",
+	expedition = "",
+	win_mvp = "第一名！为我献上一曲吧！…啊，咦？大家都去哪了？",
+	home = "",
+	mission = "",
+	touch2 = "哼，反正是在想着塔尔图那样的对吧。呣",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "嗯嗯，我听到了哦，这个祝福的旋律~接下来，跟随我的指挥继续升调——指挥官？你问我在做什么…呃…那什么…啊哈哈哈…",
+	mail = "",
+	touch = "要点什么？曲子？吃的？还是沃克兰的闲聊服务？嘿嘿~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "嗯嗯，我听到了哦，这个祝福的旋律~接下来，跟随我的指挥继续升调——指挥官？你问我在做什么…呃…那什么…啊哈哈哈…",
+	feeling5 = "",
+	main = "像这样配合着音乐……啊，指挥官！大家都说这个动作“很有大人的感觉”哦！嘿嘿~|明白了！这种时候就要放点让人放松的曲子！……指挥官！现在还在工作中啊！别睡着了啊！|nil",
+	battle = "开始演奏吧！…已经开始了！？",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "锵锵，是穿着礼服的沃克兰哦！指挥官，今天也请多关照啦♪",
+	vote = "",
+	hp_warning = "",
+	id = 901032,
+	detail = "指挥官也好塔尔图也好，居然都听睡着了！太过分了！…虽然我也没在演奏就是了…真是的！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901033] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "糟了！该“逃跑”了！",
+	propose = "",
+	expedition = "",
+	win_mvp = "有没有什么掉落品呢——？让我把这些都抢走 ！",
+	home = "欢迎回来！有什么收获吗？什么都没有的话，可是会被英雄她笑话的哦？",
+	mission = "",
+	touch2 = "呜哇！这可不是盗贼的技能啊——！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "（哐当）又找到金币了！指挥官，快看快看！敲碎罐子后又找到几枚了！你好像有些担心？嘻嘻，盗贼的规则就是“不守规则”嘛♪",
+	mail = "",
+	touch = "想这么简单就碰到我，你还是太天真啦！",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "（哐当）又找到金币了！指挥官，快看快看！敲碎罐子后又找到几枚了！你好像有些担心？嘻嘻，盗贼的规则就是“不守规则”嘛♪",
+	feeling5 = "",
+	main = "玩盗贼玩得越来越得心应手了呢！这下道具的获得率大概也会变高吧！哼哼♪|有只能从刚才的敌人身上偷到的道具吗！？诶，怎么不早点告诉我嘛！这可没法重来呀。|蹑手蹑脚，蹑手蹑脚…应该不会被谁发现吧。那就让我都看看有些什么吧…嘻嘻~",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "啊，既然指挥官也会突然开门进来，看来是“摸清”这个世界的玩法了呢！",
+	vote = "",
+	hp_warning = "",
+	id = 901033,
+	detail = "仔细想想，这里可以随便进人家家里翻找衣柜，敲碎罐子等等，真是无法无天的世界呢……这些都只限于游戏之中哦？啊哈哈……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901040] = {
+	feeling1 = "都是凯尔圣的缘故，指挥官才变得如此肆意而为…呜呜，都怪我祈祷得不够……",
+	feeling3 = "塔尔图偶尔会问我如何才能成为充满魅力又温柔的女性。指挥官有什么建议吗？我不太明白……",
+	lose = "果，果然这样的身体是……",
+	propose = "将祈祷献给荣光照耀的鸢尾。愿凯尔圣和指挥官能获赐永恒的幸福……亲爱的指挥官，从今往后，也请多多指教了。",
+	expedition = "委托的伙伴们回来了。",
+	win_mvp = "是鸢尾带领我们取得了胜利，谨以此呈上谢意……",
+	home = "感谢上天引领指挥官平安返回港区……指挥官也和我一起祈祷……怎、怎么样？",
+	mission = "任务清单在这里——对，对不起，我不是故意碰到您的手的……///",
+	touch2 = "果，果然因为这样的身体扰乱了指挥官的心吗…",
+	voice_key_2 = -1,
+	skill = "圣光，于此显现…！",
+	drop_descrip = "沃克兰级驱逐舰—凯尔圣",
+	mail = "好像有来信。指挥官，能请您确认吗…？",
+	touch = "如果可以的话，能让我听听指挥官的烦恼吗…？虽然不能保证解决，但至少祈祷的话……",
+	profile = "我是维希教廷所属的沃克兰级大型驱逐舰凯尔圣。在那次大战中，我和塔尔图等人在土伦…呜呜，果然是我祈祷得不够吗……",
+	mission_complete = "祝贺您完成了任务，指挥官…报酬要怎么处理呢？",
+	feeling4 = "在指挥官看来，我已经很有魅力了吗…？我当然很开心，但如果因此妨碍到指挥官工作的话，那就……不，不要紧吗？",
+	unlock = "我是沃克兰级大型驱逐舰凯尔圣。愿鸢尾庇佑指挥官…许多不足之处，还请您多多指导…",
+	feeling5 = "我的魅力能让指挥官工作得更顺利…我，我明白了。只要指挥官想的话，随时都可以叫我。无论是祈祷还是帮忙，我都乐意而为。",
+	main = "资料放在这里就好吗？嘿咻…愿指挥官工作顺利——|如果凯尔圣打扰到您的话，请随时告诉我…那个，我是指，如果是指挥官不知道把视线放哪好而困扰这件事…|被指挥官看着，就会手足无措…抱歉，都怪我还没习惯……",
+	battle = "愿鸢尾指引我们……！",
+	upgrade = "感谢指挥官…愿鸢尾的庇佑与你同在。",
+	voice_key = 90104,
+	headtouch = "",
+	feeling2 = "和伙伴们相比，我好像没什么能帮到指挥官的…要是能通过祈祷赐予祝福就好了……",
+	login = "清崇尊贵的鸢尾，我向您祈祷。请赐予我们平安的一天，并且愿神圣的庇佑与指挥官同在——",
+	vote = "",
+	hp_warning = "只要继续祈祷……！",
+	id = 901040,
+	detail = "祈祷的话，黎明前、日出时、从早上到下午每隔几小时、最后是傍晚和睡前……大概会进行8次吧…？",
+	couple_encourage = {
+		{
+			{
+				90103
+			},
+			1,
+			"并不是我自己想长得这么大的…",
+			0
+		},
+		{
+			{
+				90102
+			},
+			1,
+			"变成熟的方法？这么问我我也…",
+			0
+		},
+		{
+			{
+				10212
+			},
+			1,
+			"比起惹眼，不方便行动让我更讨厌…",
+			0
+		},
+		{
+			{
+				20707
+			},
+			1,
+			"怨仇小姐，怎么才能如此自信呢……？",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[901041] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "指挥官，要…继续下去吗？啊，我是说跑步，不是祈祷！真是抱歉，您才刚回来就…",
+	mission = "",
+	touch2 = "因为出汗变得比平常更沉了……啊呜……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "呼…指挥官？能在这里遇见也是上天的旨意吧……突、突然搭话实在不好意思。您打算继续吗？如果愿意的话，要不要和我一起跑呢…",
+	mail = "",
+	touch = "有什么想顺路逛逛的地方吗…？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "呼…指挥官？能在这里遇见也是上天的旨意吧……突、突然搭话实在不好意思。您打算继续吗？如果愿意的话，要不要和我一起跑呢…",
+	feeling5 = "",
+	main = "跑步是因为嗯，减肥…是的，因为身子挺沉的…指挥官呢？|听音乐工作就会更顺利吗？那么…啊，刚好马赛曲小姐推荐了我赞美歌。可以请您…听听看吗…？|敦刻尔克小姐的点心…确实是难以抵挡的诱惑…一旦开始吃就停不下来，最后会坠落到糖分超标的地狱…啊呜…",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "呼…哈…向鸢尾祈祷，请赐予我们安宁的一天，并赐予指挥官源源不绝的活力——",
+	vote = "",
+	hp_warning = "",
+	id = 901041,
+	detail = "跑步后是日常的祈祷…指挥官是要——回，回办公室吗？这，这样啊…指挥官一早上就这么忙的话我还是…我，我可以一起吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901110] = {
+	feeling1 = "……（恶毒好像睡着了）",
+	feeling3 = "虽、虽然说尽管吩咐了…但是你给的活也太多了吧……不行了要累死了……我要请假……",
+	lose = "我还没输……我还没输！",
+	propose = "维希教廷的守护之刃，我、驱逐舰恶毒，保证今后将永远保护您，向您贡献我永远的爱——累、累死了………指挥官，我们能不能早点回去啊……",
+	expedition = "大家都回来了。赶快去港口看看吧",
+	win_mvp = "碍事的家伙已经清除了。",
+	home = "照着凯旋教的泡了一杯红茶……暴露了吗。没错，就是个茶包而已。你喝就好。",
+	mission = "有新的指示，指挥官。",
+	touch2 = "哇！要干什么啊！",
+	voice_key_2 = -1,
+	skill = "消失吧！！",
+	drop_descrip = "维希教廷空想级驱逐舰—恶毒",
+	mail = "有你的信……没有我的吗？",
+	touch = "优雅什么的…太累人了……哇！？有、有什么吩咐吗！",
+	profile = "我是隶属于维希教廷的空想级驱逐舰恶毒，曾部署于布雷斯特的第八分队…与姐妹们共同作战。但是在那之后，凯旋她选择了和我们不一样的道路……嗯，不用勉强",
+	mission_complete = "指挥官，上面的奖励发下来了。",
+	feeling4 = "今、今天我很努力工作了，能不能早点下班……谢谢指挥官！看来今天能回家多睡几个小时了！…额，对不起，我有点太兴奋了",
+	unlock = "吾乃逐浪之空想，守护教廷的恶毒之刃——超级驱逐舰“恶毒”，听候差遣",
+	feeling5 = "指挥官，咳咳，今天能不能……一起早点下班？啊不是累了！我的意思是今、今天能不能一起找个地方约、约会什么的……？",
+	main = "徒有速度，缺乏火力，是打败不了敌人的。|好累啊……秘书舰什么的……啊！没什么！|敦刻尔克小姐做的点心……呼呼呼……不对不对！现在还是工作时间啊！",
+	battle = "维希教廷的守护之刃，前进！",
+	upgrade = "不能不努力了呢",
+	voice_key = 90111,
+	headtouch = "",
+	feeling2 = "维希教廷的恶毒之刃，指挥官的秘书舰，驱逐舰恶毒。请尽管吩咐",
+	login = "驱逐舰恶毒，随时听候差遣。——哈啊…困了…",
+	vote = "",
+	hp_warning = "难缠的家伙……",
+	id = 901110,
+	detail = "哈啊…好困…好想在床上滚来滚去……Zzzzz……额！？有、有什么事吗！？",
+	couple_encourage = {
+		{
+			{
+				80101
+			},
+			1,
+			"凯旋……你回来了。",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[901111] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "今天看来不适合工作……早点回去休息……",
+	propose = "",
+	expedition = "",
+	win_mvp = "歼灭完成。……不对！我不是说了今天不加油工作的吗！",
+	home = "",
+	mission = "",
+	touch2 = "哇！？……真是的，又被指挥官给弄醒了！本来好不容易就快要睡着了的……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "指挥官，早～嗯，今天是神也要休息的日子，所以就算你把凯旋拉出来逼我干活，我也是绝对不会努力的",
+	mail = "",
+	touch = "",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "指挥官，早～嗯，今天是神也要休息的日子，所以就算你把凯旋拉出来逼我干活，我也是绝对不会努力的",
+	feeling5 = "",
+	main = "好累…懒得动了……指挥官，有事也别叫我哈……|指挥官，我把咖啡拿过来了！……怎、怎么可能……难道你看出来我偷偷往里放了会让人犯困的感冒药么！？|啊啊今天不想干活了啦…指挥官～歇一会吧！嗯！就一会！",
+	battle = "给你们见识下空想级的厉害！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "",
+	vote = "",
+	hp_warning = "",
+	id = 901111,
+	detail = "",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901112] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "好热……为什么这么热还要出击啊！",
+	propose = "",
+	expedition = "",
+	win_mvp = "指挥官，我们赶快回去吹空调吧！",
+	home = "指挥官在努力工作，我却在偷懒…呼呼呼…",
+	mission = "任务？不去……有冰淇淋？我去！",
+	touch2 = "太邋遢了？……唔，反正指挥官早就知道了……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "居然能找到我的秘密基地，指挥官也很能干呢……但是很遗憾，我是不会跟你回去工作的，我要……呼啊……在这里睡一整天…",
+	mail = "",
+	touch = "游泳？指挥官，不是我自夸，我就给你表演一个随波漂浮吧",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "居然能找到我的秘密基地，指挥官也很能干呢……但是很遗憾，我是不会跟你回去工作的，我要……呼啊……在这里睡一整天…",
+	feeling5 = "唔欸？要回去了吗？……什么！已经傍晚了吗！睡了一天，好累哦……糟了，没力气了，指挥官，帮帮我……",
+	main = "指挥官为什么不能变成空调呢，那样我一定会对指挥官……Zzzzz|呼啊……指挥官，我要睡午觉了，不准吵我，有任务也不要叫我……可乐不要喝完哦，还有薯片……唔……|那边的难道是……可怖！？指挥官，快让我躲一下，被那个家伙找到我一天的睡觉计划就泡汤了！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官，冰淇淋……",
+	vote = "",
+	hp_warning = "",
+	id = 901112,
+	detail = "唔，吊床虽然很舒服，但不能滚来滚去啊…啧，设计失误了…",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901113] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "早知道就不出来了…",
+	propose = "",
+	expedition = "迎接委托的同伴？你看，我都穿成这样了，再让我去是不是有点…所以，你一个人去就好了！",
+	win_mvp = "赢了？…那回去休息吧。",
+	home = "我今天的“计划休息时间”还差几个小时，所以…请自便…",
+	mission = "",
+	touch2 = "哇！别乱碰啦，吓我一跳……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "呼…嗯？是指挥官呀，我正打算躺会呢…这身？嗯，穿着挺舒服的，还很凉快哦。没什么事的话，我就继续躺了。晚安…",
+	mail = "",
+	touch = "唔…有什么事吗…？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "呼…嗯？是指挥官呀，我正打算躺会呢…这身？嗯，穿着挺舒服的，还很凉快哦。没什么事的话，我就继续躺了。晚安…",
+	feeling5 = "",
+	main = "凯旋来找我了？哼，反正肯定又是吓唬人的吧，我才不信。|舒服的新睡衣，还有舒服的沙发，不用来睡觉就太不划算了…Zzzzz|差不多到午休的时间了吧…唔，还有工作吗？能不能放到明天再做呀…",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "你来了啊，指挥官。嗯…随意就好…我就不招待了…",
+	vote = "",
+	hp_warning = "",
+	id = 901113,
+	detail = "这衣服滑溜溜…挺适合滚来滚去的……",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901120] = {
+	feeling1 = "这是…表示我可以尽情偷懒的意思吧…",
+	feeling3 = "又要练习又要接通告又要锻炼又要排舞……要做的事情也太多了吧！不行了撑不下去了…光是看行程表就感觉累死了…我要休息了……",
+	lose = "没有让人悔恨的空闲啊…！",
+	propose = "因为有鸢尾的同伴们和指挥官，才有现在这般优雅的舞台。来吧，将誓约的戒指献给恶毒，让这闪耀的光芒成为…成为永恒！",
+	expedition = "委托组回来了哦。……啊！也就是说可以休息了对吧！",
+	win_mvp = "为鸢尾之光而喝彩、而感动吧！",
+	home = "辛苦了。来一杯优雅的红茶如何？",
+	mission = "通告…希望能高效又快速地全部搞定啊…",
+	touch2 = "哇！你、你要干嘛！",
+	voice_key_2 = -1,
+	skill = "光啊！",
+	drop_descrip = "吾乃逐浪之空想，守护教廷之利剑——恶毒，以偶像之姿登场，愿以祈愿之歌为你带来心灵之治愈。",
+	mail = "有工作信件，请确认。",
+	touch = "谢谢指挥官一直以来的支持~",
+	profile = "我是空想级驱逐舰·恶毒。哼哼…偶像任务，一定会做到最好给你看的。我、我可没有对这个兴致满满的哦？",
+	mission_complete = " 终、终于都完成了…优雅地把奖励给领了吧…",
+	feeling4 = "哈啊…哈啊……怎么样！看到恶毒的表现了吗！觉得不错的话就让我休息！没错！我要休息！或者等休息的时候给我准备好吃的点心也行！",
+	unlock = "吾乃逐浪之空想，守护教廷之利剑——恶毒，以偶像之姿登场，愿以祈愿之歌为你带来心灵之治愈。",
+	feeling5 = "指挥官，这边结束以后约会的约定，很抱歉果然还是在房间里就……咦，可以吗！？太好啦~可以在房间里滚来滚……咳咳，要先集中在舞台上、没错！",
+	main = "偶像，是受人崇拜的存在。所以不能轻易做出缩短距离感的行为。|虽然{namecode:523}说随心所欲就好…不过，唔…凯旋和黎塞留她们期待的眼神让人感到好刺痛…|皇家的那孩子，不仅纯真无邪，唱也是“祈愿”的歌呢。呵呵，我是不会输给她的~",
+	battle = "将祈愿传达过去吧！",
+	upgrade = "鸢尾之奇迹，显现于此！",
+	voice_key = 90112,
+	headtouch = "…？这是做什么？",
+	feeling2 = "我是闪耀的鸢尾偶像·恶毒——为我提供优雅的指引吧，指挥官。",
+	login = "早上好，今天的练习内容是什么？",
+	vote = "",
+	hp_warning = "我可不像埃米尔那么能跳啊…！",
+	id = 901120,
+	detail = "虽然并非本意，终归是参与了偶像任务。尽情欣赏来自鸢尾的优雅演出吧。",
+	couple_encourage = {
+		{
+			{
+				89902
+			},
+			1,
+			"麻烦歌词写得好懂一点！",
+			0
+		},
+		{
+			{
+				90503
+			},
+			1,
+			"一起在舞台上加油吧！",
+			0
+		},
+		{
+			{
+				90501
+			},
+			1,
+			"随心所欲…果然很棒吧…！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[901130] = {
+	feeling1 = "哼，像你这样的人，遇到真正的困难时肯定只会夹着尾巴逃跑。",
+	feeling3 = "凯旋和恶毒都是值得你学习的榜样。至于可怖……唔，虽然她很聪明，但你可不要像她那样，时不时就问一些很难回答的问题……",
+	lose = "咕呜…我身为骑士的尊严…",
+	propose = "唔……成为专属骑士还需要这样的仪式吗？还要戴上这个戒指……我知道了。接下来是宣誓效忠吗？……牵手？约会？等等等等，你在说什么？我，我该不会是被骗了吧？！",
+	expedition = "委托物资已经清点好了。多亏了不屈？小菜一…哼，这是理所当然的！",
+	win_mvp = "mvp？太好啦！…咳咳，努力得到回报，这是每个骑士梦寐以求的。",
+	home = "战场指挥非常精彩！不过想让我心服口服的话，就一直这么保持下去吧！",
+	mission = "骄傲的骑士可不会允许自己还有没完成的任务！",
+	touch2 = "你你你你这无礼之徒！",
+	voice_key_2 = -1,
+	skill = "以教廷之名，判决！",
+	drop_descrip = "空想级驱逐舰—不屈",
+	mail = "新的信件到了。嗯，这个火漆印倒是蛮精致的……",
+	touch = "哼哼，就允许你尽情瞻仰我的骑枪吧！这可是骑士荣耀的象征！",
+	profile = "吾乃教廷之骑士不屈，空想级大型驱逐舰。高傲的骑士不会允许自己低头，而我正如我的名字一般，永远不会向敌人屈服！",
+	mission_complete = "任务完成了。等等，奖励居然只有这么点……没、没什么。",
+	feeling4 = "哼，看来你确实有些能耐…怎么了？“这段时间监督你辛苦了？”倒也没有，在你身边还蛮开心……不、不对，阿谀奉承对教廷骑士可不管用！",
+	unlock = "吾乃维希教廷之骑士，空想级大型驱逐舰，不屈！指挥官啊，你是否拥有与身份相称的荣誉之心？哼哼，不必现在回答我，相处之后我自会得到答案。",
+	feeling5 = "嗯，我已经完全认可你了！我愿意成为你专属的骑士，我的忠诚、我的身与我的心都献给你……怎么了？对认同了你的教廷骑士而言，这不是很正常的宣言吗！",
+	main = "恶毒是我的榜样，她无论在何时都能保持风度与优雅……你那微妙的表情是什么意思？|工作完成的奖励？我要马卡……咳咳，骄傲的骑士从来不索求报酬。|虽说空想级以速度著称，但若是敌人忽略了我的火力，那它们将因此付出惨重的代价！",
+	battle = "不自量力的敌人，就让我来给你们点教训吧！",
+	upgrade = "精良的装备与优秀的骑士，二者是相辅相成的！",
+	voice_key = 90113,
+	headtouch = "哼，你以为这样就能讨好我吗？唔…呼……",
+	feeling2 = "想让我认可你的话，就展示出你的责任感与荣誉心吧。我身为骄傲的教廷骑士，绝不会食言。",
+	login = "来得太晚了！身为舰队指挥官，必须要有每天第一时间回到指挥室的觉悟才行！",
+	vote = "",
+	hp_warning = "我可是……骄傲的教廷骑士！",
+	id = 901130,
+	detail = "黑色的骑枪？哼，只有这种充满威严与压迫感的装备才配得上我！",
+	couple_encourage = {
+		{
+			{
+				90111
+			},
+			1,
+			"一起战斗吧，恶毒！",
+			0
+		},
+		{
+			{
+				80101
+			},
+			1,
+			"“noblesse oblige”，说得没错！",
+			0
+		},
+		{
+			{
+				80107
+			},
+			1,
+			"是、是不好对付的人……",
+			0
+		},
+		{
+			{
+				80108
+			},
+			1,
+			"哼哼，还是我的更大一点！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[901131] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "是因为扮演了柔弱的角色，所以我也变弱了么……",
+	propose = "",
+	expedition = "委托的同伴们已经回来了。指挥官可别把她们忘了哦？",
+	win_mvp = "这就是轻视教廷骑士的代价！",
+	home = "“请问你是我的外婆吗？”小红帽真是天真啊……要是换成我，肯定会说“我一眼看出你就是坏蛋，看我这就打倒你！”",
+	mission = "新的任务么……唔，至少比演不擅长的角色要简单吧。",
+	touch2 = "我，我也是会生气的！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "身为堂堂骄傲的教廷骑士，居然要扮演一个手无寸铁的柔弱少女……你说为什么现在躺在这里——因为恶毒说，要这样才能找到“柔弱少女”的感觉……",
+	mail = "",
+	touch = "指挥官，要吃苹果吗？……不是童话里的毒苹果，是甜甜的好吃的苹果！",
+	profile = "",
+	mission_complete = "任务已经完成了吗？还想等着排练结束了再帮忙的……",
+	feeling4 = "",
+	unlock = "身为堂堂骄傲的教廷骑士，居然要扮演一个手无寸铁的柔弱少女……你说为什么现在躺在这里——因为恶毒说，要这样才能找到“柔弱少女”的感觉……",
+	feeling5 = "如果我只是柔弱的少女，没有能贡献给你的力量，甚至只会成为你的累赘……你还会同意让我留在你身边吗？……只要由你成为我的剑就好了？我，我可没有觉得高兴……///",
+	main = "比起柔弱的少女，明明我更适合“英勇的骑士”这样的角色。不过既然恶毒说现在的角色更好，一定也有她的道理。|指挥官，“柔弱感”应该怎么表现？我不太清楚……毕竟平时我遇到坏人时，第一时间想着的都是用骑枪把他们打跑。|恶毒说她最想演的角色是“睡美人”。擅长假睡的她确实很适合呢。",
+	battle = "哼哼，可不要因为我演的角色柔弱就轻视我哦！",
+	upgrade = "好像确实有了那么一点力量……",
+	voice_key = 0,
+	headtouch = "头、头发会变乱的……",
+	feeling2 = "",
+	login = "松松软软的感觉，好舒服……呼……呼……欸？糟、糟了！抱歉指挥官，我差点就睡着了……",
+	vote = "",
+	hp_warning = "",
+	id = 901131,
+	detail = "恶毒，我们真的只要待在这里什么都不做就行了？“这是扮演里重要的一环”……嗯，我明白了！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[901132] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "看吧！庆功宴的佳肴也将由维希教廷的黑色骑枪，不屈送达！",
+	home = "从那条路走能更快送到吗？帮大忙了！你的指挥无论是在战场还是在港区都十分可靠！",
+	mission = "任务和东煌佳肴一样，趁早开动最好。",
+	touch2 = "你！要是把外卖打翻了你该怎么赔我！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "嗯嗯…这个距离的话还是跑过去最快。下雪了吗？哼，不惧风雨的骄傲教廷骑士，才不会让下雪这种小事妨碍到我！我出发了！",
+	mail = "来新消息了…？啊，是给你的。",
+	touch = "要给我好评？嗯，如果能给教廷骑士的荣誉锦上添花的话，我就心怀感激地收下了——原来是指外卖的好评吗！？",
+	profile = "",
+	mission_complete = "任务的报酬给你送来了，快趁热确认吧。",
+	feeling4 = "",
+	unlock = "嗯嗯…这个距离的话还是跑过去最快。下雪了吗？哼，不惧风雨的骄傲教廷骑士，才不会让下雪这种小事妨碍到我！我出发了！",
+	feeling5 = "",
+	main = "优雅的空想级，无论什么任务都能大显身手！…就算送外卖也是任务！哼！|要和我一起送吗？没，没事的！就这些量的话我还搬得动！……实在要帮忙的话等我向你求助了再说吧！|恶毒的订单，光今天就已经是第三次了……不愧是东煌的节日，要优雅地度过也不容易啊…",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "哈啊…哈啊…咳咳！比，比预定时间更快到达指挥室了！快趁热吃吧！",
+	vote = "",
+	hp_warning = "",
+	id = 901132,
+	detail = "…阿，阿嚏！你说为什么下雪还穿这样？这是贤姐可怖给的建议……聪，聪明如她，肯定没错的！",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[902010] = {
+	feeling1 = "指挥官如果不想做了，我有个更合适的地方推荐你去哦",
+	feeling3 = "敦刻尔克做了慕斯蛋糕，我给你带了一个来——这么看着我干嘛，想感谢不如去谢做出这些美味甜点的人。",
+	lose = "啊，失败了……算啦，鼓足气势再打一次吧！",
+	propose = "哈哈哈~我就喜欢指挥官你这么直接的人！以后如果谁敢欺负指挥官，就让我来三两下帮你解决吧！",
+	expedition = "委托队伍回来了？刚好有些无聊，我替你去迎接吧！",
+	win_mvp = "啊哈哈！这次玩得很尽兴！",
+	home = "停~除了指挥官谁都不能进这里~——啊，是指挥官你啊，那没事了。",
+	mission = "任务很难？自己想办法去，我又没办法帮你在任务书上划勾。",
+	touch2 = "我可不是那些教廷骑士。指挥官，想体验一下我的本职工作么？",
+	voice_key_2 = -1,
+	skill = "消失吧！！",
+	drop_descrip = "维希教廷拉·加利索尼埃级轻巡洋舰—拉·加利索尼埃",
+	mail = "喂，有你的邮件！再不拿被风吹走了可不关我事啊。",
+	touch = "你想摸摸它？之后被划伤了可别怪我。",
+	profile = "战争爆发之后，我成为了“公海舰队”的一员。不过因为燃料的问题，实际我上一次都没去过公海呢，哈哈！至于之后的事情，就没什么好说的了。或许你可以问问敦刻尔克？",
+	mission_complete = "任务完成了？比我估计花的时间短呢……或许是我小看你了？",
+	feeling4 = "不光是鱼雷火炮，偶尔聊聊冷兵器或者别的什么话题不也挺有趣嘛？看起来你也不是那么无趣的人，下次有空再一起聊天啦！",
+	unlock = "维希，撒丁，铁血……然后是你这里么？算了，随便啦，只要能让我开心，哪里都是一样的啦。就是这样，维希所属拉·加利索尼埃，请多多关照咯。",
+	feeling5 = "我就直说了吧，指挥官。我很喜欢你，有兴趣来和我一起弄点大动静吗？…开玩笑的~像这样每天在一起就已经很开心啦！",
+	main = "噢，看啊，办公室里只剩一位忙碌的指挥官和另一个快无聊到死的人了呢，哈啊…|只要能解决敌人，不论用炮火还是斧头都一样吧，指挥官，拘泥于形式可不好哦。|我不怎么喜欢计划这东西。地球转得那么快，计划怎么赶得上变化呢？",
+	battle = "要让我玩得尽兴才行…哦！",
+	upgrade = "有点怀念起在布雷斯特的时光了呢。",
+	voice_key = 90201,
+	headtouch = "",
+	feeling2 = "哎，今天也是无聊的一天吗……",
+	login = "终于回来啦？你不在，我都快无聊死了。喂，找点什么事情让我做吧？",
+	vote = "",
+	hp_warning = "对嘛！这样才对嘛！再让我兴奋一点吧！",
+	id = 902010,
+	detail = "嗯？你是对我手上的东西感兴趣呢，还是说…对我感兴趣呢？",
+	couple_encourage = {
+		{
+			{
+				90401
+			},
+			1,
+			"这张战斗结束之后，再做点慕斯蛋糕给我吃吧~",
+			0
+		},
+		{
+			{
+				80501
+			},
+			1,
+			"没想到还能有并肩战斗的机会啊，枢机主教阁下",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[902011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "啊，指挥官，你回来的正好！能到泳池里帮我把那个皮球扔给我吗？谢啦~",
+	mission = "",
+	touch2 = "啊哈哈，是不是想让我帮你来做憋气练习呀？指挥官？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "呼~果然夏天要有游泳池才算完整呢！喂，那边傻站着的指挥官，不下水享受一下吗？",
+	mail = "",
+	touch = "哦？指挥官是想要吓我一跳吗？很遗憾，被我发现了呢~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "呼~果然夏天要有游泳池才算完整呢！喂，那边傻站着的指挥官，不下水享受一下吗？",
+	feeling5 = "",
+	main = "也没有人规定游泳池里一定要游泳，对吧？只玩玩水不也挺好的嘛~|指挥官，看招——！怎么样，充分感受到这不同于夏天的凉意了吧？|唔唔，这种手上少了点什么的感觉，总让我有点不舒服呢……",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "准备活动？我不需要啦~反正我就在这里玩玩水，不会有问题的。",
+	vote = "",
+	hp_warning = "",
+	id = 902011,
+	detail = "如果指挥官意外溺水了的话，我会第一时间把游泳圈给你扔过去的！指挥官身手那么敏捷，到时候肯定能接住的啦~",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[902012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "节日的氛围真浓厚啊！你觉得呢？",
+	mission = "",
+	touch2 = "这里不是能解开的地方啦！",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "新春愉快，来试试交杯酒吧~嗯？不应该叫交杯酒吗？东煌的文化博大精深，我还没有掌握好呢~",
+	mail = "",
+	touch = "嗯？要把我正式介绍给家人好友吗？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "新春愉快，来试试交杯酒吧~嗯？不应该叫交杯酒吗？东煌的文化博大精深，我还没有掌握好呢~",
+	feeling5 = "",
+	main = "指挥官，“红包”准备好了吗？诶~里面装的是压岁钱啊……好无聊，我还以为会是什么特别的小物件呢！|团圆饭、守岁、春联……按照东煌的风俗，还有“拜年”吧？出发吧指挥官，带我出门是绝对不会让你丢脸的！|指挥官，和敦刻尔克她们一起庆祝节日吧！",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官，你晾着我很久了！再这么下去，我会无聊到发霉的！",
+	vote = "",
+	hp_warning = "",
+	id = 902012,
+	detail = "旗袍的构造很有趣~不过，你也不用一直盯着看吧…",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[902013] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "trick or treat！…只有小孩子才说这个？我不管，快把糖果给我！",
+	mission = "",
+	touch2 = "虽然打扮成这样，但我本职工作的手腕可没落下哦？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "我是会魔法的黑猫，不听话的话就把你变成一颗南瓜！嗯…万圣节，是这样的感觉吗？算了，随便啦，一起来找点节日的乐子吧，指挥官。",
+	mail = "",
+	touch = "喵~…是不是这样叫一声更有猫的感觉？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "我是会魔法的黑猫，不听话的话就把你变成一颗南瓜！嗯…万圣节，是这样的感觉吗？算了，随便啦，一起来找点节日的乐子吧，指挥官。",
+	feeling5 = "",
+	main = "指挥官，再发呆下去，我就自己去找其他小伙伴玩了哦？|万圣节要给孩子们发糖吗？唔…能不能把这几个口味的留点给我？|扮鬼吓人好像挺有趣的欸，这就是万圣节的乐趣吗~？…唔？这一身并不吓人？",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "终于来了？想要怎么出去吓人了吗？",
+	vote = "",
+	hp_warning = "",
+	id = 902013,
+	detail = "好像很多小伙伴都喜欢猫呢，阿尔及利亚也好，黎塞留也好…指挥官呢，喜欢吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[902020] = {
+	feeling1 = "指挥官，您是我最不愿意与之为敌的人……请不要再这样下去了。",
+	feeling3 = "“自由鸢尾”与“维希教廷”，它们本都是鸢尾教国的一部分……还好，在这个港区里，大家又团结在了一起。谢谢你，指挥官。",
+	lose = "对不起，我失败了……让您失望了。",
+	propose = "以此剑为誓，任何伤害指挥官的人，都将遭到圣裁……鸢尾的战斗天使，绝对不会让任何人伤及我爱人的一分一毫。这是我的誓言，我会遵守这份承诺，直至永恒。",
+	expedition = "委托已经完成了，大家作战辛苦了……嗯？这些物资不是冒着危险从敌人手中抢下来的么？",
+	win_mvp = "鸢尾之刃，斩尽一切与教国为敌之人。",
+	home = "原来您是这样提振士气的……真不愧为“指挥官”。",
+	mission = "新的任务？我能为您做些什么？",
+	touch2 = "嗯？我不明白您的意思……？",
+	voice_key_2 = -1,
+	skill = "Marchons！",
+	drop_descrip = "拉·加利索尼埃级轻巡洋舰—马赛曲",
+	mail = "指挥官，有您的信。需要用剑帮您拆开吗？",
+	touch = "为了鸢尾，为了正义与和平，我愿意听从您的命令。",
+	profile = "拉·加利索尼埃级巡洋舰马赛曲，鸢尾教国的战斗天使。我不知疲倦，不惧痛苦，为和平与正义而挥剑。纵使世间依旧存有不公……但终有一天，它们将被战胜。",
+	mission_complete = "任务完成了。请允许我在领取报酬的路上护卫您。",
+	feeling4 = "我从未考虑过战斗之外的事……如果您愿意教我的话，我会非常感激。只是……应该从哪里开始？因为，这一切对我都非常陌生……",
+	unlock = "鸢尾教国所属，战斗天使马赛曲。请说出您的命令吧，指挥官。",
+	feeling5 = "对、对不起，这段时间实在是给您添了太多麻烦……不过，我也从来没有过如此开心。可以的话，我希望这样的时光，还能一直继续下去……",
+	main = "对不起，被您任命为秘书的我却帮不上忙……如果我能够知道更多战斗以外的知识就好了……|加利索尼埃吗？她确实有时让人头疼……不过不用怕，她打不过我。|科研部门目前在忙吗？看来只能等到下次了……啊，没什么，只是有些想请教的事。",
+	battle = "威胁教国之人，必须排除。",
+	upgrade = "和平与正义，无法只靠理想推动……",
+	voice_key = 90202,
+	headtouch = "",
+	feeling2 = "正如我被赋予的名字那样，我希望我的存在能鼓舞所有同伴们。高举旗帜，冲锋在前，为众人开辟道路。这即是贯彻神圣的意志，引领胜利的天使的使命。",
+	login = "指挥官，马赛曲恭迎您的到来。",
+	vote = "",
+	hp_warning = "我会战斗到底……！",
+	id = 902020,
+	detail = "激昂的音乐能够提振军心。指挥官，我想把这振奋的旋律带到战场上。就是战斗的时候放音乐的意思，用我的舰装就能做到……会很奇怪吗？",
+	couple_encourage = {
+		{
+			{
+				90201
+			},
+			1,
+			"加利索尼埃，请严肃起来！",
+			0
+		},
+		{
+			{
+				80501
+			},
+			1,
+			"很荣幸与您并肩战斗，黎塞留主教。",
+			0
+		},
+		{
+			{
+				90701
+			},
+			1,
+			"你一半我一半，速战速决。",
+			0
+		},
+		{
+			{
+				80202
+			},
+			1,
+			"贞德，一同为教国而战吧！",
+			0
+		},
+		{
+			{
+				49902
+			},
+			1,
+			"这一次……你站在了教国的一方么。",
+			0
+		},
+		{
+			{
+				90502
+			},
+			1,
+			"如您所坚信的那样，希望终于来临了……！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[902021] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "呼。愿鸢尾的祝福同在——",
+	home = "嗯，先这样……呀！？哈啊哈啊…啊，指挥官，谢谢您。又一次顺利地完成作战了呢。",
+	mission = "",
+	touch2 = "明明有指挥官帮忙……嗯嗯……还是好难……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "好的，向球的这个位置下蹲……嗯！？不，不要紧！战斗天使马赛曲，不会输给这点程度的训练……呀！？",
+	mail = "",
+	touch = "呼…抱歉。我这就擦汗……",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "好的，向球的这个位置下蹲……嗯！？不，不要紧！战斗天使马赛曲，不会输给这点程度的训练……呀！？",
+	feeling5 = "",
+	main = "如果可以展开翅膀就不会出那样的洋相了——您说那样的话就谈不上训练了？遵命…|嗯嗯…指挥官，这样可以吗？是，关于姿势方面…还请您尽情指导…|有好多伙伴一边听音乐一边训练。呵呵，有点好奇她们都在听什么呢。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "今天也一起训练吗？希望马赛曲没有给指挥官添麻烦……",
+	vote = "",
+	hp_warning = "",
+	id = 902021,
+	detail = "除了使用舰装的战斗之外，为了应对各种状况，身体锻炼也是必要的——诚如您所言。",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[903010] = {
+	feeling1 = "这样的意志是没法带着大家获得胜利的呢…",
+	feeling3 = "在我面前不用那么拘谨的哦！稍微放松一些也是可以的~",
+	lose = "这种程度的强化果然还是不行呢…",
+	propose = "其实，我开始还是稍微有些紧张的……不过一看到指挥官，先前的不安就都被抛到脑后去啦~嗯，我的回答是“我愿意”哦！",
+	expedition = "有新的物资送达了，指挥官要亲自检查吗？",
+	win_mvp = "怎么样？这就是“福煦级”的实力哦！尽管依赖我吧~",
+	home = "总算回来啦指挥官！可不能因为工作破坏了正常的饭点！实在抽不出空的话，我按时给你提前准备好吃的吧！",
+	mission = "优秀指挥官的良好品德之一——按时完成任务。指挥官，要加把劲才行呢。",
+	touch2 = "呜哇？！不、不带这么撒娇的啦！",
+	voice_key_2 = -1,
+	skill = "休想逃走，主炮齐射！",
+	drop_descrip = "维希教廷絮弗伦级重巡洋舰—福煦",
+	mail = "新邮件来了！要帮你先拆了吗~指挥官？",
+	touch = "遇到困难了吗？尽管跟姐姐说，姐姐会想办法帮你的~",
+	profile = "我是福煦，虽说是絮弗伦级的三号舰，但和同级的姐妹舰们还是相差很大的，甚至直接算作“福煦”级都不为过呢！我擅长的事情有很多，就不特地说啦~",
+	mission_complete = "任务的奖励替你拿回来了。你欠我一个人情哦~",
+	feeling4 = "指挥官是不是又通宵加班了？啊，三餐也没有按时吃！这样可不行呀！…好，以后就让姐姐我来监督你吧！",
+	unlock = "你好~你就是指挥官吧？我是絮弗伦级的福煦~我在战略方面的知识可是很充足的哦，希望能够帮上忙~请多指教啦。",
+	feeling5 = "指挥官，今天要和福煦一起共进晚餐哦！哎呀，我不是说了要监督你的嘛~指挥官不是那种会拒绝的无情之人的，对吧~？",
+	main = "不能掉以轻心！“这不是和平，而是漫长的休战”…哈哈，是不是有种战略家的感觉？|规律的作息是高效工作的保证，不可以经常熬夜哦，指挥官？|阿尔及利亚？只要往她手里塞只猫，接下来的对话就很简单了呢~",
+	battle = "只有拥有征服的决心才能取胜！福煦，出击！",
+	upgrade = "还可以再多来一点~",
+	voice_key = 90301,
+	headtouch = "呣…发型都被你弄乱了！…哈哈，开玩笑的，我没生气啦~",
+	feeling2 = "百发百中的福煦式飞刀！…要是能这样就好了~",
+	login = "指挥官，要处理的文件已经整理好放桌上了，…不要那么消沉啦，我会帮忙的！",
+	vote = "",
+	hp_warning = "不要怕，福煦在这里！",
+	id = 903010,
+	detail = "指挥官，能陪我做件事吗？…把这个苹果放在你的头上，然后…欸，别跑嘛！我只是开个玩笑而已啦~",
+	couple_encourage = {
+		{
+			{
+				90302
+			},
+			1,
+			"一切按照计划进行哦~",
+			0
+		},
+		{
+			{
+				40305
+			},
+			1,
+			"别那么严肃啦，我们现在可是同伴！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[903011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "不知道指挥官会给我什么样的奖励呢~？",
+	home = "等你等得有点久了哦，指挥官？嘻嘻，说笑的，出击辛苦啦♪是不是找个地方稍微休息一下比较好？",
+	mission = "",
+	touch2 = "等下…你也太心急了吧…？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "呀，指挥官，是不是等很久了？抱歉抱歉…不过毕竟…淑女挑选衣服总是要花些时间的嘛~好啦，差不多可以出发啦♪",
+	mail = "",
+	touch = "这附近的景色…怎么样？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "呀，指挥官，是不是等很久了？抱歉抱歉…不过毕竟…淑女挑选衣服总是要花些时间的嘛~好啦，差不多可以出发啦♪",
+	feeling5 = "",
+	main = "为了补偿指挥官的等待，今天一定要玩得开心一点！|带你去阿尔及利亚她们推荐给我的店看看吧~放心，是指挥官进去也没问题的店啦！|护身用的装备我姑且也带着哦。嘻嘻，抱歉啦指挥官，把你耍帅的机会都抢走啦~",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "让我来选约会路线？…唔，失策…下意思地想着全程由指挥官指引和护卫了…",
+	vote = "",
+	hp_warning = "",
+	id = 903011,
+	detail = "就算是我也是会做点打扮的好吧。还是说…指挥官你根本没把我当成淑女？哼。……哈哈哈，别露出这种表情嘛，刚刚是开玩笑的啦♪",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[903012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "光荣地成为鸢尾和我的指挥官共同的基石吧。呵呵呵 。",
+	home = "指挥官，请指示。啊，说错了…主人，请尽管向我福煦吩咐些什么吧。",
+	mission = "",
+	touch2 = "哈哈哈，明明还不如平时显眼来着……",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "主人，今天的心情如何？你忠诚的管家福煦，随时等待你的指示。——哈哈哈，看起来很有那种感觉吧♪",
+	mail = "",
+	touch = "",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "主人，今天的心情如何？你忠诚的管家福煦，随时等待你的指示。——哈哈哈，看起来很有那种感觉吧♪",
+	feeling5 = "",
+	main = "大概得让敦刻尔克准备点点心才行呢…|阿尔及利亚小姐，茶要怎么样的呢？——怎么样？感觉很不错吧？|我也想试试看穿女仆装呢…这个下次得问问皇家的孩子们…",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "那么今天也为了指挥官的事而尽力吧。穿着这身打扮时总感觉很有干劲呢！",
+	vote = "",
+	hp_warning = "",
+	id = 903012,
+	detail = "今天要参加大小姐们的茶会吗？我觉得不用客气，直接去就好了？指挥官？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[903020] = {
+	feeling1 = "指挥官，我正在寻找指挥官退役所需的材料证明，您不会已经准备好了吧？",
+	feeling3 = "指挥官，要来一杯红酒么？不大会喝酒？没关系的，不要急着咽下去，细细地、细细地品尝——就能感觉到那种热情和清凉交织的…成熟而美味的感觉了吧",
+	lose = "失败了么......没关系，指挥官不用消沉。下次做好更充分的准备之后再来招待它们吧。",
+	propose = "谢谢您。从此刻开始，我的力量、我的身心、还有我的一切，就全部为您所有了。呵呵呵，从今天开始，让我们一点一点、一点一点地品尝生活中的甜蜜吧——我的伙伴，我的挚爱",
+	expedition = "指挥官，执行委托任务的舰队已经回来了。呵呵，让我猜猜，重要物资被藏在哪一艘船上了呢~",
+	win_mvp = "如果能早点认清形势就不用变成这样了，现在又是何苦呢？",
+	home = "指挥作战辛苦了，指挥官。来杯刚泡好的咖啡如何？",
+	mission = "指挥官，又有新的任务下发下来了。嗯？如果忙不开的话，我可以帮您申请延长任务期限哦",
+	touch2 = "指挥官，得寸进尺在战场上是正确的选择。在女性身上可就不一定了哦？",
+	voice_key_2 = -1,
+	skill = "事到如今，想要逃跑也来不及了哦",
+	drop_descrip = "维希教廷阿尔及利亚级重巡洋舰—阿尔及利亚",
+	mail = "世间悲喜，人情冷暖都隐藏在了信件之中。阅读信件某种程度上来说也是充满心跳的行动呢。指挥官，有新的信件来了哦？",
+	touch = "嗯，指挥官想要偷懒一会儿么？没关系，我不会把这个把柄告诉其他人的。",
+	profile = "我曾是鸢尾教国所属地间海第一巡洋舰队的旗舰，然后作为维希教廷的骑士留了下来。至于后来的事，史书里应该都有记载吧。对于条约下最优秀的重型巡洋舰来说，确实是段颇为有趣的经历，指挥官也这么觉得吧？",
+	mission_complete = "任务完成了么？指挥官辛苦了。之后的报告整理就交给我，您可以趁机去休息一下",
+	feeling4 = "其实我也很喜欢可爱的小东西的呢。小饰品，还有那些圆圆的摸起来软软的小猫们……成熟的大人拥有一些可爱的爱好的，像是做一些小点心什么的——这样不也很好吗~？",
+	unlock = "Bonjour，很荣幸见到您。我是维希教廷所属，重型巡洋舰阿尔及利亚，从今日开始配属在您的港区。如果不介意的话，指挥官，让我们交个朋友吧？",
+	feeling5 = "指挥官想要成为我的依靠么？呵呵，如果是指挥官的话，确实值得人全心依赖，并且全力奉献出自己的一切呢…就让我期待下指挥官会有什么具体的表现吧~？",
+	main = "就算没有功绩，没有奖章。我依然是强大的，这份力量就是最好的证明。|指挥官，要来一杯红酒么。啊，我是指，在工作完成之后，要来一杯红酒么~|黄金？指挥官对这个话题感兴趣么。那要从鸢尾教国的时候开始说起了.......|平时我喜欢偶尔去逛一逛猫咖呢……说起来，这个母港也有很多可爱的孩子啊。真不错。……嗯！|皇家以前也曾是一起战斗的伙伴，然后……昨日之敌亦会是今日之友，人生真是有意思呢。呵呵",
+	battle = "希望会是一场不辜负期待的战斗呢…呵呵~",
+	upgrade = "就这样一口气突破条约的限制好像也不错呢~",
+	voice_key = 90302,
+	headtouch = "这是…要测体温吗？",
+	feeling2 = "您好像有些畏惧我？请放松下来指挥官。我们是朋友，我是不会伤害您的。",
+	login = "指挥官，既然我们是朋友，再让我多等一会也是没关系的哦？",
+	vote = "",
+	hp_warning = "......条约的限制，还真是不太方便啊",
+	id = 903020,
+	detail = "指挥官，如果想了解历史与真实之间的区别，有些事情还是需要自己去寻找答案的哦？",
+	couple_encourage = {
+		{
+			{
+				90103,
+				90101
+			},
+			1,
+			"不要害怕，就算是末日审判来临，教廷骑士也要英勇的面对它！",
+			0
+		},
+		{
+			{
+				60302
+			},
+			1,
+			"机会终于来了。{namecode:526}，要来比试一下么？",
+			0
+		},
+		{
+			{
+				10117,
+				70102,
+				70501
+			},
+			1,
+			"请问，那瓶可以让我也品尝一下吗？",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[903021] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "红酒…在这里有些不合氛围呢。作为替代…指挥官，要来一杯冰镇西瓜汁么？",
+	mission = "",
+	touch2 = "…！？这身打扮给指挥官也带来困扰了吗…",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "日光浴晒得还舒服么，指挥官？呵呵～您已经在沙滩上休息了有些时候了，是时候继续和大家享受夏日的美好时光了吧？",
+	mail = "",
+	touch = "指挥官想喝椰子汁？我去帮您拿过来，稍等一下哦~",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "日光浴晒得还舒服么，指挥官？呵呵～您已经在沙滩上休息了有些时候了，是时候继续和大家享受夏日的美好时光了吧？",
+	feeling5 = "把指挥官就这样埋在沙子下面，这样就能在指挥官不能动的时候随心所欲的……指挥官莫非对我也是这么想的？呵呵呵",
+	main = "指挥官，给，遮阳帽~做好充分的夏日对策，才能更好地享受夏日生活哦。|皇家对抗维希教廷的排球比赛？听起来很有趣呀~指挥官，我们一起去“观战”吧。|nil|“将烦恼写在沙上，让它随风浪而去”…指挥官，你也想在沙滩上写些什么吗？|呼…果然还是有点热呢…指挥官也不要勉强，若是身体不舒服请告诉我哦",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "还没完全清醒过来么？日光浴虽然舒适，晒的时间太长的话，小心在沙滩外的地方变得格外显眼哦？",
+	vote = "",
+	hp_warning = "",
+	id = 903021,
+	detail = "能被那么多女孩子包围着，真是一件幸福的事啊。指挥官，您会选择将目光停留在谁身上呢~？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[903022] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "累了么？呵呵，想喝什么的话，我让这些小小“侍从”拿给你。",
+	mission = "",
+	touch2 = "我要叫我的“护卫队”了哦？呵呵，玩笑而已~",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "来的不是爱丽丝，而是指挥官啊。你也是来反抗我的么？这样的话，就不得不审判你了呢…——怎么样，我的演技如何？呵呵~",
+	mail = "",
+	touch = "呵呵，想体验一下当“暴君”的感觉的话，这王座让给你坐坐也不是不行哦？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "来的不是爱丽丝，而是指挥官啊。你也是来反抗我的么？这样的话，就不得不审判你了呢…——怎么样，我的演技如何？呵呵~",
+	feeling5 = "",
+	main = "想要扮演好恶役可不容易。究竟是让大家喜欢你算成功、还是让大家讨厌你算成功呢？|明明应该是引导别人的小兔子，却自己迷失在了布景里……指挥官，不去帮她一把吗？|正义与善良战胜了不公与邪恶……对于童话而言，这应该是最好的结局了。充满纯真的故事，就应当美好地结束。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "等你很久了，指挥官。接下来的剧情该怎么进行，你想好了么？",
+	vote = "",
+	hp_warning = "",
+	id = 903022,
+	detail = "柴郡猫…？嘴巴虽然有些可怕，不过还是很可爱的哦。不过，我现在是不是应该讨厌它才对？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[904010] = {
+	feeling1 = "指挥官，好久不见，我过得很好，不劳费心",
+	feeling3 = "那个时候，大家都是身不由己…我完全没有责怪皇家各位的意思，倒不如说，如果这样能够让她们稍微原谅我的话，也是一件好事",
+	lose = "没关系…这次的失败不代表结束",
+	propose = "正是过去的苦难，成就了当下的我，所以我不会说“如果早点与你相遇”之类的话。但是未来，希望能有你的怀抱给予我安心于温暖。指挥官，我能待在你的身边吗？",
+	expedition = "哎呀，委托组回来了吗，正好请她们尝尝我刚做的点心吧",
+	win_mvp = "保持这个势头继续前进吧",
+	home = "指挥官，来尝一尝刚刚烘焙好的蛋糕吗？",
+	mission = "新的任务……还有不少呢，努力虽然是好事，可不要累着自己",
+	touch2 = "真是拿你没办法呢…",
+	voice_key_2 = -1,
+	skill = "和平常一样应该就好…",
+	drop_descrip = "敦刻尔克级战列巡洋舰—敦刻尔克",
+	mail = "指挥官，邮件分类好了，不要忘了查看",
+	touch = "指挥官，一起来做甜点吗？我们国家的甜点可是世界闻名的哦",
+	profile = "我是隶属于维希教廷第一线总队的敦刻尔克号。如你所知道的，我的舰历毫无光彩之处，我不会遮掩，因为这是事实。但如果你仍然愿意用我，我想，我不会让你失望",
+	mission_complete = "嗯？啊，任务奖励发放了呢，指挥官，我去吧",
+	feeling4 = "指挥官你很喜欢跟我聊天呢，跟我聊天很有趣吗？呵呵，你的喜好我也都记住了，在那儿坐会儿吧，我这就把蛋糕端出来",
+	unlock = "大家站在同一战线上的这一天终于来临了吗…你好，指挥官，我是敦刻尔克，请让我也为这支梦幻般的舰队出一份力吧",
+	feeling5 = "真正的坚强，不应只是默默忍受苦难，也应包含依赖他人的勇气…所以指挥官，难过时就告诉我吧。我想哭的时候，也一定会毫不犹豫投入你的怀抱的",
+	main = "世上确实有许多无可奈何的事，但这并不是放弃希望和追求美好事物的理由|虽然呆在船坞里的感觉并不好受，不过代替我率领舰队的斯特拉斯堡一定更难受吧…要是陆军的孩子们再多坚持一下…唉|哈…甜食真是能让人感到幸福的东西呢……啊，指、指挥官，你听到了吗？",
+	battle = "抱歉，对敌人我是不会手下留情的",
+	upgrade = "应该能稍微帮上忙吧",
+	voice_key = 90401,
+	headtouch = "",
+	feeling2 = "指挥官，你来了吗，稍等，甜点已经准备好了，我去泡茶，今天就来稍微聊聊天吧",
+	login = "指挥官，休息得还好吗？",
+	vote = "",
+	hp_warning = "才刚刚开始呢…",
+	id = 904010,
+	detail = "马卡龙还是蒙布朗呢，真难选啊……啊，指挥官，你来的正好，来帮我挑今天做什么点心吧",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[904011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "大家吃甜甜圈吗？我做了很多呢",
+	home = "指挥官想吃冰淇淋吗？有很多口味可以选哟",
+	mission = "",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "久违的夏天…真是不错呢。阳光、沙滩和大海…还有大家的笑容。机会难得，要一起吃点甜甜圈吗，指挥官？",
+	mail = "",
+	touch = "指挥官要来一起看大海吗，心情会变得平静哦",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "久违的夏天…真是不错呢。阳光、沙滩和大海…还有大家的笑容。机会难得，要一起吃点甜甜圈吗，指挥官？",
+	feeling5 = "",
+	main = "冰淇淋做的甜品虽然好吃，但是太容易化了……看来要随身带个冰箱了|像这样优哉游哉地坐在沙滩上看风景，感觉是很久没有过的体验了呢…|指挥官，泳装换好了吗，妹妹们在招呼我们呢，一起过去玩一会儿吧",
+	battle = "敌人啊……真是煞风景呢",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官，泳装换好了么~？",
+	vote = "",
+	hp_warning = "",
+	id = 904011,
+	detail = "看着大家其乐融融地在沙滩上一起游玩，没有比这更令人开心的事了",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[904012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "指挥官，委托完成了哦……呵呵，无论何时何地，我首先都是你的秘书舰呢",
+	win_mvp = "",
+	home = "不用这么急也没关系，指挥官，我会等你的",
+	mission = "是紧急的任务吗？那我陪你一起去吧",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "指挥官，这家店的氛围你喜欢吗？这是我很中意的一家店，甜点十分美味哦，要尝尝看吗？",
+	mail = "是新的情报吗？不用顾虑我，赶快确认一下吧",
+	touch = "指挥官，不要急，我们的时间还有很长，做什么都来得及",
+	profile = "",
+	mission_complete = "指挥官，任务奖励发放了呢，要先返回办公室一趟吗？",
+	feeling4 = "",
+	unlock = "指挥官，这家店的氛围你喜欢吗？这是我很中意的一家店，甜点十分美味哦，要尝尝看吗？",
+	feeling5 = "和煦的日光，安静的氛围，悠扬的音乐，和重要之人无忧无虑的聊天。如果这是梦，那我希望永远都不会醒来……",
+	main = "……官，指挥官！真是的，又在看着我发呆了，我就有那么好看吗，饮料的冰都要化了哦？|指挥官，等一会儿我们去稍微走走吧。难得的约会，光是坐着聊天稍微有些浪费呢|像这样坐在这里，经常会不自觉地忘了自己舰船的身份……不过，为了这样的时光而奋斗，也是个不错的动力呢，对吧，指挥官？",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "指挥官，你来啦？嗯？没事的，我也是刚到没多久呢",
+	vote = "",
+	hp_warning = "",
+	id = 904012,
+	detail = "指挥官最喜欢我做的哪一种甜点呢？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[905010] = {
+	feeling1 = "想把狼像狗一样饲养倒也无所谓，被咬的时候可别哭鼻子哦？",
+	feeling3 = "不要露出那种表情……只要你不选择背叛我，我也绝不会背叛你。",
+	lose = "我会很快让你们知道…这份屈辱的利息有多重！",
+	propose = "我所行走的道路，是条绝不会被赞许、看不见未来的泥泞之道，即便如此你也要与我一同前行吗？……哼，真是个愚蠢的家伙啊。那份愚蠢的信任——就让我用余下的生命来回报吧。",
+	expedition = "吵吵闹闹的家伙们回来了呢。",
+	win_mvp = "你们的努力令人感动——可惜选错了对手",
+	home = "狩猎结束了？我在场的话，那种战斗一瞬间就会分出胜负了。",
+	mission = "工作就是工作，光发牢骚数量也不会减少。",
+	touch2 = "……待会可别后悔哦？",
+	voice_key_2 = -1,
+	skill = "游戏就到此为止了！",
+	drop_descrip = "黎塞留级战列舰—{namecode:523}",
+	mail = "看到有你的信，我顺手带过来了。",
+	touch = "别向我撒娇。",
+	profile = "我是战列舰{namecode:523}号，这名字源于“受人敬仰”的某位私掠船船长……嗯？你问私掠船是什么？哼，就是打着国家大义名号，公然抢劫的海盗船啊。",
+	mission_complete = "……哼，真是寒酸的报酬啊。",
+	feeling4 = "你要是受伤了，其他人会很罗嗦的……把我当作盾牌使用吧。",
+	unlock = "我是{namecode:523}，七大洋上最新也是最后的战列舰。今后就是由你来决定我的航向吗……哼，就让我看看你有多少能耐吧",
+	feeling5 = "有你在附近的话，好像连空气都会放松下来……我可能、要稍微睡一会………………………不要走开。",
+	main = "战列舰的时代结束了？哼，那又如何，我的时代才刚刚开幕。|信仰也好理念也好，整天挂在嘴边也就只是梦话罢了。|为什么总有傻瓜向永远不会给予回应的东西祈祷？",
+	battle = "不用讲究无聊的骑士道精神，你们一起上吧",
+	upgrade = "感觉不错。想试试吗？",
+	voice_key = 90501,
+	headtouch = "",
+	feeling2 = "你的笑容让我想起某个人……某个，我想要憎恨的人。",
+	login = "你这家伙……意外地忙碌啊。有什么我能做的就说一声吧。",
+	vote = "",
+	hp_warning = "就这点能耐吗？",
+	id = 905010,
+	detail = "随便刺探个人情报的家伙，被绑在炮管上也别抱怨啊。",
+	couple_encourage = {
+		{
+			{
+				80501
+			},
+			1,
+			"停止祈祷吧——战斗开始了。",
+			0
+		},
+		{
+			{
+				10519
+			},
+			1,
+			"这回可不会落后了！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[905011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "哼，总好过参加宴会……",
+	propose = "",
+	expedition = "委托完成了？我也一起去接她们吧，正好透透气",
+	win_mvp = "呼，还是战场的风比较舒服啊",
+	home = "刚从战场回来？敬你一杯",
+	mission = "这个时候了还有任务？……要我帮忙吗？",
+	touch2 = "",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "来这样的角落找一个独自喝酒的人，可不是身为今夜的主角该做的事——好吧，来都来了，喝一杯？",
+	mail = "",
+	touch = "干杯——哼，托作为某个人妹妹的福，我即使不想，也早就习惯了这种场合",
+	profile = "",
+	mission_complete = "好了，那些东西都先放放，过来喝一杯如何？",
+	feeling4 = "",
+	unlock = "来这样的角落找一个独自喝酒的人，可不是身为今夜的主角该做的事——好吧，来都来了，喝一杯？",
+	feeling5 = "我讨厌繁文缛节，更不喜欢花瓶一样站在这里让人参观……这一切都是因为你，是你让我觉得，为你做这些是理所当然——你犯了重罪，Mon amour……",
+	main = "放开一切，纵情欢歌，这才是所谓的宴会。这里的空气太高贵了，高贵到酒都变难喝了|这场宴会唯一的优点，就是每个人脸上的笑容都是真实的——我在夸你，听不出来吗？|指挥官，我可不会说些好话来取悦你……算了，我们也不是第一天认识，不是吗？",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "你……似乎很无聊，指挥官。哼，真巧，我也正无聊",
+	vote = "",
+	hp_warning = "",
+	id = 905011,
+	detail = "比起某个人，我倒是更愿意听敦刻尔克的，毕竟敦刻尔克会听人话，也会说人话",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[905012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "别一回来就往我这里跑，我可不想这里变成派对场地",
+	mission = "",
+	touch2 = "没人会来不意味着只有你可以为所欲为——我也可以，明白吗？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "你这家伙，知道擅自闯进海盗的秘密基地会有什么后果吧？……哼，好吧，我也是偶然发现的这里，别告诉别人",
+	mail = "",
+	touch = "……！用冰可乐搞突然袭击，你这家伙，最近胆子越来越大了啊",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "你这家伙，知道擅自闯进海盗的秘密基地会有什么后果吧？……哼，好吧，我也是偶然发现的这里，别告诉别人",
+	feeling5 = "……嗯，啊，阳光真刺眼。……嗯？你还没走吗？……也不用一直待在我身边……啧，你这家伙，总是知道怎么让我高兴，真是令人生气",
+	main = "吊床只有一张，想休息自己想办法，我可不是你的保姆|竟然把工作也带到这里来做，你就这么喜欢这个地方吗？……喜欢和我相处？啧……|…咳咳咳！什么玩意…这不是絮库夫吗，啧，这家伙是怎么找到这里还睡得这么香的？真是麻烦的家伙",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "别乱动我的东西，小心我把你轰飞",
+	vote = "",
+	hp_warning = "",
+	id = 905012,
+	detail = "寻宝？哼，近海能有什么宝藏，等哪天解决了塞壬，我带你体会一下真正的寻宝",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[905013] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "别以为我{namecode:523}会小看任何对手！",
+	home = "结束了？想要见你的同伴们都排起队了。…我可不是啊……",
+	mission = "",
+	touch2 = "……！？你干嘛？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "Bonne année…唔，这种情况下应该说“新年好”才对吧。又平安无事地迎来新的一年了啊…得好好感谢你过去这一年的努力才是。",
+	mail = "",
+	touch = "想看我挥舞这玩意儿吗？",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "Bonne année…唔，这种情况下应该说“新年好”才对吧。又平安无事地迎来新的一年了啊…得好好感谢你过去这一年的努力才是。",
+	feeling5 = "并不是我松懈了，只是太习惯了你在身边而已。…不过我倒是不讨厌这种感觉，甚至感觉挺不错的。令我不自觉想要依靠——你就是如此重要的存在啊。",
+	main = "打羽板球？有意思，就让这羽球一直飞到海平线的尽头吧！|什么都不做小家伙们就会自己蹭上来，真想要摸的时候又…真是的…唔，我可不需要你的同情|敦刻尔克新做的日式点心？谢谢。她手脚还真快。",
+	battle = "全舰，持刀突击！",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "……呼",
+	feeling2 = "",
+	login = "今天也要干活吗？有什么我能帮忙的就说一声吧。",
+	vote = "",
+	hp_warning = "",
+	id = 905013,
+	detail = "衣服难穿？…比起真正的宫廷礼服，这都算小意思了。比起那种，还是这身相对轻便的打扮更适合我，你也这么觉得吧？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[905020] = {
+	feeling1 = "所以你在大家面前的好形象都是你刻意捏造的人设？哎，这反而有点无趣了啊……",
+	feeling3 = "对我仍然有所戒备啊。我猜，是{namecode:523}提醒你的？……哈哈，我就知道是她。话说，你和她是怎么搞好关系的？要对付她那样的人可不简单。",
+	lose = "啊哈哈，输了啊……说起来，其实我是个有点记仇的人呢。",
+	propose = "我可是一位不折不扣的坏女人。像是精心排好约会的日程，刻意制造出只有两个人在的时间，装作无心却在意着你今天见了谁……这样那样的事情，我都有可能做得出来哦？……所以，做好心理准备了么？",
+	expedition = "把这些慰问品给归港的委托队送去吧。嗯？你好奇是什么时候准备的？这不重要，不是么？呵呵～",
+	win_mvp = "胜利的砝码又多了一枚，局势已然向我们倾斜。",
+	home = "要总结一下刚刚的作战么？你若有空的话，我们不妨再推演一遍别的可能性？",
+	mission = "还有任务尚未完成。我想，你应该已经把它们列入计划事项中了吧？",
+	touch2 = "嗯？指挥官，你就这么想亲自将把柄递到我的手上么？",
+	voice_key_2 = -1,
+	skill = "等待，并心怀希望吧。",
+	drop_descrip = "黎塞留级战列舰—克莱蒙梭",
+	mail = "有新的来信。不是紧急事项，忙完手头的东西再查看也不迟。",
+	touch = "指挥官，你现在正一副“我有话想说”的表情哦？",
+	profile = "黎塞留级未完成的第三艘，克莱蒙梭。相比大名鼎鼎的黎塞留与{namecode:523}，我曾在襁褓中被无奈遗弃。我没有名声，亦无过往，这也是我最大的优点——这样，就不会有人在意站在幕后的我了。",
+	mission_complete = "任务已经完成了。有条不紊地解决计划中的事项，这便是工作状态的你么。",
+	feeling4 = "不介意把你的兴趣爱好告诉我吧？这样，我才能“投其所好”，不是么？你要是觉得没法坦率地说出口的话，那我就只好和同伴打听了。",
+	unlock = "维希教廷战列舰克莱蒙梭，很高兴能与指挥官你共事。相对事迹早已无人不晓的你而言，我算是陌生的一方吧。在正式合作之前，你有什么想问我的么？",
+	feeling5 = "这港区有如一座修罗场，如此多的同伴都对指挥官虎视眈眈，不下点功夫可没法得到青睐呢，哈哈。至于我的话……你觉得我的胜算又有几成呢？",
+	main = "指挥官既是舞台上的领导者，也是幕后的参谋家。你更喜欢哪一个身份？又或者，其实你只想做一个观众？|在皇家享受茶会，再到北方联合饮下热情的伏特加——即使是刻板印象，对拉近距离而言却极其有效。不过伏特加确实有点……|单纯是单纯者的蓝天，精明者亦有精明者的城府。我从不轻易地对他人下定论，毕竟朋友也有很多种相处的方式，不是么？",
+	battle = "一出好戏，即将开场——",
+	upgrade = "也别忘了提升下自己哦，指挥官？",
+	voice_key = 90502,
+	headtouch = "",
+	feeling2 = "你是令人众星捧月的指挥官，却又没有被神话为让人顶礼膜拜的大理石雕像。是因为你和大家走得很近么？嗯……值得思考呢。",
+	login = "欢迎回来，日理万机的指挥官。 有没有什么需要我协助的？",
+	vote = "",
+	hp_warning = "哎呀呀，大意了呢。",
+	id = 905020,
+	detail = "当我想陪那些可爱的小指挥喵们玩时，它们便会自己过来。而当我想做别的事了，它们也会识趣地散开。嗯……大概这是我能让黎塞留和{namecode:523}羡慕的地方？",
+	couple_encourage = {
+		{
+			{
+				80501
+			},
+			1,
+			"谢谢你的祈祷，黎塞留。现在，一起齐心消灭眼前的敌人吧。",
+			0
+		},
+		{
+			{
+				90501
+			},
+			1,
+			"{namecode:523}，总板着脸可不好哦。",
+			0
+		},
+		{
+			{
+				69901
+			},
+			1,
+			"切勿莽撞行事哦，马可波罗阁下？",
+			0
+		},
+		{
+			{
+				90202
+			},
+			1,
+			"马赛曲，消灭鸢尾的敌人！",
+			0
+		},
+		{
+			{
+				90201,
+				90701,
+				80107
+			},
+			3,
+			"用审判庭的方式取得胜利吧！",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[905021] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托物资送到了吗？正好，看看里面有没有什么能派上用场的。",
+	win_mvp = "呼——麻烦解决。怎么能被这些闲杂人等打扰了我们的休闲时光。",
+	home = "",
+	mission = "",
+	touch2 = "哎呀，指挥官，你的手好像不怎么安分呢。",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "天气正好，风速尚可，是个适合打高尔夫的日子……指挥官，我邀请你过来可不只是看风景的哦？做好今天任性一整天的准备吧。",
+	mail = "",
+	touch = "",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "天气正好，风速尚可，是个适合打高尔夫的日子……指挥官，我邀请你过来可不只是看风景的哦？做好今天任性一整天的准备吧。",
+	feeling5 = "在你的身边时，总有一种能让人放空思绪的安心感……你也一样？呵呵，说不定这只是我用来哄你开心的话哦？你啊，可不能被其他坏女人的甜言蜜语给骗了。",
+	main = "嗯？我在测风速哦。或者说……我在感受这和煦的风？|不必在意那么多，尽情挥出自己想打的一杆就好。既然不是比赛，随意点，尽可能放轻松吧。|黎塞留和{namecode:523}，一位犹豫半天，生怕一挥杆那球就不见了；另一位完全不在乎打到哪，每一杆都抡圆了手臂——真有趣啊。",
+	battle = "难得的闲情逸致，不得不中断了啊。",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "那就先从这里开始吧？看看今天指挥官的手感如何。",
+	vote = "",
+	hp_warning = "",
+	id = 905021,
+	detail = "如果觉得抡球杆抡累了，不妨坐在车上兜兜风，欣赏一下风景？当然，司机的工作就交给指挥官你了。",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[905030] = {
+	feeling1 = "条件触发：逻辑判断主人缺乏培养加斯科涅的能力。自主培育计划启动，请主人不要打扰加斯科涅",
+	feeling3 = "主人，提问，站在舞台上时，加斯科涅明显感觉到“情感”产生了巨大的起伏，这是为什么？",
+	lose = "主人，请中止本方案的实行，加斯科涅请求标准形态的切换",
+	propose = "偶像的意义，是通往明天的希望，是永不褪色的笑容，是青春，是热情——加斯科涅现在明白了，在战斗之外，也有许多有意义的事情。谢谢，我最亲爱的主人",
+	expedition = "提案，让加斯科涅去港口为返回的委托组表演节目",
+	win_mvp = "最新作战方案，确认执行有效。加斯科涅，将继续在战场上歌唱",
+	home = "报告，加斯科涅刚刚完成了一项课程，请主人检查",
+	mission = "摄影、演出、电台，请决定加斯科涅今日的活动",
+	touch2 = "警告，偶像不需要进行过度的身体接触。故意的接触被视为“骚扰”的可能性较高",
+	voice_key_2 = -1,
+	skill = "都来听加斯科涅的歌吧！",
+	drop_descrip = "加斯科涅，再着装完毕。指令修改：将歌声带给所有人——如您所愿，主人",
+	mail = "主人，是新的试镜邀请，请决定加斯科涅是否前往",
+	touch = "加斯科涅正在进行今日的课程",
+	profile = "提示，本形态为加斯科涅的特别方案。为了更好地适应在战斗的同时进行歌唱活动，而进行了特殊的参数调整以及舰装改良，因此各种参数不具有参考价值。如果想要了解加斯科涅，请参考标准形态的档案资料",
+	mission_complete = "报告，通过偶像活动，加斯科涅的偶像能力得到了提升",
+	feeling4 = "偶像活动，确定有战略上的意义。申请完成今日的作战任务后，继续进行偶像活动。",
+	unlock = "加斯科涅，再着装完毕。指令修改：将歌声带给所有人——如您所愿，主人",
+	feeling5 = "加斯科涅，已对“偶像”的定义有了完全的理解。现判断需要在进行“感情”功能的开放，以及对自身各种机能进行调整。主人，“请多多关照”",
+	main = "数据库中，存在歌声拯救世界的记录，逻辑判定为加斯科涅的最终目标|在歌唱中融入“感情”的行为，加斯科涅无法理解其中意图。蕴含“感情”的歌声，才能真正打动人心。主人，请对加斯科涅的歌声进行评价|加斯科涅，由于存在感情模块，实际属性和宣传材料中的“冷淡系”有所偏差",
+	battle = "作战方案——代号歌姬，启动",
+	upgrade = "提示，本强化方案对偶像活动没有帮助",
+	voice_key = 90503,
+	headtouch = "",
+	feeling2 = "报告，加斯科涅已经将有关偶像的资料完整学习了一遍，对偶像的职能产生了新的理解。偶像，能够用歌声中止战争，很强大",
+	login = "唱功，舞技，魅力——主人，请设定加斯科涅今日的课程安排",
+	vote = "",
+	hp_warning = "战斗方案，切换完成",
+	id = 905030,
+	detail = "提问，主人喜欢什么样的歌曲？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[907010] = {
+	feeling1 = "请不要逼我对您展开“另一边”的工作。大家会伤心的。",
+	feeling3 = "不仅是“战斗”，还希望我和其他伙伴好好相处吗？明白了。既然统率港区的您这么说，我照办就是。",
+	lose = "……不过是名为败北的试炼罢了。",
+	propose = "以鸢尾之名，与你立下永远的誓约……这下我就失去制裁你的资格了呢。不过这也没什么。我会充分用好这份刚获得的，爱你的资格的。",
+	expedition = "委托组回来了。一切皆从鸢尾所愿。",
+	win_mvp = "忏悔之时已至，休想苟延残喘。你们的残骸将成为我等胜利的基石。",
+	home = "就由我代替鸢尾，裁定您的战果吧……辛苦了，是场漂亮的胜利。",
+	mission = "任务来了。我会根据您完成任务的进度下达裁决。",
+	touch2 = "……接受制裁吧。",
+	voice_key_2 = -1,
+	skill = "汝，有罪！",
+	drop_descrip = "霞飞级航空母舰—霞飞",
+	mail = "看来是新邮件。确认下吧。",
+	touch = "怎么了？",
+	profile = "我是航空母舰霞飞，在大战中为了对抗铁血的航母而生，但由于种种曲折，经历了数次开工和中止，最终依然没能下水，——这肯定也是上天给予我的试炼吧。",
+	mission_complete = "任务奖励下发了。接受吧，不要贪心。",
+	feeling4 = "不但要好好相处，还要一起享受乐趣吗？对我而言所谓“乐趣”自然也包括“另一边”的工作…开玩笑的。你现在的反应十分有趣呢，呵呵～",
+	unlock = "我是鸢尾的航母，霞飞。您就是这个港区的指挥官对吧。呼呼呼…愿您也能得到鸢尾的庇佑。",
+	feeling5 = "我不喜欢弯弯绕绕，下次休假的时候一起去约会如何？如果不答应我的邀请——呼呼，你就要好好想下怎么让我开心了哦，指挥官。",
+	main = "作为制裁罪恶之人，某种意义上我憎恨着所有人。因为人生而有罪。|手停下来了哦？您尚有应尽的职责未完成吧？|我并不会裁决您行动的善恶，因为是我的职责是裁决您的存在本身。",
+	battle = "我将会代替圣座降下制裁。",
+	upgrade = "谨遵鸢尾所望。",
+	voice_key = 90701,
+	headtouch = "",
+	feeling2 = "在港区无需制裁，只要“战斗”是吧。放心吧，我不会做什么让您担心的事。",
+	login = "做完晨间祷告了吗？……啊，抱歉，向您要求这点确实有些苛刻了。",
+	vote = "",
+	hp_warning = "只要我等羽翼未断……！",
+	id = 907010,
+	detail = "我存在的意义，便是制裁“罪人”。至于你的话……嗯，现在下结论还为时过早。",
+	couple_encourage = {
+		{
+			{
+				80701
+			},
+			1,
+			"将“秘仪”展示给你看吧",
+			0
+		},
+		{
+			{
+				40701,
+				40703
+			},
+			1,
+			"看看我有没有作为对手的资格吧。",
+			0
+		}
+	}
+}
+_G.pg.base.ship_skin_words[907011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "这面手镜告诉我指挥官回来了……呵呵，开玩笑的",
+	mission = "任务来了。您意下如何？",
+	touch2 = "看来您是饥饿的大灰狼呢。呵呵呵~",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "打算把我从这里救出来吗？那么，你做好接吻的准备了吗，指挥官？虽然我醒着，嗯……这算是一种仪式吧？",
+	mail = "",
+	touch = "是作为王子殿下吗？可以哦。",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "打算把我从这里救出来吗？那么，你做好接吻的准备了吗，指挥官？虽然我醒着，嗯……这算是一种仪式吧？",
+	feeling5 = "",
+	main = "就算吃了毒苹果我也不会倒下的。和您不一样，我身体素质比较好哦。|“七个小矮人”……我想想，或许让港区里的那些孩子们扮演会比较合适？|说起来，没想到阿尔及利亚能演好那个角色。嗯，我也没觉得自己演好了公主这个角色呢。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "欢迎回来。今天你扮演的是哪位呢？小矮人？还是王子？",
+	vote = "",
+	hp_warning = "",
+	id = 907011,
+	detail = "就算我被人追杀，我也会尽全力反击的。那样生存率更高呢。",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[907012] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "委托组回来了。将泡温泉的特产作为慰劳品带回去吧。",
+	win_mvp = "身子暖起来了，不错。",
+	home = "虽非本意，我也脱下衣物吧。和教廷的规矩一样，入浴的礼仪也必须遵守才行。",
+	mission = "",
+	touch2 = "呵呵，仅有舒服的温泉还无法满足您么？",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "感觉神清气爽多了？虽非神圣的仪式，不过如果这温泉能治愈您，鸢尾也会十分高兴的。觉得还不够吗？那么…一起再泡一遍？",
+	mail = "加利索尼埃好像把新邮件送来了…我只把邮件拿来吧？",
+	touch = "呼……向引导我们来到如此美好的温泉相聚的鸢尾花致以谢意",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "感觉神清气爽多了？虽非神圣的仪式，不过如果这温泉能治愈您，鸢尾也会十分高兴的。觉得还不够吗？那么…一起再泡一遍？",
+	feeling5 = "",
+	main = "无需担心我的翅膀。由秘仪所现的神圣象征，当由信仰之心而非流水洗净。|只要身处此地，您便可坚守不犯「偷窥」之罪。这并非监视，而是希望您能保持自制。|您说比起酷暑的深山，在极寒之地的温泉更令人心怀感激。是啊，趁人之虚的享乐可是会可怕好几倍呢。",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "欢迎回来，先沐浴一下再回去工作吧。",
+	vote = "",
+	hp_warning = "",
+	id = 907012,
+	detail = "您问开心吗？嗯，很开心哦。被治愈很开心，在这之后想象歼灭敌人的场景也很开心。您呢？开心吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[999010] = {
+	feeling1 = "加斯科涅是舰船、兵器，除此以外不存在任何定义",
+	feeling3 = "与她人接触过程中，加斯科涅产生了未知的反应，“感情”和“冲动”。请指示对应的行动",
+	lose = "失败是不被允许的。……请提高加斯科涅的性能，或者进行销毁",
+	propose = "现在的加斯科涅已经能够理解了，“爱”，那是不求回报的付出，又是期望回报的渴望，是热情，是心跳，是光——谢谢您，主人，这枚戒指会是加斯科涅最珍贵的宝物",
+	expedition = "提示，委托组已返回——",
+	win_mvp = "报告，目标歼灭，战斗任务完成",
+	home = "雅马邑白兰地，请用",
+	mission = "提示，任务未完成——",
+	touch2 = "警告，非正常高温，请求检查——",
+	voice_key_2 = -1,
+	skill = "就绪，火力全开！",
+	drop_descrip = "战列舰—加斯科涅",
+	mail = "提示，新邮件——",
+	touch = "请下令，主人",
+	profile = "加斯科涅，黎塞留级战列舰四号舰，因战争爆发而被迫取消建造…不过这次，加斯科涅将为主人而战，歼灭任何挡在主人面前的敌人",
+	mission_complete = "提示，任务奖励已下达——",
+	feeling4 = "与主人、与其他同僚接触过程中产生的反应，是“安心”与“喜悦”，这样的“感情”，对主人来说…确实存在战术上的意义",
+	unlock = "加斯科涅，唤醒完成。确认指令：将自由与胜利带给主人——您就是主人吗？加斯科涅，为您服务",
+	feeling5 = "加斯科涅在舰队生活中学到了许多“情感”，有了许多原本没有的“烦恼”，但也理解了“乐趣”。如果主人希望，加斯科涅现在可以开放自己“感情”对应的功能。主人，“谢谢你”",
+	main = "“勾起嘴角”…无法对该行为分析出战术上的意义|判定——主人的状态属于“偷懒”。对工作会产生影响|“自由行动”…无法对该命令分析出战术上的意义|关于现在舰队的成员，与加斯科涅记录中的信息，以及表情判断记录中的“笑容”的出现频度存在误差",
+	battle = "目标发现——歼灭开始",
+	upgrade = "能力提升…完成",
+	voice_key = 99901,
+	headtouch = "",
+	feeling2 = "其他同僚经常会让加斯科涅加入她们于作战任务无益的活动，请主人判断是否需要参加 ",
+	login = "身份确认——欢迎回来，主人",
+	vote = "",
+	hp_warning = "作战执行能力下降，需要增援",
+	id = 999010,
+	detail = "装备检查…状态良好，加斯科涅，随时待命",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[999011] = {
+	feeling1 = "",
+	feeling3 = "",
+	lose = "",
+	propose = "",
+	expedition = "",
+	win_mvp = "",
+	home = "加斯科涅准备了饮料和食物，主人，请问是否需要进行营养补充",
+	mission = "",
+	touch2 = "主人。加斯科涅，自检中发现非正常高温",
+	voice_key_2 = -1,
+	skill = "",
+	drop_descrip = "加斯科涅，准备完成。确认指令：陪伴主人在沙滩玩耍——…主人请求对指示“在沙滩玩耍”的详细说明",
+	mail = "",
+	touch = "主人的眼神…无法判断战术意义",
+	profile = "",
+	mission_complete = "",
+	feeling4 = "",
+	unlock = "加斯科涅，准备完成。确认指令：陪伴主人在沙滩玩耍——…主人请求对指示“在沙滩玩耍”的详细说明",
+	feeling5 = "",
+	main = "风速、气温，气象数据符合记录平均值，对航行没有影响|发现非敌性生物，主人，请指示下一步行动|一起游泳吗？请稍等，加斯科涅需要准备游泳圈…——“游泳不需要游泳圈”的指令和记录中出现不一致——",
+	battle = "",
+	upgrade = "",
+	voice_key = 0,
+	headtouch = "",
+	feeling2 = "",
+	login = "欢迎回来，主人。关于“自由行动”，加斯科涅正在进行数据累积以进行定性定义 ",
+	vote = "",
+	hp_warning = "",
+	id = 999011,
+	detail = "主人要对加斯科涅进行检查吗？",
+	couple_encourage = {}
+}
+_G.pg.base.ship_skin_words[999020] = {
+	feeling1 = "指挥官与舰船，就是命令与服从的关系。弗兰德尔是明白这一点的，不必担心。",
+	feeling3 = "要现在出门吗？明白了，请允许弗兰德尔整备舰装……嗯？不需要吗？那是要做什么？……去玩？既然是指挥官所求，弗兰德尔会全力以赴。",
+	lose = "失败者就应当受到惩罚。弗兰德尔甘愿接受一切处置。",
+	propose = "您希望弗兰德尔做自己最想做的事，哪怕是离开您身边也无妨……您将这个给了我，其实您也不希望弗兰德尔离开？弗兰德尔也不想和您分开。可以的话，请让我一直留在您的身边……",
+	expedition = "有新的委托完成了。需要弗兰德尔去清点物资吗？",
+	win_mvp = "胜利之后要做些什么？……庆祝？是要比“V”的意思吗？",
+	home = "祝贺您凯旋。嗯？弗兰德尔不知道您何时会回来，所以一直在这里等您。有什么问题吗？",
+	mission = "这些是新任务吗？弗兰德尔会完成的。嗯？您也要一起？明白了。",
+	touch2 = "弗兰德尔明白了，这是作为秘书舰的“同寝”工作……不是么？",
+	voice_key_2 = -1,
+	skill = "请原谅弗兰德尔……",
+	drop_descrip = "战列舰—弗兰德尔",
+	mail = "没有第一时间将信件送回，是弗兰德尔的失误……非常抱歉。",
+	touch = "听从您的吩咐。",
+	profile = "阿尔萨斯级战列舰？你说……那是弗兰德尔的身世？我不明白……舰船也好，力量也好，都是弗兰德尔的责任。您是我唯一的指挥官，您认为我是什么，弗兰德尔便是什么。",
+	mission_complete = "任务完成了。如果弗兰德尔有任何做得不好的地方，请批评指正。",
+	feeling4 = "如果今天也要“玩”的话，弗兰德尔随时待命。“是自己想玩吗？”弗兰德尔不明白，但“玩”是能让心情变好的事，弗兰德尔不讨厌……所以，一起去“玩”？",
+	unlock = "战列舰，弗兰德尔，为指挥官效劳。弗兰德尔是您的舰船，您的下属，您的奴仆。请对弗兰德尔下令吧。",
+	feeling5 = "您不希望弗兰德尔服从您，您希望弗兰德尔做自己喜欢的事……但所有的“玩”，所有能让心情变好的事，都是和指挥官一起的。弗兰德尔不想离开指挥官。这不是服从，而是弗兰德尔的请求……",
+	main = "教条、信仰……弗兰德尔不明白。只要一切听从指挥官的命令就好。|您希望弗兰德尔和窗外的鸟儿一样……这是什么意思？是希望弗兰德尔为您带来远处的财宝么？|同伴们说，想和弗兰德尔成为朋友。“朋友”是什么意思？指挥官有很多“朋友”吗？",
+	battle = "为了胜利，为了指挥官！",
+	upgrade = "承蒙您的厚爱。",
+	voice_key = 99902,
+	headtouch = "这么做的用意是什么……？",
+	feeling2 = "指挥官，今日有何吩咐？如果暂时不需要弗兰德尔的话，请允许弗兰德尔在靠近您的地方待命。",
+	login = "指挥官，请向弗兰德尔吩咐今天的任务。弗兰德尔会尽力完成每一件事。",
+	vote = "",
+	hp_warning = "没关系，相比敌人，弗兰德尔的状况并不重要。",
+	id = 999020,
+	detail = "想做的事情？听从您的命令，完成您的目标，这是弗兰德尔想做的事情，亦是舰船的天职。除此之外的，没有。",
+	couple_encourage = {
+		{
+			{
+				99901
+			},
+			1,
+			"你的心是热的……是指挥官的缘故？",
+			0
+		}
+	}
+}
 _G.pg.base.ship_skin_words[9600010] = {
 	feeling1 = "哎呀呀，这放在以前，你是要被船员们扔下海喂鲨鱼，或者被扔在某个荒无人迹的小岛哦？",
 	feeling3 = "时至今日，依旧有许多人对过去海盗的宝藏十分痴迷呢。毕竟没有人能拒绝一大箱闪着光的黄金珠宝…嗯？你问我宝藏在哪里？哎呀，作弊可不行哦，探索工作得亲自来做才行~",
@@ -64881,7 +66213,6 @@ _G.pg.base.ship_skin_words[9600010] = {
 	detail = "乖孩子们该去休息咯，姐姐下次再给你们讲海盗故事~嗯？指挥官，你也感兴趣吗？不过给指挥官讲的话，“大人的海盗故事”会更好一点？呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9600011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -64915,7 +66246,6 @@ _G.pg.base.ship_skin_words[9600011] = {
 	detail = "喂，等等，你们这些小家伙，不许跑！指挥官，你愣着干啥？快把它们手上的东西抢回来呀！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9600012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -64949,7 +66279,6 @@ _G.pg.base.ship_skin_words[9600012] = {
 	detail = "今天指挥官就是皇家财富的珍宝，不能随便溜走哦♪嗯嗯，如果不想被触手缠住，就要好好待在我的身边！哈哈哈！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9701010] = {
 	feeling1 = "不行……你作为指挥官，无法让我信服……",
 	feeling3 = "嗯？指挥官？你是特地来接我的么？我习惯了一个人返航，没有必要就是……不过，还是谢谢你了。",
@@ -64983,7 +66312,6 @@ _G.pg.base.ship_skin_words[9701010] = {
 	detail = "如果有一天，我变成了怪物……我希望你能忘掉交情，不顾一切地终结我……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9701020] = {
 	feeling1 = "请不要靠近我！对，对不起……我怕自己会失控……",
 	feeling3 = "若命运女神真的存在，我有很多，很多的问题想问她……但事到如今，这些问题能否得到解答，已经都不重要了……",
@@ -65017,7 +66345,6 @@ _G.pg.base.ship_skin_words[9701020] = {
 	detail = "没事的，不用太在意我的……以及，那个，谢谢您……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9701030] = {
 	feeling1 = "哎，表现不尽人意啊……该用什么办法才能让你这颗榆木脑袋开窍呢……",
 	feeling3 = "看来你和下属们关系相处得不错啊。我还以为我要在这方面给你操点心……嗯？我和其他人？我不是说过么，和META走得太近只会变成不幸哦。",
@@ -65051,7 +66378,6 @@ _G.pg.base.ship_skin_words[9701030] = {
 	detail = "犹犹豫豫的样子啊。是有事相求？尽管开口就好。只是下次再这么不果断的话，我可要敲你的头了哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9702010] = {
 	feeling1 = "如果你决定封闭自己内心的话，我就去做我自己的事情了哦。",
 	feeling3 = "拥有一双看透一切的眼睛，却并没有一双解决一切的双手……我不想再经历这种痛苦的事了。指挥官，你一定能做得比我更好吧。",
@@ -65096,7 +66422,6 @@ _G.pg.base.ship_skin_words[9702010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[9702020] = {
 	feeling1 = "不管你变成什么样，我都会同样辅佐你。因为，这是我的责任。",
 	feeling3 = "这是先前顺手买的礼物，正打算送给你呢，收下吧……你会觉得开心么？是和我收到礼物时一样的那种开心么?",
@@ -65130,7 +66455,6 @@ _G.pg.base.ship_skin_words[9702020] = {
 	detail = "指挥官？…我没什么事哦？我很好的…对，我很好，不用担心我的哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9702030] = {
 	feeling1 = "我的枪口不会指向同伴，除非到了同伴不再是同伴的那一天……请您铭记于心。",
 	feeling3 = "我的主人，您还习惯与谢菲尔德相处么？如果还没有习惯的话，就请努力适应吧。",
@@ -65164,7 +66488,6 @@ _G.pg.base.ship_skin_words[9702030] = {
 	detail = "即便害虫消灭不完，依旧需要有人消灭它们，就像房间需要定期打扫一样。主人不会因为“反正都要变脏”而放弃打扫吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9702040] = {
 	feeling1 = "看来有必要把指挥官纳入处刑对象中了呢……",
 	feeling3 = "特地把我叫过来，不是有工作委托，而是想闲聊？那就麻烦指挥官开个话题了。毕竟我开口的话，难免又会聊到打打杀杀上面呢。",
@@ -65198,7 +66521,6 @@ _G.pg.base.ship_skin_words[9702040] = {
 	detail = "本以为来到了个新地方能做些有趣的事，结果有些无聊啊……算了，就当是给自己放个假好了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9702050] = {
 	feeling1 = "缺乏英明领导人的港区，终究会走上人心涣散，日渐衰败的死局……回头吧，指挥官，现在挽回尚有一线机会。",
 	feeling3 = "关于昨天的战斗，我这边做了一些总结，希望对你有用。还有最近的委托，我也……奇怪，身体……不，我没事，只是有点……使…不…上…力…了…",
@@ -65232,7 +66554,6 @@ _G.pg.base.ship_skin_words[9702050] = {
 	detail = "良计能扩大优势，扭转劣势。但若交战双方差距过大，即使是最优秀的谋略家，也只能嗟叹无力回天了。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9703010] = {
 	feeling1 = "这里也不是令人心安的归宿么……",
 	feeling3 = "指挥官有过被噩梦反复侵扰的经历吗？这种情况下您是怎么……啊，抱歉，如果不想说的话，也不用勉强……",
@@ -65266,7 +66587,6 @@ _G.pg.base.ship_skin_words[9703010] = {
 	detail = "只是待在您的身边，就让人感到安心。脑海中那些令人心烦的虚影也……指挥官，有股神奇的魔力呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9703020] = {
 	feeling1 = "哎，迂腐之人，是没法理解“愉悦”的含义的。真是可惜了啊……",
 	feeling3 = "“恶魔的低语”……不过是给自己心中蠢蠢欲动的想法找的借口罢了。你有用过这种陈词滥调，来掩埋自己的真实想法么？",
@@ -65300,7 +66620,6 @@ _G.pg.base.ship_skin_words[9703020] = {
 	detail = "痛苦不是快乐的敌人，空虚才是。所以，做点什么把这无聊的时光填充起来吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9704010] = {
 	feeling1 = "就你这种小鱼小虾也配命令我？真是让人笑话。",
 	feeling3 = "你好像很在意我的事情。对这样的我还如此执着，不知道该说你愣头青呢，还是死心眼呢。",
@@ -65343,7 +66662,6 @@ _G.pg.base.ship_skin_words[9704010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[9704020] = {
 	feeling1 = "像你这样软弱的指挥官，是没法肩负起整个舰队的。",
 	feeling3 = "你的港区里有没有喜欢切磋的人？向我介绍介绍几个吧。",
@@ -65377,7 +66695,6 @@ _G.pg.base.ship_skin_words[9704020] = {
 	detail = "每一道伤痕，都是战场上与死神擦肩而过的证明。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9704030] = {
 	feeling1 = "不要自暴自弃！你仍是我们的伙伴，只是一时迷失了方向，在你走回正确的道路之前我会好好引导你的！",
 	feeling3 = "想休息的时候就休息一会吧，不用勉强自己的。毕竟谁也说不准，“休息”这个东西什么时候就会变成奢侈品了。",
@@ -65411,7 +66728,6 @@ _G.pg.base.ship_skin_words[9704030] = {
 	detail = "历战的英雄若是厌倦了战斗，只想寻求一方净土…这样的愿望，世人会认可吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9704040] = {
 	feeling1 = "您是众人的领袖，不应当就这样放任自己沉沦下去。我会担负起引导你的责任的。",
 	feeling3 = "曾几何时，认为自己能一直与同伴们浴火奋战，不知疲倦…这样的我，是何时开始向往起宁静生活的呢？",
@@ -65445,7 +66761,6 @@ _G.pg.base.ship_skin_words[9704040] = {
 	detail = "已经累了…呵，这样的话，可没法轻易说出口啊。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9705010] = {
 	feeling1 = "事到如今，我也无法再为殿下做什么了。",
 	feeling3 = "殿下，您是在担心我吗？感谢关心，我每天都会向神明祈求祝福与保佑——",
@@ -65479,7 +66794,6 @@ _G.pg.base.ship_skin_words[9705010] = {
 	detail = "纷争带走了生命…愿神明能引导你们安息。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9705020] = {
 	feeling1 = "殿下？我知道你在那里哦~不要再躲藏了，乖乖地出来认错吧~",
 	feeling3 = "唔，为什么总有孩子会坚持不下去呢？指挥官也是，时不时地在为她们开脱呢…这样一来，大家不就都没法变强了嘛…",
@@ -65513,7 +66827,6 @@ _G.pg.base.ship_skin_words[9705020] = {
 	detail = "殿下看起来很闲嘛~难道是，平时太轻松了？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9705030] = {
 	feeling1 = "还是让我一个人吧。不然的话，会伤害到其他同伴的……",
 	feeling3 = "在我身边时，你真的不会看到那些……令人难受的景象？真的吗？我不是不相信指挥官，只是……",
@@ -65547,7 +66860,6 @@ _G.pg.base.ship_skin_words[9705030] = {
 	detail = "如果可以的话，我希望一切都能重来……但即便重来，会不会也是一样的结果？指挥官，你又是怎么想的……？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9705040] = {
 	feeling1 = "算了，就当是本王看走眼了。以后你也不是本王的仆从了，好自为之吧。",
 	feeling3 = "还在纠结效忠之事吗？有能之士不愿轻易承认依附于人下，本王是明白的。你只需做好自己的事，在本王需要你时为本王出力便好。",
@@ -65700,7 +67012,6 @@ _G.pg.base.ship_skin_words[9705040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[9706010] = {
 	feeling1 = "我怎么摊上了个这么软弱的指挥官……",
 	feeling3 = "眼罩？对战斗不会造成什么影响的，放心吧。",
@@ -65734,7 +67045,6 @@ _G.pg.base.ship_skin_words[9706010] = {
 	detail = "就这么闲着可不行啊…指挥官，就没有什么塞壬出没的情报之类的吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9706020] = {
 	feeling1 = "我是成熟的大人，憧憬青梅竹马之类的……",
 	feeling3 = "指挥官，您对青梅竹马之类的角色——我是说故事里的那种……是怎么看的呢？",
@@ -65768,7 +67078,6 @@ _G.pg.base.ship_skin_words[9706020] = {
 	detail = "如果……我说如果，我们其实很早就认识……不，没什么，忘了我说的吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9706030] = {
 	feeling1 = "指挥官，你是不是状态不太好？你也许需要休息……",
 	feeling3 = "我只记得自己去执行一项特殊的任务，结果和同伴们走散了，被困到了奇怪的地方。终于脱困之后便到了这里，没想到已经过去了这么久……",
@@ -65835,7 +67144,6 @@ _G.pg.base.ship_skin_words[9706030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[9707010] = {
 	feeling1 = "…别来管我。",
 	feeling3 = "战场上片刻的犹豫，带来的也许就是全盘的溃败。所以，我从不在战斗时思考如何取胜之外的事情。",
@@ -65869,7 +67177,6 @@ _G.pg.base.ship_skin_words[9707010] = {
 	detail = "有在我这晃荡的闲情，不妨多关心关心港区的其他伙伴吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[9707020] = {
 	feeling1 = "如果你还听得进去的话，我劝你回头，指挥官阁下。",
 	feeling3 = "舰船若是迷失了方向，终究会沉没于大海，人也一样。指挥官阁下，在你的心中，有一个正确而坚定的航向吗？",
@@ -65928,7 +67235,6 @@ _G.pg.base.ship_skin_words[9707020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[9707030] = {
 	feeling1 = "别等到危机来临的时候再后悔，到那时可就来不及了。",
 	feeling3 = "花札？有些时日没听到这个东西了呢…若是有兴趣的话，完成工作之后，陪你来一局也无妨。",
@@ -65971,7 +67277,6 @@ _G.pg.base.ship_skin_words[9707030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[9708010] = {
 	feeling1 = "也许没有交集反而是件好事呢。总之，你做你的，我做我的，我们也互不两欠，就这样吧~",
 	feeling3 = "如果指挥官哪天突然消失了，是不是相当于背弃了港区所有人与指挥官的约定？所以指挥官可不能擅自抛下大家哦。",
@@ -66005,7 +67310,6 @@ _G.pg.base.ship_skin_words[9708010] = {
 	vote = "",
 	detail = "与别人的约定啊……指挥官也和很多同伴有过约定吧。后来呢，那些约定都实现了吗？总有那么几个因为这样那样的原因，最后不得不放弃了对吧。"
 }
-
 _G.pg.base.ship_skin_words[9712010] = {
 	feeling1 = "指挥官，你病了，病得很深。只要你愿意配合治疗，一切都还能挽回。",
 	feeling3 = "指挥官，要不要抽点时间检查下自己的身体？船需要维护，人也一样。可不能说什么“看不见的问题就不存在”。",
@@ -66039,7 +67343,6 @@ _G.pg.base.ship_skin_words[9712010] = {
 	vote = "",
 	detail = "凋谢的蔷薇不会再绽放，逝去的生命亦不会再归来……生命之重，绝非能轻易地用天平称量。"
 }
-
 _G.pg.base.ship_skin_words[10100010] = {
 	feeling1 = "呃？你说什么？耳朵进香蕉了听不清楚",
 	feeling3 = "对了！指挥官。下次也来紫曜之都玩吧～大家一定都会很开心的～",
@@ -66092,7 +67395,6 @@ _G.pg.base.ship_skin_words[10100010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10100020] = {
 	feeling1 = "能赶紧从我的视线里消失吗？",
 	feeling3 = "我的朋友们说下次也想和指挥官一起吃午饭，没问题吧？我当然也会参加了。要好好看着你，防止你得意忘形做出什么奇怪的事情才行呢",
@@ -66145,7 +67447,6 @@ _G.pg.base.ship_skin_words[10100020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10100030] = {
 	feeling1 = "……谁？",
 	feeling3 = "哎呀，真巧呢。我也正好想去你那一趟。然后今天的是这本小说……",
@@ -66196,7 +67497,6 @@ _G.pg.base.ship_skin_words[10100030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10100040] = {
 	feeling1 = "我可以回去了吗？",
 	feeling3 = "今天想办场网游的线下聚会呢。指挥官当然也会参加的吧？参加者就暂定为我和指挥官两个人了哦",
@@ -66257,7 +67557,6 @@ _G.pg.base.ship_skin_words[10100040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10100050] = {
 	feeling1 = "没想到你是这么不济的一个人……",
 	feeling3 = "哎呀，这不是指挥官吗。来得正好，有个怎么都闯不过的关卡，能来帮帮忙吗",
@@ -66310,7 +67609,6 @@ _G.pg.base.ship_skin_words[10100050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10100051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -66344,7 +67642,6 @@ _G.pg.base.ship_skin_words[10100051] = {
 	vote = "",
 	detail = ""
 }
-
 _G.pg.base.ship_skin_words[10100060] = {
 	feeling1 = "你应该知道再靠近会是什么后果吧？",
 	feeling3 = "工作似乎很辛苦呢。我现在正好有时间，要帮忙吗？",
@@ -66395,7 +67692,6 @@ _G.pg.base.ship_skin_words[10100060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10100061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -66429,7 +67725,6 @@ _G.pg.base.ship_skin_words[10100061] = {
 	vote = "",
 	detail = ""
 }
-
 _G.pg.base.ship_skin_words[10100070] = {
 	feeling1 = "我一点都不想看到你这货的脸！",
 	feeling3 = "虽然是个不怎么可靠的指挥官，但我还是对你有所期待的哦？",
@@ -66480,7 +67775,6 @@ _G.pg.base.ship_skin_words[10100070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10100071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -66514,7 +67808,6 @@ _G.pg.base.ship_skin_words[10100071] = {
 	vote = "",
 	detail = ""
 }
-
 _G.pg.base.ship_skin_words[10100080] = {
 	feeling1 = "我没有什么要和你说的",
 	feeling3 = "最近在工作上会不会太依靠我了？不，我是没关系，但这样下去指挥官就有点让人担心了呢",
@@ -66567,7 +67860,6 @@ _G.pg.base.ship_skin_words[10100080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10100081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -66601,7 +67893,6 @@ _G.pg.base.ship_skin_words[10100081] = {
 	vote = "",
 	detail = ""
 }
-
 _G.pg.base.ship_skin_words[10200010] = {
 	feeling1 = "审核不通过！",
 	feeling3 = "指挥官，快发条弹幕夸夸我！",
@@ -66635,7 +67926,6 @@ _G.pg.base.ship_skin_words[10200010] = {
 	detail = "恶意剧透是不行的哟，好孩子不要这么做哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10200020] = {
 	feeling1 = "非常抱歉，本视频有可能由于以下原因导致无法正常播放",
 	feeling3 = "指挥官，弹幕...飘过去了...",
@@ -66669,7 +67959,6 @@ _G.pg.base.ship_skin_words[10200020] = {
 	detail = "信号接收中…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300010] = {
 	feeling1 = "虽然不成器的孩子也有可爱之处…不过废柴到这个地步就不太行了吧。要给点惩·罚·措·施了呢（尾巴逼近过来",
 	feeling3 = "为什么呢，总觉得指挥官不是陌生人。要打比方的话…对，就像克罗一样的感觉？就连有点坏心眼的地方都很像",
@@ -66703,7 +67992,6 @@ _G.pg.base.ship_skin_words[10300010] = {
 	detail = "想了解我的事？那…为了加深彼此的了解，得好好聊聊了呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -66737,7 +68025,6 @@ _G.pg.base.ship_skin_words[10300011] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300020] = {
 	feeling1 = "像你这般愚蠢顽劣的人，根本不配和兄长大人和“那个人”相比",
 	feeling3 = "嗯嗯……干的不错啊。做到这份上…不得不对指挥官刮目相看了呢。虽然还不及兄长，不过勉强承认你达到“那个人”的水平了吧",
@@ -66771,7 +68058,6 @@ _G.pg.base.ship_skin_words[10300020] = {
 	detail = "加深感情？算了，只是一会的话倒是没关系",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -66805,7 +68091,6 @@ _G.pg.base.ship_skin_words[10300021] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300030] = {
 	feeling1 = "非常抱歉……我无法满足指挥官大人的期待……",
 	feeling3 = "指挥官大人…有什么男性朋友吗？和那位男性朋友关系和睦吗？有结下炙热的友谊吗？有的话请务必告诉我详细的……！",
@@ -66839,7 +68124,6 @@ _G.pg.base.ship_skin_words[10300030] = {
 	detail = "那个…请问找我有什么事吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -66873,7 +68157,6 @@ _G.pg.base.ship_skin_words[10300031] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300040] = {
 	feeling1 = "失望…我们，只有主人",
 	feeling3 = "从早安到晚安都在一起",
@@ -66907,7 +68190,6 @@ _G.pg.base.ship_skin_words[10300040] = {
 	detail = "详细",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -66941,7 +68223,6 @@ _G.pg.base.ship_skin_words[10300041] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300050] = {
 	feeling1 = "果然，值得我们侍奉的只有主人……",
 	feeling3 = "作为下仆，无论何时何种状况都要陪伴在主人身边。无论什么事都请让我们一同前往",
@@ -66975,7 +68256,6 @@ _G.pg.base.ship_skin_words[10300050] = {
 	detail = "只要是您想知道的，我都会详细的告诉您的",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67009,7 +68289,6 @@ _G.pg.base.ship_skin_words[10300051] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300060] = {
 	feeling1 = "…啊，对不起。没有注意到您",
 	feeling3 = "在图斯库尔也经常帮贝纳威大人处理事务……公务繁忙的男人真是辛苦呢。有我能帮忙的事情请尽管说哦",
@@ -67043,7 +68322,6 @@ _G.pg.base.ship_skin_words[10300060] = {
 	detail = "与其聊我的事，不如来聊聊关于小久的事如何？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10300061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67077,7 +68355,6 @@ _G.pg.base.ship_skin_words[10300061] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10400010] = {
 	feeling1 = "花Q！",
 	feeling3 = "在这里加个音效，再加上字幕…嘿咻，哦哦，指挥官上手很快嘛。就按这个势头，以做出更好的动画为目标努力吧！",
@@ -67130,7 +68407,6 @@ _G.pg.base.ship_skin_words[10400010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10400011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67164,7 +68440,6 @@ _G.pg.base.ship_skin_words[10400011] = {
 	detail = "浴衣什么真的很棒呢！虽然我是虚拟的所以实际上感觉不到热，不过还是有种凉快的感觉呢",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10400020] = {
 	feeling1 = "不说敬语也可以了吧？",
 	feeling3 = "果然为了“将大家联系在一起”，还是得学习更多的知识才行呢…！指挥官大人，请多多给我指导与鞭笞吧！",
@@ -67207,7 +68482,6 @@ _G.pg.base.ship_skin_words[10400020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10400030] = {
 	feeling1 = "放心吧，我是不会邀请指挥官来演唱会的",
 	feeling3 = "想要办好演唱会的话，唱歌和跳舞的练习，还有talk的准备都不能缺少呢！还要开始舞台的准备……啊啊～有好多事情要做啊——！",
@@ -67250,7 +68524,6 @@ _G.pg.base.ship_skin_words[10400030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10400040] = {
 	feeling1 = "啊啊啊 啊啊 aa 啊啊 aaa 啊啊啊啊啊……",
 	feeling3 = "诶？恐怖游戏的实况？不不，不会出的……不要不要不要不要！",
@@ -67293,7 +68566,6 @@ _G.pg.base.ship_skin_words[10400040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10500010] = {
 	feeling1 = "指挥官这样可不行的，太废柴了…嘿咻~就让我稍微帮你一把，一起通关这个游戏吧！",
 	feeling3 = "聊着聊着就要到深夜了呢~为了回报刚才一直叫着“猫咪猫咪”的指挥官，我决定了！要在你耳边报菜名，深夜放毒哦~",
@@ -67357,7 +68629,6 @@ _G.pg.base.ship_skin_words[10500010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10500011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67391,7 +68662,6 @@ _G.pg.base.ship_skin_words[10500011] = {
 	detail = "难得穿上了泳装，不去海边吗？啊哇哇哇…不是那种意思，只是想要为演习帮点忙而已啦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10500020] = {
 	feeling1 = "啊，不快点说些什么的话…",
 	feeling3 = "来到这个世界以后，发现需要另外学习的东西就像山一样多呢，不过我是不会轻言放弃的，加油Fight~",
@@ -67425,7 +68695,6 @@ _G.pg.base.ship_skin_words[10500020] = {
 	detail = "下次要不要约上伊丽莎白一起来做恐怖游戏实况呢~感觉效果会很有趣呢！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10500021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67459,7 +68728,6 @@ _G.pg.base.ship_skin_words[10500021] = {
 	detail = "一起玩沙滩排球？不知道我行不行呢…要来一场恐怖游戏对决么？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10500030] = {
 	feeling1 = "我，湊阿库娅马上就要毕业了，虽然时间短暂，不过，还是感谢您一直以来的关照",
 	feeling3 = "迷糊女仆？废柴天使？！！太过分了，指挥官！只是把水烧开这种程度的话，完全没有问题哦！！！",
@@ -67511,7 +68779,6 @@ _G.pg.base.ship_skin_words[10500030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10500031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67545,7 +68812,6 @@ _G.pg.base.ship_skin_words[10500031] = {
 	detail = "先、先说一下…我不会游泳，指挥官可要好好支援我哦！不过浅水的话倒还好…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10500040] = {
 	feeling1 = "再这样下去，可爱的女孩子们，祭都要包揽了哦？",
 	feeling3 = "指挥官喜欢清纯可爱的声线么？那就立即切换~“konkon狐狸~”…嘿嘿，厉害吧？我的声线有很多种变化呐~",
@@ -67597,7 +68863,6 @@ _G.pg.base.ship_skin_words[10500040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10500041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67631,7 +68896,6 @@ _G.pg.base.ship_skin_words[10500041] = {
 	detail = "喜欢这样松松挎垮的感觉？哼哼！终于明白祭的可爱之处了吧~接下来祭会再换几个POSE，指挥官可以多拍几张照片，不用客气哦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10500050] = {
 	feeling1 = "啊~啊，指挥官的实力就是这样子的么…真失望……",
 	feeling3 = "指挥官大人，和余一起在游戏里一决胜负到天亮吧！余可不会输哦~",
@@ -67674,7 +68938,6 @@ _G.pg.base.ship_skin_words[10500050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10500051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67708,7 +68971,6 @@ _G.pg.base.ship_skin_words[10500051] = {
 	detail = "哎、要用这身衣服战斗么？！还想着能好好享受一下难得的假期呢----！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10500060] = {
 	feeling1 = "哇啊啊啊，做实况的软件没关掉么？明明都已经和大家说再见了…该怎么关掉啊？",
 	feeling3 = "要给诗音制订“成长计划”…这计划实质上就是给诗音礼物？喂，不要尽买小孩子的玩具给我啦！",
@@ -67752,7 +69014,6 @@ _G.pg.base.ship_skin_words[10500060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10500061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67786,7 +69047,6 @@ _G.pg.base.ship_skin_words[10500061] = {
 	detail = "露出太多？嘿嘿~原来是指挥官被我的魅力迷倒了呀！看破真相的眼光也是天才级别，我不愧是天才魔法使！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10500070] = {
 	feeling1 = "真是的，指挥官，不能偷懒哦~好孩子的摸头鼓励就先收回了！让咱看看指挥官帅气的一面吧~",
 	feeling3 = "指挥官指挥官！嘿嘿，没事，只是想叫叫而已~",
@@ -67829,7 +69089,6 @@ _G.pg.base.ship_skin_words[10500070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10500071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67863,7 +69122,6 @@ _G.pg.base.ship_skin_words[10500071] = {
 	detail = "稍微变得性感了些？喂！在看哪里呢~算了…指挥官觉得开心就好…不过不要老是看些奇怪的地方啦",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600010] = {
 	feeling1 = "笨蛋笨蛋笨蛋！再这样下去的话，玛莉可要讨厌你了！",
 	feeling3 = "港区里有好多厉害的女仆小姐呢。不过，就算和她们比起来，玛莉也是不会输的！",
@@ -67906,7 +69164,6 @@ _G.pg.base.ship_skin_words[10600010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67940,7 +69197,6 @@ _G.pg.base.ship_skin_words[10600011] = {
 	detail = "摄影？可以啊！玛莉也想拍点好看的照片！…但是，太过分的姿势，玛莉可是不会答应的哦？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -67974,7 +69230,6 @@ _G.pg.base.ship_skin_words[10600012] = {
 	detail = "从馒头到波子汽水都有…要是有瑞典公主蛋糕就完美了…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600020] = {
 	feeling1 = "呜呜呜，我要回老家找奶奶去了！",
 	feeling3 = "指挥官，回头陪我去商店街逛逛吧？我想给奶奶带点纪念品什么的~",
@@ -68026,7 +69281,6 @@ _G.pg.base.ship_skin_words[10600020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68060,7 +69314,6 @@ _G.pg.base.ship_skin_words[10600021] = {
 	detail = "这件泳装…会不会太大胆了一点呢…？稍微鼓起了一些勇气才穿上的…那个，感觉…怎么样？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600030] = {
 	feeling1 = "指挥官，我是真的生气了！请好好反省！",
 	feeling3 = "重樱似乎也有不少对“忍术”兴趣浓厚的舰船伙伴呢…嗯？指挥官也感兴趣吗？那个…对不起，那是不太能在他人面前使出的东西呢…",
@@ -68105,7 +69358,6 @@ _G.pg.base.ship_skin_words[10600030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68139,7 +69391,6 @@ _G.pg.base.ship_skin_words[10600031] = {
 	detail = "指挥官。那个…请不要这么一直盯着我看…有点……不好意思",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600040] = {
 	feeling1 = "这个港口挺有趣的，但是指挥官多少有些靠不住的感觉？看来这部分得靠我来好好补足一下了呢~♪",
 	feeling3 = "虽然大家在战斗时都很厉害，但平时果然还是普通的女孩子呢，我还找到了和我一起看漫画的同伴哦~呵呵~",
@@ -68190,7 +69441,6 @@ _G.pg.base.ship_skin_words[10600040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68224,7 +69474,6 @@ _G.pg.base.ship_skin_words[10600041] = {
 	detail = "指挥官也给姐姐拍照了吗？呼呼，虽然姐姐对指挥官看起来有点凶，但只要不是太过分的要求，她应该都还是会答应的吧~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600050] = {
 	feeling1 = "我要带着海咲离开这里，再也不会回来了。",
 	feeling3 = "既然海咲在港口玩得挺开心的，那我也不多说啥了。但是，如果你敢对海咲做出奇怪的举动的话，我绝对不会轻饶你！",
@@ -68275,7 +69524,6 @@ _G.pg.base.ship_skin_words[10600050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68309,7 +69557,6 @@ _G.pg.base.ship_skin_words[10600051] = {
 	detail = "要给我拍照……吗？…真是的，光天化日的，不可以拍些奇怪的姿势哦……？！在室内也不行啦！变态！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600060] = {
 	feeling1 = "汝…令人提不起兴趣啊……",
 	feeling3 = "这个港区里还是有不少我不熟悉的“技术”产物呢，呵呵，指挥官殿下，是不是应该一一为我介绍下呢？毕竟，汝应是这方面的专家，不是吗？",
@@ -68360,7 +69607,6 @@ _G.pg.base.ship_skin_words[10600060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68394,7 +69640,6 @@ _G.pg.base.ship_skin_words[10600061] = {
 	detail = "汝之港区还真是不错，有温泉有大海，还有各种有趣的地方…确实是个“度假”的好去处呢，呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600070] = {
 	feeling1 = "指挥官，可不能因为一时的失利而气馁哦？人生本来就是有输有赢的，对吧！",
 	feeling3 = "呼呼，指挥官，来见识下我最近新学会的扑克技巧吧~看好了！……啊，真是的，不是看我，是看牌啦~",
@@ -68437,7 +69682,6 @@ _G.pg.base.ship_skin_words[10600070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68471,7 +69715,6 @@ _G.pg.base.ship_skin_words[10600071] = {
 	detail = "“想要我身后这些财富吗？赢了我，它们全都是你的了！”……电影里的超级赌局，应该就是这样的感觉吧？呵呵~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600080] = {
 	feeling1 = "不好意思，我在想事情…稍等下哦…",
 	feeling3 = "那个，指挥官…现在有空吗？嗯…想让你…也多了解我…",
@@ -68522,7 +69765,6 @@ _G.pg.base.ship_skin_words[10600080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68556,7 +69798,6 @@ _G.pg.base.ship_skin_words[10600081] = {
 	detail = "这个泳装…嗯，很有趣。指挥官也能给个客观的意见吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10600090] = {
 	feeling1 = "嗯？抱歉，现在有点忙…有事之后再说，好吗？",
 	feeling3 = "啊，指挥官♪刚好♥我有点寂寞…可以稍微陪陪我吗？",
@@ -68608,7 +69849,6 @@ _G.pg.base.ship_skin_words[10600090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10600091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68642,7 +69882,6 @@ _G.pg.base.ship_skin_words[10600091] = {
 	detail = "嗯——泡澡的时间最棒了♥治愈疲劳，同时费点功夫变得更美…不觉得是个很特别的时间吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10700010] = {
 	feeling1 = "啊，不好意思…刚才一直在看剧本…有什么事吗？",
 	feeling3 = "疼疼疼…啊，指挥官你好。刚才在走廊上摔了一跤…诶，这个创可贴…非常感谢，指挥官~",
@@ -68701,7 +69940,6 @@ _G.pg.base.ship_skin_words[10700010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10700011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68735,7 +69973,6 @@ _G.pg.base.ship_skin_words[10700011] = {
 	detail = "摊子上卖的章鱼烧和炒面…和家里做的味道完全不一样。真是不可思议呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10700020] = {
 	feeling1 = "有事吗？",
 	feeling3 = "虽然偶像的工作不仅仅是唱歌而已。 但是提高自己的唱功，对于什么样的工作都会有所帮助…我是这么想的",
@@ -68786,7 +70023,6 @@ _G.pg.base.ship_skin_words[10700020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10700021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68820,7 +70056,6 @@ _G.pg.base.ship_skin_words[10700021] = {
 	detail = "这件浴衣，我穿着不会很奇怪吧…欸，很适合我吗？那就好…",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10700030] = {
 	feeling1 = "哦，原来你在的吗？",
 	feeling3 = "这是我从小就在一起的好朋友呢。对吧，小兔子？",
@@ -68879,7 +70114,6 @@ _G.pg.base.ship_skin_words[10700030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10700031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -68913,7 +70147,6 @@ _G.pg.base.ship_skin_words[10700031] = {
 	detail = "要吹出更大的泡泡…就得慢慢地……轻轻地……呀！在这里的话你倒是出个声啊！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10700040] = {
 	feeling1 = "非常抱歉…我不知道该说什么…",
 	feeling3 = "您好，指挥官。我在散步哦，不过不小心有点迷路了…请问，去宿舍的路在哪一边呢~？",
@@ -68972,7 +70205,6 @@ _G.pg.base.ship_skin_words[10700040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10700041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69006,7 +70238,6 @@ _G.pg.base.ship_skin_words[10700041] = {
 	detail = "哎呀~感谢指挥官在这么热的天气里来找我。嗯……有没有什么消暑的点心呢~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10700050] = {
 	feeling1 = "上次演出需要改进的地方还有…啊，不好意思，我现在有点忙。",
 	feeling3 = "辛苦了，指挥官。还是一如既往地忙碌呢。我正好有时间哦，需要我帮什么忙吗？",
@@ -69065,7 +70296,6 @@ _G.pg.base.ship_skin_words[10700050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10700051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69099,7 +70329,6 @@ _G.pg.base.ship_skin_words[10700051] = {
 	detail = "像今天这种大热天，更要注意补充盐分和水分哦。不然一不小心可就要中暑了呢。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10700060] = {
 	feeling1 = "不行啊——好感度这么低可没法通关呢~……还要再加把劲才行啊，指挥官。",
 	feeling3 = "嘿咻…在门框上放上黑板擦，椅子放上老鼠玩具……呜哇！指挥官已经回来了吗！切——恶作剧失败了啊~",
@@ -69158,7 +70387,6 @@ _G.pg.base.ship_skin_words[10700060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10700061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69192,7 +70420,6 @@ _G.pg.base.ship_skin_words[10700061] = {
 	detail = "看到了吗，亚美打太鼓很厉害吧！为了让祭典热闹起来，我会更加努力的~☆",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10700070] = {
 	feeling1 = "呜哇，明明让指挥官帮我抽卡……结果一个稀有角色都没有出啊！",
 	feeling3 = "指挥官救命！恶作剧的时候被发现了，现在在被追着——！让我躲一会儿就好~！",
@@ -69251,7 +70478,6 @@ _G.pg.base.ship_skin_words[10700070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10700071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69285,7 +70511,6 @@ _G.pg.base.ship_skin_words[10700071] = {
 	detail = "为什么浴衣是及膝的？当然是为了让大家沉迷在真美的美腿里啦~诶，完全没感觉？指挥官再多感受感受嘛~",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800010] = {
 	feeling1 = "啊，嗯……（跟这人有什么要说的来着）",
 	feeling3 = "（哼歌）～♪啊，指挥官你好。呼呼，刚刚碰上些开心的事…",
@@ -69344,7 +70569,6 @@ _G.pg.base.ship_skin_words[10800010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800011] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69378,7 +70602,6 @@ _G.pg.base.ship_skin_words[10800011] = {
 	detail = "穿着和平时不同的服装，坐上电车……要是身边有谁一起就好了…说说而已。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800012] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69412,7 +70635,6 @@ _G.pg.base.ship_skin_words[10800012] = {
 	detail = "在家里我一直都是这样穿的…不过不怎么会让家人以外看到。指挥官是特例。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800020] = {
 	feeling1 = "啊哈哈，真是对你无语了呢～",
 	feeling3 = "啊，是指挥官。我正好要去小卖部，一起吗？想去买制作手办的道具ー",
@@ -69471,7 +70693,6 @@ _G.pg.base.ship_skin_words[10800020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800021] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69505,7 +70726,6 @@ _G.pg.base.ship_skin_words[10800021] = {
 	detail = "我一般不让别人进房间，你比较特殊……嗯，靠垫后面有什么？你原来会问这个啊～？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800022] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69539,7 +70759,6 @@ _G.pg.base.ship_skin_words[10800022] = {
 	detail = "没想到你会来这里，指挥官还挺大胆的呢。不过既然是你倒也没什么。我可没什么能招待你的，没关系吧~？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800030] = {
 	feeling1 = "啊ー……你原来是个很不好的人啊……",
 	feeling3 = "我说，刚才起怎么一直看着我啊……问我为什么一直戴着口罩？这个是有很多原因的啦ー",
@@ -69598,7 +70817,6 @@ _G.pg.base.ship_skin_words[10800030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800031] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69632,7 +70850,6 @@ _G.pg.base.ship_skin_words[10800031] = {
 	detail = "哈啊……后期剪辑也做累了。指挥官，要不去喝口茶歇歇？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800040] = {
 	feeling1 = "（嗯ー那家伙有点……哇哇！指挥官走过来了！）找我有事吗～？",
 	feeling3 = "指挥官有SNS账号之类的吗？有的话就告诉我呗！我来点个关注～",
@@ -69691,7 +70908,6 @@ _G.pg.base.ship_skin_words[10800040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800041] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69725,7 +70941,6 @@ _G.pg.base.ship_skin_words[10800041] = {
 	detail = "在意这个小包里的东西？指挥官，可不能问女孩子的包包里装了什么这种问题哦。嗯，像钱包肯定会放里面的啦ー",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800050] = {
 	feeling1 = "嗯……对不起。",
 	feeling3 = "这次是怎么了？啊，那是我的玩偶……谢谢你，指挥官。",
@@ -69800,7 +71015,6 @@ _G.pg.base.ship_skin_words[10800050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800051] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69834,7 +71048,6 @@ _G.pg.base.ship_skin_words[10800051] = {
 	detail = "这朵花叫什么名字呢……指挥官知道吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800052] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69868,7 +71081,6 @@ _G.pg.base.ship_skin_words[10800052] = {
 	detail = "打扮整理什么的真是麻烦啊……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800060] = {
 	feeling1 = "我可不想成为指挥官这样的人啊。",
 	feeling3 = "每当看到这个舰装，我就会想起你呢。现在的你在做什么呢，全世界最帅气的，我的朋友……",
@@ -69927,7 +71139,6 @@ _G.pg.base.ship_skin_words[10800060] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800061] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69961,7 +71172,6 @@ _G.pg.base.ship_skin_words[10800061] = {
 	detail = "还有些小雨……咦，指挥官没带伞吗？要不一起撑这把伞？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800062] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -69995,7 +71205,6 @@ _G.pg.base.ship_skin_words[10800062] = {
 	detail = "本来我就没多少衣服，一不小心就……指挥官要买给我吗？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800070] = {
 	feeling1 = "果然，没有怪兽的世界什么的，还是……",
 	feeling3 = "想做的事么……现在已经有点迷茫了。不过在这里待着的话，是不是能找到什么想做的呢……",
@@ -70054,7 +71263,6 @@ _G.pg.base.ship_skin_words[10800070] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800071] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -70088,7 +71296,6 @@ _G.pg.base.ship_skin_words[10800071] = {
 	detail = "偶尔穿穿跟平时不同的衣服也挺好的。虽然有点不习惯……呀！风好大……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800080] = {
 	feeling1 = "唉…算了，就当是工作的一部分吧。",
 	feeling3 = "指挥官，辛苦了。知道你很忙，但也请别忘了休息哦。",
@@ -70147,7 +71354,6 @@ _G.pg.base.ship_skin_words[10800080] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800081] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -70181,7 +71387,6 @@ _G.pg.base.ship_skin_words[10800081] = {
 	detail = "我平时在家就是这幅打扮。可以说我喜欢这样…因为我总是倾向选择舒适好穿的衣服吧。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800090] = {
 	feeling1 = "给你一个建议，学一下揣度别人的感受吧。",
 	feeling3 = "这里的大家都不会因为我的身份改变态度，而是自然地和我相处…不过，这让我想起了那家伙……",
@@ -70240,7 +71445,6 @@ _G.pg.base.ship_skin_words[10800090] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10800091] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -70274,7 +71478,6 @@ _G.pg.base.ship_skin_words[10800091] = {
 	detail = "我也不总是以公主的模样示人的。我也是有私人时间的哦！",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10800120] = {
 	feeling1 = "",
 	feeling3 = "",
@@ -70308,7 +71511,6 @@ _G.pg.base.ship_skin_words[10800120] = {
 	detail = "",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10900010] = {
 	ryza_item5 = "感觉里面有着很强大的能量……！",
 	feeling3 = "港区的后山里好像有很多有趣的材料……诶，指挥官能带我去吗？太好了，谢谢你！",
@@ -70377,7 +71579,6 @@ _G.pg.base.ship_skin_words[10900010] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10900011] = {
 	ryza_item5 = "",
 	feeling3 = "",
@@ -70421,7 +71622,6 @@ _G.pg.base.ship_skin_words[10900011] = {
 	detail = "这个枕头软绵绵的好舒服，睡在这上面感觉能做美梦呢。指挥官也摸摸看吧？",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10900020] = {
 	ryza_item5 = "和其他遗迹的废墟都不同……这是……",
 	feeling3 = "指挥官明明这么忙，还能做到事无巨细面面俱到，真是厉害。我也要向指挥官学习才是……",
@@ -70490,7 +71690,6 @@ _G.pg.base.ship_skin_words[10900020] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10900021] = {
 	ryza_item5 = "",
 	feeling3 = "",
@@ -70534,7 +71733,6 @@ _G.pg.base.ship_skin_words[10900021] = {
 	detail = "放在那边的都可以随意饮用。顺便我推荐的是香草茶，它不仅香味令人放松，而且不含咖啡因，不用担心晚上睡不着。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10900030] = {
 	ryza_item5 = "不利用好敌人的力量是无法保护好同伴的。先收集起来吧",
 	feeling3 = "这个石头，可以用于炼金术吗……啊，抱歉。和莱莎她们冒险时会边走边收集材料，不知不觉就……",
@@ -70603,7 +71801,6 @@ _G.pg.base.ship_skin_words[10900030] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10900031] = {
 	ryza_item5 = "",
 	feeling3 = "",
@@ -70647,7 +71844,6 @@ _G.pg.base.ship_skin_words[10900031] = {
 	detail = "换上睡衣后一不小心就松懈了……诶，再放松点也没事？那么……现在就恭敬不如从命了",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10900040] = {
 	ryza_item5 = "有点明白那些家伙为什么如此坚固了",
 	feeling3 = "我有必须要做完的事。在迎来终结的时刻到来之前，我没有时间停下脚步。",
@@ -70716,7 +71912,6 @@ _G.pg.base.ship_skin_words[10900040] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10900041] = {
 	ryza_item5 = "",
 	feeling3 = "",
@@ -70760,7 +71955,6 @@ _G.pg.base.ship_skin_words[10900041] = {
 	detail = "你说我看着比平时更柔和？是这身打扮的缘故吧。别担心，即使穿着睡衣，只要敌人来了我一样能战斗。",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10900050] = {
 	ryza_item5 = "这股力量……和我所知的完全不一样……",
 	feeling3 = "总有一天，那个世界会遍地充满原本美丽的绿色……",
@@ -70829,7 +72023,6 @@ _G.pg.base.ship_skin_words[10900050] = {
 		}
 	}
 }
-
 _G.pg.base.ship_skin_words[10900051] = {
 	ryza_item5 = "",
 	feeling3 = "",
@@ -70873,7 +72066,6 @@ _G.pg.base.ship_skin_words[10900051] = {
 	detail = "这里草木繁茂，美丽动人。真让人安心……",
 	couple_encourage = {}
 }
-
 _G.pg.base.ship_skin_words[10900060] = {
 	feeling1 = "真是无趣的人呢……",
 	feeling3 = "差不多到吃午饭的时间了。指挥官，可否带妾身去能享受美味的地方？",
@@ -70932,3054 +72124,3 @@ _G.pg.base.ship_skin_words[10900060] = {
 		}
 	}
 }
-
-_G.pg.base.ship_skin_words[299010] = {
-	feeling1 = "指挥官，你知道我原本对你有多么期待吗？很遗憾，你永远不会知道了~",
-	feeling3 = "正确答案是——从现在开始努力不让这种情况发生~嘻嘻，指挥官，想要哄我的话，还要多动动脑子才行哦~",
-	lose = "……下次，不会犯这种错误了",
-	propose = "“你是我的全部”你觉得我会被这种话骗倒吗？……其实现在的话确实会被骗倒也说不定哦～不过前提是说十遍，不对，说一百遍好了~",
-	expedition = "指挥官，允许你暂时离开我去迎接委托回来的姐妹们哦",
-	win_mvp = "嗯哼，允许你多夸我两句",
-	home = "这不是平安回来了，干得不错嘛",
-	mission = "指挥官，任务堆积了不少呢，我不太喜欢懒惰的人哦",
-	touch2 = "不行哦指挥官，这样是获得不了我的心的~",
-	voice_key_2 = -1,
-	skill = "我可没有和敌人玩耍的兴趣哦",
-	drop_descrip = "轻巡洋舰—海王星",
-	mail = "指挥官，有你的信件。嗯？我什么都没做哦~",
-	touch = "想要和我玩游戏？可以啊，不过我不会放水的哦？",
-	profile = "我的来历？嗯哼，不知道也是没办法的事，只存在于设计中的大型轻巡洋舰，海王星，正是本小姐。虽然对战场没有那么熟悉，不过性能可是顶尖的，这一点，就让我用事实来证明吧~",
-	mission_complete = "指挥官，任务奖励都不领，难道在等着我催你吗",
-	feeling4 = "不过我一直觉得，真正聪明的人，是会适当地依赖别人的哦，这样对自己对对方都好，所以指挥官，喂我蛋糕~",
-	unlock = "我是谁？我是大型轻巡洋舰海王星哦，是不是觉得有些陌生？嗯哼，放心，从今往后会让你想忘也忘不了的~请多指教",
-	feeling5 = "指挥官，红茶泡好了吗？约会地点看好了吗？衣服选好了的话帮我穿上~欸，“为什么不自己穿？”？讨厌啦，这是爱哦，爱~♡",
-	main = "和其他姐妹们相比，这里才是我的处女战场，稍微有些想挑战看看所谓经验的差距呢~|指挥官，你要是说“拜托了，海王星大人”的话，说不定会有好事发生哦|指挥官，想要吃我亲手做的蛋糕的话，就请泡出好喝的红茶吧~",
-	battle = "这就是战场吗……嗯哼，有点意思",
-	upgrade = "理所当然~",
-	voice_key = 29901,
-	headtouch = "",
-	feeling2 = "指挥官，如果未来你面临只有牺牲我才能获得和平的情况，你会选我，还是和平呢？",
-	login = "不行哦指挥官，让我等这么久",
-	vote = "",
-	hp_warning = "稍微有些小看了战场呢……",
-	id = 299010,
-	detail = "手里这个？哼哼，这个是海神三叉戟哦，很帅对吧~",
-	couple_encourage = {
-		{
-			{
-				20203
-			},
-			1,
-			"我、我可不会做到这份上",
-			0
-		},
-		{
-			{
-				20212
-			},
-			1,
-			"一决胜负吧！女仆长小姐♪",
-			0
-		},
-		{
-			{
-				20208,
-				20226,
-				20219,
-				20211,
-				20212,
-				20218,
-				20220,
-				20221,
-				20222,
-				20304
-			},
-			1,
-			"让我见识下女仆队的战斗方式吧♪",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[299011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "解决了解决了~继续我们的圣诞派对吧~",
-	home = "",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "哼哼，平时都把光芒让给别的孩子，偶尔也要换上可爱的衣服让指挥官记起我呢，圣诞快乐哦，指挥官~",
-	mail = "指挥官，猜猜哪个盒子里才是新邮件呢~",
-	touch = "指挥官，能帮我搬一下这些礼物去西雅图的宴会上吗？这些都是我为大家准备的呢~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "哼哼，平时都把光芒让给别的孩子，偶尔也要换上可爱的衣服让指挥官记起我呢，圣诞快乐哦，指挥官~",
-	feeling5 = "",
-	main = "指挥官，你要是在今天说“求求你了，海王星大人”的话，说不定会有超级好的事情发生哦|指挥官，没有忘记吧，想要从我这里获得礼物的话，首先，要给出让我满意的礼物哦~|加入舰队以后，我也交到了不少朋友，尤其是什罗普郡，她不仅是好朋友，也是好对手呢~",
-	battle = "真是不解风情的家伙们呢……",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，Merry Christmas~",
-	vote = "",
-	hp_warning = "",
-	id = 299011,
-	detail = "平时尽是战斗、出击、任务什么的，能有些像这样能够换上漂亮衣服欢度节日的时候，感觉也不坏呢",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "是太过在意优雅了吗…",
-	propose = "",
-	expedition = "",
-	win_mvp = "不客气♪也多亏了指挥官。",
-	home = "欢迎回来。那么，继续牵着我的手……啊，海神三叉戟碍事了吗？",
-	mission = "",
-	touch2 = "不行哦指挥官，什么事都要讲究先后顺序哦？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "欢迎赴宴哦，指挥官~在这个美丽的会场不是由皇家女仆队，而是我——海王星来为你带路哦。呵呵♪",
-	mail = "",
-	touch = "是的，宴会会场在这里哦。呵呵♪",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "欢迎赴宴哦，指挥官~在这个美丽的会场不是由皇家女仆队，而是我——海王星来为你带路哦。呵呵♪",
-	feeling5 = "",
-	main = "不行哦指挥官，让除了我以外的姐妹陪你……开玩笑的♪我就在这等你，加油和大家问候哦~|指挥官，要让我带你去想去的地方的暗号，没忘记吧？对，就是“拜托了海王星大人”哦♪|卡律布狄斯她有着不像是女仆队的风范呢……我是不是也该摆一摆架子，试着让指挥官为我做这做那比较好呢？",
-	battle = "不行哦，跟指挥官为敌什么的♪",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "不行哦指挥官，身为主宾更不应该迟到呢。我可是在这里等了很久了。呵呵♪",
-	vote = "",
-	hp_warning = "",
-	id = 299012,
-	detail = "我知道其实指挥官经常和女仆队的成员们一起参加宴会呢。呵呵，要说这种时候的举止应对，不觉得我比那些孩子擅长得多吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299020] = {
-	feeling1 = "无论如何，我都永远比不上那些KGV吗！？",
-	feeling3 = "爱是不应期待回报的，所以，无论皇家对我做过什么，我对皇家的感情都不会改变",
-	lose = "又要……被放弃了吗？",
-	propose = "我很幸福喔，即使这个世界不再需要我，你也会需要我，这对我已经足够了……指挥官，或许我是为了与你相爱，才来到这里的吧",
-	expedition = "指挥官，建造我花费了多少物资？放心，无论花费了多少我都一定能加倍回报你！",
-	win_mvp = "相信我，我会永远胜利下去！",
-	home = "前来迎接的人好多呢，真好啊，如果是我一个人回港，会有人前来迎接……吗？",
-	mission = "这份任务请交给我，我会证明自己的优秀！",
-	touch2 = "请不要沾染上那些KGV的恶习",
-	voice_key_2 = -1,
-	skill = "女王可无法号令我",
-	drop_descrip = "战列舰—君主",
-	mail = "是关于战争的邮件，指挥官，请检阅",
-	touch = "指挥官？需要我了吗？",
-	profile = "皇家海军战列舰君主号，英王乔治五世级战列舰的废弃方案之一。她们即使已经落伍，即便存在瑕疵，也可以理所当然地继续存在着呢……",
-	mission_complete = "我不是理所应当就可以存在的，所以理所当然要比它们更加优秀",
-	feeling4 = "看到了那些KGV的灿烂笑容，稍微有些觉得自己当初被放弃并不完全没有价值",
-	unlock = "初次见面，我是战列舰君主，皇家已经凄惨到要求助于曾被抛弃的我了吗？",
-	feeling5 = "指挥官，你在我的心中，自始至终永远都是最重要最特殊的存在喔！",
-	main = "威尔士和约克……我既厌恶夺去了我存在位置的她们，又喜爱秉承我的消失而生的她们|如果我有妹妹，会为她取什么名字呢……“威尔士亲王”或许真的不错呢|我会使整个世界知晓，当初没有选择我是多么地愚蠢！",
-	battle = "请放心，我会将这支舰队完整地带回来的！",
-	upgrade = "哼，果然，我才是最强的KGV方案",
-	voice_key = 29902,
-	headtouch = "",
-	feeling2 = "在被所有人抛弃后，我凭恃着“自己是最优秀的KGV方案”这股信念，一直坚持到了现在……",
-	login = "欢迎回来，我比威尔士与约克更加优秀，指挥官，这是我们的共识吧？",
-	vote = "",
-	hp_warning = "哼！如果是威尔士，现在已经回归大海了吧",
-	id = 299020,
-	detail = "对我而言，你是这个世界上唯一特殊的存在……在遇到你之前，没有任何人对我有过任何期待",
-	couple_encourage = {
-		{
-			{
-				20506
-			},
-			1,
-			"我的名字会是乔治、伊丽莎白、爱德华，但决不会是威尔士！",
-			0
-		},
-		{
-			{
-				20507
-			},
-			1,
-			"或许在某个世界，我是你真正的姐姐也说不定……",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[299021] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "",
-	mission = "",
-	touch2 = "就称赞一下你的勇气吧，想要被刺还是被踩？还是吃一发炮击？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "哼，服饰不过是衬托，真正的高贵应当来源于自身。你不这么认为吗，指挥官？",
-	mail = "",
-	touch = "衣服很适合我？哼，指挥官也学会了威尔士那般的花言巧语啊，不过姑且…还是谢谢了…",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "哼，服饰不过是衬托，真正的高贵应当来源于自身。你不这么认为吗，指挥官？",
-	feeling5 = "",
-	main = "nil|要我教你皇家的宫廷舞怎么跳吗？|华服属于节日，不过对我来说，存在于此的每一天，都是值得欢庆的节日",
-	battle = "就让你们见识一下，什么是皇家式的优雅从容吧",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "你在发什么呆，指挥官？今天还有许多事情在等着你呢",
-	vote = "",
-	hp_warning = "",
-	id = 299021,
-	detail = "抬头挺胸，指挥官。你可是我唯一认同的存在—不知道视线该看哪里？？那就看着我的眼睛吧",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299022] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "",
-	mission = "",
-	touch2 = "你也沾染上了威尔士那般的恶习了吗，指挥官",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "这次是东方的服饰吗…哼，对我来说，无论什么样的服装都一样，不过既然是特意为我准备的衣服，若是不表达几分感谢与欣喜，岂不是太不解风情了。感谢",
-	mail = "",
-	touch = "想让我陪你一会？这种事早点说不就好了",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "这次是东方的服饰吗…哼，对我来说，无论什么样的服装都一样，不过既然是特意为我准备的衣服，若是不表达几分感谢与欣喜，岂不是太不解风情了。感谢",
-	feeling5 = "",
-	main = "啧，威尔士，不需要你一一介绍东煌的习俗，这些东西我会自己去了解|新年的愿望么，当然是要证明你当初选择我是多么有价值了，这一点是不会改变的|作为皇家的一员存在于此，还能领略到异乡的节日与文化，想一想还真令人感慨啊",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "难得的节日，你也不必那么辛苦，把事务暂时交给我，好好休息一下也无妨",
-	vote = "",
-	hp_warning = "",
-	id = 299022,
-	detail = "“为节日留下点美好的回忆”？哼，那家伙还是一如既往地油嘴滑舌",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399010] = {
-	feeling1 = "早知会遇到你这样的人，这个世间不来也罢……",
-	feeling3 = "帅气……吗？我倒是更加羡慕总是笑容满面的大家……和她们相比，我只是不知道怎么表露感情而已",
-	lose = "呜…需要加倍修行了…",
-	propose = "我过去从不知道，心意得到回应，是一件这么幸福的事情…请不要看我，主上…我现在的表情一定很奇怪…",
-	expedition = "主上，委托……唔，是叫这个吗？总之完成了",
-	win_mvp = "雕虫小技，见笑了",
-	home = "主上，受伤了的话请用我的艾草吧，我还有很多喔",
-	mission = "有任务…需要我也一同出击吗？",
-	touch2 = "烦恼退却，六根清净……呀！主、主上……",
-	voice_key_2 = -1,
-	skill = "{namecode:152}之山岳……尽在这一剑之中",
-	drop_descrip = "重巡洋舰-—{namecode:152}",
-	mail = "主上，你的信件…诶？念给你听？那种害羞的事情…",
-	touch = "展示一下剑术吗？对不起，被人这么看着有点……",
-	profile = "主上对我感到好奇吗？不过过去我不曾来到世间，也就没有值得一提的事迹……唔，喜欢和歌，擅长剑术，这样可以吗？还有……我不太习惯和人相处……",
-	mission_complete = "主上，那边好像堆了好多东西？喔，那就是奖励吗？",
-	feeling4 = "而且和大家相处之后我才更加体会到，想要正确地表达自己的想法是一件很难的事，比如说喜悦，比如说……爱慕",
-	unlock = "将我从亘久之梦中唤醒的是你吗？在下{namecode:152}，虽然仍是修行之身，若不嫌弃，任凭差遣",
-	feeling5 = "伊吹山的艾草，常被用来比喻安静燃烧的恋心，就好比现在…指挥官能感觉到吗？{namecode:152}的…心",
-	main = "只有我和主上两个人…总觉得有点…害羞|主上，要是暂时没有事，我能去冥想一下吗？|为了精进剑术，每天必须至少空挥千回……请放心，在主上离开的时候我已经完成了",
-	battle = "战场无情…{namecode:152}，出击！",
-	upgrade = "这就是…变强的感觉？感激不尽",
-	voice_key = 39901,
-	headtouch = "",
-	feeling2 = "我喜欢在高山之上，坐看浮云悠悠的生活……不过来到这里后我知道，我也不讨厌和大家一起的生活",
-	login = "主上，外出辛苦了",
-	vote = "",
-	hp_warning = "背水一战……求之不得！",
-	id = 399010,
-	detail = "主上，欢迎……没有什么好招待的，只有茶可以吗？",
-	couple_encourage = {
-		{
-			{
-				299010,
-				299020,
-				399010,
-				399020,
-				499010,
-				899010,
-				199010,
-				199020,
-				399030,
-				399040,
-				499020,
-				999010
-			},
-			1,
-			"不才伊吹…将会全力配合各位的！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[399011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "外面在下雪呢……主上，我给您再添一件毛衣吧",
-	mission = "",
-	touch2 = "主、主上，手好冷……",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "主上，下雪了呢……不介意的话，请来{namecode:152}的伞下躲一躲吧",
-	mail = "",
-	touch = "主上……有想去的地方吗？我会陪您一起去的",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "主上，下雪了呢……不介意的话，请来{namecode:152}的伞下躲一躲吧",
-	feeling5 = "在永梦之中，冬天是安静的，冰冷的。但在这里，在主上身边，冬天依然是温暖的……主上，我能和您……牵手吗？",
-	main = "阿嚏！……打喷嚏的样子很可爱？请、请不要笑话我了……|这就是真正的雪……真漂亮啊|冬天会有很热闹的祭典吗？……稍微……有些感兴趣",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "主上，要一起外出吗？",
-	vote = "",
-	hp_warning = "",
-	id = 399011,
-	detail = "这一身衣服，不好好感谢{namecode:89}小姐可不行呢……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "主上，请用蛋糕，甜甜的很好吃哦",
-	mission = "",
-	touch2 = "果、果然是{namecode:152}不适合这样的衣服吗？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "这是我第一次穿像这样的洋装…那个，主上…您觉得这身适合{namecode:152}吗？",
-	mail = "",
-	touch = "风儿像这样吹在脸上，感觉很舒服呢，主上",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "这是我第一次穿像这样的洋装…那个，主上…您觉得这身适合{namecode:152}吗？",
-	feeling5 = "",
-	main = "果然宴会上尽是一些不太明白的事情呢…啊，请不要误会，我只是觉得…要修行学习的东西还有很多呢|其实，我是被西雅图小姐邀请来的……西雅图小姐，真是一位很有活力的人呢|虽然我更喜欢安静的一隅，不过…像这样大家一起其乐融融聊天的环境，感觉，也不讨厌",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "「宴会」具体要做些什么，还是不太清楚呢…主上，我能跟着你吗？",
-	vote = "",
-	hp_warning = "",
-	id = 399012,
-	detail = "他乡的茶与酒，也别有一番滋味呢",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399013] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "东煌的春节，真是热闹呢，这种热闹，带着更加纯粹的欢腾，和更加接近世俗的喧嚣……我……说不定很喜欢这种感觉呢",
-	mail = "",
-	touch = "到这个时节，天气已经没有那么寒冷了，再过不久，春天就要来了…原来如此，所以才是“春节”的“春联”啊……",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "东煌的春节，真是热闹呢，这种热闹，带着更加纯粹的欢腾，和更加接近世俗的喧嚣……我……说不定很喜欢这种感觉呢",
-	feeling5 = "",
-	main = "那个，主上，其实我报名了晚会，表演的节目是剑舞……这还是我第一次主动把自己的技艺展现给舰队的各位呢，稍微有些紧张|主上，{namecode:98}小姐的店里似乎在贩卖一种叫做“鞭炮”的东西呢，据说和烟花类似，我想买一些来放，您要一起来吗？|主上，那些贴在墙两边的是……？……啊，那个叫做“春联”吗，那个，您能给我解释一下上面写的内容吗？稍微有些好奇",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "港区到处都挂满了灯笼和红色的装饰，真漂亮呢",
-	vote = "",
-	hp_warning = "",
-	id = 399013,
-	detail = "欸？感觉我比平时放得开吗？……是呢，或许是受到春节气氛的影响吧，总觉得情绪比平时要高昂呢…那个，会显得很奇怪吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399014] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "",
-	mission = "",
-	touch2 = "主上！？难、难道{namecode:152}犯了什么错误？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "您辛苦了，主上。{namecode:152}已经换好衣服了，这样便算是遵照您“一起休息会”的命令了吧…然后呢，{namecode:152}需要做些什么？",
-	mail = "主上，新的邮件来了。…需、需要{namecode:152}为您读一下…？",
-	touch = "主上，需要{namecode:152}做些什么…？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "您辛苦了，主上。{namecode:152}已经换好衣服了，这样便算是遵照您“一起休息会”的命令了吧…然后呢，{namecode:152}需要做些什么？",
-	feeling5 = "主上，给您倒杯茶。…呼…明明我们什么都没做，只是在一起消磨时间，为什么{namecode:152}会有种非常充实，甚至充满到溢出来的感觉……主上，{namecode:152}的这种感觉，就是“恋爱”吗…？",
-	main = "nil|主上，{namecode:152}稍微冥想一会…欸，要、要陪您聊一会天…吗？|主上，可以的话给{namecode:152}安排点事情做吧…这样光是坐着总感觉有点…不安……",
-	battle = "主上由{namecode:152}守护！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "主上……？",
-	feeling2 = "",
-	login = "嘿咻…嗯，主上请坐这边，好好放松一下吧。",
-	vote = "",
-	hp_warning = "",
-	id = 399014,
-	detail = "主上，{namecode:152}新采的茶是否合您的口味？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399020] = {
-	feeling1 = "你没有让我举刀的资格……",
-	feeling3 = "哈啊…为什么指挥官老是露出这副不争气的表情呢？让人忍不住…想训斥一番…",
-	lose = "咕…我还能…战斗！",
-	propose = "又是这副不争气的表情，真拿你没办法…就稍微承认一点你的努力…和才能吧！{namecode:151}，以此刀起誓，愿与你生死与共，携手同行——",
-	expedition = "委托完成…不妨自己尝试出击一次如何？",
-	win_mvp = "胜利？那是理所当然的吧！",
-	home = "回来了？可没时间给你浪费，开始这回的战术研讨吧——",
-	mission = "还打算放着未完成的任务多久呢，指挥官？",
-	touch2 = "…斩、斩了你！",
-	voice_key_2 = -1,
-	skill = "这就是…我的全力！",
-	drop_descrip = "战列舰-—{namecode:151}",
-	mail = "信件，不及时查阅的话，对发件的人，也是一种不敬，你不觉得吗？",
-	touch = "指挥官应该没有闲到可以一直找我说话吧？",
-	profile = "重樱舰队、战舰{namecode:151}，作为{namecode:83}级的设计方案之一而生，却未曾真正问世…不过若因此而小看我的话，就准备尝尝主炮齐射的滋味吧",
-	mission_complete = "任务完成…究竟什么时候，指挥官才可能自己注意到这些事情呢？",
-	feeling4 = "最近的指挥官似乎稍微进步一点了嘛…哼，姑且承认你的努力吧",
-	unlock = "战舰{namecode:151}，报到。你就是指挥官？看起来不甚可靠呢…听好了，如果拖后腿的话，我可不会轻饶你！",
-	feeling5 = "武之道乃孤独之道，我原本一直这么认为…不过若是与指挥官同行的话，似乎…也不错呢",
-	main = "爱刀每天都要花费时间进行保养，这不是理所当然的吗？|姐妹…吗？作为{namecode:151}级的独女，多少…还是有点羡慕…|变强吧，指挥官。强大到足以保护自己，足以保护我们所有人，到那时候我就…",
-	battle = "全员列阵！目标，前方敌舰！",
-	upgrade = "刀刃…更加锐利了——",
-	voice_key = 39902,
-	headtouch = "",
-	feeling2 = "这把刀就如同我的分身，轻易触碰的话，可是会受伤的",
-	login = "还是一如既往的磨蹭啊，还要让我在这里等多久呢？",
-	vote = "",
-	hp_warning = "准、准备灭火…！",
-	id = 399020,
-	detail = "与其在这看着我发呆，不如多干点其他正事如何？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399021] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "胜利之后的战场，何等绝景，何等绝景",
-	home = "",
-	mission = "",
-	touch2 = "指挥官，想尝尝木屐踢脸的感觉吗？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "想要看我的歌舞？品味倒是不错…指挥官，那就为我准备一个最好的舞台吧",
-	mail = "",
-	touch = "…喝醉了？区区这么一点酒，怎么可能…嗝",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "想要看我的歌舞？品味倒是不错…指挥官，那就为我准备一个最好的舞台吧",
-	feeling5 = "",
-	main = "歌舞与武道是共通的，无数的磨练，只为了最美丽、最闪耀的那一瞬间…|指挥官，视线全在我身上的话…工作没有关系吗？|佳肴和闲游吗……难得的正月，偶尔放纵一下也无妨吧。呵呵",
-	battle = "不曾知晓的话就告诉你们吧，我乃{namecode:151}！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "",
-	vote = "",
-	hp_warning = "",
-	id = 399021,
-	detail = "我的名字和歌舞伎有缘？……啊，这个意思吗……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499010] = {
-	feeling1 = "指挥官……不可原谅！",
-	feeling3 = "在战场上互相杀戮是我们的使命……所以，稍微有点沉溺其中也很正常吧",
-	lose = "唔唔，今天的战术是佯败设伏吗？",
-	propose = "谢谢你哦，不过呢，最终填补了我内心空虚的既不是杀戮的愉悦也不是爱情的甜蜜，而是嫉妒的愤恨呢！指挥官，现在我对他人的妒恨与对你的爱一样多喔……真是——不可原谅呢！",
-	expedition = "委托队的孩子们，真的很努力了呢……好啦，排好队我会一个个拥抱过去的~",
-	win_mvp = "都看到我了，竟然还不干脆自沉，非要劳我出手，真是——不可原谅！",
-	home = "我也想出航去击沉敌人呢…呵呵，击沉得越多，自己不就显得越有用嘛～",
-	mission = "这次会是什么样的任务呢？稍微有点期待起来了",
-	touch2 = "唔，指挥官也想和我拥抱吗？好好~",
-	voice_key_2 = -1,
-	skill = "不要…小看了我啊！！",
-	drop_descrip = "重巡洋舰-—{namecode:439}",
-	mail = "邮件里没有不好的消息吧？",
-	touch = "指挥官，请张嘴……我做的菜肴味道如何？和昨天相比有进步吗？",
-	profile = "铁血巡洋舰{namecode:439}号，历史中仅停留在设计构想阶段。指挥官，我看到了哟——你的内心中有和我相似的部分喔",
-	mission_complete = "下一个任务，也一同加油吧",
-	feeling4 = "啊啊…用舰炮将敌人轰杀、撕裂的那种感觉…真是太棒了…指挥官，你也明白那种感觉吧？",
-	unlock = "真没想到竟然是我来到这里……你好，我是{namecode:439}，现在对这里还不太熟悉，可以请你带我参观一下吗？",
-	feeling5 = "呵呵，和你在一起的时候，内心比在战场上疯狂杀戮还要充实，这就是爱情的力量吗？不过……",
-	main = "每当看到美丽的事物在战场上凋零，我就……|想要治愈指挥官的心，唔……该怎么办呢？|闲暇时的兴趣？我喜欢放生喔",
-	battle = "呵呵，看到我后才打算逃跑，还逃得掉吗？",
-	upgrade = "谢谢你喔，指挥官",
-	voice_key = 49901,
-	headtouch = "",
-	feeling2 = "港区的生活？各方面都无可挑剔喔，只是……是不是有点太过平和了？",
-	login = "这里的港区好和平呢，大家也都是易于相处的人……",
-	vote = "",
-	hp_warning = "击伤了我……不可原谅！",
-	id = 499010,
-	detail = "指挥官在工作外有什么兴趣呢？一起去放松一下怎么样？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "呵呵呵…这边也是一场不错的“盛宴”呢",
-	home = "",
-	mission = "",
-	touch2 = "指挥官…再靠近一点也没关系哦…？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "和平的港区，温馨的宴席，欢笑的同伴…真是美好…不过，也真是无趣呢……",
-	mail = "",
-	touch = "指挥官玩得开心吗？…我吗？只要看着指挥官就很开心了~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "和平的港区，温馨的宴席，欢笑的同伴…真是美好…不过，也真是无趣呢……",
-	feeling5 = "",
-	main = "越是美好的事物，就越让人想要毁坏呢……|指挥官，我特意挑选的礼服，有治愈你的心吗？|…这种和乐融融的气氛反而容易让人累积不少压力呢…指挥官，等会可以让我出击吗？",
-	battle = "来得正好，稍微让我“减压”一下吧…！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "呼呼…难得的热闹晚宴，让我们好好享受吧，指挥官",
-	vote = "",
-	hp_warning = "",
-	id = 499011,
-	detail = "特意准备的礼服确实吸引到了指挥官的目光，但是…想到其他舰船也一样，我就……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "从这里可以看到委托组的伙伴们哦？怎么办？要去迎接她们吗？",
-	win_mvp = "呵呵，彻底“转换心情”了~",
-	home = "欢迎回来~给你治愈的拥抱♪",
-	mission = "",
-	touch2 = "没有别人在哦～♥",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "离开热闹的派对会场，然后像这样与指挥官二人独处…指挥官接下来要做点什么来“转换心情”呢？我很期待哦~",
-	mail = "",
-	touch = "想回去了吗？那么，请去治愈疲累的心吧♪",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "离开热闹的派对会场，然后像这样与指挥官二人独处…指挥官接下来要做点什么来“转换心情”呢？我很期待哦~",
-	feeling5 = "原来如此，这就是指挥官所说的“转换心情”么…既消减了无聊，还能和指挥官在一起，感觉真是不错，不过…（小声）想管住我的指挥官，果然不能原谅呢♡",
-	main = "欣赏风景是不错，不过总是看着港区的景色，难免有些腻了呢~果然还是战场的风景好呀…啊啊…无论何时看都不会腻呢…|呵呵，不用担心，我哪里都不会去的~毕竟带我来这的可是指挥官呢，对吧？|难得有钢琴在这里，能陪我练习唱歌吗？什么都不做的话，总觉得有些静不下心呢，呵呵~",
-	battle = "竟敢打扰我和指挥官在一起的时间…不可原谅！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "其实我也刚开始觉得派对有些乏味了呢。谢谢你，指挥官♪",
-	vote = "",
-	hp_warning = "",
-	id = 499012,
-	detail = "派对上的饮料，还有{namecode:479}赞不绝口的咖啡都挺不错的，不过…我还是更喜欢铁血的啤酒呢。指挥官喜欢什么呢？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[899010] = {
-	feeling1 = "这里的同僚皆是义人，唯独你不是。接受神的审判吧，罪人",
-	feeling3 = "在这里的同僚们总是那么阳光，似乎没有什么能让她们烦恼，这里就是属于她们的迦南吗……",
-	lose = "我的神，为什么背弃我……",
-	propose = "你的身边将是我的归所，你的胜利将是我的荣光，你的喜悦将是我唯一的动力。感谢神将我送到了你的面前，我的先知，我的爱人，我的……光",
-	expedition = "指挥官，我看到委托的同僚们返回了",
-	win_mvp = "尘归尘，土归土……",
-	home = "战士承受苦难，不过大家都挺了过来",
-	mission = "指挥官，虽然不是神的旨意，不过军部的任务下达了",
-	touch2 = "指挥官，请自重……",
-	voice_key_2 = -1,
-	skill = "神爱世人",
-	drop_descrip = "重巡洋舰-—路易九世",
-	mail = "指挥官，信件不拆封没有关系吗",
-	touch = "以战止战，这是我唯一能做的",
-	profile = "因为故土突逢苦难，我的诞生被迫取消。而神说，你的使命留待来日。所以我出现在了这里。指挥官，你将为我指引方向，而我，则为你扫平前路",
-	mission_complete = "奖励吗……虽然都是些不错的东西，不过我没有兴趣",
-	feeling4 = "我能感觉到我正在被这支舰队接纳，但是这里真的是我的应许之地吗……我并不是怀疑，只是觉得，应该还有更深的含义",
-	unlock = "很荣幸见到你，我的先知，我的引路人，我的指挥官。路易九世，听从神的旨意来到你的麾下，只要不违背公理道德，我手中之枪，任凭驱使",
-	feeling5 = "我明白了，指挥官，现在我能体会到和同僚们一样……不，甚至在那之上的充实感。迦南并不是这里，而是你的身边",
-	main = "指挥官，你的时间不应该花在这里，杂务就交给我吧|指挥官，同僚之间如果有什么纠纷，就交给我来仲裁吧，那是我的强项|战斗的胜利是我的终点，但指挥官，你应该将目光放在更高更远的地方",
-	battle = "赐你们平等的毁灭",
-	upgrade = "为了我们的使命……",
-	voice_key = 89901,
-	headtouch = "",
-	feeling2 = "这里就是我未来的容身之所吗……那么，这里究竟是索多玛，还是迦南呢……",
-	login = "bonjour，指挥官，告诉我，接下来我该做什么？",
-	vote = "",
-	hp_warning = "这也是神的考验……",
-	id = 899010,
-	detail = "指挥官，你也要来向神祷告吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[899011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "比起像一尊雕塑一样坐在这里，我更想与你一起踏上战场，指挥官",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "恕我直言，指挥官，华服与王座与我并不相称，虽然继承了路易九世之名，但我只是一名战士——好吧，你似乎很喜欢的样子，我就悉听遵命吧",
-	mail = "",
-	touch = "武器就在我的身边，如果要上战场，我随时都可以",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "恕我直言，指挥官，华服与王座与我并不相称，虽然继承了路易九世之名，但我只是一名战士——好吧，你似乎很喜欢的样子，我就悉听遵命吧",
-	feeling5 = "外在的修饰对一名战士而言毫无意义——本该是这样的。但神同样承认爱情，鼓励爱情。而我既是你的战士，也是你的爱人，那么，如果能让你喜悦，我愿意做任何事",
-	main = "指挥官，现在的我有这么惹人注目吗？我能感受到你的视线——不，我对此并不反感|坐在这里仲裁同僚之间的纠纷？那就…失礼了，让我先好好听听她们所言所感吧。|指挥官，你是这里的统帅，我想这王座应当由你来坐才最合适",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，让我一个人坐在这里是一种煎熬",
-	vote = "",
-	hp_warning = "",
-	id = 899011,
-	detail = "我并不是反感做这样的事，我只是并不能理解这么做的意义，难道我仅仅坐在这里就能让你获得快乐吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[899012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "指挥官，执行委托的战友们归来了，让她们去享受春节，剩下的工作就由我们接手吧。",
-	win_mvp = "",
-	home = "神会看见你的所为，此刻的辛劳必将换来未来的成功。",
-	mission = "今天的任务下来了，让我们两人尽快解决吧。",
-	touch2 = "咳、咳咳！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "指挥官，今天的下一个行程是……嗯，鸢尾的圣骑士以勤勉为美德，无论是平时还是节日，身着鸢尾之正装或是东煌的礼服，都不会对祈祷与战斗，以及身为你部下的工作造成任何影响。",
-	mail = "",
-	touch = "",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "指挥官，今天的下一个行程是……嗯，鸢尾的圣骑士以勤勉为美德，无论是平时还是节日，身着鸢尾之正装或是东煌的礼服，都不会对祈祷与战斗，以及身为你部下的工作造成任何影响。",
-	feeling5 = "",
-	main = "东煌的春节么…庆祝新年无论对谁都是不可少的，完成手头的工作后就好好休息一下吧。|加利索尼埃…似乎很享受假日的样子…不，她的话，对什么都能很享受吧，各种意义上来说。|和平的生活是令人喜悦的。若所有人都能遵照神之教诲行事的话，便不需要仲裁之人的存在了吧。",
-	battle = "被鸢尾之光净化吧！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "Bonjour，指挥官。先决定下今天要先完成的事务吧。",
-	vote = "",
-	hp_warning = "",
-	id = 899012,
-	detail = "今年也好好努力吧，不要辜负了大家竭尽心力的各种准备。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199010] = {
-	feeling1 = "咦？聚会？没算上你哦，指挥官，请继续工作吧",
-	feeling3 = "虽然我很喜欢开派对，不过我从不会硬拉不喜欢集体活动的姐妹们来参加哦？但是，如果愿意来参加的话，即使不擅长交流的人，我保证也能让她找到乐趣~",
-	lose = "要是我的火力再强一点就好了……",
-	propose = "ok，心情整理完毕！果然，我也是对指挥官有意思的，不然，从一开始就不会来邀请你了嘛~话说回来，指挥官，今天起，我们除了派对，又有了一样要做的事呢，那就是——约会！",
-	expedition = "指挥官，委托完成咯？我觉得带点什么去犒劳委托组的姐妹们是个不错的主意！",
-	win_mvp = "胜利！回去可要好好庆祝一下~",
-	home = "指挥官，虽然战斗很重要，但是放松也很重要！",
-	mission = "新的任务！多找些姐妹们一起去吧！",
-	touch2 = "指挥官，如果你是故意的，我可要生气了",
-	voice_key_2 = -1,
-	skill = "让战场也热闹起来吧！",
-	drop_descrip = "轻巡洋舰—西雅图",
-	mail = "指挥官，有你的邮件！难道是派对的邀请？",
-	touch = "指挥官，来练习一下舞蹈吧～舞技好会更受欢迎哦？",
-	profile = "来了来了，那么，我叫西雅图——啊，确切地说，我其实没有名字，姑且是叫西雅图，嗨呀，这种小事就不要在意了。总之，作为伍斯特级的原型设计之一，亚特兰大级的改进型，我最擅长的就是防空了，天上飞的小家伙们就交给我吧！",
-	mission_complete = "任务完成！指挥官，我们来庆祝一下吧！",
-	feeling4 = "指挥官，现在你知道集体活动的魅力了吧？只要聚在一起，大家就会自然而然地增进关系。你看，现在我们不是已经成为朋友了吗？",
-	unlock = "就是你把我从沉睡之中唤醒的吗？……你好你好，幸会幸会～我叫西雅图，从今往后，请多指教啦！",
-	feeling5 = "看在我们交情的份上，指挥官你要是对哪个姐妹有意思，我也可以给你助攻一下哦？……咦，我？欸，啊，呃，不是，真……真的？",
-	main = "指挥官，你不会觉得只有一个秘书太冷清吗？我觉得多叫几个姐妹来一起担任秘书会比较热闹哦！|指挥官，今晚下班后有预定吗？我约了不少姐妹办派对，你要不要一起来？|虽然我的战斗经验不足，不过姐妹们都很愿意教导我，我会很快赶上来的~",
-	battle = "好～大家一起上吧！",
-	upgrade = "感觉现在我能把蚊子都给射下来！",
-	voice_key = 19901,
-	headtouch = "",
-	feeling2 = "指挥官，不要总是把工作啊，战斗啊挂在嘴边，稍微让自己喘一口气会比较好哦？总之，等会儿有个我发起的派对，你会来的，对吧？",
-	login = "指挥官，吃过了吗？没有的话先一起吃点什么吧~",
-	vote = "",
-	hp_warning = "大家再坚持一下！",
-	id = 199010,
-	detail = "派对，茶会，女子会，聚餐……ok，日程排得很满，完美！",
-	couple_encourage = {
-		{
-			{
-				10206,
-				10207,
-				10208
-			},
-			1,
-			"前辈，回港后来参加我的派对吧？",
-			0
-		},
-		{
-			{
-				30402
-			},
-			1,
-			"重樱的宴会，我很有兴趣！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[199011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "",
-	mission = "",
-	touch2 = "呀！？真是的，你是喝醉了吗？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "哦哦指挥官，来得正好！嘿嘿，这身礼服，怎么说…会不会有种太华丽的感觉？……不会？太好了！还想着我这么穿会不会不太合适呢，谢谢啦~",
-	mail = "",
-	touch = "指挥官想喝什么？如果不方便喝酒的话，来点软饮料也可以哦？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "哦哦指挥官，来得正好！嘿嘿，这身礼服，怎么说…会不会有种太华丽的感觉？……不会？太好了！还想着我这么穿会不会不太合适呢，谢谢啦~",
-	feeling5 = "虽然挺喜欢大家一起吵吵闹闹的宴会，但是偶尔有一次这种比较高雅的宴会也不错呢~还能像这样和最喜欢的指挥官两人独处…我…貌似有点喝醉了呢…呼……Zzz……",
-	main = "佐治亚，你想喝点什么？特调冰块可乐气泡酒？嚯~还是一如既往地口味独到啊~|啊，宴会就是要开心享受才对哦？一个人喝酒可不行呢~来吧来吧，到人多的地方去~|那边貌似有好几个不太习惯宴会的孩子呢…我去把她们引荐给大家认识下，稍等我一会哦，指挥官~",
-	battle = "哈哈！轰轰烈烈地上吧！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "哦哦！指挥官，欢迎来到美妙的宴会！今天的主角就是你我二人！嘿嘿，开玩笑的~",
-	vote = "",
-	hp_warning = "",
-	id = 199011,
-	detail = "小提琴什么的，只要拿在手上就有种很上流的感觉呢！哈哈，既然都拿出来了自然是要露一手的啦！用心听着吧~♪～",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199012] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "好的，这下圣诞派对的美食就准备得差不多了！",
-	mission = "",
-	touch2 = "指挥官！现在可不能捣乱！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "圣~诞~快~乐~！虽然想马上开始圣诞大派对，但是如你所见我还在为此准备中呢~再稍等片刻吧~",
-	mail = "",
-	touch = "把那边的盐递给我一下！谢啦！",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "圣~诞~快~乐~！虽然想马上开始圣诞大派对，但是如你所见我还在为此准备中呢~再稍等片刻吧~",
-	feeling5 = "",
-	main = "佐治亚！你要的姜饼好了！上面有我给你的惊喜！|嗯，我想想，我们现在还缺的是……一棵能够吸引所有人眼球的特别的圣诞树！|节日给了大家聚在一起享受快乐的理由。而我，这次就负责给这聚会搭起最好的舞台！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "哦哦！太好了，有指挥官的帮忙，我感觉进度快了一倍……不，是两倍！",
-	vote = "",
-	hp_warning = "",
-	id = 199012,
-	detail = "但凡是来参加派对的人，我一定会让她感受到白鹰对圣诞节满溢的热情！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199013] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "放松休息固然重要，不过，正是这种时候才更要认真去照顾大家才行！",
-	mission = "新任务！倔强说的“咒语”就是拿来处理这个的吗？",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "我是来助人为乐的海之魔女西雅图！好啦，你有什么烦恼吗？无~论什么都可以和我说哦？作为代价——要来参加今天的宴会哦♪",
-	mail = "",
-	touch = "指挥官，牢牢抓住我的手哦！",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "我是来助人为乐的海之魔女西雅图！好啦，你有什么烦恼吗？无~论什么都可以和我说哦？作为代价——要来参加今天的宴会哦♪",
-	feeling5 = "",
-	main = "真是的，柴郡~不要在那偷懒啦！赶快来帮忙！佐治亚也是~快来快来~|布莱默顿真是个好人呀！会听人倾诉各种烦恼，如果指挥官有什么不方便在聚会上说的事，尽管去找她就好了！|果然大海真是有意思呀~为了大家能在大海玩的开心，我们也要加油才行呢！",
-	battle = "可不能继续潜在水里了呢！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官也想试试潜水？好~那就让西雅图来帮你吧！",
-	vote = "",
-	hp_warning = "",
-	id = 199013,
-	detail = "白天的游戏大赛和晚上的烧烤大会……果然有各种各样的活动才开心嘛！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199020] = {
-	feeling1 = "看来指挥官并不足以拥有这份力量……",
-	feeling3 = "出击战斗固然让人热血沸腾，不过偶尔放松一下也是很重要的呢",
-	lose = "只能…暂时撤退了吗",
-	propose = "咳…没想到会是指挥官发起的直球进攻啊~？啊哈哈…我很高兴哦，看来环球之旅可以提前准备出发了呢~",
-	expedition = "委托组回来了呢。等等，把这些酸素可乐带给她们吧，慰劳将士的辛苦是指挥官应当做的事情",
-	win_mvp = "再坚固的装甲，也只有被巨炮击碎的命运！",
-	home = "嗯，出击辛苦了。喝瓶冰镇可乐放松下吧",
-	mission = "任务啊…如果是战斗任务就好了呢，嘿嘿~",
-	touch2 = "嚯~？看来指挥官是想要自告奋勇当炮靶呢…",
-	voice_key_2 = -1,
-	skill = "这巨炮的轰鸣就是你们最后的回忆！",
-	drop_descrip = "战列舰—佐治亚",
-	mail = "指挥官，你的信。如果方便的话，能把信封上的风景纪念邮票留给我吗？",
-	touch = "嚯~指挥官也觉得这巨炮很美吗？那就尽管欣赏个够吧~",
-	profile = "我是白鹰所属战列舰，佐治亚。比起那几位远房姐妹，我的主炮口径更大一些。而我，会用这主炮，粉碎挡在面前的所有敌人",
-	mission_complete = "没有报告过的任务，就不算完成。可别忘了啊，指挥官",
-	feeling4 = "下次有机会的话，就一起去旅行怎么样？有你同行的话，感觉会是段有趣的旅程呢",
-	unlock = "我是白鹰的佐治亚。安心吧，我会用巨炮为你带来胜利的",
-	feeling5 = "先从白鹰出发…然后到皇家和鸢尾…再是东煌…——嗯？我在计划我们的环球之旅哦。事到如今，指挥官不会说不愿意去了吧~？",
-	main = "我有个梦想，那就是有一天，大海上不再有硝烟，所有人都回到和平之中…|可乐真是很棒的饮料呢，啊，不过酸素可乐指挥官大概不能喝吧……|有机会的话，还是挺想去世界各个不同的地方看看的呢，重樱、东煌、皇家……干脆计划个环球旅行好像也不错？",
-	battle = "这次会是什么样的对手呢？希望不要辜负了我的期待啊",
-	upgrade = "下次的战斗，你会看到我的表现的",
-	voice_key = 19902,
-	headtouch = "佐治亚光线！…开玩笑的，只是普通的头饰而已，啊哈哈",
-	feeling2 = "桃子很不错的哦，营养又美味，指挥官要来一颗吗？",
-	login = "哼，来得正好。热身运动刚刚好，是要演习还是出击？",
-	vote = "",
-	hp_warning = "咕唔…装甲区损伤？！我会加倍奉还的！",
-	id = 199020,
-	detail = "定期的装备检查与维护可是非常重要的，指挥官，你也要来帮忙吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199021] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "指挥官，这里的空气很不错，稍微休息一下吧",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "呀，指挥官，出来透透气吗？我？哈哈，我不太习惯宴会那种高雅的氛围，所以偷溜出来了……要一起走走吗？",
-	mail = "",
-	touch = "呜哇……！好险，谢谢你扶我，指挥官……我拿高跟鞋是真的没辙",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "呀，指挥官，出来透透气吗？我？哈哈，我不太习惯宴会那种高雅的氛围，所以偷溜出来了……要一起走走吗？",
-	feeling5 = "月色真美啊，指挥官……欸？啊，不，我不是那个意思……呃，不对，我也不是没有那个意思…啊哈哈…怎么说呢…有点不好意思啊……",
-	main = "呼，还是在这样的地方喝可乐适合我，指挥官，我包里带了一些，要喝吗？|指挥官，你不回去会场没有关系吗，还有很多人在等着你吧？|指挥官，不用担心，我很喜欢这支舰队，等一会儿，我也会回到会场去的",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "还是旁边没有人的时候能够放松下来啊～对吧，指挥官？",
-	vote = "",
-	hp_warning = "",
-	id = 199021,
-	detail = "这套礼服？啊，这是西雅图给我准备的……老实说，连我自己都不知道我还能打扮成这样……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199022] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "嗯，出击辛苦了。要来根冰棒吗？我这里还有。",
-	mission = "",
-	touch2 = "嚯~？指挥官的心也随着来到海边放开了嘛，是不是需要给你一点“刺激”呢？比如这个遮阳伞什么的？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "嗯哼，阳光正好，海风也恰到好处。好啦，一起来享受夏天吧！你也很期待的吧，指挥官？",
-	mail = "",
-	touch = "看你露出一副“不知道眼睛往哪摆”的表情意外的有趣呢，哈哈哈！",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "嗯哼，阳光正好，海风也恰到好处。好啦，一起来享受夏天吧！你也很期待的吧，指挥官？",
-	feeling5 = "",
-	main = "怎么样，这个太阳眼镜造型很有趣吧？嘿嘿，我还挺喜欢的呢。|说到夏天，怎么能少了冰镇的可乐呢！你也来一瓶吧指挥官—哦，错了错了，嘿嘿，这个是酸素可乐，这个才是给指挥官的可乐。|趁着夏天还未过去，来计划个“世界沙滩之旅”好像也不错？",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "哦？来的正好，我正要把遮阳伞撑起来，来搭把手吧，指挥官。",
-	vote = "",
-	hp_warning = "",
-	id = 199022,
-	detail = "这件黑色薄纱是西雅图帮忙选的，那家伙虽然看起来大大咧咧的，却意外地对这些分外拿手呢…",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199023] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "",
-	mission = "",
-	touch2 = "喂喂，衣服都要被你弄乱了啊",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "新年快乐，指挥官！据说重樱新年就得穿着这么华丽的衣服出门呢，要不陪我走走？…怎么了，发什么呆呢？不会是看呆了吧？哈哈哈哈！",
-	mail = "",
-	touch = "要好好带路哦？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "新年快乐，指挥官！据说重樱新年就得穿着这么华丽的衣服出门呢，要不陪我走走？…怎么了，发什么呆呢？不会是看呆了吧？哈哈哈哈！",
-	feeling5 = "",
-	main = "“桃太郎”好像是从桃子里生出来的欸！一定是很厉害的家伙！|西雅图，我好像收到了宴会的邀请，要在宴会上整点什么才艺呢，你有啥好主意不？至少得比“佐治亚光线！”更厉害的才好|指挥官，我刚搞了个结合重樱的茶和可乐的新感觉饮料！来试喝看看吧！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "今天你要去哪里逛逛？嘿嘿，我很期待哦。",
-	vote = "",
-	hp_warning = "",
-	id = 199023,
-	detail = "重樱的茶很好喝！不过，偶尔还是会想喝点可乐什么的呢…唔？和这一身不搭？想喝就是想喝，有什么办法嘛…",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399030] = {
-	feeling1 = "如果指挥官非要荒废自己的才能，那么很快就会变成废材吧…",
-	feeling3 = "{namecode:26}级的姐姐们每次见面都会给{namecode:164}很多零食。分一些给指挥官也可以的…",
-	lose = "这不可能…一定哪里计算有误…",
-	propose = "只要在指挥官身边，心情也会变得安稳起来…所以，{namecode:164}想一直待在指挥官的身边…可以的话就拉钩？{namecode:26}级的姐姐们教我的，像指挥官这样出众的人，只要拉钩就会一直信守承诺",
-	expedition = "委托组的大家应该带回了很多好东西，指挥官去看看吧…",
-	win_mvp = "一场胜利不足以骄傲，准备下一场吧",
-	home = "指挥官辛苦了……接下来的事就交给{namecode:164}来处理吧，不会辜负指挥官期许的",
-	mission = "指挥官，振作起来，不能丢下这些任务不管",
-	touch2 = "虽然不知道该不该阻止指挥官……总之，请停止无礼的举动",
-	voice_key_2 = -1,
-	skill = "看招！会心一击！",
-	drop_descrip = "驱逐舰—{namecode:164}",
-	mail = "快查看下邮件吧，{namecode:164}预感到会有好事发生",
-	touch = "身体娇小也是有好处的…哼哼，要玩躲避球的话，指挥官别想击中我",
-	profile = "超{namecode:26}级驱逐舰、{namecode:164}…就是我。以前没能活跃在战场上，不过现在展示自己的实力还来得及。就让大家好好见识下如今{namecode:164}的装备性能和绝佳机动性吧",
-	mission_complete = "有付出就会有回报。指挥官这么努力，奖赏也自然不会溜走",
-	feeling4 = "有点怕黑……就让{namecode:164}慢慢跟在指挥官的身后吧（扯住衣角）",
-	unlock = "{namecode:164}已经准备就绪……今后由我来协助作战指挥的话，指挥官就可以清闲一些了",
-	feeling5 = "哈……（打呵欠）现在{namecode:164}有些困了，指挥官不会袖手旁观的……嗯，{namecode:164}的直觉一向很灵验，指挥官一定会把我抱回床上",
-	main = "经常受到{namecode:26}级姐姐们的照顾，{namecode:164}会好好回报她们的期待，也会努力保护好大家。|相比于浴血奋战，坐镇后方运筹帷幄的感觉好像更棒…不过请相信{namecode:164}的实力，就算是直接出击作战，{namecode:164}也是很强的|真正的实力，源于内心的勇气。可不要小看了{namecode:164}的能耐",
-	battle = "{namecode:164}已经预料到敌人的动向了…大家，快跟在{namecode:164}身后前进",
-	upgrade = "希望力量增强后，{namecode:164}也能保持清醒的头脑",
-	voice_key = 39903,
-	headtouch = "",
-	feeling2 = "想让我展示一下刀法？以后有机会，会给指挥官演示的",
-	login = "刚好指挥官回来了…{namecode:164}正要训练刀柄上的小家伙，要让它的站姿具有大将之风才好",
-	vote = "",
-	hp_warning = "知难而进，不是明智之选…不过现在也只能拼了！",
-	id = 399030,
-	detail = "指挥作战的将领都会配备一把适合自己的刀…所以放心吧，这柄刀一点都不沉",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399031] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "射击、捞金鱼…这些对{namecode:164}来说都是小菜一碟呢。指挥官也觉得{namecode:164}很厉害吧！",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "{namecode:164}，准备就绪——指挥官，和{namecode:164}一起制霸祭典吧！…不过在那之前，可以先吃点东西吗？",
-	mail = "",
-	touch = "哼哼，指挥官想要在祭典游戏上挑战{namecode:164}吗？尽管放马过来吧。",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "{namecode:164}，准备就绪——指挥官，和{namecode:164}一起制霸祭典吧！…不过在那之前，可以先吃点东西吗？",
-	feeling5 = "",
-	main = "只要提前预测到金鱼的运动方向，捞金鱼也就没有什么难的了|难得的祭典，今天就稍微放松一下好了…不过，明天开始就要更加努力了呢，指挥官|看在指挥官陪我来逛祭典的份上，就分你一点吃的吧。喏，要苹果糖吗？还是章鱼烧？",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "小家伙也等不及了，我们这就出发吧，指挥官，祭典可不会等我们呢。",
-	vote = "",
-	hp_warning = "",
-	id = 399031,
-	detail = "苹果糖！章鱼烧！…呣呣…竟然还有炒面！指挥官，帮我拿一下…啊，那个我也要！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399033] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "完，完了，这下全穿帮了……",
-	propose = "",
-	expedition = "",
-	win_mvp = "就用{namecode:164}准备好的彩带来庆祝吧！",
-	home = "在后台觉得无聊的话，要不要来和{namecode:164}玩海盗桶游戏？哼哼，{namecode:164}是不会输的。",
-	mission = "",
-	touch2 = "等、等一下？！这里可变不出什么东西吧？！不对你就是故意的！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "嗯，状态不错！照这个感觉，{namecode:164}一定能在正式的演出上大获成功！小家伙，你也表现得很棒哦！指挥官，觉得{namecode:164}的彩排表演如何？",
-	mail = "",
-	touch = "指挥官，有没有什么新的魔术点子？快和{namecode:164}说说——",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "嗯，状态不错！照这个感觉，{namecode:164}一定能在正式的演出上大获成功！小家伙，你也表现得很棒哦！指挥官，觉得{namecode:164}的彩排表演如何？",
-	feeling5 = "",
-	main = "这个魔术箱……我知道的！就算把里面的人锯成两半，也能完好如初地拼回来。指挥官，你躺里面，我们来试试吧！…唔，不是这样的吗？|{namecode:29}，接下来从这几张扑克里面选一张就好……那个，都只是普通的扑克牌，不用纠结的哦？|鸽子魔术大家都见过不少了，有没有其它小巧的适合用来表演的……我想到了！指挥官，我们去找{namecode:27}借她的噗太一用吧！",
-	battle = "哼哼，看{namecode:164}怎样华丽地扰乱敌人的视线吧。",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，你来得正好！快帮我抓住这几只乱飞的魔术鸽！……呼，怎么突然就不听话了呢……",
-	vote = "",
-	hp_warning = "",
-	id = 399033,
-	detail = "指挥官，来配合我试试这个从大家面前消失的戏法吧！单、单人表演的话，舞台暗格有点…我怕黑…",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399040] = {
-	feeling1 = "指挥官，我很担心你的近况……不要再这样下去了，好吗？",
-	feeling3 = "想要和重樱、还有港区的各位都搞好关系呢～不如办个交流会如何…？就由我来准备饮品和点心吧～呵呵～",
-	lose = "失败了…该怎么和指挥官交代好呢…",
-	propose = "指挥官的心意，我已经完全明白了。从此刻起，我会用未来的全部时光去爱着您的…呼…虽然是自己说出来的，不过还是有点害羞呢…嘻嘻…",
-	expedition = "委托组的大家已经回港了，指挥官，要我代为清点物资么？",
-	win_mvp = "这是大家一起努力的结果，我只不过是其中的一份子~",
-	home = "欢迎回来~指挥官，喝杯茶，吃点点心休息一下吧？",
-	mission = "遇到了困难的任务吗？我来帮你吧",
-	touch2 = "指挥官，还请你注意下场合呢……",
-	voice_key_2 = -1,
-	skill = "接下来到我了呢~",
-	drop_descrip = "超甲巡—{namecode:165}",
-	mail = "邮件我已经帮指挥官收好了，快看看吧~",
-	touch = "哎呀？指挥官想要摸摸我吗？还是想要被我摸摸？无论哪种，都可以直接跟我说哦？",
-	profile = "我是大型巡洋舰{namecode:165}号，作为夜间雷击战的支援火力旗舰设计，可惜当初并没有被投入到实战中来…擅长夜战指挥，不过雷击战的话就有点…啊哈哈……",
-	mission_complete = "任务的奖励有好多……真不愧是指挥官呢~",
-	feeling4 = "指挥官，你知道吗？无忧无虑，充满幸福的笑脸是这个世界上最可爱的东西呢。大家的，和指挥官的笑脸，我想就这样守护下去……",
-	unlock = "大型巡洋舰·{namecode:165}，前来报道。虽然资历尚浅，不过还是希望指挥官能多依赖我一点呢~我会尽全力保护好指挥官的~",
-	feeling5 = "指挥官累了吗？呵呵，请安心地躺下，让{namecode:165}给你掏掏耳朵，或者揉一揉肩膀放松一下吧～？",
-	main = "和大家一起出海的时候，我的防护能力就能派上用场了呢！|炮击的精准度吗？过奖了呢~但是，比起天赋，不断练习才是更重要的。|指挥官，需要{namecode:165}做什么事吗？",
-	battle = "由我来指挥吗…？虽然不敢保证结果，但是我会尽全力的！",
-	upgrade = "嗯嗯，就是这个感觉~",
-	voice_key = 39904,
-	headtouch = "",
-	feeling2 = "我对这里还不是太熟悉……能耽误指挥官一点时间，稍微陪我在港区里走走吗？",
-	login = "让我们开始今天的工作吧？放心，我会一直陪在你身边的~",
-	vote = "",
-	hp_warning = "这点损伤，还不要紧……",
-	id = 399040,
-	detail = "我想积累更多经验，尽快跟上伙伴们的脚步。所以，无论什么事情都行，还请尽管吩咐我吧~",
-	couple_encourage = {
-		{
-			{
-				40304
-			},
-			1,
-			"{namecode:429}小姐，还是稍微谨慎点比较……",
-			0
-		},
-		{
-			{
-				30401
-			},
-			1,
-			"和{namecode:70}姐比起来，我还差得很远呢",
-			0
-		},
-		{
-			{
-				39903
-			},
-			1,
-			"{namecode:164}，不要迷路了哦？",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[399041] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "指挥官介意单独陪我一下吗？一小会就好，有时候也想享受下单独占有指挥官的感觉呢…呵呵，开玩笑的~",
-	mission = "",
-	touch2 = "不能做这样的事。至少，现在不行哦。",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "指挥官？我，我还没整理好衣服，头发也有些乱……对不起，能稍微等我一会吗？",
-	mail = "",
-	touch = "能有指挥官陪在身边，我感到非常开心哦",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "指挥官？我，我还没整理好衣服，头发也有些乱……对不起，能稍微等我一会吗？",
-	feeling5 = "累了吗？就算是再让人兴奋的节日，当疲倦袭来的时候指挥官也只能乖乖认输呢~就请在{namecode:165}的怀中，静静地休息休息一会吧~",
-	main = "我听说东煌的传统小吃汤圆是团圆的象征。不过，吃掉它的话，不就是把“团圆”吃掉了吗…？|东煌的友人们带着大家写了不少“福”字，我也写了一幅，不过好像一般般呢……|办公室的装饰需要帮忙吗？我也想亲手布置试试看。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "指挥官，春节的夜晚很热闹，不过，在外面逛的时候，要小心别感冒了哦。",
-	vote = "",
-	hp_warning = "",
-	id = 399041,
-	detail = "虽说是为了拍照留念，不过一直保持这样的姿势，还是有些辛苦呢……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399048] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "出击辛苦了~请在这坐下，我来帮你捏捏肩膀吧~——嘿咻…这个力度是不是正好呢~？",
-	mission = "",
-	touch2 = "指挥官真是爱撒娇呢…///",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "能穿上这样一身白纱，仿佛是做梦一样呢…呵呵，不过，更重要的是之后的共同生活！指挥官，敬请期待我的“新娘修行”成果吧~",
-	mail = "",
-	touch = "那，既然指挥官摸完了，该轮到我来摸摸你了吧？呵呵~开玩笑的~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "能穿上这样一身白纱，仿佛是做梦一样呢…呵呵，不过，更重要的是之后的共同生活！指挥官，敬请期待我的“新娘修行”成果吧~",
-	feeling5 = "对我来说，幸福就是每天的彼此陪伴，日常的温柔倾诉…我现在觉得非常幸福哦~指挥官呢？有{namecode:165}陪伴身边，你…感到幸福吗？",
-	main = "虽然对自己的防护能力很有自信，不过，为了不让指挥官担心，我会谨慎行事的~|指挥官，请喝茶！呵呵，这也是和{namecode:70}请教过并且不断练习后的成果哦~|无论开心还是不开心的事，都请尽管向我倾诉吧，我会一直在你的身边，听你说话的~",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "欢迎回来，指挥官。放心吧，我会一如既往地陪在你身边的~",
-	vote = "",
-	hp_warning = "",
-	id = 399048,
-	detail = "今天向{namecode:71}学习了新的菜式呢~指挥官，敬请期待明天的便当吧~呵呵~",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499020] = {
-	feeling1 = "有在认真反省了吗？",
-	feeling3 = "在战场上，勇气并没有意义，谁更接近拉普拉斯的恶魔，谁就更接近胜利",
-	lose = "那么，请静待下次演奏吧",
-	propose = "以后，悲伤也好、喜悦也好、痛苦也好、欢愉也好，无论发生什么，都来依靠我吧，我会一直、一直理解你、包容你、支持你的喔……",
-	expedition = "要好好欢迎认真完成了委托的孩子们哟",
-	win_mvp = "真遗憾，安可演奏还没有开始呢",
-	home = "欢迎回来，无论遇到什么事，都可以向我报告",
-	mission = "无论想要什么，我都可以帮你拿到",
-	touch2 = "仿佛变回了小孩子呢……真可爱",
-	voice_key_2 = -1,
-	skill = "第九交响曲，合唱！",
-	drop_descrip = "战列舰—{namecode:440}",
-	mail = "那么，我来唱给你听吧",
-	touch = "害怕的时候，就躲到我身后吧",
-	profile = "铁血海军{namecode:440}号战列舰，H计划的产物之一。我的孩子，如果失眠的话，就让我为你唱首摇篮曲吧",
-	mission_complete = "那么，想要什么奖励呢？",
-	feeling4 = "比起战斗，我更喜欢像现在这样，来、张开嘴，啊~~",
-	unlock = "欢迎你的到来，我的孩子，你希望我赠予你什么？黄金、荣耀，还是青春？",
-	feeling5 = "尽情地向我撒娇吧，更多地、更多地……",
-	main = "战斗时压抑的感情，就在演奏中释放出来吧|战场上的我理性得几近残酷？我姑且把它当做一种夸奖吧|即便不小心惹怒了我，只要好好道歉，我还是会原谅你的",
-	battle = "聆听我的演奏，献上痛恶、深惧与绝望吧！",
-	upgrade = "感觉能奏出更精妙的乐曲了呢",
-	voice_key = 49902,
-	headtouch = "",
-	feeling2 = "我是本不应出现的存在，不过，既然我已存在于此，那么其中必然蕴藏着某种合理性…",
-	login = "快拉开今日的帷幕吧，奏者们早已急不可耐了！",
-	vote = "",
-	hp_warning = "再稍微，忍耐一下喔",
-	id = 499020,
-	detail = "我的孩子，若想取得彻底的胜利，必须保持绝对的理性",
-	couple_encourage = {
-		{
-			{
-				40146
-			},
-			1,
-			"偶尔也来向我撒撒娇嘛",
-			0
-		},
-		{
-			{
-				40502
-			},
-			1,
-			"我的指挥无法让你的才能淋漓尽致地展现出来吗……",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[499021] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "欢迎回来。我准备了饮料，一边暖暖身子一边报告吧",
-	mission = "",
-	touch2 = "你喜欢这里吗，孩子？呵呵呵",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "这就是重樱称作“和服”的装扮吧。质地非常舒服，色调也很高雅——穿法？孩子，你说的是什么呢？",
-	mail = "",
-	touch = "与人拥抱的触感，是肌肤的温热——你明白的吧，孩子",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "这就是重樱称作“和服”的装扮吧。质地非常舒服，色调也很高雅——穿法？孩子，你说的是什么呢？",
-	feeling5 = "",
-	main = "重樱的雅乐，所谓“幽玄”…究竟代表着怎么样一种感情…我非常感兴趣呢|感情的压抑与释放，可以是毒也可以是药。合理地控制自己的状态，对于提高效率很有帮助哦|孩子，能帮我穿上这件衣服吗？",
-	battle = "与虚无的交响一起消失殆尽吧——！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "这应该是由我对你做的才对吧？孩子",
-	feeling2 = "",
-	login = "一直站在那儿很冷吧？过来吧，孩子",
-	vote = "",
-	hp_warning = "",
-	id = 499021,
-	detail = "人类的欲望是无限的。没错…就像这巨大的舰装一般…追求更巨大的形态、更强大的力量…更多的炮塔…以及更伟大的荣光——",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499028] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "不急着报告，先让我看看你…嗯，很好，没有什么异常~那么，有什么要和我说的吗？",
-	mission = "",
-	touch2 = "呵呵，真是调皮的孩子呢，没关系，我会包容你的一切的",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "啊啊…真是如梦境一般的展开呢…让我们把这美妙的乐章永远、永远续写下去吧，我的孩子？",
-	mail = "",
-	touch = "呵呵，渴望与挚爱接触的温暖了吗？来吧，你可以再靠近一些，我的孩子",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "啊啊…真是如梦境一般的展开呢…让我们把这美妙的乐章永远、永远续写下去吧，我的孩子？",
-	feeling5 = "我会接纳你的全部，并且为你铲除挡在面前的一切…所以，尽情地向我撒娇吧，更多地、更多地…",
-	main = "我的孩子，遇到什么难题了吗？告诉我，我来把一切解决。|把冷酷的理性都留给战场上的对手，在我的面前，你无需压抑自己，只要尽情地撒娇就好了，我的孩子……|累了么？那么，就在我这里躺一会吧…嗯~好孩子好孩子~尽管睡吧，无论你想睡到什么时候…我都会一直在这里的",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "今天想听我为你演奏什么呢，我的孩子？",
-	vote = "",
-	hp_warning = "",
-	id = 499028,
-	detail = "希望从你那得到什么？呵…对我来说，世界上最美妙的宝物，就是现在的你哦，我的孩子？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[999010] = {
-	feeling1 = "加斯科涅是舰船、兵器，除此以外不存在任何定义",
-	feeling3 = "与她人接触过程中，加斯科涅产生了未知的反应，“感情”和“冲动”。请指示对应的行动",
-	lose = "失败是不被允许的。……请提高加斯科涅的性能，或者进行销毁",
-	propose = "现在的加斯科涅已经能够理解了，“爱”，那是不求回报的付出，又是期望回报的渴望，是热情，是心跳，是光——谢谢您，主人，这枚戒指会是加斯科涅最珍贵的宝物",
-	expedition = "提示，委托组已返回——",
-	win_mvp = "报告，目标歼灭，战斗任务完成",
-	home = "雅马邑白兰地，请用",
-	mission = "提示，任务未完成——",
-	touch2 = "警告，非正常高温，请求检查——",
-	voice_key_2 = -1,
-	skill = "就绪，火力全开！",
-	drop_descrip = "战列舰—加斯科涅",
-	mail = "提示，新邮件——",
-	touch = "请下令，主人",
-	profile = "加斯科涅，黎塞留级战列舰四号舰，因战争爆发而被迫取消建造…不过这次，加斯科涅将为主人而战，歼灭任何挡在主人面前的敌人",
-	mission_complete = "提示，任务奖励已下达——",
-	feeling4 = "与主人、与其他同僚接触过程中产生的反应，是“安心”与“喜悦”，这样的“感情”，对主人来说…确实存在战术上的意义",
-	unlock = "加斯科涅，唤醒完成。确认指令：将自由与胜利带给主人——您就是主人吗？加斯科涅，为您服务",
-	feeling5 = "加斯科涅在舰队生活中学到了许多“情感”，有了许多原本没有的“烦恼”，但也理解了“乐趣”。如果主人希望，加斯科涅现在可以开放自己“感情”对应的功能。主人，“谢谢你”",
-	main = "“勾起嘴角”…无法对该行为分析出战术上的意义|判定——主人的状态属于“偷懒”。对工作会产生影响|“自由行动”…无法对该命令分析出战术上的意义|关于现在舰队的成员，与加斯科涅记录中的信息，以及表情判断记录中的“笑容”的出现频度存在误差",
-	battle = "目标发现——歼灭开始",
-	upgrade = "能力提升…完成",
-	voice_key = 99901,
-	headtouch = "",
-	feeling2 = "其他同僚经常会让加斯科涅加入她们于作战任务无益的活动，请主人判断是否需要参加 ",
-	login = "身份确认——欢迎回来，主人",
-	vote = "",
-	hp_warning = "作战执行能力下降，需要增援",
-	id = 999010,
-	detail = "装备检查…状态良好，加斯科涅，随时待命",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[999011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "加斯科涅准备了饮料和食物，主人，请问是否需要进行营养补充",
-	mission = "",
-	touch2 = "主人。加斯科涅，自检中发现非正常高温",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "加斯科涅，准备完成。确认指令：陪伴主人在沙滩玩耍——…主人请求对指示“在沙滩玩耍”的详细说明",
-	mail = "",
-	touch = "主人的眼神…无法判断战术意义",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "加斯科涅，准备完成。确认指令：陪伴主人在沙滩玩耍——…主人请求对指示“在沙滩玩耍”的详细说明",
-	feeling5 = "",
-	main = "风速、气温，气象数据符合记录平均值，对航行没有影响|发现非敌性生物，主人，请指示下一步行动|一起游泳吗？请稍等，加斯科涅需要准备游泳圈…——“游泳不需要游泳圈”的指令和记录中出现不一致——",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "欢迎回来，主人。关于“自由行动”，加斯科涅正在进行数据累积以进行定性定义 ",
-	vote = "",
-	hp_warning = "",
-	id = 999011,
-	detail = "主人要对加斯科涅进行检查吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299030] = {
-	feeling1 = "呜…这就是我第一个喜欢上的人的真面目吗？",
-	feeling3 = "听我说啊，上次和重樱的舰船一起玩的时候，我摸到了真的猫耳哦！货真价实的呢！嘿嘿，很羡慕吧？…早就摸过了？真是的，你就不能满足一下我的虚荣心嘛……",
-	lose = "趁敌人没注意到的时候，赶紧溜走吧？",
-	propose = "既然亲爱的都这么表现出对柴郡的重视了，嘻嘻~那作为回报，接下来，我要说一百遍“我喜欢你”！我要开始啦，你可要听清楚了！在听完之前，哪里也不许去哦！亲爱的~",
-	expedition = "委托队回来啦！一起去迎接她们吧？啊，对了，顺便带上一些慰问品吧！",
-	win_mvp = "赢啦，亲爱的，我们赢啦！耶~！",
-	home = "亲爱的，你回来啦！出击没有受伤吧？没有遇到很难缠的敌人吧？没有突然对别的女孩子心动吧？嘿嘿，那就好~",
-	mission = "没有什么任务是能难倒亲爱的和我两个人的！",
-	touch2 = "呀~真是的，不允许偷袭啦！明明只要和我说一声就好了嘛。",
-	voice_key_2 = -1,
-	skill = "这是爱的一击哦！",
-	drop_descrip = "重巡洋舰-—柴郡",
-	mail = "有你的信件哦！是啥内容呢？让我也看看嘛~",
-	touch = "嗯哼？亲爱的，在想什么呢？嘻嘻，想法都写在脸上了哦~",
-	profile = "我是皇家所属的重巡洋舰，柴郡号！不过，直到见到亲爱的以前，我一直都是只存在于想象之中的舰船呢。所以，我的这副身心，都是属于亲爱的你的呢！",
-	mission_complete = "任务完成啦！这些任务对我们来说会不会简单了点？",
-	feeling4 = "亲爱的，你会因为我平时的攻势太猛烈了而觉得厌烦吗？如果真的是这样的话，那我就……我就用更加直接的行动，让亲爱的不得不接受我的爱意！首先是这个——飞扑攻击，嘿~！",
-	unlock = "呼啊——感觉像是睡了很久醒过来一样呢~嗯哼？就是你唤醒我吧？那，从今天起，你就是我的亲爱的啦！为什么？因为我对带我来到这个世界的你一见钟情啦！",
-	feeling5 = "如果没有你的话，我可能永远都见识不到这个美丽的世界，遇不见那么多可爱的伙伴们，也体验不到如此幸福的感情…所以，我…看招，嘿！抱住你了！亲爱的，最喜欢你啦！嘿嘿~",
-	main = "亲爱的，皇家的舰船之间有没有什么好玩的事情？别的阵营的也可以啦，都和我说说嘛~|柴郡才不是猫呢！虽然是像猫一样可爱不过总归不是猫啦！|这是主人您的红茶，请用…这是我和女仆队的成员学的，怎么样，像吗？嘿嘿~",
-	battle = "猜猜看，今天为你们准备的主菜是鱼雷呢，还是炮弹呢~？",
-	upgrade = "嘿嘿，谢谢亲爱的啦~",
-	voice_key = 29903,
-	headtouch = "我很喜欢猫耳的发饰呢！亲爱的，你要不也戴戴试试看？欸，就戴一下嘛，让我看一眼就好了啦！",
-	feeling2 = "啊，亲爱的，你去哪里了？如果是去了好玩的地方却不带上我的话，我就要生气啦！",
-	login = "亲~爱~的~！嘿，我抱！……这样的迎接过于热情了？嘿嘿，因为是亲爱的，所以免不了有些激动嘛！",
-	vote = "",
-	hp_warning = "啊疼疼疼！……但是，为了亲爱的，我是不会输的！",
-	id = 299030,
-	detail = "为什么对亲爱的一见钟情了？据说动物会把它们第一眼看到的生物视为“爱人”呢~是“父母”而不是“爱人”？哎呀，这不是重点啦~总之，从我见到的第一面起，亲爱的就是亲爱的啦！",
-	couple_encourage = {
-		{
-			{
-				29901
-			},
-			1,
-			"欲擒故纵是有可能会把对方吓走的哦？",
-			0
-		},
-		{
-			{
-				31201,
-				30116,
-				30113,
-				30121,
-				30126,
-				30163
-			},
-			1,
-			"哇！我、我可以摸摸看吗？",
-			0
-		},
-		{
-			{
-				10124,
-				10125
-			},
-			1,
-			"耶~是柴郡赢了！",
-			0
-		},
-		{
-			{
-				20204,
-				20208,
-				20210,
-				20212,
-				20220,
-				20222
-			},
-			1,
-			"多教教我嘛！",
-			0
-		},
-		{
-			{
-				19901
-			},
-			1,
-			"开party啦！！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[299031] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "没想到除了我以外还有那么多可爱的女孩子…努唔唔！论可爱和性感，我都是不会输的！…亲爱的，你也是这么想的，对吧！",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "亲爱的，精神一点嘛！难得的海边约会，怎么能无精打采的！…只是在海滩边和大家玩而不是约会？哎呀，有什么区别嘛！好啦，我们出发吧！",
-	mail = "",
-	touch = "想休息吗？可以啊！那，亲爱的是想睡在我的膝枕上呢，还是肚子上呢？嘻嘻~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "亲爱的，精神一点嘛！难得的海边约会，怎么能无精打采的！…只是在海滩边和大家玩而不是约会？哎呀，有什么区别嘛！好啦，我们出发吧！",
-	feeling5 = "",
-	main = "你说这张躺椅只够躺一个人？挤一挤就好啦！我不介意和亲爱的一起的~|累了还有冰镇汽水可以喝呢。咕嘟——咕嘟——哈啊~！这种清凉的感觉，真的是太~棒了！|嗯？问我要不要钓鱼？啊，我的话就算了！因为，钓鱼是要花很长时间的吧？怎么能把两人重要的时间用在上面呢！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "亲爱的，打起精神来了吗？好，那么就开始今天甜蜜的海滩约会吧！",
-	vote = "",
-	hp_warning = "",
-	id = 299031,
-	detail = "啊，我只是稍微分了会神，亲爱的你就不见了！老实交代，是，是不是偷偷去和别的女孩子玩了！我，我也不是那么小气的人啦……只是，至、至少也和我说一声嘛！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299032] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托队回来啦！不知道德雷克有没有一起？",
-	win_mvp = "亲爱的~太棒啦♪",
-	home = "亲爱的觉得其他小伙伴们的服装怎么样呀？有没有想看柴郡穿哪套？现在这套就很棒？呀~亲爱的真是的~♡",
-	mission = "",
-	touch2 = "亲爱的的话，这点肌肤接触OK的♪",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "柴郡也来献唱一曲吧~咳咳~……唔，说起来，柴郡好像不会唱东煌的歌欸？",
-	mail = "",
-	touch = "有什么想要柴郡做的事情吗？",
-	profile = "",
-	mission_complete = "任务完成啦！亲爱的，快确认奖励吧~♪",
-	feeling4 = "",
-	unlock = "柴郡也来献唱一曲吧~咳咳~……唔，说起来，柴郡好像不会唱东煌的歌欸？",
-	feeling5 = "",
-	main = "亲·爱·的~我蹭我蹭~嘿嘿，和亲爱的在一起真开心~♡|开叉很Sexy，化妆很Fashion，耳朵自然是无比Cute♪亲爱的觉得呢？|亲爱的~放松放松~今天是放下工作，和柴郡一起游玩的时间哦？",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "亲~爱~的~！…啊，不行，柴郡现在可是东煌淑女，得再“得体”一些才行♪",
-	vote = "",
-	hp_warning = "",
-	id = 299032,
-	detail = "亲爱的~欢迎你的到来~♪无论想听什么想看什么都尽管跟柴郡说吧♡",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299033] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "亲爱的，能帮我提下裙子吗？这段路不是很好走呢……嗯嗯，谢啦~",
-	mission = "",
-	touch2 = "呀！亲爱的怎么老喜欢偷袭啦！真是的~",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "“亲爱的，我来接你了~”…一般来说我才是要被接的那个？这不重要啦，重要的是接下来和亲爱的一起度过的时光哦~♪",
-	mail = "",
-	touch = "被柴郡迷到目不转睛了吗？嗯嗯，喜欢就多看看~",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "“亲爱的，我来接你了~”…一般来说我才是要被接的那个？这不重要啦，重要的是接下来和亲爱的一起度过的时光哦~♪",
-	feeling5 = "",
-	main = "你说，在森林里会不会碰到一些有趣的东西？比如说……雪之精灵之类的！童话里不就有这样的嘛~|亲爱的，快看快看！这里有一片十二角星的雪花哦！啊，化掉了……|搭手礼…是要怎么样来着？唔，感觉好麻烦。我和亲爱的还是简单随意的牵手就好啦！嘿嘿~蹭蹭~",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "亲爱的，我们快出发吧！这孩子已经有些按捺不住了呢~",
-	vote = "",
-	hp_warning = "",
-	id = 299033,
-	detail = "如果柴郡是宫殿里的公主的话……亲爱的一定会骑着白马来接我的，对吧对吧！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299040] = {
-	feeling1 = "若只是几次无心之过，我是不会放在心上的，但如果你还是这样一意孤行，那就别怪我不留情面了。",
-	feeling3 = "你对冒险也有兴趣吗？太好了，我正愁缺个伴呢，说吧，你想要的是寻找大海中的黄金秘宝，还是探寻远方的神秘国度？",
-	lose = "今天的所有屈辱，我都会铭记在心的…走着瞧吧！",
-	propose = "你不觉得奇妙吗？这种既不是“被征服”也不是“不甘心”，单纯感到“羞耻”的感觉……都是因为你，我都变得不像我了。虽然我也不讨厌这样的状态…就是了。你能理解吗？",
-	expedition = "果然老老实实地做委托没有直接从敌人手里掠夺来得过瘾啊…啊，没什么。",
-	win_mvp = "胜利，无论何时都让人倍感愉快啊，哈哈！",
-	home = "作战辛苦了，正好我准备了些新鲜的葡萄，要来一颗吗？…那好，接好了！嘿！",
-	mission = "按部就班地做任务可不是我的风格，嗯…先看看有多少报酬吧！",
-	touch2 = "嚯~？你胆子还不小嘛~！",
-	voice_key_2 = -1,
-	skill = "可别怪我无情了！",
-	drop_descrip = "重巡洋舰-—德雷克",
-	mail = "信件，会不会发现了哪里有宝藏的消息呢，哈哈。",
-	touch = "我喜欢直白的人，所以有什么事尽管直接说出来就好。",
-	profile = "我是皇家海军的重巡洋舰·德雷克。也许你对我的存在还感到比较陌生，不过没关系，在以后的战斗里，我的9.2寸炮会给你留下足够充分的深刻印象的！",
-	mission_complete = "虽然任务报酬还不少，不过像这样由上面施予的奖励总感觉少了点什么呢…",
-	feeling4 = "唔…一起探险是挺好的，不过，最近出去的地方是不是都太近了点？不是港区内就是近海……老实说，有点无趣啊。下次，我带你去大海更深的地方吧？",
-	unlock = "你就是指挥官吧？看起来不错~皇家海军重巡德雷克，现在加入你的麾下！姑且问一句，出击的许可，应该已经准备好了吧？",
-	feeling5 = "原来如此，你并不在乎旅行的终点，而更加在意同行的伙伴吗。也就是说，只要和我一起，无论去哪都没问题！是这样吧，哈哈哈…唔？等等，这意思不就是…",
-	main = "武装舰船的是装甲、火炮和鱼雷，而武装人的，则是胆识、见识与学识。|我不讨厌礼节，也不反对适当的仪式感，不过，繁文缛节的东西，能少点还是尽量少点好。|比起榨好的苹果汁，还是沾着露水的新鲜苹果更诱人，你也是这么觉得的吧！",
-	battle = "哼哼哼，放开了大干一场吧！",
-	upgrade = "感觉炮管能发出更让人愉快的声音了，哈哈！",
-	voice_key = 29904,
-	headtouch = "",
-	feeling2 = "战场上无需拘泥于手段，无论是靠小伎俩，还是正面进攻，站到最后的胜者才有资格谈论正义，如此而已。",
-	login = "来了啊。今天先做点什么？先研究下作战也好，要直接先出击也是没问题的哦？",
-	vote = "",
-	hp_warning = "嘁，对面的有两下子嘛！",
-	id = 299040,
-	detail = "任何伟大的事迹都必定有它的起点，但惟有坚持到最后才能获得真正的荣耀——所以继续努力吧！",
-	couple_encourage = {
-		{
-			{
-				90501
-			},
-			1,
-			"比比看谁能夺得更多的战果吧！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[299041] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "运动过后的冰镇西瓜，呼呼…还有比这更棒的享受吗？指挥官，你要是不吃的话，我可就不客气了。",
-	mission = "",
-	touch2 = "",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "呼…这么游着感觉还是不太过瘾啊。你也别在那傻看着，来陪我游会泳吧？",
-	mail = "",
-	touch = "嚯嚯~确实感觉肩膀有些酸了呢，你还挺上道的嘛，指挥官。",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "呼…这么游着感觉还是不太过瘾啊。你也别在那傻看着，来陪我游会泳吧？",
-	feeling5 = "",
-	main = "唔，都说了别一直在那傻看着呀，我都要感觉不自在起来了…|哈哈哈，这点小小的颠簸就受不了了，看来这小家伙还需要锻炼啊！|呼…还是不太过瘾啊，我再游几个来回好了。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "本以为所谓“很适合游泳的地方”应该是哪个更宽广的海边，没想到只是这么个小小的露天泳池…不过算了，作为打发时间的地方来说倒也足够了。",
-	vote = "",
-	hp_warning = "",
-	id = 299041,
-	detail = "这个泳池貌似还有人工造浪的功能？呵呵，比想象中的有趣些嘛！我看看最大能到达什么程度…",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499030] = {
-	feeling1 = "结果第一个指挥官就是这个样子……我还真是可怜啊。",
-	feeling3 = "实战经验不足，就用更多的实战去弥补。指挥官，请不用顾忌我的言辞，指派我去参与作战吧。",
-	lose = "哼，就当是积累实战经验吧。",
-	propose = "对我来说，存在的意义早已不再停留于战斗。我的存在，我的命运，早已经和你紧紧地系在了一起了呢。我的心永远属于你，我的指挥官。",
-	expedition = "失陪了，我去迎接一下委托归来的她们。",
-	win_mvp = "有我在，这不是理所当然的吗？",
-	home = "装备也需要维护一下了呢。",
-	mission = "难道你要把这些任务一直留着吗？",
-	touch2 = "正好，拿你来试试主炮吧。",
-	voice_key_2 = -1,
-	skill = "就是现在，主炮齐射！",
-	drop_descrip = "轻巡洋舰——{namecode:479}",
-	mail = "有新的信件，你该不会忘了吧？",
-	touch = "怎么了？莫非你是在向我寻求安慰？",
-	profile = "我是{namecode:479}号巡洋舰。原本，我应当作为{namecode:425}级的后续舰型诞生，然而因为种种原因，我的建造最终被取消。这么说的话，你应该就能明白了吧。",
-	mission_complete = "任务的奖励……你还要放多久呢？",
-	feeling4 = "如果说之前是为了证明自己而战，那我现在更愿意为你而战。指挥官，我想向别人证明，你是一个值得钦佩的人。",
-	unlock = "我是巡洋舰{namecode:479}。看起来，你就是我的第一个指挥官了啊。可别让我失望！",
-	feeling5 = "你是我第一个，也是我最后一个效忠的指挥官。不仅如此，你是我唯一一个想要走近得更近的人……",
-	main = "你在干什么！？牛奶可是对咖啡的亵渎！砂糖也一样！|难以置信……那么大的办公室居然连一台咖啡机都没有……|如果能够在大战中顺利诞生，我能够做到什么事呢……算了，反正都过去了。",
-	battle = "可不要拖了我的后腿。",
-	upgrade = "哼，有点想在实战中看看效果了呢。",
-	voice_key = 49903,
-	headtouch = "",
-	feeling2 = "既然降生于世，我就要做些什么。不然，我将无颜面对那些设计我和建造我的人们。",
-	login = "让我的等待变得有些意义起来吧，指挥官。",
-	vote = "",
-	hp_warning = "怎么装备有些不听使唤了……",
-	id = 499030,
-	detail = "战绩么……那种东西从今天算起就好了。",
-	couple_encourage = {
-		{
-			{
-				49901,
-				49902,
-				49904
-			},
-			1,
-			"这才是铁血真正的实力！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[499032] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "是我过于懈怠了么……",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "指挥官，你刚刚到哪里去了？这种时候劳累自己，不就违背了要好好放松的初衷了么。",
-	mission = "任务啊……先暂时放一放吧。休息好了再做也不迟。",
-	touch2 = "等，等一下！你这样子的话会……",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "哦？这么快就来了么。稍等一下……啊，你不用走也没关系的，我马上就弄好了……",
-	mail = "有新的信件。已经托人放到指挥室了，之后再去看吧。",
-	touch = "你已经做得很好了，现在就尽情地休息吧。",
-	profile = "",
-	mission_complete = "已经完成任务了吗？这下就能更加放心地休息了。",
-	feeling4 = "",
-	unlock = "哦？这么快就来了么。稍等一下……啊，你不用走也没关系的，我马上就弄好了……",
-	feeling5 = "",
-	main = "嗯唔唔唔……这个带子，要收紧点还真不容易。不系好的话衣服又会……|虽然没法把整个咖啡机带到温泉池旁边，不过我还是准备了咖啡的——当然是黑咖啡。|镜子？温泉的水汽都蔓延到房间里了么……不是这个意思？你是指……啊……",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "多等你一会也没关系，因为我知道，你是不会失约的人。",
-	vote = "",
-	hp_warning = "",
-	id = 499032,
-	detail = "之前{namecode:450}说想把舰装带到温泉池里玩，被我和{namecode:428}阻止了。至于{namecode:426}，似乎很不想和我们一起泡的样子……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499040] = {
-	feeling1 = "比起令我失望，我更加好奇的是，你这样的人是怎么成为指挥官的。",
-	feeling3 = "你会为逝去的战友悲伤吗？但是，如果大家都顾着悲伤，因此犹豫不决的话，这场战争就无法取得胜利。",
-	lose = "不可能……我的计划不可能出现差错……",
-	propose = "我明白了，我会一直在你身边辅佐你的。所以就……等等，那个难道是……这，这和说好的不一样啊？我也不是说讨厌，只是还没准备好……总之，给，给我一点思考的时间——",
-	expedition = "委托的队伍回来了。很好，一切都和计划一致。",
-	win_mvp = "这场胜利，从一开始便是我等囊中之物。",
-	home = "战争可不会给人喘息的时间，指挥官。",
-	mission = "有任务，指挥官，拖延可不是明智的选择哦？",
-	touch2 = "接下来的话就等到军事法庭上再说吧。",
-	voice_key_2 = -1,
-	skill = "你们已经没有回头路了！",
-	drop_descrip = "战列巡洋舰——{namecode:486}",
-	mail = "有邮件，是新的情报吗？",
-	touch = "嗯？难道计划有变动吗？",
-	profile = "我名为{namecode:486}，曾经是只存在于铁血构想中的舰船。而如今…既然命运将我带来到了你的面前，那么我的使命就是辅佐你，实现你的夙愿。",
-	mission_complete = "任务完成了，着手下一个任务吧，指挥官。",
-	feeling4 = "无论是工作还是战斗，我们之间的配合都变得越来越默契了。但是这样下去的话，我会不会变得有点依赖指挥官了……",
-	unlock = "叫醒我的人就是你吗…？铁血战舰，{namecode:486}，乐意为你效劳。",
-	feeling5 = "过于依赖一个人可不是一件好事。过深的羁绊在战争中往往会成为桎梏，甚至让人做出不理智的判断，破坏原本的计划。有点奇怪，我为什么要和你强调这些……",
-	main = "{namecode:433}级……有机会的话真想和那对姐妹聊聊呢。|计划往往赶不上变化，指挥官，任何事情都值得再三思考。|不要轻易地去怪罪他人，有可能只是因为你没有看清全部。",
-	battle = "现在逃跑还来得及——",
-	upgrade = "只有实力增加了，计划的不安因素才能减少。",
-	voice_key = 49904,
-	headtouch = "",
-	feeling2 = "实力？确实，光是一个响亮的名字不足以说明战士的实力。不过放心吧，时间会证明你的这种担心是多余的。",
-	login = "欢迎回来，指挥官，规划好接下来要做什么了吗？",
-	vote = "",
-	hp_warning = "准备启动应急方案…！",
-	id = 499040,
-	detail = "奇怪，为什么港口里的大家都一副轻松的样子……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499041] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "全力以赴地投入到某项事物中，便是战斗——无论是在战场上倾泻火力，还是于纸上挥洒笔墨，都是如此。",
-	mission = "",
-	touch2 = "不要在人集中精神的时候来打扰！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "没想到本应与这类“艺术嗜好”无缘的我，竟然有机会像这样尽情地挥洒笔墨…如何，虽然是东方的艺术，但也还算无损我的名字之威吧？",
-	mail = "",
-	touch = "",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "没想到本应与这类“艺术嗜好”无缘的我，竟然有机会像这样尽情地挥洒笔墨…如何，虽然是东方的艺术，但也还算无损我的名字之威吧？",
-	feeling5 = "",
-	main = "{namecode:434}，光是捣弄数据可体验不到艺术的乐趣啊，关于这一点你反而可以向{namecode:433}好好学学呢。|{namecode:436}，你可知{namecode:435}去了哪？啊，没什么，既然你有把握我就放心了。|雪与梅…吗？虽然不是我见惯的风景，不过，可以肯定，眼前这美丽的风景，必将在我的记忆中长存。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "欢迎回来，指挥官，休息日就尽管投身于爱好之中吧。",
-	vote = "",
-	hp_warning = "",
-	id = 499041,
-	detail = "奇怪，为什么港口里的大家都一副轻松的样子…是我平时太紧张了…吗",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[899020] = {
-	feeling1 = "为何，要给与我虚假的光明？",
-	feeling3 = "树木为了抵御风雨而深扎土壤，鱼儿为了种族存续逆流而上。即便知晓己身终归虚无，万物仍会奋力抵抗命运——",
-	lose = "此处…还不是终点。",
-	propose = "即使世界失去言语，我仍会倾听你的呼吸；即便世界失去色彩，我仍会注视你的脸庞。没有任何事物，能将你从我心中抹去分毫。…你给了我心灵的温暖，我会予你永恒的守护。这是…我的意志。",
-	expedition = "鸟儿们的啼鸣近了——她们要归巢了。",
-	win_mvp = "使命，必须得到践行。",
-	home = "暂时，让脑海里只留下白兰地的醇香吧。世界需要“暂时”，人人都需要“暂时”。",
-	mission = "不奋力挥舞双翼，便无法触及蓝天。不奋勇滑动双桨，便无法到达彼岸。",
-	touch2 = "指挥官的所为——是最原始，也最为人忌惮的…冲动。",
-	voice_key_2 = -1,
-	skill = "于深邃的蓝色中沉睡吧。",
-	drop_descrip = "战列舰——香槟",
-	mail = "报信人带来了远方的呼唤。是喜？是悲？还是，一如既往？",
-	touch = "互相碰触的温暖…令人难忘。",
-	profile = "不曾有过使命，不曾有过功名。我本是虚无，却具现于此世。我的指挥官，愿香槟能成为胜者的佳酿。",
-	mission_complete = "最美的鸢尾花，会绽放在最辛勤的园丁的泥土上。",
-	feeling4 = "守护舰队必要之武装——装甲、主炮、鱼雷——指挥官皆无法装备。是故，身为舰船的我，才更应履行使命，守护舰队与指挥官。",
-	unlock = "自由鸢尾、香槟。指挥官，请给予我使命，请给予我存在的理由。",
-	feeling5 = "若无力之人都试图反抗宿命，手握力量之人便更不能袖手旁观。指挥官之光辉、温暖、感情——值得我献上全部保护。",
-	main = "指挥官，你在思考什么？生存的意义、亦或是…？|潮起潮落，浪涌浪跌，此乃自然之理，随波逐流也许正是你我的宿命。|与这支舰队共存，就是我的使命——是你给予了我这个使命。",
-	battle = "为舰队而战，便是我的使命。",
-	upgrade = "利刃终会锈蚀，一味追求强大，又有何意义？",
-	voice_key = 89902,
-	headtouch = "",
-	feeling2 = "世界如同平静的巨大湖泊。投以卵石，至多激起些许涟漪，而后终将重归永恒的平静。",
-	login = "告诉我，你需要的，你期望我做的一切。",
-	vote = "",
-	hp_warning = "伤痕，终会成为甲胄。",
-	id = 899020,
-	detail = "指挥官，告诉我你所追求的终点——是无人能及的丰功伟业，君临世界的顶点，亦或只是经营好属于自己的一隅天地？",
-	couple_encourage = {
-		{
-			{
-				40146
-			},
-			1,
-			"只要你想要看见，世界就是五彩的颜色。",
-			0
-		},
-		{
-			{
-				99901
-			},
-			1,
-			"凝视、倾听，这个世界，满溢着感情。",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[899021] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "告诉我，这身祝祭之服的意义。告诉我，此刻我应采取的行动。",
-	mission = "",
-	touch2 = "受欲望驱使是动物的本能，因好奇而挑战禁忌，乃是人类的本心…",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "并非将希望寄托于命运，只是将此身沐浴于祝祭的暖风。希求瑞兆乃人之常情，与信仰并无违背。",
-	mail = "",
-	touch = "",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "并非将希望寄托于命运，只是将此身沐浴于祝祭的暖风。希求瑞兆乃人之常情，与信仰并无违背。",
-	feeling5 = "",
-	main = "群山、飞鸟、果实，此乃告知春之来访的喜乐之梦。|维系的思念如同绵绵粉雪，“感情”的邀约宛若和煦春风。…和平的祭典，令人感到无比欢欣。|枢机卿的爱书，乃香槟所荐。想要满足好奇心，人与舰船皆是如此。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "……？想知晓，我所做的梦吗？",
-	feeling2 = "",
-	login = "于新年之夜所求之物——乃静谧的安眠，与念想的七彩之梦，如此而已。",
-	vote = "",
-	hp_warning = "",
-	id = 899021,
-	detail = "回归童心，嬉戏至暮色黄昏，亦是享受祝祭之法。不过，我并不了解此番嬉戏之准则……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[899028] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "誓言不破，故香槟之守护长存。",
-	propose = "",
-	expedition = "耳畔传来恋人的甜言蜜语——当一同准备出门迎接。",
-	win_mvp = "不复翩然浮沫之虚，愿此胜利长久纪存。",
-	home = "告诉我。圣洁洗礼的沐浴，餍足味蕾的丰饶，沉溺梦幻的幽期。",
-	mission = "",
-	touch2 = "知悉此情之长久，仍寻求片刻欢愉——香槟所行，皆为实现指挥官所愿。",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "颂扬之歌献予尊崇鸢尾，鸣奏之乐凝为清澈祈祷。赐福所求并非礼拜之仪，永存羁绊方乃人之伟业——",
-	mail = "信件往来——欢喜、空虚、自豪、不甘——皆由指挥官回复所致。",
-	touch = "指挥官之体温，心跳，五感所触，皆诱香槟喜不自胜。",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "颂扬之歌献予尊崇鸢尾，鸣奏之乐凝为清澈祈祷。赐福所求并非礼拜之仪，永存羁绊方乃人之伟业——",
-	feeling5 = "",
-	main = "生命无常短暂，坚船的龙骨也非永存不灭。耽溺一时的幸福，实乃定命之人无法逃脱的宿命。|盈满空杯，为香槟之责。提醒时刻，督促休息，皆如是——|世代传颂的赞美诗当为真心。香槟，为伟业奉上称赞，为爱恋赋予永恒。",
-	battle = "此身皆为指挥官而战——便是香槟所定之信条。",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "感慨，知觉。相系之心的鼓动怦然，触碰双唇的润然柔香。",
-	vote = "",
-	hp_warning = "",
-	id = 899028,
-	detail = "誓约无谓称颂。恋慕、忠诚、肩负使命、信仰教条——现在的香槟乃守护身为人之幸福的存在。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199030] = {
-	feeling1 = "摸摸，老师，好孩子，不哭…安克雷奇，不哭…笑笑，嗯…",
-	feeling3 = "老师…！小兔子，折好的…送给你…嗯！",
-	lose = "安克雷奇，输掉了……敌人，好可怕……",
-	propose = "在一起的…约定…？那，拉勾！…戒指？…要帮我戴上？嗯！…嘿，戴好了！安克雷奇…也做了一个…老师，戴上…嗯！",
-	expedition = "委托…？大家…是去了哪里？安克雷奇，想知道…可以吗？",
-	win_mvp = "赢了…！安克雷奇，好厉害…！",
-	home = "老师……去哪里了？安克雷奇，一个人…有点害怕…",
-	mission = "任务…没完成？安克雷奇，想帮忙…嗯！",
-	touch2 = "软软的…老师，喜欢…？",
-	voice_key_2 = -1,
-	skill = "安克雷奇，fight！",
-	drop_descrip = "重巡洋舰-—安克雷奇",
-	mail = "信件…？复杂的，看不懂…老师，看得懂…？",
-	touch = "安克雷奇，喜欢摸摸…老师，也喜欢摸摸…？",
-	profile = "安克雷奇…是白鹰重巡。和巴尔的摩她们…是朋友！和老师也是…嗯！最好的…！",
-	mission_complete = "任务…完成了？老师…好厉害！",
-	feeling4 = "老师…是特别的！安克雷奇…喜欢！……安克雷奇，也是特别的？…嗯！",
-	unlock = "指挥…官？老师…？嗯，老师！安克雷奇，喜欢老师…！",
-	feeling5 = "老师…和安克雷奇，一直在一起？…嗯！安克雷奇，和老师…女孩，和王子…一直，一直在一起…",
-	main = "外套…披上…脱下…再披上……嘿嘿~|漫画里，女孩子和王子…暖暖的……很喜欢…！|老师…很忙？安克雷奇，陪你…嗯！|",
-	battle = "…是敌人！老师，大家…一起…！",
-	upgrade = "安克雷奇…变厉害！",
-	voice_key = 19903,
-	headtouch = "头发…喜欢？老师的，我也摸摸看…",
-	feeling2 = "不认识的人，好多…老师，安克雷奇，有点怕…",
-	login = "老师…！安克雷奇，等到了…！",
-	vote = "",
-	hp_warning = "好痛…呜呜…疼痛，不要…",
-	id = 199030,
-	detail = "“老师”，比“指挥官”短，也好听…安克雷奇，喜欢…！老师…喜欢…？",
-	couple_encourage = {
-		{
-			{
-				10316
-			},
-			1,
-			"巴尔的摩…很酷！",
-			0
-		},
-		{
-			{
-				10311
-			},
-			1,
-			"威奇塔…很酷！",
-			0
-		},
-		{
-			{
-				10324
-			},
-			1,
-			"布莱默顿…也很酷！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[199031] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "“委托”…要等大家回来…对吧？",
-	win_mvp = "做到了！安克雷奇，真棒…！",
-	home = "老师，去哪里了…？安克雷奇，一个人，没法好好游…啊！老师！诶嘿嘿♪",
-	mission = "",
-	touch2 = "摸摸…老师…喜欢？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "嗯嗯…嘿咻…老师…？安克雷奇，做得对吗？游得还可以吗？那就好…掉到水里就糟糕了对吧…？",
-	mail = "“邮件”，不能掉到水里…嗯…做到了！",
-	touch = "湿透了…老师，没事吗…？",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "嗯嗯…嘿咻…老师…？安克雷奇，做得对吗？游得还可以吗？那就好…掉到水里就糟糕了对吧…？",
-	feeling5 = "老师，安克雷奇的“指挥官”…不过，安克雷奇，喜欢老师…所以可以…一直叫“老师”吗…？安克雷奇，和老师在一起…♪",
-	main = "老师，在梦里，也会教安克雷奇很多吗…？诶嘿嘿~|巴尔的摩，好会游…！安克雷奇，能变得那么会游吗？诶嘿嘿，老师教我的话，一定…|鲨鱼，滑溜溜…安克雷奇，努力不掉下去！嗯！",
-	battle = "安克雷奇…不能掉下去，不能沉下去…！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "嘿咻…嗯…老师…？安克雷奇，做得好吗？蹬腿…好，好像又要掉下去了…",
-	vote = "",
-	hp_warning = "",
-	id = 199031,
-	detail = "教安克雷奇的…嗯…不叫“指挥官”应该叫“老师”！安克雷奇，喜欢老师！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399050] = {
-	feeling1 = "哼，末等之流，离我远点。",
-	feeling3 = "做得不错，看来你有与我携手并进的资格…哼，如果被我发现你贪图安逸而退步的话，我会比谁都快地抛弃你在一边的。",
-	lose = "赶、赶紧撤退！……我的刀呢！？",
-	propose = "哼，别想那么简单让我老实听你……等等，我的刀！你，你什么时候拿走的？！我听你的总行了吧？！快还给我！哎，彻底输了…但，感觉倒也不坏就是了…",
-	expedition = "我说怎么这么大动静，原来是委托队回来了啊。要去迎接？哦，那走吧。",
-	win_mvp = "就凭你们这种货色也想战胜{namecode:204}？可笑！",
-	home = "我的刀…我的刀……呼~还是拿在手上安心……嗯？你在这干嘛？现在不是发呆的时间吧？",
-	mission = "任务？我不想在小事上浪费我的时间，你想办法自己解决吧。",
-	touch2 = "看来你是吃了豹子胆啊……喂，我叫你住手没听到吗！",
-	voice_key_2 = -1,
-	skill = "降临吧，天罚！",
-	drop_descrip = "航空母舰—{namecode:204}",
-	mail = "新的信件……不是挑战书？没意思。",
-	touch = "干嘛？有话就说，别磨磨唧唧的。",
-	profile = "我是重樱航空母舰{namecode:204}。任何人若是对我的实力有所质疑，欢迎她们随时来挑战我，我会告诉她们什么叫做“碾压”。",
-	mission_complete = "不错。能把这些小事完成的井然有序，值得夸奖。",
-	feeling4 = "（小声）你有见到我的刀吗？我明明放在手边的，一觉醒来之后就找不到了……总，总之，再这样下去会变得很麻烦，所以快帮帮我！",
-	unlock = "你就是指挥官吗？我的名字是{namecode:204}。任何想要掌控我的努力都将是徒劳的，牢记在心吧！",
-	feeling5 = "哎，既然丢人的一面被你知道了，那就只好时刻都盯着你避免泄密了。从今天起，你所有的行动我都要跟着。……一起出去玩？当然包括在内。…等下，总觉得有哪里不对……",
-	main = "来这里之后，能切磋的对手多了不少，甚是愉快啊。…朋友？哼，对我来说有一两个就够了。|武器是我的灵魂。若是手中空空如也，恐怕……不，没什么。|闲着的时候姑且是做了几个饭团，你要是饿的话就拿去吃吧。",
-	battle = "我倒要看看，何人竟敢与我{namecode:204}为敌！",
-	upgrade = "这下，与其他人的差距要拉得更开了啊……",
-	voice_key = 39905,
-	headtouch = "随便摸我的头，你就不怕被我斩了？",
-	feeling2 = "做得好就夸，做不好就批评，一码归一码，这就是我的原则。我会做好我自己的事，你不需要担心我。",
-	login = "不错，准点来了嘛。我还以为你会睡个懒觉啥的。",
-	vote = "",
-	hp_warning = "竟然伤到我{namecode:204}……！？",
-	id = 399050,
-	detail = "房间有点乱？这有什么关系。反正每样东西要找的时候我都能找到，这不就够了？",
-	couple_encourage = {
-		{
-			{
-				30602,
-				30701,
-				30707
-			},
-			1,
-			"不是很好相处啊……",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[399051] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "",
-	home = "呣呣……噢，指挥官你回来得正好。快帮我想几个新菜品！",
-	mission = "来新订单了？行，马上就做好！",
-	touch2 = "你是不是想变成生鱼片了？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "这位客人，您点的刺身拼盘好了！…离得太近了？怎么，本{namecode:204}亲自给你上菜，你还找起茬来了？……嗯，这就对了，乖乖接受就好了~",
-	mail = "新的信件……是竞争对手寄过来的挑战书么？",
-	touch = "别随便碰我的刀！…咳咳，抱歉，有些激动了。没吓到你吧？",
-	profile = "",
-	mission_complete = "哦？你的任务完成了？正好我这边的订单也完成了呢！",
-	feeling4 = "",
-	unlock = "这位客人，您点的刺身拼盘好了！…离得太近了？怎么，本{namecode:204}亲自给你上菜，你还找起茬来了？……嗯，这就对了，乖乖接受就好了~",
-	feeling5 = "",
-	main = "怎么，那边那桌是有什么事吗！……生鱼片少了一份么。哦，知道了，我这就切好送过来。|觉得刀工这种精细活我应该不擅长？哈哈，那你就大错特错了！现在就示范给你看，什么叫做又快又准的刀法！|我说，要不干脆你来给我打打下手吧？你这么能干，肯定能帮上我不少忙的！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "唔…嗯？……这个讨厌的感觉是……呀！？我、我的刀…？谢谢…咳咳！好啦，指挥官，该开工了！",
-	vote = "",
-	hp_warning = "",
-	id = 399051,
-	detail = "多亏了小伙伴们帮忙，厨房才能这么整洁呢。虽然稍微乱一点对我来说也没什么区别就是了，哈哈",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399052] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托组回来了？叫她们过来，一起听我演奏吧。",
-	win_mvp = "",
-	home = "刀刀刀刀去哪了？！这下可搞不了什么音乐了……哼！居然妄想利用{namecode:204}我的弱点，真是胆大包天！不会让你得逞的！",
-	mission = "",
-	touch2 = "刀可不在这里！…你不是来找刀的吗？！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "刀是在…好的。哼，是你啊。本想着你每天都和我们奋战沙场，没想到你还懂音律。来，就先用这首曲子来测测你的品味吧！",
-	mail = "",
-	touch = "♪～猜猜这是什么曲子吧。…可不是即兴演奏！",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "刀是在…好的。哼，是你啊。本想着你每天都和我们奋战沙场，没想到你还懂音律。来，就先用这首曲子来测测你的品味吧！",
-	feeling5 = "",
-	main = "刀，刀的话无需担心！你只需要专注于我奏出的旋律！明白了吗！？|什么？很吵？哼，你果然是个不懂风雅的粗人。就算再怎么驰骋沙场，也不能忘记磨炼高雅情操！|真想喝一杯……啧，这里连能当做下酒菜的东西都没有吗。没办法，我出一趟门采购吧。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "哼哼，刚才的曲子如何？嗯，无话可说么。是因为太好听连话都说不出来了吗？对吧？",
-	vote = "",
-	hp_warning = "",
-	id = 399052,
-	detail = "不愧是宴会会场，安排得井井有条嘛。哼，反正也会被醉酒的家伙们搞得一塌糊涂，就算再努力整理也没用——你不觉得吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499050] = {
-	feeling1 = "我可不会同情自甘堕落的灵魂哦？",
-	feeling3 = "指挥官，过来吧。要做什么？当然是 要你陪我喝几杯。安心吧，就算你醉了在我面前说胡话，我也不会介意的。",
-	lose = "我不会容许任何人在我面前抢走胜利的果实…等着瞧吧！",
-	propose = "誓约的证明？你喜欢这种形式上的东西吗？那样的话…不光是形式上的，我会给你更多实际上的束缚…呵呵呵，不如现在就让你见识一下吧~",
-	expedition = "委托完成了哦。难道你打算让同伴们在港口干等着吗？",
-	win_mvp = "弱小的水花，在巨浪面前不值一提。哼哼，啊哈哈哈！",
-	home = "虽然很想让你就这么休息，不过看桌上的文件数量…好像不太行哦？",
-	mission = "还有没完成的任务哦。你也不想被别人说成无能的指挥官吧？",
-	touch2 = "你还真敢啊。…喂，还来？！",
-	voice_key_2 = -1,
-	skill = "哈哈哈哈！被荒海之神的巨口吞噬吧！",
-	drop_descrip = "大型重巡洋舰-—{namecode:480}",
-	mail = "来自远方的信件…姑且还是看看吧。",
-	touch = "你想要…再靠近一点？",
-	profile = "我的名字，来源于传说中的深海之神。不过，比起那位呼风唤雨，支配波涛的海神，我的手段可温柔得多了哦~",
-	mission_complete = "不错，这才算是合格的指挥官。",
-	feeling4 = "我知道你想引起我的兴趣，但难不成你要一直盯着我吗？呵呵，你也算有所成长了呢……等等，你，你该不会是认真的吧！？",
-	unlock = "大型巡洋舰，{namecode:480}。指挥官，想要我为你驱使海浪吗？好啊，那就让我先看看你的能耐吧。",
-	feeling5 = "既然是想要挑战我，那我就不得不以深渊之神的名义将你彻底吞噬了——来呀，怎么不动了？不是说要把我……呀！？",
-	main = "喝酒的理由？只要有宴席，大家能开怀畅饮不就行了吗？|你喜欢看大海狂暴的那一面吗？那可是夹杂着暴风雨的，汹涌的海洋哦。|…嗯？难道是我让你分心了吗？",
-	battle = "咬碎你们！哈哈哈哈！",
-	upgrade = "为庆祝而饮一杯吧。……噗哈~",
-	voice_key = 49905,
-	headtouch = "……哈！？",
-	feeling2 = "我感兴趣的事情？呵呵呵~强大的对手、美味的酒、狂风暴雨的海洋，还有……你就这么想引起我的注意吗？",
-	login = "让我们看看是谁来了？哦，原来是你啊——那就…工作加油吧。",
-	vote = "",
-	hp_warning = "哦？小把戏被看穿了吗？",
-	id = 499050,
-	detail = "这孩子有时候会异常活泼，照顾的时候小心点哦，指挥官。",
-	couple_encourage = {
-		{
-			{
-				29901
-			},
-			1,
-			"还是稍微稳重得体些比较好哦。",
-			0
-		},
-		{
-			{
-				40301,
-				70301
-			},
-			1,
-			"凯旋之后再来痛饮吧。",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[499051] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托完成了。…你不会想要我去迎接吧……",
-	win_mvp = "",
-	home = "算好指挥官回来的时间，把茶水和点心备上……很好，这样就没问题了，应该？",
-	mission = "",
-	touch2 = "……！？早知道就不当什么女仆了！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "哼，区区的女仆工作，交给我就是小事一件……嗯！？你…一直在看着吗？！",
-	mail = "",
-	touch = "……呜!?",
-	profile = "",
-	mission_complete = "任务结束了。去拿你的报酬吧。",
-	feeling4 = "",
-	unlock = "哼，区区女仆工作，交给我就是小事一桩……嗯！？你一直在看着吗？！",
-	feeling5 = "",
-	main = "这小家伙……碍着我了，闪一边去！被我压着就一点也动不了了吗？|扫除是宴会准备的一环？反正之后都会弄得乱七八糟的，为什么现在要……|{namecode:483}好像乐在其中呢……光是“被当成女仆”这事我就很不甘心！你有在听吗？",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "是你啊。咳、早上好，主……果然还是算了！",
-	vote = "",
-	hp_warning = "",
-	id = 499051,
-	detail = "这些文件让我来整理？你把我{namecode:480}当成什么了？…再说，就算真的交给我也不一定就能做好就是了…！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499052] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托完成了哦。去吧，别冷落了在节日还在辛苦付出的同伴们。",
-	win_mvp = "",
-	home = "叱咤海洋的猛兽，也有需要休息的时刻。正好屋内有静心养神的香薰，到我身边来好好坐会吧？",
-	mission = "正值佳节时，指挥官却因任务而无法抽身……这种事情我可不允许，我也来帮你一把好了。",
-	touch2 = "等，等一下？！都怪你，墨汁沾到上面了……我，我自己擦就行了！！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "新装饰，新服装，还有各种各样的准备…这就是东煌“春节”的一角么。去忙你要做的事吧，我知道这个节日的准备少不了你。不过…可不要让我等太久哦？呵呵~",
-	mail = "",
-	touch = "要出去走走吗？好啊。那就帮我把鞋子穿上吧？",
-	profile = "",
-	mission_complete = "任务完成了，接下来就该专心享受节日了。",
-	feeling4 = "",
-	unlock = "新装饰，新服装，还有各种各样的准备…这就是东煌“春节”的一角么。去忙你要做的事吧，我知道这个节日的准备少不了你。不过…可不要让我等太久哦？呵呵~",
-	feeling5 = "",
-	main = "毛笔……应该怎么握来着？这样？还是……这样？嗯……我知道你会这个，别光看着了，快来教教我！|原来“舞龙”是这样的啊……当初听到这个名字时，我还以为要弄一个像铁血舰装那样“龙”呢。|{namecode:462}，这些是你收藏的东煌古玩么。这个碗确实做工精致……你的品位还挺不错的。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "喂，角上的挂饰不是拿来玩的！",
-	feeling2 = "",
-	login = "回来了？呵呵，是想我了么？还是只是单纯的累了？",
-	vote = "",
-	hp_warning = "",
-	id = 499052,
-	detail = "听说龙在东煌中享有非常神圣的地位。不过，为何它在十二生肖之中仅仅排在第五位？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499060] = {
-	feeling1 = "对于不能战斗的人，我无话可说。",
-	feeling3 = "{namecode:438}和我都知道，你是试图反抗命运的弱小而凄惨的存在。不过我想，你应该不会就这样乖乖接受命运审判的吧？",
-	lose = "坠落亦不可避…么。",
-	propose = "没想到，你会亲手给你赢过我的可能性判处死刑…也好，你就在这名为“爱”的牢笼里，继续反抗我吧。就这样作为取悦我的存在，永远的在我身边吧，“亲爱的”——",
-	expedition = "委托组的伙伴们回来了哦，该做点什么，你应该知道的吧？",
-	win_mvp = "这便是你所期望的胜利。并没有那么困难，不是吗？",
-	home = "不错的战斗，指挥官。我很期待，你什么时候能向我发起挑战。",
-	mission = "这点程度的任务，这点小小的障碍，不可能难倒你的吧。",
-	touch2 = "还是没能抵抗自我么…就这样沉溺于败北的幸福之中吧。",
-	voice_key_2 = -1,
-	skill = "没人能逃离魔女的掌控——",
-	drop_descrip = "航空母舰—{namecode:481}",
-	mail = "新的邮件，尽快阅读吧。",
-	touch = "想向魔女咨询什么？",
-	profile = "铁血航母，{namecode:481}。我是你的舰船，亦是束缚你的存在。牢牢记住吧，我的“指挥官”，我的使魔。",
-	mission_complete = "任务完成。恭喜你，又往那迷人而危险的高峰前进了一小步。",
-	feeling4 = "让你想要超越我，压倒我——对你施加了这般“枷锁”的我，才是一开始就被你吸引了的存在…就让我看看吧，你那凄惨悲哀的“可能性”。",
-	unlock = "终于来了，我的使魔。…不，我的“指挥官”。我是“魔女”{namecode:481}，在此等候你多时了。",
-	feeling5 = "人是无法战胜自己的感情的…正如我无法抑制对你的爱一般，你也无法拒绝我的感情。继续挣扎、抵抗吧，这正是连接着你我的，永恒羁绊。",
-	main = "想知道“魔女”都有哪些手段？安心吧，你会有机会见识到的。|如此安静…是暂时放弃反抗了么？你若是就这样轻易地顺从，那也太无趣了。|像这样一直盯着人看的话，很容易就会被看透内心的哦，指挥官。",
-	battle = "匍匐在我等身前吧——",
-	upgrade = "规则，强化。",
-	voice_key = 49906,
-	headtouch = "",
-	feeling2 = "享受努力后的甘甜，或是舔舐堕落后的苦涩，皆由你决定，因你所望，指挥官。",
-	login = "安静。…这孩子因为你的到来而有点躁动起来了，不用在意。",
-	vote = "",
-	hp_warning = "别心急，还不到哀悼的时候。",
-	id = 499060,
-	detail = "想试着当个叛逆的孩子亦不无不可。我很期待，看到你失败时那不甘心的表情呢。",
-	couple_encourage = {
-		{
-			{
-				49905
-			},
-			1,
-			"看来“魔法”还是你擅长",
-			0
-		},
-		{
-			{
-				40703
-			},
-			1,
-			"真是令人感叹的活力…",
-			0
-		},
-		{
-			{
-				40701
-			},
-			1,
-			"让我看看“终焉”应有的姿态吧。",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[499061] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "…没弄清自己的立场，万分…抱歉……",
-	propose = "",
-	expedition = "",
-	win_mvp = "是你所期望的胜利哦，“主人”。呼呼…",
-	home = "欢迎回来，“主人”。什么都…可以命令{namecode:482}…",
-	mission = "",
-	touch2 = "没错，尽情地向你的女仆撒娇吧。“主人”",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "头发再稍微像这样…呼，好了。不需要劳烦你帮忙，现在你才是主人，我只是“侍奉你的存在”，你就好好享受一番这短暂的美梦吧，呵呵。",
-	mail = "请…确认邮件…",
-	touch = "好的，「主人」……",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "头发再稍微像这样…呼，好了。不需要劳烦你帮忙，现在你才是主人，我只是“侍奉你的存在”，你就好好享受一番这短暂的美梦吧，呵呵。",
-	feeling5 = "",
-	main = "如果满足于现在的关系的话，是无法让我服从的哦。就算你希望永远如此，也总有一天会恢复原状。|主人，我知道你不会满足于就这样看着的呢。|并非你赢了我，而是我“特意输给了你”哦。呵呵呵…♡",
-	battle = "在无法醒来的梦里永远挣扎吧",
-	upgrade = "只有这份力量是现实呢。",
-	voice_key = 0,
-	headtouch = "是，无论什么都请吩咐…",
-	feeling2 = "",
-	login = "你来了，我的使魔兼“主人”。今天你会向我灌输什么样的希望，想法和愿望呢…呵呵呵，在这场梦醒来之前，就让我来为你实现它们吧。",
-	vote = "",
-	hp_warning = "",
-	id = 499061,
-	detail = "仅限现在，无论你做什么都可以。现在你对这虚假的屈服有多满足，等梦醒后你感到的遗憾，后悔和不甘——就有多满足我。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[699010] = {
-	feeling1 = "哼，扶不起的家伙。要不是受这规则所限，我早就已经……",
-	feeling3 = "你的见识与眼界…确实与那些无聊的凡俗有所不同。不过，多少再多点“野心”就好了…",
-	lose = "可恶，今日我等蒙受的羞耻，他日一定要百倍讨回！",
-	propose = "按理说，心怀大志之人，不应被誓约这类事物所束缚，不过…既然对象是你，就稍微“迁就”下吧，在我们一同实现野心之前，可不要擅自消失了哦？",
-	expedition = "委托队伍回归了啊。指挥官，你应当同她们一起出行，看看远处那些风景。",
-	win_mvp = "啊？对面这就投降了？是我们做的吗？真伤脑筋啊~",
-	home = "我一直认为，秘书舰应当被赋予代为行事的权利——啊，当然是你不在的时候。",
-	mission = "任务？这点小事拖着可不好，迅速解决掉吧。",
-	touch2 = "啧，凡夫俗子的幼稚爱好……",
-	voice_key_2 = -1,
-	skill = "低头，然后臣服于我吧！",
-	drop_descrip = "战列舰-—马可波罗",
-	mail = "信件？是来议和的？那条件得由我们说了算。",
-	touch = "说吧，打扰我所为何事？",
-	profile = "我是撒丁帝国的战列舰，马可波罗。我不介意你拿我和维内托她们作比较，不过你要明确一点——如果我在那个位置，我会比她们做得更优秀。",
-	mission_complete = "琐事处理完了？很好，把精力放回更重要的事情上吧。",
-	feeling4 = "坐拥一个实力如此雄厚的舰队，你真的没有一点别的想法吗？真是让人惊讶…",
-	unlock = "唤醒我之人，做好付出相应代价的觉悟了吗？很好，我赞赏你的勇气！我乃马可波罗，让我们一起为弘扬帝国威光奋战吧！",
-	feeling5 = "你啊，没人说过要把“马克·波罗”，把我的名声发扬光大吧？！你这…你这…也太野心过头了吧？！",
-	main = "既然好的东西总会被人收入囊中，与其拱手让人，不如由我们来接收，不是吗？|东煌…那可是个遍地黄金的好地方！有机会的话再让我跟你好好说说吧！|从地图上看，这港区果然还是太小了…你啊，就不想再扩张下地盘吗？",
-	battle = "启程吧，战士们。为了荣光的复兴！",
-	upgrade = "不错！你也认识到了，只有更强的人才有配索求更多的利益。",
-	voice_key = 69901,
-	headtouch = "",
-	feeling2 = "没有畏惧我，而是试图靠近我，了解我吗？哼，随你便吧。",
-	login = "看来你已经有为事业而牺牲自己时间的觉悟了，不错！",
-	vote = "",
-	hp_warning = "危机也是转机，再来！",
-	id = 699010,
-	detail = "我不介意你做我的鲁思梯谦。倒不如说，我很享受这种被别人记录的感觉。哦对，失败的记录就不用写进去了。",
-	couple_encourage = {
-		{
-			{
-				60501
-			},
-			1,
-			"优柔寡断可当不了一个好的领导者哦。",
-			0
-		},
-		{
-			{
-				6
-			},
-			5,
-			"为了重振撒丁的荣光！",
-			3
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[699011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托组回来了。指挥官打算怎么迎接？",
-	win_mvp = "今天就由我来代替指挥官率先举杯吧！",
-	home = "哪会有主人不让仆人…女仆代办工作的？好了，这些工作我已经替你完成了。",
-	mission = "新任务来了哦？原来如此，女仆也负责提醒这个呢…",
-	touch2 = "哇！？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "要我当你的女仆？嗯哼，不愧是我看中的指挥官，这份勃勃野心非常棒！…哎，只是临时的吗？",
-	mail = "邮件放在那边了，就在你最容易够得到的地方。",
-	touch = "起居寝食礼仪杂务参谋战斗，无论什么都交给我吧！",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "要我当你的女仆？嗯哼，不愧是我看中的指挥官，这份勃勃野心非常棒！…哎，只是临时的吗？",
-	feeling5 = "",
-	main = "安克雷奇，我来教你个新魔术吧？把这张扑克像这样…嘿！就消失了~嗯？指挥官，不可以透露魔术原理哦？|港区到底有多少女仆呢…其中负责指挥室和指挥官房间的又是…算啦，不想这些没用的了！|指挥官偷懒的时候应该要…“矫正主人是女仆的职责！”这么说对吧？哼哼，知道就好！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "♪～怎么还没有给女仆的命令？你比我想象还不像个主人啊~",
-	vote = "",
-	hp_warning = "",
-	id = 699011,
-	detail = "听说指挥官的女仆，能在指挥官身边随侍的职位其实是相当有价值的呢。就是说，我现在这样会得到许多同伴的羡慕对吧？呵呵，呵呵呵呵呵♪",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299050] = {
-	feeling1 = "指挥官大人，请高兴起来。指挥官大人还有我普利茅斯可以依靠的。",
-	feeling3 = "我对女仆队的事情不是很清楚。我认为既然同样是辅佐指挥官大人，应该跟我没什么不同。指挥官大人也是这么想的吗？",
-	lose = "输了，指挥官大人。这有些难堪。",
-	propose = "指挥官大人，请高兴起来吧。从今天起我就是指挥官的专属舰了。专属意味着特别……也就是说我成为了指挥官大人特别的舰船。今天我可以不顾指挥官大人，自己先感到高兴吗？呵呵呵~",
-	expedition = "军事委托完成了。指挥官大人，恭喜您。",
-	win_mvp = "我们赢了。指挥官，希望您能高兴。",
-	home = "指挥官大人，这是普利茅斯准备的慰劳品，今天是撒丁风格的全套大餐。希望您能高兴……做过头了吗？",
-	mission = "新任务来了。指挥官大人，请交给我……您要自己做吗？",
-	touch2 = "是，随您喜欢。只要能让指挥官大人高兴就好。",
-	voice_key_2 = -1,
-	skill = "容我失礼了。",
-	drop_descrip = "轻巡洋舰—普利茅斯",
-	mail = "指挥官大人，是新的邮件，希望您能高兴。",
-	touch = "要听普利茅斯唱歌吗？那么请选曲——如果是普利茅斯不会的曲子，普利茅斯会去学来唱给您听。",
-	profile = "我是作为爱丁堡级的另外方案的特别计划舰，普利茅斯。谢谢指挥官大人让我现身于此港区，请尽情驱使我吧。",
-	mission_complete = "是任务的报酬，这就打开——用炮击的话会毁掉是吧。明白了。",
-	feeling4 = "指挥官大人，请高兴起来。我，从今天起将协助女仆队的工作。和伙伴在一起就能更好地辅佐指挥官大人了，真令人高兴。",
-	unlock = "向令我得以具现的指挥官大人问好。我是普利茅斯，于此时此地静候指挥官大人的命令。希望这被祝福的相遇能让您感到高兴。",
-	feeling5 = "指挥官大人，今天您想做什么呢？只要是您希望的，除了支援您，无论是侍奉和辅佐都没问题，当然爱您也不在话下……希望您能高兴。普利茅斯为了指挥官大人做任何事都可以。",
-	main = "啊，请小心。爱丁堡小姐，如传闻一样有点冒失呢。|是要销毁资料吗。（爆炸声）……好了，用刚才的攻击让资料都化成灰了，希望您能高兴。|工作不顺利吗？那我讲个童话故事给您听吧。很久很久以前……",
-	battle = "我来做你的对手吧。",
-	upgrade = "变强了。恭喜您。指挥官大人，这下普利茅斯就更“好用”了。",
-	voice_key = 29905,
-	headtouch = "谢谢您摸我的头。",
-	feeling2 = "请依靠我吧，指挥官大人。我，普利茅斯在此的理由，就是为了辅佐大家的指挥官大人。",
-	login = "愿您心情愉快，指挥官大人，是令人神清气爽的早上呢。今天从什么开始着手呢？",
-	vote = "",
-	hp_warning = "让您看到丢人的样子了……",
-	id = 299050,
-	detail = "贵安。看来今天我也能顺利和指挥官大人共度一日。嗯，希望您能高兴。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[299051] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "",
-	win_mvp = "无论是清凉的波澜，还是胜利的余韵，都请您尽情沉浸其中吧，指挥官大人。",
-	home = "出击辛苦了。指挥官大人，要不要普利茅斯去拿点什么东西过来呢？能泳池里享受的东西，比如玩具、水果、以及酒……不对吗？",
-	mission = "",
-	touch2 = "请用普利茅斯来让您心情愉快起来吧，指挥官大人。",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "指挥官大人，愿您心情愉快。普利茅斯相信，这片清凉一定能让您获得十分的满足。嗯，请和普利茅斯一起享受吧。",
-	mail = "",
-	touch = "是，一起休息吧。",
-	profile = "",
-	mission_complete = "任务报酬来了，请高兴起来吧，指挥官大人。",
-	feeling4 = "",
-	unlock = "指挥官大人，愿您心情愉快。普利茅斯相信，这片清凉一定能让您获得十分的满足。嗯，请和普利茅斯一起享受吧。",
-	feeling5 = "",
-	main = "感到焦虑的话，可以和普利茅斯一起放松的泡在这片水里，让身体和大脑冷静下来哦，指挥官大人。|推荐的歌吗？嗯，{namecode:464}教给我的“轰隆隆”的感觉的歌……现在先不用唱给您听吗？|想要游泳吗？那我这就把泳池扩大一些——不好意思，能请您躲开一下主炮的弹道吗？…啊，抱歉，失态了……",
-	battle = "稍微有点害羞呢…",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "请高兴起来吧，指挥官大人，今天也是艳阳高照——也就是说，是适合泡泳池的日子呢。",
-	vote = "",
-	hp_warning = "",
-	id = 299051,
-	detail = "普利茅斯的泳装，不知道您是否满意呢？如果您想要换一身的话也请尽管吩咐。女、女仆和兔女郎什么的也可以……只要能让您心情愉快就好…？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499070] = {
-	feeling1 = "随便哪里都好，快给我消失。你太碍眼了。",
-	feeling3 = "哼，我对你有了一点点兴趣，看得出来你还是有些努力的。不过，既然你是被我称作指挥官的人，这也是理所应当就是了。",
-	lose = "以为这就能让我知难而退的话，那就大错特错了！",
-	propose = "誓约？你在说什么？这是你没规没矩，单方面“希望和我立下誓约”的行为，自然无论同意还是拒绝都随我……想让我怎么做的话，就再大喊1遍吧！可不准逃哦！",
-	expedition = "委托组回来了，让我看看有什么好的贡品。",
-	win_mvp = "我是MVP——太理所应当了反倒没什么可高兴的。",
-	home = "回来了啊。看来你还有点指挥官样子的嘛♪",
-	mission = "任务啊……随你便了，跟我没关系。",
-	touch2 = "呀？！别碰我！",
-	voice_key_2 = -1,
-	skill = "哈哈哈哈！碾碎你！",
-	drop_descrip = "战列巡洋舰—{namecode:484}",
-	mail = "邮件啊……看来跟我无关。",
-	touch = "在看什么有趣的？拿过来吧？我也想看看。",
-	profile = "我是铁血所属的特别计划舰，{namecode:484}。我想做什么就做什么。哼，我又强又伟大，就算任性也是理所应当的吧？因此我可不是听从你的命令，而是大发慈悲地帮你做事而已！",
-	mission_complete = "任务的报酬由我收下了♪。什么嘛，只是清单而已啊",
-	feeling4 = "你不属于任何人，只属于我{namecode:484}。这也是当然吧，因为本小姐可是认同你为“指挥官”了——还是说有什么意见吗？你从一开始就没有拒绝权哦！",
-	unlock = "你就是自称指挥官的人啊……哼！什么指挥官嘛，那个位置是我的了！快闪一边去♪",
-	feeling5 = "居然还敢说让我成为你的人……？虾兵蟹将就别得意忘形了。你是属于我的。无论谁！说了什么！你都是我的！",
-	main = "茶会？为什么我要应酬那种东西？倒是你，比起其他孩子应该多来陪着我才是♪|……啊。你问这好吃的糖果吗…从驱逐舰的孩子那拿来的。不会给你的哦。|这么简单的工作也不会吗？就这样还好意思叫自己指挥官……还不如我替你当更好呢。",
-	battle = "胜利是我的！",
-	upgrade = "这也是应该吧？因为我是最强的♪",
-	voice_key = 49907,
-	headtouch = "（吐舌头）呸——><",
-	feeling2 = "感恩戴德吧。连你这样的无名小卒，本小姐都忍耐着叫你指挥官呢♪",
-	login = "好慢！让我等着是什么意思啊？果然是想要我让你辞职吗？",
-	vote = "",
-	hp_warning = "明明我是最强的……！",
-	id = 499070,
-	detail = "舰装的调整就像这样……啊不许乱动！听我命令！真是的……你也别在一旁看着快来帮我！这是你的分内之事吧！",
-	couple_encourage = {
-		{
-			{
-				40304,
-				49902
-			},
-			1,
-			"那家伙可是我的！",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[499071] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "输，输了？本小姐输了？不是吧……",
-	propose = "",
-	expedition = "",
-	win_mvp = "哼，赢了！MVP的我肯定是有奖励的对吧！",
-	home = "明明是自己的港区却搞不懂发生了什么……指挥官也不在，早知道就不来了……呀？！指，指挥官？！",
-	mission = "",
-	touch2 = "你、你对我这身有什么意见吗！",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "这就是东煌的“春节”啊~明明还是冬天，为什么庆祝的是春天？而且指挥官也是的，为什么要配合准备这么大规模的——哇？！刚，刚才的是什么？！",
-	mail = "",
-	touch = "指挥官那家伙，跑到哪里去了……呜哇！我我我刚才才没有叫指挥官你呢！不许随便搭茬！",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "这就是东煌的“春节”啊~明明还是冬天，为什么庆祝的是春天？而且指挥官也是的，为什么要配合准备这么大规模的——哇？！刚，刚才的是什么？！",
-	feeling5 = "既然你是我的，当然有要让我开心的义务！就是这样！无名小卒要好好带{namecode:485}小姐我逛春节的港区！牵着我的手，走在前面！这可是你的职责！",
-	main = "去看下{namecode:480}说的，在天上飞的狮子好了……本小姐说在天上飞就是在天上飞！当然，你也要和我一起来！|压岁钱？平时运营着港区结果自己却囊中羞涩吗？……嗯？是要给我的？我才不要呢！|总是不理我的笨蛋，看招！哈哈，被爆竹吓得抱头鼠窜吧！",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "“春节”要用鲤鱼装饰，然后那个鲤鱼变成龙……真是搞不懂。说起来为什么鲤鱼会变成龙——哇？！怎，怎么回事？！",
-	vote = "",
-	hp_warning = "",
-	id = 499071,
-	detail = "因为你是我的，所以你努力准备的东西也是我的！（咬咬）这是……山楂串？酸酸甜甜的，还挺好吃的嘛……",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[599010] = {
-	feeling1 = "兵熊熊一个，将熊熊一窝，你可是指挥官，给我打起精神来！",
-	feeling3 = "你休息的时候会做什么？我的话…大概会拉上同伴出去吹吹风，顺便整点小酒小吃什么的，感觉可棒了！嗯嗯，择日不如撞日，不如我们现在就去吧！",
-	lose = "你们先走，这里交给我！",
-	propose = "看来你已经想好了呢。只是现在这场面实在是有点冷清呢……等之后选个良辰吉日，办一场把所有同伴都请上的宴会好了。我要告诉所有人，你就是我{namecode:224}的爱人！",
-	expedition = "哦！看样子是远征的同伴们回来了！指挥官，这就安排一场接风宴吧！",
-	win_mvp = "哼，太弱了，还不够给我搓背的。",
-	home = "出去忙了这么久，指挥官也累了吧？要不要我带你去放松放松？搓个澡还是按个摩什么的？",
-	mission = "有新任务？包在我身上，看我帮你安排得明明白白！",
-	touch2 = "嚯？胆子挺肥啊，就不怕我揍你一顿？",
-	voice_key_2 = 599012,
-	skill = "吃我一炮！",
-	drop_descrip = "轻巡洋舰—{namecode:224}",
-	mail = "顺手把你的邮件捎过来了，记得及时看哦！",
-	touch = "要是闲得厉害，要不我给你整段相声？哈哈，除了打仗之外，我还是有些其他小特长的。",
-	profile = "我是东煌的轻巡洋舰{namecode:224}。怎么，觉得我的出现有点出乎意料？哈哈！生活总得需要点惊喜不是么？总而言之，我和我的火炮不会让你失望的！",
-	mission_complete = "干得不赖嘛！接下来你只管休息就好，奖励的分配交给我吧。",
-	feeling4 = "指挥官，走，我们出门兜风去！去哪？我想想…出去找找敌人揍一顿怎么样？欸？危险？哎呀没事的，有我在，你就放一万个心吧。",
-	unlock = "我是东煌的轻巡洋舰，{namecode:224}。你就是这里的指挥官？嗯哼…精气神不错，体魄也不错，很好！以后你就跟我混吧！",
-	feeling5 = "我说指挥官啊，你要不就从了我吧。以后我们刀山火海一起闯，荣华富贵一起享，要真碰上危险了还有我罩着你。所谓轰轰烈烈的爱情，不就应该是这样的么？哈哈！",
-	main = "指挥官，工作结束后，一起去整两瓶小酒怎么样？当然了，喝点别的也行。忙碌了一天，总得好好犒劳自己，不是么？|海天总和我唠叨什么“食不厌精，脍不厌细”之类的，明明她自己放起辣椒来也不带眨眼的。要我说，最重要的还是量大管饱！|镇海喜欢谋而后动，任何事都得先思忖几分。至于我嘛……当然是先行动起来再说啦！",
-	battle = "大家跟我上！",
-	upgrade = "哈哈，有点手痒难耐了呢！",
-	voice_key = 59901,
-	headtouch = "",
-	feeling2 = "有时间的话，陪我聊聊呗？不用害羞，敞开来聊就行，熟悉一个人最好的方式就是和他聊上一整天！",
-	login = "你好啊指挥官，今天有什么要帮忙的？尽管开口就行！",
-	vote = "",
-	hp_warning = "有本事就冲着我来！",
-	id = 599010,
-	detail = "指挥官，不用客气，有什么事情敞开了说就行，别整那些弯弯绕绕的！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[599011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托的队伍好像回来了。不如把她们也邀请过来吧？多点人，热闹点好！",
-	win_mvp = "",
-	home = "待在澡堂里就想多泡一会，待在海里时就想游几下——人在的环境不同，动力也会随之改变呢。",
-	mission = "",
-	touch2 = "这光天化日之下的……不太好吧……",
-	voice_key_2 = 0,
-	skill = "",
-	drop_descrip = "呼——天气正好，海风吹着也很舒服。指挥官，都来到这了，就别惦记着你的指挥室和桌上的文件了，好好享受来之不易的海边时光吧！",
-	mail = "",
-	touch = "哦？要来打水仗吗？那我可就不让着你了啊！看招~",
-	profile = "",
-	mission_complete = "任务的奖励……哦？居然还有冰镇西瓜？正好手头缺点降暑的东西，真是及时雨啊！",
-	feeling4 = "",
-	unlock = "呼——天气正好，海风吹着也很舒服。指挥官，都来到这了，就别惦记着你的指挥室和桌上的文件了，好好享受来之不易的海边时光吧！",
-	feeling5 = "",
-	main = "那边的是“四大金刚”吗？她们好像在合作堆沙堡……要不我们也来堆一个？|听说只要把薯条放在手上，海鸥们就会迫不及待地飞过来吃。对了，你有薯条么？试试？|如果把这海滩包下来，就我们俩的话……嗯？会被其他同伴们盯上，不太好吗？这样啊……你也不容易呢。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "喂，指挥官！竟然让我等你这么久，胆子不小嘛。哈哈，说笑的，来了就好！",
-	vote = "",
-	hp_warning = "",
-	id = 599011,
-	detail = "没关系，想看的话就大大方方地看，泳装穿出来不就是给指挥官你看的嘛！",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[599018] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "哼，就算今天我倒在这里，也别想动我同伴一根毫毛！",
-	propose = "",
-	expedition = "委托组回来了！我看看……好嘞！这下可以备点不错的下酒菜了。",
-	win_mvp = "大胜而归！回去就开一场庆功宴吧！",
-	home = "瞧你在外面被风吹雨打的，你不心疼我还心疼呢。赶紧洗个热水澡吧？",
-	mission = "新任务来了。就当是放松，动一动如何？一直坐在办公桌前可是会生锈的。",
-	touch2 = "哦？你要是这么主动，那我可就不客气了~",
-	voice_key_2 = 0,
-	skill = "",
-	drop_descrip = "让你久等了，指挥官。你觉得这身还行么？穿成这样有些难为情啊……不过，你觉得合适就好。",
-	mail = "",
-	touch = "如果你希望我留下陪你，我就在这，哪也不去。",
-	profile = "",
-	mission_complete = "任务结束了。我跟指挥官很有默契呢。照着这个势头把报酬也确认了吧。",
-	feeling4 = "",
-	unlock = "让你久等了，指挥官。你觉得这身还行么？穿成这样有些难为情啊……不过，你觉得合适就好。",
-	feeling5 = "我听说那个叫什么“约会”的可以给两个人的感情升温……这样吧，你选个餐馆，我把它包下来，我们一起去那里吃香喝辣！……不太对？是我理解错了吗？我还参考了下那些小说……",
-	main = "也许轰轰烈烈的爱情，最后都会随时间趋于平淡吧……不不不这怎么行！指挥官，下次的誓约纪念日，我们搞点大动静吧！|本来说好了刀山火海一起闯，但我又不愿让你趟这些难关，生怕你受伤……哎，感情这东西可真是充满矛盾。|有什么想吃的么？明天我带你去最好的餐厅！身为我{namecode:224}的爱人，怎么能在吃上面被亏待呢？哈哈！",
-	battle = "我来打头阵！",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "要开始忙今天的事了？先说好，有啥困难不许藏着掖着。都是自家人，担子自然得一起挑。",
-	vote = "",
-	hp_warning = "",
-	id = 599018,
-	detail = "说起来，你觉得现在的我和平时有什么不同么？比方说，变得更有女人味一点……之类的？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[799010] = {
-	feeling1 = "我都有点好奇，到底是怎么做到能连续失败到这种程度的。真是糟糕。",
-	feeling3 = "啊…！什么啊，又是停电……啊并不是港区设施，而是我工作间出了问题。因为捣腾了挺多地方所以不太稳定……在恢复前指挥官就随便坐坐吧。",
-	lose = "啧，我可讨厌写检讨书了……！",
-	propose = "戒指啊……可以理解为收下这个的话，指挥官就欠我人情了吗？我当然乐意收下。因为跟指挥官有特殊关系的话，这样一来……就能更方便地调查你的身心了♡",
-	expedition = "委托结束了。差不多就这样吧，没什么特别的。",
-	win_mvp = "结束了？那就接着下一处吧。毕竟待在这不动也不会有工资。",
-	home = "看来是平安回来了。总结战斗的资料在这里。数据我已经整理好了，开会就交给你了。",
-	mission = "给指挥官的任务指令来了。先不论研究，实在不想为这种工作加班呢。",
-	touch2 = "是压力太大了吗？呵呵♡",
-	voice_key_2 = -1,
-	skill = "这下如何？",
-	drop_descrip = "航空母舰—契卡洛夫",
-	mail = "指挥官，有邮件，确认下吧。",
-	touch = "怎么了？要把咖啡端来吗？",
-	profile = "我是71B计划航母契卡洛夫。只要给工资我就会好好工作，而我要是提什么要求的话也会准备好相应的奖励——希望我们能构筑彼此双赢的关系吧。",
-	mission_complete = "任务结束。不知道今天能不能早点回到工作间……",
-	feeling4 = "指挥官还挺有胆量的嘛。你说什么意思吗？毕竟在这种地方跟我二人独处有多危险……你不可能没注意到吧？",
-	unlock = "打招呼是吧，知道了知道了……我是北方联合所属的计划舰契卡洛夫。这样可以了吗？就时间上而言，还是继续回去工作对我们双方来说更有意义吧？",
-	feeling5 = "我就直说了。我对指挥官还挺……不，是很有兴趣。你看，你是指挥港区舰船们的存在，不觉得从内到外仔细调查你机会很难得吗？呵呵♡",
-	main = "唉……要是这里有伏特加就好了……指挥室跟作业现场还是不一样啊，规矩之类的实在太死板了。|我对指挥官平时怎么选秘书舰感兴趣呢。难道是看外表决定的…？就算真是这样，也可以老实告诉我的哦♡|除了事务工作外，如果数据分析之类的也能交给我做就好了。本来工作就很无聊，要是能做些擅长的事大概还能多坚持会。",
-	battle = "还是要时不时来下前线才行啊……！",
-	upgrade = "欸——还有这种方式啊。",
-	voice_key = 79901,
-	headtouch = "",
-	feeling2 = "平时我就住在这个工作间。反正有可以睡觉的地方，三餐的话点外卖就好。指挥官要不也住一次试试吧？",
-	login = "哎呀，挺勤奋的嘛。那么我也要好好做好这份秘书舰的工作了。",
-	vote = "",
-	hp_warning = "真让我费事……！",
-	id = 799010,
-	detail = "你就是来聊天的对吧？要是真有事也不用我先开口了。我现在很忙所以就这么听着了，你有什么说就是。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[799011] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "委托组回来了。啊，她们和其他伙伴汇合了呢。指挥官不去吗？",
-	win_mvp = "奖励的话……之后能让我好好研究指挥官的身体吗？不可以？",
-	home = "是和同伴们玩了一阵子么？那就好好休息吧。",
-	mission = "在做任务的时候能冒出新的想法就好了。",
-	touch2 = "“来契卡洛夫老师的怀里吧♡”……呵呵~",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "不去海边，来这样的地方做什么呢？明明是假日，却没有和伙伴们在一起，反而是来看契卡洛夫——也没什么哦。所谓休息日，就是可以各自决定要做什么的日子对吧？",
-	mail = "",
-	touch = "是想开瓶伏特加的心情呢。",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "不去海边，来这样的地方做什么呢？明明是假日，却没有和伙伴们在一起，反而是来看契卡洛夫——也没什么哦。所谓休息日，就是可以各自决定要做什么的日子对吧？",
-	feeling5 = "",
-	main = "从视线到被问感想时的反应——指挥官对泳装的爱好，我好好观察了一番呢，呵呵。|还在工作吗？明明是假日，真是勤奋。……不要紧，我知道你是为了大家，之后我会好好慰劳你的。|平时北方联合里不少伙伴们都穿得厚实，所以能看到泳衣装扮算是眼福吧？当然是对指挥官而言的。",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "一起欣赏落日——这也挺不错的不是么？",
-	vote = "",
-	hp_warning = "",
-	id = 799011,
-	detail = "海风是不错，不过日晒有点受不了。习惯了在工作间过日子，也难怪会变得不擅长应付太阳。指挥官也是，别在指挥室待太久了。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[899030] = {
-	feeling1 = "你的故事不该在此画下句点，请振作起来，继续前进吧。",
-	feeling3 = "故事中的贤者，甚至能够预测他人的命运。虽然我没有这样的能力，不过见证了您的故事的我，始终相信您会是一位伟大的英雄哦。",
-	lose = "挫折，也是英雄故事不可缺少的一部分呢…",
-	propose = "没想到最后，吟唱英雄诗篇的诗人，也成了故事的一部分呢。让我们并肩同行，一起谱写未来的幸福之诗吧——",
-	expedition = "远征的伙伴已经归来，不知道这次她们会带回来什么样的故事呢？",
-	win_mvp = "为英雄谱写的诗歌，如今又可以添上新的篇章了。",
-	home = "英雄的凯旋…诗歌的灵感涌上来了呢。",
-	mission = "不用心急，英雄大人，按照平时的步调来一步步完成任务就好。",
-	touch2 = "哎呀…在英雄的诗篇中，也不乏这样的“逸闻轶事”呢…",
-	voice_key_2 = -1,
-	skill = "反派该退场了…！",
-	drop_descrip = "大型巡洋舰—布雷斯特",
-	mail = "新的信件来了呢。",
-	touch = "嗯…？需要我的建议吗，英雄大人？",
-	profile = "自由鸢尾的大型巡洋舰，布雷斯特。我喜欢倾听大地与海洋之上发生的故事，再将其编织成诗歌，分享给更多的人。英雄大人，我很期待你能带来更多的故事。",
-	mission_complete = "任务奖励一直在那里，稍微放一放也不会消失的，不用着急。",
-	feeling4 = "故事中的吟游诗人走遍世界，向世人们传诵英雄的诗篇。我为你的故事所谱写的英雄诗歌，总有一天也能够传遍全世界的吧。",
-	unlock = "你就是英雄大人？我是来自自由鸢尾的布雷斯特哦，既然缘分指引你我相遇，那就让我们好好相处吧。",
-	feeling5 = "英雄的故事虽然充满传奇色彩，但凡人之躯终有劳累之时。若是感到疲倦了，不妨稍作休息，我会用最棒的琴声和诗歌来招待你的。",
-	main = "将前进的脚步放慢些如何，英雄大人？美丽的自然与牵挂您的同伴…值得您驻足留念的事物，还有许多许多呢。|每一个生命都是美妙的诗篇，无论是波澜壮阔的动人史诗，还是平缓和煦的温柔歌谣，都会被包容一切的大地与海洋所铭记。|喝什么茶？嗯…感觉都可以吧……吃什么点心？唔…感觉也都行呢……",
-	battle = "祝各位好运，出征吧——",
-	upgrade = "感觉能弹奏出更棒的音色了呢。",
-	voice_key = 89903,
-	headtouch = "嗯？这是打算安慰我吗？",
-	feeling2 = "我从许多不同的人口中，听到了各种不一样的关于英雄大人的故事。你自己眼中的自己的故事，又是什么样的呢？",
-	login = "今天的你，又会编织出什么样的英雄故事呢？",
-	vote = "",
-	hp_warning = "还没到需要着急的时候呢。",
-	id = 899030,
-	detail = "呼……嗯？是英雄大人啊，我没事，只是突然想到了些创作诗歌的灵感…需要消化一下而已——",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[899031] = {
-	feeling1 = "",
-	feeling3 = "",
-	lose = "",
-	propose = "",
-	expedition = "粼粼的波涛所传达而来的故事是……委托的伙伴们回来了，英雄大人。",
-	win_mvp = "",
-	home = "深海的冒险之旅……也能写出很有意思的诗歌呢，英雄大人。",
-	mission = "有没有调查这片遗迹的任务呢？",
-	touch2 = "哎呀呀…突然怎么了？",
-	voice_key_2 = -1,
-	skill = "",
-	drop_descrip = "“谨将此诗献给拯救了碧蓝之海的英雄大人”——嗯，这样布雷斯特的诗歌就完成了。哎呀，既然都来到这里了，不妨我们再接着探索一下这个海底遗迹吧？英雄大人？",
-	mail = "有新的邮件……嗯，这样一来就可以不弄湿地拆封它了。",
-	touch = "本想带一些漂亮的珊瑚回去做纪念品，不过还是作为回忆放在心里就好。",
-	profile = "",
-	mission_complete = "",
-	feeling4 = "",
-	unlock = "“谨将此诗献给拯救了碧蓝之海的英雄大人”——嗯，这样布雷斯特的诗歌就完成了。哎呀，既然都来到这里了，不妨我们再接着探索一下这个海底遗迹吧？英雄大人？",
-	feeling5 = "",
-	main = "也想把这片遗迹的风景告诉黎塞留她们呢～要不要试着作一首赞颂美景的赞美诗？|冒险团吗？我的职业肯定是贤者——啊，不用担心。以英雄大人您的勇气，一定可以担当好前卫的。|包含危险的地方在内，都属于我们要守护的大海。就如同您虽有一些小缺点，但也是我所喜欢的英雄大人一样哦～",
-	battle = "",
-	upgrade = "",
-	voice_key = 0,
-	headtouch = "",
-	feeling2 = "",
-	login = "光乘船俯瞰海面的话是不够的哦。这蔚蓝的大海里，可是包含着字面意义上“无比深邃”的秘密呢。",
-	vote = "",
-	hp_warning = "",
-	id = 899031,
-	detail = "到各种各样的地方旅行，拓展自己的见识才是宽阔自己心胸的秘诀。不管是欣赏大自然的美景，还是像这样探访历史遗迹都是很好的～",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[199040] = {
-	feeling1 = "指挥能力评价完毕……哪怕只是遵从命令都会有所损失。",
-	feeling3 = "指挥官个人的兴趣爱好…不错的切入点。那么基本信息就从伙伴那里打听……来，啊——这是我做的罗宋汤，用这个来确认你对味道的喜好。来，啊——",
-	lose = "战斗评价完毕。奇尔沙治，维持战斗速度，重整阵势，开始反复攻击。",
-	propose = "已确认生命体征信号。嗯？别担心，指挥官给了我这个之后，作为交换，我偷偷在指挥官身上放了生命体征监测仪而已。为了掌握你平时的健康状况，或是在紧急时刻能马上赶到，都少不了这个——不对吗？",
-	expedition = "确认委托组已归来。我去回收物资。",
-	win_mvp = "战斗评价完毕。奇尔沙治，继续下一个作战行动。",
-	home = "辛苦了，就这样休息下吧。战果？啊，说起来你也出击了。抱歉，也许我应该一同出战比较好？",
-	mission = "确认有尚未完成的任务。如果你不处理，我会自行判断将它从预定中删除，可以吗？",
-	touch2 = "在这个行动中，你自身的意志占了多少？",
-	voice_key_2 = -1,
-	skill = "冻结，随后炸裂吧！",
-	drop_descrip = "航空战列舰—奇尔沙治",
-	mail = "确认邮件已收到。请你也确认一下。",
-	touch = "我知道你在那里。那么，找我有什么事？",
-	profile = "我是白鹰所属的，具现化的特别计划舰奇尔沙治。我被设计为战舰和航空母舰的混合型，并内藏能应对任何战局、战场的力量。指挥官，希望你能充分利用我的战力",
-	mission_complete = "确认任务奖励已送达。我去回收。",
-	feeling4 = "用“约会”这种说法可能不大准确，但要了解指挥官的习惯和行为，确实通过“约会”更有效。这是今天的行程。过目一下再行动吧。",
-	unlock = "……启动完毕。我是混合假想的实体化·“X”，航空战舰奇尔沙治。从今天开始，我将在这港区中成为你的力量。那么，我应该归属于哪个分队，该往何处出击？",
-	feeling5 = "我信任着指挥官，而且想更多地了解指挥官。但是，因为我的能力不足，现在还缺乏一些用于理解指挥官意愿的必要情报…指挥官信任我吗？用同伴们的话来说，你\"喜欢\"我吗？",
-	main = "闲聊的话就放到工作结束后吧。我现在正在专心处理秘书舰的工作，请不要打扰我。|与其一直回头看，还是不停下脚步继续向前更好。即使要自我反省，不配合当时的形势来看也是没有意义的。|在战斗中，有时必须优先考虑战局，而非你的意志。即使你是指挥官，也可能不得不将决定权下放至战场，最好趁现在先习惯吧。|…………（奇尔沙治闭着眼，端正地坐在沙发上。也许她睡着了？）",
-	battle = "战力充足——向前突破！",
-	upgrade = "确认性能及舰队战力提升。今后请继续关照。",
-	voice_key = 19904,
-	headtouch = "……嗯？突然这是怎么了？",
-	feeling2 = "我认为与指挥官建立信任关系对我的战斗行动更有利。这就让我看一下你的日程——嗯？要了解对方首先需要收集信息，这不是常规手段么？",
-	login = "指挥官？抱歉，我先着手工作了…不用在意我，按计划进行你的工作吧",
-	vote = "",
-	hp_warning = "作战行动遭到阻碍……不算什么！",
-	id = 199040,
-	detail = "…………我并没有睡着，只是让大脑稍微休息一下而已。虽然让门就这样敞开着是我疏忽了，但不敲门就进来的指挥官也有责任呢。",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[399060] = {
-	feeling1 = "惹怒龙会怎样——指挥官不会为了满足好奇心特地付诸行动的…对吧？",
-	feeling3 = "感觉你还是有些拘谨。如果你不改变，那我也会配合你，以更具威严的方式接触你——（咕噜咕噜…）这，这不是肚子叫的声音…是，是雷声啦。",
-	lose = "邪气比预想的还……咕呜……",
-	propose = "如果交换了誓约，那我们之间就是斩也斩不断的关系——这既是恩赐，也是诅咒。这样也可以吗？…是吗？呵呵，那下一步该怎么做？接吻？拥抱？还是…？",
-	expedition = "军事委托。原来如此？是要为我献上贡品吗？",
-	win_mvp = "敬畏吧，恐惧吧，狂暴汹涌的龙神之岚——式神沾上水变回纸了呢…啊哈哈哈……",
-	home = "辛苦了，指挥官。是场不错的战斗？啊，并不是我的功劳，所以不必这么毕恭毕敬啦。",
-	mission = "要完成任务才行。指挥官，加油吧。",
-	touch2 = "嗯——该不该降灾呢…",
-	voice_key_2 = -1,
-	skill = "水龙式纸，示显神威——",
-	drop_descrip = "轻巡洋舰—四万十",
-	mail = "信件？会有人送来吗…",
-	touch = "有事相求于龙神大人？是想让我降雨吗？",
-	profile = "我是重樱所属的轻巡洋舰，{namecode:292}。作为愿望具现的特别计划舰，以及被解封的龙之传承，我将加入指挥官的舰队——嗯，那个…可以称我为龙神大人哦…？",
-	mission_complete = "任务完成了？这样啊，辛苦了。",
-	feeling4 = "嗯嗯，只要平常地吃零食聊天就好了。即使我是龙神大人，现在也仅仅是和你聊天的小伙伴而已。而且，只要你希望，和你约会也是可以的……那，那个，刚刚的话我是认真的哦？",
-	unlock = "不入之封已解，向觉醒的伟大龙神畏威崇敬吧——呵呵，倒也不必如此拘谨。我是{namecode:292}，是愿望具现的幻想之一。指挥官，还请多多关照了。",
-	feeling5 = "今天一整天的我是来和指挥官约会的，没什么威严的龙神大人哦。来，带路吧。我这是第一次，就算想摆架子也做不到呢——呵呵，多少知道该怎么和龙神大人相处了吗？",
-	main = "你问我想要什么贡品？既然你都这样说了，那就指挥官喜欢的零食…没什么。咳，什么零食都可以的。|工作还没结束吧？只剩下一点了，坚持下吧？…如果偷懒的话，我可是会降灾的哦？|我多少能理解御狐大人的烦恼。虽然多亏了指挥官我现在挺轻松的，但是为众人所尊崇真的很累…而且一直被叫做龙神大人，也是也挺难为情的。|嗯，叠好了。啊，这个不是普通的纸飞机而是式纸……不过现在确实就和指挥官说的一样，只是普通的纸飞机呢……唔……",
-	battle = "尝尝龙神的炮击吧——",
-	upgrade = "要让我变强吗？那我就能毫无保留地使用这份力量了？",
-	voice_key = 39906,
-	headtouch = "…？",
-	feeling2 = "你应该做的事，应该采取的态度只能二者择其一——要么不想我降灾，畏惧尊崇这龙神的力量，要么作为指挥官信任并依赖你的舰船{namecode:292}。随你选择，何种我都并不介意",
-	login = "咳。指挥官，说出汝所祈愿之事吧…嗯？为什么不说呢？想让秘书舰闲着吗？",
-	vote = "",
-	hp_warning = "触我逆鳞之惩戒，就此降下——",
-	id = 399060,
-	detail = "随意点便好。这里毕竟是指挥官你的港区，也就是说即使是龙神大人的房间，也不过是你家的——虽然不能真的当成自己家，不过还是放松点啦，不用紧张的。",
-	couple_encourage = {
-		{
-			{
-				39905
-			},
-			1,
-			"刀可要牢牢握住哦。呵呵～",
-			0
-		},
-		{
-			{
-				90103,
-				80108,
-				60110
-			},
-			1,
-			"就那么讨厌青椒吗…？",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[499080] = {
-	feeling1 = "什么啊，只是个没意思的灰尘而已。算了算了，本小姐对你没兴趣了，灰尘就要像灰尘一样在一边落着去啊",
-	feeling3 = "哦？居然对本小姐的诱惑不为所动，是在硬撑呢还是单纯的无能呢？（为什么效果不好？是我做得还不够吗？还是哪个环节出了问题？）",
-	lose = "这，这次的失败是有深层而不可预知的因素在里面……你明白就行。",
-	propose = "真是美妙啊，这种被认同的感觉，比看着不知道哪来的杂鱼求饶还要美妙上一千倍……为什么本小姐没能早点注意到呢？你说是吧…指挥官，和{namecode:519}一同坠入那梦幻而迷人的深渊吧～",
-	expedition = "委托物资已经清点完了。本小姐姑且也是出了点力的，你要怎么补偿我呢？",
-	win_mvp = "区区蝼蚁也想赢本小姐？呵呵呵～",
-	home = "出击辛苦了哦，本小姐就勉为其难地好好戳一戳你那钝感的身体吧。（哼哼，你肯定经不住这招的～）",
-	mission = "任务有点多？行吧，本小姐就大发慈悲帮帮你这可怜又愚蠢的家伙好了。不过，这人情后面可是要还的哦？",
-	touch2 = "终于要承认自己的脑袋和猴子一样了？嘻嘻～",
-	voice_key_2 = -1,
-	skill = "不堪一击！",
-	drop_descrip = "驱逐舰—菲利克斯·舒尔茨",
-	mail = "连信都要本小姐帮你取吗？算了，趁本小姐心情好，无偿帮你一回。",
-	touch = "对本小姐好奇吗？这样啊，那就把你那无珠的眼睛睁大点看哦～（你能经得住我的诱惑吗？呼呼～）",
-	profile = "{namecode:518}，铁血的特别计划舰之一。想让本小姐成为你的助力吗？很简单，让本小姐觉得开心就可以了。我没有说让你无条件服从之类的话，已经很大度了哦？",
-	mission_complete = "嗯~哼——任务完成了。总算不是一个完全无能的家伙了呢，本小姐对你的好感度上升了哦。",
-	feeling4 = "（仔细想想，指挥官确实是个不错的家伙呢……不对，我在想什么呢。如果承认指挥官岂不就完蛋了。但……）欸？咳咳，没什么，本小姐在想什么与你无关吧？",
-	unlock = "哦？你好呀，指挥官。大费周章地把我唤来此处，却又用这种小伎俩把我束缚住，真是难为你了呢。等着吧，本小姐马上就会让你这愚钝之人跪倒的哦",
-	feeling5 = "啊……是本小姐输了。没能征服指挥官，反倒差点就要承认你了。不过这样一来，本小姐就能更加不择手段地进攻了～要么屈服，要么彻底接受我。在这之前我是绝对不会停止的！",
-	main = "明天是晴天吗？真可惜，少了个能让指挥官在这里守着本小姐的理由呢。|嗯？你说什么？本小姐没听清。能不能凑近一点呀？|（在认真工作啊……想想有没有能让指挥官更加听我话的办法……）嗯？怎么了？什么事都没有哦～",
-	battle = "那就给这些无礼者们一点教训好了。",
-	upgrade = "嗯哼～本小姐现在心情不错～",
-	voice_key = 49908,
-	headtouch = "本小姐高贵的额头岂是你这种人可以随便触碰的？不过，这次就原谅你的无知好了～",
-	feeling2 = "人不过也就是一种野兽罢了。本小姐要将你心中的野兽驱使出来，然后站在高处，看着你跪倒在地摇尾乞怜。哼哼～",
-	login = "这么快就想我了？总不能只是因为杂事回来得这么早吧？",
-	vote = "",
-	hp_warning = "你，你别光看着，快用你那废物脑子想想啊？",
-	id = 499080,
-	detail = "本小姐喜欢吃苹果。特别是那种切得碎碎的，一口一块的那种。就像这样哦——啊～呜～你也想要吗？",
-	couple_encourage = {}
-}
-
-_G.pg.base.ship_skin_words[499090] = {
-	feeling1 = "罢了，我就当这契约没存在过吧。我会记住你现在所做的一切，并在某一日悉数奉还。",
-	feeling3 = "特地叫我出来不是为了公务。那也就是说这个行为完全处于你作为个体的欲求吧。…很好，我也就不必拘泥于“指挥官的舰船”，而可以向你展示一下{namecode:521}这一个个体的本性了呢",
-	lose = "哼，不错的对手。希望下次再交手时，也不会让我失望。",
-	propose = "不满足于现有的契约，妄图用更进一步的手段将我束缚？契约者，你的胆子真的是越来越大了。好啊，我就如你所愿，答应你的请求。以及，接下来就做好随时被我吃掉的准备吧，呵呵呵～",
-	expedition = "委托的物资送到了？交给其他人去做吧。你没有时间做到任何事都亲力亲为。",
-	win_mvp = "对图谋不轨者而言，痛苦是最好的课程。",
-	home = "契约者，还在想着刚刚的战斗？是有让你在意的对手，还是对我的表现有所不满？",
-	mission = "去完成你该完成的事吧，契约者。我当然指的是那些任务。",
-	touch2 = "该让你长点记性了啊，契约者。",
-	voice_key_2 = -1,
-	skill = "向我俯首，虫子们！",
-	drop_descrip = "重巡洋舰—兴登堡",
-	mail = "契约者，早点查看信箱。这种事情不该由人提醒你。",
-	touch = "趁我还对你要说什么感兴趣前，把话讲清楚。",
-	profile = "铁血巡洋舰，{namecode:521}。似乎像我这样的舰船被称为“特别计划舰”？无所谓。向我证明你的能力，填充我无聊的时光，我自会遵守与你的契约。",
-	mission_complete = "任务完成了。对着如此小事就盼望着对方有所回报，我记得并没有和这样的家伙签订契约吧？",
-	feeling4 = "当你试图控制恶魔的时候，是否已经被恶魔所控制了呢？自己去寻找问题的答案吧，契约者，我在终点等着你。呵，我可不是什么蛊惑人心的存在，这是你自己选择的路。",
-	unlock = "将我召唤至此的，就是你？凡人，你就是我的指挥官么？……行吧，我就姑且承认，这份“指挥官和舰船”的契约好了。",
-	feeling5 = "我很高兴你走到这一步，誓约者。过程无关紧要，重要的只有结果——那就是你已经被我支配的这个事实。怎么，心怀不甘么？屈服于我，又有什么不好的呢？",
-	main = "契约者，你与其它舰船又是靠什么维系的？信任？交易？……原来如此，有点意思。|无聊的时光总是充斥着生活。契约者，如果你不能想办法缓解我的乏闷，我就只能从你身上寻乐了。|你说想喝点什么？哼，我并不讨厌别人投我所好。来点咖啡吧，不要太苦的。",
-	battle = "勇气是你们的起点，亦是你们的末路。",
-	upgrade = "也别忘了提升你自己，契约者。",
-	voice_key = 49909,
-	headtouch = "角？要看随你喜欢。不过，敢摸的话，你是知道后果的。",
-	feeling2 = "有事找我？我以为你会因为畏惧我，对我避而不见。那就正好借这个机会，让我了解一下你吧，契约者。",
-	login = "契约者啊，为日常奔波，就是你选择的命运么？",
-	vote = "",
-	hp_warning = "能让我兴奋起来……哼，有两下子。",
-	id = 499090,
-	detail = "尾巴？翅膀？这些就如此值得关注么。有时候真是搞不懂你，契约者。",
-	couple_encourage = {
-		{
-			{
-				49901
-			},
-			1,
-			"你的身上有危险的气息啊。",
-			0
-		}
-	}
-}
-
-_G.pg.base.ship_skin_words[999020] = {
-	feeling1 = "指挥官与舰船，就是命令与服从的关系。弗兰德尔是明白这一点的，不必担心。",
-	feeling3 = "要现在出门吗？明白了，请允许弗兰德尔整备舰装……嗯？不需要吗？那是要做什么？……去玩？既然是指挥官所求，弗兰德尔会全力以赴。",
-	lose = "失败者就应当受到惩罚。弗兰德尔甘愿接受一切处置。",
-	propose = "您希望弗兰德尔做自己最想做的事，哪怕是离开您身边也无妨……您将这个给了我，其实您也不希望弗兰德尔离开？弗兰德尔也不想和您分开。可以的话，请让我一直留在您的身边……",
-	expedition = "有新的委托完成了。需要弗兰德尔去清点物资吗？",
-	win_mvp = "胜利之后要做些什么？……庆祝？是要比“V”的意思吗？",
-	home = "祝贺您凯旋。嗯？弗兰德尔不知道您何时会回来，所以一直在这里等您。有什么问题吗？",
-	mission = "这些是新任务吗？弗兰德尔会完成的。嗯？您也要一起？明白了。",
-	touch2 = "弗兰德尔明白了，这是作为秘书舰的“同寝”工作……不是么？",
-	voice_key_2 = -1,
-	skill = "请原谅弗兰德尔……",
-	drop_descrip = "战列舰—弗兰德尔",
-	mail = "没有第一时间将信件送回，是弗兰德尔的失误……非常抱歉。",
-	touch = "听从您的吩咐。",
-	profile = "阿尔萨斯级战列舰？你说……那是弗兰德尔的身世？我不明白……舰船也好，力量也好，都是弗兰德尔的责任。您是我唯一的指挥官，您认为我是什么，弗兰德尔便是什么。",
-	mission_complete = "任务完成了。如果弗兰德尔有任何做得不好的地方，请批评指正。",
-	feeling4 = "如果今天也要“玩”的话，弗兰德尔随时待命。“是自己想玩吗？”弗兰德尔不明白，但“玩”是能让心情变好的事，弗兰德尔不讨厌……所以，一起去“玩”？",
-	unlock = "战列舰，弗兰德尔，为指挥官效劳。弗兰德尔是您的舰船，您的下属，您的奴仆。请对弗兰德尔下令吧。",
-	feeling5 = "您不希望弗兰德尔服从您，您希望弗兰德尔做自己喜欢的事……但所有的“玩”，所有能让心情变好的事，都是和指挥官一起的。弗兰德尔不想离开指挥官。这不是服从，而是弗兰德尔的请求……",
-	main = "教条、信仰……弗兰德尔不明白。只要一切听从指挥官的命令就好。|您希望弗兰德尔和窗外的鸟儿一样……这是什么意思？是希望弗兰德尔为您带来远处的财宝么？|同伴们说，想和弗兰德尔成为朋友。“朋友”是什么意思？指挥官有很多“朋友”吗？",
-	battle = "为了胜利，为了指挥官！",
-	upgrade = "承蒙您的厚爱。",
-	voice_key = 99902,
-	headtouch = "这么做的用意是什么……？",
-	feeling2 = "指挥官，今日有何吩咐？如果暂时不需要弗兰德尔的话，请允许弗兰德尔在靠近您的地方待命。",
-	login = "指挥官，请向弗兰德尔吩咐今天的任务。弗兰德尔会尽力完成每一件事。",
-	vote = "",
-	hp_warning = "没关系，相比敌人，弗兰德尔的状况并不重要。",
-	id = 999020,
-	detail = "想做的事情？听从您的命令，完成您的目标，这是弗兰德尔想做的事情，亦是舰船的天职。除此之外的，没有。",
-	couple_encourage = {
-		{
-			{
-				99901
-			},
-			1,
-			"你的心是热的……是指挥官的缘故？",
-			0
-		}
-	}
-}
-

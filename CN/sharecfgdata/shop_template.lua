@@ -21,7 +21,6 @@ _G.pg.base.shop_template[1] = {
 	discount_time = {},
 	limit_args = {}
 }
-
 _G.pg.base.shop_template[2] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49,7 +48,6 @@ _G.pg.base.shop_template[2] = {
 		1999
 	}
 }
-
 _G.pg.base.shop_template[3] = {
 	time_second = 0,
 	resource_type = 14,
@@ -79,7 +77,6 @@ _G.pg.base.shop_template[3] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[4] = {
 	time_second = 0,
 	resource_type = 14,
@@ -109,7 +106,6 @@ _G.pg.base.shop_template[4] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[5] = {
 	time_second = 0,
 	resource_type = 14,
@@ -137,7 +133,6 @@ _G.pg.base.shop_template[5] = {
 		9
 	}
 }
-
 _G.pg.base.shop_template[6] = {
 	time_second = 0,
 	resource_type = 14,
@@ -165,7 +160,6 @@ _G.pg.base.shop_template[6] = {
 		30
 	}
 }
-
 _G.pg.base.shop_template[7] = {
 	time_second = 0,
 	resource_type = 1,
@@ -189,7 +183,6 @@ _G.pg.base.shop_template[7] = {
 	discount_time = {},
 	limit_args = {}
 }
-
 _G.pg.base.shop_template[8] = {
 	time_second = 0,
 	resource_type = 1,
@@ -213,7 +206,6 @@ _G.pg.base.shop_template[8] = {
 	discount_time = {},
 	limit_args = {}
 }
-
 _G.pg.base.shop_template[9] = {
 	time_second = 0,
 	resource_type = 1,
@@ -237,7 +229,6 @@ _G.pg.base.shop_template[9] = {
 	discount_time = {},
 	limit_args = {}
 }
-
 _G.pg.base.shop_template[10] = {
 	time_second = 0,
 	resource_type = 14,
@@ -265,7 +256,6 @@ _G.pg.base.shop_template[10] = {
 		3
 	}
 }
-
 _G.pg.base.shop_template[11] = {
 	time_second = 0,
 	resource_type = 14,
@@ -293,7 +283,6 @@ _G.pg.base.shop_template[11] = {
 		9
 	}
 }
-
 _G.pg.base.shop_template[12] = {
 	time_second = 0,
 	resource_type = 14,
@@ -319,7 +308,6 @@ _G.pg.base.shop_template[12] = {
 		1
 	}
 }
-
 _G.pg.base.shop_template[13] = {
 	time_second = 0,
 	resource_type = 14,
@@ -349,7 +337,6 @@ _G.pg.base.shop_template[13] = {
 		2
 	}
 }
-
 _G.pg.base.shop_template[14] = {
 	time_second = 0,
 	resource_type = 14,
@@ -379,7 +366,6 @@ _G.pg.base.shop_template[14] = {
 		2
 	}
 }
-
 _G.pg.base.shop_template[15] = {
 	time_second = 0,
 	resource_type = 14,
@@ -409,7 +395,6 @@ _G.pg.base.shop_template[15] = {
 		2
 	}
 }
-
 _G.pg.base.shop_template[16] = {
 	time_second = 0,
 	resource_type = 14,
@@ -439,7 +424,6 @@ _G.pg.base.shop_template[16] = {
 		2
 	}
 }
-
 _G.pg.base.shop_template[17] = {
 	time_second = 0,
 	resource_type = 14,
@@ -463,7 +447,6 @@ _G.pg.base.shop_template[17] = {
 	discount_time = {},
 	limit_args = {}
 }
-
 _G.pg.base.shop_template[18] = {
 	time_second = 0,
 	resource_type = 14,
@@ -493,7 +476,6 @@ _G.pg.base.shop_template[18] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[19] = {
 	time_second = 0,
 	resource_type = 14,
@@ -527,7 +509,6 @@ _G.pg.base.shop_template[19] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[20] = {
 	time_second = 0,
 	resource_type = 1,
@@ -551,7 +532,6 @@ _G.pg.base.shop_template[20] = {
 	discount_time = {},
 	limit_args = {}
 }
-
 _G.pg.base.shop_template[21] = {
 	time_second = 0,
 	resource_type = 14,
@@ -606,7 +586,6 @@ _G.pg.base.shop_template[21] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[22] = {
 	time_second = 0,
 	resource_type = 14,
@@ -636,7 +615,6 @@ _G.pg.base.shop_template[22] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[23] = {
 	time_second = 0,
 	resource_type = 14,
@@ -660,7 +638,6 @@ _G.pg.base.shop_template[23] = {
 	discount_time = {},
 	limit_args = {}
 }
-
 _G.pg.base.shop_template[24] = {
 	time_second = 0,
 	resource_type = 14,
@@ -686,7 +663,6 @@ _G.pg.base.shop_template[24] = {
 		1
 	}
 }
-
 _G.pg.base.shop_template[25] = {
 	time_second = 0,
 	resource_type = 14,
@@ -714,7 +690,6 @@ _G.pg.base.shop_template[25] = {
 		2999
 	}
 }
-
 _G.pg.base.shop_template[26] = {
 	time_second = 0,
 	resource_type = 14,
@@ -744,7 +719,6 @@ _G.pg.base.shop_template[26] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[21001] = {
 	time_second = 0,
 	resource_type = 1,
@@ -770,7 +744,6 @@ _G.pg.base.shop_template[21001] = {
 		15003
 	}
 }
-
 _G.pg.base.shop_template[21002] = {
 	time_second = 0,
 	resource_type = 1,
@@ -796,7 +769,6 @@ _G.pg.base.shop_template[21002] = {
 		16001
 	}
 }
-
 _G.pg.base.shop_template[21003] = {
 	time_second = 0,
 	resource_type = 1,
@@ -822,7 +794,6 @@ _G.pg.base.shop_template[21003] = {
 		16011
 	}
 }
-
 _G.pg.base.shop_template[21004] = {
 	time_second = 0,
 	resource_type = 1,
@@ -848,7 +819,6 @@ _G.pg.base.shop_template[21004] = {
 		16021
 	}
 }
-
 _G.pg.base.shop_template[21005] = {
 	time_second = 0,
 	resource_type = 1,
@@ -874,7 +844,6 @@ _G.pg.base.shop_template[21005] = {
 		17001
 	}
 }
-
 _G.pg.base.shop_template[21006] = {
 	time_second = 0,
 	resource_type = 1,
@@ -900,7 +869,6 @@ _G.pg.base.shop_template[21006] = {
 		17011
 	}
 }
-
 _G.pg.base.shop_template[21007] = {
 	time_second = 0,
 	resource_type = 1,
@@ -926,7 +894,6 @@ _G.pg.base.shop_template[21007] = {
 		17021
 	}
 }
-
 _G.pg.base.shop_template[21008] = {
 	time_second = 0,
 	resource_type = 1,
@@ -952,7 +919,6 @@ _G.pg.base.shop_template[21008] = {
 		17031
 	}
 }
-
 _G.pg.base.shop_template[21009] = {
 	time_second = 0,
 	resource_type = 1,
@@ -978,7 +944,6 @@ _G.pg.base.shop_template[21009] = {
 		17041
 	}
 }
-
 _G.pg.base.shop_template[21010] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1004,7 +969,6 @@ _G.pg.base.shop_template[21010] = {
 		16002
 	}
 }
-
 _G.pg.base.shop_template[21011] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1030,7 +994,6 @@ _G.pg.base.shop_template[21011] = {
 		16012
 	}
 }
-
 _G.pg.base.shop_template[21012] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1056,7 +1019,6 @@ _G.pg.base.shop_template[21012] = {
 		16022
 	}
 }
-
 _G.pg.base.shop_template[21013] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1082,7 +1044,6 @@ _G.pg.base.shop_template[21013] = {
 		17002
 	}
 }
-
 _G.pg.base.shop_template[21014] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1108,7 +1069,6 @@ _G.pg.base.shop_template[21014] = {
 		17012
 	}
 }
-
 _G.pg.base.shop_template[21015] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1134,7 +1094,6 @@ _G.pg.base.shop_template[21015] = {
 		17022
 	}
 }
-
 _G.pg.base.shop_template[21016] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1160,7 +1119,6 @@ _G.pg.base.shop_template[21016] = {
 		17032
 	}
 }
-
 _G.pg.base.shop_template[21017] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1186,7 +1144,6 @@ _G.pg.base.shop_template[21017] = {
 		17042
 	}
 }
-
 _G.pg.base.shop_template[21018] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1212,7 +1169,6 @@ _G.pg.base.shop_template[21018] = {
 		16003
 	}
 }
-
 _G.pg.base.shop_template[21019] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1238,7 +1194,6 @@ _G.pg.base.shop_template[21019] = {
 		16013
 	}
 }
-
 _G.pg.base.shop_template[21020] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1264,7 +1219,6 @@ _G.pg.base.shop_template[21020] = {
 		16023
 	}
 }
-
 _G.pg.base.shop_template[21021] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1290,7 +1244,6 @@ _G.pg.base.shop_template[21021] = {
 		17003
 	}
 }
-
 _G.pg.base.shop_template[21022] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1316,7 +1269,6 @@ _G.pg.base.shop_template[21022] = {
 		17013
 	}
 }
-
 _G.pg.base.shop_template[21023] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1342,7 +1294,6 @@ _G.pg.base.shop_template[21023] = {
 		17023
 	}
 }
-
 _G.pg.base.shop_template[21024] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1368,7 +1319,6 @@ _G.pg.base.shop_template[21024] = {
 		17033
 	}
 }
-
 _G.pg.base.shop_template[21025] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1394,7 +1344,6 @@ _G.pg.base.shop_template[21025] = {
 		17043
 	}
 }
-
 _G.pg.base.shop_template[21026] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1420,7 +1369,6 @@ _G.pg.base.shop_template[21026] = {
 		20001
 	}
 }
-
 _G.pg.base.shop_template[21027] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1446,7 +1394,6 @@ _G.pg.base.shop_template[21027] = {
 		50001
 	}
 }
-
 _G.pg.base.shop_template[21028] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1472,7 +1419,6 @@ _G.pg.base.shop_template[21028] = {
 		50002
 	}
 }
-
 _G.pg.base.shop_template[21029] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1498,7 +1444,6 @@ _G.pg.base.shop_template[21029] = {
 		50003
 	}
 }
-
 _G.pg.base.shop_template[21030] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1524,7 +1469,6 @@ _G.pg.base.shop_template[21030] = {
 		50004
 	}
 }
-
 _G.pg.base.shop_template[21031] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1550,7 +1494,6 @@ _G.pg.base.shop_template[21031] = {
 		50005
 	}
 }
-
 _G.pg.base.shop_template[21032] = {
 	time_second = 0,
 	resource_type = 1,
@@ -1576,7 +1519,6 @@ _G.pg.base.shop_template[21032] = {
 		50006
 	}
 }
-
 _G.pg.base.shop_template[23001] = {
 	time_second = 0,
 	resource_type = 3,
@@ -1602,7 +1544,6 @@ _G.pg.base.shop_template[23001] = {
 		20001
 	}
 }
-
 _G.pg.base.shop_template[24001] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1628,7 +1569,6 @@ _G.pg.base.shop_template[24001] = {
 		15003
 	}
 }
-
 _G.pg.base.shop_template[24002] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1654,7 +1594,6 @@ _G.pg.base.shop_template[24002] = {
 		15003
 	}
 }
-
 _G.pg.base.shop_template[24003] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1680,7 +1619,6 @@ _G.pg.base.shop_template[24003] = {
 		20001
 	}
 }
-
 _G.pg.base.shop_template[24004] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1706,7 +1644,6 @@ _G.pg.base.shop_template[24004] = {
 		20001
 	}
 }
-
 _G.pg.base.shop_template[24005] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1732,7 +1669,6 @@ _G.pg.base.shop_template[24005] = {
 		16001
 	}
 }
-
 _G.pg.base.shop_template[24006] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1758,7 +1694,6 @@ _G.pg.base.shop_template[24006] = {
 		16011
 	}
 }
-
 _G.pg.base.shop_template[24007] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1784,7 +1719,6 @@ _G.pg.base.shop_template[24007] = {
 		16021
 	}
 }
-
 _G.pg.base.shop_template[24008] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1810,7 +1744,6 @@ _G.pg.base.shop_template[24008] = {
 		16002
 	}
 }
-
 _G.pg.base.shop_template[24009] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1836,7 +1769,6 @@ _G.pg.base.shop_template[24009] = {
 		16012
 	}
 }
-
 _G.pg.base.shop_template[24010] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1862,7 +1794,6 @@ _G.pg.base.shop_template[24010] = {
 		16022
 	}
 }
-
 _G.pg.base.shop_template[24011] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1888,7 +1819,6 @@ _G.pg.base.shop_template[24011] = {
 		16003
 	}
 }
-
 _G.pg.base.shop_template[24012] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1914,7 +1844,6 @@ _G.pg.base.shop_template[24012] = {
 		16013
 	}
 }
-
 _G.pg.base.shop_template[24013] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1940,7 +1869,6 @@ _G.pg.base.shop_template[24013] = {
 		16023
 	}
 }
-
 _G.pg.base.shop_template[25001] = {
 	time_second = 0,
 	resource_type = 14,
@@ -1975,7 +1903,6 @@ _G.pg.base.shop_template[25001] = {
 		40702
 	}
 }
-
 _G.pg.base.shop_template[25002] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2010,7 +1937,6 @@ _G.pg.base.shop_template[25002] = {
 		40704
 	}
 }
-
 _G.pg.base.shop_template[25003] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2045,7 +1971,6 @@ _G.pg.base.shop_template[25003] = {
 		40706
 	}
 }
-
 _G.pg.base.shop_template[25004] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2080,7 +2005,6 @@ _G.pg.base.shop_template[25004] = {
 		40708
 	}
 }
-
 _G.pg.base.shop_template[25005] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2115,7 +2039,6 @@ _G.pg.base.shop_template[25005] = {
 		40710
 	}
 }
-
 _G.pg.base.shop_template[25006] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2150,7 +2073,6 @@ _G.pg.base.shop_template[25006] = {
 		40712
 	}
 }
-
 _G.pg.base.shop_template[25007] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2185,7 +2107,6 @@ _G.pg.base.shop_template[25007] = {
 		40714
 	}
 }
-
 _G.pg.base.shop_template[25008] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2220,7 +2141,6 @@ _G.pg.base.shop_template[25008] = {
 		40716
 	}
 }
-
 _G.pg.base.shop_template[25009] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2255,7 +2175,6 @@ _G.pg.base.shop_template[25009] = {
 		40718
 	}
 }
-
 _G.pg.base.shop_template[25010] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2290,7 +2209,6 @@ _G.pg.base.shop_template[25010] = {
 		40720
 	}
 }
-
 _G.pg.base.shop_template[25011] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2325,7 +2243,6 @@ _G.pg.base.shop_template[25011] = {
 		40722
 	}
 }
-
 _G.pg.base.shop_template[25012] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2360,7 +2277,6 @@ _G.pg.base.shop_template[25012] = {
 		40724
 	}
 }
-
 _G.pg.base.shop_template[25013] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2395,7 +2311,6 @@ _G.pg.base.shop_template[25013] = {
 		40726
 	}
 }
-
 _G.pg.base.shop_template[25014] = {
 	time_second = 0,
 	resource_type = 14,
@@ -2430,7 +2345,6 @@ _G.pg.base.shop_template[25014] = {
 		40728
 	}
 }
-
 _G.pg.base.shop_template[25101] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2465,7 +2379,6 @@ _G.pg.base.shop_template[25101] = {
 		40701
 	}
 }
-
 _G.pg.base.shop_template[25102] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2500,7 +2413,6 @@ _G.pg.base.shop_template[25102] = {
 		40703
 	}
 }
-
 _G.pg.base.shop_template[25103] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2535,7 +2447,6 @@ _G.pg.base.shop_template[25103] = {
 		40705
 	}
 }
-
 _G.pg.base.shop_template[25104] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2570,7 +2481,6 @@ _G.pg.base.shop_template[25104] = {
 		40707
 	}
 }
-
 _G.pg.base.shop_template[25105] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2605,7 +2515,6 @@ _G.pg.base.shop_template[25105] = {
 		40709
 	}
 }
-
 _G.pg.base.shop_template[25106] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2640,7 +2549,6 @@ _G.pg.base.shop_template[25106] = {
 		40711
 	}
 }
-
 _G.pg.base.shop_template[25107] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2675,7 +2583,6 @@ _G.pg.base.shop_template[25107] = {
 		40713
 	}
 }
-
 _G.pg.base.shop_template[25108] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2710,7 +2617,6 @@ _G.pg.base.shop_template[25108] = {
 		40715
 	}
 }
-
 _G.pg.base.shop_template[25109] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2745,7 +2651,6 @@ _G.pg.base.shop_template[25109] = {
 		40717
 	}
 }
-
 _G.pg.base.shop_template[25110] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2780,7 +2685,6 @@ _G.pg.base.shop_template[25110] = {
 		40719
 	}
 }
-
 _G.pg.base.shop_template[25111] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2815,7 +2719,6 @@ _G.pg.base.shop_template[25111] = {
 		40721
 	}
 }
-
 _G.pg.base.shop_template[25112] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2850,7 +2753,6 @@ _G.pg.base.shop_template[25112] = {
 		40723
 	}
 }
-
 _G.pg.base.shop_template[25113] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2885,7 +2787,6 @@ _G.pg.base.shop_template[25113] = {
 		40725
 	}
 }
-
 _G.pg.base.shop_template[25114] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2920,7 +2821,6 @@ _G.pg.base.shop_template[25114] = {
 		40727
 	}
 }
-
 _G.pg.base.shop_template[31011] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2946,7 +2846,6 @@ _G.pg.base.shop_template[31011] = {
 		30011
 	}
 }
-
 _G.pg.base.shop_template[31012] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2972,7 +2871,6 @@ _G.pg.base.shop_template[31012] = {
 		30012
 	}
 }
-
 _G.pg.base.shop_template[31013] = {
 	time_second = 0,
 	resource_type = 1,
@@ -2998,7 +2896,6 @@ _G.pg.base.shop_template[31013] = {
 		30013
 	}
 }
-
 _G.pg.base.shop_template[31014] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3024,111 +2921,6 @@ _G.pg.base.shop_template[31014] = {
 		30014
 	}
 }
-
-_G.pg.base.shop_template[31111] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "400物资兑换5个克洛希德科技箱T1",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31111,
-	resource_num = 400,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30011
-	}
-}
-
-_G.pg.base.shop_template[31112] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "2000物资兑换5个克洛希德科技箱T2",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31112,
-	resource_num = 2000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30012
-	}
-}
-
-_G.pg.base.shop_template[31113] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "10000物资兑换5个克洛希德科技箱T3",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31113,
-	resource_num = 10000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30013
-	}
-}
-
-_G.pg.base.shop_template[31114] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "25000物资兑换5个克洛希德科技箱T4",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31114,
-	resource_num = 25000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30014
-	}
-}
-
 _G.pg.base.shop_template[31021] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3154,7 +2946,6 @@ _G.pg.base.shop_template[31021] = {
 		30021
 	}
 }
-
 _G.pg.base.shop_template[31022] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3180,7 +2971,6 @@ _G.pg.base.shop_template[31022] = {
 		30022
 	}
 }
-
 _G.pg.base.shop_template[31023] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3206,7 +2996,6 @@ _G.pg.base.shop_template[31023] = {
 		30023
 	}
 }
-
 _G.pg.base.shop_template[31024] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3232,111 +3021,6 @@ _G.pg.base.shop_template[31024] = {
 		30024
 	}
 }
-
-_G.pg.base.shop_template[31121] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "400物资兑换5个威斯克科技箱T1",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31121,
-	resource_num = 400,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30021
-	}
-}
-
-_G.pg.base.shop_template[31122] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "2000物资兑换5个威斯克科技箱T2",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31122,
-	resource_num = 2000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30022
-	}
-}
-
-_G.pg.base.shop_template[31123] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "10000物资兑换5个威斯克科技箱T3",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31123,
-	resource_num = 10000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30023
-	}
-}
-
-_G.pg.base.shop_template[31124] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "25000物资兑换5个威斯克科技箱T4",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31124,
-	resource_num = 25000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30024
-	}
-}
-
 _G.pg.base.shop_template[31031] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3362,7 +3046,6 @@ _G.pg.base.shop_template[31031] = {
 		30031
 	}
 }
-
 _G.pg.base.shop_template[31032] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3388,7 +3071,6 @@ _G.pg.base.shop_template[31032] = {
 		30032
 	}
 }
-
 _G.pg.base.shop_template[31033] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3414,7 +3096,6 @@ _G.pg.base.shop_template[31033] = {
 		30033
 	}
 }
-
 _G.pg.base.shop_template[31034] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3440,111 +3121,6 @@ _G.pg.base.shop_template[31034] = {
 		30034
 	}
 }
-
-_G.pg.base.shop_template[31131] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "400物资兑换5个藏王重工科技箱T1",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31131,
-	resource_num = 400,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30031
-	}
-}
-
-_G.pg.base.shop_template[31132] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "2000物资兑换5个藏王重工科技箱T2",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31132,
-	resource_num = 2000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30032
-	}
-}
-
-_G.pg.base.shop_template[31133] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "10000物资兑换5个藏王重工科技箱T3",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31133,
-	resource_num = 10000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30033
-	}
-}
-
-_G.pg.base.shop_template[31134] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "25000物资兑换5个藏王重工科技箱T4",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31134,
-	resource_num = 25000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30034
-	}
-}
-
 _G.pg.base.shop_template[31041] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3570,7 +3146,6 @@ _G.pg.base.shop_template[31041] = {
 		30041
 	}
 }
-
 _G.pg.base.shop_template[31042] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3596,7 +3171,6 @@ _G.pg.base.shop_template[31042] = {
 		30042
 	}
 }
-
 _G.pg.base.shop_template[31043] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3622,7 +3196,6 @@ _G.pg.base.shop_template[31043] = {
 		30043
 	}
 }
-
 _G.pg.base.shop_template[31044] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3648,111 +3221,6 @@ _G.pg.base.shop_template[31044] = {
 		30044
 	}
 }
-
-_G.pg.base.shop_template[31141] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "400物资兑换5个伯鲁克科技箱T1",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31141,
-	resource_num = 400,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30041
-	}
-}
-
-_G.pg.base.shop_template[31142] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "2000物资兑换5个伯鲁克科技箱T2",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31142,
-	resource_num = 2000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30042
-	}
-}
-
-_G.pg.base.shop_template[31143] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "10000物资兑换5个伯鲁克科技箱T3",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31143,
-	resource_num = 10000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30043
-	}
-}
-
-_G.pg.base.shop_template[31144] = {
-	time_second = 0,
-	resource_type = 1,
-	genre = "shopping_street",
-	type = 2,
-	desc = "25000物资兑换5个伯鲁克科技箱T4",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 0,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	time = "always",
-	group = 0,
-	num = 5,
-	discount = 0,
-	group_type = 0,
-	id = 31144,
-	resource_num = 25000,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		30044
-	}
-}
-
 _G.pg.base.shop_template[31080] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3778,7 +3246,406 @@ _G.pg.base.shop_template[31080] = {
 		30205
 	}
 }
-
+_G.pg.base.shop_template[31111] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "400物资兑换5个克洛希德科技箱T1",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31111,
+	resource_num = 400,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30011
+	}
+}
+_G.pg.base.shop_template[31112] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "2000物资兑换5个克洛希德科技箱T2",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31112,
+	resource_num = 2000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30012
+	}
+}
+_G.pg.base.shop_template[31113] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "10000物资兑换5个克洛希德科技箱T3",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31113,
+	resource_num = 10000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30013
+	}
+}
+_G.pg.base.shop_template[31114] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "25000物资兑换5个克洛希德科技箱T4",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31114,
+	resource_num = 25000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30014
+	}
+}
+_G.pg.base.shop_template[31121] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "400物资兑换5个威斯克科技箱T1",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31121,
+	resource_num = 400,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30021
+	}
+}
+_G.pg.base.shop_template[31122] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "2000物资兑换5个威斯克科技箱T2",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31122,
+	resource_num = 2000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30022
+	}
+}
+_G.pg.base.shop_template[31123] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "10000物资兑换5个威斯克科技箱T3",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31123,
+	resource_num = 10000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30023
+	}
+}
+_G.pg.base.shop_template[31124] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "25000物资兑换5个威斯克科技箱T4",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31124,
+	resource_num = 25000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30024
+	}
+}
+_G.pg.base.shop_template[31131] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "400物资兑换5个藏王重工科技箱T1",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31131,
+	resource_num = 400,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30031
+	}
+}
+_G.pg.base.shop_template[31132] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "2000物资兑换5个藏王重工科技箱T2",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31132,
+	resource_num = 2000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30032
+	}
+}
+_G.pg.base.shop_template[31133] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "10000物资兑换5个藏王重工科技箱T3",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31133,
+	resource_num = 10000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30033
+	}
+}
+_G.pg.base.shop_template[31134] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "25000物资兑换5个藏王重工科技箱T4",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31134,
+	resource_num = 25000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30034
+	}
+}
+_G.pg.base.shop_template[31141] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "400物资兑换5个伯鲁克科技箱T1",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31141,
+	resource_num = 400,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30041
+	}
+}
+_G.pg.base.shop_template[31142] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "2000物资兑换5个伯鲁克科技箱T2",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31142,
+	resource_num = 2000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30042
+	}
+}
+_G.pg.base.shop_template[31143] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "10000物资兑换5个伯鲁克科技箱T3",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31143,
+	resource_num = 10000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30043
+	}
+}
+_G.pg.base.shop_template[31144] = {
+	time_second = 0,
+	resource_type = 1,
+	genre = "shopping_street",
+	type = 2,
+	desc = "25000物资兑换5个伯鲁克科技箱T4",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 5,
+	discount = 0,
+	group_type = 0,
+	id = 31144,
+	resource_num = 25000,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30044
+	}
+}
 _G.pg.base.shop_template[31954] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3804,7 +3671,6 @@ _G.pg.base.shop_template[31954] = {
 		30348
 	}
 }
-
 _G.pg.base.shop_template[31955] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3830,7 +3696,6 @@ _G.pg.base.shop_template[31955] = {
 		30347
 	}
 }
-
 _G.pg.base.shop_template[31956] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3856,7 +3721,6 @@ _G.pg.base.shop_template[31956] = {
 		30346
 	}
 }
-
 _G.pg.base.shop_template[31957] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3882,7 +3746,6 @@ _G.pg.base.shop_template[31957] = {
 		30345
 	}
 }
-
 _G.pg.base.shop_template[31958] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3908,7 +3771,6 @@ _G.pg.base.shop_template[31958] = {
 		30344
 	}
 }
-
 _G.pg.base.shop_template[31959] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3934,7 +3796,6 @@ _G.pg.base.shop_template[31959] = {
 		30343
 	}
 }
-
 _G.pg.base.shop_template[31960] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3960,7 +3821,6 @@ _G.pg.base.shop_template[31960] = {
 		30342
 	}
 }
-
 _G.pg.base.shop_template[31961] = {
 	time_second = 0,
 	resource_type = 1,
@@ -3986,7 +3846,6 @@ _G.pg.base.shop_template[31961] = {
 		30340
 	}
 }
-
 _G.pg.base.shop_template[31962] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4012,7 +3871,6 @@ _G.pg.base.shop_template[31962] = {
 		30339
 	}
 }
-
 _G.pg.base.shop_template[31963] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4038,7 +3896,6 @@ _G.pg.base.shop_template[31963] = {
 		30338
 	}
 }
-
 _G.pg.base.shop_template[31964] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4064,7 +3921,6 @@ _G.pg.base.shop_template[31964] = {
 		30337
 	}
 }
-
 _G.pg.base.shop_template[31965] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4090,7 +3946,6 @@ _G.pg.base.shop_template[31965] = {
 		30336
 	}
 }
-
 _G.pg.base.shop_template[31966] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4116,7 +3971,6 @@ _G.pg.base.shop_template[31966] = {
 		30335
 	}
 }
-
 _G.pg.base.shop_template[31967] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4142,7 +3996,6 @@ _G.pg.base.shop_template[31967] = {
 		30334
 	}
 }
-
 _G.pg.base.shop_template[31968] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4168,7 +4021,6 @@ _G.pg.base.shop_template[31968] = {
 		30333
 	}
 }
-
 _G.pg.base.shop_template[31969] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4194,7 +4046,6 @@ _G.pg.base.shop_template[31969] = {
 		30332
 	}
 }
-
 _G.pg.base.shop_template[31970] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4220,7 +4071,6 @@ _G.pg.base.shop_template[31970] = {
 		30331
 	}
 }
-
 _G.pg.base.shop_template[31971] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4246,7 +4096,6 @@ _G.pg.base.shop_template[31971] = {
 		30330
 	}
 }
-
 _G.pg.base.shop_template[31972] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4272,7 +4121,6 @@ _G.pg.base.shop_template[31972] = {
 		30329
 	}
 }
-
 _G.pg.base.shop_template[31973] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4298,7 +4146,6 @@ _G.pg.base.shop_template[31973] = {
 		30328
 	}
 }
-
 _G.pg.base.shop_template[31974] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4324,7 +4171,6 @@ _G.pg.base.shop_template[31974] = {
 		30327
 	}
 }
-
 _G.pg.base.shop_template[31975] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4350,7 +4196,6 @@ _G.pg.base.shop_template[31975] = {
 		30326
 	}
 }
-
 _G.pg.base.shop_template[31976] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4376,7 +4221,6 @@ _G.pg.base.shop_template[31976] = {
 		30325
 	}
 }
-
 _G.pg.base.shop_template[31977] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4402,7 +4246,6 @@ _G.pg.base.shop_template[31977] = {
 		30324
 	}
 }
-
 _G.pg.base.shop_template[31978] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4428,7 +4271,6 @@ _G.pg.base.shop_template[31978] = {
 		30323
 	}
 }
-
 _G.pg.base.shop_template[31979] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4454,7 +4296,6 @@ _G.pg.base.shop_template[31979] = {
 		30322
 	}
 }
-
 _G.pg.base.shop_template[31980] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4480,7 +4321,6 @@ _G.pg.base.shop_template[31980] = {
 		30321
 	}
 }
-
 _G.pg.base.shop_template[31981] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4506,7 +4346,6 @@ _G.pg.base.shop_template[31981] = {
 		30320
 	}
 }
-
 _G.pg.base.shop_template[31982] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4532,7 +4371,6 @@ _G.pg.base.shop_template[31982] = {
 		30319
 	}
 }
-
 _G.pg.base.shop_template[31983] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4558,7 +4396,6 @@ _G.pg.base.shop_template[31983] = {
 		30318
 	}
 }
-
 _G.pg.base.shop_template[31984] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4584,7 +4421,6 @@ _G.pg.base.shop_template[31984] = {
 		30317
 	}
 }
-
 _G.pg.base.shop_template[31985] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4610,7 +4446,6 @@ _G.pg.base.shop_template[31985] = {
 		30316
 	}
 }
-
 _G.pg.base.shop_template[31986] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4636,7 +4471,6 @@ _G.pg.base.shop_template[31986] = {
 		30315
 	}
 }
-
 _G.pg.base.shop_template[31987] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4662,7 +4496,6 @@ _G.pg.base.shop_template[31987] = {
 		30314
 	}
 }
-
 _G.pg.base.shop_template[31988] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4688,7 +4521,6 @@ _G.pg.base.shop_template[31988] = {
 		30313
 	}
 }
-
 _G.pg.base.shop_template[31989] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4714,7 +4546,6 @@ _G.pg.base.shop_template[31989] = {
 		30312
 	}
 }
-
 _G.pg.base.shop_template[31990] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4740,7 +4571,6 @@ _G.pg.base.shop_template[31990] = {
 		30311
 	}
 }
-
 _G.pg.base.shop_template[31991] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4766,7 +4596,6 @@ _G.pg.base.shop_template[31991] = {
 		30310
 	}
 }
-
 _G.pg.base.shop_template[31992] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4792,7 +4621,6 @@ _G.pg.base.shop_template[31992] = {
 		30309
 	}
 }
-
 _G.pg.base.shop_template[31993] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4818,7 +4646,6 @@ _G.pg.base.shop_template[31993] = {
 		30308
 	}
 }
-
 _G.pg.base.shop_template[31994] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4844,7 +4671,6 @@ _G.pg.base.shop_template[31994] = {
 		30307
 	}
 }
-
 _G.pg.base.shop_template[31995] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4870,7 +4696,6 @@ _G.pg.base.shop_template[31995] = {
 		30306
 	}
 }
-
 _G.pg.base.shop_template[31996] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4896,7 +4721,6 @@ _G.pg.base.shop_template[31996] = {
 		30305
 	}
 }
-
 _G.pg.base.shop_template[31997] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4922,7 +4746,6 @@ _G.pg.base.shop_template[31997] = {
 		30304
 	}
 }
-
 _G.pg.base.shop_template[31998] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4948,7 +4771,6 @@ _G.pg.base.shop_template[31998] = {
 		30303
 	}
 }
-
 _G.pg.base.shop_template[31999] = {
 	time_second = 0,
 	resource_type = 1,
@@ -4974,7 +4796,6 @@ _G.pg.base.shop_template[31999] = {
 		30302
 	}
 }
-
 _G.pg.base.shop_template[33011] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5000,7 +4821,6 @@ _G.pg.base.shop_template[33011] = {
 		30011
 	}
 }
-
 _G.pg.base.shop_template[33012] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5026,7 +4846,6 @@ _G.pg.base.shop_template[33012] = {
 		30012
 	}
 }
-
 _G.pg.base.shop_template[33013] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5052,7 +4871,6 @@ _G.pg.base.shop_template[33013] = {
 		30013
 	}
 }
-
 _G.pg.base.shop_template[33014] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5078,7 +4896,6 @@ _G.pg.base.shop_template[33014] = {
 		30014
 	}
 }
-
 _G.pg.base.shop_template[33021] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5104,7 +4921,6 @@ _G.pg.base.shop_template[33021] = {
 		30021
 	}
 }
-
 _G.pg.base.shop_template[33022] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5130,7 +4946,6 @@ _G.pg.base.shop_template[33022] = {
 		30022
 	}
 }
-
 _G.pg.base.shop_template[33023] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5156,7 +4971,6 @@ _G.pg.base.shop_template[33023] = {
 		30023
 	}
 }
-
 _G.pg.base.shop_template[33024] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5182,7 +4996,6 @@ _G.pg.base.shop_template[33024] = {
 		30024
 	}
 }
-
 _G.pg.base.shop_template[33031] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5208,7 +5021,6 @@ _G.pg.base.shop_template[33031] = {
 		30031
 	}
 }
-
 _G.pg.base.shop_template[33032] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5234,7 +5046,6 @@ _G.pg.base.shop_template[33032] = {
 		30032
 	}
 }
-
 _G.pg.base.shop_template[33033] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5260,7 +5071,6 @@ _G.pg.base.shop_template[33033] = {
 		30033
 	}
 }
-
 _G.pg.base.shop_template[33034] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5286,7 +5096,6 @@ _G.pg.base.shop_template[33034] = {
 		30034
 	}
 }
-
 _G.pg.base.shop_template[33041] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5312,7 +5121,6 @@ _G.pg.base.shop_template[33041] = {
 		30041
 	}
 }
-
 _G.pg.base.shop_template[33042] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5338,7 +5146,6 @@ _G.pg.base.shop_template[33042] = {
 		30042
 	}
 }
-
 _G.pg.base.shop_template[33043] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5364,7 +5171,6 @@ _G.pg.base.shop_template[33043] = {
 		30043
 	}
 }
-
 _G.pg.base.shop_template[33044] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5390,7 +5196,6 @@ _G.pg.base.shop_template[33044] = {
 		30044
 	}
 }
-
 _G.pg.base.shop_template[33080] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5416,7 +5221,6 @@ _G.pg.base.shop_template[33080] = {
 		30205
 	}
 }
-
 _G.pg.base.shop_template[43001] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5442,7 +5246,6 @@ _G.pg.base.shop_template[43001] = {
 		101261
 	}
 }
-
 _G.pg.base.shop_template[43002] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5468,7 +5271,6 @@ _G.pg.base.shop_template[43002] = {
 		105141
 	}
 }
-
 _G.pg.base.shop_template[43003] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5494,7 +5296,6 @@ _G.pg.base.shop_template[43003] = {
 		100001
 	}
 }
-
 _G.pg.base.shop_template[43004] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5520,7 +5321,6 @@ _G.pg.base.shop_template[43004] = {
 		100011
 	}
 }
-
 _G.pg.base.shop_template[43005] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5546,7 +5346,6 @@ _G.pg.base.shop_template[43005] = {
 		108021
 	}
 }
-
 _G.pg.base.shop_template[43006] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5572,7 +5371,6 @@ _G.pg.base.shop_template[43006] = {
 		301271
 	}
 }
-
 _G.pg.base.shop_template[43007] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5598,7 +5396,6 @@ _G.pg.base.shop_template[43007] = {
 		301281
 	}
 }
-
 _G.pg.base.shop_template[43008] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5624,7 +5421,6 @@ _G.pg.base.shop_template[43008] = {
 		201131
 	}
 }
-
 _G.pg.base.shop_template[43009] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5650,7 +5446,6 @@ _G.pg.base.shop_template[43009] = {
 		103091
 	}
 }
-
 _G.pg.base.shop_template[43010] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5676,7 +5471,6 @@ _G.pg.base.shop_template[43010] = {
 		103101
 	}
 }
-
 _G.pg.base.shop_template[43011] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5702,7 +5496,6 @@ _G.pg.base.shop_template[43011] = {
 		205051
 	}
 }
-
 _G.pg.base.shop_template[43012] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5728,7 +5521,6 @@ _G.pg.base.shop_template[43012] = {
 		201291
 	}
 }
-
 _G.pg.base.shop_template[43013] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5754,7 +5546,6 @@ _G.pg.base.shop_template[43013] = {
 		401261
 	}
 }
-
 _G.pg.base.shop_template[43014] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5780,7 +5571,6 @@ _G.pg.base.shop_template[43014] = {
 		401361
 	}
 }
-
 _G.pg.base.shop_template[43015] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5806,7 +5596,6 @@ _G.pg.base.shop_template[43015] = {
 		202251
 	}
 }
-
 _G.pg.base.shop_template[43016] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5832,7 +5621,6 @@ _G.pg.base.shop_template[43016] = {
 		605021
 	}
 }
-
 _G.pg.base.shop_template[43017] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5858,7 +5646,6 @@ _G.pg.base.shop_template[43017] = {
 		601021
 	}
 }
-
 _G.pg.base.shop_template[43018] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5884,7 +5671,6 @@ _G.pg.base.shop_template[43018] = {
 		603011
 	}
 }
-
 _G.pg.base.shop_template[43019] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5910,7 +5696,6 @@ _G.pg.base.shop_template[43019] = {
 		605051
 	}
 }
-
 _G.pg.base.shop_template[43020] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5936,7 +5721,6 @@ _G.pg.base.shop_template[43020] = {
 		205071
 	}
 }
-
 _G.pg.base.shop_template[43021] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5962,7 +5746,6 @@ _G.pg.base.shop_template[43021] = {
 		801031
 	}
 }
-
 _G.pg.base.shop_template[43022] = {
 	time_second = 0,
 	resource_type = 3,
@@ -5988,7 +5771,6 @@ _G.pg.base.shop_template[43022] = {
 		107291
 	}
 }
-
 _G.pg.base.shop_template[43023] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6014,7 +5796,6 @@ _G.pg.base.shop_template[43023] = {
 		306061
 	}
 }
-
 _G.pg.base.shop_template[43024] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6040,7 +5821,6 @@ _G.pg.base.shop_template[43024] = {
 		102221
 	}
 }
-
 _G.pg.base.shop_template[43025] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6066,7 +5846,6 @@ _G.pg.base.shop_template[43025] = {
 		302081
 	}
 }
-
 _G.pg.base.shop_template[43026] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6092,7 +5871,6 @@ _G.pg.base.shop_template[43026] = {
 		301101
 	}
 }
-
 _G.pg.base.shop_template[43027] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6118,7 +5896,6 @@ _G.pg.base.shop_template[43027] = {
 		202191
 	}
 }
-
 _G.pg.base.shop_template[43028] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6144,7 +5921,6 @@ _G.pg.base.shop_template[43028] = {
 		901121
 	}
 }
-
 _G.pg.base.shop_template[43029] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6170,7 +5946,6 @@ _G.pg.base.shop_template[43029] = {
 		401281
 	}
 }
-
 _G.pg.base.shop_template[43030] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6196,7 +5971,6 @@ _G.pg.base.shop_template[43030] = {
 		108041
 	}
 }
-
 _G.pg.base.shop_template[43031] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6222,7 +5996,6 @@ _G.pg.base.shop_template[43031] = {
 		106551
 	}
 }
-
 _G.pg.base.shop_template[43032] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6248,7 +6021,6 @@ _G.pg.base.shop_template[43032] = {
 		201201
 	}
 }
-
 _G.pg.base.shop_template[43033] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6274,7 +6046,6 @@ _G.pg.base.shop_template[43033] = {
 		902011
 	}
 }
-
 _G.pg.base.shop_template[43034] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6300,7 +6071,6 @@ _G.pg.base.shop_template[43034] = {
 		807011
 	}
 }
-
 _G.pg.base.shop_template[43035] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6326,7 +6096,6 @@ _G.pg.base.shop_template[43035] = {
 		701031
 	}
 }
-
 _G.pg.base.shop_template[43036] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6352,7 +6121,6 @@ _G.pg.base.shop_template[43036] = {
 		705011
 	}
 }
-
 _G.pg.base.shop_template[43037] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6378,7 +6146,6 @@ _G.pg.base.shop_template[43037] = {
 		201331
 	}
 }
-
 _G.pg.base.shop_template[43038] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6404,7 +6171,6 @@ _G.pg.base.shop_template[43038] = {
 		302111
 	}
 }
-
 _G.pg.base.shop_template[43039] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6430,7 +6196,6 @@ _G.pg.base.shop_template[43039] = {
 		207061
 	}
 }
-
 _G.pg.base.shop_template[43040] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6456,7 +6221,6 @@ _G.pg.base.shop_template[43040] = {
 		301491
 	}
 }
-
 _G.pg.base.shop_template[43041] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6482,7 +6246,6 @@ _G.pg.base.shop_template[43041] = {
 		408101
 	}
 }
-
 _G.pg.base.shop_template[43042] = {
 	time_second = 0,
 	resource_type = 3,
@@ -6508,7 +6271,6 @@ _G.pg.base.shop_template[43042] = {
 		401241
 	}
 }
-
 _G.pg.base.shop_template[50002] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6534,7 +6296,6 @@ _G.pg.base.shop_template[50002] = {
 		15003
 	}
 }
-
 _G.pg.base.shop_template[50003] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6560,7 +6321,6 @@ _G.pg.base.shop_template[50003] = {
 		15004
 	}
 }
-
 _G.pg.base.shop_template[50004] = {
 	time_second = 0,
 	resource_type = 2,
@@ -6586,7 +6346,6 @@ _G.pg.base.shop_template[50004] = {
 		50001
 	}
 }
-
 _G.pg.base.shop_template[50005] = {
 	time_second = 0,
 	resource_type = 2,
@@ -6612,7 +6371,6 @@ _G.pg.base.shop_template[50005] = {
 		50002
 	}
 }
-
 _G.pg.base.shop_template[50006] = {
 	time_second = 0,
 	resource_type = 2,
@@ -6638,7 +6396,6 @@ _G.pg.base.shop_template[50006] = {
 		50003
 	}
 }
-
 _G.pg.base.shop_template[50007] = {
 	time_second = 0,
 	resource_type = 2,
@@ -6664,7 +6421,6 @@ _G.pg.base.shop_template[50007] = {
 		50004
 	}
 }
-
 _G.pg.base.shop_template[50008] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6690,7 +6446,6 @@ _G.pg.base.shop_template[50008] = {
 		50005
 	}
 }
-
 _G.pg.base.shop_template[50009] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6716,7 +6471,6 @@ _G.pg.base.shop_template[50009] = {
 		50006
 	}
 }
-
 _G.pg.base.shop_template[50011] = {
 	time_second = 0,
 	resource_type = 6,
@@ -6748,7 +6502,6 @@ _G.pg.base.shop_template[50011] = {
 		15005
 	}
 }
-
 _G.pg.base.shop_template[50012] = {
 	time_second = 0,
 	resource_type = 6,
@@ -6780,7 +6533,6 @@ _G.pg.base.shop_template[50012] = {
 		15005
 	}
 }
-
 _G.pg.base.shop_template[50013] = {
 	time_second = 0,
 	resource_type = 6,
@@ -6812,7 +6564,6 @@ _G.pg.base.shop_template[50013] = {
 		15005
 	}
 }
-
 _G.pg.base.shop_template[60000] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6838,7 +6589,6 @@ _G.pg.base.shop_template[60000] = {
 		40000
 	}
 }
-
 _G.pg.base.shop_template[60001] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6873,7 +6623,6 @@ _G.pg.base.shop_template[60001] = {
 		40005
 	}
 }
-
 _G.pg.base.shop_template[60002] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6908,7 +6657,6 @@ _G.pg.base.shop_template[60002] = {
 		40006
 	}
 }
-
 _G.pg.base.shop_template[60003] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6943,7 +6691,6 @@ _G.pg.base.shop_template[60003] = {
 		40007
 	}
 }
-
 _G.pg.base.shop_template[60004] = {
 	time_second = 0,
 	resource_type = 14,
@@ -6978,7 +6725,6 @@ _G.pg.base.shop_template[60004] = {
 		40008
 	}
 }
-
 _G.pg.base.shop_template[60005] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7004,7 +6750,6 @@ _G.pg.base.shop_template[60005] = {
 		40009
 	}
 }
-
 _G.pg.base.shop_template[60006] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7035,7 +6780,6 @@ _G.pg.base.shop_template[60006] = {
 		40010
 	}
 }
-
 _G.pg.base.shop_template[60007] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7070,7 +6814,6 @@ _G.pg.base.shop_template[60007] = {
 		40011
 	}
 }
-
 _G.pg.base.shop_template[60101] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7096,7 +6839,6 @@ _G.pg.base.shop_template[60101] = {
 		40001
 	}
 }
-
 _G.pg.base.shop_template[60102] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7127,7 +6869,6 @@ _G.pg.base.shop_template[60102] = {
 		40002
 	}
 }
-
 _G.pg.base.shop_template[60103] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7183,7 +6924,6 @@ _G.pg.base.shop_template[60103] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60104] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7234,7 +6974,6 @@ _G.pg.base.shop_template[60104] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60105] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7290,7 +7029,6 @@ _G.pg.base.shop_template[60105] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60106] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7346,7 +7084,6 @@ _G.pg.base.shop_template[60106] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60107] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7397,7 +7134,6 @@ _G.pg.base.shop_template[60107] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60108] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7453,7 +7189,6 @@ _G.pg.base.shop_template[60108] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60114] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7509,7 +7244,6 @@ _G.pg.base.shop_template[60114] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60115] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7565,7 +7299,6 @@ _G.pg.base.shop_template[60115] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60117] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7621,7 +7354,6 @@ _G.pg.base.shop_template[60117] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60118] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7652,7 +7384,6 @@ _G.pg.base.shop_template[60118] = {
 		40100
 	}
 }
-
 _G.pg.base.shop_template[60119] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7683,7 +7414,6 @@ _G.pg.base.shop_template[60119] = {
 		40104
 	}
 }
-
 _G.pg.base.shop_template[60120] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7714,7 +7444,6 @@ _G.pg.base.shop_template[60120] = {
 		40105
 	}
 }
-
 _G.pg.base.shop_template[60121] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7745,7 +7474,6 @@ _G.pg.base.shop_template[60121] = {
 		40104
 	}
 }
-
 _G.pg.base.shop_template[60122] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7776,7 +7504,6 @@ _G.pg.base.shop_template[60122] = {
 		40105
 	}
 }
-
 _G.pg.base.shop_template[60123] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7807,7 +7534,6 @@ _G.pg.base.shop_template[60123] = {
 		40104
 	}
 }
-
 _G.pg.base.shop_template[60124] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7863,7 +7589,6 @@ _G.pg.base.shop_template[60124] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60125] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7919,7 +7644,6 @@ _G.pg.base.shop_template[60125] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60126] = {
 	time_second = 0,
 	resource_type = 14,
@@ -7975,7 +7699,6 @@ _G.pg.base.shop_template[60126] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60127] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8031,7 +7754,6 @@ _G.pg.base.shop_template[60127] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60128] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8087,7 +7809,6 @@ _G.pg.base.shop_template[60128] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60129] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8143,7 +7864,6 @@ _G.pg.base.shop_template[60129] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60130] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8199,7 +7919,6 @@ _G.pg.base.shop_template[60130] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60131] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8230,7 +7949,6 @@ _G.pg.base.shop_template[60131] = {
 		40111
 	}
 }
-
 _G.pg.base.shop_template[60132] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8261,7 +7979,6 @@ _G.pg.base.shop_template[60132] = {
 		40112
 	}
 }
-
 _G.pg.base.shop_template[60133] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8317,7 +8034,6 @@ _G.pg.base.shop_template[60133] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60134] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8373,7 +8089,6 @@ _G.pg.base.shop_template[60134] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60135] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8429,7 +8144,6 @@ _G.pg.base.shop_template[60135] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60136] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8485,7 +8199,6 @@ _G.pg.base.shop_template[60136] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60137] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8541,7 +8254,6 @@ _G.pg.base.shop_template[60137] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60138] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8597,7 +8309,6 @@ _G.pg.base.shop_template[60138] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60139] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8653,7 +8364,6 @@ _G.pg.base.shop_template[60139] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60140] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8709,7 +8419,6 @@ _G.pg.base.shop_template[60140] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60141] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8765,7 +8474,6 @@ _G.pg.base.shop_template[60141] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60142] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8821,7 +8529,6 @@ _G.pg.base.shop_template[60142] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60143] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8877,7 +8584,6 @@ _G.pg.base.shop_template[60143] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60144] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8933,7 +8639,6 @@ _G.pg.base.shop_template[60144] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60145] = {
 	time_second = 0,
 	resource_type = 14,
@@ -8989,7 +8694,6 @@ _G.pg.base.shop_template[60145] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60146] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9045,7 +8749,6 @@ _G.pg.base.shop_template[60146] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60147] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9101,7 +8804,6 @@ _G.pg.base.shop_template[60147] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60148] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9157,7 +8859,6 @@ _G.pg.base.shop_template[60148] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60149] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9213,7 +8914,6 @@ _G.pg.base.shop_template[60149] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60150] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9269,7 +8969,6 @@ _G.pg.base.shop_template[60150] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60151] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9325,7 +9024,6 @@ _G.pg.base.shop_template[60151] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60152] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9381,7 +9079,6 @@ _G.pg.base.shop_template[60152] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60153] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9437,7 +9134,6 @@ _G.pg.base.shop_template[60153] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60154] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9493,7 +9189,6 @@ _G.pg.base.shop_template[60154] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60155] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9549,7 +9244,6 @@ _G.pg.base.shop_template[60155] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60156] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9605,7 +9299,6 @@ _G.pg.base.shop_template[60156] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60157] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9661,7 +9354,6 @@ _G.pg.base.shop_template[60157] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60158] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9717,7 +9409,6 @@ _G.pg.base.shop_template[60158] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60159] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9773,7 +9464,6 @@ _G.pg.base.shop_template[60159] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60160] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9829,7 +9519,6 @@ _G.pg.base.shop_template[60160] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60161] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9885,7 +9574,6 @@ _G.pg.base.shop_template[60161] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60162] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9941,7 +9629,6 @@ _G.pg.base.shop_template[60162] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60163] = {
 	time_second = 0,
 	resource_type = 14,
@@ -9997,7 +9684,6 @@ _G.pg.base.shop_template[60163] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60164] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10053,7 +9739,6 @@ _G.pg.base.shop_template[60164] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60165] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10109,7 +9794,6 @@ _G.pg.base.shop_template[60165] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60166] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10165,7 +9849,6 @@ _G.pg.base.shop_template[60166] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60167] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10221,7 +9904,6 @@ _G.pg.base.shop_template[60167] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60168] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10277,7 +9959,6 @@ _G.pg.base.shop_template[60168] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60169] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10333,7 +10014,6 @@ _G.pg.base.shop_template[60169] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60170] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10389,7 +10069,6 @@ _G.pg.base.shop_template[60170] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60171] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10445,7 +10124,6 @@ _G.pg.base.shop_template[60171] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60172] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10501,7 +10179,6 @@ _G.pg.base.shop_template[60172] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60173] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10557,7 +10234,6 @@ _G.pg.base.shop_template[60173] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60174] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10613,7 +10289,6 @@ _G.pg.base.shop_template[60174] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60175] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10669,7 +10344,6 @@ _G.pg.base.shop_template[60175] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60176] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10725,7 +10399,6 @@ _G.pg.base.shop_template[60176] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60177] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10781,7 +10454,6 @@ _G.pg.base.shop_template[60177] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60178] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10837,7 +10509,6 @@ _G.pg.base.shop_template[60178] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60179] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10893,7 +10564,6 @@ _G.pg.base.shop_template[60179] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60180] = {
 	time_second = 0,
 	resource_type = 14,
@@ -10949,7 +10619,6 @@ _G.pg.base.shop_template[60180] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60181] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11005,7 +10674,6 @@ _G.pg.base.shop_template[60181] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60182] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11061,7 +10729,6 @@ _G.pg.base.shop_template[60182] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60183] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11117,7 +10784,6 @@ _G.pg.base.shop_template[60183] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60184] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11173,7 +10839,6 @@ _G.pg.base.shop_template[60184] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60185] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11229,7 +10894,6 @@ _G.pg.base.shop_template[60185] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60186] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11285,7 +10949,6 @@ _G.pg.base.shop_template[60186] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60187] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11341,7 +11004,6 @@ _G.pg.base.shop_template[60187] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60188] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11397,7 +11059,6 @@ _G.pg.base.shop_template[60188] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60189] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11453,7 +11114,6 @@ _G.pg.base.shop_template[60189] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60190] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11509,7 +11169,6 @@ _G.pg.base.shop_template[60190] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60191] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11565,7 +11224,6 @@ _G.pg.base.shop_template[60191] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60192] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11621,7 +11279,6 @@ _G.pg.base.shop_template[60192] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60193] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11677,7 +11334,6 @@ _G.pg.base.shop_template[60193] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60194] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11733,7 +11389,6 @@ _G.pg.base.shop_template[60194] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60195] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11789,7 +11444,6 @@ _G.pg.base.shop_template[60195] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60196] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11845,7 +11499,6 @@ _G.pg.base.shop_template[60196] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60197] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11901,7 +11554,6 @@ _G.pg.base.shop_template[60197] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60198] = {
 	time_second = 0,
 	resource_type = 14,
@@ -11957,7 +11609,6 @@ _G.pg.base.shop_template[60198] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60199] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12013,7 +11664,6 @@ _G.pg.base.shop_template[60199] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60200] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12069,7 +11719,6 @@ _G.pg.base.shop_template[60200] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60201] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12125,7 +11774,6 @@ _G.pg.base.shop_template[60201] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60202] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12181,7 +11829,6 @@ _G.pg.base.shop_template[60202] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60203] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12237,7 +11884,6 @@ _G.pg.base.shop_template[60203] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60204] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12293,7 +11939,6 @@ _G.pg.base.shop_template[60204] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60205] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12349,7 +11994,6 @@ _G.pg.base.shop_template[60205] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60206] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12405,7 +12049,6 @@ _G.pg.base.shop_template[60206] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60207] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12461,7 +12104,6 @@ _G.pg.base.shop_template[60207] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60208] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12517,7 +12159,6 @@ _G.pg.base.shop_template[60208] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60209] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12573,7 +12214,6 @@ _G.pg.base.shop_template[60209] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60210] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12629,7 +12269,6 @@ _G.pg.base.shop_template[60210] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60211] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12685,7 +12324,6 @@ _G.pg.base.shop_template[60211] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60212] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12741,7 +12379,6 @@ _G.pg.base.shop_template[60212] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60213] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12797,7 +12434,6 @@ _G.pg.base.shop_template[60213] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60214] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12853,7 +12489,6 @@ _G.pg.base.shop_template[60214] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60215] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12909,7 +12544,6 @@ _G.pg.base.shop_template[60215] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60216] = {
 	time_second = 0,
 	resource_type = 14,
@@ -12965,7 +12599,6 @@ _G.pg.base.shop_template[60216] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60217] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13021,7 +12654,6 @@ _G.pg.base.shop_template[60217] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60218] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13077,7 +12709,6 @@ _G.pg.base.shop_template[60218] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60219] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13133,7 +12764,6 @@ _G.pg.base.shop_template[60219] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60223] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13189,7 +12819,6 @@ _G.pg.base.shop_template[60223] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60224] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13245,7 +12874,6 @@ _G.pg.base.shop_template[60224] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60225] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13301,7 +12929,6 @@ _G.pg.base.shop_template[60225] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60226] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13357,7 +12984,6 @@ _G.pg.base.shop_template[60226] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60227] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13413,7 +13039,6 @@ _G.pg.base.shop_template[60227] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60228] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13469,7 +13094,6 @@ _G.pg.base.shop_template[60228] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60229] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13525,7 +13149,6 @@ _G.pg.base.shop_template[60229] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60230] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13581,7 +13204,6 @@ _G.pg.base.shop_template[60230] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60231] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13637,7 +13259,6 @@ _G.pg.base.shop_template[60231] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60232] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13693,7 +13314,6 @@ _G.pg.base.shop_template[60232] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60233] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13749,7 +13369,6 @@ _G.pg.base.shop_template[60233] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60234] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13805,7 +13424,6 @@ _G.pg.base.shop_template[60234] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60235] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13861,7 +13479,6 @@ _G.pg.base.shop_template[60235] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60236] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13917,7 +13534,6 @@ _G.pg.base.shop_template[60236] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60237] = {
 	time_second = 0,
 	resource_type = 14,
@@ -13973,7 +13589,6 @@ _G.pg.base.shop_template[60237] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60238] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14029,7 +13644,6 @@ _G.pg.base.shop_template[60238] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60239] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14085,175 +13699,6 @@ _G.pg.base.shop_template[60239] = {
 		}
 	}
 }
-
-_G.pg.base.shop_template[60250] = {
-	time_second = 0,
-	resource_type = 14,
-	genre = "gift_package",
-	type = 2,
-	desc = "120钻石购买限时攻略补给（新泽西）",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 2,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	group = 0,
-	num = 1,
-	discount = 0,
-	group_type = 0,
-	id = 60250,
-	resource_num = 120,
-	discount_time = {},
-	limit_args = {
-		{
-			"time",
-			5
-		}
-	},
-	effect_args = {
-		40117
-	},
-	time = {
-		{
-			{
-				2021,
-				5,
-				27
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		{
-			{
-				2021,
-				6,
-				16
-			},
-			{
-				23,
-				59,
-				59
-			}
-		}
-	}
-}
-
-_G.pg.base.shop_template[60251] = {
-	time_second = 0,
-	resource_type = 14,
-	genre = "gift_package",
-	type = 2,
-	desc = "980钻石购买限时建造补给（新泽西）",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 2,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	group = 0,
-	num = 1,
-	discount = 0,
-	group_type = 0,
-	id = 60251,
-	resource_num = 980,
-	discount_time = {},
-	limit_args = {
-		{
-			"time",
-			1
-		}
-	},
-	effect_args = {
-		40118
-	},
-	time = {
-		{
-			{
-				2021,
-				5,
-				27
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		{
-			{
-				2021,
-				6,
-				16
-			},
-			{
-				23,
-				59,
-				59
-			}
-		}
-	}
-}
-
-_G.pg.base.shop_template[60252] = {
-	time_second = 0,
-	resource_type = 14,
-	genre = "gift_package",
-	type = 2,
-	desc = "500钻石购买家具币礼包（新泽西）",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 2,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	group = 0,
-	num = 1,
-	discount = 0,
-	group_type = 0,
-	id = 60252,
-	resource_num = 500,
-	discount_time = {},
-	limit_args = {
-		{
-			"time",
-			2
-		}
-	},
-	effect_args = {
-		40106
-	},
-	time = {
-		{
-			{
-				2021,
-				5,
-				27
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		{
-			{
-				2021,
-				6,
-				16
-			},
-			{
-				23,
-				59,
-				59
-			}
-		}
-	}
-}
-
 _G.pg.base.shop_template[60240] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14309,7 +13754,171 @@ _G.pg.base.shop_template[60240] = {
 		}
 	}
 }
-
+_G.pg.base.shop_template[60250] = {
+	time_second = 0,
+	resource_type = 14,
+	genre = "gift_package",
+	type = 2,
+	desc = "120钻石购买限时攻略补给（新泽西）",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 2,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 60250,
+	resource_num = 120,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			5
+		}
+	},
+	effect_args = {
+		40117
+	},
+	time = {
+		{
+			{
+				2021,
+				5,
+				27
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		{
+			{
+				2021,
+				6,
+				16
+			},
+			{
+				23,
+				59,
+				59
+			}
+		}
+	}
+}
+_G.pg.base.shop_template[60251] = {
+	time_second = 0,
+	resource_type = 14,
+	genre = "gift_package",
+	type = 2,
+	desc = "980钻石购买限时建造补给（新泽西）",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 2,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 60251,
+	resource_num = 980,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1
+		}
+	},
+	effect_args = {
+		40118
+	},
+	time = {
+		{
+			{
+				2021,
+				5,
+				27
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		{
+			{
+				2021,
+				6,
+				16
+			},
+			{
+				23,
+				59,
+				59
+			}
+		}
+	}
+}
+_G.pg.base.shop_template[60252] = {
+	time_second = 0,
+	resource_type = 14,
+	genre = "gift_package",
+	type = 2,
+	desc = "500钻石购买家具币礼包（新泽西）",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 2,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 60252,
+	resource_num = 500,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2
+		}
+	},
+	effect_args = {
+		40106
+	},
+	time = {
+		{
+			{
+				2021,
+				5,
+				27
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		{
+			{
+				2021,
+				6,
+				16
+			},
+			{
+				23,
+				59,
+				59
+			}
+		}
+	}
+}
 _G.pg.base.shop_template[60253] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14365,175 +13974,6 @@ _G.pg.base.shop_template[60253] = {
 		}
 	}
 }
-
-_G.pg.base.shop_template[60260] = {
-	time_second = 0,
-	resource_type = 14,
-	genre = "gift_package",
-	type = 2,
-	desc = "120钻石购买限时攻略补给（偶像大师）",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 2,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	group = 0,
-	num = 1,
-	discount = 0,
-	group_type = 0,
-	id = 60260,
-	resource_num = 120,
-	discount_time = {},
-	limit_args = {
-		{
-			"time",
-			5
-		}
-	},
-	effect_args = {
-		40117
-	},
-	time = {
-		{
-			{
-				2021,
-				7,
-				22
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		{
-			{
-				2021,
-				8,
-				4
-			},
-			{
-				23,
-				59,
-				59
-			}
-		}
-	}
-}
-
-_G.pg.base.shop_template[60261] = {
-	time_second = 0,
-	resource_type = 14,
-	genre = "gift_package",
-	type = 2,
-	desc = "980钻石购买限时建造补给（偶像大师）",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 2,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	group = 0,
-	num = 1,
-	discount = 0,
-	group_type = 0,
-	id = 60261,
-	resource_num = 980,
-	discount_time = {},
-	limit_args = {
-		{
-			"time",
-			1
-		}
-	},
-	effect_args = {
-		40118
-	},
-	time = {
-		{
-			{
-				2021,
-				7,
-				22
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		{
-			{
-				2021,
-				8,
-				4
-			},
-			{
-				23,
-				59,
-				59
-			}
-		}
-	}
-}
-
-_G.pg.base.shop_template[60262] = {
-	time_second = 0,
-	resource_type = 14,
-	genre = "gift_package",
-	type = 2,
-	desc = "500钻石购买家具币礼包（偶像大师）",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 2,
-	limit_args2 = "",
-	type_order = 0,
-	order = 0,
-	group = 0,
-	num = 1,
-	discount = 0,
-	group_type = 0,
-	id = 60262,
-	resource_num = 500,
-	discount_time = {},
-	limit_args = {
-		{
-			"time",
-			2
-		}
-	},
-	effect_args = {
-		40106
-	},
-	time = {
-		{
-			{
-				2021,
-				7,
-				22
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		{
-			{
-				2021,
-				8,
-				4
-			},
-			{
-				23,
-				59,
-				59
-			}
-		}
-	}
-}
-
 _G.pg.base.shop_template[60254] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14589,7 +14029,6 @@ _G.pg.base.shop_template[60254] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60255] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14645,7 +14084,6 @@ _G.pg.base.shop_template[60255] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60256] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14701,7 +14139,6 @@ _G.pg.base.shop_template[60256] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60257] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14757,7 +14194,6 @@ _G.pg.base.shop_template[60257] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60258] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14813,7 +14249,171 @@ _G.pg.base.shop_template[60258] = {
 		}
 	}
 }
-
+_G.pg.base.shop_template[60260] = {
+	time_second = 0,
+	resource_type = 14,
+	genre = "gift_package",
+	type = 2,
+	desc = "120钻石购买限时攻略补给（偶像大师）",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 2,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 60260,
+	resource_num = 120,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			5
+		}
+	},
+	effect_args = {
+		40117
+	},
+	time = {
+		{
+			{
+				2021,
+				7,
+				22
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		{
+			{
+				2021,
+				8,
+				4
+			},
+			{
+				23,
+				59,
+				59
+			}
+		}
+	}
+}
+_G.pg.base.shop_template[60261] = {
+	time_second = 0,
+	resource_type = 14,
+	genre = "gift_package",
+	type = 2,
+	desc = "980钻石购买限时建造补给（偶像大师）",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 2,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 60261,
+	resource_num = 980,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1
+		}
+	},
+	effect_args = {
+		40118
+	},
+	time = {
+		{
+			{
+				2021,
+				7,
+				22
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		{
+			{
+				2021,
+				8,
+				4
+			},
+			{
+				23,
+				59,
+				59
+			}
+		}
+	}
+}
+_G.pg.base.shop_template[60262] = {
+	time_second = 0,
+	resource_type = 14,
+	genre = "gift_package",
+	type = 2,
+	desc = "500钻石购买家具币礼包（偶像大师）",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 2,
+	limit_args2 = "",
+	type_order = 0,
+	order = 0,
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 60262,
+	resource_num = 500,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2
+		}
+	},
+	effect_args = {
+		40106
+	},
+	time = {
+		{
+			{
+				2021,
+				7,
+				22
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		{
+			{
+				2021,
+				8,
+				4
+			},
+			{
+				23,
+				59,
+				59
+			}
+		}
+	}
+}
 _G.pg.base.shop_template[60265] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14869,7 +14469,6 @@ _G.pg.base.shop_template[60265] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60266] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14925,7 +14524,6 @@ _G.pg.base.shop_template[60266] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60267] = {
 	time_second = 0,
 	resource_type = 14,
@@ -14981,7 +14579,6 @@ _G.pg.base.shop_template[60267] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60268] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15037,7 +14634,6 @@ _G.pg.base.shop_template[60268] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60269] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15093,7 +14689,6 @@ _G.pg.base.shop_template[60269] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60270] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15149,7 +14744,6 @@ _G.pg.base.shop_template[60270] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60271] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15205,7 +14799,6 @@ _G.pg.base.shop_template[60271] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60272] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15261,7 +14854,6 @@ _G.pg.base.shop_template[60272] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60273] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15317,7 +14909,6 @@ _G.pg.base.shop_template[60273] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60274] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15373,7 +14964,6 @@ _G.pg.base.shop_template[60274] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60275] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15429,7 +15019,6 @@ _G.pg.base.shop_template[60275] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60276] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15485,7 +15074,6 @@ _G.pg.base.shop_template[60276] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60277] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15541,7 +15129,6 @@ _G.pg.base.shop_template[60277] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60278] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15597,7 +15184,6 @@ _G.pg.base.shop_template[60278] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60279] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15653,7 +15239,6 @@ _G.pg.base.shop_template[60279] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60280] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15709,7 +15294,6 @@ _G.pg.base.shop_template[60280] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60281] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15765,7 +15349,6 @@ _G.pg.base.shop_template[60281] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60282] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15821,7 +15404,6 @@ _G.pg.base.shop_template[60282] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60283] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15877,7 +15459,6 @@ _G.pg.base.shop_template[60283] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60284] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15933,7 +15514,6 @@ _G.pg.base.shop_template[60284] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60285] = {
 	time_second = 0,
 	resource_type = 14,
@@ -15989,7 +15569,6 @@ _G.pg.base.shop_template[60285] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60286] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16045,7 +15624,6 @@ _G.pg.base.shop_template[60286] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60287] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16101,7 +15679,6 @@ _G.pg.base.shop_template[60287] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60288] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16157,7 +15734,6 @@ _G.pg.base.shop_template[60288] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60289] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16213,7 +15789,6 @@ _G.pg.base.shop_template[60289] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60290] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16269,7 +15844,6 @@ _G.pg.base.shop_template[60290] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60291] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16325,7 +15899,6 @@ _G.pg.base.shop_template[60291] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60292] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16381,7 +15954,6 @@ _G.pg.base.shop_template[60292] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60293] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16437,7 +16009,6 @@ _G.pg.base.shop_template[60293] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60294] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16493,7 +16064,6 @@ _G.pg.base.shop_template[60294] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60295] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16549,7 +16119,6 @@ _G.pg.base.shop_template[60295] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60296] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16605,7 +16174,6 @@ _G.pg.base.shop_template[60296] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60297] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16661,7 +16229,6 @@ _G.pg.base.shop_template[60297] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60298] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16717,7 +16284,6 @@ _G.pg.base.shop_template[60298] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60299] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16773,7 +16339,6 @@ _G.pg.base.shop_template[60299] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60300] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16829,7 +16394,6 @@ _G.pg.base.shop_template[60300] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60301] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16885,7 +16449,6 @@ _G.pg.base.shop_template[60301] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60302] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16941,7 +16504,6 @@ _G.pg.base.shop_template[60302] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60303] = {
 	time_second = 0,
 	resource_type = 14,
@@ -16997,7 +16559,6 @@ _G.pg.base.shop_template[60303] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60304] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17053,7 +16614,6 @@ _G.pg.base.shop_template[60304] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60305] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17109,7 +16669,6 @@ _G.pg.base.shop_template[60305] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60306] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17165,7 +16724,6 @@ _G.pg.base.shop_template[60306] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60311] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17196,7 +16754,6 @@ _G.pg.base.shop_template[60311] = {
 		40121
 	}
 }
-
 _G.pg.base.shop_template[60312] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17227,7 +16784,6 @@ _G.pg.base.shop_template[60312] = {
 		40122
 	}
 }
-
 _G.pg.base.shop_template[60313] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17258,7 +16814,6 @@ _G.pg.base.shop_template[60313] = {
 		40119
 	}
 }
-
 _G.pg.base.shop_template[60314] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17289,7 +16844,6 @@ _G.pg.base.shop_template[60314] = {
 		40117
 	}
 }
-
 _G.pg.base.shop_template[60315] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17320,7 +16874,6 @@ _G.pg.base.shop_template[60315] = {
 		40127
 	}
 }
-
 _G.pg.base.shop_template[60316] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17376,7 +16929,6 @@ _G.pg.base.shop_template[60316] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60318] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17432,7 +16984,6 @@ _G.pg.base.shop_template[60318] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60319] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17488,7 +17039,6 @@ _G.pg.base.shop_template[60319] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60320] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17544,7 +17094,6 @@ _G.pg.base.shop_template[60320] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60321] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17600,7 +17149,6 @@ _G.pg.base.shop_template[60321] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60322] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17656,7 +17204,6 @@ _G.pg.base.shop_template[60322] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60323] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17712,7 +17259,6 @@ _G.pg.base.shop_template[60323] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60324] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17768,7 +17314,6 @@ _G.pg.base.shop_template[60324] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60325] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17824,7 +17369,6 @@ _G.pg.base.shop_template[60325] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60327] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17880,7 +17424,6 @@ _G.pg.base.shop_template[60327] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60328] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17936,7 +17479,6 @@ _G.pg.base.shop_template[60328] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60329] = {
 	time_second = 0,
 	resource_type = 14,
@@ -17992,7 +17534,6 @@ _G.pg.base.shop_template[60329] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60330] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18048,7 +17589,6 @@ _G.pg.base.shop_template[60330] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60331] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18104,7 +17644,6 @@ _G.pg.base.shop_template[60331] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60332] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18160,7 +17699,6 @@ _G.pg.base.shop_template[60332] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60333] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18216,7 +17754,6 @@ _G.pg.base.shop_template[60333] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60334] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18272,7 +17809,6 @@ _G.pg.base.shop_template[60334] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60335] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18328,7 +17864,6 @@ _G.pg.base.shop_template[60335] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60336] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18384,7 +17919,6 @@ _G.pg.base.shop_template[60336] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60337] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18440,7 +17974,6 @@ _G.pg.base.shop_template[60337] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60338] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18496,7 +18029,6 @@ _G.pg.base.shop_template[60338] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60339] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18552,7 +18084,6 @@ _G.pg.base.shop_template[60339] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60340] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18608,7 +18139,6 @@ _G.pg.base.shop_template[60340] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60341] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18664,7 +18194,6 @@ _G.pg.base.shop_template[60341] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60342] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18720,7 +18249,6 @@ _G.pg.base.shop_template[60342] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60343] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18776,7 +18304,6 @@ _G.pg.base.shop_template[60343] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60344] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18832,7 +18359,6 @@ _G.pg.base.shop_template[60344] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60345] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18888,7 +18414,6 @@ _G.pg.base.shop_template[60345] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60346] = {
 	time_second = 0,
 	resource_type = 14,
@@ -18944,7 +18469,6 @@ _G.pg.base.shop_template[60346] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60347] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19000,7 +18524,6 @@ _G.pg.base.shop_template[60347] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60348] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19056,7 +18579,6 @@ _G.pg.base.shop_template[60348] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60349] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19112,7 +18634,6 @@ _G.pg.base.shop_template[60349] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60350] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19168,7 +18689,6 @@ _G.pg.base.shop_template[60350] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60351] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19224,7 +18744,6 @@ _G.pg.base.shop_template[60351] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60352] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19280,7 +18799,6 @@ _G.pg.base.shop_template[60352] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60353] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19336,7 +18854,6 @@ _G.pg.base.shop_template[60353] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60354] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19392,7 +18909,6 @@ _G.pg.base.shop_template[60354] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60355] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19448,7 +18964,6 @@ _G.pg.base.shop_template[60355] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60356] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19479,7 +18994,6 @@ _G.pg.base.shop_template[60356] = {
 		40121
 	}
 }
-
 _G.pg.base.shop_template[60357] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19510,7 +19024,6 @@ _G.pg.base.shop_template[60357] = {
 		40122
 	}
 }
-
 _G.pg.base.shop_template[60358] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19541,7 +19054,6 @@ _G.pg.base.shop_template[60358] = {
 		40119
 	}
 }
-
 _G.pg.base.shop_template[60359] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19572,7 +19084,6 @@ _G.pg.base.shop_template[60359] = {
 		40117
 	}
 }
-
 _G.pg.base.shop_template[60360] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19603,7 +19114,6 @@ _G.pg.base.shop_template[60360] = {
 		40127
 	}
 }
-
 _G.pg.base.shop_template[60361] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19659,7 +19169,6 @@ _G.pg.base.shop_template[60361] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60362] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19715,7 +19224,6 @@ _G.pg.base.shop_template[60362] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60363] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19771,7 +19279,6 @@ _G.pg.base.shop_template[60363] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60364] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19827,7 +19334,6 @@ _G.pg.base.shop_template[60364] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60365] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19883,7 +19389,6 @@ _G.pg.base.shop_template[60365] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60366] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19939,7 +19444,6 @@ _G.pg.base.shop_template[60366] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60367] = {
 	time_second = 0,
 	resource_type = 14,
@@ -19995,7 +19499,6 @@ _G.pg.base.shop_template[60367] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60368] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20051,7 +19554,6 @@ _G.pg.base.shop_template[60368] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60369] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20107,7 +19609,6 @@ _G.pg.base.shop_template[60369] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60370] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20163,7 +19664,6 @@ _G.pg.base.shop_template[60370] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60371] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20219,7 +19719,6 @@ _G.pg.base.shop_template[60371] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60372] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20275,7 +19774,6 @@ _G.pg.base.shop_template[60372] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60373] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20331,7 +19829,6 @@ _G.pg.base.shop_template[60373] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60374] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20387,7 +19884,6 @@ _G.pg.base.shop_template[60374] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60375] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20443,7 +19939,6 @@ _G.pg.base.shop_template[60375] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60376] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20499,7 +19994,6 @@ _G.pg.base.shop_template[60376] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60377] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20555,7 +20049,6 @@ _G.pg.base.shop_template[60377] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60378] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20611,7 +20104,6 @@ _G.pg.base.shop_template[60378] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60379] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20667,7 +20159,6 @@ _G.pg.base.shop_template[60379] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60380] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20723,7 +20214,6 @@ _G.pg.base.shop_template[60380] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60381] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20779,7 +20269,6 @@ _G.pg.base.shop_template[60381] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60382] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20835,7 +20324,6 @@ _G.pg.base.shop_template[60382] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60383] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20891,7 +20379,6 @@ _G.pg.base.shop_template[60383] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60384] = {
 	time_second = 0,
 	resource_type = 14,
@@ -20947,7 +20434,6 @@ _G.pg.base.shop_template[60384] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60385] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21003,7 +20489,6 @@ _G.pg.base.shop_template[60385] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60386] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21059,7 +20544,6 @@ _G.pg.base.shop_template[60386] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60387] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21115,7 +20599,6 @@ _G.pg.base.shop_template[60387] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60388] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21171,7 +20654,6 @@ _G.pg.base.shop_template[60388] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60389] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21227,7 +20709,6 @@ _G.pg.base.shop_template[60389] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60390] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21258,7 +20739,6 @@ _G.pg.base.shop_template[60390] = {
 		40121
 	}
 }
-
 _G.pg.base.shop_template[60391] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21289,7 +20769,6 @@ _G.pg.base.shop_template[60391] = {
 		40122
 	}
 }
-
 _G.pg.base.shop_template[60392] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21320,7 +20799,6 @@ _G.pg.base.shop_template[60392] = {
 		40119
 	}
 }
-
 _G.pg.base.shop_template[60393] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21351,7 +20829,6 @@ _G.pg.base.shop_template[60393] = {
 		40117
 	}
 }
-
 _G.pg.base.shop_template[60394] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21382,7 +20859,6 @@ _G.pg.base.shop_template[60394] = {
 		40127
 	}
 }
-
 _G.pg.base.shop_template[60395] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21438,7 +20914,6 @@ _G.pg.base.shop_template[60395] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60396] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21494,7 +20969,6 @@ _G.pg.base.shop_template[60396] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60397] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21550,7 +21024,6 @@ _G.pg.base.shop_template[60397] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60398] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21606,7 +21079,6 @@ _G.pg.base.shop_template[60398] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60399] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21662,7 +21134,6 @@ _G.pg.base.shop_template[60399] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60400] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21718,7 +21189,6 @@ _G.pg.base.shop_template[60400] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60401] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21774,7 +21244,6 @@ _G.pg.base.shop_template[60401] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60402] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21830,7 +21299,6 @@ _G.pg.base.shop_template[60402] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60403] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21886,7 +21354,6 @@ _G.pg.base.shop_template[60403] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60404] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21942,7 +21409,6 @@ _G.pg.base.shop_template[60404] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60405] = {
 	time_second = 0,
 	resource_type = 14,
@@ -21998,7 +21464,6 @@ _G.pg.base.shop_template[60405] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60406] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22054,7 +21519,6 @@ _G.pg.base.shop_template[60406] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60407] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22110,7 +21574,6 @@ _G.pg.base.shop_template[60407] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60408] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22166,7 +21629,6 @@ _G.pg.base.shop_template[60408] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60409] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22222,7 +21684,6 @@ _G.pg.base.shop_template[60409] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60410] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22278,7 +21739,6 @@ _G.pg.base.shop_template[60410] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60411] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22334,7 +21794,6 @@ _G.pg.base.shop_template[60411] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60412] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22390,7 +21849,6 @@ _G.pg.base.shop_template[60412] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60413] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22446,7 +21904,6 @@ _G.pg.base.shop_template[60413] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60414] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22502,7 +21959,6 @@ _G.pg.base.shop_template[60414] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60415] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22558,7 +22014,6 @@ _G.pg.base.shop_template[60415] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60416] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22614,7 +22069,6 @@ _G.pg.base.shop_template[60416] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60417] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22670,7 +22124,6 @@ _G.pg.base.shop_template[60417] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60420] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22726,7 +22179,6 @@ _G.pg.base.shop_template[60420] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60421] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22782,7 +22234,6 @@ _G.pg.base.shop_template[60421] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60422] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22838,7 +22289,6 @@ _G.pg.base.shop_template[60422] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60423] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22894,7 +22344,6 @@ _G.pg.base.shop_template[60423] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60424] = {
 	time_second = 0,
 	resource_type = 14,
@@ -22950,7 +22399,6 @@ _G.pg.base.shop_template[60424] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60425] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23006,7 +22454,6 @@ _G.pg.base.shop_template[60425] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60426] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23062,7 +22509,6 @@ _G.pg.base.shop_template[60426] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60427] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23118,7 +22564,6 @@ _G.pg.base.shop_template[60427] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[60428] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23174,7 +22619,6 @@ _G.pg.base.shop_template[60428] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[61001] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23202,7 +22646,6 @@ _G.pg.base.shop_template[61001] = {
 		1999
 	}
 }
-
 _G.pg.base.shop_template[61002] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23226,7 +22669,6 @@ _G.pg.base.shop_template[61002] = {
 	discount_time = {},
 	limit_args = {}
 }
-
 _G.pg.base.shop_template[61003] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23252,7 +22694,6 @@ _G.pg.base.shop_template[61003] = {
 		20001
 	}
 }
-
 _G.pg.base.shop_template[61004] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23278,7 +22719,6 @@ _G.pg.base.shop_template[61004] = {
 		15003
 	}
 }
-
 _G.pg.base.shop_template[61005] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23304,7 +22744,6 @@ _G.pg.base.shop_template[61005] = {
 		1
 	}
 }
-
 _G.pg.base.shop_template[61006] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23330,7 +22769,6 @@ _G.pg.base.shop_template[61006] = {
 		1
 	}
 }
-
 _G.pg.base.shop_template[61007] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23356,7 +22794,6 @@ _G.pg.base.shop_template[61007] = {
 		15006
 	}
 }
-
 _G.pg.base.shop_template[61008] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23382,7 +22819,6 @@ _G.pg.base.shop_template[61008] = {
 		20001
 	}
 }
-
 _G.pg.base.shop_template[61009] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23408,7 +22844,6 @@ _G.pg.base.shop_template[61009] = {
 		15003
 	}
 }
-
 _G.pg.base.shop_template[61010] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23434,7 +22869,6 @@ _G.pg.base.shop_template[61010] = {
 		15009
 	}
 }
-
 _G.pg.base.shop_template[61011] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23490,7 +22924,6 @@ _G.pg.base.shop_template[61011] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[61012] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23519,7 +22952,6 @@ _G.pg.base.shop_template[61012] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[61013] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23547,7 +22979,6 @@ _G.pg.base.shop_template[61013] = {
 		2999
 	}
 }
-
 _G.pg.base.shop_template[61014] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23579,7 +23010,6 @@ _G.pg.base.shop_template[61014] = {
 		15008
 	}
 }
-
 _G.pg.base.shop_template[61015] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23611,7 +23041,6 @@ _G.pg.base.shop_template[61015] = {
 		15008
 	}
 }
-
 _G.pg.base.shop_template[61016] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23643,7 +23072,6 @@ _G.pg.base.shop_template[61016] = {
 		15008
 	}
 }
-
 _G.pg.base.shop_template[61017] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23669,7 +23097,6 @@ _G.pg.base.shop_template[61017] = {
 		15013
 	}
 }
-
 _G.pg.base.shop_template[61018] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23697,7 +23124,6 @@ _G.pg.base.shop_template[61018] = {
 		1999
 	}
 }
-
 _G.pg.base.shop_template[61019] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23723,7 +23149,6 @@ _G.pg.base.shop_template[61019] = {
 		15
 	}
 }
-
 _G.pg.base.shop_template[70001] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23774,7 +23199,6 @@ _G.pg.base.shop_template[70001] = {
 		213011
 	}
 }
-
 _G.pg.base.shop_template[70002] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23850,7 +23274,6 @@ _G.pg.base.shop_template[70002] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70003] = {
 	time_second = 0,
 	resource_type = 14,
@@ -23926,7 +23349,6 @@ _G.pg.base.shop_template[70003] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70004] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24002,7 +23424,6 @@ _G.pg.base.shop_template[70004] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70005] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24078,7 +23499,6 @@ _G.pg.base.shop_template[70005] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70006] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24154,7 +23574,6 @@ _G.pg.base.shop_template[70006] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70007] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24230,7 +23649,6 @@ _G.pg.base.shop_template[70007] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70008] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24306,7 +23724,6 @@ _G.pg.base.shop_template[70008] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70009] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24382,7 +23799,6 @@ _G.pg.base.shop_template[70009] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70010] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24458,7 +23874,6 @@ _G.pg.base.shop_template[70010] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70011] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24534,7 +23949,6 @@ _G.pg.base.shop_template[70011] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70012] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24610,7 +24024,6 @@ _G.pg.base.shop_template[70012] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70013] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24686,7 +24099,6 @@ _G.pg.base.shop_template[70013] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70014] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24762,7 +24174,6 @@ _G.pg.base.shop_template[70014] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70017] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24788,7 +24199,6 @@ _G.pg.base.shop_template[70017] = {
 		306051
 	}
 }
-
 _G.pg.base.shop_template[70018] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24814,7 +24224,6 @@ _G.pg.base.shop_template[70018] = {
 		102091
 	}
 }
-
 _G.pg.base.shop_template[70019] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24840,7 +24249,6 @@ _G.pg.base.shop_template[70019] = {
 		301051
 	}
 }
-
 _G.pg.base.shop_template[70020] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24891,7 +24299,6 @@ _G.pg.base.shop_template[70020] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70021] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24942,7 +24349,6 @@ _G.pg.base.shop_template[70021] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70022] = {
 	time_second = 0,
 	resource_type = 14,
@@ -24993,7 +24399,6 @@ _G.pg.base.shop_template[70022] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70023] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25019,7 +24424,6 @@ _G.pg.base.shop_template[70023] = {
 		301121
 	}
 }
-
 _G.pg.base.shop_template[70024] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25095,7 +24499,6 @@ _G.pg.base.shop_template[70024] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70025] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25146,7 +24549,6 @@ _G.pg.base.shop_template[70025] = {
 		107061
 	}
 }
-
 _G.pg.base.shop_template[70026] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25222,7 +24624,6 @@ _G.pg.base.shop_template[70026] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70027] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25298,7 +24699,6 @@ _G.pg.base.shop_template[70027] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70028] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25374,7 +24774,6 @@ _G.pg.base.shop_template[70028] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70029] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25450,7 +24849,6 @@ _G.pg.base.shop_template[70029] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70030] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25526,7 +24924,6 @@ _G.pg.base.shop_template[70030] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70031] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25602,7 +24999,6 @@ _G.pg.base.shop_template[70031] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70032] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25678,7 +25074,6 @@ _G.pg.base.shop_template[70032] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70033] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25729,7 +25124,6 @@ _G.pg.base.shop_template[70033] = {
 		307022
 	}
 }
-
 _G.pg.base.shop_template[70034] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25780,7 +25174,6 @@ _G.pg.base.shop_template[70034] = {
 		101172
 	}
 }
-
 _G.pg.base.shop_template[70035] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25831,7 +25224,6 @@ _G.pg.base.shop_template[70035] = {
 		312011
 	}
 }
-
 _G.pg.base.shop_template[70036] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25907,7 +25299,6 @@ _G.pg.base.shop_template[70036] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70037] = {
 	time_second = 0,
 	resource_type = 14,
@@ -25983,7 +25374,6 @@ _G.pg.base.shop_template[70037] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70038] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26034,7 +25424,6 @@ _G.pg.base.shop_template[70038] = {
 		10100051
 	}
 }
-
 _G.pg.base.shop_template[70039] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26085,7 +25474,6 @@ _G.pg.base.shop_template[70039] = {
 		10100061
 	}
 }
-
 _G.pg.base.shop_template[70040] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26136,7 +25524,6 @@ _G.pg.base.shop_template[70040] = {
 		10100071
 	}
 }
-
 _G.pg.base.shop_template[70041] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26187,7 +25574,6 @@ _G.pg.base.shop_template[70041] = {
 		10100081
 	}
 }
-
 _G.pg.base.shop_template[70042] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26263,7 +25649,6 @@ _G.pg.base.shop_template[70042] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70043] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26339,7 +25724,6 @@ _G.pg.base.shop_template[70043] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70044] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26415,7 +25799,6 @@ _G.pg.base.shop_template[70044] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70045] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26466,7 +25849,6 @@ _G.pg.base.shop_template[70045] = {
 		206032
 	}
 }
-
 _G.pg.base.shop_template[70046] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26542,7 +25924,6 @@ _G.pg.base.shop_template[70046] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70047] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26618,7 +25999,6 @@ _G.pg.base.shop_template[70047] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70048] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26694,7 +26074,6 @@ _G.pg.base.shop_template[70048] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70049] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26720,7 +26099,6 @@ _G.pg.base.shop_template[70049] = {
 		101311
 	}
 }
-
 _G.pg.base.shop_template[70050] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26771,7 +26149,6 @@ _G.pg.base.shop_template[70050] = {
 		101262
 	}
 }
-
 _G.pg.base.shop_template[70051] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26822,7 +26199,6 @@ _G.pg.base.shop_template[70051] = {
 		202111
 	}
 }
-
 _G.pg.base.shop_template[70052] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26873,7 +26249,6 @@ _G.pg.base.shop_template[70052] = {
 		307032
 	}
 }
-
 _G.pg.base.shop_template[70053] = {
 	time_second = 0,
 	resource_type = 14,
@@ -26924,7 +26299,6 @@ _G.pg.base.shop_template[70053] = {
 		307041
 	}
 }
-
 _G.pg.base.shop_template[70054] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27000,7 +26374,6 @@ _G.pg.base.shop_template[70054] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70055] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27051,7 +26424,6 @@ _G.pg.base.shop_template[70055] = {
 		301011
 	}
 }
-
 _G.pg.base.shop_template[70056] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27102,7 +26474,6 @@ _G.pg.base.shop_template[70056] = {
 		401011
 	}
 }
-
 _G.pg.base.shop_template[70057] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27153,7 +26524,6 @@ _G.pg.base.shop_template[70057] = {
 		301161
 	}
 }
-
 _G.pg.base.shop_template[70058] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27179,7 +26549,6 @@ _G.pg.base.shop_template[70058] = {
 		301621
 	}
 }
-
 _G.pg.base.shop_template[70059] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27230,7 +26599,6 @@ _G.pg.base.shop_template[70059] = {
 		403051
 	}
 }
-
 _G.pg.base.shop_template[70060] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27281,7 +26649,6 @@ _G.pg.base.shop_template[70060] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70061] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27332,7 +26699,6 @@ _G.pg.base.shop_template[70061] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70062] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27383,7 +26749,6 @@ _G.pg.base.shop_template[70062] = {
 		301131
 	}
 }
-
 _G.pg.base.shop_template[70063] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27434,7 +26799,6 @@ _G.pg.base.shop_template[70063] = {
 		301261
 	}
 }
-
 _G.pg.base.shop_template[70064] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27460,7 +26824,6 @@ _G.pg.base.shop_template[70064] = {
 		301351
 	}
 }
-
 _G.pg.base.shop_template[70065] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27511,7 +26874,6 @@ _G.pg.base.shop_template[70065] = {
 		207061
 	}
 }
-
 _G.pg.base.shop_template[70066] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27562,7 +26924,6 @@ _G.pg.base.shop_template[70066] = {
 		201021
 	}
 }
-
 _G.pg.base.shop_template[70067] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27588,7 +26949,6 @@ _G.pg.base.shop_template[70067] = {
 		301631
 	}
 }
-
 _G.pg.base.shop_template[70068] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27614,7 +26974,6 @@ _G.pg.base.shop_template[70068] = {
 		304031
 	}
 }
-
 _G.pg.base.shop_template[70069] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27640,7 +26999,6 @@ _G.pg.base.shop_template[70069] = {
 		301491
 	}
 }
-
 _G.pg.base.shop_template[70070] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27666,7 +27024,6 @@ _G.pg.base.shop_template[70070] = {
 		301381
 	}
 }
-
 _G.pg.base.shop_template[70071] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27717,7 +27074,6 @@ _G.pg.base.shop_template[70071] = {
 		299021
 	}
 }
-
 _G.pg.base.shop_template[70072] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27768,7 +27124,6 @@ _G.pg.base.shop_template[70072] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70073] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27819,7 +27174,6 @@ _G.pg.base.shop_template[70073] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70074] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27870,7 +27224,6 @@ _G.pg.base.shop_template[70074] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70075] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27921,7 +27274,6 @@ _G.pg.base.shop_template[70075] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70076] = {
 	time_second = 0,
 	resource_type = 14,
@@ -27997,7 +27349,6 @@ _G.pg.base.shop_template[70076] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70077] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28073,7 +27424,6 @@ _G.pg.base.shop_template[70077] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70078] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28149,7 +27499,6 @@ _G.pg.base.shop_template[70078] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70079] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28225,7 +27574,6 @@ _G.pg.base.shop_template[70079] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70080] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28301,7 +27649,6 @@ _G.pg.base.shop_template[70080] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70081] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28377,7 +27724,6 @@ _G.pg.base.shop_template[70081] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70082] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28428,7 +27774,6 @@ _G.pg.base.shop_template[70082] = {
 		103081
 	}
 }
-
 _G.pg.base.shop_template[70083] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28479,7 +27824,6 @@ _G.pg.base.shop_template[70083] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70084] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28530,7 +27874,6 @@ _G.pg.base.shop_template[70084] = {
 		103101
 	}
 }
-
 _G.pg.base.shop_template[70085] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28581,7 +27924,6 @@ _G.pg.base.shop_template[70085] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70086] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28632,7 +27974,6 @@ _G.pg.base.shop_template[70086] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70087] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28683,7 +28024,6 @@ _G.pg.base.shop_template[70087] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70088] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28759,7 +28099,6 @@ _G.pg.base.shop_template[70088] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70089] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28835,7 +28174,6 @@ _G.pg.base.shop_template[70089] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70090] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28886,7 +28224,6 @@ _G.pg.base.shop_template[70090] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70091] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28937,7 +28274,6 @@ _G.pg.base.shop_template[70091] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70092] = {
 	time_second = 0,
 	resource_type = 14,
@@ -28988,7 +28324,6 @@ _G.pg.base.shop_template[70092] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70093] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29064,7 +28399,6 @@ _G.pg.base.shop_template[70093] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70095] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29140,7 +28474,6 @@ _G.pg.base.shop_template[70095] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70096] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29191,7 +28524,6 @@ _G.pg.base.shop_template[70096] = {
 		301013
 	}
 }
-
 _G.pg.base.shop_template[70097] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29267,7 +28599,6 @@ _G.pg.base.shop_template[70097] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70098] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29318,7 +28649,6 @@ _G.pg.base.shop_template[70098] = {
 		205011
 	}
 }
-
 _G.pg.base.shop_template[70099] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29369,7 +28699,6 @@ _G.pg.base.shop_template[70099] = {
 		202031
 	}
 }
-
 _G.pg.base.shop_template[70100] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29420,7 +28749,6 @@ _G.pg.base.shop_template[70100] = {
 		312012
 	}
 }
-
 _G.pg.base.shop_template[70101] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29471,7 +28799,6 @@ _G.pg.base.shop_template[70101] = {
 		102092
 	}
 }
-
 _G.pg.base.shop_template[70102] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29522,7 +28849,6 @@ _G.pg.base.shop_template[70102] = {
 		201011
 	}
 }
-
 _G.pg.base.shop_template[70103] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29598,7 +28924,6 @@ _G.pg.base.shop_template[70103] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70104] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29674,7 +28999,6 @@ _G.pg.base.shop_template[70104] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70105] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29725,7 +29049,6 @@ _G.pg.base.shop_template[70105] = {
 		408011
 	}
 }
-
 _G.pg.base.shop_template[70106] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29801,7 +29124,6 @@ _G.pg.base.shop_template[70106] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70107] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29827,7 +29149,6 @@ _G.pg.base.shop_template[70107] = {
 		202191
 	}
 }
-
 _G.pg.base.shop_template[70108] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29878,7 +29199,6 @@ _G.pg.base.shop_template[70108] = {
 		301091
 	}
 }
-
 _G.pg.base.shop_template[70109] = {
 	time_second = 0,
 	resource_type = 14,
@@ -29954,7 +29274,6 @@ _G.pg.base.shop_template[70109] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70110] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30030,7 +29349,6 @@ _G.pg.base.shop_template[70110] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70111] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30056,7 +29374,6 @@ _G.pg.base.shop_template[70111] = {
 		101361
 	}
 }
-
 _G.pg.base.shop_template[70112] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30082,7 +29399,6 @@ _G.pg.base.shop_template[70112] = {
 		101371
 	}
 }
-
 _G.pg.base.shop_template[70113] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30133,7 +29449,6 @@ _G.pg.base.shop_template[70113] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70114] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30159,7 +29474,6 @@ _G.pg.base.shop_template[70114] = {
 		302051
 	}
 }
-
 _G.pg.base.shop_template[70115] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30210,7 +29524,6 @@ _G.pg.base.shop_template[70115] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70116] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30261,7 +29574,6 @@ _G.pg.base.shop_template[70116] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70117] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30312,7 +29624,6 @@ _G.pg.base.shop_template[70117] = {
 		102181
 	}
 }
-
 _G.pg.base.shop_template[70118] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30363,7 +29674,6 @@ _G.pg.base.shop_template[70118] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70119] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30414,7 +29724,6 @@ _G.pg.base.shop_template[70119] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70120] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30465,7 +29774,6 @@ _G.pg.base.shop_template[70120] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70121] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30516,7 +29824,6 @@ _G.pg.base.shop_template[70121] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70122] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30567,7 +29874,6 @@ _G.pg.base.shop_template[70122] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70123] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30618,7 +29924,6 @@ _G.pg.base.shop_template[70123] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70124] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30669,7 +29974,6 @@ _G.pg.base.shop_template[70124] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70125] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30720,7 +30024,6 @@ _G.pg.base.shop_template[70125] = {
 		403052
 	}
 }
-
 _G.pg.base.shop_template[70126] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30746,7 +30049,6 @@ _G.pg.base.shop_template[70126] = {
 		101312
 	}
 }
-
 _G.pg.base.shop_template[70127] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30772,7 +30074,6 @@ _G.pg.base.shop_template[70127] = {
 		205021
 	}
 }
-
 _G.pg.base.shop_template[70128] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30798,7 +30099,6 @@ _G.pg.base.shop_template[70128] = {
 		301591
 	}
 }
-
 _G.pg.base.shop_template[70129] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30849,7 +30149,6 @@ _G.pg.base.shop_template[70129] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70130] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30875,7 +30174,6 @@ _G.pg.base.shop_template[70130] = {
 		101263
 	}
 }
-
 _G.pg.base.shop_template[70131] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30901,7 +30199,6 @@ _G.pg.base.shop_template[70131] = {
 		399011
 	}
 }
-
 _G.pg.base.shop_template[70132] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30952,7 +30249,6 @@ _G.pg.base.shop_template[70132] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70133] = {
 	time_second = 0,
 	resource_type = 14,
@@ -30978,7 +30274,6 @@ _G.pg.base.shop_template[70133] = {
 		205062
 	}
 }
-
 _G.pg.base.shop_template[70134] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31029,7 +30324,6 @@ _G.pg.base.shop_template[70134] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70135] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31080,7 +30374,6 @@ _G.pg.base.shop_template[70135] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70136] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31106,7 +30399,6 @@ _G.pg.base.shop_template[70136] = {
 		102051
 	}
 }
-
 _G.pg.base.shop_template[70137] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31132,7 +30424,6 @@ _G.pg.base.shop_template[70137] = {
 		102141
 	}
 }
-
 _G.pg.base.shop_template[70138] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31183,7 +30474,6 @@ _G.pg.base.shop_template[70138] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70139] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31234,7 +30524,6 @@ _G.pg.base.shop_template[70139] = {
 		301211
 	}
 }
-
 _G.pg.base.shop_template[70140] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31260,7 +30549,6 @@ _G.pg.base.shop_template[70140] = {
 		103102
 	}
 }
-
 _G.pg.base.shop_template[70141] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31311,7 +30599,6 @@ _G.pg.base.shop_template[70141] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70142] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31337,7 +30624,6 @@ _G.pg.base.shop_template[70142] = {
 		202081
 	}
 }
-
 _G.pg.base.shop_template[70143] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31413,7 +30699,6 @@ _G.pg.base.shop_template[70143] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70144] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31464,7 +30749,6 @@ _G.pg.base.shop_template[70144] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70145] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31540,7 +30824,6 @@ _G.pg.base.shop_template[70145] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70146] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31591,7 +30874,6 @@ _G.pg.base.shop_template[70146] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70147] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31617,7 +30899,6 @@ _G.pg.base.shop_template[70147] = {
 		101173
 	}
 }
-
 _G.pg.base.shop_template[70148] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31643,7 +30924,6 @@ _G.pg.base.shop_template[70148] = {
 		501041
 	}
 }
-
 _G.pg.base.shop_template[70149] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31669,7 +30949,6 @@ _G.pg.base.shop_template[70149] = {
 		107062
 	}
 }
-
 _G.pg.base.shop_template[70150] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31720,7 +30999,6 @@ _G.pg.base.shop_template[70150] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70151] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31771,7 +31049,6 @@ _G.pg.base.shop_template[70151] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70152] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31822,7 +31099,6 @@ _G.pg.base.shop_template[70152] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70153] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31848,7 +31124,6 @@ _G.pg.base.shop_template[70153] = {
 		301054
 	}
 }
-
 _G.pg.base.shop_template[70154] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31899,7 +31174,6 @@ _G.pg.base.shop_template[70154] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70156] = {
 	time_second = 0,
 	resource_type = 14,
@@ -31950,7 +31224,6 @@ _G.pg.base.shop_template[70156] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70157] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32001,7 +31274,6 @@ _G.pg.base.shop_template[70157] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70158] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32052,7 +31324,6 @@ _G.pg.base.shop_template[70158] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70159] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32103,7 +31374,6 @@ _G.pg.base.shop_template[70159] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70160] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32154,7 +31424,6 @@ _G.pg.base.shop_template[70160] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70161] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32180,7 +31449,6 @@ _G.pg.base.shop_template[70161] = {
 		206033
 	}
 }
-
 _G.pg.base.shop_template[70162] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32231,7 +31499,6 @@ _G.pg.base.shop_template[70162] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70163] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32282,7 +31549,6 @@ _G.pg.base.shop_template[70163] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70164] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32308,7 +31574,6 @@ _G.pg.base.shop_template[70164] = {
 		103061
 	}
 }
-
 _G.pg.base.shop_template[70165] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32359,109 +31624,6 @@ _G.pg.base.shop_template[70165] = {
 		}
 	}
 }
-
-_G.pg.base.shop_template[70171] = {
-	time_second = 0,
-	resource_type = 14,
-	genre = "skin_shop",
-	type = 6,
-	desc = "购买皮肤：三笠春装",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 1,
-	limit_args2 = "",
-	type_order = 0,
-	order = 10,
-	group = 0,
-	num = 1,
-	discount = 0,
-	group_type = 0,
-	id = 70171,
-	resource_num = 880,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		305112
-	},
-	time = {
-		{
-			{
-				2022,
-				5,
-				26
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		{
-			{
-				2022,
-				5,
-				29
-			},
-			{
-				23,
-				59,
-				59
-			}
-		}
-	}
-}
-
-_G.pg.base.shop_template[70172] = {
-	time_second = 0,
-	resource_type = 14,
-	genre = "skin_shop",
-	type = 6,
-	desc = "购买皮肤：小天鹅皮肤",
-	group_limit = 0,
-	group_buy_count = 0,
-	tag = 1,
-	limit_args2 = "",
-	type_order = 0,
-	order = 10,
-	group = 0,
-	num = 1,
-	discount = 0,
-	group_type = 0,
-	id = 70172,
-	resource_num = 780,
-	discount_time = {},
-	limit_args = {},
-	effect_args = {
-		201104
-	},
-	time = {
-		{
-			{
-				2022,
-				5,
-				26
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		{
-			{
-				2022,
-				5,
-				29
-			},
-			{
-				23,
-				59,
-				59
-			}
-		}
-	}
-}
-
 _G.pg.base.shop_template[70166] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32512,7 +31674,6 @@ _G.pg.base.shop_template[70166] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70167] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32538,7 +31699,6 @@ _G.pg.base.shop_template[70167] = {
 		304011
 	}
 }
-
 _G.pg.base.shop_template[70168] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32589,7 +31749,6 @@ _G.pg.base.shop_template[70168] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70170] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32615,7 +31774,106 @@ _G.pg.base.shop_template[70170] = {
 		207033
 	}
 }
-
+_G.pg.base.shop_template[70171] = {
+	time_second = 0,
+	resource_type = 14,
+	genre = "skin_shop",
+	type = 6,
+	desc = "购买皮肤：三笠春装",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 1,
+	limit_args2 = "",
+	type_order = 0,
+	order = 10,
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 70171,
+	resource_num = 880,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		305112
+	},
+	time = {
+		{
+			{
+				2022,
+				5,
+				26
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		{
+			{
+				2022,
+				5,
+				29
+			},
+			{
+				23,
+				59,
+				59
+			}
+		}
+	}
+}
+_G.pg.base.shop_template[70172] = {
+	time_second = 0,
+	resource_type = 14,
+	genre = "skin_shop",
+	type = 6,
+	desc = "购买皮肤：小天鹅皮肤",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 1,
+	limit_args2 = "",
+	type_order = 0,
+	order = 10,
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 70172,
+	resource_num = 780,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		201104
+	},
+	time = {
+		{
+			{
+				2022,
+				5,
+				26
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		{
+			{
+				2022,
+				5,
+				29
+			},
+			{
+				23,
+				59,
+				59
+			}
+		}
+	}
+}
 _G.pg.base.shop_template[70173] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32641,7 +31899,6 @@ _G.pg.base.shop_template[70173] = {
 		305061
 	}
 }
-
 _G.pg.base.shop_template[70174] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32692,7 +31949,6 @@ _G.pg.base.shop_template[70174] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70175] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32718,7 +31974,6 @@ _G.pg.base.shop_template[70175] = {
 		101174
 	}
 }
-
 _G.pg.base.shop_template[70176] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32744,7 +31999,6 @@ _G.pg.base.shop_template[70176] = {
 		201213
 	}
 }
-
 _G.pg.base.shop_template[70177] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32770,7 +32024,6 @@ _G.pg.base.shop_template[70177] = {
 		301055
 	}
 }
-
 _G.pg.base.shop_template[70178] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32796,7 +32049,6 @@ _G.pg.base.shop_template[70178] = {
 		401233
 	}
 }
-
 _G.pg.base.shop_template[70179] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32847,7 +32099,6 @@ _G.pg.base.shop_template[70179] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70180] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32898,7 +32149,6 @@ _G.pg.base.shop_template[70180] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70181] = {
 	time_second = 0,
 	resource_type = 14,
@@ -32949,7 +32199,6 @@ _G.pg.base.shop_template[70181] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70182] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33000,7 +32249,6 @@ _G.pg.base.shop_template[70182] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70183] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33051,7 +32299,6 @@ _G.pg.base.shop_template[70183] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70184] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33127,7 +32374,6 @@ _G.pg.base.shop_template[70184] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70185] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33203,7 +32449,6 @@ _G.pg.base.shop_template[70185] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70186] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33254,7 +32499,6 @@ _G.pg.base.shop_template[70186] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70187] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33305,7 +32549,6 @@ _G.pg.base.shop_template[70187] = {
 		401234
 	}
 }
-
 _G.pg.base.shop_template[70188] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33356,7 +32599,6 @@ _G.pg.base.shop_template[70188] = {
 		102052
 	}
 }
-
 _G.pg.base.shop_template[70189] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33432,7 +32674,6 @@ _G.pg.base.shop_template[70189] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70190] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33483,7 +32724,6 @@ _G.pg.base.shop_template[70190] = {
 		107051
 	}
 }
-
 _G.pg.base.shop_template[70191] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33534,7 +32774,6 @@ _G.pg.base.shop_template[70191] = {
 		403053
 	}
 }
-
 _G.pg.base.shop_template[70192] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33610,7 +32849,6 @@ _G.pg.base.shop_template[70192] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70193] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33661,7 +32899,6 @@ _G.pg.base.shop_template[70193] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70194] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33687,7 +32924,6 @@ _G.pg.base.shop_template[70194] = {
 		201261
 	}
 }
-
 _G.pg.base.shop_template[70195] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33713,7 +32949,6 @@ _G.pg.base.shop_template[70195] = {
 		202161
 	}
 }
-
 _G.pg.base.shop_template[70196] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33739,7 +32974,6 @@ _G.pg.base.shop_template[70196] = {
 		202231
 	}
 }
-
 _G.pg.base.shop_template[70197] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33765,7 +32999,6 @@ _G.pg.base.shop_template[70197] = {
 		206052
 	}
 }
-
 _G.pg.base.shop_template[70198] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33791,7 +33024,6 @@ _G.pg.base.shop_template[70198] = {
 		901111
 	}
 }
-
 _G.pg.base.shop_template[70199] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33817,7 +33049,6 @@ _G.pg.base.shop_template[70199] = {
 		904012
 	}
 }
-
 _G.pg.base.shop_template[70200] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33843,7 +33074,6 @@ _G.pg.base.shop_template[70200] = {
 		901012
 	}
 }
-
 _G.pg.base.shop_template[70201] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33869,7 +33099,6 @@ _G.pg.base.shop_template[70201] = {
 		801022
 	}
 }
-
 _G.pg.base.shop_template[70202] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33920,7 +33149,6 @@ _G.pg.base.shop_template[70202] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70203] = {
 	time_second = 0,
 	resource_type = 14,
@@ -33971,7 +33199,6 @@ _G.pg.base.shop_template[70203] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70204] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34022,7 +33249,6 @@ _G.pg.base.shop_template[70204] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70205] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34073,7 +33299,6 @@ _G.pg.base.shop_template[70205] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70206] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34124,7 +33349,6 @@ _G.pg.base.shop_template[70206] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70207] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34150,7 +33374,6 @@ _G.pg.base.shop_template[70207] = {
 		103161
 	}
 }
-
 _G.pg.base.shop_template[70208] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34176,7 +33399,6 @@ _G.pg.base.shop_template[70208] = {
 		101401
 	}
 }
-
 _G.pg.base.shop_template[70209] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34202,7 +33424,6 @@ _G.pg.base.shop_template[70209] = {
 		102231
 	}
 }
-
 _G.pg.base.shop_template[70210] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34228,7 +33449,6 @@ _G.pg.base.shop_template[70210] = {
 		107291
 	}
 }
-
 _G.pg.base.shop_template[70211] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34254,7 +33474,6 @@ _G.pg.base.shop_template[70211] = {
 		102093
 	}
 }
-
 _G.pg.base.shop_template[70212] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34305,7 +33524,6 @@ _G.pg.base.shop_template[70212] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70213] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34356,7 +33574,6 @@ _G.pg.base.shop_template[70213] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70214] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34407,7 +33624,6 @@ _G.pg.base.shop_template[70214] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70215] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34458,7 +33674,6 @@ _G.pg.base.shop_template[70215] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70216] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34509,7 +33724,6 @@ _G.pg.base.shop_template[70216] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70217] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34535,7 +33749,6 @@ _G.pg.base.shop_template[70217] = {
 		107063
 	}
 }
-
 _G.pg.base.shop_template[70218] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34586,7 +33799,6 @@ _G.pg.base.shop_template[70218] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70219] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34637,7 +33849,6 @@ _G.pg.base.shop_template[70219] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70220] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34688,7 +33899,6 @@ _G.pg.base.shop_template[70220] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70221] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34739,7 +33949,6 @@ _G.pg.base.shop_template[70221] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70222] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34790,7 +33999,6 @@ _G.pg.base.shop_template[70222] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70223] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34841,7 +34049,6 @@ _G.pg.base.shop_template[70223] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70224] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34892,7 +34099,6 @@ _G.pg.base.shop_template[70224] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70225] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34943,7 +34149,6 @@ _G.pg.base.shop_template[70225] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70226] = {
 	time_second = 0,
 	resource_type = 14,
@@ -34994,7 +34199,6 @@ _G.pg.base.shop_template[70226] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70227] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35045,7 +34249,6 @@ _G.pg.base.shop_template[70227] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70228] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35096,7 +34299,6 @@ _G.pg.base.shop_template[70228] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70229] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35147,7 +34349,6 @@ _G.pg.base.shop_template[70229] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70230] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35198,7 +34399,6 @@ _G.pg.base.shop_template[70230] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70231] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35249,7 +34449,6 @@ _G.pg.base.shop_template[70231] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70232] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35300,7 +34499,6 @@ _G.pg.base.shop_template[70232] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70233] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35351,7 +34549,6 @@ _G.pg.base.shop_template[70233] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70234] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35427,7 +34624,6 @@ _G.pg.base.shop_template[70234] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70235] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35503,7 +34699,6 @@ _G.pg.base.shop_template[70235] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70236] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35579,7 +34774,6 @@ _G.pg.base.shop_template[70236] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70237] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35655,7 +34849,6 @@ _G.pg.base.shop_template[70237] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70238] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35731,7 +34924,6 @@ _G.pg.base.shop_template[70238] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70239] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35782,7 +34974,6 @@ _G.pg.base.shop_template[70239] = {
 		403043
 	}
 }
-
 _G.pg.base.shop_template[70240] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35858,7 +35049,6 @@ _G.pg.base.shop_template[70240] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70241] = {
 	time_second = 0,
 	resource_type = 14,
@@ -35934,7 +35124,6 @@ _G.pg.base.shop_template[70241] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70242] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36010,7 +35199,6 @@ _G.pg.base.shop_template[70242] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70243] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36086,7 +35274,6 @@ _G.pg.base.shop_template[70243] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70244] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36162,7 +35349,6 @@ _G.pg.base.shop_template[70244] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70245] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36213,7 +35399,6 @@ _G.pg.base.shop_template[70245] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70246] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36225,7 +35410,7 @@ _G.pg.base.shop_template[70246] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 2,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -36241,8 +35426,8 @@ _G.pg.base.shop_template[70246] = {
 		{
 			{
 				2023,
-				9,
-				28
+				8,
+				3
 			},
 			{
 				0,
@@ -36253,8 +35438,8 @@ _G.pg.base.shop_template[70246] = {
 		{
 			{
 				2023,
-				10,
-				1
+				8,
+				9
 			},
 			{
 				23,
@@ -36264,7 +35449,6 @@ _G.pg.base.shop_template[70246] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70248] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36315,7 +35499,6 @@ _G.pg.base.shop_template[70248] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70249] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36341,7 +35524,6 @@ _G.pg.base.shop_template[70249] = {
 		808011
 	}
 }
-
 _G.pg.base.shop_template[70250] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36392,7 +35574,6 @@ _G.pg.base.shop_template[70250] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70251] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36443,7 +35624,6 @@ _G.pg.base.shop_template[70251] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70252] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36494,7 +35674,6 @@ _G.pg.base.shop_template[70252] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70253] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36545,7 +35724,6 @@ _G.pg.base.shop_template[70253] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70254] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36571,7 +35749,6 @@ _G.pg.base.shop_template[70254] = {
 		202112
 	}
 }
-
 _G.pg.base.shop_template[70255] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36622,7 +35799,6 @@ _G.pg.base.shop_template[70255] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70256] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36648,7 +35824,6 @@ _G.pg.base.shop_template[70256] = {
 		213041
 	}
 }
-
 _G.pg.base.shop_template[70257] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36699,7 +35874,6 @@ _G.pg.base.shop_template[70257] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70258] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36750,7 +35924,6 @@ _G.pg.base.shop_template[70258] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70259] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36776,7 +35949,6 @@ _G.pg.base.shop_template[70259] = {
 		101264
 	}
 }
-
 _G.pg.base.shop_template[70260] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36827,7 +35999,6 @@ _G.pg.base.shop_template[70260] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70261] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36853,7 +36024,6 @@ _G.pg.base.shop_template[70261] = {
 		502033
 	}
 }
-
 _G.pg.base.shop_template[70262] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36904,7 +36074,6 @@ _G.pg.base.shop_template[70262] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70263] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36930,7 +36099,6 @@ _G.pg.base.shop_template[70263] = {
 		301057
 	}
 }
-
 _G.pg.base.shop_template[70264] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36956,7 +36124,6 @@ _G.pg.base.shop_template[70264] = {
 		101176
 	}
 }
-
 _G.pg.base.shop_template[70265] = {
 	time_second = 0,
 	resource_type = 14,
@@ -36982,7 +36149,6 @@ _G.pg.base.shop_template[70265] = {
 		401236
 	}
 }
-
 _G.pg.base.shop_template[70267] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37033,7 +36199,6 @@ _G.pg.base.shop_template[70267] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70268] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37084,7 +36249,6 @@ _G.pg.base.shop_template[70268] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70269] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37135,7 +36299,6 @@ _G.pg.base.shop_template[70269] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70270] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37186,7 +36349,6 @@ _G.pg.base.shop_template[70270] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70271] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37237,7 +36399,6 @@ _G.pg.base.shop_template[70271] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70272] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37288,7 +36449,6 @@ _G.pg.base.shop_template[70272] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70273] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37339,7 +36499,6 @@ _G.pg.base.shop_template[70273] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70274] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37390,7 +36549,6 @@ _G.pg.base.shop_template[70274] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70276] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37441,7 +36599,6 @@ _G.pg.base.shop_template[70276] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70277] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37492,7 +36649,6 @@ _G.pg.base.shop_template[70277] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70278] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37518,7 +36674,6 @@ _G.pg.base.shop_template[70278] = {
 		301541
 	}
 }
-
 _G.pg.base.shop_template[70279] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37569,7 +36724,6 @@ _G.pg.base.shop_template[70279] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70280] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37620,7 +36774,6 @@ _G.pg.base.shop_template[70280] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70281] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37671,7 +36824,6 @@ _G.pg.base.shop_template[70281] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70282] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37697,7 +36849,6 @@ _G.pg.base.shop_template[70282] = {
 		101022
 	}
 }
-
 _G.pg.base.shop_template[70283] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37723,7 +36874,6 @@ _G.pg.base.shop_template[70283] = {
 		302211
 	}
 }
-
 _G.pg.base.shop_template[70284] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37774,7 +36924,6 @@ _G.pg.base.shop_template[70284] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70285] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37825,7 +36974,6 @@ _G.pg.base.shop_template[70285] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70286] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37876,7 +37024,6 @@ _G.pg.base.shop_template[70286] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70287] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37902,7 +37049,6 @@ _G.pg.base.shop_template[70287] = {
 		305052
 	}
 }
-
 _G.pg.base.shop_template[70288] = {
 	time_second = 0,
 	resource_type = 14,
@@ -37953,7 +37099,6 @@ _G.pg.base.shop_template[70288] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70289] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38004,7 +37149,6 @@ _G.pg.base.shop_template[70289] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70290] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38030,7 +37174,6 @@ _G.pg.base.shop_template[70290] = {
 		301101
 	}
 }
-
 _G.pg.base.shop_template[70291] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38056,7 +37199,6 @@ _G.pg.base.shop_template[70291] = {
 		206034
 	}
 }
-
 _G.pg.base.shop_template[70292] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38082,7 +37224,6 @@ _G.pg.base.shop_template[70292] = {
 		401351
 	}
 }
-
 _G.pg.base.shop_template[70293] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38108,7 +37249,6 @@ _G.pg.base.shop_template[70293] = {
 		304043
 	}
 }
-
 _G.pg.base.shop_template[70294] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38134,7 +37274,6 @@ _G.pg.base.shop_template[70294] = {
 		331050
 	}
 }
-
 _G.pg.base.shop_template[70295] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38160,7 +37299,6 @@ _G.pg.base.shop_template[70295] = {
 		202071
 	}
 }
-
 _G.pg.base.shop_template[70296] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38186,7 +37324,6 @@ _G.pg.base.shop_template[70296] = {
 		102094
 	}
 }
-
 _G.pg.base.shop_template[70297] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38212,7 +37349,6 @@ _G.pg.base.shop_template[70297] = {
 		301811
 	}
 }
-
 _G.pg.base.shop_template[70298] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38238,7 +37374,6 @@ _G.pg.base.shop_template[70298] = {
 		207023
 	}
 }
-
 _G.pg.base.shop_template[70299] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38289,7 +37424,6 @@ _G.pg.base.shop_template[70299] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70300] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38340,7 +37474,6 @@ _G.pg.base.shop_template[70300] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70301] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38391,7 +37524,6 @@ _G.pg.base.shop_template[70301] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70302] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38442,7 +37574,6 @@ _G.pg.base.shop_template[70302] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70303] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38493,7 +37624,6 @@ _G.pg.base.shop_template[70303] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70304] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38544,7 +37674,6 @@ _G.pg.base.shop_template[70304] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70305] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38595,7 +37724,6 @@ _G.pg.base.shop_template[70305] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70306] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38646,7 +37774,6 @@ _G.pg.base.shop_template[70306] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70307] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38697,7 +37824,6 @@ _G.pg.base.shop_template[70307] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70308] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38748,7 +37874,6 @@ _G.pg.base.shop_template[70308] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70309] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38799,7 +37924,6 @@ _G.pg.base.shop_template[70309] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70310] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38850,7 +37974,6 @@ _G.pg.base.shop_template[70310] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70311] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38901,7 +38024,6 @@ _G.pg.base.shop_template[70311] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70312] = {
 	time_second = 0,
 	resource_type = 14,
@@ -38952,7 +38074,6 @@ _G.pg.base.shop_template[70312] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70313] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39003,7 +38124,6 @@ _G.pg.base.shop_template[70313] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70314] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39054,7 +38174,6 @@ _G.pg.base.shop_template[70314] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70315] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39080,7 +38199,6 @@ _G.pg.base.shop_template[70315] = {
 		201022
 	}
 }
-
 _G.pg.base.shop_template[70316] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39106,7 +38224,6 @@ _G.pg.base.shop_template[70316] = {
 		301391
 	}
 }
-
 _G.pg.base.shop_template[70317] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39157,7 +38274,6 @@ _G.pg.base.shop_template[70317] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70318] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39183,7 +38299,6 @@ _G.pg.base.shop_template[70318] = {
 		102101
 	}
 }
-
 _G.pg.base.shop_template[70319] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39209,7 +38324,6 @@ _G.pg.base.shop_template[70319] = {
 		201031
 	}
 }
-
 _G.pg.base.shop_template[70320] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39260,7 +38374,6 @@ _G.pg.base.shop_template[70320] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70321] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39311,7 +38424,6 @@ _G.pg.base.shop_template[70321] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70322] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39362,7 +38474,6 @@ _G.pg.base.shop_template[70322] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70323] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39413,7 +38524,6 @@ _G.pg.base.shop_template[70323] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70324] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39464,7 +38574,6 @@ _G.pg.base.shop_template[70324] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70325] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39515,7 +38624,6 @@ _G.pg.base.shop_template[70325] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70326] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39566,7 +38674,6 @@ _G.pg.base.shop_template[70326] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70327] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39617,7 +38724,6 @@ _G.pg.base.shop_template[70327] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70328] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39668,7 +38774,6 @@ _G.pg.base.shop_template[70328] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70329] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39719,7 +38824,6 @@ _G.pg.base.shop_template[70329] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70330] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39770,7 +38874,6 @@ _G.pg.base.shop_template[70330] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70331] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39821,7 +38924,6 @@ _G.pg.base.shop_template[70331] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70332] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39872,7 +38974,6 @@ _G.pg.base.shop_template[70332] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70333] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39923,7 +39024,6 @@ _G.pg.base.shop_template[70333] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70334] = {
 	time_second = 0,
 	resource_type = 14,
@@ -39974,7 +39074,6 @@ _G.pg.base.shop_template[70334] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70335] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40025,7 +39124,6 @@ _G.pg.base.shop_template[70335] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70336] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40076,7 +39174,6 @@ _G.pg.base.shop_template[70336] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70337] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40127,7 +39224,6 @@ _G.pg.base.shop_template[70337] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70339] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40178,7 +39274,6 @@ _G.pg.base.shop_template[70339] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70340] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40229,7 +39324,6 @@ _G.pg.base.shop_template[70340] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70341] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40280,7 +39374,6 @@ _G.pg.base.shop_template[70341] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70342] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40331,7 +39424,6 @@ _G.pg.base.shop_template[70342] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70343] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40382,7 +39474,6 @@ _G.pg.base.shop_template[70343] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70344] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40433,7 +39524,6 @@ _G.pg.base.shop_template[70344] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70345] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40484,7 +39574,6 @@ _G.pg.base.shop_template[70345] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70346] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40535,7 +39624,6 @@ _G.pg.base.shop_template[70346] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70347] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40561,7 +39649,6 @@ _G.pg.base.shop_template[70347] = {
 		301801
 	}
 }
-
 _G.pg.base.shop_template[70348] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40612,7 +39699,6 @@ _G.pg.base.shop_template[70348] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70349] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40663,7 +39749,6 @@ _G.pg.base.shop_template[70349] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70350] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40714,7 +39799,6 @@ _G.pg.base.shop_template[70350] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70357] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40765,7 +39849,6 @@ _G.pg.base.shop_template[70357] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70358] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40816,7 +39899,6 @@ _G.pg.base.shop_template[70358] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70359] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40867,7 +39949,6 @@ _G.pg.base.shop_template[70359] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70360] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40918,7 +39999,6 @@ _G.pg.base.shop_template[70360] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70361] = {
 	time_second = 0,
 	resource_type = 14,
@@ -40969,7 +40049,6 @@ _G.pg.base.shop_template[70361] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70362] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41020,7 +40099,6 @@ _G.pg.base.shop_template[70362] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70363] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41071,7 +40149,6 @@ _G.pg.base.shop_template[70363] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70364] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41122,7 +40199,6 @@ _G.pg.base.shop_template[70364] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70365] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41173,7 +40249,6 @@ _G.pg.base.shop_template[70365] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70366] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41224,7 +40299,6 @@ _G.pg.base.shop_template[70366] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70367] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41275,7 +40349,6 @@ _G.pg.base.shop_template[70367] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70368] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41326,7 +40399,6 @@ _G.pg.base.shop_template[70368] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70369] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41377,7 +40449,6 @@ _G.pg.base.shop_template[70369] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70370] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41403,7 +40474,6 @@ _G.pg.base.shop_template[70370] = {
 		502035
 	}
 }
-
 _G.pg.base.shop_template[70371] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41454,7 +40524,6 @@ _G.pg.base.shop_template[70371] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70372] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41505,7 +40574,6 @@ _G.pg.base.shop_template[70372] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70373] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41556,7 +40624,6 @@ _G.pg.base.shop_template[70373] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70374] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41607,7 +40674,6 @@ _G.pg.base.shop_template[70374] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70375] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41658,7 +40724,6 @@ _G.pg.base.shop_template[70375] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70376] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41709,7 +40774,6 @@ _G.pg.base.shop_template[70376] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70377] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41760,7 +40824,6 @@ _G.pg.base.shop_template[70377] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70378] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41811,7 +40874,6 @@ _G.pg.base.shop_template[70378] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70379] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41862,7 +40924,6 @@ _G.pg.base.shop_template[70379] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70380] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41888,7 +40949,6 @@ _G.pg.base.shop_template[70380] = {
 		101252
 	}
 }
-
 _G.pg.base.shop_template[70381] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41939,7 +40999,6 @@ _G.pg.base.shop_template[70381] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70382] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41965,7 +41024,6 @@ _G.pg.base.shop_template[70382] = {
 		201321
 	}
 }
-
 _G.pg.base.shop_template[70383] = {
 	time_second = 0,
 	resource_type = 14,
@@ -41977,7 +41035,7 @@ _G.pg.base.shop_template[70383] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -41993,8 +41051,8 @@ _G.pg.base.shop_template[70383] = {
 		{
 			{
 				2023,
-				9,
-				28
+				5,
+				25
 			},
 			{
 				0,
@@ -42005,8 +41063,8 @@ _G.pg.base.shop_template[70383] = {
 		{
 			{
 				2023,
-				10,
-				1
+				5,
+				28
 			},
 			{
 				23,
@@ -42016,7 +41074,6 @@ _G.pg.base.shop_template[70383] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70384] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42028,7 +41085,7 @@ _G.pg.base.shop_template[70384] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -42043,9 +41100,9 @@ _G.pg.base.shop_template[70384] = {
 	time = {
 		{
 			{
-				2023,
-				9,
-				28
+				2022,
+				12,
+				15
 			},
 			{
 				0,
@@ -42055,19 +41112,18 @@ _G.pg.base.shop_template[70384] = {
 		},
 		{
 			{
-				2023,
-				10,
-				1
+				2022,
+				12,
+				22
 			},
 			{
-				23,
-				59,
-				59
+				9,
+				0,
+				0
 			}
 		}
 	}
 }
-
 _G.pg.base.shop_template[70385] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42079,7 +41135,7 @@ _G.pg.base.shop_template[70385] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 11,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -42094,9 +41150,9 @@ _G.pg.base.shop_template[70385] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				28
+				29
 			},
 			{
 				0,
@@ -42106,19 +41162,18 @@ _G.pg.base.shop_template[70385] = {
 		},
 		{
 			{
-				2023,
+				2022,
 				10,
-				1
+				2
 			},
 			{
-				23,
+				14,
 				59,
 				59
 			}
 		}
 	}
 }
-
 _G.pg.base.shop_template[70386] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42130,7 +41185,7 @@ _G.pg.base.shop_template[70386] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -42145,9 +41200,9 @@ _G.pg.base.shop_template[70386] = {
 	time = {
 		{
 			{
-				2023,
-				9,
-				28
+				2022,
+				12,
+				15
 			},
 			{
 				0,
@@ -42157,19 +41212,18 @@ _G.pg.base.shop_template[70386] = {
 		},
 		{
 			{
-				2023,
-				10,
-				1
+				2022,
+				12,
+				22
 			},
 			{
-				23,
-				59,
-				59
+				9,
+				0,
+				0
 			}
 		}
 	}
 }
-
 _G.pg.base.shop_template[70387] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42181,7 +41235,7 @@ _G.pg.base.shop_template[70387] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 11,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -42196,9 +41250,9 @@ _G.pg.base.shop_template[70387] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				28
+				29
 			},
 			{
 				0,
@@ -42208,19 +41262,18 @@ _G.pg.base.shop_template[70387] = {
 		},
 		{
 			{
-				2023,
+				2022,
 				10,
-				1
+				2
 			},
 			{
-				23,
+				14,
 				59,
 				59
 			}
 		}
 	}
 }
-
 _G.pg.base.shop_template[70388] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42232,7 +41285,7 @@ _G.pg.base.shop_template[70388] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -42248,8 +41301,8 @@ _G.pg.base.shop_template[70388] = {
 		{
 			{
 				2023,
-				9,
-				28
+				5,
+				25
 			},
 			{
 				0,
@@ -42260,8 +41313,8 @@ _G.pg.base.shop_template[70388] = {
 		{
 			{
 				2023,
-				10,
-				1
+				5,
+				28
 			},
 			{
 				23,
@@ -42271,7 +41324,6 @@ _G.pg.base.shop_template[70388] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70389] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42283,7 +41335,7 @@ _G.pg.base.shop_template[70389] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -42298,9 +41350,9 @@ _G.pg.base.shop_template[70389] = {
 	time = {
 		{
 			{
-				2023,
-				9,
-				28
+				2022,
+				12,
+				15
 			},
 			{
 				0,
@@ -42310,19 +41362,18 @@ _G.pg.base.shop_template[70389] = {
 		},
 		{
 			{
-				2023,
-				10,
-				1
+				2022,
+				12,
+				22
 			},
 			{
-				23,
-				59,
-				59
+				9,
+				0,
+				0
 			}
 		}
 	}
 }
-
 _G.pg.base.shop_template[70390] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42373,7 +41424,6 @@ _G.pg.base.shop_template[70390] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70391] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42424,7 +41474,6 @@ _G.pg.base.shop_template[70391] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70392] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42475,7 +41524,6 @@ _G.pg.base.shop_template[70392] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70393] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42526,7 +41574,6 @@ _G.pg.base.shop_template[70393] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70394] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42577,7 +41624,6 @@ _G.pg.base.shop_template[70394] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70395] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42628,7 +41674,6 @@ _G.pg.base.shop_template[70395] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70396] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42679,7 +41724,6 @@ _G.pg.base.shop_template[70396] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70397] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42730,7 +41774,6 @@ _G.pg.base.shop_template[70397] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70398] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42781,7 +41824,6 @@ _G.pg.base.shop_template[70398] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70399] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42832,7 +41874,6 @@ _G.pg.base.shop_template[70399] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70400] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42858,7 +41899,6 @@ _G.pg.base.shop_template[70400] = {
 		107222
 	}
 }
-
 _G.pg.base.shop_template[70401] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42909,7 +41949,6 @@ _G.pg.base.shop_template[70401] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70402] = {
 	time_second = 0,
 	resource_type = 14,
@@ -42960,7 +41999,6 @@ _G.pg.base.shop_template[70402] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70403] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43011,7 +42049,6 @@ _G.pg.base.shop_template[70403] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70404] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43062,7 +42099,6 @@ _G.pg.base.shop_template[70404] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70405] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43088,7 +42124,6 @@ _G.pg.base.shop_template[70405] = {
 		401261
 	}
 }
-
 _G.pg.base.shop_template[70406] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43139,7 +42174,6 @@ _G.pg.base.shop_template[70406] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70407] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43190,7 +42224,6 @@ _G.pg.base.shop_template[70407] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70408] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43241,7 +42274,6 @@ _G.pg.base.shop_template[70408] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70409] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43292,7 +42324,6 @@ _G.pg.base.shop_template[70409] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70410] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43343,7 +42374,6 @@ _G.pg.base.shop_template[70410] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70411] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43394,7 +42424,6 @@ _G.pg.base.shop_template[70411] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70412] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43445,7 +42474,6 @@ _G.pg.base.shop_template[70412] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70413] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43496,7 +42524,6 @@ _G.pg.base.shop_template[70413] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70414] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43547,7 +42574,6 @@ _G.pg.base.shop_template[70414] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70415] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43598,7 +42624,6 @@ _G.pg.base.shop_template[70415] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70416] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43649,7 +42674,6 @@ _G.pg.base.shop_template[70416] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70417] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43700,7 +42724,6 @@ _G.pg.base.shop_template[70417] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70418] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43726,7 +42749,6 @@ _G.pg.base.shop_template[70418] = {
 		103163
 	}
 }
-
 _G.pg.base.shop_template[70419] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43777,7 +42799,6 @@ _G.pg.base.shop_template[70419] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70420] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43803,7 +42824,6 @@ _G.pg.base.shop_template[70420] = {
 		331051
 	}
 }
-
 _G.pg.base.shop_template[70421] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43854,7 +42874,6 @@ _G.pg.base.shop_template[70421] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70422] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43880,7 +42899,6 @@ _G.pg.base.shop_template[70422] = {
 		302212
 	}
 }
-
 _G.pg.base.shop_template[70423] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43906,7 +42924,6 @@ _G.pg.base.shop_template[70423] = {
 		307013
 	}
 }
-
 _G.pg.base.shop_template[70424] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43932,7 +42949,6 @@ _G.pg.base.shop_template[70424] = {
 		307023
 	}
 }
-
 _G.pg.base.shop_template[70425] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43958,7 +42974,6 @@ _G.pg.base.shop_template[70425] = {
 		408082
 	}
 }
-
 _G.pg.base.shop_template[70426] = {
 	time_second = 0,
 	resource_type = 14,
@@ -43984,7 +42999,6 @@ _G.pg.base.shop_template[70426] = {
 		304032
 	}
 }
-
 _G.pg.base.shop_template[70427] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44010,7 +43024,6 @@ _G.pg.base.shop_template[70427] = {
 		103111
 	}
 }
-
 _G.pg.base.shop_template[70428] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44036,7 +43049,6 @@ _G.pg.base.shop_template[70428] = {
 		202083
 	}
 }
-
 _G.pg.base.shop_template[70429] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44062,7 +43074,6 @@ _G.pg.base.shop_template[70429] = {
 		301242
 	}
 }
-
 _G.pg.base.shop_template[70430] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44088,7 +43099,6 @@ _G.pg.base.shop_template[70430] = {
 		301251
 	}
 }
-
 _G.pg.base.shop_template[70431] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44114,7 +43124,6 @@ _G.pg.base.shop_template[70431] = {
 		301113
 	}
 }
-
 _G.pg.base.shop_template[70432] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44140,7 +43149,6 @@ _G.pg.base.shop_template[70432] = {
 		301123
 	}
 }
-
 _G.pg.base.shop_template[70433] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44191,7 +43199,6 @@ _G.pg.base.shop_template[70433] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70434] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44242,7 +43249,6 @@ _G.pg.base.shop_template[70434] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70435] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44293,7 +43299,6 @@ _G.pg.base.shop_template[70435] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70436] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44319,7 +43324,6 @@ _G.pg.base.shop_template[70436] = {
 		401463
 	}
 }
-
 _G.pg.base.shop_template[70437] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44345,7 +43349,6 @@ _G.pg.base.shop_template[70437] = {
 		206035
 	}
 }
-
 _G.pg.base.shop_template[70438] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44371,7 +43374,6 @@ _G.pg.base.shop_template[70438] = {
 		205022
 	}
 }
-
 _G.pg.base.shop_template[70439] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44397,7 +43399,6 @@ _G.pg.base.shop_template[70439] = {
 		205012
 	}
 }
-
 _G.pg.base.shop_template[70440] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44423,7 +43424,6 @@ _G.pg.base.shop_template[70440] = {
 		201234
 	}
 }
-
 _G.pg.base.shop_template[70441] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44449,7 +43449,6 @@ _G.pg.base.shop_template[70441] = {
 		408083
 	}
 }
-
 _G.pg.base.shop_template[70442] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44475,7 +43474,6 @@ _G.pg.base.shop_template[70442] = {
 		101253
 	}
 }
-
 _G.pg.base.shop_template[70443] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44526,7 +43524,6 @@ _G.pg.base.shop_template[70443] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70444] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44577,7 +43574,6 @@ _G.pg.base.shop_template[70444] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70445] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44628,7 +43624,6 @@ _G.pg.base.shop_template[70445] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70446] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44679,7 +43674,6 @@ _G.pg.base.shop_template[70446] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70447] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44730,7 +43724,6 @@ _G.pg.base.shop_template[70447] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70448] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44781,7 +43774,6 @@ _G.pg.base.shop_template[70448] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70449] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44832,7 +43824,6 @@ _G.pg.base.shop_template[70449] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70450] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44883,7 +43874,6 @@ _G.pg.base.shop_template[70450] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70451] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44934,7 +43924,6 @@ _G.pg.base.shop_template[70451] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70452] = {
 	time_second = 0,
 	resource_type = 14,
@@ -44985,7 +43974,6 @@ _G.pg.base.shop_template[70452] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70453] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45036,7 +44024,6 @@ _G.pg.base.shop_template[70453] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70454] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45062,7 +44049,6 @@ _G.pg.base.shop_template[70454] = {
 		101442
 	}
 }
-
 _G.pg.base.shop_template[70455] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45113,7 +44099,6 @@ _G.pg.base.shop_template[70455] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70456] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45139,7 +44124,6 @@ _G.pg.base.shop_template[70456] = {
 		101254
 	}
 }
-
 _G.pg.base.shop_template[70457] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45165,7 +44149,6 @@ _G.pg.base.shop_template[70457] = {
 		107035
 	}
 }
-
 _G.pg.base.shop_template[70459] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45216,7 +44199,6 @@ _G.pg.base.shop_template[70459] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70460] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45267,7 +44249,6 @@ _G.pg.base.shop_template[70460] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70461] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45293,7 +44274,6 @@ _G.pg.base.shop_template[70461] = {
 		805012
 	}
 }
-
 _G.pg.base.shop_template[70462] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45319,7 +44299,6 @@ _G.pg.base.shop_template[70462] = {
 		499041
 	}
 }
-
 _G.pg.base.shop_template[70463] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45370,7 +44349,6 @@ _G.pg.base.shop_template[70463] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70465] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45396,7 +44374,6 @@ _G.pg.base.shop_template[70465] = {
 		202126
 	}
 }
-
 _G.pg.base.shop_template[70466] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45422,7 +44399,6 @@ _G.pg.base.shop_template[70466] = {
 		199023
 	}
 }
-
 _G.pg.base.shop_template[70467] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45473,7 +44449,6 @@ _G.pg.base.shop_template[70467] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70468] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45524,7 +44499,6 @@ _G.pg.base.shop_template[70468] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70469] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45575,7 +44549,6 @@ _G.pg.base.shop_template[70469] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70470] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45626,7 +44599,6 @@ _G.pg.base.shop_template[70470] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70471] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45677,7 +44649,6 @@ _G.pg.base.shop_template[70471] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70472] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45728,7 +44699,6 @@ _G.pg.base.shop_template[70472] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70473] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45779,7 +44749,6 @@ _G.pg.base.shop_template[70473] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70474] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45830,7 +44799,6 @@ _G.pg.base.shop_template[70474] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70475] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45881,7 +44849,6 @@ _G.pg.base.shop_template[70475] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70476] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45932,7 +44899,6 @@ _G.pg.base.shop_template[70476] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70477] = {
 	time_second = 0,
 	resource_type = 14,
@@ -45958,7 +44924,6 @@ _G.pg.base.shop_template[70477] = {
 		408084
 	}
 }
-
 _G.pg.base.shop_template[70478] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46009,7 +44974,6 @@ _G.pg.base.shop_template[70478] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70479] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46035,7 +44999,6 @@ _G.pg.base.shop_template[70479] = {
 		107072
 	}
 }
-
 _G.pg.base.shop_template[70481] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46086,7 +45049,6 @@ _G.pg.base.shop_template[70481] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70482] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46137,7 +45099,6 @@ _G.pg.base.shop_template[70482] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70483] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46188,7 +45149,6 @@ _G.pg.base.shop_template[70483] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70484] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46239,7 +45199,6 @@ _G.pg.base.shop_template[70484] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70485] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46290,7 +45249,6 @@ _G.pg.base.shop_template[70485] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70486] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46341,7 +45299,6 @@ _G.pg.base.shop_template[70486] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70488] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46392,7 +45349,6 @@ _G.pg.base.shop_template[70488] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70489] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46443,7 +45399,6 @@ _G.pg.base.shop_template[70489] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70490] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46494,7 +45449,6 @@ _G.pg.base.shop_template[70490] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70491] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46545,7 +45499,6 @@ _G.pg.base.shop_template[70491] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70492] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46596,7 +45549,6 @@ _G.pg.base.shop_template[70492] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70494] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46647,7 +45599,6 @@ _G.pg.base.shop_template[70494] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70495] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46698,7 +45649,6 @@ _G.pg.base.shop_template[70495] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70496] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46749,7 +45699,6 @@ _G.pg.base.shop_template[70496] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70497] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46800,7 +45749,6 @@ _G.pg.base.shop_template[70497] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70498] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46851,7 +45799,6 @@ _G.pg.base.shop_template[70498] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70499] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46902,7 +45849,6 @@ _G.pg.base.shop_template[70499] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70500] = {
 	time_second = 0,
 	resource_type = 14,
@@ -46953,7 +45899,6 @@ _G.pg.base.shop_template[70500] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70501] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47004,7 +45949,6 @@ _G.pg.base.shop_template[70501] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70502] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47055,7 +45999,6 @@ _G.pg.base.shop_template[70502] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70503] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47081,7 +46024,6 @@ _G.pg.base.shop_template[70503] = {
 		107232
 	}
 }
-
 _G.pg.base.shop_template[70504] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47107,7 +46049,6 @@ _G.pg.base.shop_template[70504] = {
 		101314
 	}
 }
-
 _G.pg.base.shop_template[70505] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47158,7 +46099,6 @@ _G.pg.base.shop_template[70505] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70506] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47209,7 +46149,6 @@ _G.pg.base.shop_template[70506] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70507] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47260,7 +46199,6 @@ _G.pg.base.shop_template[70507] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70508] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47311,7 +46249,6 @@ _G.pg.base.shop_template[70508] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70509] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47362,7 +46299,6 @@ _G.pg.base.shop_template[70509] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70510] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47413,7 +46349,6 @@ _G.pg.base.shop_template[70510] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70511] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47464,7 +46399,6 @@ _G.pg.base.shop_template[70511] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70513] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47515,7 +46449,6 @@ _G.pg.base.shop_template[70513] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70514] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47566,7 +46499,6 @@ _G.pg.base.shop_template[70514] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70515] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47617,7 +46549,6 @@ _G.pg.base.shop_template[70515] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70516] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47643,7 +46574,6 @@ _G.pg.base.shop_template[70516] = {
 		701061
 	}
 }
-
 _G.pg.base.shop_template[70517] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47694,7 +46624,6 @@ _G.pg.base.shop_template[70517] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70518] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47720,7 +46649,6 @@ _G.pg.base.shop_template[70518] = {
 		107223
 	}
 }
-
 _G.pg.base.shop_template[70519] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47746,7 +46674,6 @@ _G.pg.base.shop_template[70519] = {
 		302214
 	}
 }
-
 _G.pg.base.shop_template[70520] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47772,7 +46699,6 @@ _G.pg.base.shop_template[70520] = {
 		305113
 	}
 }
-
 _G.pg.base.shop_template[70521] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47798,7 +46724,6 @@ _G.pg.base.shop_template[70521] = {
 		605023
 	}
 }
-
 _G.pg.base.shop_template[70522] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47849,7 +46774,6 @@ _G.pg.base.shop_template[70522] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70523] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47875,7 +46799,6 @@ _G.pg.base.shop_template[70523] = {
 		305053
 	}
 }
-
 _G.pg.base.shop_template[70524] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47901,7 +46824,6 @@ _G.pg.base.shop_template[70524] = {
 		801032
 	}
 }
-
 _G.pg.base.shop_template[70525] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47927,7 +46849,6 @@ _G.pg.base.shop_template[70525] = {
 		103164
 	}
 }
-
 _G.pg.base.shop_template[70526] = {
 	time_second = 0,
 	resource_type = 14,
@@ -47978,7 +46899,6 @@ _G.pg.base.shop_template[70526] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70527] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48029,7 +46949,6 @@ _G.pg.base.shop_template[70527] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70528] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48080,7 +46999,6 @@ _G.pg.base.shop_template[70528] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70529] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48131,7 +47049,6 @@ _G.pg.base.shop_template[70529] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70530] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48182,7 +47099,6 @@ _G.pg.base.shop_template[70530] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70531] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48233,7 +47149,6 @@ _G.pg.base.shop_template[70531] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70532] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48284,7 +47199,6 @@ _G.pg.base.shop_template[70532] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70533] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48335,7 +47249,6 @@ _G.pg.base.shop_template[70533] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70534] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48386,7 +47299,6 @@ _G.pg.base.shop_template[70534] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70535] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48437,7 +47349,6 @@ _G.pg.base.shop_template[70535] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70536] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48488,7 +47399,6 @@ _G.pg.base.shop_template[70536] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70537] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48539,7 +47449,6 @@ _G.pg.base.shop_template[70537] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70538] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48590,7 +47499,6 @@ _G.pg.base.shop_template[70538] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70539] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48641,7 +47549,6 @@ _G.pg.base.shop_template[70539] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70540] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48692,7 +47599,6 @@ _G.pg.base.shop_template[70540] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70541] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48743,7 +47649,6 @@ _G.pg.base.shop_template[70541] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70542] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48794,7 +47699,6 @@ _G.pg.base.shop_template[70542] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70543] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48845,7 +47749,6 @@ _G.pg.base.shop_template[70543] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70544] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48896,7 +47799,6 @@ _G.pg.base.shop_template[70544] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70545] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48947,7 +47849,6 @@ _G.pg.base.shop_template[70545] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70546] = {
 	time_second = 0,
 	resource_type = 14,
@@ -48998,7 +47899,6 @@ _G.pg.base.shop_template[70546] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70547] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49049,7 +47949,6 @@ _G.pg.base.shop_template[70547] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70548] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49100,7 +47999,6 @@ _G.pg.base.shop_template[70548] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70549] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49151,7 +48049,6 @@ _G.pg.base.shop_template[70549] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70550] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49202,7 +48099,6 @@ _G.pg.base.shop_template[70550] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70551] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49253,7 +48149,6 @@ _G.pg.base.shop_template[70551] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70552] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49304,7 +48199,6 @@ _G.pg.base.shop_template[70552] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70553] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49330,7 +48224,6 @@ _G.pg.base.shop_template[70553] = {
 		406012
 	}
 }
-
 _G.pg.base.shop_template[70554] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49356,7 +48249,6 @@ _G.pg.base.shop_template[70554] = {
 		207052
 	}
 }
-
 _G.pg.base.shop_template[70555] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49382,7 +48274,6 @@ _G.pg.base.shop_template[70555] = {
 		202273
 	}
 }
-
 _G.pg.base.shop_template[70556] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49408,7 +48299,6 @@ _G.pg.base.shop_template[70556] = {
 		102142
 	}
 }
-
 _G.pg.base.shop_template[70557] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49434,7 +48324,6 @@ _G.pg.base.shop_template[70557] = {
 		204033
 	}
 }
-
 _G.pg.base.shop_template[70558] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49460,7 +48349,6 @@ _G.pg.base.shop_template[70558] = {
 		202243
 	}
 }
-
 _G.pg.base.shop_template[70559] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49486,7 +48374,6 @@ _G.pg.base.shop_template[70559] = {
 		205102
 	}
 }
-
 _G.pg.base.shop_template[70560] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49512,7 +48399,6 @@ _G.pg.base.shop_template[70560] = {
 		301832
 	}
 }
-
 _G.pg.base.shop_template[70561] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49538,7 +48424,6 @@ _G.pg.base.shop_template[70561] = {
 		301861
 	}
 }
-
 _G.pg.base.shop_template[70562] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49564,7 +48449,6 @@ _G.pg.base.shop_template[70562] = {
 		301021
 	}
 }
-
 _G.pg.base.shop_template[70563] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49590,7 +48474,6 @@ _G.pg.base.shop_template[70563] = {
 		301812
 	}
 }
-
 _G.pg.base.shop_template[70565] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49616,7 +48499,6 @@ _G.pg.base.shop_template[70565] = {
 		301592
 	}
 }
-
 _G.pg.base.shop_template[70566] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49642,7 +48524,6 @@ _G.pg.base.shop_template[70566] = {
 		306062
 	}
 }
-
 _G.pg.base.shop_template[70568] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49668,7 +48549,6 @@ _G.pg.base.shop_template[70568] = {
 		102163
 	}
 }
-
 _G.pg.base.shop_template[70569] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49694,7 +48574,6 @@ _G.pg.base.shop_template[70569] = {
 		101041
 	}
 }
-
 _G.pg.base.shop_template[70570] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49720,7 +48599,6 @@ _G.pg.base.shop_template[70570] = {
 		101031
 	}
 }
-
 _G.pg.base.shop_template[70571] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49771,7 +48649,6 @@ _G.pg.base.shop_template[70571] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70572] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49822,7 +48699,6 @@ _G.pg.base.shop_template[70572] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70573] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49873,7 +48749,6 @@ _G.pg.base.shop_template[70573] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70574] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49924,7 +48799,6 @@ _G.pg.base.shop_template[70574] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70575] = {
 	time_second = 0,
 	resource_type = 14,
@@ -49975,7 +48849,6 @@ _G.pg.base.shop_template[70575] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70576] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50026,7 +48899,6 @@ _G.pg.base.shop_template[70576] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70577] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50077,7 +48949,6 @@ _G.pg.base.shop_template[70577] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70578] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50128,7 +48999,6 @@ _G.pg.base.shop_template[70578] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70579] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50179,7 +49049,6 @@ _G.pg.base.shop_template[70579] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70580] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50230,7 +49099,6 @@ _G.pg.base.shop_template[70580] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70581] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50281,7 +49149,6 @@ _G.pg.base.shop_template[70581] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70582] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50332,7 +49199,6 @@ _G.pg.base.shop_template[70582] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70583] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50383,7 +49249,6 @@ _G.pg.base.shop_template[70583] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70584] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50434,7 +49299,6 @@ _G.pg.base.shop_template[70584] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70585] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50485,7 +49349,6 @@ _G.pg.base.shop_template[70585] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70586] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50536,7 +49399,6 @@ _G.pg.base.shop_template[70586] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70587] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50587,7 +49449,6 @@ _G.pg.base.shop_template[70587] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70588] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50638,7 +49499,6 @@ _G.pg.base.shop_template[70588] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70589] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50689,7 +49549,6 @@ _G.pg.base.shop_template[70589] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70590] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50740,7 +49599,6 @@ _G.pg.base.shop_template[70590] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70591] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50791,7 +49649,6 @@ _G.pg.base.shop_template[70591] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70592] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50803,7 +49660,7 @@ _G.pg.base.shop_template[70592] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 2,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -50818,9 +49675,9 @@ _G.pg.base.shop_template[70592] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				28
+				8
 			},
 			{
 				0,
@@ -50830,9 +49687,9 @@ _G.pg.base.shop_template[70592] = {
 		},
 		{
 			{
-				2023,
-				10,
-				1
+				2022,
+				9,
+				14
 			},
 			{
 				23,
@@ -50842,7 +49699,6 @@ _G.pg.base.shop_template[70592] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70593] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50854,7 +49710,7 @@ _G.pg.base.shop_template[70593] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 2,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -50869,9 +49725,9 @@ _G.pg.base.shop_template[70593] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				28
+				8
 			},
 			{
 				0,
@@ -50881,9 +49737,9 @@ _G.pg.base.shop_template[70593] = {
 		},
 		{
 			{
-				2023,
-				10,
-				1
+				2022,
+				9,
+				14
 			},
 			{
 				23,
@@ -50893,7 +49749,6 @@ _G.pg.base.shop_template[70593] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70594] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50944,7 +49799,6 @@ _G.pg.base.shop_template[70594] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70595] = {
 	time_second = 0,
 	resource_type = 14,
@@ -50995,7 +49849,6 @@ _G.pg.base.shop_template[70595] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70596] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51046,7 +49899,6 @@ _G.pg.base.shop_template[70596] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70597] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51097,7 +49949,6 @@ _G.pg.base.shop_template[70597] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70598] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51148,7 +49999,6 @@ _G.pg.base.shop_template[70598] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70599] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51176,8 +50026,8 @@ _G.pg.base.shop_template[70599] = {
 		{
 			{
 				2023,
-				9,
-				21
+				5,
+				25
 			},
 			{
 				0,
@@ -51188,8 +50038,8 @@ _G.pg.base.shop_template[70599] = {
 		{
 			{
 				2023,
-				9,
-				24
+				5,
+				28
 			},
 			{
 				23,
@@ -51199,7 +50049,6 @@ _G.pg.base.shop_template[70599] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70600] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51227,8 +50076,8 @@ _G.pg.base.shop_template[70600] = {
 		{
 			{
 				2023,
-				9,
-				21
+				5,
+				25
 			},
 			{
 				0,
@@ -51239,8 +50088,8 @@ _G.pg.base.shop_template[70600] = {
 		{
 			{
 				2023,
-				9,
-				24
+				5,
+				28
 			},
 			{
 				23,
@@ -51250,7 +50099,6 @@ _G.pg.base.shop_template[70600] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70601] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51301,7 +50149,6 @@ _G.pg.base.shop_template[70601] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70602] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51352,7 +50199,6 @@ _G.pg.base.shop_template[70602] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70603] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51403,7 +50249,6 @@ _G.pg.base.shop_template[70603] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70604] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51454,7 +50299,6 @@ _G.pg.base.shop_template[70604] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70605] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51505,7 +50349,6 @@ _G.pg.base.shop_template[70605] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70606] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51532,9 +50375,9 @@ _G.pg.base.shop_template[70606] = {
 	time = {
 		{
 			{
-				2023,
-				9,
-				21
+				2022,
+				12,
+				15
 			},
 			{
 				0,
@@ -51544,19 +50387,18 @@ _G.pg.base.shop_template[70606] = {
 		},
 		{
 			{
-				2023,
-				9,
-				24
+				2022,
+				12,
+				22
 			},
 			{
-				23,
-				59,
-				59
+				9,
+				0,
+				0
 			}
 		}
 	}
 }
-
 _G.pg.base.shop_template[70607] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51607,7 +50449,6 @@ _G.pg.base.shop_template[70607] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70608] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51633,7 +50474,6 @@ _G.pg.base.shop_template[70608] = {
 		801071
 	}
 }
-
 _G.pg.base.shop_template[70609] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51659,7 +50499,6 @@ _G.pg.base.shop_template[70609] = {
 		801081
 	}
 }
-
 _G.pg.base.shop_template[70610] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51685,7 +50524,6 @@ _G.pg.base.shop_template[70610] = {
 		303182
 	}
 }
-
 _G.pg.base.shop_template[70611] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51736,7 +50574,6 @@ _G.pg.base.shop_template[70611] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70612] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51787,7 +50624,6 @@ _G.pg.base.shop_template[70612] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70613] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51838,7 +50674,6 @@ _G.pg.base.shop_template[70613] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70614] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51850,7 +50685,7 @@ _G.pg.base.shop_template[70614] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -51866,8 +50701,8 @@ _G.pg.base.shop_template[70614] = {
 		{
 			{
 				2023,
-				9,
-				28
+				5,
+				25
 			},
 			{
 				0,
@@ -51878,8 +50713,8 @@ _G.pg.base.shop_template[70614] = {
 		{
 			{
 				2023,
-				10,
-				1
+				5,
+				28
 			},
 			{
 				23,
@@ -51889,7 +50724,6 @@ _G.pg.base.shop_template[70614] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70615] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51901,7 +50735,7 @@ _G.pg.base.shop_template[70615] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 3,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -51917,8 +50751,8 @@ _G.pg.base.shop_template[70615] = {
 		{
 			{
 				2023,
-				9,
-				28
+				5,
+				25
 			},
 			{
 				0,
@@ -51929,8 +50763,8 @@ _G.pg.base.shop_template[70615] = {
 		{
 			{
 				2023,
-				10,
-				1
+				5,
+				28
 			},
 			{
 				23,
@@ -51940,7 +50774,6 @@ _G.pg.base.shop_template[70615] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70616] = {
 	time_second = 0,
 	resource_type = 14,
@@ -51991,7 +50824,6 @@ _G.pg.base.shop_template[70616] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70617] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52042,7 +50874,6 @@ _G.pg.base.shop_template[70617] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70618] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52093,7 +50924,6 @@ _G.pg.base.shop_template[70618] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70619] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52144,7 +50974,6 @@ _G.pg.base.shop_template[70619] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70620] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52195,7 +51024,6 @@ _G.pg.base.shop_template[70620] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70621] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52246,7 +51074,6 @@ _G.pg.base.shop_template[70621] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70622] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52297,7 +51124,6 @@ _G.pg.base.shop_template[70622] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70623] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52323,7 +51149,6 @@ _G.pg.base.shop_template[70623] = {
 		103243
 	}
 }
-
 _G.pg.base.shop_template[70624] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52349,7 +51174,6 @@ _G.pg.base.shop_template[70624] = {
 		107224
 	}
 }
-
 _G.pg.base.shop_template[70625] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52400,7 +51224,6 @@ _G.pg.base.shop_template[70625] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70626] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52426,7 +51249,6 @@ _G.pg.base.shop_template[70626] = {
 		305143
 	}
 }
-
 _G.pg.base.shop_template[70627] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52477,7 +51299,6 @@ _G.pg.base.shop_template[70627] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70628] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52528,7 +51349,6 @@ _G.pg.base.shop_template[70628] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70629] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52554,7 +51374,6 @@ _G.pg.base.shop_template[70629] = {
 		403101
 	}
 }
-
 _G.pg.base.shop_template[70630] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52605,7 +51424,6 @@ _G.pg.base.shop_template[70630] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70631] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52656,7 +51474,6 @@ _G.pg.base.shop_template[70631] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70632] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52707,7 +51524,6 @@ _G.pg.base.shop_template[70632] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70633] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52733,7 +51549,6 @@ _G.pg.base.shop_template[70633] = {
 		499061
 	}
 }
-
 _G.pg.base.shop_template[70634] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52784,7 +51599,6 @@ _G.pg.base.shop_template[70634] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70635] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52835,7 +51649,6 @@ _G.pg.base.shop_template[70635] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70636] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52886,7 +51699,6 @@ _G.pg.base.shop_template[70636] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70637] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52937,7 +51749,6 @@ _G.pg.base.shop_template[70637] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70638] = {
 	time_second = 0,
 	resource_type = 14,
@@ -52988,7 +51799,6 @@ _G.pg.base.shop_template[70638] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70639] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53039,7 +51849,6 @@ _G.pg.base.shop_template[70639] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70640] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53090,7 +51899,6 @@ _G.pg.base.shop_template[70640] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70641] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53141,7 +51949,6 @@ _G.pg.base.shop_template[70641] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70642] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53192,7 +51999,6 @@ _G.pg.base.shop_template[70642] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70643] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53243,7 +52049,6 @@ _G.pg.base.shop_template[70643] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70644] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53294,7 +52099,6 @@ _G.pg.base.shop_template[70644] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70645] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53345,7 +52149,6 @@ _G.pg.base.shop_template[70645] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70646] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53396,7 +52199,6 @@ _G.pg.base.shop_template[70646] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70647] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53447,7 +52249,6 @@ _G.pg.base.shop_template[70647] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70648] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53498,7 +52299,6 @@ _G.pg.base.shop_template[70648] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70649] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53549,7 +52349,6 @@ _G.pg.base.shop_template[70649] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70650] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53600,7 +52399,6 @@ _G.pg.base.shop_template[70650] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70651] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53651,7 +52449,6 @@ _G.pg.base.shop_template[70651] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70652] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53702,7 +52499,6 @@ _G.pg.base.shop_template[70652] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70653] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53753,7 +52549,6 @@ _G.pg.base.shop_template[70653] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70654] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53804,7 +52599,6 @@ _G.pg.base.shop_template[70654] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70655] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53855,7 +52649,6 @@ _G.pg.base.shop_template[70655] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70656] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53906,7 +52699,6 @@ _G.pg.base.shop_template[70656] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70657] = {
 	time_second = 0,
 	resource_type = 14,
@@ -53957,7 +52749,6 @@ _G.pg.base.shop_template[70657] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70658] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54008,7 +52799,6 @@ _G.pg.base.shop_template[70658] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70659] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54059,7 +52849,6 @@ _G.pg.base.shop_template[70659] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70660] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54110,7 +52899,6 @@ _G.pg.base.shop_template[70660] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70661] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54161,7 +52949,6 @@ _G.pg.base.shop_template[70661] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70662] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54212,7 +52999,6 @@ _G.pg.base.shop_template[70662] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70663] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54263,7 +53049,6 @@ _G.pg.base.shop_template[70663] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70664] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54314,7 +53099,6 @@ _G.pg.base.shop_template[70664] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70665] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54365,7 +53149,6 @@ _G.pg.base.shop_template[70665] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70666] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54416,7 +53199,6 @@ _G.pg.base.shop_template[70666] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70667] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54467,7 +53249,6 @@ _G.pg.base.shop_template[70667] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70668] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54518,7 +53299,6 @@ _G.pg.base.shop_template[70668] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70669] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54569,7 +53349,6 @@ _G.pg.base.shop_template[70669] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70670] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54620,7 +53399,6 @@ _G.pg.base.shop_template[70670] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70671] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54646,7 +53424,6 @@ _G.pg.base.shop_template[70671] = {
 		705061
 	}
 }
-
 _G.pg.base.shop_template[70672] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54697,7 +53474,6 @@ _G.pg.base.shop_template[70672] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70673] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54748,7 +53524,6 @@ _G.pg.base.shop_template[70673] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70674] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54799,7 +53574,6 @@ _G.pg.base.shop_template[70674] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70675] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54850,7 +53624,6 @@ _G.pg.base.shop_template[70675] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70676] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54901,7 +53674,6 @@ _G.pg.base.shop_template[70676] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70677] = {
 	time_second = 0,
 	resource_type = 14,
@@ -54952,7 +53724,6 @@ _G.pg.base.shop_template[70677] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70678] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55003,7 +53774,6 @@ _G.pg.base.shop_template[70678] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70679] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55054,7 +53824,6 @@ _G.pg.base.shop_template[70679] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70680] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55105,7 +53874,6 @@ _G.pg.base.shop_template[70680] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70681] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55156,7 +53924,6 @@ _G.pg.base.shop_template[70681] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70682] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55207,7 +53974,6 @@ _G.pg.base.shop_template[70682] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70683] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55258,7 +54024,6 @@ _G.pg.base.shop_template[70683] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70684] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55309,7 +54074,6 @@ _G.pg.base.shop_template[70684] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70685] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55360,7 +54124,6 @@ _G.pg.base.shop_template[70685] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70686] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55411,7 +54174,6 @@ _G.pg.base.shop_template[70686] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70687] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55462,7 +54224,6 @@ _G.pg.base.shop_template[70687] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70688] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55513,7 +54274,6 @@ _G.pg.base.shop_template[70688] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70689] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55564,7 +54324,6 @@ _G.pg.base.shop_template[70689] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70690] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55615,7 +54374,6 @@ _G.pg.base.shop_template[70690] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70691] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55666,7 +54424,6 @@ _G.pg.base.shop_template[70691] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70692] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55717,7 +54474,6 @@ _G.pg.base.shop_template[70692] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70693] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55768,7 +54524,6 @@ _G.pg.base.shop_template[70693] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70694] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55819,7 +54574,6 @@ _G.pg.base.shop_template[70694] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70695] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55870,7 +54624,6 @@ _G.pg.base.shop_template[70695] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70696] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55921,7 +54674,6 @@ _G.pg.base.shop_template[70696] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70697] = {
 	time_second = 0,
 	resource_type = 14,
@@ -55972,7 +54724,6 @@ _G.pg.base.shop_template[70697] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70698] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56023,7 +54774,6 @@ _G.pg.base.shop_template[70698] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70699] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56074,7 +54824,6 @@ _G.pg.base.shop_template[70699] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70700] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56100,7 +54849,6 @@ _G.pg.base.shop_template[70700] = {
 		403035
 	}
 }
-
 _G.pg.base.shop_template[70701] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56151,7 +54899,6 @@ _G.pg.base.shop_template[70701] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70702] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56177,7 +54924,6 @@ _G.pg.base.shop_template[70702] = {
 		701024
 	}
 }
-
 _G.pg.base.shop_template[70703] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56203,7 +54949,6 @@ _G.pg.base.shop_template[70703] = {
 		205093
 	}
 }
-
 _G.pg.base.shop_template[70704] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56229,7 +54974,6 @@ _G.pg.base.shop_template[70704] = {
 		102293
 	}
 }
-
 _G.pg.base.shop_template[70705] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56255,7 +54999,6 @@ _G.pg.base.shop_template[70705] = {
 		499012
 	}
 }
-
 _G.pg.base.shop_template[70706] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56281,7 +55024,6 @@ _G.pg.base.shop_template[70706] = {
 		405024
 	}
 }
-
 _G.pg.base.shop_template[70707] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56307,7 +55049,6 @@ _G.pg.base.shop_template[70707] = {
 		306082
 	}
 }
-
 _G.pg.base.shop_template[70708] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56333,7 +55074,6 @@ _G.pg.base.shop_template[70708] = {
 		105131
 	}
 }
-
 _G.pg.base.shop_template[70709] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56384,7 +55124,6 @@ _G.pg.base.shop_template[70709] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70710] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56435,7 +55174,6 @@ _G.pg.base.shop_template[70710] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70711] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56486,7 +55224,6 @@ _G.pg.base.shop_template[70711] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70712] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56537,7 +55274,6 @@ _G.pg.base.shop_template[70712] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70713] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56588,7 +55324,6 @@ _G.pg.base.shop_template[70713] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70714] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56639,7 +55374,6 @@ _G.pg.base.shop_template[70714] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70715] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56665,7 +55399,6 @@ _G.pg.base.shop_template[70715] = {
 		307074
 	}
 }
-
 _G.pg.base.shop_template[70716] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56716,7 +55449,6 @@ _G.pg.base.shop_template[70716] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70717] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56767,7 +55499,6 @@ _G.pg.base.shop_template[70717] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70718] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56818,7 +55549,6 @@ _G.pg.base.shop_template[70718] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70719] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56869,7 +55599,6 @@ _G.pg.base.shop_template[70719] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70720] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56920,7 +55649,6 @@ _G.pg.base.shop_template[70720] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70721] = {
 	time_second = 0,
 	resource_type = 14,
@@ -56971,7 +55699,6 @@ _G.pg.base.shop_template[70721] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70722] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57022,7 +55749,6 @@ _G.pg.base.shop_template[70722] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70723] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57073,7 +55799,6 @@ _G.pg.base.shop_template[70723] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70724] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57124,7 +55849,6 @@ _G.pg.base.shop_template[70724] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70725] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57175,7 +55899,6 @@ _G.pg.base.shop_template[70725] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70726] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57226,7 +55949,6 @@ _G.pg.base.shop_template[70726] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70727] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57277,7 +55999,6 @@ _G.pg.base.shop_template[70727] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70728] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57328,7 +56049,6 @@ _G.pg.base.shop_template[70728] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70729] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57379,7 +56099,6 @@ _G.pg.base.shop_template[70729] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70730] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57430,7 +56149,6 @@ _G.pg.base.shop_template[70730] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70731] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57481,7 +56199,6 @@ _G.pg.base.shop_template[70731] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70732] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57532,7 +56249,6 @@ _G.pg.base.shop_template[70732] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70733] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57583,7 +56299,6 @@ _G.pg.base.shop_template[70733] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70734] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57634,7 +56349,6 @@ _G.pg.base.shop_template[70734] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70735] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57685,7 +56399,6 @@ _G.pg.base.shop_template[70735] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70736] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57736,7 +56449,6 @@ _G.pg.base.shop_template[70736] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70737] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57748,7 +56460,7 @@ _G.pg.base.shop_template[70737] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 2,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -57764,8 +56476,8 @@ _G.pg.base.shop_template[70737] = {
 		{
 			{
 				2023,
-				9,
-				28
+				5,
+				25
 			},
 			{
 				0,
@@ -57776,8 +56488,8 @@ _G.pg.base.shop_template[70737] = {
 		{
 			{
 				2023,
-				10,
-				1
+				5,
+				28
 			},
 			{
 				23,
@@ -57787,7 +56499,6 @@ _G.pg.base.shop_template[70737] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70738] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57796,10 +56507,10 @@ _G.pg.base.shop_template[70738] = {
 	desc = "购买皮肤:220908U-81中秋节",
 	group_limit = 0,
 	group_buy_count = 0,
-	tag = 1,
+	tag = 2,
 	limit_args2 = "",
 	type_order = 0,
-	order = 2,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -57814,9 +56525,9 @@ _G.pg.base.shop_template[70738] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				28
+				8
 			},
 			{
 				0,
@@ -57826,9 +56537,9 @@ _G.pg.base.shop_template[70738] = {
 		},
 		{
 			{
-				2023,
-				10,
-				1
+				2022,
+				9,
+				14
 			},
 			{
 				23,
@@ -57838,7 +56549,6 @@ _G.pg.base.shop_template[70738] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70739] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57889,7 +56599,6 @@ _G.pg.base.shop_template[70739] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70740] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57940,7 +56649,6 @@ _G.pg.base.shop_template[70740] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70741] = {
 	time_second = 0,
 	resource_type = 14,
@@ -57991,7 +56699,6 @@ _G.pg.base.shop_template[70741] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70742] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58042,7 +56749,6 @@ _G.pg.base.shop_template[70742] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70743] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58093,7 +56799,6 @@ _G.pg.base.shop_template[70743] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70744] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58144,7 +56849,6 @@ _G.pg.base.shop_template[70744] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70745] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58195,7 +56899,6 @@ _G.pg.base.shop_template[70745] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70746] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58246,7 +56949,6 @@ _G.pg.base.shop_template[70746] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70747] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58297,7 +56999,6 @@ _G.pg.base.shop_template[70747] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70748] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58306,10 +57007,10 @@ _G.pg.base.shop_template[70748] = {
 	desc = "购买皮肤:220922塞德利茨礼服",
 	group_limit = 0,
 	group_buy_count = 0,
-	tag = 1,
+	tag = 2,
 	limit_args2 = "",
 	type_order = 0,
-	order = 10,
+	order = 2,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -58324,9 +57025,9 @@ _G.pg.base.shop_template[70748] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				21
+				22
 			},
 			{
 				0,
@@ -58336,9 +57037,9 @@ _G.pg.base.shop_template[70748] = {
 		},
 		{
 			{
-				2023,
-				9,
-				24
+				2022,
+				10,
+				12
 			},
 			{
 				23,
@@ -58348,7 +57049,6 @@ _G.pg.base.shop_template[70748] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70749] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58399,7 +57099,6 @@ _G.pg.base.shop_template[70749] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70750] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58450,7 +57149,6 @@ _G.pg.base.shop_template[70750] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70751] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58501,7 +57199,6 @@ _G.pg.base.shop_template[70751] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70752] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58510,10 +57207,10 @@ _G.pg.base.shop_template[70752] = {
 	desc = "购买皮肤:220922朱诺礼服",
 	group_limit = 0,
 	group_buy_count = 0,
-	tag = 1,
+	tag = 2,
 	limit_args2 = "",
 	type_order = 0,
-	order = 10,
+	order = 3,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -58528,9 +57225,9 @@ _G.pg.base.shop_template[70752] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				21
+				22
 			},
 			{
 				0,
@@ -58540,9 +57237,9 @@ _G.pg.base.shop_template[70752] = {
 		},
 		{
 			{
-				2023,
-				9,
-				24
+				2022,
+				10,
+				12
 			},
 			{
 				23,
@@ -58552,7 +57249,6 @@ _G.pg.base.shop_template[70752] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70753] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58561,10 +57257,10 @@ _G.pg.base.shop_template[70753] = {
 	desc = "购买皮肤:220922Z28礼服",
 	group_limit = 0,
 	group_buy_count = 0,
-	tag = 1,
+	tag = 2,
 	limit_args2 = "",
 	type_order = 0,
-	order = 10,
+	order = 3,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -58579,9 +57275,9 @@ _G.pg.base.shop_template[70753] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				21
+				22
 			},
 			{
 				0,
@@ -58591,9 +57287,9 @@ _G.pg.base.shop_template[70753] = {
 		},
 		{
 			{
-				2023,
-				9,
-				24
+				2022,
+				10,
+				12
 			},
 			{
 				23,
@@ -58603,7 +57299,6 @@ _G.pg.base.shop_template[70753] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70754] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58654,7 +57349,6 @@ _G.pg.base.shop_template[70754] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70755] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58663,10 +57357,10 @@ _G.pg.base.shop_template[70755] = {
 	desc = "购买皮肤:220922长门礼服",
 	group_limit = 0,
 	group_buy_count = 0,
-	tag = 1,
+	tag = 2,
 	limit_args2 = "",
 	type_order = 0,
-	order = 10,
+	order = 2,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -58681,9 +57375,9 @@ _G.pg.base.shop_template[70755] = {
 	time = {
 		{
 			{
-				2023,
+				2022,
 				9,
-				21
+				22
 			},
 			{
 				0,
@@ -58693,9 +57387,9 @@ _G.pg.base.shop_template[70755] = {
 		},
 		{
 			{
-				2023,
-				9,
-				24
+				2022,
+				10,
+				12
 			},
 			{
 				23,
@@ -58705,7 +57399,6 @@ _G.pg.base.shop_template[70755] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70756] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58733,8 +57426,8 @@ _G.pg.base.shop_template[70756] = {
 		{
 			{
 				2023,
-				9,
-				21
+				5,
+				25
 			},
 			{
 				0,
@@ -58745,8 +57438,8 @@ _G.pg.base.shop_template[70756] = {
 		{
 			{
 				2023,
-				9,
-				24
+				5,
+				28
 			},
 			{
 				23,
@@ -58756,7 +57449,6 @@ _G.pg.base.shop_template[70756] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70757] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58768,7 +57460,7 @@ _G.pg.base.shop_template[70757] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 2,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -58784,8 +57476,8 @@ _G.pg.base.shop_template[70757] = {
 		{
 			{
 				2023,
-				9,
-				28
+				5,
+				25
 			},
 			{
 				0,
@@ -58796,8 +57488,8 @@ _G.pg.base.shop_template[70757] = {
 		{
 			{
 				2023,
-				10,
-				1
+				5,
+				28
 			},
 			{
 				23,
@@ -58807,7 +57499,6 @@ _G.pg.base.shop_template[70757] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70758] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58819,7 +57510,7 @@ _G.pg.base.shop_template[70758] = {
 	tag = 1,
 	limit_args2 = "",
 	type_order = 0,
-	order = 2,
+	order = 10,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -58835,8 +57526,8 @@ _G.pg.base.shop_template[70758] = {
 		{
 			{
 				2023,
-				9,
-				28
+				5,
+				25
 			},
 			{
 				0,
@@ -58847,8 +57538,8 @@ _G.pg.base.shop_template[70758] = {
 		{
 			{
 				2023,
-				10,
-				1
+				5,
+				28
 			},
 			{
 				23,
@@ -58858,7 +57549,6 @@ _G.pg.base.shop_template[70758] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70759] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58909,7 +57599,6 @@ _G.pg.base.shop_template[70759] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70760] = {
 	time_second = 0,
 	resource_type = 14,
@@ -58960,7 +57649,6 @@ _G.pg.base.shop_template[70760] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70761] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59011,7 +57699,6 @@ _G.pg.base.shop_template[70761] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70762] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59062,7 +57749,6 @@ _G.pg.base.shop_template[70762] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70763] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59113,7 +57799,6 @@ _G.pg.base.shop_template[70763] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70764] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59164,7 +57849,6 @@ _G.pg.base.shop_template[70764] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70765] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59215,7 +57899,6 @@ _G.pg.base.shop_template[70765] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70766] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59266,7 +57949,6 @@ _G.pg.base.shop_template[70766] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70767] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59317,7 +57999,6 @@ _G.pg.base.shop_template[70767] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70768] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59368,7 +58049,6 @@ _G.pg.base.shop_template[70768] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70769] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59419,7 +58099,6 @@ _G.pg.base.shop_template[70769] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70770] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59470,7 +58149,6 @@ _G.pg.base.shop_template[70770] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70771] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59521,7 +58199,6 @@ _G.pg.base.shop_template[70771] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70772] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59572,7 +58249,6 @@ _G.pg.base.shop_template[70772] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70773] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59623,7 +58299,6 @@ _G.pg.base.shop_template[70773] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70774] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59674,7 +58349,6 @@ _G.pg.base.shop_template[70774] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70775] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59725,7 +58399,6 @@ _G.pg.base.shop_template[70775] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70776] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59776,7 +58449,6 @@ _G.pg.base.shop_template[70776] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70777] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59827,7 +58499,6 @@ _G.pg.base.shop_template[70777] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70778] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59878,7 +58549,6 @@ _G.pg.base.shop_template[70778] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70779] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59929,7 +58599,6 @@ _G.pg.base.shop_template[70779] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70780] = {
 	time_second = 0,
 	resource_type = 14,
@@ -59980,7 +58649,6 @@ _G.pg.base.shop_template[70780] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70781] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60031,7 +58699,6 @@ _G.pg.base.shop_template[70781] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70782] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60082,7 +58749,6 @@ _G.pg.base.shop_template[70782] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70783] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60133,7 +58799,6 @@ _G.pg.base.shop_template[70783] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70784] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60184,7 +58849,6 @@ _G.pg.base.shop_template[70784] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70785] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60235,7 +58899,6 @@ _G.pg.base.shop_template[70785] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70786] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60286,7 +58949,6 @@ _G.pg.base.shop_template[70786] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70788] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60337,7 +58999,6 @@ _G.pg.base.shop_template[70788] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70789] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60388,7 +59049,6 @@ _G.pg.base.shop_template[70789] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70790] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60439,7 +59099,6 @@ _G.pg.base.shop_template[70790] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70791] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60490,7 +59149,6 @@ _G.pg.base.shop_template[70791] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70792] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60541,7 +59199,6 @@ _G.pg.base.shop_template[70792] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70804] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60592,7 +59249,6 @@ _G.pg.base.shop_template[70804] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70805] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60643,7 +59299,6 @@ _G.pg.base.shop_template[70805] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70806] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60694,7 +59349,6 @@ _G.pg.base.shop_template[70806] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70807] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60745,7 +59399,6 @@ _G.pg.base.shop_template[70807] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70808] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60796,7 +59449,6 @@ _G.pg.base.shop_template[70808] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70809] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60847,7 +59499,6 @@ _G.pg.base.shop_template[70809] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70810] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60898,7 +59549,6 @@ _G.pg.base.shop_template[70810] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70811] = {
 	time_second = 0,
 	resource_type = 14,
@@ -60949,7 +59599,6 @@ _G.pg.base.shop_template[70811] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70812] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61000,7 +59649,6 @@ _G.pg.base.shop_template[70812] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70813] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61051,7 +59699,6 @@ _G.pg.base.shop_template[70813] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70814] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61102,7 +59749,6 @@ _G.pg.base.shop_template[70814] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70815] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61153,7 +59799,6 @@ _G.pg.base.shop_template[70815] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70816] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61204,7 +59849,6 @@ _G.pg.base.shop_template[70816] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70817] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61255,7 +59899,6 @@ _G.pg.base.shop_template[70817] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70818] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61306,7 +59949,6 @@ _G.pg.base.shop_template[70818] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70819] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61357,7 +59999,6 @@ _G.pg.base.shop_template[70819] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70820] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61408,7 +60049,6 @@ _G.pg.base.shop_template[70820] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70821] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61459,7 +60099,6 @@ _G.pg.base.shop_template[70821] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70822] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61510,7 +60149,6 @@ _G.pg.base.shop_template[70822] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70823] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61561,7 +60199,6 @@ _G.pg.base.shop_template[70823] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70824] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61612,7 +60249,6 @@ _G.pg.base.shop_template[70824] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70825] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61663,7 +60299,6 @@ _G.pg.base.shop_template[70825] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70826] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61714,7 +60349,6 @@ _G.pg.base.shop_template[70826] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70827] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61765,7 +60399,6 @@ _G.pg.base.shop_template[70827] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70828] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61816,7 +60449,6 @@ _G.pg.base.shop_template[70828] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70829] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61867,7 +60499,6 @@ _G.pg.base.shop_template[70829] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70830] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61918,7 +60549,6 @@ _G.pg.base.shop_template[70830] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70831] = {
 	time_second = 0,
 	resource_type = 14,
@@ -61969,7 +60599,6 @@ _G.pg.base.shop_template[70831] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70832] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62020,7 +60649,6 @@ _G.pg.base.shop_template[70832] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70833] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62071,7 +60699,6 @@ _G.pg.base.shop_template[70833] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70834] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62122,7 +60749,6 @@ _G.pg.base.shop_template[70834] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70835] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62173,7 +60799,6 @@ _G.pg.base.shop_template[70835] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70836] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62224,7 +60849,6 @@ _G.pg.base.shop_template[70836] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70837] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62275,7 +60899,6 @@ _G.pg.base.shop_template[70837] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70838] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62326,7 +60949,6 @@ _G.pg.base.shop_template[70838] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70839] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62377,7 +60999,6 @@ _G.pg.base.shop_template[70839] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70840] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62428,7 +61049,6 @@ _G.pg.base.shop_template[70840] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70841] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62479,7 +61099,6 @@ _G.pg.base.shop_template[70841] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70842] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62530,7 +61149,6 @@ _G.pg.base.shop_template[70842] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70843] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62581,7 +61199,6 @@ _G.pg.base.shop_template[70843] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70844] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62632,7 +61249,6 @@ _G.pg.base.shop_template[70844] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70845] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62683,7 +61299,6 @@ _G.pg.base.shop_template[70845] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70846] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62734,7 +61349,6 @@ _G.pg.base.shop_template[70846] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70847] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62785,7 +61399,6 @@ _G.pg.base.shop_template[70847] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70848] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62836,7 +61449,6 @@ _G.pg.base.shop_template[70848] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70849] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62887,7 +61499,6 @@ _G.pg.base.shop_template[70849] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70850] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62938,7 +61549,6 @@ _G.pg.base.shop_template[70850] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70851] = {
 	time_second = 0,
 	resource_type = 14,
@@ -62989,7 +61599,6 @@ _G.pg.base.shop_template[70851] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70852] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63040,7 +61649,6 @@ _G.pg.base.shop_template[70852] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70853] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63091,7 +61699,6 @@ _G.pg.base.shop_template[70853] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70854] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63142,7 +61749,6 @@ _G.pg.base.shop_template[70854] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70855] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63193,7 +61799,6 @@ _G.pg.base.shop_template[70855] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70856] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63244,7 +61849,6 @@ _G.pg.base.shop_template[70856] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70857] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63295,7 +61899,6 @@ _G.pg.base.shop_template[70857] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70858] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63346,7 +61949,6 @@ _G.pg.base.shop_template[70858] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70859] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63397,7 +61999,6 @@ _G.pg.base.shop_template[70859] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70860] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63448,7 +62049,6 @@ _G.pg.base.shop_template[70860] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70861] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63499,7 +62099,6 @@ _G.pg.base.shop_template[70861] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70862] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63550,7 +62149,6 @@ _G.pg.base.shop_template[70862] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70863] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63601,7 +62199,6 @@ _G.pg.base.shop_template[70863] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70864] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63652,7 +62249,6 @@ _G.pg.base.shop_template[70864] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70865] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63703,7 +62299,6 @@ _G.pg.base.shop_template[70865] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70866] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63754,7 +62349,6 @@ _G.pg.base.shop_template[70866] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70867] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63805,7 +62399,6 @@ _G.pg.base.shop_template[70867] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70868] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63856,7 +62449,6 @@ _G.pg.base.shop_template[70868] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70869] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63907,7 +62499,6 @@ _G.pg.base.shop_template[70869] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70870] = {
 	time_second = 0,
 	resource_type = 14,
@@ -63958,7 +62549,6 @@ _G.pg.base.shop_template[70870] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70871] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64009,7 +62599,6 @@ _G.pg.base.shop_template[70871] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70872] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64060,7 +62649,6 @@ _G.pg.base.shop_template[70872] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70873] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64111,7 +62699,6 @@ _G.pg.base.shop_template[70873] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70874] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64162,7 +62749,6 @@ _G.pg.base.shop_template[70874] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70890] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64213,7 +62799,6 @@ _G.pg.base.shop_template[70890] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70891] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64264,7 +62849,6 @@ _G.pg.base.shop_template[70891] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70892] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64315,7 +62899,6 @@ _G.pg.base.shop_template[70892] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70893] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64366,7 +62949,6 @@ _G.pg.base.shop_template[70893] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70894] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64417,7 +62999,6 @@ _G.pg.base.shop_template[70894] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70895] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64468,7 +63049,6 @@ _G.pg.base.shop_template[70895] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70896] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64519,7 +63099,6 @@ _G.pg.base.shop_template[70896] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70897] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64570,7 +63149,6 @@ _G.pg.base.shop_template[70897] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70898] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64621,7 +63199,6 @@ _G.pg.base.shop_template[70898] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70899] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64672,7 +63249,6 @@ _G.pg.base.shop_template[70899] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70900] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64723,7 +63299,6 @@ _G.pg.base.shop_template[70900] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70901] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64774,7 +63349,6 @@ _G.pg.base.shop_template[70901] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70902] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64825,7 +63399,6 @@ _G.pg.base.shop_template[70902] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70903] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64876,7 +63449,6 @@ _G.pg.base.shop_template[70903] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70904] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64927,7 +63499,6 @@ _G.pg.base.shop_template[70904] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70905] = {
 	time_second = 0,
 	resource_type = 14,
@@ -64978,7 +63549,6 @@ _G.pg.base.shop_template[70905] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70906] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65029,7 +63599,6 @@ _G.pg.base.shop_template[70906] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70907] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65080,7 +63649,6 @@ _G.pg.base.shop_template[70907] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70908] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65131,7 +63699,6 @@ _G.pg.base.shop_template[70908] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70909] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65182,7 +63749,6 @@ _G.pg.base.shop_template[70909] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70910] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65233,7 +63799,6 @@ _G.pg.base.shop_template[70910] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70911] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65284,7 +63849,6 @@ _G.pg.base.shop_template[70911] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70912] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65335,7 +63899,6 @@ _G.pg.base.shop_template[70912] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70913] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65386,7 +63949,6 @@ _G.pg.base.shop_template[70913] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70914] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65437,7 +63999,6 @@ _G.pg.base.shop_template[70914] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[70915] = {
 	time_second = 0,
 	resource_type = 14,
@@ -65488,7 +64049,6 @@ _G.pg.base.shop_template[70915] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90001] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65514,7 +64074,6 @@ _G.pg.base.shop_template[90001] = {
 		207031
 	}
 }
-
 _G.pg.base.shop_template[90002] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65540,7 +64099,6 @@ _G.pg.base.shop_template[90002] = {
 		301261
 	}
 }
-
 _G.pg.base.shop_template[90003] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65566,7 +64124,6 @@ _G.pg.base.shop_template[90003] = {
 		301351
 	}
 }
-
 _G.pg.base.shop_template[90004] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65592,7 +64149,6 @@ _G.pg.base.shop_template[90004] = {
 		301111
 	}
 }
-
 _G.pg.base.shop_template[90005] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65618,7 +64174,6 @@ _G.pg.base.shop_template[90005] = {
 		102052
 	}
 }
-
 _G.pg.base.shop_template[90006] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65644,7 +64199,6 @@ _G.pg.base.shop_template[90006] = {
 		101262
 	}
 }
-
 _G.pg.base.shop_template[90007] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65670,7 +64224,6 @@ _G.pg.base.shop_template[90007] = {
 		301121
 	}
 }
-
 _G.pg.base.shop_template[90008] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65696,7 +64249,6 @@ _G.pg.base.shop_template[90008] = {
 		202231
 	}
 }
-
 _G.pg.base.shop_template[90009] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65722,7 +64274,6 @@ _G.pg.base.shop_template[90009] = {
 		202081
 	}
 }
-
 _G.pg.base.shop_template[90010] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65773,7 +64324,6 @@ _G.pg.base.shop_template[90010] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90011] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65824,7 +64374,6 @@ _G.pg.base.shop_template[90011] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90012] = {
 	time_second = 172800,
 	resource_type = 125,
@@ -65875,7 +64424,6 @@ _G.pg.base.shop_template[90012] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90013] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -65901,7 +64449,6 @@ _G.pg.base.shop_template[90013] = {
 		605021
 	}
 }
-
 _G.pg.base.shop_template[90014] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -65927,7 +64474,6 @@ _G.pg.base.shop_template[90014] = {
 		603021
 	}
 }
-
 _G.pg.base.shop_template[90015] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -65953,7 +64499,6 @@ _G.pg.base.shop_template[90015] = {
 		101172
 	}
 }
-
 _G.pg.base.shop_template[90016] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -65979,7 +64524,6 @@ _G.pg.base.shop_template[90016] = {
 		307051
 	}
 }
-
 _G.pg.base.shop_template[90017] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66005,7 +64549,6 @@ _G.pg.base.shop_template[90017] = {
 		905011
 	}
 }
-
 _G.pg.base.shop_template[90018] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66031,7 +64574,6 @@ _G.pg.base.shop_template[90018] = {
 		301143
 	}
 }
-
 _G.pg.base.shop_template[90019] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66057,7 +64599,6 @@ _G.pg.base.shop_template[90019] = {
 		107091
 	}
 }
-
 _G.pg.base.shop_template[90020] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66083,7 +64624,6 @@ _G.pg.base.shop_template[90020] = {
 		102093
 	}
 }
-
 _G.pg.base.shop_template[90021] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66109,7 +64649,6 @@ _G.pg.base.shop_template[90021] = {
 		107063
 	}
 }
-
 _G.pg.base.shop_template[90022] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66135,7 +64674,6 @@ _G.pg.base.shop_template[90022] = {
 		203071
 	}
 }
-
 _G.pg.base.shop_template[90023] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66161,7 +64699,6 @@ _G.pg.base.shop_template[90023] = {
 		305026
 	}
 }
-
 _G.pg.base.shop_template[90024] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66187,7 +64724,6 @@ _G.pg.base.shop_template[90024] = {
 		206032
 	}
 }
-
 _G.pg.base.shop_template[90025] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66213,7 +64749,6 @@ _G.pg.base.shop_template[90025] = {
 		408081
 	}
 }
-
 _G.pg.base.shop_template[90026] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66239,7 +64774,6 @@ _G.pg.base.shop_template[90026] = {
 		207032
 	}
 }
-
 _G.pg.base.shop_template[90027] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66265,7 +64799,6 @@ _G.pg.base.shop_template[90027] = {
 		301053
 	}
 }
-
 _G.pg.base.shop_template[90028] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66291,7 +64824,6 @@ _G.pg.base.shop_template[90028] = {
 		202112
 	}
 }
-
 _G.pg.base.shop_template[90029] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66317,7 +64849,6 @@ _G.pg.base.shop_template[90029] = {
 		301051
 	}
 }
-
 _G.pg.base.shop_template[90030] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66343,7 +64874,6 @@ _G.pg.base.shop_template[90030] = {
 		102091
 	}
 }
-
 _G.pg.base.shop_template[90031] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66369,7 +64899,6 @@ _G.pg.base.shop_template[90031] = {
 		301057
 	}
 }
-
 _G.pg.base.shop_template[90032] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66395,7 +64924,6 @@ _G.pg.base.shop_template[90032] = {
 		101176
 	}
 }
-
 _G.pg.base.shop_template[90033] = {
 	time_second = 172800,
 	resource_type = 136,
@@ -66421,7 +64949,6 @@ _G.pg.base.shop_template[90033] = {
 		401236
 	}
 }
-
 _G.pg.base.shop_template[90034] = {
 	time_second = 172800,
 	resource_type = 144,
@@ -66472,7 +64999,6 @@ _G.pg.base.shop_template[90034] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90035] = {
 	time_second = 172800,
 	resource_type = 144,
@@ -66523,7 +65049,6 @@ _G.pg.base.shop_template[90035] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90036] = {
 	time_second = 172800,
 	resource_type = 144,
@@ -66574,7 +65099,6 @@ _G.pg.base.shop_template[90036] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90037] = {
 	time_second = 172800,
 	resource_type = 150,
@@ -66625,7 +65149,6 @@ _G.pg.base.shop_template[90037] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90038] = {
 	time_second = 172800,
 	resource_type = 150,
@@ -66676,7 +65199,6 @@ _G.pg.base.shop_template[90038] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90039] = {
 	time_second = 172800,
 	resource_type = 150,
@@ -66727,7 +65249,6 @@ _G.pg.base.shop_template[90039] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90040] = {
 	time_second = 172800,
 	resource_type = 153,
@@ -66778,7 +65299,6 @@ _G.pg.base.shop_template[90040] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90041] = {
 	time_second = 172800,
 	resource_type = 153,
@@ -66829,7 +65349,6 @@ _G.pg.base.shop_template[90041] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90042] = {
 	time_second = 172800,
 	resource_type = 153,
@@ -66880,7 +65399,6 @@ _G.pg.base.shop_template[90042] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90043] = {
 	time_second = 172800,
 	resource_type = 160,
@@ -66931,7 +65449,6 @@ _G.pg.base.shop_template[90043] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90044] = {
 	time_second = 172800,
 	resource_type = 160,
@@ -66982,7 +65499,6 @@ _G.pg.base.shop_template[90044] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90045] = {
 	time_second = 172800,
 	resource_type = 160,
@@ -67033,7 +65549,6 @@ _G.pg.base.shop_template[90045] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90046] = {
 	time_second = 172800,
 	resource_type = 160,
@@ -67084,7 +65599,6 @@ _G.pg.base.shop_template[90046] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90047] = {
 	time_second = 172800,
 	resource_type = 160,
@@ -67135,7 +65649,6 @@ _G.pg.base.shop_template[90047] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90048] = {
 	time_second = 172800,
 	resource_type = 160,
@@ -67186,7 +65699,6 @@ _G.pg.base.shop_template[90048] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90049] = {
 	time_second = 172800,
 	resource_type = 164,
@@ -67237,7 +65749,6 @@ _G.pg.base.shop_template[90049] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90050] = {
 	time_second = 172800,
 	resource_type = 164,
@@ -67288,7 +65799,6 @@ _G.pg.base.shop_template[90050] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90051] = {
 	time_second = 172800,
 	resource_type = 164,
@@ -67339,7 +65849,6 @@ _G.pg.base.shop_template[90051] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90052] = {
 	time_second = 172800,
 	resource_type = 167,
@@ -67390,7 +65899,6 @@ _G.pg.base.shop_template[90052] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90053] = {
 	time_second = 172800,
 	resource_type = 167,
@@ -67441,7 +65949,6 @@ _G.pg.base.shop_template[90053] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90054] = {
 	time_second = 172800,
 	resource_type = 167,
@@ -67492,7 +65999,6 @@ _G.pg.base.shop_template[90054] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90055] = {
 	time_second = 172800,
 	resource_type = 170,
@@ -67543,7 +66049,6 @@ _G.pg.base.shop_template[90055] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90056] = {
 	time_second = 172800,
 	resource_type = 170,
@@ -67594,7 +66099,6 @@ _G.pg.base.shop_template[90056] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90057] = {
 	time_second = 172800,
 	resource_type = 170,
@@ -67645,7 +66149,6 @@ _G.pg.base.shop_template[90057] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90058] = {
 	time_second = 172800,
 	resource_type = 170,
@@ -67696,7 +66199,6 @@ _G.pg.base.shop_template[90058] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90059] = {
 	time_second = 172800,
 	resource_type = 170,
@@ -67747,7 +66249,6 @@ _G.pg.base.shop_template[90059] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90060] = {
 	time_second = 172800,
 	resource_type = 170,
@@ -67798,7 +66299,6 @@ _G.pg.base.shop_template[90060] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90061] = {
 	time_second = 172800,
 	resource_type = 173,
@@ -67849,7 +66349,6 @@ _G.pg.base.shop_template[90061] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90062] = {
 	time_second = 172800,
 	resource_type = 173,
@@ -67900,7 +66399,6 @@ _G.pg.base.shop_template[90062] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90063] = {
 	time_second = 172800,
 	resource_type = 173,
@@ -67951,7 +66449,6 @@ _G.pg.base.shop_template[90063] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90064] = {
 	time_second = 172800,
 	resource_type = 178,
@@ -67977,7 +66474,6 @@ _G.pg.base.shop_template[90064] = {
 		10600011
 	}
 }
-
 _G.pg.base.shop_template[90065] = {
 	time_second = 172800,
 	resource_type = 178,
@@ -68003,7 +66499,6 @@ _G.pg.base.shop_template[90065] = {
 		10600031
 	}
 }
-
 _G.pg.base.shop_template[90066] = {
 	time_second = 172800,
 	resource_type = 178,
@@ -68029,7 +66524,6 @@ _G.pg.base.shop_template[90066] = {
 		10600021
 	}
 }
-
 _G.pg.base.shop_template[90067] = {
 	time_second = 172800,
 	resource_type = 181,
@@ -68080,7 +66574,6 @@ _G.pg.base.shop_template[90067] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90068] = {
 	time_second = 172800,
 	resource_type = 181,
@@ -68131,7 +66624,6 @@ _G.pg.base.shop_template[90068] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90069] = {
 	time_second = 172800,
 	resource_type = 181,
@@ -68182,7 +66674,6 @@ _G.pg.base.shop_template[90069] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90070] = {
 	time_second = 172800,
 	resource_type = 184,
@@ -68233,7 +66724,6 @@ _G.pg.base.shop_template[90070] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90071] = {
 	time_second = 172800,
 	resource_type = 184,
@@ -68284,7 +66774,6 @@ _G.pg.base.shop_template[90071] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90072] = {
 	time_second = 172800,
 	resource_type = 184,
@@ -68335,7 +66824,6 @@ _G.pg.base.shop_template[90072] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90073] = {
 	time_second = 172800,
 	resource_type = 185,
@@ -68386,7 +66874,6 @@ _G.pg.base.shop_template[90073] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90074] = {
 	time_second = 172800,
 	resource_type = 185,
@@ -68437,7 +66924,6 @@ _G.pg.base.shop_template[90074] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90075] = {
 	time_second = 172800,
 	resource_type = 185,
@@ -68488,7 +66974,6 @@ _G.pg.base.shop_template[90075] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90076] = {
 	time_second = 172800,
 	resource_type = 296,
@@ -68514,7 +66999,6 @@ _G.pg.base.shop_template[90076] = {
 		705041
 	}
 }
-
 _G.pg.base.shop_template[90077] = {
 	time_second = 172800,
 	resource_type = 296,
@@ -68540,7 +67024,6 @@ _G.pg.base.shop_template[90077] = {
 		702041
 	}
 }
-
 _G.pg.base.shop_template[90078] = {
 	time_second = 172800,
 	resource_type = 296,
@@ -68566,7 +67049,6 @@ _G.pg.base.shop_template[90078] = {
 		702032
 	}
 }
-
 _G.pg.base.shop_template[90079] = {
 	time_second = 172800,
 	resource_type = 195,
@@ -68617,7 +67099,6 @@ _G.pg.base.shop_template[90079] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90080] = {
 	time_second = 172800,
 	resource_type = 195,
@@ -68668,7 +67149,6 @@ _G.pg.base.shop_template[90080] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90081] = {
 	time_second = 172800,
 	resource_type = 195,
@@ -68719,7 +67199,6 @@ _G.pg.base.shop_template[90081] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90082] = {
 	time_second = 172800,
 	resource_type = 197,
@@ -68770,7 +67249,6 @@ _G.pg.base.shop_template[90082] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90083] = {
 	time_second = 172800,
 	resource_type = 197,
@@ -68821,7 +67299,6 @@ _G.pg.base.shop_template[90083] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90084] = {
 	time_second = 172800,
 	resource_type = 197,
@@ -68872,7 +67349,6 @@ _G.pg.base.shop_template[90084] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90085] = {
 	time_second = 172800,
 	resource_type = 202,
@@ -68923,7 +67399,6 @@ _G.pg.base.shop_template[90085] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90086] = {
 	time_second = 172800,
 	resource_type = 202,
@@ -68974,7 +67449,6 @@ _G.pg.base.shop_template[90086] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90087] = {
 	time_second = 172800,
 	resource_type = 202,
@@ -69025,7 +67499,6 @@ _G.pg.base.shop_template[90087] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90088] = {
 	time_second = 172800,
 	resource_type = 202,
@@ -69076,7 +67549,6 @@ _G.pg.base.shop_template[90088] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90089] = {
 	time_second = 172800,
 	resource_type = 202,
@@ -69127,7 +67599,6 @@ _G.pg.base.shop_template[90089] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90090] = {
 	time_second = 172800,
 	resource_type = 202,
@@ -69178,7 +67649,6 @@ _G.pg.base.shop_template[90090] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90091] = {
 	time_second = 172800,
 	resource_type = 209,
@@ -69229,7 +67699,6 @@ _G.pg.base.shop_template[90091] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90092] = {
 	time_second = 172800,
 	resource_type = 209,
@@ -69280,7 +67749,6 @@ _G.pg.base.shop_template[90092] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90093] = {
 	time_second = 172800,
 	resource_type = 209,
@@ -69331,7 +67799,6 @@ _G.pg.base.shop_template[90093] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90094] = {
 	time_second = 172800,
 	resource_type = 216,
@@ -69382,7 +67849,6 @@ _G.pg.base.shop_template[90094] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90095] = {
 	time_second = 172800,
 	resource_type = 216,
@@ -69433,7 +67899,6 @@ _G.pg.base.shop_template[90095] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90096] = {
 	time_second = 172800,
 	resource_type = 216,
@@ -69484,7 +67949,6 @@ _G.pg.base.shop_template[90096] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90097] = {
 	time_second = 172800,
 	resource_type = 218,
@@ -69535,7 +67999,6 @@ _G.pg.base.shop_template[90097] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90098] = {
 	time_second = 172800,
 	resource_type = 218,
@@ -69586,7 +68049,6 @@ _G.pg.base.shop_template[90098] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90099] = {
 	time_second = 172800,
 	resource_type = 218,
@@ -69637,7 +68099,6 @@ _G.pg.base.shop_template[90099] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90100] = {
 	time_second = 172800,
 	resource_type = 218,
@@ -69688,7 +68149,6 @@ _G.pg.base.shop_template[90100] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90101] = {
 	time_second = 172800,
 	resource_type = 218,
@@ -69739,7 +68199,6 @@ _G.pg.base.shop_template[90101] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90102] = {
 	time_second = 172800,
 	resource_type = 218,
@@ -69790,7 +68249,6 @@ _G.pg.base.shop_template[90102] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90103] = {
 	time_second = 172800,
 	resource_type = 221,
@@ -69841,7 +68299,6 @@ _G.pg.base.shop_template[90103] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90104] = {
 	time_second = 172800,
 	resource_type = 221,
@@ -69892,7 +68349,6 @@ _G.pg.base.shop_template[90104] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90105] = {
 	time_second = 172800,
 	resource_type = 221,
@@ -69943,7 +68399,6 @@ _G.pg.base.shop_template[90105] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90106] = {
 	time_second = 172800,
 	resource_type = 221,
@@ -69994,7 +68449,6 @@ _G.pg.base.shop_template[90106] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90107] = {
 	time_second = 172800,
 	resource_type = 221,
@@ -70045,7 +68499,6 @@ _G.pg.base.shop_template[90107] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90108] = {
 	time_second = 172800,
 	resource_type = 221,
@@ -70096,7 +68549,6 @@ _G.pg.base.shop_template[90108] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90109] = {
 	time_second = 172800,
 	resource_type = 224,
@@ -70147,7 +68599,6 @@ _G.pg.base.shop_template[90109] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90110] = {
 	time_second = 172800,
 	resource_type = 224,
@@ -70198,7 +68649,6 @@ _G.pg.base.shop_template[90110] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90111] = {
 	time_second = 172800,
 	resource_type = 224,
@@ -70249,7 +68699,6 @@ _G.pg.base.shop_template[90111] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90112] = {
 	time_second = 172800,
 	resource_type = 225,
@@ -70300,7 +68749,6 @@ _G.pg.base.shop_template[90112] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90113] = {
 	time_second = 172800,
 	resource_type = 225,
@@ -70351,7 +68799,6 @@ _G.pg.base.shop_template[90113] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90114] = {
 	time_second = 172800,
 	resource_type = 225,
@@ -70402,7 +68849,6 @@ _G.pg.base.shop_template[90114] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90115] = {
 	time_second = 172800,
 	resource_type = 228,
@@ -70453,7 +68899,6 @@ _G.pg.base.shop_template[90115] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90116] = {
 	time_second = 172800,
 	resource_type = 228,
@@ -70504,7 +68949,6 @@ _G.pg.base.shop_template[90116] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90117] = {
 	time_second = 172800,
 	resource_type = 228,
@@ -70555,7 +68999,6 @@ _G.pg.base.shop_template[90117] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90118] = {
 	time_second = 172800,
 	resource_type = 231,
@@ -70606,7 +69049,6 @@ _G.pg.base.shop_template[90118] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90119] = {
 	time_second = 172800,
 	resource_type = 231,
@@ -70657,7 +69099,6 @@ _G.pg.base.shop_template[90119] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90120] = {
 	time_second = 172800,
 	resource_type = 231,
@@ -70708,7 +69149,6 @@ _G.pg.base.shop_template[90120] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90121] = {
 	time_second = 172800,
 	resource_type = 235,
@@ -70759,7 +69199,6 @@ _G.pg.base.shop_template[90121] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90122] = {
 	time_second = 172800,
 	resource_type = 235,
@@ -70810,7 +69249,6 @@ _G.pg.base.shop_template[90122] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90123] = {
 	time_second = 172800,
 	resource_type = 235,
@@ -70861,7 +69299,6 @@ _G.pg.base.shop_template[90123] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90127] = {
 	time_second = 172800,
 	resource_type = 241,
@@ -70912,7 +69349,6 @@ _G.pg.base.shop_template[90127] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90128] = {
 	time_second = 172800,
 	resource_type = 241,
@@ -70963,7 +69399,6 @@ _G.pg.base.shop_template[90128] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90129] = {
 	time_second = 172800,
 	resource_type = 241,
@@ -71014,7 +69449,6 @@ _G.pg.base.shop_template[90129] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90130] = {
 	time_second = 172800,
 	resource_type = 241,
@@ -71065,7 +69499,6 @@ _G.pg.base.shop_template[90130] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90131] = {
 	time_second = 172800,
 	resource_type = 241,
@@ -71116,7 +69549,6 @@ _G.pg.base.shop_template[90131] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90132] = {
 	time_second = 172800,
 	resource_type = 244,
@@ -71167,7 +69599,6 @@ _G.pg.base.shop_template[90132] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90133] = {
 	time_second = 172800,
 	resource_type = 244,
@@ -71218,7 +69649,6 @@ _G.pg.base.shop_template[90133] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90134] = {
 	time_second = 172800,
 	resource_type = 244,
@@ -71269,7 +69699,6 @@ _G.pg.base.shop_template[90134] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90138] = {
 	time_second = 172800,
 	resource_type = 254,
@@ -71320,7 +69749,6 @@ _G.pg.base.shop_template[90138] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90139] = {
 	time_second = 172800,
 	resource_type = 254,
@@ -71371,7 +69799,6 @@ _G.pg.base.shop_template[90139] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90140] = {
 	time_second = 172800,
 	resource_type = 254,
@@ -71422,7 +69849,6 @@ _G.pg.base.shop_template[90140] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90141] = {
 	time_second = 172800,
 	resource_type = 261,
@@ -71473,7 +69899,6 @@ _G.pg.base.shop_template[90141] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90142] = {
 	time_second = 172800,
 	resource_type = 261,
@@ -71524,7 +69949,6 @@ _G.pg.base.shop_template[90142] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90143] = {
 	time_second = 172800,
 	resource_type = 261,
@@ -71550,7 +69974,6 @@ _G.pg.base.shop_template[90143] = {
 		207121
 	}
 }
-
 _G.pg.base.shop_template[90144] = {
 	time_second = 172800,
 	resource_type = 261,
@@ -71601,7 +70024,6 @@ _G.pg.base.shop_template[90144] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90145] = {
 	time_second = 172800,
 	resource_type = 261,
@@ -71652,7 +70074,6 @@ _G.pg.base.shop_template[90145] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90146] = {
 	time_second = 172800,
 	resource_type = 261,
@@ -71703,7 +70124,6 @@ _G.pg.base.shop_template[90146] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90147] = {
 	time_second = 172800,
 	resource_type = 267,
@@ -71754,7 +70174,6 @@ _G.pg.base.shop_template[90147] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90148] = {
 	time_second = 172800,
 	resource_type = 267,
@@ -71805,7 +70224,6 @@ _G.pg.base.shop_template[90148] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90149] = {
 	time_second = 172800,
 	resource_type = 267,
@@ -71856,7 +70274,6 @@ _G.pg.base.shop_template[90149] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90153] = {
 	time_second = 172800,
 	resource_type = 272,
@@ -71907,7 +70324,6 @@ _G.pg.base.shop_template[90153] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90154] = {
 	time_second = 172800,
 	resource_type = 272,
@@ -71958,7 +70374,6 @@ _G.pg.base.shop_template[90154] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90155] = {
 	time_second = 172800,
 	resource_type = 272,
@@ -72009,7 +70424,6 @@ _G.pg.base.shop_template[90155] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90156] = {
 	time_second = 172800,
 	resource_type = 275,
@@ -72060,7 +70474,6 @@ _G.pg.base.shop_template[90156] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90157] = {
 	time_second = 172800,
 	resource_type = 275,
@@ -72111,7 +70524,6 @@ _G.pg.base.shop_template[90157] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90158] = {
 	time_second = 172800,
 	resource_type = 275,
@@ -72162,7 +70574,6 @@ _G.pg.base.shop_template[90158] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90159] = {
 	time_second = 172800,
 	resource_type = 278,
@@ -72213,7 +70624,6 @@ _G.pg.base.shop_template[90159] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90160] = {
 	time_second = 172800,
 	resource_type = 278,
@@ -72264,7 +70674,6 @@ _G.pg.base.shop_template[90160] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90161] = {
 	time_second = 172800,
 	resource_type = 278,
@@ -72315,7 +70724,6 @@ _G.pg.base.shop_template[90161] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90162] = {
 	time_second = 172800,
 	resource_type = 278,
@@ -72366,7 +70774,6 @@ _G.pg.base.shop_template[90162] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90163] = {
 	time_second = 172800,
 	resource_type = 278,
@@ -72417,7 +70824,6 @@ _G.pg.base.shop_template[90163] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90164] = {
 	time_second = 172800,
 	resource_type = 278,
@@ -72468,7 +70874,6 @@ _G.pg.base.shop_template[90164] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90168] = {
 	time_second = 172800,
 	resource_type = 282,
@@ -72519,7 +70924,6 @@ _G.pg.base.shop_template[90168] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90169] = {
 	time_second = 172800,
 	resource_type = 282,
@@ -72570,7 +70974,6 @@ _G.pg.base.shop_template[90169] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90170] = {
 	time_second = 172800,
 	resource_type = 282,
@@ -72621,7 +71024,6 @@ _G.pg.base.shop_template[90170] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90172] = {
 	time_second = 172800,
 	resource_type = 284,
@@ -72672,7 +71074,6 @@ _G.pg.base.shop_template[90172] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90173] = {
 	time_second = 172800,
 	resource_type = 284,
@@ -72723,7 +71124,6 @@ _G.pg.base.shop_template[90173] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90174] = {
 	time_second = 172800,
 	resource_type = 284,
@@ -72774,7 +71174,6 @@ _G.pg.base.shop_template[90174] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90175] = {
 	time_second = 172800,
 	resource_type = 288,
@@ -72825,7 +71224,6 @@ _G.pg.base.shop_template[90175] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90176] = {
 	time_second = 172800,
 	resource_type = 288,
@@ -72876,7 +71274,6 @@ _G.pg.base.shop_template[90176] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90177] = {
 	time_second = 172800,
 	resource_type = 288,
@@ -72927,7 +71324,6 @@ _G.pg.base.shop_template[90177] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90178] = {
 	time_second = 172800,
 	resource_type = 293,
@@ -72978,7 +71374,6 @@ _G.pg.base.shop_template[90178] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90179] = {
 	time_second = 172800,
 	resource_type = 293,
@@ -73029,7 +71424,6 @@ _G.pg.base.shop_template[90179] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90180] = {
 	time_second = 172800,
 	resource_type = 293,
@@ -73080,7 +71474,6 @@ _G.pg.base.shop_template[90180] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90181] = {
 	time_second = 172800,
 	resource_type = 293,
@@ -73131,7 +71524,6 @@ _G.pg.base.shop_template[90181] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90182] = {
 	time_second = 172800,
 	resource_type = 293,
@@ -73182,7 +71574,6 @@ _G.pg.base.shop_template[90182] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90183] = {
 	time_second = 172800,
 	resource_type = 297,
@@ -73233,7 +71624,6 @@ _G.pg.base.shop_template[90183] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90184] = {
 	time_second = 172800,
 	resource_type = 297,
@@ -73284,7 +71674,6 @@ _G.pg.base.shop_template[90184] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90185] = {
 	time_second = 172800,
 	resource_type = 297,
@@ -73335,7 +71724,6 @@ _G.pg.base.shop_template[90185] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90186] = {
 	time_second = 172800,
 	resource_type = 297,
@@ -73386,7 +71774,6 @@ _G.pg.base.shop_template[90186] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90187] = {
 	time_second = 172800,
 	resource_type = 297,
@@ -73437,7 +71824,6 @@ _G.pg.base.shop_template[90187] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90188] = {
 	time_second = 172800,
 	resource_type = 303,
@@ -73488,7 +71874,6 @@ _G.pg.base.shop_template[90188] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90189] = {
 	time_second = 172800,
 	resource_type = 303,
@@ -73539,7 +71924,6 @@ _G.pg.base.shop_template[90189] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90190] = {
 	time_second = 172800,
 	resource_type = 303,
@@ -73590,7 +71974,6 @@ _G.pg.base.shop_template[90190] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90191] = {
 	time_second = 172800,
 	resource_type = 303,
@@ -73641,7 +72024,6 @@ _G.pg.base.shop_template[90191] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90198] = {
 	time_second = 172800,
 	resource_type = 316,
@@ -73692,7 +72074,6 @@ _G.pg.base.shop_template[90198] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90199] = {
 	time_second = 172800,
 	resource_type = 316,
@@ -73743,7 +72124,6 @@ _G.pg.base.shop_template[90199] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90200] = {
 	time_second = 172800,
 	resource_type = 316,
@@ -73794,7 +72174,6 @@ _G.pg.base.shop_template[90200] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90201] = {
 	time_second = 172800,
 	resource_type = 316,
@@ -73845,7 +72224,6 @@ _G.pg.base.shop_template[90201] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90202] = {
 	time_second = 172800,
 	resource_type = 316,
@@ -73896,7 +72274,6 @@ _G.pg.base.shop_template[90202] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90203] = {
 	time_second = 172800,
 	resource_type = 352,
@@ -73947,7 +72324,6 @@ _G.pg.base.shop_template[90203] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90204] = {
 	time_second = 172800,
 	resource_type = 352,
@@ -73998,7 +72374,6 @@ _G.pg.base.shop_template[90204] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90205] = {
 	time_second = 172800,
 	resource_type = 352,
@@ -74049,7 +72424,6 @@ _G.pg.base.shop_template[90205] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90206] = {
 	time_second = 172800,
 	resource_type = 352,
@@ -74100,7 +72474,6 @@ _G.pg.base.shop_template[90206] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90207] = {
 	time_second = 172800,
 	resource_type = 352,
@@ -74151,7 +72524,6 @@ _G.pg.base.shop_template[90207] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90208] = {
 	time_second = 172800,
 	resource_type = 352,
@@ -74202,7 +72574,6 @@ _G.pg.base.shop_template[90208] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90209] = {
 	time_second = 172800,
 	resource_type = 352,
@@ -74253,7 +72624,6 @@ _G.pg.base.shop_template[90209] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90210] = {
 	time_second = 172800,
 	resource_type = 357,
@@ -74304,7 +72674,6 @@ _G.pg.base.shop_template[90210] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90211] = {
 	time_second = 172800,
 	resource_type = 357,
@@ -74355,7 +72724,6 @@ _G.pg.base.shop_template[90211] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90212] = {
 	time_second = 172800,
 	resource_type = 357,
@@ -74406,7 +72774,6 @@ _G.pg.base.shop_template[90212] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90213] = {
 	time_second = 172800,
 	resource_type = 358,
@@ -74457,7 +72824,6 @@ _G.pg.base.shop_template[90213] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90214] = {
 	time_second = 172800,
 	resource_type = 358,
@@ -74508,7 +72874,6 @@ _G.pg.base.shop_template[90214] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90215] = {
 	time_second = 172800,
 	resource_type = 358,
@@ -74559,7 +72924,6 @@ _G.pg.base.shop_template[90215] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90216] = {
 	time_second = 172800,
 	resource_type = 360,
@@ -74610,7 +72974,6 @@ _G.pg.base.shop_template[90216] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90217] = {
 	time_second = 172800,
 	resource_type = 360,
@@ -74661,7 +73024,6 @@ _G.pg.base.shop_template[90217] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90218] = {
 	time_second = 172800,
 	resource_type = 360,
@@ -74712,7 +73074,6 @@ _G.pg.base.shop_template[90218] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90219] = {
 	time_second = 172800,
 	resource_type = 360,
@@ -74763,7 +73124,6 @@ _G.pg.base.shop_template[90219] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90220] = {
 	time_second = 172800,
 	resource_type = 360,
@@ -74814,7 +73174,6 @@ _G.pg.base.shop_template[90220] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90225] = {
 	time_second = 172800,
 	resource_type = 366,
@@ -74865,7 +73224,6 @@ _G.pg.base.shop_template[90225] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90226] = {
 	time_second = 172800,
 	resource_type = 366,
@@ -74916,7 +73274,6 @@ _G.pg.base.shop_template[90226] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90227] = {
 	time_second = 172800,
 	resource_type = 366,
@@ -74967,7 +73324,6 @@ _G.pg.base.shop_template[90227] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90228] = {
 	time_second = 172800,
 	resource_type = 370,
@@ -74979,7 +73335,7 @@ _G.pg.base.shop_template[90228] = {
 	tag = 0,
 	limit_args2 = "",
 	type_order = 0,
-	order = 6,
+	order = 3,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -75007,8 +73363,8 @@ _G.pg.base.shop_template[90228] = {
 		{
 			{
 				2023,
-				9,
-				17
+				10,
+				4
 			},
 			{
 				23,
@@ -75018,7 +73374,6 @@ _G.pg.base.shop_template[90228] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90229] = {
 	time_second = 172800,
 	resource_type = 370,
@@ -75030,7 +73385,7 @@ _G.pg.base.shop_template[90229] = {
 	tag = 0,
 	limit_args2 = "",
 	type_order = 0,
-	order = 7,
+	order = 4,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -75058,8 +73413,8 @@ _G.pg.base.shop_template[90229] = {
 		{
 			{
 				2023,
-				9,
-				17
+				10,
+				4
 			},
 			{
 				23,
@@ -75069,7 +73424,6 @@ _G.pg.base.shop_template[90229] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90230] = {
 	time_second = 172800,
 	resource_type = 370,
@@ -75081,7 +73435,7 @@ _G.pg.base.shop_template[90230] = {
 	tag = 0,
 	limit_args2 = "",
 	type_order = 0,
-	order = 4,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -75109,8 +73463,8 @@ _G.pg.base.shop_template[90230] = {
 		{
 			{
 				2023,
-				9,
-				17
+				10,
+				4
 			},
 			{
 				23,
@@ -75120,7 +73474,6 @@ _G.pg.base.shop_template[90230] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90231] = {
 	time_second = 172800,
 	resource_type = 370,
@@ -75132,7 +73485,7 @@ _G.pg.base.shop_template[90231] = {
 	tag = 0,
 	limit_args2 = "",
 	type_order = 0,
-	order = 5,
+	order = 2,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -75160,8 +73513,8 @@ _G.pg.base.shop_template[90231] = {
 		{
 			{
 				2023,
-				9,
-				17
+				10,
+				4
 			},
 			{
 				23,
@@ -75171,7 +73524,6 @@ _G.pg.base.shop_template[90231] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90232] = {
 	time_second = 172800,
 	resource_type = 370,
@@ -75222,7 +73574,6 @@ _G.pg.base.shop_template[90232] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90233] = {
 	time_second = 172800,
 	resource_type = 370,
@@ -75273,7 +73624,6 @@ _G.pg.base.shop_template[90233] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[90234] = {
 	time_second = 172800,
 	resource_type = 370,
@@ -75324,7 +73674,6 @@ _G.pg.base.shop_template[90234] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[100000] = {
 	time_second = 0,
 	resource_type = 2,
@@ -75355,7 +73704,6 @@ _G.pg.base.shop_template[100000] = {
 		102
 	}
 }
-
 _G.pg.base.shop_template[100001] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75386,7 +73734,6 @@ _G.pg.base.shop_template[100001] = {
 		61001
 	}
 }
-
 _G.pg.base.shop_template[100002] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75417,7 +73764,6 @@ _G.pg.base.shop_template[100002] = {
 		1
 	}
 }
-
 _G.pg.base.shop_template[100003] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75448,7 +73794,6 @@ _G.pg.base.shop_template[100003] = {
 		2005
 	}
 }
-
 _G.pg.base.shop_template[100004] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75479,7 +73824,6 @@ _G.pg.base.shop_template[100004] = {
 		2006
 	}
 }
-
 _G.pg.base.shop_template[100005] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75510,7 +73854,6 @@ _G.pg.base.shop_template[100005] = {
 		2015
 	}
 }
-
 _G.pg.base.shop_template[100006] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75541,7 +73884,6 @@ _G.pg.base.shop_template[100006] = {
 		2016
 	}
 }
-
 _G.pg.base.shop_template[100007] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75572,7 +73914,6 @@ _G.pg.base.shop_template[100007] = {
 		304
 	}
 }
-
 _G.pg.base.shop_template[100008] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75603,7 +73944,6 @@ _G.pg.base.shop_template[100008] = {
 		305
 	}
 }
-
 _G.pg.base.shop_template[100009] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75634,7 +73974,6 @@ _G.pg.base.shop_template[100009] = {
 		306
 	}
 }
-
 _G.pg.base.shop_template[100010] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75690,7 +74029,6 @@ _G.pg.base.shop_template[100010] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[100011] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75746,7 +74084,6 @@ _G.pg.base.shop_template[100011] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[100012] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75802,7 +74139,6 @@ _G.pg.base.shop_template[100012] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[100013] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75833,7 +74169,6 @@ _G.pg.base.shop_template[100013] = {
 		120
 	}
 }
-
 _G.pg.base.shop_template[100014] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75889,7 +74224,6 @@ _G.pg.base.shop_template[100014] = {
 		}
 	}
 }
-
 _G.pg.base.shop_template[100100] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75921,7 +74255,6 @@ _G.pg.base.shop_template[100100] = {
 		10000
 	}
 }
-
 _G.pg.base.shop_template[100101] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75953,7 +74286,6 @@ _G.pg.base.shop_template[100101] = {
 		10010
 	}
 }
-
 _G.pg.base.shop_template[100102] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -75985,7 +74317,6 @@ _G.pg.base.shop_template[100102] = {
 		10020
 	}
 }
-
 _G.pg.base.shop_template[100103] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -76017,7 +74348,6 @@ _G.pg.base.shop_template[100103] = {
 		10030
 	}
 }
-
 _G.pg.base.shop_template[100104] = {
 	time_second = 0,
 	resource_type = 3002,
@@ -76049,4 +74379,3 @@ _G.pg.base.shop_template[100104] = {
 		10040
 	}
 }
-
