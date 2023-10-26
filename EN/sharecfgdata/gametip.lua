@@ -1231,6 +1231,15 @@ _G.pg.base.gametip.backyard_backyardScene_error_noPosPutFurniture = {
 _G.pg.base.gametip.backyard_backyardScene_exitShipAfterAddEnergy = {
 	tip = " has finished resting and has left the dorm."
 }
+_G.pg.base.gametip.backyard_backyardScene_expression_label_1 = {
+	tip = "艰苦"
+}
+_G.pg.base.gametip.backyard_backyardScene_expression_label_2 = {
+	tip = "普通"
+}
+_G.pg.base.gametip.backyard_backyardScene_expression_label_3 = {
+	tip = "舒适"
+}
 _G.pg.base.gametip.backyard_backyardScene_name = {
 	tip = "<color=#92fc63>$1's Dorm</color>"
 }
@@ -1863,6 +1872,12 @@ _G.pg.base.gametip.battle_text_bisimaiz_8 = {
 }
 _G.pg.base.gametip.battle_text_bisimaiz_9 = {
 	tip = "[<color=#ffc038>Synchro-Release</color>] - Geryon's defense have <color=#f1f102>dropped dramatically</color>! Focus on dealing as much damage as fast as possible!"
+}
+_G.pg.base.gametip.battle_text_haidao_1 = {
+	tip = "<color=#f1f102>/// 警告：侦测到非「飓风」舰船 ///</color>"
+}
+_G.pg.base.gametip.battle_text_haidao_2 = {
+	tip = "<color=#f1f102>/// 「云墙守卫」突击中！圣马丁战斗力大幅度提升！ ///</color>"
 }
 _G.pg.base.gametip.battle_text_yingxiv4_1 = {
 	tip = "The Horseman is charging <color=#f1f102>left</color>!"
@@ -3018,7 +3033,7 @@ _G.pg.base.gametip.buildship_light_tip = {
 	tip = "Hermione added to the standard build pool!"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Unzen guaranteed with every 200 event builds (can be done up to 4 times)!"
+	tip = "Rate UP for São Martinho,Golden Hind, and more!"
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "Perseus and Eagle added to standard build pool!"
@@ -3523,6 +3538,9 @@ _G.pg.base.gametip.charge_scene_batch_buy_tip = {
 }
 _G.pg.base.gametip.charge_scene_buy_confirm = {
 	tip = "Spend <color=#A9F548FF>$1 Gems</color> to buy <color=#A9F548FF>$2</color>?"
+}
+_G.pg.base.gametip.charge_scene_buy_confirm_backyard = {
+	tip = "是否使用<color=#72bc42>$1钻石</color>购买<color=#72bc42>$2</color>"
 }
 _G.pg.base.gametip.charge_scene_buy_confirm_gold = {
 	tip = "Spend <color=#A9F548FF>$1 Gold</color> to buy <color=#A9F548FF>$2</color>?"
@@ -4344,6 +4362,111 @@ _G.pg.base.gametip.course_student_max_level = {
 _G.pg.base.gametip.course_sunday_tip = {
 	tip = "Self-study in progress. Double Proficiency gained from sorties."
 }
+_G.pg.base.gametip.courtyard_label_cancel_share = {
+	tip = "取消分享"
+}
+_G.pg.base.gametip.courtyard_label_capacity = {
+	tip = "食量"
+}
+_G.pg.base.gametip.courtyard_label_clear = {
+	tip = "清空"
+}
+_G.pg.base.gametip.courtyard_label_comfortable_addition = {
+	tip = "当前经验总加成 ："
+}
+_G.pg.base.gametip.courtyard_label_custom_theme = {
+	tip = "自定义主题"
+}
+_G.pg.base.gametip.courtyard_label_decoration = {
+	tip = "管理"
+}
+_G.pg.base.gametip.courtyard_label_delete = {
+	tip = "删除"
+}
+_G.pg.base.gametip.courtyard_label_detail = {
+	tip = "详情"
+}
+_G.pg.base.gametip.courtyard_label_empty_collection_list = {
+	tip = "没有找到符合条件的收藏"
+}
+_G.pg.base.gametip.courtyard_label_empty_custom_template_list = {
+	tip = "没有找到符合条件的家具主题\n请前往管理界面重新保存自定义主题"
+}
+_G.pg.base.gametip.courtyard_label_empty_template_list = {
+	tip = "没有找到符合条件的家具主题"
+}
+_G.pg.base.gametip.courtyard_label_exp_addition = {
+	tip = "经验加成 "
+}
+_G.pg.base.gametip.courtyard_label_filter = {
+	tip = "筛选"
+}
+_G.pg.base.gametip.courtyard_label_floor = {
+	tip = "当前楼层 "
+}
+_G.pg.base.gametip.courtyard_label_go = {
+	tip = "前往"
+}
+_G.pg.base.gametip.courtyard_label_month = {
+	tip = "一月内"
+}
+_G.pg.base.gametip.courtyard_label_place_pnekey = {
+	tip = "一键布置"
+}
+_G.pg.base.gametip.courtyard_label_placed_furniture = {
+	tip = "已放入家具"
+}
+_G.pg.base.gametip.courtyard_label_putlist_title = {
+	tip = "已放入家具列表"
+}
+_G.pg.base.gametip.courtyard_label_rest = {
+	tip = "休息"
+}
+_G.pg.base.gametip.courtyard_label_save = {
+	tip = "保存"
+}
+_G.pg.base.gametip.courtyard_label_save_theme = {
+	tip = "保存主题"
+}
+_G.pg.base.gametip.courtyard_label_search_holder = {
+	tip = "点击搜索"
+}
+_G.pg.base.gametip.courtyard_label_share = {
+	tip = "分享"
+}
+_G.pg.base.gametip.courtyard_label_shop = {
+	tip = "商店"
+}
+_G.pg.base.gametip.courtyard_label_shop_1 = {
+	tip = "家具商店"
+}
+_G.pg.base.gametip.courtyard_label_system_theme = {
+	tip = "系统主题"
+}
+_G.pg.base.gametip.courtyard_label_template = {
+	tip = "模板"
+}
+_G.pg.base.gametip.courtyard_label_time = {
+	tip = "时间"
+}
+_G.pg.base.gametip.courtyard_label_total_exp_addition = {
+	tip = "经验总加成 ："
+}
+_G.pg.base.gametip.courtyard_label_train = {
+	tip = "训练"
+}
+_G.pg.base.gametip.courtyard_label_using = {
+	tip = "$1F使用中"
+}
+_G.pg.base.gametip.courtyard_label_week = {
+	tip = "一周内"
+}
+_G.pg.base.gametip.courtyard_label_year = {
+	tip = "一年内"
+}
+_G.pg.base.gametip.courtyard_tip_furniture_not_in_layer = {
+	tip = "家具不在当前楼层"
+}
 _G.pg.base.gametip.cowboy_tips = {
 	tip = {
 		{
@@ -4614,6 +4737,9 @@ _G.pg.base.gametip.cryptolalia_delete_res_title = {
 }
 _G.pg.base.gametip.cryptolalia_download_done = {
 	tip = "Assets Downloaded"
+}
+_G.pg.base.gametip.cryptolalia_download_task_already_exists = {
+	tip = "$1密语正在下载中"
 }
 _G.pg.base.gametip.cryptolalia_entrance_coming_soom = {
 	tip = "Secrets Coming Soon..."
@@ -5299,11 +5425,116 @@ _G.pg.base.gametip.equip_part_tip = {
 _G.pg.base.gametip.equip_part_title = {
 	tip = "Use"
 }
+_G.pg.base.gametip.equip_share_label_1 = {
+	tip = "轻型护甲"
+}
+_G.pg.base.gametip.equip_share_label_2 = {
+	tip = "中型护甲"
+}
+_G.pg.base.gametip.equip_share_label_3 = {
+	tip = "重型护甲"
+}
+_G.pg.base.gametip.equip_share_label_4 = {
+	tip = "对空火力"
+}
+_G.pg.base.gametip.equip_share_label_5 = {
+	tip = "爆发输出"
+}
+_G.pg.base.gametip.equip_share_label_6 = {
+	tip = "平滑输出"
+}
+_G.pg.base.gametip.equip_share_label_7 = {
+	tip = "主线攻略"
+}
+_G.pg.base.gametip.equip_share_label_8 = {
+	tip = "日常任务"
+}
+_G.pg.base.gametip.equip_share_label_9 = {
+	tip = "大型作战"
+}
 _G.pg.base.gametip.equip_skin_detail_count = {
 	tip = "Owned:"
 }
 _G.pg.base.gametip.equip_skin_detail_tip = {
 	tip = "It contains Gear Skins listed below:"
+}
+_G.pg.base.gametip.equipcode_confirm_doublecheck = {
+	tip = "确认要导入当前配装结果吗？"
+}
+_G.pg.base.gametip.equipcode_diff_selected = {
+	tip = "不同装备"
+}
+_G.pg.base.gametip.equipcode_dislike_success = {
+	tip = "举报成功"
+}
+_G.pg.base.gametip.equipcode_equip_occupied = {
+	tip = "被占用"
+}
+_G.pg.base.gametip.equipcode_equipment_unowned = {
+	tip = "未拥有"
+}
+_G.pg.base.gametip.equipcode_export_success = {
+	tip = "成功复制装备码"
+}
+_G.pg.base.gametip.equipcode_illegal = {
+	tip = "装备码解析失败"
+}
+_G.pg.base.gametip.equipcode_import_success = {
+	tip = "装备导入成功"
+}
+_G.pg.base.gametip.equipcode_input = {
+	tip = "请输入装备码"
+}
+_G.pg.base.gametip.equipcode_level_unmatched = {
+	tip = "等级不符"
+}
+_G.pg.base.gametip.equipcode_like_limited = {
+	tip = "今天已经点赞过该配装方案了"
+}
+_G.pg.base.gametip.equipcode_like_success = {
+	tip = "点赞成功"
+}
+_G.pg.base.gametip.equipcode_report_type_1 = {
+	tip = "无意义的配装"
+}
+_G.pg.base.gametip.equipcode_report_type_2 = {
+	tip = "已过时的配装"
+}
+_G.pg.base.gametip.equipcode_report_warning = {
+	tip = "短期内大量异常举报可能导致该功能被禁用 "
+}
+_G.pg.base.gametip.equipcode_share_errorcode44 = {
+	tip = "已达到单日配装分享上限，分享失败"
+}
+_G.pg.base.gametip.equipcode_share_errorcode7 = {
+	tip = "今天已经分享过该船的配装方案了"
+}
+_G.pg.base.gametip.equipcode_share_exceedlimit = {
+	tip = "已选择的标签数量超过两个"
+}
+_G.pg.base.gametip.equipcode_share_listempty = {
+	tip = "无可显示内容"
+}
+_G.pg.base.gametip.equipcode_share_nolabel = {
+	tip = "请选择两个标签后再分享配装方案"
+}
+_G.pg.base.gametip.equipcode_share_ruletips = {
+	tip = "请选择两个标签，确定后将配装方案分享至服务器"
+}
+_G.pg.base.gametip.equipcode_share_success = {
+	tip = "配装方案分享成功"
+}
+_G.pg.base.gametip.equipcode_share_title = {
+	tip = "配装方案"
+}
+_G.pg.base.gametip.equipcode_share_titleeng = {
+	tip = "EQUIPMENTS"
+}
+_G.pg.base.gametip.equipcode_slot_unmatch = {
+	tip = "装备码对应了当前角色无法使用的装备"
+}
+_G.pg.base.gametip.equipcode_unsaved_tips = {
+	tip = "装备变更还未导入，是否确认退出？"
 }
 _G.pg.base.gametip.equipment_cant_unload = {
 	tip = "<color=#92fc63>Your gear storage is full.</color> Unable to unequip gear."
@@ -7615,6 +7846,22 @@ _G.pg.base.gametip.handshake_game_help = {
 2. Select all the correct items and the fan will be satisfied and leave. If you pick an item wrong, the right item will be highlighted and you can try again.
 3. A fan will wait 15 seconds for you to bring the items they want. If you take too long, the fan will leave, and you will lose 1 stamina.
 4. The minigame ends when you run out of stamina or when the timer reaches 0.]]
+		}
+	}
+}
+_G.pg.base.gametip.harbor_backhill_help = {
+	tip = {
+		{
+			info = [[
+活动简介：
+<color=#92fc63>10.26-11.9 维护</color>期间开启限时活动「神秘港湾」
+活动规则：
+1.活动期间开启「皇家财富的秘密船厂」第二阶段，参与活动可获得限定家具<color=#92fc63>「启航的冒险船」</color>、<color=#92fc63>「飓风的馈赠」</color>、<color=#92fc63>「果蔬补给品」</color>、<color=#92fc63>「喵箱SSR型」</color>在内的丰富奖励
+2.活动期间开启「啾啾悬赏板」，参与活动可获得限定纪念章<color=#92fc63>「璀璨航针」</color>、<color=#92fc63>「旧式重火炮」</color>、<color=#92fc63>「基德喵」&「贝拉喵」</color>在内的丰富奖励
+3.点击「限时兑换」可以前往活动商店
+4.点击「限时建造」可以前往建造界面
+5.点击「换装商店」可以前往换装商店界面
+]]
 		}
 	}
 }
@@ -10902,6 +11149,12 @@ _G.pg.base.gametip.indexsort_index = {
 _G.pg.base.gametip.indexsort_indexeng = {
 	tip = "Index"
 }
+_G.pg.base.gametip.indexsort_label = {
+	tip = "标签"
+}
+_G.pg.base.gametip.indexsort_labeleng = {
+	tip = "LABEL"
+}
 _G.pg.base.gametip.indexsort_rarity = {
 	tip = "Rarity"
 }
@@ -13150,6 +13403,12 @@ _G.pg.base.gametip.month_sign_resign = {
 _G.pg.base.gametip.monthly_card_tip = {
 	tip = ""
 }
+_G.pg.base.gametip.mot_class_t_level_1 = {
+	tip = "牵星者"
+}
+_G.pg.base.gametip.mot_class_t_level_2 = {
+	tip = "云墙守卫"
+}
 _G.pg.base.gametip.msgbox_repair = {
 	tip = "Repair Assets"
 }
@@ -14114,6 +14373,9 @@ A new stage will unlock every day up to <color=#92fc63>January 18th</color>.
 · You can play this minigame even if you don't have a daily attempt remaining.]]
 		}
 	}
+}
+_G.pg.base.gametip.pirate_wanted_help = {
+	tip = "活动时间：<color=#b14c4c>10.26-11.9 维护 </color>\n1.活动期间，参与「啾啾悬赏」活动可获取丰厚奖励。完成全部<color=#b14c4c>6</color>个「悬赏」后，可获得活动限定纪念章<color=#b14c4c>「璀璨航针」</color>\n2.领取时间截止11月15日24时"
 }
 _G.pg.base.gametip.pizzahut_help = {
 	tip = {
@@ -15368,6 +15630,52 @@ _G.pg.base.gametip.ryza_ui_show_acess = {
 _G.pg.base.gametip.ryza_word_equip = {
 	tip = "Gear"
 }
+_G.pg.base.gametip.sail_boat_equip_tip_1 = {
+	tip = "<color=#E3CEAF>威力较小装填速度较快的火炮</color>\n<color=#F1B969>装备后舰艇航速降低</color>"
+}
+_G.pg.base.gametip.sail_boat_equip_tip_2 = {
+	tip = "<color=#E3CEAF>威力中等装填速度中等的火炮</color>\n<color=#F1B969>装备后舰艇航速降低</color>"
+}
+_G.pg.base.gametip.sail_boat_equip_tip_3 = {
+	tip = "<color=#E3CEAF>威力极大装填速度极慢的火炮</color>\n<color=#F1B969>装备后舰艇航速降低</color>"
+}
+_G.pg.base.gametip.sail_boat_equip_tip_4 = {
+	tip = "<color=#E3CEAF>装甲甲板</color>\n<color=#F1B969>装备后舰艇耐久提升航速降低</color>"
+}
+_G.pg.base.gametip.sail_boat_equip_tip_5 = {
+	tip = "<color=#E3CEAF>海员啾</color>\n<color=#F1B969>装备后舰艇航速提升</color>"
+}
+_G.pg.base.gametip.sail_boat_minigame_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/sailboat_help1",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/sailboat_help2",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
 _G.pg.base.gametip.salvage_tips = {
 	tip = {
 		{
@@ -16593,7 +16901,17 @@ _G.pg.base.gametip.shipyard_introduce = {
 	tip = "2 new missions unlock every day until 10/25.\nComplete them all to earn the limited gear, <color=#ff9892>Tempesta Banner</color>!"
 }
 _G.pg.base.gametip.shipyard_phase_1 = {
-	tip = "占坑"
+	tip = {
+		{
+			info = [[
+活动简介：
+<color=#92fc63>10.25-11.9/24时</color>期间开启「皇家财富的秘密船厂」活动的第二阶段。
+活动期间完成「秘密船厂」建造阶段的所有任务，即可参加第二阶段活动。
+活动期间，11月1日为止每日解锁一关游戏关卡，并增加<color=#92fc63>1</color>次可获得奖励的游玩次数。
+拥有可获得奖励的游玩次数时，完成游戏关卡可获得<color=#92fc63>道具奖励。</color>
+完成全部7个游戏关卡后，可获得<color=#92fc63>限定家具「启航的冒险船」x1</color>并可自由选择任意关卡通关]]
+		}
+	}
 }
 _G.pg.base.gametip.shipyard_phase_2 = {
 	tip = "占坑"
