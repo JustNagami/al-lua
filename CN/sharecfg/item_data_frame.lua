@@ -477,6 +477,33 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>为独角兽特别制作的角色专属头像框</color>\n「Azurlane人气投票2021」活动获取",
 		scene = {}
 	},
+	[415] = {
+		time_limit_type = 0,
+		name = "殿堂纪念：应瑞",
+		gain_by = "",
+		id = 415,
+		time_second = 0,
+		desc = "<color=#ffffff>为应瑞特别制作的角色专属头像框</color>\n「Azurlane人气投票2023」活动获取",
+		scene = {}
+	},
+	[416] = {
+		time_limit_type = 0,
+		name = "殿堂纪念：柴郡",
+		gain_by = "",
+		id = 416,
+		time_second = 0,
+		desc = "<color=#ffffff>为柴郡特别制作的角色专属头像框</color>\n「Azurlane人气投票2023」活动获取",
+		scene = {}
+	},
+	[417] = {
+		time_limit_type = 0,
+		name = "殿堂纪念：{namecode:199:新泽西}",
+		gain_by = "",
+		id = 417,
+		time_second = 0,
+		desc = "<color=#ffffff>为{namecode:199:新泽西}特别制作的角色专属头像框</color>\n「Azurlane人气投票2023」活动获取",
+		scene = {}
+	},
 	[501] = {
 		time_limit_type = 0,
 		name = "美味的纪念 ",
@@ -582,7 +609,16 @@ pg.item_data_frame = {
 		gain_by = "",
 		id = 10006,
 		time_second = 0,
-		desc = "<color=#ffffff>结晶之中闪烁着天秤座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （23.11.01-23.11.30）",
+		desc = "<color=#ffffff>结晶之中闪烁着天蝎座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （23.11.01-23.11.30）",
+		scene = {}
+	},
+	[10007] = {
+		time_limit_type = 0,
+		name = "限界的挑战者·射手座",
+		gain_by = "",
+		id = 10007,
+		time_second = 0,
+		desc = "<color=#ffffff>结晶之中闪烁着射手座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （23.12.01-23.12.31）",
 		scene = {}
 	},
 	all = {
@@ -639,6 +675,9 @@ pg.item_data_frame = {
 		405,
 		406,
 		407,
+		415,
+		416,
+		417,
 		501,
 		601,
 		602,
@@ -650,6 +689,7 @@ pg.item_data_frame = {
 		10003,
 		10004,
 		10005,
-		10006
+		10006,
+		10007
 	}
 }

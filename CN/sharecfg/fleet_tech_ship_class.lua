@@ -3337,6 +3337,17 @@ pg.fleet_tech_ship_class = {
 			970205
 		}
 	},
+	[970206] = {
+		shiptype = 2,
+		name = "基洛夫·META",
+		nation = 97,
+		id = 970206,
+		t_level_1 = 8,
+		t_level = 3,
+		ships = {
+			970206
+		}
+	},
 	[970301] = {
 		shiptype = 3,
 		name = "特伦托·META",
@@ -3533,6 +3544,17 @@ pg.fleet_tech_ship_class = {
 		t_level = 2,
 		ships = {
 			971201
+		}
+	},
+	[971301] = {
+		shiptype = 13,
+		name = "黑暗界·META",
+		nation = 97,
+		id = 971301,
+		t_level_1 = 7,
+		t_level = 3,
+		ships = {
+			971301
 		}
 	},
 	all = {
@@ -3814,6 +3836,7 @@ pg.fleet_tech_ship_class = {
 		970203,
 		970204,
 		970205,
+		970206,
 		970301,
 		970302,
 		970401,
@@ -3831,6 +3854,7 @@ pg.fleet_tech_ship_class = {
 		970702,
 		970703,
 		970801,
-		971201
+		971201,
+		971301
 	}
 }

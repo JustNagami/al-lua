@@ -968,5 +968,32 @@ pg.activity_const = {
 	},
 	BOAT_QIAN_SHAO_ZHAN = {
 		act_id = 5023
+	},
+	CASTLE_ACT_ID = {
+		act_id = 5055
+	},
+	CASTLE_AWARD_ID = {
+		act_id = 5054
+	},
+	SENRANKAGURA_TRAIN_ACT_ID = {
+		act_id = 5099
+	},
+	SENRANKAGURA_TASK_ID = {
+		act_id = 5094
+	},
+	SENRANKAGURA_MEDAL_ID = {
+		act_id = 5093
+	},
+	SENRANKAGURA_PT = {
+		act_id = 5098
+	},
+	SENRANKAGURA_BUFF = {
+		act_id = 5095
+	},
+	SENRANKAGURA_TURNTABLE = {
+		act_id = 5096
+	},
+	VOTE_ENTRANCE_ACT_ID = {
+		act_id = 1068
 	}
 }

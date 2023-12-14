@@ -1364,7 +1364,7 @@ _G.pg.base.gametip.backyard_not_found_theme_template = {
 	tip = "未搜索到对应主题"
 }
 _G.pg.base.gametip.backyard_open_2floor = {
-	tip = "开启二层需要消耗<icon name=diamond w=0.7 h=0.7/><color=#92fc63FF>$1</color>是否确定开启\n *新楼层<color=#FF4B14>不会增加</color>训练栏位，仅用于摆放家具"
+	tip = "开启二层需要消耗<icon name=diamond w=0.7 h=0.7/><color=#72bc42>$1</color>是否确定开启\n *新楼层<color=#FF4B14>不会增加</color>训练栏位，仅用于摆放家具"
 }
 _G.pg.base.gametip.backyard_putFurniture_ok = {
 	tip = "保存成功"
@@ -1863,6 +1863,9 @@ _G.pg.base.gametip.battle_text_bisimaiz_8 = {
 }
 _G.pg.base.gametip.battle_text_bisimaiz_9 = {
 	tip = "「<color=#92fc63>舰装分离</color>」-革律翁的<color=#f1f102>防御大幅度下降</color>，请尽快将其击破！"
+}
+_G.pg.base.gametip.battle_text_common_1 = {
+	tip = "敌人正在准备着某种强大的攻击，请<color=#f1f102>集中火力将其打断</color>！"
 }
 _G.pg.base.gametip.battle_text_haidao_1 = {
 	tip = "<color=#f1f102>/// 警告：侦测到非「飓风」舰船 ///</color>"
@@ -2526,6 +2529,53 @@ _G.pg.base.gametip.battlepass_main_help_2310 = {
 		}
 	}
 }
+_G.pg.base.gametip.battlepass_main_help_2312 = {
+	tip = {
+		{
+			info = [[
+世界巡游(2023.12.1-2024.1.31)
+
+·<color=#92fc63>开放时间</color>
+    2023.12.1 0点 ~ 2024.1.31 23:59:59
+
+·<color=#92fc63>巡游进度说明</color>
+（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
+（2）巡游任务随时间开放解锁。
+（3）每获取100点「巡游点数」即可增加1巡游进度
+（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
+
+·<color=#92fc63>奖励规则</color>
+巡游进度奖励分为两种：
+（1）基础巡游奖励：包含<color=#ff5c5c>「黑暗界·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·六期</color>等奖励；
+    当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
+（2）特许巡游奖励：包含<color=#ff5c5c>梅换装「猫咖逢春</color>」、<color=#ff5c5c>钻石</color>等奖励；
+    购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
+    注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
+
+·<color=#92fc63>「特许巡游凭证」说明</color>
+（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
+（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即11.30 22:59:59停止)，请指挥官注意购买时间。
+
+·<color=#92fc63>任务说明</color>
+巡游任务分为两种：
+（1）每周任务 
+    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
+（2）S.P.任务
+    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
+（4）「巡游任务快速完成券」不会随本期活动结束而消失
+
+·<color=#ff5c5c>特别提示</color>
+（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
+（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
+		}
+	}
+}
 _G.pg.base.gametip.battlepass_main_time = {
 	tip = "$1天$2时"
 }
@@ -2576,6 +2626,9 @@ _G.pg.base.gametip.battlepass_main_tip_2308 = {
 }
 _G.pg.base.gametip.battlepass_main_tip_2310 = {
 	tip = "10/1-11/30期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「普林斯顿·META」</color>在内的丰富奖励"
+}
+_G.pg.base.gametip.battlepass_main_tip_2312 = {
+	tip = "2023/12/1-2024/1/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「黑暗界·META」</color>在内的丰富奖励"
 }
 _G.pg.base.gametip.battlepass_pay_acquire = {
 	tip = "购买后立即获得："
@@ -2733,6 +2786,15 @@ _G.pg.base.gametip.blackfriday_help = {
 3.可解锁换装数量无法满足礼品清单全部解锁条件的情况下，将直接解锁相差数量阶段的奖励]]
 		}
 	}
+}
+_G.pg.base.gametip.blackfriday_pack_lock = {
+	tip = "礼包将于$1解锁购买 "
+}
+_G.pg.base.gametip.blackfriday_pack_purchased = {
+	tip = "已购买"
+}
+_G.pg.base.gametip.blackfriday_pack_select_skinall = {
+	tip = "促销换装兑换券仅能兑换指定列表中的换装。若当前已全部拥有，兑换券将无法使用！"
 }
 _G.pg.base.gametip.blueprint_build_consume = {
 	tip = "需要花费 '$1' 是否开始研究？"
@@ -3184,7 +3246,7 @@ _G.pg.base.gametip.buildship_light_tip = {
 	tip = "{namecode:446} 建造追加！"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "圣马丁号、金鹿号等角色建造概率UP!"
+	tip = "每累计建造200次可获得海上传奇舰船 {namecode:18}(最多4次)"
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "{namecode:470}、{namecode:474} 等角色建造追加！"
@@ -3720,6 +3782,9 @@ _G.pg.base.gametip.charge_scene_batch_buy_tip = {
 _G.pg.base.gametip.charge_scene_buy_confirm = {
 	tip = "是否使用<color=#92fc63FF>$1钻石</color>购买<color=#92fc63FF>$2</color>"
 }
+_G.pg.base.gametip.charge_scene_buy_confirm_backyard = {
+	tip = "是否使用<color=#72bc42>$1钻石</color>购买<color=#72bc42>$2</color>"
+}
 _G.pg.base.gametip.charge_scene_buy_confirm_gold = {
 	tip = "是否使用<color=#92fc63FF>$1物资</color>购买<color=#92fc63FF>$2</color>"
 }
@@ -4007,6 +4072,27 @@ _G.pg.base.gametip.commander_can_not_select_same_group = {
 _G.pg.base.gametip.commander_capcity_is_max = {
 	tip = "猫窝已满"
 }
+_G.pg.base.gametip.commander_choice_talent_1 = {
+	tip = "选择要提升或者习得的天赋"
+}
+_G.pg.base.gametip.commander_choice_talent_2 = {
+	tip = "可选择天赋"
+}
+_G.pg.base.gametip.commander_choice_talent_3 = {
+	tip = "天赋槽已满，选择要替换的天赋"
+}
+_G.pg.base.gametip.commander_choice_talent_4 = {
+	tip = "*使用天赋点可能获得天赋的成长"
+}
+_G.pg.base.gametip.commander_choice_talent_reset = {
+	tip = "是否消耗$1物资，将天赋还原为初始状态\t重置后可用天赋$2点，天赋将还原为：    "
+}
+_G.pg.base.gametip.commander_command_ability = {
+	tip = "指挥能力"
+}
+_G.pg.base.gametip.commander_confirm_tip = {
+	tip = "*确认后负责陪玩的指挥喵会消失"
+}
 _G.pg.base.gametip.commander_equip_to_fleet_erro = {
 	tip = "装备指挥喵失败$1"
 }
@@ -4025,8 +4111,20 @@ _G.pg.base.gametip.commander_get = {
 _G.pg.base.gametip.commander_get_1 = {
 	tip = "每天的第一次喵箱预定免费喵！"
 }
+_G.pg.base.gametip.commander_get_box_tip = {
+	tip = "可能收到随机类型的喵箱，\n敬请期待喵!"
+}
+_G.pg.base.gametip.commander_get_box_tip_1 = {
+	tip = "喵箱??型"
+}
+_G.pg.base.gametip.commander_get_commander_coptyright = {
+	tip = "指挥喵管理中心——"
+}
 _G.pg.base.gametip.commander_get_skills_done = {
 	tip = "获取学习列表失败"
+}
+_G.pg.base.gametip.commander_home_level_label = {
+	tip = "当前等级"
 }
 _G.pg.base.gametip.commander_is_in_battle = {
 	tip = "该指挥喵正在出击中～"
@@ -4046,14 +4144,23 @@ _G.pg.base.gametip.commander_is_in_fleet_already = {
 _G.pg.base.gametip.commander_is_in_guild = {
 	tip = "该指挥喵正在大舰队作战首领战编队中，是否确认将该指挥喵移出编队？"
 }
+_G.pg.base.gametip.commander_level_up_tip = {
+	tip = "*指挥喵每升5级可获得1点天赋点"
+}
 _G.pg.base.gametip.commander_lock_done = {
 	tip = "锁定成功！"
 }
 _G.pg.base.gametip.commander_lock_erro = {
 	tip = "锁定失败$1"
 }
+_G.pg.base.gametip.commander_lock_setting_title = {
+	tip = "喵箱训练完成并同时满足以下条件时询问是否锁定"
+}
 _G.pg.base.gametip.commander_lock_tip = {
 	tip = "是否<color=#92fc63>锁定</color>该指挥喵？"
+}
+_G.pg.base.gametip.commander_logistics_ability = {
+	tip = "后勤能力"
 }
 _G.pg.base.gametip.commander_main_pos = {
 	tip = "司令位"
@@ -4066,6 +4173,9 @@ _G.pg.base.gametip.commander_material_is_maxLevel = {
 }
 _G.pg.base.gametip.commander_material_is_rarity = {
 	tip = "列表中有SSR以上的的指挥喵，是否确定？"
+}
+_G.pg.base.gametip.commander_material_noenough = {
+	tip = "材料不足"
 }
 _G.pg.base.gametip.commander_not_exist = {
 	tip = "不存在该指挥喵"
@@ -4087,6 +4197,9 @@ _G.pg.base.gametip.commander_rename_coldtime_tip = {
 }
 _G.pg.base.gametip.commander_rename_success_tip = {
 	tip = "更名成功"
+}
+_G.pg.base.gametip.commander_rename_tip = {
+	tip = "**每只指挥喵每天只能进行一次更名操作"
 }
 _G.pg.base.gametip.commander_rename_warning = {
 	tip = "更名后需要1天才能再次更名，是否确定将指挥喵更名为$1"
@@ -4127,8 +4240,23 @@ _G.pg.base.gametip.commander_select_max = {
 _G.pg.base.gametip.commander_select_min_cnt = {
 	tip = "最少选择$1个指挥喵"
 }
+_G.pg.base.gametip.commander_selected_max = {
+	tip = "最多选择$1个指挥喵"
+}
+_G.pg.base.gametip.commander_skill_effect = {
+	tip = "技能效果"
+}
 _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足"
+}
+_G.pg.base.gametip.commander_subtile_ablity = {
+	tip = "能力加成"
+}
+_G.pg.base.gametip.commander_subtile_talent = {
+	tip = "天赋加成"
+}
+_G.pg.base.gametip.commander_tactical_ability = {
+	tip = "战术能力"
 }
 _G.pg.base.gametip.commander_talent_learn_erro = {
 	tip = "天赋学习失败：$1"
@@ -4139,8 +4267,29 @@ _G.pg.base.gametip.commander_talent_learned = {
 _G.pg.base.gametip.commander_talent_not_exist = {
 	tip = "存在该天赋"
 }
+_G.pg.base.gametip.commander_total_gold = {
+	tip = "合计价格："
+}
 _G.pg.base.gametip.commander_unlock_done = {
 	tip = "解锁成功！"
+}
+_G.pg.base.gametip.commander_unsel_lock_flag_tip = {
+	tip = "当前未勾选询问锁定选项，指挥喵训练完成时将不会询问是否锁定指挥喵"
+}
+_G.pg.base.gametip.commander_use_box_queue = {
+	tip = "培育队列"
+}
+_G.pg.base.gametip.commander_use_box_tip = {
+	tip = "选择喵箱"
+}
+_G.pg.base.gametip.commandercat_label_custom_name = {
+	tip = "自定义名称"
+}
+_G.pg.base.gametip.commandercat_label_display_name = {
+	tip = "自定义名称"
+}
+_G.pg.base.gametip.commandercat_label_raw_name = {
+	tip = "原始名称"
 }
 _G.pg.base.gametip.commission_event_tip = {
 	tip = {
@@ -4962,6 +5111,30 @@ _G.pg.base.gametip.cruise_task_help_2310 = {
 
 ·<color=#92fc63>开放时间</color>
     2023.9.30 0点 ~ 2023.11.30 23:59:59
+
+·<color=#92fc63>巡游任务分为两种</color>
+（1）每周任务
+    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
+（2）S.P.任务
+    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
+（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2312 = {
+	tip = {
+		{
+			info = [[
+巡游任务说明
+
+·<color=#92fc63>开放时间</color>
+    2023.11.30 0点 ~ 2024.1.31 23:59:59
 
 ·<color=#92fc63>巡游任务分为两种</color>
 （1）每周任务
@@ -13544,9 +13717,9 @@ _G.pg.base.gametip.meta_help = {
 		{
 			info = [[
 1.<color=#92fc63>资讯同步</color>
-·<color=#92fc63>2023.8.31-2023.12.7</color>期间限时开放「貎·META」的「资讯同步」，通过「信标貎·META」战斗获取其同步值，达到一定同步值可以获取<color=#92fc63>「貎·META」角色</color>
+·<color=#92fc63>2023.12.7-2024.3.7</color>期间限时开放「基洛夫·META」的「资讯同步」，通过「信标基洛夫·META」战斗获取其同步值，达到一定同步值可以获取<color=#92fc63>「基洛夫·META」角色</color>
 ·获得META角色后可以通过角色的<color=#92fc63>「资讯同步」</color>模块在<color=#92fc63>上述时间</color>内继续获取包含养成材料在内的丰厚奖励
-·注意：<color=#ff5c5c>「貎·META」的「资讯同步」将于时间结束后暂时关闭,已累计的同步值也会消失。</color>
+·注意：<color=#ff5c5c>「基洛夫·META」的「资讯同步」将于时间结束后暂时关闭,已累计的同步值也会消失。</color>
 
 2.<color=#92fc63>能量激活</color>
 ·META角色达到指定等级后可以使用对应的角色结晶进行激活。激活后可以提升角色星级
@@ -15481,6 +15654,201 @@ _G.pg.base.gametip.returner_push_success = {
 _G.pg.base.gametip.returner_push_tip = {
 	tip = "此操作将会发布您的UID进入系统,以供回归指挥官进行匹配。一旦发布后,<color=#FF5C5C>将无法撤销</color>\n是否确认发布?"
 }
+_G.pg.base.gametip.roll_attr_list = {
+	tip = {
+		"交涉",
+		"急救",
+		"META研究",
+		"塞壬研究",
+		"情报分析",
+		"机械维修",
+		"药理学",
+		"民俗研究",
+		"心理学",
+		"地质学",
+		"开锁",
+		"观察力",
+		"潜行",
+		"奔跑",
+		"潜水",
+		"机甲驾驶",
+		"战术研究",
+		"格斗",
+		"射击",
+		"荒野求生",
+		"魔方研究",
+		"危机感应",
+		"魅惑术",
+		"钓鱼",
+		"法律学",
+		"量产型驾驶",
+		"舰装维修",
+		"陷阱制作",
+		"炮术",
+		"天文学",
+		"密码学",
+		"法律研究",
+		"烹饪",
+		"石油勘探",
+		"快速阅读",
+		"导航学",
+		"骑术",
+		"催眠术",
+		"追踪术",
+		"语言学",
+		"攀爬",
+		"物品整理",
+		"时间规划",
+		"文件处理",
+		"舰队集结",
+		"后勤调度",
+		"外交学",
+		"养生术",
+		"农学",
+		"土木工程学",
+		"战场指挥"
+	}
+}
+_G.pg.base.gametip.roll_card_attr = {
+	tip = "属性"
+}
+_G.pg.base.gametip.roll_card_info = {
+	tip = "基本信息"
+}
+_G.pg.base.gametip.roll_card_skill = {
+	tip = "技能"
+}
+_G.pg.base.gametip.roll_ending_tip1 = {
+	tip = "终幕已然显现，请前往古堡1F与2F中完成调查"
+}
+_G.pg.base.gametip.roll_ending_tip2 = {
+	tip = "仍有未探索区域，请前往古堡1F与2F中完成调查"
+}
+_G.pg.base.gametip.roll_gametip = {
+	tip = {
+		{
+			info = [[
+活动简介：
+<color=#92fc63>11.3-11.16维护</color>期间开启「雨夜惊魂活动」活动。
+「调查奖励」
+·调查古堡完成剧情获取奖励
+·推进剧情会用到探索之骰，通过雨夜惊魂活动累计继承敌人获取
+「角色卡」
+·角色卡上的信息将随着古堡的调查逐渐渐显
+·解锁全部剧情后，可以解锁随机生成角色卡功能
+·角色卡姓名默认为指挥官名称，可以编辑修改，可以不限次数的随机属性数值、技能与技能熟练度
+「投掷」
+探索之骰使用规则：
+投掷两个十面骰，第一个骰子为十位数数字，第二个骰子为个位数数值，当结果为：
+1~5时：判定大成功
+6~50时：判定成功
+51~94时：判定失败
+95~100时：判定大失败（00=100）
+·当出现失败与大失败时，只能前往一个区域
+触发BE剧情后将返回上一个区域同时返还一个骰子，下一次投掷结果必定为成功或大成功
+·当出现成功与大成功时，可以前往两个区域，未探索的区域后续也可以返回进行探索]]
+		}
+	}
+}
+_G.pg.base.gametip.roll_noname = {
+	tip = "姓名不能为空"
+}
+_G.pg.base.gametip.roll_notimes = {
+	tip = "骰子数量不足，前往活动获取"
+}
+_G.pg.base.gametip.roll_reward_got = {
+	tip = "已领取"
+}
+_G.pg.base.gametip.roll_reward_tip = {
+	tip = "已完成$1/$2"
+}
+_G.pg.base.gametip.roll_reward_word1 = {
+	tip = "序幕"
+}
+_G.pg.base.gametip.roll_reward_word2 = {
+	tip = "第一幕"
+}
+_G.pg.base.gametip.roll_reward_word3 = {
+	tip = "第二幕"
+}
+_G.pg.base.gametip.roll_reward_word4 = {
+	tip = "第三幕"
+}
+_G.pg.base.gametip.roll_reward_word5 = {
+	tip = "第四幕"
+}
+_G.pg.base.gametip.roll_reward_word6 = {
+	tip = "第五幕"
+}
+_G.pg.base.gametip.roll_reward_word7 = {
+	tip = "第六幕"
+}
+_G.pg.base.gametip.roll_reward_word8 = {
+	tip = "终幕"
+}
+_G.pg.base.gametip.roll_room1 = {
+	tip = "佣人休息室"
+}
+_G.pg.base.gametip.roll_room10 = {
+	tip = "观景台"
+}
+_G.pg.base.gametip.roll_room11 = {
+	tip = "次卧"
+}
+_G.pg.base.gametip.roll_room12 = {
+	tip = "收藏室"
+}
+_G.pg.base.gametip.roll_room13 = {
+	tip = "大厅"
+}
+_G.pg.base.gametip.roll_room14 = {
+	tip = "主卧"
+}
+_G.pg.base.gametip.roll_room15 = {
+	tip = "书房"
+}
+_G.pg.base.gametip.roll_room16 = {
+	tip = "密室"
+}
+_G.pg.base.gametip.roll_room17 = {
+	tip = "后花园"
+}
+_G.pg.base.gametip.roll_room2 = {
+	tip = "大厅"
+}
+_G.pg.base.gametip.roll_room3 = {
+	tip = "接待室"
+}
+_G.pg.base.gametip.roll_room4 = {
+	tip = "中庭"
+}
+_G.pg.base.gametip.roll_room5 = {
+	tip = "会客厅"
+}
+_G.pg.base.gametip.roll_room6 = {
+	tip = "管家房"
+}
+_G.pg.base.gametip.roll_room7 = {
+	tip = "餐厅"
+}
+_G.pg.base.gametip.roll_room8 = {
+	tip = "厨房"
+}
+_G.pg.base.gametip.roll_room9 = {
+	tip = "宴会厅"
+}
+_G.pg.base.gametip.roll_room_unexplored = {
+	tip = "???"
+}
+_G.pg.base.gametip.roll_times_left = {
+	tip = "剩余次数:$1"
+}
+_G.pg.base.gametip.roll_tip2 = {
+	tip = "调查全部已解锁的区域后才能再次投掷"
+}
+_G.pg.base.gametip.roll_unlock = {
+	tip = "— 调查古堡解锁全部剧情后，可以解锁随机生成角色卡功能 —"
+}
 _G.pg.base.gametip.rolling_ball_help = {
 	tip = {
 		{
@@ -16068,6 +16436,209 @@ _G.pg.base.gametip.securitycake_help = {
 _G.pg.base.gametip.select_award_warning = {
 	tip = "选择想要的奖励"
 }
+_G.pg.base.gametip.senran_pt_consume_tip = {
+	tip = "是否消耗<icon name=renzhinan_pt w=0.6 h=0.6/><color=#3fbe0d>$1</color>提升属性至<color=#3fbe0d>Lv.$2</color>?"
+}
+_G.pg.base.gametip.senran_pt_help = {
+	tip = {
+		{
+			info = [[
+活动时间：<color=#92fc63>11.23-12.7 维护 </color>
+1.活动期间，参与「忍者任务板」和「秘传忍法书」活动可获得<color=#92fc63>「忍指南」</color>。
+2.消耗「忍指南」提升各项属性，可获取联动角色<color=#92fc63>「焰」</color>及其他丰厚奖励。
+3.领取时间截止至<color=#92fc63>12月13日24时</color>。]]
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_not_enough = {
+	tip = "<color=#92fc63>忍指南</color>不足"
+}
+_G.pg.base.gametip.senran_pt_rank = {
+	tip = "属性提升$1次"
+}
+_G.pg.base.gametip.senran_pt_words_banjiu = {
+	tip = {
+		{
+			"1100002/pt1",
+			"请多多指教。"
+		},
+		{
+			"1100002/pt2",
+			"原来如此…非常有参考价值。"
+		},
+		{
+			"1100002/pt3",
+			"指挥官的教得真好…感觉状态也好起来了。"
+		},
+		{
+			"1100002/pt4",
+			"有成果了…吗？那真是太好了。"
+		},
+		{
+			"1100002/pt5",
+			"今天也辛苦了。今后还请多多关照。"
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_feiniao = {
+	tip = {
+		{
+			"1100001/pt1",
+			"指挥官，你可算来了！"
+		},
+		{
+			"1100001/pt2",
+			"感觉有点紧张呢。"
+		},
+		{
+			"1100001/pt3",
+			"有好好出成果吗？"
+		},
+		{
+			"1100001/pt4",
+			"我还能继续努力！"
+		},
+		{
+			"1100001/pt5",
+			"今后也请你继续给予我指导和鞭策!"
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_xishao = {
+	tip = {
+		{
+			"1100007/pt1",
+			"请，请多多关照……"
+		},
+		{
+			"1100007/pt2",
+			"我还能…更努力……"
+		},
+		{
+			"1100007/pt3",
+			"感觉稍微增加了一些自信…吧……"
+		},
+		{
+			"1100007/pt4",
+			"才…刚刚开始呢……"
+		},
+		{
+			"1100007/pt5",
+			"下一次…也会努力的……"
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_xuebugui = {
+	tip = {
+		{
+			"1100005/pt1",
+			"您如此忙碌还能抽空过来，非常感谢。"
+		},
+		{
+			"1100005/pt2",
+			"呵呵，像这样吗？"
+		},
+		{
+			"1100005/pt3",
+			"像这样做的话…确实会有意想不到的发现呢。"
+		},
+		{
+			"1100005/pt4",
+			"啊，难怪指挥官那么受欢迎。"
+		},
+		{
+			"1100005/pt5",
+			"我也很期待下次呢。"
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_xuequan = {
+	tip = {
+		{
+			"1100004/pt1",
+			"我一直在此等候，还请多多关照。"
+		},
+		{
+			"1100004/pt2",
+			"变强了…吗？"
+		},
+		{
+			"1100004/pt3",
+			"更严厉一点也没关系哦？"
+		},
+		{
+			"1100004/pt4",
+			"下一步打算做什么？真令人期待。"
+		},
+		{
+			"1100004/pt5",
+			"辛苦了。能够一起变得更强，我很开心。"
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_yan = {
+	tip = {
+		{
+			"1100003/pt1",
+			"呵呵，今天也很令人期待。可别让我失望。"
+		},
+		{
+			"1100003/pt2",
+			"好了，别休息了，继续继续！"
+		},
+		{
+			"1100003/pt3",
+			"指挥官也相当能干呢~"
+		},
+		{
+			"1100003/pt4",
+			"这种程度还远远不够吧？"
+		},
+		{
+			"1100003/pt5",
+			"辛苦了。能切实感受到变强，都多亏了指挥官啊。"
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_zi = {
+	tip = {
+		{
+			"1100006/pt1",
+			"今天也…会…努力的……"
+		},
+		{
+			"1100006/pt2",
+			"我…变强了…吗？"
+		},
+		{
+			"1100006/pt3",
+			"还想再…稍微努力一下……"
+		},
+		{
+			"1100006/pt4",
+			"感觉…似乎做得不错…"
+		},
+		{
+			"1100006/pt5",
+			"不再继续一会儿吗……？"
+		}
+	}
+}
+_G.pg.base.gametip.senrankagura_backhill_help = {
+	tip = {
+		{
+			info = [[
+活动简介：
+<color=#92fc63>11.23-12.07 维护前</color>开启限时活动「苍闪忍法帖」
+1.通过特别作战获取「城塞情报」，在「报酬累计所」和「补给商店」处兑换丰厚奖励。
+2.活动期间完成「忍者任务板」7日任务可以获得限定家具<color=#92fc63>「忍者移门」</color>。
+3.「秘传忍法书」：活动期间通过完成7名角色的秘传忍法书任务，可获得<color=#92fc63>联动角色特殊兵装</color>、纪念家具<color=#92fc63>「风云之卷」</color>等奖励。
+4.「忍术指导场」：参与「忍者任务板」和「秘传忍法书」活动获取<color=#92fc63>「忍指南」</color>，在「忍术指导场」中消耗「忍指南」可以获取联动角色<color=#92fc63>「焰」</color>及丰厚奖励。
+5.「换装商店」：购买限时换装。
+6.「限时建造」：建造限时角色。]]
+		}
+	}
+}
 _G.pg.base.gametip.series_enemy_SP_count = {
 	tip = "今日次数："
 }
@@ -16312,6 +16883,26 @@ _G.pg.base.gametip.sham_shop_title = {
 }
 _G.pg.base.gametip.sham_team_limit = {
 	tip = "请确保阵容中至少有一个先锋和一个主力"
+}
+_G.pg.base.gametip.shan_luan_task_buff_default = {
+	tip = "？？？"
+}
+_G.pg.base.gametip.shan_luan_task_help = {
+	tip = {
+		{
+			info = [[
+活动时间：<color=#92fc63>11.23-12.7 维护 </color>
+1.活动期间，完成「秘传忍法书」活动任务，可获得<color=#92fc63>联动角色特殊兵装</color>在内的丰厚奖励。
+2.完成7名角色的特定任务，收集7个<color=#92fc63>「秘传玉」</color>，可获得纪念家具<color=#92fc63>「风云之卷」</color>。
+3.完成一定数量的「秘传忍法书」任务可提升秘传等级获得加成效果。]]
+		}
+	}
+}
+_G.pg.base.gametip.shan_luan_task_level_tip = {
+	tip = "秘传等级: $1"
+}
+_G.pg.base.gametip.shan_luan_task_progress_tip = {
+	tip = "已达成: $1"
 }
 _G.pg.base.gametip.ship_addStarExp_error = {
 	tip = "添加船经验失败:"
@@ -17160,8 +17751,26 @@ _G.pg.base.gametip.skill = {
 _G.pg.base.gametip.skill_learn_tip = {
 	tip = "今日还有$1次快速完成技能学习的次数哦"
 }
+_G.pg.base.gametip.skin_discount_desc = {
+	tip = "是否消耗$1*1 购买折后价 $2 的 $3"
+}
+_G.pg.base.gametip.skin_discount_timelimit = {
+	tip = "道具$1将于$2维护后到期，请及时前往换装商店使用"
+}
+_G.pg.base.gametip.skin_exchange_confirm = {
+	tip = "是否使用 <color=#92fc63>$1 *1</color> 兑换 <color=#92fc63>$2</color>"
+}
+_G.pg.base.gametip.skin_exchange_timelimit = {
+	tip = "以下道具的可兑换列表将于$1维护后变更，请及时前往仓库使用 "
+}
+_G.pg.base.gametip.skin_exchange_title = {
+	tip = "可兑换换装"
+}
 _G.pg.base.gametip.skin_gift_desc = {
 	tip = "从如下换装中随机获得1件换装(如果该换装已拥有，则会自动转化为该换装等价的钻石) \n包含的换装和概率如下：\n $1"
+}
+_G.pg.base.gametip.skin_purchase_confirm = {
+	tip = "是否消耗<color=#92fc63>$1*1</color>购买折扣价\n<icon name=gem w=0.6 h=0.6/><color=#FFDE38FF>$2</color>的$3皮肤"
 }
 _G.pg.base.gametip.skin_remain_time = {
 	tip = "下架剩余时间"
@@ -18786,6 +19395,128 @@ _G.pg.base.gametip.vote_final_title2 = {
 _G.pg.base.gametip.vote_get_book = {
 	tip = "获得了应援资格"
 }
+_G.pg.base.gametip.vote_help_2023 = {
+	tip = {
+		{
+			info = [[
+<color=#FFDD00>AZURLANE人气投票2023活动规则说明</color>
+
+活动说明：
+· 活动时间：<color=#92fc63>2023年12月7日 – 2024年2月5日24时</color>
+· 本次人气投票活动，将显示服务器合计投票情况。
+· 2021年投票活动进入决胜阶段<color=#92fc63>前三名</color>的角色，本次将加入<color=#92fc63>荣耀殿堂</color>。包括2017、2019年往届荣耀殿堂角色在内，共9名角色，不参与本次投票。
+· 除9名殿堂角色外，其余<color=#92fc63>2023年11月23日前</color>加入游戏的角色将参与常规投票（方案舰角色参与常规投票；联动、META、小船角色不参与常规投票；II型、Zwei型、μ型、IF型视为与本体同一角色，不参与本次人气投票）。
+
+投票券获取方式：
+指挥官等级达到25级的玩家，可以通过以下方式获得<color=#92fc63>投票券</color>。
+除趣味投票外的其他投票阶段：
+· 活动期间，通过完成<color=#92fc63>每日任务</color>，可获得<color=#92fc63>投票券</color>。每个每日任务可获得<color=#92fc63>投票券x2</color>，每日可获得上限为20张。
+· 活动期间，通过完成<color=#92fc63>期间任务</color>，可获得<color=#92fc63>投票券</color>。每个投票阶段可通过期间任务获得的投票券数量有上限。
+	期间任务可获取投票券上限：
+		预选赛：480
+		小组赛A：200
+		小组赛B：200
+		小组赛C：200
+		小组赛D：200
+		决胜复活赛：160
+		决赛：280
+· 每轮投票结束时，剩余的<color=#92fc63>投票券</color>、<color=#92fc63>期间任务进度</color>将<color=#92fc63>重置清空</color>。
+趣味投票阶段：
+活动期间，每日登陆可获得<color=#92fc63>投票券</color>。
+
+赛程安排：
+本次投票分为以下10个阶段：
+<color=#92fc63>预选赛</color>：	2023年12月7日维护后-2023年12月18日24时
+<color=#92fc63>小组赛A</color>：	2023年12月21日0时-2023年12月25日24时
+<color=#92fc63>趣味投票一</color>：2023年12月26日0时-2023年12月28日24时
+<color=#92fc63>小组赛B</color>：	2023年12月30日0时-2024年1月3日24时
+<color=#92fc63>趣味投票二</color>：2024年1月4日0时-2024年1月6日24时
+<color=#92fc63>小组赛C</color>：	2024年1月8日0时-2024年1月12日24时
+<color=#92fc63>趣味投票三</color>：2024年1月13日0时-2024年1月15日24时
+<color=#92fc63>小组赛D</color>：	2024年1月17日0时-2024年1月21日24时
+<color=#92fc63>决胜复活赛</color>：2024年1月23日0时-2024年1月26日24时
+<color=#92fc63>决赛</color>：	2024年1月30日0时-2024年2月5日24时
+
+每轮投票结束后，将在<color=#92fc63>赛程信息</color>中展示该轮投票的统计结果。
+
+各阶段规则：
+<color=#92fc63>预选赛</color>
+<color=#92fc63>预选赛</color>投票结果仅展示角色得票排名，不展示得票数量。
+<color=#92fc63>预选赛</color>由除9名殿堂角色、联动角色、META角色、小船角色外，其他角色参加。II型、Zwei型、μ型、IF型视为与本体同一角色，不参与本次人气投票。
+<color=#92fc63>预选赛</color>获得票数排名前240名的角色，将根据排名，自动
+分成4组，每组60名角色，进入<color=#92fc63>小组赛</color>。
+
+<color=#92fc63>小组赛</color>
+<color=#92fc63>小组赛</color>由<color=#92fc63>预选赛</color>前240名的角色自动分组组成，共4个小
+组，每组60名角色。
+每个小组内获得前5名的角色，将直接进入<color=#92fc63>决赛</color>，第6至第15名的角色，将进入<color=#92fc63>决胜复活赛</color>。其余角色将被淘汰。
+
+<color=#92fc63>趣味投票</color>
+<color=#92fc63>趣味投票</color>共分为3场：塞壬、META、小船。趣味投票角色不参与常规投票。
+
+<color=#92fc63>决胜复活赛</color>
+<color=#92fc63>决胜复活赛</color>由<color=#92fc63>小组赛</color>每个小组第6名至第15名的角色参加。
+<color=#92fc63>决胜复活赛</color>中的前15名角色，将进入<color=#92fc63>决赛</color>，其余角色将被淘汰。
+
+<color=#92fc63>决赛</color>
+<color=#92fc63>决赛</color>由<color=#92fc63>小组赛</color>各小组的前5名，<color=#92fc63>决胜复活赛</color>的前15名，共35名角色参加。
+
+同票规则：
+<color=#92fc63>预选赛</color>中若出现同票情况，按照达到票数的先后处理。
+<color=#92fc63>小组赛</color>、<color=#92fc63>决胜复活赛</color>、<color=#92fc63>决赛</color>中若出现同票情况，按照<color=#92fc63>预
+选赛</color>的排名先后处理。
+]]
+		}
+	}
+}
+_G.pg.base.gametip.vote_label_rank = {
+	tip = "名次"
+}
+_G.pg.base.gametip.vote_label_rank_fresh_time_tip = {
+	tip = "排行榜每半小时更新一次"
+}
+_G.pg.base.gametip.vote_lable_acc_title_1 = {
+	tip = "累计投票"
+}
+_G.pg.base.gametip.vote_lable_acc_title_2 = {
+	tip = "累计已投票 ："
+}
+_G.pg.base.gametip.vote_lable_curr_title_1 = {
+	tip = "本轮投票"
+}
+_G.pg.base.gametip.vote_lable_curr_title_2 = {
+	tip = "本轮已投票 ："
+}
+_G.pg.base.gametip.vote_lable_daily_task_tip = {
+	tip = "完成每日任务可获得$1奖励"
+}
+_G.pg.base.gametip.vote_lable_daily_task_title = {
+	tip = "每日任务"
+}
+_G.pg.base.gametip.vote_lable_not_start = {
+	tip = "未开启"
+}
+_G.pg.base.gametip.vote_lable_rearch = {
+	tip = "已达成"
+}
+_G.pg.base.gametip.vote_lable_ship_votes = {
+	tip = "$1票"
+}
+_G.pg.base.gametip.vote_lable_task_list_is_empty = {
+	tip = "本轮投票券已兑换完毕"
+}
+_G.pg.base.gametip.vote_lable_task_title = {
+	tip = "期间任务"
+}
+_G.pg.base.gametip.vote_lable_title = {
+	tip = "<size=36>赛程总时间</size> <size=32>2023/12/7 - 2024/2/5 24时</size>"
+}
+_G.pg.base.gametip.vote_lable_voting = {
+	tip = "进行中"
+}
+_G.pg.base.gametip.vote_lable_window_title = {
+	tip = "奖励一览"
+}
 _G.pg.base.gametip.vote_love_confirm = {
 	tip = "是否消耗一次真爱投票机会进行一次额外投票"
 }
@@ -18824,6 +19555,12 @@ _G.pg.base.gametip.vote_rank_refresh_time = {
 }
 _G.pg.base.gametip.vote_success = {
 	tip = "投票成功"
+}
+_G.pg.base.gametip.vote_tip_area_closed = {
+	tip = "该区域未处于开启时间内"
+}
+_G.pg.base.gametip.vote_tip_level_limit = {
+	tip = "需要指挥官等级<color=#92fc63>Lv25</color>后，才可使用换票处"
 }
 _G.pg.base.gametip.vote_vote_count = {
 	tip = "$1票"
@@ -19013,6 +19750,9 @@ _G.pg.base.gametip.word_chuansong = {
 }
 _G.pg.base.gametip.word_clear = {
 	tip = "清理"
+}
+_G.pg.base.gametip.word_click_to_close = {
+	tip = "点击空白关闭"
 }
 _G.pg.base.gametip.word_cmdClose = {
 	tip = "尚未开启"
@@ -19703,6 +20443,9 @@ _G.pg.base.gametip.word_shipNation_ryza = {
 _G.pg.base.gametip.word_shipNation_saDing = {
 	tip = "撒丁帝国"
 }
+_G.pg.base.gametip.word_shipNation_senran = {
+	tip = "闪乱神乐"
+}
 _G.pg.base.gametip.word_shipNation_ssss = {
 	tip = "SSSS"
 }
@@ -19948,6 +20691,9 @@ _G.pg.base.gametip.word_take_effect = {
 }
 _G.pg.base.gametip.word_take_video_tip = {
 	tip = "提示:录像过程中，点击右侧按钮即可结束录像"
+}
+_G.pg.base.gametip.word_talent = {
+	tip = "天赋"
 }
 _G.pg.base.gametip.word_teach = {
 	tip = "授课"
@@ -20456,7 +21202,7 @@ _G.pg.base.gametip.world_boss_help_meta = {
 			info = [[
 信标·META功能说明
 
-1. <color=#92fc63>2023.8.31-2023.12.7</color>期间限时开放「貎·META」的挑战，在此期间指挥官可挑战「貎·META」累计其同步值获取<color=#92fc63>「貎·META」角色</color>及其他丰厚奖励
+1. <color=#92fc63>2023.12.7-2024.3.7</color>期间限时开放「基洛夫·META」的挑战，在此期间指挥官可挑战「基洛夫·META」累计其同步值获取<color=#92fc63>「基洛夫·META」角色</color>及其他丰厚奖励
 <color=#ff5c5c>注意：同步值将于时间结束后消失</color>
 
 2.「信标数据」获取与解析
@@ -20477,7 +21223,7 @@ _G.pg.base.gametip.world_boss_help_meta = {
 ·同一个信标最多能允许累计30位指挥官进行挑战
 
 5.战斗说明
-·挑战信标貎·META暂不可使用指挥喵与潜艇
+·挑战信标基洛夫·META暂不可使用指挥喵与潜艇
 ·战斗结算时不会获得经验值，不会影响舰船心情值
 ·战斗中不可中途退出，如果出现网络波动导致掉线的情况：
 ①挑战自己解析的信标时将会消耗40点石油(非第一次挑战)，且不会计算已造成的伤害
@@ -20485,8 +21231,8 @@ _G.pg.base.gametip.world_boss_help_meta = {
  <color=#92fc63>请在参与作战时保持网络环境畅通</color>
 
 6.火力支援
-随着信标貎·META挑战的进行，从第31天开始，即2023.10.1~2023.12.7期间，舰队挑战「貎·META」时将会获得一次额外火力支援。火力支援会对敌人造成伤害，并为敌人施加一个持续伤害的特殊状态（不受任何加成效果影响）。随着本期信标貎·META开放的日期增加，火力支援提供的伤害也会增加。
-※此支援只会在指挥官自己发现的信标貎·META战斗中出现，每次挑战均会触发。]]
+随着信标基洛夫·META挑战的进行，从第31天开始，即2024.1.7~2024.3.7期间，舰队挑战「基洛夫·META」时将会获得一次额外火力支援。火力支援会对敌人造成伤害，并为敌人施加一个持续伤害的特殊状态（不受任何加成效果影响）。随着本期信标基洛夫·META开放的日期增加，火力支援提供的伤害也会增加。
+※此支援只会在指挥官自己发现的信标基洛夫·META战斗中出现，每次挑战均会触发。]]
 		}
 	}
 }
