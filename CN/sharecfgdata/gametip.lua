@@ -15312,6 +15312,9 @@ _G.pg.base.gametip.recently_sticker_placeholder = {
 _G.pg.base.gametip.reconnect_tip = {
 	tip = "服务器连接失败，是否重新连接？\n[$1]"
 }
+_G.pg.base.gametip.rect_ship_card_tpl_add = {
+	tip = "点击添加"
+}
 _G.pg.base.gametip.reduce_sp3_pass_count = {
 	tip = "累计通关sp3次数："
 }

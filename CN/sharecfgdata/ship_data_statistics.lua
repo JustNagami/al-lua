@@ -60336,7 +60336,8 @@ _G.pg.base.ship_data_statistics[107231] = {
 	},
 	tag_list = {
 		"Independence-Class",
-		"Eagle Union-CVL"
+		"Eagle Union-CVL",
+		"Princeton"
 	}
 }
 _G.pg.base.ship_data_statistics[107232] = {
@@ -60460,7 +60461,8 @@ _G.pg.base.ship_data_statistics[107232] = {
 	},
 	tag_list = {
 		"Independence-Class",
-		"Eagle Union-CVL"
+		"Eagle Union-CVL",
+		"Princeton"
 	}
 }
 _G.pg.base.ship_data_statistics[107233] = {
@@ -60584,7 +60586,8 @@ _G.pg.base.ship_data_statistics[107233] = {
 	},
 	tag_list = {
 		"Independence-Class",
-		"Eagle Union-CVL"
+		"Eagle Union-CVL",
+		"Princeton"
 	}
 }
 _G.pg.base.ship_data_statistics[107234] = {
@@ -60708,7 +60711,8 @@ _G.pg.base.ship_data_statistics[107234] = {
 	},
 	tag_list = {
 		"Independence-Class",
-		"Eagle Union-CVL"
+		"Eagle Union-CVL",
+		"Princeton"
 	}
 }
 _G.pg.base.ship_data_statistics[107271] = {
@@ -353117,8 +353121,8 @@ _G.pg.base.ship_data_statistics[9701033] = {
 		0
 	},
 	equipment_proficiency = {
-		1.25,
-		1.3,
+		1.1,
+		1.45,
 		1
 	},
 	strategy_list = {},
@@ -353241,8 +353245,8 @@ _G.pg.base.ship_data_statistics[9701034] = {
 		0
 	},
 	equipment_proficiency = {
-		1.3,
-		1.35,
+		1.15,
+		1.5,
 		1.05
 	},
 	strategy_list = {},
