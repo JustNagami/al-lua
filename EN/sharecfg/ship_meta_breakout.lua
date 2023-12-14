@@ -34,6 +34,10 @@ pg.ship_meta_breakout = setmetatable({
 		9702052,
 		9702053,
 		9702054,
+		9702061,
+		9702062,
+		9702063,
+		9702064,
 		9703011,
 		9703012,
 		9703013,
@@ -105,7 +109,11 @@ pg.ship_meta_breakout = setmetatable({
 		9703021,
 		9703022,
 		9703023,
-		9703024
+		9703024,
+		9713011,
+		9713012,
+		9713013,
+		9713014
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -612,6 +620,69 @@ pg.base.ship_meta_breakout = {
 		id = 9702054,
 		item1 = 21025,
 		pre_id = 9702053,
+		weapon_ids = {}
+	},
+	[9702061] = {
+		breakout_view = "Unlock Cinders of Hope - Kirov/Main gun efficiency +5%",
+		gold = 1000,
+		breakout_id = 9702062,
+		repair = 0,
+		item2 = 21028,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9702061,
+		item1 = 21028,
+		pre_id = 0,
+		weapon_ids = {
+			170241
+		}
+	},
+	[9702062] = {
+		breakout_view = "Torpedo base +1/Torpedo preload +1/Main gun efficiency +10%",
+		gold = 3000,
+		breakout_id = 9702063,
+		repair = 0,
+		item2 = 21028,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9702062,
+		item1 = 21028,
+		pre_id = 9702061,
+		weapon_ids = {
+			106,
+			106
+		}
+	},
+	[9702063] = {
+		breakout_view = "Improve Cinders of Hope - Kirov/Main gun efficiency +15%",
+		gold = 10000,
+		breakout_id = 9702064,
+		repair = 0,
+		item2 = 21028,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9702063,
+		item1 = 21028,
+		pre_id = 9702062,
+		weapon_ids = {
+			170242
+		}
+	},
+	[9702064] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21028,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9702064,
+		item1 = 21028,
+		pre_id = 9702063,
 		weapon_ids = {}
 	},
 	[9703011] = {
@@ -1804,6 +1875,72 @@ pg.base.ship_meta_breakout = {
 		id = 9703024,
 		item1 = 21023,
 		pre_id = 9703023,
+		weapon_ids = {}
+	},
+	[9713011] = {
+		breakout_view = "Unlock Cinders of Hope - Erebus/Secondary Gun base +1/Main gun efficiency +5%",
+		gold = 500,
+		breakout_id = 9713012,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9713011,
+		item1 = 21027,
+		pre_id = 0,
+		weapon_ids = {
+			21000,
+			21000
+		}
+	},
+	[9713012] = {
+		breakout_view = "Main gun base +1/Main gun efficiency +10%",
+		gold = 1500,
+		breakout_id = 9713013,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9713012,
+		item1 = 21027,
+		pre_id = 9713011,
+		weapon_ids = {
+			24100,
+			24100
+		}
+	},
+	[9713013] = {
+		breakout_view = "Improve Cinders of Hope - Erebus/Secondary Gun base +1/Main gun efficiency +15%",
+		gold = 2500,
+		breakout_id = 9713014,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9713013,
+		item1 = 21027,
+		pre_id = 9713012,
+		weapon_ids = {
+			21000,
+			21000,
+			21000
+		}
+	},
+	[9713014] = {
+		breakout_view = "N/A",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9713014,
+		item1 = 21027,
+		pre_id = 9713013,
 		weapon_ids = {}
 	}
 }

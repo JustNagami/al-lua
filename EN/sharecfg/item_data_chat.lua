@@ -85,7 +85,7 @@ pg.item_data_chat = {
 		name = "Extreme Challenge - Gemini",
 		id = 10001,
 		time_second = 0,
-		desc = "<color=#ffffff>Presented to Commanders who demonstrated the courage to challenge their limits.</color>\n<color=#A7A7AAFF>Obtained from [Extreme Challenge] (06/15/23 - 06/30/23)</color>",
+		desc = "<color=#ffffff>Presented to Commanders who demonstrated the courage to challenge their limits.</color>\n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 6/15/23 - 6/30/23 Season.</color>",
 		scene = {}
 	},
 	[10002] = {
@@ -109,7 +109,7 @@ pg.item_data_chat = {
 		name = "Extreme Challenge - Virgo",
 		id = 10004,
 		time_second = 0,
-		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Virgo. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 1/9/23 - 30/9/23 Season.</color>",
+		desc = "<color=#ffffff>Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 9/1/23 - 9/30/23 Season.</color>",
 		scene = {}
 	},
 	[10005] = {
@@ -117,15 +117,23 @@ pg.item_data_chat = {
 		name = "Extreme Challenge - Libra",
 		id = 10005,
 		time_second = 0,
-		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Libra. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 1/10/23 - 31/10/23 Season.</color>",
+		desc = "<color=#ffffff>Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 10/1/23 - 10/31/23 Season.</color>",
 		scene = {}
 	},
 	[10006] = {
 		time_limit_type = 0,
-		name = "限界的挑战者·天蝎座",
+		name = "Extreme Challenge - Scorpio",
 		id = 10006,
 		time_second = 0,
-		desc = "<color=#ffffff>献给勇于挑战极限的指挥官！</color>\n<color=#A7A7AAFF>通过参与「限界挑战」获取 </color>",
+		desc = "<color=#ffffff>Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 11/1/23 - 11/30/23 Season.</color>",
+		scene = {}
+	},
+	[10007] = {
+		time_limit_type = 0,
+		name = "Extreme Challenge - Sagittarius",
+		id = 10007,
+		time_second = 0,
+		desc = "<color=#ffffff>Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 12/1/23 - 12/31/23 Season.</color>",
 		scene = {}
 	},
 	all = {
@@ -144,6 +152,7 @@ pg.item_data_chat = {
 		10003,
 		10004,
 		10005,
-		10006
+		10006,
+		10007
 	}
 }

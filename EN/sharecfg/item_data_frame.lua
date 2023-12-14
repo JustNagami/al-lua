@@ -450,6 +450,33 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>A special portrait frame made to commemorate Bismarck.</color>\nObtained through the Azur Lane 2021 Popularity Poll.",
 		scene = {}
 	},
+	[417] = {
+		time_limit_type = 0,
+		name = "Hall of Fame: New Jersey",
+		gain_by = "",
+		id = 417,
+		time_second = 0,
+		desc = "<color=#ffffff>A special portrait frame made to commemorate New Jersey.</color>\nObtained from the Azur Lane Popularity Poll 2023.",
+		scene = {}
+	},
+	[420] = {
+		time_limit_type = 0,
+		name = "Hall of Fame: Prinz Eugen",
+		gain_by = "",
+		id = 420,
+		time_second = 0,
+		desc = "<color=#ffffff>A special portrait frame made to commemorate Prinz Eugen.</color>\nObtained from the Azur Lane Popularity Poll 2023.",
+		scene = {}
+	},
+	[421] = {
+		time_limit_type = 0,
+		name = "Hall of Fame: Friedrich der Große",
+		gain_by = "",
+		id = 421,
+		time_second = 0,
+		desc = "<color=#ffffff>A special portrait frame made to commemorate Friedrich der Große.</color>\nObtained from the Azur Lane Popularity Poll 2023.",
+		scene = {}
+	},
 	[501] = {
 		time_limit_type = 0,
 		name = "Manjuu Pizzeria Frame ",
@@ -501,7 +528,7 @@ pg.item_data_frame = {
 		gain_by = "",
 		id = 10001,
 		time_second = 0,
-		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Gemini. Presented to Commanders who demonstrated the courage to challenge their limits.</color>\nObtained from [Extreme Challenge] (06/15/23 - 06/30/23)",
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Gemini. Presented to Commanders who demonstrated the courage to challenge their limits.</color>\nObtained from [Extreme Challenge] during the 6/15/23 - 6/30/23 Season.",
 		scene = {}
 	},
 	[10002] = {
@@ -528,7 +555,7 @@ pg.item_data_frame = {
 		gain_by = "",
 		id = 10004,
 		time_second = 0,
-		desc = "<color=#ffffff>Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 1/9/23 - 30/9/23 Season.</color>",
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Virgo. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \nObtained from [Extreme Challenge] during the 9/1/23 - 9/30/23 Season.",
 		scene = {}
 	},
 	[10005] = {
@@ -537,16 +564,25 @@ pg.item_data_frame = {
 		gain_by = "",
 		id = 10005,
 		time_second = 0,
-		desc = "<color=#ffffff>Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 1/10/23 - 31/10/23 Season.</color>",
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Libra. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \nObtained from [Extreme Challenge] during the 10/1/23 - 10/31/23 Season.",
 		scene = {}
 	},
 	[10006] = {
 		time_limit_type = 0,
-		name = "限界的挑战者·天蝎座",
+		name = "Extreme Challenge - Scorpio",
 		gain_by = "",
 		id = 10006,
 		time_second = 0,
-		desc = "<color=#ffffff>结晶之中闪烁着天秤座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （23.11.01-23.11.30）",
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Scorpio. Presented to Commanders who demonstrated the courage to challenge their limits.</color>\nObtained from [Extreme Challenge] during the 11/1/23 - 11/30/23 Season.",
+		scene = {}
+	},
+	[10007] = {
+		time_limit_type = 0,
+		name = "Extreme Challenge - Sagittarius",
+		gain_by = "",
+		id = 10007,
+		time_second = 0,
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Sagittarius. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 12/1/23 - 12/31/23 Season.</color>",
 		scene = {}
 	},
 	all = {
@@ -600,6 +636,9 @@ pg.item_data_frame = {
 		406,
 		411,
 		412,
+		417,
+		420,
+		421,
 		501,
 		601,
 		602,
@@ -610,6 +649,7 @@ pg.item_data_frame = {
 		10003,
 		10004,
 		10005,
-		10006
+		10006,
+		10007
 	}
 }

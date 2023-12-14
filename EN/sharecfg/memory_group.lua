@@ -161,6 +161,11 @@ pg.memory_group = setmetatable({
 		261,
 		262,
 		263,
+		264,
+		265,
+		266,
+		267,
+		268,
 		501,
 		502,
 		503,
@@ -249,7 +254,8 @@ pg.memory_group = setmetatable({
 		588,
 		589,
 		590,
-		591
+		591,
+		592
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -1421,7 +1427,10 @@ pg.base.memory_group = {
 		memories = {
 			1874,
 			1869,
-			1875
+			1875,
+			3211,
+			3217,
+			3218
 		}
 	},
 	[167] = {
@@ -2374,7 +2383,7 @@ pg.base.memory_group = {
 		subtype = 1,
 		icon = "title_event",
 		type = 2,
-		link_event = 0,
+		link_event = 5069,
 		title = "Upon the Shimmering Blue ",
 		memories = {
 			1801,
@@ -3830,6 +3839,135 @@ pg.base.memory_group = {
 			3096,
 			3097,
 			3098
+		}
+	},
+	[264] = {
+		id = 264,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5054,
+		title = "A Bump in the Rainy Night",
+		memories = {
+			3101,
+			3102,
+			3103,
+			3104,
+			3105,
+			3106,
+			3107,
+			3108,
+			3109,
+			3110,
+			3111,
+			3112,
+			3113,
+			3114,
+			3115,
+			3116,
+			3117,
+			3118,
+			3119,
+			3120,
+			3121,
+			3122,
+			3123,
+			3124,
+			3125,
+			3126,
+			3127,
+			3128
+		}
+	},
+	[265] = {
+		id = 265,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5082,
+		title = "Today's Featured Product",
+		memories = {
+			3141,
+			3142,
+			3143
+		}
+	},
+	[266] = {
+		id = 266,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5101,
+		title = "The Ninja Scrolls: Azur Flash",
+		memories = {
+			3151,
+			3152,
+			3153,
+			3154,
+			3155,
+			3156,
+			3157,
+			3158,
+			3159,
+			3160,
+			3161,
+			3162,
+			3163,
+			3164,
+			3165,
+			3166,
+			3167,
+			3168,
+			3169,
+			3170,
+			3171,
+			3172,
+			3173,
+			3174
+		}
+	},
+	[267] = {
+		id = 267,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5096,
+		title = "The Ninja Scrolls: At Your Leisure",
+		memories = {
+			3181,
+			3182,
+			3183,
+			3184,
+			3185,
+			3186,
+			3187
+		}
+	},
+	[268] = {
+		id = 268,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 1068,
+		title = "Popularity Poll 2023",
+		memories = {
+			3191,
+			3192,
+			3193,
+			3194,
+			3195,
+			3196,
+			3197,
+			3198,
+			3199,
+			3200,
+			3201,
+			3202,
+			3203,
+			3204,
+			3205,
+			3206,
+			3207
 		}
 	},
 	[501] = {
@@ -5356,6 +5494,23 @@ pg.base.memory_group = {
 			3055,
 			3056,
 			3057
+		}
+	},
+	[592] = {
+		id = 592,
+		subtype = 0,
+		icon = "title_chara_pangpei",
+		type = 3,
+		link_event = 0,
+		title = "Captain Pompey Has You Covered!",
+		memories = {
+			3131,
+			3132,
+			3133,
+			3134,
+			3135,
+			3136,
+			3137
 		}
 	}
 }

@@ -1175,6 +1175,41 @@ pg.player_resource = {
 		name = "haidao_pt",
 		itemid = 59497
 	},
+	[377] = {
+		id = 377,
+		name = "skinTicket59",
+		itemid = 59498
+	},
+	[378] = {
+		id = 378,
+		name = "rixiv2_pt1",
+		itemid = 59500
+	},
+	[379] = {
+		id = 379,
+		name = "commission_pt3",
+		itemid = 59501
+	},
+	[380] = {
+		id = 380,
+		name = "shanluan_pt",
+		itemid = 59506
+	},
+	[381] = {
+		id = 381,
+		name = "shanluan_mission_pt",
+		itemid = 59508
+	},
+	[382] = {
+		id = 382,
+		name = "skinTicket60",
+		itemid = 59509
+	},
+	[383] = {
+		id = 383,
+		name = "newserver_pt_231123",
+		itemid = 59512
+	},
 	[950] = {
 		id = 950,
 		name = "yisegefuke_pt1",
@@ -1375,6 +1410,11 @@ pg.player_resource = {
 		name = "synchronize_shentong",
 		itemid = 21912
 	},
+	[3014] = {
+		id = 3014,
+		name = "synchronize_jiluofu",
+		itemid = 21913
+	},
 	[3106] = {
 		id = 3106,
 		name = "twhongran_pt",
@@ -1450,6 +1490,11 @@ pg.player_resource = {
 		name = "Battlepass_13",
 		itemid = 59493
 	},
+	[4014] = {
+		id = 4014,
+		name = "Battlepass_14",
+		itemid = 59510
+	},
 	[4186] = {
 		id = 4186,
 		name = "skin_rerun_pt1",
@@ -1468,6 +1513,11 @@ pg.player_resource = {
 	[4699] = {
 		id = 4699,
 		name = "skin_rerun_pt_jp2023",
+		itemid = 0
+	},
+	[5081] = {
+		id = 5081,
+		name = "skin_rerun_pt_us2023",
 		itemid = 0
 	},
 	[100004] = {
@@ -2191,6 +2241,27 @@ pg.player_resource = {
 		haidao_pt = {
 			376
 		},
+		skinTicket59 = {
+			377
+		},
+		rixiv2_pt1 = {
+			378
+		},
+		commission_pt3 = {
+			379
+		},
+		shanluan_pt = {
+			380
+		},
+		shanluan_mission_pt = {
+			381
+		},
+		skinTicket60 = {
+			382
+		},
+		newserver_pt_231123 = {
+			383
+		},
 		yisegefuke_pt1 = {
 			950
 		},
@@ -2311,6 +2382,9 @@ pg.player_resource = {
 		synchronize_shentong = {
 			3013
 		},
+		synchronize_jiluofu = {
+			3014
+		},
 		twhongran_pt = {
 			3106
 		},
@@ -2356,6 +2430,9 @@ pg.player_resource = {
 		Battlepass_13 = {
 			4013
 		},
+		Battlepass_14 = {
+			4014
+		},
 		skin_rerun_pt1 = {
 			4186
 		},
@@ -2367,6 +2444,9 @@ pg.player_resource = {
 		},
 		skin_rerun_pt_jp2023 = {
 			4699
+		},
+		skin_rerun_pt_us2023 = {
+			5081
 		},
 		skin_rerun_pt = {
 			100004
@@ -2614,6 +2694,13 @@ pg.player_resource = {
 		371,
 		375,
 		376,
+		377,
+		378,
+		379,
+		380,
+		381,
+		382,
+		383,
 		950,
 		951,
 		952,
@@ -2654,6 +2741,7 @@ pg.player_resource = {
 		3011,
 		3012,
 		3013,
+		3014,
 		3106,
 		3137,
 		4001,
@@ -2669,10 +2757,12 @@ pg.player_resource = {
 		4011,
 		4012,
 		4013,
+		4014,
 		4186,
 		4276,
 		4599,
 		4699,
+		5081,
 		100004,
 		40275,
 		30853

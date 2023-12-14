@@ -314,6 +314,9 @@ pg.skill_data_template = setmetatable({
 		60440,
 		60450,
 		60460,
+		60470,
+		60480,
+		60490,
 		7000,
 		9010,
 		9020,
@@ -332,6 +335,7 @@ pg.skill_data_template = setmetatable({
 		9110,
 		9120,
 		9709,
+		9711,
 		10010,
 		10020,
 		10030,
@@ -1776,6 +1780,35 @@ pg.skill_data_template = setmetatable({
 		109340,
 		109350,
 		109360,
+		110010,
+		110020,
+		110030,
+		110040,
+		110050,
+		110060,
+		110070,
+		110080,
+		110090,
+		110100,
+		110110,
+		110120,
+		110130,
+		110140,
+		110150,
+		110160,
+		110170,
+		110180,
+		110190,
+		110200,
+		110210,
+		110220,
+		110310,
+		110320,
+		110330,
+		110340,
+		110350,
+		110360,
+		110370,
 		800010,
 		800020,
 		800030,
@@ -1952,6 +1985,19 @@ pg.skill_data_template = setmetatable({
 		800982,
 		800985,
 		800987,
+		800990,
+		801000,
+		801011,
+		801012,
+		801015,
+		801017,
+		801020,
+		801030,
+		801040,
+		801051,
+		801052,
+		801055,
+		801057,
 		901010,
 		901020,
 		902010,
@@ -2035,7 +2081,9 @@ pg.skill_data_template = setmetatable({
 		1090150,
 		1090160,
 		1090170,
-		1090180
+		1090180,
+		1090190,
+		1090200
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -11230,7 +11278,7 @@ pg.base.skill_data_template = {
 		id = 60120,
 		type = 0,
 		max_level = 0,
-		desc = "Increases the Ammo Capacity of the ship equipping this gear by +1.",
+		desc = "Increases AMO by 1 for the boat equipping this gear (the Submarine Fleet's AMO cap is 6.)",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -11702,11 +11750,11 @@ pg.base.skill_data_template = {
 	},
 	[60450] = {
 		desc_get = "",
-		name = "航海望远镜",
+		name = "Nautical Telescope",
 		id = 60450,
 		type = 0,
 		max_level = 0,
-		desc = "狩猎范围等级+1",
+		desc = "Increases ASR by 1 for the boat equipping this gear.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -11716,11 +11764,53 @@ pg.base.skill_data_template = {
 	},
 	[60460] = {
 		desc_get = "",
-		name = "果蔬补给品",
+		name = "Fruit Rations",
 		id = 60460,
 		type = 0,
 		max_level = 0,
-		desc = "在战斗中受到伤害，导致耐久低于60%时，恢复自身5%耐久（每场战斗仅能发动一次）",
+		desc = "Once per battle, when the ship with this gear's HP falls below 60.0% as a result of DMG taken: restores 5.0% of that ship's max HP.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60470] = {
+		desc_get = "",
+		name = "Shinobi Medal",
+		id = 60470,
+		type = 0,
+		max_level = 0,
+		desc = "Changes the battle music when equipped. If additional gear that changes the battle music is active at the same time, only a randomly chosen one will take effect.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60480] = {
+		desc_get = "",
+		name = "Shinobi Attire",
+		id = 60480,
+		type = 0,
+		max_level = 0,
+		desc = "The ship equipping this gear is treated as a Senran Kagura collab character.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60490] = {
+		desc_get = "",
+		name = "Ninjutsu Scroll",
+		id = 60490,
+		type = 0,
+		max_level = 0,
+		desc = "When equipped by a Senran Kagura collab character: 30s after the battle starts, fires a special barrage from your Vanguard's frontmost ship (DMG is based on the FP stat of the ship equipping this gear; if equipped by a Senran Kagura submarine: performs this special barrage at the start of the battle instead).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -12524,6 +12614,20 @@ pg.base.skill_data_template = {
 		desc_get = "",
 		name = "Future Content ",
 		id = 9709,
+		type = 0,
+		max_level = 0,
+		desc = "",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[9711] = {
+		desc_get = "",
+		name = "布里之誓·purin",
+		id = 9711,
 		type = 0,
 		max_level = 0,
 		desc = "",
@@ -83498,11 +83602,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17160] = {
 		desc_get = "",
-		name = "暗影无形",
+		name = "Unseen Phantom",
 		id = 17160,
 		type = 1,
 		max_level = 10,
-		desc = "战斗中，自身造成的伤害提高$1；自身受到攻击时，有$2概率进入【暗影】状态，【暗影】状态持续5秒，持续期间自身回避率提高$3，结束后发射一轮特殊弹幕$4（弹幕威力依据技能等级），【暗影】状态触发后进入15秒冷却",
+		desc = "Increases this ship's DMG dealt by $1. When this ship is attacked: $2 chance for this ship to enter the Phantom state. \nThis state increases her Evasion Rate by $3 and lasts for 5s. When this state ends: fires a $4 special barrage (DMG is based on the skill's level). There is a 15s cooldown between Phantom state activations.",
 		system_transform = {
 			[11.0] = 3500
 		},
@@ -83687,11 +83791,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17170] = {
 		desc_get = "",
-		name = "深海的幽灵",
+		name = "Ghost Ship of the Deep",
 		id = 17170,
 		type = 2,
 		max_level = 10,
-		desc = "进入战斗后，自身炮击属性提高$1，恢复自身25%耐久；战斗中，因自身技能效果导致回避率上升时，恢复自身$2耐久；在战斗中受到伤害导致自身耐久首次低于40%后5秒，或自身参加作战超过60秒后，召唤一个继承自身部分属性的【幽灵船】（幽灵船不会攻击、继承属性的百分比随技能等级提高)，【幽灵船】持续存在时间5秒，召唤【幽灵船】的同时自身撤退并离开战斗",
+		desc = "When the battle starts: increases this ship's FP by $1 and restores 25.0% of her max HP. When this ship's Evasion Rate increases as a result of her skills activating: restores $2 of this ship's max HP. \nOnce per battle, 5s after this ship's HP falls below 40.0% as a result of DMG taken, or 60s after she has entered the battle: summons a Ghost Ship which copies some of this ship's stats, then this ship leaves the battle. The Ghost Ship lasts for 5s, does not attack, and the percentages of stats it copies increases based on the skill's level.",
 		system_transform = {
 			[11.0] = 3500
 		},
@@ -83811,11 +83915,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17190] = {
 		desc_get = "",
-		name = "黄金光辉永不黯淡",
+		name = "Untarnishable Brilliance of Gold",
 		id = 17190,
 		type = 3,
 		max_level = 10,
-		desc = "战斗开始后，自身炮击属性提升$1，受到的伤害降低$2，并获得一枚护盾，抵消自身耐久$3的伤害，护盾持续30秒；在队伍中（存活）时，队伍中飓风阵营角色炮击属性提升$1，造成的伤害提升$1",
+		desc = "When the battle starts: deploys a barrier (lasts 30s) that can negate up to $3 of this ship's max HP in DMG, and increases this ship's FP by $1 and decreases her DMG taken by $2 until the battle ends. While this ship is afloat: increases your Tempesta ships' FP and DMG dealt by $1.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -83962,11 +84066,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17200] = {
 		desc_get = "",
-		name = "圣洁轰炸",
+		name = "Peerless Cannons of Destruction",
 		id = 17200,
 		type = 1,
 		max_level = 10,
-		desc = "战斗开始时，若队伍中存在至少2个飓风阵营角色，自身首轮主炮装填时间缩短$1；自身每次主炮发射时，触发一轮特殊弹幕$2（威力依据技能等级）",
+		desc = "When the battle starts, if there are 2 or more Tempesta ships in your fleet: decreases the loading time of this ship's first volley by $1. When this ship fires her Main Guns: fires a $2 special barrage (DMG is based on the skill's level).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -84059,11 +84163,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17210] = {
 		desc_get = "",
-		name = "只为安眠",
+		name = "For a Good Night's Sleep",
 		id = 17210,
 		type = 1,
 		max_level = 10,
-		desc = "进入战斗时及进入战斗后每10秒，进行一次特殊攻击$1（威力依据技能等级）",
+		desc = "When the battle starts, and every 10s: performs a $1 special attack (DMG is based on the skill's level).",
 		system_transform = {
 			[11.0] = 3500
 		},
@@ -84113,11 +84217,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17220] = {
 		desc_get = "",
-		name = "困了…",
+		name = "What a Pain...",
 		id = 17220,
 		type = 3,
 		max_level = 10,
-		desc = "进入战斗后，自身炮击属性提高$1并在五秒内每秒回复自身$2耐久；自身在战斗中受到伤害，导致耐久首次低于30%后5秒，或自身参加作战超过45秒后，撤退并离开战斗",
+		desc = "Increases this ship's FP by $1. When the battle starts: restores $2 of her max HP once per second for 5s. 5s after this ship's HP falls below 30.0% as a result of DMG taken, or 45s after she has entered the battle: this ship leaves the battle.",
 		system_transform = {
 			[11.0] = 3500
 		},
@@ -84237,11 +84341,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17240] = {
 		desc_get = "",
-		name = "迷雾之境",
+		name = "Pierce the Mistveil",
 		id = 17240,
 		type = 1,
 		max_level = 10,
-		desc = "战斗开始时，自身炮击、装填属性提高$1；围绕自身生成领域，领域内的敌方单位航速降低$2且每秒受到30点伤害，若战斗开始时队伍中存在其他飓风阵营角色，领域每秒造成的伤害提高至60点",
+		desc = "Increases this ship's FP and RLD by $1. Creates a Deep Domain area around this ship that decreases the enemy's SPD by $2 and inflicts 30 DMG every second to enemies within it; when the battle starts, if there is another Tempesta ship in your fleet, this DMG is increased to 60.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -84343,11 +84447,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17250] = {
 		desc_get = "",
-		name = "深海的恩典",
+		name = "Hindhorn's Grace",
 		id = 17250,
 		type = 3,
 		max_level = 10,
-		desc = "战斗中，自身受到的伤害降低$1，每18秒触发一轮特殊弹幕$2（威力依据技能等级）；自身在战斗中受到伤害导致耐久低于40%时，回复自身$1最大耐久并在3秒内回避所有伤害，每场战斗最多触发一次",
+		desc = "Decreases this ship's DMG taken by $1 and, every 18s, fires a $2 special barrage (DMG is based on the skill's level).\nOnce per battle, when this ship's HP falls below 40.0% as a result of DMG taken: this ship evades all attacks for 3s and recovers $1 of her max HP.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -84440,11 +84544,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17260] = {
 		desc_get = "",
-		name = "狂暴之爪",
+		name = "Claws of Mistrust",
 		id = 17260,
 		type = 1,
 		max_level = 10,
-		desc = "战斗开始时，自身机动属性提高$1；自身一号武器栏位武器开火时，触发一轮特殊弹幕$2（威力依据技能等级）",
+		desc = "Increases this ship's EVA by $1. When this ship fires the weapon in her Main Gun slot: additionally fires a $2 special barrage (DMG is based on the skill's level).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -84537,11 +84641,11 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 	},
 	[17270] = {
 		desc_get = "",
-		name = "宝藏守护",
+		name = "Treasure of the Loyal Protector",
 		id = 17270,
 		type = 3,
 		max_level = 10,
-		desc = "战斗开始时，自身回避率提高$1；自身在战斗中受到伤害导致耐久低于35%时，回复自身$2最大耐久，每场战斗最多触发一次",
+		desc = "Increases this ship's Evasion Rate by $1. Once per battle, when this ship's HP falls below 35.0% as a result of DMG taken: restores $2 of this ship's max HP.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101736,11 +101840,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[30131] = {
 		desc_get = "",
-		name = "专属弹幕-玛丽·西莱斯特号I",
+		name = "All Out Assault I",
 		id = 30131,
 		type = 1,
 		max_level = 1,
-		desc = "主炮每进行28次攻击，触发专属弹幕-玛丽·西莱斯特号I",
+		desc = "Activates All Out Assault I: Mary Celeste once every 28 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101750,11 +101854,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[30132] = {
 		desc_get = "",
-		name = "专属弹幕-玛丽·西莱斯特号II",
+		name = "All Out Assault II",
 		id = 30132,
 		type = 1,
 		max_level = 1,
-		desc = "主炮每进行40次攻击，触发专属弹幕-玛丽·西莱斯特号II",
+		desc = "Activates All Out Assault II: Mary Celeste once every 40 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101764,11 +101868,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[30141] = {
 		desc_get = "",
-		name = "专属弹幕-维达号I",
+		name = "All Out Assault I",
 		id = 30141,
 		type = 1,
 		max_level = 1,
-		desc = "主炮每进行28次攻击，触发专属弹幕-维达号I",
+		desc = "Activates All Out Assault I: Whydah once every 28 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101778,11 +101882,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[30142] = {
 		desc_get = "",
-		name = "专属弹幕-维达号II",
+		name = "All Out Assault II",
 		id = 30142,
 		type = 1,
 		max_level = 1,
-		desc = "主炮每进行40次攻击，触发专属弹幕-维达号II",
+		desc = "Activates All Out Assault II: Whydah once every 40 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101792,11 +101896,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[30151] = {
 		desc_get = "",
-		name = "专属弹幕-金鹿号I",
+		name = "All Out Assault I",
 		id = 30151,
 		type = 1,
 		max_level = 1,
-		desc = "主炮每进行22次攻击，触发专属弹幕-金鹿号I",
+		desc = "Activates All Out Assault I: Golden Hind once every 22 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101806,11 +101910,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[30152] = {
 		desc_get = "",
-		name = "专属弹幕-金鹿号II",
+		name = "All Out Assault II",
 		id = 30152,
 		type = 1,
 		max_level = 1,
-		desc = "主炮每进行30次攻击，触发专属弹幕-金鹿号II",
+		desc = "Activates All Out Assault II: Golden Hind once every 30 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101820,11 +101924,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[30161] = {
 		desc_get = "",
-		name = "专属弹幕-加里冒险号I",
+		name = "All Out Assault I",
 		id = 30161,
 		type = 1,
 		max_level = 1,
-		desc = "主炮每进行30次攻击，触发专属弹幕-加里冒险号I",
+		desc = "Activates All Out Assault I: Adventure Galley once every 30 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101834,11 +101938,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[30162] = {
 		desc_get = "",
-		name = "专属弹幕-加里冒险号II",
+		name = "All Out Assault II",
 		id = 30162,
 		type = 1,
 		max_level = 1,
-		desc = "主炮每进行20次攻击，触发专属弹幕-加里冒险号II",
+		desc = "Activates All Out Assault II: Adventure Galley once every 20 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -115062,6 +115166,2736 @@ One of the following two effects apply based on what type of weapon this ship ha
 		desc_get_add = {},
 		desc_add = {}
 	},
+	[110010] = {
+		desc_get = "",
+		name = "Twin Blades - Followup Slash",
+		id = 110010,
+		type = 1,
+		max_level = 10,
+		desc = "When the battle starts: increases this ship's Crit DMG by $1 for every Senran Kagura collab character in your fleet(can be stacked up to 3 times).\nEvery 12s: applies a debuff to the enemy with the lowest HP remaining, increasing their DMG taken from Senran Kagura collab characters by $2, and performs a $3 special attack - Twin Blades - Followup Slash (DMG is based on the skill's level and this ship's FP and TRP stats). When this attack activates, if there is only 1 enemy on the battlefield: this attack deals guaranteed Crit DMG. $4",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"",
+				",If this special attack sinks an enemy: performs Twin Blades - Followup Slash again (10s cooldown between activations)."
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					",If this special attack sinks an enemy: performs Twin Blades - Followup Slash again (10s cooldown between activations)."
+				}
+			}
+		}
+	},
+	[110020] = {
+		desc_get = "",
+		name = "Twin Blades Combo Strike",
+		id = 110020,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's FP and TRP by $1. Once per battle, when this ship's HP falls below 30.0% as a result of DMG taken: increases this ship's Evasion Rate by $2 and performs a $3 special attack (DMG is based on the skill's level and this ship's FP and TRP stats). Restores this ship's HP equal to 12.0% of the DMG dealt by this attack.\nWhen this attack activates, if there is only 1 enemy on the battlefield: this attack deals guaranteed Crit DMG.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110030] = {
+		desc_get = "",
+		name = "Twin Blades Combo Strike+",
+		id = 110030,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's FP and TRP by $1. When the battle starts, if there is another Senran Kagura collab character in your fleet: increases this ship's EVA by $1.\nOnce per battle, when this ship's HP falls below 30.0% as a result of DMG taken: increases this ship's Evasion Rate by $2 and performs a $3 Secret Ninja Art: Hanzō-Style Full Bloom (DMG is based on the skill's level and this ship's FP and TRP stats). Restores this ship's HP equal to 15.0% of the DMG dealt by this Secret Ninja Art.\nWhen this Secret Ninja Art activates, if there is only 1 enemy on the battlefield: this attack deals guaranteed Crit DMG. $4",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"",
+				",If Hanzō-Style Full Bloom sinks an enemy: additionally performs Twin Blades - Followup Slash 3 times."
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					",If Hanzō-Style Full Bloom sinks an enemy: additionally performs Twin Blades - Followup Slash 3 times."
+				}
+			}
+		}
+	},
+	[110040] = {
+		desc_get = "",
+		name = "Fierce Sky Phoenix Flash",
+		id = 110040,
+		type = 1,
+		max_level = 10,
+		desc = "Every 25s: this ship stops in place for 3s and fires a $1 special barrage (DMG is based on the skill's level). \nWhen this ship stops in place as a result of this skill: deploys a barrier (lasts 3s) capable of blocking up to 2.0% of this ship's max HP in DMG; if this shield expires: performs a $2 special slash attack (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110050] = {
+		desc_get = "",
+		name = "Phoenix's Superb Fire Dance",
+		id = 110050,
+		type = 3,
+		max_level = 10,
+		desc = "Every 10s: increases this ship's ACC and RLD by $1 for 5s and, with an 80.0% chance, fires a $2 torpedo barrage (DMG is based on the skill's level).\nOnce per battle, when this ship's HP falls below 60.0%: decreases this ship's DMG taken by 10.0% and increases her EVA by $3 and FP and TRP by $4 until the battle ends.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"4.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"4.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[110060] = {
+		desc_get = "",
+		name = "Fierce Sky Phoenix Flash+",
+		id = 110060,
+		type = 1,
+		max_level = 10,
+		desc = "Every 25s: this ship stops in place for 3s and fires a $1 special barrage (DMG is based on the skill's level) and performs a $2 Secret Ninja Art: Superb Phoenix Flash (DMG is based on the skill's level). \nWhen this ship stops in place as a result of this skill: deploys a barrier (lasts 3s) capable of blocking up to 3.0% of this ship's max HP in DMG; if this shield expires: performs a $3 special slash barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110070] = {
+		desc_get = "",
+		name = "Blaze of Sacrifice",
+		id = 110070,
+		type = 1,
+		max_level = 10,
+		desc = "When this boat surfaces: fires a $1 special barrage I that inflicts a special Burn ailment for 6s to enemies hit (barrage DMG is based on the skill's level; special Burn DMG is based on this boat's TRP stat).",
+		system_transform = {
+			[11.0] = 3500
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110080] = {
+		desc_get = "",
+		name = "Flaming Crimson",
+		id = 110080,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this boat's TRP stat by $1. When this boat leaves the battle: fires a $2 special barrage II (DMG is based on the skill's level) and removes your fleet's non-special Burn ailments.",
+		system_transform = {
+			[11.0] = 3500
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110090] = {
+		desc_get = "",
+		name = "Blaze of Sacrifice+",
+		id = 110090,
+		type = 1,
+		max_level = 10,
+		desc = "5s after the battle starts: this boat surfaces and performs a $1 Secret Ninja Art: Charge, inflicting a special Burn ailment to enemies hit for 20s (Secret Ninja Art DMG is based on the skill's level; special Burn DMG is based on the boat's TRP stat).\nWhile this boat performs this Secret Ninja Art: this boat recovers 10 OXY every second and the first 3 attacks that hit her have their DMG set to 1. This boat submerges after she has finished attacking, and will surface a second time when her OXY runs out.\nWhile an enemy afflicted with the special Burn caused by this skill is afloat: increases this boat's Crit DMG by $2.",
+		system_transform = {
+			[11.0] = 3500
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.6%"
+				},
+				{
+					"6.6%",
+					"+1.6%"
+				},
+				{
+					"8.2%",
+					"+1.8%"
+				},
+				{
+					"10.0%",
+					"+1.6%"
+				},
+				{
+					"11.6%",
+					"+1.6%"
+				},
+				{
+					"13.2%",
+					"+1.8%"
+				},
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.8%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
+	[110100] = {
+		desc_get = "",
+		name = "Fan Dance of Ice and Snow",
+		id = 110100,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's AVI by $1. When this ship launches an airstrike: launches an additional $2 special airstrike (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110110] = {
+		desc_get = "",
+		name = "Frozen Trees in Heavenly Storm",
+		id = 110110,
+		type = 1,
+		max_level = 10,
+		desc = "Once per battle, when this ship's HP falls below 50.0% as a result of DMG taken: restores $1 of this ship's max HP. When this ship's Detection Gauge value reaches 0: fires a $2 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110120] = {
+		desc_get = "",
+		name = "Fan Dance of Ice and Snow+",
+		id = 110120,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's AVI by $1. When this ship launches an airstrike: performs a $2 Secret Ninja Art: Performance - Ice Valley (DMG is based on the skill's level).\nWhen this Secret Ninja Art hits an enemy: inflicts the Snow Dance ailment, reducing their SPD by 30.0% for 5s; if hitting an enemy already inflicted with Snow Dance: saves 1 stack (maximum of 5 stacks); 20.0% chance to set the enemy's SPD to 0 for 2s for each stack.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110130] = {
+		desc_get = "",
+		name = "Management Member's Pressure",
+		id = 110130,
+		type = 3,
+		max_level = 10,
+		desc = "Decreases this ship's DMG taken by 8.0%. While this ship is afloat: increases your Vanguard's AA and RLD by $4 and increases your Flagship's DMG dealt by 5.0%.\nIncreases the DMG of this ship's first volley by $1. Increases this ship's DMG dealt to Heavy Armor enemies by $2. Enemies hit by this ship's Main Guns suffer $3 decreased FP, TRP, and AVI for 8s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"30.0%",
+				"60.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"3.5%",
+				"8.0%"
+			},
+			{
+				"4.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"30.0%",
+					"+3.3%"
+				},
+				{
+					"33.3%",
+					"+3.3%"
+				},
+				{
+					"36.6%",
+					"+3.3%"
+				},
+				{
+					"39.9%",
+					"+3.3%"
+				},
+				{
+					"43.2%",
+					"+3.3%"
+				},
+				{
+					"46.5%",
+					"+3.3%"
+				},
+				{
+					"49.8%",
+					"+3.3%"
+				},
+				{
+					"53.1%",
+					"+3.3%"
+				},
+				{
+					"56.4%",
+					"+3.6%"
+				},
+				{
+					"60.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[110140] = {
+		desc_get = "",
+		name = "Purple Ice Blast",
+		id = 110140,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's FP and ACC by $1. When this ship fires her Main Guns: $2 chance to fire a $3 special barrage (DMG is based on the skill's level). Enemies hit 5 times by this barrage suffer a special Armor Break ailment and take 5.0% increased airstrike DMG from your ships until the battle ends.",
+		system_transform = {
+			[3.0] = 110143
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110150] = {
+		desc_get = "",
+		name = "Purple Ice Blast+",
+		id = 110150,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's FP and ACC by $1. When this ship fires her Main Guns: $2 chance to perform a $3 Secret Ninja Art: Purple Ice, Linked Fangs. Enemies hit 5 times by this Secret Ninja Art suffer a special Armor Break ailment and take 5.0% increased airstrike DMG from your ships until the battle ends.",
+		system_transform = {
+			[3.0] = 110153
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"50.0%",
+				"100.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"50.0%",
+					"+5.5%"
+				},
+				{
+					"55.5%",
+					"+5.5%"
+				},
+				{
+					"61%",
+					"+5.5%"
+				},
+				{
+					"66.5%",
+					"+5.5%"
+				},
+				{
+					"72.0%",
+					"+5.5%"
+				},
+				{
+					"77.5%",
+					"+5.5%"
+				},
+				{
+					"83.0%",
+					"+5.5%"
+				},
+				{
+					"88.5%",
+					"+5.5%"
+				},
+				{
+					"94.0%",
+					"+6.0%"
+				},
+				{
+					"100.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110160] = {
+		desc_get = "",
+		name = "Bebeby, Hide Me!",
+		id = 110160,
+		type = 2,
+		max_level = 10,
+		desc = "Increases this ship's max Detection Gauge value by 15 and increases her AA and AVI by $1. 20s after the battle starts: designates 1 random enemy; restores $2 of this ship's max HP when that enemy is defeated.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[110170] = {
+		desc_get = "",
+		name = "Root of Calamity Storm",
+		id = 110170,
+		type = 1,
+		max_level = 10,
+		desc = "While this ship is afloat, when your Main Fleet has been attacked 5 times: this ship gains 1 Root of Calamity's Wrath (does not stack); when this ship launches an airstrike: expends the stack and fires a $1 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110180] = {
+		desc_get = "",
+		name = "Root of Calamity Storm+",
+		id = 110180,
+		type = 1,
+		max_level = 10,
+		desc = "Decreases the loading time of this ship's first airstrike by 45.0%. While this ship is afloat, when your Main Fleet has been attacked 5 times: this ship gains 1 Root of Calamity's Wrath (does not stack); when this ship launches an airstrike: expends the stack and performs a $1 Secret Ninja Art: Someone, Save Me (DMG is based on the skill's level). Enemies hit by this Secret Ninja Art are Poisoned for 20s, inflicting 105 DMG to them every second.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110190] = {
+		desc_get = "",
+		name = "Soul of Tohno",
+		id = 110190,
+		type = 3,
+		max_level = 10,
+		desc = [[
+When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this ship's RLD by 5.0% (can be stacked up to 3 times). When this buff reaches its max stacks, the following effects activate: 
+1) Performs a $2 slash attack; 
+2) Increases this ship's Main Gun DMG dealt by 10.0% until the battle ends; 
+3) Until the battle ends, if the skill Enka Tuypa's special barrage activates: performs an additional $1 special slash attack (slash attack DMG is based on the skill's level).]],
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110200] = {
+		desc_get = "",
+		name = "Enka Tuypa",
+		id = 110200,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's ACC by $1. Every 4 times this ship fires her Main Guns: fires this ship's Main Guns again as well as a $2 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110210] = {
+		desc_get = "",
+		name = "Soul of Tohno+",
+		id = 110210,
+		type = 1,
+		max_level = 10,
+		desc = [[
+When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this ship's RLD by 5.0% (can be stacked up to 3 times). When this buff reaches its max stacks, the following effects activate:
+1) Performs a $2 Secret Ninja Art: Poro Kamuyasi;
+2) Increases this ship's Main Gun DMG dealt by 10.0% until the battle ends;
+3) Until the battle ends, if the skill Enka Tuypa's special barrage activates: performs an additional $2 Secret Ninja Art: Poro Kamuyasi (DMG is based on the skill's level).]],
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[110220] = {
+		desc_get = "",
+		name = "New Link Chance!",
+		id = 110220,
+		type = 1,
+		max_level = 10,
+		desc = "彩蛋效果占用，描述不需要本地化（战斗开始后5秒，若队伍中全部都为携带了特殊兵装的闪乱神乐角色，旗舰触发一轮特殊弹幕(威力依据防空属性，箱子数量随机2~7)）",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[110310] = {
+		desc_get = "",
+		name = "Twin Blades - Two-Sided Winding Flash",
+		id = 110310,
+		type = 1,
+		max_level = 1,
+		desc = "In battle, increases this ship's LCK by 9 and decreases her DMG taken by 10.0%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[110320] = {
+		desc_get = "",
+		name = "Sword Draw - Phoenix's Flashing Flight",
+		id = 110320,
+		type = 1,
+		max_level = 1,
+		desc = "Increases this ship's LCK by 6. Every 20s: decreases the FP, TRP, and AVI of a random enemy by 5.0% for 5s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[110330] = {
+		desc_get = "",
+		name = "Six Swords - Homura the Pioneer",
+		id = 110330,
+		type = 1,
+		max_level = 1,
+		desc = "Increases this boat's LCK by 12 and Torpedo Crit Rate by 10.0%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[110340] = {
+		desc_get = "",
+		name = "Folding Fan - Frosty Sleeves Snow Dance",
+		id = 110340,
+		type = 1,
+		max_level = 1,
+		desc = "Increases this ship's LCK by 7 and increases her ACC and RLD by 15.0%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[110350] = {
+		desc_get = "",
+		name = "Feather Fan - Purple Ice Linked Blossoms",
+		id = 110350,
+		type = 1,
+		max_level = 1,
+		desc = "Increases this ship's LCK by 4. Once per battle, when this ship's HP falls below 50.0% as a result of DMG taken: increases this ship's FP by 10.0% until the battle ends.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[110360] = {
+		desc_get = "",
+		name = "Shuriken - Full Moon Hidden in Shade",
+		id = 110360,
+		type = 1,
+		max_level = 1,
+		desc = "Decreases(?) this ship's LCK by 6 and increases her AVI by 5.0% and EVA by 10.0%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[110370] = {
+		desc_get = "",
+		name = "Tachis - Hankane",
+		id = 110370,
+		type = 1,
+		max_level = 1,
+		desc = "Increases this ship's LCK by 9. When this ship's Main or Secondary Gun hits an enemy: 10.0% chance to decrease that enemy's DMG dealt by 5.0% for 5s (10s cooldown between activations).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
 	[800010] = {
 		desc_get = "",
 		name = "Shadowflame Torch",
@@ -123615,6 +126449,637 @@ One of the following two effects apply based on what type of weapon this ship ha
 		desc_get_add = {},
 		desc_add = {}
 	},
+	[800990] = {
+		desc_get = "",
+		name = "Descend Upon a Nightmare",
+		id = 800990,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's FP and ACC by $1. When this ship fires her Main Guns: $2 chance to restore 5.0% max HP to the ship with the lowest HP percentage in your fleet; if this effect does not activate, and your Flagship is a META ship: increases your Flagship's DMG dealt by 8.0% for 10s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"30.0%",
+				"60.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"30.0%",
+					"+3.3%"
+				},
+				{
+					"33.3%",
+					"+3.3%"
+				},
+				{
+					"36.6%",
+					"+3.3%"
+				},
+				{
+					"39.9%",
+					"+3.3%"
+				},
+				{
+					"43.2%",
+					"+3.3%"
+				},
+				{
+					"46.5%",
+					"+3.3%"
+				},
+				{
+					"49.8%",
+					"+3.3%"
+				},
+				{
+					"53.1%",
+					"+3.3%"
+				},
+				{
+					"56.4%",
+					"+3.6%"
+				},
+				{
+					"60.0%"
+				}
+			}
+		}
+	},
+	[801000] = {
+		desc_get = "",
+		name = "Fade into Darkness",
+		id = 801000,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's DMG dealt by $1 to enemies with less than 10.0% HP remaining. Every 20s: $2 chance to fire a $3 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801011] = {
+		desc_get = "",
+		name = "Cinders of Hope - Erebus",
+		id = 801011,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG by 5.0%.",
+		system_transform = {
+			[51.0] = 801015
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801012] = {
+		desc_get = "",
+		name = "Cinders of Hope - Erebus",
+		id = 801012,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG by 8.0%.",
+		system_transform = {
+			[51.0] = 801017
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801015] = {
+		desc_get = "",
+		name = "Cinders of Hope - Erebus",
+		id = 801015,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG by 5.0%.",
+		system_transform = {
+			[51.0] = 801015
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801017] = {
+		desc_get = "",
+		name = "Cinders of Hope - Erebus",
+		id = 801017,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG by 8.0%.",
+		system_transform = {
+			[51.0] = 801017
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801020] = {
+		desc_get = "",
+		name = "Vspyshka's Roar",
+		id = 801020,
+		type = 1,
+		max_level = 10,
+		desc = "When the battle starts, and every 20s: summons a $1 support unit Vspyshka to fight in the battle for 10s. /nVspyshka's stats change based on Kirov META's stats./nThe higher the skill level, the higher Vspyshka's stats and the more DMG it deals.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801030] = {
+		desc_get = "",
+		name = "Kometa's Brilliance",
+		id = 801030,
+		type = 3,
+		max_level = 10,
+		desc = "Sets this ship's Main Gun Range and Targeting Range to 75 and increases this ship's EVA by $1. When the battle starts, for each other ship afloat in your fleet: increases this ship's FP by $2 (can stack up to 5 times; gains the maximum stacks if the only ships afloat are this ship and your Flagship).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"1.5%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"1.5%",
+					"+0.3%"
+				},
+				{
+					"1.8%",
+					"+0.3%"
+				},
+				{
+					"2.1%",
+					"+0.4%"
+				},
+				{
+					"2.5%",
+					"+0.3%"
+				},
+				{
+					"2.8%",
+					"+0.3%"
+				},
+				{
+					"3.1%",
+					"+0.4%"
+				},
+				{
+					"3.5%",
+					"+0.4%"
+				},
+				{
+					"3.9%",
+					"+0.4%"
+				},
+				{
+					"4.3%",
+					"+0.7%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	},
+	[801040] = {
+		desc_get = "",
+		name = "Coordinated Dance",
+		id = 801040,
+		type = 1,
+		max_level = 10,
+		desc = "Every 15s: $1 chance to peform a $2 special attack that decreases the SPD of enemies hit by 30.0% for 8s; the first time each battle that this attack actives: also increases hit enemies' DMG taken by 15.0% for 8s (special attack DMG is based on the skill's level; the DMG taken increase effect does not stack with the skill \"Kirov, Reporting!\").",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"50.0%",
+				"100.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"50.0%",
+					"+5.5%"
+				},
+				{
+					"55.5%",
+					"+5.5%"
+				},
+				{
+					"61%",
+					"+5.5%"
+				},
+				{
+					"66.5%",
+					"+5.5%"
+				},
+				{
+					"72.0%",
+					"+5.5%"
+				},
+				{
+					"77.5%",
+					"+5.5%"
+				},
+				{
+					"83.0%",
+					"+5.5%"
+				},
+				{
+					"88.5%",
+					"+5.5%"
+				},
+				{
+					"94.0%",
+					"+6.0%"
+				},
+				{
+					"100.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801051] = {
+		desc_get = "",
+		name = "Cinders of Hope - Kirov",
+		id = 801051,
+		type = 3,
+		max_level = 1,
+		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51.0] = 801055
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801052] = {
+		desc_get = "",
+		name = "Cinders of Hope - Kirov",
+		id = 801052,
+		type = 3,
+		max_level = 1,
+		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51.0] = 801057
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801055] = {
+		desc_get = "",
+		name = "Cinders of Hope - Kirov",
+		id = 801055,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 3.0%.",
+		system_transform = {
+			[51.0] = 801055
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801057] = {
+		desc_get = "",
+		name = "Cinders of Hope - Kirov",
+		id = 801057,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
+		system_transform = {
+			[51.0] = 801057
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
 	[901010] = {
 		desc_get = "",
 		name = "Slash Attack - Spread",
@@ -123953,11 +127418,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[902230] = {
 		desc_get = "",
-		name = "飓风的加护",
+		name = "Tempesta's Protection",
 		id = 902230,
 		type = 2,
 		max_level = 1,
-		desc = "自身受到的航空伤害降低15%；进入战斗时，为自身生成一枚可以阻挡6枚子弹的护盾，护盾持续10秒",
+		desc = "Decreases this ship's aircraft DMG taken by 15.0%. When the battle starts: deploys a shield (lasts 10s) that can block up to 6 enemy shells.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -123967,11 +127432,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[902240] = {
 		desc_get = "",
-		name = "飓风的庇佑",
+		name = "Tempesta's Blessing",
 		id = 902240,
 		type = 2,
 		max_level = 1,
-		desc = "自身受到的航空伤害降低25%，战斗开始前40秒，自身受到的伤害降低10%",
+		desc = "Decreases this ship's aircraft DMG taken by 25.0%. For the first 40s of battle: decreases this ship's DMG taken by 10.0%.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -123981,11 +127446,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[902250] = {
 		desc_get = "",
-		name = "飓风的复苏",
+		name = "Tempesta's Resurgence",
 		id = 902250,
 		type = 2,
 		max_level = 1,
-		desc = "自身受到的航空伤害降低20%，战斗开始第40秒，回复自身8%最大耐久值",
+		desc = "Decreases this ship's aircraft DMG taken by 20.0%. Once per battle, 40s after the battle starts: restores 8.0% of this ship's max HP.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -128159,11 +131624,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[1017160] = {
 		desc_get = "",
-		name = "暗影无形 +",
+		name = "Unseen Phantom+",
 		id = 1017160,
 		type = 1,
 		max_level = 10,
-		desc = "战斗中，自身造成的伤害提高$1；自身受到攻击时，有$2概率进入【暗影】状态，【暗影】状态持续5秒，持续期间自身回避率提高$3，结束后随机选定一名敌人使自身在接下来5秒对其造成的伤害提高15%，同时发射一轮必定暴击的特殊弹幕$4（弹幕威力依据技能等级），【暗影】状态触发后进入15秒冷却",
+		desc = "Increases this ship's DMG dealt by $1. When this ship is attacked: $2 chance for this ship to enter the Phantom state. \nThis state increases her Evasion Rate by $3 and lasts for 5s. When this state ends, one random enemy is chosen; for 5s, Mary Celeste deals 15.0% increased DMG to this enemy and she fires a $4 special barrage (DMG is based on the skill's level) that always deals Critical DMG. There is a 15s cooldown between Phantom state activations.",
 		system_transform = {
 			[11.0] = 3500
 		},
@@ -128348,11 +131813,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[1017200] = {
 		desc_get = "",
-		name = "圣洁轰炸 +",
+		name = "Peerless Cannons of Destruction+",
 		id = 1017200,
 		type = 1,
 		max_level = 10,
-		desc = "战斗开始时，自身首轮主炮装填时间缩短$1，自身护甲类型修改为中甲；自身每次主炮发射时，触发一轮特殊弹幕$2，特殊弹幕有10%概率对命中的敌方单位造成进水持续伤害，持续18秒，(进水效果每3秒结算一次，弹幕与进水伤害依据炮击属性和技能等级)",
+		desc = "Decreases the loading time of this ship's first volley by $1 and changes her Armor Type to Medium Armor. When this ship fires her Main Guns: fires a $2 special barrage with a 10.0% chance to inflict a special Flooding ailment to enemies hit for 18s (barrage and Flooding DMG are based on this ship's FP stat and the skill's level; Flooding DMG procs once every 3s).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -128445,11 +131910,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[1017270] = {
 		desc_get = "",
-		name = "宝藏守护 +",
+		name = "Treasure of the Loyal Protector+",
 		id = 1017270,
 		type = 3,
 		max_level = 10,
-		desc = "战斗开始时，自身回避率提高$1；自身在战斗中受到伤害导致耐久低于50%时，回复自身$2最大耐久，该效果每战斗最多触发一次；自身在战斗中受到伤害导致耐久低于35%时，回复自身$2最大耐久，该效果每场战斗最多触发一次",
+		desc = "Increases this ship's Evasion Rate by $1. Once per battle, when this ship's HP falls below 50.0% as a result of DMG taken: restores $2 of this ship's max HP; also once per battle, when this ship's HP falls below 35.0% as a result of DMG taken: restores $2 of this ship's max HP.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -128551,11 +132016,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[1017250] = {
 		desc_get = "",
-		name = "深海的恩典 +",
+		name = "Hindhorn's Grace+",
 		id = 1017250,
 		type = 3,
 		max_level = 10,
-		desc = "战斗中，自身受到的伤害降低$3，每18秒触发一轮特殊弹幕$1（威力依据技能等级），被特殊弹幕命中的敌方单位6秒内受到来自我方飓风阵营角色造成的伤害提高$2；自身在战斗中受到伤害导致耐久低于50%时，回复自身$3最大耐久并在3秒内回避所有伤害，每场战斗最多触发一次",
+		desc = "Decreases this ship's DMG taken by $3 and, every 18s, fires a $1 special barrage (DMG is based on the skill's level). Enemies hit by this barrage take $2 more DMG from your Tempesta ships for 6s. \nOnce per battle, when this ship's HP falls below 50.0% as a result of DMG taken: this ship evades all attacks for 3s and recovers $3 of her max HP.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -128693,11 +132158,11 @@ One of the following two effects apply based on what type of weapon this ship ha
 	},
 	[1017210] = {
 		desc_get = "",
-		name = "只为安眠 +",
+		name = "For a Good Night's Sleep+",
 		id = 1017210,
 		type = 1,
 		max_level = 10,
-		desc = "进入战斗时及进入战斗后每10秒，进行一次特殊攻击$1（威力依据技能等级），任意被特殊攻击命中的单位存活时，维达号自身受到的所有伤害降低$2",
+		desc = "When the battle starts, and every 10s: performs a $1 special attack (DMG is based on the skill's level). As long as at least 1 enemy hit by this attack is afloat: decreases Whydah's DMG taken by $2.",
 		system_transform = {
 			[11.0] = 3500
 		},
@@ -131031,6 +134496,209 @@ One of the following two effects apply based on what type of weapon this ship ha
 				},
 				{
 					"Lv.10"
+				}
+			}
+		}
+	},
+	[1090190] = {
+		desc_get = "",
+		name = "Focused Assault - Takao",
+		id = 1090190,
+		type = 1,
+		max_level = 10,
+		desc = "Increases FP by $1. When this ship fires her Main Guns: $2 chance to double the DMG dealt by that attack. Every 10s: fires a $3 special barrage (DMG is based on the skill's level)",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[1090200] = {
+		desc_get = "",
+		name = "Double Torpedo - McCall",
+		id = 1090200,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship fires her torpedoes: $1 chance to fire a second wave of torpedoes and reduces the reload time of currently reloading torpedoes by 3s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"30%",
+				"50%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"30.0%",
+					"+2.2%"
+				},
+				{
+					"32.2%",
+					"+2.2%"
+				},
+				{
+					"34.4%",
+					"+2.2%"
+				},
+				{
+					"36.6%",
+					"+2.2%"
+				},
+				{
+					"38.8%",
+					"+2.2%"
+				},
+				{
+					"41.0%",
+					"+2.2%"
+				},
+				{
+					"43.2%",
+					"+2.2%"
+				},
+				{
+					"45.4%",
+					"+2.2%"
+				},
+				{
+					"47.6%",
+					"+2.4%"
+				},
+				{
+					"50.0%"
 				}
 			}
 		}

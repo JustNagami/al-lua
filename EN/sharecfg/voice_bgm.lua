@@ -72,13 +72,7 @@ pg.voice_bgm = {
 		time = "",
 		bgm = "level"
 	},
-	CommanderInfoScene = {
-		default_bgm = "backyard",
-		special_bgm = "",
-		time = "",
-		bgm = "backyard"
-	},
-	CommandRoomScene = {
+	CommanderCatScene = {
 		default_bgm = "backyard",
 		special_bgm = "",
 		time = "",
@@ -851,5 +845,268 @@ pg.voice_bgm = {
 		special_bgm = "",
 		time = "",
 		bgm = "Theme-SeaAndSun-soft"
+	},
+	CastlePtPage = {
+		default_bgm = "story-oldcastle-carnival",
+		special_bgm = "",
+		time = "",
+		bgm = "story-oldcastle-carnival"
+	},
+	CastleMainScene = {
+		default_bgm = "story-oldcastle-carnival",
+		special_bgm = "",
+		time = "",
+		bgm = "story-oldcastle-carnival"
+	},
+	DaofengV2LoginPage = {
+		default_bgm = "theme-IJNdailymeeting",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-IJNdailymeeting"
+	},
+	JapanV2frameRePage = {
+		default_bgm = "battle-longgong",
+		special_bgm = "",
+		time = "",
+		bgm = "battle-longgong"
+	},
+	DaofengMainRePage = {
+		default_bgm = "Map-longgong",
+		special_bgm = "",
+		time = "",
+		bgm = "Map-longgong"
+	},
+	DaofengPTRePage = {
+		default_bgm = "Theme-longgong",
+		special_bgm = "",
+		time = "",
+		bgm = "Theme-longgong"
+	},
+	CollectionEventPtPage = {
+		default_bgm = "theme-starsea-core",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-starsea-core"
+	},
+	BlackFridayGiftPage = {
+		default_bgm = "bar-soft",
+		special_bgm = "",
+		time = "",
+		bgm = "bar-soft"
+	},
+	BlackFridayWithManualSignPage = {
+		default_bgm = "bar-soft",
+		special_bgm = "",
+		time = "",
+		bgm = "bar-soft"
+	},
+	SenrankaguraMainPage = {
+		default_bgm = "sk-az-battle",
+		special_bgm = "",
+		time = "",
+		bgm = "sk-az-battle"
+	},
+	SenrankaguraPtPage = {
+		default_bgm = "sk-az-pv2",
+		special_bgm = "",
+		time = "",
+		bgm = "sk-az-pv2"
+	},
+	SenrankaguraBackHillScene = {
+		default_bgm = "sk-az-story",
+		special_bgm = "",
+		time = "",
+		bgm = "sk-az-story"
+	},
+	SenrankaguraTaskPage = {
+		default_bgm = "sk-az-pv1",
+		special_bgm = "",
+		time = "",
+		bgm = "sk-az-pv1"
+	},
+	SenrankaguraMedalScene = {
+		default_bgm = "sk-az-battle",
+		special_bgm = "",
+		time = "",
+		bgm = "sk-az-battle"
+	},
+	SenrankaguraTrainScene = {
+		default_bgm = "sk-az-pv2",
+		special_bgm = "",
+		time = "",
+		bgm = "sk-az-pv2"
+	},
+	NewServerMainPage = {
+		default_bgm = "story-musicanniversary-gorgeous",
+		special_bgm = "",
+		time = "",
+		bgm = "story-musicanniversary-gorgeous"
+	},
+	NewServerLoginPage = {
+		default_bgm = "story-musicanniversary-gorgeous",
+		special_bgm = "",
+		time = "",
+		bgm = "story-musicanniversary-gorgeous"
+	},
+	VoteEntranceScene = {
+		default_bgm = "votefes-start",
+		special_bgm = "votefes-up",
+		bgm = "votefes-start",
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	VoteScene = {
+		default_bgm = "votefes-start",
+		special_bgm = "votefes-up",
+		bgm = "votefes-start",
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	VoteExchangeScene = {
+		default_bgm = "votefes-start",
+		special_bgm = "votefes-up",
+		bgm = "votefes-start",
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	VoteRankScene = {
+		default_bgm = "votefes-start",
+		special_bgm = "votefes-up",
+		bgm = "votefes-start",
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	VoteScheduleScene = {
+		default_bgm = "votefes-start",
+		special_bgm = "votefes-up",
+		bgm = "votefes-start",
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	VoteFameHallLayer = {
+		default_bgm = "story-musicanniversary-gorgeous",
+		special_bgm = "",
+		time = "",
+		bgm = "story-musicanniversary-gorgeous"
 	}
 }

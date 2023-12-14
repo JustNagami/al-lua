@@ -1,16 +1,18 @@
 pg = pg or {}
 pg.activity_banner = {
 	{
-		param = "5051",
 		id = 1,
-		pic = "temp1",
-		type = 3,
+		pic = "temp2",
+		type = 2,
+		param = {
+			"scene vote entrance"
+		},
 		time = {
 			{
 				{
 					2023,
-					10,
-					26
+					12,
+					7
 				},
 				{
 					0,
@@ -20,9 +22,9 @@ pg.activity_banner = {
 			},
 			{
 				{
-					2023,
-					11,
-					8
+					2024,
+					2,
+					5
 				},
 				{
 					23,
@@ -34,21 +36,21 @@ pg.activity_banner = {
 	},
 	{
 		id = 2,
-		pic = "temp2",
+		pic = "temp3",
 		type = 2,
 		param = {
-			"scene get boat",
+			"scene level",
 			{
-				projectName = "new",
-				page = 1
+				open_remaster = true,
+				isSP = false
 			}
 		},
 		time = {
 			{
 				{
 					2023,
-					10,
-					26
+					12,
+					7
 				},
 				{
 					0,
@@ -59,8 +61,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					11,
-					8
+					12,
+					21
 				},
 				{
 					23,
@@ -72,7 +74,7 @@ pg.activity_banner = {
 	},
 	{
 		id = 3,
-		pic = "temp3",
+		pic = "temp4",
 		type = 2,
 		param = {
 			"scene skinshop",
@@ -82,8 +84,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					10,
-					26
+					11,
+					23
 				},
 				{
 					0,
@@ -94,8 +96,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					11,
-					8
+					12,
+					6
 				},
 				{
 					23,
@@ -106,18 +108,40 @@ pg.activity_banner = {
 		}
 	},
 	{
+		param = "5096",
 		id = 4,
-		pic = "temp4",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene Cryptolalia",
-			{}
+		pic = "temp5",
+		type = 3,
+		time = {
+			{
+				{
+					2023,
+					11,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					12,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
 		}
 	},
 	{
 		id = 5,
-		pic = "temp5",
+		pic = "temp6",
 		type = 2,
 		param = {
 			"scene charge",
@@ -129,8 +153,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					10,
-					26
+					11,
+					23
 				},
 				{
 					0,
@@ -141,8 +165,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					11,
-					8
+					12,
+					6
 				},
 				{
 					23,
@@ -154,7 +178,7 @@ pg.activity_banner = {
 	},
 	{
 		id = 6,
-		pic = "temp6",
+		pic = "temp7",
 		type = 2,
 		param = {
 			"scene court yard"
@@ -163,8 +187,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					10,
-					26
+					11,
+					23
 				},
 				{
 					0,
@@ -175,8 +199,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					11,
-					8
+					12,
+					6
 				},
 				{
 					23,
@@ -188,20 +212,17 @@ pg.activity_banner = {
 	},
 	{
 		id = 7,
-		pic = "temp7",
+		pic = "temp8",
 		type = 2,
 		param = {
-			"scene shop",
-			{
-				warp = "shopstreet"
-			}
+			"scene level"
 		},
 		time = {
 			{
 				{
 					2023,
-					10,
-					26
+					12,
+					7
 				},
 				{
 					0,
@@ -212,8 +233,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					11,
-					8
+					12,
+					21
 				},
 				{
 					23,
@@ -224,16 +245,48 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5023",
+		param = "5078",
 		id = 8,
-		pic = "temp8",
+		pic = "temp1",
 		type = 3,
 		time = {
 			{
 				{
 					2023,
-					10,
-					19
+					11,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					1,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		param = "5081",
+		id = 9,
+		pic = "temp11",
+		type = 3,
+		time = {
+			{
+				{
+					2023,
+					11,
+					16
 				},
 				{
 					0,
@@ -245,7 +298,7 @@ pg.activity_banner = {
 				{
 					2023,
 					11,
-					8
+					30
 				},
 				{
 					23,
@@ -256,11 +309,38 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5022",
-		time = "stop",
-		type = 3,
-		id = 9,
-		pic = "temp9"
+		id = 10,
+		pic = "temp9",
+		type = 2,
+		param = {
+			"crusing"
+		},
+		time = {
+			{
+				{
+					2023,
+					12,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					12,
+					13
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	},
 	[90] = {
 		param = "",
@@ -271,8 +351,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					10,
-					26
+					11,
+					23
 				},
 				{
 					0,
@@ -283,8 +363,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					11,
-					8
+					12,
+					6
 				},
 				{
 					23,
@@ -317,8 +397,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					10,
-					26
+					11,
+					23
 				},
 				{
 					0,
@@ -329,8 +409,8 @@ pg.activity_banner = {
 			{
 				{
 					2023,
-					11,
-					8
+					12,
+					6
 				},
 				{
 					23,
@@ -362,18 +442,19 @@ pg.activity_banner = {
 		pic = "autumn"
 	},
 	get_id_list_by_type = {
-		[3] = {
-			1,
-			8,
-			9
-		},
 		[2] = {
+			1,
 			2,
 			3,
-			4,
 			5,
 			6,
-			7
+			7,
+			10
+		},
+		[3] = {
+			4,
+			8,
+			9
 		},
 		[9] = {
 			90,
@@ -403,6 +484,7 @@ pg.activity_banner = {
 		7,
 		8,
 		9,
+		10,
 		90,
 		91,
 		95,

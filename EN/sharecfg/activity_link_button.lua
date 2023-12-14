@@ -11,7 +11,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			5051
+			5101
 		}
 	},
 	{
@@ -50,8 +50,9 @@ pg.activity_link_button = {
 		}
 	},
 	[20] = {
-		type = 2,
+		param = "0",
 		name = "event_minigame",
+		type = 0,
 		text_pic = "text_event_minigame",
 		id = 20,
 		group_id = 5,
@@ -59,10 +60,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			5047
-		},
-		param = {
-			"HARBOR_BACKHILL"
+			5095
 		}
 	},
 	[30] = {
@@ -155,10 +153,26 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			4935
+			5093
 		},
 		param = {
-			"SSSS_MEDAL_COLLECTION"
+			"SENRANKAGURA_MEDAL"
+		}
+	},
+	[101] = {
+		type = 2,
+		name = "event_senran",
+		text_pic = "text_event_senran",
+		id = 101,
+		group_id = 100,
+		pic = "event_senran",
+		order = 1,
+		time = {
+			"default",
+			5099
+		},
+		param = {
+			"SENRANKAGURA_TRAIN"
 		}
 	},
 	get_id_list_by_name = {
@@ -193,6 +207,9 @@ pg.activity_link_button = {
 		},
 		event_medal = {
 			100
+		},
+		event_senran = {
+			101
 		}
 	},
 	all = {
@@ -207,6 +224,7 @@ pg.activity_link_button = {
 		70,
 		80,
 		90,
-		100
+		100,
+		101
 	}
 }

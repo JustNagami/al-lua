@@ -335,6 +335,10 @@ pg.expedition_data_by_map = setmetatable({
 		1760002,
 		1760003,
 		1760004,
+		1770001,
+		1770002,
+		1770003,
+		1770004,
 		2100000,
 		2100001,
 		2100010,
@@ -395,6 +399,10 @@ pg.expedition_data_by_map = setmetatable({
 		2100282,
 		2100291,
 		2100292,
+		2100301,
+		2100302,
+		2100311,
+		2100312,
 		2200000,
 		2200010,
 		2200020,
@@ -10454,7 +10462,7 @@ pg.base.expedition_data_by_map = {
 		ani_controller = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4104,
+		on_activity = 5069,
 		ui_type = 1,
 		bg = "Map_1560001",
 		destory_icon_suffix = "blue",
@@ -10498,7 +10506,7 @@ pg.base.expedition_data_by_map = {
 		ani_controller = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4104,
+		on_activity = 5069,
 		ui_type = 1,
 		bg = "Map_1560002",
 		destory_icon_suffix = "blue",
@@ -10542,7 +10550,7 @@ pg.base.expedition_data_by_map = {
 		ani_controller = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4104,
+		on_activity = 5069,
 		ui_type = 1,
 		bg = "Map_1560011",
 		destory_icon_suffix = "blue",
@@ -10586,7 +10594,7 @@ pg.base.expedition_data_by_map = {
 		ani_controller = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4104,
+		on_activity = 5069,
 		ui_type = 1,
 		bg = "Map_1560012",
 		destory_icon_suffix = "blue",
@@ -10630,7 +10638,7 @@ pg.base.expedition_data_by_map = {
 		ani_controller = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4104,
+		on_activity = 5069,
 		ui_type = 1,
 		bg = "Map_1560012",
 		destory_icon_suffix = "blue",
@@ -10674,7 +10682,7 @@ pg.base.expedition_data_by_map = {
 		ani_controller = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4104,
+		on_activity = 5069,
 		ui_type = 1,
 		bg = "Map_1560012",
 		destory_icon_suffix = "blue",
@@ -13472,7 +13480,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		uifx = "",
 		on_activity = 4580,
-		ui_type = 1,
+		ui_type = 7,
 		bg = "Map_1690001",
 		destory_icon_suffix = "blue",
 		animtor = 1,
@@ -13516,7 +13524,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		uifx = "",
 		on_activity = 4580,
-		ui_type = 1,
+		ui_type = 7,
 		bg = "Map_1690002",
 		destory_icon_suffix = "blue",
 		animtor = 1,
@@ -13560,7 +13568,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		uifx = "",
 		on_activity = 4580,
-		ui_type = 1,
+		ui_type = 7,
 		bg = "Map_1690002",
 		destory_icon_suffix = "blue",
 		animtor = 1,
@@ -13604,7 +13612,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		uifx = "",
 		on_activity = 4580,
-		ui_type = 1,
+		ui_type = 7,
 		bg = "Map_1690002",
 		destory_icon_suffix = "blue",
 		animtor = 1,
@@ -15512,7 +15520,7 @@ pg.base.expedition_data_by_map = {
 	},
 	[1760001] = {
 		map = 1760001,
-		name = "飓风与青春之泉·上篇|| ||CHAPTER EX||E.X.",
+		name = "Tempesta and the Fountain of Youth - PT.1|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 4,
 		anchor = "",
@@ -15556,7 +15564,7 @@ pg.base.expedition_data_by_map = {
 	},
 	[1760002] = {
 		map = 1760002,
-		name = "飓风与青春之泉·下篇|| ||CHAPTER EX||E.X.",
+		name = "Tempesta and the Fountain of Youth - PT.2|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 4,
 		anchor = "",
@@ -15600,7 +15608,7 @@ pg.base.expedition_data_by_map = {
 	},
 	[1760003] = {
 		map = 1760003,
-		name = "飓风与青春之泉·SP|| ||CHAPTER EX||E.X.",
+		name = "Tempesta and the Fountain of Youth·SP|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 8,
 		anchor = "",
@@ -15644,7 +15652,7 @@ pg.base.expedition_data_by_map = {
 	},
 	[1760004] = {
 		map = 1760004,
-		name = "飓风与青春之泉·EX|| ||CHAPTER EX||E.X.",
+		name = "Tempesta and the Fountain of Youth·EX|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 8,
 		anchor = "",
@@ -15663,6 +15671,182 @@ pg.base.expedition_data_by_map = {
 		destory_icon_suffix = "blue",
 		animtor = 1,
 		bind_map = 1760002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1770001] = {
+		map = 1770001,
+		name = "The Ninja Scrolls: Azur Flash|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "sk-az-story",
+		enter_story = "CANGSHANRENFATIEGUANQIA1",
+		ani_name = "Map_1770001",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5101,
+		ui_type = 8,
+		bg = "Map_1770001",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1770002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1770002] = {
+		map = 1770002,
+		name = "The Ninja Scrolls: Azur Flash - Challenge|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "sk-menu",
+		enter_story = "",
+		ani_name = "Map_1770002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5101,
+		ui_type = 8,
+		bg = "Map_1770002",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1770001,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1770003] = {
+		map = 1770003,
+		name = "The Ninja Scrolls: Azur Flash - SP|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "sk-theme",
+		enter_story = "",
+		ani_name = "Map_1770001",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5101,
+		ui_type = 8,
+		bg = "Map_1770001",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1770002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[1770004] = {
+		map = 1770004,
+		name = "The Ninja Scrolls: Azur Flash - EX|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "sk-az-pv1",
+		enter_story = "",
+		ani_name = "Map_1770002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 5101,
+		ui_type = 8,
+		bg = "Map_1770002",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1770002,
 		clouds_pos = {
 			{
 				332,
@@ -18219,6 +18403,182 @@ pg.base.expedition_data_by_map = {
 		destory_icon_suffix = "blue",
 		animtor = 1,
 		bind_map = 2100282,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100301] = {
+		map = 2100301,
+		name = "Inverted Orthant - Part 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "blueocean-image",
+		enter_story = "FUXIANGXIANZUOZHAN1",
+		ani_name = "Map_1390001",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1390001",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1460011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100302] = {
+		map = 2100302,
+		name = "Inverted Orthant - Part 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-executor-type1",
+		enter_story = "FUXIANGXIANZUOZHAN15",
+		ani_name = "Map_1390002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1390002",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1460012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100311] = {
+		map = 2100311,
+		name = "Inverted Orthant - Part 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "blueocean-image",
+		enter_story = "FUXIANGXIANZUOZHAN1",
+		ani_name = "Map_1390003",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1390003",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1460001,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100312] = {
+		map = 2100312,
+		name = "Inverted Orthant - Part 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-executor-type1",
+		enter_story = "FUXIANGXIANZUOZHAN15",
+		ani_name = "Map_1390004",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1390004",
+		destory_icon_suffix = "blue",
+		animtor = 1,
+		bind_map = 1460002,
 		clouds_pos = {
 			{
 				332,

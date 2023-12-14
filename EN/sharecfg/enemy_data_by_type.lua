@@ -77,24 +77,28 @@ pg.enemy_data_by_type = {
 		type = 19
 	},
 	{
-		type_name = "导驱",
+		type_name = "DDG",
 		type = 20
 	},
 	{
-		type_name = "导驱",
+		type_name = "DDG",
 		type = 21
 	},
 	{
-		type_name = "风帆",
+		type_name = "IX",
 		type = 22
 	},
 	{
-		type_name = "风帆",
+		type_name = "IX",
 		type = 23
 	},
 	{
-		type_name = "风帆",
+		type_name = "IX",
 		type = 24
+	},
+	{
+		type_name = "Unknown",
+		type = 25
 	},
 	all = {
 		1,
@@ -120,6 +124,7 @@ pg.enemy_data_by_type = {
 		21,
 		22,
 		23,
-		24
+		24,
+		25
 	}
 }

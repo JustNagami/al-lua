@@ -1187,6 +1187,50 @@ pg.login = {
 			}
 		}
 	},
+	[43] = {
+		id = 43,
+		login_static = "login",
+		op_play = 0,
+		op_time = "",
+		login_cri = "",
+		bgm = "",
+		date = {
+			"timer",
+			{
+				{
+					2023,
+					11,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2023,
+					12,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[4001] = {
+		id = 4001,
+		login_static = "login_20231116us",
+		date = "stop",
+		op_play = 0,
+		op_time = "",
+		login_cri = "login_20231116us",
+		bgm = ""
+	},
 	all = {
 		1,
 		2,
@@ -1216,6 +1260,8 @@ pg.login = {
 		39,
 		40,
 		41,
-		42
+		42,
+		43,
+		4001
 	}
 }

@@ -1165,7 +1165,7 @@ _G.pg.base.gametip.backyard_backyardGranaryLayer_foodCountLimit = {
 	tip = "You don't have enough snacks."
 }
 _G.pg.base.gametip.backyard_backyardGranaryLayer_foodMaxIncreaseNotice = {
-	tip = "Expand Supply Capacity from  <color=#92fc63>$1</color> to <color=#92fc63>$2</color>."
+	tip = "Expand Supply Capacity from <color=#72bc42>$1</color> to <color=#72bc42>$2</color>."
 }
 _G.pg.base.gametip.backyard_backyardGranaryLayer_foodTimeNotice_bottom = {
 	tip = "will be eaten up~"
@@ -1195,23 +1195,13 @@ _G.pg.base.gametip.backyard_backyardScene_clearSuccess = {
 	tip = "<color=#92fc63>Cleared!</color>"
 }
 _G.pg.base.gametip.backyard_backyardScene_comforChatContent1 = {
-	tip = [[
-<size=28>The total comfort is currently affected by the
-number of furniture items in the following slots:
-Wallpaper:<color=#92fc63>$2</color>/Floor:<color=#92fc63>$5</color>/Furniture:<color=#92fc63>$3</color>
-Décor:<color=#92fc63>$4</color>/Carpet:<color=#92fc63>$6</color>/Wall Décor:<color=#92fc63>$7</color></size>]]
+	tip = "Furniture does not have to be placed to contribute comfort. The dorm's total comfort is calculated as a sum of a certain number of the highest-comfort pieces of furniture in each slot."
 }
 _G.pg.base.gametip.backyard_backyardScene_comforChatContent1_1 = {
 	tip = "<color=#CC0000>Hard</color>"
 }
 _G.pg.base.gametip.backyard_backyardScene_comforChatContent2 = {
-	tip = [[
-<size=37>$1</size><size=28>
-Bonus EXP Gain:<color=#92fc63>+$2%</color></size><size=28>
-The dorm's total happiness is calculated as a sum of 
-the <color=#92fc63>n</color> highest-comfort pieces of furniture in each slot. The number of pieces of furniture included in this count increases depending on how many times the dorm has been expanded. Furniture does not have to be placed to contribute comfort.
-Current expansions: <color=#92fc63>$3</color>
-</size>]]
+	tip = "The number of pieces of furniture included in this count increases depending on how many times the dorm has been expanded. Current expansions: <color=#72bc42>$1</color>"
 }
 _G.pg.base.gametip.backyard_backyardScene_comforChatContent2_2 = {
 	tip = "<color=#FFBB11>Normal</color>"
@@ -1232,13 +1222,13 @@ _G.pg.base.gametip.backyard_backyardScene_exitShipAfterAddEnergy = {
 	tip = " has finished resting and has left the dorm."
 }
 _G.pg.base.gametip.backyard_backyardScene_expression_label_1 = {
-	tip = "艰苦"
+	tip = "Low"
 }
 _G.pg.base.gametip.backyard_backyardScene_expression_label_2 = {
 	tip = "普通"
 }
 _G.pg.base.gametip.backyard_backyardScene_expression_label_3 = {
-	tip = "舒适"
+	tip = "Comfortable"
 }
 _G.pg.base.gametip.backyard_backyardScene_name = {
 	tip = "<color=#92fc63>$1's Dorm</color>"
@@ -1873,11 +1863,14 @@ _G.pg.base.gametip.battle_text_bisimaiz_8 = {
 _G.pg.base.gametip.battle_text_bisimaiz_9 = {
 	tip = "[<color=#ffc038>Synchro-Release</color>] - Geryon's defense have <color=#f1f102>dropped dramatically</color>! Focus on dealing as much damage as fast as possible!"
 }
+_G.pg.base.gametip.battle_text_common_1 = {
+	tip = "The enemy is charging up a powerful attack! <color=#f1f102>Focus fire to interrupt it!</color>"
+}
 _G.pg.base.gametip.battle_text_haidao_1 = {
-	tip = "<color=#f1f102>/// 警告：侦测到非「飓风」舰船 ///</color>"
+	tip = "<color=#f1f102>/// Warning: Non-Tempesta Ship Detected ///</color>"
 }
 _G.pg.base.gametip.battle_text_haidao_2 = {
-	tip = "<color=#f1f102>/// 「云墙守卫」突击中！圣马丁战斗力大幅度提升！ ///</color>"
+	tip = "<color=#f1f102>/// The Nebula Guardian attacks! São Martinho has powered up! ///</color>"
 }
 _G.pg.base.gametip.battle_text_yingxiv4_1 = {
 	tip = "The Horseman is charging <color=#f1f102>left</color>!"
@@ -2405,6 +2398,43 @@ Any purchased Cruise Mission Vouchers will remain even after the campaign season
 		}
 	}
 }
+_G.pg.base.gametip.battlepass_main_help_2312 = {
+	tip = {
+		{
+			info = [[
+Cruise Missions Seasonal Campaign
+12/1 00:00 – 1/31 23:59
+
+- Overview -
+"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
+Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
+Erebus META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfits for Hatsuharu, "Hatsuharu's Cat Café Caper"
+
+- How to Play -
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
+· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
+a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
+b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
+· When the campaign season ends, your Progress Pts will be reset.
+
+- Tips - 
+· Play at your own pace
+Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
+
+· Fair Winds Cruise Pass
+If. you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
+
+· Skipping Missions (not recommended)
+You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
 _G.pg.base.gametip.battlepass_main_time = {
 	tip = "$1 d $2 hr"
 }
@@ -2455,6 +2485,9 @@ _G.pg.base.gametip.battlepass_main_tip_2308 = {
 }
 _G.pg.base.gametip.battlepass_main_tip_2310 = {
 	tip = "Complete Cruise Missions between 10/1-11/30 to receive <color=#854748>Princeton META</color> and other rewards!"
+}
+_G.pg.base.gametip.battlepass_main_tip_2312 = {
+	tip = "Complete Cruise Missions between 12/1-1/31 to receive <color=#854748>Erebus META</color> and other rewards!"
 }
 _G.pg.base.gametip.battlepass_pay_acquire = {
 	tip = "Buy Now to Get:"
@@ -2620,6 +2653,15 @@ Event Rules:
 4. Purchasing the Black Friday Lucky Bag (2022) will unlock 1 Tier of the reward list no matter if you get a new skin or a skin you already have.]]
 		}
 	}
+}
+_G.pg.base.gametip.blackfriday_pack_lock = {
+	tip = "Available on $1"
+}
+_G.pg.base.gametip.blackfriday_pack_purchased = {
+	tip = "Purchased"
+}
+_G.pg.base.gametip.blackfriday_pack_select_skinall = {
+	tip = "The Static Skin Voucher can only be used to redeem one of the eligible skins. If you own all the eligible skins, this voucher cannot be used."
 }
 _G.pg.base.gametip.blueprint_build_consume = {
 	tip = "Spend $1 to commence development?"
@@ -3027,16 +3069,16 @@ _G.pg.base.gametip.building_upgrade_tip = {
 	tip = "Are you sure you want to upgrade? Building materials will be consumed."
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Howe and Valiant added to standard build pool!"
+	tip = "Prinz Heinrich added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Hermione added to the standard build pool!"
+	tip = "Nürnberg added to the standard build pool!"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Rate UP for São Martinho,Golden Hind, and more!"
+	tip = "Receive an extra copy of Shimakaze after doing a total of 200 builds! (Limit of 4 times)"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Perseus and Eagle added to standard build pool!"
+	tip = "Peter Strasser, U-37 and Weser added to standard build pool!"
 }
 _G.pg.base.gametip.buleprint_need_level_tip = {
 	tip = "The corresponding ship will be unlocked at Level $1."
@@ -3540,7 +3582,7 @@ _G.pg.base.gametip.charge_scene_buy_confirm = {
 	tip = "Spend <color=#A9F548FF>$1 Gems</color> to buy <color=#A9F548FF>$2</color>?"
 }
 _G.pg.base.gametip.charge_scene_buy_confirm_backyard = {
-	tip = "是否使用<color=#72bc42>$1钻石</color>购买<color=#72bc42>$2</color>"
+	tip = "Spend <color=#72bc42>$1 Gems</color> to buy <color=#72bc42>$2</color>?"
 }
 _G.pg.base.gametip.charge_scene_buy_confirm_gold = {
 	tip = "Spend <color=#A9F548FF>$1 Gold</color> to buy <color=#A9F548FF>$2</color>?"
@@ -3842,6 +3884,27 @@ _G.pg.base.gametip.commander_can_not_select_same_group = {
 _G.pg.base.gametip.commander_capcity_is_max = {
 	tip = "The Cattery is full, nya..."
 }
+_G.pg.base.gametip.commander_choice_talent_1 = {
+	tip = "Select the Talent to learn or upgrade."
+}
+_G.pg.base.gametip.commander_choice_talent_2 = {
+	tip = "Available Talents"
+}
+_G.pg.base.gametip.commander_choice_talent_3 = {
+	tip = "Select the Talent you'd like to overwrite."
+}
+_G.pg.base.gametip.commander_choice_talent_4 = {
+	tip = "Meowfficer Talents can be improved by using Talent Points"
+}
+_G.pg.base.gametip.commander_choice_talent_reset = {
+	tip = "Spend $1 Coins to respec this Meowfficer's Talents?Talents will be \t reset to their initial state, and you will be refunded $2 Talent Points."
+}
+_G.pg.base.gametip.commander_command_ability = {
+	tip = "Directives"
+}
+_G.pg.base.gametip.commander_confirm_tip = {
+	tip = "*This will consume the assigned Meowfficers."
+}
 _G.pg.base.gametip.commander_equip_to_fleet_erro = {
 	tip = "Could not assign the following Meowfficer: $1."
 }
@@ -3860,8 +3923,20 @@ _G.pg.base.gametip.commander_get = {
 _G.pg.base.gametip.commander_get_1 = {
 	tip = "Your daily first Cat Box is free of charge, nya!"
 }
+_G.pg.base.gametip.commander_get_box_tip = {
+	tip = "Gives you a random \nCat Box."
+}
+_G.pg.base.gametip.commander_get_box_tip_1 = {
+	tip = "Unknown Cat Box"
+}
+_G.pg.base.gametip.commander_get_commander_coptyright = {
+	tip = "Meowfficer Boarding"
+}
 _G.pg.base.gametip.commander_get_skills_done = {
 	tip = "Failed to fetch list of learnable Talents."
+}
+_G.pg.base.gametip.commander_home_level_label = {
+	tip = "Current Level"
 }
 _G.pg.base.gametip.commander_is_in_battle = {
 	tip = "This Meowfficer is currently sortieing."
@@ -3881,14 +3956,23 @@ _G.pg.base.gametip.commander_is_in_fleet_already = {
 _G.pg.base.gametip.commander_is_in_guild = {
 	tip = "There are Meowfficers currently assigned to a Guild Operation boss battle. Are you sure you want to continue?"
 }
+_G.pg.base.gametip.commander_level_up_tip = {
+	tip = "*Gain 1 Talent Point every 5 levels."
+}
 _G.pg.base.gametip.commander_lock_done = {
 	tip = "Meowfficer locked."
 }
 _G.pg.base.gametip.commander_lock_erro = {
 	tip = "The following could not be locked: $1."
 }
+_G.pg.base.gametip.commander_lock_setting_title = {
+	tip = "Upon finishing Cat Box training, auto-lock Meowfficers based on the following criteria:"
+}
 _G.pg.base.gametip.commander_lock_tip = {
 	tip = "Would you like to lock this Meowfficer?"
+}
+_G.pg.base.gametip.commander_logistics_ability = {
+	tip = "Logistics"
 }
 _G.pg.base.gametip.commander_main_pos = {
 	tip = "Command Cat"
@@ -3901,6 +3985,9 @@ _G.pg.base.gametip.commander_material_is_maxLevel = {
 }
 _G.pg.base.gametip.commander_material_is_rarity = {
 	tip = "You have selected an SR Meowfficer. Would you like to continue?"
+}
+_G.pg.base.gametip.commander_material_noenough = {
+	tip = "Insufficient crafting materials"
 }
 _G.pg.base.gametip.commander_not_exist = {
 	tip = "This Meowfficer does not exist."
@@ -3928,6 +4015,9 @@ _G.pg.base.gametip.commander_rename_coldtime_tip = {
 }
 _G.pg.base.gametip.commander_rename_success_tip = {
 	tip = "Name change successful."
+}
+_G.pg.base.gametip.commander_rename_tip = {
+	tip = "You can only change a Meowfficer's name once every 24 hours."
 }
 _G.pg.base.gametip.commander_rename_warning = {
 	tip = "Would you like to change this Meowfficer's name to $1?"
@@ -3968,8 +4058,23 @@ _G.pg.base.gametip.commander_select_max = {
 _G.pg.base.gametip.commander_select_min_cnt = {
 	tip = "You must select $1 or more Meowfficers."
 }
+_G.pg.base.gametip.commander_selected_max = {
+	tip = "Select up to a maximum of $1 Meowfficers."
+}
+_G.pg.base.gametip.commander_skill_effect = {
+	tip = "Skill Effects"
+}
 _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points."
+}
+_G.pg.base.gametip.commander_subtile_ablity = {
+	tip = "Inherent Bonuses"
+}
+_G.pg.base.gametip.commander_subtile_talent = {
+	tip = "Talent Bonuses"
+}
+_G.pg.base.gametip.commander_tactical_ability = {
+	tip = "Tactics"
 }
 _G.pg.base.gametip.commander_talent_learn_erro = {
 	tip = "Failed to learn the following Talent: $1."
@@ -3980,8 +4085,29 @@ _G.pg.base.gametip.commander_talent_learned = {
 _G.pg.base.gametip.commander_talent_not_exist = {
 	tip = "Talent error: this Talent already exists."
 }
+_G.pg.base.gametip.commander_total_gold = {
+	tip = "Total Cost:"
+}
 _G.pg.base.gametip.commander_unlock_done = {
 	tip = "Meowfficer unlocked."
+}
+_G.pg.base.gametip.commander_unsel_lock_flag_tip = {
+	tip = "No auto-lock option chosen. When Meowfficers finish training, you won't be asked if you want to lock them."
+}
+_G.pg.base.gametip.commander_use_box_queue = {
+	tip = "Selected"
+}
+_G.pg.base.gametip.commander_use_box_tip = {
+	tip = "Cat Boxes Owned:"
+}
+_G.pg.base.gametip.commandercat_label_custom_name = {
+	tip = "Custom Name"
+}
+_G.pg.base.gametip.commandercat_label_display_name = {
+	tip = "Custom Name"
+}
+_G.pg.base.gametip.commandercat_label_raw_name = {
+	tip = "Original Name"
 }
 _G.pg.base.gametip.commission_event_tip = {
 	tip = {
@@ -4366,25 +4492,25 @@ _G.pg.base.gametip.courtyard_label_cancel_share = {
 	tip = "取消分享"
 }
 _G.pg.base.gametip.courtyard_label_capacity = {
-	tip = "食量"
+	tip = "Supplies"
 }
 _G.pg.base.gametip.courtyard_label_clear = {
-	tip = "清空"
+	tip = "Clear"
 }
 _G.pg.base.gametip.courtyard_label_comfortable_addition = {
-	tip = "当前经验总加成 ："
+	tip = "Total EXP Bonus:"
 }
 _G.pg.base.gametip.courtyard_label_custom_theme = {
-	tip = "自定义主题"
+	tip = "Saved Sets"
 }
 _G.pg.base.gametip.courtyard_label_decoration = {
-	tip = "管理"
+	tip = "Move"
 }
 _G.pg.base.gametip.courtyard_label_delete = {
 	tip = "删除"
 }
 _G.pg.base.gametip.courtyard_label_detail = {
-	tip = "详情"
+	tip = "Details"
 }
 _G.pg.base.gametip.courtyard_label_empty_collection_list = {
 	tip = "没有找到符合条件的收藏"
@@ -4396,67 +4522,67 @@ _G.pg.base.gametip.courtyard_label_empty_template_list = {
 	tip = "没有找到符合条件的家具主题"
 }
 _G.pg.base.gametip.courtyard_label_exp_addition = {
-	tip = "经验加成 "
+	tip = "EXP Bonus"
 }
 _G.pg.base.gametip.courtyard_label_filter = {
 	tip = "筛选"
 }
 _G.pg.base.gametip.courtyard_label_floor = {
-	tip = "当前楼层 "
+	tip = "Floors"
 }
 _G.pg.base.gametip.courtyard_label_go = {
-	tip = "前往"
+	tip = "Confirm"
 }
 _G.pg.base.gametip.courtyard_label_month = {
 	tip = "一月内"
 }
 _G.pg.base.gametip.courtyard_label_place_pnekey = {
-	tip = "一键布置"
+	tip = "Batch Place"
 }
 _G.pg.base.gametip.courtyard_label_placed_furniture = {
-	tip = "已放入家具"
+	tip = "Placed Furniture"
 }
 _G.pg.base.gametip.courtyard_label_putlist_title = {
 	tip = "已放入家具列表"
 }
 _G.pg.base.gametip.courtyard_label_rest = {
-	tip = "休息"
+	tip = "Rest"
 }
 _G.pg.base.gametip.courtyard_label_save = {
-	tip = "保存"
+	tip = "Save"
 }
 _G.pg.base.gametip.courtyard_label_save_theme = {
-	tip = "保存主题"
+	tip = "Save Theme"
 }
 _G.pg.base.gametip.courtyard_label_search_holder = {
 	tip = "点击搜索"
 }
 _G.pg.base.gametip.courtyard_label_share = {
-	tip = "分享"
+	tip = "Share"
 }
 _G.pg.base.gametip.courtyard_label_shop = {
-	tip = "商店"
+	tip = "Shop"
 }
 _G.pg.base.gametip.courtyard_label_shop_1 = {
-	tip = "家具商店"
+	tip = "Shop"
 }
 _G.pg.base.gametip.courtyard_label_system_theme = {
-	tip = "系统主题"
+	tip = "Presets"
 }
 _G.pg.base.gametip.courtyard_label_template = {
 	tip = "模板"
 }
 _G.pg.base.gametip.courtyard_label_time = {
-	tip = "时间"
+	tip = "Time"
 }
 _G.pg.base.gametip.courtyard_label_total_exp_addition = {
-	tip = "经验总加成 ："
+	tip = "Total EXP Bonus:"
 }
 _G.pg.base.gametip.courtyard_label_train = {
-	tip = "训练"
+	tip = "Train"
 }
 _G.pg.base.gametip.courtyard_label_using = {
-	tip = "$1F使用中"
+	tip = "Placed on floor $1"
 }
 _G.pg.base.gametip.courtyard_label_week = {
 	tip = "一周内"
@@ -4465,7 +4591,7 @@ _G.pg.base.gametip.courtyard_label_year = {
 	tip = "一年内"
 }
 _G.pg.base.gametip.courtyard_tip_furniture_not_in_layer = {
-	tip = "家具不在当前楼层"
+	tip = "You cannot place furniture on this floor."
 }
 _G.pg.base.gametip.cowboy_tips = {
 	tip = {
@@ -4711,6 +4837,23 @@ Any purchased Cruise Mission Vouchers will remain even after the campaign season
 		}
 	}
 }
+_G.pg.base.gametip.cruise_task_help_2312 = {
+	tip = {
+		{
+			info = [[
+- Regarding Cruise Missions - 
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+
+· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
 _G.pg.base.gametip.cruise_task_phase = {
 	tip = "Progress PTS | Stage. $1 "
 }
@@ -4739,7 +4882,7 @@ _G.pg.base.gametip.cryptolalia_download_done = {
 	tip = "Assets Downloaded"
 }
 _G.pg.base.gametip.cryptolalia_download_task_already_exists = {
-	tip = "$1密语正在下载中"
+	tip = "Downloading the Secret \"$1\"..."
 }
 _G.pg.base.gametip.cryptolalia_entrance_coming_soom = {
 	tip = "Secrets Coming Soon..."
@@ -5426,31 +5569,31 @@ _G.pg.base.gametip.equip_part_title = {
 	tip = "Use"
 }
 _G.pg.base.gametip.equip_share_label_1 = {
-	tip = "轻型护甲"
+	tip = "Anti Light Armor"
 }
 _G.pg.base.gametip.equip_share_label_2 = {
-	tip = "中型护甲"
+	tip = "Anti Medium Armor"
 }
 _G.pg.base.gametip.equip_share_label_3 = {
-	tip = "重型护甲"
+	tip = "Anti Heavy Armor"
 }
 _G.pg.base.gametip.equip_share_label_4 = {
-	tip = "对空火力"
+	tip = "Anti Aviation"
 }
 _G.pg.base.gametip.equip_share_label_5 = {
 	tip = "爆发输出"
 }
 _G.pg.base.gametip.equip_share_label_6 = {
-	tip = "平滑输出"
+	tip = "Recurring Damage"
 }
 _G.pg.base.gametip.equip_share_label_7 = {
-	tip = "主线攻略"
+	tip = "Main"
 }
 _G.pg.base.gametip.equip_share_label_8 = {
-	tip = "日常任务"
+	tip = "Dailies"
 }
 _G.pg.base.gametip.equip_share_label_9 = {
-	tip = "大型作战"
+	tip = "OpSi"
 }
 _G.pg.base.gametip.equip_skin_detail_count = {
 	tip = "Owned:"
@@ -5459,82 +5602,82 @@ _G.pg.base.gametip.equip_skin_detail_tip = {
 	tip = "It contains Gear Skins listed below:"
 }
 _G.pg.base.gametip.equipcode_confirm_doublecheck = {
-	tip = "确认要导入当前配装结果吗？"
+	tip = "Would you like to use the imported loadout?"
 }
 _G.pg.base.gametip.equipcode_diff_selected = {
-	tip = "不同装备"
+	tip = "Different Gear"
 }
 _G.pg.base.gametip.equipcode_dislike_success = {
-	tip = "举报成功"
+	tip = "Thank you for your report."
 }
 _G.pg.base.gametip.equipcode_equip_occupied = {
-	tip = "被占用"
+	tip = "In Use"
 }
 _G.pg.base.gametip.equipcode_equipment_unowned = {
-	tip = "未拥有"
+	tip = "Unowned Gear"
 }
 _G.pg.base.gametip.equipcode_export_success = {
-	tip = "成功复制装备码"
+	tip = "Gear code copied."
 }
 _G.pg.base.gametip.equipcode_illegal = {
-	tip = "装备码解析失败"
+	tip = "Please enter the correct gear code."
 }
 _G.pg.base.gametip.equipcode_import_success = {
-	tip = "装备导入成功"
+	tip = "Successfully equipped the imported loadout."
 }
 _G.pg.base.gametip.equipcode_input = {
-	tip = "请输入装备码"
+	tip = "Please enter a gear code."
 }
 _G.pg.base.gametip.equipcode_level_unmatched = {
-	tip = "等级不符"
+	tip = "Wrong Level"
 }
 _G.pg.base.gametip.equipcode_like_limited = {
-	tip = "今天已经点赞过该配装方案了"
+	tip = "You have already left a like on this loadout today."
 }
 _G.pg.base.gametip.equipcode_like_success = {
-	tip = "点赞成功"
+	tip = "You left a like."
 }
 _G.pg.base.gametip.equipcode_report_type_1 = {
-	tip = "无意义的配装"
+	tip = "The loadout doesn't make sense."
 }
 _G.pg.base.gametip.equipcode_report_type_2 = {
-	tip = "已过时的配装"
+	tip = "The loadout is too old."
 }
 _G.pg.base.gametip.equipcode_report_warning = {
-	tip = "短期内大量异常举报可能导致该功能被禁用 "
+	tip = "You will be unable to share loadouts if you report too often."
 }
 _G.pg.base.gametip.equipcode_share_errorcode44 = {
-	tip = "已达到单日配装分享上限，分享失败"
+	tip = "You cannot share any more loadouts for today."
 }
 _G.pg.base.gametip.equipcode_share_errorcode7 = {
-	tip = "今天已经分享过该船的配装方案了"
+	tip = "You have already shared this character's loadout today."
 }
 _G.pg.base.gametip.equipcode_share_exceedlimit = {
-	tip = "已选择的标签数量超过两个"
+	tip = "You can only select up to 2 tags."
 }
 _G.pg.base.gametip.equipcode_share_listempty = {
-	tip = "无可显示内容"
+	tip = "You have nothing to share."
 }
 _G.pg.base.gametip.equipcode_share_nolabel = {
-	tip = "请选择两个标签后再分享配装方案"
+	tip = "You must select 2 tags before you can share."
 }
 _G.pg.base.gametip.equipcode_share_ruletips = {
-	tip = "请选择两个标签，确定后将配装方案分享至服务器"
+	tip = "You can share your loadout after giving it 2 tags."
 }
 _G.pg.base.gametip.equipcode_share_success = {
-	tip = "配装方案分享成功"
+	tip = "Successfully shared the selected loadout."
 }
 _G.pg.base.gametip.equipcode_share_title = {
-	tip = "配装方案"
+	tip = "Loadouts"
 }
 _G.pg.base.gametip.equipcode_share_titleeng = {
-	tip = "EQUIPMENTS"
+	tip = "LOADOUTS"
 }
 _G.pg.base.gametip.equipcode_slot_unmatch = {
-	tip = "装备码对应了当前角色无法使用的装备"
+	tip = "This loadout contains unequippable gear for the current character."
 }
 _G.pg.base.gametip.equipcode_unsaved_tips = {
-	tip = "装备变更还未导入，是否确认退出？"
+	tip = "You cannot use the imported loadout. Return to the previous screen?"
 }
 _G.pg.base.gametip.equipment_cant_unload = {
 	tip = "<color=#92fc63>Your gear storage is full.</color> Unable to unequip gear."
@@ -7853,14 +7996,30 @@ _G.pg.base.gametip.harbor_backhill_help = {
 	tip = {
 		{
 			info = [[
-活动简介：
-<color=#92fc63>10.26-11.9 维护</color>期间开启限时活动「神秘港湾」
-活动规则：
-1.活动期间开启「皇家财富的秘密船厂」第二阶段，参与活动可获得限定家具<color=#92fc63>「启航的冒险船」</color>、<color=#92fc63>「飓风的馈赠」</color>、<color=#92fc63>「果蔬补给品」</color>、<color=#92fc63>「喵箱SSR型」</color>在内的丰富奖励
-2.活动期间开启「啾啾悬赏板」，参与活动可获得限定纪念章<color=#92fc63>「璀璨航针」</color>、<color=#92fc63>「旧式重火炮」</color>、<color=#92fc63>「基德喵」&「贝拉喵」</color>在内的丰富奖励
-3.点击「限时兑换」可以前往活动商店
-4.点击「限时建造」可以前往建造界面
-5.点击「换装商店」可以前往换装商店界面
+- Event Overview -
+The Swashbuckler's Retreat event is available between October 25th and November 8th.
+
+- Details -
+· Secret Shipyard
+ Tap this button to go to the prelude event, Tempesta's Secret Shipyard.
+Finishing the prelude event gives you access to a minigame. A new minigame stage will unlock every day until November 1st. Complete them all to receive the following great rewards!
+Complete stage 3: receive Fruit Rations, a Tempesta auxiliary gear.
+Complete stage 5: receive Tempesta Augment Module set.
+Complete stage 7: receive the Pirate Ship, a piece of furniture.
+
+· Commemoration
+Tap this button to view the limited event missions and claim rewards.
+Complete the event missions to receive rewards such as the SR Main Gun Old Heavy Cannon, the new Meowfficers Bellamy and Kidd, and the exclusive furniture Brilliant Compass.
+
+· Event Shop
+Tap this button to go to the shop and exchange event currency for items.
+
+· Limited Construction
+Tap this button to go to the build screen.
+
+· New Skins
+Tap this button to view the port's latest fashion.
+
 ]]
 		}
 	}
@@ -11150,10 +11309,10 @@ _G.pg.base.gametip.indexsort_indexeng = {
 	tip = "Index"
 }
 _G.pg.base.gametip.indexsort_label = {
-	tip = "标签"
+	tip = "Tags"
 }
 _G.pg.base.gametip.indexsort_labeleng = {
-	tip = "LABEL"
+	tip = "TAGS"
 }
 _G.pg.base.gametip.indexsort_rarity = {
 	tip = "Rarity"
@@ -13404,22 +13563,22 @@ _G.pg.base.gametip.monthly_card_tip = {
 	tip = ""
 }
 _G.pg.base.gametip.mot_class_t_level_1 = {
-	tip = "牵星者"
+	tip = "Star Wayfinder"
 }
 _G.pg.base.gametip.mot_class_t_level_2 = {
-	tip = "云墙守卫"
+	tip = "Nebula Guardian"
 }
 _G.pg.base.gametip.msgbox_repair = {
-	tip = "Repair Assets"
+	tip = "Repair \nAssets"
 }
 _G.pg.base.gametip.msgbox_repair_cipher = {
-	tip = "Redownload Assets"
+	tip = "Redownload   Assets"
 }
 _G.pg.base.gametip.msgbox_repair_l2d = {
-	tip = "Repair Live2D"
+	tip = "Repair \nLive2D"
 }
 _G.pg.base.gametip.msgbox_repair_painting = {
-	tip = "Download Art Asset"
+	tip = "Download \nArt Asset"
 }
 _G.pg.base.gametip.msgbox_repair_title = {
 	tip = "Notice"
@@ -14375,7 +14534,12 @@ A new stage will unlock every day up to <color=#92fc63>January 18th</color>.
 	}
 }
 _G.pg.base.gametip.pirate_wanted_help = {
-	tip = "活动时间：<color=#b14c4c>10.26-11.9 维护 </color>\n1.活动期间，参与「啾啾悬赏」活动可获取丰厚奖励。完成全部<color=#b14c4c>6</color>个「悬赏」后，可获得活动限定纪念章<color=#b14c4c>「璀璨航针」</color>\n2.领取时间截止11月15日24时"
+	tip = [[
+This event is available between <color=#f15a22>October 26th and November 8th.</color>
+
+- Overview -
+1. Exclusive missions are available during this event.
+2. Complete the missions to receive all kinds of rewards, including new Meowfficers, Tempesta gear and Augment Modules, limited furniture ""Brilliant Compass.""Rewards are claimable up to November 15th, 23:59.]]
 }
 _G.pg.base.gametip.pizzahut_help = {
 	tip = {
@@ -15284,6 +15448,201 @@ _G.pg.base.gametip.returner_push_success = {
 _G.pg.base.gametip.returner_push_tip = {
 	tip = "Enabling Automatic UID Search will input your UID in the fields of Returning or new Commanders looking for Active Commander UIDs. Would you like to continue?"
 }
+_G.pg.base.gametip.roll_attr_list = {
+	tip = {
+		"Persuasion",
+		"First Aid",
+		"META Research",
+		"Siren Research",
+		"Info Analysis",
+		"Machine Mechanic",
+		"Pharmacology",
+		"Folklore Scholar",
+		"Psychology",
+		"Geology",
+		"Lockpicking",
+		"Eagle Eye",
+		"Swiftness",
+		"Running",
+		"Diving",
+		"Mech Piloting",
+		"Tactics Research",
+		"CQC",
+		"Marksmanship",
+		"Survival",
+		"Cube Research",
+		"Danger Sense",
+		"Enamor",
+		"Fishing",
+		"Law Scholar",
+		"Ship Piloting",
+		"Rigging Mechanic",
+		"Trap-Making",
+		"Gunnery",
+		"Astronomy",
+		"Cryptology",
+		"Law Research",
+		"Cooking",
+		"Oil Investigation",
+		"Librarian",
+		"Navigation",
+		"Riding",
+		"Hypnosis",
+		"Tracking",
+		"Language",
+		"Climbing",
+		"Item Management",
+		"Time Management",
+		"Paperwork Filing",
+		"Fleet Gathering",
+		"Logistics",
+		"Diplomacy",
+		"Hygiene",
+		"Agriculture",
+		"Civil Engineering",
+		"Tactical Command"
+	}
+}
+_G.pg.base.gametip.roll_card_attr = {
+	tip = "Stats"
+}
+_G.pg.base.gametip.roll_card_info = {
+	tip = "Profile"
+}
+_G.pg.base.gametip.roll_card_skill = {
+	tip = "Skills"
+}
+_G.pg.base.gametip.roll_ending_tip1 = {
+	tip = "Explore all areas on the 1st and 2nd Floor to reach the finale of the story."
+}
+_G.pg.base.gametip.roll_ending_tip2 = {
+	tip = "You haven't explored all areas on the 1st and 2nd Floor yet."
+}
+_G.pg.base.gametip.roll_gametip = {
+	tip = {
+		{
+			info = [[
+- Overview -
+This event is available between November 3rd and November 15th.
+Complete the event missions, investigate the castle, and unlock story chapters to receive various exploration rewards, including the limited furniture, Dice of Destiny.
+
+· How to Investigate
+On the A Bump in the Rainy Night event banner, there are event missions for sinking enemy ships. Each time you complete one, you receive one Die Roll.
+You can then tap the button on the bottom right of the event banner to move around the castle and investigate. On the investigation screen, you may use your Die Rolls to unlock new areas to search for clues.
+Tapping on a searchable area will initiate the story.
+
+Your rolls on the investigation screen can end in either success or failure. When your roll succeeds, you unlock 2 new searchable areas, while if it fails, you only unlock 1.
+Different story events will play out depending on where you investigate. If you get a game over, you will automatically be returned to the point you were before. This will not count as a Die Roll, and you can try for a roll even if you have 0 attempts.
+
+You will unlock rewards based on the amount of areas you have investigated, such as the limited furniture, Dice of Destiny.
+After you have read the whole story, you unlock the character creation function which lets you create a profile for your investigator.
+
+· Character Creation
+Finishing the whole story will unlock the character creation function.
+Here, you can input a name to generate a random investigator's profile.
+]]
+		}
+	}
+}
+_G.pg.base.gametip.roll_noname = {
+	tip = "You need to name your investigator first."
+}
+_G.pg.base.gametip.roll_notimes = {
+	tip = "You don't have enough rolls. Complete event missions to get more."
+}
+_G.pg.base.gametip.roll_reward_got = {
+	tip = "Claimed"
+}
+_G.pg.base.gametip.roll_reward_tip = {
+	tip = "Completed $1/$2"
+}
+_G.pg.base.gametip.roll_reward_word1 = {
+	tip = "Prologue"
+}
+_G.pg.base.gametip.roll_reward_word2 = {
+	tip = "Chapter 1"
+}
+_G.pg.base.gametip.roll_reward_word3 = {
+	tip = "Chapter 2"
+}
+_G.pg.base.gametip.roll_reward_word4 = {
+	tip = "Chapter 3"
+}
+_G.pg.base.gametip.roll_reward_word5 = {
+	tip = "Chapter 4"
+}
+_G.pg.base.gametip.roll_reward_word6 = {
+	tip = "Chapter 5"
+}
+_G.pg.base.gametip.roll_reward_word7 = {
+	tip = "Chapter 6"
+}
+_G.pg.base.gametip.roll_reward_word8 = {
+	tip = "Finale"
+}
+_G.pg.base.gametip.roll_room1 = {
+	tip = "Servants' Room"
+}
+_G.pg.base.gametip.roll_room10 = {
+	tip = "Observation Deck"
+}
+_G.pg.base.gametip.roll_room11 = {
+	tip = "Second Bedroom"
+}
+_G.pg.base.gametip.roll_room12 = {
+	tip = "Collection Room"
+}
+_G.pg.base.gametip.roll_room13 = {
+	tip = "2nd Floor Hall"
+}
+_G.pg.base.gametip.roll_room14 = {
+	tip = "Main Bedroom"
+}
+_G.pg.base.gametip.roll_room15 = {
+	tip = "Study"
+}
+_G.pg.base.gametip.roll_room16 = {
+	tip = "Secret Room"
+}
+_G.pg.base.gametip.roll_room17 = {
+	tip = "Garden"
+}
+_G.pg.base.gametip.roll_room2 = {
+	tip = "1st Floor Hall"
+}
+_G.pg.base.gametip.roll_room3 = {
+	tip = "Guest Room"
+}
+_G.pg.base.gametip.roll_room4 = {
+	tip = "Courtyard"
+}
+_G.pg.base.gametip.roll_room5 = {
+	tip = "Living Room"
+}
+_G.pg.base.gametip.roll_room6 = {
+	tip = "Housekeeper's Room"
+}
+_G.pg.base.gametip.roll_room7 = {
+	tip = "Dining Room"
+}
+_G.pg.base.gametip.roll_room8 = {
+	tip = "Kitchen"
+}
+_G.pg.base.gametip.roll_room9 = {
+	tip = "Banquet Hall"
+}
+_G.pg.base.gametip.roll_room_unexplored = {
+	tip = "???"
+}
+_G.pg.base.gametip.roll_times_left = {
+	tip = "Rolls Left: $1"
+}
+_G.pg.base.gametip.roll_tip2 = {
+	tip = "You must explore the unlocked area(s) to be able to roll again."
+}
+_G.pg.base.gametip.roll_unlock = {
+	tip = "Unlock all stories to create your own investigator."
+}
 _G.pg.base.gametip.rolling_ball_help = {
 	tip = {
 		{
@@ -15631,19 +15990,19 @@ _G.pg.base.gametip.ryza_word_equip = {
 	tip = "Gear"
 }
 _G.pg.base.gametip.sail_boat_equip_tip_1 = {
-	tip = "<color=#E3CEAF>威力较小装填速度较快的火炮</color>\n<color=#F1B969>装备后舰艇航速降低</color>"
+	tip = "<color=#E3CEAF>Pretty Weak, Rapid-Fire Gun</color>\n<color=#F1B969>Equipping this on your ship reduces her speed.</color>"
 }
 _G.pg.base.gametip.sail_boat_equip_tip_2 = {
-	tip = "<color=#E3CEAF>威力中等装填速度中等的火炮</color>\n<color=#F1B969>装备后舰艇航速降低</color>"
+	tip = "<color=#E3CEAF>Decently Strong, Decently Quick Gun</color>\n<color=#F1B969>Equipping this on your ship reduces her speed.</color>"
 }
 _G.pg.base.gametip.sail_boat_equip_tip_3 = {
-	tip = "<color=#E3CEAF>威力极大装填速度极慢的火炮</color>\n<color=#F1B969>装备后舰艇航速降低</color>"
+	tip = "<color=#E3CEAF>Extremely Powerful, Extremely Slow Gun</color>\n<color=#F1B969>Equipping this on your ship reduces her speed.</color>"
 }
 _G.pg.base.gametip.sail_boat_equip_tip_4 = {
-	tip = "<color=#E3CEAF>装甲甲板</color>\n<color=#F1B969>装备后舰艇耐久提升航速降低</color>"
+	tip = "<color=#E3CEAF>Armored Deck</color>\n<color=#F1B969>Equipping this on your ship raises her HP but reduces her speed.</color>"
 }
 _G.pg.base.gametip.sail_boat_equip_tip_5 = {
-	tip = "<color=#E3CEAF>海员啾</color>\n<color=#F1B969>装备后舰艇航速提升</color>"
+	tip = "<color=#E3CEAF>Manjuu Sailor</color>\n<color=#F1B969>Equipping this on your ship raises her speed.</color>"
 }
 _G.pg.base.gametip.sail_boat_minigame_help = {
 	tip = {
@@ -15887,6 +16246,214 @@ Regarding Minigames and the Early Summer Invitation
 }
 _G.pg.base.gametip.select_award_warning = {
 	tip = "Please select one of the following rewards"
+}
+_G.pg.base.gametip.senran_pt_consume_tip = {
+	tip = "Would you like to use <color=#3fbe0d>$1</color> <icon name=renzhinan_pt w=0.6 h=0.6/> to increase your level to <color=#3fbe0d>Lv.$2</color>?"
+}
+_G.pg.base.gametip.senran_pt_help = {
+	tip = {
+		{
+			info = [[
+This event is available between <color=#92fc63>November 23rd and December 6th.</color>
+
+1. Participate in The Ninja Scrolls, complete tasks on the Mission Board, and finish time-limited missions to receive <color=#92fc63>Ninja Teachings</color>.
+2. Spend your Ninja Teachings in the Ninjutsu Dojo and increase the attribute level to 8 to receive rewards, including <color=#92fc63>Homura</color>, an SR Submarine.
+3. Homura is claimable until <color=#92fc63>midnight on December 13th.</color>]]
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_not_enough = {
+	tip = "Insufficient <color=#92fc63>Shinobi Teachings</color>."
+}
+_G.pg.base.gametip.senran_pt_rank = {
+	tip = "Level Raised $1 Time(s)"
+}
+_G.pg.base.gametip.senran_pt_words_banjiu = {
+	tip = {
+		{
+			"1100002/pt1",
+			"Thank you very much for your guidance."
+		},
+		{
+			"1100002/pt2",
+			"I see... That certainly is quite helpful."
+		},
+		{
+			"1100002/pt3",
+			"Because your instruction style is so helpful, I'm doing better now than ever."
+		},
+		{
+			"1100002/pt4",
+			"You can tell that I'm making good progress? I'm glad to hear that."
+		},
+		{
+			"1100002/pt5",
+			"Thank you for your hard work. I look forward to working with you next time as well."
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_feiniao = {
+	tip = {
+		{
+			"1100001/pt1",
+			"I've been waiting for you, Commander!"
+		},
+		{
+			"1100001/pt2",
+			"Now I feel tense all of a sudden."
+		},
+		{
+			"1100001/pt3",
+			"Has my training bore fruit?"
+		},
+		{
+			"1100001/pt4",
+			"I could totally keep going!"
+		},
+		{
+			"1100001/pt5",
+			"I'm happy to keep receiving your guidance and encouragement, moving forward!"
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_xishao = {
+	tip = {
+		{
+			"1100007/pt1",
+			"I'll... be in your care..."
+		},
+		{
+			"1100007/pt2",
+			"I'll... try to work harder..."
+		},
+		{
+			"1100007/pt3",
+			"I think... I'm a bit more confident now."
+		},
+		{
+			"1100007/pt4",
+			"I still... need to do more."
+		},
+		{
+			"1100007/pt5",
+			"Next time... I'll need to give it my all as well..."
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_xuebugui = {
+	tip = {
+		{
+			"1100005/pt1",
+			"Thank you for taking this time out of your busy schedule."
+		},
+		{
+			"1100005/pt2",
+			"Heehee. Is this how it's done?"
+		},
+		{
+			"1100005/pt3",
+			"This activity leads to surprising discoveries."
+		},
+		{
+			"1100005/pt4",
+			"Yes, I can see now why you're so widely adored."
+		},
+		{
+			"1100005/pt5",
+			"I look forward to our next time."
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_xuequan = {
+	tip = {
+		{
+			"1100004/pt1",
+			"I've awaited your arrival. Let us get to it."
+		},
+		{
+			"1100004/pt2",
+			"Do you think I've become stronger?"
+		},
+		{
+			"1100004/pt3",
+			"I wouldn't mind if you ramped up the intensity."
+		},
+		{
+			"1100004/pt4",
+			"What is next on the schedule? I can't wait to see."
+		},
+		{
+			"1100004/pt5",
+			"Thank you kindly. I'm delighted to grow stronger with you."
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_yan = {
+	tip = {
+		{
+			"1100003/pt1",
+			"Heheh, this'll be fun. I have high hopes."
+		},
+		{
+			"1100003/pt2",
+			"C'mon, no breaks! Next one!"
+		},
+		{
+			"1100003/pt3",
+			"You're not half-bad at this, Commander."
+		},
+		{
+			"1100003/pt4",
+			"Surely we're not done already?"
+		},
+		{
+			"1100003/pt5",
+			"Nice work. I can feel my new strength, and it's all thanks to you."
+		}
+	}
+}
+_G.pg.base.gametip.senran_pt_words_zi = {
+	tip = {
+		{
+			"1100006/pt1",
+			"I'll... give it my best shot."
+		},
+		{
+			"1100006/pt2",
+			"Do you think I've gotten stronger?"
+		},
+		{
+			"1100006/pt3",
+			"I want to try a little harder."
+		},
+		{
+			"1100006/pt4",
+			"I feel like... I've gotten the hang of this."
+		},
+		{
+			"1100006/pt5",
+			"I can do just a little more... if you can."
+		}
+	}
+}
+_G.pg.base.gametip.senrankagura_backhill_help = {
+	tip = {
+		{
+			info = [[
+- Overview -
+The Ninja Scrolls: Azur Flash is available between <color=#92fc63>November 23rd and December 6th.</color>
+
+- Details -
+1. Complete event stages and missions to receive Castle Tickets, the event currency.
+Castle Tickets can be spent in the event exchange shop for various rewards, including the SR collaboration character Ikaruga.
+You can also claim the Elite collaboration character Murasaki as a milestone reward for collecting enough Castle Tickets.
+2. The Missions Board lists new event missions every day. Complete these missions to receive Shinobi Teachings and the time-limited furniture Shinobi Sliding Doors.
+3. The Ninja Scrolls has special missions available for each character. Complete these missions to receive Shinobi Teachings, Augment Modules for the new characters, and the special furniture Akashi Castle Scroll.
+4. The Ninjutsu Dojo is where you can spend your Shinobi Teachings to raise the Dojo's attribute level. Raise it high enough to receive the SR collaboration character Homura.
+5. The New Skins button takes you to the skin shop.
+6. The Limited Construction button takes you to the build screen.]]
+		}
+	}
 }
 _G.pg.base.gametip.series_enemy_SP_count = {
 	tip = "Attempts Remaining:"
@@ -16160,6 +16727,33 @@ _G.pg.base.gametip.sham_shop_title = {
 }
 _G.pg.base.gametip.sham_team_limit = {
 	tip = "Please ensure that each fleet has at least 1 ship in the Vanguard and 1 ship in the Main fleet."
+}
+_G.pg.base.gametip.shan_luan_task_buff_default = {
+	tip = "???"
+}
+_G.pg.base.gametip.shan_luan_task_help = {
+	tip = {
+		{
+			info = [[
+This event is available between <color=#92fc63>November 23rd and December 6th.</color>
+
+- Overview -
+Complete the event missions to receive Shinobi Teachings and Secret Orbs.
+Completing each respective character's mission will reward you with time-limited furniture.
+
+- Details -
+1. Tap a character's art on the screen to view the list of her event missions.
+2. From the character's mission list screen, you can view the details of each mission as well as claim rewards.
+3. After collecting 7 Secret Orbs in total, tap the Details button to claim the time-limited furniture Akashi Castle Scroll.
+4. After completing enough missions, you'll unlock more rewards (claimable through the Details button) as well as fleet-wide buffs effective for the duration of the event.]]
+		}
+	}
+}
+_G.pg.base.gametip.shan_luan_task_level_tip = {
+	tip = "Secret Level: $1"
+}
+_G.pg.base.gametip.shan_luan_task_progress_tip = {
+	tip = "Completed: $1"
 }
 _G.pg.base.gametip.share_success = {
 	tip = "Sharing Successfully"
@@ -16904,12 +17498,19 @@ _G.pg.base.gametip.shipyard_phase_1 = {
 	tip = {
 		{
 			info = [[
-活动简介：
-<color=#92fc63>10.25-11.9/24时</color>期间开启「皇家财富的秘密船厂」活动的第二阶段。
-活动期间完成「秘密船厂」建造阶段的所有任务，即可参加第二阶段活动。
-活动期间，11月1日为止每日解锁一关游戏关卡，并增加<color=#92fc63>1</color>次可获得奖励的游玩次数。
-拥有可获得奖励的游玩次数时，完成游戏关卡可获得<color=#92fc63>道具奖励。</color>
-完成全部7个游戏关卡后，可获得<color=#92fc63>限定家具「启航的冒险船」x1</color>并可自由选择任意关卡通关]]
+- Event Overview -
+In this minigame, you'll take control of the ship you built in Tempesta's Secret Shipyard, sink enemies on the high seas, collect booty, and reach the destination to rack up points.
+This minigame is available between <color=#92fc63>October 26th and November 8th.</color>
+
+- Details -
+· There are missions for you to complete at Tempesta's Secret Shipyard. Once you have finished them all, you'll have a complete ship to steer in the minigame.
+· Pick a stage, choose the equipment you want to bring, then set sail.
+· A new minigame stage will unlock every day up to November 1st.
+· There are one-time rewards the first time you clear specific stages.
+- Stage 3: Fruit Rations, a Tempesta auxiliary gear
+- Stage 5: Tempesta weapons set
+- Stage 7: Pirate Ship, a piece of furniture
+· After you finish stage 7, you can replay any stage you like.]]
 		}
 	}
 }
@@ -17024,8 +17625,26 @@ _G.pg.base.gametip.skill = {
 _G.pg.base.gametip.skill_learn_tip = {
 	tip = "You can quickly finish a class $1 more time(s) today."
 }
+_G.pg.base.gametip.skin_discount_desc = {
+	tip = "Spend 1 $1 to purchase $3 at a discounted price of $2?"
+}
+_G.pg.base.gametip.skin_discount_timelimit = {
+	tip = "The item $1 will expire after $2 maintenance, please use it in time in the Outfit Shop."
+}
+_G.pg.base.gametip.skin_exchange_confirm = {
+	tip = "Spend <color=#92fc63>1 $1</color> to exchange for <color=#92fc63>$2</color>?"
+}
+_G.pg.base.gametip.skin_exchange_timelimit = {
+	tip = "The pool of skins that this item may be redeemed for will change after $1. Please plan your usage accordingly."
+}
+_G.pg.base.gametip.skin_exchange_title = {
+	tip = "Redeemable Skins"
+}
 _G.pg.base.gametip.skin_gift_desc = {
 	tip = "You will obtain one of the following random skins (duplicate skins will be converted into a corresponding sum of Gems).\nThe available skins and their rarities are as follows: \n$1"
+}
+_G.pg.base.gametip.skin_purchase_confirm = {
+	tip = "Spend <color=#92fc63>1 $1</color> to purchase the following skin, <color=#FFDE38FF>$3</color>, at a discounted price of <icon name=gem w=0.7 h=0.7/>$2?"
 }
 _G.pg.base.gametip.skin_remain_time = {
 	tip = "Expires in "
@@ -18722,6 +19341,128 @@ _G.pg.base.gametip.vote_final_title2 = {
 _G.pg.base.gametip.vote_get_book = {
 	tip = "You obtained a Certificate of Support."
 }
+_G.pg.base.gametip.vote_help_2023 = {
+	tip = {
+		{
+			info = [[
+<color=#FFDD00>Azur Lane Popularity Poll 2023 Information</color>
+
+- Overview -
+· Complete event missions to collect ballots and use them to vote for your favorite shipgirls and receive rewards based on how many votes you have cast.
+· Tap the Popularity Poll button in the top right corner on the main screen to view the event missions, current rankings, and cast votes in the active round.
+· The Popularity Poll is available from <color=#92fc63>December 7th, 2023 to 12 AM on February 5th, 2024</color>.
+· The Daily Results board displays the current total votes in each round across all servers.
+· Excluding shipgirls already in the Hall of Fame, <color=#92fc63>all shipgirls available in the game before November 23rd, 2023</color> are eligible to participate. Collaboration characters (excluding blueprint ships), µ-rigging, and Type II rigging shipgirls as well as Kaga(BB) cannot participate in the poll, but META and Little shipgirls can be voted on in the special vote rounds.
+
+- Obtaining Ballots -
+All Commanders who have reached Commander Level 25 are able to obtain <color=#92fc63>ballots</color> through the following means:
+Qualifiers (Excluding Special Votes):
+· Completing the <color=#92fc63>daily missions</color> that appear during the poll <color=#92fc63>automatically awards you with ballots</color>. You can obtain up to a maximum of <color=#92fc63>20 ballots a day</color> this way.
+· Completing the <color=#92fc63>one-time missions</color> that appear during the poll <color=#92fc63>automatically awards you with ballots</color>. Each poll round has a limit on how many ballots may be obtained this way.
+For more on the mission objectives and the maximum caps on ballots obtained, please check the Event Tasks tab.
+
+Max Ballot Caps for Each Round of the Poll:
+Qualifiers: 480
+Group A: 200
+Group B: 200
+Group C: 200
+Group D: 200
+Repechage: 160
+Finals: 280
+When all the polling rounds have finished, your remaining ballots will be <color=#92fc63>automatically removed</color> and your progress on the event missions will <color=#92fc63>reset</color>.
+Special Votes:
+You receive <color=#92fc63>1 ballot</color> a day when you log in to the game.
+
+- Voting Schedule -
+The main and special votes follow the schedule below:
+<color=#92fc63>Qualifiers</color>: after the 7/12/2023 maintenance to 18/12/2023, 11:59 PM.
+<color=#92fc63>Group A</color>: from 21/12/2023, midnight to 25/12/2023, 11:59 PM.
+<color=#92fc63>Special Vote I</color>: from 26/12/2023, midnight to 28/12/2023, 11:59 PM.
+<color=#92fc63>Group B</color>: from 30/12/2023, midnight to 3/1/2024, 11:59 PM.
+<color=#92fc63>Special Vote II</color>: from 4/1/2024, midnight to 6/1/2024, 11:59 PM.
+<color=#92fc63>Group C</color>: from 8/1/2024, midnight to 12/1/2024, 11:59 PM.
+<color=#92fc63>Special Vote III</color>: from 13/1/2024, midnight to 15/1/2024, 11:59 PM.
+<color=#92fc63>Group D</color>: from 17/1/2024, midnight to 21/1/2024, 11:59 PM.
+<color=#92fc63>Repechage</color>: from 23/1/2024, midnight to 26/1/2024, 11:59 PM.
+<color=#92fc63>Finals</color>: from 30/1/2024, midnight to 5/2/2024, 11:59 PM.
+
+The voting time and final results of each round are available on the <color=#92fc63>Daily Results</color>.
+
+- Round-Specific Rules -
+<color=#92fc63>Qualifiers</color>
+During the Qualifiers round, the total number of votes for each character will not be shown, only their current rankings.
+All shipgirls are able to participate in this round, with the exceptions of: shipgirls in the Hall of Fame, collaboration characters (excluding blueprint ships), µ-rigging shipgirls,Type II rigging shipgirls, Kaga(BB), META shipgirls, and Little shipgirls.
+The top 240 shipgirls with the most votes this round advance to the group votes. Each group consists of 60 shipgirls.
+
+<color=#92fc63>Group Votes</color>
+The group votes will consist of all the winners from the qualifiers divided into four groups.
+The top 5 shipgirls with the most votes in each group will advance to the finals. The shipgirls from 6th to 15th place will instead advance to the <color=#92fc63>repechage</color>.
+
+<color=#92fc63>Special Votes</color>
+There will be a total of 3 special votes, one each dedicated to Sirens, META shipgirls, and Little shipgirls. The participants in this round cannot participate in the main poll.
+
+<color=#92fc63>Repechage</color>
+The repechage will consist of all shipgirls who placed between 6th and 15th from each group during the group votes.
+The top 15 shipgirls with the most votes in this round will advance to the finals.
+
+<color=#92fc63>Finals</color>
+A total of 20 participants from the group votes and 15 from the repechage will participate in the finals.
+
+- In Case of a Tie in Number of Votes -
+In the <color=#92fc63>qualifiers</color>, if there occurs a tie in the number of votes between shipgirls, the winner will be chosen based on the order of who reached the final number of votes first.
+In the <color=#92fc63>group votes</color>, the <color=#92fc63>repechage</color>, and the <color=#92fc63>finals</color>, the winner will be chosen based on the order of the final rankings in the qualifiers.
+]]
+		}
+	}
+}
+_G.pg.base.gametip.vote_label_rank = {
+	tip = "Rank"
+}
+_G.pg.base.gametip.vote_label_rank_fresh_time_tip = {
+	tip = "The ranking is updated every 30 minutes."
+}
+_G.pg.base.gametip.vote_lable_acc_title_1 = {
+	tip = "Total Votes"
+}
+_G.pg.base.gametip.vote_lable_acc_title_2 = {
+	tip = "Total Votes:"
+}
+_G.pg.base.gametip.vote_lable_curr_title_1 = {
+	tip = "Votes This Round"
+}
+_G.pg.base.gametip.vote_lable_curr_title_2 = {
+	tip = "Votes This Round:"
+}
+_G.pg.base.gametip.vote_lable_daily_task_tip = {
+	tip = "Complete daily missions to receive $1 reward(s)."
+}
+_G.pg.base.gametip.vote_lable_daily_task_title = {
+	tip = "Dailies"
+}
+_G.pg.base.gametip.vote_lable_not_start = {
+	tip = "Locked"
+}
+_G.pg.base.gametip.vote_lable_rearch = {
+	tip = "Completed"
+}
+_G.pg.base.gametip.vote_lable_ship_votes = {
+	tip = "$1 vote(s)"
+}
+_G.pg.base.gametip.vote_lable_task_list_is_empty = {
+	tip = "You have obtained every ballot."
+}
+_G.pg.base.gametip.vote_lable_task_title = {
+	tip = "Event Tasks"
+}
+_G.pg.base.gametip.vote_lable_title = {
+	tip = "<size=30>Popularity Poll is open between</size> <size=28>12/7/2023 and 2/5/2024 12 AM</size>"
+}
+_G.pg.base.gametip.vote_lable_voting = {
+	tip = "In Progress"
+}
+_G.pg.base.gametip.vote_lable_window_title = {
+	tip = "Rewards"
+}
 _G.pg.base.gametip.vote_love_confirm = {
 	tip = "Are you sure you want to use a special vote?"
 }
@@ -18745,6 +19486,12 @@ _G.pg.base.gametip.vote_rank_refresh_time = {
 }
 _G.pg.base.gametip.vote_success = {
 	tip = "Voted!"
+}
+_G.pg.base.gametip.vote_tip_area_closed = {
+	tip = "Event unavailable "
+}
+_G.pg.base.gametip.vote_tip_level_limit = {
+	tip = "Becomes obtainable after you reach Commander Level 25."
 }
 _G.pg.base.gametip.vote_vote_count = {
 	tip = "$1 votes"
@@ -18935,6 +19682,9 @@ _G.pg.base.gametip.word_chuansong = {
 _G.pg.base.gametip.word_clear = {
 	tip = "Sort"
 }
+_G.pg.base.gametip.word_click_to_close = {
+	tip = "Tap to close"
+}
 _G.pg.base.gametip.word_cmdClose = {
 	tip = "Not yet open"
 }
@@ -19020,7 +19770,7 @@ _G.pg.base.gametip.word_ema1 = {
 	tip = "Emas"
 }
 _G.pg.base.gametip.word_energy_recov_speed = {
-	tip = "Recovery"
+	tip = "Recovery Speed"
 }
 _G.pg.base.gametip.word_equip = {
 	tip = "Gear"
@@ -19420,7 +20170,7 @@ _G.pg.base.gametip.word_not_get = {
 	tip = "Ungranted "
 }
 _G.pg.base.gametip.word_nowenergy = {
-	tip = "Current Mood"
+	tip = "Morale"
 }
 _G.pg.base.gametip.word_oil = {
 	tip = "Oil"
@@ -19638,6 +20388,9 @@ _G.pg.base.gametip.word_shipNation_ryza = {
 }
 _G.pg.base.gametip.word_shipNation_saDing = {
 	tip = "Sardegna Empire "
+}
+_G.pg.base.gametip.word_shipNation_senran = {
+	tip = "Senran Kagura"
 }
 _G.pg.base.gametip.word_shipNation_ssss = {
 	tip = "SSSS"
@@ -19894,6 +20647,9 @@ _G.pg.base.gametip.word_take_effect = {
 _G.pg.base.gametip.word_take_video_tip = {
 	tip = "Tips: Tap the button on the right side to stop recording."
 }
+_G.pg.base.gametip.word_talent = {
+	tip = "Talent"
+}
 _G.pg.base.gametip.word_teach = {
 	tip = "Teach"
 }
@@ -19937,7 +20693,7 @@ _G.pg.base.gametip.word_video_mode = {
 	tip = "Rec"
 }
 _G.pg.base.gametip.word_votes = {
-	tip = "得票数量"
+	tip = "Votes"
 }
 _G.pg.base.gametip.word_wait = {
 	tip = ""
@@ -20410,9 +21166,9 @@ _G.pg.base.gametip.world_boss_help_meta = {
 			info = [[
 - META Showdown Overview -
 
-From <color=#92fc63>8/31/23 to 12/7/23</color>, challenge Jintsuu META
+From <color=#92fc63>12/7/23 to 3/6/24</color>, challenge Kirov META
 to earn Sync Points. Sync Points can be used
-to obtain the limited character, <color=#92fc63>Jintsuu META</color> as well
+to obtain the limited character, <color=#92fc63>Kirov META</color> as well
 as other great rewards.
 <color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>
 
