@@ -472,7 +472,7 @@ _G.pg.base.gametip.activity_shop_exchange_count = {
 	tip = "可兑换次数"
 }
 _G.pg.base.gametip.activity_shop_lable = {
-	tip = "*兑换开放时间:<color=#FFF693>$1</color>"
+	tip = "*兑换开放时间:\n<color=#FFF693>$1</color>"
 }
 _G.pg.base.gametip.activity_shop_title = {
 	tip = "活动"
@@ -3246,7 +3246,7 @@ _G.pg.base.gametip.buildship_light_tip = {
 	tip = "{namecode:446} 建造追加！"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 {namecode:18}(最多4次)"
+	tip = "每累计建造200次可获得海上传奇舰船 关岛(最多4次)"
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "{namecode:470}、{namecode:474} 等角色建造追加！"
@@ -4105,6 +4105,13 @@ _G.pg.base.gametip.commander_fleet_not_exist = {
 _G.pg.base.gametip.commander_fleet_pos_not_exist = {
 	tip = "该位置不存在指挥喵"
 }
+_G.pg.base.gametip.commander_formation_prefab_fleet = {
+	tip = [[
+当
+前
+编
+队]]
+}
 _G.pg.base.gametip.commander_get = {
 	tip = "是否消耗$1物资购买$2个喵箱？"
 }
@@ -4248,6 +4255,12 @@ _G.pg.base.gametip.commander_skill_effect = {
 }
 _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足"
+}
+_G.pg.base.gametip.commander_skill_ui_confirm = {
+	tip = "确定"
+}
+_G.pg.base.gametip.commander_skill_ui_info = {
+	tip = "信息"
 }
 _G.pg.base.gametip.commander_subtile_ablity = {
 	tip = "能力加成"
@@ -4501,14 +4514,32 @@ _G.pg.base.gametip.cook_game_Albacore = {
 _G.pg.base.gametip.cook_game_august = {
 	tip = "移动速度更快"
 }
+_G.pg.base.gametip.cook_game_constellation = {
+	tip = "上对甜品有概率让评委进入<color=#FFE555>【特殊状态】</color>"
+}
+_G.pg.base.gametip.cook_game_constellation_skill_desc = {
+	tip = "使评委拒绝对方阵营的甜品，同时我方成员给该状态的黄鸡评委上任何甜品会获得双倍分数，持续7秒"
+}
+_G.pg.base.gametip.cook_game_constellation_skill_name = {
+	tip = "<color=#FFE555>「希望占卜状态」</color>"
+}
 _G.pg.base.gametip.cook_game_elbe = {
 	tip = "同时端两盘甜品"
+}
+_G.pg.base.gametip.cook_game_flandre = {
+	tip = "拥有一名女仆啾协协助者"
 }
 _G.pg.base.gametip.cook_game_hakuryu = {
 	tip = "连续上对甜点时增加移动速度"
 }
 _G.pg.base.gametip.cook_game_howe = {
 	tip = "每次成功上甜品时50%概率额外加1分"
+}
+_G.pg.base.gametip.cook_game_janus = {
+	tip = "上对分数随机增加，上错分数随机减少"
+}
+_G.pg.base.gametip.cook_game_laffey = {
+	tip = "上对甜品后，下一次上对甜品分数+1"
 }
 _G.pg.base.gametip.cook_game_marcopolo = {
 	tip = "增加己方游戏时间"
@@ -12258,6 +12289,9 @@ _G.pg.base.gametip.lanternRiddles_wait_for_reanswer = {
 _G.pg.base.gametip.last_building_not_shown = {
 	tip = "上次建造时未能展示的已获取角色"
 }
+_G.pg.base.gametip.last_times_sign = {
+	tip = "剩余签到次数：$1"
+}
 _G.pg.base.gametip.launch_ball_hatsuduki_skill_1 = {
 	tip = "主动技能:百鬼退散"
 }
@@ -14454,6 +14488,19 @@ _G.pg.base.gametip.newserver_soldout = {
 }
 _G.pg.base.gametip.newserver_time = {
 	tip = "$1天$2时"
+}
+_G.pg.base.gametip.newyear2024_backhill_help = {
+	tip = {
+		{
+			info = [[
+活动时间：<color=#92fc63>2023.12.21-2024.1.4维护</color>
+活动简介：
+「甜品大作战II」：参与小游戏获取限定家具「炫彩聚光灯」、「喧嚣惊喜灯」等奖励
+「绘马祈愿」：参与绘马祈愿获取奖励「年贺状」
+「换装商店」：购买限时换装
+「限时建造」：建造限时角色]]
+		}
+	}
 }
 _G.pg.base.gametip.nine_choose_one = {
 	tip = "指挥官只能邀请一人参加舞会，\n是否确认邀请<color=#92fc63>$1</color>？\n邀请后会获得对应角色和回礼"
@@ -17772,6 +17819,12 @@ _G.pg.base.gametip.skin_exchange_title = {
 _G.pg.base.gametip.skin_gift_desc = {
 	tip = "从如下换装中随机获得1件换装(如果该换装已拥有，则会自动转化为该换装等价的钻石) \n包含的换装和概率如下：\n $1"
 }
+_G.pg.base.gametip.skin_page_desc = {
+	tip = "活动期间，每日解锁$1次签到机会\n完成签到可获取限时奖励并解锁限定剧情"
+}
+_G.pg.base.gametip.skin_page_sign = {
+	tip = "点击签到"
+}
 _G.pg.base.gametip.skin_purchase_confirm = {
 	tip = "是否消耗<color=#92fc63>$1*1</color>购买折扣价\n<icon name=gem w=0.6 h=0.6/><color=#FFDE38FF>$2</color>的$3皮肤"
 }
@@ -19200,11 +19253,11 @@ _G.pg.base.gametip.ur_exchange_help_tip = {
 需要收集「特装原型」进行兑换
 
  ■ 「特装原型」可通过以下途径获取：
-通过特装原型周常任务，完成每日日常任务每周可以获得「特装原型」400个
+通过周常任务活跃奖励，每周可以获得「特装原型」500个
 还可以通过出击击破主线、活动、作战档案、主线困难关卡的BOSS、完成科研项目或退役非改造海上传奇稀有度角色获得
 （退役通过改造提升为海上传奇稀有度的角色无法获得）
 
-每月的特装原型获取数量上限为4000
+每月的特装原型获取数量上限为5000
 每月1日0点刷新可获取数量
 *部分活动获取的特装原型不计入每月上限，会进行注明
 ]]
