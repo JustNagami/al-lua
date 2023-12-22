@@ -1547,6 +1547,35 @@ pg.skill_data_display = setmetatable({
 		17250,
 		17251,
 		17252,
+		17280,
+		17290,
+		17291,
+		17303,
+		17304,
+		17305,
+		17306,
+		17307,
+		17308,
+		17309,
+		17311,
+		17312,
+		17321,
+		17330,
+		17331,
+		17340,
+		17350,
+		17351,
+		17360,
+		17362,
+		17370,
+		17372,
+		17380,
+		17390,
+		17391,
+		17400,
+		17401,
+		17411,
+		17421,
 		18010,
 		18040,
 		18041,
@@ -2001,6 +2030,8 @@ pg.skill_data_display = setmetatable({
 		29162,
 		29171,
 		29172,
+		29173,
+		29174,
 		29181,
 		29182,
 		29191,
@@ -2762,6 +2793,7 @@ pg.skill_data_display = setmetatable({
 		1011900,
 		1010250,
 		1010251,
+		1010380,
 		1090030,
 		1090031,
 		1090032,
@@ -2797,6 +2829,12 @@ pg.skill_data_display = setmetatable({
 		1017161,
 		1017251,
 		1017252,
+		1012620,
+		1012621,
+		1012622,
+		1011940,
+		1011941,
+		1011942,
 		1090020,
 		1090042,
 		1090043,
@@ -2817,7 +2855,11 @@ pg.skill_data_display = setmetatable({
 		1090170,
 		1090171,
 		1090172,
-		1090191
+		1090191,
+		1090210,
+		1090211,
+		1090220,
+		1090221
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -9002,6 +9044,122 @@ pg.base.skill_data_display = {
 		id = 17252,
 		name = "Hindhorn's Grace"
 	},
+	[17280] = {
+		id = 17280,
+		name = "Lady Lou"
+	},
+	[17290] = {
+		id = 17290,
+		name = "The Lady's Advance"
+	},
+	[17291] = {
+		id = 17291,
+		name = "The Lady's Advance"
+	},
+	[17303] = {
+		id = 17303,
+		name = "Bunbun Strikers"
+	},
+	[17304] = {
+		id = 17304,
+		name = "Motivation - 1/5"
+	},
+	[17305] = {
+		id = 17305,
+		name = "Motivation - 2/5"
+	},
+	[17306] = {
+		id = 17306,
+		name = "Motivation - 3/5"
+	},
+	[17307] = {
+		id = 17307,
+		name = "Motivation - 4/5"
+	},
+	[17308] = {
+		id = 17308,
+		name = "Motivation - 5/5"
+	},
+	[17309] = {
+		id = 17309,
+		name = "Annihilation Mode"
+	},
+	[17311] = {
+		id = 17311,
+		name = "Scout Support"
+	},
+	[17312] = {
+		id = 17312,
+		name = "Mission Complete"
+	},
+	[17321] = {
+		id = 17321,
+		name = "Fiercer When Cornered"
+	},
+	[17330] = {
+		id = 17330,
+		name = "Battle Star Fireworks"
+	},
+	[17331] = {
+		id = 17331,
+		name = "Battle Star Fireworks"
+	},
+	[17340] = {
+		id = 17340,
+		name = "Guest Incoming!"
+	},
+	[17350] = {
+		id = 17350,
+		name = "On-Air Broadcast Assistance"
+	},
+	[17351] = {
+		id = 17351,
+		name = "On-Air Broadcast Assistance"
+	},
+	[17360] = {
+		id = 17360,
+		name = "On-Air Broadcast Assistance"
+	},
+	[17362] = {
+		id = 17362,
+		name = "On-Air Broadcast Assistance"
+	},
+	[17370] = {
+		id = 17370,
+		name = "Scaling Spiral"
+	},
+	[17372] = {
+		id = 17372,
+		name = "Scaling Spiral"
+	},
+	[17380] = {
+		id = 17380,
+		name = "Soaring Star-Chaser"
+	},
+	[17390] = {
+		id = 17390,
+		name = "Young Eagles' Roost"
+	},
+	[17391] = {
+		id = 17391,
+		name = "Young Eagles' Roost"
+	},
+	[17400] = {
+		id = 17400,
+		name = "Playful Avengers"
+	},
+	[17401] = {
+		id = 17401,
+		name = "Playful Avengers"
+	},
+	[17411] = {
+		id = 17411,
+		name = "Teary-Eyed Huntress"
+	},
+	[17421] = {
+		id = 17421,
+		name = "Fish Are Friends"
+	},
 	[18010] = {
 		id = 18010,
 		name = "MKV-Class AP Shells 194/160+"
@@ -10817,6 +10975,14 @@ pg.base.skill_data_display = {
 	[29172] = {
 		id = 29172,
 		name = "EX Barrage: Z1 Ⅱ"
+	},
+	[29173] = {
+		id = 29173,
+		name = "All Out Assault I"
+	},
+	[29174] = {
+		id = 29174,
+		name = "All Out Assault II"
 	},
 	[29181] = {
 		id = 29181,
@@ -13862,6 +14028,10 @@ pg.base.skill_data_display = {
 		id = 1010251,
 		name = "Javelin Raid+"
 	},
+	[1010380] = {
+		id = 1010380,
+		name = "Z Vanguard+"
+	},
 	[1090030] = {
 		id = 1090030,
 		name = "Anti-Air Mode - Montpelier"
@@ -14002,6 +14172,30 @@ pg.base.skill_data_display = {
 		id = 1017252,
 		name = "Hindhorn's Grace+"
 	},
+	[1012620] = {
+		id = 1012620,
+		name = "Terni Shields+"
+	},
+	[1012621] = {
+		id = 1012621,
+		name = "Terni Shields+"
+	},
+	[1012622] = {
+		id = 1012622,
+		name = "Terni Shields+"
+	},
+	[1011940] = {
+		id = 1011940,
+		name = "Observer of the Sky and Sea+"
+	},
+	[1011941] = {
+		id = 1011941,
+		name = "Observer of the Sky and Sea+"
+	},
+	[1011942] = {
+		id = 1011942,
+		name = "Observer of the Sky and Sea+"
+	},
 	[1090020] = {
 		id = 1090020,
 		name = "Full Firepower - Karlsruhe"
@@ -14085,5 +14279,21 @@ pg.base.skill_data_display = {
 	[1090191] = {
 		id = 1090191,
 		name = "Focused Assault - Takao"
+	},
+	[1090210] = {
+		id = 1090210,
+		name = "Emergency Maneuvers - Fortune"
+	},
+	[1090211] = {
+		id = 1090211,
+		name = "Emergency Maneuvers - Fortune"
+	},
+	[1090220] = {
+		id = 1090220,
+		name = "Reload Command - Königsberg"
+	},
+	[1090221] = {
+		id = 1090221,
+		name = "Reload Command - Königsberg"
 	}
 }

@@ -4527,7 +4527,7 @@ _G.pg.base.gametip.cook_game_elbe = {
 	tip = "同时端两盘甜品"
 }
 _G.pg.base.gametip.cook_game_flandre = {
-	tip = "拥有一名女仆啾协协助者"
+	tip = "拥有一名女仆啾协助者"
 }
 _G.pg.base.gametip.cook_game_hakuryu = {
 	tip = "连续上对甜点时增加移动速度"
@@ -17820,7 +17820,7 @@ _G.pg.base.gametip.skin_gift_desc = {
 	tip = "从如下换装中随机获得1件换装(如果该换装已拥有，则会自动转化为该换装等价的钻石) \n包含的换装和概率如下：\n $1"
 }
 _G.pg.base.gametip.skin_page_desc = {
-	tip = "活动期间，每日解锁$1次签到机会\n完成签到可获取限时奖励并解锁限定剧情"
+	tip = "活动期间，每日解锁$1次签到机会\n完成签到可以获取限时奖励并解锁限定剧情"
 }
 _G.pg.base.gametip.skin_page_sign = {
 	tip = "点击签到"

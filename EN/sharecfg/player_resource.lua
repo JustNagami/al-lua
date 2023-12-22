@@ -1210,6 +1210,21 @@ pg.player_resource = {
 		name = "newserver_pt_231123",
 		itemid = 59512
 	},
+	[384] = {
+		id = 384,
+		name = "xinghai_pt1",
+		itemid = 59515
+	},
+	[385] = {
+		id = 385,
+		name = "xinghai_pt2",
+		itemid = 59516
+	},
+	[386] = {
+		id = 386,
+		name = "skinTicket61",
+		itemid = 59517
+	},
 	[950] = {
 		id = 950,
 		name = "yisegefuke_pt1",
@@ -1518,6 +1533,11 @@ pg.player_resource = {
 	[5081] = {
 		id = 5081,
 		name = "skin_rerun_pt_us2023",
+		itemid = 0
+	},
+	[5082] = {
+		id = 5082,
+		name = "skin_rerun_pt_2023",
 		itemid = 0
 	},
 	[100004] = {
@@ -2262,6 +2282,15 @@ pg.player_resource = {
 		newserver_pt_231123 = {
 			383
 		},
+		xinghai_pt1 = {
+			384
+		},
+		xinghai_pt2 = {
+			385
+		},
+		skinTicket61 = {
+			386
+		},
 		yisegefuke_pt1 = {
 			950
 		},
@@ -2447,6 +2476,9 @@ pg.player_resource = {
 		},
 		skin_rerun_pt_us2023 = {
 			5081
+		},
+		skin_rerun_pt_2023 = {
+			5082
 		},
 		skin_rerun_pt = {
 			100004
@@ -2701,6 +2733,9 @@ pg.player_resource = {
 		381,
 		382,
 		383,
+		384,
+		385,
+		386,
 		950,
 		951,
 		952,
@@ -2763,6 +2798,7 @@ pg.player_resource = {
 		4599,
 		4699,
 		5081,
+		5082,
 		100004,
 		40275,
 		30853
