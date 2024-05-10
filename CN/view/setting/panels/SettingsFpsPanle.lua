@@ -1,18 +1,18 @@
 slot0 = class("SettingsFpsPanle", import(".SettingsBasePanel"))
 
-slot0.GetUIName = function(slot0)
+function slot0.GetUIName(slot0)
 	return "SettingsFPS"
 end
 
-slot0.GetTitle = function(slot0)
+function slot0.GetTitle(slot0)
 	return i18n("Settings_title_FPS")
 end
 
-slot0.GetTitleEn = function(slot0)
+function slot0.GetTitleEn(slot0)
 	return "  / FPS SETTING"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.fps30Toggle = slot0._tf:Find("options/30fps")
 	slot0.fps60Toggle = slot0._tf:Find("options/60fps")
 
@@ -34,7 +34,7 @@ slot0.OnInit = function(slot0)
 	setText(slot0._tf:Find("options/60fps/Text"), "60" .. i18n("word_frame"))
 end
 
-slot0.OnUpdate = function(slot0)
+function slot0.OnUpdate(slot0)
 	if PlayerPrefs.GetInt("fps_limit", DevicePerformanceUtil.GetDefaultFps()) == 30 then
 		triggerToggle(slot0.fps30Toggle, true)
 	end

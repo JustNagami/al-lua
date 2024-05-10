@@ -1,6 +1,6 @@
 slot2 = class("StaticEggCellView", DecorateClass(import(".StaticCellView"), import(".EggCellView")))
 
-slot2.Ctor = function(slot0, slot1)
+function slot2.Ctor(slot0, slot1)
 	uv0.Ctor(slot0, slot1)
 	uv1.Ctor(slot0)
 
@@ -10,11 +10,11 @@ slot2.Ctor = function(slot0, slot1)
 	slot0.buffer = FuncBuffer.New()
 end
 
-slot2.GetOrder = function(slot0)
+function slot2.GetOrder(slot0)
 	return ChapterConst.CellPriorityEnemy
 end
 
-slot2.Update = function(slot0)
+function slot2.Update(slot0)
 	slot2 = slot0.config
 	slot3 = slot0.info.trait ~= ChapterConst.TraitLurk
 
@@ -63,7 +63,7 @@ slot2.Update = function(slot0)
 	end
 end
 
-slot2.TweenBlink = function(slot0)
+function slot2.TweenBlink(slot0)
 	slot0:StopTween()
 
 	slot1 = findTF(slot0.go, "icon")
@@ -81,7 +81,7 @@ slot2.TweenBlink = function(slot0)
 	end)).uniqueId
 end
 
-slot2.TweenShining = function(slot0, slot1)
+function slot2.TweenShining(slot0, slot1)
 	slot0:StopTween()
 
 	slot2 = findTF(slot0.go, "icon")
@@ -107,7 +107,7 @@ slot2.TweenShining = function(slot0, slot1)
 	end)).uniqueId
 end
 
-slot2.StopTween = function(slot0)
+function slot2.StopTween(slot0)
 	if not slot0.tweenId then
 		return
 	end
@@ -117,7 +117,7 @@ slot2.StopTween = function(slot0)
 	slot0.tweenId = nil
 end
 
-slot2.Clear = function(slot0)
+function slot2.Clear(slot0)
 	slot0:StopTween()
 	slot0.buffer:Clear()
 

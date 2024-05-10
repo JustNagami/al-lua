@@ -1,34 +1,28 @@
 slot0 = class("WorldCommanderFormationPage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "WorldCommanderFormationUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.samllTF = slot0:findTF("small")
 
 	setActive(slot0.samllTF, true)
 
-	slot1 = slot0.samllTF
-	slot0.pos1 = slot1:Find("commander1")
-	slot1 = slot0.samllTF
-	slot0.pos2 = slot1:Find("commander2")
-	slot1 = slot0.samllTF
-	slot0.smallSalvageMask = slot1:Find("salvage_mask")
-	slot2 = slot0.smallSalvageMask
+	slot0.pos1 = slot0.samllTF:Find("commander1")
+	slot0.pos2 = slot0.samllTF:Find("commander2")
+	slot0.smallSalvageMask = slot0.samllTF:Find("salvage_mask")
 
-	setText(slot2:Find("text_bg/Text"), i18n("world_catsearch_help_4"))
+	setText(slot0.smallSalvageMask:Find("text_bg/Text"), i18n("world_catsearch_help_4"))
 
 	slot0.descPanel = slot0:findTF("desc")
 
 	setActive(slot0.descPanel, false)
 
 	slot0.descFrameTF = slot0:findTF("desc/frame")
-	slot1 = slot0.descFrameTF
-	slot0.descSalvageMask = slot1:Find("salvage_mask")
-	slot2 = slot0.descSalvageMask
+	slot0.descSalvageMask = slot0.descFrameTF:Find("salvage_mask")
 
-	setText(slot2:Find("text_bg/Text"), i18n("world_catsearch_help_5"))
+	setText(slot0.descSalvageMask:Find("text_bg/Text"), i18n("world_catsearch_help_5"))
 
 	slot0.descPos1 = slot0:findTF("commander1/frame/info", slot0.descFrameTF)
 	slot0.descPos2 = slot0:findTF("commander2/frame/info", slot0.descFrameTF)
@@ -51,9 +45,11 @@ slot0.OnInit = function(slot0)
 	onButton(slot0, slot0.descPanel, function ()
 		uv0:closeDescPanel()
 	end, SFX_PANEL)
+	setText(slot0:findTF("desc/frame/atttr_panel/abilitys/title/Text"), i18n("commander_subtile_ablity"))
+	setText(slot0:findTF("desc/frame/atttr_panel/talents/title/Text"), i18n("commander_subtile_talent"))
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	slot0.fleet = slot1
 	slot2 = slot0.fleet:getCommanders()
 
@@ -67,7 +63,7 @@ slot0.Update = function(slot0, slot1)
 	setActive(slot0.descSalvageMask, slot0.fleet:IsCatSalvage())
 end
 
-slot0.openDescPanel = function(slot0, slot1)
+function slot0.openDescPanel(slot0, slot1)
 	slot2 = slot1 or 0.2
 
 	if LeanTween.isTweening(go(slot0.samllTF)) or LeanTween.isTweening(go(slot0.descFrameTF)) then
@@ -91,7 +87,7 @@ slot0.openDescPanel = function(slot0, slot1)
 	slot0._tf:SetAsLastSibling()
 end
 
-slot0.closeDescPanel = function(slot0, slot1)
+function slot0.closeDescPanel(slot0, slot1)
 	slot2 = slot1 or 0.2
 
 	if LeanTween.isTweening(go(slot0.samllTF)) or LeanTween.isTweening(go(slot0.descFrameTF)) then
@@ -116,7 +112,7 @@ slot0.closeDescPanel = function(slot0, slot1)
 	slot0.contextData.inDescPage = false
 end
 
-slot0.updateDesc = function(slot0)
+function slot0.updateDesc(slot0)
 	slot1 = slot0.fleet:getCommanders()
 
 	for slot5 = 1, CommanderConst.MAX_FORMATION_POS do
@@ -130,7 +126,7 @@ slot0.updateDesc = function(slot0)
 	slot0:updateAdditions()
 end
 
-slot0.updateAdditions = function(slot0)
+function slot0.updateAdditions(slot0)
 	slot1 = slot0.fleet
 	slot2 = _.values(slot1:getCommandersTalentDesc())
 	slot3, slot4 = slot1:getCommandersAddition()
@@ -160,7 +156,7 @@ slot0.updateAdditions = function(slot0)
 	setActive(slot0.talentsArr, #slot2 > 4)
 end
 
-slot0.updateSkillTF = function(slot0, slot1, slot2)
+function slot0.updateSkillTF(slot0, slot1, slot2)
 	setActive(slot2, slot1)
 
 	if slot1 then
@@ -178,7 +174,7 @@ slot0.updateSkillTF = function(slot0, slot1, slot2)
 	removeOnButton(slot2)
 end
 
-slot0.updateCommander = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.updateCommander(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot1:Find("add")
 	slot6 = slot1:Find("info")
 
@@ -198,7 +194,7 @@ slot0.updateCommander = function(slot0, slot1, slot2, slot3, slot4)
 	setActive(slot6, slot3)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0:isShowing() then
 		LeanTween.cancel(go(slot0.samllTF))
 		LeanTween.cancel(go(slot0.descFrameTF))

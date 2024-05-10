@@ -4,7 +4,7 @@ slot0.BATCH = 2
 slot0.INFO = 3
 slot0.SEE = 4
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	pg.DelegateInfo.New(slot0)
 
 	slot0._go = slot1
@@ -48,7 +48,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.Open = function(slot0, slot1)
+function slot0.Open(slot0, slot1)
 	slot0.settings = slot1 or {}
 	slot2 = slot0.settings.item
 
@@ -59,19 +59,19 @@ slot0.Open = function(slot0, slot1)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._go)
 end
 
-slot0.Close = function(slot0)
+function slot0.Close(slot0)
 	slot0.settings = nil
 
 	setActive(slot0._go, false)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._go, slot0._parent)
 end
 
-slot0.Update = function(slot0, slot1)
-	slot2 = {
+function slot0.Update(slot0, slot1)
+	slot2 = Drop.New({
 		type = DROP_TYPE_WORLD_ITEM,
 		id = slot1.id,
 		count = slot1.count
-	}
+	})
 	slot4 = slot0.itemTF
 
 	updateDrop(slot4:Find("left/IconTpl"), slot2)
@@ -87,15 +87,15 @@ slot0.Update = function(slot0, slot1)
 	setText(slot0.itemName, slot1:getConfig("name"))
 	onButton(slot0, slot0.resetBtn, function ()
 		assert(uv0.settings.onResetInfo, "without reset info callback")
-		uv0.settings.onResetInfo({
+		uv0.settings.onResetInfo(Drop.New({
 			count = 1,
 			type = DROP_TYPE_WORLD_ITEM,
 			id = uv1.id
-		})
+		}))
 	end, SFX_PANEL)
 end
 
-slot0.UpdateAction = function(slot0, slot1)
+function slot0.UpdateAction(slot0, slot1)
 	slot2 = slot0.settings
 	slot3 = slot0.settings.mode or uv0.SINGLE
 
@@ -169,7 +169,7 @@ slot0.UpdateAction = function(slot0, slot1)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 	slot0:Close()
 end

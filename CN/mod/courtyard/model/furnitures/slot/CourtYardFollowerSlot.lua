@@ -1,17 +1,17 @@
 slot0 = class("CourtYardFollowerSlot", import(".CourtYardFurnitureBaseSlot"))
 
-slot0.OnInit = function(slot0, slot1)
+function slot0.OnInit(slot0, slot1)
 	slot0.name = slot1[1][1]
 	slot0.defaultAction = slot1[1][2]
 	slot0.skewValue = Vector3(slot1[3][1][1], slot1[3][1][2])
 	slot0.aciton = slot1[3][2]
 end
 
-slot0.GetSpineDefaultAction = function(slot0)
+function slot0.GetSpineDefaultAction(slot0)
 	return slot0.defaultAction
 end
 
-slot0.Occupy = function(slot0, slot1, slot2, slot3)
+function slot0.Occupy(slot0, slot1, slot2, slot3)
 	if slot0:IsEmpty() then
 		slot0.owner = slot2
 		slot0.user = slot1
@@ -26,11 +26,11 @@ slot0.Occupy = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.OnAwake = function(slot0)
+function slot0.OnAwake(slot0)
 	slot0:ClearTimer()
 end
 
-slot0.Clear = function(slot0, slot1)
+function slot0.Clear(slot0, slot1)
 	if slot0:IsUsing() then
 		slot0:Empty()
 		slot0.observer:WillClearInteraction(slot0, slot1)
@@ -44,33 +44,33 @@ slot0.Clear = function(slot0, slot1)
 	end
 end
 
-slot0.OnStart = function(slot0)
+function slot0.OnStart(slot0)
 	slot0.user:UpdateInteraction({
 		action = slot0.aciton,
 		slot = slot0
 	})
 end
 
-slot0.ClearTimer = function(slot0)
+function slot0.ClearTimer(slot0)
 end
 
-slot0.OnStop = function(slot0)
+function slot0.OnStop(slot0)
 	slot0:ClearTimer()
 end
 
-slot0.OnEnd = function(slot0)
+function slot0.OnEnd(slot0)
 	slot0:ClearTimer()
 end
 
-slot0.GetBodyMask = function(slot0)
+function slot0.GetBodyMask(slot0)
 	return false
 end
 
-slot0.GetUsingAnimator = function(slot0)
+function slot0.GetUsingAnimator(slot0)
 	return false
 end
 
-slot0.GetFollower = function(slot0)
+function slot0.GetFollower(slot0)
 	return nil
 end
 

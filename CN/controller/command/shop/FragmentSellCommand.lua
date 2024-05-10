@@ -1,27 +1,23 @@
 slot0 = class("FragmentSellCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = getProxy(BagProxy)
 	slot5 = getProxy(PlayerProxy):getRawData()
 	slot6 = {}
 	slot7 = {}
 
 	for slot11, slot12 in pairs(slot1:getBody()) do
-		slot13 = slot12
-
-		assert(pg.item_data_statistics[slot13.id], "Can't find the price " .. slot13.id)
-
-		if slot3:getItemCountById(slot13.id) < slot13.count then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot14.name))
+		if slot3:getItemCountById(slot12.id) < slot12.count then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot12:getConfig("name")))
 
 			return
 		end
 
-		slot7[slot14.price[1]] = (slot7[slot14.price[1]] or 0) + slot14.price[2] * slot13.count
+		slot7[slot14[1]] = (slot7[slot12:getConfig("price")[1]] or 0) + slot14[2] * slot12.count
 
 		table.insert(slot6, {
-			id = slot13.id,
-			count = slot13.count
+			id = slot12.id,
+			count = slot12.count
 		})
 	end
 

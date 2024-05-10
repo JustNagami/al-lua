@@ -1,20 +1,20 @@
 slot0 = class("ChargeDiamondShopView", import("...base.BaseSubView"))
 slot0.MonthCardID = 1
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ChargeDiamondShopUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:initData()
 	slot0:initUI()
 	slot0:Show()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.isNeedHideMonthCard = (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and pg.SdkMgr.GetInstance():CheckAudit()
 	slot0.diamondGoodsVOList = {}
 	slot0.diamondGoodsVOListForShow = {}
@@ -23,7 +23,7 @@ slot0.initData = function(slot0)
 	slot0:updateData()
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	slot0.itemTpl = slot0:findTF("ItemTpl")
 	slot1 = slot0:findTF("content")
 	slot0.monthCardTF = slot0:findTF("ItemMonth", slot1)
@@ -33,7 +33,7 @@ slot0.initUI = function(slot0)
 	slot0:updateView()
 end
 
-slot0.initUIItemList = function(slot0)
+function slot0.initUIItemList(slot0)
 	slot1 = UIItemList.New(slot0.itemContainerTF, slot0.itemTpl)
 
 	slot1:make(function (slot0, slot1, slot2)
@@ -52,16 +52,16 @@ slot0.initUIItemList = function(slot0)
 	return slot1
 end
 
-slot0.updateUIItemList = function(slot0)
+function slot0.updateUIItemList(slot0)
 	slot0.uiItemList:align(#slot0.diamondGoodsVOListForShow)
 end
 
-slot0.updateView = function(slot0)
+function slot0.updateView(slot0)
 	setActive(slot0.monthCardTF, not slot0.isNeedHideMonthCard)
 	slot0:updateUIItemList()
 end
 
-slot0.confirm = function(slot0, slot1)
+function slot0.confirm(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -71,11 +71,7 @@ slot0.confirm = function(slot0, slot1)
 
 		if slot1:isMonthCard() or slot1:isGiftBox() or slot1:isItemBox() or slot1:isPassItem() then
 			slot5 = underscore.map(slot1:getConfig("extra_service_item"), function (slot0)
-				return {
-					type = slot0[1],
-					id = slot0[2],
-					count = slot0[3]
-				}
+				return Drop.Create(slot0)
 			end)
 			slot6 = nil
 
@@ -83,17 +79,13 @@ slot0.confirm = function(slot0, slot1)
 				slot7 = slot1:getConfig("sub_display")
 				slot8 = slot7[1]
 				slot9 = pg.battlepass_event_pt[slot8].pt
-				slot6 = {
+				slot6 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = pg.battlepass_event_pt[slot8].pt,
 					count = slot7[2]
-				}
+				})
 				slot5 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot8].drop_client_pay, function (slot0)
-					return {
-						type = slot0[1],
-						id = slot0[2],
-						count = slot0[3]
-					}
+					return Drop.Create(slot0)
 				end))
 			end
 
@@ -101,17 +93,17 @@ slot0.confirm = function(slot0, slot1)
 			slot8 = nil
 
 			if slot1:isMonthCard() then
-				slot8 = {
-					id = 4,
-					type = 1,
-					count = slot7
-				}
-			elseif slot7 > 0 then
-				table.insert(slot5, {
-					id = 4,
-					type = 1,
+				slot8 = Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
 					count = slot7
 				})
+			elseif slot7 > 0 then
+				table.insert(slot5, Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
+					count = slot7
+				}))
 			end
 
 			slot9, slot10 = nil
@@ -170,7 +162,7 @@ slot0.confirm = function(slot0, slot1)
 	else
 		slot2 = {}
 
-		if type(pg.item_data_statistics[slot1:getConfig("effect_args")[1]].display_icon) == "table" then
+		if type(Item.getConfigData(slot1:getConfig("effect_args")[1]).display_icon) == "table" then
 			for slot9, slot10 in ipairs(slot5) do
 				table.insert(slot2, {
 					type = slot10[1],
@@ -202,7 +194,7 @@ slot0.confirm = function(slot0, slot1)
 	end
 end
 
-slot0.updateDiamondGoodsVOList = function(slot0)
+function slot0.updateDiamondGoodsVOList(slot0)
 	slot0.diamondGoodsVOList = {}
 
 	for slot5, slot6 in pairs(pg.pay_data_display.all) do
@@ -220,7 +212,7 @@ slot0.updateDiamondGoodsVOList = function(slot0)
 	end
 end
 
-slot0.sortDiamondGoodsVOList = function(slot0)
+function slot0.sortDiamondGoodsVOList(slot0)
 	slot0.diamondGoodsVOListForShow = {}
 
 	for slot4, slot5 in ipairs(slot0.diamondGoodsVOList) do
@@ -268,28 +260,28 @@ slot0.sortDiamondGoodsVOList = function(slot0)
 	end)
 end
 
-slot0.updateGoodsData = function(slot0)
+function slot0.updateGoodsData(slot0)
 	slot0.firstChargeIds = slot0.contextData.firstChargeIds
 	slot0.chargedList = slot0.contextData.chargedList
 	slot0.normalList = slot0.contextData.normalList
 	slot0.normalGroupList = slot0.contextData.normalGroupList
 end
 
-slot0.setGoodData = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.setGoodData(slot0, slot1, slot2, slot3, slot4)
 	slot0.firstChargeIds = slot1
 	slot0.chargedList = slot2
 	slot0.normalList = slot3
 	slot0.normalGroupList = slot4
 end
 
-slot0.updateData = function(slot0)
+function slot0.updateData(slot0)
 	slot0.player = getProxy(PlayerProxy):getData()
 
 	slot0:updateDiamondGoodsVOList()
 	slot0:sortDiamondGoodsVOList()
 end
 
-slot0.reUpdateAll = function(slot0)
+function slot0.reUpdateAll(slot0)
 	slot0:updateData()
 	slot0:updateView()
 end

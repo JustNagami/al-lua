@@ -24,11 +24,11 @@ slot0.optionsPath = {
 	"blur_panel/adapt/top/title/option"
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "WorldPortUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	for slot4, slot5 in pairs(uv0.Listeners) do
 		slot0[slot4] = function (...)
 			uv0[uv1](uv2, ...)
@@ -59,13 +59,13 @@ slot0.init = function(slot0)
 	}
 	slot0.rtNGoodsContainer = slot0.rtNShop:Find("frame/content/right/page/view/content")
 	slot0.rtNShopRes = slot0.rtNShop:Find("frame/content/right/page/title/res")
-	slot1 = {
+	slot1 = Drop.New({
 		type = DROP_TYPE_WORLD_ITEM,
 		id = WorldItem.PortMoneyId
-	}
+	})
 
-	GetImageSpriteFromAtlasAsync(getDropIcon(slot1), "", slot0.rtNShopRes:Find("icon/Image"), false)
-	setText(slot0.rtNShopRes:Find("icon/name"), getDropName(slot1))
+	GetImageSpriteFromAtlasAsync(slot1:getIcon(), "", slot0.rtNShopRes:Find("icon/Image"), false)
+	setText(slot0.rtNShopRes:Find("icon/name"), slot1:getName())
 
 	slot0.rtTop = slot0.rtBlurPanel:Find("adapt/top")
 	slot0.btnBack = slot0.rtTop:Find("title/back_button")
@@ -109,7 +109,7 @@ slot0.init = function(slot0)
 	slot0.multiWindow = OriginShopMultiWindow.New(slot0._tf, slot0.event)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, {
 		groupName = slot0:getGroupNameFromData()
 	})
@@ -154,11 +154,11 @@ slot0.didEnter = function(slot0)
 	slot0:EaseInUI()
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	triggerButton(slot0.btnBack)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 	slot0:RecyclePainting(slot0.rtPainting)
 	slot0.singleWindow:Destroy()
@@ -204,7 +204,7 @@ slot0.willExit = function(slot0)
 	slot0.wsWorldInfo = nil
 end
 
-slot0.GetPaintingInfo = function(slot0)
+function slot0.GetPaintingInfo(slot0)
 	if slot0.port:IsTempPort() then
 		return "mingshi", false
 	else
@@ -212,7 +212,7 @@ slot0.GetPaintingInfo = function(slot0)
 	end
 end
 
-slot0.UpdatePainting = function(slot0, slot1, slot2)
+function slot0.UpdatePainting(slot0, slot1, slot2)
 	slot0.paintingName = slot1
 
 	setPaintingPrefab(slot0.rtPainting, slot1, "chuanwu")
@@ -222,13 +222,13 @@ slot0.UpdatePainting = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.AddGlitchArtEffectForPating = function(slot0, slot1)
+function slot0.AddGlitchArtEffectForPating(slot0, slot1)
 	for slot6 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
 		slot2[slot6].material = slot0.glitchArtMaterial
 	end
 end
 
-slot0.RecyclePainting = function(slot0, slot1)
+function slot0.RecyclePainting(slot0, slot1)
 	if slot1:Find("fitter").childCount > 0 then
 		for slot6 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
 			slot7 = slot2[slot6]
@@ -253,7 +253,7 @@ slot0.RecyclePainting = function(slot0, slot1)
 	end
 end
 
-slot0.DisplayTopUI = function(slot0, slot1)
+function slot0.DisplayTopUI(slot0, slot1)
 	setActive(slot0.rtImageTitle, slot1 == uv0.PageMain)
 	setActive(slot0.rtImageTitleTask, slot1 == uv0.PageTask)
 	setActive(slot0.rtImageTitleShop, slot1 == uv0.PageShop or slot1 == uv0.PageNShop)
@@ -264,11 +264,11 @@ slot0.DisplayTopUI = function(slot0, slot1)
 	setActive(slot0.rtBgNShop, slot1 == uv0.PageNShop)
 end
 
-slot0.DisposeTopUI = function(slot0)
+function slot0.DisposeTopUI(slot0)
 	slot0.wsPortLeft:Dispose()
 end
 
-slot0.NewPortLeft = function(slot0)
+function slot0.NewPortLeft(slot0)
 	slot1 = WSPortLeft.New()
 	slot1.transform = slot0.rtTopLeft
 
@@ -278,7 +278,7 @@ slot0.NewPortLeft = function(slot0)
 	return slot1
 end
 
-slot0.EnterPortAnim = function(slot0, slot1)
+function slot0.EnterPortAnim(slot0, slot1)
 	if slot0.rtEnterIcon:GetComponent(typeof(DftAniEvent)) then
 		slot2:SetTriggerEvent(function (slot0)
 			uv0()
@@ -291,7 +291,7 @@ slot0.EnterPortAnim = function(slot0, slot1)
 	setActive(slot0.rtEnterIcon, true)
 end
 
-slot0.EaseInUI = function(slot0, slot1)
+function slot0.EaseInUI(slot0, slot1)
 	slot0.isTweening = true
 	slot2 = {}
 
@@ -350,7 +350,7 @@ slot0.EaseInUI = function(slot0, slot1)
 	end)
 end
 
-slot0.EaseOutUI = function(slot0, slot1)
+function slot0.EaseOutUI(slot0, slot1)
 	slot0:CancelUITween()
 
 	slot2 = LeanTween.moveX(slot0.rtTopLeft, -slot0.rtTopLeft.rect.width, WorldConst.UIEaseDuration)
@@ -375,20 +375,20 @@ slot0.EaseOutUI = function(slot0, slot1)
 	end))
 end
 
-slot0.CancelUITween = function(slot0)
+function slot0.CancelUITween(slot0)
 	LeanTween.cancel(go(slot0.rtTopTitle))
 	LeanTween.cancel(go(slot0.rtTopLeft))
 	LeanTween.cancel(go(slot0.rtTopRight))
 	LeanTween.cancel(go(slot0.rtTopBottom))
 end
 
-slot0.SetPlayer = function(slot0, slot1)
+function slot0.SetPlayer(slot0, slot1)
 	slot0.player = slot1
 
 	slot0.resPanel:setPlayer(slot1)
 end
 
-slot0.SetAtlas = function(slot0, slot1)
+function slot0.SetAtlas(slot0, slot1)
 	slot0.atlas = slot1
 	slot5 = slot0.onUpdateNGoods
 
@@ -419,7 +419,7 @@ slot0.SetAtlas = function(slot0, slot1)
 	end
 end
 
-slot0.SetPort = function(slot0, slot1)
+function slot0.SetPort(slot0, slot1)
 	slot0.port = slot1
 
 	slot0.port:AddListener(WorldMapPort.EventUpdateTaskIds, slot0.onUpdateTasks)
@@ -455,7 +455,7 @@ slot0.SetPort = function(slot0, slot1)
 	slot0.taskProxy:AddListener(WorldTaskProxy.EventUpdateTask, slot0.onUpdateTasks)
 end
 
-slot0.SetBg = function(slot0, slot1)
+function slot0.SetBg(slot0, slot1)
 	slot0.portBg = pg.world_port_data[slot1].port_bg
 
 	setImageAlpha(slot0.rtBg, #slot0.portBg > 0 and 1 or 0)
@@ -476,7 +476,7 @@ slot0.SetBg = function(slot0, slot1)
 	GetImageSpriteFromAtlasAsync("world/portword/" .. slot0.portBg .. "_en", "", slot0.rtImageTitle:Find("Image"), true)
 end
 
-slot0.OnUpdateTasks = function(slot0)
+function slot0.OnUpdateTasks(slot0)
 	slot0:UpdateTaskTip()
 	slot0:SetPageDirty(uv0.PageTask)
 
@@ -485,7 +485,7 @@ slot0.OnUpdateTasks = function(slot0)
 	end
 end
 
-slot0.OnUpdateGoods = function(slot0)
+function slot0.OnUpdateGoods(slot0)
 	slot0:UpdateCDTip()
 	slot0:SetPageDirty(uv0.PageShop)
 
@@ -494,7 +494,7 @@ slot0.OnUpdateGoods = function(slot0)
 	end
 end
 
-slot0.OnUpdateNGoods = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.OnUpdateNGoods(slot0, slot1, slot2, slot3, slot4)
 	if slot0.page == uv0.PageNShop then
 		slot5 = slot0.nGoodsDic[slot3]
 		slot5.buyCount = slot4
@@ -508,7 +508,7 @@ slot0.OnUpdateNGoods = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.SetPage = function(slot0, slot1)
+function slot0.SetPage(slot0, slot1)
 	if slot0.page ~= slot1 then
 		if uv0.BlurPages[slot0.page or 0] ~= uv0.BlurPages[slot1] then
 			if uv0.BlurPages[slot1] then
@@ -530,15 +530,15 @@ slot0.SetPage = function(slot0, slot1)
 	end
 end
 
-slot0.SetPageDirty = function(slot0, slot1)
+function slot0.SetPageDirty(slot0, slot1)
 	slot0.dirtyFlags[slot1] = true
 end
 
-slot0.IsPageDirty = function(slot0, slot1)
+function slot0.IsPageDirty(slot0, slot1)
 	return slot0.dirtyFlags[slot1] == true or slot0.dirtyFlags[slot1] == nil
 end
 
-slot0.UpdatePage = function(slot0)
+function slot0.UpdatePage(slot0)
 	slot1 = slot0.page
 
 	slot0:DisplayTopUI(slot1)
@@ -557,7 +557,7 @@ slot0.UpdatePage = function(slot0)
 	end
 end
 
-slot0.UpdateTasks = function(slot0)
+function slot0.UpdateTasks(slot0)
 	slot0.dirtyFlags[uv0.PageTask] = false
 	slot1 = slot0.rtTasks:Find("frame/viewport/content")
 	slot3 = _.map(slot0.port.taskIds, function (slot0)
@@ -585,7 +585,7 @@ slot0.UpdateTasks = function(slot0)
 				uv0:emit(WorldPortMediator.OnSubmitTask, uv1)
 			end, SFX_PANEL)
 
-			slot5.onDrop = function(slot0)
+			function slot5.onDrop(slot0)
 				uv0:emit(uv1.ON_DROP, slot0)
 			end
 		end
@@ -593,7 +593,7 @@ slot0.UpdateTasks = function(slot0)
 	setActive(slot0.rtTasks:Find("frame/empty"), #slot3 == 0)
 end
 
-slot0.DisposeTasks = function(slot0)
+function slot0.DisposeTasks(slot0)
 	_.each(slot0.wsTasks, function (slot0)
 		slot0:Dispose()
 	end)
@@ -601,7 +601,7 @@ slot0.DisposeTasks = function(slot0)
 	slot0.wsTasks = {}
 end
 
-slot0.UpdateGoods = function(slot0)
+function slot0.UpdateGoods(slot0)
 	slot0.dirtyFlags[uv0.PageShop] = false
 	slot1 = slot0.rtShop
 	slot1 = slot1:Find("frame/scrollview/view")
@@ -639,7 +639,7 @@ slot0.UpdateGoods = function(slot0)
 	end)
 end
 
-slot0.DisposeGoods = function(slot0)
+function slot0.DisposeGoods(slot0)
 	_.each(slot0.wsGoods, function (slot0)
 		slot0:Dispose()
 	end)
@@ -647,7 +647,7 @@ slot0.DisposeGoods = function(slot0)
 	slot0.wsGoods = {}
 end
 
-slot0.UpdateNShopPorts = function(slot0)
+function slot0.UpdateNShopPorts(slot0)
 	slot0.dirtyFlags[uv0.PageNShop] = false
 	slot1 = underscore.keys(slot0.nGoodsPortDic)
 
@@ -678,7 +678,7 @@ slot0.UpdateNShopPorts = function(slot0)
 	end
 end
 
-slot0.UpdateNShopGoods = function(slot0, slot1)
+function slot0.UpdateNShopGoods(slot0, slot1)
 	slot0.nShopPortId = slot1
 	slot2 = slot0.atlas:GetPressingUnlockCount()
 	slot3 = slot0.atlas:GetPressingUnlockRecordCount(slot1)
@@ -715,11 +715,11 @@ slot0.UpdateNShopGoods = function(slot0, slot1)
 					slot4 = slot3:GetDropInfo()
 
 					updateDrop(slot2:Find("IconTpl"), slot4)
-					setText(slot2:Find("name_mask/name"), shortenString(slot4.cfg.name, 6))
+					setText(slot2:Find("name_mask/name"), shortenString(slot4:getConfig("name"), 6))
 
 					slot5 = slot3:GetPriceInfo()
 
-					GetImageSpriteFromAtlasAsync(updateDropCfg(slot5).icon, "", slot2:Find("consume/contain/icon"), false)
+					GetImageSpriteFromAtlasAsync(slot5:getIcon(), "", slot2:Find("consume/contain/icon"), false)
 					setText(slot2:Find("consume/contain/Text"), slot5.count)
 					setText(slot2:Find("count_contain/count"), slot3:GetPurchasableCnt() .. "/" .. slot3:GetLimitGoodCount())
 					setText(slot2:Find("count_contain/label"), i18n("activity_shop_exchange_count"))
@@ -740,7 +740,7 @@ slot0.UpdateNShopGoods = function(slot0, slot1)
 	slot0.atlas:SetPressingUnlockRecordCount(slot1, slot2)
 end
 
-slot0.OnUpdateMoneyCount = function(slot0, slot1, slot2, slot3)
+function slot0.OnUpdateMoneyCount(slot0, slot1, slot2, slot3)
 	if not slot1 or slot3.id == WorldItem.PortMoneyId then
 		slot4 = slot0.inventory:GetItemCount(WorldItem.PortMoneyId)
 
@@ -749,11 +749,11 @@ slot0.OnUpdateMoneyCount = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.UpdateRefreshTime = function(slot0, slot1)
+function slot0.UpdateRefreshTime(slot0, slot1)
 	setText(slot0.cdTF:Find("Text"), pg.TimeMgr.GetInstance():DescCDTime(slot1))
 end
 
-slot0.UpdateCDTip = function(slot0)
+function slot0.UpdateCDTip(slot0)
 	setActive(slot0.cdTF, #slot0.port.goods > 0 and not slot0.port:IsTempPort())
 	setActive(slot0.emptyTF, #slot0.port.goods == 0)
 
@@ -762,17 +762,17 @@ slot0.UpdateCDTip = function(slot0)
 	end
 end
 
-slot0.UpdateTaskTip = function(slot0)
+function slot0.UpdateTaskTip(slot0)
 	setActive(slot0.btnOperation:Find("new"), false)
 end
 
-slot0.UpdateNShopTip = function(slot0)
+function slot0.UpdateNShopTip(slot0)
 	if nowWorld():UsePortNShop() then
 		setActive(slot0.btnSupply:Find("new"), slot0.atlas:GetAnyPortMarkNShop())
 	end
 end
 
-slot0.showTaskWindow = function(slot0, slot1)
+function slot0.showTaskWindow(slot0, slot1)
 	setActive(slot0.rtTaskWindow:Find("main_window/left_panel"):Find("bg"), slot1:IsSpecialType())
 
 	if #slot1.config.rare_task_icon > 0 then
@@ -823,7 +823,7 @@ slot0.showTaskWindow = function(slot0, slot1)
 	pg.UIMgr.GetInstance():BlurPanel(slot0.rtTaskWindow, slot0._tf)
 end
 
-slot0.hideTaskWindow = function(slot0)
+function slot0.hideTaskWindow(slot0)
 	setActive(slot0.rtTaskWindow, false)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0.rtTaskWindow, slot0._tf)
 end

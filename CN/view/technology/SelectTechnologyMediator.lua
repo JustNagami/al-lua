@@ -4,7 +4,7 @@ slot0.ON_TECHNOLOGY = "SelectTechnologyMediator:ON_TECHNOLOGY"
 slot0.ON_TRANSFORM_EQUIPMENT = "SelectTechnologyMediator:ON_TRANSFORM_EQUIPMENT"
 slot0.ON_META = "SelectTechnologyMediator:ON_META"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_TECHNOLOGY, function ()
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY)
 	end)
@@ -27,11 +27,11 @@ slot0.register = function(slot0)
 	slot0.viewComponent:notifyMeta(MetaCharacterConst.isMetaMainEntRedPoint())
 end
 
-slot0.onTechnologyNotify = function()
+function slot0.onTechnologyNotify()
 	return #getProxy(TechnologyProxy):getPlanningTechnologys() > 0 and slot0[#slot0]:isCompleted()
 end
 
-slot0.onBlueprintNotify = function()
+function slot0.onBlueprintNotify()
 	slot0 = getProxy(TechnologyProxy)
 
 	if PlayerPrefs.GetString("technology_day_mark", "") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d", true) and slot0:CheckPursuingCostTip() then
@@ -63,13 +63,13 @@ slot0.onBlueprintNotify = function()
 	return false
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == PlayerProxy.UPDATED then

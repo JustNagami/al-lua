@@ -4,7 +4,7 @@ slot2 = pg.shop_template
 slot3 = pg.skin_page_template
 slot4 = pg.ship_skin_template
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0.view = slot2
 	slot0._go = slot1
 	slot0._tf = tf(slot1)
@@ -57,7 +57,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	slot0.goodsVO = slot1
 	slot2 = slot1:getSkinId()
 	slot0.shipSkinConfig = uv0[slot2]
@@ -74,27 +74,30 @@ slot0.update = function(slot0, slot1)
 	end
 
 	if slot0.goodsVO.type == Goods.TYPE_SKIN then
-		slot0._priceIcon.sprite = LoadSprite(pg.item_data_statistics[id2ItemId(slot1:getConfig("resource_type"))].icon)
-		slot0._priceTxt.text, slot11 = slot1:GetPrice()
+		slot0._priceIcon.sprite = LoadSprite(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot1:getConfig("resource_type")
+		}):getIcon())
+		slot0._priceTxt.text, slot9 = slot1:GetPrice()
 		slot0._opriceTxt.text = slot1:getConfig("resource_num")
 
-		setActive(go(slot0._opriceTxt), slot1:isDisCount() and slot11 > 0)
+		setActive(go(slot0._opriceTxt), slot1:isDisCount() and slot9 > 0)
 
-		slot12 = slot1.buyCount == 0
-		slot13 = slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit
+		slot10 = slot1.buyCount == 0
+		slot11 = slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit
 
-		if slot0.view.encoreSkinMap[slot1.id] and slot12 then
+		if slot0.view.encoreSkinMap[slot1.id] and slot10 then
 			setActive(slot0._tagTFs[10], true)
-		elseif slot13 then
+		elseif slot11 then
 			setActive(slot0._tagTFs[9], true)
-		elseif slot12 then
-			slot15 = slot0.goodsVO:getConfig("tag")
+		elseif slot10 then
+			slot13 = slot0.goodsVO:getConfig("tag")
 
-			if slot9 or slot15 == 5 then
-				setText(slot0._tagTFs[5]:Find("Text"), string.format("%0.2f", slot11) .. "%")
+			if slot7 or slot13 == 5 then
+				setText(slot0._tagTFs[5]:Find("Text"), string.format("%0.2f", slot9) .. "%")
 				setActive(slot0._tagTFs[5], true)
-			elseif slot0._tagTFs[slot15] then
-				setActive(slot0._tagTFs[slot15], true)
+			elseif slot0._tagTFs[slot13] then
+				setActive(slot0._tagTFs[slot13], true)
 			else
 				setActive(slot0._tagTFs[6], true)
 			end
@@ -116,14 +119,14 @@ slot0.update = function(slot0, slot1)
 	})
 end
 
-slot0.updateSelected = function(slot0, slot1)
+function slot0.updateSelected(slot0, slot1)
 	slot0._content.localPosition = Vector3(0, slot1 and -26 or -126, 0)
 
 	setActive(slot0._priceTF, slot1 and slot0.goodsVO.type == Goods.TYPE_SKIN)
 	setActive(slot0._mask, not slot1)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	removeOnButton(slot0._go)
 
 	slot0._go = nil

@@ -1,6 +1,6 @@
 slot0 = class("MainLeftPanel", import(".MainBasePanel"))
 
-slot0.OnSetUp = function(slot0)
+function slot0.OnSetUp(slot0)
 	slot0.hideBtn = findTF(slot0._tf, "hideButton")
 	slot0.cameraBtn = findTF(slot0._tf, "cameraButton")
 	slot0.commissionBtn = findTF(slot0._tf, "commissionButton")
@@ -12,7 +12,7 @@ slot0.OnSetUp = function(slot0)
 	slot0.wordLpos = slot0.wordBtn.localPosition
 end
 
-slot0.OnRegist = function(slot0)
+function slot0.OnRegist(slot0)
 	onButton(slot0, slot0.hideBtn, function ()
 		uv0:emit(NewMainScene.FOLD, true)
 	end, SFX_MAIN)
@@ -45,7 +45,7 @@ slot0.OnRegist = function(slot0)
 	slot0:UpdateChangeSkinBtn()
 end
 
-slot0.UpdateLayout = function(slot0)
+function slot0.UpdateLayout(slot0)
 	if pg.SdkMgr.GetInstance():IsAUPackage() then
 		setActive(slot0.cameraBtn, false)
 
@@ -54,18 +54,18 @@ slot0.UpdateLayout = function(slot0)
 	end
 end
 
-slot0.OnFresh = function(slot0)
+function slot0.OnFresh(slot0)
 	slot0:UpdateChangeSkinBtn()
 	slot0:ResetCommissionBtn()
 end
 
-slot0.OnRemoveLayer = function(slot0, slot1)
+function slot0.OnRemoveLayer(slot0, slot1)
 	if slot1.mediator == CommissionInfoMediator then
 		slot0:ResetCommissionBtn()
 	end
 end
 
-slot0.OpenCamera = function(slot0)
+function slot0.OpenCamera(slot0)
 	if pg.SdkMgr.GetInstance():IsYunPackage() then
 		pg.TipsMgr.GetInstance():ShowTips("指挥官，当前平台不支持该功能哦")
 
@@ -86,17 +86,17 @@ slot0.OpenCamera = function(slot0)
 	end
 end
 
-slot0.ResetCommissionBtn = function(slot0)
+function slot0.ResetCommissionBtn(slot0)
 	slot0.commissionBtn.localPosition = Vector3(0, slot0.commissionBtn.localPosition.y, 0)
 end
 
-slot0.UpdateWordBtn = function(slot0, slot1)
+function slot0.UpdateWordBtn(slot0, slot1)
 	slot2 = slot1 and 1 or 0
 	slot0.wordOpen.alpha = 1 - slot2
 	slot0.wordClose.alpha = slot2
 end
 
-slot0.UpdateChangeSkinBtn = function(slot0)
+function slot0.UpdateChangeSkinBtn(slot0)
 	slot1 = nil
 
 	if getProxy(SettingsProxy):IsOpenRandomFlagShip() then
@@ -108,10 +108,16 @@ slot0.UpdateChangeSkinBtn = function(slot0)
 		slot1 = getProxy(PlayerProxy):getRawData().characters
 	end
 
-	setActive(slot0.changeSkinBtn, #slot1 > 1)
+	slot3 = getProxy(SettingsProxy):GetFlagShipDisplayMode() == FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR and 0 or #slot1
+
+	if getProxy(PlayerProxy):getRawData():ExistEducateChar() and slot2 ~= FlAG_SHIP_DISPLAY_ONLY_SHIP then
+		slot3 = slot3 + 1
+	end
+
+	setActive(slot0.changeSkinBtn, slot3 > 1)
 end
 
-slot0.GetDirection = function(slot0)
+function slot0.GetDirection(slot0)
 	return Vector2(-1, 0)
 end
 

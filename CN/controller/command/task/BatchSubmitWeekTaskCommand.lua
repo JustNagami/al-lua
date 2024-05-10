@@ -1,6 +1,6 @@
 slot0 = class("BatchSubmitWeekTaskCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.callback
 	slot5 = slot2.dontSendMsg
@@ -24,7 +24,7 @@ slot0.execute = function(slot0, slot1)
 			}
 			slot8 = slot0.pt
 
-			table.insert({}, Item.New(slot7))
+			table.insert({}, Drop.New(slot7))
 			uv0:RemoveSubTasks(uv1)
 			uv0:AddProgress(slot0.pt)
 

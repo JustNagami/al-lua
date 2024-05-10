@@ -25,7 +25,7 @@ slot0.bullet_type_range = 3
 slot0.bullet_type_disperse = 4
 slot0.rid_index = 0
 
-slot0.getRid = function()
+function slot0.getRid()
 	uv0.rid_index = uv0.rid_index + 1
 
 	return uv0.rid_index

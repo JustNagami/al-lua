@@ -1,10 +1,10 @@
 PaintingfilteConst = {}
 slot0 = PaintingfilteConst
 
-slot0.GetStandardTimeConfig = function(slot0)
+function slot0.GetStandardTimeConfig(slot0)
 	slot1 = {}
 
-	slot2 = function(slot0)
+	function slot2(slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			if type(slot5) == "table" and #slot5 == 2 then
 				table.insert(uv0, slot5)
@@ -12,7 +12,7 @@ slot0.GetStandardTimeConfig = function(slot0)
 		end
 	end
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			if type(slot5) == "table" and type(slot5[1]) == "string" and type(slot5[2]) == "table" then
 				uv0(slot5)
@@ -29,7 +29,7 @@ slot0.GetStandardTimeConfig = function(slot0)
 	return slot1
 end
 
-slot0.IsTwoTimeCross = function(slot0, slot1)
+function slot0.IsTwoTimeCross(slot0, slot1)
 	slot2 = pg.TimeMgr.GetInstance()
 	slot3 = slot2:parseTimeFromConfig(slot0[1])
 	slot6 = slot2:parseTimeFromConfig(slot1[2])
@@ -41,7 +41,7 @@ slot0.IsTwoTimeCross = function(slot0, slot1)
 	end
 end
 
-slot0.IsActMatchTime = function(slot0)
+function slot0.IsActMatchTime(slot0)
 	slot1 = pg.activity_template[slot0]
 	slot2 = slot1.type
 
@@ -52,7 +52,7 @@ slot0.IsActMatchTime = function(slot0)
 	end
 end
 
-slot0.IsBuildActMatch = function(slot0)
+function slot0.IsBuildActMatch(slot0)
 	if pg.activity_template[slot0].type == 1 or pg.activity_template[slot0].type == 85 then
 		return uv0.IsActMatchTime(slot0)
 	else
@@ -60,7 +60,7 @@ slot0.IsBuildActMatch = function(slot0)
 	end
 end
 
-slot0.IsNormalShopMatch = function(slot0)
+function slot0.IsNormalShopMatch(slot0)
 	slot1 = pg.shop_template[slot0]
 	slot3 = slot1.time
 
@@ -75,7 +75,7 @@ slot0.IsNormalShopMatch = function(slot0)
 	return false
 end
 
-slot0.IsActShopMatch = function(slot0)
+function slot0.IsActShopMatch(slot0)
 	slot1 = pg.activity_shop_extra[slot0]
 	slot3 = slot1.time
 
@@ -90,15 +90,15 @@ slot0.IsActShopMatch = function(slot0)
 	return false
 end
 
-slot0.GetfilteTime = function()
+function slot0.GetfilteTime()
 	return pg.painting_filte_config.time
 end
 
-slot0.GetConstPoolIndexList = function()
+function slot0.GetConstPoolIndexList()
 	return pg.painting_filte_config.pool_id_list
 end
 
-slot0.IsPoolWeightConfigMatch = function(slot0, slot1)
+function slot0.IsPoolWeightConfigMatch(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		if slot0[slot6] > 0 then
 			return true
@@ -108,7 +108,7 @@ slot0.IsPoolWeightConfigMatch = function(slot0, slot1)
 	return false
 end
 
-slot0.GetBuildActIDList = function()
+function slot0.GetBuildActIDList()
 	slot0 = {}
 
 	for slot4, slot5 in ipairs(pg.activity_template.all) do
@@ -120,7 +120,7 @@ slot0.GetBuildActIDList = function()
 	return slot0
 end
 
-slot0.GetActPoolIndexList = function()
+function slot0.GetActPoolIndexList()
 	slot0 = {}
 
 	for slot5, slot6 in ipairs(uv0.GetBuildActIDList()) do
@@ -132,7 +132,7 @@ slot0.GetActPoolIndexList = function()
 	return slot0
 end
 
-slot0.GetShipConfigIDListByPoolList = function(slot0)
+function slot0.GetShipConfigIDListByPoolList(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(pg.ship_data_create) do
@@ -144,7 +144,7 @@ slot0.GetShipConfigIDListByPoolList = function(slot0)
 	return slot1
 end
 
-slot0.GetActID2MemoryMap = function()
+function slot0.GetActID2MemoryMap()
 	slot0 = {}
 
 	for slot4, slot5 in ipairs(pg.memory_group.all) do
@@ -167,15 +167,15 @@ slot0.GetActID2MemoryMap = function()
 	return slot0
 end
 
-slot0.GetActPoolShipConfigIDList = function()
+function slot0.GetActPoolShipConfigIDList()
 	return uv0.GetShipConfigIDListByPoolList(uv0.GetActPoolIndexList())
 end
 
-slot0.GetConstPoolShipConfigIDList = function()
+function slot0.GetConstPoolShipConfigIDList()
 	return uv0.GetShipConfigIDListByPoolList(uv0.GetConstPoolIndexList())
 end
 
-slot0.GetCreateExchangeShipConfigIDList = function()
+function slot0.GetCreateExchangeShipConfigIDList()
 	slot0 = {}
 
 	for slot5, slot6 in ipairs({
@@ -183,14 +183,20 @@ slot0.GetCreateExchangeShipConfigIDList = function()
 		11
 	}) do
 		for slot11, slot12 in ipairs(uv0.GetBuildActIDList()) do
-			table.insert(slot0, pg.ship_data_create_exchange[slot12].exchange_ship_id)
+			if pg.ship_data_create_exchange[slot12] then
+				for slot16, slot17 in ipairs(pg.ship_data_create_exchange[slot12].exchange_ship_id) do
+					if not table.contains(slot0, slot17) then
+						table.insert(slot0, slot17)
+					end
+				end
+			end
 		end
 	end
 
 	return slot0
 end
 
-slot0.GetNPCShipConfigIDList = function()
+function slot0.GetNPCShipConfigIDList()
 	slot0 = {}
 
 	if pg.activity_const.ACT_NPC_SHIP_ID.act_id and IsNumber(slot1) and uv0.IsActMatchTime(slot1) then
@@ -200,13 +206,13 @@ slot0.GetNPCShipConfigIDList = function()
 	return slot0
 end
 
-slot0.GetSkinIDFromNormalShopID = function(slot0)
+function slot0.GetSkinIDFromNormalShopID(slot0)
 	assert(#pg.shop_template[slot0].effect_args == 1, "shop_template的effect_args字段,元素个数大于1,ID:", slot0)
 
 	return slot2[1]
 end
 
-slot0.GetNormalShopSkinIDList = function()
+function slot0.GetNormalShopSkinIDList()
 	slot0 = {}
 
 	for slot4, slot5 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
@@ -220,11 +226,11 @@ slot0.GetNormalShopSkinIDList = function()
 	return slot0
 end
 
-slot0.GetSkinIDFromActShopID = function(slot0)
+function slot0.GetSkinIDFromActShopID(slot0)
 	return pg.activity_shop_extra[slot0].commodity_id
 end
 
-slot0.GetActShopSkinIDList = function()
+function slot0.GetActShopSkinIDList()
 	slot0 = {}
 
 	for slot4, slot5 in ipairs(pg.activity_shop_extra.get_id_list_by_commodity_type[DROP_TYPE_SKIN]) do
@@ -238,7 +244,7 @@ slot0.GetActShopSkinIDList = function()
 	return slot0
 end
 
-slot1 = function(slot0, slot1)
+function slot1(slot0, slot1)
 	for slot6, slot7 in ipairs(pg.painting_filte_map[string.lower(slot1)].res_list) do
 		if not table.contains(slot0, slot7) then
 			table.insert(slot0, slot7)
@@ -246,30 +252,30 @@ slot1 = function(slot0, slot1)
 	end
 end
 
-slot2 = function(slot0, slot1)
+function slot2(slot0, slot1)
 	uv0(slot0, ShipGroup.getDefaultSkin(slot1).painting)
 end
 
-slot3 = function(slot0, slot1)
+function slot3(slot0, slot1)
 	uv0(slot0, Ship.getGroupId({
 		configId = slot1
 	}))
 end
 
-slot4 = function(slot0, slot1)
+function slot4(slot0, slot1)
 	uv0(slot0, pg.ship_skin_template[slot1].painting)
 end
 
-SpecialFilteForChange = function()
+function SpecialFilteForChange()
 	slot0 = {}
 
-	slot1 = function(slot0)
+	function slot1(slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			uv0(uv1, slot5)
 		end
 	end
 
-	slot2 = function(slot0)
+	function slot2(slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			uv0(uv1, slot5)
 		end
@@ -295,11 +301,15 @@ SpecialFilteForChange = function()
 		slot2(slot7)
 	end
 
+	for slot9, slot10 in ipairs(pg.secretary_special_ship.all) do
+		uv2(slot0, pg.secretary_special_ship[slot10].prefab)
+	end
+
 	return table.concat(slot0, ";")
 end
 
-SpecialFilteForConst = function()
-	slot1 = function(slot0)
+function SpecialFilteForConst()
+	function slot1(slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			uv0(uv1, slot5)
 		end
@@ -314,7 +324,7 @@ SpecialFilteForConst = function()
 	return table.concat({}, ";")
 end
 
-SpecialFilterForWorldStory = function(slot0)
+function SpecialFilterForWorldStory(slot0)
 	slot1 = {}
 
 	for slot5 = slot0.Length, 1, -1 do
@@ -324,7 +334,7 @@ SpecialFilterForWorldStory = function(slot0)
 	return pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(slot1)
 end
 
-SpecialFilteForActStory = function()
+function SpecialFilteForActStory()
 	slot0 = PaintingfilteConst.GetActID2MemoryMap()
 	slot1 = PaintingfilteConst.GetfilteTime()
 	slot2 = {}
@@ -352,7 +362,7 @@ PLATFORM_KR = 3
 PLATFORM_US = 4
 PLATFORM_CHT = 5
 
-SetPlatform = function(slot0)
+function SetPlatform(slot0)
 	if slot0 == "zh" then
 		PLATFORM_CODE = PLATFORM_CH
 	elseif slot0 == "jp" then

@@ -4,7 +4,7 @@ slot0.COMPOSE_ITEM = "ItemInfoMediator:COMPOSE_ITEM"
 slot0.SELL_BLUEPRINT = "sell blueprint"
 slot0.EXCHANGE_LOVE_LETTER_ITEM = "ItemInfoMediator.EXCHANGE_LOVE_LETTER_ITEM"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.SELL_BLUEPRINT, function (slot0, slot1)
 		uv0:sendNotification(GAME.FRAG_SELL, {
 			slot1
@@ -17,7 +17,7 @@ slot0.register = function(slot0)
 			return
 		end
 
-		uv0.viewComponent:PlayOpenBox(slot3:getTempConfig("display_effect"), function ()
+		uv0.viewComponent:PlayOpenBox(slot3:getConfig("display_effect"), function ()
 			uv0:sendNotification(GAME.USE_ITEM, {
 				id = uv1,
 				count = uv2
@@ -38,7 +38,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setDrop(slot0.contextData.drop)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		BagProxy.ITEM_UPDATED,
 		GAME.USE_ITEM_DONE,
@@ -46,7 +46,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == BagProxy.ITEM_UPDATED then
@@ -54,11 +54,11 @@ slot0.handleNotification = function(slot0, slot1)
 			if slot3.count <= 0 then
 				slot0.viewComponent:closeView()
 			else
-				slot0.viewComponent:setItem({
+				slot0.viewComponent:setItem(Drop.New({
 					type = DROP_TYPE_ITEM,
 					id = slot3.id,
 					count = slot3.count
-				})
+				}))
 			end
 		end
 	elseif slot2 == GAME.USE_ITEM_DONE then

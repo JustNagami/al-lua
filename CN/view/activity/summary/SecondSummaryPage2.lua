@@ -1,6 +1,6 @@
 slot0 = class("SecondSummaryPage2", import(".SummaryAnimationPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	setPaintingPrefabAsync(slot0._tf:Find("paint_panel/painting"), Ship.New({
 		configId = slot0.summaryInfoVO.flagShipId
 	}):getPainting(), "chuanwu")

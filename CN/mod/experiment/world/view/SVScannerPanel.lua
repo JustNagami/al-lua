@@ -3,18 +3,18 @@ slot0.ShowView = "SVScannerPanel.ShowView"
 slot0.HideView = "SVScannerPanel.HideView"
 slot0.HideGoing = "SVScannerPanel.HideGoing"
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SVScannerPanel"
 end
 
-slot0.getBGM = function(slot0)
+function slot0.getBGM(slot0)
 	return "echo-loop"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = GameObject.Find("OverlayCamera")
 	slot0.camera = slot1:GetComponent(typeof(Camera))
 	slot1 = slot0._tf
@@ -107,10 +107,10 @@ slot0.OnInit = function(slot0)
 	end, SFX_CONFIRM)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
-slot0.Show = function(slot0, slot1, slot2)
+function slot0.Show(slot0, slot1, slot2)
 	slot0:emit(uv0.ShowView)
 
 	if slot1 then
@@ -119,7 +119,7 @@ slot0.Show = function(slot0, slot1, slot2)
 		slot0:HideWindow()
 	end
 
-	slot0.wsDragProxy.onDragFunction = function()
+	function slot0.wsDragProxy.onDragFunction()
 		if isActive(uv0.rtPanel) then
 			uv0:HideWindow()
 		end
@@ -131,7 +131,7 @@ slot0.Show = function(slot0, slot1, slot2)
 	uv0.super.Show(slot0)
 end
 
-slot0.Hide = function(slot0, slot1)
+function slot0.Hide(slot0, slot1)
 	if LeanTween.isTweening(slot0.alphaLT) then
 		return
 	end
@@ -159,12 +159,12 @@ slot0.Hide = function(slot0, slot1)
 	end)
 end
 
-slot0.Setup = function(slot0, slot1, slot2)
+function slot0.Setup(slot0, slot1, slot2)
 	slot0.map = slot1
 	slot0.wsDragProxy = slot2
 end
 
-slot0.DisplayWindow = function(slot0, slot1, slot2)
+function slot0.DisplayWindow(slot0, slot1, slot2)
 	if isActive(slot0.rtPanel) and slot0.attachment == slot1 then
 		slot0:HideWindow()
 	else
@@ -188,12 +188,12 @@ slot0.DisplayWindow = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.HideWindow = function(slot0)
+function slot0.HideWindow(slot0)
 	setAnchoredPosition(slot0.rtAnim, Vector2.zero)
 	setActive(slot0.rtPanel, false)
 end
 
-slot0.EaseInOut = function(slot0, slot1, slot2)
+function slot0.EaseInOut(slot0, slot1, slot2)
 	if slot0.alphaLT then
 		LeanTween.cancel(slot0.alphaLT)
 	end
@@ -203,7 +203,7 @@ slot0.EaseInOut = function(slot0, slot1, slot2)
 	end)).uniqueId
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	if slot0.attachment ~= slot1 then
 		slot0.attachment = slot1
 
@@ -211,7 +211,7 @@ slot0.Update = function(slot0, slot1)
 	end
 end
 
-slot0.OnUpdate = function(slot0)
+function slot0.OnUpdate(slot0)
 	slot1 = slot0.map
 	slot3 = slot0.rtTitle:Find("Text")
 	slot4 = {}

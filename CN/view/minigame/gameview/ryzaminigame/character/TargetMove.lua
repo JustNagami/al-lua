@@ -1,20 +1,20 @@
 slot0 = class("TargetMove", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
 
-slot0.GetBaseOrder = function(slot0)
+function slot0.GetBaseOrder(slot0)
 	return 2
 end
 
-slot0.InTimeRiver = function(slot0)
+function slot0.InTimeRiver(slot0)
 	return true
 end
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	slot0.rtScale = slot0._tf:Find("scale")
 
 	uv0.super.Init(slot0, slot1)
 end
 
-slot0.UpdatePos = function(slot0, slot1)
+function slot0.UpdatePos(slot0, slot1)
 	slot5 = slot1
 
 	slot0.responder:UpdatePos(slot0, slot5)
@@ -50,13 +50,13 @@ slot0.UpdatePos = function(slot0, slot1)
 	})
 end
 
-slot0.SetHide = function(slot0, slot1)
+function slot0.SetHide(slot0, slot1)
 	slot0.hide = slot1
 
 	slot0.responder:UpdateHide(slot0, slot1)
 end
 
-slot0.GetSpeed = function(slot0)
+function slot0.GetSpeed(slot0)
 	return slot0.speed
 end
 
@@ -71,15 +71,15 @@ slot0.SpeedDistance = {
 	5
 }
 
-slot0.GetSpeedDis = function(slot0)
+function slot0.GetSpeedDis(slot0)
 	return slot0.SpeedDistance[slot0:GetSpeed()]
 end
 
-slot0.TimeUpdate = function(slot0, slot1)
+function slot0.TimeUpdate(slot0, slot1)
 	slot0:MoveUpdate(NewPos(0, 0))
 end
 
-slot0.MoveUpdate = function(slot0, slot1)
+function slot0.MoveUpdate(slot0, slot1)
 	if slot1.x == 0 and slot1.y == 0 then
 		return slot1
 	end
@@ -111,12 +111,12 @@ slot1 = {
 	y = "x"
 }
 
-slot0.MoveDelta = function(slot0, slot1, slot2)
+function slot0.MoveDelta(slot0, slot1, slot2)
 	if slot1.x == 0 and slot1.y == 0 or slot2 == 0 then
 		return NewPos(0, 0)
 	end
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		slot1 = slot0 - uv0.realPos
 
 		if slot1.x * slot1.x < 1 and slot1.y * slot1.y < 1 then
@@ -169,19 +169,18 @@ slot0.MoveDelta = function(slot0, slot1, slot2)
 
 		return slot6 - slot5
 	elseif not slot3(NewPos(slot0.pos.x + (slot6.x < 0 and -1 or 1), slot0.pos.y + (slot6.y < 0 and -1 or 1))) then
-		key = slot1.y * slot1.y > slot1.x * slot1.x and "y" or "x"
-		slot8 = uv0[key]
-		slot9 = NewPos(0, 0)
+		slot9 = uv0[slot1.y * slot1.y > slot1.x * slot1.x and "y" or "x"]
+		slot10 = NewPos(0, 0)
 
-		if slot5[slot8] * slot5[slot8] > slot2 * slot2 then
-			slot9[key] = -slot5[key]
-			slot9[slot8] = (-slot5[slot8] < 0 and -1 or 1) * math.sqrt(slot2 * slot2 - slot9[key] * slot9[key])
+		if slot5[slot9] * slot5[slot9] > slot2 * slot2 then
+			slot10[slot8] = -slot5[slot8]
+			slot10[slot9] = (-slot5[slot9] < 0 and -1 or 1) * math.sqrt(slot2 * slot2 - slot10[slot8] * slot10[slot8])
 		else
-			slot9[slot8] = -slot5[slot8]
-			slot9[key] = (slot1[key] < 0 and -1 or 1) * math.sqrt(slot2 * slot2 - slot9[slot8] * slot9[slot8])
+			slot10[slot9] = -slot5[slot9]
+			slot10[slot8] = (slot1[slot8] < 0 and -1 or 1) * math.sqrt(slot2 * slot2 - slot10[slot9] * slot10[slot9])
 		end
 
-		slot6 = slot5 + slot9
+		slot6 = slot5 + slot10
 		slot6.x = math.clamp(slot6.x, unpack(slot4.x))
 		slot6.y = math.clamp(slot6.y, unpack(slot4.y))
 
@@ -191,11 +190,11 @@ slot0.MoveDelta = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.GetMoveInfo = function(slot0)
+function slot0.GetMoveInfo(slot0)
 	return slot0.pos, NewPos(0, 0)
 end
 
-slot0.GetCollideRange = function(slot0)
+function slot0.GetCollideRange(slot0)
 	return {
 		{
 			{
@@ -212,7 +211,7 @@ end
 
 slot0.loopDic = {}
 
-slot0.PlayAnim = function(slot0, slot1)
+function slot0.PlayAnim(slot0, slot1)
 	if slot0.status ~= slot1 then
 		slot0.status = slot1
 

@@ -1,17 +1,17 @@
 slot0 = class("SVOrderPanel", import("view.base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SVOrderPanel"
 end
 
-slot0.getBGM = function(slot0)
+function slot0.getBGM(slot0)
 	return "echo-loop"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = slot0._tf
 	slot2 = slot1:Find("adapt/order_list")
 	slot0.btnRedeploy = slot2:Find("redeploy")
@@ -91,17 +91,17 @@ slot0.OnInit = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0:ClearBtnTimers()
 	slot0.wsCompass:Dispose()
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false)
 	uv0.super.Show(slot0)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	if isActive(slot0.rtMsgbox) then
 		slot0:HideMsgbox()
 	end
@@ -112,12 +112,12 @@ slot0.Hide = function(slot0)
 	uv0.super.Hide(slot0)
 end
 
-slot0.Setup = function(slot0, slot1, slot2, slot3)
+function slot0.Setup(slot0, slot1, slot2, slot3)
 	slot0:Update(slot1, slot2)
 	slot0.wsCompass:SetAnchorEulerAngles(slot3)
 end
 
-slot0.Update = function(slot0, slot1, slot2)
+function slot0.Update(slot0, slot1, slot2)
 	if slot0.entrance ~= slot1 or slot0.map ~= slot2 or slot0.gid ~= slot2.gid then
 		slot0.entrance = slot1
 		slot0.map = slot2
@@ -128,7 +128,7 @@ slot0.Update = function(slot0, slot1, slot2)
 	slot0:UpdateOrderBtn()
 end
 
-slot0.SetButton = function(slot0, slot1, slot2)
+function slot0.SetButton(slot0, slot1, slot2)
 	slot3 = slot1:Find("type_lock")
 
 	setActive(slot3, not nowWorld():IsSystemOpen(slot2.system))
@@ -169,7 +169,7 @@ slot0.SetButton = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.UpdateOrderBtn = function(slot0)
+function slot0.UpdateOrderBtn(slot0)
 	slot0:ClearBtnTimers()
 
 	slot0.timers = {}
@@ -257,7 +257,7 @@ slot0.UpdateOrderBtn = function(slot0)
 	})
 end
 
-slot0.ClearBtnTimers = function(slot0)
+function slot0.ClearBtnTimers(slot0)
 	if slot0.timers then
 		for slot4, slot5 in pairs(slot0.timers) do
 			slot5:Stop()
@@ -267,18 +267,18 @@ slot0.ClearBtnTimers = function(slot0)
 	slot0.timers = nil
 end
 
-slot0.UpdateCompassMarks = function(slot0)
+function slot0.UpdateCompassMarks(slot0)
 	slot0.wsCompass:ClearMarks()
 	slot0.wsCompass:Update(slot0.entrance, slot0.map)
 end
 
-slot0.ClearComppass = function(slot0)
+function slot0.ClearComppass(slot0)
 	slot0.wsCompass.map = nil
 
 	slot0.wsCompass:RemoveCellsListener()
 end
 
-slot0.ShowMsgbox = function(slot0, slot1)
+function slot0.ShowMsgbox(slot0, slot1)
 	slot2 = nowWorld()
 
 	setText(slot0.rtMsgStamina:Find("Text"), slot2.staminaMgr:GetTotalStamina())
@@ -292,21 +292,21 @@ slot0.ShowMsgbox = function(slot0, slot1)
 		slot5 = i18n("world_instruction_morale_1", setColorStr(slot4, COLOR_GREEN), setColorStr(slot3, slot4 <= slot3 and COLOR_GREEN or COLOR_RED))
 		slot6 = i18n("world_instruction_morale_4")
 
-		slot7 = function()
+		function slot7()
 			uv0:emit(WorldScene.SceneOp, "OpReqMaintenance", uv0.map:GetFleet().id)
 		end
 	elseif slot1 == WorldConst.OpReqSub then
 		slot5 = i18n(slot2:IsSubmarineSupporting() and "world_instruction_submarine_7" or "world_instruction_submarine_2", setColorStr(slot4, COLOR_GREEN), setColorStr(slot3, slot4 <= slot3 and COLOR_GREEN or COLOR_RED))
 		slot6 = i18n("world_instruction_submarine_8")
 
-		slot7 = function()
+		function slot7()
 			uv0:emit(WorldScene.SceneOp, "OpReqSub")
 		end
 	elseif slot1 == WorldConst.OpReqVision then
 		slot5 = i18n("world_instruction_detect_1", setColorStr(slot4, COLOR_GREEN), setColorStr(slot3, slot4 <= slot3 and COLOR_GREEN or COLOR_RED))
 		slot6 = i18n("world_instruction_submarine_8")
 
-		slot7 = function()
+		function slot7()
 			uv0:emit(WorldScene.SceneOp, "OpReqVision")
 		end
 	else
@@ -384,12 +384,12 @@ slot0.ShowMsgbox = function(slot0, slot1)
 	pg.UIMgr.GetInstance():BlurPanel(slot0.rtMsgbox)
 end
 
-slot0.HideMsgbox = function(slot0)
+function slot0.HideMsgbox(slot0)
 	setActive(slot0.rtMsgbox, false)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0.rtMsgbox, slot0._tf)
 end
 
-slot0.DisplayAutoSetting = function(slot0, slot1)
+function slot0.DisplayAutoSetting(slot0, slot1)
 	setActive(slot0.rtMsgBtns:Find("btn_confirm"), not slot1)
 	setActive(slot0.rtMsgBtns:Find("btn_setting"), slot1)
 end

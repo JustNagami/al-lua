@@ -19,7 +19,7 @@ slot0.flagList = {
 	"inSupport"
 }
 
-slot0.checkShipFlag = function(slot0, slot1, slot2)
+function slot0.checkShipFlag(slot0, slot1, slot2)
 	if type(defaultValue(slot1[slot2], uv0.TAG_HIDE_BASE[slot2])) == "boolean" then
 		return not slot3 and slot0:getFlag(slot2)
 	elseif type(slot3) == "number" then
@@ -29,7 +29,7 @@ slot0.checkShipFlag = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.ShipStatusToTag = function(slot0, slot1)
+function slot0.ShipStatusToTag(slot0, slot1)
 	if uv0.checkShipFlag(slot0, slot1, "inChapter") then
 		return {
 			"shipstatus",
@@ -521,7 +521,7 @@ slot2 = {
 	}
 }
 
-slot0.ShipStatusCheck = function(slot0, slot1, slot2, slot3)
+function slot0.ShipStatusCheck(slot0, slot1, slot2, slot3)
 	slot4, slot5 = uv0.ShipStatusConflict(slot0, slot1, slot3)
 
 	if slot4 == uv0.STATE_CHANGE_FAIL then
@@ -541,7 +541,7 @@ slot0.ShipStatusCheck = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.ShipStatusConflict = function(slot0, slot1, slot2)
+function slot0.ShipStatusConflict(slot0, slot1, slot2)
 	slot3 = uv0[slot0]
 	slot2 = slot2 or {}
 
@@ -566,7 +566,7 @@ slot0.ShipStatusConflict = function(slot0, slot1, slot2)
 	return uv1.STATE_CHANGE_OK
 end
 
-slot0.ChangeStatusCheckBox = function(slot0, slot1, slot2)
+function slot0.ChangeStatusCheckBox(slot0, slot1, slot2)
 	if slot0 == "inBackyard" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("ship_vo_moveout_backyard"),
@@ -705,7 +705,7 @@ slot0.ChangeStatusCheckBox = function(slot0, slot1, slot2)
 	return true
 end
 
-slot0.ChangeStatusTipBox = function(slot0, slot1)
+function slot0.ChangeStatusTipBox(slot0, slot1)
 	if slot0 == "inElite" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
@@ -716,7 +716,7 @@ slot0.ChangeStatusTipBox = function(slot0, slot1)
 	return true
 end
 
-slot0.canDestroyShip = function(slot0, slot1)
+function slot0.canDestroyShip(slot0, slot1)
 	if slot0:isBluePrintShip() then
 		return false, i18n("blueprint_destory_tip")
 	elseif slot0:GetLockState() == Ship.LOCK_STATE_LOCK then

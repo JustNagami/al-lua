@@ -9,13 +9,13 @@ slot0.Battle.BattleSupportUnit = class("BattleSupportUnit", slot0.Battle.BattleP
 slot0.Battle.BattleSupportUnit.__name = "BattleSupportUnit"
 slot7 = slot0.Battle.BattleSupportUnit
 
-slot7.Ctor = function(slot0, slot1, slot2)
+function slot7.Ctor(slot0, slot1, slot2)
 	uv0.super.Ctor(slot0, slot1, slot2)
 
 	slot0._type = uv1.UnitType.SUPPORT_UNIT
 end
 
-slot7.setWeapon = function(slot0, slot1)
+function slot7.setWeapon(slot0, slot1)
 	slot2 = slot0._tmpData.default_equip_list
 	slot3 = slot0._tmpData.base_list
 	slot4 = slot0._proficiencyList
@@ -32,7 +32,7 @@ slot7.setWeapon = function(slot0, slot1)
 			slot11 = slot4[slot9]
 			slot12 = slot5[slot9]
 
-			slot13 = function(slot0, slot1, slot2)
+			function slot13(slot0, slot1, slot2)
 				if uv0.GetWeaponPropertyDataFromID(slot0).type == uv1.EquipmentType.INTERCEPT_AIRCRAFT then
 					for slot8 = 1, uv2[uv3] do
 						slot10 = uv4:AddWeapon(slot0, slot1, slot2, uv5, uv3):GetTemplateData().type
@@ -67,7 +67,7 @@ slot7.setWeapon = function(slot0, slot1)
 	end
 end
 
-slot7.AddWeapon = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot7.AddWeapon(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot0._totalWeapon[#slot0._totalWeapon + 1] = uv0.CreateWeaponUnit(slot1, slot0, slot4, slot5)
 
 	if slot2 then

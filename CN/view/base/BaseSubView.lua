@@ -7,7 +7,7 @@ slot0.STATES = {
 	LOADED = 3
 }
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	uv0.super.Ctor(slot0, slot2)
 
 	slot0.contextData = slot3
@@ -19,7 +19,7 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	slot0._funcQueue = {}
 end
 
-slot0.Load = function(slot0)
+function slot0.Load(slot0)
 	if slot0._state ~= uv0.STATES.NONE then
 		return
 	end
@@ -42,7 +42,7 @@ slot0.Load = function(slot0)
 	end)
 end
 
-slot0.Loaded = function(slot0, slot1)
+function slot0.Loaded(slot0, slot1)
 	pg.UIMgr.GetInstance():LoadingOff()
 
 	if slot0._state ~= uv0.STATES.LOADING then
@@ -59,7 +59,7 @@ slot0.Loaded = function(slot0, slot1)
 	slot0:OnLoaded()
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	if slot0._state ~= uv0.STATES.LOADED then
 		return
 	end
@@ -70,7 +70,7 @@ slot0.Init = function(slot0)
 	slot0:HandleFuncQueue()
 end
 
-slot0.Destroy = function(slot0)
+function slot0.Destroy(slot0)
 	if slot0._state == uv0.STATES.DESTROY then
 		return
 	end
@@ -99,7 +99,7 @@ slot0.Destroy = function(slot0)
 	end
 end
 
-slot0.HandleFuncQueue = function(slot0)
+function slot0.HandleFuncQueue(slot0)
 	if slot0._state == uv0.STATES.INITED then
 		while #slot0._funcQueue > 0 do
 			slot1 = table.remove(slot0._funcQueue, 1)
@@ -109,11 +109,11 @@ slot0.HandleFuncQueue = function(slot0)
 	end
 end
 
-slot0.Reset = function(slot0)
+function slot0.Reset(slot0)
 	slot0._state = uv0.STATES.NONE
 end
 
-slot0.ActionInvoke = function(slot0, slot1, ...)
+function slot0.ActionInvoke(slot0, slot1, ...)
 	assert(slot0[slot1], "func not exist >>>" .. slot1)
 
 	slot0._funcQueue[#slot0._funcQueue + 1] = {
@@ -129,68 +129,65 @@ slot0.ActionInvoke = function(slot0, slot1, ...)
 	slot0:HandleFuncQueue()
 end
 
-slot0.CallbackInvoke = function(slot0, slot1, ...)
+function slot0.CallbackInvoke(slot0, slot1, ...)
 	slot0._funcQueue[#slot0._funcQueue + 1] = {
 		func = slot1,
-		params = {
-			len = select("#", ...),
-			...
-		}
+		params = packEx(...)
 	}
 
 	slot0:HandleFuncQueue()
 end
 
-slot0.ExecuteAction = function(slot0, slot1, ...)
+function slot0.ExecuteAction(slot0, slot1, ...)
 	slot0:Load()
 	slot0:ActionInvoke(slot1, ...)
 end
 
-slot0.GetLoaded = function(slot0)
+function slot0.GetLoaded(slot0)
 	return uv0.STATES.LOADED <= slot0._state
 end
 
-slot0.CheckState = function(slot0, slot1)
+function slot0.CheckState(slot0, slot1)
 	return slot0._state == slot1
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	setActive(slot0._tf, true)
 	slot0:ShowOrHideResUI(true)
 	slot0:PlayBGM()
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	setActive(slot0._tf, false)
 	slot0:ShowOrHideResUI(false)
 	slot0:StopBgm()
 end
 
-slot0.isShowing = function(slot0)
+function slot0.isShowing(slot0)
 	return slot0._tf and isActive(slot0._tf)
 end
 
-slot0.getBGM = function(slot0, slot1)
+function slot0.getBGM(slot0, slot1)
 	return getBgm(slot1 or slot0.__cname)
 end
 
-slot0.PlayBGM = function(slot0)
+function slot0.PlayBGM(slot0)
 	if slot0:getBGM() then
 		pg.BgmMgr.GetInstance():Push(slot0.__cname, slot1)
 	end
 end
 
-slot0.StopBgm = function(slot0)
+function slot0.StopBgm(slot0)
 	pg.BgmMgr.GetInstance():Pop(slot0.__cname)
 end
 
-slot0.findTF = function(slot0, slot1, slot2)
+function slot0.findTF(slot0, slot1, slot2)
 	assert(slot0._tf, "transform should exist")
 
 	return findTF(slot2 or slot0._tf, slot1)
 end
 
-slot0.getTpl = function(slot0, slot1, slot2)
+function slot0.getTpl(slot0, slot1, slot2)
 	slot3 = slot0:findTF(slot1, slot2)
 
 	slot3:SetParent(slot0._tf, false)
@@ -199,24 +196,24 @@ slot0.getTpl = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return nil
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
-slot0.ResUISettings = function(slot0)
+function slot0.ResUISettings(slot0)
 	return nil
 end
 
-slot0.ShowOrHideResUI = function(slot0, slot1)
+function slot0.ShowOrHideResUI(slot0, slot1)
 	if not slot0:ResUISettings() then
 		return
 	end

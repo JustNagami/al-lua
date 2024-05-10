@@ -3,11 +3,11 @@ slot0.PAGE_DEV = 1
 slot0.PAGE_UPGRADE = 2
 slot0.PAGE_DEV_ITEM = 3
 
-slot0.getTargetUI = function(slot0)
+function slot0.getTargetUI(slot0)
 	return "TechnologyBluePage", "TechnologyRedPage"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.frame = slot0:findTF("frame")
 	slot0.toggle = slot0:findTF("frame/toggle")
 	slot0.upgradeList = UIItemList.New(slot0:findTF("frame/upgrade/content"), slot0:findTF("frame/upgrade/content/tpl"))
@@ -32,7 +32,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0:findTF("progress/title/label", slot0.inDevelopmentPanel), i18n("guild_tech_label_condition"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:OverlayPanelPB(slot0.frame, {
@@ -60,12 +60,12 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.SetUp = function(slot0, slot1)
+function slot0.SetUp(slot0, slot1)
 	slot0:Update(slot1)
 	triggerToggle(slot0.toggle, false)
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	slot0.guildVO = slot1
 	slot0.technologyVOs = slot0.guildVO:getTechnologys()
 	slot0.technologyGroupVOs = slot0.guildVO:getTechnologyGroups()
@@ -75,7 +75,7 @@ slot0.Update = function(slot0, slot1)
 	slot0.isAdmin = GuildMember.IsAdministrator(slot1:getSelfDuty())
 end
 
-slot0.Flush = function(slot0)
+function slot0.Flush(slot0)
 	if uv0.PAGE_DEV == slot0.page then
 		slot0:InitBreakOutList()
 	elseif uv0.PAGE_UPGRADE == slot0.page then
@@ -85,7 +85,7 @@ slot0.Flush = function(slot0)
 	end
 end
 
-slot0.UpdateUpgradeList = function(slot0)
+function slot0.UpdateUpgradeList(slot0)
 	table.sort(slot0.technologyVOs, function (slot0, slot1)
 		return slot0.id < slot1.id
 	end)
@@ -103,7 +103,7 @@ slot0.UpdateUpgradeList = function(slot0)
 	slot0.page = uv0.PAGE_UPGRADE
 end
 
-slot0.UpdateBreakOutList = function(slot0)
+function slot0.UpdateBreakOutList(slot0)
 	if slot0.activityGroup then
 		slot0:InitDevingItem()
 	else
@@ -115,14 +115,14 @@ slot0.UpdateBreakOutList = function(slot0)
 	setActive(slot0.breakoutListPanel, not slot0.activityGroup)
 end
 
-slot0.Switch2BreakOutList = function(slot0)
+function slot0.Switch2BreakOutList(slot0)
 	setActive(slot0.upgradePanel, false)
 	setActive(slot0.inDevelopmentPanel, false)
 	setActive(slot0.breakoutListPanel, true)
 	slot0:InitBreakOutList(true)
 end
 
-slot0.InitBreakOutList = function(slot0, slot1)
+function slot0.InitBreakOutList(slot0, slot1)
 	table.sort(slot0.technologyGroupVOs, function (slot0, slot1)
 		return slot0.pid < slot1.pid
 	end)
@@ -148,7 +148,7 @@ slot0.InitBreakOutList = function(slot0, slot1)
 	slot0.page = uv0.PAGE_DEV
 end
 
-slot0.InitDevingItem = function(slot0)
+function slot0.InitDevingItem(slot0)
 	slot1 = slot0.activityGroup
 	slot0.inDevelopmentIcon.sprite = GetSpriteFromAtlas("GuildTechnology", slot1.id)
 	slot0.inDevelopmentName.text = slot1:getConfig("name")
@@ -182,7 +182,7 @@ slot0.InitDevingItem = function(slot0)
 	slot0.page = uv0.PAGE_DEV_ITEM
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.frame, slot0._tf)
 end
 

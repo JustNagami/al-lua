@@ -3,7 +3,7 @@ slot0.USE_FOOD = "BackyardFeedMediator:USE_FOOD"
 slot0.BUY_FOOD = "BackyardFeedMediator:BUY_FOOD"
 slot0.EXTEND = "BackyardFeedMediator:EXTEND"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.USE_FOOD, function (slot0, slot1, slot2, slot3)
 		if slot3 then
 			uv0:setBackyardRemind()
@@ -30,7 +30,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:SetIsRemind(getProxy(SettingsProxy):getBackyardRemind())
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.ADD_FOOD_DONE,
 		DormProxy.DORM_UPDATEED,
@@ -38,7 +38,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 	slot4 = slot1:getType()
 

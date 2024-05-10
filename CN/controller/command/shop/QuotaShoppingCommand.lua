@@ -1,16 +1,16 @@
 slot0 = class("QuotaShoppingCommand", pm.SimpleCommand)
 slot0.QUOTA_SHOP = 4
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot5 = slot2.type
 	slot8 = getProxy(ShopsProxy):getQuotaShop():getGoodsCfg(slot2.id)
 
-	if GetOwnedDropCount({
+	if Drop.New({
 		type = slot8.resource_category,
 		id = slot8.resource_type
-	}) < slot8.resource_num * slot2.count then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", getDropName(slot9)))
+	}):getOwnedCount() < slot8.resource_num * slot2.count then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot9:getName()))
 
 		return
 	end

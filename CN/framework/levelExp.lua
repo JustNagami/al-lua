@@ -1,4 +1,4 @@
-prepareLevelExpConfig = function(slot0, slot1)
+function prepareLevelExpConfig(slot0, slot1)
 	slot1 = slot1 or "exp"
 	slot2 = nil
 
@@ -19,7 +19,7 @@ prepareLevelExpConfig = function(slot0, slot1)
 	end
 end
 
-getConfigFromTotalExp = function(slot0, slot1, slot2)
+function getConfigFromTotalExp(slot0, slot1, slot2)
 	slot2 = slot2 or "exp"
 	slot3 = nil
 
@@ -32,15 +32,15 @@ getConfigFromTotalExp = function(slot0, slot1, slot2)
 	return slot3
 end
 
-getConfigFromLevel0 = function(slot0, slot1)
+function getConfigFromLevel0(slot0, slot1)
 	return slot0[slot1 + 1] or slot0[#slot0]
 end
 
-getConfigFromLevel1 = function(slot0, slot1)
+function getConfigFromLevel1(slot0, slot1)
 	return slot0[slot1] or slot0[#slot0]
 end
 
-getExpByRarityFromLv1 = function(slot0, slot1)
+function getExpByRarityFromLv1(slot0, slot1)
 	slot2 = getConfigFromLevel1(pg.ship_level, slot1)
 
 	if ShipRarity.SSR <= slot0 then

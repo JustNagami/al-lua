@@ -7,14 +7,14 @@ slot0.Fields = {
 	[TeamType.Submarine] = "table"
 }
 
-slot0.Build = function(slot0)
+function slot0.Build(slot0)
 	slot0[TeamType.Main] = {}
 	slot0[TeamType.Vanguard] = {}
 	slot0[TeamType.Submarine] = {}
 	slot0.commanderIds = {}
 end
 
-slot0.Setup = function(slot0, slot1)
+function slot0.Setup(slot0, slot1)
 	slot0.id = slot1.id
 
 	slot0:UpdateShips(_.map(slot1.ship_list, function (slot0)
@@ -33,7 +33,7 @@ slot0.Setup = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateShips = function(slot0, slot1)
+function slot0.UpdateShips(slot0, slot1)
 	slot0[TeamType.Main] = {}
 	slot0[TeamType.Vanguard] = {}
 	slot0[TeamType.Submarine] = {}
@@ -59,7 +59,7 @@ slot0.UpdateShips = function(slot0, slot1)
 	end
 end
 
-slot0.IsValid = function(slot0)
+function slot0.IsValid(slot0)
 	if slot0:GetFleetType() == FleetType.Submarine then
 		return #slot0:GetTeamShips(TeamType.Submarine, true) > 0
 	else
@@ -69,21 +69,21 @@ slot0.IsValid = function(slot0)
 	end
 end
 
-slot0.GetFleetType = function(slot0)
+function slot0.GetFleetType(slot0)
 	return #slot0[TeamType.Submarine] > 0 and FleetType.Submarine or FleetType.Normal
 end
 
-slot0.GetPrefab = function(slot0)
+function slot0.GetPrefab(slot0)
 	return slot0:GetFlagShipVO():getPrefab()
 end
 
-slot0.GetShip = function(slot0, slot1)
+function slot0.GetShip(slot0, slot1)
 	return _.detect(slot0:GetShips(true), function (slot0)
 		return slot0.id == uv0
 	end)
 end
 
-slot0.GetShips = function(slot0, slot1)
+function slot0.GetShips(slot0, slot1)
 	_.each({
 		TeamType.Main,
 		TeamType.Vanguard,
@@ -99,25 +99,25 @@ slot0.GetShips = function(slot0, slot1)
 	return {}
 end
 
-slot0.GetShipVOs = function(slot0, slot1)
+function slot0.GetShipVOs(slot0, slot1)
 	return _.map(slot0:GetShips(slot1), function (slot0)
 		return WorldConst.FetchShipVO(slot0.id)
 	end)
 end
 
-slot0.GetTeamShips = function(slot0, slot1, slot2)
+function slot0.GetTeamShips(slot0, slot1, slot2)
 	return _(slot0[slot1]):chain():filter(function (slot0)
 		return uv0 or slot0:IsAlive()
 	end):value()
 end
 
-slot0.GetTeamShipVOs = function(slot0, slot1, slot2)
+function slot0.GetTeamShipVOs(slot0, slot1, slot2)
 	return _.map(slot0:GetTeamShips(slot1, slot2), function (slot0)
 		return WorldConst.FetchShipVO(slot0.id)
 	end)
 end
 
-slot0.GetFlagShipVO = function(slot0)
+function slot0.GetFlagShipVO(slot0)
 	if slot0:GetFleetType() == FleetType.Submarine then
 		return WorldConst.FetchShipVO(_.detect(slot0[TeamType.Submarine], function (slot0)
 			return slot0:IsAlive()
@@ -129,7 +129,7 @@ slot0.GetFlagShipVO = function(slot0)
 	end
 end
 
-slot0.IsAlive = function(slot0)
+function slot0.IsAlive(slot0)
 	return _.any(slot0[TeamType.Main], function (slot0)
 		return slot0:IsAlive()
 	end) and _.any(slot0[TeamType.Vanguard], function (slot0)
@@ -137,7 +137,7 @@ slot0.IsAlive = function(slot0)
 	end)
 end
 
-slot0.GetLevel = function(slot0)
+function slot0.GetLevel(slot0)
 	slot1 = slot0:GetShips(true)
 
 	return math.floor(_.reduce(slot1, 0, function (slot0, slot1)
@@ -145,7 +145,7 @@ slot0.GetLevel = function(slot0)
 	end) / #slot1)
 end
 
-slot0.BuildFormationIds = function(slot0)
+function slot0.BuildFormationIds(slot0)
 	for slot5, slot6 in pairs({
 		[TeamType.Main] = {},
 		[TeamType.Vanguard] = {},
@@ -168,7 +168,7 @@ slot0.BuildFormationIds = function(slot0)
 	return slot1
 end
 
-slot0.getTeamByName = function(slot0, slot1)
+function slot0.getTeamByName(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(slot0[slot1]) do
@@ -180,11 +180,11 @@ slot0.getTeamByName = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getFleetType = function(slot0)
+function slot0.getFleetType(slot0)
 	return slot0:GetFleetType()
 end
 
-slot0.getShipVOsDic = function(slot0)
+function slot0.getShipVOsDic(slot0)
 	slot1 = {}
 
 	for slot6, slot7 in ipairs(slot0:GetShipVOs()) do

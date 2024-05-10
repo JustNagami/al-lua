@@ -14,33 +14,33 @@ slot11 = class("BattleFleetCardPuzzleMoveDeck")
 slot0.Battle.BattleFleetCardPuzzleMoveDeck = slot11
 slot11.__name = "BattleFleetCardPuzzleMoveDeck"
 
-slot11.Ctor = function(slot0, slot1, slot2)
+function slot11.Ctor(slot0, slot1, slot2)
 	slot0._cardPuzzleComponent = slot1
 	slot0._indexID = slot2
 
 	slot0:init()
 end
 
-slot11.CustomConfig = function(slot0, slot1)
+function slot11.CustomConfig(slot0, slot1)
 	slot0._generateRate = uv0.GetPuzzleDungeonTemplate(slot1).move_recovery
 end
 
-slot11.GetIndexID = function(slot0)
+function slot11.GetIndexID(slot0)
 	return slot0._indexID
 end
 
-slot11.Dispose = function(slot0)
+function slot11.Dispose(slot0)
 end
 
-slot11.GetCardList = function(slot0)
+function slot11.GetCardList(slot0)
 	return slot0._moveCardList
 end
 
-slot11.Update = function(slot0, slot1)
+function slot11.Update(slot0, slot1)
 	slot0:update(slot1)
 end
 
-slot11.init = function(slot0)
+function slot11.init(slot0)
 	slot0._moveCardList = {}
 
 	uv0.EventDispatcher.AttachEventDispatcher(slot0)
@@ -54,11 +54,11 @@ slot11.init = function(slot0)
 	slot0:updateTimeStamp()
 end
 
-slot11.updateTimeStamp = function(slot0)
+function slot11.updateTimeStamp(slot0)
 	slot0._lastUpdateTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-slot11.update = function(slot0, slot1)
+function slot11.update(slot0, slot1)
 	if slot0:GetLength() < slot0._maxMoveCard + slot0._attrManager:GetCurrent("MoveExtra") then
 		slot0._generating = (slot1 - slot0._lastUpdateTimeStamp) * slot0._generateRate + slot0._generating
 	end
@@ -66,16 +66,16 @@ slot11.update = function(slot0, slot1)
 	slot0:updateTimeStamp()
 end
 
-slot11.GetGeneratePorcess = function(slot0)
+function slot11.GetGeneratePorcess(slot0)
 	return slot0._generating
 end
 
-slot11.TryPlayTopMoveCard = function(slot0)
+function slot11.TryPlayTopMoveCard(slot0)
 	if slot0:GetLength() > 0 then
 		return slot0:GetCardList()[slot1]
 	end
 end
 
-slot11.RestartGenrate = function(slot0)
+function slot11.RestartGenrate(slot0)
 	slot0._generating = 0
 end

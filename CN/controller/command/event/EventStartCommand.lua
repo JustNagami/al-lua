@@ -1,6 +1,6 @@
 slot0 = class("EventStartCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.shipIds
 
@@ -20,7 +20,7 @@ slot0.execute = function(slot0, slot1)
 		return
 	end
 
-	slot10 = function()
+	function slot10()
 		if uv0 then
 			uv1:sendNotification(GAME.ACT_COLLECTION_EVENT_OP, {
 				arg2 = 0,
@@ -52,7 +52,7 @@ slot0.execute = function(slot0, slot1)
 	end
 end
 
-slot0.OnStart = function(slot0)
+function slot0.OnStart(slot0)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("event_start_success"))
 
 	slot2 = getProxy(EventProxy):findInfoById(slot0)

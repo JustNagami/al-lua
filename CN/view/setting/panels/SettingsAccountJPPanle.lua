@@ -1,18 +1,18 @@
 slot0 = class("SettingsAccountJPPanle", import(".SettingsBasePanel"))
 
-slot0.GetUIName = function(slot0)
+function slot0.GetUIName(slot0)
 	return "SettingsAccountJP"
 end
 
-slot0.GetTitle = function(slot0)
+function slot0.GetTitle(slot0)
 	return i18n("Settings_title_LoginJP")
 end
 
-slot0.GetTitleEn = function(slot0)
+function slot0.GetTitleEn(slot0)
 	return "  / ACCOUNT"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.userProxy = getProxy(UserProxy)
 	slot0.accountTwitterUI = findTF(slot0._tf, "page1")
 	slot0.goTranscodeUIBtn = findTF(findTF(slot0.accountTwitterUI, "btn_layout/account_con"), "bind_account")
@@ -60,7 +60,7 @@ slot0.OnInit = function(slot0)
 	slot0:OnRegisterEvent()
 end
 
-slot0.OnRegisterEvent = function(slot0)
+function slot0.OnRegisterEvent(slot0)
 	onButton(slot0, slot0.getCodeBtn, function ()
 		if uv0.transcode == "" then
 			slot1 = pg.SecondaryPWDMgr
@@ -102,11 +102,11 @@ slot0.OnRegisterEvent = function(slot0)
 	end)
 end
 
-slot0.OnUpdate = function(slot0)
+function slot0.OnUpdate(slot0)
 	slot0:checkAllAccountState()
 end
 
-slot0.checkAllAccountState = function(slot0)
+function slot0.checkAllAccountState(slot0)
 	slot0:checkTranscodeView()
 	slot0:checkAccountTwitterView()
 	slot0:checkAccountAppleView()
@@ -115,12 +115,12 @@ slot0.checkAllAccountState = function(slot0)
 	slot0:checkAccountGPSView()
 end
 
-slot0.showTranscode = function(slot0, slot1)
+function slot0.showTranscode(slot0, slot1)
 	slot0.userProxy:saveTranscode(slot1)
 	slot0:checkTranscodeView()
 end
 
-slot0.checkTranscodeView = function(slot0)
+function slot0.checkTranscodeView(slot0)
 	slot0.transcode = pg.SdkMgr.GetInstance():GetYostarTransCode() or ""
 
 	if not slot0.transcode or slot0.transcode == "" or slot0.transcode == "NULL" then
@@ -136,7 +136,7 @@ slot0.checkTranscodeView = function(slot0)
 	end
 end
 
-slot0.checkAccountTwitterView = function(slot0)
+function slot0.checkAccountTwitterView(slot0)
 	slot1 = pg.SdkMgr.GetInstance():IsSocialLink(AIRI_PLATFORM_TWITTER)
 
 	setActive(slot0.twitterUnlinkBtn, slot1)
@@ -148,7 +148,7 @@ slot0.checkAccountTwitterView = function(slot0)
 	end
 end
 
-slot0.checkAccountAppleView = function(slot0)
+function slot0.checkAccountAppleView(slot0)
 	slot1 = pg.SdkMgr.GetInstance():IsSocialLink(AIRI_PLATFORM_APPLE)
 
 	setActive(slot0.appleUnlinkBtn, slot1)
@@ -160,7 +160,7 @@ slot0.checkAccountAppleView = function(slot0)
 	end
 end
 
-slot0.checkAccountAmazonView = function(slot0)
+function slot0.checkAccountAmazonView(slot0)
 	if pg.SdkMgr.GetInstance():GetChannelUID() == "3" then
 		slot1 = pg.SdkMgr.GetInstance():IsSocialLink(AIRI_PLATFORM_AMAZON)
 
@@ -174,7 +174,7 @@ slot0.checkAccountAmazonView = function(slot0)
 	end
 end
 
-slot0.checkAccountYostarView = function(slot0)
+function slot0.checkAccountYostarView(slot0)
 	slot1 = pg.SdkMgr.GetInstance():IsSocialLink(AIRI_PLATFORM_YOSTAR)
 
 	setActive(slot0.yostarUnlinkBtn, slot1)
@@ -186,7 +186,7 @@ slot0.checkAccountYostarView = function(slot0)
 	end
 end
 
-slot0.checkAccountGPSView = function(slot0)
+function slot0.checkAccountGPSView(slot0)
 	slot1 = pg.SdkMgr.GetInstance():IsSocialLink(AIRI_PLATFORM_GPS)
 
 	setActive(slot0.pgsCon, slot1)

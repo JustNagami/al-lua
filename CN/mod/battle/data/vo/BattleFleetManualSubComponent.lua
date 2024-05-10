@@ -12,14 +12,14 @@ slot9 = class("BattleFleetManualSubComponent")
 slot0.Battle.BattleFleetManualSubComponent = slot9
 slot9.__name = "BattleFleetManualSubComponent"
 
-slot9.Ctor = function(slot0, slot1)
+function slot9.Ctor(slot0, slot1)
 	slot0._fleetVO = slot1
 
 	slot0:init()
 	slot0:attachFunction()
 end
 
-slot9.attachFunction = function(slot0)
+function slot9.attachFunction(slot0)
 	slot0._fleetVO.GetSubBench = uv0.GetSubBench
 	slot0._fleetVO.GetSubFreeDiveVO = uv0.GetSubFreeDiveVO
 	slot0._fleetVO.GetSubFreeFloatVO = uv0.GetSubFreeFloatVO
@@ -29,20 +29,20 @@ slot9.attachFunction = function(slot0)
 	slot0._fleetVO.AddManualSubmarine = uv0.AddManualSubmarine
 end
 
-slot9.UpdateAutoComponent = function(slot0, slot1)
+function slot9.UpdateAutoComponent(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0._manualSubList) do
 		slot6:UpdateOxygen(slot1)
 	end
 end
 
-slot9.UpdateManualWeaponVO = function(slot0, slot1)
+function slot9.UpdateManualWeaponVO(slot0, slot1)
 	slot0._submarineDiveVO:Update(slot1)
 	slot0._submarineFloatVO:Update(slot1)
 	slot0._submarineBoostVO:Update(slot1)
 	slot0._submarineShiftVO:Update(slot1)
 end
 
-slot9.RemovePlayerUnit = function(slot0, slot1)
+function slot9.RemovePlayerUnit(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0._subList, i) do
 		if slot6 == slot1 then
 			table.remove(slot0._subList, slot5)
@@ -64,7 +64,7 @@ slot9.RemovePlayerUnit = function(slot0, slot1)
 	end
 end
 
-slot9.AddManualSubmarine = function(slot0, slot1)
+function slot9.AddManualSubmarine(slot0, slot1)
 	slot0._unitList[#slot0._unitList + 1] = slot1
 	slot0._manualSubList[#slot0._manualSubList + 1] = slot1
 	slot0._manualSubBench[#slot0._manualSubBench + 1] = slot1
@@ -76,31 +76,31 @@ slot9.AddManualSubmarine = function(slot0, slot1)
 	slot1:RegisterEventListener(slot0, uv0.UPDATE_HP, slot0.onUnitUpdateHP)
 end
 
-slot9.GetSubBench = function(slot0)
+function slot9.GetSubBench(slot0)
 	return slot0._manualSubBench
 end
 
-slot9.GetSubFreeDiveVO = function(slot0)
+function slot9.GetSubFreeDiveVO(slot0)
 	return slot0._manualSubComponent._submarineDiveVO
 end
 
-slot9.GetSubFreeFloatVO = function(slot0)
+function slot9.GetSubFreeFloatVO(slot0)
 	return slot0._manualSubComponent._submarineFloatVO
 end
 
-slot9.GetSubBoostVO = function(slot0)
+function slot9.GetSubBoostVO(slot0)
 	return slot0._manualSubComponent._submarineBoostVO
 end
 
-slot9.GetSubSpecialVO = function(slot0)
+function slot9.GetSubSpecialVO(slot0)
 	return slot0._manualSubComponent._submarineSpecialVO
 end
 
-slot9.GetSubShiftVO = function(slot0)
+function slot9.GetSubShiftVO(slot0)
 	return slot0._manualSubComponent._submarineShiftVO
 end
 
-slot9.init = function(slot0)
+function slot9.init(slot0)
 	slot0._submarineDiveVO = uv0.Battle.BattleSubmarineFuncVO.New(uv1.SR_CONFIG.DIVE_CD)
 	slot0._submarineFloatVO = uv0.Battle.BattleSubmarineFuncVO.New(uv1.SR_CONFIG.FLOAT_CD)
 	slot0._submarineVOList = {
@@ -120,19 +120,19 @@ slot9.init = function(slot0)
 	slot0._maxCount = 0
 end
 
-slot9.SetSubUnitData = function(slot0, slot1)
+function slot9.SetSubUnitData(slot0, slot1)
 	slot0._subUntiDataList = slot1
 end
 
-slot9.GetSubUnitData = function(slot0)
+function slot9.GetSubUnitData(slot0)
 	return slot0._subUntiDataList
 end
 
-slot9.GetSubList = function(slot0)
+function slot9.GetSubList(slot0)
 	return slot0._subList
 end
 
-slot9.ShiftManualSub = function(slot0)
+function slot9.ShiftManualSub(slot0)
 	slot1 = nil
 
 	if slot0._manualSubUnit then
@@ -218,7 +218,7 @@ slot9.ShiftManualSub = function(slot0)
 	end
 end
 
-slot9.ChangeSubmarineState = function(slot0, slot1, slot2)
+function slot9.ChangeSubmarineState(slot0, slot1, slot2)
 	if not slot0._manualSubUnit then
 		return
 	end
@@ -243,12 +243,12 @@ slot9.ChangeSubmarineState = function(slot0, slot1, slot2)
 	}))
 end
 
-slot9.SubmarinBoost = function(slot0)
+function slot9.SubmarinBoost(slot0)
 	slot0._manualSubUnit:Boost(Vector3.right, uv0.SR_CONFIG.BOOST_SPEED, uv0.SR_CONFIG.BOOST_DECAY, uv0.SR_CONFIG.BOOST_DURATION, uv0.SR_CONFIG.BOOST_DECAY_STAMP)
 	slot0._submarineBoostVO:ResetCurrent()
 end
 
-slot9.UnleashSubmarineSpecial = function(slot0)
+function slot9.UnleashSubmarineSpecial(slot0)
 	if slot0:GetWeaponBlock() then
 		return
 	end

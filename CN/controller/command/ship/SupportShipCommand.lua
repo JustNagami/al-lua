@@ -1,6 +1,6 @@
 slot0 = class("ExchangeShipCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody().count
 	slot5 = getProxy(BagProxy):getItemById(ITEM_ID_SILVER_HOOK)
 	slot6 = getProxy(BuildShipProxy):getSupportShipCost() * slot3

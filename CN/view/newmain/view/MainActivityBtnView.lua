@@ -1,6 +1,6 @@
 slot0 = class("MainActivityBtnView", import("view.base.BaseEventLogic"))
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	uv0.super.Ctor(slot0, slot2)
 
 	slot0._tf = slot1
@@ -22,7 +22,9 @@ slot0.Ctor = function(slot0, slot1, slot2)
 		MainLanternFestivalBtn.New(slot3, slot2),
 		MainActBossRushBtn.New(slot3, slot2),
 		MainActAprilFoolBtn.New(slot3, slot2),
-		MainActMedalCollectionBtn.New(slot3, slot2)
+		MainActMedalCollectionBtn.New(slot3, slot2),
+		MainActSenranBtn.New(slot3, slot2),
+		MainActBossSingleBtn.New(slot3, slot2)
 	}
 	slot0.specailBtns = {
 		MainActInsBtn.New(slot3.parent, slot2),
@@ -30,7 +32,8 @@ slot0.Ctor = function(slot0, slot1, slot2)
 		MainActRefluxBtn.New(slot0.linkBtnTop:Find("layout"), slot2),
 		MainActNewServerBtn.New(slot0.linkBtnTop:Find("layout"), slot2),
 		MainActDelegationBtn.New(slot0.eventPanel, slot2),
-		MainIslandActDelegationBtn.New(slot0.eventPanel, slot2)
+		MainIslandActDelegationBtn.New(slot0.eventPanel, slot2),
+		MainVoteEntranceBtn.New(slot0.eventPanel, slot2)
 	}
 
 	if pg.SdkMgr.GetInstance():CheckAudit() then
@@ -42,7 +45,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0:Register()
 end
 
-slot0.Register = function(slot0)
+function slot0.Register(slot0)
 	slot0:bind(NewMainScene.ON_REMOVE_LAYER, function (slot0, slot1)
 		uv0:OnRemoveLayer(slot1)
 	end)
@@ -54,7 +57,7 @@ slot0.Register = function(slot0)
 	end)
 end
 
-slot0.GetBtn = function(slot0, slot1)
+function slot0.GetBtn(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0.activityBtns) do
 		if isa(slot6, slot1) then
 			return slot6
@@ -70,7 +73,7 @@ slot0.GetBtn = function(slot0, slot1)
 	return nil
 end
 
-slot0.OnRemoveLayer = function(slot0, slot1)
+function slot0.OnRemoveLayer(slot0, slot1)
 	slot2 = nil
 
 	if slot1.mediator == LotteryMediator then
@@ -84,13 +87,13 @@ slot0.OnRemoveLayer = function(slot0, slot1)
 	end
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	slot0:Flush()
 
 	slot0.isInit = true
 end
 
-slot0.Flush = function(slot0)
+function slot0.Flush(slot0)
 	if slot0.checkNotchRatio ~= NotchAdapt.CheckNotchRatio then
 		slot0.checkNotchRatio = NotchAdapt.CheckNotchRatio
 		slot0.initPos = nil
@@ -136,7 +139,7 @@ slot0.Flush = function(slot0)
 	end
 end
 
-slot0.Refresh = function(slot0)
+function slot0.Refresh(slot0)
 	if not slot0.isInit then
 		return
 	end
@@ -150,7 +153,7 @@ slot0.Refresh = function(slot0)
 	end
 end
 
-slot0.Disable = function(slot0)
+function slot0.Disable(slot0)
 	slot0.lposX = nil
 
 	for slot4, slot5 in ipairs(slot0.specailBtns) do
@@ -160,7 +163,7 @@ slot0.Disable = function(slot0)
 	end
 end
 
-slot0.Fold = function(slot0, slot1, slot2)
+function slot0.Fold(slot0, slot1, slot2)
 	slot0.lposX = slot0.lposX or slot0._tf.localPosition.x
 	slot3 = slot1 and slot0.lposX + 1200 or slot0.lposX
 
@@ -180,7 +183,7 @@ slot0.Fold = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:disposeEvent()
 
 	for slot4, slot5 in ipairs(slot0.activityBtns) do

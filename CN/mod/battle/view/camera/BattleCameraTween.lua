@@ -6,11 +6,11 @@ slot0.Battle.BattleCameraTween = class("BattleCameraTween")
 slot0.Battle.BattleCameraTween.__name = "BattleCameraTween"
 slot3 = slot0.Battle.BattleCameraTween
 
-slot3.Ctor = function(slot0)
+function slot3.Ctor(slot0)
 	slot0._point = Vector3.zero
 end
 
-slot3.SetFromTo = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function slot3.SetFromTo(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot0._point:Set(slot2.x, slot2.y, slot2.z)
 
 	slot8 = LeanTween.value(go(slot1), slot2, slot3, slot4):setOnUpdateVector3(System.Action_UnityEngine_Vector3(function (slot0)
@@ -32,10 +32,10 @@ slot3.SetFromTo = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot
 	end
 end
 
-slot3.GetCameraPos = function(slot0)
+function slot3.GetCameraPos(slot0)
 	return slot0._point
 end
 
-slot3.Dispose = function(slot0)
+function slot3.Dispose(slot0)
 	slot0._point = nil
 end

@@ -3,14 +3,14 @@ slot1 = pg.ship_skin_expression
 slot2 = pg.ship_skin_expression_ex
 slot3 = false
 
-slot4 = function(...)
+function slot4(...)
 	if uv0 and IsUnityEditor then
 		print(...)
 	end
 end
 
-slot5 = function(slot0, slot1, slot2, slot3)
-	slot5 = function()
+function slot5(slot0, slot1, slot2, slot3)
+	function slot5()
 		slot1 = nil
 
 		if uv0[uv1] and slot0 ~= "" then
@@ -24,7 +24,7 @@ slot5 = function(slot0, slot1, slot2, slot3)
 		return slot1
 	end
 
-	slot6 = function(slot0)
+	function slot6(slot0)
 		if uv0.main_ex and slot1 ~= "" then
 			slot2 = nil
 
@@ -42,7 +42,7 @@ slot5 = function(slot0, slot1, slot2, slot3)
 		return nil
 	end
 
-	slot7 = function()
+	function slot7()
 		if not string.split(uv0, "_")[2] then
 			return nil
 		end
@@ -63,7 +63,7 @@ slot5 = function(slot0, slot1, slot2, slot3)
 	return slot8
 end
 
-slot0.GetExpression = function(slot0, slot1, slot2, slot3)
+function slot0.GetExpression(slot0, slot1, slot2, slot3)
 	uv0("name:", slot0, " - kind:", slot1, " - favor:", slot2)
 
 	if not uv1[slot0] then
@@ -87,40 +87,52 @@ slot0.GetExpression = function(slot0, slot1, slot2, slot3)
 	return slot5
 end
 
-slot0.SetExpression = function(slot0, slot1, slot2, slot3, slot4)
-	slot5 = tf(slot0):Find("face")
-
-	if not uv0.GetExpression(slot1, slot2, slot3, slot4) or slot6 == "" then
-		if slot5 then
-			setActive(slot5, false)
-		end
-
-		return false
-	end
-
-	if slot5 then
-		setImageSprite(slot5, GetSpriteFromAtlas("paintingface/" .. slot1, slot6))
-		setActive(slot5, true)
-
-		if findTF(slot5, "face_sub") then
-			slot9 = GetSpriteFromAtlas("paintingface/" .. slot1, slot6 .. "_sub")
-
-			setActive(slot8, slot9)
-
-			if slot9 then
-				setImageSprite(slot8, slot9)
-			end
-		end
-	end
-
-	return true
+function slot0.SetExpression(slot0, slot1, slot2, slot3, slot4)
+	return uv0.UpdateExpression(slot0, slot1, uv0.GetExpression(slot1, slot2, slot3, slot4))
 end
 
-slot0.DefaultFaceless = function(slot0)
+function slot0.UpdateExpression(slot0, slot1, slot2)
+	if not tf(slot0):Find("face") then
+		return false, nil
+	end
+
+	slot4 = slot1
+
+	if (not slot2 or slot2 == "") and uv0.DefaultFaceless(string.gsub(slot1, "_n", "")) then
+		slot2 = uv0.GetDefaultFace(slot4)
+	end
+
+	if not slot2 or slot2 == "" then
+		setActive(slot3, false)
+
+		return false, nil
+	end
+
+	uv0._UpdateExpression(slot3, slot4, slot2)
+
+	return true, slot2
+end
+
+function slot0._UpdateExpression(slot0, slot1, slot2)
+	setImageSprite(slot0, GetSpriteFromAtlas("paintingface/" .. slot1, slot2))
+	setActive(slot0, true)
+
+	if findTF(slot0, "face_sub") then
+		slot5 = GetSpriteFromAtlas("paintingface/" .. slot1, slot2 .. "_sub")
+
+		setActive(slot4, slot5)
+
+		if slot5 then
+			setImageSprite(slot4, slot5)
+		end
+	end
+end
+
+function slot0.DefaultFaceless(slot0)
 	return uv0[slot0] and slot1.default ~= ""
 end
 
-slot0.GetDefaultFace = function(slot0)
+function slot0.GetDefaultFace(slot0)
 	return uv0[slot0].default
 end
 

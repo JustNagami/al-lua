@@ -1,14 +1,14 @@
 slot0 = class("SpWeaponDesignLayer", import("view.base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SpWeaponDesignUI"
 end
 
-slot0.SetCraftList = function(slot0, slot1)
+function slot0.SetCraftList(slot0, slot1)
 	slot0.craftList = slot1
 end
 
-slot0.SetSpWeapons = function(slot0, slot1)
+function slot0.SetSpWeapons(slot0, slot1)
 	assert(slot0.craftList)
 
 	if slot0.craftList then
@@ -20,15 +20,15 @@ slot0.SetSpWeapons = function(slot0, slot1)
 	end
 end
 
-slot0.setItems = function(slot0, slot1)
+function slot0.setItems(slot0, slot1)
 	slot0.itemVOs = slot1
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.designScrollView = slot0:findTF("equipment_scrollview")
 	slot0.equipmentTpl = slot0:findTF("Template")
 
@@ -59,18 +59,18 @@ slot0.init = function(slot0)
 	})
 end
 
-slot0.SetParentTF = function(slot0, slot1)
+function slot0.SetParentTF(slot0, slot1)
 	slot0.parentTF = slot1
 	slot0.equipmentView = slot0:findTF("equipment_scrollview", slot0.parentTF)
 
 	setActive(slot0.equipmentView, false)
 end
 
-slot0.SetTopContainer = function(slot0, slot1)
+function slot0.SetTopContainer(slot0, slot1)
 	slot0.topPanel = slot1
 end
 
-slot0.SetTopItems = function(slot0, slot1)
+function slot0.SetTopItems(slot0, slot1)
 	slot0.topItems = slot1
 end
 
@@ -78,7 +78,7 @@ slot1 = {
 	"sort_rarity"
 }
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	setParent(slot0._tf, slot0.parentTF)
 	slot0._tf:SetSiblingIndex(slot0.equipmentView:GetSiblingIndex())
 
@@ -151,12 +151,12 @@ slot0.didEnter = function(slot0)
 	slot0:initTags()
 end
 
-slot0.isDefaultStatus = function(slot0)
+function slot0.isDefaultStatus(slot0)
 	return (not slot0.contextData.indexDatas.typeIndex or slot0.contextData.indexDatas.typeIndex == IndexConst.SpWeaponTypeAll) and (not slot0.contextData.indexDatas.rarityIndex or slot0.contextData.indexDatas.rarityIndex == IndexConst.SpWeaponRarityAll)
 end
 
-slot0.initTags = function(slot0)
-	slot4 = function()
+function slot0.initTags(slot0)
+	function slot4()
 		uv0.contextData.asc = not uv0.contextData.asc
 
 		uv0:filter()
@@ -190,27 +190,27 @@ slot0.initTags = function(slot0)
 	triggerToggle(slot0.tagTFs[slot0.contextData.index], true)
 end
 
-slot0.initDesigns = function(slot0)
+function slot0.initDesigns(slot0)
 	slot1 = slot0.designScrollView
 	slot0.scollRect = slot1:GetComponent("LScrollRect")
 	slot0.scollRect.decelerationRate = 0.07
 
-	slot0.scollRect.onInitItem = function(slot0)
+	function slot0.scollRect.onInitItem(slot0)
 		uv0:initDesign(slot0)
 	end
 
-	slot0.scollRect.onUpdateItem = function(slot0, slot1)
+	function slot0.scollRect.onUpdateItem(slot0, slot1)
 		uv0:updateDesign(slot0, slot1)
 	end
 
-	slot0.scollRect.onReturnItem = function(slot0, slot1)
+	function slot0.scollRect.onReturnItem(slot0, slot1)
 		uv0:returnDesign(slot0, slot1)
 	end
 
 	slot0.desgins = {}
 end
 
-slot0.initDesign = function(slot0, slot1)
+function slot0.initDesign(slot0, slot1)
 	slot2 = SpWeaponItemView.New(slot1)
 
 	onButton(slot0, slot2.go, function ()
@@ -220,7 +220,7 @@ slot0.initDesign = function(slot0, slot1)
 	slot0.desgins[slot1] = slot2
 end
 
-slot0.updateDesign = function(slot0, slot1, slot2)
+function slot0.updateDesign(slot0, slot1, slot2)
 	if not slot0.desgins[slot2] then
 		slot0:initDesign(slot2)
 
@@ -230,7 +230,7 @@ slot0.updateDesign = function(slot0, slot1, slot2)
 	slot3:update(slot0.filterCraftList[slot1 + 1])
 end
 
-slot0.returnDesign = function(slot0, slot1, slot2)
+function slot0.returnDesign(slot0, slot1, slot2)
 	if slot0.exited then
 		return
 	end
@@ -240,13 +240,13 @@ slot0.returnDesign = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.getDesignVO = function(slot0, slot1)
+function slot0.getDesignVO(slot0, slot1)
 	return slot1
 end
 
 slot2 = require("view.equipment.SpWeaponSortCfg")
 
-slot0.filter = function(slot0)
+function slot0.filter(slot0)
 	GetSpriteFromAtlasAsync("ui/commonui_atlas", slot0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on", function (slot0)
 		setImageSprite(uv0.indexBtn, slot0, true)
 	end)
@@ -269,13 +269,13 @@ slot0.filter = function(slot0)
 	setActive(slot0.sortImgDec, not slot0.contextData.asc)
 end
 
-slot0.UpdateCraftList = function(slot0)
+function slot0.UpdateCraftList(slot0)
 	slot0.scollRect:SetTotalCount(#slot0.filterCraftList)
 	setActive(slot0.listEmptyTF, #slot0.filterCraftList <= 0)
 	Canvas.ForceUpdateCanvases()
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if isActive(slot0.indexPanel) then
 		triggerButton(slot0.indexPanel)
 
@@ -286,7 +286,7 @@ slot0.onBackPressed = function(slot0)
 	slot0:emit(uv0.ON_BACK)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.indexPanel, slot0._tf)
 	setParent(slot0.toggleOwned, slot0._tf)
 	setParent(slot0.top, slot0._tf)

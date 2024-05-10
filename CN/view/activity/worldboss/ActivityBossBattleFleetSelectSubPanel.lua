@@ -1,10 +1,10 @@
 slot0 = class("ActivityBossBattleFleetSelectSubPanel", import("view.base.BaseSubPanel"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ActivityBossFleetSelectView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.tfShipTpl = slot0:findTF("panel/shiptpl")
 	slot0.tfEmptyTpl = slot0:findTF("panel/emptytpl")
 	slot4 = slot0.findTF
@@ -54,7 +54,7 @@ slot0.OnInit = function(slot0)
 	slot0:InitInteractable()
 end
 
-slot0.InitInteractable = function(slot0)
+function slot0.InitInteractable(slot0)
 	onButton(slot0, slot0.btnGo, function ()
 		uv0:OnCombat()
 	end, SFX_UI_WEIGHANCHOR_GO)
@@ -93,7 +93,7 @@ slot0.InitInteractable = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.SetFleets = function(slot0, slot1)
+function slot0.SetFleets(slot0, slot1)
 	slot0.fleets = {
 		[FleetType.Normal] = {},
 		[FleetType.Submarine] = {}
@@ -112,7 +112,7 @@ slot0.SetFleets = function(slot0, slot1)
 	end
 end
 
-slot0.SetOilLimit = function(slot0, slot1)
+function slot0.SetOilLimit(slot0, slot1)
 	slot2 = _.any(slot1, function (slot0)
 		return slot0 > 0
 	end)
@@ -138,24 +138,24 @@ slot0.SetOilLimit = function(slot0, slot1)
 	end
 end
 
-slot0.SetSettings = function(slot0, slot1, slot2, slot3)
+function slot0.SetSettings(slot0, slot1, slot2, slot3)
 	slot0.groupNum = slot1
 	slot0.submarineNum = slot2
 	slot0.showTryBtn = slot3
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	slot0:clearFleets()
 	slot0:UpdateFleets()
 
-	slot1 = not LOCK_COMMANDER and pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommandRoomMediator")
+	slot1 = not LOCK_COMMANDER and pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator")
 
 	triggerToggle(slot0.viewParent.contextData.showCommander and slot1 and slot0.commanderToggle or slot0.formationToggle, true)
 	setActive(slot0.commanderToggle, slot1)
 	setActive(slot0.btnTry, slot0.showTryBtn)
 end
 
-slot0.getLimitNums = function(slot0, slot1)
+function slot0.getLimitNums(slot0, slot1)
 	slot2 = 0
 
 	if slot1 == FleetType.Normal then
@@ -167,7 +167,7 @@ slot0.getLimitNums = function(slot0, slot1)
 	return slot2 or 0
 end
 
-slot0.UpdateFleets = function(slot0)
+function slot0.UpdateFleets(slot0)
 	for slot4, slot5 in pairs(slot0.tfFleets) do
 		for slot9 = 1, #slot5 do
 			slot0:updateFleet(slot4, slot9)
@@ -175,7 +175,7 @@ slot0.UpdateFleets = function(slot0)
 	end
 end
 
-slot0.updateFleet = function(slot0, slot1, slot2)
+function slot0.updateFleet(slot0, slot1, slot2)
 	slot0:updateCommanderBtn(slot1, slot2)
 
 	slot4 = slot2 <= slot0:getLimitNums(slot1) and slot0.fleets[slot1][slot2]
@@ -221,7 +221,7 @@ slot0.updateFleet = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateShips = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.updateShips(slot0, slot1, slot2, slot3, slot4)
 	removeAllChildren(slot1)
 
 	slot5 = getProxy(BayProxy)
@@ -261,7 +261,7 @@ slot0.updateShips = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.updateCommanderBtn = function(slot0, slot1, slot2)
+function slot0.updateCommanderBtn(slot0, slot1, slot2)
 	slot3 = slot2 <= slot0:getLimitNums(slot1)
 	slot4 = slot3 and slot0.fleets[slot1][slot2]
 	slot5 = slot0.tfFleets[slot1][slot2]
@@ -273,7 +273,7 @@ slot0.updateCommanderBtn = function(slot0, slot1, slot2)
 	setActive(slot0:findTF("blank", slot5), not slot3 or slot3 and not slot4 and slot0.viewParent.contextData.showCommander)
 end
 
-slot0.updateCommanders = function(slot0, slot1, slot2)
+function slot0.updateCommanders(slot0, slot1, slot2)
 	for slot6 = 1, 2 do
 		slot7 = slot2:getCommanderByPos(slot6)
 		slot8 = slot1:Find("pos" .. slot6)
@@ -295,7 +295,7 @@ slot0.updateCommanders = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.clearFleets = function(slot0)
+function slot0.clearFleets(slot0)
 	for slot4, slot5 in pairs(slot0.tfFleets) do
 		_.each(slot5, function (slot0)
 			uv0:clearFleet(slot0)
@@ -303,7 +303,7 @@ slot0.clearFleets = function(slot0)
 	end
 end
 
-slot0.clearFleet = function(slot0, slot1)
+function slot0.clearFleet(slot0, slot1)
 	slot3 = slot0:findTF(TeamType.Vanguard, slot1)
 	slot4 = slot0:findTF(TeamType.Submarine, slot1)
 
@@ -320,37 +320,37 @@ slot0.clearFleet = function(slot0, slot1)
 	end
 end
 
-slot0.OnShow = function(slot0)
+function slot0.OnShow(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, nil, {
 		groupName = LayerWeightConst.GROUP_FORMATION_PAGE,
 		weight = #getProxy(ContextProxy):getCurrentContext().children > 0 and LayerWeightConst.LOWER_LAYER or nil
 	})
 end
 
-slot0.OnHide = function(slot0)
+function slot0.OnHide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0.viewParent._tf)
 	triggerToggle(slot0.commanderToggle, false)
 end
 
-slot0.OnCancel = function(slot0)
+function slot0.OnCancel(slot0)
 	slot0:InvokeParent("hideFleetEdit")
 end
 
-slot0.OnCommit = function(slot0)
+function slot0.OnCommit(slot0)
 	slot0:InvokeParent("commitEdit")
 end
 
-slot0.OnCombat = function(slot0)
+function slot0.OnCombat(slot0)
 	slot0:InvokeParent("commitEdit")
 	slot0:InvokeParent("commitCombat")
 end
 
-slot0.OnTrybat = function(slot0)
+function slot0.OnTrybat(slot0)
 	slot0:InvokeParent("commitEdit")
 	slot0:InvokeParent("commitTrybat")
 end
 
-slot0.OnLongPressShip = function(slot0, slot1, slot2)
+function slot0.OnLongPressShip(slot0, slot1, slot2)
 	slot0:InvokeParent("openShipInfo", slot1, slot2)
 end
 

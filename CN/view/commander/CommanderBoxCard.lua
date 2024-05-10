@@ -1,6 +1,6 @@
 slot0 = class("CommanderBoxCard")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0._parent = slot1
 	slot0._tf = slot2
 	slot0._go = go(slot2)
@@ -15,7 +15,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.quicklyTool = slot0.startingTF:Find("quickly_tool")
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	slot0.boxVO = slot1
 
 	slot0:removeTimer()
@@ -49,7 +49,7 @@ slot0.Update = function(slot0, slot1)
 		slot5:Start()
 		slot0.timer.func()
 		onButton(slot0._parent, slot0.quicklyTool, function ()
-			uv0._parent:emit(CommandRoomScene.ON_QUICKLY_TOOL_WINDOW, uv1.id)
+			uv0._parent:emit(CommanderCatScene.EVENT_QUICKLY_TOOL, uv1.id)
 		end, SFX_PANEL)
 	elseif slot2 == CommanderBox.STATE_FINISHED then
 		slot0.timerTxt.text = "COMPLETE"
@@ -62,7 +62,7 @@ slot0.Update = function(slot0, slot1)
 				return
 			end
 
-			uv0._parent:emit(CommandRoomMediator.ON_GET, uv1.id)
+			uv0._parent:emit(CommanderCatMediator.GET, uv1.id)
 		end, SFX_PANEL)
 	end
 
@@ -77,7 +77,7 @@ end
 
 slot1 = true
 
-slot0.playAnim = function(slot0, slot1)
+function slot0.playAnim(slot0, slot1)
 	slot4 = slot0.boxVO
 
 	slot0:loadBox(slot4:getFetchPrefab(), slot0.boxParent, function (slot0)
@@ -92,7 +92,7 @@ slot0.playAnim = function(slot0, slot1)
 	end)
 end
 
-slot0.loadBox = function(slot0, slot1, slot2, slot3)
+function slot0.loadBox(slot0, slot1, slot2, slot3)
 	if not slot1 then
 		slot0:returnChar()
 	else
@@ -127,7 +127,7 @@ slot0.loadBox = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.removeTimer = function(slot0)
+function slot0.removeTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -135,7 +135,7 @@ slot0.removeTimer = function(slot0)
 	end
 end
 
-slot0.removeWaitingTimer = function(slot0)
+function slot0.removeWaitingTimer(slot0)
 	if slot0.waitTimer then
 		slot0.waitTimer:Stop()
 
@@ -143,7 +143,7 @@ slot0.removeWaitingTimer = function(slot0)
 	end
 end
 
-slot0.returnChar = function(slot0)
+function slot0.returnChar(slot0)
 	if slot0.modelTf and slot0.prefabName then
 		PoolMgr.GetInstance():ReturnSpineChar(slot0.prefabName, slot0.modelTf.gameObject)
 
@@ -152,7 +152,7 @@ slot0.returnChar = function(slot0)
 	end
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	slot0:removeTimer()
 	slot0:removeWaitingTimer()
 	removeOnButton(slot0._tf)
@@ -160,7 +160,7 @@ slot0.Clear = function(slot0)
 	slot0.boxVO = nil
 end
 
-slot0.Destroy = function(slot0)
+function slot0.Destroy(slot0)
 	slot0:Clear()
 	slot0:returnChar()
 

@@ -1,6 +1,6 @@
 slot0 = class("NewYearFestivalScene2", import("..TemplateMV.BackHillTemplate"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewyearFestivalUI2"
 end
 
@@ -10,7 +10,7 @@ slot0.edge2area = {
 	["5_6"] = "map_bottom"
 }
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	uv0.super.init(slot0)
 
 	slot0.top = slot0:findTF("top")
@@ -46,7 +46,7 @@ slot0.init = function(slot0)
 	end
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0:findTF("top/back"), function ()
 		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
@@ -81,13 +81,13 @@ slot0.didEnter = function(slot0)
 	slot0:UpdateView()
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	setActive(slot0.upper_daxuezhang:Find("Tip"), uv0.IsMiniActNeedTip(ActivityConst.NEWYEAR_SNOWBALL_FIGHT))
 	setActive(slot0.upper_xiaochijie:Find("Tip"), NewYearSnackPage.IsTip())
 	setActive(slot0.upper_qiaozhong:Find("Tip"), NewYearShrineView.IsNeedShowTipWithoutActivityFinalReward())
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:clearStudents()
 	uv0.super.willExit(slot0)
 end

@@ -3,22 +3,22 @@ pg.CipherGroupMgr = singletonClass("CipherGroupMgr")
 slot0 = pg.CipherGroupMgr
 slot0.GroupName = "CIPHER"
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 	slot0.group = GroupHelper.GetGroupMgrByName(uv0.GroupName)
 	slot0.downloadList = {}
 	slot0.finishCount = 0
 	slot0.curIndex = 0
 end
 
-slot0.GetCurFilePath = function(slot0)
+function slot0.GetCurFilePath(slot0)
 	return slot0.downloadList[slot0.curIndex]
 end
 
-slot0.GetCurFileState = function(slot0)
+function slot0.GetCurFileState(slot0)
 	return slot0.group:CheckF(slot0:GetCurFilePath())
 end
 
-slot0.GetValidFileList = function(slot0, slot1)
+function slot0.GetValidFileList(slot0, slot1)
 	slot2 = {}
 
 	if GroupHelper.IsGroupWaitToUpdate(uv0.GroupName) then
@@ -37,7 +37,7 @@ slot0.GetValidFileList = function(slot0, slot1)
 	return slot2
 end
 
-slot0.StartWithFileList = function(slot0, slot1)
+function slot0.StartWithFileList(slot0, slot1)
 	if #slot0:GetValidFileList(slot1) > 0 then
 		slot0:Clear()
 
@@ -49,7 +49,7 @@ slot0.StartWithFileList = function(slot0, slot1)
 	end
 end
 
-slot0.AddFileList = function(slot0, slot1)
+function slot0.AddFileList(slot0, slot1)
 	if #slot0:GetValidFileList(slot1) > 0 then
 		for slot6, slot7 in ipairs(slot2) do
 			table.insert(slot0.downloadList, slot7)
@@ -57,18 +57,18 @@ slot0.AddFileList = function(slot0, slot1)
 	end
 end
 
-slot0.SetCallBack = function(slot0, slot1)
+function slot0.SetCallBack(slot0, slot1)
 	slot0.progressCB = slot1.progressCB
 	slot0.allFinishCB = slot1.allFinishCB
 	slot0.singleFinshCB = slot1.singleFinshCB
 	slot0.errorCB = slot1.errorCB
 end
 
-slot0.IsAnyFileInProgress = function(slot0)
+function slot0.IsAnyFileInProgress(slot0)
 	return slot0.curIndex > 0 and slot0.curIndex <= #slot0.downloadList
 end
 
-slot0.DelFile = function(slot0, slot1)
+function slot0.DelFile(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		slot7 = PathMgr.getAssetBundle(slot6)
 
@@ -82,7 +82,7 @@ slot0.DelFile = function(slot0, slot1)
 
 	slot0.group:ClearStreamWriter()
 
-	slot2 = function(slot0)
+	function slot2(slot0)
 		slot1 = false
 
 		for slot5, slot6 in ipairs(uv0) do
@@ -168,7 +168,7 @@ slot0.DelFile = function(slot0, slot1)
 	end
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	slot0:clearTimer()
 
 	slot0.downloadList = {}
@@ -176,11 +176,11 @@ slot0.Clear = function(slot0)
 	slot0.curIndex = 0
 end
 
-slot0.isCipherExist = function(slot0, slot1)
+function slot0.isCipherExist(slot0, slot1)
 	return (slot0.group:CheckF(slot1) == DownloadState.None or slot2 == DownloadState.UpdateSuccess) and PathMgr.FileExists(PathMgr.getAssetBundle(slot1))
 end
 
-slot0.Repair = function(slot0)
+function slot0.Repair(slot0)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideYes = true,
 		content = i18n("resource_verify_warn"),
@@ -199,7 +199,7 @@ slot0.Repair = function(slot0)
 	})
 end
 
-slot0.clearTimer = function(slot0)
+function slot0.clearTimer(slot0)
 	if slot0.frameTimer then
 		slot0.frameTimer:Stop()
 
@@ -207,7 +207,7 @@ slot0.clearTimer = function(slot0)
 	end
 end
 
-slot0.updateWithIndex = function(slot0, slot1)
+function slot0.updateWithIndex(slot0, slot1)
 	if slot1 > #slot0.downloadList then
 		if slot0.allFinishCB then
 			slot0.allFinishCB()
@@ -218,10 +218,10 @@ slot0.updateWithIndex = function(slot0, slot1)
 		return
 	end
 
-	slot0.group:UpdateBigF(slot0:GetCurFilePath())
+	slot0.group:UpdateF(slot0:GetCurFilePath())
 end
 
-slot0.onUpdateD = function(slot0)
+function slot0.onUpdateD(slot0)
 	if slot0.group:CheckF(slot0:GetCurFilePath()) == DownloadState.UpdateSuccess then
 		slot0.finishCount = slot0.finishCount + 1
 
@@ -243,7 +243,7 @@ slot0.onUpdateD = function(slot0)
 	end
 end
 
-slot0.createUpdateTimer = function(slot0)
+function slot0.createUpdateTimer(slot0)
 	slot0.frameTimer = FrameTimer.New(function ()
 		uv0:onUpdateD()
 	end, 1, -1)

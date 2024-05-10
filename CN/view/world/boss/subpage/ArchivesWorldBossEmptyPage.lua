@@ -1,10 +1,10 @@
 slot0 = class("ArchivesWorldBossEmptyPage", import(".BaseWorldBossEmptyPage"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ArchivesWorldBossEmptyUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -46,7 +46,7 @@ slot0.OnInit = function(slot0)
 	end
 end
 
-slot0.OnUpdate = function(slot0)
+function slot0.OnUpdate(slot0)
 	slot0.archivesWorldbossBtn = slot0.archivesWorldbossBtn or ArchivesWorldbossBtn.New(slot0:findTF("archives_btn"), slot0.event)
 	slot2 = nil
 
@@ -72,7 +72,7 @@ slot0.OnUpdate = function(slot0)
 	slot0.archivesWorldbossBtn:Flush()
 end
 
-slot0.OnUpdateRes = function(slot0)
+function slot0.OnUpdateRes(slot0)
 	if not slot0.progressTxt then
 		return
 	end
@@ -81,7 +81,7 @@ slot0.OnUpdateRes = function(slot0)
 	slot0.progressTxt.text = WorldBossConst.GetAchieveBossItemProgress() .. "/" .. slot3
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	uv0.super.OnDestroy(slot0)
 
 	if slot0.archivesWorldbossBtn then

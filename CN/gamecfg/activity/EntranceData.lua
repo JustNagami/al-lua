@@ -194,19 +194,6 @@ return {
 		end
 	},
 	{
-		banner = "vote_frame_hall",
-		event = ActivityMediator.GO_FISRT_VOTE,
-		data = {},
-		isShow = function ()
-			slot0 = getProxy(ActivityProxy)
-
-			return getProxy(VoteProxy):GetVoteBookActivty() and not slot1:isEnd()
-		end,
-		isTip = function ()
-			return getProxy(VoteProxy):ExistPastVoteAward()
-		end
-	},
-	{
 		banner = "event_square",
 		event = ActivityMediator.EVENT_GO_SCENE,
 		data = {
@@ -296,23 +283,23 @@ return {
 			return getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_MEDAL_ACT_ID) and not slot0:isEnd()
 		end,
 		isTip = function ()
-			return Activity.isHaveActivableMedal()
+			return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_MEDAL_ACT_ID))
 		end
 	},
 	{
-		banner = "meta_entrance_970205",
+		banner = "meta_entrance_970505",
 		event = ActivityMediator.EVENT_GO_SCENE,
 		data = {
 			SCENE.METACHARACTER,
 			{
-				autoOpenShipConfigID = 9702051
+				autoOpenShipConfigID = 9705051
 			}
 		},
 		isShow = function ()
-			return getProxy(MetaCharacterProxy):getMetaProgressVOByID(970205) and slot1:isInAct()
+			return getProxy(MetaCharacterProxy):getMetaProgressVOByID(970505) and slot1:isInAct()
 		end,
 		isTip = function ()
-			if getProxy(MetaCharacterProxy):getMetaProgressVOByID(970205):isPassType() then
+			if getProxy(MetaCharacterProxy):getMetaProgressVOByID(970505):isPassType() then
 				return false
 			end
 

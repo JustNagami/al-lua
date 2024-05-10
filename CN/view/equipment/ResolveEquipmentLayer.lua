@@ -1,20 +1,20 @@
 slot0 = class("ResolveEquipmentLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ResolveEquipmentUI"
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 end
 
-slot0.setEquipments = function(slot0, slot1)
+function slot0.setEquipments(slot0, slot1)
 	slot0.equipmentVOs = slot1
 
 	slot0:setEquipmentByIds(slot1)
 end
 
-slot0.setEquipmentByIds = function(slot0, slot1)
+function slot0.setEquipmentByIds(slot0, slot1)
 	slot0.equipmentVOByIds = {}
 
 	for slot5, slot6 in ipairs(slot1) do
@@ -22,7 +22,7 @@ slot0.setEquipmentByIds = function(slot0, slot1)
 	end
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.mainPanel = slot0:findTF("main")
 
 	setActive(slot0.mainPanel, true)
@@ -47,7 +47,7 @@ slot0.init = function(slot0)
 	slot0.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(slot0._tf, slot0.event)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:initEquipments()
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:emit(uv1.ON_CLOSE)
@@ -59,7 +59,7 @@ slot0.didEnter = function(slot0)
 		slot0 = {}
 
 		if underscore.any(uv0.selectedIds, function (slot0)
-			return uv0.equipmentVOByIds[slot0[1]].config.rarity >= 4 or slot1.level > 1
+			return uv0.equipmentVOByIds[slot0[1]]:getConfig("rarity") >= 4 or slot1:getConfig("level") > 1
 		end) then
 			table.insert(slot0, function (slot0)
 				slot1 = uv0.equipDestroyConfirmWindow
@@ -113,14 +113,14 @@ slot0.didEnter = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnResolveEquipDone = function(slot0)
+function slot0.OnResolveEquipDone(slot0)
 	setActive(slot0.destroyConfirm, false)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 	setActive(slot0.mainPanel, false)
 	slot0:unselecteAllEquips()
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
 	if isActive(slot0.destroyConfirm) then
@@ -132,11 +132,11 @@ slot0.onBackPressed = function(slot0)
 	end
 end
 
-slot0.selectedLowRarityEquipment = function(slot0)
+function slot0.selectedLowRarityEquipment(slot0)
 	slot0.selectedIds = {}
 
 	for slot4, slot5 in ipairs(slot0.equipmentVOs) do
-		if slot5.config.level <= 1 and slot5.config.rarity < 4 then
+		if slot5:getConfig("level") <= 1 and slot5:getConfig("rarity") < 4 then
 			slot0:selectEquip(slot5, slot5.count)
 		end
 	end
@@ -144,7 +144,7 @@ slot0.selectedLowRarityEquipment = function(slot0)
 	slot0:updateSelected()
 end
 
-slot0.selecteAllEquips = function(slot0)
+function slot0.selecteAllEquips(slot0)
 	slot0.selectedIds = {}
 
 	for slot4, slot5 in ipairs(slot0.equipmentVOs) do
@@ -154,19 +154,19 @@ slot0.selecteAllEquips = function(slot0)
 	slot0:updateSelected()
 end
 
-slot0.unselecteAllEquips = function(slot0)
+function slot0.unselecteAllEquips(slot0)
 	slot0.selectedIds = {}
 
 	slot0:updateSelected()
 end
 
-slot0.displayDestroyBonus = function(slot0)
+function slot0.displayDestroyBonus(slot0)
 	slot1 = {}
 	slot2 = 0
 
 	for slot6, slot7 in ipairs(slot0.selectedIds) do
-		if pg.equip_data_template[slot7[1]] then
-			slot9 = slot8.destory_item or {}
+		if Equipment.CanInBag(slot7[1]) then
+			slot9 = Equipment.getConfigData(slot7[1]).destory_item or {}
 			slot2 = slot2 + (slot8.destory_gold or 0) * slot7[2]
 
 			for slot14, slot15 in ipairs(slot9) do
@@ -223,7 +223,7 @@ slot0.displayDestroyBonus = function(slot0)
 
 		updateDrop(slot7, slot8)
 
-		slot11, slot12 = contentWrap(slot8.cfg.name, 10, 2)
+		slot11, slot12 = contentWrap(slot8:getConfig("name"), 10, 2)
 
 		if slot11 then
 			slot12 = slot12 .. "..."
@@ -232,10 +232,10 @@ slot0.displayDestroyBonus = function(slot0)
 		setText(slot7:Find("name"), slot12)
 		onButton(slot0, slot7, function ()
 			if uv0.type == DROP_TYPE_RESOURCE or uv0.type == DROP_TYPE_ITEM then
-				uv1:emit(uv2.ON_ITEM, uv0.cfg.id)
+				uv1:emit(uv2.ON_ITEM, uv0:getConfig("id"))
 			elseif uv0.type == DROP_TYPE_EQUIP then
 				uv1:emit(uv2.ON_EQUIPMENT, {
-					equipmentId = uv0.cfg.id,
+					equipmentId = uv0:getConfig("id"),
 					type = EquipmentInfoMediator.TYPE_DISPLAY
 				})
 			end
@@ -243,16 +243,16 @@ slot0.displayDestroyBonus = function(slot0)
 	end
 end
 
-slot0.initEquipments = function(slot0)
-	slot0.viewRect.onInitItem = function(slot0)
+function slot0.initEquipments(slot0)
+	function slot0.viewRect.onInitItem(slot0)
 		uv0:onInitItem(slot0)
 	end
 
-	slot0.viewRect.onUpdateItem = function(slot0, slot1)
+	function slot0.viewRect.onUpdateItem(slot0, slot1)
 		uv0:onUpdateItem(slot0, slot1)
 	end
 
-	slot0.viewRect.onStart = function()
+	function slot0.viewRect.onStart()
 		uv0:selectedLowRarityEquipment()
 	end
 
@@ -261,18 +261,19 @@ slot0.initEquipments = function(slot0)
 	slot0:filterEquipments()
 end
 
-slot0.filterEquipments = function(slot0)
-	table.sort(slot0.equipmentVOs, function (slot0, slot1)
-		if slot0.config.rarity == slot1.config.rarity then
-			return slot0.id < slot1.id
-		else
-			return slot1.config.rarity < slot0.config.rarity
+function slot0.filterEquipments(slot0)
+	table.sort(slot0.equipmentVOs, CompareFuncs({
+		function (slot0)
+			return -slot0:getConfig("rarity")
+		end,
+		function (slot0)
+			return slot0.id
 		end
-	end)
+	}))
 	slot0.viewRect:SetTotalCount(#slot0.equipmentVOs, -1)
 end
 
-slot0.onInitItem = function(slot0, slot1)
+function slot0.onInitItem(slot0, slot1)
 	slot2 = EquipmentItem.New(slot1)
 
 	onButton(slot0, slot2.go, function ()
@@ -285,7 +286,7 @@ slot0.onInitItem = function(slot0, slot1)
 	slot0.cards[slot1] = slot2
 end
 
-slot0.onUpdateItem = function(slot0, slot1, slot2)
+function slot0.onUpdateItem(slot0, slot1, slot2)
 	if not slot0.cards[slot2] then
 		slot0:onInitItem(slot2)
 
@@ -295,7 +296,7 @@ slot0.onUpdateItem = function(slot0, slot1, slot2)
 	slot3:update(slot0.equipmentVOs[slot1 + 1], true)
 end
 
-slot0.isSelectedAll = function(slot0)
+function slot0.isSelectedAll(slot0)
 	for slot4, slot5 in pairs(slot0.equipmentVOByIds) do
 		slot6 = false
 
@@ -313,7 +314,7 @@ slot0.isSelectedAll = function(slot0)
 	return true
 end
 
-slot0.selectEquip = function(slot0, slot1, slot2)
+function slot0.selectEquip(slot0, slot1, slot2)
 	if not slot0:checkDestroyGold(slot1, slot2) then
 		return
 	end
@@ -358,7 +359,7 @@ slot0.selectEquip = function(slot0, slot1, slot2)
 	slot0.isManual = nil
 end
 
-slot0.updateSelected = function(slot0)
+function slot0.updateSelected(slot0)
 	for slot4, slot5 in pairs(slot0.cards) do
 		if slot5.equipmentVO then
 			slot6 = false
@@ -378,15 +379,15 @@ slot0.updateSelected = function(slot0)
 	end
 end
 
-slot0.checkDestroyGold = function(slot0, slot1, slot2)
+function slot0.checkDestroyGold(slot0, slot1, slot2)
 	slot3 = 0
 	slot4 = false
 
 	for slot8, slot9 in pairs(slot0.selectedIds) do
 		slot10 = slot9[2]
 
-		if pg.equip_data_template[slot9[1]] then
-			slot3 = slot3 + (slot11.destory_gold or 0) * slot10
+		if Equipment.CanInBag(slot9[1]) then
+			slot3 = slot3 + (Equipment.getConfigData(slot9[1]).destory_gold or 0) * slot10
 		end
 
 		if slot1 and slot9[1] == slot1.configId then
@@ -395,7 +396,7 @@ slot0.checkDestroyGold = function(slot0, slot1, slot2)
 	end
 
 	if not slot4 and slot1 and slot2 > 0 then
-		slot3 = slot3 + (pg.equip_data_template[slot1.configId].destory_gold or 0) * slot2
+		slot3 = slot3 + (slot1:getConfig("destory_gold") or 0) * slot2
 	end
 
 	if slot0.player:GoldMax(slot3) then
@@ -407,7 +408,7 @@ slot0.checkDestroyGold = function(slot0, slot1, slot2)
 	return true
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0.equipDestroyConfirmWindow:Destroy()
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, pg.UIMgr.GetInstance().UIMain)
 end

@@ -1,10 +1,10 @@
 slot0 = class("AprilFoolSuperBurinSubView", import(".AprilFoolBulinSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "AprilFoolSuperBurinSubView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA) or slot1:isEnd() then
 		slot0:Destroy()
 

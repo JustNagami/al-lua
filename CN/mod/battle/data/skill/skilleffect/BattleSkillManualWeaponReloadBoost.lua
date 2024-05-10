@@ -4,7 +4,7 @@ slot1 = class("BattleSkillManualWeaponReloadBoost", slot0.Battle.BattleSkillEffe
 slot0.Battle.BattleSkillManualWeaponReloadBoost = slot1
 slot1.__name = "BattleSkillManualWeaponReloadBoost"
 
-slot1.Ctor = function(slot0, slot1)
+function slot1.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1, lv)
 
 	slot0._weaponType = slot0._tempData.arg_list.weaponType
@@ -12,7 +12,7 @@ slot1.Ctor = function(slot0, slot1)
 	slot0._boostRate = slot0._tempData.arg_list.rate
 end
 
-slot1.DoDataEffect = function(slot0, slot1, slot2)
+function slot1.DoDataEffect(slot0, slot1, slot2)
 	if slot0.getWeaponQueueByType(slot1, slot0._weaponType) then
 		slot4 = slot3:GetCoolDownList()
 
@@ -32,11 +32,11 @@ slot1.DoDataEffect = function(slot0, slot1, slot2)
 	end
 end
 
-slot1.DoDataEffectWithoutTarget = function(slot0, slot1)
+function slot1.DoDataEffectWithoutTarget(slot0, slot1)
 	slot0:DoDataEffect(slot1, nil)
 end
 
-slot1.getWeaponQueueByType = function(slot0, slot1)
+function slot1.getWeaponQueueByType(slot0, slot1)
 	slot2 = nil
 
 	if slot1 == "ChargeWeapon" then

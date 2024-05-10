@@ -8,15 +8,15 @@ slot1 = {
 	50006
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BackyardFeedUI"
 end
 
-slot0.SetIsRemind = function(slot0, slot1)
+function slot0.SetIsRemind(slot0, slot1)
 	slot0.remindEndTime = slot1
 end
 
-slot0.OnUsageItem = function(slot0, slot1)
+function slot0.OnUsageItem(slot0, slot1)
 	if not table.indexof(uv0, slot1) or slot2 <= 0 then
 		return
 	end
@@ -24,25 +24,26 @@ slot0.OnUsageItem = function(slot0, slot1)
 	slot0.cards[slot2]:UpdateCnt(getProxy(BagProxy):getItemCountById(slot1))
 end
 
-slot0.OnDormUpdated = function(slot0)
+function slot0.OnDormUpdated(slot0)
 	slot0:UpdateDorm()
 end
 
-slot0.OnShopDone = function(slot0)
+function slot0.OnShopDone(slot0)
 	slot0:UpdateCards()
 	slot0:UpdateDorm()
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.frame = slot0:findTF("frame")
 	slot0.chatTxt = slot0:findTF("chat/Text"):GetComponent(typeof(Text))
 	slot0.chatTxt1 = slot0:findTF("chat/Text1"):GetComponent(typeof(Text))
 	slot0.chatTime = slot0:findTF("chat/Text/time"):GetComponent(typeof(Text))
 	slot0.chatTxt2 = slot0:findTF("chat/Text2"):GetComponent(typeof(Text))
-	slot0.capacityBar = slot0:findTF("frame/top/stock/bar"):GetComponent(typeof(Image))
-	slot0.capacityTxt = slot0:findTF("frame/top/stock/Text"):GetComponent(typeof(Text))
-	slot0.extendBtn = slot0:findTF("frame/top/extend_btn")
-	slot0.additionTxt = slot0:findTF("frame/top/addition"):GetComponent(typeof(Text))
+	slot0.capacityBar = slot0:findTF("frame/progress"):GetComponent(typeof(Slider))
+	slot0.capacityBarEffect = slot0:findTF("frame/progress_effect"):GetComponent(typeof(Slider))
+	slot0.capacityTxt = slot0:findTF("frame/Text"):GetComponent(typeof(Text))
+	slot0.extendBtn = slot0:findTF("frame/extend_btn")
+	slot0.additionTxt = slot0:findTF("frame/addition"):GetComponent(typeof(Text))
 	slot0.paint = slot0:findTF("lenggui")
 	slot0.cardTpl = slot0:findTF("frame/foodtpl")
 	slot0.purchasePage = BackyardFeedPurchasePage.New(slot0._tf, slot0.event)
@@ -50,13 +51,10 @@ slot0.init = function(slot0)
 	slot0.closeBtn = slot0:findTF("close")
 	Input.multiTouchEnabled = false
 
-	setText(slot0:findTF("frame/top/extend_btn/Text"), i18n("enter_extend_food_label"))
+	setText(slot0:findTF("frame/extend_btn/Text"), i18n("enter_extend_food_label"))
 end
 
-slot0.didEnter = function(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
-		weight = LayerWeightConst.BASE_LAYER
-	})
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.closeBtn, function ()
 		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_CANCEL)
@@ -74,14 +72,15 @@ slot0.didEnter = function(slot0)
 	slot0:InitFoods()
 end
 
-slot0.UpdateDorm = function(slot0)
-	slot1 = getProxy(DormProxy):getRawData()
+function slot0.UpdateDorm(slot0)
+	slot0:InitCharChat(getProxy(DormProxy):getRawData())
 
-	slot0:InitCharChat(slot1)
-	slot0:InitCapcity(slot1)
+	if not slot0.playing then
+		slot0:InitCapcity(slot1)
+	end
 end
 
-slot0.InitCharChat = function(slot0, slot1)
+function slot0.InitCharChat(slot0, slot1)
 	slot0:RemoveTimer()
 	slot0:ClearTxts()
 
@@ -96,13 +95,13 @@ slot0.InitCharChat = function(slot0, slot1)
 	end
 end
 
-slot0.ClearTxts = function(slot0)
+function slot0.ClearTxts(slot0)
 	slot0.chatTxt.text = ""
 	slot0.chatTxt1.text = ""
 	slot0.chatTime.text = ""
 end
 
-slot0.AddChatTimer = function(slot0, slot1)
+function slot0.AddChatTimer(slot0, slot1)
 	slot2 = slot1:getFoodLeftTime()
 	slot0.chatTxt.text = i18n("backyard_backyardGranaryLayer_foodTimeNotice_top")
 	slot0.chatTxt1.text = i18n("backyard_backyardGranaryLayer_foodTimeNotice_bottom")
@@ -125,13 +124,49 @@ slot0.AddChatTimer = function(slot0, slot1)
 	slot0.timer.func()
 end
 
-slot0.InitCapcity = function(slot0, slot1)
-	slot2 = slot1:GetCapcity()
-	slot0.capacityBar.fillAmount = slot1.food / slot2
-	slot0.capacityTxt.text = slot1.food .. "/" .. slot2
+function slot0.InitCapcity(slot0, slot1)
+	slot0:UpdateCapacity(slot1.food, slot1:GetCapcity())
 end
 
-slot2 = function(slot0, slot1)
+function slot0.UpdateCapacity(slot0, slot1, slot2)
+	slot3 = slot1 / slot2
+	slot0.capacityBar.value = slot3
+	slot0.capacityBarEffect.value = slot3
+
+	slot0:UpdateCapacityTxt(slot1, slot2)
+end
+
+function slot0.UpdateCapacityTxt(slot0, slot1, slot2)
+	slot0.capacityTxt.text = "<color=#eb9e30>" .. slot1 .. "</color><color=#606064>/" .. slot2 .. "</color>"
+end
+
+function slot0.UpdateCapacityWithAnim(slot0, slot1, slot2)
+	if LeanTween.isTweening(slot0.capacityBarEffect.gameObject) then
+		LeanTween.cancel(slot0.capacityBarEffect.gameObject)
+	end
+
+	if LeanTween.isTweening(slot0.capacityBar.gameObject) then
+		LeanTween.cancel(slot0.capacityBar.gameObject)
+	end
+
+	slot0.playing = true
+	slot3 = slot0.capacityBarEffect.value
+	slot4 = slot1 / slot2
+
+	slot0:UpdateCapacityTxt(slot1, slot2)
+	LeanTween.value(slot0.capacityBarEffect.gameObject, slot3, slot4, 0.396):setOnUpdate(System.Action_float(function (slot0)
+		uv0.capacityBarEffect.value = slot0
+	end)):setEase(LeanTweenType.easeOutQuint)
+	LeanTween.value(slot0.capacityBar.gameObject, slot3, slot4, 0.396):setEase(LeanTweenType.easeInOutQuart):setOnUpdate(System.Action_float(function (slot0)
+		uv0.capacityBar.value = slot0
+	end)):setOnComplete(System.Action(function ()
+		uv0.playing = false
+
+		uv0:UpdateDorm()
+	end)):setDelay(0.069)
+end
+
+function slot2(slot0, slot1)
 	onButton(slot0, slot1.mask, function ()
 		uv0.purchasePage:ExecuteAction("Show", uv1.foodId)
 	end, SFX_PANEL)
@@ -152,7 +187,7 @@ slot2 = function(slot0, slot1)
 	end, true, true, 0.15, SFX_PANEL)
 end
 
-slot0.InitFoods = function(slot0)
+function slot0.InitFoods(slot0)
 	slot0.cards = {}
 	slot1 = FoodCard.New(slot0.cardTpl)
 
@@ -185,7 +220,7 @@ slot0.InitFoods = function(slot0)
 	end)
 end
 
-slot0.UpdateCards = function(slot0)
+function slot0.UpdateCards(slot0)
 	for slot4 = 1, #uv0 do
 		slot5 = uv0[slot4]
 
@@ -193,12 +228,12 @@ slot0.UpdateCards = function(slot0)
 	end
 end
 
-slot0.SimulateAddFood = function(slot0, slot1, slot2)
+function slot0.SimulateAddFood(slot0, slot1, slot2)
 	if not slot0.isSimulation then
 		slot3 = getProxy(DormProxy):getRawData()
 		slot0.simulateFood = slot3.food
 		slot0.simulateCapacity = slot3:GetCapcity()
-		slot0.simulateAddition = pg.item_data_template[slot1].usage_arg[1]
+		slot0.simulateAddition = Item.getConfigData(slot1).usage_arg[1]
 		slot0.simulateItemCnt = getProxy(BagProxy):getItemCountById(slot1)
 		slot0.simulateUsageCnt = 0
 		slot0.isSimulation = true
@@ -237,33 +272,32 @@ slot0.SimulateAddFood = function(slot0, slot1, slot2)
 	slot0.simulateItemCnt = slot0.simulateItemCnt - 1
 	slot0.simulateUsageCnt = slot0.simulateUsageCnt + 1
 	slot0.simulateFood = slot0.simulateFood + slot0.simulateAddition
-	slot0.capacityBar.fillAmount = slot0.simulateFood / slot0.simulateCapacity
-	slot0.capacityTxt.text = slot0.simulateFood .. "/" .. slot0.simulateCapacity
 
+	slot0:UpdateCapacityWithAnim(slot0.simulateFood, slot0.simulateCapacity)
 	slot0.cards[table.indexof(uv0, slot1)]:UpdateCnt(slot0.simulateItemCnt)
 	slot0:DoAddFoodAnimation(slot0.simulateAddition)
 end
 
-slot0.DoAddFoodAnimation = function(slot0, slot1)
+function slot0.DoAddFoodAnimation(slot0, slot1)
 	slot0.additionTxt.text = "+" .. slot1
 
 	if LeanTween.isTweening(go(slot0.additionTxt)) then
 		LeanTween.cancel(go(slot0.additionTxt))
 	end
 
-	slot2 = LeanTween.moveLocalY(go(slot0.additionTxt), 40, 0.5)
-	slot2 = slot2:setFrom(0)
+	slot2 = LeanTween.moveLocalY(go(slot0.additionTxt), 220, 0.5)
+	slot2 = slot2:setFrom(160)
 
 	slot2:setOnComplete(System.Action(function ()
 		uv0.additionTxt.text = ""
 	end))
 end
 
-slot0.ShowCapcityTip = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.ShowCapcityTip(slot0, slot1, slot2, slot3, slot4)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		showStopRemind = true,
 		type = MSGBOX_TYPE_SINGLE_ITEM,
-		content = i18n("backyard_food_remind", pg.item_data_statistics[slot1].name),
+		content = i18n("backyard_food_remind", Item.getConfigData(slot1).name),
 		name = i18n("backyard_food_count", slot2 .. "/" .. slot3),
 		drop = {
 			type = DROP_TYPE_ITEM,
@@ -276,7 +310,7 @@ slot0.ShowCapcityTip = function(slot0, slot1, slot2, slot3, slot4)
 	})
 end
 
-slot0.TriggerAddFood = function(slot0, slot1, slot2)
+function slot0.TriggerAddFood(slot0, slot1, slot2)
 	if not slot2 or slot2 <= 0 then
 		return
 	end
@@ -284,7 +318,7 @@ slot0.TriggerAddFood = function(slot0, slot1, slot2)
 	slot0:emit(BackyardFeedMediator.USE_FOOD, slot1, slot2)
 end
 
-slot0.RemoveTimer = function(slot0)
+function slot0.RemoveTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -292,7 +326,15 @@ slot0.RemoveTimer = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
+	if LeanTween.isTweening(slot0.capacityBarEffect.gameObject) then
+		LeanTween.cancel(slot0.capacityBarEffect.gameObject)
+	end
+
+	if LeanTween.isTweening(slot0.capacityBar.gameObject) then
+		LeanTween.cancel(slot0.capacityBar.gameObject)
+	end
+
 	slot0:RemoveTimer()
 
 	for slot4, slot5 in pairs(slot0.cards) do
@@ -316,8 +358,6 @@ slot0.willExit = function(slot0)
 
 		slot0.extendPage = nil
 	end
-
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, pg.UIMgr.GetInstance().UIMain)
 
 	Input.multiTouchEnabled = true
 end

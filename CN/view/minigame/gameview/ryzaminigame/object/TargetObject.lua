@@ -1,14 +1,14 @@
 slot0 = class("TargetObject", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
 
-slot0.CellPassability = function(slot0)
+function slot0.CellPassability(slot0)
 	return false
 end
 
-slot0.FirePassability = function(slot0)
+function slot0.FirePassability(slot0)
 	return 2
 end
 
-slot1 = function(slot0)
+function slot1(slot0)
 	slot1 = math.random()
 
 	for slot5, slot6 in ipairs(slot0) do
@@ -23,7 +23,7 @@ slot1 = function(slot0)
 	end
 end
 
-slot0.TryDrop = function(slot0, slot1, slot2)
+function slot0.TryDrop(slot0, slot1, slot2)
 	if not slot1 then
 		return
 	end

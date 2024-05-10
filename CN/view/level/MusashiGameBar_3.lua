@@ -1,6 +1,6 @@
 slot0 = class("MusashiGameBar_3", import(".LevelStageStatusBarTemplate"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "MusashiGameBar_3"
 end
 

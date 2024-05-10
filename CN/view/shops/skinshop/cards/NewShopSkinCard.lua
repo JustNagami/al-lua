@@ -1,6 +1,6 @@
 slot0 = class("NewShopSkinCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._go = slot1
 	slot0._tf = tf(slot1)
 	slot0._content = slot0._tf:Find("frame/content")
@@ -66,7 +66,7 @@ slot11 = {
 	}
 }
 
-slot12 = function(slot0, slot1)
+function slot12(slot0, slot1)
 	slot2 = slot0.buyCount == 0
 
 	if slot1 and slot2 then
@@ -83,7 +83,7 @@ slot12 = function(slot0, slot1)
 
 	slot3 = slot0:getConfig("tag")
 
-	if slot0:isDisCount() or slot3 == uv3 then
+	if (slot0:isDisCount() or slot3 == uv3) and not slot0:IsItemDiscountType() then
 		return uv3
 	elseif uv4[slot3] then
 		return slot3
@@ -92,7 +92,7 @@ slot12 = function(slot0, slot1)
 	end
 end
 
-slot0.Update = function(slot0, slot1, slot2, slot3)
+function slot0.Update(slot0, slot1, slot2, slot3)
 	slot0.commodity = slot1
 	slot0.isReturn = slot3
 	slot4 = slot1:getSkinId()
@@ -112,7 +112,10 @@ slot0.Update = function(slot0, slot1, slot2, slot3)
 	slot8 = false
 
 	if slot0.commodity.type == Goods.TYPE_SKIN then
-		LoadSpriteAsync(pg.item_data_statistics[id2ItemId(slot1:getConfig("resource_type"))].icon, function (slot0)
+		LoadSpriteAsync(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot1:getConfig("resource_type")
+		}):getIcon(), function (slot0)
 			if IsNil(uv0._priceIcon) then
 				return
 			end
@@ -120,30 +123,30 @@ slot0.Update = function(slot0, slot1, slot2, slot3)
 			uv0._priceIcon.sprite = slot0
 		end)
 
-		slot0._priceTxt.text, slot16 = slot1:GetPrice()
+		slot0._priceTxt.text, slot14 = slot1:GetPrice()
 		slot0._opriceTxt.text = slot1:getConfig("resource_num")
 
-		setActive(go(slot0._opriceTxt), slot1:isDisCount() and slot16 > 0)
+		setActive(go(slot0._opriceTxt), slot1:isDisCount() and slot14 > 0)
 
 		if uv0(slot1, slot3) == uv1 then
 			slot7 = true
-			slot0.discountTagOffTxt.text = string.format("%0.2f", slot16) .. "%"
-		elseif slot17 == uv2 then
+			slot0.discountTagOffTxt.text = string.format("%0.2f", slot14) .. "%"
+		elseif slot15 == uv2 then
 			slot8 = true
 
 			setActive(slot0.timelimitTag, true)
 		else
-			slot19 = uv3[slot17][2]
-			slot0.tagImg.enabled = uv3[slot17][1] and slot18 ~= ""
+			slot17 = uv3[slot15][2]
+			slot0.tagImg.enabled = uv3[slot15][1] and slot16 ~= ""
 
 			if slot0.tagImg.enabled then
-				slot0.tagImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "tag_" .. slot18)
+				slot0.tagImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "tag_" .. slot16)
 			end
 
-			slot0.tagEnImg.enabled = slot19 and slot19 ~= ""
+			slot0.tagEnImg.enabled = slot17 and slot17 ~= ""
 
 			if slot0.tagEnImg.enabled then
-				slot0.tagEnImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "en_text_" .. slot19 .. "_text")
+				slot0.tagEnImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "en_text_" .. slot17 .. "_text")
 			end
 		end
 	end
@@ -157,7 +160,7 @@ slot0.Update = function(slot0, slot1, slot2, slot3)
 	slot0:UpdateSelected(slot2)
 end
 
-slot0.UpdateSelected = function(slot0, slot1)
+function slot0.UpdateSelected(slot0, slot1)
 	if slot0.isSelected ~= slot1 then
 		slot0.isSelected = slot1
 		slot0._content.localPosition = Vector3(0, slot1 and -26 or -126, 0)
@@ -167,7 +170,7 @@ slot0.UpdateSelected = function(slot0, slot1)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:UpdateSelected(false)
 
 	slot0._icon.transform.localScale = Vector3.one

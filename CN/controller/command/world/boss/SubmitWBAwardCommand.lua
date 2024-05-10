@@ -1,6 +1,6 @@
 slot0 = class("SubmitWBAwardCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot4 = nowWorld()
 	slot5 = slot4:GetBossProxy()
 	slot6 = pg.ConnectionMgr.GetInstance()

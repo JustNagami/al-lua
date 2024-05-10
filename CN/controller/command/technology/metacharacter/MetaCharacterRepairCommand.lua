@@ -1,6 +1,6 @@
 slot0 = class("MetaCharacterRepairCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot9 = getProxy(BayProxy):getShipById(slot2.shipID):getMetaCharacter():getAttrVO(slot2.attr):getItem()
 
@@ -25,10 +25,10 @@ slot0.execute = function(slot0, slot1)
 			uv0:levelUp()
 			uv1:updateShip(uv2)
 			getProxy(MetaCharacterProxy):getMetaProgressVOByID(uv3.id):updateShip(uv2)
-			uv4:sendNotification(GAME.CONSUME_ITEM, Item.New({
-				count = uv5,
-				id = uv6,
-				type = DROP_TYPE_ITEM
+			uv4:sendNotification(GAME.CONSUME_ITEM, Drop.New({
+				type = DROP_TYPE_ITEM,
+				id = uv5,
+				count = uv6
 			}))
 			uv4:sendNotification(GAME.REPAIR_META_CHARACTER_DONE)
 		else

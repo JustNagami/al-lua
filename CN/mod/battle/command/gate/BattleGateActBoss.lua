@@ -2,7 +2,7 @@ slot0 = class("BattleGateActBoss")
 ys.Battle.BattleGateActBoss = slot0
 slot0.__name = "BattleGateActBoss"
 
-slot0.Entrance = function(slot0, slot1)
+function slot0.Entrance(slot0, slot1)
 	if BeginStageCommand.DockOverload() then
 		return
 	end
@@ -81,7 +81,7 @@ slot0.Entrance = function(slot0, slot1)
 	end)
 end
 
-slot0.Exit = function(slot0, slot1)
+function slot0.Exit(slot0, slot1)
 	slot4 = getProxy(BayProxy)
 	slot5 = slot0.statistics._battleScore
 	slot6 = getProxy(ActivityProxy):getActivityById(slot0.actId)

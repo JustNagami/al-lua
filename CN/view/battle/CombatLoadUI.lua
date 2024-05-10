@@ -2,11 +2,11 @@ slot0 = class("CombatLoadUI", import("..base.BaseUI"))
 slot0._loadObs = nil
 slot0.LOADING_ANIMA_DISTANCE = 1820
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CombatLoadUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = slot0:findTF("loading")
 	slot0._loadingProgress = slot1:Find("loading_bar"):GetComponent(typeof(Slider))
 	slot0._loadingProgress.value = 0
@@ -31,14 +31,14 @@ slot0.init = function(slot0)
 	slot0._tipsText = slot1:Find("tipsText"):GetComponent(typeof(Text))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:Preload()
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 end
 
-slot0.Preload = function(slot0)
+function slot0.Preload(slot0)
 	PoolMgr.GetInstance():DestroyAllSprite()
 
 	slot0._loadObs = {}
@@ -195,7 +195,7 @@ slot0.Preload = function(slot0)
 				uv0.addCommanderBuffRes(slot18)
 				uv0.addChapterBuffRes(slot17)
 			end
-		elseif slot0.contextData.system == SYSTEM_HP_SHARE_ACT_BOSS or slot0.contextData.system == SYSTEM_ACT_BOSS or slot0.contextData.system == SYSTEM_ACT_BOSS_SP or slot0.contextData.system == SYSTEM_BOSS_EXPERIMENT then
+		elseif slot0.contextData.system == SYSTEM_HP_SHARE_ACT_BOSS or slot0.contextData.system == SYSTEM_ACT_BOSS or slot0.contextData.system == SYSTEM_ACT_BOSS_SP or slot0.contextData.system == SYSTEM_BOSS_EXPERIMENT or slot0.contextData.system == SYSTEM_BOSS_SINGLE then
 			if getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId] then
 				for slot12, slot13 in ipairs(slot7.ships) do
 					table.insert(slot3, slot2:getShipById(slot13))
@@ -220,6 +220,10 @@ slot0.Preload = function(slot0)
 						configId = slot0
 					}):GetBuffID()
 				end))
+			end
+
+			if slot0.contextData.system == SYSTEM_BOSS_SINGLE then
+				uv0.addChapterBuffRes(getProxy(ActivityProxy):getActivityById(slot0.contextData.actId):GetBuffIdsByStageId(slot0.contextData.stageId))
 			end
 		elseif slot0.contextData.system == SYSTEM_BOSS_RUSH or slot0.contextData.system == SYSTEM_BOSS_RUSH_EX then
 			slot6 = getProxy(ActivityProxy):getActivityById(slot0.contextData.actId):GetSeriesData()
@@ -428,7 +432,7 @@ slot0.Preload = function(slot0)
 						slot14.equipments[slot20] = slot13.equipment[slot20] or false
 					end
 
-					slot14.getActiveEquipments = function(slot0)
+					function slot14.getActiveEquipments(slot0)
 						return slot0.equipments
 					end
 
@@ -449,7 +453,7 @@ slot0.Preload = function(slot0)
 						slot14.equipments[slot20] = slot13.equipment[slot20] or false
 					end
 
-					slot14.getActiveEquipments = function(slot0)
+					function slot14.getActiveEquipments(slot0)
 						return slot0.equipments
 					end
 
@@ -470,7 +474,7 @@ slot0.Preload = function(slot0)
 						slot14.equipments[slot20] = slot13.equipment[slot20] or false
 					end
 
-					slot14.getActiveEquipments = function(slot0)
+					function slot14.getActiveEquipments(slot0)
 						return slot0.equipments
 					end
 
@@ -591,7 +595,7 @@ slot0.Preload = function(slot0)
 	slot0._tipsText.text = pg.server_language[math.random(#pg.server_language)].content
 end
 
-slot0.addCommanderBuffRes = function(slot0)
+function slot0.addCommanderBuffRes(slot0)
 	slot1 = ys.Battle.BattleResourceManager.GetInstance()
 
 	for slot5, slot6 in ipairs(slot0) do
@@ -601,7 +605,7 @@ slot0.addCommanderBuffRes = function(slot0)
 	end
 end
 
-slot0.addGlobalBuffRes = function()
+function slot0.addGlobalBuffRes()
 	slot2 = ys.Battle.BattleResourceManager.GetInstance()
 
 	for slot6, slot7 in ipairs(_.map(BuffHelper.GetBattleBuffs(), function (slot0)
@@ -613,7 +617,7 @@ slot0.addGlobalBuffRes = function()
 	end
 end
 
-slot0.addChapterBuffRes = function(slot0)
+function slot0.addChapterBuffRes(slot0)
 	slot1 = ys.Battle.BattleResourceManager.GetInstance()
 
 	for slot5, slot6 in ipairs(slot0) do
@@ -623,7 +627,7 @@ slot0.addChapterBuffRes = function(slot0)
 	end
 end
 
-slot0.addChapterAuraRes = function(slot0)
+function slot0.addChapterAuraRes(slot0)
 	slot1 = ys.Battle.BattleResourceManager.GetInstance()
 
 	for slot5, slot6 in ipairs(slot0) do
@@ -633,7 +637,7 @@ slot0.addChapterAuraRes = function(slot0)
 	end
 end
 
-slot0.addEnemyBuffRes = function(slot0)
+function slot0.addEnemyBuffRes(slot0)
 	slot1 = ys.Battle.BattleResourceManager.GetInstance()
 
 	for slot5, slot6 in ipairs(slot0) do
@@ -643,7 +647,7 @@ slot0.addEnemyBuffRes = function(slot0)
 	end
 end
 
-slot0.StartLoad = function(slot0, slot1, slot2, slot3)
+function slot0.StartLoad(slot0, slot1, slot2, slot3)
 	slot0._toLoad[slot3] = 1
 
 	LoadAndInstantiateAsync(slot1, slot2, function (slot0)
@@ -651,7 +655,7 @@ slot0.StartLoad = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.LoadFinish = function(slot0, slot1, slot2)
+function slot0.LoadFinish(slot0, slot1, slot2)
 	slot0._loadObs.map = slot1
 	slot0._toLoad.map = nil
 

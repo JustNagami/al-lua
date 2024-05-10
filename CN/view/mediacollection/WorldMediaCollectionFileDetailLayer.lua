@@ -1,10 +1,10 @@
 slot0 = class("WorldMediaCollectionFileDetailLayer", import(".WorldMediaCollectionSubLayer"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "WorldMediaCollectionFileDetailUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	assert(slot0.viewParent, "Need assign ViewParent for " .. slot0.__cname)
 	onButton(slot0, slot0._tf:Find("Buttom"), function ()
 		uv0.viewParent:Backward()
@@ -20,7 +20,7 @@ slot0.OnInit = function(slot0)
 	slot0.fileChild = {}
 	slot0.fileChildIndex = {}
 
-	slot0.scrollComp.onUpdateItem = function(slot0, ...)
+	function slot0.scrollComp.onUpdateItem(slot0, ...)
 		uv0:OnUpdateFile(slot0 + 1, ...)
 	end
 
@@ -31,7 +31,7 @@ slot0.OnInit = function(slot0)
 	setText(slot0._tf:Find("ArchiveList/ProgressDesc"), i18n("world_collection_1"))
 end
 
-slot0.InitDocument = function(slot0)
+function slot0.InitDocument(slot0)
 	slot0.document = slot0._tf:Find("Document")
 	slot0.documentContentTF = slot0.document:Find("Viewport/Content")
 	slot0.documentHead = slot0.documentContentTF:Find("Head")
@@ -44,12 +44,12 @@ slot0.InitDocument = function(slot0)
 	slot0.documentStamp = slot0.documentImage:Find("ClassifiedStamp")
 end
 
-slot0.Openning = function(slot0)
+function slot0.Openning(slot0)
 	slot0.anim:Play("Enter")
 	slot0:Enter()
 end
 
-slot0.Enter = function(slot0)
+function slot0.Enter(slot0)
 	slot0.contextData.SelectedFile = nil
 
 	slot0:UpdateView()
@@ -64,13 +64,13 @@ slot0.Enter = function(slot0)
 	end)())
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	slot0.canvasGroup.alpha = 1
 
 	uv0.super.Hide(slot0)
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	assert(slot0.contextData.FileGroupIndex, "Not Initialize FileGroupIndex")
 
 	slot0.archiveList = _.map(WorldCollectionProxy.GetCollectionFileGroupTemplate(slot0.contextData.FileGroupIndex).child, function (slot0)
@@ -91,11 +91,11 @@ slot0.UpdateView = function(slot0)
 	slot0.scrollComp:SetTotalCount(#slot0.archiveList)
 end
 
-slot1 = function(slot0)
+function slot1(slot0)
 	return string.char(226, 133, 160 + slot0 - 1)
 end
 
-slot0.OnUpdateFile = function(slot0, slot1, slot2)
+function slot0.OnUpdateFile(slot0, slot1, slot2)
 	if slot0.exited then
 		return
 	end
@@ -129,7 +129,7 @@ slot0.OnUpdateFile = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.SwitchFileIndex = function(slot0, slot1)
+function slot0.SwitchFileIndex(slot0, slot1)
 	if slot0.contextData.SelectedFile and slot0.contextData.SelectedFile == slot1 then
 		return
 	end
@@ -155,7 +155,7 @@ slot0.SwitchFileIndex = function(slot0, slot1)
 	end
 end
 
-slot0.SetDocument = function(slot0, slot1, slot2)
+function slot0.SetDocument(slot0, slot1, slot2)
 	setText(slot0.documentTitle, slot1.name)
 
 	if slot1.pic and #slot3 > 0 then
@@ -178,7 +178,7 @@ slot0.SetDocument = function(slot0, slot1, slot2)
 	slot0:SetDocumentText(slot1.content, slot1.subTitle, slot2)
 end
 
-slot0.getTextPreferredHeight = function(slot0, slot1, slot2)
+function slot0.getTextPreferredHeight(slot0, slot1, slot2)
 	return ReflectionHelp.RefCallMethod(typeof("UnityEngine.TextGenerator"), "GetPreferredHeight", slot0.cachedTextGeneratorForLayout, {
 		typeof("System.String"),
 		typeof("UnityEngine.TextGenerationSettings")
@@ -188,13 +188,13 @@ slot0.getTextPreferredHeight = function(slot0, slot1, slot2)
 	}) / slot0.pixelsPerUnit
 end
 
-slot0.SetDocumentText = function(slot0, slot1, slot2, slot3)
+function slot0.SetDocumentText(slot0, slot1, slot2, slot3)
 	slot7 = math.max(slot0.documentRect.rect.width - (isActive(slot0.documentImage) and slot0.documentImage.rect.width or 0), 0)
 	slot9 = slot5 and slot0.documentImage.rect.height + 100 or 0
 	slot0.documentText:GetComponent(typeof(Text)).text = ""
 	slot11 = ""
 
-	slot12 = function()
+	function slot12()
 		slot0 = 0
 
 		if isActive(uv0.documentHead) then
@@ -249,7 +249,7 @@ slot0.SetDocumentText = function(slot0, slot1, slot2, slot3)
 	slot15 = 1
 	slot16 = 1
 
-	slot17 = function(slot0)
+	function slot17(slot0)
 		slot1 = ""
 		slot2 = ""
 		slot3 = {}
@@ -312,7 +312,7 @@ slot0.SetDocumentText = function(slot0, slot1, slot2, slot3)
 	slot12()
 end
 
-slot0.SplitRichAndLetters = function(slot0)
+function slot0.SplitRichAndLetters(slot0)
 	slot1 = 1
 	slot2 = "<([^>]*)>"
 	slot3 = {}

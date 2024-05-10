@@ -1,6 +1,6 @@
 slot0 = class("SixthAnniversaryJPScene", import("..TemplateMV.BackHillTemplate"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SixthAnniversaryJPUI"
 end
 
@@ -8,7 +8,7 @@ slot0.edge2area = {
 	default = "_SDPlace"
 }
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	uv0.super.init(slot0)
 
 	slot0.top = slot0:findTF("top")
@@ -44,7 +44,7 @@ slot0.init = function(slot0)
 	end
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0:findTF("top/Back"), function ()
 		uv0:onBackPressed()
 	end, SFX_CANCEL)
@@ -73,31 +73,31 @@ slot0.didEnter = function(slot0)
 	pg.NewStoryMgr.GetInstance():Play(pg.activity_template[ActivityConst.MINIGAME_ZUMA].config_client.biaohoushanstory)
 end
 
-slot0.HotSpringTip = function()
+function slot0.HotSpringTip()
 	return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING))
 end
 
-slot0.ZumaTip = function()
+function slot0.ZumaTip()
 	return LaunchBallActivityMgr.IsTip(ActivityConst.MINIGAME_ZUMA) or LaunchBallTaskMgr.GetRedTip()
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	setActive(slot0.upper_jiujiuwenquan:Find("Tip"), uv0.HotSpringTip())
 	setActive(slot0.upper_shijiandiaocha:Find("Tip"), uv0.ZumaTip())
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:clearStudents()
 	uv0.super.willExit(slot0)
 end
 
-slot0.IsShowMainTip = function(slot0)
+function slot0.IsShowMainTip(slot0)
 	if slot0 and not slot0:isEnd() then
 		return uv0.HotSpringTip() or uv0.ZumaTip()
 	end
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	slot0:emit(uv0.ON_HOME)
 end
 

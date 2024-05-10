@@ -1,6 +1,6 @@
 slot0 = class("MainSubmitTaskSequence")
 
-slot0.Execute = function(slot0, slot1)
+function slot0.Execute(slot0, slot1)
 	getProxy(TaskProxy):pushAutoSubmitTask()
 	slot1()
 end

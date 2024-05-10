@@ -1,6 +1,6 @@
 slot0 = class("CastleGamingUI")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0._tf = slot1
 	slot0._event = slot2
 	slot0._gameUI = findTF(slot0._tf, "ui/gamingUI")
@@ -23,20 +23,20 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.addScoreAnim = GetComponent(findTF(slot0._gameUI, "addScore/ad"), typeof(Animator))
 end
 
-slot0.show = function(slot0, slot1)
+function slot0.show(slot0, slot1)
 	setActive(slot0._gameUI, slot1)
 end
 
-slot0.update = function(slot0)
+function slot0.update(slot0)
 end
 
-slot0.start = function(slot0)
+function slot0.start(slot0)
 	setActive(slot0.addScoreTf, false)
 
 	slot0.direct = Vector2(0, 0)
 end
 
-slot0.addScore = function(slot0, slot1)
+function slot0.addScore(slot0, slot1)
 	slot2 = slot1.num
 	slot3 = slot1.pos
 	slot4 = slot1.id
@@ -54,7 +54,7 @@ slot0.addScore = function(slot0, slot1)
 	setActive(slot0.addScoreTf, true)
 end
 
-slot0.step = function(slot0)
+function slot0.step(slot0)
 	slot0.joyStick:step()
 	setText(slot0.gameTime, math.floor(CastleGameVo.gameTime))
 	setText(slot0.gameScore, CastleGameVo.scoreNum)
@@ -64,7 +64,7 @@ slot0.step = function(slot0)
 	slot0.joyStick:setDirectTarget(slot0.direct)
 end
 
-slot0.press = function(slot0, slot1, slot2)
+function slot0.press(slot0, slot1, slot2)
 	if slot1 == KeyCode.W then
 		if slot2 then
 			slot0.direct.y = 1

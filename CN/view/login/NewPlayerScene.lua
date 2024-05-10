@@ -20,11 +20,11 @@ slot7 = {
 	[401231] = i18n("login_newPlayerScene_word_z23")
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewPlayerUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.eventTriggers = {}
 	slot0.characters = slot0:findTF("select_character/characters")
 	slot0.propPanel = slot0:findTF("prop_panel")
@@ -61,7 +61,7 @@ slot0.init = function(slot0)
 	setActive(slot0.randBtn, PLATFORM_CODE == PLATFORM_CH)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if LeanTween.isTweening(go(slot0.propPanel)) then
 		return
 	end
@@ -77,7 +77,7 @@ slot0.onBackPressed = function(slot0)
 	pg.SdkMgr.GetInstance():OnAndoridBackPress()
 end
 
-slot0.switchPanel = function(slot0)
+function slot0.switchPanel(slot0)
 	setActive(slot0.propPanel, true)
 
 	slot1 = slot0.propPanel:GetComponent(typeof(CanvasGroup))
@@ -112,7 +112,7 @@ slot0.switchPanel = function(slot0)
 	end
 end
 
-slot0.initCharacters = function(slot0)
+function slot0.initCharacters(slot0)
 	slot0.charInitPos = {}
 
 	for slot4 = 1, 3 do
@@ -152,7 +152,7 @@ slot0.initCharacters = function(slot0)
 	end
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.confirmBtn, function ()
 		uv0:showNamedPanel()
 	end, SFX_PANEL)
@@ -194,7 +194,7 @@ end
 slot8 = 0.3
 slot9 = -47
 
-slot0.selectCharacterByIdx = function(slot0, slot1, slot2)
+function slot0.selectCharacterByIdx(slot0, slot1, slot2)
 	slot0.inProp = true
 	slot0.contextData.configId = slot2
 
@@ -239,7 +239,7 @@ slot0.selectCharacterByIdx = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.initSkills = function(slot0)
+function slot0.initSkills(slot0)
 	removeAllChildren(slot0.skillContainer)
 
 	for slot5, slot6 in ipairs(pg.ship_data_template[slot0.contextData.configId].buff_list_display) do
@@ -253,7 +253,7 @@ slot0.initSkills = function(slot0)
 	end
 end
 
-slot0.showNamedPanel = function(slot0)
+function slot0.showNamedPanel(slot0)
 	slot0.qChar:SetParent(slot0.info)
 	pg.UIMgr.GetInstance():BlurPanel(slot0.namedPanel)
 	setActive(slot0.namedPanel, true)
@@ -261,13 +261,13 @@ slot0.showNamedPanel = function(slot0)
 	setText(slot0.chat, uv0[slot0.contextData.configId])
 end
 
-slot0.closeNamedPanel = function(slot0)
+function slot0.closeNamedPanel(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0.namedPanel, slot0._tf)
 	setActive(slot0.namedPanel, false)
 	slot0.qChar:SetParent(slot0.propPanel)
 end
 
-slot0.recycleSpineChar = function(slot0)
+function slot0.recycleSpineChar(slot0)
 	if slot0.shipPrefab and slot0.shipModel then
 		PoolMgr.GetInstance():ReturnSpineChar(slot0.shipPrefab, slot0.shipModel)
 
@@ -276,7 +276,7 @@ slot0.recycleSpineChar = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0.eventTriggers then
 		for slot4, slot5 in pairs(slot0.eventTriggers) do
 			ClearEventTrigger(slot4)

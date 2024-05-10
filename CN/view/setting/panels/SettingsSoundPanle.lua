@@ -1,18 +1,18 @@
 slot0 = class("SettingsSoundPanle", import(".SettingsBasePanel"))
 
-slot0.GetUIName = function(slot0)
+function slot0.GetUIName(slot0)
 	return "SettingsSound"
 end
 
-slot0.GetTitle = function(slot0)
+function slot0.GetTitle(slot0)
 	return i18n("Settings_title_sound")
 end
 
-slot0.GetTitleEn = function(slot0)
+function slot0.GetTitleEn(slot0)
 	return "  / VOICE SETTINGS"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bgmSlider = slot0._tf:Find("settings/bgm/slider")
 	slot0.effectSlider = slot0._tf:Find("settings/sfx/slider")
 	slot0.mainSlider = slot0._tf:Find("settings/cv/slider")
@@ -43,7 +43,7 @@ slot0.OnInit = function(slot0)
 	setText(slot0._tf:Find("settings/cv/icon/Text"), i18n("settings_sound_title_cv"))
 end
 
-slot0.OnVolumeSwitch = function(slot0, slot1)
+function slot0.OnVolumeSwitch(slot0, slot1)
 	if not slot1 then
 		PlayerPrefs.SetFloat("bgm_vol_mute_setting", pg.CriMgr.GetInstance():getBGMVolume())
 		PlayerPrefs.SetFloat("se_vol_mute_setting", pg.CriMgr.GetInstance():getSEVolume())
@@ -64,7 +64,7 @@ slot0.OnVolumeSwitch = function(slot0, slot1)
 	slot0:UpdateSlidersState()
 end
 
-slot0.InitBgmSlider = function(slot0)
+function slot0.InitBgmSlider(slot0)
 	slot1 = pg.CriMgr.GetInstance():getBGMVolume()
 
 	if slot0.isMute then
@@ -81,7 +81,7 @@ slot0.InitBgmSlider = function(slot0)
 	end)
 end
 
-slot0.InitEffectSlider = function(slot0)
+function slot0.InitEffectSlider(slot0)
 	slot1 = pg.CriMgr.GetInstance():getSEVolume()
 
 	if slot0.isMute then
@@ -98,7 +98,7 @@ slot0.InitEffectSlider = function(slot0)
 	end)
 end
 
-slot0.InitMainSlider = function(slot0)
+function slot0.InitMainSlider(slot0)
 	slot1 = pg.CriMgr.GetInstance():getCVVolume()
 
 	if slot0.isMute then
@@ -115,14 +115,14 @@ slot0.InitMainSlider = function(slot0)
 	end)
 end
 
-slot0.OnUpdate = function(slot0)
+function slot0.OnUpdate(slot0)
 	slot0:InitBgmSlider()
 	slot0:InitEffectSlider()
 	slot0:InitMainSlider()
 	slot0:UpdateSlidersState()
 end
 
-slot0.UpdateSlidersState = function(slot0)
+function slot0.UpdateSlidersState(slot0)
 	slot1 = slot0.isMute
 
 	slot0:SetSliderEnable(slot0.bgmSlider, not slot1)
@@ -130,7 +130,7 @@ slot0.UpdateSlidersState = function(slot0)
 	slot0:SetSliderEnable(slot0.mainSlider, not slot1)
 end
 
-slot0.SetSliderEnable = function(slot0, slot1, slot2)
+function slot0.SetSliderEnable(slot0, slot1, slot2)
 	slot2 = tobool(slot2)
 	slot1:GetComponent("Slider").interactable = slot2
 

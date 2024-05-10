@@ -1,4 +1,6 @@
 slot0 = class("NewSkinShopMainView", import("view.base.BaseEventLogic"))
+slot0.EVT_SHOW_OR_HIDE_PURCHASE_VIEW = "NewSkinShopMainView:EVT_SHOW_OR_HIDE_PURCHASE_VIEW"
+slot0.EVT_ON_PURCHASE = "NewSkinShopMainView:EVT_ON_PURCHASE"
 slot1 = 1
 slot2 = 2
 slot3 = 3
@@ -8,8 +10,10 @@ slot6 = 3
 slot7 = 4
 slot8 = 5
 slot9 = 6
+slot10 = 7
+slot11 = 8
 
-slot10 = function(slot0)
+function slot12(slot0)
 	if not uv0.obtainBtnSpriteNames then
 		uv0.obtainBtnSpriteNames = {
 			[uv1] = "yigoumai_butten",
@@ -17,19 +21,22 @@ slot10 = function(slot0)
 			[uv3] = "qianwanghuoqu_butten",
 			[uv4] = "item_buy",
 			[uv5] = "furniture_shop",
-			[uv6] = "tiyan_btn"
+			[uv6] = "tiyan_btn",
+			[uv7] = "item_buy",
+			[uv8] = "buy_with_gift"
 		}
 	end
 
 	return uv0.obtainBtnSpriteNames[slot0]
 end
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	pg.DelegateInfo.New(slot0)
 	uv0.super.Ctor(slot0, slot2)
 
 	slot0._go = slot1.gameObject
 	slot0._tf = slot1
+	slot0.overlay = slot0._tf:Find("overlay")
 	slot0.titleTr = slot0._tf:Find("overlay/title")
 	slot0.skinNameTxt = slot0._tf:Find("overlay/title/skin_name"):GetComponent(typeof(Text))
 	slot0.shipNameTxt = slot0._tf:Find("overlay/title/name"):GetComponent(typeof(Text))
@@ -44,6 +51,9 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.switchPreviewBtn = slot0._tf:Find("overlay/right/switch")
 	slot0.obtainBtn = slot0._tf:Find("overlay/right/price/btn")
 	slot0.obtainBtnImg = slot0.obtainBtn:GetComponent(typeof(Image))
+	slot0.giftTag = slot0.obtainBtn:Find("tag")
+	slot0.giftItem = slot0.obtainBtn:Find("item")
+	slot0.giftText = slot0._tf:Find("overlay/right/price/btn/Text"):GetComponent(typeof(Text))
 	slot0.consumeTr = slot0._tf:Find("overlay/right/price/consume")
 	slot0.consumeRealPriceTxt = slot0.consumeTr:Find("Text"):GetComponent(typeof(Text))
 	slot0.consumePriceTxt = slot0.consumeTr:Find("originalprice/Text"):GetComponent(typeof(Text))
@@ -67,9 +77,25 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.isToggleShowBg = true
 	slot0.isPreviewFurniture = false
 	slot0.interactionPreview = BackYardInteractionPreview.New(slot0.furnitureContainer, Vector3(0, 0, 0))
+	slot0.voucherMsgBox = SkinVoucherMsgBox.New(pg.UIMgr.GetInstance().OverlayMain)
+	slot0.purchaseView = NewSkinShopPurchaseView.New(slot0._tf, slot2)
+
+	slot0:RegisterEvent()
 end
 
-slot0.Flush = function(slot0, slot1)
+function slot0.RegisterEvent(slot0)
+	slot0:bind(uv0.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, function (slot0, slot1)
+		setAnchoredPosition(uv0.paintingTF, {
+			x = slot1 and -440 or -120
+		})
+		setActive(uv0.overlay, not slot1)
+	end)
+	slot0:bind(uv0.EVT_ON_PURCHASE, function (slot0, slot1)
+		uv0:OnClickBtn(uv0:GetObtainBtnState(slot1), slot1)
+	end)
+end
+
+function slot0.Flush(slot0, slot1)
 	if not slot1 then
 		slot0:FlushStyle(true)
 
@@ -98,7 +124,7 @@ slot0.Flush = function(slot0, slot1)
 	slot0.commodity = slot1
 end
 
-slot0.FlushStyle = function(slot0, slot1)
+function slot0.FlushStyle(slot0, slot1)
 	setActive(slot0.paintingTF.parent, not slot1)
 	setActive(slot0.defaultBg, slot1)
 	setActive(slot0.diffBg.parent, not slot1)
@@ -106,11 +132,11 @@ slot0.FlushStyle = function(slot0, slot1)
 	setActive(slot0.rightTr, not slot1)
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewSkinShopMainView"
 end
 
-slot0.FlushBgWithAnim = function(slot0, slot1)
+function slot0.FlushBgWithAnim(slot0, slot1)
 	slot2 = slot0._tf
 	slot2:GetComponent(typeof(CanvasGroup)).blocksRaycasts = false
 
@@ -130,7 +156,7 @@ slot0.FlushBgWithAnim = function(slot0, slot1)
 	end)
 end
 
-slot0.DoSwitchBgAnim = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.DoSwitchBgAnim(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0:ClearSwitchBgAnim()
 
 	GetOrAddComponent(slot0.bgsGo, typeof(CanvasGroup)).alpha = slot1
@@ -140,7 +166,7 @@ slot0.DoSwitchBgAnim = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	end)):setEase(slot4):setOnComplete(System.Action(slot5))
 end
 
-slot0.ClearSwitchBgAnim = function(slot0)
+function slot0.ClearSwitchBgAnim(slot0)
 	if LeanTween.isTweening(slot0.bgsGo) then
 		LeanTween.cancel(slot0.bgsGo)
 	end
@@ -148,7 +174,7 @@ slot0.ClearSwitchBgAnim = function(slot0)
 	GetOrAddComponent(slot0.bgsGo, typeof(CanvasGroup)).alpha = 1
 end
 
-slot0.FlushBG = function(slot0, slot1, slot2)
+function slot0.FlushBG(slot0, slot1, slot2)
 	slot3 = slot1:getSkinId()
 	slot7 = Ship.New({
 		id = 999,
@@ -185,13 +211,13 @@ slot0.FlushBG = function(slot0, slot1, slot2)
 	setActive(slot0.defaultBg, not slot9)
 end
 
-slot0.FlushName = function(slot0, slot1)
+function slot0.FlushName(slot0, slot1)
 	slot3 = pg.ship_skin_template[slot1:getSkinId()]
 	slot0.skinNameTxt.text = SwitchSpecialChar(slot3.name, true)
 	slot0.shipNameTxt.text = ShipGroup.getDefaultShipConfig(slot3.ship_group).name
 end
 
-slot0.FlushPaintingToggle = function(slot0, slot1)
+function slot0.FlushPaintingToggle(slot0, slot1)
 	removeOnToggle(slot0.dynamicToggle)
 	removeOnToggle(slot0.showBgToggle)
 
@@ -209,7 +235,13 @@ slot0.FlushPaintingToggle = function(slot0, slot1)
 		slot0.isToggleShowBg = true
 	end
 
-	if (slot2:IsSpine() or slot2:IsLive2d()) and PlayerPrefs.GetInt("skinShop#l2dPreViewToggle" .. getProxy(PlayerProxy):getRawData().id, 0) == 1 then
+	slot4 = slot2:IsSpine() or slot2:IsLive2d()
+
+	if LOCK_SKIN_SHOP_ANIM_PREVIEW then
+		slot4 = false
+	end
+
+	if slot4 and PlayerPrefs.GetInt("skinShop#l2dPreViewToggle" .. getProxy(PlayerProxy):getRawData().id, 0) == 1 then
 		slot0.isToggleDynamic = true
 	end
 
@@ -253,25 +285,25 @@ slot0.FlushPaintingToggle = function(slot0, slot1)
 	setActive(slot0.showBgToggle, not slot0.isToggleDynamic and slot3)
 end
 
-slot0.RecordFlag = function(slot0, slot1)
+function slot0.RecordFlag(slot0, slot1)
 	PlayerPrefs.SetInt("skinShop#l2dPreViewToggle" .. getProxy(PlayerProxy):getRawData().id, slot1 and 1 or 0)
 	PlayerPrefs.Save()
 	slot0:emit(NewSkinShopMediator.ON_RECORD_ANIM_PREVIEW_BTN, slot1)
 end
 
-slot0.ExistL2dRes = function(slot0, slot1)
+function slot0.ExistL2dRes(slot0, slot1)
 	slot2 = HXSet.autoHxShiftPath("live2d/" .. string.lower(slot1), nil, true)
 
 	return PathMgr.FileExists(PathMgr.getAssetBundle(slot2)), slot2
 end
 
-slot0.ExistSpineRes = function(slot0, slot1)
+function slot0.ExistSpineRes(slot0, slot1)
 	slot2 = HXSet.autoHxShiftPath("SpinePainting/" .. string.lower(slot1), nil, true)
 
 	return PathMgr.FileExists(PathMgr.getAssetBundle(slot2)), slot2
 end
 
-slot0.FlushDynamicPaintingResState = function(slot0, slot1)
+function slot0.FlushDynamicPaintingResState(slot0, slot1)
 	if not slot0.isToggleDynamic then
 		return
 	end
@@ -297,7 +329,7 @@ slot0.FlushDynamicPaintingResState = function(slot0, slot1)
 	end
 end
 
-slot0.DownloadDynamicPainting = function(slot0, slot1, slot2)
+function slot0.DownloadDynamicPainting(slot0, slot1, slot2)
 	if slot0.downloads[slot2:getSkinId()] then
 		return
 	end
@@ -317,7 +349,7 @@ slot0.DownloadDynamicPainting = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.GetPaintingState = function(slot0, slot1)
+function slot0.GetPaintingState(slot0, slot1)
 	slot2 = ShipSkin.New({
 		id = slot1:getSkinId()
 	})
@@ -325,13 +357,17 @@ slot0.GetPaintingState = function(slot0, slot1)
 	if slot0.isToggleDynamic and slot2:IsLive2d() then
 		return uv0
 	elseif slot0.isToggleDynamic and slot2:IsSpine() then
+		if slot2:getConfig("spine_use_live2d") == 1 then
+			return uv0
+		end
+
 		return uv1
 	else
 		return uv2
 	end
 end
 
-slot0.FlushPainting = function(slot0, slot1)
+function slot0.FlushPainting(slot0, slot1)
 	slot3 = pg.ship_skin_template[slot1:getSkinId()].painting
 
 	if slot0:GetPaintingState(slot1) == uv0 and not slot0:ExistL2dRes(slot3) or slot2 == uv1 and not slot0:ExistSpineRes(slot3) then
@@ -360,7 +396,7 @@ slot0.FlushPainting = function(slot0, slot1)
 	}
 end
 
-slot0.ClearPainting = function(slot0)
+function slot0.ClearPainting(slot0)
 	if not slot0.paintingState then
 		return
 	end
@@ -376,7 +412,7 @@ slot0.ClearPainting = function(slot0)
 	slot0.paintingState = nil
 end
 
-slot0.LoadMeshPainting = function(slot0, slot1, slot2)
+function slot0.LoadMeshPainting(slot0, slot1, slot2)
 	slot4 = GetOrAddComponent(findTF(slot0.paintingTF, "fitter"), "PaintingScaler")
 	slot4.FrameName = "chuanwu"
 	slot4.Tween = 1
@@ -411,7 +447,7 @@ slot0.LoadMeshPainting = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.ClearMeshPainting = function(slot0)
+function slot0.ClearMeshPainting(slot0)
 	slot1 = slot0.paintingTF:Find("fitter")
 
 	if slot0.paintingName and slot1.childCount > 0 then
@@ -424,7 +460,7 @@ slot0.ClearMeshPainting = function(slot0)
 	slot0.paintingName = nil
 end
 
-slot0.LoadL2dPainting = function(slot0, slot1)
+function slot0.LoadL2dPainting(slot0, slot1)
 	slot2 = slot1:getSkinId()
 	slot5 = Live2D.GenerateData({
 		ship = Ship.New({
@@ -453,7 +489,7 @@ slot0.LoadL2dPainting = function(slot0, slot1)
 	end)
 end
 
-slot0.ClearL2dPainting = function(slot0)
+function slot0.ClearL2dPainting(slot0)
 	if slot0.live2dChar then
 		slot0:RevertShopHxForL2d(slot0.live2dChar)
 		slot0.live2dChar:Dispose()
@@ -462,7 +498,7 @@ slot0.ClearL2dPainting = function(slot0)
 	end
 end
 
-slot0.LoadSpinePainting = function(slot0, slot1)
+function slot0.LoadSpinePainting(slot0, slot1)
 	slot2 = slot1:getSkinId()
 	slot6 = pg.UIMgr.GetInstance()
 
@@ -487,7 +523,7 @@ slot0.LoadSpinePainting = function(slot0, slot1)
 	end)
 end
 
-slot0.ClearSpinePainting = function(slot0)
+function slot0.ClearSpinePainting(slot0)
 	if slot0.spinePainting and slot0.spinePainting._tf then
 		slot1 = slot0.spinePainting._tf:Find("shop_hx")
 
@@ -498,7 +534,7 @@ slot0.ClearSpinePainting = function(slot0)
 	end
 end
 
-slot0.CheckShowShopHxForL2d = function(slot0, slot1, slot2)
+function slot0.CheckShowShopHxForL2d(slot0, slot1, slot2)
 	if PLATFORM_CODE ~= PLATFORM_CH then
 		return
 	end
@@ -510,11 +546,11 @@ slot0.CheckShowShopHxForL2d = function(slot0, slot1, slot2)
 	slot1:changeParamaterValue("shophx", slot2.buyCount <= 0 and 1 or 0)
 end
 
-slot0.RevertShopHxForL2d = function(slot0, slot1)
+function slot0.RevertShopHxForL2d(slot0, slot1)
 	slot1:changeParamaterValue("shophx", 0)
 end
 
-slot0.CheckShowShopHx = function(slot0, slot1, slot2)
+function slot0.CheckShowShopHx(slot0, slot1, slot2)
 	if PLATFORM_CODE ~= PLATFORM_CH then
 		return
 	end
@@ -528,13 +564,13 @@ slot0.CheckShowShopHx = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.RevertShopHx = function(slot0, slot1)
+function slot0.RevertShopHx(slot0, slot1)
 	if not IsNil(slot1) then
 		setActive(slot1, false)
 	end
 end
 
-slot0.FlushPreviewBtn = function(slot0, slot1)
+function slot0.FlushPreviewBtn(slot0, slot1)
 	removeOnButton(slot0.switchPreviewBtn)
 
 	if not Goods.ExistFurniture(slot1.id) and slot0.isPreviewFurniture then
@@ -558,18 +594,18 @@ slot0.FlushPreviewBtn = function(slot0, slot1)
 	end
 end
 
-slot0.IsSwitchTweening = function(slot0)
+function slot0.IsSwitchTweening(slot0)
 	return LeanTween.isTweening(go(slot0.furnitureBg)) or LeanTween.isTweening(go(slot0.charBg))
 end
 
-slot0.ClearSwitchTween = function(slot0)
+function slot0.ClearSwitchTween(slot0)
 	if slot0:IsSwitchTweening() then
 		LeanTween.cancel(go(slot0.furnitureBg))
 		LeanTween.cancel(go(slot0.charBg))
 	end
 end
 
-slot0.StartSwitchAnim = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.StartSwitchAnim(slot0, slot1, slot2, slot3, slot4)
 	slot0:ClearSwitchTween()
 
 	slot7 = slot1:GetComponent(typeof(CanvasGroup)).alpha
@@ -589,7 +625,7 @@ slot0.StartSwitchAnim = function(slot0, slot1, slot2, slot3, slot4)
 	end))
 end
 
-slot0.SwitchPreview = function(slot0, slot1, slot2, slot3)
+function slot0.SwitchPreview(slot0, slot1, slot2, slot3)
 	slot4 = slot1:getSkinId()
 
 	slot0:StartSwitchAnim(slot0.furnitureBg, slot0.charBg, slot3 and 0.3 or 0, function ()
@@ -611,7 +647,7 @@ slot0.SwitchPreview = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.GetObtainBtnState = function(slot0, slot1)
+function slot0.GetObtainBtnState(slot0, slot1)
 	if slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
 		return uv0
 	elseif slot0.isPreviewFurniture then
@@ -626,12 +662,16 @@ slot0.GetObtainBtnState = function(slot0, slot1)
 		return uv1
 	elseif slot1:isDisCount() and slot1:IsItemDiscountType() then
 		return uv4
-	else
+	elseif slot1:CanUseVoucherType() then
 		return uv5
+	elseif #slot1:GetGiftList() > 0 then
+		return uv6
+	else
+		return uv7
 	end
 end
 
-slot0.FlushPrice = function(slot0, slot1)
+function slot0.FlushPrice(slot0, slot1)
 	slot3 = slot1.type == Goods.TYPE_ACTIVITY or slot1.type == Goods.TYPE_ACTIVITY_EXTRA
 
 	if slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
@@ -646,11 +686,11 @@ slot0.FlushPrice = function(slot0, slot1)
 	setActive(slot0.consumeTr, slot1.type == Goods.TYPE_SKIN and not slot2 and not slot3)
 end
 
-slot0.UpdateExperiencePrice = function(slot0, slot1)
+function slot0.UpdateExperiencePrice(slot0, slot1)
 	slot0.experienceTxt.text = (getProxy(PlayerProxy):getRawData():getSkinTicket() < slot1:getConfig("resource_num") and "<color=" .. COLOR_RED .. ">" or "") .. slot3 .. (slot3 < slot2 and "</color>" or "") .. "/" .. slot2
 end
 
-slot0.UpdateCommodityPrice = function(slot0, slot1)
+function slot0.UpdateCommodityPrice(slot0, slot1)
 	slot2 = slot1:GetPrice()
 	slot3 = slot1:getConfig("resource_num")
 	slot0.consumeRealPriceTxt.text = slot2
@@ -659,7 +699,7 @@ slot0.UpdateCommodityPrice = function(slot0, slot1)
 	setActive(tf(go(slot0.consumePriceTxt)).parent, slot2 ~= slot3)
 end
 
-slot0.UpdateFurniturePrice = function(slot0, slot1)
+function slot0.UpdateFurniturePrice(slot0, slot1)
 	slot3 = Furniture.New({
 		id = Goods.Id2FurnitureId(slot1.id)
 	})
@@ -671,52 +711,95 @@ slot0.UpdateFurniturePrice = function(slot0, slot1)
 	setActive(tf(go(slot0.consumePriceTxt)).parent, slot4 ~= slot5)
 end
 
-slot0.FlushObtainBtn = function(slot0, slot1)
+function slot0.FlushObtainBtn(slot0, slot1)
 	if not slot0.obtainBtnSprites[slot0:GetObtainBtnState(slot1)] then
 		slot0.obtainBtnSprites[slot2] = GetSpriteFromAtlas("ui/skinshopui_atlas", uv0(slot2))
 	end
 
 	slot0.obtainBtnImg.sprite = slot3
-	slot4 = slot0.obtainBtnImg
 
-	slot4:SetNativeSize()
+	slot0.obtainBtnImg:SetNativeSize()
+	setActive(slot0.giftTag, slot2 == uv1)
+	setActive(slot0.giftItem, slot2 == uv1)
+
+	if slot2 == uv1 then
+		slot0:FlushGift(slot1)
+	else
+		slot0.giftText.text = ""
+	end
+
 	onButton(slot0, slot0.obtainBtn, function ()
-		if uv0 == uv1 or uv0 == uv2 then
-			uv3:OnPurchase(uv4)
-		elseif uv0 == uv5 then
-			uv3:OnActivity(uv4)
-		elseif uv0 == uv6 then
-			uv3:OnBackyard(uv4)
-		elseif uv0 == uv7 then
-			uv3:OnExperience(uv4)
+		if uv0 == uv1 or uv0 == uv2 or uv0 == uv3 then
+			uv4.purchaseView:ExecuteAction("Show", uv5)
+		else
+			uv4:OnClickBtn(uv0, uv5)
 		end
 	end, SFX_PANEL)
 end
 
-slot0.OnPurchase = function(slot0, slot1)
+function slot0.OnClickBtn(slot0, slot1, slot2)
+	if slot1 == uv0 or slot1 == uv1 or slot1 == uv2 then
+		slot0:OnPurchase(slot2)
+	elseif slot1 == uv3 then
+		slot0:OnItemPurchase(slot2)
+	elseif slot1 == uv4 then
+		slot0:OnActivity(slot2)
+	elseif slot1 == uv5 then
+		slot0:OnBackyard(slot2)
+	elseif slot1 == uv6 then
+		slot0:OnExperience(slot2)
+	end
+end
+
+function slot0.FlushGift(slot0, slot1)
+	slot2 = slot1:GetGiftList()
+	slot3 = slot2[1]
+
+	updateDrop(slot0.giftItem, {
+		type = slot3.type,
+		id = slot3.id,
+		count = slot3.count
+	})
+
+	slot0.giftText.text = #slot2 > 1 and "+" .. #slot2 - 1 .. "..." or ""
+end
+
+function slot0.OnItemPurchase(slot0, slot1)
 	if slot1.type ~= Goods.TYPE_SKIN then
 		return
 	end
 
-	slot4 = i18n("charge_scene_buy_confirm", slot1:GetPrice(), pg.ship_skin_template[slot1:getSkinId()].name)
-
-	if slot1:isDisCount() and slot1:IsItemDiscountType() then
-		slot4 = i18n("discount_coupon_tip", slot2, slot1:GetDiscountItem().name, slot3)
+	if #slot1:GetVoucherIdList() <= 0 then
+		return
 	end
 
-	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = slot4,
-		onYes = function ()
-			if uv0 then
-				uv1:emit(NewSkinShopMediator.ON_SHOPPING_BY_ACT, uv2.id, 1)
+	slot0.voucherMsgBox:ExecuteAction("Show", {
+		itemList = slot2,
+		skinName = SwitchSpecialChar(pg.ship_skin_template[slot1:getSkinId()].name, true),
+		price = slot1:GetPrice(),
+		onYes = function (slot0)
+			if slot0 then
+				uv0:emit(NewSkinShopMediator.ON_ITEM_PURCHASE, slot0, uv1.id)
 			else
-				uv1:emit(NewSkinShopMediator.ON_SHOPPING, uv2.id, 1)
+				uv0:emit(NewSkinShopMediator.ON_SHOPPING, uv1.id, 1)
 			end
 		end
 	})
 end
 
-slot0.OnActivity = function(slot0, slot1)
+function slot0.OnPurchase(slot0, slot1)
+	if slot1.type ~= Goods.TYPE_SKIN then
+		return
+	end
+
+	if slot1:isDisCount() and slot1:IsItemDiscountType() then
+		slot0:emit(NewSkinShopMediator.ON_SHOPPING_BY_ACT, slot1.id, 1)
+	else
+		slot0:emit(NewSkinShopMediator.ON_SHOPPING, slot1.id, 1)
+	end
+end
+
+function slot0.OnActivity(slot0, slot1)
 	slot2 = slot1:getConfig("time")
 	slot3 = slot1:getConfig("activity")
 	slot4 = getProxy(ActivityProxy):getActivityById(slot3)
@@ -736,7 +819,7 @@ slot0.OnActivity = function(slot0, slot1)
 	end
 end
 
-slot0.OnBackyard = function(slot0, slot1)
+function slot0.OnBackyard(slot0, slot1)
 	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "BackYardMediator") then
 		slot2 = pg.open_systems_limited[1]
 
@@ -748,7 +831,7 @@ slot0.OnBackyard = function(slot0, slot1)
 	slot0:emit(NewSkinShopMediator.ON_BACKYARD_SHOP)
 end
 
-slot0.OnExperience = function(slot0, slot1)
+function slot0.OnExperience(slot0, slot1)
 	if getProxy(ShipSkinProxy):getSkinById(slot1:getSkinId()) and not slot3:isExpireType() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("already_have_the_skin"))
 
@@ -772,7 +855,7 @@ slot0.OnExperience = function(slot0, slot1)
 	})
 end
 
-slot0.FlushTag = function(slot0, slot1)
+function slot0.FlushTag(slot0, slot1)
 	slot0.uiTagList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(uv0[slot1 + 1]), function (slot0)
@@ -790,7 +873,7 @@ slot0.FlushTag = function(slot0, slot1)
 	slot0.uiTagList:align(#pg.ship_skin_template[slot1:getSkinId()].tag)
 end
 
-slot0.FlushChar = function(slot0, slot1, slot2)
+function slot0.FlushChar(slot0, slot1, slot2)
 	if slot0.prefabName and slot0.prefabName == slot1 then
 		return
 	end
@@ -817,7 +900,7 @@ slot0.FlushChar = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.FlushTimeline = function(slot0, slot1)
+function slot0.FlushTimeline(slot0, slot1)
 	slot2 = slot1:getSkinId()
 	slot3 = false
 	slot4 = nil
@@ -825,14 +908,14 @@ slot0.FlushTimeline = function(slot0, slot1)
 	if slot1:IsActivityExtra() and slot1:ShowMaintenanceTime() then
 		slot5, slot6 = slot1:GetMaintenanceMonthAndDay()
 
-		slot4 = function()
+		function slot4()
 			return i18n("limit_skin_time_before_maintenance", uv0, uv1)
 		end
 
 		slot3 = true
 	elseif slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
 		if getProxy(ShipSkinProxy):getSkinById(slot2) and slot5:isExpireType() and not slot5:isExpired() then
-			slot4 = function()
+			function slot4()
 				return skinTimeStamp(uv0:getRemainTime())
 			end
 		end
@@ -843,7 +926,7 @@ slot0.FlushTimeline = function(slot0, slot1)
 			slot7 = pg.TimeMgr.GetInstance()
 			slot7 = slot7:Table2ServerTime(slot6)
 
-			slot4 = function()
+			function slot4()
 				return skinCommdityTimeStamp(uv0)
 			end
 		end
@@ -857,7 +940,7 @@ slot0.FlushTimeline = function(slot0, slot1)
 	end
 end
 
-slot0.AddTimer = function(slot0, slot1)
+function slot0.AddTimer(slot0, slot1)
 	slot0.timer = Timer.New(function ()
 		uv0.timeLimitTxt.text = uv1()
 	end, 1, -1)
@@ -866,7 +949,7 @@ slot0.AddTimer = function(slot0, slot1)
 	slot0.timer:Start()
 end
 
-slot0.ClearTimer = function(slot0)
+function slot0.ClearTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -874,7 +957,7 @@ slot0.ClearTimer = function(slot0)
 	end
 end
 
-slot0.ReturnChar = function(slot0)
+function slot0.ReturnChar(slot0)
 	if not IsNil(slot0.spineChar) then
 		slot0.spineChar.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
 		PoolMgr.GetInstance():ReturnSpineChar(slot0.prefabName, slot0.spineChar.gameObject)
@@ -884,15 +967,30 @@ slot0.ReturnChar = function(slot0)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.ClosePurchaseView(slot0)
+	if slot0.purchaseView and slot0.purchaseView:GetLoaded() then
+		slot0.purchaseView:Hide()
+	end
+end
+
+function slot0.Dispose(slot0)
 	slot0.exited = true
 
 	pg.DelegateInfo.Dispose(slot0)
 	slot0:ClearSwitchBgAnim()
+	pg.DynamicBgMgr.GetInstance():ClearBg(slot0:getUIName())
 
-	slot4 = slot0
+	if slot0.voucherMsgBox then
+		slot0.voucherMsgBox:Destroy()
 
-	pg.DynamicBgMgr.GetInstance():ClearBg(slot0.getUIName(slot4))
+		slot0.voucherMsgBox = nil
+	end
+
+	if slot0.purchaseView then
+		slot0.purchaseView:Destroy()
+
+		slot0.purchaseView = nil
+	end
 
 	for slot4, slot5 in pairs(slot0.downloads) do
 		slot5:Dispose()

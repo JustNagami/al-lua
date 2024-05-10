@@ -1,7 +1,7 @@
 slot0 = class("MapBuilderSSSS", import(".MapBuilderNormal"))
 slot1 = "ssss_buttons"
 
-slot0.preload = function(slot0, slot1)
+function slot0.preload(slot0, slot1)
 	slot2 = PoolMgr.GetInstance()
 
 	slot2:GetUI(uv0, true, function (slot0)
@@ -11,11 +11,11 @@ slot0.preload = function(slot0, slot1)
 	end)
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return MapBuilder.TYPESSSS
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
 	slot1 = slot0._parentTf
@@ -48,20 +48,20 @@ slot0.OnInit = function(slot0)
 	setParent(slot0.buttons, slot0.mainLayer)
 end
 
-slot0.Show = function(slot0)
-	uv0.super.Show(slot0)
+function slot0.ShowButtons(slot0)
+	uv0.super.ShowButtons(slot0)
 	setActive(slot0.buttons, true)
 	setParent(slot0.challengeBtn, slot0.leftChapter)
-	slot0.challengeBtn:SetSiblingIndex(6)
+	slot0.challengeBtn:SetSiblingIndex(5)
 	setParent(slot0.missionBtn, slot0.rightChapter)
 	slot0.missionBtn:SetSiblingIndex(0)
 end
 
-slot0.Hide = function(slot0)
+function slot0.HideButtons(slot0)
 	setParent(slot0.challengeBtn, slot0.buttons)
 	setParent(slot0.missionBtn, slot0.buttons)
 	setActive(slot0.buttons, false)
-	uv0.super.Hide(slot0)
+	uv0.super.HideButtons(slot0)
 end
 
 slot2 = {
@@ -72,7 +72,7 @@ slot2 = {
 	18997
 }
 
-slot0.UpdateButtons = function(slot0)
+function slot0.UpdateButtons(slot0)
 	uv0.super.UpdateButtons(slot0)
 	setActive(slot0.sceneParent.actEliteBtn, false)
 	setActive(slot0.challengeBtn, slot0.data:getConfig("type") ~= Map.ACTIVITY_HARD)
@@ -95,7 +95,7 @@ slot0.UpdateButtons = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	PoolMgr.GetInstance():ReturnUI(uv0, slot0.buttons)
 	uv1.super.OnDestroy(slot0)
 end

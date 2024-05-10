@@ -1,18 +1,18 @@
 slot0 = class("SurveyPage", import("...base.BaseActivityPage"))
 
-slot0.SetEnterTag = function(slot0)
+function slot0.SetEnterTag(slot0)
 	PlayerPrefs.SetInt("survey_enter_" .. tostring(slot0), 1)
 end
 
-slot0.IsEverEnter = function(slot0)
+function slot0.IsEverEnter(slot0)
 	return PlayerPrefs.HasKey("survey_enter_" .. tostring(slot0))
 end
 
-slot0.ClearEnterTag = function(slot0)
+function slot0.ClearEnterTag(slot0)
 	PlayerPrefs.DeleteKey("survey_enter_" .. tostring(slot0))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("BG")
 	slot0.bguo = slot0:findTF("BGUO")
 	slot0.goBtn = slot0:findTF("GO")
@@ -26,44 +26,14 @@ slot0.OnInit = function(slot0)
 		slot0.isDone = slot0.actProxy:isSurveyDone()
 	end
 
-	slot1 = {
-		x = -249.1,
-		y = -232.7
-	}
-	slot2 = {
-		x = -249.1,
-		y = -245
-	}
-
-	if PLATFORM_CODE == PLATFORM_CH then
-		if getProxy(UserProxy):GetCacheGatewayInServerLogined() == PLATFORM_ANDROID then
-			if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI then
-				setActive(slot0.bg, true)
-				setActive(slot0.bguo, false)
-				setActive(slot0.goBtn, true)
-				setLocalPosition(slot0.awardTF, slot1)
-			else
-				setActive(slot0.bg, false)
-				setActive(slot0.bguo, true)
-				setActive(slot0.goBtn, false)
-				setLocalPosition(slot0.awardTF, slot2)
-			end
-		elseif slot3 == PLATFORM_IPHONEPLAYER then
-			setActive(slot0.bg, true)
-			setActive(slot0.bguo, false)
-			setActive(slot0.goBtn, true)
-			setLocalPosition(slot0.awardTF, slot1)
-		end
-	else
-		setActive(slot0.bg, true)
-		setActive(slot0.bguo, false)
-		setActive(slot0.goBtn, true)
-		setLocalPosition(slot0.awardTF, slot1)
-	end
+	setActive(slot0.bg, true)
+	setActive(slot0.bguo, false)
+	setActive(slot0.goBtn, true)
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	setActive(slot0.maskTF, slot0.isDone == true)
+	setActive(slot0.goBtn, not slot0.isDone)
 
 	slot1 = pg.survey_data_template[slot0.surveyID].bonus[1]
 

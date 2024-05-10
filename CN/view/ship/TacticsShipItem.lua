@@ -1,10 +1,10 @@
 slot0 = class("TacticsShipItem", import(".DockyardShipItem"))
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
 	slot0.isLoaded = false
 
 	if IsNil(slot2) then
-		slot5 = function(slot0)
+		function slot5(slot0)
 			slot0.name = "ShipCardTpl"
 
 			setParent(slot0, uv0)
@@ -35,7 +35,7 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4)
 	slot0.isLoaded = true
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	if not slot0.isLoaded then
 		slot0.cacheShipVO = slot1
 	else
@@ -43,7 +43,7 @@ slot0.update = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateExpBuff = function(slot0)
+function slot0.UpdateExpBuff(slot0)
 end
 
 return slot0

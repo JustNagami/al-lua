@@ -1,14 +1,14 @@
 slot0 = class("GuildOfficeLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "GuildEmptyUI"
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.playerVO = slot1
 end
 
-slot0.SetGuild = function(slot0, slot1)
+function slot0.SetGuild(slot0, slot1)
 	slot0.guild = slot1
 	slot0.isAdmin = GuildMember.IsAdministrator(slot1:getSelfDuty())
 
@@ -17,12 +17,12 @@ slot0.SetGuild = function(slot0, slot1)
 	end
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.taskPage = GuildOfficeTaskPage.New(slot0._tf, slot0.event)
 	slot0.helpBtn = slot0:findTF("frame/help")
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot1 = slot0.guild
 	slot2 = pg.GuildPaintingMgr
 	slot2 = slot2:GetInstance()
@@ -40,30 +40,30 @@ slot0.didEnter = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.UpdateContribution = function(slot0)
+function slot0.UpdateContribution(slot0)
 	if slot0.taskPage and slot0.taskPage:GetLoaded() then
 		slot0.taskPage:OnUpdateContribution()
 	end
 end
 
-slot0.UpdateSupplyPanel = function(slot0)
+function slot0.UpdateSupplyPanel(slot0)
 	if slot0.taskPage and slot0.taskPage:GetLoaded() then
 		slot0.taskPage:OnUpdateSupplyPanel()
 	end
 end
 
-slot0.UpdateTask = function(slot0, slot1)
+function slot0.UpdateTask(slot0, slot1)
 	if slot0.taskPage and slot0.taskPage:GetLoaded() then
 		slot0.taskPage:OnUpdateTask(slot1)
 	end
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 	slot0:emit(uv0.ON_BACK)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0.taskPage:Destroy()
 
 	if isActive(pg.MsgboxMgr:GetInstance()._go) then

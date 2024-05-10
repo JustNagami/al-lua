@@ -1,12 +1,12 @@
 slot0 = class("HoloLiveLinkLinkSelectMediator", import("view.base.ContextMediator"))
 slot0.HUB_ID = 3
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:BindEvent()
 	slot0:requestDataFromServer()
 end
 
-slot0.requestDataFromServer = function(slot0)
+function slot0.requestDataFromServer(slot0)
 	slot1 = pg.ConnectionMgr.GetInstance()
 
 	slot1:Send(26101, {
@@ -22,17 +22,17 @@ slot0.requestDataFromServer = function(slot0)
 	end)
 end
 
-slot0.BindEvent = function(slot0)
+function slot0.BindEvent(slot0)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
 		GAME.SEND_MINI_GAME_OP_DONE
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == MiniGameProxy.ON_HUB_DATA_UPDATE then

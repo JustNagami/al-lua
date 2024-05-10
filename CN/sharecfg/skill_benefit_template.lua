@@ -2990,7 +2990,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735002] = {
-		skill_id = 17351,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735002,
@@ -3003,7 +3003,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735003] = {
-		skill_id = 17352,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735003,
@@ -3016,7 +3016,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735004] = {
-		skill_id = 17353,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735004,
@@ -3029,7 +3029,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735005] = {
-		skill_id = 17354,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735005,
@@ -3042,7 +3042,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735006] = {
-		skill_id = 17355,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735006,
@@ -3055,7 +3055,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735007] = {
-		skill_id = 17356,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735007,
@@ -3068,7 +3068,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735008] = {
-		skill_id = 17357,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735008,
@@ -3081,7 +3081,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735009] = {
-		skill_id = 17358,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735009,
@@ -3094,7 +3094,7 @@ pg.skill_benefit_template = {
 		world_extra_effect = {}
 	},
 	[1735010] = {
-		skill_id = 17359,
+		skill_id = 17350,
 		skill_group_level = 0,
 		type = 5,
 		id = 1735010,
@@ -3103,6 +3103,136 @@ pg.skill_benefit_template = {
 		limit = {},
 		effect = {
 			17360
+		},
+		world_extra_effect = {}
+	},
+	[1761001] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761001,
+		lv = 1,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761002] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761002,
+		lv = 2,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761003] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761003,
+		lv = 3,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761004] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761004,
+		lv = 4,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761005] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761005,
+		lv = 5,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761006] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761006,
+		lv = 6,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761007] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761007,
+		lv = 7,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761008] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761008,
+		lv = 8,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761009] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761009,
+		lv = 9,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
+		},
+		world_extra_effect = {}
+	},
+	[1761010] = {
+		skill_id = 17610,
+		skill_group_level = 0,
+		type = 5,
+		id = 1761010,
+		lv = 10,
+		skill_group = 0,
+		limit = {},
+		effect = {
+			17640
 		},
 		world_extra_effect = {}
 	},
@@ -4213,6 +4343,16 @@ pg.skill_benefit_template = {
 		1735008,
 		1735009,
 		1735010,
+		1761001,
+		1761002,
+		1761003,
+		1761004,
+		1761005,
+		1761006,
+		1761007,
+		1761008,
+		1761009,
+		1761010,
 		1951001,
 		1951002,
 		1951003,

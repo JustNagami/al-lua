@@ -1,6 +1,6 @@
 slot0 = class("BuyFurnitureCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.type
 	slot5 = getProxy(DormProxy)
@@ -36,7 +36,7 @@ slot0.execute = function(slot0, slot1)
 		return
 	end
 
-	slot9 = function()
+	function slot9()
 		slot0 = pg.ConnectionMgr.GetInstance()
 
 		slot0:Send(19006, {
@@ -72,18 +72,27 @@ slot0.execute = function(slot0, slot1)
 			}):getConfig("name")
 		end
 
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("charge_scene_buy_confirm", slot8, slot10),
-			onYes = function ()
-				uv0()
-			end
-		})
+		if _BackyardMsgBoxMgr then
+			_BackyardMsgBoxMgr:Show({
+				content = i18n("charge_scene_buy_confirm_backyard", slot8, slot10),
+				onYes = function ()
+					uv0()
+				end
+			})
+		else
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("charge_scene_buy_confirm", slot8, slot10),
+				onYes = function ()
+					uv0()
+				end
+			})
+		end
 	else
 		slot9()
 	end
 end
 
-slot0.UpdateLinkActivity = function(slot0, slot1)
+function slot0.UpdateLinkActivity(slot0, slot1)
 	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINK_COLLECT) and not slot3:isEnd() then
 		slot8 = slot3.id
 

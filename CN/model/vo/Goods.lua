@@ -34,7 +34,7 @@ slot0.Tec_Ship_Gift_Arg = {
 }
 slot0.CUR_PACKET_ID = 27
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 	assert(false, "does not call this function, use Create instead")
 end
 
@@ -74,29 +74,29 @@ slot1 = {
 	end
 }
 
-slot0.Create = function(slot0, slot1)
+function slot0.Create(slot0, slot1)
 	return switch(slot1, uv0, function (slot0, slot1)
 		return CommonCommodity.New(slot0, slot1)
 	end, slot0, slot1)
 end
 
-slot0.ExistFurniture = function(slot0)
+function slot0.ExistFurniture(slot0)
 	return pg.shop_furniture_relation[slot0] ~= nil
 end
 
-slot0.Id2FurnitureId = function(slot0)
+function slot0.Id2FurnitureId(slot0)
 	return pg.shop_furniture_relation[slot0].fur_id
 end
 
-slot0.FurnitureId2Id = function(slot0)
+function slot0.FurnitureId2Id(slot0)
 	return pg.shop_furniture_relation.get_id_list_by_fur_id[slot0] and slot1[1]
 end
 
-slot0.GetFurnitureConfig = function(slot0)
+function slot0.GetFurnitureConfig(slot0)
 	return pg.shop_furniture_relation[slot0]
 end
 
-slot0.Id2ShipSkinId = function(slot0)
+function slot0.Id2ShipSkinId(slot0)
 	return pg.shop_template[slot0].effect_args[1]
 end
 

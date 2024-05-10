@@ -1,10 +1,10 @@
 slot0 = class("WorldBossRankPage", import("....base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "WorldBossRankUI"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.numberTF1 = slot0:findTF("frame/list/number1")
 
 	setActive(slot0.numberTF1, false)
@@ -22,13 +22,13 @@ slot0.OnLoaded = function(slot0)
 	setActive(slot0.numberTF4, false)
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-slot0.Update = function(slot0, slot1, slot2)
+function slot0.Update(slot0, slot1, slot2)
 	slot0.bossProxy = slot1
 	slot0.bossId = slot2
 
@@ -36,7 +36,7 @@ slot0.Update = function(slot0, slot1, slot2)
 	slot0:UpdateRankList()
 end
 
-slot0.UpdateRankList = function(slot0)
+function slot0.UpdateRankList(slot0)
 	if slot0.bossProxy:GetRank(slot0.bossId) == nil then
 		slot0:emit(WorldBossMediator.ON_RANK_LIST, slot1)
 	else
@@ -44,7 +44,7 @@ slot0.UpdateRankList = function(slot0)
 	end
 end
 
-slot0.UpdateRanks = function(slot0, slot1)
+function slot0.UpdateRanks(slot0, slot1)
 	for slot5 = 1, 3 do
 		slot6 = slot1[slot5]
 
@@ -73,7 +73,7 @@ slot0.UpdateRanks = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateRank = function(slot0, slot1, slot2)
+function slot0.UpdateRank(slot0, slot1, slot2)
 	setText(slot1:Find("Text"), slot2.name)
 	setText(slot1:Find("damage/Text"), slot2.damage)
 	setActive(slot1:Find("view"), slot2.id ~= getProxy(PlayerProxy):getRawData().id)
@@ -82,16 +82,16 @@ slot0.UpdateRank = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.UpdateMyRank = function(slot0, slot1, slot2)
+function slot0.UpdateMyRank(slot0, slot1, slot2)
 	slot0:UpdateRank(slot1, slot2)
 	setText(slot1:Find("number"), slot2.number)
 end
 
-slot0.isActive = function(slot0)
+function slot0.isActive(slot0)
 	return isActive(slot0._tf)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

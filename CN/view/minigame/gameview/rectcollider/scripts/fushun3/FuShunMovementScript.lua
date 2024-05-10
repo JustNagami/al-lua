@@ -1,13 +1,14 @@
 slot0 = class("FuShunMovementScript", import("..RectBaseScript"))
 
-slot0.onInit = function(slot0)
+function slot0.onInit(slot0)
 	slot0._loop = true
 	slot0._active = true
 	slot0._weight = 1
 	slot0._scriptTime = nil
+	slot0._name = "FuShunMovementScript"
 end
 
-slot0.onStep = function(slot0)
+function slot0.onStep(slot0)
 	slot0._collisionInfo.playerInput.x = 1
 	slot3 = slot0._collisionInfo.velocityXSmoothing
 
@@ -26,10 +27,10 @@ slot0.onStep = function(slot0)
 	slot0._collisionInfo.velocityXSmoothing = slot3
 end
 
-slot0.onLateStep = function(slot0)
+function slot0.onLateStep(slot0)
 end
 
-slot0.onTrigger = function(slot0)
+function slot0.onTrigger(slot0)
 	if Application.isEditor and slot0._triggerKey == KeyCode.A or slot0._triggerKey == KeyCode.D then
 		slot1 = slot0._keyInfo:getKeyCode(KeyCode.A)
 		slot2 = slot0._keyInfo:getKeyCode(KeyCode.D)

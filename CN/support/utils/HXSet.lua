@@ -16,7 +16,7 @@ slot0.nameCodeMap_EN = {
 	IJN = "IRN"
 }
 
-slot0.init = function()
+function slot0.init()
 	for slot3, slot4 in pairs(pg.name_code) do
 		slot5 = nil
 
@@ -65,7 +65,7 @@ slot0.init = function()
 	uv0.update()
 end
 
-slot0.calcLocalizationUse = function()
+function slot0.calcLocalizationUse()
 	if PLATFORM_CODE == PLATFORM_CH then
 		if PlayerPrefs.HasKey("localization_use") then
 			PlayerPrefs.DeleteKey(slot0)
@@ -92,7 +92,7 @@ slot0.calcLocalizationUse = function()
 	end
 end
 
-slot0.switchCodeMode = function()
+function slot0.switchCodeMode()
 	if pg.gameset.code_switch.key_value == 1 or uv0.codeMode then
 		uv0.codeMode = not uv0.codeMode
 
@@ -103,13 +103,14 @@ slot0.switchCodeMode = function()
 	end
 end
 
-slot0.isHXNation = function(slot0)
+function slot0.isHXNation(slot0)
 	uv0.nationHX = uv0.nationHX or {
 		[Nation.US] = true,
 		[Nation.JP] = true,
 		[Nation.DE] = true,
 		[Nation.CN] = true,
 		[Nation.ITA] = true,
+		[Nation.SN] = true,
 		[Nation.MNF] = true,
 		[Nation.META] = true
 	}
@@ -117,7 +118,7 @@ slot0.isHXNation = function(slot0)
 	return uv0.nationHX[slot0]
 end
 
-slot0.update = function()
+function slot0.update()
 	slot0 = uv0.codeMode and {} or uv0.nameCodeMap
 	slot1 = uv0.codeMode and {} or uv0.nameEquipCodeMap
 	slot2 = uv0.codeMode and {} or uv0.nameCodeMap_EN
@@ -229,21 +230,21 @@ slot0.update = function()
 	})
 end
 
-slot0.hxLan = function(slot0, slot1)
+function slot0.hxLan(slot0, slot1)
 	return string.gsub(slot0 or "", "{namecode:(%d+).-}", function (slot0)
 		return pg.name_code[tonumber(slot0)] and ((uv0.codeMode or uv1) and slot1.name or slot1.code)
 	end)
 end
 
-slot0.isHx = function()
+function slot0.isHx()
 	return not uv0.codeMode
 end
 
-slot0.isHxSkin = function()
+function slot0.isHxSkin()
 	return not uv0.antiSkinMode
 end
 
-slot0.isHxPropose = function()
+function slot0.isHxPropose()
 	return not uv0.codeMode and PLATFORM_CODE == PLATFORM_CH and LOCK_PROPOSE_SHIP
 end
 
@@ -263,7 +264,7 @@ slot0.folderBundle = {
 	"paintingface"
 }
 
-slot0.needShift = function(slot0)
+function slot0.needShift(slot0)
 	for slot4, slot5 in ipairs(uv0.hxPathList) do
 		if string.find(slot0, slot5) then
 			return true
@@ -273,7 +274,7 @@ slot0.needShift = function(slot0)
 	return false
 end
 
-slot0.isFolderBundle = function(slot0)
+function slot0.isFolderBundle(slot0)
 	for slot4, slot5 in ipairs(uv0.folderBundle) do
 		if string.find(slot0, slot5) then
 			return true
@@ -283,7 +284,7 @@ slot0.isFolderBundle = function(slot0)
 	return false
 end
 
-slot0.autoHxShift = function(slot0, slot1)
+function slot0.autoHxShift(slot0, slot1)
 	if uv0.isHx() then
 		if string.find(slot0, "live2d") then
 			if PathMgr.FileExists(PathMgr.getAssetBundle(slot0 .. slot1 .. "_hx")) then
@@ -301,7 +302,7 @@ slot0.autoHxShift = function(slot0, slot1)
 	return slot0, slot1
 end
 
-slot0.autoHxShiftPath = function(slot0, slot1, slot2)
+function slot0.autoHxShiftPath(slot0, slot1, slot2)
 	if uv0.isHx() then
 		if string.find(slot0, "live2d") then
 			if slot2 then

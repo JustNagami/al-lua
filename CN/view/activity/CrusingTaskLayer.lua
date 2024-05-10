@@ -1,14 +1,14 @@
 slot0 = class("CrusingTaskLayer", import("view.base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CrusingTaskUI"
 end
 
-slot0.tempCache = function(slot0)
+function slot0.tempCache(slot0)
 	return true
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.rtBg = slot0._tf:Find("bg")
 	slot1 = slot0._tf:Find("window")
 	slot0.itemQuick = slot1:Find("item_quick")
@@ -31,7 +31,7 @@ slot0.init = function(slot0)
 	slot0.rtWeekToggles = slot1:Find("week_list")
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:BlurPanel(slot0._tf)
@@ -137,10 +137,10 @@ slot0.didEnter = function(slot0)
 	end
 
 	slot0:updatePhaseInfo()
-	LoadImageSpriteAtlasAsync(getDropIcon({
+	LoadImageSpriteAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = slot0.ptId
-	}), "", slot0.sliderPt:Find("icon"), true)
+	}):getIcon(), "", slot0.sliderPt:Find("icon"), true)
 	onButton(slot0, slot0.itemQuick, function ()
 		uv0:emit(uv1.ON_DROP, {
 			count = 1,
@@ -148,10 +148,10 @@ slot0.didEnter = function(slot0)
 			id = Item.QUICK_TASK_PASS_TICKET_ID
 		})
 	end, SFX_PANEL)
-	LoadImageSpriteAtlasAsync(getDropIcon({
+	LoadImageSpriteAtlasAsync(Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = Item.QUICK_TASK_PASS_TICKET_ID
-	}), "", slot0.itemQuick:Find("icon"), true)
+	}):getIcon(), "", slot0.itemQuick:Find("icon"), true)
 	onButton(slot0, slot0.itemQuick:Find("plus"), function ()
 		shoppingBatch(61017, {
 			id = Item.QUICK_TASK_PASS_TICKET_ID
@@ -161,11 +161,11 @@ slot0.didEnter = function(slot0)
 	setText(slot0.textComplete:Find("Text"), i18n("cruise_task_tips"))
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-slot0.setActivity = function(slot0, slot1)
+function slot0.setActivity(slot0, slot1)
 	slot0.activity = slot1
 
 	for slot5, slot6 in pairs(slot1:GetCrusingInfo()) do
@@ -173,7 +173,7 @@ slot0.setActivity = function(slot0, slot1)
 	end
 
 	slot0.taskGroupList = {}
-	slot2 = math.floor((pg.TimeMgr.GetInstance():GetServerTime() - slot1:getStartTime()) / 86400) + 1
+	slot2 = slot1:getNDay()
 	slot6 = "config_data"
 
 	for slot6, slot7 in ipairs(slot1:getConfig(slot6)) do
@@ -185,7 +185,7 @@ slot0.setActivity = function(slot0, slot1)
 	end
 end
 
-slot0.updatePhaseInfo = function(slot0)
+function slot0.updatePhaseInfo(slot0)
 	setText(slot0.textPhase, i18n("cruise_task_phase", slot0.phase))
 
 	if slot0.phase < #slot0.awardList then
@@ -201,7 +201,7 @@ slot0.updatePhaseInfo = function(slot0)
 	end
 end
 
-slot0.updateTaskInfo = function(slot0)
+function slot0.updateTaskInfo(slot0)
 	underscore.each(slot0.tempTaskGroup, function (slot0)
 		underscore.each(slot0, function (slot0)
 			uv0 = uv0 + 1
@@ -214,11 +214,11 @@ slot0.updateTaskInfo = function(slot0)
 	setText(slot0.textComplete, 0 .. "/" .. 0)
 end
 
-slot0.updateItemInfo = function(slot0)
+function slot0.updateItemInfo(slot0)
 	setText(slot0.itemQuick, getProxy(BagProxy):getItemCountById(Item.QUICK_TASK_PASS_TICKET_ID))
 end
 
-slot0.updateTaskGroup = function(slot0, slot1, slot2)
+function slot0.updateTaskGroup(slot0, slot1, slot2)
 	slot9 = "week"
 	slot8 = true
 
@@ -275,7 +275,7 @@ slot0.updateTaskGroup = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateTaskDisplay = function(slot0, slot1, slot2)
+function slot0.updateTaskDisplay(slot0, slot1, slot2)
 	setText(slot1:Find("desc"), slot2:getConfig("desc"))
 
 	slot3 = slot2:getProgress()
@@ -307,7 +307,7 @@ slot0.updateTaskDisplay = function(slot0, slot1, slot2)
 	end, SFX_CONFIRM)
 end
 
-slot0.updateCurrentTaskGroup = function(slot0)
+function slot0.updateCurrentTaskGroup(slot0)
 	triggerToggle(slot0.rtWeekToggles:Find(slot0.weekToggle), true)
 end
 

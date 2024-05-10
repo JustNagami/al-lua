@@ -1,6 +1,6 @@
 slot0 = class("ActivityBuff", import(".CommonBuff"))
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	uv0.super.Ctor(slot0, {
 		id = slot2,
 		timestamp = slot3
@@ -9,11 +9,11 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	slot0.activityId = slot1
 end
 
-slot0.IsActiveType = function(slot0)
+function slot0.IsActiveType(slot0)
 	return true
 end
 
-slot1 = function(slot0, slot1, slot2)
+function slot1(slot0, slot1, slot2)
 	if slot1 == "<=" then
 		return slot0 <= slot2
 	elseif slot1 == "<" then
@@ -29,7 +29,7 @@ slot1 = function(slot0, slot1, slot2)
 	return false
 end
 
-slot0.isActivate = function(slot0)
+function slot0.isActivate(slot0)
 	slot1 = false
 
 	if getProxy(ActivityProxy):getActivityById(slot0.activityId) and not slot3:isEnd() then
@@ -65,11 +65,11 @@ slot0.isActivate = function(slot0)
 	return slot1
 end
 
-slot0.getLeftTime = function(slot0)
+function slot0.getLeftTime(slot0)
 	return getProxy(ActivityProxy):getActivityById(slot0.activityId).stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-slot0.isAddedBuff = function(slot0)
+function slot0.isAddedBuff(slot0)
 	slot1 = true
 
 	if getProxy(ActivityProxy):getActivityById(slot0.activityId) and not slot3:isEnd() and slot0:getConfig("benefit_condition")[1] == "pt" then

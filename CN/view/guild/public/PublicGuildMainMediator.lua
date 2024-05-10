@@ -2,7 +2,7 @@ slot0 = class("PublicGuildMainMediator", import("...base.ContextMediator"))
 slot0.ON_COMMIT = "PublicGuildMainMediator:ON_COMMIT"
 slot0.UPGRADE_TECH = "PublicGuildMainMediator:UPGRADE_TECH"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_COMMIT, function (slot0, slot1)
 		uv0:sendNotification(GAME.PUBLIC_GUILD_COMMIT_DONATE, {
 			id = slot1
@@ -17,7 +17,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:SetPlayer(getProxy(PlayerProxy):getData())
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.PUBLIC_GUILD_COMMIT_DONATE_DONE,
 		GAME.PUBLIC_GUILD_REFRESH_DONATE_LIST_DONE,
@@ -27,7 +27,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.PUBLIC_GUILD_COMMIT_DONATE_DONE then

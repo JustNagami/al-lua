@@ -15,7 +15,7 @@ require("Mgr/Story/Include")
 
 slot10 = true
 
-slot11 = function(...)
+function slot11(...)
 	if uv0 and IsUnityEditor then
 		originalPrint(...)
 	end
@@ -29,7 +29,7 @@ slot12 = {
 	""
 }
 
-slot13 = function(slot0)
+function slot13(slot0)
 	slot1 = uv0[PLATFORM_CODE]
 
 	if slot0 == "index" then
@@ -63,7 +63,7 @@ slot13 = function(slot0)
 	return slot3 and slot4
 end
 
-slot0.SetData = function(slot0, slot1)
+function slot0.SetData(slot0, slot1)
 	slot0.playedList = {}
 
 	for slot5, slot6 in ipairs(slot1) do
@@ -101,17 +101,17 @@ slot0.SetData = function(slot0, slot1)
 	end
 end
 
-slot0.SetPlayedFlag = function(slot0, slot1)
+function slot0.SetPlayedFlag(slot0, slot1)
 	uv0("Update story id", slot1)
 
 	slot0.playedList[slot1] = true
 end
 
-slot0.GetPlayedFlag = function(slot0, slot1)
+function slot0.GetPlayedFlag(slot0, slot1)
 	return slot0.playedList[slot1]
 end
 
-slot0.IsPlayed = function(slot0, slot1, slot2)
+function slot0.IsPlayed(slot0, slot1, slot2)
 	slot3, slot4 = slot0:StoryName2StoryId(slot1)
 	slot5 = slot0:GetPlayedFlag(slot3)
 	slot6 = true
@@ -123,7 +123,7 @@ slot0.IsPlayed = function(slot0, slot1, slot2)
 	return slot5 and slot6
 end
 
-slot14 = function(slot0)
+function slot14(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0) do
@@ -133,7 +133,7 @@ slot14 = function(slot0)
 	return slot1
 end
 
-slot0.StoryName2StoryId = function(slot0, slot1)
+function slot0.StoryName2StoryId(slot0, slot1)
 	if not uv0.indexs then
 		uv0.indexs = uv1(uv2("index"))
 	end
@@ -145,7 +145,7 @@ slot0.StoryName2StoryId = function(slot0, slot1)
 	return uv0.indexs[slot1], uv0.againIndexs[slot1]
 end
 
-slot0.StoryId2StoryName = function(slot0, slot1)
+function slot0.StoryId2StoryName(slot0, slot1)
 	if not uv0.indexIds then
 		uv0.indexIds = uv1("index")
 	end
@@ -157,7 +157,7 @@ slot0.StoryId2StoryName = function(slot0, slot1)
 	return uv0.indexIds[slot1], uv0.againIndexIds[slot1]
 end
 
-slot0.StoryLinkNames = function(slot0, slot1)
+function slot0.StoryLinkNames(slot0, slot1)
 	if not uv0.linkNames then
 		uv0.linkNames = uv1("index_link")
 	end
@@ -165,11 +165,11 @@ slot0.StoryLinkNames = function(slot0, slot1)
 	return uv0.linkNames[slot1]
 end
 
-slot0._GetStoryPaintingsByName = function(slot0, slot1)
+function slot0._GetStoryPaintingsByName(slot0, slot1)
 	return slot1:GetUsingPaintingNames()
 end
 
-slot0.GetStoryPaintingsByName = function(slot0, slot1)
+function slot0.GetStoryPaintingsByName(slot0, slot1)
 	if not uv0(slot1) then
 		uv1("not exist story file")
 
@@ -179,7 +179,7 @@ slot0.GetStoryPaintingsByName = function(slot0, slot1)
 	return slot0:_GetStoryPaintingsByName(Story.New(slot2, false))
 end
 
-slot0.GetStoryPaintingsByNameList = function(slot0, slot1)
+function slot0.GetStoryPaintingsByNameList(slot0, slot1)
 	slot2 = {}
 	slot3 = {}
 
@@ -198,25 +198,25 @@ slot0.GetStoryPaintingsByNameList = function(slot0, slot1)
 	return slot2
 end
 
-slot0.GetStoryPaintingsById = function(slot0, slot1)
+function slot0.GetStoryPaintingsById(slot0, slot1)
 	return slot0:GetStoryPaintingsByIdList({
 		slot1
 	})
 end
 
-slot0.GetStoryPaintingsByIdList = function(slot0, slot1)
+function slot0.GetStoryPaintingsByIdList(slot0, slot1)
 	return slot0:GetStoryPaintingsByNameList(_.map(slot1, function (slot0)
 		return uv0:StoryId2StoryName(slot0)
 	end))
 end
 
-slot0.ShouldDownloadRes = function(slot0, slot1)
+function slot0.ShouldDownloadRes(slot0, slot1)
 	return _.any(slot0:GetStoryPaintingsByName(slot1), function (slot0)
 		return PaintingConst.VerifyPaintingFileName(slot0)
 	end)
 end
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	slot0.state = uv0
 	slot0.playedList = {}
 	slot0.playQueue = {}
@@ -239,7 +239,8 @@ slot0.Init = function(slot0, slot1)
 			DialogueStoryPlayer.New(slot0),
 			BgStoryPlayer.New(slot0),
 			CarouselPlayer.New(slot0),
-			VedioStoryPlayer.New(slot0)
+			VedioStoryPlayer.New(slot0),
+			CastStoryPlayer.New(slot0)
 		}
 		uv0.setSpeedPanel = StorySetSpeedPanel.New(uv0._tf)
 		uv0.recordPanel = NewStoryRecordPanel.New()
@@ -255,7 +256,7 @@ slot0.Init = function(slot0, slot1)
 	end)
 end
 
-slot0.Play = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.Play(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	table.insert(slot0.playQueue, {
 		slot1,
 		slot2
@@ -283,7 +284,7 @@ slot0.Play = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	end
 end
 
-slot0.Puase = function(slot0)
+function slot0.Puase(slot0)
 	if slot0.state ~= uv0 then
 		uv1("state is not 'running'")
 
@@ -297,7 +298,7 @@ slot0.Puase = function(slot0)
 	end
 end
 
-slot0.Resume = function(slot0)
+function slot0.Resume(slot0)
 	if slot0.state ~= uv0 then
 		uv1("state is not 'pause'")
 
@@ -311,7 +312,7 @@ slot0.Resume = function(slot0)
 	end
 end
 
-slot0.Stop = function(slot0)
+function slot0.Stop(slot0)
 	if slot0.state ~= uv0 then
 		uv1("state is not 'running'")
 
@@ -325,14 +326,14 @@ slot0.Stop = function(slot0)
 	end
 end
 
-slot0.PlayForWorld = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function slot0.PlayForWorld(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot0.optionSelCodes = slot2 or {}
 	slot0.autoPlayFlag = slot6
 
 	slot0:Play(slot1, slot3, slot4, slot5, slot7, true)
 end
 
-slot0.ForceAutoPlay = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.ForceAutoPlay(slot0, slot1, slot2, slot3, slot4)
 	slot0.autoPlayFlag = true
 
 	slot0:Play(slot1, function (slot0, slot1)
@@ -340,7 +341,7 @@ slot0.ForceAutoPlay = function(slot0, slot1, slot2, slot3, slot4)
 	end, slot3, slot4, true)
 end
 
-slot0.ForceManualPlay = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.ForceManualPlay(slot0, slot1, slot2, slot3, slot4)
 	slot0.banPlayFlag = true
 
 	slot0:Play(slot1, function (slot0, slot1)
@@ -348,7 +349,7 @@ slot0.ForceManualPlay = function(slot0, slot1, slot2, slot3, slot4)
 	end, slot3, slot4, true)
 end
 
-slot0.SeriesPlay = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.SeriesPlay(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot7 = {}
 
 	for slot11, slot12 in ipairs(slot1) do
@@ -360,12 +361,12 @@ slot0.SeriesPlay = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	seriesAsync(slot7, slot2)
 end
 
-slot0.SoloPlay = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.SoloPlay(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	uv0("Play Story:", slot1)
 
 	slot7 = 1
 
-	slot8 = function(slot0, slot1)
+	function slot8(slot0, slot1)
 		uv0 = uv0 - 1
 
 		if uv1 and uv0 == 0 then
@@ -407,9 +408,11 @@ slot0.SoloPlay = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 			uv0:CheckResDownload(uv0.storyScript, slot0)
 		end,
 		function (slot0)
+			originalPrint("start load story window...")
 			uv0:CheckAndLoadDialogue(uv0.storyScript, slot0)
 		end
 	}, function ()
+		originalPrint("enter story...")
 		uv0:OnStart()
 
 		slot0 = {}
@@ -417,6 +420,8 @@ slot0.SoloPlay = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 
 		for slot4, slot5 in ipairs(uv0.storyScript.steps) do
 			table.insert(slot0, function (slot0)
+				pg.m02:sendNotification(GAME.STORY_NEXT)
+
 				slot1 = uv0.players[uv1:GetMode()]
 				uv0.currPlayer = slot1
 
@@ -430,7 +435,7 @@ slot0.SoloPlay = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	end)
 end
 
-slot0.CheckResDownload = function(slot0, slot1, slot2)
+function slot0.CheckResDownload(slot0, slot1, slot2)
 	slot3 = slot0:_GetStoryPaintingsByName(slot1)
 
 	originalPrint("start download res " .. table.concat(slot3, ","))
@@ -448,13 +453,13 @@ slot0.CheckResDownload = function(slot0, slot1, slot2)
 	})
 end
 
-slot15 = function(slot0, slot1)
+function slot15(slot0, slot1)
 	ResourceMgr.Inst:getAssetAsync("ui/" .. slot0, slot0, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		uv0(slot0)
 	end), true, true)
 end
 
-slot0.CheckAndLoadDialogue = function(slot0, slot1, slot2)
+function slot0.CheckAndLoadDialogue(slot0, slot1, slot2)
 	if not slot0.dialogueContainer:Find(slot1:GetDialogueStyleName()) then
 		uv0("NewStoryDialogue" .. slot3, function (slot0)
 			Object.Instantiate(slot0, uv0.dialogueContainer).name = uv1
@@ -466,7 +471,7 @@ slot0.CheckAndLoadDialogue = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.CheckState = function(slot0)
+function slot0.CheckState(slot0)
 	if slot0.state == uv0 or slot0.state == uv1 or slot0.state == uv2 then
 		return false
 	end
@@ -474,8 +479,9 @@ slot0.CheckState = function(slot0)
 	return true
 end
 
-slot0.RegistSkipBtn = function(slot0)
-	slot1 = function()
+function slot0.RegistSkipBtn(slot0)
+	function slot1()
+		uv0:TrackingSkip()
 		uv0.storyScript:SkipAll()
 		uv0.currPlayer:NextOneImmediately()
 	end
@@ -516,7 +522,7 @@ slot0.RegistSkipBtn = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.RegistAutoBtn = function(slot0)
+function slot0.RegistAutoBtn(slot0)
 	onButton(slot0, slot0.autoBtn, function ()
 		if uv0:IsStopping() or uv0:IsPausing() then
 			return
@@ -546,21 +552,17 @@ slot0.RegistAutoBtn = function(slot0)
 	slot0.isAutoPlay = slot1
 end
 
-slot0.RegistRecordBtn = function(slot0)
-	slot1 = false
-
+function slot0.RegistRecordBtn(slot0)
 	onButton(slot0, slot0.recordBtn, function ()
 		if uv0.storyScript:GetAutoPlayFlag() then
 			return
 		end
 
-		uv1 = not uv1
-
-		uv0.recordPanel[uv1 and "Show" or "Hide"](uv0.recordPanel, uv0.recorder)
+		uv0.recordPanel.Show(uv0.recordPanel, uv0.recorder)
 	end, SFX_PANEL)
 end
 
-slot0.TriggerAutoBtn = function(slot0)
+function slot0.TriggerAutoBtn(slot0)
 	if not slot0:IsRunning() then
 		return
 	end
@@ -568,7 +570,7 @@ slot0.TriggerAutoBtn = function(slot0)
 	triggerButton(slot0.autoBtn)
 end
 
-slot0.TriggerSkipBtn = function(slot0)
+function slot0.TriggerSkipBtn(slot0)
 	if not slot0:IsRunning() then
 		return
 	end
@@ -576,7 +578,7 @@ slot0.TriggerSkipBtn = function(slot0)
 	triggerButton(slot0.skipBtn)
 end
 
-slot0.ForEscPress = function(slot0)
+function slot0.ForEscPress(slot0)
 	if slot0.recordPanel:IsShowing() then
 		slot0.recordPanel:Hide()
 	else
@@ -584,19 +586,19 @@ slot0.ForEscPress = function(slot0)
 	end
 end
 
-slot0.UpdatePlaySpeed = function(slot0, slot1)
+function slot0.UpdatePlaySpeed(slot0, slot1)
 	if slot0:IsRunning() and slot0.storyScript then
 		slot0.storyScript:SetPlaySpeed(slot1)
 	end
 end
 
-slot0.GetPlaySpeed = function(slot0)
+function slot0.GetPlaySpeed(slot0)
 	if slot0:IsRunning() and slot0.storyScript then
 		return slot0.storyScript:GetPlaySpeed()
 	end
 end
 
-slot0.OnStart = function(slot0)
+function slot0.OnStart(slot0)
 	slot0.recorder:Clear()
 	removeOnButton(slot0._go)
 	removeOnButton(slot0.skipBtn)
@@ -605,6 +607,7 @@ slot0.OnStart = function(slot0)
 
 	slot0.state = uv0
 
+	slot0:TrackingStart()
 	pg.m02:sendNotification(GAME.STORY_BEGIN, slot0.storyScript:GetName())
 
 	slot4 = {
@@ -631,18 +634,40 @@ slot0.OnStart = function(slot0)
 	slot0:RegistRecordBtn()
 end
 
-slot0.UpdateAutoBtn = function(slot0)
+function slot0.TrackingStart(slot0)
+	slot0.trackFlag = false
+
+	if not slot0.storyScript then
+		return
+	end
+
+	if not slot0:GetPlayedFlag(slot0:StoryName2StoryId(slot0.storyScript:GetName())) then
+		TrackConst.StoryStart(slot1)
+
+		slot0.trackFlag = true
+	end
+end
+
+function slot0.TrackingSkip(slot0)
+	if not slot0.trackFlag or not slot0.storyScript then
+		return
+	end
+
+	TrackConst.StorySkip(slot0:StoryName2StoryId(slot0.storyScript:GetName()))
+end
+
+function slot0.UpdateAutoBtn(slot0)
 	slot0:ClearAutoBtn(slot0.storyScript:GetAutoPlayFlag())
 end
 
-slot0.ClearAutoBtn = function(slot0, slot1)
+function slot0.ClearAutoBtn(slot0, slot1)
 	slot0.autoBtnImg.color = slot1 and uv0 or uv1
 	slot0.isAutoPlay = slot1
 
 	slot0.setSpeedPanel[slot1 and "Show" or "Hide"](slot0.setSpeedPanel)
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	slot0.recorder:Clear()
 	slot0.recordPanel:Hide()
 
@@ -688,7 +713,7 @@ slot0.Clear = function(slot0)
 	slot0.bgmVolumeValue = nil
 end
 
-slot0.OnEnd = function(slot0, slot1)
+function slot0.OnEnd(slot0, slot1)
 	slot0:Clear()
 
 	if slot0.state == uv0 or slot0.state == uv1 then
@@ -716,7 +741,7 @@ slot0.OnEnd = function(slot0, slot1)
 	end
 end
 
-slot0.OnSceneEnter = function(slot0, slot1)
+function slot0.OnSceneEnter(slot0, slot1)
 	if not slot0.scenes then
 		slot0.scenes = {}
 	end
@@ -724,7 +749,7 @@ slot0.OnSceneEnter = function(slot0, slot1)
 	slot0.scenes[slot1.view] = true
 end
 
-slot0.OnSceneExit = function(slot0, slot1)
+function slot0.OnSceneExit(slot0, slot1)
 	if not slot0.scenes then
 		return
 	end
@@ -732,25 +757,25 @@ slot0.OnSceneExit = function(slot0, slot1)
 	slot0.scenes[slot1.view] = nil
 end
 
-slot0.IsReView = function(slot0)
+function slot0.IsReView(slot0)
 	slot1 = getProxy(ContextProxy):GetPrevContext(1)
 
 	return slot0.scenes[WorldMediaCollectionScene.__cname] == true or slot1 and slot1.mediator == WorldMediaCollectionMediator
 end
 
-slot0.IsRunning = function(slot0)
+function slot0.IsRunning(slot0)
 	return slot0.state == uv0
 end
 
-slot0.IsStopping = function(slot0)
+function slot0.IsStopping(slot0)
 	return slot0.state == uv0
 end
 
-slot0.IsPausing = function(slot0)
+function slot0.IsPausing(slot0)
 	return slot0.state == uv0
 end
 
-slot0.IsAutoPlay = function(slot0)
+function slot0.IsAutoPlay(slot0)
 	if slot0.banPlayFlag then
 		return false
 	end
@@ -758,15 +783,15 @@ slot0.IsAutoPlay = function(slot0)
 	return getProxy(SettingsProxy):GetStoryAutoPlayFlag() or slot0.autoPlayFlag == true
 end
 
-slot0.GetRectSize = function(slot0)
+function slot0.GetRectSize(slot0)
 	return Vector2(slot0._tf.rect.width, slot0._tf.rect.height)
 end
 
-slot0.AddRecord = function(slot0, slot1)
+function slot0.AddRecord(slot0, slot1)
 	slot0.recorder:Add(slot1)
 end
 
-slot0.Quit = function(slot0)
+function slot0.Quit(slot0)
 	slot0.recorder:Dispose()
 	slot0.recordPanel:Dispose()
 	slot0.setSpeedPanel:Dispose()
@@ -778,7 +803,7 @@ slot0.Quit = function(slot0)
 	slot0.scenes = {}
 end
 
-slot0.Fix = function(slot0)
+function slot0.Fix(slot0)
 	slot4 = {
 		10020,
 		10021,

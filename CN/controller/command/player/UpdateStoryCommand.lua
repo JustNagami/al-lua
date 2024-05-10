@@ -1,6 +1,6 @@
 slot0 = class("UpdateStoryCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	assert(type(slot1:getBody().storyId) == "string")
 
 	if not pg.ConnectionMgr.GetInstance():getConnection() or not pg.ConnectionMgr.GetInstance():isConnected() then
@@ -13,7 +13,7 @@ slot0.execute = function(slot0, slot1)
 
 	slot5 = {}
 
-	slot6 = function(slot0, slot1)
+	function slot6(slot0, slot1)
 		pg.ConnectionMgr.GetInstance():Send(11017, {
 			story_id = slot0
 		}, 11018, function (slot0)
@@ -26,7 +26,7 @@ slot0.execute = function(slot0, slot1)
 		end)
 	end
 
-	slot7 = function(slot0, slot1)
+	function slot7(slot0, slot1)
 		slot2, slot3 = uv0:StoryName2StoryId(slot0)
 		slot4 = {}
 

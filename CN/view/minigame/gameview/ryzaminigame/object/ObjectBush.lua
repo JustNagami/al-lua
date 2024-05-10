@@ -1,22 +1,22 @@
 slot0 = class("ObjectBush", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
 
-slot0.GetBaseOrder = function(slot0)
+function slot0.GetBaseOrder(slot0)
 	return 3
 end
 
-slot0.CellPassability = function(slot0)
+function slot0.CellPassability(slot0)
 	return true
 end
 
-slot0.FirePassability = function(slot0)
+function slot0.FirePassability(slot0)
 	return 0
 end
 
-slot0.InitUI = function(slot0, slot1)
+function slot0.InitUI(slot0, slot1)
 	slot0.hideCount = 0
 end
 
-slot0.InitRegister = function(slot0, slot1)
+function slot0.InitRegister(slot0, slot1)
 	slot2 = slot0._tf
 	slot2 = slot2:Find("Image")
 	slot3 = slot2:GetComponent(typeof(Animator))
@@ -62,7 +62,7 @@ slot0.InitRegister = function(slot0, slot1)
 	})
 end
 
-slot0.ChangeHide = function(slot0, slot1)
+function slot0.ChangeHide(slot0, slot1)
 	slot0.hideCount = slot0.hideCount + (slot1 and 1 or -1)
 	GetOrAddComponent(slot0._tf, typeof(CanvasGroup)).alpha = slot0.hideCount > 0 and 0.5 or 1
 end

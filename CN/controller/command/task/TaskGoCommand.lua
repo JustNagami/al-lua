@@ -1,6 +1,6 @@
 slot0 = class("TaskGoCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot4 = getProxy(ChapterProxy)
 
 	if slot1:getBody().taskVO:getConfig("scene") and #slot5 > 0 then
@@ -220,8 +220,8 @@ slot0.execute = function(slot0, slot1)
 		end
 	elseif slot9 == 17 then
 		if slot10 == 0 then
-			slot0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
-				fleetType = CommandRoomScene.FLEET_TYPE_COMMON
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
+				fleetType = CommanderCatScene.FLEET_TYPE_COMMON
 			})
 		end
 	elseif slot9 == 18 then

@@ -4,13 +4,13 @@ slot0.Battle.BattleBuffDamageWall = class("BattleBuffDamageWall", slot0.Battle.B
 slot0.Battle.BattleBuffDamageWall.__name = "BattleBuffDamageWall"
 slot1 = slot0.Battle.BattleBuffDamageWall
 
-slot1.Ctor = function(slot0, slot1)
+function slot1.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0._cldList = {}
 end
 
-slot1.SetArgs = function(slot0, slot1, slot2)
+function slot1.SetArgs(slot0, slot1, slot2)
 	uv0.super.SetArgs(slot0, slot1, slot2)
 	slot0._wall:SetCldObjType(uv1.Battle.BattleWallData.CLD_OBJ_TYPE_SHIP)
 
@@ -58,7 +58,7 @@ slot1.SetArgs = function(slot0, slot1, slot2)
 	slot0._atkAttr = uv1.Battle.BattleAttr.GetAtkAttrByType(slot0._attr, slot0._atkAttrType)
 end
 
-slot1.onWallCld = function(slot0, slot1)
+function slot1.onWallCld(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		if not table.contains(slot0._cldList, slot6) then
 			slot0._dataProxy:HandleWallDamage(slot0, slot6)
@@ -87,39 +87,39 @@ slot1.onWallCld = function(slot0, slot1)
 	end
 end
 
-slot1.GetDamageEnhance = function(slot0)
+function slot1.GetDamageEnhance(slot0)
 	return 1
 end
 
-slot1.GetHost = function(slot0)
+function slot1.GetHost(slot0)
 	return slot0._unit
 end
 
-slot1.GetWeaponHostAttr = function(slot0)
+function slot1.GetWeaponHostAttr(slot0)
 	return uv0.Battle.BattleAttr.GetAttr(slot0)
 end
 
-slot1.GetWeapon = function(slot0)
+function slot1.GetWeapon(slot0)
 	return slot0._forgeWeapon
 end
 
-slot1.GetWeaponTempData = function(slot0)
+function slot1.GetWeaponTempData(slot0)
 	return slot0._forgeWeaponTmp
 end
 
-slot1.GetWeaponAtkAttr = function(slot0)
+function slot1.GetWeaponAtkAttr(slot0)
 	return slot0._atkAttr
 end
 
-slot1.GetCorrectedDMG = function(slot0)
+function slot1.GetCorrectedDMG(slot0)
 	return slot0._damage
 end
 
-slot1.GetTemplate = function(slot0)
+function slot1.GetTemplate(slot0)
 	return slot0._forgeTmp
 end
 
-slot1.Clear = function(slot0)
+function slot1.Clear(slot0)
 	slot0._cldList = nil
 
 	uv0.super.Clear(slot0)

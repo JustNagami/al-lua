@@ -4,11 +4,11 @@ slot0.Battle.BattleLabelWave = class("BattleLabelWave", slot0.Battle.BattleWaveI
 slot0.Battle.BattleLabelWave.__name = "BattleLabelWave"
 slot1 = slot0.Battle.BattleLabelWave
 
-slot1.Ctor = function(slot0)
+function slot1.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot1.SetWaveData = function(slot0, slot1)
+function slot1.SetWaveData(slot0, slot1)
 	uv0.super.SetWaveData(slot0, slot1)
 
 	slot0._labelData = {
@@ -21,7 +21,7 @@ slot1.SetWaveData = function(slot0, slot1)
 	}
 end
 
-slot1.DoWave = function(slot0)
+function slot1.DoWave(slot0)
 	uv0.super.DoWave(slot0)
 	uv1.Battle.BattleState.GetInstance():GetProxyByName(uv1.Battle.BattleDataProxy.__name):DispatchCustomWarning(slot0._labelData)
 	slot0:doPass()

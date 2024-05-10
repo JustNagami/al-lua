@@ -6,7 +6,7 @@ slot0.GIFT_BUY_ITEM = "NewServerCarnivalMediator.GIFT_BUY_ITEM"
 slot0.GIFT_OPEN_ITEM_PANEL = "NewServerCarnivalMediator.GIFT_OPEN_ITEM_PANEL"
 slot0.UPDATE_SHOP_RED_DOT = "NewServerCarnivalMediator.UPDATE_SHOP_RED_DOT"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.TASK_GO, function (slot0, slot1)
 		uv0:sendNotification(GAME.TASK_GO, {
 			taskVO = slot1
@@ -41,7 +41,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setData()
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SUBMIT_TASK_DONE,
 		PlayerProxy.UPDATED,
@@ -50,7 +50,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.SUBMIT_TASK_DONE then

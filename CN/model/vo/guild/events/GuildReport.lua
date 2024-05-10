@@ -3,7 +3,7 @@ slot0.SCORE_TYPE_S = 1
 slot0.SCORE_TYPE_A = 2
 slot0.SCORE_TYPE_B = 3
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.id = slot1.id
 	slot0.eventId = slot1.event_id
 	slot0.configId = slot0.eventId
@@ -33,49 +33,49 @@ slot0.Ctor = function(slot0, slot1)
 	slot0:SetStatus(slot1.status)
 end
 
-slot0.SetStatus = function(slot0, slot1)
+function slot0.SetStatus(slot0, slot1)
 	slot0.state = slot1
 end
 
-slot0.IsBoss = function(slot0)
+function slot0.IsBoss(slot0)
 	return false
 end
 
-slot0.IsLock = function(slot0)
+function slot0.IsLock(slot0)
 	return slot0.state == GuildConst.REPORT_STATE_LOCK
 end
 
-slot0.IsUnlock = function(slot0)
+function slot0.IsUnlock(slot0)
 	return GuildConst.REPORT_STATE_LOCK < slot0.state
 end
 
-slot0.CanSubmit = function(slot0)
+function slot0.CanSubmit(slot0)
 	return slot0.state == GuildConst.REPORT_STATE_UNlOCK
 end
 
-slot0.IsSubmited = function(slot0)
+function slot0.IsSubmited(slot0)
 	return slot0.state == GuildConst.REPORT_STATE_SUBMITED
 end
 
-slot0.Submit = function(slot0)
+function slot0.Submit(slot0)
 	if slot0:CanSubmit() then
 		slot0.state = GuildConst.REPORT_STATE_SUBMITED
 	end
 end
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.guild_base_event
 end
 
-slot0.GetReportDesc = function(slot0)
+function slot0.GetReportDesc(slot0)
 	return slot0:getConfig("report")[slot0.score]
 end
 
-slot0.IsPerfectFinish = function(slot0)
+function slot0.IsPerfectFinish(slot0)
 	return slot0.score == uv0.SCORE_TYPE_S
 end
 
-slot0.GetSelfDrop = function(slot0)
+function slot0.GetSelfDrop(slot0)
 	if slot0.score == uv0.SCORE_TYPE_S then
 		return slot0:getConfig("award_list_report")
 	else
@@ -83,11 +83,11 @@ slot0.GetSelfDrop = function(slot0)
 	end
 end
 
-slot0.GetNodeDrop = function(slot0)
+function slot0.GetNodeDrop(slot0)
 	return slot0.nodeAwards
 end
 
-slot0.GetDrop = function(slot0)
+function slot0.GetDrop(slot0)
 	slot1 = {}
 	slot3 = slot0:GetNodeDrop()
 
@@ -102,7 +102,7 @@ slot0.GetDrop = function(slot0)
 	return slot1, #slot2
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return slot0:getConfig("type")
 end
 

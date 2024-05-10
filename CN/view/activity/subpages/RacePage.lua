@@ -1,7 +1,7 @@
 slot0 = class("RacePage", import("...base.BaseActivityPage"))
 slot1 = 58
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("AD")
 	slot0.help = slot0:findTF("help", slot0.bg)
 	slot0.goBtn = slot0:findTF("go_btn", slot0.bg)
@@ -23,7 +23,7 @@ slot0.OnInit = function(slot0)
 	slot0:hideRankPanel()
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	slot2 = getProxy(MiniGameProxy):GetHubByHubId(slot0.activity:getConfig("config_id"))
 	uv0 = slot0.activity:getConfig("config_client").gameid and uv0
 	slot0.is_ranking = pg.mini_game[uv0].is_ranking == 1
@@ -33,7 +33,7 @@ slot0.OnDataSetting = function(slot0)
 	slot0.curDay = slot0.leftCount + slot0.playedCount
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	if getProxy(MiniGameProxy):CanFetchRank(uv0) then
 		pg.m02:sendNotification(GAME.MINI_GAME_FRIEND_RANK, {
 			id = uv0,
@@ -103,14 +103,14 @@ slot0.OnFirstFlush = function(slot0)
 	setText(slot0.rankBlank:Find("text"), i18n("racing_rank_no_data"))
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	setActive(slot0.ticketStat, slot0.leftCount ~= 0)
 	setText(slot0.ticketNum, slot0.leftCount)
 	setText(slot0.costTf, slot0.playedCount)
 	setSlider(slot0.progressBar, 0, 1, slot0.playedCount / slot0.needCount)
 end
 
-slot0.updateRankTf = function(slot0, slot1)
+function slot0.updateRankTf(slot0, slot1)
 	slot2 = getProxy(FriendProxy)
 	slot4 = getProxy(PlayerProxy):getData()
 
@@ -141,7 +141,7 @@ slot0.updateRankTf = function(slot0, slot1)
 	end))
 end
 
-slot0.updateRankPosTf = function(slot0, slot1, slot2)
+function slot0.updateRankPosTf(slot0, slot1, slot2)
 	setActive(slot1:Find("img1"), slot2 == 1)
 	setActive(slot1:Find("img2"), slot2 == 2)
 	setActive(slot1:Find("img3"), slot2 == 3)
@@ -156,7 +156,7 @@ slot0.updateRankPosTf = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateRankFaceTf = function(slot0, slot1, slot2, slot3)
+function slot0.updateRankFaceTf(slot0, slot1, slot2, slot3)
 	if slot3 then
 		setActive(slot1:Find("frame1"), slot3 == 1)
 		setActive(slot1:Find("frame2"), slot3 == 2)
@@ -176,7 +176,7 @@ slot0.updateRankFaceTf = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.updateRankSelfTf = function(slot0, slot1, slot2)
+function slot0.updateRankSelfTf(slot0, slot1, slot2)
 	slot5 = getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getData().character)
 	slot7 = {
 		position = slot2 and slot2.position or 0,
@@ -197,15 +197,15 @@ slot0.updateRankSelfTf = function(slot0, slot1, slot2)
 	setActive(slot0.rankSelf, true)
 end
 
-slot0.showRankPanel = function(slot0)
+function slot0.showRankPanel(slot0)
 	setActive(slot0.rankPanel, true)
 end
 
-slot0.hideRankPanel = function(slot0)
+function slot0.hideRankPanel(slot0)
 	setActive(slot0.rankPanel, false)
 end
 
-slot0.getScoreString = function(slot0, slot1)
+function slot0.getScoreString(slot0, slot1)
 	return string.format("%.2fM", (slot1 or 0) / 100)
 end
 

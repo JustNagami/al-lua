@@ -1,16 +1,16 @@
 slot0 = class("ConfirmEquipmentDeletePanel", import(".MsgboxSubPanel"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "EquipDeleteConfirmBox"
 end
 
-slot0.UpdateView = function(slot0, slot1)
+function slot0.UpdateView(slot0, slot1)
 	slot1.hideYes = true
 
 	uv0.super.UpdateView(slot0, slot1)
 end
 
-slot0.OnRefresh = function(slot0, slot1)
+function slot0.OnRefresh(slot0, slot1)
 	slot0:SetWindowSize(Vector2(937, 540))
 	setText(slot0._tf:Find("InputField"):Find("Placeholder"), i18n("box_equipment_del_click"))
 	setText(slot0._tf:Find("intro"), SwitchSpecialChar(i18n("destory_important_equipment_tip", slot1.data.name)))

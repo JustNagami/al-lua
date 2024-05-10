@@ -1,10 +1,10 @@
 slot0 = class("CommanderMsgBoxPage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CommanderMsgBoxUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = slot0._tf
 	slot0.cancelBtn = slot1:Find("frame/cancel_btn")
 	slot1 = slot0._tf
@@ -23,11 +23,13 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnUpdate = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
+	uv0.super.Show(slot0)
+
 	if slot1.content1 then
 		setText(slot0.text1, slot1.content)
 		setText(slot0.text2, slot1.content1)
-	else
+	elseif slot1.content then
 		setText(slot0.text, setColorStr(slot1.content, "#847D7B"))
 	end
 
@@ -60,17 +62,12 @@ slot0.OnUpdate = function(slot0, slot1)
 	end
 
 	slot0._tf:SetAsLastSibling()
-	slot0:Show()
-end
-
-slot0.Show = function(slot0)
-	uv0.super.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = slot0.layer or LayerWeightConst.SECOND_LAYER
 	})
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 	setText(slot0.text, "")
 	setText(slot0.text1, "")
@@ -78,7 +75,7 @@ slot0.Hide = function(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0:Hide()
 end
 

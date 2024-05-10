@@ -1,4 +1,4 @@
-string.split = function(slot0, slot1)
+function string.split(slot0, slot1)
 	slot0 = tostring(slot0)
 
 	if tostring(slot1) == "" then
@@ -21,7 +21,7 @@ string.split = function(slot0, slot1)
 	return slot3
 end
 
-import = function(slot0, slot1)
+function import(slot0, slot1)
 	slot2 = nil
 	slot3 = slot0
 	slot4 = 1

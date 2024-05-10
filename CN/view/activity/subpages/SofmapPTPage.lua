@@ -10,7 +10,7 @@ slot0.SpineActionByStep = {
 	20
 }
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	uv0.super.OnFirstFlush(slot0)
 
 	slot0.shop = slot0:findTF("shop", slot0.bg)
@@ -75,7 +75,7 @@ slot0.OnFirstFlush = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	uv0.super.OnUpdateFlush(slot0)
 
 	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
@@ -103,7 +103,7 @@ slot0.OnUpdateFlush = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0.spineLRQ then
 		slot0.spineLRQ:Stop()
 
@@ -119,7 +119,7 @@ slot0.OnDestroy = function(slot0)
 	end
 end
 
-slot0.showBubble = function(slot0, slot1)
+function slot0.showBubble(slot0, slot1)
 	slot2 = nil
 
 	if not slot1 then
@@ -136,7 +136,7 @@ slot0.showBubble = function(slot0, slot1)
 
 	setText(slot0.bubbleText, slot2)
 
-	slot4 = function()
+	function slot4()
 		slot0 = LeanTween.value(go(uv0.bubble), 1, 0, uv1.FADE_OUT_TIME)
 		slot0 = slot0:setOnUpdate(System.Action_float(uv2))
 

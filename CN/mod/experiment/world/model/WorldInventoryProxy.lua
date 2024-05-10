@@ -4,11 +4,11 @@ slot0.Fields = {
 }
 slot0.EventUpdateItem = "WorldInventoryProxy.EventUpdateItem"
 
-slot0.Build = function(slot0)
+function slot0.Build(slot0)
 	slot0.data = {}
 end
 
-slot0.Setup = function(slot0, slot1)
+function slot0.Setup(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		slot7 = WorldItem.New(slot6)
 		slot0.data[slot7.id] = slot7
@@ -17,15 +17,15 @@ slot0.Setup = function(slot0, slot1)
 	end
 end
 
-slot0.GetItem = function(slot0, slot1)
+function slot0.GetItem(slot0, slot1)
 	return slot0.data[slot1]
 end
 
-slot0.GetItemCount = function(slot0, slot1)
+function slot0.GetItemCount(slot0, slot1)
 	return slot0:GetItem(slot1) and slot2.count or 0
 end
 
-slot0.AddItem = function(slot0, slot1, slot2)
+function slot0.AddItem(slot0, slot1, slot2)
 	if slot0:GetItem(slot1) then
 		slot3.count = slot3.count + slot2
 	else
@@ -38,7 +38,7 @@ slot0.AddItem = function(slot0, slot1, slot2)
 	slot0:DispatchEvent(uv0.EventUpdateItem, slot3:clone())
 end
 
-slot0.RemoveItem = function(slot0, slot1, slot2)
+function slot0.RemoveItem(slot0, slot1, slot2)
 	if slot0:GetItem(slot1) then
 		slot2 = slot2 or slot3.count
 
@@ -54,7 +54,7 @@ slot0.RemoveItem = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.UpdateItem = function(slot0, slot1, slot2)
+function slot0.UpdateItem(slot0, slot1, slot2)
 	if slot0:GetItem(slot1) then
 		slot3.count = slot2
 
@@ -62,13 +62,13 @@ slot0.UpdateItem = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.GetItemList = function(slot0)
+function slot0.GetItemList(slot0)
 	return _(slot0.data):chain():values():filter(function (slot0)
 		return slot0.count > 0
 	end):value()
 end
 
-slot0.CalcResetExchangeResource = function(slot0)
+function slot0.CalcResetExchangeResource(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -85,7 +85,7 @@ slot0.CalcResetExchangeResource = function(slot0)
 	return slot1
 end
 
-slot0.GetItemsByType = function(slot0, slot1)
+function slot0.GetItemsByType(slot0, slot1)
 	return underscore.filter(slot0:GetItemList(), function (slot0)
 		return slot0:getWorldItemType() == uv0
 	end)

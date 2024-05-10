@@ -36,7 +36,7 @@ slot0.SortIndexs = {
 	slot0.SortEnergy
 }
 
-slot0.getSortFuncAndName = function(slot0, slot1)
+function slot0.getSortFuncAndName(slot0, slot1)
 	for slot5 = 1, #ShipIndexCfg.sort do
 		if bit.band(bit.lshift(1, slot5 - 1), slot0) > 0 then
 			return underscore.map(ShipIndexCfg.sort[slot5].sortFuncs, function (slot0)
@@ -68,7 +68,7 @@ slot0.SortPropertyNames = {
 	"word_attr_antisub"
 }
 
-slot0.sortByCombatPower = function()
+function slot0.sortByCombatPower()
 	return {
 		function (slot0)
 			return -slot0:getShipCombatPower()
@@ -79,7 +79,7 @@ slot0.sortByCombatPower = function()
 	}
 end
 
-slot0.sortByField = function(slot0)
+function slot0.sortByField(slot0)
 	return {
 		function (slot0)
 			return -slot0[uv0]
@@ -93,7 +93,7 @@ slot0.sortByField = function(slot0)
 	}
 end
 
-slot0.sortByProperty = function(slot0)
+function slot0.sortByProperty(slot0)
 	return {
 		function (slot0)
 			return -slot0:getShipProperties()[uv0]
@@ -104,7 +104,7 @@ slot0.sortByProperty = function(slot0)
 	}
 end
 
-slot0.sortByCfg = function(slot0)
+function slot0.sortByCfg(slot0)
 	return {
 		function (slot0)
 			return -(uv0 == "rarity" and slot0:getRarity() or slot0:getConfig(uv0))
@@ -115,7 +115,7 @@ slot0.sortByCfg = function(slot0)
 	}
 end
 
-slot0.sortByIntimacy = function()
+function slot0.sortByIntimacy()
 	return {
 		function (slot0)
 			return -slot0.intimacy
@@ -132,7 +132,7 @@ slot0.sortByIntimacy = function()
 	}
 end
 
-slot0.sortByEnergy = function()
+function slot0.sortByEnergy()
 	return {
 		function (slot0)
 			return -slot0:getEnergy()
@@ -183,8 +183,8 @@ slot0.TypeNames = {
 	"index_other"
 }
 
-slot0.filterByType = function(slot0, slot1)
-	if not slot1 or slot1 == uv0.EquipmentTypeAll then
+function slot0.filterByType(slot0, slot1)
+	if not slot1 or slot1 == uv0.TypeAll then
 		return true
 	end
 
@@ -221,7 +221,8 @@ slot0.CampSN = bit.lshift(1, 6)
 slot0.CampFF = bit.lshift(1, 7)
 slot0.CampMNF = bit.lshift(1, 8)
 slot0.CampMETA = bit.lshift(1, 9)
-slot0.CampOther = bit.lshift(1, 10)
+slot0.CampMot = bit.lshift(1, 10)
+slot0.CampOther = bit.lshift(1, 11)
 slot0.CampIndexs = {
 	slot0.CampUS,
 	slot0.CampEN,
@@ -233,6 +234,7 @@ slot0.CampIndexs = {
 	slot0.CampFF,
 	slot0.CampMNF,
 	slot0.CampMETA,
+	slot0.CampMot,
 	slot0.CampOther
 }
 slot0.CampAll = IndexConst.BitAll(slot0.CampIndexs)
@@ -251,10 +253,11 @@ slot0.CampNames = {
 	"word_shipNation_ziyou",
 	"word_shipNation_weixi",
 	"word_shipNation_meta_index",
+	"word_shipNation_mot",
 	"word_shipNation_other"
 }
 
-slot0.filterByCamp = function(slot0, slot1)
+function slot0.filterByCamp(slot0, slot1)
 	if not slot1 or slot1 == uv0.CampAll then
 		return true
 	end
@@ -301,7 +304,7 @@ slot0.RarityNames = {
 	"index_rare6"
 }
 
-slot0.filterByRarity = function(slot0, slot1)
+function slot0.filterByRarity(slot0, slot1)
 	if not slot1 or slot1 == uv0.RarityAll then
 		return true
 	end
@@ -405,7 +408,7 @@ end
 table.insert(slot0.ExtraNames, "index_dressed")
 table.insert(slot0.ExtraNames, "index_marry")
 
-slot0.filterByExtra = function(slot0, slot1)
+function slot0.filterByExtra(slot0, slot1)
 	if not slot1 or slot1 == uv0.ExtraAll then
 		return true
 	end
@@ -455,7 +458,7 @@ slot0.CollExtraNames = {
 	"index_not_obtained"
 }
 
-slot0.filterByCollExtra = function(slot0, slot1)
+function slot0.filterByCollExtra(slot0, slot1)
 	if not slot1 or slot1 == uv0.CollExtraAll then
 		return true
 	end

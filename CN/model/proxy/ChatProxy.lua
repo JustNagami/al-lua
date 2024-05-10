@@ -1,7 +1,7 @@
 slot0 = class("ChatProxy", import(".NetProxy"))
 slot0.NEW_MSG = "ChatProxy public msg"
 
-slot0.InjectPublic = function(slot0, slot1, slot2)
+function slot0.InjectPublic(slot0, slot1, slot2)
 	if slot1.id == 0 then
 		slot0.text = slot1.args[1] and slot1.args[1].string or ""
 
@@ -35,7 +35,7 @@ slot0.InjectPublic = function(slot0, slot1, slot2)
 				end
 			end
 		else
-			slot9 = (slot8.type ~= PublicArg.TypeEquipId or pg.equip_data_statistics[slot8.int].name) and (slot8.type ~= PublicArg.TypeItemId or pg.item_data_statistics[slot8.int].name) and (slot8.type ~= PublicArg.TypeNums or slot8.int) and (slot8.type ~= PublicArg.TypeWorldBoss or slot8.string) and slot8.string
+			slot9 = (slot8.type ~= PublicArg.TypeEquipId or pg.equip_data_statistics[slot8.int].name) and (slot8.type ~= PublicArg.TypeItemId or Item.getConfigData(slot8.int).name) and (slot8.type ~= PublicArg.TypeNums or slot8.int) and (slot8.type ~= PublicArg.TypeWorldBoss or slot8.string) and slot8.string
 		end
 
 		slot3 = string.gsub(slot3, "$" .. slot7, slot9)
@@ -44,7 +44,7 @@ slot0.InjectPublic = function(slot0, slot1, slot2)
 	slot0.text = slot3
 end
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:on(50101, function (slot0)
 		if slot0.type == ChatConst.CODE_BANED then
 			pg.TipsMgr.GetInstance():ShowTips(slot0.content)
@@ -103,7 +103,7 @@ slot0.register = function(slot0)
 	slot0.actBossMsg = {}
 end
 
-slot0.addNewMsg = function(slot0, slot1)
+function slot0.addNewMsg(slot0, slot1)
 	if slot1.id == 0 then
 		slot0.top = slot1
 
@@ -123,7 +123,7 @@ slot0.addNewMsg = function(slot0, slot1)
 	slot0:sendNotification(uv0.NEW_MSG, slot1)
 end
 
-slot0.UpdateMsg = function(slot0, slot1)
+function slot0.UpdateMsg(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0.data) do
 		if slot6:IsSame(slot1.uniqueId) then
 			slot0.data[slot5] = slot1
@@ -131,17 +131,17 @@ slot0.UpdateMsg = function(slot0, slot1)
 	end
 end
 
-slot0.GetMessagesByUniqueId = function(slot0, slot1)
+function slot0.GetMessagesByUniqueId(slot0, slot1)
 	return _.select(slot0.data, function (slot0)
 		return slot0.uniqueId == uv0
 	end)
 end
 
-slot0.clearMsg = function(slot0)
+function slot0.clearMsg(slot0)
 	slot0.data = {}
 end
 
-slot0.loadUsedEmoji = function(slot0)
+function slot0.loadUsedEmoji(slot0)
 	slot0.usedEmoji = {}
 
 	if #string.split(PlayerPrefs.GetString(ChatConst.EMOJI_SAVE_TAG .. getProxy(PlayerProxy):getRawData().id) or "", ":") > 0 then
@@ -153,7 +153,7 @@ slot0.loadUsedEmoji = function(slot0)
 	end
 end
 
-slot0.saveUsedEmoji = function(slot0)
+function slot0.saveUsedEmoji(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.usedEmoji) do
@@ -163,7 +163,7 @@ slot0.saveUsedEmoji = function(slot0)
 	PlayerPrefs.SetString(ChatConst.EMOJI_SAVE_TAG .. getProxy(PlayerProxy):getRawData().id, table.concat(slot1, ":"))
 end
 
-slot0.getUsedEmoji = function(slot0)
+function slot0.getUsedEmoji(slot0)
 	if not slot0.usedEmoji then
 		slot0:loadUsedEmoji()
 	end
@@ -171,13 +171,13 @@ slot0.getUsedEmoji = function(slot0)
 	return slot0.usedEmoji
 end
 
-slot0.addUsedEmoji = function(slot0, slot1)
+function slot0.addUsedEmoji(slot0, slot1)
 	slot2[slot1] = (slot0:getUsedEmoji()[slot1] or 0) + 1
 
 	slot0:saveUsedEmoji()
 end
 
-slot0.loadUsedEmojiIcon = function(slot0)
+function slot0.loadUsedEmojiIcon(slot0)
 	slot0.usedEmojiIcon = {}
 
 	for slot4 = 1, 6 do
@@ -191,7 +191,7 @@ slot0.loadUsedEmojiIcon = function(slot0)
 	end
 end
 
-slot0.saveUsedEmojiIcon = function(slot0)
+function slot0.saveUsedEmojiIcon(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(slot0.usedEmojiIcon) do
@@ -201,7 +201,7 @@ slot0.saveUsedEmojiIcon = function(slot0)
 	PlayerPrefs.SetString(ChatConst.EMOJI_ICON_SAVE_TAG .. getProxy(PlayerProxy):getRawData().id, table.concat(slot1, ":"))
 end
 
-slot0.getUsedEmojiIcon = function(slot0)
+function slot0.getUsedEmojiIcon(slot0)
 	if not slot0.usedEmojiIcon then
 		slot0:loadUsedEmojiIcon()
 	end
@@ -209,7 +209,7 @@ slot0.getUsedEmojiIcon = function(slot0)
 	return slot0.usedEmojiIcon
 end
 
-slot0.addUsedEmojiIcon = function(slot0, slot1)
+function slot0.addUsedEmojiIcon(slot0, slot1)
 	if table.indexof(slot0:getUsedEmojiIcon(), slot1, 1) then
 		table.remove(slot2, slot3)
 	else
@@ -220,7 +220,7 @@ slot0.addUsedEmojiIcon = function(slot0, slot1)
 	slot0:saveUsedEmojiIcon()
 end
 
-slot0.GetAllTypeChatMessages = function(slot0, slot1)
+function slot0.GetAllTypeChatMessages(slot0, slot1)
 	slot2 = {}
 
 	if not getProxy(ChatProxy) then

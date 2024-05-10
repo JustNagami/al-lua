@@ -14,7 +14,7 @@ slot9 = {
 	http = true
 }
 
-slot11 = function(slot0, slot1)
+function slot11(slot0, slot1)
 	slot2, slot3, slot4, slot5 = nil
 	slot1 = slot1 or {}
 	slot2, slot7 = slot0:receive()
@@ -118,7 +118,7 @@ slot12 = {
 	__index = {}
 }
 
-slot8.open = function(slot0, slot1, slot2)
+function slot8.open(slot0, slot1, slot2)
 	slot3 = uv0.try(slot2 or uv0.tcp())
 	slot4 = uv1.setmetatable({
 		c = slot3
@@ -133,11 +133,11 @@ slot8.open = function(slot0, slot1, slot2)
 	return slot4
 end
 
-slot12.__index.sendrequestline = function(slot0, slot1, slot2)
+function slot12.__index.sendrequestline(slot0, slot1, slot2)
 	return slot0.try(slot0.c:send(uv0.format("%s %s HTTP/1.1\r\n", slot1 or "GET", slot2)))
 end
 
-slot12.__index.sendheaders = function(slot0, slot1)
+function slot12.__index.sendheaders(slot0, slot1)
 	slot2 = uv0.canonic
 	slot3 = "\r\n"
 
@@ -150,7 +150,7 @@ slot12.__index.sendheaders = function(slot0, slot1)
 	return 1
 end
 
-slot12.__index.sendbody = function(slot0, slot1, slot2, slot3)
+function slot12.__index.sendbody(slot0, slot1, slot2, slot3)
 	slot2 = slot2 or uv0.source.empty()
 	slot3 = slot3 or uv0.pump.step
 	slot4 = "http-chunked"
@@ -162,7 +162,7 @@ slot12.__index.sendbody = function(slot0, slot1, slot2, slot3)
 	return slot0.try(uv0.pump.all(slot2, uv1.sink(slot4, slot0.c), slot3))
 end
 
-slot12.__index.receivestatusline = function(slot0)
+function slot12.__index.receivestatusline(slot0)
 	if slot0.try(slot0.c:receive(5)) ~= "HTTP/" then
 		return nil, slot1
 	end
@@ -172,11 +172,11 @@ slot12.__index.receivestatusline = function(slot0)
 	return slot0.try(uv2.tonumber(uv0.skip(2, uv1.find(slot1, "HTTP/%d*%.%d* (%d%d%d)"))), slot1)
 end
 
-slot12.__index.receiveheaders = function(slot0)
+function slot12.__index.receiveheaders(slot0)
 	return slot0.try(uv0(slot0.c))
 end
 
-slot12.__index.receivebody = function(slot0, slot1, slot2, slot3)
+function slot12.__index.receivebody(slot0, slot1, slot2, slot3)
 	slot2 = slot2 or uv0.sink.null()
 	slot3 = slot3 or uv0.pump.step
 	slot4 = uv1.tonumber(slot1["content-length"])
@@ -191,7 +191,7 @@ slot12.__index.receivebody = function(slot0, slot1, slot2, slot3)
 	return slot0.try(uv0.pump.all(uv2.source(slot6, slot0.c, slot4), slot2, slot3))
 end
 
-slot12.__index.receive09body = function(slot0, slot1, slot2, slot3)
+function slot12.__index.receive09body(slot0, slot1, slot2, slot3)
 	slot4 = uv0.source.rewind(uv1.source("until-closed", slot0.c))
 
 	slot4(slot1)
@@ -199,11 +199,11 @@ slot12.__index.receive09body = function(slot0, slot1, slot2, slot3)
 	return slot0.try(uv0.pump.all(slot4, slot2, slot3))
 end
 
-slot12.__index.close = function(slot0)
+function slot12.__index.close(slot0)
 	return slot0.c:close()
 end
 
-slot13 = function(slot0)
+function slot13(slot0)
 	slot1 = slot0
 
 	if not slot0.proxy and not uv0.PROXY then
@@ -218,7 +218,7 @@ slot13 = function(slot0)
 	return uv2.build(slot1)
 end
 
-slot14 = function(slot0)
+function slot14(slot0)
 	if slot0.proxy or uv0.PROXY then
 		slot1 = uv1.parse(slot1)
 
@@ -228,7 +228,7 @@ slot14 = function(slot0)
 	end
 end
 
-slot15 = function(slot0)
+function slot15(slot0)
 	slot2 = {
 		connection = "close, TE",
 		te = "trailers",
@@ -261,7 +261,7 @@ slot16 = {
 	port = 80
 }
 
-slot17 = function(slot0)
+function slot17(slot0)
 	slot1 = slot0.url and uv0.parse(slot0.url, uv1) or {}
 
 	for slot5, slot6 in uv2.pairs(slot0) do
@@ -283,7 +283,7 @@ slot17 = function(slot0)
 	return slot1
 end
 
-slot18 = function(slot0, slot1, slot2)
+function slot18(slot0, slot1, slot2)
 	if not slot2.location then
 		return false
 	end
@@ -299,7 +299,7 @@ slot18 = function(slot0, slot1, slot2)
 	return slot0.redirect ~= false and (slot1 == 301 or slot1 == 302 or slot1 == 303 or slot1 == 307) and (not slot0.method or slot0.method == "GET" or slot0.method == "HEAD") and (not slot0.nredirects or slot0.nredirects < 5)
 end
 
-slot19 = function(slot0, slot1)
+function slot19(slot0, slot1)
 	if slot0.method == "HEAD" then
 		return nil
 	end
@@ -317,7 +317,7 @@ end
 
 slot20, slot21 = nil
 
-slot21 = function(slot0, slot1)
+function slot21(slot0, slot1)
 	slot2, slot3, slot4, slot5 = uv0({
 		url = uv1.absolute(slot0.url, slot1),
 		source = slot0.source,
@@ -333,7 +333,7 @@ slot21 = function(slot0, slot1)
 	return slot2, slot3, slot4, slot5
 end
 
-slot20 = function(slot0)
+function slot20(slot0)
 	slot1 = uv0(slot0)
 	slot2 = uv1.open(slot1.host, slot1.port, slot1.create)
 
@@ -374,7 +374,7 @@ slot20 = function(slot0)
 	return 1, slot3, slot5, slot4
 end
 
-slot8.genericform = function(slot0, slot1)
+function slot8.genericform(slot0, slot1)
 	slot2 = {}
 	slot3 = {
 		url = slot0,
@@ -394,7 +394,7 @@ slot8.genericform = function(slot0, slot1)
 	return slot3
 end
 
-slot23 = function(slot0, slot1)
+function slot23(slot0, slot1)
 	slot2 = uv0(slot0, slot1)
 	slot3, slot4, slot5, slot6 = uv1(slot2)
 

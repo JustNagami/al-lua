@@ -1,30 +1,30 @@
 slot0 = class("CardPuzzleShip", BaseVO)
 
-slot0.getShipArmor = function(slot0)
+function slot0.getShipArmor(slot0)
 	return slot0:getConfig("armor")
 end
 
-slot0.getShipArmorName = function(slot0)
+function slot0.getShipArmorName(slot0)
 	return ArmorType.Type2Name(slot0:getShipArmor())
 end
 
-slot0.getGroupId = function(slot0)
+function slot0.getGroupId(slot0)
 	return pg.ship_data_template[slot0.configId].group_type
 end
 
-slot0.getGroupIdByConfigId = function(slot0)
+function slot0.getGroupIdByConfigId(slot0)
 	return math.floor(slot0 / 10)
 end
 
-slot0.getShipType = function(slot0)
+function slot0.getShipType(slot0)
 	return pg.ship_data_statistics[slot0.configId].type
 end
 
-slot0.getNation = function(slot0)
+function slot0.getNation(slot0)
 	assert(false)
 end
 
-slot0.getPaintingName = function(slot0)
+function slot0.getPaintingName(slot0)
 	slot1 = pg.ship_data_statistics[slot0].skin_id
 	slot2 = pg.ship_skin_template[slot1]
 
@@ -33,15 +33,15 @@ slot0.getPaintingName = function(slot0)
 	return slot2.painting
 end
 
-slot0.getName = function(slot0)
+function slot0.getName(slot0)
 	return pg.ship_data_statistics[slot0.configId].name
 end
 
-slot0.getShipName = function(slot0)
+function slot0.getShipName(slot0)
 	return pg.ship_data_statistics[slot0].name
 end
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.configId = slot1.template_id or slot1.configId
 	slot0.level = slot1.level
 	slot0.exp = slot1.exp
@@ -96,11 +96,11 @@ slot0.Ctor = function(slot0, slot1)
 	end
 end
 
-slot0.getActiveEquipments = function(slot0)
+function slot0.getActiveEquipments(slot0)
 	for slot5 = #Clone(slot0.equipments), 1, -1 do
 		if slot1[slot5] then
 			for slot10 = 1, slot5 - 1 do
-				if slot1[slot10] and slot6.config.equip_limit ~= 0 and slot11.config.equip_limit == slot6.config.equip_limit then
+				if slot1[slot10] and slot6:getConfig("equip_limit") ~= 0 and slot11:getConfig("equip_limit") == slot6:getConfig("equip_limit") then
 					slot1[slot5] = false
 				end
 			end
@@ -110,15 +110,15 @@ slot0.getActiveEquipments = function(slot0)
 	return slot1
 end
 
-slot0.getAllEquipments = function(slot0)
+function slot0.getAllEquipments(slot0)
 	return slot0.equipments
 end
 
-slot0.updateSkinId = function(slot0, slot1)
+function slot0.updateSkinId(slot0, slot1)
 	slot0.skinId = slot1
 end
 
-slot0.getPrefab = function(slot0)
+function slot0.getPrefab(slot0)
 	slot1 = slot0.skinId
 	slot2 = pg.ship_skin_template[slot1]
 
@@ -127,7 +127,7 @@ slot0.getPrefab = function(slot0)
 	return slot2.prefab
 end
 
-slot0.getPainting = function(slot0)
+function slot0.getPainting(slot0)
 	slot1 = pg.ship_skin_template[slot0.skinId]
 
 	assert(slot1, "ship_skin_template not exist: " .. slot0.configId .. " " .. slot0.skinId)
@@ -135,7 +135,7 @@ slot0.getPainting = function(slot0)
 	return slot1.painting
 end
 
-slot0.GetSkinConfig = function(slot0)
+function slot0.GetSkinConfig(slot0)
 	slot1 = pg.ship_skin_template[slot0.skinId]
 
 	assert(slot1, "ship_skin_template not exist: " .. slot0.configId .. " " .. slot0.skinId)
@@ -143,22 +143,22 @@ slot0.GetSkinConfig = function(slot0)
 	return slot1
 end
 
-slot0.updateEquip = function(slot0, slot1, slot2)
+function slot0.updateEquip(slot0, slot1, slot2)
 	assert(slot2 == nil or slot2.count == 1)
 
 	slot3 = slot0.equipments[slot1]
 	slot0.equipments[slot1] = slot2 and Clone(slot2) or false
 end
 
-slot0.getEquip = function(slot0, slot1)
+function slot0.getEquip(slot0, slot1)
 	return Clone(slot0.equipments[slot1])
 end
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.puzzle_ship_template
 end
 
-slot0.isAvaiable = function(slot0)
+function slot0.isAvaiable(slot0)
 	return true
 end
 
@@ -188,11 +188,11 @@ slot0.SONAR_PROPERTIES = {
 	AttributeType.SonarRange
 }
 
-slot0.getShipProperties = function(slot0)
+function slot0.getShipProperties(slot0)
 	return slot0:getBaseProperties()
 end
 
-slot0.getBaseProperties = function(slot0)
+function slot0.getBaseProperties(slot0)
 	assert(slot0:getConfigTable(), "配置表没有这艘船" .. slot0.configId)
 
 	slot2 = {}
@@ -212,7 +212,7 @@ slot0.getBaseProperties = function(slot0)
 	return slot2
 end
 
-slot0.getGiftProperties = function(slot0, slot1)
+function slot0.getGiftProperties(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(uv0.PROPERTIES) do
@@ -240,7 +240,7 @@ slot0.getGiftProperties = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getProperties = function(slot0, slot1)
+function slot0.getProperties(slot0, slot1)
 	slot2 = slot0:getShipProperties()
 	slot3 = slot0:getGiftProperties(slot1)
 
@@ -263,7 +263,7 @@ slot0.getProperties = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getTriggerSkills = function(slot0)
+function slot0.getTriggerSkills(slot0)
 	_.each(slot0:getSkillEffects(), function (slot0)
 		if slot0.type == "AddBuff" and slot0.arg_list and slot0.arg_list.buff_id then
 			slot1 = slot0.arg_list.buff_id
@@ -277,11 +277,11 @@ slot0.getTriggerSkills = function(slot0)
 	return {}
 end
 
-slot0.GetEquipmentSkills = function(slot0)
+function slot0.GetEquipmentSkills(slot0)
 	slot1 = {}
 
 	for slot6, slot7 in ipairs(slot0:getActiveEquipments()) do
-		if slot7 and slot7.config.skill_id[1] then
+		if slot7 and slot7:getConfig("skill_id")[1] then
 			slot1[slot8] = {
 				level = 1,
 				id = slot8
@@ -292,7 +292,7 @@ slot0.GetEquipmentSkills = function(slot0)
 	return slot1
 end
 
-slot0.getAllSkills = function(slot0)
+function slot0.getAllSkills(slot0)
 	slot1 = Clone(slot0.skills)
 
 	for slot5, slot6 in pairs(slot0:GetEquipmentSkills()) do
@@ -306,23 +306,23 @@ slot0.getAllSkills = function(slot0)
 	return slot1
 end
 
-slot0.getRarity = function(slot0)
+function slot0.getRarity(slot0)
 	assert(false)
 end
 
-slot0.getExchangePrice = function(slot0)
+function slot0.getExchangePrice(slot0)
 	assert(false)
 end
 
-slot0.upgrade = function(slot0)
+function slot0.upgrade(slot0)
 	assert(false)
 end
 
-slot0.getTeamType = function(slot0)
+function slot0.getTeamType(slot0)
 	return TeamType.GetTeamFromShipType(slot0:getShipType())
 end
 
-slot0.getMaxConfigId = function(slot0)
+function slot0.getMaxConfigId(slot0)
 	slot1 = pg.ship_data_template
 	slot2 = nil
 
@@ -337,7 +337,7 @@ slot0.getMaxConfigId = function(slot0)
 	return slot2
 end
 
-slot0.fateSkillChange = function(slot0, slot1)
+function slot0.fateSkillChange(slot0, slot1)
 	if not slot0.skillChangeList then
 		slot0.skillChangeList = slot0:isBluePrintShip() and slot0:getBluePrint():getChangeSkillList() or {}
 	end
@@ -351,7 +351,7 @@ slot0.fateSkillChange = function(slot0, slot1)
 	return slot1
 end
 
-slot0.getSkillList = function(slot0)
+function slot0.getSkillList(slot0)
 	slot1 = pg.ship_data_template[slot0.configId]
 	slot2 = Clone(slot1.buff_list_display)
 	slot3 = Clone(slot1.buff_list)
@@ -379,13 +379,13 @@ slot0.getSkillList = function(slot0)
 	return slot6
 end
 
-slot0.getDisplaySkillIds = function(slot0)
+function slot0.getDisplaySkillIds(slot0)
 	return _.map(pg.ship_data_template[slot0.configId].buff_list_display, function (slot0)
 		return uv0:fateSkillChange(slot0)
 	end)
 end
 
-slot0.getSkillIndex = function(slot0, slot1)
+function slot0.getSkillIndex(slot0, slot1)
 	for slot6, slot7 in ipairs(slot0:getSkillList()) do
 		if slot1 == slot7 then
 			return slot6
@@ -393,21 +393,21 @@ slot0.getSkillIndex = function(slot0, slot1)
 	end
 end
 
-slot0.IsBgmSkin = function(slot0)
+function slot0.IsBgmSkin(slot0)
 	return table.contains(slot0:GetSkinConfig().tag, ShipSkin.WITH_BGM)
 end
 
-slot0.GetSkinBgm = function(slot0)
+function slot0.GetSkinBgm(slot0)
 	if slot0:IsBgmSkin() then
 		return slot0:GetSkinConfig().bgm
 	end
 end
 
-slot0.GetConfigId = function(slot0)
+function slot0.GetConfigId(slot0)
 	return slot0.configId
 end
 
-slot0.GetDefaultCards = function(slot0)
+function slot0.GetDefaultCards(slot0)
 	return slot0:getConfig("default_card")
 end
 

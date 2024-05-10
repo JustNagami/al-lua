@@ -1,15 +1,15 @@
 slot0 = class("EquipUpgradeLayer", import("..base.BaseUI"))
 slot0.CHAT_DURATION_TIME = 0.3
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "EquipUpgradeUI"
 end
 
-slot0.setItems = function(slot0, slot1)
+function slot0.setItems(slot0, slot1)
 	slot0.itemVOs = slot1
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
@@ -38,18 +38,18 @@ slot0.init = function(slot0)
 	slot0.Overlay = pg.UIMgr.GetInstance().OverlayMain
 end
 
-slot0.updateRes = function(slot0, slot1)
+function slot0.updateRes(slot0, slot1)
 	slot0.playerVO = slot1
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_CANCEL)
 	slot0:updateAll()
 end
 
-slot0.updateAll = function(slot0)
+function slot0.updateAll(slot0)
 	setActive(slot0.equipmentList, slot0.contextData.shipVO)
 
 	if slot0.contextData.shipVO then
@@ -66,7 +66,7 @@ slot0.updateAll = function(slot0)
 	end
 end
 
-slot0.displayEquipments = function(slot0)
+function slot0.displayEquipments(slot0)
 	slot0.equipmentTFs = {}
 
 	removeAllChildren(slot0.equipmentContain)
@@ -78,7 +78,7 @@ slot0.displayEquipments = function(slot0)
 			updateEquipment(slot7, slot6)
 			setActive(slot7:Find("tip"), false)
 
-			if slot0:isMaterialEnough(slot6) and slot6.config.next ~= 0 then
+			if slot0:isMaterialEnough(slot6) and slot6:getConfig("next") ~= 0 then
 				setActive(slot8, true)
 				blinkAni(slot8, 0.5)
 			end
@@ -86,7 +86,7 @@ slot0.displayEquipments = function(slot0)
 			onButton(slot0, slot7, function ()
 				if uv0.contextData.pos then
 					setActive(uv0.equipmentTFs[slot0]:Find("selected"), false)
-					setActive(uv0.equipmentTFs[slot0]:Find("tip"), uv0:isMaterialEnough(uv1:getEquip(slot0)) and uv1:getEquip(slot0).config.next ~= 0)
+					setActive(uv0.equipmentTFs[slot0]:Find("tip"), uv0:isMaterialEnough(uv1:getEquip(slot0)) and uv1:getEquip(slot0):getConfig("next") ~= 0)
 				end
 
 				uv0.contextData.pos = uv2
@@ -105,10 +105,10 @@ slot0.displayEquipments = function(slot0)
 	end
 end
 
-slot0.isMaterialEnough = function(slot0, slot1)
+function slot0.isMaterialEnough(slot0, slot1)
 	slot2 = true
 
-	if not slot1.config.trans_use_item then
+	if not slot1:getConfig("trans_use_item") then
 		return false
 	end
 
@@ -123,17 +123,17 @@ slot0.isMaterialEnough = function(slot0, slot1)
 	return slot2
 end
 
-slot0.updateEquipment = function(slot0)
+function slot0.updateEquipment(slot0)
 	slot1 = slot0.contextData.equipmentVO
 	slot0.contextData.equipmentId = slot1.id
 
-	slot0:updateAttrs(slot0.equipmentPanel:Find("view/content"), slot1, slot1.config.next > 0 and slot1:MigrateTo(slot1.config.next) or nil)
-	changeToScrollText(slot0.equipmentPanel:Find("name_container"), slot1.config.name)
+	slot0:updateAttrs(slot0.equipmentPanel:Find("view/content"), slot1, slot1:getConfig("next") > 0 and slot1:MigrateTo(slot1:getConfig("next")) or nil)
+	changeToScrollText(slot0.equipmentPanel:Find("name_container"), slot1:getConfig("name"))
 	setActive(findTF(slot0.equipmentPanel, "unique"), slot1:isUnique())
 	updateEquipment(slot0:findTF("equiptpl", slot0.equipmentPanel), slot1)
 end
 
-slot1 = function(slot0)
+function slot1(slot0)
 	slot0.sub = {
 		_.detect(slot0.sub, function (slot0)
 			return slot0.type == AttributeType.Damage
@@ -141,7 +141,7 @@ slot1 = function(slot0)
 	}
 end
 
-slot2 = function(slot0)
+function slot2(slot0)
 	slot0.sub = {
 		_.detect(slot0.sub, function (slot0)
 			return slot0.type == AttributeType.Corrected
@@ -149,7 +149,7 @@ slot2 = function(slot0)
 	}
 end
 
-slot0.updateAttrs = function(slot0, slot1, slot2, slot3)
+function slot0.updateAttrs(slot0, slot1, slot2, slot3)
 	for slot8 = 1, #slot2:GetPropertiesInfo().weapon.sub do
 		uv0(slot4.weapon.sub[slot8])
 	end
@@ -231,11 +231,11 @@ slot0.updateAttrs = function(slot0, slot1, slot2, slot3)
 	updateEquipUpgradeInfo(slot1, slot4, slot0.contextData.shipVO)
 end
 
-slot0.updateMaterials = function(slot0)
+function slot0.updateMaterials(slot0)
 	slot1 = true
 	slot2 = slot0.contextData.equipmentVO
-	slot4 = slot2.config.trans_use_gold
-	slot3 = defaultValue(slot2.config.trans_use_item, {})
+	slot4 = slot2:getConfig("trans_use_gold")
+	slot3 = defaultValue(slot2:getConfig("trans_use_item"), {})
 	slot5 = nil
 	slot6 = 0
 
@@ -276,9 +276,9 @@ slot0.updateMaterials = function(slot0)
 
 				uv1 = uv1 - 1
 			end, SFX_PANEL)
-			setActive(slot13:Find("click"), slot2.config.level > 10)
+			setActive(slot13:Find("click"), slot2:getConfig("level") > 10)
 
-			slot6 = slot6 + (slot2.config.level > 10 and 1 or 0)
+			slot6 = slot6 + (slot2:getConfig("level") > 10 and 1 or 0)
 		end
 	end
 
@@ -321,20 +321,20 @@ slot0.updateMaterials = function(slot0)
 	setButtonEnabled(slot0.startBtn, slot7)
 end
 
-slot0.upgradeFinish = function(slot0, slot1, slot2)
+function slot0.upgradeFinish(slot0, slot1, slot2)
 	setActive(slot0.mainPanel, false)
 	setActive(slot0.finishPanel, true)
 	onButton(slot0, slot0.finishPanel:Find("bg"), function ()
 		setActive(uv0.mainPanel, true)
 		setActive(uv0.finishPanel, false)
 	end, SFX_CANCEL)
-	changeToScrollText(slot0.finishPanel:Find("frame/equipment_panel/name_container"), slot2.config.name)
+	changeToScrollText(slot0.finishPanel:Find("frame/equipment_panel/name_container"), slot2:getConfig("name"))
 	setActive(findTF(slot0.finishPanel, "frame/equipment_panel/unique"), slot2:isUnique())
 	updateEquipment(slot0:findTF("frame/equipment_panel/equiptpl", slot0.finishPanel), slot2)
 	slot0:updateAttrs(slot0:findTF("frame/equipment_panel/view/content", slot0.finishPanel), slot1, slot2)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 

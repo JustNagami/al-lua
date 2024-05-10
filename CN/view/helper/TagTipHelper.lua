@@ -1,6 +1,6 @@
 slot0 = class("TagTipHelper")
 
-slot0.FuDaiTagTip = function(slot0)
+function slot0.FuDaiTagTip(slot0)
 	triggerToggle(slot0, false)
 
 	slot1 = {}
@@ -12,7 +12,7 @@ slot0.FuDaiTagTip = function(slot0)
 	end
 
 	if #slot1 > 0 then
-		slot3 = function(slot0)
+		function slot3(slot0)
 			table.sort(uv0, function (slot0, slot1)
 				return pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1.time[1]) < pg.TimeMgr.GetInstance():parseTimeFromConfig(slot0.time[1])
 			end)
@@ -41,7 +41,7 @@ slot0.FuDaiTagTip = function(slot0)
 	end
 end
 
-slot0.SetFuDaiTagMark = function()
+function slot0.SetFuDaiTagMark()
 	if uv0.FudaiTime then
 		PlayerPrefs.SetInt("Ever_Enter_Mall_", uv0.FudaiTime)
 		PlayerPrefs.Save()
@@ -50,7 +50,7 @@ slot0.SetFuDaiTagMark = function()
 	end
 end
 
-slot0.SkinTagTip = function(slot0)
+function slot0.SkinTagTip(slot0)
 	triggerToggle(slot0, false)
 
 	slot2 = {}
@@ -74,7 +74,7 @@ slot0.SkinTagTip = function(slot0)
 	end
 end
 
-slot0.SetSkinTagMark = function()
+function slot0.SetSkinTagMark()
 	if uv0.SkinTime then
 		PlayerPrefs.SetInt("Ever_Enter_Skin_Shop_", uv0.SkinTime)
 		PlayerPrefs.Save()
@@ -83,11 +83,11 @@ slot0.SetSkinTagMark = function()
 	end
 end
 
-slot0.MonthCardTagTip = function(slot0)
+function slot0.MonthCardTagTip(slot0)
 	triggerToggle(slot0, MonthCardOutDateTipPanel.GetShowMonthCardTag())
 end
 
-slot0.FreeGiftTag = function(slot0)
+function slot0.FreeGiftTag(slot0)
 	if not getProxy(ShopsProxy):getChargedList() then
 		pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
 			callback = function ()
@@ -107,13 +107,13 @@ slot0.FreeGiftTag = function(slot0)
 	end
 end
 
-slot0.FreeBuildTicketTip = function(slot0, slot1)
+function slot0.FreeBuildTicketTip(slot0, slot1)
 	if getProxy(ActivityProxy):IsShowFreeBuildMark(false) then
 		setActive(slot0, true)
-		LoadImageSpriteAtlasAsync(getDropIcon({
+		LoadImageSpriteAtlasAsync(Drop.New({
 			type = DROP_TYPE_VITEM,
 			id = slot3:getConfig("config_client")[1]
-		}), "", slot0:Find("Image"))
+		}):getIcon(), "", slot0:Find("Image"))
 
 		slot4 = tostring(slot3.data1)
 
@@ -129,7 +129,7 @@ slot0.FreeBuildTicketTip = function(slot0, slot1)
 	end
 end
 
-slot0.TecShipGiftTip = function(slot0)
+function slot0.TecShipGiftTip(slot0)
 	slot1 = {
 		2001,
 		2002,
@@ -159,7 +159,7 @@ slot0.TecShipGiftTip = function(slot0)
 	end
 end
 
-slot0.SetFreeBuildMark = function()
+function slot0.SetFreeBuildMark()
 	if uv0.BuildMark then
 		if getProxy(ActivityProxy):IsShowFreeBuildMark(false) then
 			PlayerPrefs.SetString("Free_Build_Ticket_" .. slot0.id, pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d"))

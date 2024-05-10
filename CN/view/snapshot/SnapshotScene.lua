@@ -7,11 +7,11 @@ slot0.SHOW_SPINE = 2
 slot0.STATE_TAKE_PHOTO = 0
 slot0.STATE_TAKE_VIDEO = 1
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "snapshot"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	setActive(pg.UIMgr.GetInstance().OverlayEffect, false)
 
 	slot0.dummy = slot0:findTF("SnapshotInvisible")
@@ -51,19 +51,19 @@ slot0.init = function(slot0)
 	slot0.animContainer = slot0:findTF("animation_container", slot0.l2dAnimations):GetComponent("LScrollRect")
 	slot0.animContainer.decelerationRate = 0.1
 
-	slot0.animContainer.onInitItem = function(slot0)
+	function slot0.animContainer.onInitItem(slot0)
 		uv0:onInitItem(slot0)
 	end
 
-	slot0.animContainer.onUpdateItem = function(slot0, slot1)
+	function slot0.animContainer.onUpdateItem(slot0, slot1)
 		uv0:onUpdateItem(slot0, slot1)
 	end
 
-	slot0.animContainer.onReturnItem = function(slot0, slot1)
+	function slot0.animContainer.onReturnItem(slot0, slot1)
 		uv0:onReturnItem(slot0, slot1)
 	end
 
-	slot0.animContainer.onStart = function()
+	function slot0.animContainer.onStart()
 		uv0:updateSelectedItem()
 	end
 
@@ -117,7 +117,7 @@ slot0.init = function(slot0)
 	setActive(slot0.videoTipPanel, false)
 end
 
-slot0.back = function(slot0)
+function slot0.back(slot0)
 	if slot0.exited then
 		return
 	end
@@ -125,7 +125,7 @@ slot0.back = function(slot0)
 	slot0:emit(uv0.ON_BACK)
 end
 
-slot0.saveVideo = function(slot0)
+function slot0.saveVideo(slot0)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		content = i18n("word_save_video"),
 		onYes = function ()
@@ -134,7 +134,7 @@ slot0.saveVideo = function(slot0)
 	})
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:back()
 	end)
@@ -226,7 +226,7 @@ slot0.didEnter = function(slot0)
 		end
 	end)
 
-	slot1 = function()
+	function slot1()
 		if uv0.state == uv1.STATE_TAKE_PHOTO then
 			return
 		end
@@ -285,7 +285,7 @@ slot0.didEnter = function(slot0)
 		uv0:emit(uv1.SELECT_CHAR_PANEL)
 	end)
 
-	slot0.webcam.takeCallback = function(slot0)
+	function slot0.webcam.takeCallback(slot0)
 		setActive(uv0.ui, true)
 	end
 
@@ -310,7 +310,7 @@ slot0.didEnter = function(slot0)
 	slot0:updateShowType()
 end
 
-slot0.changeToTakeVideo = function(slot0)
+function slot0.changeToTakeVideo(slot0)
 	if slot0.state == uv0.STATE_TAKE_VIDEO then
 		return
 	end
@@ -321,14 +321,14 @@ slot0.changeToTakeVideo = function(slot0)
 	SetActive(slot0.videoTakeImg, true)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:SetDummyForIOS(false)
 	cameraPaintViewAdjust(false)
 	slot0:clearSkin()
 	setActive(pg.UIMgr.GetInstance().OverlayEffect, PlayerPrefs.GetInt(SHOW_TOUCH_EFFECT, 1) > 0)
 end
 
-slot0.clearSkin = function(slot0)
+function slot0.clearSkin(slot0)
 	if slot0.paintSkin and slot0.showType == uv0.SHOW_PAINT then
 		retPaintingPrefab(slot0.paint, slot0.paintSkin)
 	end
@@ -353,7 +353,7 @@ slot0.clearSkin = function(slot0)
 	slot0.live2dRequestId = nil
 end
 
-slot0.checkSkin = function(slot0, slot1)
+function slot0.checkSkin(slot0, slot1)
 	slot2 = pg.ship_skin_template[slot1]
 
 	assert(slot1 == -1 or slot2, "invalid skin id " .. slot1)
@@ -361,7 +361,11 @@ slot0.checkSkin = function(slot0, slot1)
 	slot0.skin = slot2
 	slot3 = false
 
-	if slot0.paintSkin ~= slot2.painting or slot2.spineSkin ~= slot2.prefab then
+	if slot0.contextData.tbId then
+		slot0.paintSkin = pg.secretary_special_ship[slot0.contextData.tbId].prefab or "tbniang"
+		slot3 = true
+		slot0.contextData.tbId = nil
+	elseif slot0.paintSkin ~= slot2.painting or slot2.spineSkin ~= slot2.prefab then
 		slot0:clearSkin()
 
 		slot0.paintSkin = slot2.painting
@@ -380,7 +384,7 @@ slot0.checkSkin = function(slot0, slot1)
 	return slot3
 end
 
-slot0.setSkinAndLive2d = function(slot0, slot1, slot2)
+function slot0.setSkinAndLive2d(slot0, slot1, slot2)
 	slot3 = slot0:checkSkin(slot1)
 
 	if slot0.showType ~= uv0.SHOW_LIVE2D and slot2 then
@@ -396,13 +400,13 @@ slot0.setSkinAndLive2d = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.setSkin = function(slot0, slot1)
+function slot0.setSkin(slot0, slot1)
 	if slot0:checkSkin(slot1) then
 		slot0:updateSkin()
 	end
 end
 
-slot0.setLive2d = function(slot0, slot1)
+function slot0.setLive2d(slot0, slot1)
 	if slot0.showType ~= uv0.SHOW_LIVE2D and slot1 then
 		slot0:clearSkin()
 
@@ -413,7 +417,7 @@ slot0.setLive2d = function(slot0, slot1)
 	end
 end
 
-slot0.updateShowType = function(slot0)
+function slot0.updateShowType(slot0)
 	setActive(slot0.paintBtn, false)
 	slot0:setLive2dAnimsPanelState(false)
 	setActive(slot0.live2dBtn, false)
@@ -430,7 +434,7 @@ slot0.updateShowType = function(slot0)
 	end
 end
 
-slot1 = function(slot0)
+function slot1(slot0)
 	if slot0 == uv0.SHOW_PAINT then
 		return 0.5, 2
 	elseif slot0 == uv0.SHOW_LIVE2D then
@@ -440,7 +444,7 @@ slot1 = function(slot0)
 	end
 end
 
-slot0.updateSkin = function(slot0)
+function slot0.updateSkin(slot0)
 	if slot0.showType == uv0.SHOW_LIVE2D and (not ResourceMgr.Inst:AssetExist("live2d/" .. slot0.paintSkin) or not PathMgr.FileExists(PathMgr.getAssetBundle("live2d/" .. slot0.paintSkin))) then
 		slot0.showType = uv0.SHOW_PAINT
 
@@ -479,7 +483,7 @@ slot0.updateSkin = function(slot0)
 
 			slot2:SetAction(pg.AssistantInfo.action2Id.idle)
 
-			slot2.FinishAction = function(slot0)
+			function slot2.FinishAction(slot0)
 				if uv0.selectedID and uv0.selectedID ~= pg.AssistantInfo.action2Id.idle then
 					uv0:setL2dAction(uv0.selectedID)
 				end
@@ -539,7 +543,7 @@ slot0.updateSkin = function(slot0)
 	end
 end
 
-slot0.playAction = function(slot0, slot1)
+function slot0.playAction(slot0, slot1)
 	if slot0.showType ~= uv0.SHOW_SPINE then
 		return
 	end
@@ -547,7 +551,7 @@ slot0.playAction = function(slot0, slot1)
 	GetOrAddComponent(slot0:findTF("model", slot0.spine), typeof(SpineAnimUI)):SetAction(slot1, 0)
 end
 
-slot0.ResetL2dPanel = function(slot0)
+function slot0.ResetL2dPanel(slot0)
 	slot0.selectedID = pg.AssistantInfo.action2Id.idle
 	slot0.isPause = false
 
@@ -555,7 +559,7 @@ slot0.ResetL2dPanel = function(slot0)
 	slot0:updateSelectedItem()
 end
 
-slot0.UpdateL2dPlayState = function(slot0, slot1)
+function slot0.UpdateL2dPlayState(slot0, slot1)
 	if slot0.showType ~= uv0.SHOW_LIVE2D then
 		return
 	end
@@ -573,7 +577,7 @@ slot0.UpdateL2dPlayState = function(slot0, slot1)
 	end
 end
 
-slot0.L2dAnimationState = function(slot0)
+function slot0.L2dAnimationState(slot0)
 	if slot0.showType ~= uv0.SHOW_LIVE2D then
 		return
 	end
@@ -585,7 +589,7 @@ slot0.L2dAnimationState = function(slot0)
 	end
 end
 
-slot0.updateLive2dAnimationPanel = function(slot0)
+function slot0.updateLive2dAnimationPanel(slot0)
 	SetActive(slot0.l2dAnimations, slot0.isShowL2dAnims)
 	SetActive(slot0.l2dAnimationBtnGo, not slot0.isShowL2dAnims)
 
@@ -594,7 +598,7 @@ slot0.updateLive2dAnimationPanel = function(slot0)
 	end
 end
 
-slot0.setLive2dAnimsPanelState = function(slot0, slot1)
+function slot0.setLive2dAnimsPanelState(slot0, slot1)
 	slot0.isShowL2dAnims = slot1
 
 	slot0:updateLive2dAnimationPanel()
@@ -602,7 +606,7 @@ end
 
 slot2 = 3
 
-slot0.onInitItem = function(slot0, slot1)
+function slot0.onInitItem(slot0, slot1)
 	slot2 = SnapshotItem.New(slot1, false)
 
 	onButton(slot0, slot2.go, function ()
@@ -627,7 +631,7 @@ slot0.onInitItem = function(slot0, slot1)
 	slot0.scrollItems[slot1] = slot2
 end
 
-slot0.setL2dAction = function(slot0, slot1)
+function slot0.setL2dAction(slot0, slot1)
 	if slot1 ~= pg.AssistantInfo.action2Id.idle then
 		-- Nothing
 	end
@@ -645,7 +649,7 @@ slot0.setL2dAction = function(slot0, slot1)
 	end
 end
 
-slot0.onUpdateItem = function(slot0, slot1, slot2)
+function slot0.onUpdateItem(slot0, slot1, slot2)
 	slot1 = slot1 + 1
 
 	if not slot0.scrollItems[slot2] then
@@ -674,10 +678,10 @@ slot0.onUpdateItem = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.onReturnItem = function(slot0, slot1, slot2)
+function slot0.onReturnItem(slot0, slot1, slot2)
 end
 
-slot0.updateSelectedItem = function(slot0)
+function slot0.updateSelectedItem(slot0)
 	for slot4, slot5 in pairs(slot0.scrollItems) do
 		if slot5:HasInfo() then
 			if slot5:GetID() == slot0.selectedID then
@@ -689,7 +693,7 @@ slot0.updateSelectedItem = function(slot0)
 	end
 end
 
-slot0.updateUIDirection = function(slot0)
+function slot0.updateUIDirection(slot0)
 	if slot0.isVertical then
 		slot1 = slot0.verticalEulerAngle
 		slot2 = slot0.rotateUseTime
@@ -727,13 +731,13 @@ slot0.updateUIDirection = function(slot0)
 	end
 end
 
-slot0.updateListItemRotate = function(slot0, slot1, slot2)
+function slot0.updateListItemRotate(slot0, slot1, slot2)
 	for slot6, slot7 in pairs(slot0.scrollItems) do
 		slot7:RotateUI(slot1, slot2)
 	end
 end
 
-slot0.updateCameraCanvas = function(slot0)
+function slot0.updateCameraCanvas(slot0)
 	slot4 = 1
 
 	if CameraMgr.instance.AspectRatio > UnityEngine.Screen.width / UnityEngine.Screen.height then
@@ -749,7 +753,7 @@ slot0.updateCameraCanvas = function(slot0)
 	end
 end
 
-slot0.SetDummyForIOS = function(slot0, slot1)
+function slot0.SetDummyForIOS(slot0, slot1)
 	if PLATFORM ~= PLATFORM_IPHONEPLAYER then
 		setActive(slot0.dummy, false)
 
@@ -779,7 +783,7 @@ slot0.SetDummyForIOS = function(slot0, slot1)
 	end
 end
 
-slot0.SetMute = function(slot0, slot1)
+function slot0.SetMute(slot0, slot1)
 	if slot1 then
 		CriAtom.SetCategoryVolume("Category_CV", 0)
 		CriAtom.SetCategoryVolume("Category_BGM", 0)

@@ -12,11 +12,11 @@ slot9 = singletonClass("BattleDataProxy", slot0.MVC.Proxy)
 slot0.Battle.BattleDataProxy = slot9
 slot9.__name = "BattleDataProxy"
 
-slot9.Ctor = function(slot0)
+function slot9.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot9.InitBattle = function(slot0, slot1)
+function slot9.InitBattle(slot0, slot1)
 	slot0.Update = slot0.updateInit
 
 	slot0:SetupCalculateDamage(pg.SdkMgr.GetInstance():CheckPretest() and (PlayerPrefs.GetInt("stage_scratch") or 0) == 1 and GodenFnger or uv0.CreateContextCalculateDamage(slot1.battleType == SYSTEM_WORLD or slot2 == SYSTEM_WORLD_BOSS))
@@ -41,17 +41,17 @@ slot9.InitBattle = function(slot0, slot1)
 	slot0:DispatchEvent(uv2.Event.New(uv3.COMMON_DATA_INIT_FINISH, {}))
 end
 
-slot9.OnCameraRatioUpdate = function(slot0)
+function slot9.OnCameraRatioUpdate(slot0)
 	slot0._cameraTop, slot0._cameraBottom, slot0._cameraLeft, slot0._cameraRight = slot0._cameraUtil:SetMapData(slot0:GetTotalBounds())
 
 	slot0._cameraUtil:setArrowPoint()
 end
 
-slot9.Start = function(slot0)
+function slot9.Start(slot0)
 	slot0._startTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-slot9.TriggerBattleInitBuffs = function(slot0)
+function slot9.TriggerBattleInitBuffs(slot0)
 	for slot4, slot5 in pairs(slot0._fleetList) do
 		slot6 = slot5:GetUnitList()
 
@@ -59,7 +59,7 @@ slot9.TriggerBattleInitBuffs = function(slot0)
 	end
 end
 
-slot9.TirggerBattleStartBuffs = function(slot0)
+function slot9.TirggerBattleStartBuffs(slot0)
 	for slot4, slot5 in pairs(slot0._fleetList) do
 		slot6 = slot5:GetUnitList()
 		slot7 = slot5:GetScoutList()
@@ -91,6 +91,12 @@ slot9.TirggerBattleStartBuffs = function(slot0)
 				end
 			end
 
+			if slot0._currentStageData.stageBuff then
+				for slot23, slot24 in ipairs(slot0._currentStageData.stageBuff) do
+					slot19:AddBuff(uv0.Battle.BattleBuffUnit.New(slot24.id, slot24.level))
+				end
+			end
+
 			slot19:TriggerBuff(uv1.BuffEffectType.ON_START_GAME)
 
 			if slot19 == slot12 then
@@ -118,7 +124,7 @@ slot9.TirggerBattleStartBuffs = function(slot0)
 	end
 end
 
-slot9.InitAllFleetUnitsWeaponCD = function(slot0)
+function slot9.InitAllFleetUnitsWeaponCD(slot0)
 	for slot4, slot5 in pairs(slot0._fleetList) do
 		for slot10, slot11 in ipairs(slot5:GetUnitList()) do
 			uv0.InitUnitWeaponCD(slot11)
@@ -126,17 +132,17 @@ slot9.InitAllFleetUnitsWeaponCD = function(slot0)
 	end
 end
 
-slot9.InitUnitWeaponCD = function(slot0)
+function slot9.InitUnitWeaponCD(slot0)
 	slot0:CheckWeaponInitial()
 end
 
-slot9.StartCardPuzzle = function(slot0)
+function slot9.StartCardPuzzle(slot0)
 	for slot4, slot5 in pairs(slot0._fleetList) do
 		slot5:GetCardPuzzleComponent():Start()
 	end
 end
 
-slot9.PausePuzzleComponent = function(slot0)
+function slot9.PausePuzzleComponent(slot0)
 	for slot4, slot5 in pairs(slot0._fleetList) do
 		if slot5:GetCardPuzzleComponent() then
 			slot6:BlockComponentByCard(true)
@@ -144,7 +150,7 @@ slot9.PausePuzzleComponent = function(slot0)
 	end
 end
 
-slot9.ResumePuzzleComponent = function(slot0)
+function slot9.ResumePuzzleComponent(slot0)
 	onDelayTick(function ()
 		for slot3, slot4 in pairs(uv0._fleetList) do
 			if slot4:GetCardPuzzleComponent() then
@@ -154,15 +160,15 @@ slot9.ResumePuzzleComponent = function(slot0)
 	end, 0.06)
 end
 
-slot9.GetInitData = function(slot0)
+function slot9.GetInitData(slot0)
 	return slot0._battleInitData
 end
 
-slot9.GetDungeonData = function(slot0)
+function slot9.GetDungeonData(slot0)
 	return slot0._dungeonInfo
 end
 
-slot9.InitData = function(slot0, slot1)
+function slot9.InitData(slot0, slot1)
 	slot0.FrameIndex = 1
 	slot0._friendlyCode = 1
 	slot0._foeCode = -1
@@ -267,13 +273,13 @@ slot9.InitData = function(slot0, slot1)
 	slot0:initBGM()
 end
 
-slot9.initBGM = function(slot0)
+function slot9.initBGM(slot0)
 	slot0._initBGMList = {}
 	slot0._otherBGMList = {}
 	slot1 = {}
 	slot2 = {}
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			slot6 = {}
 
@@ -323,7 +329,7 @@ slot9.initBGM = function(slot0)
 	end
 end
 
-slot9.initCommanderBuff = function(slot0)
+function slot9.initCommanderBuff(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(slot0) do
@@ -341,7 +347,7 @@ slot9.initCommanderBuff = function(slot0)
 	return slot1
 end
 
-slot9.Clear = function(slot0)
+function slot9.Clear(slot0)
 	for slot4, slot5 in pairs(slot0._teamList) do
 		slot0:KillNPCTeam(slot5)
 	end
@@ -420,14 +426,14 @@ slot9.Clear = function(slot0)
 	uv0.ClearDungeonCfg(slot0._dungeonID)
 end
 
-slot9.DeactiveProxy = function(slot0)
+function slot9.DeactiveProxy(slot0)
 	slot0._state = nil
 
 	slot0:Clear()
 	uv0.Battle.BattleDataProxy.super.DeactiveProxy(slot0)
 end
 
-slot9.InitUserShipsData = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.InitUserShipsData(slot0, slot1, slot2, slot3, slot4)
 	for slot8, slot9 in ipairs(slot2) do
 		slot10 = slot0:SpawnVanguard(slot9, slot3)
 	end
@@ -459,7 +465,7 @@ slot9.InitUserShipsData = function(slot0, slot1, slot2, slot3, slot4)
 	}))
 end
 
-slot9.InitUserSupportShipsData = function(slot0, slot1, slot2)
+function slot9.InitUserSupportShipsData(slot0, slot1, slot2)
 	slot3 = slot0:GetFleetByIFF(slot1)
 
 	for slot7, slot8 in ipairs(slot2) do
@@ -467,7 +473,7 @@ slot9.InitUserSupportShipsData = function(slot0, slot1, slot2)
 	end
 end
 
-slot9.InitUserAidData = function(slot0)
+function slot9.InitUserAidData(slot0)
 	for slot4, slot5 in ipairs(slot0._battleInitData.AidUnitList) do
 		slot7 = slot5.properties
 		slot7.level = slot5.level
@@ -485,16 +491,16 @@ slot9.InitUserAidData = function(slot0)
 	end
 end
 
-slot9.SetSubmarinAidData = function(slot0)
+function slot9.SetSubmarinAidData(slot0)
 	slot0:GetFleetByIFF(uv0.FRIENDLY_CODE):SetSubAidData(slot0._battleInitData.TotalSubAmmo, slot0._battleInitData.SubFlag)
 end
 
-slot9.AddWeather = function(slot0, slot1)
+function slot9.AddWeather(slot0, slot1)
 	table.insert(slot0._weahter, slot1)
 	slot0:InitWeatherData()
 end
 
-slot9.InitWeatherData = function(slot0)
+function slot9.InitWeatherData(slot0)
 	for slot4, slot5 in ipairs(slot0._weahter) do
 		if slot5 == uv0.WEATHER.NIGHT then
 			for slot9, slot10 in pairs(slot0._fleetList) do
@@ -508,7 +514,7 @@ slot9.InitWeatherData = function(slot0)
 	end
 end
 
-slot9.CelebrateVictory = function(slot0, slot1)
+function slot9.CelebrateVictory(slot0, slot1)
 	slot2 = nil
 	slot2 = (slot1 ~= slot0:GetFoeCode() or slot0._foeShipList) and slot0._friendlyShipList
 
@@ -517,7 +523,7 @@ slot9.CelebrateVictory = function(slot0, slot1)
 	end
 end
 
-slot9.InitStageData = function(slot0)
+function slot9.InitStageData(slot0)
 	slot0._currentStageData = slot0._dungeonInfo.stages[slot0._currentStageIndex]
 	slot0._countDown = slot0._currentStageData.timeCount
 	slot1 = slot0._currentStageData.totalArea
@@ -553,7 +559,7 @@ slot9.InitStageData = function(slot0)
 	end
 end
 
-slot9.GetVanguardBornCoordinate = function(slot0, slot1)
+function slot9.GetVanguardBornCoordinate(slot0, slot1)
 	if slot1 == uv0.FRIENDLY_CODE then
 		return slot0._currentStageData.fleetCorrdinate
 	elseif slot1 == uv0.FOE_CODE then
@@ -561,19 +567,19 @@ slot9.GetVanguardBornCoordinate = function(slot0, slot1)
 	end
 end
 
-slot9.GetTotalBounds = function(slot0)
+function slot9.GetTotalBounds(slot0)
 	return slot0._totalUpperBound, slot0._totalLowerBound, slot0._totalLeftBound, slot0._totalRightBound
 end
 
-slot9.GetTotalRightBound = function(slot0)
+function slot9.GetTotalRightBound(slot0)
 	return slot0._totalRightBound
 end
 
-slot9.GetTotalLowerBound = function(slot0)
+function slot9.GetTotalLowerBound(slot0)
 	return slot0._totalLowerBound
 end
 
-slot9.GetUnitBoundByIFF = function(slot0, slot1)
+function slot9.GetUnitBoundByIFF(slot0, slot1)
 	if slot1 == uv0.FRIENDLY_CODE then
 		return slot0._leftZoneUpperBound, slot0._leftZoneLowerBound, slot0._leftZoneLeftBound, uv0.MaxRight, uv0.MaxLeft, slot0._leftZoneRightBound
 	elseif slot1 == uv0.FOE_CODE then
@@ -581,7 +587,7 @@ slot9.GetUnitBoundByIFF = function(slot0, slot1)
 	end
 end
 
-slot9.GetFleetBoundByIFF = function(slot0, slot1)
+function slot9.GetFleetBoundByIFF(slot0, slot1)
 	if slot1 == uv0.FRIENDLY_CODE then
 		return slot0._leftZoneUpperBound, slot0._leftZoneLowerBound, slot0._leftZoneLeftBound, slot0._leftZoneRightBound
 	elseif slot1 == uv0.FOE_CODE then
@@ -589,13 +595,13 @@ slot9.GetFleetBoundByIFF = function(slot0, slot1)
 	end
 end
 
-slot9.ShiftFleetBound = function(slot0, slot1, slot2)
+function slot9.ShiftFleetBound(slot0, slot1, slot2)
 	slot1:GetUnitBound():SwtichDuelAggressive()
 	slot1:SetAutobotBound(slot0:GetFleetBoundByIFF(slot2))
 	slot1:UpdateScoutUnitBound()
 end
 
-slot9.GetFieldBound = function(slot0)
+function slot9.GetFieldBound(slot0)
 	if slot0._battleInitData and slot0._battleInitData.battleType == SYSTEM_DUEL then
 		return slot0:GetTotalBounds()
 	else
@@ -603,7 +609,7 @@ slot9.GetFieldBound = function(slot0)
 	end
 end
 
-slot9.GetFleetByIFF = function(slot0, slot1)
+function slot9.GetFleetByIFF(slot0, slot1)
 	if slot0._fleetList[slot1] == nil then
 		slot2 = uv0.Battle.BattleFleetVO.New(slot1)
 		slot0._fleetList[slot1] = slot2
@@ -630,35 +636,35 @@ slot9.GetFleetByIFF = function(slot0, slot1)
 	return slot0._fleetList[slot1]
 end
 
-slot9.GetAidUnit = function(slot0)
+function slot9.GetAidUnit(slot0)
 	return slot0._aidUnitList
 end
 
-slot9.GetFleetList = function(slot0)
+function slot9.GetFleetList(slot0)
 	return slot0._fleetList
 end
 
-slot9.GetEnemySubmarineCount = function(slot0)
+function slot9.GetEnemySubmarineCount(slot0)
 	return slot0._enemySubmarineCount
 end
 
-slot9.GetCommander = function(slot0)
+function slot9.GetCommander(slot0)
 	return slot0._commander
 end
 
-slot9.GetCommanderBuff = function(slot0)
+function slot9.GetCommanderBuff(slot0)
 	return slot0._commanderBuff, slot0._subCommanderBuff
 end
 
-slot9.GetStageInfo = function(slot0)
+function slot9.GetStageInfo(slot0)
 	return slot0._currentStageData
 end
 
-slot9.GetWinningStreak = function(slot0)
+function slot9.GetWinningStreak(slot0)
 	return slot0._chapterWinningStreak
 end
 
-slot9.GetBGMList = function(slot0, slot1)
+function slot9.GetBGMList(slot0, slot1)
 	if not slot1 then
 		return slot0._initBGMList
 	else
@@ -666,27 +672,27 @@ slot9.GetBGMList = function(slot0, slot1)
 	end
 end
 
-slot9.GetDungeonLevel = function(slot0)
+function slot9.GetDungeonLevel(slot0)
 	return slot0._dungeonLevel
 end
 
-slot9.SetDungeonLevel = function(slot0, slot1)
+function slot9.SetDungeonLevel(slot0, slot1)
 	slot0._dungeonLevel = slot1
 end
 
-slot9.IsCompletelyRepress = function(slot0)
+function slot9.IsCompletelyRepress(slot0)
 	return slot0._completelyRepress
 end
 
-slot9.GetRepressReduce = function(slot0)
+function slot9.GetRepressReduce(slot0)
 	return slot0._repressReduce
 end
 
-slot9.GetRepressLevel = function(slot0)
+function slot9.GetRepressLevel(slot0)
 	return slot0._repressLevel
 end
 
-slot9.updateInit = function(slot0, slot1)
+function slot9.updateInit(slot0, slot1)
 	slot0:TriggerBattleInitBuffs()
 
 	slot0.checkCld = true
@@ -696,7 +702,7 @@ slot9.updateInit = function(slot0, slot1)
 	slot0.Update = slot0.updateLoop
 end
 
-slot9.updateLoop = function(slot0, slot1)
+function slot9.updateLoop(slot0, slot1)
 	slot0.FrameIndex = slot0.FrameIndex + 1
 
 	slot0:updateDeadList()
@@ -869,7 +875,7 @@ slot9.updateLoop = function(slot0, slot1)
 	end
 end
 
-slot9.UpdateAutoComponent = function(slot0, slot1)
+function slot9.UpdateAutoComponent(slot0, slot1)
 	for slot5, slot6 in pairs(slot0._fleetList) do
 		slot6:UpdateAutoComponent(slot1)
 	end
@@ -889,7 +895,7 @@ slot9.UpdateAutoComponent = function(slot0, slot1)
 	end
 end
 
-slot9.UpdateWeather = function(slot0, slot1)
+function slot9.UpdateWeather(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0._weahter) do
 		if slot6 == uv0.WEATHER.NIGHT then
 			slot7 = {
@@ -954,13 +960,13 @@ slot9.UpdateWeather = function(slot0, slot1)
 	end
 end
 
-slot9.UpdateEscapeOnly = function(slot0, slot1)
+function slot9.UpdateEscapeOnly(slot0, slot1)
 	for slot5, slot6 in pairs(slot0._foeShipList) do
 		slot6:Update(slot1)
 	end
 end
 
-slot9.UpdateCountDown = function(slot0, slot1)
+function slot9.UpdateCountDown(slot0, slot1)
 	slot0._lastUpdateTime = slot0._lastUpdateTime or slot1
 
 	if slot0._countDown - (slot1 - slot0._lastUpdateTime) <= 0 then
@@ -976,7 +982,7 @@ slot9.UpdateCountDown = function(slot0, slot1)
 	slot0._lastUpdateTime = slot1
 end
 
-slot9.SpawnMonster = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot9.SpawnMonster(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = slot0:GenerateUnitID()
 	slot8 = {}
 
@@ -1025,12 +1031,12 @@ slot9.SpawnMonster = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0._unitList[slot6] = slot11
 
 	if slot11:IsSpectre() then
-		slot11:SetBlindInvisible(true)
+		slot11:UpdateBlindInvisibleBySpectre()
 	else
 		slot0._cldSystem:InitShipCld(slot11)
 	end
 
-	slot11:SummonSickness(uv3.SUMMONING_SICKNESS_DURATION)
+	slot11:SummonSickness(slot1.sickness or uv3.SUMMONING_SICKNESS_DURATION)
 	slot11:SetMoveCast(slot1.moveCast == true)
 
 	if slot11:GetIFF() == uv4.FRIENDLY_CODE then
@@ -1072,7 +1078,7 @@ slot9.SpawnMonster = function(slot0, slot1, slot2, slot3, slot4, slot5)
 		extraInfo = slot1.extraInfo
 	}))
 
-	slot15 = function(slot0)
+	function slot16(slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			slot6, slot7 = nil
 
@@ -1088,19 +1094,19 @@ slot9.SpawnMonster = function(slot0, slot1, slot2, slot3, slot4, slot5)
 		end
 	end
 
-	slot19 = slot0._battleInitData.AffixBuffList or {}
+	slot20 = slot0._battleInitData.AffixBuffList or {}
 
-	slot15(slot11:GetTemplate().buff_list)
-	slot15(slot0._battleInitData.ExtraBuffList or {})
-	slot15(slot1.buffList or {})
+	slot16(slot11:GetTemplate().buff_list)
+	slot16(slot0._battleInitData.ExtraBuffList or {})
+	slot16(slot1.buffList or {})
 
 	if slot1.affix then
-		slot15(slot19)
+		slot16(slot20)
 	end
 
 	if slot1.summonWaveIndex then
-		slot0._waveSummonList[slot20] = slot0._waveSummonList[slot20] or {}
-		slot0._waveSummonList[slot20][slot11] = true
+		slot0._waveSummonList[slot21] = slot0._waveSummonList[slot21] or {}
+		slot0._waveSummonList[slot21][slot11] = true
 	end
 
 	slot11:CheckWeaponInitial()
@@ -1120,7 +1126,7 @@ slot9.SpawnMonster = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	return slot11
 end
 
-slot9.UpdateHostileSubmarine = function(slot0, slot1)
+function slot9.UpdateHostileSubmarine(slot0, slot1)
 	if slot1 then
 		slot0._enemySubmarineCount = slot0._enemySubmarineCount + 1
 	else
@@ -1130,7 +1136,7 @@ slot9.UpdateHostileSubmarine = function(slot0, slot1)
 	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_HOSTILE_SUBMARINE))
 end
 
-slot9.SpawnNPC = function(slot0, slot1, slot2)
+function slot9.SpawnNPC(slot0, slot1, slot2)
 	slot3 = slot0:GenerateUnitID()
 	slot4 = uv0.UnitType.MINION_UNIT
 	slot6 = {}
@@ -1183,7 +1189,7 @@ slot9.SpawnNPC = function(slot0, slot1, slot2)
 		extraInfo = slot1.extraInfo
 	}))
 
-	slot11 = function(slot0)
+	function slot11(slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			slot6, slot7 = nil
 
@@ -1206,7 +1212,7 @@ slot9.SpawnNPC = function(slot0, slot1, slot2)
 	return slot7
 end
 
-slot9.EnemyEscape = function(slot0)
+function slot9.EnemyEscape(slot0)
 	for slot4, slot5 in pairs(slot0._foeShipList) do
 		if slot5:ContainsLabelTag(uv0.ESCAPE_EXPLO_TAG) then
 			slot5:SetDeathReason(uv1.UnitDeathReason.CLS)
@@ -1218,7 +1224,7 @@ slot9.EnemyEscape = function(slot0)
 	end
 end
 
-slot9.GetNPCTeam = function(slot0, slot1)
+function slot9.GetNPCTeam(slot0, slot1)
 	if not slot0._teamList[slot1] then
 		slot0._teamList[slot1] = uv0.Battle.BattleTeamVO.New(slot1)
 	end
@@ -1226,7 +1232,7 @@ slot9.GetNPCTeam = function(slot0, slot1)
 	return slot0._teamList[slot1]
 end
 
-slot9.KillNPCTeam = function(slot0, slot1)
+function slot9.KillNPCTeam(slot0, slot1)
 	if slot0._teamList[slot1] then
 		slot2:Dispose()
 
@@ -1234,7 +1240,7 @@ slot9.KillNPCTeam = function(slot0, slot1)
 	end
 end
 
-slot9.SpawnVanguard = function(slot0, slot1, slot2)
+function slot9.SpawnVanguard(slot0, slot1, slot2)
 	slot4 = slot0:generatePlayerUnit(slot1, slot2, BuildVector3(slot0:GetVanguardBornCoordinate(slot2)), slot0._commanderBuff)
 
 	slot0:GetFleetByIFF(slot2):AppendPlayerUnit(slot4)
@@ -1249,7 +1255,7 @@ slot9.SpawnVanguard = function(slot0, slot1, slot2)
 	return slot4
 end
 
-slot9.SpawnMain = function(slot0, slot1, slot2)
+function slot9.SpawnMain(slot0, slot1, slot2)
 	slot3 = nil
 	slot5 = #slot0:GetFleetByIFF(slot2):GetMainList() + 1
 	slot3 = (not slot0._currentStageData.mainUnitPosition or not slot0._currentStageData.mainUnitPosition[slot2] or Clone(slot0._currentStageData.mainUnitPosition[slot2][slot5])) and Clone(uv0.MAIN_UNIT_POS[slot2][slot5])
@@ -1274,7 +1280,7 @@ slot9.SpawnMain = function(slot0, slot1, slot2)
 	return slot6
 end
 
-slot9.SpawnSub = function(slot0, slot1, slot2)
+function slot9.SpawnSub(slot0, slot1, slot2)
 	slot3 = nil
 	slot5 = #slot0:GetFleetByIFF(slot2):GetSubList() + 1
 	slot6 = uv0.SUB_UNIT_OFFSET_X + (uv1.GetPlayerShipTmpDataFromID(slot1.tmpID).summon_offset or 0)
@@ -1292,7 +1298,7 @@ slot9.SpawnSub = function(slot0, slot1, slot2)
 	return slot7
 end
 
-slot9.SpawnManualSub = function(slot0, slot1, slot2)
+function slot9.SpawnManualSub(slot0, slot1, slot2)
 	slot4 = slot0:generatePlayerUnit(slot1, slot2, BuildVector3(slot0:GetVanguardBornCoordinate(slot2)), slot0._commanderBuff)
 
 	slot0:GetFleetByIFF(slot2):AddManualSubmarine(slot4)
@@ -1306,7 +1312,7 @@ slot9.SpawnManualSub = function(slot0, slot1, slot2)
 	return slot4
 end
 
-slot9.SpawnSupportUnit = function(slot0, slot1, slot2)
+function slot9.SpawnSupportUnit(slot0, slot1, slot2)
 	slot3 = slot0:generateSupportPlayerUnit(slot1, slot2)
 
 	slot0:GetFleetByIFF(slot2):AppendSupportUnit(slot3)
@@ -1314,7 +1320,7 @@ slot9.SpawnSupportUnit = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot9.ShutdownPlayerUnit = function(slot0, slot1)
+function slot9.ShutdownPlayerUnit(slot0, slot1)
 	slot2 = slot0._unitList[slot1]
 	slot4 = slot0:GetFleetByIFF(slot2:GetIFF())
 
@@ -1332,7 +1338,7 @@ slot9.ShutdownPlayerUnit = function(slot0, slot1)
 	}))
 end
 
-slot9.updateDeadList = function(slot0)
+function slot9.updateDeadList(slot0)
 	slot1 = #slot0._deadUnitList
 
 	while slot1 > 0 do
@@ -1343,7 +1349,7 @@ slot9.updateDeadList = function(slot0)
 	end
 end
 
-slot9.KillUnit = function(slot0, slot1)
+function slot9.KillUnit(slot0, slot1)
 	if slot0._unitList[slot1] == nil then
 		return
 	end
@@ -1405,7 +1411,7 @@ slot9.KillUnit = function(slot0, slot1)
 	table.insert(slot0._deadUnitList, slot2)
 end
 
-slot9.KillAllEnemy = function(slot0)
+function slot9.KillAllEnemy(slot0)
 	for slot4, slot5 in pairs(slot0._unitList) do
 		if slot5:GetIFF() == uv0.FOE_CODE and slot5:IsAlive() and not slot5:IsBoss() then
 			slot5:DeadAction()
@@ -1413,7 +1419,7 @@ slot9.KillAllEnemy = function(slot0)
 	end
 end
 
-slot9.KillSubmarineByIFF = function(slot0, slot1)
+function slot9.KillSubmarineByIFF(slot0, slot1)
 	for slot5, slot6 in pairs(slot0._unitList) do
 		if slot6:GetIFF() == slot1 and slot6:IsAlive() and table.contains(TeamType.SubShipType, slot6:GetTemplate().type) and not slot6:IsBoss() then
 			slot6:DeadAction()
@@ -1421,7 +1427,7 @@ slot9.KillSubmarineByIFF = function(slot0, slot1)
 	end
 end
 
-slot9.KillAllAircraft = function(slot0)
+function slot9.KillAllAircraft(slot0)
 	for slot4, slot5 in pairs(slot0._aircraftList) do
 		slot5:Clear()
 		slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_AIR_CRAFT, {
@@ -1432,7 +1438,7 @@ slot9.KillAllAircraft = function(slot0)
 	end
 end
 
-slot9.KillWaveSummonMonster = function(slot0, slot1)
+function slot9.KillWaveSummonMonster(slot0, slot1)
 	if slot0._waveSummonList[slot1] then
 		for slot6, slot7 in pairs(slot2) do
 			slot0:KillUnit(slot6:GetUniqueID())
@@ -1442,11 +1448,11 @@ slot9.KillWaveSummonMonster = function(slot0, slot1)
 	slot0._waveSummonList[slot1] = nil
 end
 
-slot9.IsThereBoss = function(slot0)
+function slot9.IsThereBoss(slot0)
 	return slot0:GetActiveBossCount() > 0
 end
 
-slot9.GetActiveBossCount = function(slot0)
+function slot9.GetActiveBossCount(slot0)
 	slot1 = 0
 
 	for slot5, slot6 in pairs(slot0:GetUnitList()) do
@@ -1458,7 +1464,7 @@ slot9.GetActiveBossCount = function(slot0)
 	return slot1
 end
 
-slot9.setShipUnitBound = function(slot0, slot1)
+function slot9.setShipUnitBound(slot0, slot1)
 	slot2 = slot1:GetIFF()
 
 	if slot1:GetFleetVO() then
@@ -1468,7 +1474,7 @@ slot9.setShipUnitBound = function(slot0, slot1)
 	end
 end
 
-slot9.generatePlayerUnit = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.generatePlayerUnit(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot0:GenerateUnitID()
 	slot6 = slot1.properties
 	slot6.level = slot1.level
@@ -1532,7 +1538,7 @@ slot9.generatePlayerUnit = function(slot0, slot1, slot2, slot3, slot4)
 	return slot10
 end
 
-slot9.generateSupportPlayerUnit = function(slot0, slot1, slot2)
+function slot9.generateSupportPlayerUnit(slot0, slot1, slot2)
 	slot3 = slot0:GenerateUnitID()
 	slot4 = slot1.properties
 	slot4.level = slot1.level
@@ -1557,7 +1563,7 @@ slot9.generateSupportPlayerUnit = function(slot0, slot1, slot2)
 	return slot6
 end
 
-slot9.SwitchSpectreUnit = function(slot0, slot1)
+function slot9.SwitchSpectreUnit(slot0, slot1)
 	slot2 = slot1:GetUniqueID()
 	slot4 = slot1:GetIFF() == uv0.FRIENDLY_CODE and slot0._friendlyShipList or slot0._foeShipList
 
@@ -1579,41 +1585,41 @@ slot9.SwitchSpectreUnit = function(slot0, slot1)
 	end
 end
 
-slot9.GetUnitList = function(slot0)
+function slot9.GetUnitList(slot0)
 	return slot0._unitList
 end
 
-slot9.GetFriendlyShipList = function(slot0)
+function slot9.GetFriendlyShipList(slot0)
 	return slot0._friendlyShipList
 end
 
-slot9.GetFoeShipList = function(slot0)
+function slot9.GetFoeShipList(slot0)
 	return slot0._foeShipList
 end
 
-slot9.GetFoeAircraftList = function(slot0)
+function slot9.GetFoeAircraftList(slot0)
 	return slot0._foeAircraftList
 end
 
-slot9.GetFreeShipList = function(slot0)
+function slot9.GetFreeShipList(slot0)
 	return slot0._freeShipList
 end
 
-slot9.GetSpectreShipList = function(slot0)
+function slot9.GetSpectreShipList(slot0)
 	return slot0._spectreShipList
 end
 
-slot9.GenerateUnitID = function(slot0)
+function slot9.GenerateUnitID(slot0)
 	slot0._unitCount = slot0._unitCount + 1
 
 	return slot0._unitCount
 end
 
-slot9.GetCountDown = function(slot0)
+function slot9.GetCountDown(slot0)
 	return slot0._countDown
 end
 
-slot9.SpawnAirFighter = function(slot0, slot1)
+function slot9.SpawnAirFighter(slot0, slot1)
 	slot2 = #slot0._airFighterList + 1
 	slot3 = uv0.GetFormationTmpDataFromID(slot1.formation).pos_offset
 	slot4 = {
@@ -1625,7 +1631,7 @@ slot9.SpawnAirFighter = function(slot0, slot1)
 		maxTotalNumber = slot1.maxTotalNumber or 15
 	}
 
-	slot5 = function(slot0)
+	function slot5(slot0)
 		if uv0.currentNumber < uv0.totalNumber then
 			uv0.currentNumber = slot1 + 1
 			slot2 = uv1:CreateAirFighter(uv2)
@@ -1669,7 +1675,7 @@ slot9.SpawnAirFighter = function(slot0, slot1)
 	end)
 end
 
-slot9.ClearAirFighterTimer = function(slot0)
+function slot9.ClearAirFighterTimer(slot0)
 	for slot4, slot5 in ipairs(slot0._airFighterList) do
 		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot5.timer)
 
@@ -1679,7 +1685,7 @@ slot9.ClearAirFighterTimer = function(slot0)
 	slot0._airFighterList = {}
 end
 
-slot9.KillAllAirStrike = function(slot0)
+function slot9.KillAllAirStrike(slot0)
 	for slot4, slot5 in pairs(slot0._aircraftList) do
 		if slot5.__name == uv0.Battle.BattleAirFighterUnit.__name then
 			slot0._cldSystem:DeleteAircraftCld(slot5)
@@ -1722,15 +1728,15 @@ slot9.KillAllAirStrike = function(slot0)
 	slot0._airFighterList = {}
 end
 
-slot9.GetAirFighterInfo = function(slot0, slot1)
+function slot9.GetAirFighterInfo(slot0, slot1)
 	return slot0._airFighterList[slot1]
 end
 
-slot9.GetAirFighterList = function(slot0)
+function slot9.GetAirFighterList(slot0)
 	return slot0._airFighterList
 end
 
-slot9.CreateAircraft = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.CreateAircraft(slot0, slot1, slot2, slot3, slot4)
 	slot6 = uv0.CreateAircraftUnit(slot0:GenerateAircraftID(), slot2, slot1, slot3)
 
 	if slot4 then
@@ -1744,7 +1750,7 @@ slot9.CreateAircraft = function(slot0, slot1, slot2, slot3, slot4)
 	return slot6
 end
 
-slot9.CreateAirFighter = function(slot0, slot1)
+function slot9.CreateAirFighter(slot0, slot1)
 	slot2 = slot0:GenerateAircraftID()
 	slot3 = uv0.CreateAirFighterUnit(slot2, slot1)
 
@@ -1753,7 +1759,7 @@ slot9.CreateAirFighter = function(slot0, slot1)
 	return slot3
 end
 
-slot9.doCreateAirUnit = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.doCreateAirUnit(slot0, slot1, slot2, slot3, slot4)
 	slot0._aircraftList[slot1] = slot2
 
 	slot0._cldSystem:InitAircraftCld(slot2)
@@ -1773,7 +1779,7 @@ slot9.doCreateAirUnit = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot9.KillAircraft = function(slot0, slot1)
+function slot9.KillAircraft(slot0, slot1)
 	if slot0._aircraftList[slot1] == nil then
 		return
 	end
@@ -1807,17 +1813,17 @@ slot9.KillAircraft = function(slot0, slot1)
 	}))
 end
 
-slot9.GetAircraftList = function(slot0)
+function slot9.GetAircraftList(slot0)
 	return slot0._aircraftList
 end
 
-slot9.GenerateAircraftID = function(slot0)
+function slot9.GenerateAircraftID(slot0)
 	slot0._aircraftCount = slot0._aircraftCount + 1
 
 	return slot0._aircraftCount
 end
 
-slot9.CreateBulletUnit = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.CreateBulletUnit(slot0, slot1, slot2, slot3, slot4)
 	slot6, slot7 = uv0.CreateBattleBulletData(slot0:GenerateBulletID(), slot1, slot2, slot3, slot4)
 
 	if slot7 then
@@ -1835,7 +1841,7 @@ slot9.CreateBulletUnit = function(slot0, slot1, slot2, slot3, slot4)
 	return slot6
 end
 
-slot9.RemoveBulletUnit = function(slot0, slot1)
+function slot9.RemoveBulletUnit(slot0, slot1)
 	if slot0._bulletList[slot1] == nil then
 		return
 	end
@@ -1854,18 +1860,18 @@ slot9.RemoveBulletUnit = function(slot0, slot1)
 	slot2:Dispose()
 end
 
-slot9.GetBulletList = function(slot0)
+function slot9.GetBulletList(slot0)
 	return slot0._bulletList
 end
 
-slot9.GenerateBulletID = function(slot0)
+function slot9.GenerateBulletID(slot0)
 	slot1 = slot0._bulletCount + 1
 	slot0._bulletCount = slot1
 
 	return slot1
 end
 
-slot9.CLSBullet = function(slot0, slot1, slot2)
+function slot9.CLSBullet(slot0, slot1, slot2)
 	slot3 = true
 
 	if slot0._battleInitData.battleType == SYSTEM_DUEL then
@@ -1883,7 +1889,7 @@ slot9.CLSBullet = function(slot0, slot1, slot2)
 	end
 end
 
-slot9.CLSAircraft = function(slot0, slot1)
+function slot9.CLSAircraft(slot0, slot1)
 	for slot5, slot6 in pairs(slot0._aircraftList) do
 		if slot6:GetIFF() == slot1 then
 			slot6:Clear()
@@ -1896,7 +1902,7 @@ slot9.CLSAircraft = function(slot0, slot1)
 	end
 end
 
-slot9.CLSMinion = function(slot0)
+function slot9.CLSMinion(slot0)
 	for slot4, slot5 in pairs(slot0._unitList) do
 		if slot5:GetIFF() == uv0.FOE_CODE and slot5:IsAlive() and not slot5:IsBoss() then
 			slot5:SetDeathReason(uv1.UnitDeathReason.CLS)
@@ -1905,7 +1911,7 @@ slot9.CLSMinion = function(slot0)
 	end
 end
 
-slot9.SpawnColumnArea = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
+function slot9.SpawnColumnArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
 	slot10 = uv0.Battle.BattleAOEData.New(slot0:GenerateAreaID(), slot2, slot6, slot8)
 
 	slot10:SetPosition(Clone(slot3))
@@ -1919,7 +1925,7 @@ slot9.SpawnColumnArea = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6
 	return slot10
 end
 
-slot9.SpawnCubeArea = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9)
+function slot9.SpawnCubeArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9)
 	slot11 = uv0.Battle.BattleAOEData.New(slot0:GenerateAreaID(), slot2, slot7, slot9)
 
 	slot11:SetPosition(Clone(slot3))
@@ -1934,7 +1940,7 @@ slot9.SpawnCubeArea = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, 
 	return slot11
 end
 
-slot9.SpawnLastingColumnArea = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11)
+function slot9.SpawnLastingColumnArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11)
 	slot13 = uv0.Battle.BattleLastingAOEData.New(slot0:GenerateAreaID(), slot2, slot6, slot7, slot10, slot11)
 
 	slot13:SetPosition(Clone(slot3))
@@ -1955,7 +1961,7 @@ slot9.SpawnLastingColumnArea = function(slot0, slot1, slot2, slot3, slot4, slot5
 	return slot13
 end
 
-slot9.SpawnLastingCubeArea = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11, slot12)
+function slot9.SpawnLastingCubeArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11, slot12)
 	slot14 = uv0.Battle.BattleLastingAOEData.New(slot0:GenerateAreaID(), slot2, slot7, slot8, slot11, slot12)
 
 	slot14:SetPosition(Clone(slot3))
@@ -1977,7 +1983,7 @@ slot9.SpawnLastingCubeArea = function(slot0, slot1, slot2, slot3, slot4, slot5, 
 	return slot14
 end
 
-slot9.SpawnTriggerColumnArea = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
+function slot9.SpawnTriggerColumnArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
 	slot10 = uv0.Battle.BattleTriggerAOEData.New(slot0:GenerateAreaID(), slot2, slot8)
 
 	slot10:SetPosition(Clone(slot3))
@@ -1998,14 +2004,14 @@ slot9.SpawnTriggerColumnArea = function(slot0, slot1, slot2, slot3, slot4, slot5
 	return slot10
 end
 
-slot9.CreateAreaOfEffect = function(slot0, slot1)
+function slot9.CreateAreaOfEffect(slot0, slot1)
 	slot0._AOEList[slot1:GetUniqueID()] = slot1
 
 	slot0._cldSystem:InitAOECld(slot1)
 	slot1:StartTimer()
 end
 
-slot9.RemoveAreaOfEffect = function(slot0, slot1)
+function slot9.RemoveAreaOfEffect(slot0, slot1)
 	if not slot0._AOEList[slot1] then
 		return
 	end
@@ -2020,17 +2026,17 @@ slot9.RemoveAreaOfEffect = function(slot0, slot1)
 	}))
 end
 
-slot9.GetAOEList = function(slot0)
+function slot9.GetAOEList(slot0)
 	return slot0._AOEList
 end
 
-slot9.GenerateAreaID = function(slot0)
+function slot9.GenerateAreaID(slot0)
 	slot0._AOECount = slot0._AOECount + 1
 
 	return slot0._AOECount
 end
 
-slot9.SpawnWall = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.SpawnWall(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot0:GenerateWallID()
 	slot6 = uv0.Battle.BattleWallData.New(slot5, slot1, slot2, slot3, slot4)
 	slot0._wallList[slot5] = slot6
@@ -2040,13 +2046,13 @@ slot9.SpawnWall = function(slot0, slot1, slot2, slot3, slot4)
 	return slot6
 end
 
-slot9.RemoveWall = function(slot0, slot1)
+function slot9.RemoveWall(slot0, slot1)
 	slot0._wallList[slot1] = nil
 
 	slot0._cldSystem:DeleteWallCld(slot0._wallList[slot1])
 end
 
-slot9.SpawnShelter = function(slot0, slot1, slot2)
+function slot9.SpawnShelter(slot0, slot1, slot2)
 	slot3 = slot0:GernerateShelterID()
 	slot4 = uv0.Battle.BattleShelterData.New(slot3)
 	slot0._shelterList[slot3] = slot4
@@ -2054,7 +2060,7 @@ slot9.SpawnShelter = function(slot0, slot1, slot2)
 	return slot4
 end
 
-slot9.RemoveShelter = function(slot0, slot1)
+function slot9.RemoveShelter(slot0, slot1)
 	slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_SHELTER, {
 		uid = slot1
 	}))
@@ -2063,23 +2069,23 @@ slot9.RemoveShelter = function(slot0, slot1)
 	slot0._shelterList[slot1] = nil
 end
 
-slot9.GetWallList = function(slot0)
+function slot9.GetWallList(slot0)
 	return slot0._wallList
 end
 
-slot9.GenerateWallID = function(slot0)
+function slot9.GenerateWallID(slot0)
 	slot0._wallIndex = slot0._wallIndex + 1
 
 	return slot0._wallIndex
 end
 
-slot9.GernerateShelterID = function(slot0)
+function slot9.GernerateShelterID(slot0)
 	slot0._shelterIndex = slot0._shelterIndex + 1
 
 	return slot0._shelterIndex
 end
 
-slot9.SpawnEnvironment = function(slot0, slot1)
+function slot9.SpawnEnvironment(slot0, slot1)
 	slot3 = uv0.Battle.BattleEnvironmentUnit.New(slot0:GernerateEnvironmentID(), uv1.FOE_CODE)
 
 	slot3:SetTemplate(slot1)
@@ -2087,7 +2093,7 @@ slot9.SpawnEnvironment = function(slot0, slot1)
 	slot4 = slot3:GetBehaviours()
 	slot5 = Vector3(slot1.coordinate[1], slot1.coordinate[2], slot1.coordinate[3])
 
-	slot6 = function(slot0)
+	function slot6(slot0)
 		slot1 = {}
 
 		for slot5, slot6 in ipairs(slot0) do
@@ -2099,10 +2105,10 @@ slot9.SpawnEnvironment = function(slot0, slot1)
 		uv1:UpdateFrequentlyCollide(slot1)
 	end
 
-	slot7 = function()
+	function slot7()
 	end
 
-	slot8 = function()
+	function slot8()
 	end
 
 	slot9 = slot1.field_type or uv2.BulletField.SURFACE
@@ -2117,7 +2123,7 @@ slot9.SpawnEnvironment = function(slot0, slot1)
 	return slot3
 end
 
-slot9.RemoveEnvironment = function(slot0, slot1)
+function slot9.RemoveEnvironment(slot0, slot1)
 	slot2 = slot0._environmentList[slot1]
 
 	slot0:RemoveAreaOfEffect(slot2:GetAOEData():GetUniqueID())
@@ -2126,23 +2132,23 @@ slot9.RemoveEnvironment = function(slot0, slot1)
 	slot0._environmentList[slot1] = nil
 end
 
-slot9.DispatchWarning = function(slot0, slot1, slot2)
+function slot9.DispatchWarning(slot0, slot1, slot2)
 	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_ENVIRONMENT_WARNING, {
 		isActive = slot1
 	}))
 end
 
-slot9.GetEnvironmentList = function(slot0)
+function slot9.GetEnvironmentList(slot0)
 	return slot0._environmentList
 end
 
-slot9.GernerateEnvironmentID = function(slot0)
+function slot9.GernerateEnvironmentID(slot0)
 	slot0._environmentIndex = slot0._environmentIndex + 1
 
 	return slot0._environmentIndex
 end
 
-slot9.SpawnEffect = function(slot0, slot1, slot2, slot3)
+function slot9.SpawnEffect(slot0, slot1, slot2, slot3)
 	slot0:DispatchEvent(uv0.Event.New(uv1.ADD_EFFECT, {
 		FXID = slot1,
 		position = slot2,
@@ -2150,7 +2156,7 @@ slot9.SpawnEffect = function(slot0, slot1, slot2, slot3)
 	}))
 end
 
-slot9.SpawnUIFX = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.SpawnUIFX(slot0, slot1, slot2, slot3, slot4)
 	slot0:DispatchEvent(uv0.Event.New(uv1.ADD_UI_FX, {
 		FXID = slot1,
 		position = slot2,
@@ -2159,7 +2165,7 @@ slot9.SpawnUIFX = function(slot0, slot1, slot2, slot3, slot4)
 	}))
 end
 
-slot9.SpawnCameraFX = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.SpawnCameraFX(slot0, slot1, slot2, slot3, slot4)
 	slot0:DispatchEvent(uv0.Event.New(uv1.ADD_CAMERA_FX, {
 		FXID = slot1,
 		position = slot2,
@@ -2168,15 +2174,15 @@ slot9.SpawnCameraFX = function(slot0, slot1, slot2, slot3, slot4)
 	}))
 end
 
-slot9.GetFriendlyCode = function(slot0)
+function slot9.GetFriendlyCode(slot0)
 	return slot0._friendlyCode
 end
 
-slot9.GetFoeCode = function(slot0)
+function slot9.GetFoeCode(slot0)
 	return slot0._foeCode
 end
 
-slot9.GetOppoSideCode = function(slot0)
+function slot9.GetOppoSideCode(slot0)
 	if slot0 == uv0.FRIENDLY_CODE then
 		return uv0.FOE_CODE
 	elseif slot0 == uv0.FOE_CODE then
@@ -2184,11 +2190,11 @@ slot9.GetOppoSideCode = function(slot0)
 	end
 end
 
-slot9.GetStatistics = function(slot0)
+function slot9.GetStatistics(slot0)
 	return slot0._statistics
 end
 
-slot9.BlockManualCast = function(slot0, slot1)
+function slot9.BlockManualCast(slot0, slot1)
 	slot2 = slot1 and 1 or -1
 
 	for slot6, slot7 in pairs(slot0._fleetList) do
@@ -2196,13 +2202,13 @@ slot9.BlockManualCast = function(slot0, slot1)
 	end
 end
 
-slot9.JamManualCast = function(slot0, slot1)
+function slot9.JamManualCast(slot0, slot1)
 	slot0:DispatchEvent(uv0.Event.New(uv1.JAMMING, {
 		jammingFlag = slot1
 	}))
 end
 
-slot9.SubmarineStrike = function(slot0, slot1)
+function slot9.SubmarineStrike(slot0, slot1)
 	slot2 = slot0:GetFleetByIFF(slot1)
 	slot3 = slot2:GetSubAidVO()
 
@@ -2237,11 +2243,11 @@ slot9.SubmarineStrike = function(slot0, slot1)
 	slot3:Cast()
 end
 
-slot9.GetWaveFlags = function(slot0)
+function slot9.GetWaveFlags(slot0)
 	return slot0._waveFlags
 end
 
-slot9.AddWaveFlag = function(slot0, slot1)
+function slot9.AddWaveFlag(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -2253,7 +2259,7 @@ slot9.AddWaveFlag = function(slot0, slot1)
 	table.insert(slot2, slot1)
 end
 
-slot9.RemoveFlag = function(slot0, slot1)
+function slot9.RemoveFlag(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -2265,20 +2271,20 @@ slot9.RemoveFlag = function(slot0, slot1)
 	table.removebyvalue(slot2, slot1)
 end
 
-slot9.DispatchCustomWarning = function(slot0, slot1)
+function slot9.DispatchCustomWarning(slot0, slot1)
 	slot0:DispatchEvent(uv0.Event.New(uv1.EDIT_CUSTOM_WARNING_LABEL, {
 		labelData = slot1
 	}))
 end
 
-slot9.DispatchGridmanSkill = function(slot0, slot1, slot2)
+function slot9.DispatchGridmanSkill(slot0, slot1, slot2)
 	slot0:DispatchEvent(uv0.Event.New(uv1.GRIDMAN_SKILL_FLOAT, {
 		type = slot1,
 		IFF = slot2
 	}))
 end
 
-slot9.SpawnFusionUnit = function(slot0, slot1, slot2, slot3, slot4)
+function slot9.SpawnFusionUnit(slot0, slot1, slot2, slot3, slot4)
 	slot7 = slot0:generatePlayerUnit(slot2, slot1:GetIFF(), Clone(slot1:GetPosition()), slot0._commanderBuff)
 
 	uv0.SetFusionAttrFromElement(slot7, slot1, slot3, slot4)
@@ -2295,7 +2301,7 @@ slot9.SpawnFusionUnit = function(slot0, slot1, slot2, slot3, slot4)
 	return slot7
 end
 
-slot9.DefusionUnit = function(slot0, slot1)
+function slot9.DefusionUnit(slot0, slot1)
 	slot3 = slot0:GetFleetByIFF(slot1:GetIFF())
 
 	slot3:RemovePlayerUnit(slot1)
@@ -2311,7 +2317,7 @@ slot9.DefusionUnit = function(slot0, slot1)
 	slot0:KillUnit(slot1:GetUniqueID())
 end
 
-slot9.FreezeUnit = function(slot0, slot1)
+function slot9.FreezeUnit(slot0, slot1)
 	uv0.SetCurrent(slot1, uv1.Battle.BattleBuffSetBattleUnitType.ATTR_KEY, uv2.FUSION_ELEMENT_UNIT_TYPE)
 	slot1:UpdateBlindInvisibleBySpectre()
 	slot0:SwitchSpectreUnit(slot1)
@@ -2335,7 +2341,7 @@ slot9.FreezeUnit = function(slot0, slot1)
 	end
 end
 
-slot9.ActiveFreezeUnit = function(slot0, slot1)
+function slot9.ActiveFreezeUnit(slot0, slot1)
 	uv0.SetCurrent(slot1, uv1.Battle.BattleBuffSetBattleUnitType.ATTR_KEY, uv2.PLAYER_DEFAULT)
 	slot1:UpdateBlindInvisibleBySpectre()
 	slot0:SwitchSpectreUnit(slot1)

@@ -1,16 +1,16 @@
 slot0 = class("ContextMediator", pm.Mediator)
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0:initNotificationHandleDic()
 	uv0.super.Ctor(slot0, nil, slot1)
 end
 
-slot0.initNotificationHandleDic = function(slot0)
+function slot0.initNotificationHandleDic(slot0)
 	slot0.handElse = nil
 	slot0.handleDic = nil
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	if slot0.handleDic then
 		return underscore.keys(slot0.handleDic)
 	else
@@ -18,7 +18,7 @@ slot0.listNotificationInterests = function(slot0)
 	end
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	if slot0.handleDic then
 		switch(slot1:getName(), slot0.handleDic, slot0.handElse, slot0, slot1)
 	else
@@ -26,7 +26,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.onRegister = function(slot0)
+function slot0.onRegister(slot0)
 	slot0.event = {}
 
 	slot0:bind(BaseUI.ON_BACK_PRESSED, function (slot0, slot1)
@@ -50,7 +50,17 @@ slot0.onRegister = function(slot0)
 		uv0:sendNotification(GAME.GO_BACK, slot1)
 	end)
 	slot0:bind(BaseUI.ON_HOME, function (slot0)
-		if getProxy(ContextProxy):getCurrentContext():retriveLastChild() and slot3 ~= slot2 then
+		if getProxy(ContextProxy):getCurrentContext().mediator == NewMainMediator then
+			for slot6 = #slot2.children, 1, -1 do
+				uv0:sendNotification(GAME.REMOVE_LAYERS, {
+					context = slot2.children[slot6]
+				})
+			end
+
+			return
+		end
+
+		if slot2:retriveLastChild() and slot3 ~= slot2 then
 			uv0:sendNotification(GAME.REMOVE_LAYERS, {
 				onHome = true,
 				context = slot3
@@ -92,7 +102,7 @@ slot0.onRegister = function(slot0)
 		seriesAsync(slot2, slot1.removeFunc)
 	end)
 
-	slot1 = function(slot0, slot1)
+	function slot1(slot0, slot1)
 		slot4 = {}
 
 		for slot8, slot9 in pairs(getProxy(BayProxy):getNewShip(true)) do
@@ -102,8 +112,8 @@ slot0.onRegister = function(slot0)
 		end
 
 		underscore.each(slot0, function (slot0)
-			if slot0.type == DROP_TYPE_NPC_SHIP then
-				table.insert(uv0, uv1:getShipById(slot0.id))
+			if slot0.type == DROP_TYPE_OPERATION then
+				table.insert(uv0, uv1:getShipById(slot0.count))
 			elseif slot0.type == DROP_TYPE_SHIP then
 				if Ship.isMetaShipByConfigID(slot0.configId or slot0.id) then
 					if table.indexof(uv2, slot1) then
@@ -141,7 +151,7 @@ slot0.onRegister = function(slot0)
 		end
 	end
 
-	slot2 = function(slot0, slot1)
+	function slot2(slot0, slot1)
 		for slot5, slot6 in pairs(slot0) do
 			if slot6.type == DROP_TYPE_SKIN and pg.ship_skin_template[slot6.id].skin_type ~= ShipSkin.SKIN_TYPE_REMAKE and not getProxy(ShipSkinProxy):hasOldNonLimitSkin(slot6.id) then
 				table.insert(slot1, function (slot0)
@@ -181,6 +191,33 @@ slot0.onRegister = function(slot0)
 		end
 	end
 
+	function slot3(slot0, slot1)
+		slot2 = 0
+
+		for slot6, slot7 in ipairs(slot0) do
+			if slot7.type == DROP_TYPE_COMMANDER_CAT then
+				slot2 = slot2 + 1
+			end
+		end
+
+		if slot2 == 0 then
+			return
+		end
+
+		for slot7, slot8 in ipairs(getProxy(CommanderProxy):GetNewestCommander(slot2)) do
+			table.insert(slot1, function (slot0)
+				uv0:addSubLayers(Context.New({
+					viewComponent = NewCommanderScene,
+					mediator = NewCommanderMediator,
+					data = {
+						commander = uv1,
+						onExit = slot0
+					}
+				}))
+			end)
+		end
+	end
+
 	slot0:bind(BaseUI.ON_ACHIEVE, function (slot0, slot1, slot2)
 		slot3 = {}
 
@@ -194,6 +231,7 @@ slot0.onRegister = function(slot0)
 			table.insert(slot3, function (slot0)
 				uv0(uv1, uv2)
 				uv3(uv1, uv2)
+				uv4(uv1, uv2)
 				slot0()
 			end)
 		end
@@ -214,6 +252,7 @@ slot0.onRegister = function(slot0)
 			table.insert(slot2, function (slot0)
 				uv0(uv1, uv2)
 				uv3(uv1, uv2)
+				uv4(uv1, uv2)
 				slot0()
 			end)
 		end
@@ -241,7 +280,7 @@ slot0.onRegister = function(slot0)
 	slot0:register()
 end
 
-slot0.commonBind = function(slot0)
+function slot0.commonBind(slot0)
 	uv0.CommonBindDic = uv0.CommonBindDic or {
 		[BaseUI.ON_DROP] = function (slot0, slot1, slot2, slot3)
 			if slot2.type == DROP_TYPE_EQUIP then
@@ -249,7 +288,7 @@ slot0.commonBind = function(slot0)
 					mediator = EquipmentInfoMediator,
 					viewComponent = EquipmentInfoLayer,
 					data = {
-						equipmentId = slot2.cfg.id,
+						equipmentId = slot2:getConfig("id"),
 						type = EquipmentInfoMediator.TYPE_DISPLAY,
 						onRemoved = slot3,
 						LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER
@@ -260,7 +299,7 @@ slot0.commonBind = function(slot0)
 					mediator = SpWeaponInfoMediator,
 					viewComponent = SpWeaponInfoLayer,
 					data = {
-						spWeaponConfigId = slot2.cfg.id,
+						spWeaponConfigId = slot2:getConfig("id"),
 						type = SpWeaponInfoLayer.TYPE_DISPLAY,
 						onRemoved = slot3,
 						LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER
@@ -271,9 +310,17 @@ slot0.commonBind = function(slot0)
 					mediator = EquipmentSkinMediator,
 					viewComponent = EquipmentSkinLayer,
 					data = {
-						skinId = slot2.cfg.id,
+						skinId = slot2:getConfig("id"),
 						mode = EquipmentSkinLayer.DISPLAY,
 						weight = LayerWeightConst.TOP_LAYER
+					}
+				}))
+			elseif slot2.type == DROP_TYPE_EMOJI then
+				slot0:addSubLayers(Context.New({
+					mediator = ContextMediator,
+					viewComponent = EmojiInfoLayer,
+					data = {
+						id = slot2.cfg.id
 					}
 				}))
 			else
@@ -316,15 +363,16 @@ slot0.commonBind = function(slot0)
 				weight = LayerWeightConst.TOP_LAYER
 			})
 		end,
-		[BaseUI.ON_ITEM] = function (slot0, slot1, slot2)
+		[BaseUI.ON_ITEM] = function (slot0, slot1, slot2, slot3)
 			slot0:addSubLayers(Context.New({
 				mediator = ItemInfoMediator,
 				viewComponent = ItemInfoLayer,
 				data = {
-					drop = {
+					drop = Drop.New({
 						type = DROP_TYPE_ITEM,
 						id = slot2
-					}
+					}),
+					confirmCall = slot3
 				}
 			}))
 		end,
@@ -333,11 +381,11 @@ slot0.commonBind = function(slot0)
 				mediator = ItemInfoMediator,
 				viewComponent = ItemInfoLayer,
 				data = {
-					drop = {
+					drop = Drop.New({
 						type = DROP_TYPE_ITEM,
 						id = slot2,
 						extra = slot3
-					}
+					})
 				}
 			}))
 		end,
@@ -346,10 +394,10 @@ slot0.commonBind = function(slot0)
 				mediator = ItemInfoMediator,
 				viewComponent = ItemInfoLayer,
 				data = {
-					drop = {
+					drop = Drop.New({
 						type = DROP_TYPE_SHIP,
 						id = slot2
-					}
+					})
 				}
 			}))
 		end,
@@ -371,17 +419,17 @@ slot0.commonBind = function(slot0)
 	end
 end
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 end
 
-slot0.onUIAvalible = function(slot0)
+function slot0.onUIAvalible(slot0)
 end
 
-slot0.setContextData = function(slot0, slot1)
+function slot0.setContextData(slot0, slot1)
 	slot0.contextData = slot1
 end
 
-slot0.bind = function(slot0, slot1, slot2)
+function slot0.bind(slot0, slot1, slot2)
 	slot0.viewComponent.event:connect(slot1, slot2)
 	table.insert(slot0.event, {
 		event = slot1,
@@ -389,7 +437,7 @@ slot0.bind = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.onRemove = function(slot0)
+function slot0.onRemove(slot0)
 	slot0:remove()
 
 	for slot4, slot5 in ipairs(slot0.event) do
@@ -399,10 +447,10 @@ slot0.onRemove = function(slot0)
 	slot0.event = {}
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 end
 
-slot0.addSubLayers = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.addSubLayers(slot0, slot1, slot2, slot3, slot4)
 	assert(isa(slot1, Context), "should be an instance of Context")
 
 	slot5 = slot0:GetContext()
@@ -430,7 +478,7 @@ slot0.addSubLayers = function(slot0, slot1, slot2, slot3, slot4)
 	slot0:sendNotification(GAME.LOAD_LAYERS, slot6)
 end
 
-slot0.switchLayersOnParent = function(slot0, slot1, slot2)
+function slot0.switchLayersOnParent(slot0, slot1, slot2)
 	assert(isa(slot1, Context), "should be an instance of Context")
 
 	slot4 = slot0:GetContext().parent
@@ -456,11 +504,11 @@ slot0.switchLayersOnParent = function(slot0, slot1, slot2)
 	slot0:sendNotification(GAME.LOAD_LAYERS, slot5)
 end
 
-slot0.GetContext = function(slot0)
+function slot0.GetContext(slot0)
 	return getProxy(ContextProxy):getCurrentContext():getContextByMediator(slot0.class)
 end
 
-slot0.blockEvents = function(slot0)
+function slot0.blockEvents(slot0)
 	if slot0.event then
 		for slot4, slot5 in ipairs(slot0.event) do
 			slot0.viewComponent.event:block(slot5.event, slot5.callback)
@@ -468,7 +516,7 @@ slot0.blockEvents = function(slot0)
 	end
 end
 
-slot0.unblockEvents = function(slot0)
+function slot0.unblockEvents(slot0)
 	if slot0.event then
 		for slot4, slot5 in ipairs(slot0.event) do
 			slot0.viewComponent.event:unblock(slot5.event, slot5.callback)
@@ -476,7 +524,7 @@ slot0.unblockEvents = function(slot0)
 	end
 end
 
-slot0.onBackPressed = function(slot0, slot1)
+function slot0.onBackPressed(slot0, slot1)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
 	slot2 = getProxy(ContextProxy)
@@ -490,7 +538,7 @@ slot0.onBackPressed = function(slot0, slot1)
 	end
 end
 
-slot0.removeSubLayers = function(slot0, slot1, slot2)
+function slot0.removeSubLayers(slot0, slot1, slot2)
 	assert(isa(slot1, uv0), "should be a ContextMediator Class")
 
 	if not getProxy(ContextProxy):getContextByMediator(slot0.class or slot0) then

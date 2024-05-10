@@ -28,27 +28,27 @@ slot0.ELEMENT_RING_COLOR = {
 	[slot0.ELEMENT_TYPE.SAIREN] = "AF97FF"
 }
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_ryza_recipe_circle
 end
 
-slot0.GetConfigID = function(slot0)
+function slot0.GetConfigID(slot0)
 	return slot0.configId
 end
 
-slot0.GetIconPath = function(slot0)
+function slot0.GetIconPath(slot0)
 	return slot0:getConfig("icon")
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return slot0:getConfig("type")
 end
 
-slot0.GetProp = function(slot0)
+function slot0.GetProp(slot0)
 	return slot0:getConfig("prop")
 end
 
-slot0.GetElement = function(slot0)
+function slot0.GetElement(slot0)
 	if slot0:GetType() == uv0.TYPE.SAIREN then
 		return uv0.ELEMENT_TYPE.SAIREN
 	elseif slot0:GetType() == uv0.TYPE.ANY then
@@ -58,11 +58,11 @@ slot0.GetElement = function(slot0)
 	return slot0:GetProp()
 end
 
-slot0.GetElementName = function(slot0)
+function slot0.GetElementName(slot0)
 	return uv0.ELEMENT_NAME[slot0:GetElement()]
 end
 
-slot0.GetRingElement = function(slot0, slot1)
+function slot0.GetRingElement(slot0, slot1)
 	slot2 = slot0:GetElement()
 
 	if slot0:GetType() == uv0.TYPE.ANY and slot1 then
@@ -72,28 +72,28 @@ slot0.GetRingElement = function(slot0, slot1)
 	return slot2
 end
 
-slot0.GetElementRingColor = function(slot0, slot1)
+function slot0.GetElementRingColor(slot0, slot1)
 	return SummerFeastScene.TransformColor(uv0.ELEMENT_RING_COLOR[slot0:GetRingElement(slot1)])
 end
 
-slot0.GetLevel = function(slot0)
+function slot0.GetLevel(slot0)
 	return slot0:getConfig("prop_level")
 end
 
-slot0.GetLimitItemID = function(slot0)
+function slot0.GetLimitItemID(slot0)
 	return slot0:getConfig("ryza_item_id")
 end
 
-slot0.GetNeighbors = function(slot0)
+function slot0.GetNeighbors(slot0)
 	return slot0:getConfig("circle_connect")
 end
 
-slot0.GetFormulaId = function(slot0)
+function slot0.GetFormulaId(slot0)
 	return slot0:getConfig("recipe_id")
 end
 
-slot0.CanUseMaterial = function(slot0, slot1, slot2)
-	slot3 = function()
+function slot0.CanUseMaterial(slot0, slot1, slot2)
+	function slot3()
 		if uv0:GetProduction()[1] ~= DROP_TYPE_RYZA_DROP then
 			return false
 		end

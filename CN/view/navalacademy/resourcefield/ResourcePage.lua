@@ -1,10 +1,10 @@
 slot0 = class("ResourcePage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ResourcePage"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.titleTxt = slot0:findTF("frame/title/text"):GetComponent(typeof(Text))
 	slot0.iconImg = slot0:findTF("frame/title/icon"):GetComponent(typeof(Image))
 	slot0.closeBtn = slot0:findTF("frame/btnBack")
@@ -24,7 +24,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0:findTF("frame/upgrade_duration/Image/Text"), i18n("class_label_upgradetime"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0.closeBtn, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
@@ -46,18 +46,18 @@ slot0.OnInit = function(slot0)
 	end)
 end
 
-slot0.Flush = function(slot0, slot1)
+function slot0.Flush(slot0, slot1)
 	slot0:Update(slot1)
 	slot0:Show()
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	slot0.resourceField = slot1
 
 	slot0:Refresh()
 end
 
-slot0.CheckUpgrade = function(slot0)
+function slot0.CheckUpgrade(slot0)
 	if not slot0.resourceField:CanUpgrade() then
 		if slot0.resourceField:IsMaxLevel() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("class_res_maxlevel_tip"))
@@ -81,11 +81,11 @@ slot0.CheckUpgrade = function(slot0)
 	return true
 end
 
-slot0.OnUpgrade = function(slot0)
+function slot0.OnUpgrade(slot0)
 	slot0:emit(NavalAcademyMediator.UPGRADE_FIELD, slot0.resourceField:GetUpgradeType())
 end
 
-slot0.Refresh = function(slot0)
+function slot0.Refresh(slot0)
 	slot1 = slot0.resourceField
 	slot0.iconImg.sprite = GetSpriteFromAtlas("ui/ResourceFieldUI_atlas", slot1:GetKeyWord())
 	slot0.titleTxt.text = slot1:GetName()
@@ -99,7 +99,7 @@ slot0.Refresh = function(slot0)
 	slot0:FlushState()
 end
 
-slot0.FlushState = function(slot0)
+function slot0.FlushState(slot0)
 	slot1 = slot0.resourceField
 	slot3 = slot1:IsStarting()
 
@@ -117,13 +117,13 @@ slot0.FlushState = function(slot0)
 	slot0:UpdateResourceFieldAttrs()
 end
 
-slot0.UpdateResourceFieldAttrs = function(slot0)
+function slot0.UpdateResourceFieldAttrs(slot0)
 	slot0.attrs = slot0.resourceField:GetEffectAttrs()
 
 	slot0.attrUIlist:align(#slot0.attrs)
 end
 
-slot0.UpdateResourceFieldAttr = function(slot0, slot1, slot2)
+function slot0.UpdateResourceFieldAttr(slot0, slot1, slot2)
 	setText(slot2:Find("label"), slot1:GetName())
 	setText(slot2:Find("advance"), "[+" .. slot1:GetAdditionDesc() .. "]")
 
@@ -136,7 +136,7 @@ slot0.UpdateResourceFieldAttr = function(slot0, slot1, slot2)
 	setText(slot2:Find("current"), slot1:GetProgressDesc())
 end
 
-slot0.AddTimer = function(slot0)
+function slot0.AddTimer(slot0)
 	if pg.TimeMgr.GetInstance():GetServerTime() < slot0.resourceField:GetUpgradeTimeStamp() then
 		slot0.timer = Timer.New(function ()
 			if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
@@ -151,7 +151,7 @@ slot0.AddTimer = function(slot0)
 	end
 end
 
-slot0.RemoveTimer = function(slot0)
+function slot0.RemoveTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -159,7 +159,7 @@ slot0.RemoveTimer = function(slot0)
 	end
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	if not slot0.isOpen then
 		uv0.super.Show(slot0)
 		pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
@@ -168,7 +168,7 @@ slot0.Show = function(slot0)
 	end
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	if slot0.isOpen then
 		slot0.isOpen = false
 
@@ -177,7 +177,7 @@ slot0.Hide = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0:Hide()
 	slot0:RemoveTimer()
 end

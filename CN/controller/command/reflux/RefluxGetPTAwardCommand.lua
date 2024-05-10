@@ -1,6 +1,6 @@
 slot0 = class("RefluxGetPTAwardCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0)
+function slot0.execute(slot0)
 	slot1 = pg.ConnectionMgr.GetInstance()
 
 	slot1:Send(11755, {

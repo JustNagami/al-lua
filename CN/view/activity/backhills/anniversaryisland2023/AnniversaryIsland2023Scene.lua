@@ -1,6 +1,6 @@
 slot0 = class("AnniversaryIsland2023Scene", import("view.activity.BackHills.TemplateMV.BackHillTemplate"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "AnniversaryIsland2023UI"
 end
 
@@ -14,17 +14,17 @@ slot0.Buildings = {
 	[23.0] = "living"
 }
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 
 	slot0.loader = AutoLoader.New()
 end
 
-slot0.preload = function(slot0, slot1)
+function slot0.preload(slot0, slot1)
 	slot0.loader:LoadBundle("ui/" .. slot0:getUIName() .. "_level" .. slot0:CalculateSceneLevel(), slot1)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.top = slot0:findTF("top")
 	slot0._bg = slot0:findTF("BG")
 	slot0._map = slot0:findTF("map")
@@ -50,7 +50,7 @@ slot0.init = function(slot0)
 	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.AnniversaryIsland2023Graph"))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0:findTF("top/Back"), function ()
 		uv0:onBackPressed()
 	end, SFX_CANCEL)
@@ -120,11 +120,11 @@ slot0.didEnter = function(slot0)
 	slot0:UpdateView()
 end
 
-slot0.UpdateActivity = function(slot0, slot1)
+function slot0.UpdateActivity(slot0, slot1)
 	slot0:UpdateView()
 end
 
-slot0.RegisterDataResponse = function(slot0)
+function slot0.RegisterDataResponse(slot0)
 	slot0.Respones = ResponsableTree.CreateShell({})
 
 	slot0.Respones:SetRawData("view", slot0)
@@ -187,7 +187,7 @@ slot0.RegisterDataResponse = function(slot0)
 		slot4 = slot1[1]
 		slot5 = slot1[2]
 
-		slot6 = function(slot0)
+		function slot6(slot0)
 			setActive(uv0["map_" .. slot0]:Find(tostring(uv1)), true)
 
 			if uv2[1] then
@@ -257,7 +257,7 @@ slot0.RegisterDataResponse = function(slot0)
 	end)
 end
 
-slot0.PlayStory = function()
+function slot0.PlayStory()
 	slot0 = getProxy(ActivityProxy)
 	slot0 = slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
 	slot1 = slot0:GetTotalBuildingLevel()
@@ -276,7 +276,7 @@ slot0.PlayStory = function()
 	end)
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	AnniversaryIsland2023Scene.PlayStory()
 
 	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
@@ -298,20 +298,20 @@ slot0.UpdateView = function(slot0)
 	end)())
 end
 
-slot0.CalculateSceneLevel = function(slot0)
+function slot0.CalculateSceneLevel(slot0)
 	return getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2):GetTotalBuildingLevel()
 end
 
-slot0.UpdateBuildingTip = function(slot0, slot1, slot2)
+function slot0.UpdateBuildingTip(slot0, slot1, slot2)
 	return uv0.super.UpdateBuildingTip(slot0, slot1, slot2) and slot3 and slot4 <= slot1:GetTotalBuildingLevel()
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:clearStudents()
 	uv0.super.willExit(slot0)
 end
 
-slot0.IsShowMainTip = function(slot0)
+function slot0.IsShowMainTip(slot0)
 	if slot0 and not slot0:isEnd() then
 		return (function ()
 			return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND))

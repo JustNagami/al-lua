@@ -27,13 +27,13 @@ slot0.PIC_PATH_PREFIX = "gallerypic/"
 slot0.Still_Show_On_Lock = 0
 slot0.Set_BG_Func_Save_Tag = "set_bg_func_save"
 
-slot0.SetBGFuncTag = function(slot0)
+function slot0.SetBGFuncTag(slot0)
 	if getProxy(PlayerProxy) then
 		PlayerPrefs.SetInt(uv0.Set_BG_Func_Save_Tag .. getProxy(PlayerProxy):getRawData().id, slot0 and 1 or 0)
 	end
 end
 
-slot0.GetBGFuncTag = function()
+function slot0.GetBGFuncTag()
 	if getProxy(PlayerProxy) then
 		return PlayerPrefs.GetInt(uv0.Set_BG_Func_Save_Tag .. getProxy(PlayerProxy):getRawData().id) == 1 and true or false
 	end

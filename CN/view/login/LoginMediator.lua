@@ -6,7 +6,7 @@ slot0.ON_LOGIN_PROCESS = "LoginMediator:ON_LOGIN_PROCESS"
 slot0.ON_SEARCH_ACCOUNT = "LoginMediator:ON_SEARCH_ACCOUNT"
 slot0.CHECK_RES = "LoginMediator:CHECK_RES"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_LOGIN, function (slot0, slot1)
 		uv0:sendNotification(GAME.USER_LOGIN, slot1)
 	end)
@@ -51,11 +51,11 @@ slot0.register = function(slot0)
 	pg.SdkMgr.GetInstance():EnterLoginScene()
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	pg.SdkMgr.GetInstance():ExitLoginScene()
 end
 
-slot0.loginProcessHandler = function(slot0)
+function slot0.loginProcessHandler(slot0)
 	slot1 = getProxy(SettingsProxy)
 	slot2 = pg.SdkMgr.GetInstance()
 
@@ -139,7 +139,7 @@ slot0.loginProcessHandler = function(slot0)
 	slot0.process()
 end
 
-slot0.CheckMaintain = function(slot0)
+function slot0.CheckMaintain(slot0)
 	slot1 = -1
 	slot2 = 0
 	slot3 = 1
@@ -169,7 +169,7 @@ slot0.CheckMaintain = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.USER_LOGIN_SUCCESS,
 		GAME.USER_LOGIN_FAILED,
@@ -187,7 +187,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == ServerProxy.SERVERS_UPDATED then
@@ -313,8 +313,8 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.checkPaintingRes = function(slot0)
-	slot2 = function()
+function slot0.checkPaintingRes(slot0)
+	function slot2()
 		uv0.viewComponent.isNeedResCheck = true
 	end
 

@@ -6,24 +6,21 @@ slot0.TipWords = {
 	greeting_year = "spring_invited_2021"
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	assert(false)
 end
 
-slot0.setItemVO = function(slot0, slot1)
+function slot0.setItemVO(slot0, slot1)
 	slot0.itemVO = slot1
-	slot2 = slot0.itemVO
-	slot2 = slot2:getTempCfgTable()
-	slot0.idList = slot2.usage_arg
+	slot0.idList = slot0.itemVO:getConfig("usage_arg")
 	slot0.shipIdList = underscore.map(slot0.idList, function (slot0)
 		return pg.item_usage_invitation[slot0].ship_id
 	end)
-	slot0.style = slot2.open_ui[1]
-	slot0.title = slot2.open_ui[2]
+	slot0.style, slot0.title = unpack(slot0.itemVO:getConfig("open_ui"))
 	slot0.strTip = uv0.TipWords[slot0.style]
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = slot0._tf
 	slot1 = slot1:Find("layer")
 	slot0.backBtn = slot1:Find("back")
@@ -62,7 +59,7 @@ slot0.init = function(slot0)
 	slot0.afterAnima = {}
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:emit(uv1.ON_BACK)
 	end, SOUND_BACK)
@@ -86,7 +83,7 @@ slot0.didEnter = function(slot0)
 	triggerToggle(slot0.selectPanel:GetChild(0), true)
 end
 
-slot0.checkAndSetSprite = function(slot0, slot1, slot2)
+function slot0.checkAndSetSprite(slot0, slot1, slot2)
 	if slot0.spList[slot1] and slot0.afterAnima[slot1] then
 		setImageSprite(slot2, slot0.spList[slot1], true)
 
@@ -98,7 +95,7 @@ slot0.checkAndSetSprite = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.changeShowCharacter = function(slot0, slot1, slot2, slot3)
+function slot0.changeShowCharacter(slot0, slot1, slot2, slot3)
 	if slot3 then
 		slot4 = LeanTween.alpha(rtf(slot2), 0, 0.3)
 
@@ -120,7 +117,7 @@ slot0.changeShowCharacter = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.setSelectTarget = function(slot0, slot1)
+function slot0.setSelectTarget(slot0, slot1)
 	slot0:changeShowCharacter("p_" .. slot0.shipIdList[slot1], slot0.print, slot0.selectTarget)
 
 	if slot0.rtName then
@@ -131,7 +128,7 @@ slot0.setSelectTarget = function(slot0, slot1)
 	slot0.selectedShipNumber = slot0.shipIdList[slot1]
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 end
 
 return slot0

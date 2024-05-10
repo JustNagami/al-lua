@@ -1,11 +1,16 @@
 slot0 = class("CourtYardDispatcher")
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0, slot1)
+	slot0.host = slot1
 	slot0.__callbacks = {}
 	slot0.__list = {}
 end
 
-slot0.AddListener = function(slot0, slot1, slot2)
+function slot0.GetHost(slot0)
+	return slot0.host
+end
+
+function slot0.AddListener(slot0, slot1, slot2)
 	assert(type(slot1) == "string" and type(slot2) == "function")
 
 	if not slot0.__callbacks[slot1] then
@@ -15,7 +20,7 @@ slot0.AddListener = function(slot0, slot1, slot2)
 	table.insert(slot0.__callbacks[slot1], slot2)
 end
 
-slot0.RemoveListener = function(slot0, slot1, slot2)
+function slot0.RemoveListener(slot0, slot1, slot2)
 	assert(type(slot1) == "string" and type(slot2) == "function")
 
 	if slot0.__callbacks[slot1] then
@@ -27,13 +32,13 @@ slot0.RemoveListener = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.ClearListener = function(slot0, slot1)
+function slot0.ClearListener(slot0, slot1)
 	assert(type(slot1) == "string")
 
 	slot0.__callbacks[slot1] = nil
 end
 
-slot0.DispatchEvent = function(slot0, slot1, ...)
+function slot0.DispatchEvent(slot0, slot1, ...)
 	assert(type(slot1) == "string")
 
 	if slot0.__callbacks[slot1] then
@@ -47,7 +52,7 @@ slot0.DispatchEvent = function(slot0, slot1, ...)
 	end
 end
 
-slot0.ClearListeners = function(slot0)
+function slot0.ClearListeners(slot0)
 	for slot4, slot5 in pairs(slot0.__callbacks) do
 		slot0.__callbacks[slot4] = nil
 	end

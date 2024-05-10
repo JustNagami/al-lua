@@ -1,6 +1,6 @@
 slot0 = class("NewServerCommodity", import("...BaseVO"))
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.id = slot1.id
 	slot0.configId = slot0.id
 	slot0.count = slot1.count or slot0:getConfig("goods_purchase_limit")
@@ -13,23 +13,23 @@ slot0.Ctor = function(slot0, slot1)
 	end
 end
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.newserver_shop_template
 end
 
-slot0.CanPurchase = function(slot0)
+function slot0.CanPurchase(slot0)
 	return slot0.count > 0
 end
 
-slot0.ReduceCnt = function(slot0, slot1)
+function slot0.ReduceCnt(slot0, slot1)
 	slot0.count = slot0.count - slot1
 end
 
-slot0.CanPurchaseMulTimes = function(slot0, slot1)
+function slot0.CanPurchaseMulTimes(slot0, slot1)
 	return slot1 <= slot0.count
 end
 
-slot0.CanPurchaseSubGoods = function(slot0, slot1)
+function slot0.CanPurchaseSubGoods(slot0, slot1)
 	if slot0:LimitPurchaseSubGoods() then
 		return not (slot0.boughtRecord[slot1] == true)
 	else
@@ -37,27 +37,27 @@ slot0.CanPurchaseSubGoods = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateBoughtRecord = function(slot0, slot1)
+function slot0.UpdateBoughtRecord(slot0, slot1)
 	slot0.boughtRecord[slot1] = true
 end
 
-slot0.LimitPurchaseSubGoods = function(slot0)
+function slot0.LimitPurchaseSubGoods(slot0)
 	return slot0:getConfig("goods_type") == 4
 end
 
-slot0.Selectable = function(slot0)
+function slot0.Selectable(slot0)
 	return slot0:getConfig("goods_type") == 2 or slot1 == 4
 end
 
-slot0.GetConsume = function(slot0)
-	return {
+function slot0.GetConsume(slot0)
+	return Drop.New({
 		type = slot0:getConfig("resource_category"),
 		id = slot0:getConfig("resource_type"),
 		count = slot0:getConfig("resource_num")
-	}
+	})
 end
 
-slot0.GetDesc = function(slot0)
+function slot0.GetDesc(slot0)
 	return {
 		name = slot0:getConfig("goods_name"),
 		icon = slot0:getConfig("goods_icon"),
@@ -65,7 +65,7 @@ slot0.GetDesc = function(slot0)
 	}
 end
 
-slot0.IsOpening = function(slot0, slot1)
+function slot0.IsOpening(slot0, slot1)
 	slot2 = {}
 
 	if not (slot1 + slot0:getConfig("unlock_time") <= pg.TimeMgr.GetInstance():GetServerTime()) then
@@ -75,43 +75,45 @@ slot0.IsOpening = function(slot0, slot1)
 	return slot6, slot2
 end
 
-slot0.GetDropCnt = function(slot0)
+function slot0.GetDropCnt(slot0)
 	return slot0:getConfig("num")
 end
 
-slot0.GetCanPurchaseCnt = function(slot0)
+function slot0.GetCanPurchaseCnt(slot0)
 	return slot0.count
 end
 
-slot0.GetCanPurchaseMaxCnt = function(slot0)
+function slot0.GetCanPurchaseMaxCnt(slot0)
 	return slot0:getConfig("goods_purchase_limit")
 end
 
-slot0.GetDropType = function(slot0)
+function slot0.GetDropType(slot0)
 	return slot0:getConfig("type")
 end
 
-slot0.GetSelectableGoods = function(slot0)
+function slot0.GetSelectableGoods(slot0)
 	return slot0:getConfig("goods")
 end
 
-slot0.CheckTimeLimit = function(slot0)
+function slot0.CheckTimeLimit(slot0)
 	slot1 = false
 	slot2 = false
-	slot4 = slot0:getConfig("goods")[1]
+	slot3 = nil
+	slot6 = Item.getConfigData(slot0:getConfig("goods")[1])
 
-	if slot0:getConfig("type") == DROP_TYPE_VITEM and pg.item_data_statistics[slot4].virtual_type == 22 then
+	if slot0:getConfig("type") == DROP_TYPE_VITEM and slot6.virtual_type == 22 then
 		slot1 = true
+		slot3 = true
 
-		if getProxy(ActivityProxy):getActivityById(pg.item_data_statistics[slot4].link_id) and not slot6:isEnd() then
+		if getProxy(ActivityProxy):getActivityById(slot6.link_id) and not slot8:isEnd() then
 			slot2 = true
 		end
 	end
 
-	return slot1, slot2
+	return slot1, slot2, slot3
 end
 
-slot0.GetPurchasableCnt = function(slot0)
+function slot0.GetPurchasableCnt(slot0)
 	return slot0.count
 end
 

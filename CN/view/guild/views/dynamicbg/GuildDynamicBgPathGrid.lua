@@ -1,6 +1,6 @@
 slot0 = class("GuildDynamicBgPathGrid")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.canWalk = slot1.canWalk
 	slot0.position = slot1.position
 	slot0.sizeDelta = slot1.sizeDelta
@@ -10,41 +10,41 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.centerPosition = Vector3(slot0.localPosition.x + slot0.sizeDelta.x / 2, slot0.localPosition.y + slot0.sizeDelta.y / 2)
 end
 
-slot0.GetPosition = function(slot0)
+function slot0.GetPosition(slot0)
 	return slot0.position
 end
 
-slot0.GetLocalPosition = function(slot0)
+function slot0.GetLocalPosition(slot0)
 	return slot0.localPosition
 end
 
-slot0.GetCenterPosition = function(slot0)
+function slot0.GetCenterPosition(slot0)
 	return slot0.centerPosition
 end
 
-slot0.CanWalk = function(slot0)
+function slot0.CanWalk(slot0)
 	return slot0.canWalk and not slot0:IsLock()
 end
 
-slot0.Lock = function(slot0)
+function slot0.Lock(slot0)
 	slot0.lockCnt = slot0.lockCnt + 1
 end
 
-slot0.Unlock = function(slot0)
+function slot0.Unlock(slot0)
 	if slot0.lockCnt > 0 then
 		slot0.lockCnt = slot0.lockCnt - 1
 	end
 end
 
-slot0.UnlockAll = function(slot0)
+function slot0.UnlockAll(slot0)
 	slot0.lockCnt = 0
 end
 
-slot0.IsLock = function(slot0)
+function slot0.IsLock(slot0)
 	return slot0.lockCnt > 0
 end
 
-slot0.GetAroundGrids = function(slot0)
+function slot0.GetAroundGrids(slot0)
 	slot1 = slot0.position
 
 	return {

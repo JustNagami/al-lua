@@ -1,6 +1,6 @@
 slot0 = class("SynGraftingActivityCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody().id
 
 	if #getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GRAFTING) == 0 then
@@ -11,7 +11,7 @@ slot0.execute = function(slot0, slot1)
 		return
 	end
 
-	slot7 = function(slot0, slot1)
+	function slot7(slot0, slot1)
 		if not slot0 or slot0:isEnd() then
 			return false
 		end
@@ -26,17 +26,17 @@ slot0.execute = function(slot0, slot1)
 	end
 end
 
-slot0.HandleLinkAct = function(slot0, slot1, slot2)
+function slot0.HandleLinkAct(slot0, slot1, slot2)
 	if slot0:IsBuildShipType(slot2:getConfig("type")) then
 		slot0:SynBuildShipAct(slot1, slot2)
 	end
 end
 
-slot0.IsBuildShipType = function(slot0, slot1)
+function slot0.IsBuildShipType(slot0, slot1)
 	return slot1 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or slot1 == ActivityConst.ACTIVITY_TYPE_BUILD or slot1 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
 end
 
-slot0.SynBuildShipAct = function(slot0, slot1, slot2)
+function slot0.SynBuildShipAct(slot0, slot1, slot2)
 	slot1.data1 = slot2.data1
 	slot1.data2 = slot2.data2
 

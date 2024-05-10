@@ -4,43 +4,43 @@ slot0.Battle.IAntiSubState = class("IAntiSubState")
 slot0.Battle.IAntiSubState.__name = "IAntiSubState"
 slot1 = slot0.Battle.IAntiSubState
 
-slot1.Ctor = function(slot0)
+function slot1.Ctor(slot0)
 end
 
-slot1.OnVigilantEngage = function(slot0)
+function slot1.OnVigilantEngage(slot0)
 end
 
-slot1.OnMineExplode = function(slot0)
+function slot1.OnMineExplode(slot0)
 end
 
-slot1.OnSubmarinFloat = function(slot0)
+function slot1.OnSubmarinFloat(slot0)
 end
 
-slot1.OnSonarDetect = function(slot0)
+function slot1.OnSonarDetect(slot0)
 end
 
-slot1.ToPreLevel = function(slot0)
+function slot1.ToPreLevel(slot0)
 end
 
-slot1.OnHateChain = function(slot0)
+function slot1.OnHateChain(slot0)
 end
 
-slot1.CanDecay = function(slot0)
+function slot1.CanDecay(slot0)
 	return nil
 end
 
-slot1.GetWeaponUseable = function(slot0)
+function slot1.GetWeaponUseable(slot0)
 	return nil
 end
 
-slot1.GetWarnMark = function(slot0)
+function slot1.GetWarnMark(slot0)
 	return nil
 end
 
-slot1.GetMeterSpeed = function(slot0)
+function slot1.GetMeterSpeed(slot0)
 	return nil
 end
 
-slot1.DecayDuration = function(slot0)
+function slot1.DecayDuration(slot0)
 	return nil
 end

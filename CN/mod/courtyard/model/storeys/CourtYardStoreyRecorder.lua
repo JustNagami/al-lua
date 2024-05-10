@@ -1,18 +1,18 @@
 slot0 = class("CourtYardStoreyRecorder")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.storey = slot1
 	slot0.setup = false
 end
 
-slot0.BeginCheckChange = function(slot0)
+function slot0.BeginCheckChange(slot0)
 	slot0:Reset()
 
 	slot0.setup = true
 	slot0.headSample = slot0.storey:ToTable()
 end
 
-slot0.TakeSample = function(slot0)
+function slot0.TakeSample(slot0)
 	if not slot0.setup then
 		return
 	end
@@ -38,7 +38,7 @@ slot0.TakeSample = function(slot0)
 	return slot1, slot2
 end
 
-slot0.Reset = function(slot0)
+function slot0.Reset(slot0)
 	slot0.furnitures = slot0.storey:GetAllFurniture()
 
 	for slot4, slot5 in pairs(slot0.furnitures) do
@@ -48,22 +48,22 @@ slot0.Reset = function(slot0)
 	end
 end
 
-slot0.EndCheckChange = function(slot0)
+function slot0.EndCheckChange(slot0)
 	slot0:Clear()
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	slot0.furnitures = nil
 	slot0.setup = false
 	slot0.headSample = nil
 end
 
-slot0.HasChange = function(slot0)
+function slot0.HasChange(slot0)
 	if table.getCount(slot0.storey:ToTable()) ~= table.getCount(slot0.headSample) then
 		return true
 	end
 
-	slot3 = function(slot0, slot1)
+	function slot3(slot0, slot1)
 		if not slot1 then
 			return false
 		end
@@ -80,7 +80,7 @@ slot0.HasChange = function(slot0)
 	return false
 end
 
-slot0.GetHeadSample = function(slot0)
+function slot0.GetHeadSample(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.headSample) do
@@ -92,7 +92,7 @@ slot0.GetHeadSample = function(slot0)
 	return slot1
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Clear()
 end
 

@@ -1,10 +1,10 @@
 slot0 = class("LanternFestivalView", import("..BaseMiniGameView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "LanternFestivalUI"
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0.controller = LanternRiddlesController.New()
 
 	slot0.controller.view:SetUI(slot0._tf)
@@ -22,7 +22,7 @@ slot0.didEnter = function(slot0)
 	slot0.controller:SetUp(slot0:PackData())
 end
 
-slot0.PackData = function(slot0)
+function slot0.PackData(slot0)
 	slot1 = 15
 	slot2 = slot0:GetMGHubData()
 	slot4, slot5 = nil
@@ -48,7 +48,7 @@ slot0.PackData = function(slot0)
 	}
 end
 
-slot0.OnGetAwardDone = function(slot0, slot1)
+function slot0.OnGetAwardDone(slot0, slot1)
 	if slot1.cmd == MiniGameOPCommand.CMD_COMPLETE then
 		slot2 = slot0:GetMGHubData()
 		slot4 = slot2.usedtime
@@ -64,7 +64,7 @@ slot0.OnGetAwardDone = function(slot0, slot1)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0.controller:Dispose()
 end
 

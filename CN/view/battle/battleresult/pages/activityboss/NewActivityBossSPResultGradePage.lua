@@ -1,6 +1,6 @@
 slot0 = class("NewActivityBossSPResultGradePage", import(".NewActivityBossResultGradePage"))
 
-slot0.LoadBGAndGrade = function(slot0, slot1)
+function slot0.LoadBGAndGrade(slot0, slot1)
 	parallelAsync({
 		function (slot0)
 			uv0:LoadBG(slot0)
@@ -14,7 +14,7 @@ slot0.LoadBGAndGrade = function(slot0, slot1)
 	}, slot1)
 end
 
-slot0.LoadActivityBossSPRes = function(slot0, slot1)
+function slot0.LoadActivityBossSPRes(slot0, slot1)
 	slot2 = ResourceMgr.Inst
 
 	slot2:getAssetAsync("BattleResultItems/ActivitybossSP", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
@@ -27,7 +27,7 @@ slot0.LoadActivityBossSPRes = function(slot0, slot1)
 	end), true, true)
 end
 
-slot0.InitActivityPanel = function(slot0, slot1)
+function slot0.InitActivityPanel(slot0, slot1)
 	slot1:SetSiblingIndex(1)
 
 	slot0.playAgain = slot1:Find("playAgain")
@@ -49,11 +49,11 @@ slot0.InitActivityPanel = function(slot0, slot1)
 	setText(slot1:Find("Active/BuffTitle"), i18n("activityboss_sp_active_buff"))
 end
 
-slot0.UpdateActiveBuffs = function(slot0, slot1, slot2)
+function slot0.UpdateActiveBuffs(slot0, slot1, slot2)
 	slot4 = slot1:Find("ScrollView")
 	slot4 = slot4:GetComponent("LScrollRect")
 
-	slot4.onUpdateItem = function(slot0, slot1)
+	function slot4.onUpdateItem(slot0, slot1)
 		slot3 = uv0[slot0 + 1]
 
 		setActive(tf(slot1):Find("Icon"), tobool(slot3))

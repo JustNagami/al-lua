@@ -1,6 +1,6 @@
 slot0 = class("BeachGuardGameUI")
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	slot0._tf = slot1
 	slot0._event = slot3
 	slot0._gameData = slot2
@@ -9,17 +9,17 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	slot4 = GameObject.Find("UICamera")
 	slot0._uiCamera = slot4:GetComponent(typeof(Camera))
 
-	onButton(slot0._event, findTF(slot0.gameUI, "topRight/btnStop"), function ()
+	onButton(slot0._event, findTF(slot0.gameUI, "ad/topRight/btnStop"), function ()
 		uv0._event:emit(BeachGuardGameView.OPEN_PAUSE_UI)
 		uv0._event:emit(BeachGuardGameView.PAUSE_GAME, true)
 	end)
-	onButton(slot0._event, findTF(slot0.gameUI, "btnLeave"), function ()
+	onButton(slot0._event, findTF(slot0.gameUI, "ad/btnLeave"), function ()
 		uv0._event:emit(BeachGuardGameView.OPEN_LEVEL_UI)
 		uv0._event:emit(BeachGuardGameView.PAUSE_GAME, true)
 	end)
 
-	slot0.gameTimeS = findTF(slot0.gameUI, "top/time/s")
-	slot0.scoreTf = findTF(slot0.gameUI, "top/score")
+	slot0.gameTimeS = findTF(slot0.gameUI, "ad/top/time/s")
+	slot0.scoreTf = findTF(slot0.gameUI, "ad/top/score")
 	slot0.bottom = findTF(slot0.gameUI, "bottom")
 	slot0.goods = findTF(slot0.gameUI, "bottom/goods")
 	slot0.goodsNum = findTF(slot0.gameUI, "bottom/goods/num")
@@ -51,11 +51,11 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 		uv0:cancelRecycle()
 	end)
 
-	slot0.enemyProgress = findTF(slot0.gameUI, "top/enemyProgress")
-	slot0.bossRate = findTF(slot0.gameUI, "top/bossRate")
+	slot0.enemyProgress = findTF(slot0.gameUI, "ad/enemyProgress")
+	slot0.bossRate = findTF(slot0.gameUI, "ad/bossRate")
 end
 
-slot0.cancelRecycle = function(slot0)
+function slot0.cancelRecycle(slot0)
 	slot0.recycleFlag = false
 
 	setActive(slot0.btnRecycle, true)
@@ -63,7 +63,7 @@ slot0.cancelRecycle = function(slot0)
 	slot0._event:emit(BeachGuardGameView.RECYCLES_CHAR, false)
 end
 
-slot0.show = function(slot0, slot1)
+function slot0.show(slot0, slot1)
 	slot0.recycleFlag = false
 
 	setActive(slot0.btnRecycle, true)
@@ -71,7 +71,7 @@ slot0.show = function(slot0, slot1)
 	setActive(slot0.gameUI, slot1)
 end
 
-slot0.firstUpdate = function(slot0, slot1)
+function slot0.firstUpdate(slot0, slot1)
 	slot2 = slot1.chapter
 	slot3 = BeachGuardConst.chapter_data[slot2]
 	slot0.enemyTime = BeachGuardConst.chapater_enemy[slot2].time
@@ -107,7 +107,7 @@ slot0.firstUpdate = function(slot0, slot1)
 	slot0:update()
 end
 
-slot0.update = function(slot0)
+function slot0.update(slot0)
 	slot1 = slot0.runningData.goodsNum
 	slot2 = slot0.runningData.sceneChars
 
@@ -145,7 +145,7 @@ slot0.update = function(slot0)
 	setText(slot0.goodsNum, slot1)
 end
 
-slot0.updateGoods = function(slot0, slot1, slot2)
+function slot0.updateGoods(slot0, slot1, slot2)
 	if slot1 and slot1 > 0 then
 		setActive(slot0.goodsAdd, false)
 		setText(findTF(slot0.goodsAdd, "text"), "+" .. tostring(slot1))
@@ -153,7 +153,7 @@ slot0.updateGoods = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.createCharCard = function(slot0)
+function slot0.createCharCard(slot0)
 	for slot4 = 1, #slot0.showCards do
 		slot5 = slot4
 		slot8 = nil
@@ -234,7 +234,7 @@ slot0.createCharCard = function(slot0)
 	end
 end
 
-slot0.getCardFromPool = function(slot0, slot1)
+function slot0.getCardFromPool(slot0, slot1)
 	for slot5 = #slot0.cardPool, 1, -1 do
 		if slot0.cardPool[slot5].config.id == slot1 then
 			return table.remove(slot0.cardPool, slot5)
@@ -244,7 +244,7 @@ slot0.getCardFromPool = function(slot0, slot1)
 	return nil
 end
 
-slot0.resetChaCard = function(slot0)
+function slot0.resetChaCard(slot0)
 	for slot4 = 1, #slot0.cards do
 		slot5 = slot0.cards[slot4].tf
 
@@ -262,12 +262,12 @@ slot0.resetChaCard = function(slot0)
 	end
 end
 
-slot0.setEnemyComming = function(slot0)
+function slot0.setEnemyComming(slot0)
 	setActive(slot0.enemyComming, false)
 	setActive(slot0.enemyComming, true)
 end
 
-slot0.setDragCallback = function(slot0, slot1)
+function slot0.setDragCallback(slot0, slot1)
 end
 
 return slot0

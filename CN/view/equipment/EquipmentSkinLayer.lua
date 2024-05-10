@@ -2,15 +2,15 @@ slot0 = class("EquipmentSkinLayer", import("..base.BaseUI"))
 slot0.DISPLAY = 1
 slot0.REPLACE = 2
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "EquipmentSkinInfoUI"
 end
 
-slot0.setShip = function(slot0, slot1)
+function slot0.setShip(slot0, slot1)
 	slot0.shipVO = slot1
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, slot0.contextData.weight and {
 		weight = slot0.contextData.weight
 	} or {})
@@ -27,7 +27,7 @@ slot0.init = function(slot0)
 	setActive(slot0.replacePanel, false)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:emit(uv1.ON_CLOSE)
 	end, SOUND_BACK)
@@ -52,7 +52,7 @@ slot0.didEnter = function(slot0)
 	end
 end
 
-slot0.initDisplay = function(slot0)
+function slot0.initDisplay(slot0)
 	setActive(slot0.displayPanel, true)
 	setActive(slot0.replacePanel, false)
 
@@ -75,7 +75,7 @@ slot0.initDisplay = function(slot0)
 	slot0:updateSkinView(slot0.displayPanel, slot0.contextData.skinId)
 end
 
-slot0.initDisplay4Ship = function(slot0)
+function slot0.initDisplay4Ship(slot0)
 	eachChild(slot0.displayActions, function (slot0)
 		setActive(slot0, slot0.gameObject.name ~= "confirm")
 		onButton(uv0, slot0, function ()
@@ -88,7 +88,7 @@ slot0.initDisplay4Ship = function(slot0)
 	end)
 end
 
-slot0.initReplace = function(slot0)
+function slot0.initReplace(slot0)
 	setActive(slot0.displayPanel, false)
 	setActive(slot0.replacePanel, true)
 
@@ -103,7 +103,7 @@ slot0.initReplace = function(slot0)
 	end
 end
 
-slot0.updateSkinView = function(slot0, slot1, slot2, slot3)
+function slot0.updateSkinView(slot0, slot1, slot2, slot3)
 	slot4 = slot2 ~= 0
 	slot6 = slot0:findTF("info", slot1)
 
@@ -133,10 +133,10 @@ slot0.updateSkinView = function(slot0, slot1, slot2, slot3)
 		onButton(slot0, slot11, function ()
 			uv0:emit(EquipmentSkinMediator.ON_PREVIEW, uv1)
 		end, SFX_PANEL)
-		updateDrop(slot0:findTF("info/equip", slot1), {
+		updateDrop(slot0:findTF("info/equip", slot1), Drop.New({
 			type = DROP_TYPE_EQUIPMENT_SKIN,
 			id = slot2
-		})
+		}))
 
 		if slot0:findTF("info/head", slot1) then
 			setActive(slot12, slot3)
@@ -153,7 +153,7 @@ slot0.updateSkinView = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0.UIMain)
 end
 

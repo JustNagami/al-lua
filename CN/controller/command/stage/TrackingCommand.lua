@@ -1,6 +1,6 @@
 slot0 = class("TrackingCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.chapterId
 	slot4 = slot2.fleetIds
@@ -22,6 +22,7 @@ slot0.execute = function(slot0, slot1)
 
 	slot9 = getProxy(ChapterProxy)
 	slot10 = slot9:getChapterById(slot3)
+	slot10.loopFlag = slot6
 	slot11 = slot9:getMapById(slot10:getConfig("map"))
 	slot12 = slot9:GetContinuousData(SYSTEM_SCENARIO)
 
@@ -294,7 +295,7 @@ slot0.execute = function(slot0, slot1)
 	})
 end
 
-slot0.sendProto = function(slot0)
+function slot0.sendProto(slot0)
 	slot7 = slot0.autoFightFlag
 	slot8 = pg.ConnectionMgr.GetInstance()
 
@@ -374,7 +375,7 @@ slot0.sendProto = function(slot0)
 	end)
 end
 
-slot0.isCrossStoryLimit = function(slot0, slot1)
+function slot0.isCrossStoryLimit(slot0, slot1)
 	slot2 = true
 
 	if slot1 ~= "" and #slot1 > 0 then
@@ -390,21 +391,21 @@ slot0.isCrossStoryLimit = function(slot0, slot1)
 	return slot2
 end
 
-slot0.CalculateSpItemMoreCostRate = function(slot0)
+function slot0.CalculateSpItemMoreCostRate(slot0)
 	slot1 = 1
 
 	if not slot0 or slot0 == 0 then
 		return slot1
 	end
 
-	slot8 = 2
-	slot9 = -2
+	slot7 = 2
+	slot8 = -2
 
-	for slot8, slot9 in ipairs(_.map(string.split(string.sub(pg.item_data_template[slot0].usage_arg, slot8, slot9), ","), function (slot0)
+	for slot7, slot8 in ipairs(_.map(string.split(string.sub(Item.getConfigData(slot0).usage_arg, slot7, slot8), ","), function (slot0)
 		return tonumber(slot0)
 	end)) do
-		if pg.benefit_buff_template[slot8] and slot10.benefit_type == Chapter.OPERATION_BUFF_TYPE_COST then
-			slot1 = slot1 + tonumber(slot10.benefit_effect) * 0.01
+		if pg.benefit_buff_template[slot7] and slot9.benefit_type == Chapter.OPERATION_BUFF_TYPE_COST then
+			slot1 = slot1 + tonumber(slot9.benefit_effect) * 0.01
 		end
 	end
 

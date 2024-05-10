@@ -6,7 +6,7 @@ slot0.DropType2Name = {
 	[DROP_TYPE_SPWEAPON] = "special_weapon"
 }
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("AD")
 	slot0.btnList = slot0:findTF("btn_list", slot0.bg)
 	slot0.itemPanel = slot0:findTF("item_panel", slot0.bg)
@@ -17,13 +17,13 @@ slot0.OnInit = function(slot0)
 	setText(slot0:findTF("tpl/owner/title", slot0.content), i18n("collect_page_got"))
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	slot0.guideConfig = pg.activity_limit_item_guide
 
 	slot0:BuildDatas()
 end
 
-slot0.BuildDatas = function(slot0)
+function slot0.BuildDatas(slot0)
 	slot1 = pg.activity_limit_item_guide.get_id_list_by_activity[slot0.activity.id]
 	slot5 = slot0.activity.id
 
@@ -39,17 +39,17 @@ slot0.BuildDatas = function(slot0)
 		slot7.count = slot0.activity:getKVPList(1, slot7.id)
 
 		if slot7.config.count_storage == 1 then
-			slot7.count = GetOwnedDropCount({
+			slot7.count = Drop.New({
 				type = slot7.config.type,
 				id = slot7.config.drop_id
-			})
+			}):getOwnedCount()
 		end
 
 		table.insert(slot0.dataList, slot7)
 	end
 end
 
-slot0.GetTogglesDropTypes = function(slot0)
+function slot0.GetTogglesDropTypes(slot0)
 	return {
 		DROP_TYPE_EQUIP,
 		DROP_TYPE_FURNITURE,
@@ -58,7 +58,7 @@ slot0.GetTogglesDropTypes = function(slot0)
 	}
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	slot0.itemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:OnUpdateItem(slot1, slot2)
@@ -72,12 +72,12 @@ slot0.OnFirstFlush = function(slot0)
 	triggerToggle(slot0.toggles[slot0.curPage], true)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	slot0:BuildDatas()
 	slot0:UpdatePage(slot0.curPage)
 end
 
-slot0.AddTogglesListener = function(slot0)
+function slot0.AddTogglesListener(slot0)
 	slot0.toggles = {}
 
 	assert(#slot0:GetTogglesDropTypes() == slot0.togglesTF.childCount, "dropType数量与togglesTF子节点数不匹配")
@@ -95,7 +95,7 @@ slot0.AddTogglesListener = function(slot0)
 	end
 end
 
-slot0.AddSpecialBtnListener = function(slot0)
+function slot0.AddSpecialBtnListener(slot0)
 	slot1 = slot0.activity:getConfig("config_client")
 	slot0.furnitureThemeBtn = slot0:findTF("furniture_theme", slot0.btnList)
 
@@ -116,10 +116,11 @@ slot0.AddSpecialBtnListener = function(slot0)
 	slot0.equipSkinBoxBtn = slot0:findTF("equip_skin_box", slot0.btnList)
 
 	if slot0.equipSkinBoxBtn and slot1.equipskin_box_link then
-		slot2 = GetOwnedDropCount({
+		slot2 = Drop.New({
 			type = slot1.equipskin_box_link.drop_type,
 			id = slot1.equipskin_box_link.drop_id
 		})
+		slot2 = slot2:getOwnedCount()
 
 		onButton(slot0, slot0.equipSkinBoxBtn, function ()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -134,7 +135,7 @@ slot0.AddSpecialBtnListener = function(slot0)
 	end
 end
 
-slot0.OnUpdateItem = function(slot0, slot1, slot2)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
 	slot3 = slot0.showDataList[slot1 + 1]
 	slot4 = slot0:findTF("icon_mask/icon", slot2)
 
@@ -153,10 +154,10 @@ slot0.OnUpdateItem = function(slot0, slot1, slot2)
 			skipable_list = uv0.config.link_params
 		})
 	end, SFX_PANEL)
-	changeToScrollText(slot0:findTF("name_mask/name", slot2), getDropName({
+	changeToScrollText(slot0:findTF("name_mask/name", slot2), Drop.New({
 		type = slot3.config.type,
 		id = slot3.config.drop_id
-	}))
+	}):getName())
 	setText(slot0:findTF("owner/number", slot2), slot3.count .. "/" .. slot3.config.count)
 
 	GetOrAddComponent(slot0:findTF("owner", slot2), typeof(CanvasGroup)).alpha = slot3.count == slot3.config.count and 0.5 or 1
@@ -165,7 +166,7 @@ slot0.OnUpdateItem = function(slot0, slot1, slot2)
 	setActive(slot0:findTF("new", slot2), slot3.config.is_new == "1")
 end
 
-slot0.UpdatePage = function(slot0, slot1)
+function slot0.UpdatePage(slot0, slot1)
 	slot0.curPage = slot1
 	slot0.showDataList = {}
 
@@ -189,7 +190,7 @@ slot0.UpdatePage = function(slot0, slot1)
 	slot0.itemList:align(#slot0.showDataList)
 end
 
-slot0.DoSkip = function(slot0, slot1, slot2)
+function slot0.DoSkip(slot0, slot1, slot2)
 	if slot1 == 2 then
 		pg.m02:sendNotification(GAME.GO_SCENE, slot2[1], slot2[2] or {})
 	elseif slot1 == 3 then

@@ -10,7 +10,7 @@ WIRETYPE_END_GROUP = 4
 WIRETYPE_FIXED32 = 5
 _WIRETYPE_MAX = 5
 
-slot1 = function(slot0)
+function slot1(slot0)
 	if slot0 <= 127 then
 		return 1
 	end
@@ -30,11 +30,11 @@ slot1 = function(slot0)
 	return 5
 end
 
-PackTag = function(slot0, slot1)
+function PackTag(slot0, slot1)
 	return slot0 * 8 + slot1
 end
 
-UnpackTag = function(slot0)
+function UnpackTag(slot0)
 	slot1 = slot0 % 8
 
 	return (slot0 - slot1) / 8, slot1
@@ -45,84 +45,84 @@ ZigZagDecode32 = slot0.zig_zag_decode32
 ZigZagEncode64 = slot0.zig_zag_encode64
 ZigZagDecode64 = slot0.zig_zag_decode64
 
-Int32ByteSize = function(slot0, slot1)
+function Int32ByteSize(slot0, slot1)
 	return Int64ByteSize(slot0, slot1)
 end
 
-Int32ByteSizeNoTag = function(slot0)
+function Int32ByteSizeNoTag(slot0)
 	return uv0(slot0)
 end
 
-Int64ByteSize = function(slot0, slot1)
+function Int64ByteSize(slot0, slot1)
 	return UInt64ByteSize(slot0, slot1)
 end
 
-UInt32ByteSize = function(slot0, slot1)
+function UInt32ByteSize(slot0, slot1)
 	return UInt64ByteSize(slot0, slot1)
 end
 
-UInt64ByteSize = function(slot0, slot1)
+function UInt64ByteSize(slot0, slot1)
 	return TagByteSize(slot0) + uv0(slot1)
 end
 
-SInt32ByteSize = function(slot0, slot1)
+function SInt32ByteSize(slot0, slot1)
 	return UInt32ByteSize(slot0, ZigZagEncode(slot1))
 end
 
-SInt64ByteSize = function(slot0, slot1)
+function SInt64ByteSize(slot0, slot1)
 	return UInt64ByteSize(slot0, ZigZagEncode(slot1))
 end
 
-Fixed32ByteSize = function(slot0, slot1)
+function Fixed32ByteSize(slot0, slot1)
 	return TagByteSize(slot0) + 4
 end
 
-Fixed64ByteSize = function(slot0, slot1)
+function Fixed64ByteSize(slot0, slot1)
 	return TagByteSize(slot0) + 8
 end
 
-SFixed32ByteSize = function(slot0, slot1)
+function SFixed32ByteSize(slot0, slot1)
 	return TagByteSize(slot0) + 4
 end
 
-SFixed64ByteSize = function(slot0, slot1)
+function SFixed64ByteSize(slot0, slot1)
 	return TagByteSize(slot0) + 8
 end
 
-FloatByteSize = function(slot0, slot1)
+function FloatByteSize(slot0, slot1)
 	return TagByteSize(slot0) + 4
 end
 
-DoubleByteSize = function(slot0, slot1)
+function DoubleByteSize(slot0, slot1)
 	return TagByteSize(slot0) + 8
 end
 
-BoolByteSize = function(slot0, slot1)
+function BoolByteSize(slot0, slot1)
 	return TagByteSize(slot0) + 1
 end
 
-EnumByteSize = function(slot0, slot1)
+function EnumByteSize(slot0, slot1)
 	return UInt32ByteSize(slot0, slot1)
 end
 
-StringByteSize = function(slot0, slot1)
+function StringByteSize(slot0, slot1)
 	return BytesByteSize(slot0, slot1)
 end
 
-BytesByteSize = function(slot0, slot1)
+function BytesByteSize(slot0, slot1)
 	return TagByteSize(slot0) + uv0(#slot1) + #slot1
 end
 
-MessageByteSize = function(slot0, slot1)
+function MessageByteSize(slot0, slot1)
 	return TagByteSize(slot0) + uv0(slot1.ByteSize()) + slot1.ByteSize()
 end
 
-MessageSetItemByteSize = function(slot0, slot1)
+function MessageSetItemByteSize(slot0, slot1)
 	slot3 = slot1.ByteSize()
 
 	return 2 * TagByteSize(1) + TagByteSize(2) + TagByteSize(3) + uv0(slot0) + uv0(slot3) + slot3
 end
 
-TagByteSize = function(slot0)
+function TagByteSize(slot0)
 	return uv0(PackTag(slot0, 0))
 end

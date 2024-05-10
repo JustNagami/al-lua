@@ -11,7 +11,7 @@ slot0.ON_SELECT_COMMANDER = "BossRushFleetSelectMediator:ON_SELECT_COMMANDER"
 slot0.ON_COMMANDER_SKILL = "BossRushFleetSelectMediator:ON_COMMANDER_SKILL"
 slot0.ON_SWITCH_MODE = "BossRushFleetSelectMediator:ON_SWITCH_MODE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_OPEN_DECK, function (slot0, slot1)
 		slot3 = slot1.shipVO
 		slot6, slot7, slot8 = uv0.getDockCallbackFuncs(slot3, uv0.contextData.fleets[slot1.fleetIndex], slot1.teamType, _.flatten(_.map(uv0.contextData.fleets, function (slot0)
@@ -115,7 +115,7 @@ slot0.register = function(slot0)
 			end
 		end
 
-		slot12 = function(slot0, slot1)
+		function slot12(slot0, slot1)
 			slot3 = uv0
 
 			if slot3:getRecommendShip(underscore.filter(TeamType.GetShipTypeListFromTeam(slot1), function (slot0)
@@ -168,11 +168,11 @@ slot0.register = function(slot0)
 	slot0:bind(uv0.ON_SELECT_COMMANDER, function (slot0, slot1, slot2)
 		slot3 = uv0.contextData.fleets
 
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 			maxCount = 1,
-			mode = CommandRoomScene.MODE_SELECT,
+			mode = CommanderCatScene.MODE_SELECT,
 			activeCommander = slot3[slot1]:getCommanders()[slot2],
-			fleetType = CommandRoomScene.FLEET_TYPE_BOSSRUSH,
+			fleetType = CommanderCatScene.FLEET_TYPE_BOSSRUSH,
 			fleets = slot3,
 			ignoredIds = {},
 			onCommander = function (slot0)
@@ -260,7 +260,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setHardShipVOs(getProxy(BayProxy):getRawData())
 end
 
-slot0.OnSwitchMode = function(slot0, slot1)
+function slot0.OnSwitchMode(slot0, slot1)
 	assert(slot1)
 
 	slot2 = slot0.contextData.mode
@@ -302,7 +302,7 @@ slot0.OnSwitchMode = function(slot0, slot1)
 	PlayerPrefs.SetInt("series_mode_flag" .. slot0.contextData.seriesData.id, slot1)
 end
 
-slot0.getRecommendShip = function(slot0, slot1, slot2)
+function slot0.getRecommendShip(slot0, slot1, slot2)
 	slot3 = slot0.contextData.actId
 	slot6 = {}
 
@@ -342,7 +342,7 @@ slot0.getRecommendShip = function(slot0, slot1, slot2)
 	return slot10
 end
 
-slot0.openCommanderPanel = function(slot0, slot1, slot2)
+function slot0.openCommanderPanel(slot0, slot1, slot2)
 	slot3 = slot0.contextData.actId
 
 	slot0:addSubLayers(Context.New({
@@ -372,7 +372,7 @@ slot0.openCommanderPanel = function(slot0, slot1, slot2)
 	}))
 end
 
-slot0.closeCommanderPanel = function(slot0)
+function slot0.closeCommanderPanel(slot0)
 	if getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushCMDFormationMediator) then
 		slot0:sendNotification(GAME.REMOVE_LAYERS, {
 			context = slot3
@@ -380,14 +380,14 @@ slot0.closeCommanderPanel = function(slot0)
 	end
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE,
 		BossRushPreCombatMediator.ON_FLEET_REFRESHED
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == nil then
@@ -399,10 +399,10 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 end
 
-slot0.getDockCallbackFuncs = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.getDockCallbackFuncs(slot0, slot1, slot2, slot3, slot4)
 	slot5 = getProxy(BayProxy)
 
 	return function (slot0, slot1)

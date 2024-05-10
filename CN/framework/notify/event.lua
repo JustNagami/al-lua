@@ -17,7 +17,7 @@ slot9 = {
 	__index = slot8
 }
 
-slot10 = function()
+function slot10()
 	return {
 		handlers = uv0.New(),
 		pre_emits = uv0.New(),
@@ -27,7 +27,7 @@ slot10 = function()
 	}
 end
 
-slot11 = function(slot0)
+function slot11(slot0)
 	slot1 = {}
 	slot5 = uv1
 
@@ -38,7 +38,7 @@ slot11 = function(slot0)
 	return slot1
 end
 
-slot12 = function(slot0, slot1)
+function slot12(slot0, slot1)
 	slot0.events[slot2[1]] = slot0.events[uv0(slot1)[1]] or uv1()
 
 	for slot7 = 2, #slot2 do
@@ -50,7 +50,7 @@ slot12 = function(slot0, slot1)
 	return slot3
 end
 
-slot13 = function(slot0, slot1)
+function slot13(slot0, slot1)
 	if not slot0.events[uv0(slot1)[1]] then
 		return true
 	end
@@ -66,7 +66,7 @@ slot13 = function(slot0, slot1)
 	return false
 end
 
-slot14 = function(slot0, slot1)
+function slot14(slot0, slot1)
 	slot3 = 2
 	slot4 = slot0.events[uv0(slot1)[1]]
 
@@ -88,7 +88,7 @@ slot14 = function(slot0, slot1)
 	end
 end
 
-slot15 = function(slot0, slot1)
+function slot15(slot0, slot1)
 	slot2 = uv0.New()
 	slot3 = uv0.New()
 
@@ -104,7 +104,7 @@ slot15 = function(slot0, slot1)
 	return slot2, slot3
 end
 
-slot16 = function(slot0, slot1)
+function slot16(slot0, slot1)
 	for slot5 in slot1:get_iterator() do
 		for slot9 in slot5.post_emits:get_iterator() do
 			slot9(slot0)
@@ -112,7 +112,7 @@ slot16 = function(slot0, slot1)
 	end
 end
 
-slot17 = function(slot0, slot1)
+function slot17(slot0, slot1)
 	for slot5 in slot1.nodes:get_iterator() do
 		for slot9 in slot5.handlers:get_iterator() do
 			if slot0.stopped then
@@ -121,16 +121,16 @@ slot17 = function(slot0, slot1)
 
 			if slot5.blocked_handlers[slot9] == 0 then
 				if slot1.accumulator then
-					slot1.accumulator(slot9(slot1.event_name, uv0(slot1.args, 1, slot1.args.len)))
+					slot1.accumulator(slot9(slot1.event_name, unpackEx(slot1.args)))
 				else
-					slot9(slot1.event_name, uv0(slot1.args, 1, slot1.args.len))
+					slot9(slot1.event_name, unpackEx(slot1.args))
 				end
 			end
 		end
 	end
 end
 
-slot8.connect = function(slot0, slot1, slot2)
+function slot8.connect(slot0, slot1, slot2)
 	slot3 = uv0(slot0, slot1)
 
 	slot3.handlers:push_back(slot2)
@@ -140,7 +140,7 @@ slot8.connect = function(slot0, slot1, slot2)
 	end
 end
 
-slot8.disconnect = function(slot0, slot1, slot2)
+function slot8.disconnect(slot0, slot1, slot2)
 	if uv0(slot0, slot1) then
 		return
 	end
@@ -152,11 +152,11 @@ slot8.disconnect = function(slot0, slot1, slot2)
 	slot3.blocked_handlers[slot2] = nil
 end
 
-slot8.chectConnect = function(slot0, slot1)
+function slot8.chectConnect(slot0, slot1)
 	return not uv0(slot0, slot1)
 end
 
-slot8.block = function(slot0, slot1, slot2)
+function slot8.block(slot0, slot1, slot2)
 	if uv0(slot0, slot1) then
 		return
 	end
@@ -166,7 +166,7 @@ slot8.block = function(slot0, slot1, slot2)
 	end
 end
 
-slot8.unblock = function(slot0, slot1, slot2)
+function slot8.unblock(slot0, slot1, slot2)
 	if uv0(slot0, slot1) then
 		return
 	end
@@ -176,22 +176,19 @@ slot8.unblock = function(slot0, slot1, slot2)
 	end
 end
 
-slot8.emit = function(slot0, slot1, ...)
+function slot8.emit(slot0, slot1, ...)
 	slot0.stopped = false
 	slot2, slot3 = uv0(slot0, slot1)
 
 	uv1(slot0, {
 		event_name = slot1,
 		nodes = slot2,
-		args = {
-			len = select("#", ...),
-			...
-		}
+		args = packEx(...)
 	})
 	uv2(slot1, slot3)
 end
 
-slot8.emit_with_accumulator = function(slot0, slot1, slot2, ...)
+function slot8.emit_with_accumulator(slot0, slot1, slot2, ...)
 	slot0.stopped = false
 	slot3, slot4 = uv0(slot0, slot1)
 
@@ -199,19 +196,16 @@ slot8.emit_with_accumulator = function(slot0, slot1, slot2, ...)
 		event_name = slot1,
 		nodes = slot3,
 		accumulator = slot2,
-		args = {
-			len = select("#", ...),
-			...
-		}
+		args = packEx(...)
 	})
 	uv2(slot1, slot4)
 end
 
-slot8.add_pre_emit = function(slot0, slot1, slot2)
+function slot8.add_pre_emit(slot0, slot1, slot2)
 	uv0(slot0, slot1).pre_emits:push_back(slot2)
 end
 
-slot8.remove_pre_emit = function(slot0, slot1, slot2)
+function slot8.remove_pre_emit(slot0, slot1, slot2)
 	if uv0(slot0, slot1) then
 		return
 	end
@@ -219,11 +213,11 @@ slot8.remove_pre_emit = function(slot0, slot1, slot2)
 	uv1(slot0, slot1).pre_emits:remove(slot2)
 end
 
-slot8.add_post_emit = function(slot0, slot1, slot2)
+function slot8.add_post_emit(slot0, slot1, slot2)
 	uv0(slot0, slot1).post_emits:push_front(slot2)
 end
 
-slot8.remove_post_emit = function(slot0, slot1, slot2)
+function slot8.remove_post_emit(slot0, slot1, slot2)
 	if uv0(slot0, slot1) then
 		return
 	end
@@ -231,11 +225,11 @@ slot8.remove_post_emit = function(slot0, slot1, slot2)
 	uv1(slot0, slot1).post_emits:remove(slot2)
 end
 
-slot8.stop = function(slot0)
+function slot8.stop(slot0)
 	slot0.stopped = true
 end
 
-slot8.clear = function(slot0, slot1)
+function slot8.clear(slot0, slot1)
 	if not slot1 then
 		slot0.events = {}
 
@@ -245,7 +239,7 @@ end
 
 slot18 = slot7.New()
 
-slot7.get_global_event = function()
+function slot7.get_global_event()
 	return uv0
 end
 

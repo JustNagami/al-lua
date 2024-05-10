@@ -35,7 +35,7 @@ slot1 = {
 	end
 }
 
-slot0.Ctor = function(slot0, ...)
+function slot0.Ctor(slot0, ...)
 	uv0.super.Ctor(slot0)
 	rawset(slot0, "fields", {})
 
@@ -58,14 +58,14 @@ slot0.Ctor = function(slot0, ...)
 	slot0:Build(...)
 end
 
-slot0.Build = function(slot0)
+function slot0.Build(slot0)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Clear()
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	uv0.super.ClearListeners(slot0)
 
 	slot1 = rawget(slot0, "class")
@@ -80,11 +80,11 @@ slot0.Clear = function(slot0)
 	end
 end
 
-slot0.Clone = function(slot0)
+function slot0.Clone(slot0)
 	return uv0.Clone_Copy(slot0, {})
 end
 
-slot0.Clone_Copy = function(slot0, slot1)
+function slot0.Clone_Copy(slot0, slot1)
 	if type(slot0) ~= "table" then
 		return slot0
 	elseif slot1[slot0] then
@@ -120,7 +120,7 @@ slot0.Clone_Copy = function(slot0, slot1)
 	end
 end
 
-slot0.Trans = function(slot0, slot1)
+function slot0.Trans(slot0, slot1)
 	assert(superof(slot1, uv0), "class error: without super of BaseEntity")
 
 	slot2 = slot1.New()

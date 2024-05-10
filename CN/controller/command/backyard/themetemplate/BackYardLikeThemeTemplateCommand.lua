@@ -1,9 +1,9 @@
 slot0 = class("BackYardLikeThemeTemplateCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 
-	slot5 = function(slot0)
+	function slot5(slot0)
 		if getProxy(DormProxy):GetCollectionThemeTemplateById(uv0) then
 			slot2:AddLike()
 			slot1:UpdateCollectionThemeTemplate(slot2)

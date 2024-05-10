@@ -1,6 +1,6 @@
 slot0 = class("GoodsCard", import(".BaseGoodsCard"))
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0.go = slot1
@@ -43,7 +43,7 @@ slot0.Ctor = function(slot0, slot1)
 	end, SFX_PANEL)
 end
 
-slot0.setGroupMask = function(slot0, slot1)
+function slot0.setGroupMask(slot0, slot1)
 	slot3 = slot0.goodsVO:getConfig("group_limit") > 0 and slot2 <= slot1
 
 	if isActive(slot0.mask) then
@@ -58,7 +58,7 @@ slot0.setGroupMask = function(slot0, slot1)
 	end
 end
 
-slot0.setLevelMask = function(slot0, slot1)
+function slot0.setLevelMask(slot0, slot1)
 	slot2 = slot0.goodsVO:getLevelLimit(slot1)
 	slot3 = slot0.goodsVO:isLevelLimit(slot1)
 
@@ -77,7 +77,7 @@ slot0.setLevelMask = function(slot0, slot1)
 	end
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	slot0.goodsVO = slot1
 	slot2 = slot0.goodsVO:canPurchase()
 
@@ -88,7 +88,7 @@ slot0.update = function(slot0, slot1)
 	slot3 = slot1:getDropInfo()
 
 	updateDrop(slot0.itemTF, slot3)
-	setText(slot0.nameTxt, shortenString(slot3.cfg.name or "", 6))
+	setText(slot0.nameTxt, shortenString(slot3:getConfig("name") or "", 6))
 
 	slot5 = ""
 	slot6 = slot1:getConfig("resource_num")
@@ -108,10 +108,13 @@ slot0.update = function(slot0, slot1)
 	slot0.discountTextTF.text = slot5
 	slot0.countTF.text = math.ceil(slot6)
 
-	GetImageSpriteFromAtlasAsync(pg.item_data_statistics[id2ItemId(slot1:getConfig("resource_type"))].icon, "", tf(slot0.resIconTF))
+	GetImageSpriteFromAtlasAsync(Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = slot1:getConfig("resource_type")
+	}):getIcon(), "", tf(slot0.resIconTF))
 end
 
-slot0.OnDispose = function(slot0)
+function slot0.OnDispose(slot0)
 	slot0.goodsVO = nil
 end
 

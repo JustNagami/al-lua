@@ -9,13 +9,13 @@ slot0.ON_ACTIVE_TECH = "CommissionInfoMediator.ON_ACTIVE_TECH"
 slot0.ON_TECH_FINISHED = "CommissionInfoMediator.ON_TECH_FINISHED"
 slot0.ON_TECH_QUEUE_FINISH = "CommissionInfoMediator.ON_TECH_QUEUE_FINISH"
 slot0.ON_INS = "CommissionInfoMediator.ON_INS"
-slot0.ON_UR_ACTIVITY = "CommanderInfoMediator:ON_UR_ACTIVITY"
-slot0.ON_CRUSING = "CommanderInfoMediator.ON_CRUSING"
-slot0.GET_CLASS_RES = "CommanderInfoMediator:GET_CLASS_RES"
-slot0.FINISH_CLASS_ALL = "CommanderInfoMediator:FINISH_CLASS_ALL"
-slot0.GO_META_BOSS = "CommanderInfoMediator:GO_META_BOSS"
+slot0.ON_UR_ACTIVITY = "CommissionInfoMediator:ON_UR_ACTIVITY"
+slot0.ON_CRUSING = "CommissionInfoMediator.ON_CRUSING"
+slot0.GET_CLASS_RES = "CommissionInfoMediator:GET_CLASS_RES"
+slot0.FINISH_CLASS_ALL = "CommissionInfoMediator:FINISH_CLASS_ALL"
+slot0.GO_META_BOSS = "CommissionInfoMediator:GO_META_BOSS"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 	slot0:bind(uv0.GO_META_BOSS, function (slot0)
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.WORLDBOSS)
@@ -98,12 +98,12 @@ slot0.register = function(slot0)
 	slot0:Notify()
 end
 
-slot0.Notify = function(slot0)
+function slot0.Notify(slot0)
 	slot0.viewComponent:NotifyIns(getProxy(InstagramProxy), getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM))
 	slot0.viewComponent:UpdateLinkPanel()
 end
 
-slot0.continueClass = function(slot0, slot1, slot2, slot3)
+function slot0.continueClass(slot0, slot1, slot2, slot3)
 	slot5 = getProxy(BayProxy):getShipById(slot1)
 
 	if table.getCount(getProxy(BagProxy):getItemsByType(Item.LESSON_TYPE) or {}) <= 0 then
@@ -121,7 +121,7 @@ slot0.continueClass = function(slot0, slot1, slot2, slot3)
 	})
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.HARVEST_RES_DONE,
@@ -133,7 +133,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == PlayerProxy.UPDATED then
@@ -246,7 +246,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.HandleClassMaxLevel = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.HandleClassMaxLevel(slot0, slot1, slot2, slot3, slot4)
 	slot5 = i18n("tactics_end_to_learn", slot1:getName(), getSkillName(slot3), slot4)
 
 	if _.all(slot1:getSkillList(), function (slot0)

@@ -1,10 +1,10 @@
 slot0 = class("AcceptFriendRequestCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = getProxy(FriendProxy)
 
-	slot5 = function(slot0)
+	function slot5(slot0)
 		slot1 = pg.ConnectionMgr.GetInstance()
 
 		slot1:Send(50006, {

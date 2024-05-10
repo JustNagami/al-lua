@@ -10,7 +10,7 @@ slot0.OptimizedBlur = 1
 slot0.StaticBlur = 2
 slot0.PartialBlur = 3
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	print("initializing ui manager...")
 
 	slot0.mainCamera = GameObject.Find("MainCamera")
@@ -53,7 +53,7 @@ slot0.Init = function(slot0, slot1)
 		[uv0.CameraOverlay] = false
 	}
 
-	slot2 = function(slot0)
+	function slot2(slot0)
 		if slot0 == nil then
 			return
 		end
@@ -63,7 +63,7 @@ slot0.Init = function(slot0, slot1)
 		slot0.blurIterations = 2
 	end
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		if slot0 == nil then
 			return
 		end
@@ -73,7 +73,7 @@ slot0.Init = function(slot0, slot1)
 		slot0.blurIteration = 4
 	end
 
-	slot4 = function(slot0)
+	function slot4(slot0)
 		if slot0 == nil then
 			return
 		end
@@ -83,7 +83,7 @@ slot0.Init = function(slot0, slot1)
 		slot0.blurIterations = 1
 	end
 
-	slot5 = function(slot0)
+	function slot5(slot0)
 		if slot0 == nil then
 			return
 		end
@@ -147,35 +147,35 @@ slot0.Init = function(slot0, slot1)
 	}, slot1)
 end
 
-slot0.Loading = function(slot0, slot1)
+function slot0.Loading(slot0, slot1)
 	slot0._loadPanel:appendInfo(slot1)
 end
 
-slot0.LoadingOn = function(slot0, slot1)
+function slot0.LoadingOn(slot0, slot1)
 	slot0._loadPanel:on(slot1)
 end
 
-slot0.displayLoadingBG = function(slot0, slot1)
+function slot0.displayLoadingBG(slot0, slot1)
 	slot0._loadPanel:displayBG(slot1)
 end
 
-slot0.LoadingOff = function(slot0)
+function slot0.LoadingOff(slot0)
 	slot0._loadPanel:off()
 end
 
-slot0.OnLoading = function(slot0)
+function slot0.OnLoading(slot0)
 	return slot0._loadPanel:onLoading()
 end
 
-slot0.LoadingRetainCount = function(slot0)
+function slot0.LoadingRetainCount(slot0)
 	return slot0._loadPanel:getRetainCount()
 end
 
-slot0.AddDebugButton = function(slot0, slot1, slot2)
+function slot0.AddDebugButton(slot0, slot1, slot2)
 	slot0._debugPanel:addCustomBtn(slot1, slot2)
 end
 
-slot0.AddWorldTestButton = function(slot0, slot1, slot2)
+function slot0.AddWorldTestButton(slot0, slot1, slot2)
 	slot0._debugPanel:addCustomBtn(slot1, function ()
 		uv0._debugPanel:hidePanel()
 		uv1()
@@ -194,7 +194,7 @@ slot0._normalColor = Color(255, 255, 255, 1)
 slot0._darkColor = Color(255, 255, 255, 0.5)
 slot0._firstPos = Vector3.zero
 
-slot0.AttachStickOb = function(slot0, slot1)
+function slot0.AttachStickOb(slot0, slot1)
 	slot0.hrz = 0
 	slot0.vtc = 0
 	slot0.fingerId = -1
@@ -215,11 +215,11 @@ slot0.AttachStickOb = function(slot0, slot1)
 	slot0:SetActive(true)
 end
 
-slot0.SetActive = function(slot0, slot1)
+function slot0.SetActive(slot0, slot1)
 	slot0._stickActive = slot1
 end
 
-slot0.Marching = function(slot0)
+function slot0.Marching(slot0)
 	slot1 = ys.Battle.BattleConfig
 
 	LeanTween.value(go(slot0._stick), 0, 0.625, 1.8):setOnUpdate(System.Action_float(function (slot0)
@@ -229,7 +229,7 @@ slot0.Marching = function(slot0)
 	end))
 end
 
-slot0.UpdateStick = function(slot0, slot1, slot2)
+function slot0.UpdateStick(slot0, slot1, slot2)
 	if not slot0._stickActive then
 		return
 	end
@@ -262,7 +262,7 @@ slot0.UpdateStick = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.SetOutput = function(slot0, slot1, slot2, slot3)
+function slot0.SetOutput(slot0, slot1, slot2, slot3)
 	slot0.hrz = slot1
 	slot0.vtc = slot2
 
@@ -278,7 +278,7 @@ slot0.SetOutput = function(slot0, slot1, slot2, slot3)
 	slot0.fingerId = slot3
 end
 
-slot0.ClearStick = function(slot0)
+function slot0.ClearStick(slot0)
 	slot0._stick.localPosition = Vector3.zero
 
 	slot0._stickCom:ClearStickFunc()
@@ -292,18 +292,18 @@ end
 slot2 = {}
 slot3 = false
 
-slot0.OverlayPanel = function(slot0, slot1, slot2)
+function slot0.OverlayPanel(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 	slot2.globalBlur = false
 
 	uv0.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, slot1, slot2)
 end
 
-slot0.UnOverlayPanel = function(slot0, slot1, slot2)
+function slot0.UnOverlayPanel(slot0, slot1, slot2)
 	uv0.LayerWeightMgr.GetInstance():DelFromOverlay(slot1, slot2 or slot0.UIMain)
 end
 
-slot0.BlurPanel = function(slot0, slot1, slot2, slot3)
+function slot0.BlurPanel(slot0, slot1, slot2, slot3)
 	slot3 = slot3 or {}
 	slot3.globalBlur = true
 	slot3.staticBlur = slot2
@@ -311,32 +311,32 @@ slot0.BlurPanel = function(slot0, slot1, slot2, slot3)
 	uv0.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, slot1, slot3)
 end
 
-slot0.UnblurPanel = function(slot0, slot1, slot2)
+function slot0.UnblurPanel(slot0, slot1, slot2)
 	uv0.LayerWeightMgr.GetInstance():DelFromOverlay(slot1, slot2 or slot0.UIMain)
 end
 
-slot0.OverlayPanelPB = function(slot0, slot1, slot2)
+function slot0.OverlayPanelPB(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 	slot2.globalBlur = false
 
 	uv0.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, slot1, slot2)
 end
 
-slot0.PartialBlurTfs = function(slot0, slot1)
+function slot0.PartialBlurTfs(slot0, slot1)
 	uv0 = true
 	uv1 = slot1
 
 	slot0:UpdatePBEnable(true)
 end
 
-slot0.ShutdownPartialBlur = function(slot0)
+function slot0.ShutdownPartialBlur(slot0)
 	uv0 = false
 	uv1 = {}
 
 	slot0:UpdatePBEnable(false)
 end
 
-slot0.RevertPBMaterial = function(slot0, slot1)
+function slot0.RevertPBMaterial(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		slot7 = slot6:GetComponent(typeof(Image))
 
@@ -346,7 +346,7 @@ slot0.RevertPBMaterial = function(slot0, slot1)
 	end
 end
 
-slot0.UpdatePBEnable = function(slot0, slot1)
+function slot0.UpdatePBEnable(slot0, slot1)
 	if slot1 then
 		if uv0 ~= nil then
 			for slot5, slot6 in ipairs(uv0) do
@@ -372,7 +372,7 @@ slot0.UpdatePBEnable = function(slot0, slot1)
 	end
 end
 
-slot0.BlurCamera = function(slot0, slot1, slot2, slot3)
+function slot0.BlurCamera(slot0, slot1, slot2, slot3)
 	if not slot0.camLockStatus[slot1] or slot3 then
 		slot4 = slot0.cameraBlurs[slot1][uv0.OptimizedBlur]
 		slot5 = slot0.cameraBlurs[slot1][uv0.StaticBlur]
@@ -393,7 +393,7 @@ slot0.BlurCamera = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.UnblurCamera = function(slot0, slot1, slot2)
+function slot0.UnblurCamera(slot0, slot1, slot2)
 	if not slot0.camLockStatus[slot1] or slot2 then
 		slot0.cameraBlurs[slot1][uv0.StaticBlur].enabled = false
 		slot0.cameraBlurs[slot1][uv0.OptimizedBlur].enabled = false
@@ -404,11 +404,11 @@ slot0.UnblurCamera = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.GetStaticRtt = function(slot0, slot1)
+function slot0.GetStaticRtt(slot0, slot1)
 	return ReflectionHelp.RefGetField(typeof("UnityStandardAssets.ImageEffects.BlurOptimized"), "staticRtt", slot0.cameraBlurs[slot1][uv0.OptimizedBlur])
 end
 
-slot0.SetMainCamBlurTexture = function(slot0, slot1)
+function slot0.SetMainCamBlurTexture(slot0, slot1)
 	slot2 = slot0.mainCamera:GetComponent(typeof(Camera))
 	slot3 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
 		typeof("System.Int32"),
@@ -438,11 +438,11 @@ slot0.SetMainCamBlurTexture = function(slot0, slot1)
 	return slot4
 end
 
-slot0.GetMainCamera = function(slot0)
+function slot0.GetMainCamera(slot0)
 	return slot0.mainCamera
 end
 
-slot0.InitBgmCfg = function(slot0, slot1)
+function slot0.InitBgmCfg(slot0, slot1)
 	slot0.isDefaultBGM = false
 
 	if OPEN_SPECIAL_IP_BGM and PLATFORM_CODE == PLATFORM_US then
@@ -460,7 +460,7 @@ slot0.InitBgmCfg = function(slot0, slot1)
 		}
 		slot4 = ""
 
-		slot5 = function(slot0)
+		function slot5(slot0)
 			slot2 = "\","
 			slot3, slot4 = string.find(slot0, "\"country\":\"")
 
@@ -475,7 +475,7 @@ slot0.InitBgmCfg = function(slot0, slot1)
 			return slot0
 		end
 
-		slot6 = function(slot0)
+		function slot6(slot0)
 			slot1 = false
 
 			for slot5, slot6 in ipairs(uv0) do
@@ -510,6 +510,6 @@ slot0.InitBgmCfg = function(slot0, slot1)
 	end
 end
 
-slot0.IsDefaultBGM = function(slot0)
+function slot0.IsDefaultBGM(slot0)
 	return slot0.isDefaultBGM
 end

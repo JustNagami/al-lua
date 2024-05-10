@@ -1,6 +1,6 @@
 slot0 = class("EquipmentItemTransformVer", import("view.equipment.EquipmentItem"))
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	setActive(slot0.equiped, false)
 	setActive(slot0.unloadBtn, not slot1)
 	setActive(slot0.bg, slot1)
@@ -26,7 +26,7 @@ slot0.update = function(slot0, slot1)
 		end
 	end
 
-	findTF(slot3, "name"):GetComponent(typeof(Text)).text = shortenString(slot1.cfg.name, 5)
+	findTF(slot3, "name"):GetComponent(typeof(Text)).text = shortenString(slot1:getConfig("name"), 5)
 
 	if not IsNil(slot0.mask) then
 		setActive(slot0.mask, slot2.mask)
@@ -42,7 +42,7 @@ slot0.update = function(slot0, slot1)
 	end
 end
 
-slot0.updateSelected = function(slot0, slot1)
+function slot0.updateSelected(slot0, slot1)
 	slot0.selected = slot1
 
 	setActive(slot0.selectedMask, slot1)

@@ -1,18 +1,20 @@
 slot0 = class("ActivityBossTotalRewardPanel", import("view.level.BaseTotalRewardPanel"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ActivityBossTotalRewardPanel"
 end
 
 slot1 = 0.15
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	uv0.super.init(slot0)
 
 	slot0.itemList = slot0.boxView:Find("Content/ItemGrid2")
+
+	setText(slot0.window:Find("Fixed/top/bg/obtain/title"), i18n("autofight_rewards"))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, nil, {
 		lockGlobalBlur = true,
 		weight = LayerWeightConst.THIRD_LAYER
@@ -27,12 +29,12 @@ slot0.didEnter = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:SkipAnim()
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	onButton(slot0, slot0._tf:Find("BG"), function ()
 		if uv0.isRewardAnimating then
 			uv0:SkipAnim()
@@ -103,7 +105,7 @@ slot0.UpdateView = function(slot0)
 	end)
 end
 
-slot0.SkipAnim = function(slot0)
+function slot0.SkipAnim(slot0)
 	if not slot0.isRewardAnimating then
 		return
 	end
@@ -121,7 +123,7 @@ slot0.SkipAnim = function(slot0)
 	end)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	existCall(slot0.contextData.onClose)
 	slot0:closeView()
 end

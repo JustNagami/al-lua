@@ -1,12 +1,12 @@
 slot0 = class("SpTemplatePage", import(".PtTemplatePage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
 	slot0.buildBtn = slot0:findTF("build_btn", slot0.bg)
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	uv0.super.OnFirstFlush(slot0)
 
 	if not slot0.activity:getConfig("config_client").linkPoolActID then

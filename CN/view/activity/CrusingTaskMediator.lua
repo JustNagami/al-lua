@@ -6,7 +6,7 @@ slot0.ON_BUY_QUICK_TASK_ITEM = "CrusingTaskMediator.ON_BUY_QUICK_TASK_ITEM"
 slot0.ON_EXIT = "CrusingTaskMediator.ON_EXIT"
 slot0.quickTaskGoodId = 61017
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_TASK_GO, function (slot0, slot1)
 		uv0:sendNotification(GAME.TASK_GO, {
 			taskVO = slot1
@@ -34,7 +34,7 @@ slot0.register = function(slot0)
 	updateCrusingActivityTask(slot1)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		BagProxy.ITEM_UPDATED,
@@ -42,7 +42,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 	slot4 = slot1:getType()
 

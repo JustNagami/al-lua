@@ -1,18 +1,25 @@
 slot0 = class("BackYardDecorationPutlistPage", import(".BackYardDecorationBasePage"))
+slot0.SELECTED_FURNITRUE = "BackYardDecorationPutlistPage:SELECTED_FURNITRUE"
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BackYardPutListPage"
 end
 
-slot0.OnLoaded = function(slot0)
-	slot0._bg = slot0:findTF("bg")
-	slot0.scrollRect = slot0:findTF("bg/frame0/frame/scrollrect"):GetComponent("LScrollRect")
-	slot0.scrollRectTF = slot0:findTF("bg/frame0/frame/scrollrect")
-	slot0.emptyTF = slot0:findTF("bg/frame0/frame/empty")
-	slot0.arr = slot0:findTF("bg/frame0/frame/arr")
+function slot0.OnLoaded(slot0)
+	slot0:bind(BackYardDecrationLayer.INNER_SELECTED_FURNITRUE, function (slot0, slot1)
+		uv0:Selected(slot1)
+	end)
+
+	slot0._bg = slot0:findTF("frame")
+	slot0.scrollRect = slot0:findTF("frame/frame/scrollrect"):GetComponent("LScrollRect")
+	slot0.scrollRectTF = slot0:findTF("frame/frame/scrollrect")
+	slot0.emptyTF = slot0:findTF("frame/frame/empty")
+	slot0.arr = slot0:findTF("frame/frame/arr")
+
+	setText(slot0:findTF("frame/title/Text"), i18n("courtyard_label_putlist_title"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
@@ -21,7 +28,7 @@ slot0.OnInit = function(slot0)
 		uv0:Hide()
 	end, SFX_PANEL)
 
-	slot1 = function()
+	function slot1()
 		if uv0.timer then
 			uv0.timer:Stop()
 
@@ -29,13 +36,13 @@ slot0.OnInit = function(slot0)
 		end
 	end
 
-	slot2 = function(slot0)
+	function slot2(slot0)
 		uv0.timer = Timer.New(slot0, 0.8, 1)
 
 		uv0.timer:Start()
 	end
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		slot1 = uv0.change2ScrPos(uv1.scrollRectTF:Find("content"), slot0.position)
 		slot2 = nil
 
@@ -87,30 +94,57 @@ slot0.OnInit = function(slot0)
 
 			if uv2(slot1) then
 				uv1:emit(BackYardDecorationMediator.ON_SELECTED_FURNITRUE, slot3.furniture.id)
+				slot3:MarkOrUnMark(uv1.card.furniture.id)
+
+				uv1.selectedId = uv1.card.furniture.id
+
+				uv1:emit(uv3.SELECTED_FURNITRUE)
 			end
 		end
 	end)
 end
 
-slot0.change2ScrPos = function(slot0, slot1)
+function slot0.ClearMark(slot0)
+	slot0.selectedId = nil
+
+	for slot4, slot5 in pairs(slot0.cards) do
+		slot5:MarkOrUnMark(slot0.selectedId)
+	end
+end
+
+function slot0.Selected(slot0, slot1)
+	slot0:ClearMark()
+
+	for slot5, slot6 in pairs(slot0.cards) do
+		if slot6.furniture and slot6.furniture.id == slot1 then
+			slot6:MarkOrUnMark(slot1)
+
+			break
+		end
+	end
+
+	slot0.selectedId = slot1
+end
+
+function slot0.change2ScrPos(slot0, slot1)
 	return LuaHelper.ScreenToLocal(slot0:GetComponent("RectTransform"), slot1, GameObject.Find("UICamera"):GetComponent("Camera"))
 end
 
-slot0.OnInitItem = function(slot0, slot1)
+function slot0.OnInitItem(slot0, slot1)
 	slot0.cards[slot1] = BackYardDecorationPutCard.New(slot1)
 end
 
-slot0.OnUpdateItem = function(slot0, slot1, slot2)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
 	if not slot0.cards[slot2] then
 		slot0:OnInitItem(slot2)
 
 		slot3 = slot0.cards[slot2]
 	end
 
-	slot3:Update(slot0.displays[slot1 + 1])
+	slot3:Update(slot0.displays[slot1 + 1], slot0.selectedId)
 end
 
-slot0.OnDisplayList = function(slot0)
+function slot0.OnDisplayList(slot0)
 	slot0.displays = {}
 	slot3 = {}
 
@@ -132,7 +166,7 @@ slot0.OnDisplayList = function(slot0)
 	slot0.scrollRect:SetTotalCount(#slot0.displays)
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	uv0.super.Show(slot0)
 
 	slot2 = LeanTween.value(slot0._bg.gameObject, slot0._bg.anchoredPosition.x, 0, 0.4)
@@ -153,28 +187,33 @@ slot0.Show = function(slot0)
 	end
 end
 
-slot0.Hide = function(slot0)
-	slot2 = LeanTween.value(slot0._bg.gameObject, 0, -slot0._bg.rect.width, 0.4)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0._bg, {
-			x = slot0
-		})
-	end))
+function slot0.Hide(slot0)
+	slot6 = 0.4
 
-	slot2:setOnComplete(System.Action(function ()
+	function slot5()
 		uv0.super.Hide(uv1)
 
 		if uv1.OnShow then
 			uv1.OnShow(false)
 		end
-	end))
+	end
+
+	LeanTween.value(slot0._bg.gameObject, 0, -slot0._bg.rect.width, slot6):setOnUpdate(System.Action_float(function (slot0)
+		setAnchoredPosition(uv0._bg, {
+			x = slot0
+		})
+	end)):setOnComplete(System.Action(slot5))
+
+	for slot5, slot6 in pairs(slot0.cards) do
+		slot6:Clear()
+	end
 end
 
-slot0.OnDormUpdated = function(slot0)
+function slot0.OnDormUpdated(slot0)
 	slot0:OnDisplayList()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 

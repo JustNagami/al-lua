@@ -1,14 +1,14 @@
 slot0 = class("EquipmentTransformInfoLayer", import("view.base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "EquipmentTransformInfoUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.loader = AutoLoader.New()
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	assert(slot0.contextData.equipVO, "Not Pass EquipVO")
 
 	slot1 = slot0._tf
@@ -43,7 +43,7 @@ slot0.didEnter = function(slot0)
 			uv0:closeView()
 		end)
 
-		uv0.unloadEffect = function()
+		function uv0.unloadEffect()
 			uv0:SetTriggerEvent(nil)
 			uv0:SetEndEvent(nil)
 		end
@@ -55,7 +55,7 @@ slot0.didEnter = function(slot0)
 	end)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 
 	if slot0.unloadEffect then

@@ -1,6 +1,6 @@
 slot0 = class("CollectionGetAwardCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot5 = false
 	slot6 = 0
@@ -55,11 +55,7 @@ slot0.execute = function(slot0, slot1)
 
 			slot4 = {}
 
-			table.insert(slot4, Item.New({
-				type = slot3[1],
-				id = slot3[2],
-				count = slot3[3]
-			}))
+			table.insert(slot4, Drop.Create(slot3))
 			uv2:sendNotification(GAME.COLLECT_GET_AWARD_DONE, {
 				id = uv0,
 				items = slot4

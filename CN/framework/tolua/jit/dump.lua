@@ -31,7 +31,7 @@ slot30 = {
 slot31 = {}
 slot32 = 0
 
-slot33 = function(slot0, slot1)
+function slot33(slot0, slot1)
 	uv0.__index = {}
 
 	if uv1.arch:sub(1, 4) == "mips" then
@@ -53,7 +53,7 @@ slot33 = function(slot0, slot1)
 	end
 end
 
-slot34 = function(slot0, slot1)
+function slot34(slot0, slot1)
 	slot2 = uv0
 
 	if uv1 == 0 then
@@ -94,11 +94,11 @@ slot34 = function(slot0, slot1)
 	return slot2
 end
 
-slot35 = function(slot0)
+function slot35(slot0)
 	uv0:write(slot0)
 end
 
-slot36 = function(slot0)
+function slot36(slot0)
 	if not uv0(slot0) then
 		return
 	end
@@ -189,11 +189,11 @@ slot38 = {
 	"[35m%s[m"
 }
 
-slot39 = function(slot0)
+function slot39(slot0)
 	return slot0
 end
 
-slot40 = function(slot0, slot1)
+function slot40(slot0, slot1)
 	return uv0(uv1[slot1], slot0)
 end
 
@@ -211,7 +211,7 @@ slot42 = {
 	["&"] = "&amp;"
 }
 
-slot43 = function(slot0, slot1)
+function slot43(slot0, slot1)
 	return uv2("<span class=\"irt_%s\">%s</span>", uv3[slot1], uv0(slot0, "[<>&]", uv1))
 end
 
@@ -321,7 +321,7 @@ slot48 = {
 	}
 }
 
-slot49 = function(slot0)
+function slot49(slot0)
 	if slot0 == "\n" then
 		return "\\n"
 	elseif slot0 == "\r" then
@@ -333,7 +333,7 @@ slot49 = function(slot0)
 	end
 end
 
-slot50 = function(slot0, slot1)
+function slot50(slot0, slot1)
 	if uv0(slot0, slot1).loc then
 		return slot2.loc
 	elseif slot2.ffid then
@@ -345,7 +345,7 @@ slot50 = function(slot0, slot1)
 	end
 end
 
-slot51 = function(slot0, slot1, slot2)
+function slot51(slot0, slot1, slot2)
 	slot3, slot4, slot5 = uv0(slot0, slot1)
 	slot7 = nil
 
@@ -388,7 +388,7 @@ slot51 = function(slot0, slot1, slot2)
 	return slot7
 end
 
-slot52 = function(slot0, slot1)
+function slot52(slot0, slot1)
 	slot2 = 2
 
 	for slot6 = 0, slot1[1] - 1 do
@@ -414,7 +414,7 @@ slot52 = function(slot0, slot1)
 	uv2:write("]\n")
 end
 
-slot53 = function(slot0)
+function slot53(slot0)
 	slot4 = slot0
 
 	uv0:write("---- TRACE ", slot4, " snapshots\n")
@@ -429,7 +429,7 @@ slot53 = function(slot0)
 	end
 end
 
-slot54 = function(slot0, slot1)
+function slot54(slot0, slot1)
 	if not uv0 then
 		uv0 = require("jit.dis_" .. uv1.arch)
 	end
@@ -451,7 +451,7 @@ slot54 = function(slot0, slot1)
 	return ""
 end
 
-slot55 = function(slot0, slot1)
+function slot55(slot0, slot1)
 	slot2 = nil
 
 	if slot1 > 0 then
@@ -472,7 +472,7 @@ slot55 = function(slot0, slot1)
 	return slot2
 end
 
-slot56 = function(slot0, slot1)
+function slot56(slot0, slot1)
 	if slot1 < 0 then
 		uv0:write(uv1(slot0, slot1))
 	else
@@ -493,7 +493,7 @@ slot56 = function(slot0, slot1)
 	end
 end
 
-slot57 = function(slot0, slot1, slot2)
+function slot57(slot0, slot1, slot2)
 	if not uv0(slot0) then
 		return
 	end
@@ -610,7 +610,7 @@ end
 slot58 = ""
 slot59 = 0
 
-slot60 = function(slot0, slot1)
+function slot60(slot0, slot1)
 	if uv0(slot0) == "number" then
 		if uv0(slot1) == "function" then
 			slot1 = uv1(slot1)
@@ -622,7 +622,7 @@ slot60 = function(slot0, slot1)
 	return slot0
 end
 
-slot61 = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot61(slot0, slot1, slot2, slot3, slot4, slot5)
 	if slot0 == "stop" or slot0 == "abort" and uv0.a then
 		if uv0.i then
 			uv1(slot1, uv0.s, uv0.r and slot0 == "stop")
@@ -682,7 +682,7 @@ slot61 = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	uv4:flush()
 end
 
-slot62 = function(slot0, slot1, slot2, slot3, slot4)
+function slot62(slot0, slot1, slot2, slot3, slot4)
 	if slot3 ~= uv0 then
 		uv0 = slot3
 		uv1 = uv2(" .", slot3)
@@ -712,7 +712,7 @@ slot62 = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot63 = function(slot0, slot1, slot2, slot3, ...)
+function slot63(slot0, slot1, slot2, slot3, ...)
 	uv0:write("---- TRACE ", slot0, " exit ", slot1, "\n")
 
 	if uv1.X then
@@ -758,7 +758,7 @@ slot63 = function(slot0, slot1, slot2, slot3, ...)
 	end
 end
 
-slot65 = function(slot0, slot1)
+function slot65(slot0, slot1)
 	if uv0 then
 		uv1()
 	end

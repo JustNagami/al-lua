@@ -1,29 +1,23 @@
 slot0 = class("BackYardThemeTemplateCard", import("...Shop.cards.BackYardThemeCard"))
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._go = slot1
 	slot0._tf = slot1.transform
 	slot0.content = slot0._tf:Find("content")
 	slot0.mask = slot0.content:Find("mask")
-	slot0.label = slot0.content:Find("label")
-	slot0.iconRaw = slot0.content:Find("icon_raw"):GetComponent(typeof(RawImage))
-	slot0.selected = slot0.content:Find("benti_s")
-
-	setActive(slot0.label, true)
-	setAnchoredPosition(slot0.mask, {
-		y = 33
-	})
-
+	slot0.iconRaw = slot0.content:Find("icon_mask/icon_raw"):GetComponent(typeof(RawImage))
+	slot0.nameTxt = slot0.content:Find("Text"):GetComponent(typeof(Text))
 	slot0.pos = slot0.content:Find("pos")
 	slot0.posTxt = slot0.pos:Find("Text"):GetComponent(typeof(Text))
 end
 
-slot0.FlushData = function(slot0, slot1)
+function slot0.FlushData(slot0, slot1)
 	slot0.template = slot1
 	slot0.themeVO = slot1
+	slot0.nameTxt.text = slot1:GetName()
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	if slot0.template and slot1.id == slot0.template.id then
 		slot0:FlushData(slot1)
 
@@ -56,19 +50,7 @@ slot0.Update = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateSelected = function(slot0, slot1)
-	uv0.super.UpdateSelected(slot0, slot1)
-
-	slot3 = slot1 and slot1.id == slot0.themeVO.id and 0 or 33
-
-	if not IsNil(slot0.mask) then
-		setAnchoredPosition(slot0.mask, {
-			y = slot3
-		})
-	end
-end
-
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	uv0.super.Dispose(slot0)
 
 	if not IsNil(slot0.iconRaw.texture) then

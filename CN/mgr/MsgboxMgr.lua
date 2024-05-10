@@ -45,7 +45,7 @@ MSGBOX_TYPE_DROP_ITEM_ESKIN = 26
 slot1.enable = false
 slot2 = require("Mgr.const.MsgboxBtnNameMap")
 
-slot1.Init = function(slot0, slot1)
+function slot1.Init(slot0, slot1)
 	print("initializing msgbox manager...")
 	PoolMgr.GetInstance():GetUI("MsgBox", true, function (slot0)
 		uv0._go = slot0
@@ -142,11 +142,11 @@ slot1.Init = function(slot0, slot1)
 	end)
 end
 
-slot1.getMsgBoxOb = function(slot0)
+function slot1.getMsgBoxOb(slot0)
 	return slot0._go
 end
 
-slot3 = function(slot0, slot1)
+function slot3(slot0, slot1)
 	slot0:commonSetting(slot1)
 	SetActive(slot0._msgPanel, true)
 
@@ -157,7 +157,7 @@ slot3 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot4 = function(slot0, slot1)
+function slot4(slot0, slot1)
 	slot0:commonSetting(slot1)
 	setActive(slot0._inputPanel, true)
 	setActive(slot0._btnContainer, false)
@@ -182,7 +182,7 @@ slot4 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot5 = function(slot0, slot1)
+function slot5(slot0, slot1)
 	slot0:commonSetting(slot1)
 	SetActive(slot0._exchangeShipPanel, true)
 	setActive(findTF(slot0._exchangeShipPanel, "icon_bg/own"), false)
@@ -190,7 +190,7 @@ slot5 = function(slot0, slot1)
 	SetActive(slot0._exchangeShipPanel:Find("intro_view/Viewport/intro"), slot1.drop.type == DROP_TYPE_SHIP or slot1.drop.type == DROP_TYPE_RESOURCE or slot1.drop.type == DROP_TYPE_ITEM or slot1.drop.type == DROP_TYPE_FURNITURE or slot1.drop.type == DROP_TYPE_STRATEGY or slot1.drop.type == DROP_TYPE_SKIN or slot1.drop.type == DROP_TYPE_SKIN_TIMELIMIT)
 	setActive(slot0.singleItemIntro, slot0.settings.numUpdate == nil)
 	setActive(slot0._countDescTxt, slot3 ~= nil)
-	setText(slot0._exchangeShipPanel:Find("name_mode/name"), slot1.name or slot1.drop.cfg.name or "")
+	setText(slot0._exchangeShipPanel:Find("name_mode/name"), slot1.name or slot1.drop:getConfig("name") or "")
 	setText(slot0._exchangeShipPanel:Find("name_mode/name/name"), getText(slot0._exchangeShipPanel:Find("name_mode/name")))
 
 	slot5, slot6, slot7 = ShipWordHelper.GetWordAndCV(uv0.ship_data_statistics[slot1.drop.id].skin_id, ShipWordHelper.WORD_TYPE_DROP, nil, PLATFORM_CODE ~= PLATFORM_US)
@@ -223,7 +223,7 @@ slot5 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot6 = function(slot0, slot1)
+function slot6(slot0, slot1)
 	slot0:commonSetting(slot1)
 	SetActive(slot0._itemPanel, true)
 	setActive(slot0._itemText, slot1.content)
@@ -257,7 +257,7 @@ slot6 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot7 = function(slot0, slot1)
+function slot7(slot0, slot1)
 	slot0:commonSetting(slot1)
 	SetActive(slot0._eskinPanel, true)
 	setActive(slot0._eskinText, slot1.content)
@@ -275,7 +275,7 @@ slot7 = function(slot0, slot1)
 				anonymous = slot3.anonymous,
 				hideName = slot3.hideName
 			})
-			setText(slot2:Find("own/Text"), i18n("equip_skin_detail_count") .. GetOwnedDropCount(slot3))
+			setText(slot2:Find("own/Text"), i18n("equip_skin_detail_count") .. slot3:getOwnedCount())
 			onButton(uv1, slot2, function ()
 				if uv0.anonymous then
 					return
@@ -288,7 +288,7 @@ slot7 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot8 = function(slot0, slot1)
+function slot8(slot0, slot1)
 	slot0:commonSetting(slot1)
 	SetActive(slot0._sigleItemPanel, true)
 	SetActive(slot0._sigleItemPanel:Find("ship_group"), false)
@@ -313,7 +313,7 @@ slot8 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot9 = function(slot0, slot1)
+function slot9(slot0, slot1)
 	slot0:commonSetting(slot1)
 	SetActive(slot0._sigleItemPanel, true)
 	setActive(slot0._sigleItemPanel:Find("left/IconTpl"):Find("timelimit"), slot1.drop.type == DROP_TYPE_SKIN_TIMELIMIT)
@@ -321,7 +321,7 @@ slot9 = function(slot0, slot1)
 	setActive(slot0._singleItemshipTypeTF, slot1.drop.type == DROP_TYPE_SHIP)
 
 	if slot1.drop.type == DROP_TYPE_SHIP then
-		GetImageSpriteFromAtlasAsync("shiptype", shipType2print(slot1.drop.cfg.type), slot0._singleItemshipTypeTF, false)
+		GetImageSpriteFromAtlasAsync("shiptype", shipType2print(slot1.drop:getConfig("type")), slot0._singleItemshipTypeTF, false)
 	end
 
 	slot3 = slot1.drop.type == DROP_TYPE_SHIP
@@ -343,7 +343,7 @@ slot9 = function(slot0, slot1)
 
 	setActive(slot0._countDescTxt, slot0.settings.numUpdate ~= nil)
 	SetActive(slot0.singleItemIntro, slot7 == nil)
-	setText(slot0._sigleItemPanel:Find("display_panel/name_container/name/Text"), slot1.name or slot1.drop.cfg.name or "")
+	setText(slot0._sigleItemPanel:Find("display_panel/name_container/name/Text"), slot1.name or slot1.drop:getConfig("name") or "")
 	UpdateOwnDisplay(slot0._sigleItemPanel:Find("left/own"), slot1.drop)
 	RegisterDetailButton(slot0, slot0._sigleItemPanel:Find("left/detail"), slot1.drop)
 
@@ -358,73 +358,10 @@ slot9 = function(slot0, slot1)
 
 	if slot1.content and slot1.content ~= "" then
 		setText(slot5, slot1.content)
-	elseif slot1.drop.type == DROP_TYPE_RESOURCE then
-		setText(slot5, slot1.drop.cfg.display)
-	elseif slot1.drop.type == DROP_TYPE_ITEM then
-		slot10 = Item.New({
-			id = slot1.drop.cfg.id
-		}):getConfig("display")
-
-		if slot1.drop.cfg.type == Item.LOVE_LETTER_TYPE then
-			slot10 = string.gsub(slot10, "$1", ShipGroup.getDefaultShipNameByGroupID(slot1.drop.extra))
-		end
-
-		setText(slot5, SwitchSpecialChar(slot10, true))
-	elseif slot1.drop.type == DROP_TYPE_FURNITURE then
-		setText(slot5, slot1.drop.cfg.describe)
-	elseif slot1.drop.type == DROP_TYPE_SHIP then
-		slot10, slot11, slot12 = ShipWordHelper.GetWordAndCV(uv0.ship_data_statistics[slot1.drop.id].skin_id, ShipWordHelper.WORD_TYPE_DROP, nil, PLATFORM_CODE ~= PLATFORM_US)
-
-		setText(slot5, slot12 or i18n("ship_drop_desc_default"))
-	elseif slot1.drop.type == DROP_TYPE_NPC_SHIP then
-		slot10, slot11, slot12 = ShipWordHelper.GetWordAndCV(slot1.drop.cfg.skin_id, ShipWordHelper.WORD_TYPE_DROP, nil, PLATFORM_CODE ~= PLATFORM_US)
-
-		setText(slot5, slot12 or i18n("ship_drop_desc_default"))
-	elseif slot1.drop.type == DROP_TYPE_EQUIP then
-		setText(slot5, slot8)
-	elseif slot1.drop.type == DROP_TYPE_STRATEGY then
-		slot9 = slot1.drop.cfg.desc
-
-		for slot13, slot14 in ipairs({
-			slot1.drop.count
-		}) do
-			slot9 = string.gsub(slot9, "$" .. slot13, slot14)
-		end
-
-		setText(slot5, slot9)
-	elseif slot1.drop.type == DROP_TYPE_SKIN or slot1.drop.type == DROP_TYPE_SKIN_TIMELIMIT then
-		setText(slot5, slot1.drop.cfg.desc)
-	elseif slot1.drop.type == DROP_TYPE_EQUIPMENT_SKIN then
-		setText(slot5, slot1.drop.cfg.desc .. "\n\n" .. i18n("word_fit") .. ": " .. table.concat(_.map(slot1.drop.cfg.equip_type, function (slot0)
-			return EquipType.Type2Name2(slot0)
-		end), ","))
-	elseif slot1.drop.type == DROP_TYPE_VITEM then
-		setText(slot5, slot1.drop.cfg.display)
-	elseif slot1.drop.type == DROP_TYPE_WORLD_ITEM then
-		setText(slot5, slot1.drop.cfg.display)
 	elseif slot1.drop.type == DROP_TYPE_WORLD_COLLECTION then
-		slot10 = WorldCollectionProxy.GetCollectionType(slot1.drop.id) == WorldCollectionProxy.WorldCollectionType.FILE and "file" or "record"
-
-		setText(slot5, i18n("world_" .. slot10 .. "_desc", slot1.drop.cfg.name))
-		setText(slot0._sigleItemPanel:Find("name_mode/name_mask/name"), i18n("world_" .. slot10 .. "_name", slot1.drop.cfg.name))
-	elseif slot1.drop.type == DROP_TYPE_ICON_FRAME then
-		setText(slot5, slot1.drop.cfg.desc)
-	elseif slot1.drop.type == DROP_TYPE_CHAT_FRAME then
-		setText(slot5, slot1.drop.cfg.desc)
-	elseif slot1.drop.type == DROP_TYPE_EMOJI then
-		setText(slot5, slot1.drop.cfg.item_desc)
-	elseif slot1.drop.type == DROP_TYPE_LOVE_LETTER then
-		desc = string.gsub(slot1.drop.cfg.display, "$1", ShipGroup.getDefaultShipNameByGroupID(slot1.drop.count))
-
-		setText(slot5, SwitchSpecialChar(desc, true))
-	elseif slot1.drop.type == DROP_TYPE_META_PT then
-		setText(slot5, slot1.drop.cfg.display)
-	elseif slot1.drop.type == DROP_TYPE_BUFF then
-		setText(slot5, slot1.drop.cfg.desc)
-	elseif DROP_TYPE_USE_ACTIVITY_DROP < slot1.drop.type then
-		setText(slot5, slot1.drop.cfg.display)
+		slot1.drop:MsgboxIntroSet(slot1, slot5, slot0._sigleItemPanel:Find("name_mode/name_mask/name"))
 	else
-		assert(false, "can not handle this type>>" .. slot1.drop.type)
+		slot1.drop:MsgboxIntroSet(slot1, slot5)
 	end
 
 	if slot1.intro then
@@ -455,7 +392,7 @@ slot9 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot10 = function(slot0, slot1)
+function slot10(slot0, slot1)
 	slot0:commonSetting(slot1)
 	setActive(findTF(slot0._helpPanel, "bg"), not slot1.helps.pageMode)
 	setActive(slot0._helpBgTF, slot1.helps.pageMode)
@@ -576,7 +513,7 @@ slot10 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot11 = function(slot0, slot1)
+function slot11(slot0, slot1)
 	slot0:commonSetting(slot1)
 	setActive(slot0._otherPanel, true)
 
@@ -599,7 +536,7 @@ slot11 = function(slot0, slot1)
 			slot0.timers.secondaryUItimer:Stop()
 		end
 
-		slot9 = function()
+		function slot9()
 			if (uv1.fail_cd and uv1.fail_cd - uv0.TimeMgr.GetInstance():GetServerTime() or 0) < 0 then
 				slot1 = 0
 			end
@@ -671,7 +608,7 @@ slot11 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot12 = function(slot0, slot1)
+function slot12(slot0, slot1)
 	slot0:commonSetting(slot1)
 	setActive(slot0._worldResetPanel, true)
 	setActive(slot0._worldShopBtn, false)
@@ -703,7 +640,7 @@ slot12 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot13 = function(slot0, slot1)
+function slot13(slot0, slot1)
 	slot0:commonSetting(slot1)
 
 	slot0._window.sizeDelta = Vector2(slot0._defaultSize.x, 520)
@@ -798,7 +735,7 @@ slot13 = function(slot0, slot1)
 	slot0:Loaded(slot1)
 end
 
-slot1.nextPage = function(slot0)
+function slot1.nextPage(slot0)
 	slot0.helpPage = slot0.helpPage + 1
 
 	if slot0.helpPage < 1 then
@@ -812,7 +749,7 @@ slot1.nextPage = function(slot0)
 	slot0:switchHelpPage(slot0.helpPage)
 end
 
-slot1.prePage = function(slot0)
+function slot1.prePage(slot0)
 	slot0.helpPage = slot0.helpPage - 1
 
 	if slot0.helpPage < 1 then
@@ -826,14 +763,14 @@ slot1.prePage = function(slot0)
 	slot0:switchHelpPage(slot0.helpPage)
 end
 
-slot1.switchHelpPage = function(slot0, slot1)
+function slot1.switchHelpPage(slot0, slot1)
 	for slot5 = 1, slot0._helpList.childCount do
 		setActive(slot0._helpList:GetChild(slot5 - 1), slot1 == slot5)
 		setText(slot6:Find("icon/corner/Text"), slot5)
 	end
 end
 
-slot1.commonSetting = function(slot0, slot1)
+function slot1.commonSetting(slot0, slot1)
 	rtf(slot0._window).sizeDelta = slot0._defaultSize
 	rtf(slot0._helpPanel).sizeDelta = slot0._defaultHelpSize
 	slot0.enable = true
@@ -1021,7 +958,7 @@ slot1.commonSetting = function(slot0, slot1)
 	slot0.locked = slot0.settings.locked or false
 end
 
-slot1.createBtn = function(slot0, slot1)
+function slot1.createBtn(slot0, slot1)
 	slot3 = slot1.noQuit
 	slot5 = cloneTplTo(slot0._go.transform:Find("custom_btn_list/custom_button_" .. (slot1.btnType or uv0.BUTTON_BLUE)), slot0._btnContainer)
 
@@ -1068,7 +1005,7 @@ slot1.createBtn = function(slot0, slot1)
 	return slot5
 end
 
-slot1.updateButton = function(slot0, slot1, slot2, slot3)
+function slot1.updateButton(slot0, slot1, slot2, slot3)
 	slot4 = uv0[slot2]
 
 	if IsNil(slot1:Find("pic")) then
@@ -1090,7 +1027,7 @@ slot1.updateButton = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot1.Loaded = function(slot0, slot1)
+function slot1.Loaded(slot0, slot1)
 	uv0.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		groupName = slot1.groupName,
 		weight = slot1.weight or LayerWeightConst.SECOND_LAYER,
@@ -1100,7 +1037,7 @@ slot1.Loaded = function(slot0, slot1)
 	uv0.m02:sendNotification(GAME.OPEN_MSGBOX_DONE)
 end
 
-slot1.Clear = function(slot0)
+function slot1.Clear(slot0)
 	for slot4, slot5 in pairs(slot0.panelDict) do
 		slot5:Destroy()
 	end
@@ -1168,7 +1105,7 @@ slot1.Clear = function(slot0)
 	slot0.locked = nil
 end
 
-slot1.ShowMsgBox = function(slot0, slot1)
+function slot1.ShowMsgBox(slot0, slot1)
 	if slot0.locked then
 		return
 	end
@@ -1268,7 +1205,7 @@ slot1.ShowMsgBox = function(slot0, slot1)
 	})
 end
 
-slot1.GetPanel = function(slot0, slot1)
+function slot1.GetPanel(slot0, slot1)
 	if not slot0.panelDict[slot1] then
 		slot0.panelDict[slot1] = slot1.New(slot0)
 
@@ -1279,7 +1216,7 @@ slot1.GetPanel = function(slot0, slot1)
 	return slot0.panelDict[slot1]
 end
 
-slot1.CloseAndHide = function(slot0)
+function slot1.CloseAndHide(slot0)
 	if not slot0.enable then
 		return
 	end
@@ -1288,7 +1225,7 @@ slot1.CloseAndHide = function(slot0)
 	slot0:hide()
 end
 
-slot1.hide = function(slot0)
+function slot1.hide(slot0)
 	if not slot0.enable then
 		return
 	end
@@ -1298,7 +1235,7 @@ slot1.hide = function(slot0)
 	uv0.m02:sendNotification(GAME.CLOSE_MSGBOX_DONE)
 end
 
-slot1.emit = function(slot0, slot1, ...)
+function slot1.emit(slot0, slot1, ...)
 	if not slot0.analogyMediator then
 		slot0.analogyMediator = {
 			addSubLayers = function (slot0, slot1)
@@ -1307,9 +1244,16 @@ slot1.emit = function(slot0, slot1, ...)
 					context = slot1
 				})
 			end,
+			sendNotification = function (slot0, ...)
+				uv0.m02:sendNotification(...)
+			end,
 			viewComponent = slot0
 		}
 	end
 
 	return ContextMediator.CommonBindDic[slot1](slot0.analogyMediator, slot1, ...)
+end
+
+function slot1.closeView(slot0)
+	slot0:hide()
 end

@@ -1,10 +1,10 @@
 slot0 = class("ActivityShopPage", import(".BaseShopPage"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ActivityShop"
 end
 
-slot0.GetPaintingName = function(slot0)
+function slot0.GetPaintingName(slot0)
 	assert(slot0.shop)
 
 	slot3 = getProxy(ActivityProxy):checkHxActivity(slot0.shop.activityId)
@@ -23,58 +23,85 @@ slot0.GetPaintingName = function(slot0)
 	return "aijiang_pt"
 end
 
-slot0.GetBg = function(slot0, slot1)
+function slot0.GetBg(slot0, slot1)
 	return slot1:getBgPath()
 end
 
-slot0.GetPaintingEnterVoice = function(slot0)
+function slot0.GetPaintingEnterVoice(slot0)
 	slot1, slot2, slot3 = slot0.shop:GetEnterVoice()
 
 	return slot2, slot1, slot3
 end
 
-slot0.GetPaintingCommodityUpdateVoice = function(slot0)
+function slot0.GetPaintingCommodityUpdateVoice(slot0)
 	slot1, slot2, slot3 = slot0.shop:GetPurchaseVoice()
 
 	return slot2, slot1, slot3
 end
 
-slot0.GetPaintingAllPurchaseVoice = function(slot0)
+function slot0.GetPaintingAllPurchaseVoice(slot0)
 	slot1, slot2, slot3 = slot0.shop:GetPurchaseAllVoice()
 
 	return slot2, slot1, slot3
 end
 
-slot0.GetPaintingTouchVoice = function(slot0)
+function slot0.GetPaintingTouchVoice(slot0)
+	slot1, slot2, slot3 = slot0.shop:GetTouchVoice()
+
+	return slot2, slot1, slot3
 end
 
-slot0.OnLoaded = function(slot0)
-	slot0.resTF = slot0:findTF("res_battery"):GetComponent(typeof(Image))
-	slot0.resIcon = slot0:findTF("res_battery/icon"):GetComponent(typeof(Image))
-	slot0.resCnt = slot0:findTF("res_battery/Text"):GetComponent(typeof(Text))
+function slot0.OnLoaded(slot0)
+	slot0.resTrList = {
+		{
+			slot0:findTF("res_battery"):GetComponent(typeof(Image)),
+			slot0:findTF("res_battery/icon"):GetComponent(typeof(Image)),
+			slot0:findTF("res_battery/Text"):GetComponent(typeof(Text)),
+			slot0:findTF("res_battery/label"):GetComponent(typeof(Text))
+		},
+		{
+			slot0:findTF("res_battery1"):GetComponent(typeof(Image)),
+			slot0:findTF("res_battery1/icon"):GetComponent(typeof(Image)),
+			slot0:findTF("res_battery1/Text"):GetComponent(typeof(Text)),
+			slot0:findTF("res_battery1/label"):GetComponent(typeof(Text))
+		}
+	}
 	slot0.eventResCnt = slot0:findTF("event_res_battery/Text"):GetComponent(typeof(Text))
-	slot0.resName = slot0:findTF("res_battery/label"):GetComponent(typeof(Text))
 	slot0.time = slot0:findTF("Text"):GetComponent(typeof(Text))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 end
 
-slot0.OnUpdatePlayer = function(slot0)
-	slot1 = slot0.shop:getResId()
-	slot0.resCnt.text = slot0.player:getResource(slot1)
-	slot0.eventResCnt.text = slot0.player:getResource(slot1)
+function slot0.OnUpdatePlayer(slot0)
+	if slot0.shop:IsEventShop() then
+		slot0.eventResCnt.text = slot0.player:getResource(slot0.shop:getResId())
+	else
+		slot1 = slot0.shop:GetResList()
+
+		for slot5, slot6 in pairs(slot0.resTrList) do
+			slot8 = slot6[2]
+			slot9 = slot6[3]
+
+			setActive(slot6[1], slot1[slot5] ~= nil)
+
+			if slot10 ~= nil then
+				slot9.text = slot0.player:getResource(slot10)
+			end
+		end
+	end
 end
 
-slot0.OnSetUp = function(slot0)
+function slot0.OnSetUp(slot0)
 	slot0:SetResIcon()
+	slot0:UpdateTip()
 end
 
-slot0.OnUpdateAll = function(slot0)
+function slot0.OnUpdateAll(slot0)
 	slot0:InitCommodities()
 end
 
-slot0.OnUpdateCommodity = function(slot0, slot1)
+function slot0.OnUpdateCommodity(slot0, slot1)
 	slot2 = nil
 
 	for slot6, slot7 in pairs(slot0.cards) do
@@ -92,22 +119,41 @@ slot0.OnUpdateCommodity = function(slot0, slot1)
 	end
 end
 
-slot0.SetResIcon = function(slot0)
-	slot2 = pg.item_data_statistics[id2ItemId(slot0.shop:getResId())]
+function slot0.SetResIcon(slot0, slot1)
+	slot2 = slot0.shop:GetResList()
 
-	GetSpriteFromAtlasAsync(slot2.icon, "", function (slot0)
-		uv0.resIcon.sprite = slot0
-	end)
+	for slot6, slot7 in ipairs(slot0.resTrList) do
+		slot8 = slot7[1]
+		slot9 = slot7[2]
+		slot10 = slot7[3]
+		slot11 = slot7[4]
 
-	slot0.resName.text = slot2.name
-	slot0.time.text = i18n("activity_shop_lable", slot0.shop:getOpenTime())
+		if slot2[slot6] ~= nil then
+			slot13 = Drop.New({
+				type = slot1 or DROP_TYPE_RESOURCE,
+				id = slot12
+			})
+
+			GetSpriteFromAtlasAsync(slot13:getIcon(), "", function (slot0)
+				uv0.sprite = slot0
+			end)
+
+			slot11.text = slot13:getName()
+		end
+	end
+
 	slot3 = slot0.shop:IsEventShop()
 
 	setActive(slot0:findTF("res_battery"), not slot3)
+	setActive(slot0:findTF("res_battery1"), not slot3 and #slot2 > 1)
 	setActive(slot0:findTF("event_res_battery"), slot3)
 end
 
-slot0.OnInitItem = function(slot0, slot1)
+function slot0.UpdateTip(slot0)
+	slot0.time.text = "<size=" .. (#slot0.shop:GetResList() > 1 and 25 or 27) .. ">" .. i18n("activity_shop_lable", slot0.shop:getOpenTime()) .. "</size>"
+end
+
+function slot0.OnInitItem(slot0, slot1)
 	slot2 = ActivityGoodsCard.New(slot1)
 	slot2.tagImg.raycastTarget = false
 
@@ -122,7 +168,7 @@ slot0.OnInitItem = function(slot0, slot1)
 	slot0.cards[slot1] = slot2
 end
 
-slot0.OnUpdateItem = function(slot0, slot1, slot2)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
 	if not slot0.cards[slot2] then
 		slot0:OnInitItem(slot2)
 
@@ -134,13 +180,12 @@ slot0.OnUpdateItem = function(slot0, slot1, slot2)
 	slot3:update(slot0.displays[slot1 + 1], nil, slot6, slot7)
 end
 
-slot0.TipPurchase = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.TipPurchase(slot0, slot1, slot2, slot3, slot4)
 	slot5, slot6 = slot1:GetTranCntWhenFull(slot2)
 
 	if slot5 > 0 then
-		updateDropCfg(slot6)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("pt_shop_tran_tip", math.max(slot2 - slot5, 0), slot3, slot5 * slot6.count, slot6.cfg.name),
+			content = i18n("pt_shop_tran_tip", math.max(slot2 - slot5, 0), slot3, slot5 * slot6.count, slot6:getConfig("name")),
 			onYes = slot4
 		})
 	else
@@ -148,7 +193,7 @@ slot0.TipPurchase = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.OnPurchase = function(slot0, slot1, slot2)
+function slot0.OnPurchase(slot0, slot1, slot2)
 	slot4 = slot1:getConfig("commodity_id")
 
 	if slot1:getConfig("commodity_type") == DROP_TYPE_ITEM and getProxy(BagProxy):RawGetItemById(slot4) and slot5:IsShipExpType() and slot5:IsMaxCnt() then
@@ -160,7 +205,7 @@ slot0.OnPurchase = function(slot0, slot1, slot2)
 	slot0:emit(NewShopsMediator.ON_ACT_SHOPPING, slot0.shop.activityId, 1, slot1.id, slot2)
 end
 
-slot0.OnClickCommodity = function(slot0, slot1, slot2)
+function slot0.OnClickCommodity(slot0, slot1, slot2)
 	if not slot1:CheckCntLimit() then
 		return
 	end
@@ -189,7 +234,7 @@ slot0.OnClickCommodity = function(slot0, slot1, slot2)
 	uv0.super.OnClickCommodity(slot0, slot1, slot2)
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	uv0.super.Show(slot0)
 
 	if slot0.shop:GetBGM() ~= "" then
@@ -197,7 +242,7 @@ slot0.Show = function(slot0)
 	end
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 
 	if slot0.shop:GetBGM() ~= "" then

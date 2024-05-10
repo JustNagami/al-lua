@@ -1,6 +1,6 @@
 slot0 = class("SetSecondaryPasswordCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = pg.UIMgr.GetInstance()
 

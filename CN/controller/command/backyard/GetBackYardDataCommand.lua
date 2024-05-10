@@ -1,6 +1,6 @@
 slot0 = class("GetBackYardDataCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.data
 	slot5 = nil

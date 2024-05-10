@@ -1,6 +1,6 @@
 slot0 = class("LockCommanderCommande", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.flag
 
@@ -8,7 +8,7 @@ slot0.execute = function(slot0, slot1)
 		return
 	end
 
-	slot7 = function()
+	function slot7()
 		slot0 = pg.ConnectionMgr.GetInstance()
 
 		slot0:Send(25016, {

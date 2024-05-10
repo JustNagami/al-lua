@@ -1,10 +1,10 @@
 slot0 = class("NewProbabilitySkinShopView", import("view.base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ProbabilitySkinShopItem"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.purchaseBtn = slot0:findTF("frame")
 	slot0.tipTxt = slot0:findTF("tip/Text"):GetComponent(typeof(Text))
 	slot0.icon = slot0:findTF("frame/icon/Image"):GetComponent(typeof(Image))
@@ -18,17 +18,17 @@ slot0.OnLoaded = function(slot0)
 	slot0._tf:SetSiblingIndex(2)
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	uv0.super.Show(slot0)
 	slot0:UpdateCommodity(slot1)
 	slot0:UpdateTip()
 end
 
-slot0.Flush = function(slot0, slot1)
+function slot0.Flush(slot0, slot1)
 	slot0:UpdateCommodity(slot1)
 end
 
-slot1 = function(slot0)
+function slot1(slot0)
 	return ({
 		"hot",
 		"new_tag",
@@ -39,7 +39,7 @@ slot1 = function(slot0)
 	})[slot0] or "hot"
 end
 
-slot2 = function(slot0, slot1)
+function slot2(slot0, slot1)
 	slot0.uiList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = uv0[slot1 + 1]
@@ -54,7 +54,7 @@ slot2 = function(slot0, slot1)
 	slot0.uiList:align(#slot1:getConfig("display"))
 end
 
-slot0.UpdateCommodity = function(slot0, slot1)
+function slot0.UpdateCommodity(slot0, slot1)
 	slot0.icon.sprite = LoadSprite("ChargeIcon/" .. slot1:getConfig("picture"))
 	slot3 = slot0.icon
 
@@ -78,7 +78,7 @@ slot0.UpdateCommodity = function(slot0, slot1)
 	end, SFX_PANEL)
 end
 
-slot0.OnCharge = function(slot0, slot1)
+function slot0.OnCharge(slot0, slot1)
 	slot2 = slot1
 	slot3 = underscore.map(slot2:getConfig("extra_service_item"), function (slot0)
 		return {
@@ -118,11 +118,11 @@ slot0.OnCharge = function(slot0, slot1)
 	})
 end
 
-slot0.UpdateTip = function(slot0)
+function slot0.UpdateTip(slot0)
 	slot0.tipTxt.text = i18n("probabilityskinshop_tip")
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

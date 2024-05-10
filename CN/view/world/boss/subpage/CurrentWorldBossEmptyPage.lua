@@ -1,10 +1,10 @@
 slot0 = class("CurrentWorldBossEmptyPage", import(".BaseWorldBossEmptyPage"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CurrentWorldBossEmptyUI"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	uv0.super.OnLoaded(slot0)
 
 	slot0.timeTxt = slot0:findTF("time/Text"):GetComponent(typeof(Text))
@@ -12,7 +12,7 @@ slot0.OnLoaded = function(slot0)
 	slot0:UpdateUseItemStyle(WorldBossConst.GetCurrBossGroup() or "")
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -44,14 +44,14 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnUpdate = function(slot0)
+function slot0.OnUpdate(slot0)
 	slot3 = pg.TimeMgr.GetInstance():inTime(WorldBossConst.GetCurrBossStartTimeAndEndTime()) and WorldBossConst.CanUnlockCurrBoss()
 
 	setActive(slot0.useItem, slot3)
 	setActive(slot0.noItem, not slot3)
 
 	if slot2 then
-		slot0.timeTxt.text = pg.TimeMgr.GetInstance():STimeDescC(pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1[1]), "%Y.%m.%d") .. "~" .. pg.TimeMgr.GetInstance():STimeDescC(pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1[2]), "%Y.%m.%d")
+		slot0.timeTxt.text = pg.TimeMgr.GetInstance():DescDateFromConfig(slot1[1]) .. "~" .. pg.TimeMgr.GetInstance():DescDateFromConfig(slot1[2])
 	else
 		slot0.timeTxt.text = ""
 	end
@@ -60,7 +60,7 @@ slot0.OnUpdate = function(slot0)
 	slot0.ptBtn = slot0.ptBtn or WorldbossPtBtn.New(slot0:findTF("point"))
 end
 
-slot0.OnUpdateRes = function(slot0)
+function slot0.OnUpdateRes(slot0)
 	if not slot0.progressTxt then
 		return
 	end
@@ -69,13 +69,13 @@ slot0.OnUpdateRes = function(slot0)
 	slot0.progressTxt.text = WorldBossConst.GetCurrBossItemProgress() .. "/" .. slot3
 end
 
-slot0.OnUpdatePt = function(slot0, slot1)
+function slot0.OnUpdatePt(slot0, slot1)
 	if slot0.ptBtn then
 		slot0.ptBtn:Update()
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	uv0.super.OnDestroy(slot0)
 
 	if slot0.metaWorldbossBtn then

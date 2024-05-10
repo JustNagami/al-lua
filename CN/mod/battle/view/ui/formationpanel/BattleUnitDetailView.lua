@@ -37,11 +37,11 @@ slot6.BaseEnhancement = {
 }
 slot6.SecondaryAttrListener = {}
 
-slot6.Ctor = function(slot0)
+function slot6.Ctor(slot0)
 	pg.DelegateInfo.New(slot0)
 end
 
-slot6.SetUnit = function(slot0, slot1)
+function slot6.SetUnit(slot0, slot1)
 	uv0.EventListener.AttachEventListener(slot0)
 
 	slot0._unit = slot1
@@ -88,7 +88,7 @@ slot6.SetUnit = function(slot0, slot1)
 	slot0:updateWeaponList()
 end
 
-slot6.Update = function(slot0)
+function slot6.Update(slot0)
 	for slot4, slot5 in ipairs(uv0.PrimalAttr) do
 		slot0:updatePrimalAttr(slot5)
 	end
@@ -109,7 +109,7 @@ slot6.Update = function(slot0)
 	slot0:updateSkillList()
 end
 
-slot6.ConfigSkin = function(slot0, slot1)
+function slot6.ConfigSkin(slot0, slot1)
 	slot0._go = slot1
 	slot2 = slot1.transform
 	slot0._tf = slot2
@@ -146,7 +146,7 @@ slot6.ConfigSkin = function(slot0, slot1)
 	end
 end
 
-slot6.updateHP = function(slot0)
+function slot6.updateHP(slot0)
 	slot1, slot2 = slot0._unit:GetHP()
 	slot3 = slot0._unit:GetHPRate()
 
@@ -166,7 +166,7 @@ slot6.updateHP = function(slot0)
 	setText(slot0._shield, slot5)
 end
 
-slot6.updatePrimalAttr = function(slot0, slot1)
+function slot6.updatePrimalAttr(slot0, slot1)
 	slot2 = slot0._unit:GetAttrByName(slot1)
 
 	setText(slot0._attrView:Find(slot1 .. "/current"), slot2)
@@ -182,7 +182,7 @@ slot6.updatePrimalAttr = function(slot0, slot1)
 	end
 end
 
-slot6.updateBaseEnhancement = function(slot0, slot1, slot2)
+function slot6.updateBaseEnhancement(slot0, slot1, slot2)
 	slot4 = slot0._unit:GetAttrByName(slot1)
 
 	setText(slot0._baseEnhanceView:Find(slot2):Find("current"), slot4)
@@ -192,7 +192,7 @@ slot6.updateBaseEnhancement = function(slot0, slot1, slot2)
 	end
 end
 
-slot6.updateSecondaryAttr = function(slot0, slot1, slot2)
+function slot6.updateSecondaryAttr(slot0, slot1, slot2)
 	if not slot0._secondaryAttrList[slot1] then
 		slot3 = cloneTplTo(slot0._secondaryAttrTpl, slot0._secondaryAttrContainer)
 
@@ -215,7 +215,7 @@ slot6.updateSecondaryAttr = function(slot0, slot1, slot2)
 	end
 end
 
-slot6.updateBuffList = function(slot0)
+function slot6.updateBuffList(slot0)
 	slot1 = slot0._unit:GetBuffList()
 
 	for slot5, slot6 in pairs(slot0._buffList) do
@@ -250,7 +250,7 @@ slot6.updateBuffList = function(slot0)
 	end
 end
 
-slot6.updateWeaponList = function(slot0)
+function slot6.updateWeaponList(slot0)
 	if slot0._unit:GetAirAssistList() then
 		for slot5, slot6 in ipairs(slot1) do
 			slot7 = cloneTplTo(slot0._weaponTpl, slot0._weaponContainer)
@@ -305,7 +305,7 @@ slot6.updateWeaponList = function(slot0)
 	end
 end
 
-slot6.updateWeaponProgress = function(slot0)
+function slot6.updateWeaponProgress(slot0)
 	for slot4, slot5 in pairs(slot0._weaponList) do
 		slot6 = slot5.tf
 
@@ -325,7 +325,7 @@ slot6.updateWeaponProgress = function(slot0)
 	end
 end
 
-slot6.updateBarProgress = function(slot0, slot1)
+function slot6.updateBarProgress(slot0, slot1)
 	slot0:Find("common/reload_progress/blood"):GetComponent(typeof(Image)).fillAmount = 1 - slot1
 
 	if slot1 == 0 then
@@ -335,7 +335,7 @@ slot6.updateBarProgress = function(slot0, slot1)
 	end
 end
 
-slot6.updateBulletAttrBuff = function(slot0, slot1)
+function slot6.updateBulletAttrBuff(slot0, slot1)
 	slot2 = slot0._weaponList[slot1]
 	slot3 = slot2.tf
 	slot5 = slot3:Find("weapon_attr_tpl")
@@ -374,7 +374,7 @@ slot6.updateBulletAttrBuff = function(slot0, slot1)
 	end
 end
 
-slot6.addBuff = function(slot0, slot1, slot2)
+function slot6.addBuff(slot0, slot1, slot2)
 	Canvas.ForceUpdateCanvases()
 	setText(cloneTplTo(slot0._buffTpl, slot0._buffContainer):Find("buff_id"), "buff_" .. slot1)
 
@@ -394,7 +394,7 @@ slot6.addBuff = function(slot0, slot1, slot2)
 	slot0._buffList[slot1] = slot3
 end
 
-slot6.addSkillCaster = function(slot0, slot1)
+function slot6.addSkillCaster(slot0, slot1)
 	if not uv0.Battle.BattleSkillUnit.IsFireSkill(slot1._skill_id, slot1._srcBuff:GetLv()) then
 		return
 	end
@@ -416,13 +416,13 @@ slot6.addSkillCaster = function(slot0, slot1)
 	slot0:updateCastEffectTpl(slot2)
 end
 
-slot6.updateSkillList = function(slot0)
+function slot6.updateSkillList(slot0)
 	for slot4, slot5 in pairs(slot0._skillList) do
 		slot0:updateCastEffectTpl(slot4)
 	end
 end
 
-slot6.updateCastEffectTpl = function(slot0, slot1)
+function slot6.updateCastEffectTpl(slot0, slot1)
 	slot2 = slot0._skillList[slot1]
 	slot3 = slot2.tf
 	slot5 = 0
@@ -439,7 +439,7 @@ slot6.updateCastEffectTpl = function(slot0, slot1)
 	setText(slot7:Find("damageSum"), slot6)
 end
 
-slot6.Dispose = function(slot0)
+function slot6.Dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 
 	slot0._unit = nil
@@ -451,7 +451,7 @@ slot6.Dispose = function(slot0)
 	uv0.EventListener.DetachEventListener(slot0)
 end
 
-slot6.setDeltaText = function(slot0, slot1)
+function slot6.setDeltaText(slot0, slot1)
 	setText(slot0, slot1)
 
 	slot0:GetComponent(typeof(Text)).color = slot1 > 0 and Color.green or Color.red

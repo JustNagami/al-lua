@@ -4,11 +4,11 @@ slot1 = class("BattleBuffHP", slot0.Battle.BattleBuffEffect)
 slot0.Battle.BattleBuffHP = slot1
 slot1.__name = "BattleBuffHP"
 
-slot1.Ctor = function(slot0, slot1)
+function slot1.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 end
 
-slot1.SetArgs = function(slot0, slot1, slot2)
+function slot1.SetArgs(slot0, slot1, slot2)
 	slot0._number = slot0._tempData.arg_list.number or 0
 	slot0._numberBase = slot0._number
 	slot0._currentHPRatio = 0
@@ -33,12 +33,16 @@ slot1.SetArgs = function(slot0, slot1, slot2)
 	slot0._incorruptible = slot0._tempData.arg_list.incorrupt
 end
 
-slot1.onBulletHit = function(slot0, slot1, slot2, slot3)
+function slot1.onBulletHit(slot0, slot1, slot2, slot3)
 	if not slot0:equipIndexRequire(slot3.equipIndex) then
 		return
 	end
 
 	if not slot0:bulletTagRequire(slot3.bulletTag) then
+		return
+	end
+
+	if not slot0:victimRequire(slot3.target, slot1) then
 		return
 	end
 
@@ -65,13 +69,13 @@ slot1.onBulletHit = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot1.onAttach = function(slot0, slot1, slot2)
+function slot1.onAttach(slot0, slot1, slot2)
 	onDelayTick(function ()
 		uv0.super.onAttach(uv1, uv2, uv3)
 	end, 0.03)
 end
 
-slot1.onTrigger = function(slot0, slot1, slot2)
+function slot1.onTrigger(slot0, slot1, slot2)
 	if slot0:CalcNumber(slot1) > 0 then
 		slot3 = math.floor(slot3 * slot1:GetAttrByName("healingRate"))
 	end
@@ -84,6 +88,6 @@ slot1.onTrigger = function(slot0, slot1, slot2)
 	})
 end
 
-slot1.CalcNumber = function(slot0, slot1)
+function slot1.CalcNumber(slot0, slot1)
 	return math.floor((slot1:GetHP() * slot0._currentHPRatio + slot0._maxHPNumber + slot0._number + slot0._castMaxHPNumber) * (slot0._caster:GetAttrByName("healingEnhancement") + 1))
 end

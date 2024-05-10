@@ -14,7 +14,7 @@ slot0.Listeners = {
 	onUpdate = "Update"
 }
 
-slot0.Build = function(slot0)
+function slot0.Build(slot0)
 	pg.DelegateInfo.New(slot0)
 
 	slot1 = nowWorld()
@@ -24,7 +24,7 @@ slot0.Build = function(slot0)
 	slot1:GetAtlas():AddListener(WorldAtlas.EventAddPressingMap, slot0.onUpdate)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot1 = nowWorld()
 
 	slot1:RemoveListener(World.EventUpdateGlobalBuff, slot0.onUpdate)
@@ -34,12 +34,12 @@ slot0.Dispose = function(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 end
 
-slot0.Setup = function(slot0)
+function slot0.Setup(slot0)
 	slot0:Init()
 	slot0:Update()
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	slot0.powerIconTF = slot0.transform:Find("power/level")
 
 	onToggle(slot0, slot0.powerIconTF, function (slot0)
@@ -72,7 +72,7 @@ slot0.Init = function(slot0)
 	slot0.achievementTip = slot0.btnAchievement:Find("tip")
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot1 = nowWorld()
 	slot2 = slot1:GetWorldRank()
 

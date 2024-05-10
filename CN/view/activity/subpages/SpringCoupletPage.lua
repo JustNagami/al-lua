@@ -26,7 +26,7 @@ slot19 = {
 }
 slot20 = 20
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.itemTpl = findTF(slot0._tf, "AD/itemTpl")
 	slot0.iconTpl = findTF(slot0._tf, "AD/iconTpl")
 	slot0.wordTpl = findTF(slot0._tf, "AD/wordTpl")
@@ -164,7 +164,7 @@ slot0.OnInit = function(slot0)
 	end)
 end
 
-slot0.OnShowFlush = function(slot0)
+function slot0.OnShowFlush(slot0)
 	slot0.tipStayIndex = uv0
 
 	if slot0.data1List and slot0.data2List and #slot0.data1List ~= #slot0.data2List then
@@ -176,11 +176,11 @@ slot0.OnShowFlush = function(slot0)
 	end
 end
 
-slot0.OnHideFlush = function(slot0)
+function slot0.OnHideFlush(slot0)
 	setActive(slot0.charTip, false)
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	if not slot0.coupletIds then
 		slot0.coupletIds = slot0.activity:getConfig("config_client").couplet
 		slot0.coupletDatas = {}
@@ -198,7 +198,7 @@ slot0.OnDataSetting = function(slot0)
 	return updateActivityTaskStatus(slot0.taskActivity)
 end
 
-slot0.onTimer = function(slot0)
+function slot0.onTimer(slot0)
 	if slot0.tipStayIndex and slot0.tipStayIndex > 0 then
 		slot0.tipStayIndex = slot0.tipStayIndex - 1
 	elseif slot0.tipStayIndex == 0 then
@@ -212,16 +212,16 @@ slot0.onTimer = function(slot0)
 	end
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	slot0:updateUI()
 	slot0:finishAll()
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	slot0:updateUI()
 end
 
-slot0.updateUI = function(slot0)
+function slot0.updateUI(slot0)
 	slot0.data1 = slot0.activity.data1
 	slot0.data2 = slot0.activity.data2
 	slot0.data3 = slot0.activity.data3
@@ -261,7 +261,7 @@ slot0.updateUI = function(slot0)
 	slot0:updateTask()
 end
 
-slot0.finishAll = function(slot0)
+function slot0.finishAll(slot0)
 	if #slot0.data2List == #slot0.coupletIds and #slot0.data2List == #slot0.data1List and slot0.activity.data1 == 0 then
 		pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
 			cmd = 1,
@@ -270,7 +270,7 @@ slot0.finishAll = function(slot0)
 	end
 end
 
-slot0.updateTask = function(slot0)
+function slot0.updateTask(slot0)
 	slot0.nday = slot0.taskActivity.data3
 	slot2 = slot0.taskProxy:getTaskById(slot0.taskGroup[slot0.nday][1]) or slot0.taskProxy:getFinishTaskById(slot1)
 	slot0.taskVO = slot2
@@ -297,7 +297,7 @@ slot0.updateTask = function(slot0)
 	setText(slot0.taskMax, "/" .. slot8)
 end
 
-slot0.finishCouplete = function(slot0)
+function slot0.finishCouplete(slot0)
 	if slot0.coupletUnLock and not slot0.coupletComplete then
 		slot1 = slot0.coupletIds[slot0.coupletIndex]
 		slot3 = slot0.coupletDatas[slot0.coupletIndex].repeated_jp
@@ -327,7 +327,7 @@ slot0.finishCouplete = function(slot0)
 			slot4 = nil
 
 			if #slot0.activity.data2_list == #slot0.coupletIds - 1 then
-				slot4 = function(slot0)
+				function slot4(slot0)
 					uv0:emit(ActivityMediator.NEXT_DISPLAY_AWARD, slot0)
 					uv0:finishAll()
 				end
@@ -350,7 +350,7 @@ slot0.finishCouplete = function(slot0)
 	end
 end
 
-slot0.selectCoupletChange = function(slot0)
+function slot0.selectCoupletChange(slot0)
 	if uv0 < slot0.coupletIndex then
 		slot0.coupletIndex = 1
 	end
@@ -382,7 +382,7 @@ slot0.selectCoupletChange = function(slot0)
 	slot0:updateCoupletWord()
 end
 
-slot0.updateCoupletWord = function(slot0)
+function slot0.updateCoupletWord(slot0)
 	setImageSprite(slot0.coupletUpImg, GetSpriteFromAtlas(uv0, "couplet_" .. slot0.coupletIndex .. "_list"))
 	setActive(slot0.coupletUpContents, slot0.coupletUnLock)
 	setActive(slot0.coupletUpLock, not slot0.coupletUnLock)
@@ -427,7 +427,7 @@ slot0.updateCoupletWord = function(slot0)
 	setText(slot0.countDesc, i18n(uv2, slot0.coupletIndex))
 end
 
-slot0.addCoupletWordEvent = function(slot0, slot1)
+function slot0.addCoupletWordEvent(slot0, slot1)
 	slot2 = slot1.event
 	slot3 = slot1.tf
 	slot4 = slot1.parent
@@ -456,7 +456,7 @@ slot0.addCoupletWordEvent = function(slot0, slot1)
 	end)
 end
 
-slot0.createWord = function(slot0, slot1, slot2)
+function slot0.createWord(slot0, slot1, slot2)
 	slot3 = tf(instantiate(slot0.wordTpl))
 
 	setParent(slot3, slot2)
@@ -473,7 +473,7 @@ slot0.createWord = function(slot0, slot1, slot2)
 	}
 end
 
-slot0.getWordByPosition = function(slot0, slot1)
+function slot0.getWordByPosition(slot0, slot1)
 	if math.abs(slot0.coupletBottomContents:InverseTransformPoint(slot1).x) < uv0 / 2 then
 		slot3 = math.floor(math.abs((slot2.y - uv1 / 2) / uv1)) + 1
 
@@ -485,11 +485,11 @@ slot0.getWordByPosition = function(slot0, slot1)
 	end
 end
 
-slot0.getWordPosition = function(slot0, slot1)
+function slot0.getWordPosition(slot0, slot1)
 	return Vector2((slot1 - 1) % uv0 * uv1, -math.floor((slot1 - 1) / uv0) * uv2)
 end
 
-slot0.tweenWord = function(slot0, slot1)
+function slot0.tweenWord(slot0, slot1)
 	slot3 = slot0:getWordPosition(slot1.swapIndex)
 
 	if LeanTween.isTweening(go(slot1.tf)) then
@@ -519,7 +519,7 @@ slot0.tweenWord = function(slot0, slot1)
 	end))
 end
 
-slot0.clearTween = function(slot0)
+function slot0.clearTween(slot0)
 	for slot4 = 1, #slot0.coupletBottomWords do
 		if LeanTween.isTweening(go(slot0.coupletBottomWords[slot4].tf)) then
 			LeanTween.cancel(go(slot5.tf))
@@ -527,7 +527,7 @@ slot0.clearTween = function(slot0)
 	end
 end
 
-slot0.showTips = function(slot0, slot1, slot2)
+function slot0.showTips(slot0, slot1, slot2)
 	if type(slot1) == "table" then
 		if slot1 and #slot1 > 0 then
 			slot0.tipTime = Time.realtimeSinceStartup
@@ -545,7 +545,7 @@ slot0.showTips = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 

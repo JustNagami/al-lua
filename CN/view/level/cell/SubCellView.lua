@@ -1,6 +1,6 @@
 slot2 = class("SubCellView", DecorateClass(import(".DynamicCellView"), import(".SpineCellView")))
 
-slot2.Ctor = function(slot0, slot1)
+function slot2.Ctor(slot0, slot1)
 	uv0.Ctor(slot0, slot1)
 	uv1.Ctor(slot0)
 	uv1.InitCellTransform(slot0)
@@ -13,11 +13,28 @@ slot2.Ctor = function(slot0, slot1)
 	slot0:LoadEffectShuihua()
 end
 
-slot2.GetOrder = function(slot0)
+function slot2.GetOrder(slot0)
 	return ChapterConst.CellPriorityFleet
 end
 
-slot2.LoadEffectShuihua = function(slot0)
+function slot2.OverrideCanvas(slot0)
+	uv0.super.OverrideCanvas(slot0)
+
+	slot0.markCanvas = GetOrAddComponent(slot0.tf:Find("mark"), typeof(Canvas))
+	slot0.markCanvas.overrideSorting = true
+end
+
+function slot2.ResetCanvasOrder(slot0)
+	uv0.super.ResetCanvasOrder(slot0)
+
+	if not slot0.markCanvas then
+		return
+	end
+
+	pg.ViewUtils.SetSortingOrder(slot0.markCanvas, slot0.line.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityTopMark)
+end
+
+function slot2.LoadEffectShuihua(slot0)
 	slot1 = "qianting_01"
 	slot2 = slot0.shuihuaLoader
 
@@ -32,7 +49,7 @@ slot2.LoadEffectShuihua = function(slot0)
 	end, "Shuihua")
 end
 
-slot2.PlayShuiHua = function(slot0)
+function slot2.PlayShuiHua(slot0)
 	if not slot0.effect_shuihua then
 		return
 	end
@@ -41,16 +58,16 @@ slot2.PlayShuiHua = function(slot0)
 	setActive(slot0.effect_shuihua, true)
 end
 
-slot2.SetActive = function(slot0, slot1)
+function slot2.SetActive(slot0, slot1)
 	slot0:SetActiveModel(slot1)
 end
 
-slot2.SetActiveModel = function(slot0, slot1)
+function slot2.SetActiveModel(slot0, slot1)
 	setActive(slot0.tfShadow, slot1)
 	slot0:SetSpineVisible(slot1)
 end
 
-slot2.Clear = function(slot0)
+function slot2.Clear(slot0)
 	slot0.showFlag = nil
 
 	slot0.shuihuaLoader:Clear()

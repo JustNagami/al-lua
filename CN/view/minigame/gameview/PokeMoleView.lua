@@ -109,7 +109,7 @@ slot18 = {
 slot19 = 10
 slot20 = 10
 
-slot21 = function(slot0, slot1)
+function slot21(slot0, slot1)
 	slot2 = {
 		ctor = function (slot0)
 			slot0._tf = uv0
@@ -266,7 +266,7 @@ slot21 = function(slot0, slot1)
 	return slot2
 end
 
-slot22 = function(slot0, slot1)
+function slot22(slot0, slot1)
 	slot2 = {
 		ctor = function (slot0)
 			slot0.playerTpl = uv0
@@ -340,7 +340,7 @@ slot22 = function(slot0, slot1)
 	return slot2
 end
 
-slot23 = function(slot0, slot1)
+function slot23(slot0, slot1)
 	slot2 = {
 		ctor = function (slot0)
 			slot0._tf = uv0
@@ -485,7 +485,7 @@ slot23 = function(slot0, slot1)
 	return slot2
 end
 
-slot24 = function(slot0, slot1, slot2, slot3)
+function slot24(slot0, slot1, slot2, slot3)
 	slot4 = {
 		ctor = function (slot0)
 			slot0.enemysTpl = uv0
@@ -746,7 +746,7 @@ slot24 = function(slot0, slot1, slot2, slot3)
 	return slot4
 end
 
-slot25 = function(slot0, slot1, slot2)
+function slot25(slot0, slot1, slot2)
 	slot3 = {
 		ctor = function (slot0)
 			slot0.playerController = uv0
@@ -779,7 +779,7 @@ end
 slot26 = "role type loop"
 slot27 = "role type normal"
 
-slot28 = function(slot0, slot1)
+function slot28(slot0, slot1)
 	slot2 = {
 		ctor = function (slot0)
 			slot0.playerController = uv0
@@ -856,20 +856,20 @@ slot28 = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "PokeMoleGameUI"
 end
 
-slot0.getBGM = function(slot0)
+function slot0.getBGM(slot0)
 	return uv0
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:initData()
 	slot0:initUI()
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.settlementFlag = false
 	slot0.gameStartFlag = false
 	slot0.timer = Timer.New(function ()
@@ -877,7 +877,7 @@ slot0.initData = function(slot0)
 	end, 1 / (Application.targetFrameRate or 60), -1, true)
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	slot0.clickMask = findTF(slot0._tf, "clickMask")
 	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
 	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
@@ -960,7 +960,7 @@ slot0.initUI = function(slot0)
 	slot0.specialEffect = findTF(slot0.gameUI, "btnSpecial/baoweidangao_extiao")
 	slot0.arrowTf = findTF(slot0.gameUI, "btnSpecial/arrow")
 
-	slot5 = function()
+	function slot5()
 		if uv0.playerController and uv0.playerController:useSpecial() then
 			uv0.bgRoleController:special()
 		end
@@ -1004,14 +1004,14 @@ slot0.initUI = function(slot0)
 	UpdateBeat:AddListener(slot0.handle)
 end
 
-slot0.updateMenuUI = function(slot0)
+function slot0.updateMenuUI(slot0)
 	slot1 = slot0:getGameUsedTimes()
 
 	setActive(findTF(slot0.menuUI, "btnStart/tip"), slot0:getGameTimes() > 0)
 	slot0:CheckGet()
 end
 
-slot0.openMenuUI = function(slot0)
+function slot0.openMenuUI(slot0)
 	setActive(findTF(slot0._tf, "scene_front"), false)
 	setActive(findTF(slot0._tf, "scene_background"), false)
 	setActive(findTF(slot0._tf, "scene"), false)
@@ -1020,7 +1020,7 @@ slot0.openMenuUI = function(slot0)
 	slot0:updateMenuUI()
 end
 
-slot0.showSettlement = function(slot0)
+function slot0.showSettlement(slot0)
 	setActive(slot0.settlementUI, true)
 	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
@@ -1038,11 +1038,11 @@ slot0.showSettlement = function(slot0)
 	end
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot0:AddDebugInput()
 end
 
-slot0.AddDebugInput = function(slot0)
+function slot0.AddDebugInput(slot0)
 	if slot0.gameStop or slot0.settlementFlag then
 		return
 	end
@@ -1050,7 +1050,7 @@ slot0.AddDebugInput = function(slot0)
 	slot1 = IsUnityEditor and Input.GetKeyDown(KeyCode.Space) and slot0.playerController and slot0.playerController:useSpecial()
 end
 
-slot0.CheckGet = function(slot0)
+function slot0.CheckGet(slot0)
 	setActive(findTF(slot0.menuUI, "got"), false)
 
 	if slot0:getUltimate() and slot0:getUltimate() ~= 0 then
@@ -1071,17 +1071,17 @@ slot0.CheckGet = function(slot0)
 	end
 end
 
-slot0.clearUI = function(slot0)
+function slot0.clearUI(slot0)
 end
 
-slot0.readyStart = function(slot0)
+function slot0.readyStart(slot0)
 	setActive(slot0.countUI, true)
 	slot0.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
 	slot0.bgRoleController:reset()
 end
 
-slot0.gameStart = function(slot0)
+function slot0.gameStart(slot0)
 	slot0.gameStartFlag = true
 	slot0.gameStepTime = 0
 	slot0.gameLastTime = uv0
@@ -1095,11 +1095,11 @@ slot0.gameStart = function(slot0)
 	slot0:gameUIUpdate()
 end
 
-slot0.onTimer = function(slot0)
+function slot0.onTimer(slot0)
 	slot0:gameStep()
 end
 
-slot0.gameStep = function(slot0)
+function slot0.gameStep(slot0)
 	slot0.playerController:step()
 	slot0.enemyController:step()
 	slot0.bgRoleController:step()
@@ -1140,7 +1140,7 @@ slot0.gameStep = function(slot0)
 	SetActive(slot0.arrowTf, slot2 == uv1 and slot1 == 0)
 end
 
-slot0.gameUIUpdate = function(slot0)
+function slot0.gameUIUpdate(slot0)
 	for slot4 = 1, #slot0.hearts do
 		if slot4 <= slot0.enemyController:getCakeLifeIndex() then
 			SetActive(slot0.hearts[slot4], true)
@@ -1152,20 +1152,20 @@ slot0.gameUIUpdate = function(slot0)
 	setText(slot0.textScore, slot0.enemyController:getScore())
 end
 
-slot0.resumeGame = function(slot0)
+function slot0.resumeGame(slot0)
 	slot0.gameStop = false
 
 	setActive(slot0.leaveUI, false)
 	slot0:timerStart()
 end
 
-slot0.stopGame = function(slot0)
+function slot0.stopGame(slot0)
 	slot0.gameStop = true
 
 	slot0:timerStop()
 end
 
-slot0.onGameOver = function(slot0)
+function slot0.onGameOver(slot0)
 	if slot0.settlementFlag then
 		return
 	end
@@ -1189,38 +1189,38 @@ slot0.onGameOver = function(slot0)
 	end))
 end
 
-slot0.timerStop = function(slot0)
+function slot0.timerStop(slot0)
 	if slot0.timer.running then
 		slot0.timer:Stop()
 	end
 end
 
-slot0.timerStart = function(slot0)
+function slot0.timerStart(slot0)
 	if not slot0.timer.running then
 		slot0.timer:Start()
 	end
 end
 
-slot0.getGameTimes = function(slot0)
+function slot0.getGameTimes(slot0)
 	return slot0:GetMGHubData().count
 end
 
-slot0.getGameUsedTimes = function(slot0)
+function slot0.getGameUsedTimes(slot0)
 	return slot0:GetMGHubData().usedtime
 end
 
-slot0.getUltimate = function(slot0)
+function slot0.getUltimate(slot0)
 	return slot0:GetMGHubData().ultimate
 end
 
-slot0.getGameTotalTime = function(slot0)
+function slot0.getGameTotalTime(slot0)
 	return slot0:GetMGHubData():getConfig("reward_need")
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0.handle then
 		UpdateBeat:RemoveListener(slot0.handle)
 	end

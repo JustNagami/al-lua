@@ -1,18 +1,18 @@
 slot0 = class("CommanderBuilding", import(".NavalAcademyBuilding"))
 
-slot0.GetGameObjectName = function(slot0)
+function slot0.GetGameObjectName(slot0)
 	return "commander"
 end
 
-slot0.GetTitle = function(slot0)
+function slot0.GetTitle(slot0)
 	return i18n("school_title_zhihuimiao")
 end
 
-slot0.OnClick = function(slot0)
+function slot0.OnClick(slot0)
 	slot0:emit(NavalAcademyMediator.ON_OPEN_COMMANDER)
 end
 
-slot0.IsTip = function(slot0)
+function slot0.IsTip(slot0)
 	if getProxy(PlayerProxy):getRawData().level < 40 then
 		return false
 	end

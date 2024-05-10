@@ -54,7 +54,7 @@ slot0.TECH_NATION_ATTRS = {
 	AttributeType.AntiSub
 }
 
-slot0.GetNationSpriteByIndex = function(slot0)
+function slot0.GetNationSpriteByIndex(slot0)
 	return GetSpriteFromAtlas(uv0.AtlasName, uv0.NationResName[slot0] .. "01"), GetSpriteFromAtlas(uv0.AtlasName, uv0.NationResName[slot0] .. "02")
 end
 
@@ -85,8 +85,10 @@ slot0.TypeOrder = {
 		ShipType.WeiXiu,
 		ShipType.ZhongPao,
 		ShipType.Yunshu,
+		ShipType.HangZhan,
 		ShipType.FengFanS,
-		ShipType.HangZhan
+		ShipType.FengFanV,
+		ShipType.FengFanM
 	}
 }
 slot0.TypeResName = {
@@ -100,11 +102,11 @@ slot0.TypeResName = {
 	"type_all_"
 }
 
-slot0.GetTypeSpriteByIndex = function(slot0)
+function slot0.GetTypeSpriteByIndex(slot0)
 	return GetSpriteFromAtlas(uv0.AtlasName, uv0.TypeResName[slot0] .. "01"), GetSpriteFromAtlas(uv0.AtlasName, uv0.TypeResName[slot0] .. "02")
 end
 
-slot0.ClassToGroupIDList = function()
+function slot0.ClassToGroupIDList()
 	slot0 = {}
 
 	for slot4, slot5 in ipairs(pg.fleet_tech_ship_template.all) do
@@ -120,11 +122,11 @@ slot0.ClassToGroupIDList = function()
 	return slot0
 end
 
-slot0.GetOrderClassList = function()
+function slot0.GetOrderClassList()
 	slot0 = {}
 
 	for slot4, slot5 in ipairs(pg.fleet_tech_ship_class.all) do
-		if pg.fleet_tech_ship_class[slot5].nation ~= Nation.META then
+		if pg.fleet_tech_ship_class[slot5].nation ~= Nation.META and slot6 ~= Nation.MOT then
 			table.insert(slot0, slot5)
 		end
 	end
@@ -139,17 +141,14 @@ slot0.GetOrderClassList = function()
 end
 
 slot0.MetaClassConfig = nil
+slot0.MotClassConfig = nil
 
-slot0.CreateMetaClassConfig = function()
-	if uv0.MetaClassConfig then
+function slot0.CreateMetaClassConfig()
+	if uv0.MetaClassConfig and uv0.MotClassConfig then
 		return
 	end
 
 	for slot3, slot4 in ipairs(pg.fleet_tech_ship_class.all) do
-		if slot4 == 970101 then
-			print("---")
-		end
-
 		if pg.fleet_tech_ship_class[slot4].nation == Nation.META then
 			if uv0.MetaClassConfig == nil then
 				uv0.MetaClassConfig = {}
@@ -184,6 +183,40 @@ slot0.CreateMetaClassConfig = function()
 			slot11.t_level = slot7
 
 			table.insert(slot11.ships[slot10], slot5.ships[1])
+		elseif slot6 == Nation.MOT then
+			if uv0.MotClassConfig == nil then
+				uv0.MotClassConfig = {}
+			end
+
+			if uv0.MotClassConfig["mot_class_t_level_" .. slot5.t_level] == nil then
+				uv0.MotClassConfig[slot8] = {}
+			end
+
+			if uv0.MotClassConfig[slot8].ships == nil then
+				uv0.MotClassConfig[slot8].ships = {}
+			end
+
+			slot9 = i18n(slot8)
+
+			if uv0.MotClassConfig[slot8].ships[slot5.t_level_1] == nil then
+				uv0.MotClassConfig[slot8].ships[slot10] = {}
+			end
+
+			if uv0.MotClassConfig[slot8].indexList == nil then
+				uv0.MotClassConfig[slot8].indexList = {}
+			end
+
+			if not table.contains(uv0.MotClassConfig[slot8].indexList, slot10) then
+				table.insert(uv0.MotClassConfig[slot8].indexList, slot10)
+			end
+
+			slot11 = uv0.MotClassConfig[slot8]
+			slot11.id = slot8
+			slot11.name = slot9
+			slot11.nation = slot6
+			slot11.t_level = slot7
+
+			table.insert(slot11.ships[slot10], slot5.ships[1])
 		end
 	end
 
@@ -200,9 +233,23 @@ slot0.CreateMetaClassConfig = function()
 			slot4.ships = slot6
 		end
 	end
+
+	if uv0.MotClassConfig then
+		for slot3, slot4 in pairs(uv0.MotClassConfig) do
+			slot6 = {}
+
+			for slot10, slot11 in ipairs(slot4.indexList) do
+				_.each(slot4.ships[slot11], function (slot0)
+					table.insert(uv0, slot0)
+				end)
+			end
+
+			slot4.ships = slot6
+		end
+	end
 end
 
-slot0.GetOrderMetaClassList = function(slot0)
+function slot0.GetOrderMetaClassList(slot0)
 	slot1 = {}
 	slot3 = {}
 
@@ -230,7 +277,35 @@ slot0.GetOrderMetaClassList = function(slot0)
 	return slot1
 end
 
-slot0.GetMetaClassConfig = function(slot0, slot1)
+function slot0.GetOrderMotClassList(slot0)
+	slot1 = {}
+	slot3 = {}
+
+	for slot7, slot8 in ipairs(pg.gameset.tech_sort_mot.description) do
+		for slot12, slot13 in pairs(uv0.MotClassConfig) do
+			if slot8 == slot13.t_level then
+				table.insert(slot3, slot13)
+
+				break
+			end
+		end
+	end
+
+	for slot7, slot8 in ipairs(slot3) do
+		slot9 = slot8.ships
+		slot10 = nil
+
+		if #((not slot0 or #slot0 == 0) and slot9 or _.select(slot9, function (slot0)
+			return table.contains(uv1, uv0.GetShipTypeByGroupID(slot0))
+		end)) > 0 then
+			table.insert(slot1, slot8.id)
+		end
+	end
+
+	return slot1
+end
+
+function slot0.GetMetaClassConfig(slot0, slot1)
 	slot3 = uv0.MetaClassConfig[slot0].ships
 	slot4 = nil
 
@@ -244,7 +319,21 @@ slot0.GetMetaClassConfig = function(slot0, slot1)
 	}
 end
 
-slot0.GetShipTypeByGroupID = function(slot0)
+function slot0.GetMotClassConfig(slot0, slot1)
+	slot3 = uv0.MotClassConfig[slot0].ships
+	slot4 = nil
+
+	return {
+		id = slot2.id,
+		name = slot2.name,
+		nation = slot2.nation,
+		ships = (not slot1 or #slot1 == 0) and slot3 or _.select(slot3, function (slot0)
+			return table.contains(uv1, uv0.GetShipTypeByGroupID(slot0))
+		end)
+	}
+end
+
+function slot0.GetShipTypeByGroupID(slot0)
 	return pg.ship_data_group[pg.ship_data_group.get_id_list_by_group_type[slot0][1]].type
 end
 

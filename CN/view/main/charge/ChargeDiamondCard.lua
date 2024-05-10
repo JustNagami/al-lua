@@ -2,7 +2,7 @@ slot0 = class("ChargeDiamondCard")
 slot0.NewTagType = 2
 slot0.DoubleTagType = 4
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	slot0.go = slot1
 	slot0.tr = tf(slot1)
 	slot0.firstTag = slot0.tr:Find("FirstTag")
@@ -19,7 +19,7 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	slot0.parentContext = slot3
 end
 
-slot0.update = function(slot0, slot1, slot2, slot3)
+function slot0.update(slot0, slot1, slot2, slot3)
 	slot0.goods = slot1
 
 	if slot1:isMonthCard() then
@@ -63,7 +63,7 @@ slot0.update = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.updateForMonthTF = function(slot0, slot1, slot2)
+function slot0.updateForMonthTF(slot0, slot1, slot2)
 	slot3 = slot0.monthTF:Find("IconImg")
 	slot6 = slot0.monthTF:Find("ItemIconTpl")
 	slot7 = slot0.monthTF:Find("ItemIconList")
@@ -126,7 +126,7 @@ slot0.updateForMonthTF = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.destoryTimer = function(slot0)
+function slot0.destoryTimer(slot0)
 end
 
 return slot0

@@ -1,22 +1,22 @@
 slot0 = class("SpineCellView")
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 end
 
-slot0.InitCellTransform = function(slot0)
+function slot0.InitCellTransform(slot0)
 	slot0.tfShip = slot0.tf:Find("ship")
 	slot0.tfShadow = slot0.tf:Find("shadow")
 end
 
-slot0.GetRotatePivot = function(slot0)
+function slot0.GetRotatePivot(slot0)
 	return slot0.tfShip
 end
 
-slot0.GetAction = function(slot0)
+function slot0.GetAction(slot0)
 	return slot0.action
 end
 
-slot0.SetAction = function(slot0, slot1)
+function slot0.SetAction(slot0, slot1)
 	slot0.action = slot1
 
 	if slot0.spineRole then
@@ -24,11 +24,11 @@ slot0.SetAction = function(slot0, slot1)
 	end
 end
 
-slot0.GetSpineRole = function(slot0)
+function slot0.GetSpineRole(slot0)
 	return slot0.spineRole
 end
 
-slot0.LoadSpine = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.LoadSpine(slot0, slot1, slot2, slot3, slot4)
 	if slot0.lastPrefab == slot1 then
 		if slot0.spineRole:CheckInited() then
 			existCall(slot4)
@@ -57,10 +57,10 @@ slot0.LoadSpine = function(slot0, slot1, slot2, slot3, slot4)
 		uv0.spineRole:SetLocalScale(Vector3(0.4 * uv1, 0.4 * uv1, 1))
 		uv0:SetAction(uv0:GetAction())
 		existCall(uv2)
-	end)
+	end, nil, slot0.spineRole.ORBIT_KEY_SLG)
 end
 
-slot0.UnloadSpine = function(slot0)
+function slot0.UnloadSpine(slot0)
 	slot0.lastPrefab = nil
 
 	if slot0.spineRole then
@@ -70,13 +70,13 @@ slot0.UnloadSpine = function(slot0)
 	end
 end
 
-slot0.SetSpineVisible = function(slot0, slot1)
+function slot0.SetSpineVisible(slot0, slot1)
 	if slot0.spineRole then
 		slot0.spineRole:SetVisible(slot1)
 	end
 end
 
-slot0.ClearSpine = function(slot0)
+function slot0.ClearSpine(slot0)
 	slot0:UnloadSpine()
 end
 

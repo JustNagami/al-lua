@@ -1,6 +1,6 @@
 slot0 = class("SSSSLinkAcademyScene", import("..TemplateMV.BackHillTemplate"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SSSSLinkAcademyUI"
 end
 
@@ -12,7 +12,7 @@ slot0.edge2area = {
 	["3_4"] = "map_front"
 }
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.top = slot0:findTF("top")
 	slot0._map = slot0:findTF("map")
 
@@ -36,7 +36,7 @@ slot0.init = function(slot0)
 	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SSSSLinkAcademyGraph"))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0:findTF("top/return_btn"), function ()
 		uv0:emit(uv1.ON_BACK)
 	end)
@@ -74,27 +74,29 @@ slot0.didEnter = function(slot0)
 	slot0:UpdateView()
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	slot2 = nil
 
 	setActive(slot0.upper_xiaoyouxi:Find("tip"), uv0.IsMiniActNeedTip(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME) and slot3.id))
 	setActive(slot0.upper_huodongye:Find("tip"), slot1:getActivityById(ActivityConst.SSSS_PT) and slot5:readyToAchieve())
-	setActive(slot0.upper_jinianzhang:Find("tip"), Activity.isHaveActivableMedal())
+	setActive(slot0.upper_jinianzhang:Find("tip"), uv0.MedalTip())
 	setActive(slot0.upper_huoyuehuodong:Find("tip"), slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY) and slot8:readyToAchieve())
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:clearStudents()
 end
 
-slot0.IsShowMainTip = function(slot0)
+function slot0.MedalTip()
+	return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA))
+end
+
+function slot0.IsShowMainTip(slot0)
 	slot1 = getProxy(ActivityProxy)
 
 	return (function ()
 		return Activity.IsActivityReady(uv0:getActivityById(ActivityConst.SSSS_PT))
-	end)() or (function ()
-		return Activity.IsActivityReady(uv0:getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA))
-	end)() or (function ()
+	end)() or uv0.MedalTip()() or (function ()
 		return Activity.IsActivityReady(uv0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME))
 	end)() or (function ()
 		return Activity.IsActivityReady(uv0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY))

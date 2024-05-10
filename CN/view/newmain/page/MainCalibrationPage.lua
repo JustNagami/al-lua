@@ -1,10 +1,10 @@
 slot0 = class("MainCalibrationPage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "MainCalibrationUI"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.moveBtn = slot0:findTF("move")
 	slot0.setBtn = slot0:findTF("set")
 	slot0.backBtn = slot0:findTF("back")
@@ -16,7 +16,7 @@ slot0.OnLoaded = function(slot0)
 	slot0.showing = false
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = false
 	slot2 = false
 
@@ -58,13 +58,13 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Move = function(slot0, slot1)
+function slot0.Move(slot0, slot1)
 	setToggleEnabled(slot0.setBtn, not slot1)
 	slot0:emit(NewMainScene.ENABLE_PAITING_MOVE, slot1)
 end
 
-slot0.SetPostion = function(slot0, slot1)
-	slot2 = function()
+function slot0.SetPostion(slot0, slot1)
+	function slot2()
 		setActive(uv0.moveBtn, not uv1)
 		setActive(uv0.backBtn, not uv1)
 	end
@@ -87,7 +87,7 @@ slot0.SetPostion = function(slot0, slot1)
 	slot0:emit(NewMainScene.ENABLE_PAITING_MOVE, slot1)
 end
 
-slot0.SavePostion = function(slot0)
+function slot0.SavePostion(slot0)
 	slot1 = slot0.paintingTF.anchoredPosition
 	slot2 = slot0.paintingTF.localScale.x
 	slot3 = slot0.flagShip.skinId
@@ -95,22 +95,22 @@ slot0.SavePostion = function(slot0)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		content = i18n("secretary_pos_save"),
 		onYes = function ()
-			getProxy(SettingsProxy):setSkinPosSetting(uv0, uv1.x, uv1.y, uv2)
+			getProxy(SettingsProxy):setSkinPosSetting(uv0.flagShip, uv1.x, uv1.y, uv2)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("secretary_pos_save_success"))
-			triggerToggle(uv3.setBtn, false)
-			uv3:emit(NewMainScene.FOLD, false)
+			triggerToggle(uv0.setBtn, false)
+			uv0:emit(NewMainScene.FOLD, false)
 		end
 	})
 end
 
-slot0.ResetPostion = function(slot0)
-	getProxy(SettingsProxy):resetSkinPosSetting(slot0.flagShip.skinId)
+function slot0.ResetPostion(slot0)
+	getProxy(SettingsProxy):resetSkinPosSetting(slot0.flagShip)
 
 	slot0.paintingTF.anchoredPosition = Vector2(MainPaintingView.PAINT_DEFAULT_POS_X, MainPaintingView.DEFAULT_HEIGHT)
 	slot0.paintingTF.localScale = Vector3.one
 end
 
-slot0.ShowOrHide = function(slot0, slot1, slot2)
+function slot0.ShowOrHide(slot0, slot1, slot2)
 	if slot1 then
 		slot0:Show()
 	else
@@ -121,7 +121,7 @@ slot0.ShowOrHide = function(slot0, slot1, slot2)
 	slot0.showing = slot1
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	uv0.super.Show(slot0)
 	slot0:DoBottomAnimation(0, 100)
 	slot0:DoLeftAnimation(0, -150, function ()
@@ -129,13 +129,13 @@ slot0.Show = function(slot0)
 	setParent(slot0._tf, pg.UIMgr.GetInstance().OverlayMain)
 end
 
-slot0.DoLeftAnimation = function(slot0, slot1, slot2, slot3)
+function slot0.DoLeftAnimation(slot0, slot1, slot2, slot3)
 	LeanTween.value(slot0.backBtn.gameObject, slot1, slot2, 0.3):setOnUpdate(System.Action_float(function (slot0)
 		uv0.backBtn.anchoredPosition = Vector2(slot0, uv0.backBtn.anchoredPosition.y)
 	end)):setOnComplete(System.Action(slot3))
 end
 
-slot0.DoBottomAnimation = function(slot0, slot1, slot2)
+function slot0.DoBottomAnimation(slot0, slot1, slot2)
 	slot3 = LeanTween.value(slot0.moveBtn.gameObject, slot1, slot2, 0.3)
 
 	slot3:setOnUpdate(System.Action_float(function (slot0)
@@ -145,14 +145,14 @@ slot0.DoBottomAnimation = function(slot0, slot1, slot2)
 	setParent(slot0._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	slot0:DoBottomAnimation(100, 0)
 	slot0:DoLeftAnimation(-150, 0, function ()
 		uv0.super.Hide(uv1)
 	end)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

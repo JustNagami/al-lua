@@ -1,6 +1,6 @@
 slot1, slot2, slot3, slot4, slot5 = nil
 
-slot1 = function(slot0, slot1)
+function slot1(slot0, slot1)
 	if IsNil(slot0.Find(slot0, "base")) then
 		return
 	end
@@ -40,7 +40,7 @@ slot1 = function(slot0, slot1)
 	end
 end
 
-slot3 = function(slot0, slot1)
+function slot3(slot0, slot1)
 	if IsNil(slot0.Find(slot0, "desc")) then
 		return
 	end
@@ -54,23 +54,23 @@ slot3 = function(slot0, slot1)
 	setText(slot2.Find(slot2, "Text"), slot1.desc)
 end
 
-slot2 = function(slot0, slot1)
+function slot2(slot0, slot1)
 	uv0(slot0, slot1)
 	uv1(slot0, slot1)
 end
 
-slot4 = function(slot0, slot1, slot2)
+function slot4(slot0, slot1, slot2)
 	removeAllChildren(slot0)
 	uv0(slot0, slot1, slot2)
 end
 
-slot5 = function(slot0, slot1, slot2)
+function slot5(slot0, slot1, slot2)
 	for slot6, slot7 in ipairs(slot2) do
 		uv0(cloneTplTo(slot1, slot0), slot7)
 	end
 end
 
-updateSpWeaponInfo = function(slot0, slot1, slot2)
+function updateSpWeaponInfo(slot0, slot1, slot2)
 	uv0(slot0.Find(slot0, "attrs"), slot0.Find(slot0, "attr_tpl"), slot1.attrs)
 
 	slot4 = {}
@@ -138,19 +138,22 @@ updateSpWeaponInfo = function(slot0, slot1, slot2)
 		end
 	end
 
-	for slot13, slot14 in ipairs(ShipType.FilterOverQuZhuType(ShipType.AllShipType)) do
-		slot15 = slot13 <= slot6.childCount and slot6:GetChild(slot13 - 1) or cloneTplTo(slot7, slot6)
+	UIItemList.StaticAlign(slot6, slot7, #ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), slot8, slot9), function (slot0, slot1, slot2)
+		slot1 = slot1 + 1
 
-		GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(slot14), slot15)
-		setActive(slot15:Find("main"), slot8[slot14] and not slot9[slot14])
-		setActive(slot15:Find("sub"), slot9[slot14] and not slot8[slot14])
-		setImageAlpha(slot15, not slot8[slot14] and not slot9[slot14] and 0.3 or 1)
-	end
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1]
 
+			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(slot3), slot2)
+			setActive(slot2:Find("main"), uv1[slot3] and not uv2[slot3])
+			setActive(slot2:Find("sub"), uv2[slot3] and not uv1[slot3])
+			setImageAlpha(slot2, not uv1[slot3] and not uv2[slot3] and 0.3 or 1)
+		end
+	end)
 	setActive(slot3, false)
 end
 
-slot6 = function(slot0)
+function slot6(slot0)
 	slot1 = slot0:GetConfigAttributes()
 	slot2 = slot0:GetBaseAttributes()
 
@@ -168,7 +171,7 @@ slot6 = function(slot0)
 	}
 end
 
-slot7 = function(slot0, slot1)
+function slot7(slot0, slot1)
 	slot2 = {
 		attrs = {}
 	}

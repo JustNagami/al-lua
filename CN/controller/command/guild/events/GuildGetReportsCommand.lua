@@ -1,6 +1,6 @@
 slot0 = class("GuildGetReportsCommand", import(".GuildEventBaseCommand"))
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody().callback
 
 	if not getProxy(GuildProxy):ShouldRequestReport() then

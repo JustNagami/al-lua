@@ -2,11 +2,11 @@ pg = pg or {}
 pg.GuildPaintingMgr = singletonClass("GuildPaintingMgr")
 slot0 = pg.GuildPaintingMgr
 
-slot0.Enter = function(slot0, slot1)
+function slot0.Enter(slot0, slot1)
 	slot0._tf = slot1
 end
 
-slot0.Update = function(slot0, slot1, slot2, slot3)
+function slot0.Update(slot0, slot1, slot2, slot3)
 	slot0.isShipPainting = slot3
 
 	slot0:Show()
@@ -30,19 +30,19 @@ slot0.Update = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	if not IsNil(slot0._tf) then
 		setActive(slot0._tf, true)
 	end
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	if not IsNil(slot0._tf) then
 		setActive(slot0._tf, false)
 	end
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	if slot0.name then
 		if slot0.isShipPainting then
 			retPaintingPrefab(slot0._tf, slot0.name)
@@ -54,6 +54,6 @@ slot0.Clear = function(slot0)
 	end
 end
 
-slot0.Exit = function(slot0)
+function slot0.Exit(slot0)
 	slot0:Clear()
 end

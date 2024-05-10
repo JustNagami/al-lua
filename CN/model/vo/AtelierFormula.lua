@@ -6,65 +6,65 @@ slot0.TYPE = {
 	ITEM = 2
 }
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_ryza_recipe
 end
 
-slot0.Ctor = function(slot0, ...)
+function slot0.Ctor(slot0, ...)
 	uv0.super.Ctor(slot0, ...)
 
 	slot0.times = slot0.times or 0
 end
 
-slot0.GetConfigID = function(slot0)
+function slot0.GetConfigID(slot0)
 	return slot0.configId
 end
 
-slot0.GetName = function(slot0)
+function slot0.GetName(slot0)
 	return slot0:getConfig("name")
 end
 
-slot0.GetIconPath = function(slot0)
+function slot0.GetIconPath(slot0)
 	return slot0:getConfig("icon")
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return slot0:getConfig("type")
 end
 
-slot0.GetDesc = function(slot0)
+function slot0.GetDesc(slot0)
 	return slot0:getConfig("display")
 end
 
-slot0.GetMaxLimit = function(slot0)
+function slot0.GetMaxLimit(slot0)
 	return slot0:getConfig("item_num")
 end
 
-slot0.SetUsedCount = function(slot0, slot1)
+function slot0.SetUsedCount(slot0, slot1)
 	slot0.times = slot1
 end
 
-slot0.GetUsedCount = function(slot0)
+function slot0.GetUsedCount(slot0)
 	return slot0.times
 end
 
-slot0.IsAvaliable = function(slot0)
+function slot0.IsAvaliable(slot0)
 	return slot0:GetMaxLimit() < 0 or slot0:GetUsedCount() < slot0:GetMaxLimit()
 end
 
-slot0.GetProduction = function(slot0)
+function slot0.GetProduction(slot0)
 	return slot0:getConfig("item_id")
 end
 
-slot0.GetCircleList = function(slot0)
+function slot0.GetCircleList(slot0)
 	return slot0:getConfig("recipe_circle")
 end
 
-slot0.IsFormualCanComposite = function(slot0, slot1)
+function slot0.IsFormualCanComposite(slot0, slot1)
 	slot2 = {}
 	slot3 = slot1:GetItems()
 
-	slot4 = function(slot0)
+	function slot4(slot0)
 		slot1 = uv0[slot0:GetConfigID()] or Clone(uv1[slot0:GetConfigID()])
 
 		assert(slot1, "Using Unexist material")
@@ -91,7 +91,7 @@ slot0.IsFormualCanComposite = function(slot0, slot1)
 
 	slot6 = AtelierMaterial.bindConfigTable()
 
-	slot7 = function(slot0)
+	function slot7(slot0)
 		for slot4, slot5 in ipairs(uv0.all) do
 			if (uv1[slot5] or uv2[slot5]) and slot6.count > 0 and slot0:CanUseMaterial(slot6, uv3) then
 				uv4(slot6)

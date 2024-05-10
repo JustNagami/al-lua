@@ -1,24 +1,24 @@
 slot0 = class("TowerClimbingController")
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 	slot0.view = TowerClimbingView.New(slot0)
 end
 
-slot0.SetCallBack = function(slot0, slot1, slot2)
+function slot0.SetCallBack(slot0, slot1, slot2)
 	slot0.OnGameEndCallBack = slot1
 	slot0.OnOverMapScore = slot2
 end
 
-slot0.SetUp = function(slot0, slot1)
+function slot0.SetUp(slot0, slot1)
 	slot0:NetUpdateData(slot1)
 	slot0.view:OnEnter()
 end
 
-slot0.NetUpdateData = function(slot0, slot1)
+function slot0.NetUpdateData(slot0, slot1)
 	slot0.data = slot1
 end
 
-slot0.StartGame = function(slot0, slot1)
+function slot0.StartGame(slot0, slot1)
 	if slot0.enterGame then
 		return
 	end
@@ -45,7 +45,7 @@ slot0.StartGame = function(slot0, slot1)
 	end)
 end
 
-slot0.EnterBlock = function(slot0, slot1, slot2)
+function slot0.EnterBlock(slot0, slot1, slot2)
 	if slot0.map:GetPlayer():IsFatalInjured() then
 		return
 	end
@@ -63,7 +63,7 @@ slot0.EnterBlock = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.StayBlock = function(slot0, slot1, slot2)
+function slot0.StayBlock(slot0, slot1, slot2)
 	if slot0.map:GetPlayer():IsFatalInjured() then
 		return
 	end
@@ -79,7 +79,7 @@ slot0.StayBlock = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.ExitBlock = function(slot0, slot1)
+function slot0.ExitBlock(slot0, slot1)
 	if slot0.map:GetPlayer():IsFatalInjured() then
 		return
 	end
@@ -93,7 +93,7 @@ slot0.ExitBlock = function(slot0, slot1)
 	end
 end
 
-slot0.EnterAttacker = function(slot0)
+function slot0.EnterAttacker(slot0)
 	if slot0.map:GetPlayer():IsFatalInjured() then
 		return
 	end
@@ -106,7 +106,7 @@ slot0.EnterAttacker = function(slot0)
 	slot0.map:GetPlayer():AddInvincibleEffect(TowerClimbingGameSettings.INVINCEIBLE_TIME)
 end
 
-slot0.EnterGround = function(slot0)
+function slot0.EnterGround(slot0)
 	if slot0.map:GetPlayer():IsFatalInjured() then
 		return
 	end
@@ -129,7 +129,7 @@ slot0.EnterGround = function(slot0)
 	end
 end
 
-slot0.OnStickChange = function(slot0, slot1)
+function slot0.OnStickChange(slot0, slot1)
 	if slot0.map:GetPlayer():IsFatalInjured() then
 		return
 	end
@@ -141,7 +141,7 @@ slot0.OnStickChange = function(slot0, slot1)
 	end
 end
 
-slot0.MainLoop = function(slot0)
+function slot0.MainLoop(slot0)
 	if not slot0.handle then
 		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 	end
@@ -149,7 +149,7 @@ slot0.MainLoop = function(slot0)
 	UpdateBeat:AddListener(slot0.handle)
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot0.view:Update()
 	slot0.map:Update()
 
@@ -158,15 +158,15 @@ slot0.Update = function(slot0)
 	end
 end
 
-slot0.PlayerJump = function(slot0)
+function slot0.PlayerJump(slot0)
 	slot0.map:GetPlayer():Jump()
 end
 
-slot0.PlayerIdle = function(slot0)
+function slot0.PlayerIdle(slot0)
 	slot0.map:GetPlayer():Idle()
 end
 
-slot1 = function(slot0)
+function slot1(slot0)
 	slot0.IsStarting = false
 
 	if slot0.handle then
@@ -174,7 +174,7 @@ slot1 = function(slot0)
 	end
 end
 
-slot0.EndGame = function(slot0)
+function slot0.EndGame(slot0)
 	uv0(slot0)
 
 	slot1 = slot0.map:GetPlayer()
@@ -190,13 +190,13 @@ slot0.EndGame = function(slot0)
 	end
 end
 
-slot0.updateHighScore = function(slot0, slot1)
+function slot0.updateHighScore(slot0, slot1)
 	slot0.highScores = slot1
 
 	slot0.view:SetHighScore(slot1)
 end
 
-slot0.ExitGame = function(slot0)
+function slot0.ExitGame(slot0)
 	uv0(slot0)
 	slot0.view:OnExitGame()
 
@@ -209,11 +209,11 @@ slot0.ExitGame = function(slot0)
 	slot0.enterGame = nil
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	return slot0.view:onBackPressed()
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:ExitGame()
 	slot0.view:Dispose()
 end

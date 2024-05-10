@@ -4,6 +4,7 @@ slot0.MODE_DIALOGUE = 2
 slot0.MODE_BG = 3
 slot0.MODE_CAROUSE = 4
 slot0.MODE_VEDIO = 5
+slot0.MODE_CAST = 6
 slot0.STORY_AUTO_SPEED = {
 	-9,
 	0,
@@ -17,17 +18,25 @@ slot0.TRIGGER_DELAY_TIME = {
 	0
 }
 
-slot0.GetStoryStepCls = function(slot0)
+function slot0.GetStoryStepCls(slot0)
 	return ({
 		AsideStep,
 		DialogueStep,
 		BgStep,
 		CarouselStep,
-		VedioStep
+		VedioStep,
+		CastStep
 	})[slot0]
 end
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5)
+slot0.PLAYER = 2
+slot0.TB = 4
+slot0.PlaceholderMap = {
+	playername = slot0.PLAYER,
+	tb = slot0.TB
+}
+
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.name = slot1.id
 	slot0.mode = slot1.mode
 	slot0.once = slot1.once
@@ -36,6 +45,18 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.skipTip = defaultValue(slot1.skipTip, true)
 	slot0.noWaitFade = defaultValue(slot1.noWaitFade, false)
 	slot0.dialogueBox = slot1.dialogbox or 1
+	slot0.defaultTb = slot1.defaultTb
+	slot0.placeholder = 0
+	slot6 = ipairs
+	slot7 = slot1.placeholder or {}
+
+	for slot9, slot10 in slot6(slot7) do
+		slot11 = uv0.PlaceholderMap[slot10] or 0
+
+		assert(slot11 > 0, slot10)
+
+		slot0.placeholder = bit.bor(slot0.placeholder, slot11)
+	end
 
 	if UnGamePlayState then
 		slot0.speedData = slot1.speed or 0
@@ -47,11 +68,15 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = 0
 	slot7 = slot3 or {}
 	slot8 = {}
+	slot9 = ipairs
+	slot10 = slot1.scripts or {}
 
-	for slot12, slot13 in ipairs(slot1.scripts) do
+	for slot12, slot13 in slot9(slot10) do
 		slot16 = uv0.GetStoryStepCls(slot13.mode or slot0.mode).New(slot13)
 
 		slot16:SetId(slot12)
+		slot16:SetPlaceholderType(slot0:GetPlaceholder())
+		slot16:SetDefaultTb(slot0.defaultTb)
 
 		if slot16:ExistOption() then
 			if slot7[slot6 + 1] then
@@ -72,7 +97,10 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5)
 		table.insert(slot0.steps, slot16)
 	end
 
-	table.insert(slot8, #slot0.steps)
+	if #slot0.steps > 0 then
+		table.insert(slot8, #slot0.steps)
+	end
+
 	slot0:HandleRecallOptions(slot8)
 
 	slot0.branchCode = nil
@@ -90,8 +118,8 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.speed = 0
 end
 
-slot0.HandleRecallOptions = function(slot0, slot1)
-	slot2 = function(slot0, slot1)
+function slot0.HandleRecallOptions(slot0, slot1)
+	function slot2(slot0, slot1)
 		slot2 = uv0.steps[slot0]
 		slot3 = {}
 
@@ -107,7 +135,7 @@ slot0.HandleRecallOptions = function(slot0, slot1)
 		}
 	end
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		for slot4 = slot0, 1, -1 do
 			if uv0.steps[slot4] and slot5.branchCode ~= nil then
 				return slot4
@@ -151,11 +179,19 @@ slot0.HandleRecallOptions = function(slot0, slot1)
 	end
 end
 
-slot0.GetDialogueStyleName = function(slot0)
+function slot0.GetPlaceholder(slot0)
+	return slot0.placeholder
+end
+
+function slot0.ShouldReplaceContent(slot0)
+	return slot0.placeholder > 0
+end
+
+function slot0.GetDialogueStyleName(slot0)
 	return slot0.dialogueBox
 end
 
-slot0.GetTriggerDelayTime = function(slot0)
+function slot0.GetTriggerDelayTime(slot0)
 	if table.indexof(uv0.STORY_AUTO_SPEED, slot0.speed) then
 		return uv0.TRIGGER_DELAY_TIME[slot1] or 0
 	end
@@ -163,67 +199,67 @@ slot0.GetTriggerDelayTime = function(slot0)
 	return 0
 end
 
-slot0.SetAutoPlay = function(slot0)
+function slot0.SetAutoPlay(slot0)
 	slot0.isAuto = true
 
 	slot0:SetPlaySpeed(slot0.speedData)
 end
 
-slot0.UpdatePlaySpeed = function(slot0)
+function slot0.UpdatePlaySpeed(slot0)
 	slot0:SetPlaySpeed(getProxy(SettingsProxy):GetStorySpeed() or 0)
 end
 
-slot0.GetPlaySpeed = function(slot0)
+function slot0.GetPlaySpeed(slot0)
 	return slot0.speed
 end
 
-slot0.StopAutoPlay = function(slot0)
+function slot0.StopAutoPlay(slot0)
 	slot0.isAuto = false
 
 	slot0:ResetSpeed()
 end
 
-slot0.SetPlaySpeed = function(slot0, slot1)
+function slot0.SetPlaySpeed(slot0, slot1)
 	slot0.speed = slot1
 end
 
-slot0.ResetSpeed = function(slot0)
+function slot0.ResetSpeed(slot0)
 	slot0.speed = 0
 end
 
-slot0.GetPlaySpeed = function(slot0)
+function slot0.GetPlaySpeed(slot0)
 	return slot0.speed
 end
 
-slot0.GetAutoPlayFlag = function(slot0)
+function slot0.GetAutoPlayFlag(slot0)
 	return slot0.isAuto
 end
 
-slot0.ShowSkipTip = function(slot0)
+function slot0.ShowSkipTip(slot0)
 	return slot0.skipTip
 end
 
-slot0.ShouldWaitFadeout = function(slot0)
+function slot0.ShouldWaitFadeout(slot0)
 	return not slot0.noWaitFade
 end
 
-slot0.ShouldHideSkip = function(slot0)
+function slot0.ShouldHideSkip(slot0)
 	return slot0.hideSkip
 end
 
-slot0.CanPlay = function(slot0)
+function slot0.CanPlay(slot0)
 	return slot0.force or not slot0.isPlayed
 end
 
-slot0.GetId = function(slot0)
+function slot0.GetId(slot0)
 	return slot0.name
 end
 
-slot0.GetName = function(slot0)
+function slot0.GetName(slot0)
 	return slot0.name
 end
 
-slot0.GetStepByIndex = function(slot0, slot1)
+function slot0.GetStepByIndex(slot0, slot1)
 	if not slot0.steps[slot1] or slot0.branchCode and not slot2:IsSameBranch(slot0.branchCode) then
 		return nil
 	end
@@ -231,7 +267,7 @@ slot0.GetStepByIndex = function(slot0, slot1)
 	return slot2
 end
 
-slot0.GetNextStep = function(slot0, slot1)
+function slot0.GetNextStep(slot0, slot1)
 	if slot1 >= #slot0.steps then
 		return nil
 	end
@@ -243,7 +279,7 @@ slot0.GetNextStep = function(slot0, slot1)
 	end
 end
 
-slot0.GetPrevStep = function(slot0, slot1)
+function slot0.GetPrevStep(slot0, slot1)
 	if slot1 <= 1 then
 		return nil
 	end
@@ -255,47 +291,47 @@ slot0.GetPrevStep = function(slot0, slot1)
 	end
 end
 
-slot0.ShouldFadeout = function(slot0)
+function slot0.ShouldFadeout(slot0)
 	return slot0.fadeOut ~= nil
 end
 
-slot0.GetFadeoutTime = function(slot0)
+function slot0.GetFadeoutTime(slot0)
 	return slot0.fadeOut
 end
 
-slot0.IsPlayed = function(slot0)
+function slot0.IsPlayed(slot0)
 	return slot0.isPlayed
 end
 
-slot0.SetBranchCode = function(slot0, slot1)
+function slot0.SetBranchCode(slot0, slot1)
 	slot0.branchCode = slot1
 end
 
-slot0.GetBranchCode = function(slot0)
+function slot0.GetBranchCode(slot0)
 	return slot0.branchCode
 end
 
-slot0.GetNextScriptName = function(slot0)
+function slot0.GetNextScriptName(slot0)
 	return slot0.nextScriptName
 end
 
-slot0.SetNextScriptName = function(slot0, slot1)
+function slot0.SetNextScriptName(slot0, slot1)
 	slot0.nextScriptName = slot1
 end
 
-slot0.SkipAll = function(slot0)
+function slot0.SkipAll(slot0)
 	slot0.skipAll = true
 end
 
-slot0.StopSkip = function(slot0)
+function slot0.StopSkip(slot0)
 	slot0.skipAll = false
 end
 
-slot0.ShouldSkipAll = function(slot0)
+function slot0.ShouldSkipAll(slot0)
 	return slot0.skipAll
 end
 
-slot0.GetUsingPaintingNames = function(slot0)
+function slot0.GetUsingPaintingNames(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(slot0.steps) do

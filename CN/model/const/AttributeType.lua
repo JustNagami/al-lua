@@ -30,6 +30,7 @@ slot0.Corrected = "corrected"
 slot0.OxyMax = "oxy_max"
 slot0.OxyCost = "oxy_cost"
 slot0.OxyRecovery = "oxy_recovery"
+slot0.OxyRecoverySurface = "oxy_recovery_surface"
 slot0.OxyRecoveryBench = "oxy_recovery_bench"
 slot0.OxyAttackDuration = "attack_duration"
 slot0.OxyRaidDistance = "raid_distance"
@@ -37,7 +38,7 @@ slot0.SonarRange = "sonarRange"
 slot0.Tactics = "tactics"
 slot0.WorldPower = "world_power"
 
-slot0.Type2Name = function(slot0)
+function slot0.Type2Name(slot0)
 	return i18n("attribute_" .. slot0)
 end
 
@@ -61,15 +62,15 @@ slot1 = {
 	[-2.0] = "common_compare_not_more_than"
 }
 
-slot0.eliteConditionCompareTip = function(slot0)
+function slot0.eliteConditionCompareTip(slot0)
 	return i18n(uv0[slot0])
 end
 
-slot0.EliteCondition2Name = function(slot0, ...)
+function slot0.EliteCondition2Name(slot0, ...)
 	return i18n(uv0.eliteConditionTip[slot0], ...)
 end
 
-slot0.EliteConditionCompare = function(slot0, slot1, slot2)
+function slot0.EliteConditionCompare(slot0, slot1, slot2)
 	if slot0 == 0 then
 		return slot1 == slot2
 	elseif slot0 == 1 then
@@ -101,11 +102,12 @@ slot0.attrNameTable = {
 	[slot0.OxyCost] = "oxyCost",
 	[slot0.OxyRecovery] = "oxyRecovery",
 	[slot0.OxyRecoveryBench] = "oxyRecoveryBench",
+	[slot0.OxyRecoverySurface] = "oxyRecoverySurface",
 	[slot0.OxyAttackDuration] = "oxyAtkDuration",
 	[slot0.OxyRaidDistance] = "raidDist"
 }
 
-slot0.ConvertBattleAttrName = function(slot0)
+function slot0.ConvertBattleAttrName(slot0)
 	if uv0.attrNameTable[slot0] then
 		return uv0.attrNameTable[slot0]
 	else
@@ -125,7 +127,7 @@ slot0.PrimalAttr = {
 	velocity = true
 }
 
-slot0.IsPrimalBattleAttr = function(slot0)
+function slot0.IsPrimalBattleAttr(slot0)
 	return uv0.PrimalAttr[slot0]
 end
 

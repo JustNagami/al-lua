@@ -5,16 +5,16 @@ slot0.Battle.BattleBuffHealingCorrupt.__name = "BattleBuffHealingCorrupt"
 slot1 = slot0.Battle.BattleBuffHealingCorrupt
 slot1.FX_TYPE = slot0.Battle.BattleBuffEffect.FX_TYPE_LINK
 
-slot1.Ctor = function(slot0, slot1)
+function slot1.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 end
 
-slot1.SetArgs = function(slot0, slot1, slot2)
+function slot1.SetArgs(slot0, slot1, slot2)
 	slot0._corruptRate = slot0._tempData.arg_list.corruptRate or 1
 	slot0._damageRate = slot3.damageRate or 1
 end
 
-slot1.onTakeHealing = function(slot0, slot1, slot2, slot3)
+function slot1.onTakeHealing(slot0, slot1, slot2, slot3)
 	if slot3.incorrupt then
 		return
 	end

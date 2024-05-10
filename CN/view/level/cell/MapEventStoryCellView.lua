@@ -1,16 +1,16 @@
 slot0 = class("MapEventStoryCellView", import("view.level.cell.StaticCellView"))
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0.attachTw = nil
 end
 
-slot0.GetOrder = function(slot0)
+function slot0.GetOrder(slot0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot1 = slot0.info
 
 	if IsNil(slot0.go) then
@@ -43,7 +43,7 @@ slot0.Update = function(slot0)
 	setActive(slot0.tf, slot1.flag == ChapterConst.CellFlagActive)
 end
 
-slot0.DestroyGO = function(slot0)
+function slot0.DestroyGO(slot0)
 	if slot0.attachTw then
 		LeanTween.cancel(slot0.attachTw.uniqueId)
 

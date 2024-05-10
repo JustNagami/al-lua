@@ -25,7 +25,7 @@ slot0.OPEN_MAIN = "GuildOfficeMediator:OPEN_MAIN"
 slot0.SWITCH_TO_OFFICE = "GuildOfficeMediator:SWITCH_TO_OFFICE"
 slot0.OPEN_SHOP = "GuildMainMediator:OPEN_SHOP"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	if getProxy(ContextProxy):GetPrevContext(1).mediator == NewGuildMediator then
 		slot1:RemoveContext(slot2)
 	end
@@ -150,7 +150,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setPlayerVO(getProxy(PlayerProxy):getData())
 end
 
-slot0.closePage = function(slot0, slot1)
+function slot0.closePage(slot0, slot1)
 	if getProxy(ContextProxy):getContextByMediator(slot1) then
 		slot0:sendNotification(GAME.REMOVE_LAYERS, {
 			context = slot3
@@ -158,7 +158,7 @@ slot0.closePage = function(slot0, slot1)
 	end
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GuildProxy.GUILD_UPDATED,
 		GuildProxy.EXIT_GUILD,
@@ -192,7 +192,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GuildProxy.GUILD_UPDATED then

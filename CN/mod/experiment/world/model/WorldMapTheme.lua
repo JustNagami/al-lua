@@ -12,7 +12,7 @@ slot0.Fields = {
 	angle = "number"
 }
 
-slot0.Setup = function(slot0, slot1)
+function slot0.Setup(slot0, slot1)
 	slot0.assetSea = slot1[1]
 	slot0.angle = slot1[2]
 	slot0.fov = slot1[3]
@@ -26,17 +26,17 @@ slot0.Setup = function(slot0, slot1)
 	slot0.sinAngle = math.sin(slot2)
 end
 
-slot0.GetLinePosition = function(slot0, slot1, slot2)
+function slot0.GetLinePosition(slot0, slot1, slot2)
 	slot3 = Vector2(slot2 + 0.5, WorldConst.MaxRow * 0.5 - slot1 - 0.5)
 
 	return Vector3(slot3.x * (slot0.cellSize.x + slot0.cellSpace.x), slot3.y * (slot0.cellSize.y + slot0.cellSpace.y), 0)
 end
 
-slot0.X2Column = function(slot0, slot1)
+function slot0.X2Column(slot0, slot1)
 	return math.round(slot1 / (slot0.cellSize.x + slot0.cellSpace.x) - 0.5)
 end
 
-slot0.Y2Row = function(slot0, slot1)
+function slot0.Y2Row(slot0, slot1)
 	return math.round(WorldConst.MaxRow * 0.5 - 0.5 - slot1 / (slot0.cellSize.y + slot0.cellSpace.y))
 end
 

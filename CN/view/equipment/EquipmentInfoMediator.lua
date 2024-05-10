@@ -18,15 +18,11 @@ slot0.ON_REVERT = "EquipmentInfoMediator:ON_REVERT"
 slot0.ON_MOVE = "EquipmentInfoMediator:ON_MOVE"
 slot0.OPEN_LAYER = "OPEN LAYER"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	if getProxy(ContextProxy):getCurrentContext().scene == SCENE.EQUIPSCENE then
 		slot0.viewComponent.fromEquipmentView = true
 	end
 
-	slot3 = getProxy(BagProxy)
-	slot4 = slot0.viewComponent
-
-	slot4:setRevertItem(slot3:getItemById(Item.REVERT_EQUIPMENT_ID))
 	slot0:bind(uv0.ON_DESTROY, function (slot0, slot1)
 		uv0:sendNotification(GAME.DESTROY_EQUIPMENTS, {
 			equipments = {
@@ -92,9 +88,13 @@ slot0.register = function(slot0)
 	end)
 	slot0:bind(uv0.ON_CHANGE, function (slot0)
 		slot1 = getProxy(BayProxy)
-		slot5 = slot1:getEquipsInShips(slot1:getShipById(uv0.contextData.shipId), uv0.contextData.pos)
+		slot2 = slot1:getShipById(uv0.contextData.shipId)
+		slot3 = getProxy(EquipmentProxy)
+		slot5 = slot1:getEquipsInShips(function (slot0, slot1)
+			return uv0.id ~= slot1 and not uv0:isForbiddenAtPos(slot0, uv1.contextData.pos)
+		end)
 
-		for slot9, slot10 in ipairs(getProxy(EquipmentProxy):getEquipments(true)) do
+		for slot9, slot10 in ipairs(slot3:getEquipments(true)) do
 			if not slot2:isForbiddenAtPos(slot10, uv0.contextData.pos) then
 				table.insert(slot5, slot10)
 			end
@@ -134,18 +134,20 @@ slot0.register = function(slot0)
 	if slot0.contextData.equipment then
 		slot0.viewComponent:setEquipment(slot0.contextData.equipment)
 	else
-		slot6 = getProxy(EquipmentProxy):getEquipmentById(slot0.contextData.equipmentId) or slot5 and slot5 > 0 and Equipment.New({
-			id = slot5
+		slot5 = getProxy(EquipmentProxy):getEquipmentById(slot0.contextData.equipmentId) or slot4 and slot4 > 0 and Equipment.New({
+			id = slot4
 		}) or nil
 
-		slot0.viewComponent:setEquipment(slot6)
+		slot0.viewComponent:setEquipment(slot5)
 	end
 
-	slot0.viewComponent:setShip(getProxy(BayProxy):getShipById(slot0.contextData.shipId), slot0.contextData.oldShipId and slot4:getShipById(slot0.contextData.oldShipId) or nil)
+	slot3 = getProxy(BayProxy)
+
+	slot0.viewComponent:setShip(slot0.contextData.shipVO or slot3:getShipById(slot0.contextData.shipId), slot0.contextData.oldShipId and slot3:getShipById(slot0.contextData.oldShipId) or nil)
 	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.DESTROY_EQUIPMENTS_DONE,
 		GAME.EQUIP_TO_SHIP_DONE,
@@ -153,7 +155,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.DESTROY_EQUIPMENTS_DONE or slot2 == GAME.EQUIP_TO_SHIP_DONE or slot2 == GAME.REVERT_EQUIPMENT_DONE then

@@ -1,11 +1,11 @@
 slot0 = class("LoadContextCommand", pm.SimpleCommand)
 slot0.queue = {}
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot0:load(slot1:getBody())
 end
 
-slot0.load = function(slot0, slot1)
+function slot0.load(slot0, slot1)
 	table.insert(uv0.queue, slot1)
 
 	if #uv0.queue == 1 then
@@ -13,9 +13,9 @@ slot0.load = function(slot0, slot1)
 	end
 end
 
-slot0.loadNext = function(slot0)
+function slot0.loadNext(slot0)
 	if #uv0.queue > 0 then
-		slot2 = function()
+		function slot2()
 			if uv0.callback then
 				uv0.callback()
 			end
@@ -34,7 +34,7 @@ slot0.loadNext = function(slot0)
 	end
 end
 
-slot0.loadScene = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.loadScene(slot0, slot1, slot2, slot3, slot4)
 	assert(isa(slot1, Context), "should be an instance of Context")
 
 	slot5 = getProxy(ContextProxy)
@@ -129,7 +129,7 @@ slot0.loadScene = function(slot0, slot1, slot2, slot3, slot4)
 	})
 end
 
-slot0.loadLayer = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.loadLayer(slot0, slot1, slot2, slot3, slot4)
 	assert(isa(slot1, Context), "should be an instance of Context")
 
 	slot5 = pg.SceneMgr.GetInstance()
@@ -201,14 +201,14 @@ slot0.loadLayer = function(slot0, slot1, slot2, slot3, slot4)
 	})
 end
 
-slot0.LoadLayerOnTopContext = function(slot0)
+function slot0.LoadLayerOnTopContext(slot0)
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
 		parentContext = getProxy(ContextProxy):getCurrentContext(),
 		context = slot0
 	})
 end
 
-slot0.RemoveLayerByMediator = function(slot0)
+function slot0.RemoveLayerByMediator(slot0)
 	if getProxy(ContextProxy):getCurrentContext():getContextByMediator(slot0) then
 		pg.m02:sendNotification(GAME.REMOVE_LAYERS, {
 			context = slot2

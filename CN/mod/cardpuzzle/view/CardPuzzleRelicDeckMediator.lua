@@ -2,7 +2,7 @@ slot0 = class("CardPuzzleRelicDeckMediator", ContextMediator)
 slot0.SHOW_GIFT = "SHOW_GIFT"
 slot0.CLOSE_LAYER = "CLOSE_LAYER"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot2 = slot0.viewComponent
 
 	slot2:SetGifts(slot0.contextData.relicList)
@@ -18,11 +18,11 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 end
 
 return slot0

@@ -1,6 +1,6 @@
 slot0 = class("RollingCircleRect")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	pg.DelegateInfo.New(slot0)
 
 	slot0.childs = {}
@@ -10,17 +10,17 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0:AddDragListener()
 end
 
-slot0.SetCallback = function(slot0, slot1, slot2, slot3)
+function slot0.SetCallback(slot0, slot1, slot2, slot3)
 	slot0.binder = slot1
 	slot0.OnSelected = slot2
 	slot0.OnRelease = slot3
 end
 
-slot0.AddItem = function(slot0, slot1)
+function slot0.AddItem(slot0, slot1)
 	slot2 = nil
 
 	if #slot0.childs <= 0 then
-		slot2 = RollingCircleItem.New(slot0.tpl, slot3 + 1, slot1)
+		RollingCircleItem.New(slot0.tpl, slot3 + 1, slot1):Init()
 	else
 		slot2 = RollingCircleItem.New(Object.Instantiate(slot0.tpl, slot0.tpl.parent), slot3 + 1, slot1)
 		slot5 = slot0.childs[#slot0.childs]
@@ -30,6 +30,7 @@ slot0.AddItem = function(slot0, slot1)
 		slot2:SetNext(slot6)
 		slot6:SetPrev(slot2)
 		slot5:SetNext(slot2)
+		slot2:Init()
 	end
 
 	table.insert(slot0.childs, slot2)
@@ -44,7 +45,7 @@ slot0.AddItem = function(slot0, slot1)
 	return slot2
 end
 
-slot0.ScrollTo = function(slot0, slot1)
+function slot0.ScrollTo(slot0, slot1)
 	Canvas.ForceUpdateCanvases()
 
 	if _.detect(slot0.childs, function (slot0)
@@ -54,7 +55,7 @@ slot0.ScrollTo = function(slot0, slot1)
 	end
 end
 
-slot0.AddDragListener = function(slot0)
+function slot0.AddDragListener(slot0)
 	uv0.AddVerticalDrag(slot0.parent, function (slot0)
 		uv0:Step(slot0 > 0 and -1 or 1)
 	end, function ()
@@ -68,11 +69,11 @@ slot0.AddDragListener = function(slot0)
 	end)
 end
 
-slot0.GetCenterIndex = function(slot0)
+function slot0.GetCenterIndex(slot0)
 	return math.min(4, math.ceil(#slot0.childs / 2))
 end
 
-slot0.ScrollToCenter = function(slot0, slot1)
+function slot0.ScrollToCenter(slot0, slot1)
 	if slot0:GetCenterIndex() - slot1:GetIndex() == 0 then
 		return
 	end
@@ -80,7 +81,7 @@ slot0.ScrollToCenter = function(slot0, slot1)
 	slot0:Step(slot4)
 end
 
-slot0.Step = function(slot0, slot1)
+function slot0.Step(slot0, slot1)
 	slot2 = slot1 > 0 and "GoForward" or "GoBack"
 	slot4 = slot0:GetCenterIndex()
 
@@ -105,7 +106,7 @@ slot0.Step = function(slot0, slot1)
 	end
 end
 
-slot0.AddVerticalDrag = function(slot0, slot1, slot2)
+function slot0.AddVerticalDrag(slot0, slot1, slot2)
 	slot3 = GetOrAddComponent(slot0, "EventTriggerListener")
 	slot4 = 90
 	slot5 = nil
@@ -151,7 +152,7 @@ slot0.AddVerticalDrag = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 
 	for slot4, slot5 in ipairs(slot0.childs) do

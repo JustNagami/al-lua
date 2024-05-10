@@ -1,10 +1,10 @@
 slot0 = class("GuideUIFinder")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.queue = {}
 end
 
-slot0.Search = function(slot0, slot1)
+function slot0.Search(slot0, slot1)
 	table.insert(slot0.queue, slot1)
 
 	if #slot0.queue == 1 then
@@ -12,14 +12,14 @@ slot0.Search = function(slot0, slot1)
 	end
 end
 
-slot0.Start = function(slot0)
+function slot0.Start(slot0)
 	if #slot0.queue <= 0 then
 		return
 	end
 
 	slot0:Clear()
 
-	slot2 = function()
+	function slot2()
 		table.remove(uv0.queue, 1)
 		uv0:Start()
 	end
@@ -35,7 +35,7 @@ slot0.Start = function(slot0)
 	end
 end
 
-slot1 = function(slot0, slot1)
+function slot1(slot0, slot1)
 	slot2 = {}
 
 	for slot6 = 0, slot0.childCount - 1 do
@@ -50,7 +50,7 @@ slot1 = function(slot0, slot1)
 	return slot1 and slot2[slot1 + 1] or slot2[#slot2]
 end
 
-slot2 = function(slot0)
+function slot2(slot0)
 	if GameObject.Find(slot0.path) and slot0.childIndex and slot0.childIndex == "#" then
 		return uv0(slot1.transform)
 	elseif slot1 and slot0.childIndex and slot0.childIndex == -999 then
@@ -64,7 +64,7 @@ slot2 = function(slot0)
 	return nil
 end
 
-slot3 = function(slot0)
+function slot3(slot0)
 	if uv0(slot0) ~= nil then
 		for slot5, slot6 in ipairs(slot0.conditionData) do
 			if slot1:Find(slot6) then
@@ -76,7 +76,7 @@ slot3 = function(slot0)
 	return nil
 end
 
-slot4 = function(slot0)
+function slot4(slot0)
 	slot1 = nil
 
 	if (not slot0.conditionData or uv0(slot0)) and uv1(slot0) then
@@ -86,7 +86,7 @@ slot4 = function(slot0)
 	return nil
 end
 
-slot0.AddSearchTimer = function(slot0, slot1, slot2)
+function slot0.AddSearchTimer(slot0, slot1, slot2)
 	slot3 = 20
 	slot0.timer = Timer.New(function ()
 		uv0 = uv0 - 1
@@ -111,12 +111,12 @@ slot0.AddSearchTimer = function(slot0, slot1, slot2)
 	slot0.timer.func()
 end
 
-slot0.SearchWithoutDelay = function(slot0, slot1)
+function slot0.SearchWithoutDelay(slot0, slot1)
 	slot0:Clear()
 	slot1.callback(uv0(slot1))
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	if slot0.delayTimer then
 		slot0.delayTimer:Stop()
 

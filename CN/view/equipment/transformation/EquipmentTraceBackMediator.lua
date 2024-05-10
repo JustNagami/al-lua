@@ -1,7 +1,7 @@
 slot0 = class("EquipmentTraceBackMediator", import("view.base.ContextMediator"))
 slot0.TRANSFORM_EQUIP = "transform equip"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:BindEvent()
 
 	slot0.env = {}
@@ -16,7 +16,7 @@ slot0.register = function(slot0)
 	slot0.stopUpdateView = false
 end
 
-slot0.BindEvent = function(slot0)
+function slot0.BindEvent(slot0)
 	slot0:bind(uv0.TRANSFORM_EQUIP, function (slot0, slot1, slot2)
 		uv0.stopUpdateView = true
 
@@ -27,7 +27,7 @@ slot0.BindEvent = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		BagProxy.ITEM_UPDATED,
@@ -39,7 +39,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == PlayerProxy.UPDATED then

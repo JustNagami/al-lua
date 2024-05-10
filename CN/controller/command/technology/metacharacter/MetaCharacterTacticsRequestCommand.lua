@@ -1,6 +1,6 @@
 slot0 = class("MetaCharacterTacticsRequestCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	print("63313 request tactics info")
 
 	slot4 = pg.ConnectionMgr.GetInstance()

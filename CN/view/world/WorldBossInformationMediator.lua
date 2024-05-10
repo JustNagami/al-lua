@@ -2,7 +2,7 @@ slot0 = class("WorldBossInformationMediator", import("..base.ContextMediator"))
 slot0.RETREAT_FLEET = "WorldBossInformationMediator:RETREAT_FLEET"
 slot0.OnOpenSublayer = "WorldBossInformationMediator:OpenSublayer"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.RETREAT_FLEET, function ()
 		uv0:sendNotification(GAME.WORLD_RETREAT_FLEET)
 	end)
@@ -12,7 +12,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.WORLD_MAP_OP_DONE,
@@ -20,7 +20,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == PlayerProxy.UPDATED then

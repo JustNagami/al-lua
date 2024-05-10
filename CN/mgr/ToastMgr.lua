@@ -7,6 +7,8 @@ slot0.TYPE_TECPOINT = "Tecpoint"
 slot0.TYPE_TROPHY = "Trophy"
 slot0.TYPE_META = "Meta"
 slot0.TYPE_CRUSING = "Crusing"
+slot0.TYPE_VOTE = "Vote"
+slot0.TYPE_EMOJI = "Emoji"
 slot0.ToastInfo = {
 	[slot0.TYPE_ATTIRE] = {
 		Attire = "attire_tpl"
@@ -24,10 +26,16 @@ slot0.ToastInfo = {
 	},
 	[slot0.TYPE_CRUSING] = {
 		Crusing = "crusing_pt_tpl"
+	},
+	[slot0.TYPE_VOTE] = {
+		Vote = "vote_tpl"
+	},
+	[slot0.TYPE_EMOJI] = {
+		Emoji = "emoji_tpl"
 	}
 }
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	PoolMgr.GetInstance():GetUI("ToastUI", true, function (slot0)
 		uv0._go = slot0
 
@@ -68,13 +76,13 @@ slot0.Init = function(slot0, slot1)
 	end)
 end
 
-slot0.ResetUIDandHistory = function(slot0)
+function slot0.ResetUIDandHistory(slot0)
 	slot0.completedJob = 0
 	slot0.actionJob = 0
 	slot0.buffer = {}
 end
 
-slot0.ShowToast = function(slot0, slot1, slot2)
+function slot0.ShowToast(slot0, slot1, slot2)
 	slot3 = #slot0.buffer
 
 	table.insert(slot0.buffer, {
@@ -89,7 +97,7 @@ slot0.ShowToast = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.Toast = function(slot0)
+function slot0.Toast(slot0)
 	if slot0.actionJob >= #slot0.buffer then
 		return
 	end
@@ -129,7 +137,7 @@ slot0.Toast = function(slot0)
 	end)
 end
 
-slot0.GetAndSet = function(slot0, slot1, slot2)
+function slot0.GetAndSet(slot0, slot1, slot2)
 	slot3 = slot0.pools[slot1 .. "Tpl"]:Dequeue()
 
 	setActive(slot3, true)
@@ -139,7 +147,7 @@ slot0.GetAndSet = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.UpdateAttire = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateAttire(slot0, slot1, slot2, slot3)
 	slot4 = slot0:GetAndSet(slot1.type, slot0.container)
 	slot5 = slot4:GetComponent(typeof(DftAniEvent))
 
@@ -166,7 +174,32 @@ slot0.UpdateAttire = function(slot0, slot1, slot2, slot3)
 	assert(isa(slot6, AttireFrame))
 	setActive(slot4.transform:Find("bg/icon_frame"), slot6:getType() == AttireConst.TYPE_ICON_FRAME)
 	setActive(slot4.transform:Find("bg/chat_frame"), slot7 == AttireConst.TYPE_CHAT_FRAME)
-	setText(slot4.transform:Find("bg/Text"), slot6:getConfig("name"))
+	setText(slot4.transform:Find("bg/Text"), HXSet.hxLan(slot6:getConfig("name")))
+end
+
+function slot0.UpdateEmoji(slot0, slot1, slot2, slot3)
+	slot4 = slot0:GetAndSet(slot1.type, slot0.container)
+	slot5 = slot4:GetComponent(typeof(DftAniEvent))
+
+	slot5:SetTriggerEvent(function (slot0)
+		if uv0 then
+			uv0()
+		end
+
+		uv1:SetTriggerEvent(nil)
+	end)
+	slot5:SetEndEvent(function (slot0)
+		setActive(uv0, false)
+		uv1.pools[uv2.type .. "Tpl"]:Enqueue(uv0)
+		uv3:SetEndEvent(nil)
+
+		if uv4 then
+			uv4()
+		end
+	end)
+	slot4:GetComponent(typeof(Animation)):Play("attire")
+	setText(slot4.transform:Find("bg/label"), i18n("word_emoji_unlock"))
+	setText(slot4.transform:Find("bg/Text"), i18n("word_get_emoji", slot1.info.item_name))
 end
 
 slot0.FADE_TIME = 0.4
@@ -174,7 +207,7 @@ slot0.FADE_OUT_TIME = 1
 slot0.SHOW_TIME = 1.5
 slot0.DELAY_TIME = 0.3
 
-slot0.UpdateTecpoint = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateTecpoint(slot0, slot1, slot2, slot3)
 	slot4 = slot1.info
 	slot7 = slot4.attr
 	slot8 = slot4.value
@@ -198,7 +231,7 @@ slot0.UpdateTecpoint = function(slot0, slot1, slot2, slot3)
 		end
 	end
 
-	slot11 = function()
+	function slot11()
 		if uv0 then
 			uv0()
 		end
@@ -210,7 +243,7 @@ slot0.UpdateTecpoint = function(slot0, slot1, slot2, slot3)
 
 	slot13 = GetComponent(slot9, "CanvasGroup")
 
-	slot15 = function()
+	function slot15()
 		LeanTween.moveX(rtf(uv0), 0, uv1.FADE_OUT_TIME)
 		LeanTween.value(uv0, 1, 0, uv1.FADE_OUT_TIME):setOnUpdate(System.Action_float(uv2)):setOnComplete(System.Action(function ()
 			setActive(uv0, false)
@@ -230,10 +263,10 @@ slot0.UpdateTecpoint = function(slot0, slot1, slot2, slot3)
 		LeanTween.delayedCall(uv0, uv1.SHOW_TIME, System.Action(uv2))
 	end))
 
-	slot16 = function(slot0, slot1, slot2)
+	function slot16(slot0, slot1, slot2)
 		slot3 = GetComponent(slot0.transform, "CanvasGroup")
 
-		slot5 = function()
+		function slot5()
 			LeanTween.moveX(rtf(uv0), 0, uv1.FADE_OUT_TIME)
 			LeanTween.value(uv0, 1, 0, uv1.FADE_OUT_TIME):setOnUpdate(System.Action_float(uv2)):setOnComplete(System.Action(function ()
 				setActive(uv0, false)
@@ -259,7 +292,7 @@ slot0.UpdateTecpoint = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.UpdateTrophy = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateTrophy(slot0, slot1, slot2, slot3)
 	slot4 = pg.CriMgr.GetInstance()
 
 	slot4:PlaySoundEffect_V3(slot1.info.sound or SFX_UI_TIP)
@@ -289,7 +322,7 @@ slot0.UpdateTrophy = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.UpdateMeta = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateMeta(slot0, slot1, slot2, slot3)
 	slot4 = slot1.info
 	slot7 = slot0:GetAndSet("MetaExp", slot0.container)
 	slot8 = slot0:GetAndSet("MetaLevel", slot0.container)
@@ -331,7 +364,7 @@ slot0.UpdateMeta = function(slot0, slot1, slot2, slot3)
 		end
 	end
 
-	slot23 = function()
+	function slot23()
 		if uv0 then
 			uv0()
 		end
@@ -345,7 +378,7 @@ slot0.UpdateMeta = function(slot0, slot1, slot2, slot3)
 	GetComponent(slot8, "CanvasGroup").alpha = 0
 
 	if slot16 or slot20 then
-		slot28 = function()
+		function slot28()
 			LeanTween.moveX(rtf(uv0.transform), 0, uv1.FADE_OUT_TIME)
 			LeanTween.value(uv0, 1, 0, uv1.FADE_OUT_TIME):setOnUpdate(System.Action_float(uv2)):setOnComplete(System.Action(function ()
 				uv0.pools.MetaExpTpl:Enqueue(uv1)
@@ -365,11 +398,11 @@ slot0.UpdateMeta = function(slot0, slot1, slot2, slot3)
 	end
 
 	if slot20 then
-		slot27 = function(slot0)
+		function slot27(slot0)
 			uv0.alpha = slot0
 		end
 
-		slot28 = function()
+		function slot28()
 			LeanTween.moveX(rtf(uv0.transform), 0, uv1.FADE_OUT_TIME)
 			LeanTween.value(uv0, 1, 0, uv1.FADE_OUT_TIME):setOnUpdate(System.Action_float(uv2)):setOnComplete(System.Action(function ()
 				uv0.pools.MetaLevelTpl:Enqueue(uv1)
@@ -377,7 +410,7 @@ slot0.UpdateMeta = function(slot0, slot1, slot2, slot3)
 			end))
 		end
 
-		slot29 = function()
+		function slot29()
 			LeanTween.delayedCall(uv0, uv1.SHOW_TIME, System.Action(uv2))
 		end
 
@@ -387,20 +420,20 @@ slot0.UpdateMeta = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.UpdateCrusing = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateCrusing(slot0, slot1, slot2, slot3)
 	slot4 = slot1.info
-	slot5 = slot4.ptId
 	slot7 = pg.CriMgr.GetInstance()
 
 	slot7:PlaySoundEffect_V3(slot1.info.sound or SFX_UI_TIP)
 
 	slot7 = tf(slot0:GetAndSet(slot1.type, slot0.container))
-
-	LoadImageSpriteAtlasAsync(getDropIcon({
+	slot8 = Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = slot5
-	}), "", slot7:Find("PointIcon"), true)
-	setText(slot7:Find("info/name"), pg.item_data_statistics[id2ItemId(slot5)].name)
+		id = slot4.ptId
+	})
+
+	LoadImageSpriteAtlasAsync(slot8:getIcon(), "", slot7:Find("PointIcon"), true)
+	setText(slot7:Find("info/name"), slot8:getName())
 	setText(slot7:Find("info/pt"), "+" .. slot4.ptCount)
 	setAnchoredPosition(slot7, {
 		x = slot7.rect.width
@@ -421,7 +454,37 @@ slot0.UpdateCrusing = function(slot0, slot1, slot2, slot3)
 	end))
 end
 
-slot0.Dispose = function(slot0)
+function slot0.UpdateVote(slot0, slot1, slot2, slot3)
+	slot4 = slot1.info
+	slot7 = Drop.New({
+		type = DROP_TYPE_ITEM,
+		id = slot4.ptId
+	})
+	slot8 = tf(slot0:GetAndSet(slot1.type, slot0.container))
+
+	LoadImageSpriteAtlasAsync(slot7:getIcon(), "", slot8:Find("PointIcon"), true)
+	setText(slot8:Find("info/name"), slot7:getName())
+	setText(slot8:Find("info/pt"), "+" .. slot4.ptCount)
+	setAnchoredPosition(slot8, {
+		x = slot8.rect.width
+	})
+	LeanTween.alphaCanvas(GetComponent(slot8, typeof(CanvasGroup)), 1, 0.5):setFrom(0):setOnComplete(System.Action(function ()
+		LeanTween.alphaCanvas(uv0, 0, 0.5):setDelay(5):setOnComplete(System.Action(function ()
+			setActive(uv0, false)
+			uv1.pools[uv2.type .. "Tpl"]:Enqueue(go(uv0))
+
+			if uv3 then
+				uv3()
+			end
+		end))
+
+		if uv5 then
+			uv5()
+		end
+	end))
+end
+
+function slot0.Dispose(slot0)
 	setActive(slot0._tf, false)
 	slot0:ResetUIDandHistory()
 

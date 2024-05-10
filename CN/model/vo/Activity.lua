@@ -1,7 +1,7 @@
 slot0 = class("Activity", import(".BaseVO"))
 slot1 = nil
 
-slot0.GetType2Class = function()
+function slot0.GetType2Class()
 	if uv0 then
 		return uv0
 	end
@@ -23,17 +23,21 @@ slot0.GetType2Class = function()
 		[ActivityConst.ACTIVITY_TYPE_HOTSPRING] = SpringActivity,
 		[ActivityConst.ACTIVITY_TYPE_HOTSPRING_2] = Spring2Activity,
 		[ActivityConst.ACTIVITY_TYPE_TASK_RYZA] = ActivityTaskActivity,
-		[ActivityConst.ACTIVITY_TYPE_PUZZLA] = PuzzleActivity
+		[ActivityConst.ACTIVITY_TYPE_PUZZLA] = PuzzleActivity,
+		[ActivityConst.ACTIVITY_TYPE_SKIN_COUPON] = SkinCouponActivity,
+		[ActivityConst.ACTIVITY_TYPE_MANUAL_SIGN] = ManualSignActivity,
+		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE] = BossSingleActivity,
+		[ActivityConst.ACTIVITY_TYPE_EVENT_SINGLE] = SingleEventActivity
 	}
 
 	return uv0
 end
 
-slot0.Create = function(slot0)
+function slot0.Create(slot0)
 	return (uv0.GetType2Class()[pg.activity_template[slot0.id].type] or Activity).New(slot0)
 end
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.id = slot1.id
 	slot0.configId = slot0.id
 	slot0.stopTime = slot1.stop_time
@@ -111,32 +115,32 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.clientList = {}
 end
 
-slot0.GetBuffList = function(slot0)
+function slot0.GetBuffList(slot0)
 	return slot0.buffList
 end
 
-slot0.AddBuff = function(slot0, slot1)
+function slot0.AddBuff(slot0, slot1)
 	assert(isa(slot1, ActivityBuff), "activityBuff should instance of ActivityBuff")
 	table.insert(slot0.buffList, slot1)
 end
 
-slot0.setClientList = function(slot0, slot1)
+function slot0.setClientList(slot0, slot1)
 	slot0.clientList = slot1
 end
 
-slot0.getClientList = function(slot0)
+function slot0.getClientList(slot0)
 	return slot0.clientList
 end
 
-slot0.updateDataList = function(slot0, slot1)
+function slot0.updateDataList(slot0, slot1)
 	table.insert(slot0.data1_list, slot1)
 end
 
-slot0.setDataList = function(slot0, slot1)
+function slot0.setDataList(slot0, slot1)
 	slot0.data1_list = slot1
 end
 
-slot0.updateKVPList = function(slot0, slot1, slot2, slot3)
+function slot0.updateKVPList(slot0, slot1, slot2, slot3)
 	if not slot0.data1KeyValueList[slot1] then
 		slot0.data1KeyValueList[slot1] = {}
 	end
@@ -144,7 +148,7 @@ slot0.updateKVPList = function(slot0, slot1, slot2, slot3)
 	slot0.data1KeyValueList[slot1][slot2] = slot3
 end
 
-slot0.getKVPList = function(slot0, slot1, slot2)
+function slot0.getKVPList(slot0, slot1, slot2)
 	if not slot0.data1KeyValueList[slot1] then
 		slot0.data1KeyValueList[slot1] = {}
 	end
@@ -152,23 +156,23 @@ slot0.getKVPList = function(slot0, slot1, slot2)
 	return slot0.data1KeyValueList[slot1][slot2] or 0
 end
 
-slot0.getData1 = function(slot0)
+function slot0.getData1(slot0)
 	return slot0.data1
 end
 
-slot0.getData3 = function(slot0)
+function slot0.getData3(slot0)
 	return slot0.data3
 end
 
-slot0.getData1List = function(slot0)
+function slot0.getData1List(slot0)
 	return slot0.data1_list
 end
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_template
 end
 
-slot0.getDataConfigTable = function(slot0)
+function slot0.getDataConfigTable(slot0)
 	slot2 = slot0:getConfig("config_id")
 
 	if slot0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_MONOPOLY then
@@ -180,7 +184,7 @@ slot0.getDataConfigTable = function(slot0)
 	end
 end
 
-slot0.getDataConfig = function(slot0, slot1)
+function slot0.getDataConfig(slot0, slot1)
 	slot2 = slot0:getDataConfigTable()
 
 	assert(slot2, "miss config : " .. slot0.id)
@@ -188,11 +192,11 @@ slot0.getDataConfig = function(slot0, slot1)
 	return slot2 and slot2[slot1]
 end
 
-slot0.isEnd = function(slot0)
+function slot0.isEnd(slot0)
 	return slot0.stopTime > 0 and slot0.stopTime <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-slot0.increaseUsedCount = function(slot0, slot1)
+function slot0.increaseUsedCount(slot0, slot1)
 	if slot1 == 1 then
 		slot0.data1 = slot0.data1 + 1
 	elseif slot1 == 2 then
@@ -200,7 +204,7 @@ slot0.increaseUsedCount = function(slot0, slot1)
 	end
 end
 
-slot0.readyToAchieve = function(slot0)
+function slot0.readyToAchieve(slot0)
 	slot1, slot2 = slot0:IsShowTipById()
 
 	if slot1 then
@@ -288,7 +292,7 @@ slot0.readyToAchieve = function(slot0)
 			slot2 = ActivityPtData.New(slot0):CanGetAward()
 			slot3 = true
 
-			if slot0:getConfig("config_client") and slot0:getConfig("config_client").task_act_id and slot4 ~= 0 and pg.activity_template[slot4] and pg.activity_template[slot4].config_data and #slot6 > 0 then
+			if slot0:getConfig("config_client") and slot0:getConfig("config_client").task_act_id and slot4 ~= 0 and pg.activity_template[slot4] and _.flatten(pg.activity_template[slot4].config_data) and #slot6 > 0 then
 				slot7 = getProxy(TaskProxy)
 
 				for slot11 = 1, #slot6 do
@@ -298,28 +302,13 @@ slot0.readyToAchieve = function(slot0)
 				end
 			end
 
-			if getProxy(VoteProxy):IsVoteBookAct(slot0.id) then
-				slot5 = nil
-
-				if _.detect(pg.activity_vote.all, function (slot0)
-					return pg.TimeMgr.GetInstance():inTime(pg.activity_vote[slot0].time_show) and slot1.is_in_game == 1
-				end) then
-					slot5 = VoteGroup.New({
-						id = slot4,
-						list = {}
-					})
-				end
-
-				slot3 = slot5 and slot5:GetStage() == VoteGroup.VOTE_STAGE
-			end
-
 			slot4 = false
 
 			if slot0:getConfig("config_client").fireworkActID and slot5 ~= 0 then
 				slot4 = getProxy(ActivityProxy):getActivityById(slot5) and slot6:readyToAchieve() or false
 			end
 
-			return slot2 and slot3 or slot4
+			return slot2 and slot3 or slot4 or type(slot0:getConfig("config_client")[2]) == "number" and ManualSignActivity.IsManualSignActAndAnyAwardCanGet(slot6)
 		end,
 		[ActivityConst.ACTIVITY_TYPE_PT_BUFF] = function (...)
 			return uv0.readyToAchieveDic[ActivityConst.ACTIVITY_TYPE_PIZZA_PT](...)
@@ -361,7 +350,7 @@ slot0.readyToAchieve = function(slot0)
 				return true
 			end
 
-			if slot0:getConfig("id") ~= ActivityConst.ACTIVITY_STACK_ID and slot0:getConfig("id") ~= ActivityConst.ACTIVITY_QET_ID and slot0:getConfig("id") ~= ActivityConst.MINIGAME_RACING_ID and slot1:getConfig("reward_need") <= slot1.usedtime and slot1.ultimate == 0 then
+			if slot1:getConfig("reward") ~= 0 and slot1:getConfig("reward_need") <= slot1.usedtime and slot1.ultimate == 0 then
 				return true
 			end
 
@@ -428,7 +417,7 @@ slot0.readyToAchieve = function(slot0)
 					slot4 = 0
 
 					if slot0[1] == DROP_TYPE_VITEM then
-						assert(AcessWithinNull(pg.item_data_statistics[slot2], "link_id") == uv0.id)
+						assert(AcessWithinNull(Item.getConfigData(slot2), "link_id") == uv0.id)
 
 						slot4 = uv0:GetMaterialCount(slot2)
 					elseif DROP_TYPE_USE_ACTIVITY_DROP < slot1 then
@@ -499,7 +488,7 @@ slot0.readyToAchieve = function(slot0)
 				return true
 			end
 
-			if slot0.id == ActivityConst.APRILFOOL_DISCOVERY_RE and slot0.data1 < 2 then
+			if slot5 and #slot5.auto_finish_args > 0 and slot0.data1 == 1 then
 				return true
 			end
 
@@ -608,13 +597,20 @@ slot0.readyToAchieve = function(slot0)
 		end,
 		[ActivityConst.ACTIVITY_TYPE_ZUMA] = function (slot0)
 			return LaunchBallActivityMgr.GetInvitationAble(slot0.id)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_GIFT_UP] = function (slot0)
+			slot1 = slot0:getConfig("config_client").gifts[2]
+
+			return underscore(slot1):chain():first(math.min(#slot1, slot0:getNDay())):any(function (slot0)
+				return getProxy(ShopsProxy):GetGiftCommodity(slot0, Goods.TYPE_GIFT_PACKAGE):canPurchase() and slot1:inTime() and not slot1:IsGroupLimit()
+			end):value()
 		end
 	}
 
 	return switch(slot0:getConfig("type"), uv0.readyToAchieveDic, nil, slot0)
 end
 
-slot0.IsShowTipById = function(slot0)
+function slot0.IsShowTipById(slot0)
 	uv0.ShowTipTableById = uv0.ShowTipTableById or {
 		[ActivityConst.ACTIVITY_ID_US_SKIRMISH_RE] = function ()
 			slot0 = getProxy(SkirmishProxy)
@@ -673,14 +669,15 @@ slot0.IsShowTipById = function(slot0)
 		[pg.activity_const.NEWYEAR_SNACK_PAGE_ID.act_id] = NewYearSnackPage.IsTip,
 		[ActivityConst.WWF_TASK_ID] = WWFPtPage.IsShowRed,
 		[ActivityConst.NEWMEIXIV4_SKIRMISH_ID] = NewMeixiV4SkirmishPage.IsShowRed,
-		[ActivityConst.JIUJIU_YOYO_ID] = JiujiuYoyoPage.IsShowRed
+		[ActivityConst.JIUJIU_YOYO_ID] = JiujiuYoyoPage.IsShowRed,
+		[ActivityConst.SENRANKAGURA_TRAIN_ACT_ID] = SenrankaguraTrainScene.IsShowRed
 	}
 	slot1 = uv0.ShowTipTableById[slot0.id]
 
 	return tobool(slot1), slot1 and slot1()
 end
 
-slot0.isShow = function(slot0)
+function slot0.isShow(slot0)
 	if slot0:getConfig("is_show") <= 0 then
 		return false
 	end
@@ -702,7 +699,7 @@ slot0.isShow = function(slot0)
 	return true
 end
 
-slot0.isAfterShow = function(slot0)
+function slot0.isAfterShow(slot0)
 	if slot0.configId == ActivityConst.UR_TASK_ACT_ID or slot0.configId == ActivityConst.SPECIAL_WEAPON_ACT_ID then
 		slot1 = getProxy(TaskProxy)
 
@@ -714,11 +711,11 @@ slot0.isAfterShow = function(slot0)
 	return false
 end
 
-slot0.getShowPriority = function(slot0)
+function slot0.getShowPriority(slot0)
 	return slot0:getConfig("is_show")
 end
 
-slot0.left4Day = function(slot0)
+function slot0.left4Day(slot0)
 	if slot0.stopTime - pg.TimeMgr.GetInstance():GetServerTime() < 345600 then
 		return true
 	end
@@ -726,11 +723,11 @@ slot0.left4Day = function(slot0)
 	return false
 end
 
-slot0.getAwardInfos = function(slot0)
+function slot0.getAwardInfos(slot0)
 	return slot0.data1KeyValueList or {}
 end
 
-slot0.updateData = function(slot0, slot1, slot2)
+function slot0.updateData(slot0, slot1, slot2)
 	if slot0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_LOTTERY then
 		if not slot0:getAwardInfos()[slot1] then
 			slot0.data1KeyValueList[slot1] = {}
@@ -746,11 +743,11 @@ slot0.updateData = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.getTaskShip = function(slot0)
+function slot0.getTaskShip(slot0)
 	return slot0:getConfig("config_client")[1]
 end
 
-slot0.getNotificationMsg = function(slot0)
+function slot0.getNotificationMsg(slot0)
 	slot2 = ActivityProxy.ACTIVITY_SHOW_AWARDS
 
 	if slot0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_SHOP then
@@ -766,13 +763,13 @@ slot0.getNotificationMsg = function(slot0)
 	return slot2
 end
 
-slot0.getDayIndex = function(slot0)
+function slot0.getDayIndex(slot0)
 	slot2 = pg.TimeMgr.GetInstance()
 
 	return slot2:DiffDay(slot0:getStartTime(), slot2:GetServerTime()) + 1
 end
 
-slot0.getStartTime = function(slot0)
+function slot0.getStartTime(slot0)
 	slot1, slot2 = parseTimeConfig(slot0:getConfig("time"))
 
 	if slot2 and slot2[1] == "newuser" then
@@ -782,22 +779,28 @@ slot0.getStartTime = function(slot0)
 	end
 end
 
-slot0.isVariableTime = function(slot0)
+function slot0.getNDay(slot0, slot1)
+	slot2 = pg.TimeMgr.GetInstance()
+
+	return slot2:DiffDay(slot1 or slot0:getStartTime(), slot2:GetServerTime()) + 1
+end
+
+function slot0.isVariableTime(slot0)
 	slot1, slot2 = parseTimeConfig(slot0:getConfig("time"))
 
 	return slot2 and slot2[1] == "newuser"
 end
 
-slot0.setSpecialData = function(slot0, slot1, slot2)
+function slot0.setSpecialData(slot0, slot1, slot2)
 	slot0.speciaData = slot0.speciaData and slot0.speciaData or {}
 	slot0.speciaData[slot1] = slot2
 end
 
-slot0.getSpecialData = function(slot0, slot1)
+function slot0.getSpecialData(slot0, slot1)
 	return slot0.speciaData and slot0.speciaData[slot1] and slot0.speciaData[slot1] or nil
 end
 
-slot0.canPermanentFinish = function(slot0)
+function slot0.canPermanentFinish(slot0)
 	if slot0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASK_LIST then
 		slot2 = slot0:getConfig("config_data")
 		slot3 = getProxy(TaskProxy)
@@ -816,13 +819,13 @@ slot0.canPermanentFinish = function(slot0)
 	return false
 end
 
-slot0.GetShopTime = function(slot0)
+function slot0.GetShopTime(slot0)
 	slot1 = pg.TimeMgr.GetInstance()
 
 	return slot1:STimeDescS(slot0:getStartTime(), "%y.%m.%d") .. " - " .. slot1:STimeDescS(slot0.stopTime, "%y.%m.%d")
 end
 
-slot0.GetCrusingUnreceiveAward = function(slot0)
+function slot0.GetCrusingUnreceiveAward(slot0)
 	assert(slot0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_CRUSING, "type error")
 
 	slot1 = pg.battlepass_event_pt[slot0.id]
@@ -837,11 +840,7 @@ slot0.GetCrusingUnreceiveAward = function(slot0)
 		if slot0.data1 < slot8 then
 			break
 		elseif not slot3[slot8] then
-			table.insert(slot2, {
-				type = slot1.drop_client[slot7][1],
-				id = slot1.drop_client[slot7][2],
-				count = slot1.drop_client[slot7][3]
-			})
+			table.insert(slot2, Drop.Create(slot1.drop_client[slot7]))
 		end
 	end
 
@@ -859,18 +858,14 @@ slot0.GetCrusingUnreceiveAward = function(slot0)
 		if slot0.data1 < slot9 then
 			break
 		elseif not slot4[slot9] then
-			table.insert(slot2, {
-				type = slot1.drop_client_pay[slot8][1],
-				id = slot1.drop_client_pay[slot8][2],
-				count = slot1.drop_client_pay[slot8][3]
-			})
+			table.insert(slot2, Drop.Create(slot1.drop_client_pay[slot8]))
 		end
 	end
 
 	return PlayerConst.MergePassItemDrop(slot2)
 end
 
-slot0.GetCrusingInfo = function(slot0)
+function slot0.GetCrusingInfo(slot0)
 	assert(slot0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_CRUSING, "type error")
 
 	slot2 = pg.battlepass_event_pt[slot0.id].pt
@@ -926,12 +921,8 @@ slot0.GetCrusingInfo = function(slot0)
 	}
 end
 
-slot0.IsActivityReady = function(slot0)
+function slot0.IsActivityReady(slot0)
 	return slot0 and not slot0:isEnd() and slot0:readyToAchieve()
-end
-
-slot0.isHaveActivableMedal = function()
-	return uv0.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA))
 end
 
 return slot0

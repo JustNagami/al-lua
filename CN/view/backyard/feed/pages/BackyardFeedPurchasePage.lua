@@ -1,10 +1,10 @@
 slot0 = class("BackyardFeedPurchasePage", import("....base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BackYardFeedShopPanel"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.foodItem = slot0._tf:Find("frame")
 	slot0.icon = slot0.foodItem:Find("icon_bg/icon")
 	slot0.foodName = slot0._tf:Find("frame/name"):GetComponent(typeof(Text))
@@ -19,26 +19,33 @@ slot0.OnLoaded = function(slot0)
 	slot0.tenBtn = slot0.calPanel:Find("ten_btn")
 	slot0.confirmBtn = slot0._tf:Find("frame/ok_btn")
 	slot0.cancelBtn = slot0._tf:Find("frame/cancel_btn")
+	slot0.closetBtn = slot0._tf:Find("frame/close")
+	slot0._parentTF = slot0._tf.parent
 
 	setText(slot0.cancelBtn:Find("text"), i18n("word_cancel"))
 	setText(slot0.confirmBtn:Find("text"), i18n("word_ok"))
-	setText(slot0.calPanel:Find("total"), i18n("backyard_theme_total_print") .. ":")
+	setText(slot0._tf:Find("frame/title"), i18n("words_information"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 	onButton(slot0, slot0.cancelBtn, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
+	onButton(slot0, slot0.closetBtn, function ()
+		uv0:Hide()
+	end, SFX_PANEL)
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	uv0.super.Show(slot0)
 	slot0:UpdateFood(slot1)
 
-	slot3 = pg.shop_template[pg.item_data_statistics[slot1].shop_id]
+	slot3 = pg.shop_template[underscore.detect(getGameset("food_shop_id")[2], function (slot0)
+		return slot0[1] == uv0
+	end)[2]]
 	slot6 = 1
 	slot0.total.text = slot3.resource_num * slot6
 
@@ -90,12 +97,15 @@ slot0.Show = function(slot0, slot1)
 	end, SFX_CONFIRM)
 end
 
-slot0.Purchase = function(slot0, slot1)
+function slot0.Purchase(slot0, slot1)
 	if getProxy(PlayerProxy):getRawData()[id2res(slot1.resourceType)] < slot1.resourceNum * slot1.count then
 		if slot1.resourceType == 4 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
 		elseif slot1.resourceType ~= 2 or not ItemTipPanel.ShowOilBuyTip(slot1.resourceNum * slot1.count) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_error_noResource", pg.item_data_statistics[id2ItemId(slot1.resourceType)].name))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_error_noResource", Drop.New({
+				type = DROP_TYPE_RESOURCE,
+				id = slot1.resourceType
+			}):getName()))
 		end
 
 		slot0:Hide()
@@ -107,20 +117,23 @@ slot0.Purchase = function(slot0, slot1)
 	slot0:Hide()
 end
 
-slot0.UpdateFood = function(slot0, slot1)
-	slot2 = pg.item_data_statistics[slot1]
+function slot0.UpdateFood(slot0, slot1)
+	slot2 = Item.getConfigData(slot1)
 
-	updateItem(slot0.foodItem, {
-		type = DROP_TYPE_ITEM,
+	updateItem(slot0.foodItem, Item.New({
 		id = slot1,
 		cnt = getProxy(BagProxy):getItemCountById(slot1)
-	})
+	}))
 
 	slot0.foodName.text = slot2.name
 	slot0.foodDesc.text = slot2.display
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+end
+
+function slot0.OnDestroy(slot0)
 	slot0:Hide()
 end
 

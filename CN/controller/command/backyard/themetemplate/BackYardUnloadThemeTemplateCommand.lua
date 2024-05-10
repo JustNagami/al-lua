@@ -1,10 +1,10 @@
 slot0 = class("BackYardUnloadThemeTemplateCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot4 = getProxy(DormProxy)
 	slot5 = slot4:GetCustomThemeTemplateById(slot1:getBody().templateId)
 
-	slot6 = function(slot0)
+	function slot6(slot0)
 		slot1 = pg.UIMgr.GetInstance()
 
 		slot1:LoadingOn()
@@ -36,7 +36,7 @@ slot0.execute = function(slot0, slot1)
 		end)
 	end
 
-	slot7 = function(slot0)
+	function slot7(slot0)
 		uv0:UnLoad()
 		uv1:UpdateCustomThemeTemplate(uv0)
 

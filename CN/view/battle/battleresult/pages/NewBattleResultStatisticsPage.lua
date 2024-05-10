@@ -4,11 +4,11 @@ slot2 = 2
 slot3 = 0
 slot4 = 1
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewBattleResultStatisticsPage"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.mask = slot0:findTF("mask")
 	slot0.paintingTr = slot0:findTF("painting")
 	slot0.resultPaintingTr = slot0:findTF("result")
@@ -61,12 +61,12 @@ slot0.OnLoaded = function(slot0)
 	slot0.animation = NewBattleResultAnimation.New(slot0._tf)
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.teamType = uv0
 	slot0.displayMode = uv1
 end
 
-slot0.SetUp = function(slot0, slot1, slot2)
+function slot0.SetUp(slot0, slot1, slot2)
 	seriesAsync({
 		function (slot0)
 			uv0.cg.alpha = 0
@@ -98,7 +98,7 @@ slot0.SetUp = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.InitMainView = function(slot0, slot1)
+function slot0.InitMainView(slot0, slot1)
 	slot0.isEnter = true
 
 	parallelAsync({
@@ -114,7 +114,7 @@ slot0.InitMainView = function(slot0, slot1)
 	}, slot1)
 end
 
-slot0.PlayEnterAnimation = function(slot0, slot1)
+function slot0.PlayEnterAnimation(slot0, slot1)
 	if not getProxy(SettingsProxy):IsDisplayResultPainting() then
 		slot1()
 		Object.Destroy(slot0.rawImage.gameObject)
@@ -154,7 +154,7 @@ slot0.PlayEnterAnimation = function(slot0, slot1)
 	end
 end
 
-slot0.LoadBG = function(slot0, slot1)
+function slot0.LoadBG(slot0, slot1)
 	if not IsNil(slot0._parentTf:Find("Effect")) then
 		setParent(slot2, slot0._tf)
 		slot2:SetSiblingIndex(2)
@@ -187,7 +187,7 @@ slot0.LoadBG = function(slot0, slot1)
 	end
 end
 
-slot0.RegisterEvent = function(slot0, slot1)
+function slot0.RegisterEvent(slot0, slot1)
 	onButton(slot0, slot0.mainFleetBtn, function ()
 		uv0.teamType = uv1
 
@@ -214,11 +214,13 @@ slot0.RegisterEvent = function(slot0, slot1)
 	end, SFX_PANEL)
 
 	if slot0.contextData.autoSkipFlag then
-		triggerButton(slot0.confrimBtn)
+		onNextTick(function ()
+			triggerButton(uv0.confrimBtn)
+		end)
 	end
 end
 
-slot5 = function(slot0, slot1)
+function slot5(slot0, slot1)
 	onButton(slot0, slot1, function ()
 		setActive(uv0, false)
 
@@ -242,7 +244,7 @@ slot5 = function(slot0, slot1)
 	end, SFX_PANEL)
 end
 
-slot0.UpdateMetaBtn = function(slot0)
+function slot0.UpdateMetaBtn(slot0)
 	if getProxy(MetaCharacterProxy):getLastMetaSkillExpInfoList() and #slot1 > 0 then
 		slot3 = ResourceMgr.Inst
 
@@ -256,7 +258,7 @@ slot0.UpdateMetaBtn = function(slot0)
 	end
 end
 
-slot0.StartEnterAnimation = function(slot0, slot1)
+function slot0.StartEnterAnimation(slot0, slot1)
 	LeanTween.value(slot0.topPanel.gameObject, 320, 0, 0.2):setOnUpdate(System.Action_float(function (slot0)
 		setAnchoredPosition(uv0.topPanel, {
 			y = slot0
@@ -269,15 +271,15 @@ slot0.StartEnterAnimation = function(slot0, slot1)
 	end)):setOnComplete(System.Action(slot1))
 end
 
-slot0.GetShipSlotExpandPosition = function(slot0, slot1)
+function slot0.GetShipSlotExpandPosition(slot0, slot1)
 	return Vector2(1300, slot0:GetShipSlotShrinkPosition(slot1).y)
 end
 
-slot0.GetShipSlotShrinkPosition = function(slot0, slot1)
+function slot0.GetShipSlotShrinkPosition(slot0, slot1)
 	return Vector2(500, 250) + (slot1 - 1) * Vector2(69.55, -117.7)
 end
 
-slot6 = function(slot0, slot1, slot2)
+function slot6(slot0, slot1, slot2)
 	slot3 = ""
 
 	if slot1 or slot0 and slot0[slot2] then
@@ -287,7 +289,7 @@ slot6 = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.GetAnimationFlag = function(slot0)
+function slot0.GetAnimationFlag(slot0)
 	if slot0.contextData.autoSkipFlag then
 		return false
 	end
@@ -299,7 +301,7 @@ slot0.GetAnimationFlag = function(slot0)
 	return not slot1
 end
 
-slot0.UpdateShipDetail = function(slot0)
+function slot0.UpdateShipDetail(slot0)
 	slot1 = slot0.teamType == uv0
 	slot2 = slot1 and slot0.surfaceShipTpls or slot0.subShipTpls
 	slot3, slot4 = NewBattleResultUtil.SeparateSurfaceAndSubShips(slot0.contextData.oldMainShips)
@@ -316,7 +318,7 @@ slot0.UpdateShipDetail = function(slot0)
 		slot17 = slot2[slot14]
 		slot18 = slot0.contextData.newMainShips[slot15.id]
 
-		slot19 = function()
+		function slot19()
 			setText(uv0:Find("atk"), not uv1 and (uv2.output or 0) or "EXP" .. "<color=#FFDE38>+" .. NewBattleResultUtil.GetShipExpOffset(uv3, uv4) .. "</color>")
 			setText(uv0:Find("killCount"), not uv1 and (uv2.kill_count or 0) or "Lv." .. uv4.level)
 
@@ -337,7 +339,7 @@ slot0.UpdateShipDetail = function(slot0)
 	end
 end
 
-slot7 = function(slot0, slot1)
+function slot7(slot0, slot1)
 	if IsNil(slot1:Find("MVP")) then
 		slot3 = ResourceMgr.Inst
 
@@ -366,7 +368,7 @@ slot7 = function(slot0, slot1)
 	end
 end
 
-slot8 = function(slot0, slot1)
+function slot8(slot0, slot1)
 	if IsNil(slot1:Find("LevelUp")) then
 		slot3 = ResourceMgr.Inst
 
@@ -380,7 +382,7 @@ slot8 = function(slot0, slot1)
 	end
 end
 
-slot9 = function(slot0, slot1)
+function slot9(slot0, slot1)
 	if IsNil(slot1:Find("Intmacy")) then
 		slot3 = ResourceMgr.Inst
 
@@ -394,7 +396,7 @@ slot9 = function(slot0, slot1)
 	end
 end
 
-slot10 = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot10(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = slot1:Find("mask/icon"):GetComponent(typeof(Image))
 	slot6.sprite = LoadSprite("herohrzicon/" .. slot2:getPainting())
 	slot6.gameObject.transform.sizeDelta = Vector2(432, 96)
@@ -434,11 +436,11 @@ slot10 = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	end
 end
 
-slot0.InitShips = function(slot0, slot1)
+function slot0.InitShips(slot0, slot1)
 	slot0:UpdateShips(true, slot1)
 end
 
-slot0.UpdateShips = function(slot0, slot1, slot2)
+function slot0.UpdateShips(slot0, slot1, slot2)
 	slot4 = slot0.teamType == uv0 and slot0.subShipTpls or slot0.surfaceShipTpls
 	slot5, slot6 = NewBattleResultUtil.SeparateSurfaceAndSubShips(slot0.contextData.oldMainShips)
 
@@ -461,7 +463,7 @@ slot0.UpdateShips = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.LoadShipTpls = function(slot0, slot1, slot2, slot3)
+function slot0.LoadShipTpls(slot0, slot1, slot2, slot3)
 	slot4 = {}
 
 	for slot8 = #slot1 + 1, #slot2 do
@@ -487,7 +489,7 @@ slot0.LoadShipTpls = function(slot0, slot1, slot2, slot3)
 	seriesAsync(slot4, slot3)
 end
 
-slot0.StartShipsEnterAnimation = function(slot0, slot1, slot2, slot3)
+function slot0.StartShipsEnterAnimation(slot0, slot1, slot2, slot3)
 	if slot2 <= 0 then
 		for slot7, slot8 in ipairs(slot1) do
 			slot8.anchoredPosition = slot0:GetShipSlotShrinkPosition(slot7)
@@ -521,7 +523,7 @@ slot0.StartShipsEnterAnimation = function(slot0, slot1, slot2, slot3)
 	seriesAsync(slot4, slot3)
 end
 
-slot0.UpdateSwitchBtn = function(slot0)
+function slot0.UpdateSwitchBtn(slot0)
 	slot1 = NewBattleResultUtil.HasSubShip(slot0.contextData.oldMainShips)
 	slot2 = NewBattleResultUtil.HasSurfaceShip(slot0.contextData.oldMainShips)
 
@@ -533,7 +535,7 @@ slot0.UpdateSwitchBtn = function(slot0)
 	end
 end
 
-slot0.UpdateMvpPainting = function(slot0, slot1)
+function slot0.UpdateMvpPainting(slot0, slot1)
 	slot3, slot4, slot5, slot6 = NewBattleResultUtil.SeparateMvpShip(slot0.contextData.oldMainShips, slot0.contextData.statistics.mvpShipID, slot0.contextData.statistics._flagShipID)
 	slot6 = slot6 or slot2[#slot2 - 1]
 
@@ -544,7 +546,7 @@ slot0.UpdateMvpPainting = function(slot0, slot1)
 	slot0:DisplayShipDialogue(slot6)
 end
 
-slot0.RecordPainting = function(slot0, slot1)
+function slot0.RecordPainting(slot0, slot1)
 	onNextTick(function ()
 		if not IsNil(uv0.resultPaintingTr:Find("fitter"):GetChild(0)) then
 			uv0.resultPaintingData = {
@@ -560,7 +562,7 @@ slot0.RecordPainting = function(slot0, slot1)
 	end)
 end
 
-slot0.UpdateFailedPainting = function(slot0, slot1)
+function slot0.UpdateFailedPainting(slot0, slot1)
 	slot2 = slot0.contextData.oldMainShips
 
 	ResourceMgr.Inst:getAssetAsync("BattleResultItems/FailedPainting", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
@@ -576,15 +578,15 @@ slot0.UpdateFailedPainting = function(slot0, slot1)
 	slot0:DisplayShipDialogue(slot2[math.random(#slot2)])
 end
 
-slot0.GetPaintingPosition = function(slot0)
+function slot0.GetPaintingPosition(slot0)
 	return NewBattleResultDisplayPaintingsPage.StaticGetFinalExpandPosition(#slot0.contextData.oldMainShips)
 end
 
-slot0.UpdatePaintingPosition = function(slot0)
+function slot0.UpdatePaintingPosition(slot0)
 	slot0.paintingTr.localPosition = slot0:GetPaintingPosition()
 end
 
-slot0.UpdatePainting = function(slot0, slot1)
+function slot0.UpdatePainting(slot0, slot1)
 	slot0:UpdatePaintingPosition()
 
 	if slot0.contextData.score > 1 then
@@ -594,13 +596,13 @@ slot0.UpdatePainting = function(slot0, slot1)
 	end
 end
 
-slot0.DisplayShipDialogue = function(slot0, slot1)
+function slot0.DisplayShipDialogue(slot0, slot1)
 	slot2, slot3, slot4 = nil
 
 	if slot0.contextData.score > 1 then
 		slot2, slot4, slot3 = ShipWordHelper.GetWordAndCV(slot1.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, , slot1:getCVIntimacy())
 	else
-		slot2, slot4, slot3 = ShipWordHelper.GetWordAndCV(slot1.skinId, ShipWordHelper.WORD_TYPE_LOSE)
+		slot2, slot4, slot3 = ShipWordHelper.GetWordAndCV(slot1.skinId, ShipWordHelper.WORD_TYPE_LOSE, nil, , slot1:getCVIntimacy())
 	end
 
 	slot0.chatText.text = slot3
@@ -609,7 +611,7 @@ slot0.DisplayShipDialogue = function(slot0, slot1)
 	slot0:PlayMvpShipVoice()
 end
 
-slot0.PlayMvpShipVoice = function(slot0)
+function slot0.PlayMvpShipVoice(slot0)
 	if not slot0.contextData.statistics.mvpShipID or type(slot0.contextData.statistics.mvpShipID) == "number" and slot0.contextData.statistics.mvpShipID <= 0 then
 		return
 	end
@@ -637,7 +639,7 @@ slot0.PlayMvpShipVoice = function(slot0)
 	end
 end
 
-slot0.StopVoice = function(slot0)
+function slot0.StopVoice(slot0)
 	if slot0._currentVoice then
 		slot0._currentVoice:PlaybackStop()
 
@@ -645,26 +647,26 @@ slot0.StopVoice = function(slot0)
 	end
 end
 
-slot0.UpdateGrade = function(slot0)
+function slot0.UpdateGrade(slot0)
 	slot1, slot2 = NewBattleResultUtil.Score2Grade(slot0.contextData.score, slot0.contextData._scoreMark)
 
 	LoadImageSpriteAsync(slot1, slot0.gradeIcon, false)
 	LoadImageSpriteAsync(slot2, slot0.gradeTxt, false)
 end
 
-slot0.UpdateChapterName = function(slot0)
+function slot0.UpdateChapterName(slot0)
 	slot0.chapterName.text = NewBattleResultUtil.GetChapterName(slot0.contextData)
 
 	setActive(slot0.opBonus, NewBattleResultUtil.IsOpBonus(slot0.contextData.extraBuffList))
 end
 
-slot0.UpdatePlayer = function(slot0)
+function slot0.UpdatePlayer(slot0)
 	slot1 = slot0.contextData.oldPlayer
 	slot2 = getProxy(PlayerProxy)
 	slot2 = slot2:getRawData()
 	slot0.playerName.text = slot2:GetName()
 
-	slot3 = function()
+	function slot3()
 		uv0.playerLv.text = "Lv." .. uv1.level
 		uv0.playerExp.text = "+" .. NewBattleResultUtil.GetPlayerExpOffset(uv2, uv1)
 		uv0.playerExpLabel.text = "EXP"
@@ -682,7 +684,7 @@ slot0.UpdatePlayer = function(slot0)
 	end
 end
 
-slot11 = function(slot0, slot1, slot2)
+function slot11(slot0, slot1, slot2)
 	GetImageSpriteFromAtlasAsync("commandericon/" .. slot2:getPainting(), "", slot0:Find("icon"))
 	setText(slot0:Find("name_text"), slot2:getName())
 	setText(slot0:Find("lv_text"), "Lv." .. slot2.level)
@@ -691,11 +693,11 @@ slot11 = function(slot0, slot1, slot2)
 	slot0:Find("exp_bar/progress"):GetComponent(typeof(Image)).fillAmount = slot2:isMaxLevel() and 1 or slot1.curExp / slot2:getNextLevelExp()
 end
 
-slot0.UpdateCommanders = function(slot0, slot1)
+function slot0.UpdateCommanders(slot0, slot1)
 	slot3 = slot0.contextData.commanderExps or {}
 	slot4 = slot0.teamType == uv0 and slot3.surfaceCMD or slot3.submarineCMD or {}
 
-	slot5 = function()
+	function slot5()
 		for slot3 = 1, #uv0 do
 			setActive(uv1.commaderTpls[slot3], true)
 			uv2(uv1.commaderTpls[slot3], uv0[slot3], getProxy(CommanderProxy):getCommanderById(uv0[slot3].commander_id))
@@ -714,7 +716,7 @@ slot0.UpdateCommanders = function(slot0, slot1)
 	slot1()
 end
 
-slot0.LoadCommanderTpls = function(slot0, slot1, slot2)
+function slot0.LoadCommanderTpls(slot0, slot1, slot2)
 	slot3 = {}
 
 	for slot7 = #slot0.commaderTpls + 1, slot1 do
@@ -737,7 +739,7 @@ slot0.LoadCommanderTpls = function(slot0, slot1, slot2)
 	parallelAsync(slot3, slot2)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if slot0.metaExpView then
 		slot0.metaExpView:closePanel()
 
@@ -749,7 +751,7 @@ slot0.onBackPressed = function(slot0)
 	return false
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0.exited = true
 
 	if slot0.metaExpView then

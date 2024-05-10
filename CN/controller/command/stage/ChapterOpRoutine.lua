@@ -1,9 +1,9 @@
 slot0 = class("ChapterOpRoutine", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 end
 
-slot0.initData = function(slot0, slot1, slot2, slot3)
+function slot0.initData(slot0, slot1, slot2, slot3)
 	slot0.op = slot1
 	slot0.data = slot2
 	slot0.chapter = slot3
@@ -13,11 +13,11 @@ slot0.initData = function(slot0, slot1, slot2, slot3)
 	slot0.extraFlag = 0
 end
 
-slot0.doDropUpdate = function(slot0)
+function slot0.doDropUpdate(slot0)
 	slot0.items = PlayerConst.addTranDrop(slot0.data.drop_list)
 end
 
-slot0.doMapUpdate = function(slot0)
+function slot0.doMapUpdate(slot0)
 	slot2 = slot0.flag
 	slot3 = slot0.extraFlag
 	slot4 = slot0.chapter
@@ -50,7 +50,7 @@ slot0.doMapUpdate = function(slot0)
 	slot0.extraFlag = slot3
 end
 
-slot0.doCellFlagUpdate = function(slot0)
+function slot0.doCellFlagUpdate(slot0)
 	slot2 = slot0.flag
 	slot3 = slot0.chapter
 
@@ -71,7 +71,7 @@ slot0.doCellFlagUpdate = function(slot0)
 	slot0.flag = slot2
 end
 
-slot0.doAIUpdate = function(slot0)
+function slot0.doAIUpdate(slot0)
 	slot2 = slot0.flag
 	slot3 = slot0.extraFlag
 	slot4 = slot0.chapter
@@ -89,17 +89,15 @@ slot0.doAIUpdate = function(slot0)
 	slot0.extraFlag = slot3
 end
 
-slot0.doShipUpdate = function(slot0)
+function slot0.doShipUpdate(slot0)
 	slot2 = slot0.flag
 	slot3 = slot0.chapter
 
 	if #slot0.data.ship_update > 0 then
 		_.each(slot1.ship_update, function (slot0)
-			if uv0:getShip(slot0.id) and slot1.hpRant * slot0.hp_rant == 0 and slot1:getShipType() == ShipType.WeiXiu then
-				uv1 = bit.bor(uv1, ChapterConst.DirtyStrategy)
-			end
+			uv0:updateFleetShipHp(slot0.id, slot0.hp_rant)
 
-			uv0:updateShipHp(slot0.id, slot0.hp_rant)
+			uv1 = bit.bor(uv1, ChapterConst.DirtyStrategy)
 		end)
 
 		slot2 = bit.bor(slot2, ChapterConst.DirtyFleet)
@@ -108,11 +106,11 @@ slot0.doShipUpdate = function(slot0)
 	slot0.flag = slot2
 end
 
-slot0.doBuffUpdate = function(slot0)
+function slot0.doBuffUpdate(slot0)
 	slot0.chapter:UpdateBuffList(slot0.data.buff_list)
 end
 
-slot0.doExtraFlagUpdate = function(slot0)
+function slot0.doExtraFlagUpdate(slot0)
 	slot2 = slot0.chapter
 	slot3 = getProxy(ChapterProxy)
 
@@ -123,7 +121,7 @@ slot0.doExtraFlagUpdate = function(slot0)
 	end
 end
 
-slot0.doRetreat = function(slot0)
+function slot0.doRetreat(slot0)
 	slot2 = slot0.flag
 	slot3 = slot0.chapter
 
@@ -141,14 +139,12 @@ slot0.doRetreat = function(slot0)
 		end
 	else
 		slot3:retreat(slot1.win)
-
-		slot2 = ChapterConst.DirtyMapItems
 	end
 
 	slot0.flag = slot2
 end
 
-slot0.doMove = function(slot0)
+function slot0.doMove(slot0)
 	slot1 = slot0.extraFlag
 	slot3 = slot0.chapter
 	slot4 = nil
@@ -171,7 +167,7 @@ slot0.doMove = function(slot0)
 	slot0.extraFlag = slot1
 end
 
-slot0.doOpenBox = function(slot0)
+function slot0.doOpenBox(slot0)
 	slot1 = slot0.items
 	slot3 = slot0.chapter
 	slot5 = slot3.fleet.line
@@ -187,7 +183,7 @@ slot0.doOpenBox = function(slot0)
 		slot9 = slot7.effect_arg
 
 		slot4:achievedStrategy(slot8, slot9)
-		table.insert(slot1, Item.New({
+		table.insert(slot1, Drop.New({
 			type = DROP_TYPE_STRATEGY,
 			id = slot8,
 			count = slot9
@@ -208,7 +204,7 @@ slot0.doOpenBox = function(slot0)
 	slot0.extraFlag = bit.bor(slot0.extraFlag, ChapterConst.DirtyAutoAction)
 end
 
-slot0.doPlayStory = function(slot0)
+function slot0.doPlayStory(slot0)
 	slot2 = slot0.chapter
 	slot4 = slot2.fleet.line
 	slot5 = slot2:getChapterCell(slot4.row, slot4.column)
@@ -219,7 +215,7 @@ slot0.doPlayStory = function(slot0)
 	slot0.flag = bit.bor(slot0.flag, ChapterConst.DirtyAttachment)
 end
 
-slot0.doAmbush = function(slot0)
+function slot0.doAmbush(slot0)
 	slot3 = slot0.chapter.fleet
 
 	if slot0.op.arg1 == 1 then
@@ -233,7 +229,7 @@ slot0.doAmbush = function(slot0)
 	end
 end
 
-slot0.doStrategy = function(slot0)
+function slot0.doStrategy(slot0)
 	slot1 = slot0.flag
 	slot3 = slot0.chapter
 
@@ -267,7 +263,7 @@ slot0.doStrategy = function(slot0)
 	slot0.flag = bit.bor(slot1, ChapterConst.DirtyStrategy)
 end
 
-slot0.doRepair = function(slot0)
+function slot0.doRepair(slot0)
 	slot1 = getProxy(ChapterProxy)
 	slot1.repairTimes = slot1.repairTimes + 1
 	slot2, slot3, slot4 = ChapterConst.GetRepairParams()
@@ -283,7 +279,7 @@ slot0.doRepair = function(slot0)
 	end
 end
 
-slot0.doSupply = function(slot0)
+function slot0.doSupply(slot0)
 	slot1 = slot0.flag
 	slot2 = slot0.chapter
 	slot3 = slot2.fleet
@@ -307,12 +303,12 @@ slot0.doSupply = function(slot0)
 	slot0.flag = bit.bor(slot1, ChapterConst.DirtyAttachment, ChapterConst.DirtyFleet)
 end
 
-slot0.doSubState = function(slot0)
+function slot0.doSubState(slot0)
 	slot0.chapter.subAutoAttack = slot0.op.arg1
 	slot0.flag = bit.bor(slot0.flag, ChapterConst.DirtyStrategy)
 end
 
-slot0.doCollectAI = function(slot0)
+function slot0.doCollectAI(slot0)
 	slot0.aiActs = slot0.aiActs or {}
 
 	if slot0.data.submarine_act_list then
@@ -331,17 +327,20 @@ slot0.doCollectAI = function(slot0)
 		slot1 = nil
 
 		if slot0.act_type == ChapterConst.ActType_TargetDown then
-			if uv0.op.arg1 == ChapterConst.StrategyMissileStrike then
-				slot1 = ChapterMissileExplodeAction.New(slot0)
-			elseif uv0.op.arg1 == ChapterConst.StrategyAirSupport then
-				slot1 = ChapterAirSupportAIAction.New(slot0)
-			end
+			if uv0.op.type == ChapterConst.OpStrategy then
+				if uv0.op.arg1 == ChapterConst.StrategyMissileStrike then
+					slot1 = ChapterMissileExplodeAction.New(slot0)
+				elseif uv0.op.arg1 == ChapterConst.StrategyAirSupport then
+					slot1 = ChapterAirSupportAIAction.New(slot0)
+				end
 
-			assert(uv0.op.type == ChapterConst.OpStrategy and slot1)
-			slot1:SetTargetLine({
-				row = uv0.op.arg2,
-				column = uv0.op.arg3
-			})
+				slot1:SetTargetLine({
+					row = uv0.op.arg2,
+					column = uv0.op.arg3
+				})
+			else
+				slot1 = ChapterMissileExplodeAction.New(slot0)
+			end
 		elseif slot0.act_type == ChapterConst.ActType_Expel then
 			ChapterExpelAIAction.New(slot0):SetTargetLine({
 				row = uv0.op.arg2,
@@ -361,7 +360,7 @@ slot0.doCollectAI = function(slot0)
 	end)
 end
 
-slot0.doBarrier = function(slot0)
+function slot0.doBarrier(slot0)
 	slot1 = slot0.flag
 	slot2 = slot0.op
 	slot3 = slot0.chapter
@@ -387,7 +386,7 @@ slot0.doBarrier = function(slot0)
 	slot0.flag = bit.bor(slot1, ChapterConst.DirtyAttachment, ChapterConst.DirtyStrategy)
 end
 
-slot0.doRequest = function(slot0)
+function slot0.doRequest(slot0)
 	slot2 = -1
 	slot4 = slot0.chapter.fleet
 
@@ -402,11 +401,11 @@ slot0.doRequest = function(slot0)
 	slot0.flag = slot2
 end
 
-slot0.doSkipBattle = function(slot0)
+function slot0.doSkipBattle(slot0)
 	slot0.flag = bit.bor(slot0.flag, ChapterConst.DirtyStrategy, ChapterConst.DirtyAttachment, ChapterConst.DirtyAchieve, ChapterConst.DirtyFleet, ChapterConst.DirtyChampion)
 end
 
-slot0.doTeleportSub = function(slot0)
+function slot0.doTeleportSub(slot0)
 	slot1 = slot0.op
 	slot0.fullpath = {
 		_.detect(slot0.chapter.fleets, function (slot0)
@@ -419,7 +418,7 @@ slot0.doTeleportSub = function(slot0)
 	}
 end
 
-slot0.doEnemyRound = function(slot0)
+function slot0.doEnemyRound(slot0)
 	slot1 = slot0.chapter
 	slot2 = slot0.extraFlag
 
@@ -432,7 +431,7 @@ slot0.doEnemyRound = function(slot0)
 	slot0.extraFlag = bit.bor(slot2, ChapterConst.DirtyAutoAction)
 end
 
-slot0.doTeleportByPortal = function(slot0)
+function slot0.doTeleportByPortal(slot0)
 	if not (slot0.fullpath and slot0.fullpath[#slot0.fullpath]) then
 		return
 	end
@@ -468,13 +467,13 @@ slot0.doTeleportByPortal = function(slot0)
 	table.insert(slot0.teleportPaths, slot4)
 end
 
-slot0.doCollectCommonAction = function(slot0)
+function slot0.doCollectCommonAction(slot0)
 	slot0.aiActs = slot0.aiActs or {}
 
 	table.insert(slot0.aiActs, ChapterCommonAction.New(slot0))
 end
 
-slot0.AddBoxAction = function(slot0)
+function slot0.AddBoxAction(slot0)
 	slot1 = slot0.chapter
 	slot3 = slot1.fleet.line
 	slot4 = slot1:getChapterCell(slot3.row, slot3.column)
@@ -483,7 +482,7 @@ slot0.AddBoxAction = function(slot0)
 	assert(slot5, "box_data_template not exist: " .. slot4.attachmentId)
 
 	if slot5.type == ChapterConst.BoxStrategy then
-		table.insert(slot0.items, Item.New({
+		table.insert(slot0.items, Drop.New({
 			type = DROP_TYPE_STRATEGY,
 			id = slot5.effect_id,
 			count = slot5.effect_arg

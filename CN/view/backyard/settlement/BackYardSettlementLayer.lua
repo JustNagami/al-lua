@@ -1,19 +1,19 @@
 slot0 = class("BackYardSettlementLayer", import("...base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BackYardStatisticsUI"
 end
 
-slot0.setShipVOs = function(slot0, slot1, slot2)
+function slot0.setShipVOs(slot0, slot1, slot2)
 	slot0.oldShipVOs = slot1
 	slot0.newShipVOs = slot2
 end
 
-slot0.setDormVO = function(slot0, slot1)
+function slot0.setDormVO(slot0, slot1)
 	slot0.dormVO = slot1
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.frame = slot0:findTF("frame")
 	slot0.painting = slot0:findTF("painting")
 	slot0.confirmBtn = slot0:findTF("painting/confirm_btn")
@@ -23,7 +23,7 @@ slot0.init = function(slot0)
 	slot0.uilist = UIItemList.New(slot0:findTF("container", slot0.frame), slot0:findTF("container/ship_tpl", slot0.frame))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.BASE_LAYER
 	})
@@ -44,7 +44,7 @@ slot0.didEnter = function(slot0)
 	slot0:InitPainting(slot1, slot2)
 end
 
-slot0.InitPainting = function(slot0, slot1, slot2)
+function slot0.InitPainting(slot0, slot1, slot2)
 	setPaintingPrefabAsync(slot0.painting, slot1:getPainting(), "jiesuan")
 	setActive(slot0.timeTF, slot0.dormVO.food ~= 0)
 	setActive(slot0.expTF, slot0.dormVO.food ~= 0)
@@ -76,7 +76,7 @@ slot0.InitPainting = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.UpdateShips = function(slot0)
+function slot0.UpdateShips(slot0)
 	slot1 = {}
 	slot2 = 0
 
@@ -97,9 +97,13 @@ slot0.UpdateShips = function(slot0)
 
 	for slot8, slot9 in pairs(slot0.cards) do
 		table.insert(slot4, function (slot0)
-			slot1 = uv0[uv1 + 1]
+			if uv0.exited then
+				return
+			end
 
-			uv2:Update(uv3, uv4.oldShipVOs[slot1], uv4.newShipVOs[slot1])
+			slot1 = uv1[uv2 + 1]
+
+			uv3:Update(uv4, uv0.oldShipVOs[slot1], uv0.newShipVOs[slot1])
 			onNextTick(slot0)
 		end)
 	end
@@ -109,7 +113,7 @@ slot0.UpdateShips = function(slot0)
 	return slot0.newShipVOs[slot1[1]], slot2 * slot3
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot4 = pg.UIMgr.GetInstance().UIMain
 
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot4)

@@ -1,6 +1,6 @@
 slot0 = class("MainBaseSpcailActBtn")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	pg.DelegateInfo.New(slot0)
 
 	slot0.parentTf = slot1
@@ -8,7 +8,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.isloading = false
 end
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	slot0.isScale = slot1
 
 	if slot0.isloading then
@@ -49,7 +49,7 @@ slot0.Init = function(slot0, slot1)
 	slot0:CheckHide()
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	if not IsNil(slot0._tf) then
 		Destroy(slot0._tf.gameObject)
 
@@ -59,18 +59,18 @@ slot0.Clear = function(slot0)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0.exited = true
 
 	pg.DelegateInfo.Dispose(slot0)
 	slot0:Clear()
 end
 
-slot0.Refresh = function(slot0)
+function slot0.Refresh(slot0)
 	slot0:CheckHide()
 end
 
-slot0.CheckHide = function(slot0)
+function slot0.CheckHide(slot0)
 	if slot0.shouldHide and not IsNil(slot0._tf) then
 		setActive(slot0._tf, true)
 	end
@@ -78,27 +78,27 @@ slot0.CheckHide = function(slot0)
 	slot0.shouldHide = false
 end
 
-slot0.Disable = function(slot0)
+function slot0.Disable(slot0)
 	slot0.shouldHide = true
 end
 
-slot0.InShowTime = function(slot0)
+function slot0.InShowTime(slot0)
 	assert("overview me !!!")
 end
 
-slot0.GetUIName = function(slot0)
+function slot0.GetUIName(slot0)
 end
 
-slot0.OnClick = function(slot0)
+function slot0.OnClick(slot0)
 end
 
-slot0.OnRegister = function(slot0)
+function slot0.OnRegister(slot0)
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 end
 
-slot0.OnClear = function(slot0)
+function slot0.OnClear(slot0)
 end
 
 return slot0

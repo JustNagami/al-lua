@@ -8,18 +8,18 @@ slot0.Fields = {
 	item_info = "table"
 }
 
-slot0.Build = function(slot0)
+function slot0.Build(slot0)
 	slot0.transform = GetOrAddComponent(GameObject.New(), "RectTransform")
 	slot0.transform.name = "model"
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Unload()
 	Destroy(slot0.transform)
 	slot0:Clear()
 end
 
-slot0.Setup = function(slot0, slot1, slot2, slot3)
+function slot0.Setup(slot0, slot1, slot2, slot3)
 	assert(not slot0.item_info)
 
 	slot0.item_info = slot1
@@ -29,7 +29,7 @@ slot0.Setup = function(slot0, slot1, slot2, slot3)
 	slot0:Load()
 end
 
-slot0.Load = function(slot0)
+function slot0.Load(slot0)
 	slot1 = slot0.item_info[3]
 	slot0.prefab = slot1
 	slot2 = PoolMgr.GetInstance()
@@ -46,7 +46,7 @@ slot0.Load = function(slot0)
 	end)
 end
 
-slot0.Unload = function(slot0)
+function slot0.Unload(slot0)
 	if slot0.prefab and slot0.moduleTF then
 		PoolMgr.GetInstance():ReturnPrefab(WorldConst.ResChapterPrefab .. slot0.prefab, slot0.prefab, slot0.moduleTF.gameObject, true)
 	end
@@ -55,7 +55,7 @@ slot0.Unload = function(slot0)
 	slot0.moduleTF = nil
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	if not IsNil(slot0.moduleTF:GetComponent(typeof(UnityEngine.UI.Graphic))) then
 		slot1.raycastTarget = false
 	end

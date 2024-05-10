@@ -9,13 +9,13 @@ slot2.CLICK_STATE_DRAG = "CLICK_STATE_DRAG"
 slot2.CLICK_STATE_RELEASE = "CLICK_STATE_RELEASE"
 slot2.CLICK_STATE_NONE = "CLICK_STATE_NONE"
 
-slot2.Ctor = function(slot0, slot1)
+function slot2.Ctor(slot0, slot1)
 	slot0._go = slot1
 
 	slot0:Init()
 end
 
-slot2.Init = function(slot0)
+function slot2.Init(slot0)
 	SetActive(slot0._go, true)
 
 	slot0._distY = 0
@@ -33,11 +33,11 @@ slot2.Init = function(slot0)
 	end)
 end
 
-slot2.SetCardPuzzleComponent = function(slot0, slot1)
+function slot2.SetCardPuzzleComponent(slot0, slot1)
 	slot0._cardPuzzleInfo = slot1
 end
 
-slot2.updateStick = function(slot0, slot1, slot2)
+function slot2.updateStick(slot0, slot1, slot2)
 	if not slot0._cardPuzzleInfo:GetClickEnable() then
 		return
 	end
@@ -92,17 +92,17 @@ slot2.updateStick = function(slot0, slot1, slot2)
 	slot0._prePress = slot0._isPress
 end
 
-slot2.GetDistance = function(slot0)
+function slot2.GetDistance(slot0)
 	return slot0._distX, slot0._distY
 end
 
-slot2.IsFirstPress = function(slot0)
+function slot2.IsFirstPress(slot0)
 	return slot0._initX, slot0._initY
 end
 
-slot2.IsPress = function(slot0)
+function slot2.IsPress(slot0)
 	return slot0._isPress
 end
 
-slot2.Dispose = function(slot0)
+function slot2.Dispose(slot0)
 end

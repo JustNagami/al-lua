@@ -6,14 +6,14 @@ slot0.ShipState = {
 }
 slot0.normalSpeed = 15
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._go = slot1
 	slot0._tf = slot1.transform
 
 	slot0:init()
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.chat = slot0._tf:Find("chat")
 	slot0.chatFace = slot0.chat:Find("face")
 	slot0.chatTask = slot0.chat:Find("task")
@@ -24,23 +24,23 @@ slot0.init = function(slot0)
 	setActive(slot0.clickArea, true)
 end
 
-slot0.attach = function(slot0)
+function slot0.attach(slot0)
 	slot0.exited = false
 
 	setActive(slot0._go, true)
 	pg.DelegateInfo.New(slot0)
 end
 
-slot0.setPathFinder = function(slot0, slot1)
+function slot0.setPathFinder(slot0, slot1)
 	slot0.pathFinder = slot1
 end
 
-slot0.setCallBack = function(slot0, slot1, slot2)
+function slot0.setCallBack(slot0, slot1, slot2)
 	slot0.onStateChange = slot1
 	slot0.onTask = slot2
 end
 
-slot0.updateStudent = function(slot0, slot1, slot2)
+function slot0.updateStudent(slot0, slot1, slot2)
 	if slot1.hide then
 		setActive(slot0._go, false)
 
@@ -116,7 +116,7 @@ slot0.updateStudent = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateState = function(slot0, slot1)
+function slot0.updateState(slot0, slot1)
 	if slot0.state ~= slot1 then
 		slot0.state = slot1
 
@@ -129,7 +129,7 @@ slot0.updateState = function(slot0, slot1)
 	end
 end
 
-slot0.updateAction = function(slot0)
+function slot0.updateAction(slot0)
 	if not IsNil(slot0.anim) then
 		if slot0.state == uv0.ShipState.Walk then
 			slot0.anim:SetAction("walk", 0)
@@ -149,7 +149,7 @@ slot0.updateAction = function(slot0)
 	end
 end
 
-slot0.updateLogic = function(slot0)
+function slot0.updateLogic(slot0)
 	slot0:clearLogic()
 
 	if slot0.state == uv0.ShipState.Walk then
@@ -190,13 +190,13 @@ slot0.updateLogic = function(slot0)
 	end
 end
 
-slot0.onClickShip = function(slot0)
+function slot0.onClickShip(slot0)
 	if slot0.onTask then
 		slot0.onTask(slot0.acceptTaskId, slot0.currentTask)
 	end
 end
 
-slot0.clearLogic = function(slot0)
+function slot0.clearLogic(slot0)
 	LeanTween.cancel(slot0._go)
 
 	if slot0.idleTimer then
@@ -206,7 +206,7 @@ slot0.clearLogic = function(slot0)
 	end
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	slot0:clearLogic()
 
 	if not IsNil(slot0.model) then
@@ -227,7 +227,7 @@ slot0.clear = function(slot0)
 	slot0.state = nil
 end
 
-slot0.detach = function(slot0)
+function slot0.detach(slot0)
 	if not slot0.exited then
 		setActive(slot0._go, false)
 		pg.DelegateInfo.Dispose(slot0)

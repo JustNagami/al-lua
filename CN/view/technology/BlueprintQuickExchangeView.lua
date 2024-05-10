@@ -1,10 +1,10 @@
 slot0 = class("BlueprintQuickExchangeView", import("view.base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BlueprintQuickExchangeUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = slot0._tf
 	slot0.rtBg = slot1:Find("bg")
 
@@ -37,7 +37,7 @@ slot0.OnInit = function(slot0)
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
 			setText(slot2:Find("calc/value"), uv0.countList[slot1])
-			setScrollText(slot2:Find("name/Text"), slot3.cfg.name)
+			setScrollText(slot2:Find("name/Text"), slot3:getConfig("name"))
 			setText(slot2:Find("kc"), i18n("tec_tip_material_stock") .. ":" .. slot3.count)
 			pressPersistTrigger(slot2:Find("calc/plus"), 0.5, function (slot0)
 				if uv1.countList[uv2] < uv0.count and uv1.count + uv3 <= uv1.need then
@@ -93,20 +93,19 @@ slot0.OnInit = function(slot0)
 			return
 		end
 
-		slot0 = pg.item_data_template
-		slot1 = {}
+		slot0 = {}
 
-		for slot5, slot6 in ipairs(uv0.displayList) do
-			if uv0.countList[slot5] > 0 then
-				table.insert(slot1, {
-					id = slot6.id,
-					count = uv0.countList[slot5],
-					arg = slot0[slot6.id].usage_arg[uv0.awardList[slot5].index]
+		for slot4, slot5 in ipairs(uv0.displayList) do
+			if uv0.countList[slot4] > 0 then
+				table.insert(slot0, {
+					id = slot5.id,
+					count = uv0.countList[slot4],
+					arg = Item.getConfigData(slot5.id).usage_arg[uv0.awardList[slot4].index]
 				})
 			end
 		end
 
-		uv0:emit(ShipBluePrintMediator.QUICK_EXCHAGE_BLUEPRINT, slot1)
+		uv0:emit(ShipBluePrintMediator.QUICK_EXCHAGE_BLUEPRINT, slot0)
 		uv0:Hide()
 	end, SFX_CANCEL)
 
@@ -136,24 +135,23 @@ slot0.OnInit = function(slot0)
 	end)
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	setActive(slot0._tf, true)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 	setActive(slot0._tf, false)
 end
 
-slot0.UpdateBlueprint = function(slot0, slot1)
+function slot0.UpdateBlueprint(slot0, slot1)
 	slot0.blueprintVO = slot1
-	slot7 = "name"
 
-	changeToScrollText(slot0.rtResult:Find("title/Text"), Item.New({
+	changeToScrollText(slot0.rtResult:Find("title/Text"), Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = slot1:getItemId()
-	}):getConfig(slot7))
+	}):getName())
 
 	slot0.displayList = {}
 	slot0.awardList = {}
@@ -162,12 +160,12 @@ slot0.UpdateBlueprint = function(slot0, slot1)
 	for slot7, slot8 in ipairs(pg.gameset.general_blueprint_list.description) do
 		if slot3:getItemCountById(slot8) > 0 then
 			slot10 = nil
-			slot14 = DROP_TYPE_ITEM
+			slot14 = "display_icon"
 
-			for slot14, slot15 in ipairs(updateDropCfg({
-				type = slot14,
+			for slot14, slot15 in ipairs(Drop.New({
+				type = DROP_TYPE_ITEM,
 				id = slot8
-			}).display_icon) do
+			}):getConfig(slot14)) do
 				if slot15[1] == DROP_TYPE_ITEM and slot15[2] == slot2.id then
 					slot10 = {
 						index = slot14,
@@ -201,7 +199,7 @@ slot0.UpdateBlueprint = function(slot0, slot1)
 	triggerToggle(slot0.toggleSwitch, slot1:canFateSimulation())
 end
 
-slot0.UpdateResult = function(slot0)
+function slot0.UpdateResult(slot0)
 	slot0.bagProxy = slot0.bagProxy or getProxy(BagProxy)
 	slot0.need = math.max(slot0.blueprintVO:getUseageMaxItem() + (slot0.isSwitch and slot0.blueprintVO:getFateMaxLeftOver() or 0) - slot0.bagProxy:getItemCountById(slot0.blueprintVO:getItemId()), 0)
 	slot1 = #slot0.displayList

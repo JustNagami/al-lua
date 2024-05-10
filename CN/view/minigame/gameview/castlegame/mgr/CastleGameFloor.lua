@@ -1,7 +1,7 @@
 slot0 = class("CastleGameFloor")
 slot1 = 999999
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0._tpl = slot1
 	slot0._event = slot2
 	slot0.floors = {}
@@ -37,19 +37,19 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0:updateBounds()
 end
 
-slot0.getTfs = function(slot0)
+function slot0.getTfs(slot0)
 	return slot0.floorTfs
 end
 
-slot0.getFloors = function(slot0)
+function slot0.getFloors(slot0)
 	return slot0.floors
 end
 
-slot0.getActiveIndexs = function(slot0)
+function slot0.getActiveIndexs(slot0)
 	return slot0.activeIndexs
 end
 
-slot0.updateBounds = function(slot0)
+function slot0.updateBounds(slot0)
 	for slot4 = 1, #slot0.floors do
 		slot7 = slot0.floors[slot4].tf.anchoredPosition
 		slot8 = {}
@@ -64,11 +64,11 @@ slot0.updateBounds = function(slot0)
 	end
 end
 
-slot0.getBounds = function(slot0)
+function slot0.getBounds(slot0)
 	return slot0.bounds
 end
 
-slot0.setContent = function(slot0, slot1)
+function slot0.setContent(slot0, slot1)
 	if not slot1 then
 		print("地板的容器不能为nil")
 
@@ -82,7 +82,7 @@ slot0.setContent = function(slot0, slot1)
 	end
 end
 
-slot0.start = function(slot0)
+function slot0.start(slot0)
 	slot0.fallDatas = slot0:getFallDatas()
 	slot0.floorFallStep = uv0
 	slot0.activeIndexs = {}
@@ -100,7 +100,7 @@ slot0.start = function(slot0)
 	slot0:updateFloorPos()
 end
 
-slot0.step = function(slot0)
+function slot0.step(slot0)
 	if slot0.floorFallStep and slot0.floorFallStep > 0 then
 		slot0.floorFallStep = slot0.floorFallStep - CastleGameVo.deltaTime
 
@@ -143,28 +143,28 @@ slot0.step = function(slot0)
 	end
 end
 
-slot0.setBroken = function(slot0, slot1, slot2)
+function slot0.setBroken(slot0, slot1, slot2)
 	slot0:setFloorFallTime(slot0:getFloorByIndex(slot1), false, slot2)
 end
 
-slot0.removeFloorByFallData = function(slot0, slot1)
+function slot0.removeFloorByFallData(slot0, slot1)
 	for slot7 = 1, #CastleGameVo.floor_rule[table.remove(slot1.rule_id, math.random(1, #slot1.rule_id))] do
 		slot0:setFloorFallTime(slot0:getFloorByIndex(slot3[slot7]), true, nil)
 	end
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 end
 
-slot0.setFloorFallCallback = function(slot0, slot1)
+function slot0.setFloorFallCallback(slot0, slot1)
 	slot0.floorFallCallback = slot1
 end
 
-slot0.getFallDatas = function(slot0)
+function slot0.getFallDatas(slot0)
 	return CastleGameVo.roundData.floors
 end
 
-slot0.applyFloorFall = function(slot0, slot1)
+function slot0.applyFloorFall(slot0, slot1)
 	slot2 = slot1.zPos
 	slot1.fall = true
 	slot1.revertTime = CastleGameVo.floor_revert_time
@@ -172,19 +172,19 @@ slot0.applyFloorFall = function(slot0, slot1)
 	slot1.anim:Play("hide")
 end
 
-slot0.revertFloorFall = function(slot0, slot1)
+function slot0.revertFloorFall(slot0, slot1)
 	slot1.fall = false
 
 	slot1.anim:Play("revert")
 end
 
-slot0.revertActiveFloor = function(slot0, slot1)
+function slot0.revertActiveFloor(slot0, slot1)
 	if not table.contains(slot0.activeIndexs, slot1.index) then
 		table.insert(slot0.activeIndexs, slot1.index)
 	end
 end
 
-slot0.removeActiveFloor = function(slot0, slot1)
+function slot0.removeActiveFloor(slot0, slot1)
 	for slot5 = #slot0.activeIndexs, 1, -1 do
 		if slot0.activeIndexs[slot5] == slot1.index then
 			table.remove(slot0.activeIndexs, slot5)
@@ -192,7 +192,7 @@ slot0.removeActiveFloor = function(slot0, slot1)
 	end
 end
 
-slot0.setFloorFallTime = function(slot0, slot1, slot2, slot3)
+function slot0.setFloorFallTime(slot0, slot1, slot2, slot3)
 	for slot7 = 1, #slot1 do
 		if slot2 then
 			slot1[slot7].anim:Play("shake")
@@ -209,7 +209,7 @@ slot0.setFloorFallTime = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.getFloorByIndex = function(slot0, slot1, slot2)
+function slot0.getFloorByIndex(slot0, slot1, slot2)
 	for slot6 = 1, #slot0.floors do
 		if slot0.floors[slot6].index == slot1 then
 			return {
@@ -223,14 +223,14 @@ slot0.getFloorByIndex = function(slot0, slot1, slot2)
 	return {}
 end
 
-slot0.updateFloorPos = function(slot0)
+function slot0.updateFloorPos(slot0)
 	for slot4 = 1, #slot0.floors do
 		slot5 = slot0.floors[slot4].index
 		slot0.floors[slot4].tf.anchoredPosition = CastleGameVo.GetRotationPosByWH(slot5 % CastleGameVo.w_count, math.floor(slot5 / CastleGameVo.h_count))
 	end
 end
 
-slot0.getOutLandPoint = function(slot0)
+function slot0.getOutLandPoint(slot0)
 	return {
 		lb = slot0.floors[1].bound[1],
 		lt = slot0.floors[(CastleGameVo.h_count - 1) * CastleGameVo.w_count + 1].bound[2],
@@ -239,7 +239,7 @@ slot0.getOutLandPoint = function(slot0)
 	}
 end
 
-slot0.press = function(slot0, slot1)
+function slot0.press(slot0, slot1)
 end
 
 return slot0

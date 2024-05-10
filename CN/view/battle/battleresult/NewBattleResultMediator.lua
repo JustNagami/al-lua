@@ -8,7 +8,7 @@ slot0.REENTER_STAGE = "NewBattleResultMediator:REENTER_STAGE"
 slot0.CHALLENGE_SHARE = "NewBattleResultMediator:ON_CHALLENGE_SHARE"
 slot0.CHALLENGE_DEFEAT_SCENE = "NewBattleResultMediator:CHALLENGE_DEFEAT_SCENE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.GET_NEW_SHIP, function (slot0, slot1, slot2, slot3)
 		uv0:addSubLayers(Context.New({
 			mediator = NewShipMediator,
@@ -64,16 +64,17 @@ slot0.register = function(slot0)
 	slot0:sendNotification(uv0.ON_ENTER_BATTLE_RESULT)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.BEGIN_STAGE_DONE,
 		NewBattleResultMediator.SET_SKIP_FLAG,
 		ContinuousOperationMediator.CONTINUE_OPERATION,
-		GAME.ACT_BOSS_EXCHANGE_TICKET_DONE
+		GAME.ACT_BOSS_EXCHANGE_TICKET_DONE,
+		BossSingleContinuousOperationMediator.CONTINUE_OPERATION
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.BEGIN_STAGE_DONE then
@@ -84,6 +85,8 @@ slot0.handleNotification = function(slot0, slot1)
 		slot0.contextData.autoSkipFlag = slot3
 	elseif slot2 == GAME.ACT_BOSS_EXCHANGE_TICKET_DONE then
 		slot0.viewComponent:emit(uv0.REENTER_STAGE)
+	elseif slot2 == BossSingleContinuousOperationMediator.CONTINUE_OPERATION then
+		slot0.contextData.continuousBattleTimes = slot0.contextData.continuousBattleTimes - 1
 	end
 end
 

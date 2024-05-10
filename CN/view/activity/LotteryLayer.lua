@@ -2,7 +2,7 @@ slot0 = class("LotteryLayer", import("..base.BaseUI"))
 slot1 = pg.activity_random_award_template
 slot2 = true
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	if uv0 then
 		return "LotteryForCHTUI"
 	else
@@ -10,19 +10,19 @@ slot0.getUIName = function(slot0)
 	end
 end
 
-slot0.setPlayerVO = function(slot0, slot1)
+function slot0.setPlayerVO(slot0, slot1)
 	slot0.playerVO = slot1
 
 	slot0:updateResource()
 end
 
-slot0.updateResource = function(slot0)
+function slot0.updateResource(slot0)
 	slot0.resCount = slot0.playerVO[id2res(slot0.resId)]
 
 	setText(slot0.resource:Find("Text"), slot0.resCount)
 end
 
-slot0.setActivity = function(slot0, slot1)
+function slot0.setActivity(slot0, slot1)
 	slot0.activityVO = slot1
 	slot0.resId = slot0.activityVO:getConfig("config_client").resId
 	slot0.awardInfos = slot1:getAwardInfos()
@@ -30,7 +30,7 @@ slot0.setActivity = function(slot0, slot1)
 	slot0:initActivityPools()
 end
 
-slot0.initActivityPools = function(slot0)
+function slot0.initActivityPools(slot0)
 	slot0.activityPools = {}
 	slot1 = slot0.activityVO
 	slot1 = slot1:getConfig("config_data")
@@ -52,7 +52,7 @@ slot0.initActivityPools = function(slot0)
 	slot0.activityPool = slot0.activityPools[slot0.activityVO.data1 or slot1[1]]
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.lotteryPoolContainer = slot0:findTF("left_panel/pool_list/content")
 	slot0.attrs = slot0:findTF("left_panel/pool_list/arrs")
 	slot0.mainItenContainer = slot0:findTF("right_panel/main_item_list/content")
@@ -74,7 +74,7 @@ slot0.init = function(slot0)
 	slot0.topPanel = slot0:findTF("top")
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0:findTF("top/back_btn"), function ()
 		uv0:emit(uv1.ON_CLOSE)
 	end, SOUND_BACK)
@@ -90,7 +90,12 @@ slot0.didEnter = function(slot0)
 		slot0.launchTenBtn,
 		slot0.launchMaxBtn
 	}) do
-		GetImageSpriteFromAtlasAsync(pg.item_data_statistics[id2ItemId(slot0.resId)].icon, "", slot7:Find("res/icon"), true)
+		slot9 = Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot0.resId
+		})
+
+		GetImageSpriteFromAtlasAsync(slot9:getIcon(), "", slot7:Find("res/icon"), true)
 		onButton(slot0, slot7, function ()
 			if not uv0.activityPool then
 				return
@@ -114,7 +119,7 @@ slot0.didEnter = function(slot0)
 				return
 			end
 
-			slot2 = function()
+			function slot2()
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("amercian_notice_1", uv0 * uv1.count, uv0),
 					onYes = function ()
@@ -152,7 +157,7 @@ slot0.didEnter = function(slot0)
 		setActive(uv0.bonusWindow, false)
 	end)
 
-	slot6 = function()
+	function slot6()
 		setActive(uv0.bonusWindow, false)
 	end
 
@@ -173,13 +178,13 @@ slot0.didEnter = function(slot0)
 	triggerToggle(slot0.activityPoolTFs[slot0.activityPool.id], true)
 end
 
-slot0.onActivityUpdated = function(slot0, slot1)
+function slot0.onActivityUpdated(slot0, slot1)
 	slot0:setActivity(slot1)
 	slot0:updateActivityPoolState()
 	slot0:switchToPool(slot1.data1)
 end
 
-slot0.initPoolTFs = function(slot0)
+function slot0.initPoolTFs(slot0)
 	slot0.activityPoolTFs = {}
 
 	for slot4, slot5 in pairs(slot0.activityPools) do
@@ -199,7 +204,7 @@ slot0.initPoolTFs = function(slot0)
 	end
 end
 
-slot0.updateActivityPoolState = function(slot0)
+function slot0.updateActivityPoolState(slot0)
 	for slot4, slot5 in pairs(slot0.activityPools) do
 		slot6 = slot0.activityPoolTFs[slot4]
 		slot7 = not slot5.prevId or slot0.activityPools[slot5.prevId]:canOpenNext()
@@ -222,7 +227,7 @@ slot0.updateActivityPoolState = function(slot0)
 	end
 end
 
-slot0.switchToPool = function(slot0, slot1)
+function slot0.switchToPool(slot0, slot1)
 	slot2 = slot0.activityPools[slot1]
 	slot3 = slot0.activityPoolTFs[slot1]
 
@@ -241,7 +246,7 @@ slot0.switchToPool = function(slot0, slot1)
 	slot0.showActivityPool = slot0.activityPools[slot2.id]
 end
 
-slot0.updateAwardsFetchedCount = function(slot0, slot1)
+function slot0.updateAwardsFetchedCount(slot0, slot1)
 	if slot0.awardsCounttxt then
 		slot2 = slot1:getFetchCount()
 		slot3 = slot1:getItemCount()
@@ -249,7 +254,7 @@ slot0.updateAwardsFetchedCount = function(slot0, slot1)
 	end
 end
 
-slot0.updateMainItems = function(slot0, slot1)
+function slot0.updateMainItems(slot0, slot1)
 	for slot7 = slot0.mainItenContainer.childCount, #slot1:getMainItems() do
 		cloneTplTo(slot0.mainItenTpl, slot0.mainItenContainer)
 	end
@@ -272,7 +277,7 @@ slot0.updateMainItems = function(slot0, slot1)
 	end
 end
 
-slot0.showBonus = function(slot0, slot1, slot2)
+function slot0.showBonus(slot0, slot1, slot2)
 	setActive(slot0.bonusWindow, true)
 
 	slot0.awardMain = slot1
@@ -295,18 +300,18 @@ slot0.showBonus = function(slot0, slot1, slot2)
 	slot0.dropListN:align(#slot0.awardNormal)
 end
 
-slot0.updateDrop = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.updateDrop(slot0, slot1, slot2, slot3, slot4)
 	if slot1 == UIItemList.EventUpdate then
 		slot5 = slot4[slot2 + 1]
 
 		updateDrop(slot3, slot5)
 		setText(slot3:Find("count"), slot5.surplus .. "/" .. slot5.total)
 		setActive(slot3:Find("mask"), slot5.surplus <= 0)
-		setScrollText(findTF(slot3, "name_mask/name"), slot5.name or slot5.cfg.name)
+		setScrollText(findTF(slot3, "name_mask/name"), slot5.name or slot5:getConfig("name"))
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0.bgs = nil
 end
 

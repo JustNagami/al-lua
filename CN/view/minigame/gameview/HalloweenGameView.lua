@@ -139,18 +139,18 @@ slot32 = 50000
 slot33 = "event:/ui/getcandy"
 slot34 = "event:/ui/jackboom"
 
-slot35 = function(slot0)
+function slot35(slot0)
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "HalloweenGameUI"
 end
 
-slot0.getBGM = function(slot0)
+function slot0.getBGM(slot0)
 	return "backyard"
 end
 
-slot36 = function(slot0, slot1, slot2)
+function slot36(slot0, slot1, slot2)
 	slot3 = {
 		charactorTf = slot0,
 		moveRanges = slot1,
@@ -196,7 +196,7 @@ slot36 = function(slot0, slot1, slot2)
 
 			slot0:ghostAniCallback(true)
 
-			slot0.aniCallback = function(slot0)
+			function slot0.aniCallback(slot0)
 				if not slot0 then
 					uv0.ghostFlag = uv1
 				else
@@ -571,7 +571,7 @@ slot36 = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot37 = function(slot0, slot1)
+function slot37(slot0, slot1)
 	slot2 = {
 		moveTf = slot0,
 		useLightTf = slot1,
@@ -696,7 +696,7 @@ slot37 = function(slot0, slot1)
 	return slot2
 end
 
-slot38 = function(slot0, slot1)
+function slot38(slot0, slot1)
 	slot2 = {
 		_tf = slot0,
 		moveRange = slot1,
@@ -802,7 +802,7 @@ slot38 = function(slot0, slot1)
 	return slot2
 end
 
-slot39 = function()
+function slot39()
 	return {
 		speedLevel = 1,
 		dropRequestCallback = nil,
@@ -845,7 +845,7 @@ slot39 = function()
 	}
 end
 
-slot40 = function(slot0, slot1)
+function slot40(slot0, slot1)
 	return {
 		flyer = slot0,
 		scene = slot1,
@@ -1040,7 +1040,7 @@ slot40 = function(slot0, slot1)
 	}
 end
 
-slot41 = function(slot0, slot1, slot2)
+function slot41(slot0, slot1, slot2)
 	return {
 		charactor = slot0,
 		dropItemController = slot1,
@@ -1104,7 +1104,7 @@ slot41 = function(slot0, slot1, slot2)
 	}
 end
 
-slot42 = function(slot0)
+function slot42(slot0)
 	return {
 		_tf = slot0,
 		speedLevel = 1,
@@ -1188,7 +1188,7 @@ slot42 = function(slot0)
 	}
 end
 
-slot43 = function(slot0, slot1, slot2)
+function slot43(slot0, slot1, slot2)
 	slot4 = 4
 
 	return {
@@ -1326,7 +1326,7 @@ slot43 = function(slot0, slot1, slot2)
 	}
 end
 
-slot44 = function(slot0, slot1)
+function slot44(slot0, slot1)
 	slot3 = 3
 
 	return {
@@ -1359,14 +1359,14 @@ slot44 = function(slot0, slot1)
 	}
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0:initUI()
 	slot0:initData()
 	slot0:gameReadyStart()
 end
 
-slot0.initUI = function(slot0)
-	slot4 = function()
+function slot0.initUI(slot0)
+	function slot4()
 		if not uv0.gameStartFlag then
 			uv0:closeView()
 		else
@@ -1417,69 +1417,69 @@ slot0.initUI = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.timer = Timer.New(function ()
 		uv0:onTimer()
 	end, 0.016666666666666666, -1)
 	slot0.charactor = uv0(findTF(slot0.scene, "charactor"), uv1, slot0.scene)
 
-	slot0.charactor.charactorIdleCallback = function(slot0)
+	function slot0.charactor.charactorIdleCallback(slot0)
 		setActive(uv0.playerIdleTip, slot0)
 	end
 
 	slot0.flyer = uv2(findTF(slot0.scene, "flyCharactor"), uv3)
 
-	slot0.flyer.dropCallback = function()
+	function slot0.flyer.dropCallback()
 		uv0:onCreateDropItem()
 	end
 
 	slot0.controllerUI = uv4(findTF(slot0._tf, "controller"), findTF(slot0._tf, "conRight/useLight"))
 
-	slot0.controllerUI.pointChangeCallback = function(slot0)
+	function slot0.controllerUI.pointChangeCallback(slot0)
 		uv0:onControllerDirectChange(slot0)
 	end
 
-	slot0.controllerUI.pointUpCallback = function(slot0)
+	function slot0.controllerUI.pointUpCallback(slot0)
 		uv0:onControllerDirectUp(slot0)
 	end
 
-	slot0.controllerUI.pointLightCallback = function(slot0)
+	function slot0.controllerUI.pointLightCallback(slot0)
 		uv0:onUseLight(slot0)
 	end
 
 	slot0.dropControl = uv5()
 
-	slot0.dropControl.dropRequestCallback = function()
+	function slot0.dropControl.dropRequestCallback()
 		uv0:onRequestDrop()
 	end
 
 	slot0.dropItemController = uv6(slot0.flyer, slot0.scene)
 
-	slot0.dropItemController.lostCallback = function()
+	function slot0.dropItemController.lostCallback()
 		uv0:lostCandy()
 	end
 
-	slot0.dropItemController.boomCallback = function()
+	function slot0.dropItemController.boomCallback()
 		uv0:touchBoom()
 	end
 
-	slot0.dropItemController.dropSpeedUpCallback = function()
+	function slot0.dropItemController.dropSpeedUpCallback()
 		uv0:dropSpeedUp()
 	end
 
 	slot0.dropColliderControll = uv7(slot0.charactor, slot0.dropItemController, slot0.scene)
 
-	slot0.dropColliderControll.colliderDropItemCallback = function(slot0)
+	function slot0.dropColliderControll.colliderDropItemCallback(slot0)
 		uv0:addScore(slot0.score)
 	end
 
 	slot0.ghostBossController = uv8(findTF(slot0._tf, "ghostBoss"))
 
-	slot0.ghostBossController.createGhostCallback = function()
+	function slot0.ghostBossController.createGhostCallback()
 		uv0:createGhost()
 	end
 
-	slot0.ghostBossController.ghostSpeedUpCallback = function()
+	function slot0.ghostBossController.ghostSpeedUpCallback()
 		if uv0.eyesController then
 			uv0.eyesController:changeEyeShow(false)
 		end
@@ -1487,7 +1487,7 @@ slot0.initData = function(slot0)
 
 	slot0.ghostChildController = uv9(findTF(slot0.scene, "tplGhost"), slot0.charactor, slot0.scene)
 
-	slot0.ghostChildController.catchCharactorCallback = function(slot0)
+	function slot0.ghostChildController.catchCharactorCallback(slot0)
 		uv0:onGhostCatch(slot0)
 	end
 
@@ -1516,12 +1516,12 @@ slot0.initData = function(slot0)
 	end)
 end
 
-slot0.gameReadyStart = function(slot0)
+function slot0.gameReadyStart(slot0)
 	setActive(slot0.countUI, true)
 	slot0.countAnimator:Play("count")
 end
 
-slot0.gameStart = function(slot0)
+function slot0.gameStart(slot0)
 	slot0.heartNum = uv0
 	slot0.scoreNum = 0
 	slot0.gameStartFlag = true
@@ -1541,7 +1541,7 @@ slot0.gameStart = function(slot0)
 	slot0:timerStart()
 end
 
-slot0.timerStart = function(slot0)
+function slot0.timerStart(slot0)
 	if not slot0.timer.running then
 		slot0.timer:Start()
 	end
@@ -1549,7 +1549,7 @@ slot0.timerStart = function(slot0)
 	setActive(slot0.wanshengjie, true)
 end
 
-slot0.timerStop = function(slot0)
+function slot0.timerStop(slot0)
 	if slot0.timer.running then
 		slot0.timer:Stop()
 	end
@@ -1557,17 +1557,17 @@ slot0.timerStop = function(slot0)
 	setActive(slot0.wanshengjie, false)
 end
 
-slot0.getGameTimes = function(slot0)
+function slot0.getGameTimes(slot0)
 	return slot0:GetMGHubData().count
 end
 
-slot0.getSoundData = function(slot0, slot1)
+function slot0.getSoundData(slot0, slot1)
 	CueData.GetCueData().channelName = pg.CriMgr.C_GALLERY_MUSIC
 	slot0.cueData.cueSheetName = slot1
 	slot0.cueData.cueName = ""
 end
 
-slot0.onTimer = function(slot0)
+function slot0.onTimer(slot0)
 	uv0 = uv0 + slot0.timer.duration
 
 	slot0.charactor:step()
@@ -1581,7 +1581,7 @@ slot0.onTimer = function(slot0)
 	slot0.eyesController:step()
 end
 
-slot0.updateUI = function(slot0)
+function slot0.updateUI(slot0)
 	for slot4 = 1, #slot0.hearts do
 		if slot4 <= slot0.heartNum then
 			setActive(findTF(slot0.hearts[slot4], "img"), true)
@@ -1599,13 +1599,13 @@ slot0.updateUI = function(slot0)
 	setText(slot0.scoreText, slot0.scoreNum)
 end
 
-slot0.dropSpeedUp = function(slot0)
+function slot0.dropSpeedUp(slot0)
 	if slot0.ghostBossController then
 		slot0.ghostBossController:showTip(1)
 	end
 end
 
-slot0.loseHeart = function(slot0, slot1)
+function slot0.loseHeart(slot0, slot1)
 	if slot0.heartNum and slot0.heartNum > 0 then
 		slot0.heartNum = slot0.heartNum - 1
 
@@ -1637,13 +1637,13 @@ slot0.loseHeart = function(slot0, slot1)
 	end
 end
 
-slot0.addScore = function(slot0, slot1)
+function slot0.addScore(slot0, slot1)
 	slot0.scoreNum = slot0.scoreNum + slot1
 
 	slot0:updateUI()
 end
 
-slot0.gameOver = function(slot0)
+function slot0.gameOver(slot0)
 	slot0.charactor:gameOver()
 	slot0.flyer:gameOver()
 	slot0.dropControl:gameOver()
@@ -1661,7 +1661,7 @@ slot0.gameOver = function(slot0)
 	slot0:showSettlement()
 end
 
-slot0.showSettlement = function(slot0)
+function slot0.showSettlement(slot0)
 	setActive(slot0.settlementUI, true)
 	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
@@ -1675,33 +1675,33 @@ slot0.showSettlement = function(slot0)
 	setText(findTF(slot0.settlementUI, "ad/currentText"), slot3)
 end
 
-slot0.lostCandy = function(slot0)
+function slot0.lostCandy(slot0)
 	slot0:loseHeart(uv0)
 end
 
-slot0.touchBoom = function(slot0)
+function slot0.touchBoom(slot0)
 	slot0:loseHeart(uv0)
 end
 
-slot0.createGhost = function(slot0)
+function slot0.createGhost(slot0)
 	if slot0.ghostChildController and slot0.ghostChildController:createGhost() then
 		slot0.ghostBossController:onCreate()
 	end
 end
 
-slot0.onCreateDropItem = function(slot0)
+function slot0.onCreateDropItem(slot0)
 	if slot0.dropItemController then
 		slot0.dropItemController:createDropItem()
 	end
 end
 
-slot0.onRequestDrop = function(slot0)
+function slot0.onRequestDrop(slot0)
 	if slot0.flyer then
 		slot0.flyer:addDropNum()
 	end
 end
 
-slot0.onGhostCatch = function(slot0, slot1)
+function slot0.onGhostCatch(slot0, slot1)
 	if not slot0.charactor:getGhostFlag() then
 		slot0.charactor:setGhostFlag(true, function ()
 			uv0.ghostChildController:removeChild(uv1)
@@ -1711,7 +1711,7 @@ slot0.onGhostCatch = function(slot0, slot1)
 	end
 end
 
-slot0.onUseLight = function(slot0, slot1)
+function slot0.onUseLight(slot0, slot1)
 	if not slot0.gameStartFlag then
 		return
 	end
@@ -1731,29 +1731,29 @@ slot0.onUseLight = function(slot0, slot1)
 	end, slot1)
 end
 
-slot0.onColliderItem = function(slot0, slot1)
+function slot0.onColliderItem(slot0, slot1)
 	uv0("碰撞到了物品，数量:" .. #slot1)
 end
 
-slot0.onControllerDirectChange = function(slot0, slot1)
+function slot0.onControllerDirectChange(slot0, slot1)
 	slot0:changeDirect(slot1, true)
 end
 
-slot0.onControllerDirectUp = function(slot0, slot1)
+function slot0.onControllerDirectUp(slot0, slot1)
 	slot0:changeDirect(slot1, false)
 end
 
-slot0.changeDirect = function(slot0, slot1, slot2)
+function slot0.changeDirect(slot0, slot1, slot2)
 	if slot0.gameStartFlag then
 		slot0.charactor:onDirectChange(slot1, slot2)
 	end
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot0:AddDebugInput()
 end
 
-slot0.AddDebugInput = function(slot0)
+function slot0.AddDebugInput(slot0)
 	if IsUnityEditor then
 		if Input.GetKeyDown(KeyCode.A) then
 			slot0:changeDirect(uv0, true)
@@ -1773,13 +1773,13 @@ slot0.AddDebugInput = function(slot0)
 	end
 end
 
-slot0.clearUI = function(slot0)
+function slot0.clearUI(slot0)
 	setActive(slot0.scene, false)
 	setActive(slot0.settlementUI, false)
 	setActive(slot0.countUI, false)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if not slot0.gameStartFlag then
 		slot0:emit(uv0.ON_BACK_PRESSED)
 	else
@@ -1790,7 +1790,7 @@ slot0.onBackPressed = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0.timer and slot0.timer.running then
 		slot0.timer:Stop()
 	end

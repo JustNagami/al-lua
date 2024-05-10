@@ -1,8 +1,9 @@
 slot0 = class("ShipProfileMediator", import("...base.ContextMediator"))
 slot0.CLICK_ROTATE_BTN = "ShipProfileMediator:CLICK_ROTATE_BTN"
 slot0.OPEN_CRYPTOLALIA = "ShipProfileMediator:OPEN_CRYPTOLALIA"
+slot0.OPEN_EQUIP_CODE_SHARE = "ShipProfileMediator.OPEN_EQUIP_CODE_SHARE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot1 = getProxy(CollectionProxy)
 	slot2 = getProxy(ShipSkinProxy)
 	slot0.showTrans = slot0.contextData.showTrans
@@ -71,9 +72,18 @@ slot0.register = function(slot0)
 			}
 		}))
 	end)
+	slot0:bind(uv0.OPEN_EQUIP_CODE_SHARE, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
+			mediator = EquipCodeShareMediator,
+			viewComponent = EquipCodeShareLayer,
+			data = {
+				shipGroupId = slot1
+			}
+		}))
+	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.FETCH_EVALUATION_DONE,
 		CollectionProxy.GROUP_INFO_UPDATE,
@@ -81,7 +91,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.FETCH_EVALUATION_DONE then

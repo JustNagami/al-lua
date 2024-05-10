@@ -1,6 +1,6 @@
 slot0 = class("MainMonthCardSequence")
 
-slot0.Execute = function(slot0, slot1)
+function slot0.Execute(slot0, slot1)
 	if MonthCardOutDateTipPanel.GetMonthCardEndDate() == 0 then
 		slot1()
 
@@ -16,7 +16,7 @@ slot0.Execute = function(slot0, slot1)
 	end
 end
 
-slot0.ShowMsg = function(slot0, slot1, slot2, slot3)
+function slot0.ShowMsg(slot0, slot1, slot2, slot3)
 	MonthCardOutDateTipPanel.SetMonthCardTipDate(slot2)
 
 	slot4 = pg.TimeMgr.GetInstance():STimeDescS(math.min(slot2, slot1), "*t")

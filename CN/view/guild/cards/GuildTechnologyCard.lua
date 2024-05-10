@@ -1,6 +1,6 @@
 slot0 = class("GuildTechnologyCard")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0.view = slot2
 
 	pg.DelegateInfo.New(slot0)
@@ -29,7 +29,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	setActive(slot0.breakoutTF, false)
 end
 
-slot0.Update = function(slot0, slot1, slot2)
+function slot0.Update(slot0, slot1, slot2)
 	slot0.titleImg.text = slot1:getConfig("name")
 	slot0.iconImag.sprite = GetSpriteFromAtlas("GuildTechnology", slot1.group.id)
 	slot6 = slot1:GetLevel()
@@ -82,8 +82,8 @@ slot0.Update = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.DoUprade = function(slot0, slot1)
-	slot2 = function()
+function slot0.DoUprade(slot0, slot1)
+	function slot2()
 		slot1, slot2 = uv0:GetConsume()
 
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
@@ -94,7 +94,7 @@ slot0.DoUprade = function(slot0, slot1)
 		})
 	end
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		if uv0:IsRiseInPrice() then
 			slot1, slot2, slot3 = uv0:CanUpgradeBySelf()
 			slot4 = i18n("guild_tech_price_inc_tip")
@@ -122,7 +122,7 @@ slot0.DoUprade = function(slot0, slot1)
 	})
 end
 
-slot0.Destroy = function(slot0)
+function slot0.Destroy(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 end
 

@@ -1,6 +1,6 @@
 slot0 = class("StaticCellView", import("view.level.cell.LevelCellView"))
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0)
 
 	slot0.parent = slot1
@@ -9,7 +9,7 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.info = nil
 end
 
-slot0.PrepareBase = function(slot0, slot1)
+function slot0.PrepareBase(slot0, slot1)
 	slot0.go = GameObject.New(slot1)
 
 	slot0.go:AddComponent(typeof(RectTransform))
@@ -22,7 +22,7 @@ slot0.PrepareBase = function(slot0, slot1)
 	slot0:ResetCanvasOrder()
 end
 
-slot0.DestroyGO = function(slot0)
+function slot0.DestroyGO(slot0)
 	if slot0.loader then
 		slot0.loader:ClearRequests()
 	end
@@ -35,11 +35,11 @@ slot0.DestroyGO = function(slot0)
 	end
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	assert(false, "not implemented")
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	slot0.parent = nil
 	slot0.info = nil
 

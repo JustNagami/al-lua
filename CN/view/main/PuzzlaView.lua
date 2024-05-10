@@ -130,7 +130,7 @@ slot10 = {
 	RIGHT = 3
 }
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	pg.DelegateInfo.New(slot0)
 
 	slot0.showDesc = slot1.descs
@@ -144,7 +144,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.onFinish = nil
 end
 
-slot0.load = function(slot0, slot1, slot2)
+function slot0.load(slot0, slot1, slot2)
 	slot0.puzzlaHeight = 0
 	slot0.puzzlaWidth = 0
 	slot0.startPosition = Vector2(0, 0)
@@ -169,7 +169,7 @@ slot0.load = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.puzzlaItems = {}
 	slot1 = 1
 
@@ -209,7 +209,7 @@ slot0.init = function(slot0)
 	end
 end
 
-slot0.createItem = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.createItem(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = GameObject(slot2.x .. "-" .. slot2.y)
 
 	slot6:AddComponent(typeof(Image))
@@ -229,13 +229,13 @@ slot0.createItem = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	return slot7
 end
 
-slot0.checkSurround = function(slot0, slot1)
+function slot0.checkSurround(slot0, slot1)
 	if slot0:getBlockItemByPositions(slot1:getSurroundPosition()) then
 		slot0:swop(slot1, slot3)
 	end
 end
 
-slot0.swop = function(slot0, slot1, slot2)
+function slot0.swop(slot0, slot1, slot2)
 	slot3 = slot2:getPosition()
 	slot4 = slot1:getPosition()
 
@@ -261,7 +261,7 @@ slot0.swop = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.getBlockItemByPositions = function(slot0, slot1)
+function slot0.getBlockItemByPositions(slot0, slot1)
 	slot2 = nil
 
 	for slot6, slot7 in ipairs(slot1) do
@@ -275,17 +275,17 @@ slot0.getBlockItemByPositions = function(slot0, slot1)
 	return slot2
 end
 
-slot0.isBlockItem = function(slot0, slot1)
+function slot0.isBlockItem(slot0, slot1)
 	return slot0:getItemByPosition(slot1):isBlock()
 end
 
-slot0.getItemByPosition = function(slot0, slot1)
+function slot0.getItemByPosition(slot0, slot1)
 	assert(slot0.puzzlaItems[slot1.y], "position y" .. slot1.y)
 
 	return slot0.puzzlaItems[slot1.y][slot1.x]
 end
 
-slot0.isValidPosition = function(slot0, slot1)
+function slot0.isValidPosition(slot0, slot1)
 	if slot1.x > 0 and slot1.y > 0 and slot1.x <= uv0 and slot1.y <= uv1 then
 		return true
 	end
@@ -293,7 +293,7 @@ slot0.isValidPosition = function(slot0, slot1)
 	return false
 end
 
-slot0.printTable = function(slot0)
+function slot0.printTable(slot0)
 	for slot4, slot5 in ipairs(slot0.puzzlaItems) do
 		slot6 = ""
 
@@ -305,10 +305,10 @@ slot0.printTable = function(slot0)
 	end
 end
 
-slot0.disorganizePuzzla = function(slot0, slot1)
+function slot0.disorganizePuzzla(slot0, slot1)
 	slot0.paths = {}
 
-	slot2 = function()
+	function slot2()
 	end
 
 	if slot1 and #slot1 > 0 then
@@ -330,8 +330,8 @@ slot0.disorganizePuzzla = function(slot0, slot1)
 	end
 end
 
-slot0.disorganizeStep = function(slot0)
-	slot2 = function(slot0)
+function slot0.disorganizeStep(slot0)
+	function slot2(slot0)
 		if uv0.prevDir then
 			return uv0.prevDir == slot0
 		end
@@ -357,7 +357,7 @@ slot0.disorganizeStep = function(slot0)
 	return slot6.dir
 end
 
-slot0.printPaths = function(slot0)
+function slot0.printPaths(slot0)
 	slot1 = ""
 	slot2 = ipairs
 	slot3 = slot0.paths or {}
@@ -369,7 +369,7 @@ slot0.printPaths = function(slot0)
 	print(slot1)
 end
 
-slot0.decodePuzzla = function(slot0, slot1)
+function slot0.decodePuzzla(slot0, slot1)
 	slot2 = {}
 	slot3 = ipairs
 	slot4 = slot1 or {}
@@ -386,7 +386,7 @@ slot0.decodePuzzla = function(slot0, slot1)
 	return slot2
 end
 
-slot0.aotuDecode = function(slot0)
+function slot0.aotuDecode(slot0)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(slot0:decodePuzzla(slot0.paths)) do
@@ -396,7 +396,7 @@ slot0.aotuDecode = function(slot0)
 	slot0:revertPuzzla(slot2)
 end
 
-slot0.printDecode = function(slot0)
+function slot0.printDecode(slot0)
 	slot2 = ""
 
 	for slot6, slot7 in ipairs(slot0:decodePuzzla(slot0.paths)) do
@@ -406,11 +406,11 @@ slot0.printDecode = function(slot0)
 	print(slot2)
 end
 
-slot0.revertPuzzla = function(slot0, slot1)
+function slot0.revertPuzzla(slot0, slot1)
 	slot0:orderDisorganize(slot1, uv0)
 end
 
-slot0.getBlockItem = function(slot0)
+function slot0.getBlockItem(slot0)
 	slot1 = nil
 
 	for slot5, slot6 in ipairs(slot0.puzzlaItems) do
@@ -426,13 +426,13 @@ slot0.getBlockItem = function(slot0)
 	return slot1
 end
 
-slot0.orderDisorganize = function(slot0, slot1, slot2, slot3)
+function slot0.orderDisorganize(slot0, slot1, slot2, slot3)
 	slot4 = {}
 	slot0.blockEvent = true
 	slot5 = slot0:getBlockItem()
 	slot6 = {}
 
-	slot7 = function(slot0)
+	function slot7(slot0)
 		uv1:swop(uv1:getItemByPosition(uv0:getSurroundPosition()[slot0]), uv0)
 		table.insert(uv2, uv3[slot0])
 	end
@@ -465,7 +465,7 @@ slot0.orderDisorganize = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.isFinish = function(slot0)
+function slot0.isFinish(slot0)
 	for slot4, slot5 in ipairs(slot0.puzzlaItems) do
 		for slot9, slot10 in ipairs(slot5) do
 			assert(isa(slot10, PuzzlaItem), "item should instance of PuzzlaItem")
@@ -479,7 +479,7 @@ slot0.isFinish = function(slot0)
 	return true
 end
 
-slot0.removeTimer = function(slot0)
+function slot0.removeTimer(slot0)
 	if slot0.delayTimer then
 		slot0.delayTimer:Stop()
 
@@ -487,7 +487,7 @@ slot0.removeTimer = function(slot0)
 	end
 end
 
-slot0.dispose = function(slot0)
+function slot0.dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 	slot0:removeTimer()
 end

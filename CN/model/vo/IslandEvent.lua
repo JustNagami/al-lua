@@ -1,15 +1,15 @@
 slot0 = class("IslandEvent", import(".BaseVO"))
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_map_event_data
 end
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.id = slot1.id
 	slot0.configId = slot1.id
 end
 
-slot0.CheckTrigger = function(slot0, slot1)
+function slot0.CheckTrigger(slot0, slot1)
 	if slot0:getConfig("type") == 2 then
 		slot2 = underscore.detect(slot0:getConfig("params"), function (slot0)
 			return slot0[1] == uv0
@@ -26,7 +26,7 @@ slot0.CheckTrigger = function(slot0, slot1)
 				type = slot4
 			}).type == DROP_TYPE_RESOURCE or slot3.type == DROP_TYPE_ITEM or DROP_TYPE_USE_ACTIVITY_DROP < slot3.type, "error config cosume type")
 
-			if GetOwnedDropCount(slot3) < slot3.count then
+			if slot3:getOwnedCount() < slot3.count then
 				return false, i18n("common_no_item_1")
 			end
 		end
@@ -35,7 +35,7 @@ slot0.CheckTrigger = function(slot0, slot1)
 	return true
 end
 
-slot0.AfterTrigger = function(slot0, slot1)
+function slot0.AfterTrigger(slot0, slot1)
 	if slot0:getConfig("type") == 2 and underscore.detect(slot0:getConfig("params"), function (slot0)
 		return slot0[1] == uv0
 	end)[2] then

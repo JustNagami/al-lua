@@ -1,10 +1,10 @@
 slot0 = class("ShipBreakResultLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ShipBreakResultUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.frame = slot0:findTF("frame")
 	slot0.attrPanel = slot0:findTF("right_panel/top/attrs")
 	slot0.rarePanel = slot0:findTF("right_panel/top/rare")
@@ -21,7 +21,7 @@ slot0.init = function(slot0)
 	slot0._paintingShadowTF = slot0:findTF("shadow")
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_CANCEL)
@@ -35,7 +35,7 @@ slot1 = {
 	"air"
 }
 
-slot0.updateStatistics = function(slot0)
+function slot0.updateStatistics(slot0)
 	slot3 = intProperties(slot0.contextData.newShip:getShipProperties())
 	slot4 = intProperties(slot0.contextData.oldShip:getShipProperties())
 	slot5 = slot0.attrPanel
@@ -223,7 +223,7 @@ slot0.updateStatistics = function(slot0)
 	end)
 end
 
-slot0.voice = function(slot0, slot1)
+function slot0.voice(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -234,7 +234,7 @@ slot0.voice = function(slot0, slot1)
 	slot0._currentVoice = slot1
 end
 
-slot0.stopVoice = function(slot0)
+function slot0.stopVoice(slot0)
 	if slot0._currentVoice then
 		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(slot0._currentVoice)
 	end
@@ -242,7 +242,7 @@ slot0.stopVoice = function(slot0)
 	slot0._currentVoice = nil
 end
 
-slot0.recycleSpineChar = function(slot0)
+function slot0.recycleSpineChar(slot0)
 	if slot0.shipPrefab and slot0.shipModel then
 		PoolMgr.GetInstance():ReturnSpineChar(slot0.shipPrefab, slot0.shipModel)
 
@@ -251,7 +251,7 @@ slot0.recycleSpineChar = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0.delayTId then
 		LeanTween.cancel(slot0.delayTId)
 	end

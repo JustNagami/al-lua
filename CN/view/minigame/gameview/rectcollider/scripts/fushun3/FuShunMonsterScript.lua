@@ -1,15 +1,16 @@
 slot0 = class("FuShunMonsterScript", import("..RectBaseScript"))
 
-slot0.onInit = function(slot0)
+function slot0.onInit(slot0)
 	slot0._loop = true
 	slot0._active = true
 	slot0._weight = 1
 	slot0._scriptTime = nil
 	slot0._collisionInfo.playerInput.x = math.random() > 0.5 and 1 or -1
 	slot0._collisionInfo.directionalInput = slot0._collisionInfo.playerInput
+	slot0._name = "FuShunMonsterScript"
 end
 
-slot0.onStep = function(slot0)
+function slot0.onStep(slot0)
 	slot0._collisionInfo.config.moveSpeed = 1
 
 	if slot0._collisionInfo.left and slot0._collisionInfo.playerInput.x == -1 then
@@ -37,10 +38,10 @@ slot0.onStep = function(slot0)
 	slot0._collisionInfo.velocityXSmoothing = slot3
 end
 
-slot0.onLateStep = function(slot0)
+function slot0.onLateStep(slot0)
 end
 
-slot0.onTrigger = function(slot0)
+function slot0.onTrigger(slot0)
 end
 
 return slot0

@@ -1,22 +1,22 @@
 slot0 = class("SettingsAdjustScreenPanle", import(".SettingsBasePanel"))
 
-slot0.GetUIName = function(slot0)
+function slot0.GetUIName(slot0)
 	return "SettingsAdjustScreen"
 end
 
-slot0.GetTitle = function(slot0)
+function slot0.GetTitle(slot0)
 	return i18n("Settings_title_AdjustScr")
 end
 
-slot0.GetTitleEn = function(slot0)
+function slot0.GetTitleEn(slot0)
 	return "  / SCREEN SETTING"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.notchSlider = findTF(slot0._tf, "slider")
 end
 
-slot0.OnUpdate = function(slot0)
+function slot0.OnUpdate(slot0)
 	slot1 = getProxy(SettingsProxy)
 
 	setSlider(slot0.notchSlider, ADAPT_MIN, Screen.width / Screen.height - 0.001, slot1:GetScreenRatio())

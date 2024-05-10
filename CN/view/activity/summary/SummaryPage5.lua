@@ -1,6 +1,6 @@
 slot0 = class("SummaryPage5", import(".SummaryAnimationPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, findTF(slot0._go, "share"), function ()
 		if uv0:inAnim() then
 			return
@@ -37,7 +37,7 @@ slot0.OnInit = function(slot0)
 	setActive(slot0._go, false)
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 end
 
 return slot0

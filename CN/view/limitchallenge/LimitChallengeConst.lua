@@ -7,13 +7,13 @@ slot0.GET_CHALLENGE_AWARD = "LimitChallengeConst.GET_CHALLENGE_AWARD"
 slot0.GET_CHALLENGE_AWARD_DONE = "LimitChallengeConst.GET_CHALLENGE_AWARD_DONE"
 slot0.UPDATE_PASS_TIME = "LimitChallengeConst.UPDATE_PASS_TIME"
 
-slot0.RequestInfo = function()
+function slot0.RequestInfo()
 	if pg.constellation_challenge_month and #pg.constellation_challenge_month.all > 0 and LimitChallengeConst.GetCurMonthConfig() then
 		pg.m02:sendNotification(LimitChallengeConst.REQ_CHALLENGE_INFO)
 	end
 end
 
-slot0.GetNextMonthTS = function()
+function slot0.GetNextMonthTS()
 	slot0 = pg.TimeMgr.GetInstance():GetServerTime()
 	slot1 = tonumber(pg.TimeMgr.GetInstance():STimeDescS(slot0, "%Y"))
 
@@ -32,23 +32,23 @@ slot0.GetNextMonthTS = function()
 	})
 end
 
-slot0.GetCurMonth = function()
+function slot0.GetCurMonth()
 	return tonumber(pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "%m"))
 end
 
-slot0.GetCurMonthConfig = function()
+function slot0.GetCurMonthConfig()
 	return pg.constellation_challenge_month[uv0.GetCurMonth()]
 end
 
-slot0.GetChallengeIDByLevel = function(slot0)
+function slot0.GetChallengeIDByLevel(slot0)
 	return LimitChallengeConst.GetCurMonthConfig().stage[slot0]
 end
 
-slot0.GetStageIDByLevel = function(slot0)
+function slot0.GetStageIDByLevel(slot0)
 	return pg.expedition_constellation_challenge_template[uv0.GetChallengeIDByLevel(slot0)].dungeon_id
 end
 
-slot0.GetChallengeIDByStageID = function(slot0)
+function slot0.GetChallengeIDByStageID(slot0)
 	for slot4, slot5 in ipairs(pg.expedition_constellation_challenge_template.all) do
 		if slot0 == pg.expedition_constellation_challenge_template[slot5].dungeon_id then
 			return slot6.id
@@ -56,13 +56,13 @@ slot0.GetChallengeIDByStageID = function(slot0)
 	end
 end
 
-slot0.IsOpen = function()
+function slot0.IsOpen()
 	slot0 = getProxy(PlayerProxy):getRawData().level
 
 	return pg.SystemOpenMgr.GetInstance():isOpenSystem(slot0, "LimitChallengeMediator") and pg.SystemOpenMgr.GetInstance():isOpenSystem(slot0, "ChallengeMainMediator")
 end
 
-slot0.IsInAct = function()
+function slot0.IsInAct()
 	return LOCK_LIMIT_CHALLENGE and checkExist(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE), {
 		"isEnd"
 	}) == false or pg.constellation_challenge_month and #pg.constellation_challenge_month.all > 0 and LimitChallengeConst.GetCurMonthConfig()
@@ -70,15 +70,15 @@ end
 
 slot0.RedPointKey = "LimitChallengeMonth"
 
-slot0.SetRedPointMonth = function()
+function slot0.SetRedPointMonth()
 	PlayerPrefs.SetInt(uv0.RedPointKey, uv0.GetCurMonth())
 end
 
-slot0.GetRedPointMonth = function()
+function slot0.GetRedPointMonth()
 	return PlayerPrefs.GetInt(uv0.RedPointKey, 0)
 end
 
-slot0.IsShowRedPoint = function()
+function slot0.IsShowRedPoint()
 	if LOCK_LIMIT_CHALLENGE then
 		return false
 	end

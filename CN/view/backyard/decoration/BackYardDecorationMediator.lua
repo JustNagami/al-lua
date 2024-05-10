@@ -17,7 +17,7 @@ slot0.START_TAKE_THEME_PHOTO = "BackYardDecorationMediator:START_TAKE_THEME_PHOT
 slot0.END_TAKE_THEME_PHOTO = "BackYardDecorationMediator:END_TAKE_THEME_PHOTO"
 slot0.ON_SET_UP = "BackYardDecorationMediator:ON_SET_UP"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_SELECTED_FURNITRUE, function (slot0, slot1)
 		_courtyard:GetController():SelectFurnitureByConfigId(slot1)
 	end)
@@ -105,10 +105,17 @@ slot0.register = function(slot0)
 	end)
 	slot0:bind(uv0.ADD_FURNITURE, function (slot0, slot1, slot2)
 		_courtyard:GetController():AddFurniture({
+			selected = true,
 			id = uv0:GenUniqueID(uv0.dorm, slot1.configId),
 			configId = slot1.configId,
 			date = slot1.date
 		})
+		getProxy(DormProxy):_ClearNewFlag(slot1.configId)
+
+		slot4 = uv0.dorm:GetFurniture(slot1.configId)
+
+		slot4:ClearNewFlag()
+		uv0.viewComponent:UpdateFurnitrue(slot4)
 
 		if slot2 then
 			slot2()
@@ -120,7 +127,7 @@ slot0.register = function(slot0)
 			onNextTick(slot0)
 		end)
 
-		slot5 = function(slot0)
+		function slot5(slot0)
 			_courtyard:GetController():AddFurniture({
 				id = slot0.id,
 				configId = slot0.configId,
@@ -168,7 +175,7 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.AnyFurnitureInFloor = function(slot0, slot1, slot2)
+function slot0.AnyFurnitureInFloor(slot0, slot1, slot2)
 	if not slot1:GetThemeList()[slot2] then
 		return false
 	end
@@ -176,7 +183,7 @@ slot0.AnyFurnitureInFloor = function(slot0, slot1, slot2)
 	return table.getCount(slot4:GetAllFurniture()) > 0
 end
 
-slot0.GetCanPutFurnitureForTheme = function(slot0, slot1, slot2)
+function slot0.GetCanPutFurnitureForTheme(slot0, slot1, slot2)
 	slot6 = {}
 	slot7 = false
 
@@ -191,12 +198,41 @@ slot0.GetCanPutFurnitureForTheme = function(slot0, slot1, slot2)
 		slot7 = true
 	end
 
+	slot6 = slot0:FilterOwnCount(slot6)
+
 	table.sort(slot6, BackyardThemeFurniture._LoadWeight)
 
 	return slot6, slot7
 end
 
-slot0.GetAllFloorFurnitures = function(slot0, slot1)
+function slot0.FilterOwnCount(slot0, slot1)
+	slot2 = {}
+	slot3 = {}
+	slot4 = {}
+	slot5 = getProxy(DormProxy):getRawData()
+
+	for slot9, slot10 in ipairs(slot1) do
+		slot3[slot10.configId] = (slot3[slot10.configId] or 0) + 1
+
+		if slot3[slot10.configId] <= slot5:GetOwnFurnitureCount(slot10.configId) then
+			table.insert(slot2, slot10)
+		else
+			table.insert(slot4, slot10.id)
+		end
+	end
+
+	for slot9, slot10 in ipairs(slot4) do
+		for slot14, slot15 in ipairs(slot2) do
+			if slot15.parent == slot10 then
+				slot15.parent = 0
+			end
+		end
+	end
+
+	return slot2
+end
+
+function slot0.GetAllFloorFurnitures(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in pairs(slot1:GetThemeList()) do
@@ -208,7 +244,7 @@ slot0.GetAllFloorFurnitures = function(slot0, slot1)
 	return slot2
 end
 
-slot0.GenUniqueID = function(slot0, slot1, slot2)
+function slot0.GenUniqueID(slot0, slot1, slot2)
 	slot3 = slot0:GetAllFloorFurnitures(slot1)
 
 	for slot8 = 0, slot1:GetOwnFurnitureCount(slot2) - 1 do
@@ -220,7 +256,7 @@ slot0.GenUniqueID = function(slot0, slot1, slot2)
 	return BackyardThemeFurniture.GetUniqueId(slot2, 0)
 end
 
-slot0.SetUp = function(slot0)
+function slot0.SetUp(slot0)
 	seriesAsync({
 		function (slot0)
 			slot1 = getProxy(DormProxy)
@@ -244,10 +280,11 @@ slot0.SetUp = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		CourtYardEvent._SYN_FURNITURE,
 		CourtYardEvent._EXIT_MODE,
+		CourtYardEvent._FURNITURE_SELECTED,
 		DormProxy.THEME_TEMPLATE_ADDED,
 		DormProxy.THEME_TEMPLATE_DELTETED,
 		GAME.BACKYARD_GET_THEME_TEMPLATE_DONE,
@@ -260,7 +297,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == CourtYardEvent._SYN_FURNITURE then
@@ -310,6 +347,8 @@ slot0.handleNotification = function(slot0, slot1)
 		GetOrAddComponent(slot0.viewComponent._tf, typeof(CanvasGroup)).alpha = 0
 	elseif slot2 == uv0.END_TAKE_THEME_PHOTO then
 		GetOrAddComponent(slot0.viewComponent._tf, typeof(CanvasGroup)).alpha = 1
+	elseif slot2 == CourtYardEvent._FURNITURE_SELECTED then
+		slot0.viewComponent:emit(BackYardDecrationLayer.INNER_SELECTED_FURNITRUE, slot3)
 	end
 end
 

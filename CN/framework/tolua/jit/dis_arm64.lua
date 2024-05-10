@@ -1184,7 +1184,7 @@ slot45 = {
 	"sxtx"
 }
 
-slot46 = function(slot0, slot1, slot2)
+function slot46(slot0, slot1, slot2)
 	slot3 = slot0.pos
 	slot4 = ""
 
@@ -1201,17 +1201,17 @@ slot46 = function(slot0, slot1, slot2)
 	slot0.pos = slot3 + 4
 end
 
-slot47 = function(slot0)
+function slot47(slot0)
 	return uv0(slot0, ".long", {
 		"0x" .. uv1(slot0.op)
 	})
 end
 
-slot48 = function(slot0, slot1, slot2)
+function slot48(slot0, slot1, slot2)
 	return uv0[uv1(slot1, slot0 .. "%w-([xwds])")][slot2]
 end
 
-slot49 = function(slot0)
+function slot49(slot0)
 	if slot0 < 0 then
 		return uv0(slot0)
 	else
@@ -1227,7 +1227,7 @@ slot50 = {
 	1
 }
 
-slot51 = function(slot0)
+function slot51(slot0)
 	slot1 = uv0(uv1(slot0, 10), 63)
 	slot2 = uv0(uv1(slot0, 16), 63)
 
@@ -1291,7 +1291,7 @@ slot51 = function(slot0)
 	end
 end
 
-slot52 = function(slot0, slot1)
+function slot52(slot0, slot1)
 	if slot1 == "b" or slot1 == "bl" then
 		return uv0(uv1(slot0, 6), 4)
 	elseif slot1 == "adr" or slot1 == "adrp" then
@@ -1303,11 +1303,11 @@ slot52 = function(slot0, slot1)
 	end
 end
 
-slot53 = function(slot0)
+function slot53(slot0)
 	return (uv0(slot0, 1048576) == 0 and 1 or -1) * (16 + uv0(uv2(slot0, 13), 15)) * 2^(uv1(uv2(uv3(uv4(slot0, 12), 5), 24), 128) - 131)
 end
 
-slot54 = function(slot0, slot1, slot2, slot3)
+function slot54(slot0, slot1, slot2, slot3)
 	if slot2 < slot3 or slot2 == 31 or slot2 == 63 then
 		return false
 	end
@@ -1325,7 +1325,7 @@ slot54 = function(slot0, slot1, slot2, slot3)
 	return true
 end
 
-slot55 = function(slot0)
+function slot55(slot0)
 	slot1 = slot0.pos
 	slot2, slot3, slot4, slot5 = uv0(slot0.code, slot1 + 1, slot1 + 4)
 	slot6 = uv1(uv2(slot5, 24), uv2(slot4, 16), uv2(slot3, 8), slot2)
@@ -1677,7 +1677,7 @@ slot55 = function(slot0)
 	return uv24(slot0, slot10 .. slot8, slot7)
 end
 
-slot56 = function(slot0, slot1, slot2)
+function slot56(slot0, slot1, slot2)
 	slot1 = slot1 or 0
 	slot3 = slot2 and slot1 + slot2 or #slot0.code
 	slot0.pos = slot1

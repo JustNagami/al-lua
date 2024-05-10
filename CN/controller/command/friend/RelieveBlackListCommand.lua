@@ -1,6 +1,6 @@
 slot0 = class("RelieveBlackListCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	if not getProxy(FriendProxy):getBlackPlayerById(slot1:getBody()) then
 		return
 	end

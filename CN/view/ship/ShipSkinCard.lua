@@ -1,6 +1,6 @@
 slot0 = class("ShipSkinCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.go = slot1
 	slot0.tr = slot1.transform
 	slot0.painting = findTF(slot0.tr, "bg/mask/painting")
@@ -32,7 +32,7 @@ slot0.Ctor = function(slot0, slot1)
 	setText(findTF(slot0.hideObjToggleTF, "Label"), i18n("paint_hide_other_obj_tip"))
 end
 
-slot0.updateSkin = function(slot0, slot1, slot2)
+function slot0.updateSkin(slot0, slot1, slot2)
 	if slot0.skin ~= slot1 or slot0.own ~= slot2 then
 		slot0.skin = slot1
 		slot0.own = slot2
@@ -80,7 +80,7 @@ slot0.updateSkin = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateData = function(slot0, slot1, slot2, slot3)
+function slot0.updateData(slot0, slot1, slot2, slot3)
 	if slot0.ship ~= slot1 or slot0.skin ~= slot2 or slot0.own ~= slot3 then
 		slot0.ship = slot1
 		slot0.skin = slot2
@@ -157,7 +157,7 @@ slot0.updateData = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.updateSelected = function(slot0, slot1)
+function slot0.updateSelected(slot0, slot1)
 	if slot0.selected ~= slot1 then
 		slot0.selected = slot1
 
@@ -165,7 +165,7 @@ slot0.updateSelected = function(slot0, slot1)
 	end
 end
 
-slot0.updateUsing = function(slot0, slot1)
+function slot0.updateUsing(slot0, slot1)
 	if slot0.using ~= slot1 then
 		slot0.using = slot1
 
@@ -173,12 +173,12 @@ slot0.updateUsing = function(slot0, slot1)
 	end
 end
 
-slot0.flushSkin = function(slot0)
+function slot0.flushSkin(slot0)
 	slot0:clearPainting()
 	slot0:loadPainting()
 end
 
-slot0.clearPainting = function(slot0)
+function slot0.clearPainting(slot0)
 	if slot0.paintingName then
 		retPaintingPrefab(slot0.painting, slot0.paintingName)
 
@@ -186,7 +186,7 @@ slot0.clearPainting = function(slot0)
 	end
 end
 
-slot0.loadPainting = function(slot0)
+function slot0.loadPainting(slot0)
 	slot0.paintingName = slot0.skin and slot0.skin.painting or "unknown"
 
 	setActive(slot0.hideObjToggle, PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot0.paintingName .. "_n")))
@@ -196,7 +196,7 @@ slot0.loadPainting = function(slot0)
 	setPaintingPrefabAsync(slot0.painting, slot0.paintingName, "pifu")
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	slot0:clearPainting()
 
 	slot0.skin = nil

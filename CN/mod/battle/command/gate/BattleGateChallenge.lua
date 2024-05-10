@@ -2,7 +2,7 @@ slot0 = class("BattleGateChallenge")
 ys.Battle.BattleGateChallenge = slot0
 slot0.__name = "BattleGateChallenge"
 
-slot0.Entrance = function(slot0, slot1)
+function slot0.Entrance(slot0, slot1)
 	slot2 = slot0.mode
 	slot3 = slot0.actId
 	slot4 = getProxy(PlayerProxy)
@@ -67,7 +67,7 @@ slot0.Entrance = function(slot0, slot1)
 	end)
 end
 
-slot0.Exit = function(slot0, slot1)
+function slot0.Exit(slot0, slot1)
 	slot2 = pg.battle_cost_template[SYSTEM_CHALLENGE]
 	slot3 = getProxy(FleetProxy)
 	slot5 = slot0.statistics._battleScore
@@ -105,7 +105,7 @@ slot0.Exit = function(slot0, slot1)
 
 		slot5 = uv4
 
-		slot6 = function(slot0)
+		function slot6(slot0)
 			if uv0.statistics[slot0] then
 				uv1:updateShipHP(slot0, slot1.bp)
 			end

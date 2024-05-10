@@ -1,21 +1,21 @@
 slot0 = class("PrayPoolSuccessView", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "PrayPoolSuccessView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:initData()
 	slot0:initUI()
 	slot0:updateUI()
 	slot0:Show()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0.buildMsgBox:hide()
 end
 
-slot0.OnBackPress = function(slot0)
+function slot0.OnBackPress(slot0)
 	if slot0:GetLoaded() and isActive(slot0.boxTF) then
 		slot0.buildMsgBox:hide()
 
@@ -23,7 +23,7 @@ slot0.OnBackPress = function(slot0)
 	end
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.prayProxy = getProxy(PrayProxy)
 	slot0.poolType = slot0.prayProxy:getSelectedPoolType()
 	slot0.playerProxy = getProxy(PlayerProxy)
@@ -35,7 +35,7 @@ slot0.initData = function(slot0)
 	slot0.buildShipProxy = getProxy(BuildShipProxy)
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	slot0.shipTF = {
 		slot0:findTF("Ship1"),
 		slot0:findTF("Ship2")
@@ -74,7 +74,7 @@ slot0.initUI = function(slot0)
 	end, SFX_UI_BUILDING_STARTBUILDING)
 end
 
-slot0.updateUI = function(slot0)
+function slot0.updateUI(slot0)
 	slot0:updatePaint(slot0.prayProxy:getSelectedShipIDList())
 
 	slot2 = nil
@@ -89,7 +89,7 @@ slot0.updateUI = function(slot0)
 	setText(slot0.buildGoldNumText, slot5.use_gold)
 end
 
-slot0.updatePaint = function(slot0, slot1)
+function slot0.updatePaint(slot0, slot1)
 	for slot5 = 1, 2 do
 		slot6 = slot1[slot5]
 		slot9 = pg.ship_data_statistics[slot6].rarity
@@ -116,7 +116,7 @@ slot0.updatePaint = function(slot0, slot1)
 	end
 end
 
-slot0.MsgBox = function(slot0)
+function slot0.MsgBox(slot0)
 	slot1 = {
 		_go = slot0,
 		__cname = "buildmsgbox",
@@ -139,7 +139,7 @@ slot0.MsgBox = function(slot0)
 
 	pg.DelegateInfo.New(slot1)
 
-	slot2 = function(slot0, slot1)
+	function slot2(slot0, slot1)
 		uv0.valueTxt.text = slot0
 
 		if slot1 then
@@ -149,7 +149,7 @@ slot0.MsgBox = function(slot0)
 		end
 	end
 
-	slot1.init = function(slot0)
+	function slot1.init(slot0)
 		slot0.inited = true
 
 		onButton(slot0, slot0._tf, function ()
@@ -191,7 +191,7 @@ slot0.MsgBox = function(slot0)
 		end, SFX_PANEL)
 	end
 
-	slot1.verifyCount = function(slot0, slot1)
+	function slot1.verifyCount(slot0, slot1)
 		if slot0.verify then
 			return slot0.verify(slot1)
 		end
@@ -199,11 +199,11 @@ slot0.MsgBox = function(slot0)
 		return true
 	end
 
-	slot1.isActive = function(slot0)
+	function slot1.isActive(slot0)
 		return slot0.active
 	end
 
-	slot1.show = function(slot0, slot1, slot2, slot3, slot4)
+	function slot1.show(slot0, slot1, slot2, slot3, slot4)
 		slot0.verify = slot2
 		slot0.onConfirm = slot3
 		slot0.active = true
@@ -221,7 +221,7 @@ slot0.MsgBox = function(slot0)
 		pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	end
 
-	slot1.hide = function(slot0)
+	function slot1.hide(slot0)
 		if slot0:isActive() then
 			slot0.onConfirm = nil
 			slot0.active = false
@@ -235,7 +235,7 @@ slot0.MsgBox = function(slot0)
 		end
 	end
 
-	slot1.close = function(slot0)
+	function slot1.close(slot0)
 		slot0:hide()
 		pg.DelegateInfo.Dispose(slot0)
 	end

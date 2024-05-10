@@ -1,6 +1,6 @@
 slot0 = class("BannerScrollRect")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0.container = slot1
 	slot0.dotContainer = slot2
 	slot3 = slot1:Find("item")
@@ -19,7 +19,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.dragEvent = slot0.container:GetComponent("EventTriggerListener")
 end
 
-slot0.GetItem = function(slot0, slot1)
+function slot0.GetItem(slot0, slot1)
 	if not slot0.items[slot1] then
 		slot3 = slot0.items[1]
 		slot0.items[slot1] = Object.Instantiate(slot3, slot3.transform.parent)
@@ -28,7 +28,7 @@ slot0.GetItem = function(slot0, slot1)
 	return slot2
 end
 
-slot0.GetDot = function(slot0, slot1)
+function slot0.GetDot(slot0, slot1)
 	if not slot0.dots[slot1] then
 		slot3 = slot0.dots[1]
 		slot0.dots[slot1] = Object.Instantiate(slot3, slot3.transform.parent)
@@ -37,7 +37,7 @@ slot0.GetDot = function(slot0, slot1)
 	return slot2
 end
 
-slot0.AddChild = function(slot0)
+function slot0.AddChild(slot0)
 	slot0.total = slot0.total + 1
 	slot1 = slot0:GetDot(slot0.total)
 	slot2 = slot0:GetItem(slot0.total)
@@ -50,15 +50,15 @@ slot0.AddChild = function(slot0)
 	return slot2
 end
 
-slot0.UpdateItemPosition = function(slot0, slot1, slot2)
+function slot0.UpdateItemPosition(slot0, slot1, slot2)
 	slot2.localPosition = Vector3((slot1 - 1) * slot0.itemWidth, slot2.localPosition.y, 0)
 end
 
-slot0.UpdateDotPosition = function(slot0, slot1, slot2)
+function slot0.UpdateDotPosition(slot0, slot1, slot2)
 	slot2.localPosition = Vector3(slot0.dotStartPosX + (slot1 - 1) * (slot0.dotWidth + 15), slot2.localPosition.y, 0)
 end
 
-slot0.SetUp = function(slot0)
+function slot0.SetUp(slot0)
 	if slot0.total == 0 then
 		slot0:Disable()
 
@@ -72,7 +72,7 @@ slot0.SetUp = function(slot0)
 	slot0:AddDrag()
 end
 
-slot0.AutoScroll = function(slot0)
+function slot0.AutoScroll(slot0)
 	slot0:RemoveTimer()
 
 	slot0.timer = Timer.New(function ()
@@ -86,7 +86,7 @@ slot0.AutoScroll = function(slot0)
 	slot0.timer:Start()
 end
 
-slot0.ScrollTo = function(slot0, slot1)
+function slot0.ScrollTo(slot0, slot1)
 	slot0.animating = true
 
 	LeanTween.moveLocalX(go(slot0.container), -1 * (slot1 - 1) * slot0.itemWidth, 0.2):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function ()
@@ -98,7 +98,7 @@ slot0.ScrollTo = function(slot0, slot1)
 	slot0.index = slot1
 end
 
-slot0.AddDrag = function(slot0)
+function slot0.AddDrag(slot0)
 	slot1 = 0
 	slot2 = nil
 	slot3 = slot0.dragEvent
@@ -139,7 +139,7 @@ slot0.AddDrag = function(slot0)
 	end)
 end
 
-slot0.Reset = function(slot0)
+function slot0.Reset(slot0)
 	slot0:RemoveTimer()
 	ClearEventTrigger(slot0.dragEvent)
 	LeanTween.cancel(go(slot0.container))
@@ -151,7 +151,7 @@ slot0.Reset = function(slot0)
 	slot0:Disable()
 end
 
-slot0.Disable = function(slot0)
+function slot0.Disable(slot0)
 	for slot4, slot5 in ipairs(slot0.items) do
 		setActive(slot5, false)
 	end
@@ -163,11 +163,11 @@ slot0.Disable = function(slot0)
 	end
 end
 
-slot0.Puase = function(slot0)
+function slot0.Puase(slot0)
 	slot0:RemoveTimer()
 end
 
-slot0.Resume = function(slot0)
+function slot0.Resume(slot0)
 	if slot0.total == 0 then
 		return
 	end
@@ -175,7 +175,7 @@ slot0.Resume = function(slot0)
 	slot0:AutoScroll()
 end
 
-slot0.RemoveTimer = function(slot0)
+function slot0.RemoveTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -183,7 +183,7 @@ slot0.RemoveTimer = function(slot0)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Reset()
 
 	for slot4, slot5 in ipairs(slot0.items) do

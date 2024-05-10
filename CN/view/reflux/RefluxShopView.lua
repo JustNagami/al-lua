@@ -12,18 +12,18 @@ slot0.GiftPackTypeName = {
 slot0.Special_ID_Gold = 1
 slot0.Special_ID_Gem = 14
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "RefluxShopUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:initData()
 	slot0:initUI()
 	slot0:updateUI()
 	uv0.SaveEnterTag()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	for slot4, slot5 in pairs(uv0.GiftPackType) do
 		if slot0.packTimerList[slot5] then
 			slot6:Stop()
@@ -39,16 +39,16 @@ slot0.OnDestroy = function(slot0)
 	end
 end
 
-slot0.OnBackPress = function(slot0)
+function slot0.OnBackPress(slot0)
 	slot0:Hide()
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.refluxProxy = getProxy(RefluxProxy)
 	slot0.shopProxy = getProxy(ShopsProxy)
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	setActive(slot0:findTF("BG/MoneyTip"), false)
 
 	slot0.itemTpl = slot0:findTF("ItemTpl")
@@ -76,7 +76,7 @@ slot0.initUI = function(slot0)
 	})
 end
 
-slot0.updateData = function(slot0)
+function slot0.updateData(slot0)
 	slot2 = false
 
 	if slot0:getCurDayGiftPackIDList()[1] then
@@ -96,12 +96,12 @@ slot0.updateData = function(slot0)
 	}
 end
 
-slot0.updateUI = function(slot0)
+function slot0.updateUI(slot0)
 	slot0:updateData()
 	slot0:updatePackList()
 end
 
-slot0.updateOutline = function(slot0)
+function slot0.updateOutline(slot0)
 	for slot5 = 1, slot0.packContainerTF.childCount do
 		slot7 = slot0.packContainerTF:GetChild(slot5 - 1)
 		slot9 = slot0:findTF("TimeLimit/Text", slot7):GetComponent(typeof(Text))
@@ -113,7 +113,7 @@ slot0.updateOutline = function(slot0)
 	end
 end
 
-slot0.updateItem = function(slot0, slot1, slot2)
+function slot0.updateItem(slot0, slot1, slot2)
 	slot3 = slot0:findTF("Frame", slot1)
 	slot4 = slot0:findTF("Icon", slot1)
 	slot7 = slot2.id or slot2[2]
@@ -121,10 +121,10 @@ slot0.updateItem = function(slot0, slot1, slot2)
 	setText(slot0:findTF("Count", slot1), slot2.count or slot2[3])
 
 	if (slot2.type or slot2[1]) ~= DROP_TYPE_SHIP then
-		setImageSprite(slot4, LoadSprite(getDropIcon({
+		setImageSprite(slot4, LoadSprite(Drop.New({
 			type = slot6,
 			id = slot7
-		})))
+		}):getIcon()))
 	else
 		setImageSprite(slot4, LoadSprite("QIcon/" .. Ship.New({
 			configId = slot7
@@ -145,7 +145,7 @@ slot0.updateItem = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.updatePack = function(slot0, slot1, slot2, slot3)
+function slot0.updatePack(slot0, slot1, slot2, slot3)
 	if slot2 == false then
 		setActive(slot1, false)
 
@@ -161,7 +161,7 @@ slot0.updatePack = function(slot0, slot1, slot2, slot3)
 	slot4, slot5 = nil
 
 	if slot3 ~= uv0.GiftPackType.Money then
-		slot5 = pg.item_data_statistics[slot2:getConfig("effect_args")[1]]
+		slot5 = Item.getConfigData(slot2:getConfig("effect_args")[1])
 	end
 
 	slot7 = nil
@@ -258,7 +258,7 @@ slot0.updatePack = function(slot0, slot1, slot2, slot3)
 	end, SFX_PANEL)
 end
 
-slot0.updatePackTimeLimit = function(slot0, slot1, slot2)
+function slot0.updatePackTimeLimit(slot0, slot1, slot2)
 	slot5 = slot0:calcNextGiftPackSecByType(uv0.GiftPackTypeName[slot2], slot0:getCurDay())
 
 	if slot0.packTimerList[slot2] then
@@ -267,7 +267,7 @@ slot0.updatePackTimeLimit = function(slot0, slot1, slot2)
 		slot0.packTimerList[slot2] = nil
 	end
 
-	slot7 = function()
+	function slot7()
 		if uv0 >= 0 then
 			setText(uv1, pg.TimeMgr.GetInstance():DescCDTime(uv0))
 
@@ -288,7 +288,7 @@ slot0.updatePackTimeLimit = function(slot0, slot1, slot2)
 	slot7()
 end
 
-slot0.updatePackNextTime = function(slot0, slot1, slot2)
+function slot0.updatePackNextTime(slot0, slot1, slot2)
 	slot5 = slot0:calcNextGiftPackSecByType(uv0.GiftPackTypeName[slot2], slot0:getCurDay())
 
 	if slot0.packNextTimerList[slot2] then
@@ -297,7 +297,7 @@ slot0.updatePackNextTime = function(slot0, slot1, slot2)
 		slot0.packNextTimerList[slot2] = nil
 	end
 
-	slot7 = function()
+	function slot7()
 		if uv0 >= 0 then
 			setText(uv1, pg.TimeMgr.GetInstance():DescCDTime(uv0))
 
@@ -318,11 +318,11 @@ slot0.updatePackNextTime = function(slot0, slot1, slot2)
 	slot7()
 end
 
-slot0.updatePackList = function(slot0)
+function slot0.updatePackList(slot0)
 	slot0.packItemList:align(#slot0.goodVOList)
 end
 
-slot0.isShowRedPot = function()
+function slot0.isShowRedPot()
 	if PlayerPrefs.GetInt("RefluxShop_Enter_Day", 0) < getProxy(RefluxProxy).signCount then
 		return true
 	else
@@ -330,11 +330,11 @@ slot0.isShowRedPot = function()
 	end
 end
 
-slot0.SaveEnterTag = function()
+function slot0.SaveEnterTag()
 	PlayerPrefs.SetInt("RefluxShop_Enter_Day", getProxy(RefluxProxy).signCount)
 end
 
-slot0.getCurDay = function(slot0)
+function slot0.getCurDay(slot0)
 	if pg.TimeMgr.GetInstance():DiffDay(slot0.refluxProxy.returnTimestamp, pg.TimeMgr.GetInstance():GetServerTime()) < #pg.return_giftpack_template.all then
 		return slot3 + 1
 	else
@@ -342,7 +342,7 @@ slot0.getCurDay = function(slot0)
 	end
 end
 
-slot0.getLevelIndex = function(slot0, slot1)
+function slot0.getLevelIndex(slot0, slot1)
 	slot2 = slot1 or slot0:getCurDay()
 	slot4 = slot0.refluxProxy.returnLV
 	slot5 = nil
@@ -356,7 +356,7 @@ slot0.getLevelIndex = function(slot0, slot1)
 	end
 end
 
-slot0.getCurDayGiftPackIDByType = function(slot0, slot1, slot2)
+function slot0.getCurDayGiftPackIDByType(slot0, slot1, slot2)
 	if (slot2 or slot0:getCurDay()) > #pg.return_giftpack_template.all then
 		return false
 	end
@@ -375,7 +375,7 @@ slot0.getCurDayGiftPackIDByType = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.getCurDayGiftPackIDList = function(slot0)
+function slot0.getCurDayGiftPackIDList(slot0)
 	slot1 = slot0:getCurDay()
 
 	return {
@@ -385,7 +385,7 @@ slot0.getCurDayGiftPackIDList = function(slot0)
 	}
 end
 
-slot0.getNextGiftPackDayByType = function(slot0, slot1, slot2)
+function slot0.getNextGiftPackDayByType(slot0, slot1, slot2)
 	if (slot2 or slot0:getCurDay()) >= #pg.return_giftpack_template.all then
 		return false
 	end
@@ -406,21 +406,21 @@ slot0.getNextGiftPackDayByType = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.isHaveNextPack = function(slot0, slot1, slot2)
+function slot0.isHaveNextPack(slot0, slot1, slot2)
 	return slot0:getNextGiftPackDayByType(slot1, slot2 or slot0:getCurDay()) ~= false
 end
 
-slot0.calcNextGiftPackSecByType = function(slot0, slot1, slot2)
+function slot0.calcNextGiftPackSecByType(slot0, slot1, slot2)
 	return slot0.refluxProxy.returnTimestamp + (slot0:getNextGiftPackDayByType(slot1, slot2 or slot0:getCurDay()) - 1) * 86400 - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-slot0.isBuyEver = function(slot0, slot1)
+function slot0.isBuyEver(slot0, slot1)
 	slot2 = getProxy(ShopsProxy)
 
 	return 0 + ChargeConst.getBuyCount(slot2:getChargedList(), slot1) + ChargeConst.getBuyCount(slot2:GetNormalList(), slot1) > 0
 end
 
-slot0.confirm = function(slot0, slot1)
+function slot0.confirm(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -430,11 +430,7 @@ slot0.confirm = function(slot0, slot1)
 
 		if slot1:isMonthCard() or slot1:isGiftBox() or slot1:isItemBox() or slot1:isPassItem() then
 			slot5 = underscore.map(slot1:getConfig("extra_service_item"), function (slot0)
-				return {
-					type = slot0[1],
-					id = slot0[2],
-					count = slot0[3]
-				}
+				return Drop.Create(slot0)
 			end)
 			slot6 = nil
 
@@ -442,17 +438,13 @@ slot0.confirm = function(slot0, slot1)
 				slot7 = slot1:getConfig("sub_display")
 				slot8 = slot7[1]
 				slot9 = pg.battlepass_event_pt[slot8].pt
-				slot6 = {
+				slot6 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = pg.battlepass_event_pt[slot8].pt,
 					count = slot7[2]
-				}
+				})
 				slot5 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot8].drop_client_pay, function (slot0)
-					return {
-						type = slot0[1],
-						id = slot0[2],
-						count = slot0[3]
-					}
+					return Drop.Create(slot0)
 				end))
 			end
 
@@ -460,17 +452,17 @@ slot0.confirm = function(slot0, slot1)
 			slot8 = nil
 
 			if slot1:isMonthCard() then
-				slot8 = {
-					id = 4,
-					type = 1,
-					count = slot7
-				}
-			elseif slot7 > 0 then
-				table.insert(slot5, {
-					id = 4,
-					type = 1,
+				slot8 = Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
 					count = slot7
 				})
+			elseif slot7 > 0 then
+				table.insert(slot5, Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
+					count = slot7
+				}))
 			end
 
 			slot9, slot10 = nil
@@ -534,13 +526,9 @@ slot0.confirm = function(slot0, slot1)
 	else
 		slot2 = {}
 
-		if type(pg.item_data_statistics[slot1:getConfig("effect_args")[1]].display_icon) == "table" then
+		if type(Item.getConfigData(slot1:getConfig("effect_args")[1]).display_icon) == "table" then
 			for slot9, slot10 in ipairs(slot5) do
-				table.insert(slot2, {
-					type = slot10[1],
-					id = slot10[2],
-					count = slot10[3]
-				})
+				table.insert(slot2, Drop.Create(slot10))
 			end
 		end
 
@@ -574,7 +562,7 @@ slot0.confirm = function(slot0, slot1)
 	end
 end
 
-slot0.getAllRefluxPackID = function()
+function slot0.getAllRefluxPackID()
 	slot0 = {}
 
 	for slot4, slot5 in ipairs(pg.return_giftpack_template.all) do

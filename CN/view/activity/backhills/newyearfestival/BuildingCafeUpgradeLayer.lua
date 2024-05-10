@@ -4,7 +4,7 @@ slot1 = {
 	18
 }
 
-slot0.Set = function(slot0, slot1, slot2)
+function slot0.Set(slot0, slot1, slot2)
 	slot2 = slot2 or slot0.contextData.buildingID
 	slot3 = pg.activity_event_building[slot2]
 
@@ -47,7 +47,7 @@ slot0.Set = function(slot0, slot1, slot2)
 		setText(slot0:findTF("window/frame/content/preview/next"), slot17.desc)
 	end
 
-	slot0.loader:GetSprite(pg.item_data_statistics[slot7].icon, "", slot0:findTF("window/frame/costback/icon"))
+	slot0.loader:GetSprite(Item.getConfigData(slot7).icon, "", slot0:findTF("window/frame/costback/icon"))
 	setText(slot0:findTF("window/frame/costback/cost"), slot3.material[slot5] or 0)
 	onButton(slot0, slot0.btnUpgrade, function ()
 		if not uv0 then

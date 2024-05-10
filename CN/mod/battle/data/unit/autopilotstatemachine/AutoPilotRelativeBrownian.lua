@@ -4,11 +4,11 @@ slot1 = class("AutoPilotRelativeBrownian", slot0.Battle.IPilot)
 slot0.Battle.AutoPilotRelativeBrownian = slot1
 slot1.__name = "AutoPilotRelativeBrownian"
 
-slot1.Ctor = function(slot0, ...)
+function slot1.Ctor(slot0, ...)
 	uv0.super.Ctor(slot0, ...)
 end
 
-slot1.SetParameter = function(slot0, slot1, slot2)
+function slot1.SetParameter(slot0, slot1, slot2)
 	uv0.super.SetParameter(slot0, slot1, slot2)
 
 	slot0._randomPoint = {
@@ -22,7 +22,7 @@ slot1.SetParameter = function(slot0, slot1, slot2)
 	slot0._random = slot1.randomCount or 30
 end
 
-slot1.Active = function(slot0, slot1)
+function slot1.Active(slot0, slot1)
 	slot0._stopCount = slot0._stop
 	slot0._moveCount = 0
 	slot0._randomCount = 0
@@ -38,7 +38,7 @@ slot1.Active = function(slot0, slot1)
 	uv1.super.Active(slot0, slot1)
 end
 
-slot1.GetDirection = function(slot0, slot1)
+function slot1.GetDirection(slot0, slot1)
 	if slot0:IsExpired() then
 		slot0:Finish()
 

@@ -2,7 +2,7 @@ slot0 = class("BeachGuardUIlua")
 slot1 = "event:/ui/ddldaoshu2"
 slot2 = "event:/ui/break_out_full"
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	slot0._tf = slot1
 	slot0._event = slot3
 	slot0._gameData = slot2
@@ -13,7 +13,7 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	slot0:initSettlementUI()
 end
 
-slot0.initCountUI = function(slot0)
+function slot0.initCountUI(slot0)
 	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
 	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
 	slot0.countDft = GetOrAddComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
@@ -29,9 +29,11 @@ slot0.initCountUI = function(slot0)
 	end)
 end
 
-slot0.initLeavelUI = function(slot0)
+function slot0.initLeavelUI(slot0)
 	slot0.leaveUI = findTF(slot0._tf, "pop/LeaveUI")
+	slot1 = GetComponent(findTF(slot0.leaveUI, "ad/desc"), typeof(Image))
 
+	slot1:SetNativeSize()
 	setActive(slot0.leaveUI, false)
 	onButton(slot0._event, findTF(slot0.leaveUI, "ad/btnOk"), function ()
 		uv0:resumeGame()
@@ -43,9 +45,11 @@ slot0.initLeavelUI = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.initPauseUI = function(slot0)
+function slot0.initPauseUI(slot0)
 	slot0.pauseUI = findTF(slot0._tf, "pop/pauseUI")
+	slot1 = GetComponent(findTF(slot0.pauseUI, "ad/desc"), typeof(Image))
 
+	slot1:SetNativeSize()
 	setActive(slot0.pauseUI, false)
 	onButton(slot0._event, findTF(slot0.pauseUI, "ad/btnOk"), function ()
 		uv0:resumeGame()
@@ -53,7 +57,7 @@ slot0.initPauseUI = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.initSettlementUI = function(slot0)
+function slot0.initSettlementUI(slot0)
 	slot0.settlementUI = findTF(slot0._tf, "pop/SettleMentUI")
 
 	setActive(slot0.settlementUI, false)
@@ -63,7 +67,7 @@ slot0.initSettlementUI = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.updateSettlementUI = function(slot0, slot1, slot2, slot3)
+function slot0.updateSettlementUI(slot0, slot1, slot2, slot3)
 	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
 	slot6 = slot3.scoreNum
@@ -83,7 +87,7 @@ slot0.updateSettlementUI = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.backPressed = function(slot0)
+function slot0.backPressed(slot0)
 	if isActive(slot0.pauseUI) then
 		slot0:resumeGame()
 		slot0._event:emit(BeachGuardGameView.PAUSE_GAME, false)
@@ -98,12 +102,12 @@ slot0.backPressed = function(slot0)
 	end
 end
 
-slot0.resumeGame = function(slot0)
+function slot0.resumeGame(slot0)
 	setActive(slot0.leaveUI, false)
 	setActive(slot0.pauseUI, false)
 end
 
-slot0.popLeaveUI = function(slot0)
+function slot0.popLeaveUI(slot0)
 	if isActive(slot0.pauseUI) then
 		setActive(slot0.pauseUI, false)
 	end
@@ -111,7 +115,7 @@ slot0.popLeaveUI = function(slot0)
 	setActive(slot0.leaveUI, true)
 end
 
-slot0.popPauseUI = function(slot0)
+function slot0.popPauseUI(slot0)
 	if isActive(slot0.leaveUI) then
 		setActive(slot0.leaveUI, false)
 	end
@@ -119,31 +123,31 @@ slot0.popPauseUI = function(slot0)
 	setActive(slot0.pauseUI, true)
 end
 
-slot0.updateGameUI = function(slot0, slot1)
+function slot0.updateGameUI(slot0, slot1)
 	setText(slot0.scoreTf, slot1.scoreNum)
 	setText(slot0.gameTimeS, math.ceil(slot1.gameTime))
 end
 
-slot0.readyStart = function(slot0)
+function slot0.readyStart(slot0)
 	slot0:popCountUI(true)
 	slot0.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
 end
 
-slot0.popCountUI = function(slot0, slot1)
+function slot0.popCountUI(slot0, slot1)
 	setActive(slot0.countUI, slot1)
 end
 
-slot0.openSettlementUI = function(slot0, slot1)
+function slot0.openSettlementUI(slot0, slot1)
 	setActive(slot0.settlementUI, slot1)
 end
 
-slot0.clearUI = function(slot0)
+function slot0.clearUI(slot0)
 	setActive(slot0.settlementUI, false)
 	setActive(slot0.countUI, false)
 end
 
-slot0.getGameTimes = function(slot0, slot1)
+function slot0.getGameTimes(slot0, slot1)
 	return slot1.count
 end
 

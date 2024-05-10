@@ -1,6 +1,6 @@
 slot0 = class("ShoppingCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.id
 	slot4 = slot2.count
@@ -21,15 +21,15 @@ slot0.execute = function(slot0, slot1)
 	slot7 = getProxy(PlayerProxy):getData()
 
 	if slot5.type == DROP_TYPE_ITEM then
-		for slot14, slot15 in pairs(pg.item_data_statistics[slot5.effect_args[1]].display_icon) do
-			if slot15[1] == 1 then
-				if slot15[2] == 1 and slot7:GoldMax(slot15[3]) then
+		for slot13, slot14 in pairs(Item.getConfigData(slot5.effect_args[1]).display_icon) do
+			if slot14[1] == 1 then
+				if slot14[2] == 1 and slot7:GoldMax(slot14[3]) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 					return
 				end
 
-				if slot15[2] == 2 and slot7:OilMax(slot15[3]) then
+				if slot14[2] == 2 and slot7:OilMax(slot14[3]) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 					return
@@ -106,7 +106,10 @@ slot0.execute = function(slot0, slot1)
 	end
 
 	if slot7[id2res(slot5.resource_type)] < slot11 then
-		slot13 = pg.item_data_statistics[id2ItemId(slot5.resource_type)].name
+		slot13 = Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot5.resource_type
+		}):getName()
 
 		if slot5.resource_type == 1 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
@@ -130,7 +133,7 @@ slot0.execute = function(slot0, slot1)
 	table.insert(slot13, function (slot0)
 		if uv0.genre == ShopArgs.GiftPackage or uv0.genre == ShopArgs.NewServerShop then
 			slot3, slot4 = CheckOverflow(GetItemsOverflowDic({
-				Item.New({
+				Drop.New({
 					count = 1,
 					type = DROP_TYPE_ITEM,
 					id = uv0.effect_args[1]
@@ -138,7 +141,20 @@ slot0.execute = function(slot0, slot1)
 			}))
 
 			if not slot3 then
-				pg.TipsMgr.GetInstance():ShowTips(slot4)
+				switch(slot4, {
+					gold = function ()
+						pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
+					end,
+					oil = function ()
+						pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
+					end,
+					equip = function ()
+						NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), openDestroyEquip, gotoChargeScene)
+					end,
+					ship = function ()
+						NoPosMsgBox(i18n("switch_to_shop_tip_noDockyard"), openDockyardClear, gotoChargeScene, openDockyardIntensify)
+					end
+				})
 
 				return
 			end

@@ -5,7 +5,7 @@ slot0.Fields = {
 	config = "table"
 }
 
-slot0.Setup = function(slot0, slot1)
+function slot0.Setup(slot0, slot1)
 	slot0.id = slot1
 	slot0.config = pg.world_target_data[slot0.id]
 
@@ -28,7 +28,7 @@ slot0.Setup = function(slot0, slot1)
 	slot0.triggers = slot2
 end
 
-slot0.NetUpdate = function(slot0, slot1)
+function slot0.NetUpdate(slot0, slot1)
 	_.each(slot1, function (slot0)
 		slot1 = uv0:GetTrigger(slot0.trigger_id)
 
@@ -52,23 +52,23 @@ slot0.NetUpdate = function(slot0, slot1)
 	return {}, nil
 end
 
-slot0.GetTrigger = function(slot0, slot1)
+function slot0.GetTrigger(slot0, slot1)
 	return _.detect(slot0.triggers, function (slot0)
 		return slot0.id == uv0
 	end)
 end
 
-slot0.GetTriggers = function(slot0)
+function slot0.GetTriggers(slot0)
 	return slot0.triggers
 end
 
-slot0.IsAchieved = function(slot0)
+function slot0.IsAchieved(slot0)
 	return _.all(slot0.triggers, function (slot0)
 		return slot0:IsAchieved()
 	end)
 end
 
-slot0.GetProgress = function(slot0)
+function slot0.GetProgress(slot0)
 	if #slot0.triggers > 1 then
 		return _.reduce(slot0.triggers, 0, function (slot0, slot1)
 			return slot0 + (slot1:IsAchieved() and 1 or 0)
@@ -78,7 +78,7 @@ slot0.GetProgress = function(slot0)
 	end
 end
 
-slot0.GetMaxProgress = function(slot0)
+function slot0.GetMaxProgress(slot0)
 	if #slot0.triggers > 1 then
 		return #slot0.triggers
 	else

@@ -1,6 +1,6 @@
 slot0 = class("DeXiQianShaoRePtPage", import(".TemplatePage.NewFrameTemplatePage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("AD")
 	slot0.battleBtn = slot0:findTF("battle_btn", slot0.bg)
 	slot0.getBtn = slot0:findTF("get_btn", slot0.bg)
@@ -16,7 +16,7 @@ slot0.OnInit = function(slot0)
 	slot0.gotTag = slot0:findTF("AD/switcher/phase2/got")
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	onButton(slot0, slot0.battleBtn, function ()
 		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
 	end, SFX_PANEL)

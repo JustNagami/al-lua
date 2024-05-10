@@ -1,30 +1,30 @@
 slot0 = class("RefluxSignView", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "RefluxSignUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:initData()
 	slot0:initUI()
 	slot0:updateUI()
 	slot0:tryAutoSign()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
-slot0.OnBackPress = function(slot0)
+function slot0.OnBackPress(slot0)
 	slot0:Hide()
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.refluxProxy = getProxy(RefluxProxy)
 	slot0.dayAwardList = slot0:getAllAwardList()
 	slot0.totalSignCount = #pg.return_sign_template.all
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	slot1 = slot0:findTF("DayImg")
 	slot0.daySpriteList = {}
 
@@ -51,7 +51,7 @@ slot0.initUI = function(slot0)
 				uv0:findTF("Item3/Icon", slot2)
 			}) do
 				if slot10[slot14].type ~= DROP_TYPE_SHIP then
-					setImageSprite(slot15, LoadSprite(getDropIcon(slot16)))
+					setImageSprite(slot15, LoadSprite(slot16:getIcon()))
 				else
 					setImageSprite(slot15, LoadSprite("QIcon/" .. Ship.New({
 						configId = slot16.id
@@ -74,16 +74,16 @@ slot0.initUI = function(slot0)
 	slot0.tplWidth = slot0.dayTpl:GetComponent(typeof(LayoutElement)).preferredWidth
 end
 
-slot0.updateUI = function(slot0)
+function slot0.updateUI(slot0)
 	setText(slot0.signCountText, slot0.refluxProxy.signCount)
 	slot0.dayUIItemList:align(slot0.totalSignCount)
 	slot0:autoScroll(slot0.refluxProxy.signCount)
 end
 
-slot0.updateOutline = function(slot0)
+function slot0.updateOutline(slot0)
 end
 
-slot0.getAllAwardList = function(slot0)
+function slot0.getAllAwardList(slot0)
 	slot1 = {}
 	slot2 = slot0.refluxProxy.returnLV
 
@@ -92,11 +92,7 @@ slot0.getAllAwardList = function(slot0)
 		slot12 = {}
 
 		for slot17, slot18 in ipairs(slot8.award_display[slot0:getLevelIndex(slot2, slot8.level)]) do
-			table.insert(slot12, {
-				type = slot18[1],
-				id = slot18[2],
-				count = slot18[3]
-			})
+			table.insert(slot12, Drop.Create(slot18))
 		end
 
 		table.insert(slot1, slot12)
@@ -105,7 +101,7 @@ slot0.getAllAwardList = function(slot0)
 	return slot1
 end
 
-slot0.getLevelIndex = function(slot0, slot1, slot2)
+function slot0.getLevelIndex(slot0, slot1, slot2)
 	for slot6, slot7 in ipairs(slot2) do
 		slot9 = slot7[2]
 
@@ -115,13 +111,13 @@ slot0.getLevelIndex = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.tryAutoSign = function(slot0)
+function slot0.tryAutoSign(slot0)
 	if slot0.refluxProxy:isCanSign() then
 		pg.m02:sendNotification(GAME.REFLUX_SIGN)
 	end
 end
 
-slot0.autoScroll = function(slot0, slot1)
+function slot0.autoScroll(slot0, slot1)
 	slot3 = 0
 	slot0.scrollSC.horizontalNormalizedPosition = math.clamp(slot1 == 1 and 0 or slot1 == slot0.dayContainerTF.childCount and 1 or slot1 / slot0.dayContainerTF.childCount, 0, 1)
 end

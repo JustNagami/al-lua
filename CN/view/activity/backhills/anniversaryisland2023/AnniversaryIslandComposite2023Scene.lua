@@ -1,20 +1,20 @@
 slot0 = class("AnniversaryIslandComposite2023Scene", import("view.base.BaseUI"))
 slot0.FilterAll = bit.bor(1, 2)
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 
 	slot0.loader = AutoLoader.New()
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "AnniversaryIslandComposite2023UI"
 end
 
 slot1 = "ui/AnniversaryIslandComposite2023UI_atlas"
 slot2 = "ui/AtelierCommonUI_atlas"
 
-slot0.preload = function(slot0, slot1)
+function slot0.preload(slot0, slot1)
 	table.ParallelIpairsAsync({
 		uv0,
 		uv1
@@ -23,7 +23,7 @@ slot0.preload = function(slot0, slot1)
 	end, slot1)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.layerFormulaList = slot0._tf:Find("Panel/FormulaList")
 	slot0.layerFormulaDetail = slot0._tf:Find("Panel/FormulaDetail")
 	slot0.top = slot0._tf:Find("Top")
@@ -31,7 +31,7 @@ slot0.init = function(slot0)
 
 	setActive(slot0.layerFormulaList:Find("Item"), false)
 
-	slot0.formulaRect.onUpdateItem = function(slot0, slot1)
+	function slot0.formulaRect.onUpdateItem(slot0, slot1)
 		uv0:UpdateFormulaListItem(slot0 + 1, slot1)
 	end
 
@@ -55,7 +55,7 @@ slot0.init = function(slot0)
 	setText(slot0.layerFormulaDetail:Find("MaterialsBG/MaterialsTitle"), i18n("workbench_tips9"))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0.contextData.filterType = slot0.contextData.filterType or uv0.FilterAll
 
 	table.Foreach(slot0.formulaFilterButtons, function (slot0, slot1)
@@ -141,7 +141,7 @@ slot0.didEnter = function(slot0)
 	slot0:UpdateView()
 end
 
-slot0.InitCounter = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.InitCounter(slot0, slot1, slot2, slot3, slot4)
 	slot0:DisposeCounter()
 
 	slot2[2] = math.max(slot2[1], slot2[2])
@@ -213,7 +213,7 @@ slot0.InitCounter = function(slot0, slot1, slot2, slot3, slot4)
 	end, SFX_PANEL)
 end
 
-slot0.DisposeCounter = function(slot0)
+function slot0.DisposeCounter(slot0)
 	if slot0._leftRemoveTimer then
 		slot0._leftRemoveTimer()
 		slot0._rightRemoveTimer()
@@ -228,7 +228,7 @@ slot3 = {
 	[DROP_TYPE_WORKBENCH_DROP] = "workbench_tips7"
 }
 
-slot0.UpdateFormulaListItem = function(slot0, slot1, slot2)
+function slot0.UpdateFormulaListItem(slot0, slot1, slot2)
 	slot3 = tf(slot2)
 	slot4 = slot0.env.filterFormulas[slot1]
 	slot5 = slot4:GetProduction()
@@ -277,7 +277,7 @@ slot0.UpdateFormulaListItem = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.UpdateFilterButtons = function(slot0)
+function slot0.UpdateFilterButtons(slot0)
 	table.Foreach(slot0.formulaFilterButtons, function (slot0, slot1)
 		slot2 = uv0.contextData.filterType ~= uv1.FilterAll and bit.band(uv0.contextData.filterType, bit.lshift(1, slot0 - 1)) > 0
 
@@ -286,7 +286,7 @@ slot0.UpdateFilterButtons = function(slot0)
 	end)
 end
 
-slot0.BuildActivityEnv = function(slot0)
+function slot0.BuildActivityEnv(slot0)
 	slot0.env.formulas = _.map(pg.activity_workbench_recipe.all, function (slot0)
 		slot1 = WorkBenchFormula.New({
 			configId = slot0
@@ -311,11 +311,11 @@ slot0.BuildActivityEnv = function(slot0)
 	slot0:FilterFormulas()
 end
 
-slot0.FilterFormulas = function(slot0)
+function slot0.FilterFormulas(slot0)
 	slot1 = {}
 	slot2 = slot0.contextData.filterType
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		if uv0 == uv1.FilterAll then
 			return true
 		end
@@ -354,7 +354,7 @@ slot0.FilterFormulas = function(slot0)
 	slot0.env.filterFormulas = slot1
 end
 
-slot0.UpdateFormulaList = function(slot0)
+function slot0.UpdateFormulaList(slot0)
 	slot1 = #slot0.env.filterFormulas == 0
 
 	setActive(slot0.layerFormulaList:Find("Empty"), slot1)
@@ -362,7 +362,7 @@ slot0.UpdateFormulaList = function(slot0)
 	slot0.formulaRect:SetTotalCount(#slot0.env.filterFormulas)
 end
 
-slot0.UpdateFormulaDetail = function(slot0, slot1)
+function slot0.UpdateFormulaDetail(slot0, slot1)
 	slot0.contextData.formulaId = slot1
 
 	setActive(slot0.layerFormulaDetail, slot1)
@@ -405,7 +405,7 @@ slot0.UpdateFormulaDetail = function(slot0, slot1)
 				uv1:emit(BaseUI.ON_DROP, uv0)
 			end
 		end)
-		setText(uv4.layerFormulaDetail:Find("Name"), slot0.cfg.name)
+		setText(uv4.layerFormulaDetail:Find("Name"), slot0:getConfig("name"))
 	end)()
 
 	slot7 = 100
@@ -443,7 +443,7 @@ slot0.UpdateFormulaDetail = function(slot0, slot1)
 		end
 	end)
 
-	slot9 = function(slot0)
+	function slot9(slot0)
 		slot2 = uv0.layerFormulaDetail
 		slot3 = uv0.layerFormulaDetail
 
@@ -471,19 +471,19 @@ slot0.UpdateFormulaDetail = function(slot0, slot1)
 	slot9(slot10)
 end
 
-slot0.BindEnv = function(slot0, slot1, slot2)
+function slot0.BindEnv(slot0, slot1, slot2)
 	table.insert(slot0.listeners, {
 		keys = slot1,
 		func = slot2
 	})
 end
 
-slot0.RefreshData = function(slot0)
+function slot0.RefreshData(slot0)
 	slot0.lastEnv = slot0.lastEnv or {}
 	slot1 = {}
 	slot2 = nil
 
-	slot3 = function(slot0, slot1)
+	function slot3(slot0, slot1)
 		if uv0[slot0] then
 			return
 		end
@@ -523,25 +523,25 @@ slot0.RefreshData = function(slot0)
 	slot0.lastEnv = table.shallowCopy(slot0.env)
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	slot0:RefreshData()
 	AnniversaryIsland2023Scene.PlayStory()
 end
 
-slot0.OnReceiveFormualRequest = function(slot0, slot1)
+function slot0.OnReceiveFormualRequest(slot0, slot1)
 	slot0.env.formulaId = slot1
 
 	slot0:UpdateView()
 end
 
-slot0.UpdateActivityDrop = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateActivityDrop(slot0, slot1, slot2, slot3)
 	updateDrop(slot1, slot2)
 	SetCompomentEnabled(slot1:Find("icon_bg"), typeof(Image), false)
 	setActive(slot1:Find("bg"), false)
 	setActive(slot1:Find("icon_bg/frame"), false)
 	setActive(slot1:Find("icon_bg/stars"), false)
 
-	slot4 = slot2.cfg.rarity
+	slot4 = slot2:getConfig("rarity")
 
 	if slot2.type == DROP_TYPE_EQUIP or slot2.type == DROP_TYPE_EQUIPMENT_SKIN then
 		slot4 = slot4 - 1
@@ -556,7 +556,7 @@ slot0.UpdateActivityDrop = function(slot0, slot1, slot2, slot3)
 	slot0.loader:GetSpriteQuiet(uv0, slot5, slot1)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:DisposeCounter()
 	slot0.loader:Clear()
 end

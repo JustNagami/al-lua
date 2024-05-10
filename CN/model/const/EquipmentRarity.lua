@@ -13,7 +13,7 @@ slot0.prints = {
 	"5"
 }
 
-slot0.Rarity2Print = function(slot0)
+function slot0.Rarity2Print(slot0)
 	return uv0.prints[slot0]
 end
 
@@ -46,7 +46,7 @@ slot0.correctedLevel = {
 	}
 }
 
-slot0.Rarity2CorrectedLevel = function(slot0, slot1)
+function slot0.Rarity2CorrectedLevel(slot0, slot1)
 	slot3 = nil
 
 	for slot7, slot8 in ipairs(uv0.correctedLevel[slot0]) do

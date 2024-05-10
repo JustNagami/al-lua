@@ -1,7 +1,7 @@
 slot0 = class("IdolPTPage", import(".TemplatePage.PtTemplatePage"))
 slot0.RefreshTime = 300
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
 	slot4 = slot0.bg
@@ -15,7 +15,7 @@ slot0.OnInit = function(slot0)
 	slot0.linkBtn = slot0:findTF("btn_link", slot0.bg)
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	slot1 = uv0.super.OnDataSetting(slot0)
 	slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM)
 	slot0.linkAct = slot2
@@ -33,7 +33,7 @@ slot0.OnDataSetting = function(slot0)
 	return slot1
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	onButton(slot0, slot0.displayBtn, function ()
 		uv0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
 			type = uv0.ptData.type,
@@ -71,7 +71,7 @@ slot0.OnFirstFlush = function(slot0)
 	end)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	uv0.super.OnUpdateFlush(slot0)
 
 	if slot0.linkAct and not slot1:isEnd() then
@@ -116,7 +116,7 @@ slot0.OnUpdateFlush = function(slot0)
 	slot0:GetWorldRank(slot0.RefreshTime)
 end
 
-slot0.TransFormat = function(slot0, slot1)
+function slot0.TransFormat(slot0, slot1)
 	slot1 = tonumber(slot1) or 0
 	slot3 = slot1 % 10
 
@@ -127,7 +127,7 @@ slot0.TransFormat = function(slot0, slot1)
 	end
 end
 
-slot0.GetWorldRank = function(slot0, slot1)
+function slot0.GetWorldRank(slot0, slot1)
 	if not slot0.linkAct or slot0.linkAct:isEnd() then
 		return
 	end
@@ -139,7 +139,7 @@ slot0.GetWorldRank = function(slot0, slot1)
 	end
 end
 
-slot0.NeedTip = function()
+function slot0.NeedTip()
 	if getProxy(ActivityProxy):getActivityById(ActivityConst.IDOL_PT_ID) and not slot0:isEnd() then
 		return slot0:readyToAchieve()
 	end

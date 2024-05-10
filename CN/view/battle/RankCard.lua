@@ -30,7 +30,7 @@ slot1 = {
 	}
 }
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0._go = go(slot1)
 	slot0._tf = slot1
 	slot0._type = slot2
@@ -49,7 +49,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	ClearTweenItemAlphaAndWhite(slot0._go)
 end
 
-slot0.update = function(slot0, slot1, slot2)
+function slot0.update(slot0, slot1, slot2)
 	slot0.rankVO = slot1
 	slot0.nameTF.text = slot1.name
 	slot3 = slot1.rank
@@ -81,7 +81,10 @@ slot0.update = function(slot0, slot1, slot2)
 	if slot6 then
 		if slot1.type == PowerRank.TYPE_PT then
 			if slot2 then
-				setImageSprite(slot0.scoreIconTF, LoadSprite(pg.item_data_statistics[id2ItemId(getProxy(ActivityProxy):getActivityById(slot2):getConfig("config_id"))].icon))
+				setImageSprite(slot0.scoreIconTF, LoadSprite(Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = getProxy(ActivityProxy):getActivityById(slot2):getConfig("config_id")
+				}):getIcon()))
 			end
 		else
 			setImageSprite(slot0.scoreIconTF, GetSpriteFromAtlas(slot6[1], slot6[2]), true)
@@ -113,7 +116,7 @@ slot0.update = function(slot0, slot1, slot2)
 	TweenItemAlphaAndWhite(slot0._go)
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	ClearTweenItemAlphaAndWhite(slot0._go)
 
 	if not IsNil(slot0.notonlistTF) then
@@ -124,7 +127,7 @@ slot0.clear = function(slot0)
 	slot0.numberTF.text = 0
 end
 
-slot0.dispose = function(slot0, ...)
+function slot0.dispose(slot0, ...)
 end
 
 return slot0

@@ -6,26 +6,26 @@ slot0.Fields = {
 	theme = "table"
 }
 
-slot0.GetResName = function()
+function slot0.GetResName()
 	return "world_cell_item"
 end
 
-slot0.GetName = function(slot0, slot1)
+function slot0.GetName(slot0, slot1)
 	return "item_" .. slot0 .. "_" .. slot1
 end
 
-slot0.Setup = function(slot0, slot1, slot2)
+function slot0.Setup(slot0, slot1, slot2)
 	slot0.cell = slot1
 	slot0.theme = slot2
 
 	slot0:Init()
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Clear()
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	slot1 = slot0.cell
 	slot2 = slot0.transform
 	slot2.name = uv0.GetName(slot1.row, slot1.column)

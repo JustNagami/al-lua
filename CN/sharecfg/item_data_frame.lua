@@ -432,6 +432,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>「事件之穹界，因果之尽头。禁地不可逾越，跨过即为永恒。」</color>\n「星海逐光」活动获取",
 		scene = {}
 	},
+	[329] = {
+		time_limit_type = 0,
+		name = "雪域寒星",
+		gain_by = "雪境迷踪",
+		id = 329,
+		time_second = 0,
+		desc = "<color=#ffffff>「跨越冰山，穿越雪原，定义自我，见证未来。」</color>\n「雪境迷踪」活动获取",
+		scene = {}
+	},
 	[401] = {
 		time_limit_type = 0,
 		name = "殿堂纪念：企业",
@@ -630,6 +639,51 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>结晶之中闪烁着射手座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （23.12.01-23.12.31）",
 		scene = {}
 	},
+	[10008] = {
+		time_limit_type = 0,
+		name = "限界的挑战者·摩羯座",
+		gain_by = "",
+		id = 10008,
+		time_second = 0,
+		desc = "<color=#ffffff>结晶之中闪烁着摩羯座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （24.01.01-24.01.31）",
+		scene = {}
+	},
+	[10009] = {
+		time_limit_type = 0,
+		name = "限界的挑战者·水瓶座",
+		gain_by = "",
+		id = 10009,
+		time_second = 0,
+		desc = "<color=#ffffff>结晶之中闪烁着水瓶座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （24.02.01-24.02.29）",
+		scene = {}
+	},
+	[10010] = {
+		time_limit_type = 0,
+		name = "限界的挑战者·双鱼座",
+		gain_by = "",
+		id = 10010,
+		time_second = 0,
+		desc = "<color=#ffffff>结晶之中闪烁着双鱼座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （24.03.01-24.03.31）",
+		scene = {}
+	},
+	[10011] = {
+		time_limit_type = 0,
+		name = "限界的挑战者·白羊座",
+		gain_by = "",
+		id = 10011,
+		time_second = 0,
+		desc = "<color=#ffffff>结晶之中闪烁着白羊座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （24.04.01-24.04.30）",
+		scene = {}
+	},
+	[10012] = {
+		time_limit_type = 0,
+		name = "限界的挑战者·金牛座",
+		gain_by = "",
+		id = 10012,
+		time_second = 0,
+		desc = "<color=#ffffff>结晶之中闪烁着金牛座的光芒，献给勇于挑战极限的指挥官！</color>\n通过参与「限界挑战」获取 （24.05.01-24.05.31）",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
@@ -679,6 +733,7 @@ pg.item_data_frame = {
 		326,
 		327,
 		328,
+		329,
 		401,
 		402,
 		404,
@@ -700,6 +755,11 @@ pg.item_data_frame = {
 		10004,
 		10005,
 		10006,
-		10007
+		10007,
+		10008,
+		10009,
+		10010,
+		10011,
+		10012
 	}
 }

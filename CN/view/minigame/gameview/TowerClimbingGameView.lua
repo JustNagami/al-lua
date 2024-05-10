@@ -1,18 +1,18 @@
 slot0 = class("TowerClimbingGameView", import("..BaseMiniGameView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "TowerClimbingUI"
 end
 
-slot0.GetMGData = function(slot0)
+function slot0.GetMGData(slot0)
 	return getProxy(MiniGameProxy):GetMiniGameData(slot0.contextData.miniGameId):clone()
 end
 
-slot0.GetMGHubData = function(slot0)
+function slot0.GetMGHubData(slot0)
 	return getProxy(MiniGameProxy):GetHubByGameId(slot0.contextData.miniGameId)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0:findTF("overview/back"), function ()
 		uv0:emit(uv1.ON_BACK)
 	end, SFX_PANEL)
@@ -25,7 +25,7 @@ slot0.didEnter = function(slot0)
 	end
 end
 
-slot0.UpdateTip = function(slot0)
+function slot0.UpdateTip(slot0)
 	slot2 = TowerClimbingCollectionLayer.New()
 
 	slot2:SetData(slot0:GetMGData())
@@ -38,7 +38,7 @@ slot0.UpdateTip = function(slot0)
 	end))
 end
 
-slot0.Start = function(slot0)
+function slot0.Start(slot0)
 	slot0.controller = TowerClimbingController.New()
 
 	slot0.controller.view:SetUI(slot0._go)
@@ -52,7 +52,7 @@ slot0.Start = function(slot0)
 	slot0:UpdateTip()
 end
 
-slot0.OnSendMiniGameOPDone = function(slot0, slot1)
+function slot0.OnSendMiniGameOPDone(slot0, slot1)
 	if slot1.hubid == 9 and slot1.cmd == MiniGameOPCommand.CMD_SPECIAL_GAME and slot1.argList[1] == MiniGameDataCreator.TowerClimbingGameID and slot1.argList[2] == 1 then
 		slot0:Start()
 	elseif slot1.hubid == 9 and slot1.cmd == MiniGameOPCommand.CMD_COMPLETE or slot1.hubid == 9 and slot1.cmd == MiniGameOPCommand.CMD_SPECIAL_GAME and (slot1.argList[2] == 3 or slot1.argList[2] == 4) then
@@ -61,7 +61,7 @@ slot0.OnSendMiniGameOPDone = function(slot0, slot1)
 	end
 end
 
-slot0.GetTowerClimbingPageAndScore = function(slot0)
+function slot0.GetTowerClimbingPageAndScore(slot0)
 	slot1 = slot0[1] or {}
 
 	for slot6 = #slot1 + 1, 3 do
@@ -112,13 +112,13 @@ slot0.GetTowerClimbingPageAndScore = function(slot0)
 	return slot4, slot5, slot6
 end
 
-slot0.GetAwardScores = function()
+function slot0.GetAwardScores()
 	return _.map(pg.mini_game[MiniGameDataCreator.TowerClimbingGameID].simple_config_data, function (slot0)
 		return slot0[1]
 	end)
 end
 
-slot0.PackData = function(slot0)
+function slot0.PackData(slot0)
 	slot4, slot5, slot6 = uv0.GetTowerClimbingPageAndScore(slot0:GetMGData():GetRuntimeData("kvpElements"))
 
 	print(slot4, "-", slot5)
@@ -136,7 +136,7 @@ slot0.PackData = function(slot0)
 	}
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if slot0.controller:onBackPressed() then
 		return
 	end
@@ -144,7 +144,7 @@ slot0.onBackPressed = function(slot0)
 	slot0:emit(uv0.ON_BACK)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0.controller:Dispose()
 end
 

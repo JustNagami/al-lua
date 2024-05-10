@@ -5,7 +5,7 @@ slot0.MOD_SHIP = "ShipModMediator:MOD_SHIP"
 slot0.ON_SKILL = "ShipModMediator:ON_SKILL"
 slot0.LOADEND = "ShipModMediator:LOADEND"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot1 = getProxy(BayProxy)
 	slot3 = slot0.viewComponent
 
@@ -69,13 +69,13 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.MOD_SHIP_DONE
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.MOD_SHIP_DONE then

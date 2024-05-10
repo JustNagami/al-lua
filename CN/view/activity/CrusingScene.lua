@@ -5,11 +5,11 @@ slot0.optionsPath = {
 slot0.FrameSpeed = 10
 slot0.PlaySpeed = 1.5
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CrusingUI"
 end
 
-slot0.preload = function(slot0, slot1)
+function slot0.preload(slot0, slot1)
 	slot2 = getProxy(ActivityProxy)
 	slot2 = slot2:getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
 	slot3 = PoolMgr.GetInstance()
@@ -45,7 +45,7 @@ slot0.preload = function(slot0, slot1)
 	end)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.rtBg = slot0._tf:Find("bg")
 	slot0.scrollMap = slot0.rtBg:Find("map_scroll")
 	slot0.btnTask = slot0.rtBg:Find("task_btn")
@@ -55,7 +55,7 @@ slot0.init = function(slot0)
 	slot0.sliderPt = slot0.rtAward:Find("Slider")
 	slot0.comScroll = GetComponent(slot0.rtAward:Find("view/content"), "LScrollRect")
 
-	slot0.comScroll.onUpdateItem = function(slot0, slot1)
+	function slot0.comScroll.onUpdateItem(slot0, slot1)
 		uv0:updateAwardInfo(tf(slot1), uv0.awardList[slot0 + 1])
 	end
 
@@ -72,7 +72,7 @@ slot0.init = function(slot0)
 	slot0.LTDic = {}
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.btnBack, function ()
 		uv0:closeView()
 	end, SFX_CANCEL)
@@ -159,10 +159,10 @@ slot0.didEnter = function(slot0)
 		setParent(slot6.rtLine, slot0.scrollMap:Find("bg"), true)
 	end
 
-	GetComponent(slot0.textTip, "RichText"):AddSprite("pt", GetSpriteFromAtlas(getDropIcon({
+	GetComponent(slot0.textTip, "RichText"):AddSprite("pt", GetSpriteFromAtlas(Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = slot0.ptId
-	}), ""))
+	}):getIcon(), ""))
 	setText(slot0.textTip, i18n(slot0.activity:getConfig("config_client").tips[1]))
 
 	slot2 = slot0.activity.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
@@ -201,14 +201,14 @@ slot0.didEnter = function(slot0)
 	end
 
 	slot0:updateMapStatus()
-	LoadImageSpriteAtlasAsync(getDropIcon({
+	LoadImageSpriteAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = slot0.ptId
-	}), "", slot0.sliderPt:Find("Text/icon"), true)
+	}):getIcon(), "", slot0.sliderPt:Find("Text/icon"), true)
 	slot0:updateMapWay()
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	for slot4, slot5 in pairs(slot0.LTDic) do
 		if slot5 then
 			LeanTween.cancel(slot4)
@@ -232,7 +232,7 @@ slot0.willExit = function(slot0)
 	end
 end
 
-slot0.setActivity = function(slot0, slot1)
+function slot0.setActivity(slot0, slot1)
 	slot0.activity = slot1
 
 	for slot5, slot6 in pairs(slot1:GetCrusingInfo()) do
@@ -240,11 +240,11 @@ slot0.setActivity = function(slot0, slot1)
 	end
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 end
 
-slot0.updateAwardInfo = function(slot0, slot1, slot2)
+function slot0.updateAwardInfo(slot0, slot1, slot2)
 	slot3 = slot2.pt <= slot0.pt
 
 	if slot1:Find("mask") then
@@ -252,22 +252,14 @@ slot0.updateAwardInfo = function(slot0, slot1, slot2)
 	end
 
 	setText(slot1:Find("Text"), slot2.id)
-	updateDrop(slot1:Find("award"), {
-		type = slot2.award[1],
-		id = slot2.award[2],
-		count = slot2.award[3]
-	})
+	updateDrop(slot1:Find("award"), Drop.Create(slot2.award))
 	setActive(slot1:Find("award/get"), slot3 and not slot0.awardDic[slot2.pt])
 	setActive(slot1:Find("award/got"), slot0.awardDic[slot2.pt])
 	setActive(slot1:Find("award/mask"), slot0.awardDic[slot2.pt])
 	onButton(slot0, slot1:Find("award"), function ()
 		uv0:emit(uv1.ON_DROP, uv2)
 	end, SFX_CONFIRM)
-	updateDrop(slot1:Find("award_pay"), {
-		type = slot2.award_pay[1],
-		id = slot2.award_pay[2],
-		count = slot2.award_pay[3]
-	})
+	updateDrop(slot1:Find("award_pay"), Drop.Create(slot2.award_pay))
 	setActive(slot1:Find("award_pay/lock"), not slot0.isPay)
 	setActive(slot1:Find("award_pay/get"), slot0.isPay and slot3 and not slot0.awardPayDic[slot2.pt])
 	setActive(slot1:Find("award_pay/got"), slot0.awardPayDic[slot2.pt])
@@ -277,7 +269,7 @@ slot0.updateAwardInfo = function(slot0, slot1, slot2)
 	end, SFX_CONFIRM)
 end
 
-slot0.updateAwardPanel = function(slot0)
+function slot0.updateAwardPanel(slot0)
 	setText(slot0.textPhase, slot0.phase)
 
 	if slot0.phase < #slot0.awardList then
@@ -307,7 +299,7 @@ slot0.updateAwardPanel = function(slot0)
 	setButtonEnabled(slot0.btnAfter, slot1)
 end
 
-slot0.updateMapStatus = function(slot0)
+function slot0.updateMapStatus(slot0)
 	for slot4, slot5 in ipairs(slot0.maps) do
 		slot6 = nil
 		slot7 = {}
@@ -346,7 +338,7 @@ slot0.updateMapStatus = function(slot0)
 			if isActive(slot0) then
 				slot3 = nil
 
-				slot3 = function(slot0, slot1)
+				function slot3(slot0, slot1)
 					if getImageSprite(slot0) then
 						setImageSprite(slot1, slot2)
 					end
@@ -367,7 +359,7 @@ slot0.updateMapStatus = function(slot0)
 	end
 end
 
-slot0.updateMapWay = function(slot0)
+function slot0.updateMapWay(slot0)
 	if slot0.exited or slot0.contextData.frozenMapUpdate then
 		return
 	end
@@ -413,7 +405,7 @@ slot0.updateMapWay = function(slot0)
 	end
 end
 
-slot0.buildPhaseAwardScrollPos = function(slot0)
+function slot0.buildPhaseAwardScrollPos(slot0)
 	slot0.phasePos = {}
 
 	for slot4 = 1, #slot0.awardList - 1 do
@@ -421,7 +413,7 @@ slot0.buildPhaseAwardScrollPos = function(slot0)
 	end
 end
 
-slot0.onScroll = function(slot0, slot1, slot2)
+function slot0.onScroll(slot0, slot1, slot2)
 	slot3 = slot1.onValueChanged
 
 	assert(slot2, "callback should exist")
@@ -430,7 +422,7 @@ slot0.onScroll = function(slot0, slot1, slot2)
 	slot3:AddListener(slot2)
 end
 
-slot0.updateNextAward = function(slot0, slot1)
+function slot0.updateNextAward(slot0, slot1)
 	if not slot0.phasePos then
 		return
 	end
@@ -454,7 +446,7 @@ slot0.updateNextAward = function(slot0, slot1)
 	end
 end
 
-slot0.checkLimitMax = function(slot0, slot1)
+function slot0.checkLimitMax(slot0, slot1)
 	slot2 = slot0.player
 
 	for slot6, slot7 in ipairs(slot1) do
@@ -470,7 +462,7 @@ slot0.checkLimitMax = function(slot0, slot1)
 
 				return true
 			end
-		elseif slot7.type == DROP_TYPE_ITEM and pg.item_data_statistics[slot7.id].type == Item.EXP_BOOK_TYPE and slot8.max_num < getProxy(BagProxy):getItemCountById(slot7.id) + slot7.count then
+		elseif slot7.type == DROP_TYPE_ITEM and Item.getConfigData(slot7.id).type == Item.EXP_BOOK_TYPE and slot8.max_num < getProxy(BagProxy):getItemCountById(slot7.id) + slot7.count then
 			return true
 		end
 	end
@@ -478,42 +470,34 @@ slot0.checkLimitMax = function(slot0, slot1)
 	return false
 end
 
-slot0.openBuyPanel = function(slot0)
+function slot0.openBuyPanel(slot0)
 	slot2 = Goods.Create({
 		shop_id = slot0:getPassID()
 	}, Goods.TYPE_CHARGE)
 	slot3 = slot2:getConfig("tag")
 	slot4 = underscore.map(slot2:getConfig("extra_service_item"), function (slot0)
-		return {
-			type = slot0[1],
-			id = slot0[2],
-			count = slot0[3]
-		}
+		return Drop.Create(slot0)
 	end)
 	slot5 = nil
 	slot6 = slot2:getConfig("sub_display")
 	slot7 = slot6[1]
 	slot8 = pg.battlepass_event_pt[slot7].pt
-	slot5 = {
+	slot5 = Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = pg.battlepass_event_pt[slot7].pt,
 		count = slot6[2]
-	}
+	})
 	slot4 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot7].drop_client_pay, function (slot0)
-		return {
-			type = slot0[1],
-			id = slot0[2],
-			count = slot0[3]
-		}
+		return Drop.Create(slot0)
 	end))
 	slot10 = nil
 
 	if slot2:getConfig("gem") + slot2:getConfig("extra_gem") > 0 then
-		table.insert(slot4, {
-			id = 4,
-			type = 1,
+		table.insert(slot4, Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = PlayerConst.ResDiamond,
 			count = slot9
-		})
+		}))
 	end
 
 	slot0:emit(CrusingMediator.EVENT_GO_CHARGE, {
@@ -542,7 +526,7 @@ slot0.openBuyPanel = function(slot0)
 	})
 end
 
-slot0.getPassID = function(slot0)
+function slot0.getPassID(slot0)
 	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING) and not slot2:isEnd() then
 		for slot6, slot7 in ipairs(pg.pay_data_display.all) do
 			if pg.pay_data_display[slot7].sub_display and type(slot8.sub_display) == "table" and slot8.sub_display[1] == slot2.id then
@@ -552,7 +536,7 @@ slot0.getPassID = function(slot0)
 	end
 end
 
-slot0.OnChargeSuccess = function(slot0, slot1)
+function slot0.OnChargeSuccess(slot0, slot1)
 	slot0.chargeTipWindow:ExecuteAction("Show", slot1)
 end
 

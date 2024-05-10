@@ -1,6 +1,6 @@
 slot0 = class("ReserveCommanderBoxCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody().count
 
 	if getProxy(CommanderProxy):getBoxUseCnt() == CommanderConst.MAX_GETBOX_CNT then

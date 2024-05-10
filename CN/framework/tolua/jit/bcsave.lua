@@ -3,7 +3,7 @@ assert(require("jit").version_num == 20100, "LuaJIT core/library version mismatc
 slot1 = require("bit")
 slot2 = "luaJIT_BC_"
 
-slot3 = function()
+function slot3()
 	io.stderr:write([[
 Save LuaJIT bytecode: luajit -b[options] input output
   -l        Only list bytecode.
@@ -22,7 +22,7 @@ File types: c h obj o raw (default)
 	os.exit(1)
 end
 
-slot4 = function(slot0, ...)
+function slot4(slot0, ...)
 	if slot0 then
 		return slot0, ...
 	end
@@ -32,7 +32,7 @@ slot4 = function(slot0, ...)
 	os.exit(1)
 end
 
-slot5 = function(slot0)
+function slot5(slot0)
 	if type(slot0) == "function" then
 		return slot0
 	end
@@ -44,7 +44,7 @@ slot5 = function(slot0)
 	return uv0(loadfile(slot0))
 end
 
-slot6 = function(slot0, slot1)
+function slot6(slot0, slot1)
 	if slot0 == "-" then
 		return io.stdout
 	end
@@ -80,21 +80,21 @@ slot9 = {
 	linux = true
 }
 
-slot10 = function(slot0, slot1, slot2)
+function slot10(slot0, slot1, slot2)
 	return uv0(slot1[string.lower(slot0)], "unknown ", slot2) == true and slot0 or slot3
 end
 
-slot11 = function(slot0)
+function slot11(slot0)
 	return uv0[string.match(string.lower(slot0), "%.(%a+)$")] or "raw"
 end
 
-slot12 = function(slot0)
+function slot12(slot0)
 	uv0(string.match(slot0, "^[%w_.%-]+$"), "bad module name")
 
 	return string.gsub(slot0, "[%.%-]", "_")
 end
 
-slot13 = function(slot0)
+function slot13(slot0)
 	slot0 = (type(slot0) ~= "string" or string.match(slot2, "^[%w_.%-]+")) and nil
 
 	uv0(slot0, "cannot derive module name, use -n name")
@@ -102,7 +102,7 @@ slot13 = function(slot0)
 	return string.gsub(slot0, "[%.%-]", "_")
 end
 
-slot14 = function(slot0, slot1, slot2)
+function slot14(slot0, slot1, slot2)
 	slot3, slot4 = slot0:write(slot2)
 
 	if slot3 and slot1 ~= "-" then
@@ -112,11 +112,11 @@ slot14 = function(slot0, slot1, slot2)
 	uv0(slot3, "cannot write ", slot1, ": ", slot4)
 end
 
-slot15 = function(slot0, slot1)
+function slot15(slot0, slot1)
 	uv1(uv0(slot0, "wb"), slot0, slot1)
 end
 
-slot16 = function(slot0, slot1, slot2)
+function slot16(slot0, slot1, slot2)
 	slot3 = uv0(slot1, "w")
 
 	if slot0.type == "c" then
@@ -151,7 +151,7 @@ const unsigned char %s%s[] = {
 	uv2(slot3, slot1, table.concat(slot4, ",", 1, slot5) .. "\n};\n")
 end
 
-slot17 = function(slot0, slot1, slot2, slot3)
+function slot17(slot0, slot1, slot2, slot3)
 	slot3.cdef([[
 typedef struct {
   uint8_t emagic[4], eclass, eendian, eversion, eosabi, eabiversion, epad[7];
@@ -213,7 +213,7 @@ typedef struct {
 		slot6 = true
 	end
 
-	slot7 = function(slot0)
+	function slot7(slot0)
 		return slot0
 	end
 
@@ -223,14 +223,14 @@ typedef struct {
 	if slot3.abi("be") ~= slot6 then
 		slot7 = uv1.bswap
 
-		slot8 = function(slot0)
+		function slot8(slot0)
 			return uv0.rshift(uv0.bswap(slot0), 16)
 		end
 
 		if slot5 then
 			slot10 = slot3.cast("int64_t", 4294967296.0)
 
-			slot9 = function(slot0)
+			function slot9(slot0)
 				return uv0.bswap(slot0) * uv1
 			end
 		else
@@ -333,7 +333,7 @@ typedef struct {
 	uv4(slot14, slot1, slot2)
 end
 
-slot18 = function(slot0, slot1, slot2, slot3)
+function slot18(slot0, slot1, slot2, slot3)
 	slot3.cdef([[
 typedef struct {
   uint16_t arch, nsects;
@@ -389,14 +389,14 @@ typedef struct {
 
 	slot6 = "   /EXPORT:" .. slot4 .. ",DATA "
 
-	slot8 = function(slot0)
+	function slot8(slot0)
 		return slot0
 	end
 
 	if slot3.abi("be") then
 		slot7 = uv1.bswap
 
-		slot8 = function(slot0)
+		function slot8(slot0)
 			return uv0.rshift(uv0.bswap(slot0), 16)
 		end
 	end
@@ -454,7 +454,7 @@ typedef struct {
 	uv3(slot12, slot1, slot2)
 end
 
-slot19 = function(slot0, slot1, slot2, slot3)
+function slot19(slot0, slot1, slot2, slot3)
 	slot3.cdef([[
 typedef struct
 {
@@ -661,7 +661,7 @@ typedef struct {
 	uv4(slot15, slot1, slot2)
 end
 
-slot20 = function(slot0, slot1, slot2)
+function slot20(slot0, slot1, slot2)
 	slot3, slot4 = pcall(require, "ffi")
 
 	uv0(slot3, "FFI library required to write this file type")
@@ -675,11 +675,11 @@ slot20 = function(slot0, slot1, slot2)
 	end
 end
 
-slot21 = function(slot0, slot1)
+function slot21(slot0, slot1)
 	require("jit.bc").dump(uv0(slot0), uv1(slot1, "w"), true)
 end
 
-slot22 = function(slot0, slot1, slot2)
+function slot22(slot0, slot1, slot2)
 	slot4 = string.dump(uv0(slot1), slot0.strip)
 
 	if not slot0.type then

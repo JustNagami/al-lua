@@ -5,17 +5,17 @@ slot0.Fields = {
 	transform = "userdata"
 }
 
-slot0.Setup = function(slot0)
+function slot0.Setup(slot0)
 	pg.DelegateInfo.New(slot0)
 	slot0:Init()
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 	slot0:Clear()
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	slot1 = slot0.transform
 
 	onButton(slot0, slot1, function ()
@@ -26,7 +26,7 @@ slot0.Init = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.UpdateTask = function(slot0, slot1)
+function slot0.UpdateTask(slot0, slot1)
 	slot0.task = slot1
 	slot2 = slot0.transform
 
@@ -39,7 +39,7 @@ slot0.UpdateTask = function(slot0, slot1)
 			slot3 = uv0[slot1 + 1]
 
 			updateDrop(slot2, slot3)
-			setScrollText(slot2:Find("name_mask/name"), slot3.cfg.name)
+			setScrollText(slot2:Find("name_mask/name"), slot3:getConfig("name"))
 		end
 	end)
 	slot6:align(#slot1:GetDisplayDrops())

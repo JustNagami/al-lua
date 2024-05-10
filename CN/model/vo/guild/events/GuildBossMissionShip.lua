@@ -1,6 +1,6 @@
 slot0 = class("GuildBossMissionShip")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.super = slot1
 
 	setmetatable(slot0, {
@@ -10,15 +10,15 @@ slot0.Ctor = function(slot0, slot1)
 	})
 end
 
-slot0.IsOwner = function(slot0)
+function slot0.IsOwner(slot0)
 	return tonumber(GuildAssaultFleet.GetUserId(slot0.id)) == getProxy(PlayerProxy):getRawData().id
 end
 
-slot0.GetUniqueId = function(slot0)
+function slot0.GetUniqueId(slot0)
 	return GuildAssaultFleet.GetRealId(slot0.id)
 end
 
-slot0.getProperties = function(slot0, slot1, slot2)
+function slot0.getProperties(slot0, slot1, slot2)
 	slot3 = getProxy(GuildProxy):getRawData()
 	slot4 = {}
 

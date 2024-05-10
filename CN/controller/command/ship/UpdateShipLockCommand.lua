@@ -1,11 +1,11 @@
 slot0 = class("UpdateShipLockCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.ship_id_list
 	slot5 = slot2.callback
 
-	slot6 = function()
+	function slot6()
 		slot0 = pg.ConnectionMgr.GetInstance()
 
 		slot0:Send(12022, {

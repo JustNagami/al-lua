@@ -1,6 +1,6 @@
 slot0 = class("CourtYardMatFurniture", import(".CourtYardFurniture"))
 
-slot0.GetDeathType = function(slot0)
+function slot0.GetDeathType(slot0)
 	return CourtYardConst.DEPTH_TYPE_MAT
 end
 

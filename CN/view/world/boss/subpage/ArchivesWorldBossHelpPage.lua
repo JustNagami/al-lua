@@ -1,6 +1,6 @@
 slot0 = class("ArchivesWorldBossHelpPage", import(".WorldBossHelpPage"))
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	uv0.super.OnLoaded(slot0)
 	setActive(slot0.worldBtn, false)
 end

@@ -1,10 +1,10 @@
 slot0 = class("CommanderSkillLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CommanderSkillUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = slot0.contextData.skill
 	slot0.backBtn = slot0:findTF("top/btnBack")
 	slot0.skillInfoName = slot0:findTF("panel/bg/skill_name")
@@ -21,9 +21,15 @@ slot0.init = function(slot0)
 	slot0.skillDescList = UIItemList.New(slot0.skillDescContent, slot0.skillDescTF)
 
 	GetImageSpriteFromAtlasAsync("commanderskillicon/" .. slot1:getConfig("icon"), "", slot0.skillInfoIcon)
+	slot0:SetLocaliza()
 end
 
-slot0.didEnter = function(slot0)
+function slot0.SetLocaliza(slot0)
+	setText(slot0:findTF("top/title_list/infomation/title"), i18n("words_information"))
+	setText(slot0:findTF("panel/buttonList/ok_button/Image"), i18n("word_ok"))
+end
+
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_CANCEL)
@@ -40,7 +46,7 @@ slot0.didEnter = function(slot0)
 	slot0:UpdateList()
 end
 
-slot0.UpdateList = function(slot0)
+function slot0.UpdateList(slot0)
 	slot1 = slot0.contextData.skill
 	slot2 = slot1:getConfig("lv")
 	slot4 = slot1:getConfig("lv")
@@ -57,7 +63,7 @@ slot0.UpdateList = function(slot0)
 	slot0.skillDescList:align(#slot1:GetSkillGroup())
 end
 
-slot0.GetDesc = function(slot0, slot1, slot2)
+function slot0.GetDesc(slot0, slot1, slot2)
 	if not slot1 and slot2.desc_world and slot2.desc_world ~= "" then
 		return slot2.desc_world
 	else
@@ -65,15 +71,15 @@ slot0.GetDesc = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.GetColor = function(slot0, slot1)
+function slot0.GetColor(slot0, slot1)
 	return "#FFFFFFFF"
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	triggerButton(slot0.backBtn)
 end
 

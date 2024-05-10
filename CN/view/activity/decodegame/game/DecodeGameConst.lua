@@ -160,11 +160,11 @@ slot0.UNLOCK_STORYID = {
 }
 slot0.LAST_STORYID = "LIMINGZHIAN4"
 
-slot0.Vect2Index = function(slot0, slot1)
+function slot0.Vect2Index(slot0, slot1)
 	return (slot0 - 1) * DecodeGameConst.MAP_COLUMN + slot1
 end
 
-slot0.Index2Vect = function(slot0)
+function slot0.Index2Vect(slot0)
 	slot1 = math.ceil(slot0 / uv0.MAP_COLUMN)
 
 	return slot1, slot0 - (slot1 - 1) * uv0.MAP_COLUMN

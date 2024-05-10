@@ -1059,7 +1059,7 @@ slot53 = {
 	}
 }
 
-slot54 = function(slot0, slot1)
+function slot54(slot0, slot1)
 	slot2 = {
 		ctor = function (slot0)
 			slot0._boxTf = uv0
@@ -1412,7 +1412,7 @@ end
 
 slot55 = false
 
-slot56 = function(slot0, slot1, slot2)
+function slot56(slot0, slot1, slot2)
 	slot3 = {
 		ctor = function (slot0)
 			slot0._specialTf = uv0
@@ -1420,7 +1420,7 @@ slot56 = function(slot0, slot1, slot2)
 			slot0._effectSuccess = findTF(slot0._successTf, "effectSuccess")
 			slot0._event = uv2
 
-			slot4 = function(slot0, slot1, slot2)
+			function slot4(slot0, slot1, slot2)
 				uv0:addPowerAmount(slot1.index, uv0:getPowerAmount(slot1.series, slot1.combo))
 			end
 
@@ -1567,7 +1567,7 @@ slot56 = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot57 = function(slot0, slot1, slot2)
+function slot57(slot0, slot1, slot2)
 	slot3 = {
 		ctor = function (slot0)
 			slot0._sceneTf = uv0
@@ -1757,7 +1757,7 @@ slot57 = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot58 = function(slot0, slot1)
+function slot58(slot0, slot1)
 	slot2 = {
 		ctor = function (slot0)
 			slot0._scene = uv0
@@ -2201,11 +2201,11 @@ slot58 = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "GridGameUI"
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:initEvent()
 	slot0:initData()
 	slot0:initUI()
@@ -2215,7 +2215,7 @@ slot0.didEnter = function(slot0)
 	slot0:openMenuUI()
 end
 
-slot0.initEvent = function(slot0)
+function slot0.initEvent(slot0)
 	slot0:bind(uv0, function (slot0, slot1, slot2)
 		uv0:addScore(slot1)
 	end)
@@ -2224,10 +2224,10 @@ slot0.initEvent = function(slot0)
 	end)
 end
 
-slot0.onEventHandle = function(slot0, slot1)
+function slot0.onEventHandle(slot0, slot1)
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	if (Application.targetFrameRate or 60) > 60 then
 		slot1 = 60
 	end
@@ -2237,7 +2237,7 @@ slot0.initData = function(slot0)
 	end, 1 / slot1, -1)
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	slot0.backSceneTf = findTF(slot0._tf, "scene_background")
 	slot0.sceneTf = findTF(slot0._tf, "scene")
 	slot0.clickMask = findTF(slot0._tf, "clickMask")
@@ -2283,7 +2283,7 @@ slot0.initUI = function(slot0)
 
 	slot0.settlementUI = findTF(slot0._tf, "pop/SettleMentUI")
 
-	slot4 = function()
+	function slot4()
 		setActive(uv0.settlementUI, false)
 		uv0:openMenuUI()
 	end
@@ -2311,7 +2311,7 @@ slot0.initUI = function(slot0)
 		})
 	end
 
-	slot4 = function()
+	function slot4()
 		setActive(uv0.selectedUI, false)
 	end
 
@@ -2428,7 +2428,7 @@ slot0.initUI = function(slot0)
 	UpdateBeat:AddListener(slot0.handle)
 end
 
-slot0.initGameUI = function(slot0)
+function slot0.initGameUI(slot0)
 	slot0.gameUI = findTF(slot0._tf, "ui/gameUI")
 
 	onButton(slot0, findTF(slot0.gameUI, "topRight/btnStop"), function ()
@@ -2448,18 +2448,18 @@ slot0.initGameUI = function(slot0)
 	setActive(slot0.scoreAnimTf, false)
 end
 
-slot0.initController = function(slot0)
+function slot0.initController(slot0)
 	slot0.boxController = uv0(findTF(slot0.gameUI, "box"), slot0)
 	slot0.specialController = uv1(findTF(slot0.gameUI, "specialPower"), findTF(slot0.gameUI, "successPower"), slot0)
 	slot0.bgController = uv2(findTF(slot0._tf, "sceneContainer"), slot0.gameUI, slot0)
 	slot0.roleController = uv3(findTF(slot0._tf, "sceneContainer/scene"), slot0)
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot0:AddDebugInput()
 end
 
-slot0.AddDebugInput = function(slot0)
+function slot0.AddDebugInput(slot0)
 	if slot0.gameStop or slot0.settlementFlag then
 		return
 	end
@@ -2469,7 +2469,7 @@ slot0.AddDebugInput = function(slot0)
 	end
 end
 
-slot0.updateSelectedUI = function(slot0)
+function slot0.updateSelectedUI(slot0)
 	for slot4 = 1, #slot0.leftSelectRole do
 		if uv0 == slot0.leftSelectRole[slot4].id then
 			setActive(findTF(slot5.tf, "selected"), true)
@@ -2491,7 +2491,7 @@ slot0.updateSelectedUI = function(slot0)
 	end
 end
 
-slot0.updateMenuUI = function(slot0)
+function slot0.updateMenuUI(slot0)
 	if slot0:getGameUsedTimes() and slot1 >= 7 then
 		setActive(findTF(slot0.menuUI, "btnStart/free"), true)
 	else
@@ -2528,7 +2528,7 @@ slot0.updateMenuUI = function(slot0)
 	slot0:CheckGet()
 end
 
-slot0.CheckGet = function(slot0)
+function slot0.CheckGet(slot0)
 	setActive(findTF(slot0.menuUI, "got"), false)
 
 	if slot0:getUltimate() and slot0:getUltimate() ~= 0 then
@@ -2549,7 +2549,7 @@ slot0.CheckGet = function(slot0)
 	end
 end
 
-slot0.openMenuUI = function(slot0)
+function slot0.openMenuUI(slot0)
 	setActive(findTF(slot0._tf, "sceneContainer/scene_front"), false)
 	setActive(findTF(slot0._tf, "sceneContainer/scene_background"), false)
 	setActive(findTF(slot0._tf, "sceneContainer/scene"), false)
@@ -2565,7 +2565,7 @@ slot0.openMenuUI = function(slot0)
 	end
 end
 
-slot0.clearUI = function(slot0)
+function slot0.clearUI(slot0)
 	setActive(slot0.sceneTf, false)
 	setActive(slot0.settlementUI, false)
 	setActive(slot0.countUI, false)
@@ -2574,7 +2574,7 @@ slot0.clearUI = function(slot0)
 	setActive(slot0.selectedUI, false)
 end
 
-slot0.readyStart = function(slot0)
+function slot0.readyStart(slot0)
 	setActive(slot0.countUI, true)
 	slot0.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
@@ -2586,7 +2586,7 @@ slot0.readyStart = function(slot0)
 	end
 end
 
-slot0.gameStart = function(slot0)
+function slot0.gameStart(slot0)
 	setActive(findTF(slot0._tf, "sceneContainer/scene_front"), true)
 	setActive(findTF(slot0._tf, "sceneContainer/scene_background"), true)
 	setActive(findTF(slot0._tf, "sceneContainer/scene"), true)
@@ -2608,30 +2608,30 @@ slot0.gameStart = function(slot0)
 	slot0:timerStart()
 end
 
-slot0.getGameTimes = function(slot0)
+function slot0.getGameTimes(slot0)
 	return slot0:GetMGHubData().count
 end
 
-slot0.getGameUsedTimes = function(slot0)
+function slot0.getGameUsedTimes(slot0)
 	return slot0:GetMGHubData().usedtime
 end
 
-slot0.getUltimate = function(slot0)
+function slot0.getUltimate(slot0)
 	return slot0:GetMGHubData().ultimate
 end
 
-slot0.getGameTotalTime = function(slot0)
+function slot0.getGameTotalTime(slot0)
 	return slot0:GetMGHubData():getConfig("reward_need")
 end
 
-slot0.changeSpeed = function(slot0, slot1)
+function slot0.changeSpeed(slot0, slot1)
 end
 
-slot0.onTimer = function(slot0)
+function slot0.onTimer(slot0)
 	slot0:gameStep()
 end
 
-slot0.gameStep = function(slot0)
+function slot0.gameStep(slot0)
 	if not slot0.ignoreTime then
 		slot0.gameTime = slot0.gameTime - Time.deltaTime
 
@@ -2655,24 +2655,24 @@ slot0.gameStep = function(slot0)
 	end
 end
 
-slot0.timerStart = function(slot0)
+function slot0.timerStart(slot0)
 	if not slot0.timer.running then
 		slot0.timer:Start()
 	end
 end
 
-slot0.timerStop = function(slot0)
+function slot0.timerStop(slot0)
 	if slot0.timer.running then
 		slot0.timer:Stop()
 	end
 end
 
-slot0.updateGameUI = function(slot0)
+function slot0.updateGameUI(slot0)
 	setText(slot0.scoreTf, slot0.scoreNum)
 	setText(slot0.gameTimeS, math.ceil(slot0.gameTime))
 end
 
-slot0.addScore = function(slot0, slot1)
+function slot0.addScore(slot0, slot1)
 	setActive(slot0.scoreAnimTf, false)
 	setActive(slot0.scoreAnimTf, true)
 	setText(slot0.scoreAnimTextTf, "+" .. tostring(slot1))
@@ -2684,7 +2684,7 @@ slot0.addScore = function(slot0, slot1)
 	end
 end
 
-slot0.onGameOver = function(slot0)
+function slot0.onGameOver(slot0)
 	if slot0.settlementFlag then
 		return
 	end
@@ -2712,7 +2712,7 @@ slot0.onGameOver = function(slot0)
 	end))
 end
 
-slot0.showSettlement = function(slot0)
+function slot0.showSettlement(slot0)
 	setActive(slot0.settlementUI, true)
 	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
@@ -2737,7 +2737,7 @@ slot0.showSettlement = function(slot0)
 	end
 end
 
-slot0.resumeGame = function(slot0)
+function slot0.resumeGame(slot0)
 	slot0.gameStop = false
 
 	setActive(slot0.leaveUI, false)
@@ -2745,14 +2745,14 @@ slot0.resumeGame = function(slot0)
 	slot0:timerStart()
 end
 
-slot0.stopGame = function(slot0)
+function slot0.stopGame(slot0)
 	slot0.gameStop = true
 
 	slot0:timerStop()
 	slot0:changeSpeed(0)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if not slot0.gameStartFlag then
 		slot0:emit(uv0.ON_BACK_PRESSED)
 	else
@@ -2769,7 +2769,7 @@ slot0.onBackPressed = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0.handle then
 		UpdateBeat:RemoveListener(slot0.handle)
 	end

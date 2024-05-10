@@ -1,6 +1,6 @@
 slot0 = class("MetaCharActiveEnergyCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	if not getProxy(BayProxy):getShipById(slot1:getBody().shipId) then
 		return
 	end
@@ -64,10 +64,10 @@ slot0.execute = function(slot0, slot1)
 			getProxy(PlayerProxy):updatePlayer(uv4)
 
 			for slot7, slot8 in pairs(uv6) do
-				uv1:sendNotification(GAME.CONSUME_ITEM, Item.New({
-					count = slot8.count,
+				uv1:sendNotification(GAME.CONSUME_ITEM, Drop.New({
+					type = DROP_TYPE_ITEM,
 					id = slot8.itemId,
-					type = DROP_TYPE_ITEM
+					count = slot8.count
 				}))
 			end
 
@@ -82,7 +82,7 @@ slot0.execute = function(slot0, slot1)
 	end)
 end
 
-slot0.updateStar = function(slot0, slot1, slot2, slot3)
+function slot0.updateStar(slot0, slot1, slot2, slot3)
 	slot1.configId = slot3
 
 	for slot8, slot9 in ipairs(pg.ship_data_template[slot1.configId].buff_list) do

@@ -1,13 +1,13 @@
 slot0 = class("BeatMonsterPage", import("....base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("AD")
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	slot0:Show()
 
 	slot2 = slot0:PacketData(slot0.activity)
@@ -28,7 +28,7 @@ slot0.OnUpdateFlush = function(slot0)
 	end
 end
 
-slot0.PacketData = function(slot0, slot1)
+function slot0.PacketData(slot0, slot1)
 	slot2 = slot1:GetDataConfig("hp")
 
 	return {
@@ -39,7 +39,7 @@ slot0.PacketData = function(slot0, slot1)
 	}
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0.controller:Dispose()
 end
 

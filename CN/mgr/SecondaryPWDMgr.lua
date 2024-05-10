@@ -10,7 +10,7 @@ slot1.CLOSE_PASSWORD = 98
 slot1.SET_PASSWORD = 99
 slot1.CHANGE_SETTING = 100
 
-slot2 = function()
+function slot2()
 	if not PLATFORM_CODE then
 		return
 	end
@@ -31,7 +31,7 @@ slot2 = function()
 	return slot0
 end
 
-slot1.Init = function(slot0, slot1)
+function slot1.Init(slot0, slot1)
 	uv0.LIMITED_OPERATION = uv1()
 
 	if slot1 then
@@ -39,7 +39,7 @@ slot1.Init = function(slot0, slot1)
 	end
 end
 
-slot1.LimitedOperation = function(slot0, slot1, slot2, slot3)
+function slot1.LimitedOperation(slot0, slot1, slot2, slot3)
 	if not table.contains(getProxy(SecondaryPWDProxy):getRawData().system_list, slot1) then
 		if slot3 then
 			slot3()
@@ -86,7 +86,7 @@ slot1.LimitedOperation = function(slot0, slot1, slot2, slot3)
 	}))
 end
 
-slot1.ChangeSetting = function(slot0, slot1, slot2)
+function slot1.ChangeSetting(slot0, slot1, slot2)
 	if table.equal(slot1, getProxy(SecondaryPWDProxy):getRawData().system_list) then
 		return
 	end
@@ -112,7 +112,7 @@ slot1.ChangeSetting = function(slot0, slot1, slot2)
 	}))
 end
 
-slot1.SetPassword = function(slot0, slot1)
+function slot1.SetPassword(slot0, slot1)
 	if getProxy(SecondaryPWDProxy):getRawData().state > 0 then
 		return
 	end
@@ -129,7 +129,7 @@ slot1.SetPassword = function(slot0, slot1)
 	}))
 end
 
-slot1.LoadLayer = function(slot0, slot1)
+function slot1.LoadLayer(slot0, slot1)
 	slot3 = getProxy(ContextProxy):getCurrentContext()
 	slot3 = slot3:getContextByMediator(slot3.mediator)
 
@@ -143,7 +143,7 @@ slot1.LoadLayer = function(slot0, slot1)
 	})
 end
 
-slot1.ShowWarningWindow = function(slot0)
+function slot1.ShowWarningWindow(slot0)
 	uv0.MsgboxMgr.GetInstance():ShowMsgBox({
 		title = "warning",
 		mode = "showresttime",
@@ -152,11 +152,11 @@ slot1.ShowWarningWindow = function(slot0)
 	})
 end
 
-slot1.FetchData = function(slot0)
+function slot1.FetchData(slot0)
 	uv0.m02:sendNotification(GAME.FETCH_PASSWORD_STATE)
 end
 
-slot1.IsNormalOp = function(slot0, slot1)
+function slot1.IsNormalOp(slot0, slot1)
 	if not slot1 then
 		return false
 	end
@@ -164,7 +164,7 @@ slot1.IsNormalOp = function(slot0, slot1)
 	return table.contains(uv0.LIMITED_OPERATION, slot1)
 end
 
-slot1.Dispose = function(slot0)
+function slot1.Dispose(slot0)
 end
 
 return slot1

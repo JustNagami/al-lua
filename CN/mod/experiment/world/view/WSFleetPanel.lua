@@ -19,17 +19,17 @@ slot0.Fields = {
 	selectIds = "table"
 }
 
-slot0.Setup = function(slot0)
+function slot0.Setup(slot0)
 	pg.DelegateInfo.New(slot0)
 	slot0:Init()
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 	slot0:Clear()
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	slot1 = slot0.transform
 	slot0.rtShipTpl = slot1:Find("panel/shiptpl")
 	slot0.rtEmptyTpl = slot1:Find("panel/emptytpl")
@@ -63,7 +63,7 @@ slot0.Init = function(slot0)
 	setActive(slot0.toggleMask, false)
 end
 
-slot0.UpdateMulti = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateMulti(slot0, slot1, slot2, slot3)
 	slot0.map = slot1
 	slot0.fleets = _(_.values(slot2)):chain():filter(function (slot0)
 		return slot0:isRegularFleet()
@@ -107,13 +107,13 @@ slot0.UpdateMulti = function(slot0, slot1, slot2, slot3)
 	slot0:updateLimit()
 end
 
-slot0.getFleetById = function(slot0, slot1)
+function slot0.getFleetById(slot0, slot1)
 	return _.detect(slot0.fleets, function (slot0)
 		return slot0.id == uv0
 	end)
 end
 
-slot0.getLimitNums = function(slot0, slot1)
+function slot0.getLimitNums(slot0, slot1)
 	slot2 = 0
 
 	if slot1 == FleetType.Normal then
@@ -125,7 +125,7 @@ slot0.getLimitNums = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getSelectIds = function(slot0)
+function slot0.getSelectIds(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.selectIds) do
@@ -143,7 +143,7 @@ slot0.getSelectIds = function(slot0)
 	return slot1
 end
 
-slot0.updateFleets = function(slot0)
+function slot0.updateFleets(slot0)
 	for slot4, slot5 in pairs(slot0.rtFleets) do
 		for slot9 = 1, #slot5 do
 			slot0:updateFleet(slot4, slot9)
@@ -151,7 +151,7 @@ slot0.updateFleets = function(slot0)
 	end
 end
 
-slot0.updateLimit = function(slot0)
+function slot0.updateLimit(slot0)
 	slot5 = slot0.rtLimit
 
 	setText(slot5:Find("number"), string.format("%d/%d", #_.filter(slot0.selectIds[FleetType.Normal], function (slot0)
@@ -165,7 +165,7 @@ slot0.updateLimit = function(slot0)
 	end), slot0:getLimitNums(FleetType.Submarine)))
 end
 
-slot0.selectFleet = function(slot0, slot1, slot2, slot3)
+function slot0.selectFleet(slot0, slot1, slot2, slot3)
 	if fleetId ~= slot3 then
 		slot4 = slot0.selectIds[slot1]
 
@@ -200,7 +200,7 @@ slot0.selectFleet = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.updateFleet = function(slot0, slot1, slot2)
+function slot0.updateFleet(slot0, slot1, slot2)
 	slot5 = slot0:getFleetById(slot0.selectIds[slot1][slot2])
 	slot6 = slot2 <= slot0:getLimitNums(slot1)
 	slot7 = slot0.rtFleets[slot1][slot2]
@@ -254,7 +254,7 @@ slot0.updateFleet = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateShips = function(slot0, slot1, slot2)
+function slot0.updateShips(slot0, slot1, slot2)
 	slot3 = UIItemList.New(slot1, slot0.rtShipTpl)
 
 	slot3:make(function (slot0, slot1, slot2)
@@ -276,7 +276,7 @@ slot0.updateShips = function(slot0, slot1, slot2)
 	slot3:align(#slot2)
 end
 
-slot0.showToggleMask = function(slot0, slot1, slot2)
+function slot0.showToggleMask(slot0, slot1, slot2)
 	setActive(slot0.toggleMask, true)
 
 	slot3 = _.filter(slot0.fleets, function (slot0)
@@ -312,11 +312,11 @@ slot0.showToggleMask = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.hideToggleMask = function(slot0)
+function slot0.hideToggleMask(slot0)
 	setActive(slot0.toggleMask, false)
 end
 
-slot0.clearFleets = function(slot0)
+function slot0.clearFleets(slot0)
 	for slot4, slot5 in pairs(slot0.rtFleets) do
 		_.each(slot5, function (slot0)
 			uv0:clearFleet(slot0)
@@ -324,7 +324,7 @@ slot0.clearFleets = function(slot0)
 	end
 end
 
-slot0.clearFleet = function(slot0, slot1)
+function slot0.clearFleet(slot0, slot1)
 	slot3 = slot1:Find("vanguard")
 	slot4 = slot1:Find("sub")
 

@@ -1,6 +1,6 @@
 slot0 = class("AssignedItemPanel")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	pg.DelegateInfo.New(slot0)
 
 	slot0._go = slot1
@@ -11,16 +11,16 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.view = slot2
 end
 
-slot0.findTF = function(slot0, slot1)
+function slot0.findTF(slot0, slot1)
 	return findTF(slot0._tf, slot1)
 end
 
-slot0.show = function(slot0)
+function slot0.show(slot0)
 	setActive(slot0._tf, true)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-slot0.hide = function(slot0)
+function slot0.hide(slot0)
 	setActive(slot0._tf, false)
 
 	slot0.selectedVO = nil
@@ -36,7 +36,7 @@ slot0.hide = function(slot0)
 	slot0.selectedItem = nil
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.isInited = true
 	slot0.ulist = UIItemList.New(slot0:findTF("got/bottom/scroll/list"), slot0:findTF("got/bottom/scroll/list/tpl"))
 	slot0.confirmBtn = slot0:findTF("calc/confirm")
@@ -88,7 +88,7 @@ slot0.init = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.updateValue = function(slot0)
+function slot0.updateValue(slot0)
 	setText(slot0.valueText, slot0.count)
 
 	slot1 = slot0.ulist
@@ -98,7 +98,7 @@ slot0.updateValue = function(slot0)
 	end)
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	slot0.itemVO = slot1
 
 	if not slot0.isInited then
@@ -122,14 +122,14 @@ slot0.update = function(slot0, slot1)
 
 			onToggle(uv1, slot2, function (slot0)
 				if slot0 then
-					uv0.selectedVO = uv1:getTempCfgTable().usage_arg[uv2 + 1]
+					uv0.selectedVO = uv1:getConfig("usage_arg")[uv2 + 1]
 
 					setText(uv3, uv0.count * uv4[3])
 
 					uv0.selectedItem = uv5
 				end
 			end, SFX_PANEL)
-			setScrollText(slot2:Find("name_bg/Text"), slot4.cfg.name)
+			setScrollText(slot2:Find("name_bg/Text"), slot4:getConfig("name"))
 		end
 	end)
 	slot0.ulist:align(#slot1:getConfig("display_icon"))
@@ -143,7 +143,7 @@ slot0.update = function(slot0, slot1)
 	setText(slot0.descTF, slot1:getConfig("display"))
 end
 
-slot0.dispose = function(slot0)
+function slot0.dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 end
 

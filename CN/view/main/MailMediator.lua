@@ -8,7 +8,7 @@ slot0.ON_MORE_OLDER = "MailMediator:ON_MORE_OLDER"
 slot0.ON_MORE_NEWER = "MailMediator:ON_MORE_NEWER"
 slot0.ON_CHANGE_IMP = "MailMediator:ON_CHANGE_IMP"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot1 = getProxy(MailProxy)
 
 	slot0:bind(uv0.ON_OPEN, function (slot0, slot1)
@@ -73,20 +73,20 @@ slot0.register = function(slot0)
 	end
 end
 
-slot0.getAllAttachment = function(slot0)
+function slot0.getAllAttachment(slot0)
 	slot1 = {}
 	slot2 = getProxy(MailProxy)
 	slot1 = underscore.map(slot2:getAllAttachment(), function (slot0)
-		return {
-			type = slot0.dropType,
+		return Drop.New({
+			type = slot0.type,
 			id = slot0.id,
 			count = slot0.count
-		}
+		})
 	end)
 
 	table.sort(slot1, CompareFuncs({
 		function (slot0)
-			return -getDropRarity(slot0)
+			return -slot0:getDropRarity()
 		end,
 		function (slot0)
 			return -slot0.id
@@ -96,7 +96,7 @@ slot0.getAllAttachment = function(slot0)
 	return slot1
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.TAKE_ATTACHMENT_FULL_SHIP,
 		GAME.TAKE_ATTACHMENT_FULL_EQUIP,
@@ -113,7 +113,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.GET_MAIL_LIST_DONE or slot2 == GAME.DELETE_MAIL_DONE then
@@ -162,7 +162,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.ShowAndCheckDrops = function(slot0, slot1)
+function slot0.ShowAndCheckDrops(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -172,6 +172,19 @@ slot0.ShowAndCheckDrops = function(slot0, slot1)
 	if #slot1 > 0 then
 		table.insert(slot2, function (slot0)
 			uv0.viewComponent:emit(BaseUI.ON_ACHIEVE, uv1, slot0)
+		end)
+	end
+
+	if underscore.detect(slot1, function (slot0)
+		return slot0.type == DROP_TYPE_ITEM and slot0:getConfig("type") == Item.SKIN_ASSIGNED_TYPE and Item.InTimeLimitSkinAssigned(slot0.id)
+	end) then
+		table.insert(slot2, function (slot0)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				hideNo = true,
+				content = i18n("skin_exchange_usetip", uv0:getName()),
+				onYes = slot0,
+				onNo = slot0
+			})
 		end)
 	end
 

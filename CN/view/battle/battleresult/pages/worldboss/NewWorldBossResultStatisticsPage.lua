@@ -1,12 +1,12 @@
 slot0 = class("NewWorldBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
-slot0.UpdateGrade = function(slot0)
+function slot0.UpdateGrade(slot0)
 	LoadImageSpriteAsync("battlescore/grade_label_clear", slot0.gradeTxt, false)
 	setActive(slot0.gradeIcon, false)
 	setActive(slot0.topPanel:Find("grade/label"), false)
 end
 
-slot0.LoadBG = function(slot0, slot1)
+function slot0.LoadBG(slot0, slot1)
 	slot3 = ResourceMgr.Inst
 
 	slot3:getAssetAsync("BattleResultItems/" .. "CommonBg", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
@@ -30,11 +30,11 @@ slot0.LoadBG = function(slot0, slot1)
 	end), true, true)
 end
 
-slot0.UpdateOutput = function(slot0, slot1)
+function slot0.UpdateOutput(slot0, slot1)
 	setText(slot1:Find("Text"), slot0.contextData.statistics.specificDamage)
 end
 
-slot0.UpdateCommanders = function(slot0, slot1)
+function slot0.UpdateCommanders(slot0, slot1)
 	slot2 = ResourceMgr.Inst
 
 	slot2:getAssetAsync("BattleResultItems/Worldboss", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
@@ -49,22 +49,22 @@ slot0.UpdateCommanders = function(slot0, slot1)
 	end), true, true)
 end
 
-slot0.UpdatePlayer = function(slot0)
+function slot0.UpdatePlayer(slot0)
 	setActive(slot0.topPanel:Find("exp"), false)
 end
 
-slot0.RegisterEvent = function(slot0, slot1)
+function slot0.RegisterEvent(slot0, slot1)
 	uv0.super.RegisterEvent(slot0, slot1)
 	triggerButton(slot0.statisticsBtn)
 	setActive(slot0.statisticsBtn, false)
 end
 
-slot0.UpdatePainting = function(slot0, slot1)
+function slot0.UpdatePainting(slot0, slot1)
 	slot0:UpdatePaintingPosition()
 	slot0:UpdateMvpPainting(slot1)
 end
 
-slot0.UpdateChapterName = function(slot0)
+function slot0.UpdateChapterName(slot0)
 	slot0.chapterName.text = ""
 
 	setActive(slot0.opBonus, false)

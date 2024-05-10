@@ -1,6 +1,6 @@
 slot0 = class("ActivityCollectionEventCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.arg1
 	slot4 = slot2.onConfirm

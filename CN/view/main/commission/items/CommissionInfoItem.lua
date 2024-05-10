@@ -1,6 +1,6 @@
 slot0 = class("CommissionInfoItem")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0.view = slot2
 
 	pg.DelegateInfo.New(slot0)
@@ -28,7 +28,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.timers = {}
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	onToggle(slot0, slot0.toggle, function (slot0)
 		uv0.foldFlag.localScale = Vector3(1, slot0 and -1 or 1, 1)
 
@@ -67,21 +67,21 @@ slot0.Init = function(slot0)
 	slot0:Flush()
 end
 
-slot0.Adpater = function(slot0)
+function slot0.Adpater(slot0)
 	slot0.parentTF.localPosition = Vector3(slot0.parentTF.localPosition.x, math.abs(slot0._tf.localPosition.y), 0)
 end
 
-slot0.CanOpen = function(slot0)
+function slot0.CanOpen(slot0)
 	return true
 end
 
-slot0.Flush = function(slot0)
+function slot0.Flush(slot0)
 	if slot0:CanOpen() then
 		slot0:OnFlush()
 	end
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot0:Flush()
 
 	if slot0.isInitList then
@@ -89,7 +89,7 @@ slot0.Update = function(slot0)
 	end
 end
 
-slot0.RemoveTimers = function(slot0)
+function slot0.RemoveTimers(slot0)
 	slot1 = pairs
 	slot2 = slot0.timers or {}
 
@@ -100,7 +100,7 @@ slot0.RemoveTimers = function(slot0)
 	slot0.timers = {}
 end
 
-slot0.UpdateList = function(slot0)
+function slot0.UpdateList(slot0)
 	slot0:RemoveTimers()
 
 	slot1, slot2 = slot0:GetList()
@@ -110,29 +110,29 @@ slot0.UpdateList = function(slot0)
 	slot0.list = slot1
 end
 
-slot0.OnFlush = function(slot0)
+function slot0.OnFlush(slot0)
 end
 
-slot0.UpdateListItem = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateListItem(slot0, slot1, slot2, slot3)
 end
 
-slot0.GetList = function(slot0)
+function slot0.GetList(slot0)
 	assert(false)
 end
 
-slot0.OnSkip = function(slot0)
+function slot0.OnSkip(slot0)
 	assert(false)
 end
 
-slot0.OnFinishAll = function(slot0)
+function slot0.OnFinishAll(slot0)
 	assert(false)
 end
 
-slot0.emit = function(slot0, ...)
+function slot0.emit(slot0, ...)
 	slot0.view:emit(...)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 	slot0:RemoveTimers()
 end

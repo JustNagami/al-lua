@@ -1,10 +1,10 @@
 slot0 = class("OriginShopMultiWindow", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ShopsUIMsgbox"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.topItem = slot0:findTF("item/panel_bg")
 	slot0.ownerTF = slot0.topItem:Find("left/own")
 	slot0.detailTF = slot0.topItem:Find("left/detail")
@@ -25,7 +25,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0:findTF("actions/confirm_button/label"), i18n("shop_word_exchange"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0.cancelBtn, function ()
 		uv0:Close()
 	end, SFX_PANEL)
@@ -37,7 +37,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Open = function(slot0, slot1, slot2)
+function slot0.Open(slot0, slot1, slot2)
 	slot0.opening = true
 
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
@@ -45,7 +45,7 @@ slot0.Open = function(slot0, slot1, slot2)
 	slot0:Show()
 end
 
-slot0.InitWindow = function(slot0, slot1, slot2)
+function slot0.InitWindow(slot0, slot1, slot2)
 	slot3, slot4, slot5 = nil
 
 	if isa(slot1, WorldNShopCommodity) then
@@ -54,15 +54,15 @@ slot0.InitWindow = function(slot0, slot1, slot2)
 		slot5 = slot1:GetLimitGoodCount()
 	else
 		slot3 = slot1:getDropInfo()
-		slot4 = {
+		slot4 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = slot1:getConfig("resource_type"),
 			count = slot1:getConfig("resource_num")
-		}
+		})
 		slot5 = slot1:getLimitCount()
 	end
 
-	slot6 = math.max(math.floor(GetOwnedDropCount(slot4) / slot4.count), 1)
+	slot6 = math.max(math.floor(slot4:getOwnedCount() / slot4.count), 1)
 
 	if slot5 ~= 0 then
 		slot6 = math.min(slot6, slot5 - slot1.buyCount)
@@ -78,8 +78,8 @@ slot0.InitWindow = function(slot0, slot1, slot2)
 	UpdateOwnDisplay(slot0.ownerTF, slot3)
 	RegisterDetailButton(slot0, slot0.detailTF, slot3)
 
-	slot0.nameTF.text = slot3.cfg.name
-	slot0.descTF.text = slot3.desc or slot3.cfg.desc
+	slot0.nameTF.text = slot3:getConfig("name")
+	slot0.descTF.text = slot3.desc or slot3:getConfig("desc")
 
 	updateDrop(slot0.bottomItem, slot3)
 	onButton(slot0, slot0.confirmBtn, function ()
@@ -97,7 +97,7 @@ slot0.InitWindow = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.Close = function(slot0)
+function slot0.Close(slot0)
 	if slot0.opening then
 		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 		slot0:Hide()
@@ -106,7 +106,7 @@ slot0.Close = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0.opening then
 		slot0:Close()
 	end

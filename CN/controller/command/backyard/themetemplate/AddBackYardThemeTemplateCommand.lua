@@ -1,6 +1,6 @@
 slot0 = class("AddBackYardThemeTemplateCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = getProxy(DormProxy):getRawData()
 	slot4 = slot3.level
 	slot5, slot6 = CourtYardRawDataChecker.Check(slot1:getBody().furnitureputList, slot3:GetMapSize())
@@ -25,7 +25,7 @@ slot0.execute = function(slot0, slot1)
 		end
 
 		table.insert(slot7, {
-			shipId = 0,
+			shipId = 1,
 			id = tostring(slot12.configId),
 			x = slot12.x,
 			y = slot12.y,

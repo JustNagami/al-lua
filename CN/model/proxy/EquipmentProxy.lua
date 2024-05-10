@@ -4,7 +4,7 @@ slot0.EQUIPMENT_SKIN_UPDATED = "equipment skin updated"
 slot0.SPWEAPONS_UPDATED = "spweapons updated"
 slot0.MAX_SPWEAPON_BAG = 2000
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0.data = {}
 	slot0.equipmentSkinIds = {}
 	slot0.shipIdListInTimeLimit = {}
@@ -48,11 +48,11 @@ slot0.register = function(slot0)
 	})
 end
 
-slot0.getEquipmentSkins = function(slot0)
+function slot0.getEquipmentSkins(slot0)
 	return slot0.equipmentSkinIds or {}
 end
 
-slot0.getSkinsByType = function(slot0, slot1)
+function slot0.getSkinsByType(slot0, slot1)
 	slot2 = {}
 	slot3 = pg.equip_skin_template
 
@@ -67,7 +67,7 @@ slot0.getSkinsByType = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getSkinsByTypes = function(slot0, slot1)
+function slot0.getSkinsByTypes(slot0, slot1)
 	if not slot1 or #slot1 <= 0 then
 		return {}
 	end
@@ -94,11 +94,11 @@ slot0.getSkinsByTypes = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getEquipmnentSkinById = function(slot0, slot1)
+function slot0.getEquipmnentSkinById(slot0, slot1)
 	return slot0.equipmentSkinIds[slot1]
 end
 
-slot0.addEquipmentSkin = function(slot0, slot1, slot2)
+function slot0.addEquipmentSkin(slot0, slot1, slot2)
 	if slot0.equipmentSkinIds[slot1] then
 		slot0.equipmentSkinIds[slot1].count = slot0.equipmentSkinIds[slot1].count + slot2
 	else
@@ -114,7 +114,7 @@ slot0.addEquipmentSkin = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.useageEquipmnentSkin = function(slot0, slot1)
+function slot0.useageEquipmnentSkin(slot0, slot1)
 	assert(slot0.equipmentSkinIds[slot1], "equipmentSkin is nil--" .. slot1)
 	assert(slot0.equipmentSkinIds[slot1].count > 0, "equipmentSkin count should greater than zero")
 
@@ -126,7 +126,7 @@ slot0.useageEquipmnentSkin = function(slot0, slot1)
 	})
 end
 
-slot0.addEquipment = function(slot0, slot1)
+function slot0.addEquipment(slot0, slot1)
 	assert(isa(slot1, Equipment), "should be an instance of Equipment")
 
 	slot1 = slot0.data.equipments[slot1.id] or slot1
@@ -135,7 +135,7 @@ slot0.addEquipment = function(slot0, slot1)
 	slot0:updateEquipment(slot1)
 end
 
-slot0.addEquipmentById = function(slot0, slot1, slot2, slot3)
+function slot0.addEquipmentById(slot0, slot1, slot2, slot3)
 	assert(slot1 ~= 0, "equipmentProxy装备的id==0")
 	assert(slot1 ~= 1, "equipmentProxy装备的id==1")
 	assert(slot2 > 0, "count should greater than zero")
@@ -146,7 +146,7 @@ slot0.addEquipmentById = function(slot0, slot1, slot2, slot3)
 	}))
 end
 
-slot0.updateEquipment = function(slot0, slot1)
+function slot0.updateEquipment(slot0, slot1)
 	assert(isa(slot1, Equipment), "should be an instance of Equipment")
 
 	slot0.data.equipments[slot1.id] = slot1.count ~= 0 and slot1:clone() or nil
@@ -156,7 +156,7 @@ slot0.updateEquipment = function(slot0, slot1)
 	slot0.facade:sendNotification(uv0.EQUIPMENT_UPDATED, slot1:clone())
 end
 
-slot0.removeEquipmentById = function(slot0, slot1, slot2)
+function slot0.removeEquipmentById(slot0, slot1, slot2)
 	assert(slot0.data.equipments[slot1] ~= nil, "equipment should exist")
 	assert(slot2 > 0, "count should greater than zero")
 	assert(slot2 <= slot3.count, "number of equipment should enough")
@@ -166,7 +166,7 @@ slot0.removeEquipmentById = function(slot0, slot1, slot2)
 	slot0:updateEquipment(slot3)
 end
 
-slot0.getEquipments = function(slot0, slot1)
+function slot0.getEquipments(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in pairs(slot0.data.equipments) do
@@ -182,11 +182,11 @@ slot0.getEquipments = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getEquipmentsByFillter = function(slot0, slot1, slot2)
+function slot0.getEquipmentsByFillter(slot0, slot1, slot2)
 	slot3 = {}
 
 	for slot7, slot8 in pairs(slot0.data.equipments) do
-		if slot8.count > 0 and table.contains(slot2, slot8.config.type) and not table.contains(pg.equip_data_template[slot8.configId].ship_type_forbidden, slot1) then
+		if slot8.count > 0 and table.contains(slot2, slot8:getConfig("type")) and not table.contains(slot8:getConfig("ship_type_forbidden"), slot1) then
 			table.insert(slot3, slot8:clone())
 		end
 	end
@@ -194,7 +194,7 @@ slot0.getEquipmentsByFillter = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.GetEquipmentsRaw = function(slot0)
+function slot0.GetEquipmentsRaw(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.data.equipments) do
@@ -206,7 +206,7 @@ slot0.GetEquipmentsRaw = function(slot0)
 	return slot1
 end
 
-slot0.getEquipmentById = function(slot0, slot1)
+function slot0.getEquipmentById(slot0, slot1)
 	if slot0.data.equipments[slot1] ~= nil then
 		return slot0.data.equipments[slot1]:clone()
 	end
@@ -214,9 +214,9 @@ slot0.getEquipmentById = function(slot0, slot1)
 	return nil
 end
 
-slot0.getSameTypeEquipmentId = function(slot0, slot1)
+function slot0.getSameTypeEquipmentId(slot0, slot1)
 	slot2 = Equipment.New({
-		id = slot1.config.id
+		id = slot1:getConfig("id")
 	})
 	slot3 = nil
 
@@ -232,7 +232,7 @@ slot0.getSameTypeEquipmentId = function(slot0, slot1)
 
 	if not slot3 then
 		slot2 = Equipment.New({
-			id = slot1.config.id
+			id = slot1:getConfig("id")
 		})
 
 		while slot2.config.prev ~= 0 do
@@ -253,7 +253,7 @@ slot0.getSameTypeEquipmentId = function(slot0, slot1)
 	end
 end
 
-slot0.getEquipCount = function(slot0)
+function slot0.getEquipCount(slot0)
 	slot1 = 0
 
 	for slot5, slot6 in pairs(slot0.data.equipments) do
@@ -263,7 +263,7 @@ slot0.getEquipCount = function(slot0)
 	return slot1
 end
 
-slot0.getEquipmentSkinCount = function(slot0)
+function slot0.getEquipmentSkinCount(slot0)
 	slot2 = 0
 
 	for slot6, slot7 in pairs(slot0:getEquipmentSkins()) do
@@ -273,11 +273,11 @@ slot0.getEquipmentSkinCount = function(slot0)
 	return slot2
 end
 
-slot0.getCapacity = function(slot0)
+function slot0.getCapacity(slot0)
 	return slot0:getEquipCount()
 end
 
-slot0.getTimeLimitShipList = function(slot0)
+function slot0.getTimeLimitShipList(slot0)
 	slot1 = getProxy(BayProxy)
 	slot2 = {}
 	slot3 = nil
@@ -295,23 +295,23 @@ slot0.getTimeLimitShipList = function(slot0)
 	return slot2
 end
 
-slot0.clearTimeLimitShipList = function(slot0)
+function slot0.clearTimeLimitShipList(slot0)
 	slot0.shipIdListInTimeLimit = {}
 end
 
-slot0.GetSpWeapons = function(slot0)
+function slot0.GetSpWeapons(slot0)
 	return slot0.spWeapons
 end
 
-slot0.GetSpWeaponByUid = function(slot0, slot1)
+function slot0.GetSpWeaponByUid(slot0, slot1)
 	return slot0.spWeapons[slot1]
 end
 
-slot0.StaticGetSpWeapon = function(slot0, slot1)
+function slot0.StaticGetSpWeapon(slot0, slot1)
 	return slot0 and slot0 > 0 and getProxy(BayProxy):getShipById(slot0) and slot2:GetSpWeapon() or getProxy(EquipmentProxy):GetSpWeaponByUid(slot1), nil
 end
 
-slot0.GetSameTypeSpWeapon = function(slot0, slot1)
+function slot0.GetSameTypeSpWeapon(slot0, slot1)
 	slot2 = nil
 	slot3 = slot1:GetConfigID()
 	slot4 = nil
@@ -368,19 +368,19 @@ slot0.GetSameTypeSpWeapon = function(slot0, slot1)
 	return slot2
 end
 
-slot0.GetSpWeaponCapacity = function(slot0)
+function slot0.GetSpWeaponCapacity(slot0)
 	return slot0.spWeaponCapacity
 end
 
-slot0.AddSpWeaponCapacity = function(slot0, slot1)
+function slot0.AddSpWeaponCapacity(slot0, slot1)
 	slot0.spWeaponCapacity = slot0.spWeaponCapacity + slot1
 end
 
-slot0.GetSpWeaponCount = function(slot0)
+function slot0.GetSpWeaponCount(slot0)
 	return table.getCount(slot0:GetSpWeapons())
 end
 
-slot0.AddSpWeapon = function(slot0, slot1)
+function slot0.AddSpWeapon(slot0, slot1)
 	slot1:SetShipId(nil)
 
 	slot0.spWeapons[slot1:GetUID()] = slot1
@@ -388,7 +388,7 @@ slot0.AddSpWeapon = function(slot0, slot1)
 	slot0.facade:sendNotification(uv0.SPWEAPONS_UPDATED)
 end
 
-slot0.RemoveSpWeapon = function(slot0, slot1)
+function slot0.RemoveSpWeapon(slot0, slot1)
 	slot0.spWeapons[slot1:GetUID()] = nil
 
 	slot0.facade:sendNotification(uv0.SPWEAPONS_UPDATED)
@@ -409,11 +409,11 @@ for slot4, slot5 in ipairs(pg.equip_upgrade_data.all) do
 	table.insert(slot0.EquipTransformTargetDict[slot6.target_id].sources, slot5)
 end
 
-slot0.GetTransformTargets = function(slot0)
+function slot0.GetTransformTargets(slot0)
 	return uv0.EquipTransformTargetDict[slot0] and uv0.EquipTransformTargetDict[slot0].targets or {}
 end
 
-slot0.GetTransformSources = function(slot0)
+function slot0.GetTransformSources(slot0)
 	return uv0.EquipTransformTargetDict[slot0] and uv0.EquipTransformTargetDict[slot0].sources or {}
 end
 
@@ -429,7 +429,7 @@ for slot4, slot5 in ipairs(pg.equip_upgrade_template.all) do
 	slot0.EquipmentTransformTreeTemplate[slot6.category1][slot6.category2] = slot6
 end
 
-slot0.SameEquip = function(slot0, slot1)
+function slot0.SameEquip(slot0, slot1)
 	assert(slot0 and slot1, "Compare NIL Equip")
 
 	if not slot0 or not slot1 then
@@ -439,7 +439,7 @@ slot0.SameEquip = function(slot0, slot1)
 	return slot0.id == slot1.id and slot0.shipId == slot1.shipId and slot0.shipPos == slot1.shipPos
 end
 
-slot0.GetWeakEquipsDict = function(slot0)
+function slot0.GetWeakEquipsDict(slot0)
 	if slot0.weakTable.equipsDict then
 		return slot0.weakTable.equipsDict
 	end
@@ -452,7 +452,7 @@ slot0.GetWeakEquipsDict = function(slot0)
 	return slot1
 end
 
-slot0.OnEquipsUpdate = function(slot0, slot1)
+function slot0.OnEquipsUpdate(slot0, slot1)
 	if not slot0.weakTable.equipsDict then
 		return
 	end
@@ -460,7 +460,7 @@ slot0.OnEquipsUpdate = function(slot0, slot1)
 	slot0.weakTable.equipsDict:UpdateEquipment(slot1)
 end
 
-slot0.OnShipEquipsAdd = function(slot0, slot1, slot2, slot3)
+function slot0.OnShipEquipsAdd(slot0, slot1, slot2, slot3)
 	if not slot0.weakTable.equipsDict then
 		return
 	end
@@ -472,7 +472,7 @@ slot0.OnShipEquipsAdd = function(slot0, slot1, slot2, slot3)
 	slot0.weakTable.equipsDict:AddEquipment(slot1)
 end
 
-slot0.OnShipEquipsRemove = function(slot0, slot1, slot2, slot3)
+function slot0.OnShipEquipsRemove(slot0, slot1, slot2, slot3)
 	if not slot0.weakTable.equipsDict then
 		return
 	end

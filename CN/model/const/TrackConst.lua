@@ -1,6 +1,6 @@
 slot0 = class("TrackConst")
 
-slot0.GetTrackData = function(slot0, slot1, ...)
+function slot0.GetTrackData(slot0, slot1, ...)
 	return {
 		system = slot0,
 		id = slot1,
@@ -8,7 +8,7 @@ slot0.GetTrackData = function(slot0, slot1, ...)
 	}
 end
 
-slot0.GetDesc = function(slot0, slot1, ...)
+function slot0.GetDesc(slot0, slot1, ...)
 	return uv0["Build" .. slot0 .. "Action" .. slot1 .. "Desc"](unpack({
 		...
 	}))
@@ -20,20 +20,63 @@ slot0.ACTION_ENTER_GIFT = 2
 slot0.ACTION_BUY_RECOMMEND = 3
 slot0.ACTION_LOOKUP_RECOMMEND = 4
 
-slot0.Build1Action1Desc = function(slot0)
+function slot0.Build1Action1Desc(slot0)
 	return slot0 and "1" or "0"
 end
 
-slot0.Build1Action2Desc = function(slot0)
+function slot0.Build1Action2Desc(slot0)
 	return slot0 and "1" or "0"
 end
 
-slot0.Build1Action3Desc = function(slot0)
+function slot0.Build1Action3Desc(slot0)
 	return slot0 .. ""
 end
 
-slot0.Build1Action4Desc = function(slot0)
+function slot0.Build1Action4Desc(slot0)
 	return slot0 .. ""
+end
+
+slot1 = 1
+slot2 = 1
+slot3 = 2
+
+function slot0.StoryStart(slot0)
+	if not slot0 then
+		return
+	end
+
+	pg.m02:sendNotification(GAME.NEW_TRACK, {
+		type = uv0,
+		eventId = uv1,
+		para1 = tostring(slot0)
+	})
+end
+
+function slot0.StorySkip(slot0)
+	if not slot0 then
+		return
+	end
+
+	pg.m02:sendNotification(GAME.NEW_TRACK, {
+		type = uv0,
+		eventId = uv1,
+		para1 = tostring(slot0)
+	})
+end
+
+slot0.TRACK_NEW_BULLETIN_OPEN_URL = 2
+slot0.EVENT_NEW_BULLETIN_OPEN_URL = 1
+
+function slot0.Track(slot0, slot1, ...)
+	slot2, slot3, slot4 = ...
+
+	pg.m02:sendNotification(GAME.NEW_TRACK, {
+		type = slot0,
+		eventId = slot1,
+		para1 = slot2,
+		para2 = slot3,
+		para3 = slot4
+	})
 end
 
 return slot0

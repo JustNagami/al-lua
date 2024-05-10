@@ -1,6 +1,7 @@
 slot0 = class("AvatarFrameAwardCommand", pm.SimpleCommand)
+slot1 = nil
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody() or {}
 	slot3 = slot2.callback
 	slot5 = pg.activity_template[slot2.act_id].type
@@ -26,11 +27,7 @@ slot0.execute = function(slot0, slot1)
 
 				uv2:sendNotification(GAME.SUBMIT_AVATAR_TASK_DONE, {
 					awards = {
-						Item.New({
-							type = slot3[1],
-							id = slot3[2],
-							count = slot3[3]
-						})
+						Drop.Create(slot3)
 					},
 					callback = uv3
 				})
@@ -64,7 +61,7 @@ slot0.execute = function(slot0, slot1)
 				end
 
 				for slot6, slot7 in ipairs(slot0.award_list) do
-					table.insert(slot2, Item.New({
+					table.insert(slot2, Drop.New({
 						type = slot7.type,
 						id = slot7.id,
 						count = slot7.number
@@ -82,7 +79,7 @@ slot0.execute = function(slot0, slot1)
 	end)
 end
 
-slot0.getAwardNum = function(slot0, slot1, slot2)
+function slot0.getAwardNum(slot0, slot1, slot2)
 	for slot6 = 1, #AvatarFrameTask.fillter_task_type do
 		for slot12, slot13 in ipairs(slot1[AvatarFrameTask.fillter_task_type[slot6]]) do
 			if slot2 == slot13[1] then

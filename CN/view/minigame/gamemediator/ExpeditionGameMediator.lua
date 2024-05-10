@@ -1,6 +1,6 @@
 slot0 = class("ExpeditionGameMediator", import(".MiniHubMediator"))
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	slot1 = {
 		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityProxy.ACTIVITY_SHOW_AWARDS,
@@ -12,7 +12,7 @@ slot0.listNotificationInterests = function(slot0)
 	return slot1
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	uv0.super.handleNotification(slot0, slot1)
 
 	slot3 = slot1:getBody()

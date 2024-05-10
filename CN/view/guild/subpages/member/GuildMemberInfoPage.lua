@@ -1,6 +1,6 @@
 slot0 = class("GuildMemberInfoPage", import(".GuildMemberBasePage"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "GuildMemberInfoPage"
 end
 
@@ -50,7 +50,7 @@ slot1 = {
 	}
 }
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	uv0.super.OnLoaded(slot0)
 
 	slot0.infonameTF = slot0:findTF("frame/info/name/Text"):GetComponent(typeof(Text))
@@ -63,13 +63,13 @@ slot0.OnLoaded = function(slot0)
 	slot0.resumeInfo = slot0:findTF("frame/content")
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
 	end, SFX_CONFIRM)
 end
 
-slot0.Show = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.Show(slot0, slot1, slot2, slot3, slot4)
 	slot0.guildVO = slot1
 	slot0.playerVO = slot2
 	slot0.memberVO = slot3
@@ -81,7 +81,7 @@ slot0.Show = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.Flush = function(slot0, slot1)
+function slot0.Flush(slot0, slot1)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	setActive(slot0._tf, true)
 	slot0._tf:SetAsLastSibling()

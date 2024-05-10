@@ -1,6 +1,6 @@
 slot0 = class("EggCellView", import(".EnemyCellView"))
 
-slot0.InitEggCellTransform = function(slot0)
+function slot0.InitEggCellTransform(slot0)
 	slot0.tfIcon = slot0.tf:Find("icon")
 	slot0.tfBufficons = slot0.tf:Find("random_buff_container")
 	slot0.tfBossIcon = slot0.tf:Find("titleContain/bg_boss")
@@ -16,7 +16,7 @@ slot0.InitEggCellTransform = function(slot0)
 	slot0.effectFireball = slot0.tf:Find("huoqiubaozha")
 end
 
-slot0.StartEggCellView = function(slot0, slot1, slot2)
+function slot0.StartEggCellView(slot0, slot1, slot2)
 	if ChapterConst.EnemySize[slot1.type] == 99 then
 		setActive(slot0.tfBossIcon, true)
 		slot0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_boss", slot0.tfBossIcon)
@@ -27,6 +27,14 @@ slot0.StartEggCellView = function(slot0, slot1, slot2)
 		setActive(slot0.tfBossIcon, false)
 	end
 
+	if ChapterConst.EnemySize[slot1.type] == 98 then
+		slot0.tfBossIcon.localScale = Vector3(0.5, 0.5, 1)
+		slot0.tfBossIcon.anchoredPosition = Vector2(61.1, -30.6)
+	else
+		slot0.tfBossIcon.localScale = Vector3(1, 1, 1)
+		slot0.tfBossIcon.anchoredPosition = Vector2(39.5, -23)
+	end
+
 	uv0.ClearExtraEffects(slot0)
 	uv0.LoadExtraEffects(slot0, slot1.effect_prefab)
 	slot0:GetLoader():GetSprite("enemies/" .. slot1.icon, "", slot0.tfIcon)
@@ -34,7 +42,7 @@ slot0.StartEggCellView = function(slot0, slot1, slot2)
 	existCall(slot2)
 end
 
-slot0.UpdateEggCell = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.UpdateEggCell(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot2.row
 	slot6 = slot2.column
 	slot7 = slot2.trait ~= ChapterConst.TraitLurk and slot2.flag == ChapterConst.CellFlagActive and not slot1:existFleet(FleetType.Transport, slot5, slot6)

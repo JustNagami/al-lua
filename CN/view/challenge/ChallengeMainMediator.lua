@@ -7,7 +7,7 @@ slot0.ON_OPEN_RANK = "ChallengeMainMediator:ON_OPEN_RANK"
 slot0.COMMANDER_FORMATION_OP = "ChallengeMainMediator:COMMANDER_FORMATION_OP"
 slot0.ON_COMMANDER_SKILL = "ChallengeMainMediator:ON_COMMANDER_SKILL"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot3 = getProxy(ChallengeProxy)
 
 	slot0:bind(uv0.ON_OPEN_RANK, function ()
@@ -93,12 +93,12 @@ slot0.register = function(slot0)
 		}))
 	end)
 	slot0:bind(uv0.ON_SELECT_ELITE_COMMANDER, function (slot0, slot1, slot2)
-		uv2:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
+		uv2:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 			maxCount = 1,
-			mode = CommandRoomScene.MODE_SELECT,
+			mode = CommanderCatScene.MODE_SELECT,
 			activeCommander = uv0:getActivityFleets()[uv1.id][slot1]:getCommanders()[slot2],
 			ignoredIds = {},
-			fleetType = CommandRoomScene.FLEET_TYPE_CHALLENGE,
+			fleetType = CommanderCatScene.FLEET_TYPE_CHALLENGE,
 			onCommander = function (slot0)
 				return true
 			end,
@@ -182,7 +182,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setCommanderPrefabs(getProxy(CommanderProxy):getPrefabFleet())
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.CHALLENGE2_INITIAL_DONE,
 		GAME.CHALLENGE2_RESET_DONE,
@@ -193,7 +193,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 	slot4 = getProxy(ChallengeProxy)
 	slot5 = getProxy(ActivityProxy)
@@ -263,7 +263,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.getDockCallbackFuncs = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.getDockCallbackFuncs(slot0, slot1, slot2, slot3, slot4)
 	slot5 = getProxy(BayProxy)
 	slot6 = getProxy(FleetProxy)
 	slot7 = getProxy(ActivityProxy)

@@ -2,7 +2,7 @@ slot0 = class("EatFoodPage", import("...base.BaseActivityPage"))
 slot1 = 35
 slot2 = 31
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.icons = {
 		slot0:findTF("AD/bg/npc1"),
 		slot0:findTF("AD/bg/npc2"),
@@ -23,19 +23,14 @@ slot0.OnInit = function(slot0)
 	}
 	slot0.helpBtn = slot0:findTF("AD/help")
 	slot0.goBtn = slot0:findTF("AD/go")
-	slot1 = pg.mini_game_hub[uv0].reward_display
-	slot2 = Item.New({
-		type = slot1[1],
-		id = slot1[2],
-		count = slot1[3]
-	})
+	slot2 = Drop.Create(pg.mini_game_hub[uv0].reward_display)
 
 	onButton(slot0, slot0:findTF("AD/btnFinalAward"), function ()
 		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
 end
 
-slot0.SetData = function(slot0)
+function slot0.SetData(slot0)
 	slot2 = getProxy(MiniGameProxy):GetHubByHubId(uv0)
 	slot0.data = slot2
 	slot0.ultimate = slot2.ultimate
@@ -43,7 +38,7 @@ slot0.SetData = function(slot0)
 	slot0.count = slot2.count
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	slot0:SetData()
 	onButton(slot0, slot0.goBtn, function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0)
@@ -58,7 +53,7 @@ slot0.OnFirstFlush = function(slot0)
 	slot0:CheckGet()
 end
 
-slot0.UpdateSigned = function(slot0)
+function slot0.UpdateSigned(slot0)
 	slot1 = slot0.data:getConfig("reward_need")
 	slot3 = slot0.ultimate == 0
 	slot4 = slot0.usedtime + slot0.count
@@ -77,7 +72,7 @@ slot0.UpdateSigned = function(slot0)
 	end
 end
 
-slot0.CheckGet = function(slot0)
+function slot0.CheckGet(slot0)
 	if slot0.ultimate == 0 then
 		if slot0.usedtime < slot0.data:getConfig("reward_need") then
 			return

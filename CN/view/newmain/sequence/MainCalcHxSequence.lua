@@ -1,6 +1,6 @@
 slot0 = class("MainCalcHxSequence")
 
-slot0.Execute = function(slot0, slot1)
+function slot0.Execute(slot0, slot1)
 	HXSet.calcLocalizationUse()
 	slot1()
 end

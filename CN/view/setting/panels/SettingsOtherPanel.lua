@@ -1,18 +1,18 @@
 slot0 = class("SettingsOtherPanel", import(".SettingsNotificationPanel"))
 
-slot0.GetUIName = function(slot0)
+function slot0.GetUIName(slot0)
 	return "SettingsOther"
 end
 
-slot0.GetTitle = function(slot0)
+function slot0.GetTitle(slot0)
 	return i18n("Settings_title_Other")
 end
 
-slot0.GetTitleEn = function(slot0)
+function slot0.GetTitleEn(slot0)
 	return "  / OTHER SETTINGS"
 end
 
-slot0.OnInit = function(slot0, ...)
+function slot0.OnInit(slot0, ...)
 	uv0.super.OnInit(slot0, ...)
 
 	slot2 = pg.BrightnessMgr.GetInstance():IsPermissionGranted()
@@ -23,7 +23,7 @@ slot0.OnInit = function(slot0, ...)
 	end
 end
 
-slot0.OnItemSwitch = function(slot0, slot1, slot2)
+function slot0.OnItemSwitch(slot0, slot1, slot2)
 	if slot1.id == 1 then
 		pg.PushNotificationMgr.GetInstance():setSwitchShipName(slot2)
 	elseif slot1.id == 5 then
@@ -39,7 +39,7 @@ slot0.OnItemSwitch = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.OnClickEffectItemSwitch = function(slot0, slot1, slot2)
+function slot0.OnClickEffectItemSwitch(slot0, slot1, slot2)
 	if pg.UIMgr.GetInstance().OverlayEffect then
 		setActive(slot3, slot2)
 	end
@@ -47,7 +47,7 @@ slot0.OnClickEffectItemSwitch = function(slot0, slot1, slot2)
 	slot0:OnCommonLocalItemSwitch(slot1, slot2)
 end
 
-slot0.OnCommonServerItemSwitch = function(slot0, slot1, slot2)
+function slot0.OnCommonServerItemSwitch(slot0, slot1, slot2)
 	slot4 = getProxy(PlayerProxy):getRawData():GetCommonFlag(_G[slot1.name])
 	slot5 = not slot2
 
@@ -66,8 +66,8 @@ slot0.OnCommonServerItemSwitch = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.OnAutoFightBatterySaveModeItemSwitch = function(slot0, slot1, slot2)
-	slot3 = function()
+function slot0.OnAutoFightBatterySaveModeItemSwitch(slot0, slot1, slot2)
+	function slot3()
 		triggerToggle(uv0.uilist.container:GetChild(uv1.id - 1):Find("off"), true)
 	end
 
@@ -105,7 +105,7 @@ slot0.OnAutoFightBatterySaveModeItemSwitch = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.OnAutoFightDownFrameItemSwitch = function(slot0, slot1, slot2)
+function slot0.OnAutoFightDownFrameItemSwitch(slot0, slot1, slot2)
 	if not slot0:GetDefaultValue(slot0.list[9]) and slot2 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("words_autoFight_tips"))
 		triggerToggle(slot0.uilist.container:GetChild(slot1.id - 1):Find("off"), true)
@@ -117,23 +117,34 @@ slot0.OnAutoFightDownFrameItemSwitch = function(slot0, slot1, slot2)
 	PlayerPrefs.Save()
 end
 
-slot0.SetGrayOption = function(slot0, slot1)
+function slot0.SetGrayOption(slot0, slot1)
 	setGray(slot0:Find("on"), not slot1)
 	setGray(slot0:Find("off"), not slot1)
 end
 
-slot0.OnCommonLocalItemSwitch = function(slot0, slot1, slot2)
+function slot0.OnCommonLocalItemSwitch(slot0, slot1, slot2)
 	PlayerPrefs.SetInt(_G[slot1.name], slot2 and 1 or 0)
 	PlayerPrefs.Save()
 end
 
-slot0.OnUpdateItem = function(slot0, slot1)
+function slot0.OnUpdateItem(slot0, slot1)
 	if slot1.id == 10 then
 		uv0.SetGrayOption(slot0.uilist.container:GetChild(slot1.id - 1), slot0:GetDefaultValue(slot0.list[9]))
 	end
 end
 
-slot0.GetDefaultValue = function(slot0, slot1)
+function slot0.OnUpdateItemWithTr(slot0, slot1, slot2)
+	setActive(findTF(slot2, "mask/tip"), false)
+
+	if slot1.id == 18 then
+		onButton(slot0, slot3, function ()
+			pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, uv0)
+		end, SFX_PANEL)
+		setActive(slot3, true)
+	end
+end
+
+function slot0.GetDefaultValue(slot0, slot1)
 	if slot1.id == 1 then
 		return pg.PushNotificationMgr.GetInstance():isEnableShipName()
 	elseif slot1.id == 17 then
@@ -151,7 +162,7 @@ slot0.GetDefaultValue = function(slot0, slot1)
 	end
 end
 
-slot0.GetList = function(slot0)
+function slot0.GetList(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(pg.settings_other_template.all) do

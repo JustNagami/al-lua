@@ -1,6 +1,6 @@
 slot0 = class("LevelAwardPage", import("...base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("bg")
 	slot0.award = slot0:findTF("scroll/award")
 	slot0.content = slot0:findTF("scroll/content")
@@ -9,11 +9,11 @@ slot0.OnInit = function(slot0)
 	slot0.pageSignUpTF = slot0:findTF("sign_up")
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	slot0.config = pg.activity_level_award[slot0.activity:getConfig("config_id")]
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	setActive(slot0.award, false)
 
 	for slot4 = 1, #slot0.config.front_drops do
@@ -56,7 +56,7 @@ slot0.OnFirstFlush = function(slot0)
 	end
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	for slot4 = 1, #slot0.config.front_drops do
 		slot6 = slot0:findTF("award" .. tostring(slot4), slot0.content)
 		slot7 = slot0:findTF("btnAchieve", slot6)
@@ -73,7 +73,7 @@ slot0.OnUpdateFlush = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

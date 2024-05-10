@@ -714,7 +714,7 @@ slot25 = {
 	"ns"
 }
 
-slot26 = function(slot0)
+function slot26(slot0)
 	if slot0 <= 3 then
 		return uv0[uv1(slot0, 3)]
 	else
@@ -722,7 +722,7 @@ slot26 = function(slot0)
 	end
 end
 
-slot27 = function(slot0, slot1, slot2)
+function slot27(slot0, slot1, slot2)
 	slot3 = slot0.pos
 	slot4 = ""
 
@@ -739,13 +739,13 @@ slot27 = function(slot0, slot1, slot2)
 	slot0.pos = slot3 + 4
 end
 
-slot28 = function(slot0)
+function slot28(slot0)
 	return uv0(slot0, ".long", {
 		"0x" .. uv1(slot0.op)
 	})
 end
 
-slot29 = function(slot0)
+function slot29(slot0)
 	slot1 = slot0.pos
 	slot2, slot3, slot4, slot5 = uv0(slot0.code, slot1 + 1, slot1 + 4)
 	slot7 = {}
@@ -922,7 +922,7 @@ slot29 = function(slot0)
 	return uv17(slot0, slot11, slot7)
 end
 
-slot30 = function(slot0, slot1, slot2)
+function slot30(slot0, slot1, slot2)
 	slot1 = slot1 or 0
 	slot3 = slot2 and slot1 + slot2 or #slot0.code
 	slot3 = slot3 - slot3 % 4

@@ -3,7 +3,7 @@ slot0 = pg
 slot0.FontMgr = singletonClass("FontMgr")
 slot1 = slot0.FontMgr
 
-slot0.FontMgr.Init = function(slot0, slot1)
+function slot0.FontMgr.Init(slot0, slot1)
 	print("initializing font manager...")
 
 	slot2 = {}

@@ -1,6 +1,6 @@
 slot0 = class("MainOverDueEquipmentSequence", import(".MainSublayerSequence"))
 
-slot0.Execute = function(slot0, slot1)
+function slot0.Execute(slot0, slot1)
 	if #getProxy(EquipmentProxy):getTimeLimitShipList() > 0 then
 		slot0:ShowMsgBox({
 			item2Row = true,
@@ -14,7 +14,7 @@ slot0.Execute = function(slot0, slot1)
 	end
 end
 
-slot0.ShowMsgBox = function(slot0, slot1)
+function slot0.ShowMsgBox(slot0, slot1)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideNo = true,
 		type = MSGBOX_TYPE_ITEM_BOX,
@@ -30,13 +30,13 @@ slot0.ShowMsgBox = function(slot0, slot1)
 	})
 end
 
-slot0.ShowItemBox = function(slot0, slot1, slot2)
+function slot0.ShowItemBox(slot0, slot1, slot2)
 	if slot1.type == DROP_TYPE_EQUIP then
 		slot0:AddSubLayers(Context.New({
 			mediator = EquipmentInfoMediator,
 			viewComponent = EquipmentInfoLayer,
 			data = {
-				equipmentId = slot1.cfg.id,
+				equipmentId = slot1:getConfig("id"),
 				type = EquipmentInfoMediator.TYPE_DISPLAY,
 				onRemoved = slot2,
 				LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER
@@ -47,7 +47,7 @@ slot0.ShowItemBox = function(slot0, slot1, slot2)
 			mediator = SpWeaponInfoMediator,
 			viewComponent = SpWeaponInfoLayer,
 			data = {
-				spWeaponConfigId = slot1.cfg.id,
+				spWeaponConfigId = slot1:getConfig("id"),
 				type = SpWeaponInfoLayer.TYPE_DISPLAY,
 				onRemoved = slot2,
 				LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER

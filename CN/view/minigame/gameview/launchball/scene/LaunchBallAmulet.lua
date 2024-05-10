@@ -76,7 +76,7 @@ slot23 = {
 	}
 }
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.amuletLAnimators = {}
 	slot0.amuletSAnimators = {}
 	slot0.amuletEFAnimators = {}
@@ -124,7 +124,7 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.butterflys = {}
 end
 
-slot0.start = function(slot0)
+function slot0.start(slot0)
 	slot0.lifeBound = GetComponent(findTF(slot0._lifeContent, tostring(LaunchBallGameVo.gameRoundData.amulet_life)), typeof(BoxCollider2D))
 	slot0.min = slot0._lifeContent:InverseTransformPoint(slot0.lifeBound.bounds.min)
 	slot0.max = slot0._lifeContent:InverseTransformPoint(slot0.lifeBound.bounds.max)
@@ -142,7 +142,7 @@ slot0.start = function(slot0)
 	slot0.isPlaying = false
 end
 
-slot0.step = function(slot0)
+function slot0.step(slot0)
 	if not slot0.isPlaying then
 		if LaunchBallGameVo.joyStickData and LaunchBallGameVo.joyStickData.angle then
 			slot0.rad = LaunchBallGameVo.joyStickData.rad
@@ -257,11 +257,11 @@ slot0.step = function(slot0)
 	end
 end
 
-slot0.getFireAmulet = function(slot0)
+function slot0.getFireAmulet(slot0)
 	return slot0._amuletFires
 end
 
-slot0.removeFireAmulet = function(slot0, slot1)
+function slot0.removeFireAmulet(slot0, slot1)
 	if slot0._amuletFires and #slot0._amuletFires > 0 then
 		for slot5 = #slot0._amuletFires, 1, -1 do
 			if slot0._amuletFires[slot5] then
@@ -274,7 +274,7 @@ end
 
 slot0.fireIndex = 0
 
-slot0.getAmulete = function(slot0, slot1, slot2)
+function slot0.getAmulete(slot0, slot1, slot2)
 	slot3, slot4, slot5, slot6 = nil
 	slot7 = slot0._content
 
@@ -344,16 +344,16 @@ slot0.getAmulete = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.returnAmulete = function(slot0, slot1, slot2)
+function slot0.returnAmulete(slot0, slot1, slot2)
 	setActive(slot1.tf, false)
 	table.insert(slot2, slot1)
 end
 
-slot0.getColor = function(slot0)
+function slot0.getColor(slot0)
 	return slot0.amuletL.color
 end
 
-slot0.fireAmulet = function(slot0)
+function slot0.fireAmulet(slot0)
 	if slot0.amuletL then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(LaunchBallGameVo.SFX_FIRE)
 
@@ -382,7 +382,7 @@ slot0.fireAmulet = function(slot0)
 	end
 end
 
-slot0.randomFireAmulet = function(slot0, slot1)
+function slot0.randomFireAmulet(slot0, slot1)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(LaunchBallGameVo.SFX_FIRE)
 
 	slot6 = slot0
@@ -405,12 +405,12 @@ slot0.randomFireAmulet = function(slot0, slot1)
 	table.insert(slot0._amuletFires, slot2)
 end
 
-slot0.setAmuletL = function(slot0, slot1)
+function slot0.setAmuletL(slot0, slot1)
 	slot0.amuletL = slot1
 	LaunchBallGameVo.amulet = slot0.amuletL
 end
 
-slot0.createEF = function(slot0, slot1)
+function slot0.createEF(slot0, slot1)
 	slot2 = slot0:getAmulete(uv0, slot1.color)
 	slot1.effectIndex = slot1.effectIndex + 1
 	slot3 = slot1.effectIndex % uv1 + 1
@@ -425,7 +425,7 @@ slot0.createEF = function(slot0, slot1)
 	table.insert(slot0.amuletEFs, slot2)
 end
 
-slot0.getRandomAmuletType = function(slot0)
+function slot0.getRandomAmuletType(slot0)
 	if not LaunchBallGameVo.enemyColors or #LaunchBallGameVo.enemyColors == 0 then
 		return uv0[math.random(1, #uv0)]
 	else
@@ -433,7 +433,7 @@ slot0.getRandomAmuletType = function(slot0)
 	end
 end
 
-slot0.getAnimator = function(slot0, slot1, slot2)
+function slot0.getAnimator(slot0, slot1, slot2)
 	slot3 = nil
 
 	if slot1 == uv0 then
@@ -451,15 +451,15 @@ slot0.getAnimator = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.getAmuletPos = function(slot0, slot1, slot2)
+function slot0.getAmuletPos(slot0, slot1, slot2)
 	return Vector2(math.cos(slot2) * slot1, math.sin(slot2) * slot1)
 end
 
-slot0.getAngle = function(slot0)
+function slot0.getAngle(slot0)
 	return slot0.angle
 end
 
-slot0.eventCall = function(slot0, slot1, slot2)
+function slot0.eventCall(slot0, slot1, slot2)
 	if slot1 == LaunchBallGameScene.PLAYING_CHANGE then
 		slot0.isPlaying = slot2
 	elseif slot1 == LaunchBallGameScene.FIRE_AMULET then
@@ -490,11 +490,11 @@ slot0.eventCall = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.getButterfly = function(slot0)
+function slot0.getButterfly(slot0)
 	return slot0.butterflys
 end
 
-slot0.createButterfly = function(slot0)
+function slot0.createButterfly(slot0)
 	slot1 = tf(instantiate(slot0._butterflyTpl))
 	slot1.anchoredPosition = Vector2(math.random(1, 20), math.random(1, 20))
 	slot4 = math.deg2Rad * math.random(1, 360)
@@ -510,11 +510,11 @@ slot0.createButterfly = function(slot0)
 	setActive(slot1, true)
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	slot0:clearAmulet()
 end
 
-slot0.clearAmulet = function(slot0)
+function slot0.clearAmulet(slot0)
 	if slot0.amuletL then
 		slot0:returnAmulete(slot0.amuletL, slot0.amuletLPool)
 		slot0:setAmuletL(nil)

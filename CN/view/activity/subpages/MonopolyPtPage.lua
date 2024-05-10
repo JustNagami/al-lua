@@ -1,6 +1,6 @@
 slot0 = class("MonopolyPtPage", import("...base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onToggle(slot0, findTF(slot0._tf, "AD/toggle/1"), function ()
 		uv0:changeToggle(1)
 	end, SFX_CONFIRM)
@@ -21,13 +21,13 @@ slot0.OnInit = function(slot0)
 	end, SFX_CONFIRM)
 end
 
-slot0.changeToggle = function(slot0, slot1)
+function slot0.changeToggle(slot0, slot1)
 	for slot5 = 1, 3 do
 		setActive(findTF(slot0._tf, "AD/toggle/" .. slot5 .. "/on/desc"), slot5 == slot1)
 	end
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	if slot0.ptData then
 		slot0.ptData:Update(slot0.activity)
 	else
@@ -35,7 +35,7 @@ slot0.OnFirstFlush = function(slot0)
 	end
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	if slot0.ptData then
 		slot0.ptData:Update(slot0.activity)
 	else

@@ -1,6 +1,6 @@
 slot0 = class("GuildUpdateBossMissionFleetCommand", import(".GuildEventBaseCommand"))
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.editFleet
 	slot4 = slot2.callback
@@ -10,7 +10,7 @@ slot0.execute = function(slot0, slot1)
 		return
 	end
 
-	slot6 = function(slot0)
+	function slot6(slot0)
 		if table.getCount(slot0) == 0 then
 			if uv0 then
 				uv0()
@@ -65,7 +65,7 @@ slot0.execute = function(slot0, slot1)
 	slot6(slot7)
 end
 
-slot0.WarpData = function(slot0, slot1)
+function slot0.WarpData(slot0, slot1)
 	slot2 = {}
 
 	for slot7, slot8 in ipairs(slot1:GetShipIds()) do

@@ -2,7 +2,7 @@ pg = pg or {}
 pg.SdkMgr = singletonClass("SdkMgr")
 slot0 = pg.SdkMgr
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 	if PLATFORM_CODE == PLATFORM_CH then
 		slot0.instance = require("Mgr.Sdk.BiliSDKMgr")
 	elseif PLATFORM_CODE == PLATFORM_JP then
@@ -18,7 +18,7 @@ slot0.Ctor = function(slot0)
 	slot0.pcode = slot0:GetPlatformCode(Application.identifier)
 end
 
-slot0.Call = function(slot0, slot1, ...)
+function slot0.Call(slot0, slot1, ...)
 	assert(slot0.instance)
 
 	if slot0.instance[slot1] then
@@ -26,86 +26,86 @@ slot0.Call = function(slot0, slot1, ...)
 	end
 end
 
-slot0.Get = function(slot0, slot1, ...)
+function slot0.Get(slot0, slot1, ...)
 	assert(slot0.instance)
 	assert(slot0.instance[slot1], "func should exist " .. slot1)
 
 	return slot0.instance[slot1](...)
 end
 
-EnterMultiWindow = function(slot0)
+function EnterMultiWindow(slot0)
 	originalPrint(".......EnterMultiWindow")
 end
 
-ExitMultiWindow = function(slot0)
+function ExitMultiWindow(slot0)
 	originalPrint(".......ExitMultiWindow")
 end
 
-slot0.InitSDK = function(slot0)
+function slot0.InitSDK(slot0)
 	slot0:Call("InitSDK")
 end
 
-slot0.GoSDkLoginScene = function(slot0)
+function slot0.GoSDkLoginScene(slot0)
 	slot0:Call("GoSDkLoginScene")
 end
 
-slot0.LoginSdk = function(slot0, slot1)
+function slot0.LoginSdk(slot0, slot1)
 	slot0:Call("LoginSdk", slot1)
 end
 
-slot0.TryLoginSdk = function(slot0)
+function slot0.TryLoginSdk(slot0)
 	slot0:Call("TryLoginSdk")
 end
 
-slot0.CreateRole = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.CreateRole(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0:Call("CreateRole", slot1, slot2, slot3, slot4, slot5)
 end
 
-slot0.EnterServer = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function slot0.EnterServer(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot0:Call("EnterServer", slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 end
 
-slot0.ChooseServer = function(slot0, slot1, slot2)
+function slot0.ChooseServer(slot0, slot1, slot2)
 	slot0:Call("ChooseServer", slot1, slot2)
 end
 
-slot0.SdkGateWayLogined = function(slot0)
+function slot0.SdkGateWayLogined(slot0)
 	slot0:Call("SdkGateWayLogined")
 end
 
-slot0.SdkLoginGetaWayFailed = function(slot0)
+function slot0.SdkLoginGetaWayFailed(slot0)
 	slot0:Call("SdkLoginGetaWayFailed")
 end
 
-slot0.SdkLevelUp = function(slot0)
+function slot0.SdkLevelUp(slot0)
 	slot0:Call("SdkLevelUp")
 end
 
-slot0.SdkPay = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10)
+function slot0.SdkPay(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10)
 	slot0:Call("SdkPay", slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10)
 end
 
-slot0.LogoutSDK = function(slot0, slot1)
+function slot0.LogoutSDK(slot0, slot1)
 	slot0:Call("LogoutSDK", slot1)
 end
 
-slot0.BindCPU = function(slot0)
+function slot0.BindCPU(slot0)
 	slot0:Call("BindCPU")
 end
 
-slot0.OnAndoridBackPress = function(slot0)
+function slot0.OnAndoridBackPress(slot0)
 	slot0:Call("OnAndoridBackPress")
 end
 
-slot0.DeleteAccount = function(slot0)
+function slot0.DeleteAccount(slot0)
 	slot0:Call("DeleteAccount")
 end
 
-slot0.GetChannelUID = function(slot0)
+function slot0.GetChannelUID(slot0)
 	return slot0:Get("GetChannelUID")
 end
 
-slot0.GetLoginType = function(slot0)
+function slot0.GetLoginType(slot0)
 	if PathMgr.FileExists(Application.persistentDataPath .. "/server_config.txt") then
 		return LoginType.PLATFORM_INNER
 	end
@@ -113,47 +113,51 @@ slot0.GetLoginType = function(slot0)
 	return slot0:Get("GetLoginType")
 end
 
-slot0.GetIsPlatform = function(slot0)
+function slot0.GetIsPlatform(slot0)
 	return slot0:Get("GetIsPlatform")
 end
 
-slot0.EnterLoginScene = function(slot0)
+function slot0.EnterLoginScene(slot0)
 	slot0.inLoginScene = true
 end
 
-slot0.ExitLoginScene = function(slot0)
+function slot0.ExitLoginScene(slot0)
 	slot0.inLoginScene = false
 end
 
-slot0.IsInLoginScene = function(slot0)
+function slot0.IsInLoginScene(slot0)
 	return slot0.inLoginScene
 end
 
-slot0.IsYunPackage = function(slot0)
+function slot0.IsYunPackage(slot0)
 	return PLATFORM_CODE == PLATFORM_CH and slot0:GetChannelUID() == "yun"
 end
 
-slot0.Service = function(slot0)
+function slot0.Service(slot0)
 	slot0:Call("Service")
 end
 
-slot0.Survey = function(slot0, slot1)
+function slot0.Survey(slot0, slot1)
 	slot0:Call("Survey", slot1)
 end
 
-slot0.IsAUPackage = function(slot0)
+function slot0.IsHuaweiPackage(slot0)
+	return PLATFORM_CODE == PLATFORM_CH and slot0:Get("IsHuaweiPackage")
+end
+
+function slot0.IsAUPackage(slot0)
 	return PLATFORM_CODE == PLATFORM_JP and slot0:GetChannelUID() == "2"
 end
 
-slot0.GetYostarUid = function(slot0)
+function slot0.GetYostarUid(slot0)
 	return slot0:Get("GetYostarUid")
 end
 
-slot0.GetYostarTransCode = function(slot0)
+function slot0.GetYostarTransCode(slot0)
 	return slot0:Get("GetTransCode")
 end
 
-slot0.CheckAudit = function(slot0)
+function slot0.CheckAudit(slot0)
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 		return slot0:Get("CheckAudit")
 	else
@@ -161,7 +165,7 @@ slot0.CheckAudit = function(slot0)
 	end
 end
 
-slot0.CheckPreAudit = function(slot0)
+function slot0.CheckPreAudit(slot0)
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 		return slot0:Get("CheckPreAudit")
 	else
@@ -169,15 +173,15 @@ slot0.CheckPreAudit = function(slot0)
 	end
 end
 
-slot0.CheckPretest = function(slot0)
+function slot0.CheckPretest(slot0)
 	return slot0:Get("CheckPretest")
 end
 
-slot0.CheckGoogleSimulator = function(slot0)
+function slot0.CheckGoogleSimulator(slot0)
 	return slot0:Get("CheckGoogleSimulator")
 end
 
-slot0.CheckWorldTest = function(slot0)
+function slot0.CheckWorldTest(slot0)
 	if PLATFORM_CODE == PLATFORM_CH then
 		return slot0:Get("CheckWorldTest")
 	else
@@ -185,39 +189,39 @@ slot0.CheckWorldTest = function(slot0)
 	end
 end
 
-slot0.AiriLoginSDK = function(slot0)
+function slot0.AiriLoginSDK(slot0)
 	slot0:Call("AiriLogin")
 end
 
-slot0.TranscodeRequest = function(slot0)
+function slot0.TranscodeRequest(slot0)
 	slot0:Call("TranscodeRequest")
 end
 
-slot0.LoginWithTranscode = function(slot0, slot1, slot2)
+function slot0.LoginWithTranscode(slot0, slot1, slot2)
 	slot0:Call("LoginWithTranscode", slot1, slot2)
 end
 
-slot0.LoginWithSocial = function(slot0, slot1, slot2, slot3)
+function slot0.LoginWithSocial(slot0, slot1, slot2, slot3)
 	slot0:Call("LoginWithSocial", slot1, slot2, slot3)
 end
 
-slot0.LoginWithDevice = function(slot0)
+function slot0.LoginWithDevice(slot0)
 	slot0:Call("LoginWithDevice")
 end
 
-slot0.AiriBuy = function(slot0, slot1, slot2, slot3)
+function slot0.AiriBuy(slot0, slot1, slot2, slot3)
 	slot0:Call("AiriBuy", slot1, slot2, slot3)
 end
 
-slot0.LinkSocial = function(slot0, slot1, slot2, slot3)
+function slot0.LinkSocial(slot0, slot1, slot2, slot3)
 	slot0:Call("LinkSocial", slot1, slot2, slot3)
 end
 
-slot0.UnlinkSocial = function(slot0, slot1)
+function slot0.UnlinkSocial(slot0, slot1)
 	slot0:Call("UnlinkSocial", slot1)
 end
 
-slot0.IsSocialLink = function(slot0, slot1)
+function slot0.IsSocialLink(slot0, slot1)
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 		return slot0:Get("IsSocialLink", slot1)
 	else
@@ -225,7 +229,7 @@ slot0.IsSocialLink = function(slot0, slot1)
 	end
 end
 
-slot0.GetSocialName = function(slot0, slot1)
+function slot0.GetSocialName(slot0, slot1)
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 		return slot0:Get("GetSocialName", slot1)
 	else
@@ -233,7 +237,7 @@ slot0.GetSocialName = function(slot0, slot1)
 	end
 end
 
-slot0.GetIsBirthSet = function(slot0)
+function slot0.GetIsBirthSet(slot0)
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 		return slot0:Get("GetIsBirthSet")
 	end
@@ -241,39 +245,39 @@ slot0.GetIsBirthSet = function(slot0)
 	return true
 end
 
-slot0.SetBirth = function(slot0, slot1)
+function slot0.SetBirth(slot0, slot1)
 	slot0:Call("SetBirth", slot1)
 end
 
-slot0.ClearAccountCache = function(slot0)
+function slot0.ClearAccountCache(slot0)
 	slot0:Call("ClearAccountCache")
 end
 
-slot0.GameShare = function(slot0, slot1, slot2)
+function slot0.GameShare(slot0, slot1, slot2)
 	slot0:Call("GameShare", slot1, slot2)
 end
 
-slot0.VerificationCodeReq = function(slot0, slot1)
+function slot0.VerificationCodeReq(slot0, slot1)
 	slot0:Call("VerificationCodeReq", slot1)
 end
 
-slot0.OpenYostarHelp = function(slot0)
+function slot0.OpenYostarHelp(slot0)
 	slot0:Call("OpenYostarHelp")
 end
 
-slot0.OnAppPauseForSDK = function(slot0, slot1)
+function slot0.OnAppPauseForSDK(slot0, slot1)
 	slot0:Call("OnAppPauseForSDK", slot1)
 end
 
-slot0.UserEventUpload = function(slot0, slot1)
+function slot0.UserEventUpload(slot0, slot1)
 	slot0:Call("UserEventUpload", slot1)
 end
 
-slot0.ShowSurvey = function(slot0, slot1, slot2)
+function slot0.ShowSurvey(slot0, slot1, slot2)
 	return slot0:Call("ShowSurvey", slot1, slot2)
 end
 
-slot0.CheckAiriCanBuy = function(slot0)
+function slot0.CheckAiriCanBuy(slot0)
 	if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 		return slot0:Get("CheckAiriCanBuy")
 	else
@@ -281,7 +285,7 @@ slot0.CheckAiriCanBuy = function(slot0)
 	end
 end
 
-slot0.CheckHadAccountCache = function(slot0)
+function slot0.CheckHadAccountCache(slot0)
 	if PLATFORM_CODE == PLATFORM_JP then
 		return slot0:Get("CheckHadAccountCache")
 	else
@@ -289,7 +293,7 @@ slot0.CheckHadAccountCache = function(slot0)
 	end
 end
 
-slot0.AccountDelete = function(slot0)
+function slot0.AccountDelete(slot0)
 	if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 		return slot0:Get("AccountDelete")
 	else
@@ -297,7 +301,7 @@ slot0.AccountDelete = function(slot0)
 	end
 end
 
-slot0.AccountReborn = function(slot0)
+function slot0.AccountReborn(slot0)
 	if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 		return slot0:Get("AccountReborn")
 	else
@@ -305,7 +309,7 @@ slot0.AccountReborn = function(slot0)
 	end
 end
 
-slot0.ConfirmLinkGooglePlayGame = function(slot0)
+function slot0.ConfirmLinkGooglePlayGame(slot0)
 	if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 		return slot0:Get("ConfirmLinkGooglePlayGame")
 	else
@@ -313,7 +317,7 @@ slot0.ConfirmLinkGooglePlayGame = function(slot0)
 	end
 end
 
-slot0.ConfirmUnLinkGooglePlayGame = function(slot0)
+function slot0.ConfirmUnLinkGooglePlayGame(slot0)
 	if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 		return slot0:Get("ConfirmUnLinkGooglePlayGame")
 	else
@@ -324,7 +328,7 @@ end
 AIRI_LAST_GEN_TIME = 0
 AIRI_GEN_LIMIT_TIME = 30
 
-GetAiriGenCodeTimeRemain = function()
+function GetAiriGenCodeTimeRemain()
 	if AIRI_GEN_LIMIT_TIME < Time.realtimeSinceStartup - AIRI_LAST_GEN_TIME or AIRI_LAST_GEN_TIME == 0 then
 		return 0
 	else
@@ -332,69 +336,69 @@ GetAiriGenCodeTimeRemain = function()
 	end
 end
 
-slot0.UserCenter = function(slot0)
+function slot0.UserCenter(slot0)
 	slot0:Call("UserCenter")
 end
 
-slot0.BugReport = function(slot0)
+function slot0.BugReport(slot0)
 	slot0:Call("BugReport")
 end
 
-slot0.StoreReview = function(slot0)
+function slot0.StoreReview(slot0)
 	slot0:Call("StoreReview")
 end
 
-slot0.QueryWithProduct = function(slot0)
+function slot0.QueryWithProduct(slot0)
 	slot0:Call("QueryWithProduct")
 end
 
-slot0.ShareImg = function(slot0, slot1, slot2)
+function slot0.ShareImg(slot0, slot1, slot2)
 	slot0:Call("ShareImg", slot1, slot2)
 end
 
-slot0.SwitchAccount = function(slot0)
+function slot0.SwitchAccount(slot0)
 	slot0:Call("SwitchAccount")
 end
 
-slot0.CompletedTutorial = function(slot0)
+function slot0.CompletedTutorial(slot0)
 	slot0:Call("CompletedTutorial")
 end
 
-slot0.UnlockAchievement = function(slot0)
+function slot0.UnlockAchievement(slot0)
 	slot0:Call("UnlockAchievement")
 end
 
-slot0.IsBindFaceBook = function(slot0)
+function slot0.IsBindFaceBook(slot0)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return slot0:Get("IsBindFaceBook")
 	end
 end
 
-slot0.IsBindApple = function(slot0)
+function slot0.IsBindApple(slot0)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return slot0:Get("IsBindApple")
 	end
 end
 
-slot0.IsBindGoogle = function(slot0)
+function slot0.IsBindGoogle(slot0)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return slot0:Get("IsBindGoogle")
 	end
 end
 
-slot0.IsBindPhone = function(slot0)
+function slot0.IsBindPhone(slot0)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return slot0:Get("IsBindPhone")
 	end
 end
 
-slot0.IsBindGameCenter = function(slot0)
+function slot0.IsBindGameCenter(slot0)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return false
 	end
 end
 
-slot0.CanTriggerDeepLinking = function(slot0)
+function slot0.CanTriggerDeepLinking(slot0)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return slot0:Get("CanTriggerDeepLinking")
 	else
@@ -402,11 +406,11 @@ slot0.CanTriggerDeepLinking = function(slot0)
 	end
 end
 
-slot0.TriggerDeepLinking = function(slot0)
+function slot0.TriggerDeepLinking(slot0)
 	slot0:Call("TriggerDeepLinking")
 end
 
-slot0.BindSocial = function(slot0, slot1)
+function slot0.BindSocial(slot0, slot1)
 	if slot1 == 1 then
 		slot0:BindFaceBook()
 	elseif slot1 == 2 then
@@ -420,7 +424,7 @@ slot0.BindSocial = function(slot0, slot1)
 	end
 end
 
-slot0.UnbindSocial = function(slot0, slot1)
+function slot0.UnbindSocial(slot0, slot1)
 	if slot1 == 1 then
 		slot0:UnBindFaceBook()
 	elseif slot1 == 2 then
@@ -432,49 +436,49 @@ slot0.UnbindSocial = function(slot0, slot1)
 	end
 end
 
-slot0.BindFaceBook = function(slot0)
+function slot0.BindFaceBook(slot0)
 	slot0:Call("BindFaceBook")
 end
 
-slot0.BindApple = function(slot0)
+function slot0.BindApple(slot0)
 	slot0:Call("BindApple")
 end
 
-slot0.BindGoogle = function(slot0)
+function slot0.BindGoogle(slot0)
 	slot0:Call("BindGoogle")
 end
 
-slot0.BindPhone = function(slot0)
+function slot0.BindPhone(slot0)
 	slot0:Call("BindPhone")
 end
 
-slot0.UnBindFaceBook = function(slot0)
+function slot0.UnBindFaceBook(slot0)
 	slot0:Call("UnBindFaceBook")
 end
 
-slot0.UnBindGoogle = function(slot0)
+function slot0.UnBindGoogle(slot0)
 	slot0:Call("UnBindGoogle")
 end
 
-slot0.UnBindPhone = function(slot0)
+function slot0.UnBindPhone(slot0)
 	slot0:Call("UnBindPhone")
 end
 
-slot0.ShowLicence = function(slot0)
+function slot0.ShowLicence(slot0)
 	slot0:Call("ShowLicence")
 end
 
-slot0.ShowPrivate = function(slot0)
+function slot0.ShowPrivate(slot0)
 	slot0:Call("ShowPrivate")
 end
 
-slot0.GetProduct = function(slot0, slot1)
+function slot0.GetProduct(slot0, slot1)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return slot0:Get("GetProduct", slot1)
 	end
 end
 
-slot0.GetDeviceId = function(slot0)
+function slot0.GetDeviceId(slot0)
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 		return slot0:Get("GetDeviceId")
 	elseif PLATFORM_CODE == PLATFORM_KR then
@@ -486,8 +490,8 @@ slot0.GetDeviceId = function(slot0)
 	end
 end
 
-InLoginScene = function()
-	slot0 = function()
+function InLoginScene()
+	function slot0()
 		return getProxy(UserProxy):GetLoginedFlag()
 	end
 
@@ -498,7 +502,7 @@ InLoginScene = function()
 	return false
 end
 
-slot0.GetPlatformCode = function(slot0, slot1)
+function slot0.GetPlatformCode(slot0, slot1)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return slot0:Get("GetPackageCode", slot1)
 	else
@@ -506,7 +510,7 @@ slot0.GetPlatformCode = function(slot0, slot1)
 	end
 end
 
-slot0.IgnorePlatform = function(slot0, slot1)
+function slot0.IgnorePlatform(slot0, slot1)
 	if slot0.pcode and slot1 and #slot1 > 0 and _.any(slot1, function (slot0)
 		return tostring(slot0) == uv0
 	end) then

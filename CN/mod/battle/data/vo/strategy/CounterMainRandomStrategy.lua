@@ -7,15 +7,15 @@ slot3 = slot0.Battle.CounterMainRandomStrategy
 slot3.__name = "CounterMainRandomStrategy"
 slot3.FIX_FRONT = 0.5
 
-slot3.Ctor = function(slot0, slot1)
+function slot3.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 end
 
-slot3.GetStrategyType = function(slot0)
+function slot3.GetStrategyType(slot0)
 	return uv0.Battle.BattleJoyStickAutoBot.COUNTER_MAIN
 end
 
-slot3.generateTargetPoint = function(slot0)
+function slot3.generateTargetPoint(slot0)
 	slot1 = slot0._upperBound
 	slot2 = slot0._lowerBound
 

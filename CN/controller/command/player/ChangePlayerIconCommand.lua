@@ -1,6 +1,6 @@
 slot0 = class("ChangePlayerIconCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.characterId
 	slot5 = slot2.skinPage
@@ -32,6 +32,12 @@ slot0.execute = function(slot0, slot1)
 		end
 	end
 
+	if #slot4 <= 0 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_error"))
+
+		return
+	end
+
 	slot9 = pg.ConnectionMgr.GetInstance()
 
 	slot9:Send(11011, {
@@ -59,7 +65,7 @@ slot0.execute = function(slot0, slot1)
 	end)
 end
 
-slot0.UpdayePlayerCharas = function(slot0, slot1)
+function slot0.UpdayePlayerCharas(slot0, slot1)
 	slot3 = getProxy(BayProxy):getShipById(slot1[1])
 	slot0.character = slot1[1]
 	slot0.characters = slot1

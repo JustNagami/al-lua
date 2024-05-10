@@ -1,10 +1,10 @@
 slot0 = class("ShopMultiWindow", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ShopsUIMsgbox"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.topItem = slot0:findTF("item/panel_bg")
 	slot0.ownerTF = slot0.topItem:Find("left/own")
 	slot0.detailTF = slot0.topItem:Find("left/detail")
@@ -26,7 +26,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0:findTF("actions/confirm_button/label"), i18n("shop_word_exchange"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0.cancelBtn, function ()
 		uv0:Close()
 	end, SFX_PANEL)
@@ -38,7 +38,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Open = function(slot0, slot1, slot2)
+function slot0.Open(slot0, slot1, slot2)
 	slot0.opening = true
 
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
@@ -46,7 +46,7 @@ slot0.Open = function(slot0, slot1, slot2)
 	slot0:Show()
 end
 
-slot0.InitWindow = function(slot0, slot1, slot2)
+function slot0.InitWindow(slot0, slot1, slot2)
 	slot3 = {
 		id = slot1:getConfig("commodity_id"),
 		type = slot1:getConfig("commodity_type"),
@@ -54,19 +54,19 @@ slot0.InitWindow = function(slot0, slot1, slot2)
 	}
 
 	if isa(slot1, ActivityCommodity) then
-		slot4, slot5 = slot1:CheckTimeLimit()
+		slot4, slot5, slot6 = slot1:CheckTimeLimit()
 
 		setActive(slot0.timeLimitTF, slot4)
 
 		if slot4 and slot5 then
-			setText(slot0:findTF("Text", slot0.timeLimitTF), i18n("eventshop_time_hint", pg.TimeMgr.GetInstance():STimeDescC(getProxy(ActivityProxy):getActivityById(pg.item_data_statistics[slot3.id].link_id).stopTime, "%m.%d")))
+			setText(slot0:findTF("Text", slot0.timeLimitTF), i18n("eventshop_time_hint", pg.TimeMgr.GetInstance():STimeDescC(getProxy(ActivityProxy):getActivityById(Item.getConfigData(slot3.id).link_id).stopTime, "%m.%d")))
 		end
 	end
 
-	slot5 = math.max(math.floor(GetOwnedDropCount({
+	slot5 = math.max(math.floor(Drop.New({
 		type = slot1:getConfig("resource_category"),
 		id = slot1:getConfig("resource_type")
-	}) / slot1:getConfig("resource_num")), 1)
+	}):getOwnedCount() / slot1:getConfig("resource_num")), 1)
 
 	if slot1:getConfig("num_limit") ~= 0 or isa(slot1, QuotaCommodity) then
 		slot5 = math.min(slot5, math.max(0, slot1:GetPurchasableCnt()))
@@ -82,13 +82,13 @@ slot0.InitWindow = function(slot0, slot1, slot2)
 	UpdateOwnDisplay(slot0.ownerTF, slot3)
 	RegisterDetailButton(slot0, slot0.detailTF, slot3)
 
-	slot0.nameTF.text = slot3.cfg.name
-	slot0.descTF.text = slot3.desc or slot3.cfg.desc
+	slot0.nameTF.text = slot3:getConfig("name")
+	slot0.descTF.text = slot3.desc or slot3:getConfig("desc")
 
 	updateDrop(slot0.bottomItem, slot3)
 	onButton(slot0, slot0.confirmBtn, function ()
 		if uv0 then
-			uv0(uv1, uv2.curCount, uv3.cfg.name)
+			uv0(uv1, uv2.curCount, uv3:getConfig("name"))
 		end
 
 		uv2:Close()
@@ -104,7 +104,7 @@ slot0.InitWindow = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.Close = function(slot0)
+function slot0.Close(slot0)
 	if slot0.opening then
 		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 		slot0:Hide()
@@ -113,7 +113,7 @@ slot0.Close = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0.opening then
 		slot0:Close()
 	end

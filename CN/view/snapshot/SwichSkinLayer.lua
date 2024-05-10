@@ -1,14 +1,14 @@
 slot0 = class("SwichSkinLayer", import("..base.BaseUI"))
 
-slot0.setShip = function(slot0, slot1)
+function slot0.setShip(slot0, slot1)
 	slot0.shipVO = slot1
 end
 
-slot0.setShipSkin = function(slot0, slot1)
+function slot0.setShipSkin(slot0, slot1)
 	slot0.shipVO.skinId = slot1
 end
 
-slot0.GetShareSkins = function(slot0)
+function slot0.GetShareSkins(slot0)
 	slot1 = getProxy(ShipSkinProxy)
 
 	return _.map(slot1:GetShareSkinsForShip(slot0.shipVO), function (slot0)
@@ -16,31 +16,31 @@ slot0.GetShareSkins = function(slot0)
 	end)
 end
 
-slot0.setSkinList = function(slot0, slot1)
+function slot0.setSkinList(slot0, slot1)
 	slot0.skinList = slot1
 	slot0.skins = slot0:getGroupSkinList(slot0.shipVO.groupId)
 	slot0.shareSkins = slot0:GetShareSkins()
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SwichSkinLayer"
 end
 
-slot0.back = function(slot0)
+function slot0.back(slot0)
 	slot0:emit(uv0.ON_CLOSE)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.shareBtn = slot0:findTF("select_skin/share_btn")
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:initSelectSkinPanel()
 	triggerToggle(slot0.shareBtn, false)
 	setActive(slot0.shareBtn, #slot0.shareSkins > 0)
 end
 
-slot0.initSelectSkinPanel = function(slot0)
+function slot0.initSelectSkinPanel(slot0)
 	slot0.skinPanel = slot0._tf
 
 	onButton(slot0, slot0:findTF("select_skin/btnBack", slot0.skinPanel), function ()
@@ -66,11 +66,11 @@ slot0.initSelectSkinPanel = function(slot0)
 	slot0.skinCardMap = {}
 end
 
-slot0.openSelectSkinPanel = function(slot0)
+function slot0.openSelectSkinPanel(slot0)
 	slot0:Flush(slot0.skins)
 end
 
-slot0.Flush = function(slot0, slot1)
+function slot0.Flush(slot0, slot1)
 	for slot5 = slot0.skinContainer.childCount, #slot1 - 1 do
 		cloneTplTo(slot0.skinCard, slot0.skinContainer)
 	end
@@ -112,24 +112,15 @@ slot0.Flush = function(slot0, slot1)
 			elseif uv4 then
 				if uv5 or uv6 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_skin_out_of_stock"))
+				elseif Goods.Create({
+					shop_id = uv4.id
+				}, Goods.TYPE_SKIN):isDisCount() and slot0:IsItemDiscountType() then
+					uv1:emit(SwichSkinMediator.BUY_ITEM_BY_ACT, uv4.id, 1)
 				else
-					slot0 = Goods.Create({
-						shop_id = uv4.id
-					}, Goods.TYPE_SKIN)
-					slot3 = i18n("text_buy_fashion_tip", slot0:GetPrice(), uv2.name)
-
-					if slot0:isDisCount() and slot0:IsItemDiscountType() then
-						slot3 = i18n("discount_coupon_tip", slot2, slot0:GetDiscountItem().name, uv2.name)
-					end
-
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = slot3,
+						content = i18n("text_buy_fashion_tip", slot0:GetPrice(), uv2.name),
 						onYes = function ()
-							if uv0 then
-								uv1:emit(SwichSkinMediator.BUY_ITEM_BY_ACT, uv2.id, 1)
-							else
-								uv1:emit(SwichSkinMediator.BUY_ITEM, uv2.id, 1)
-							end
+							uv0:emit(SwichSkinMediator.BUY_ITEM, uv1.id, 1)
 						end
 					})
 				end
@@ -139,11 +130,11 @@ slot0.Flush = function(slot0, slot1)
 	end
 end
 
-slot0.getGroupSkinList = function(slot0, slot1)
+function slot0.getGroupSkinList(slot0, slot1)
 	return getProxy(ShipSkinProxy):GetAllSkinForShip(slot0.shipVO)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	for slot4, slot5 in pairs(slot0.skinCardMap) do
 		slot5:clear()
 	end

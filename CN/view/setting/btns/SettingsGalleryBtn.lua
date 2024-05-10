@@ -1,10 +1,10 @@
 slot0 = class("SettingsGalleryBtn", import(".SettingsDownloadableBtn"))
 
-slot0.GetDownloadGroup = function(slot0)
+function slot0.GetDownloadGroup(slot0)
 	return "GALLERY_PIC"
 end
 
-slot0.GetLocaltion = function(slot0, slot1, slot2)
+function slot0.GetLocaltion(slot0, slot1, slot2)
 	slot3 = ""
 
 	if slot1 == DownloadState.None then
@@ -58,7 +58,7 @@ slot0.GetLocaltion = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.GetTitle = function(slot0)
+function slot0.GetTitle(slot0)
 	return i18n("setting_resdownload_title_gallery")
 end
 

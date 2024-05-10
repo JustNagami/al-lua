@@ -26,7 +26,7 @@ slot1 = {
 }
 System.Reflection.BindingFlags = slot1
 
-System.Reflection.BindingFlags.GetMask = function(...)
+function System.Reflection.BindingFlags.GetMask(...)
 	slot1 = 0
 
 	for slot5 = 1, #{

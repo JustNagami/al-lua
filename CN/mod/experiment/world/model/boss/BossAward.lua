@@ -8,7 +8,7 @@ slot0.Fields = {
 	duetime = "number"
 }
 
-slot0.Setup = function(slot0, slot1)
+function slot0.Setup(slot0, slot1)
 	slot0.bossId = slot1.bossId
 	slot0.config = pg.world_joint_boss_template[slot0.bossId]
 	slot0.level = slot1.level
@@ -17,27 +17,27 @@ slot0.Setup = function(slot0, slot1)
 	slot0.acceptTime = slot1.accept_time or 0
 end
 
-slot0.IsReceived = function(slot0)
+function slot0.IsReceived(slot0)
 	return slot0.acceptTime > 0
 end
 
-slot0.GetAwards = function(slot0)
+function slot0.GetAwards(slot0)
 	return slot0.config.drop_show
 end
 
-slot0.IsExpired = function(slot0)
+function slot0.IsExpired(slot0)
 	return slot0.duetime <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-slot0.GetExpiredTime = function(slot0, ...)
+function slot0.GetExpiredTime(slot0, ...)
 	return slot0.duetime
 end
 
-slot0.GetBossName = function(slot0)
+function slot0.GetBossName(slot0)
 	return slot0.config.name
 end
 
-slot0.GetRank = function(slot0)
+function slot0.GetRank(slot0)
 	return slot0.rank
 end
 

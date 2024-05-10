@@ -1,10 +1,10 @@
 slot0 = class("CommanderQuicklyToolPage", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CommanderQuicklyToolPage"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.closeBtn = slot0:findTF("frame/close_btn")
 	slot0.cancelBtn = slot0:findTF("frame/cancel_btn")
 	slot0.confirmBtn = slot0:findTF("frame/confirm_btn")
@@ -19,7 +19,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0:findTF("frame/content/time/label"), i18n("commander_box_quickly_tool_tip_3"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
@@ -67,18 +67,18 @@ slot0.OnInit = function(slot0)
 			return
 		end
 
-		uv0:emit(CommandRoomMediator.ON_USE_QUICKLY_TOOL, uv0.itemId, uv0.value, uv0.boxId)
+		uv0:emit(CommanderCatMediator.USE_QUICKLY_TOOL, uv0.itemId, uv0.value, uv0.boxId)
 		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-slot0.Show = function(slot0, slot1, slot2)
+function slot0.Show(slot0, slot1, slot2)
 	setParent(slot0._tf, pg.UIMgr.GetInstance().OverlayMain)
 	uv0.super.Show(slot0)
 
 	slot0.itemId = slot2
 	slot0.boxId = slot1
-	slot0.cost = pg.item_data_template[slot0.itemId].usage_arg[1]
+	slot0.cost = Item.getConfigData(slot0.itemId).usage_arg[1]
 	slot0.costM = slot0.cost / 60
 	slot3 = getProxy(BagProxy):getItemCountById(slot2)
 	slot0.maxCnt = math.min(slot0:CalcMaxUsageCnt(), slot3)
@@ -87,19 +87,19 @@ slot0.Show = function(slot0, slot1, slot2)
 	slot0:UpdateValue(slot0.maxCnt)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 	setParent(slot0._tf, slot0._parentTf)
 end
 
-slot0.UpdateValue = function(slot0, slot1)
+function slot0.UpdateValue(slot0, slot1)
 	slot0.value = slot1
 	slot0.valueTxt.text = slot1
 
 	slot0:AddTimer(getProxy(CommanderProxy):getBoxById(slot0.boxId):getFinishTime() - slot0.costM * slot1 * 60)
 end
 
-slot0.CalcMaxUsageCnt = function(slot0)
+function slot0.CalcMaxUsageCnt(slot0)
 	if getProxy(CommanderProxy):getBoxById(slot0.boxId):getFinishTime() - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
 		return math.ceil(slot4 / slot0.cost)
 	else
@@ -107,7 +107,7 @@ slot0.CalcMaxUsageCnt = function(slot0)
 	end
 end
 
-slot0.AddTimer = function(slot0, slot1)
+function slot0.AddTimer(slot0, slot1)
 	slot0:RemoveTimer()
 
 	slot0.timer = Timer.New(function ()
@@ -124,7 +124,7 @@ slot0.AddTimer = function(slot0, slot1)
 	slot0.timer.func()
 end
 
-slot0.RemoveTimer = function(slot0)
+function slot0.RemoveTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -132,12 +132,12 @@ slot0.RemoveTimer = function(slot0)
 	end
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 	slot0:RemoveTimer()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0:RemoveTimer()
 end
 

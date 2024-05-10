@@ -1,11 +1,11 @@
 slot0 = class("LoginScene", import("..base.BaseUI"))
 slot1 = 1
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "LoginUI2"
 end
 
-slot0.getBGM = function(slot0)
+function slot0.getBGM(slot0)
 	if slot0.bgmName and slot0.bgmName ~= "" then
 		return slot0.bgmName
 	end
@@ -13,7 +13,7 @@ slot0.getBGM = function(slot0)
 	return uv0.super.getBGM(slot0)
 end
 
-slot0.preload = function(slot0, slot1)
+function slot0.preload(slot0, slot1)
 	slot0.iconSpries = {}
 
 	seriesAsync({
@@ -48,7 +48,7 @@ slot0.preload = function(slot0, slot1)
 	}, slot1)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0:setBg()
 
 	slot0.version = slot0:findTF("version")
@@ -177,7 +177,7 @@ slot0.init = function(slot0)
 	slot0:initEvents()
 end
 
-slot0.setServerAccountData = function(slot0, slot1)
+function slot0.setServerAccountData(slot0, slot1)
 	slot2 = slot1.id
 	slot3 = nil
 
@@ -214,7 +214,7 @@ slot0.setServerAccountData = function(slot0, slot1)
 	end
 end
 
-slot0.searchAountState = function(slot0, slot1)
+function slot0.searchAountState(slot0, slot1)
 	slot0.searching = slot1
 
 	for slot5 = 1, #slot0.serversDic do
@@ -237,7 +237,7 @@ slot0.searchAountState = function(slot0, slot1)
 	end
 end
 
-slot0.initEvents = function(slot0)
+function slot0.initEvents(slot0)
 	slot0:bind(LoginSceneConst.SWITCH_SUB_VIEW, function (slot0, slot1)
 		uv0:switchSubView(slot1)
 	end)
@@ -246,7 +246,7 @@ slot0.initEvents = function(slot0)
 	end)
 end
 
-slot0.switchSubView = function(slot0, slot1)
+function slot0.switchSubView(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0.subViewList) do
 		if isa(slot6, BaseSubView) then
 			if table.contains(slot1, slot5) then
@@ -275,7 +275,7 @@ slot0.switchSubView = function(slot0, slot1)
 	slot0.repairBtn:SetAsLastSibling()
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if slot0.searching then
 		return
 	end
@@ -299,12 +299,12 @@ slot0.onBackPressed = function(slot0)
 	pg.SdkMgr.GetInstance():OnAndoridBackPress()
 end
 
-slot0.setUserData = function(slot0, slot1)
+function slot0.setUserData(slot0, slot1)
 	setActive(slot0.airiUidTxt, true)
 	setText(slot0.airiUidTxt, "uid: " .. slot1.arg2)
 end
 
-slot0.showUserAgreement = function(slot0, slot1)
+function slot0.showUserAgreement(slot0, slot1)
 	slot2 = nil
 
 	if PLATFORM_CODE == PLATFORM_CH then
@@ -350,7 +350,7 @@ slot0.showUserAgreement = function(slot0, slot1)
 	end)
 end
 
-slot0.setBg = function(slot0)
+function slot0.setBg(slot0)
 	slot0.bgImg = slot0:findTF("background/bg"):GetComponent(typeof(Image))
 
 	if not slot0.isCriBg then
@@ -364,15 +364,15 @@ slot0.setBg = function(slot0)
 	end
 end
 
-slot0.setLastLogin = function(slot0, slot1)
+function slot0.setLastLogin(slot0, slot1)
 	slot0.shareData.lastLoginUser = slot1
 end
 
-slot0.setAutoLogin = function(slot0)
+function slot0.setAutoLogin(slot0)
 	slot0.shareData.autoLoginEnabled = true
 end
 
-slot0.setLastLoginServer = function(slot0, slot1)
+function slot0.setLastLoginServer(slot0, slot1)
 	if not slot1 then
 		setText(findTF(slot0.currentServer, "server_name"), "")
 
@@ -388,7 +388,7 @@ slot0.setLastLoginServer = function(slot0, slot1)
 	slot0.shareData.lastLoginServer = slot1
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.closeUserAgreenTF, function ()
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 			setActive(uv0.userAgreenTF, false)
@@ -435,7 +435,7 @@ slot0.didEnter = function(slot0)
 		pg.RepairResMgr.GetInstance():Repair()
 	end)
 
-	slot1 = function()
+	function slot1()
 		if pg.SdkMgr.GetInstance():GetLoginType() == LoginType.PLATFORM then
 			pg.SdkMgr.GetInstance():LoginSdk()
 		elseif slot0 == LoginType.PLATFORM_TENCENT then
@@ -547,7 +547,7 @@ slot0.didEnter = function(slot0)
 	slot0:InitPrivateAndLicence()
 end
 
-slot0.InitPrivateAndLicence = function(slot0)
+function slot0.InitPrivateAndLicence(slot0)
 	slot1 = PLATFORM_CODE == PLATFORM_CH or IsUnityEditor
 
 	setActive(slot0.privateBtn, slot1)
@@ -563,7 +563,7 @@ slot0.InitPrivateAndLicence = function(slot0)
 	end
 end
 
-slot0.playExtraVoice = function(slot0)
+function slot0.playExtraVoice(slot0)
 	if pg.gameset.login_extra_voice.description and #slot1 > 0 then
 		slot4 = "cv-" .. slot1[math.clamp(math.floor(math.random() * #slot1) + 1, 1, #slot1)]
 		slot0.loginCueSheet = slot4
@@ -572,7 +572,7 @@ slot0.playExtraVoice = function(slot0)
 	end
 end
 
-slot0.unloadExtraVoice = function(slot0)
+function slot0.unloadExtraVoice(slot0)
 	if slot0.loginCueSheet then
 		pg.CriMgr.GetInstance():UnloadCueSheet(slot0.loginCueSheet)
 
@@ -580,7 +580,7 @@ slot0.unloadExtraVoice = function(slot0)
 	end
 end
 
-slot0.autoLogin = function(slot0)
+function slot0.autoLogin(slot0)
 	if slot0.shareData.lastLoginUser then
 		if slot0.shareData.autoLoginEnabled then
 			slot0.event:emit(LoginMediator.ON_LOGIN, slot0.shareData.lastLoginUser)
@@ -623,7 +623,7 @@ slot2 = {
 	}
 }
 
-slot0.updateServerTF = function(slot0, slot1, slot2)
+function slot0.updateServerTF(slot0, slot1, slot2)
 	setText(findTF(slot1, "name"), "-  " .. slot2.name .. "  -")
 	setImageSprite(findTF(slot1, "statu"), slot0.iconSpries[slot2.status + 1], true)
 
@@ -652,7 +652,7 @@ slot0.updateServerTF = function(slot0, slot1, slot2)
 	end, SFX_CONFIRM)
 end
 
-slot0.updateAdviceServer = function(slot0)
+function slot0.updateAdviceServer(slot0)
 	if not slot0.recentTF or not slot0.adviceTF then
 		return
 	end
@@ -672,7 +672,7 @@ slot0.updateAdviceServer = function(slot0)
 	end
 end
 
-slot0.updateServerList = function(slot0, slot1)
+function slot0.updateServerList(slot0, slot1)
 	slot0.serverList = slot1
 	slot2 = _.sort(_.values(slot1), function (slot0, slot1)
 		return slot0.sortIndex < slot1.sortIndex
@@ -700,7 +700,7 @@ slot0.updateServerList = function(slot0, slot1)
 	end
 end
 
-slot0.fillterRefundServer = function(slot0)
+function slot0.fillterRefundServer(slot0)
 	slot2 = {}
 
 	if getProxy(UserProxy).data.limitServerIds and #slot1.data.limitServerIds > 0 and slot0.serverList and #slot0.serverList > 0 then
@@ -734,32 +734,32 @@ slot0.fillterRefundServer = function(slot0)
 	end
 end
 
-slot0.switchToTencentLogin = function(slot0)
+function slot0.switchToTencentLogin(slot0)
 	slot0:switchSubView({
 		LoginSceneConst.DEFINE.TENCENT_LOGIN_VIEW
 	})
 end
 
-slot0.switchToAiriLogin = function(slot0)
+function slot0.switchToAiriLogin(slot0)
 	slot0:switchSubView({
 		LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
 		LoginSceneConst.DEFINE.PRESS_TO_LOGIN
 	})
 end
 
-slot0.switchToLogin = function(slot0)
+function slot0.switchToLogin(slot0)
 	slot0:switchSubView({
 		LoginSceneConst.DEFINE.LOGIN_PANEL_VIEW
 	})
 end
 
-slot0.switchToRegister = function(slot0)
+function slot0.switchToRegister(slot0)
 	slot0:switchSubView({
 		LoginSceneConst.DEFINE.REGISTER_PANEL_VIEW
 	})
 end
 
-slot0.switchToServer = function(slot0)
+function slot0.switchToServer(slot0)
 	slot0:updateAdviceServer()
 
 	if pg.SdkMgr.GetInstance():GetLoginType() ~= LoginType.PLATFORM_INNER and PLATFORM_CODE ~= PLATFORM_KR then
@@ -778,7 +778,7 @@ slot0.switchToServer = function(slot0)
 	end
 end
 
-slot0.SwitchToWaitPanel = function(slot0, slot1)
+function slot0.SwitchToWaitPanel(slot0, slot1)
 	slot2 = slot0:findTF("Msgbox")
 	slot3 = slot0:findTF("window/content", slot2)
 	slot0.waitTimer = nil
@@ -806,7 +806,7 @@ slot0.SwitchToWaitPanel = function(slot0, slot1)
 	setActive(slot2, true)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0.waitTimer then
 		slot0.waitTimer:Stop()
 
@@ -823,7 +823,7 @@ slot0.willExit = function(slot0)
 	slot0.switchGatewayBtn:Dispose()
 end
 
-slot0.playOpening = function(slot0, slot1)
+function slot0.playOpening(slot0, slot1)
 	slot2 = pg.CpkPlayMgr.GetInstance()
 
 	slot2:PlayCpkMovie(function ()
@@ -843,13 +843,13 @@ slot0.playOpening = function(slot0, slot1)
 	slot0.onPlayingOP = true
 end
 
-slot0.closeYostarAlertView = function(slot0)
+function slot0.closeYostarAlertView(slot0)
 	if slot0.yostarAlertView and slot0.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
 		slot0.yostarAlertView:Destroy()
 	end
 end
 
-slot0.onLoadDataDone = function(slot0)
+function slot0.onLoadDataDone(slot0)
 	slot0:unloadExtraVoice()
 
 	if getProxy(PlayerProxy) then

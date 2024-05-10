@@ -1,10 +1,10 @@
 slot0 = class("EquipmentTransformLayer", import("view.base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "EquipmentTransformUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.layer = slot0:findTF("Adapt")
 	slot0.formulaItems = {
 		slot0.layer:Find("MaterialModule1"),
@@ -41,17 +41,17 @@ slot0.init = function(slot0)
 	slot0.loader = AutoLoader.New()
 end
 
-slot0.SetEnv = function(slot0, slot1)
+function slot0.SetEnv(slot0, slot1)
 	slot0.env = slot1
 end
 
-slot0.UpdatePlayer = function(slot0, slot1)
+function slot0.UpdatePlayer(slot0, slot1)
 	slot0.player = slot1
 
 	slot0:UpdateConsumeComparer()
 end
 
-slot0.UpdateConsumeComparer = function(slot0)
+function slot0.UpdateConsumeComparer(slot0)
 	slot1 = 0
 	slot2 = 0
 	slot3 = true
@@ -71,7 +71,7 @@ slot0.UpdateConsumeComparer = function(slot0)
 	slot0.consumePanel:Find("GoldText"):GetComponent(typeof(Text)).text = slot4
 end
 
-slot0.UpdateFormula = function(slot0, slot1)
+function slot0.UpdateFormula(slot0, slot1)
 	if slot1 == slot0.contextData.formulaId then
 		return
 	end
@@ -105,14 +105,14 @@ slot0.UpdateFormula = function(slot0, slot1)
 	slot0:UpdatePage()
 end
 
-slot0.UpdatePage = function(slot0)
+function slot0.UpdatePage(slot0)
 	slot0:UpdateSourceEquipmentPaths()
 	slot0:UpdateFormulaItems()
 	slot0:UpdateTargetInfo()
 	slot0:UpdateSourceInfo()
 end
 
-slot0.UpdateSourceEquipmentPaths = function(slot0)
+function slot0.UpdateSourceEquipmentPaths(slot0)
 	slot1 = slot0.env.tracebackHelper
 	slot0.hasRoot = _.any(slot1:GetSortedEquipTraceBack(slot0.equipmentSourceId), function (slot0)
 		return slot0.candicates and #slot1 > 0 and EquipmentTransformUtil.CheckTransformFormulasSucceed(slot0.formulas, slot1[#slot1])
@@ -127,7 +127,7 @@ slot0.UpdateSourceEquipmentPaths = function(slot0)
 	end)
 end
 
-slot0.CheckEnoughMaterials = function(slot0)
+function slot0.CheckEnoughMaterials(slot0)
 	if not slot0.contextData.formula then
 		return
 	end
@@ -147,7 +147,7 @@ slot0.CheckEnoughMaterials = function(slot0)
 	return true
 end
 
-slot0.UpdateFormulaItems = function(slot0)
+function slot0.UpdateFormulaItems(slot0)
 	for slot4, slot5 in ipairs(slot0.formulaItems) do
 		slot6 = slot5:Find("Item")
 		slot7 = slot0.transformMaterials[slot4]
@@ -176,43 +176,43 @@ slot0.UpdateFormulaItems = function(slot0)
 	end
 end
 
-slot0.UpdateTargetInfo = function(slot0)
+function slot0.UpdateTargetInfo(slot0)
 	updateDrop(slot0.targetEquipItem:Find("Item"), {
 		id = slot0.equipmentTarget,
 		type = DROP_TYPE_EQUIP
 	})
-	slot0.targetEquipItem:Find("Mask/NameText"):GetComponent("ScrollText"):SetText(pg.equip_data_statistics[slot0.equipmentTarget].name)
+	slot0.targetEquipItem:Find("Mask/NameText"):GetComponent("ScrollText"):SetText(Equipment.getConfigData(slot0.equipmentTarget).name)
 
-	slot2 = slot0.layer:Find("InfoPanel")
+	slot1 = slot0.layer:Find("InfoPanel")
+	slot3 = 0
 	slot4 = 0
-	slot5 = 0
 
-	for slot9, slot10 in ipairs(slot0.env.tracebackHelper:GetEquipmentTransformCandicates(slot0.equipmentTarget)) do
-		if slot10.type == DROP_TYPE_EQUIP then
-			if slot10.template.shipId then
-				slot4 = slot4 + slot10.template.count
+	for slot8, slot9 in ipairs(slot0.env.tracebackHelper:GetEquipmentTransformCandicates(slot0.equipmentTarget)) do
+		if slot9.type == DROP_TYPE_EQUIP then
+			if slot9.template.shipId then
+				slot3 = slot3 + slot9.template.count
 			else
-				slot5 = slot5 + slot10.template.count
+				slot4 = slot4 + slot9.template.count
 			end
 		end
 	end
 
-	setText(slot2:Find("StoreCount/OnShip/ValueText"), slot4)
-	setText(slot2:Find("StoreCount/Free/ValueText"), slot5)
+	setText(slot1:Find("StoreCount/OnShip/ValueText"), slot3)
+	setText(slot1:Find("StoreCount/Free/ValueText"), slot4)
 
-	slot6 = Equipment.New({
+	slot5 = Equipment.New({
 		id = slot0.equipmentTarget
 	})
-	slot7 = slot2:Find("Viewport/Content")
+	slot6 = slot1:Find("Viewport/Content")
 
-	updateEquipInfo(slot7, slot6:GetPropertiesInfo(), slot6:GetSkill())
+	updateEquipInfo(slot6, slot5:GetPropertiesInfo(), slot5:GetSkill())
 	Canvas.ForceUpdateCanvases()
-	uv0.FitTextBGSize(slot7:Find("attrs"))
-	uv0.FitTextBGSize(slot7:Find("weapon"))
-	uv0.FitTextBGSize(slot7:Find("equip_info"))
+	uv0.FitTextBGSize(slot6:Find("attrs"))
+	uv0.FitTextBGSize(slot6:Find("weapon"))
+	uv0.FitTextBGSize(slot6:Find("equip_info"))
 end
 
-slot0.FitTextBGSize = function(slot0)
+function slot0.FitTextBGSize(slot0)
 	for slot4 = 0, slot0.childCount - 1 do
 		slot5 = slot0:GetChild(slot4)
 		slot6 = slot5:Find("base/NameBG").sizeDelta
@@ -223,7 +223,7 @@ slot0.FitTextBGSize = function(slot0)
 	end
 end
 
-slot0.UpdateSourceInfo = function(slot0)
+function slot0.UpdateSourceInfo(slot0)
 	slot2 = slot0.contextData.sourceEquipmentInstance or {
 		id = slot0.equipmentSourceId,
 		type = DROP_TYPE_EQUIP
@@ -246,7 +246,7 @@ slot0.UpdateSourceInfo = function(slot0)
 	end
 
 	setText(slot4, slot5)
-	slot0.sourceEquipItem:Find("Mask/NameText"):GetComponent("ScrollText"):SetText(pg.equip_data_statistics[slot0.equipmentSourceId].name)
+	slot0.sourceEquipItem:Find("Mask/NameText"):GetComponent("ScrollText"):SetText(Equipment.getConfigData(slot0.equipmentSourceId).name)
 	setActive(slot0.sourceEquipItem:Find("craftable"), slot0.hasRoot)
 	onButton(slot0, slot0.sourceEquipItem:Find("craftable"), function ()
 		uv0:emit(EquipmentTransformMediator.OPEN_LAYER, Context.New({
@@ -263,28 +263,28 @@ slot0.UpdateSourceInfo = function(slot0)
 		end
 	end, SFX_PANEL)
 
-	slot7 = slot0.sourceEquipItem:Find("Status")
+	slot6 = slot0.sourceEquipItem:Find("Status")
 
 	if not slot0.childsCanUse then
-		setImageSprite(slot7, LoadSprite("ui/equipmenttransformui_atlas", "noown"))
-		setActive(slot7, true)
+		setImageSprite(slot6, LoadSprite("ui/equipmenttransformui_atlas", "noown"))
+		setActive(slot6, true)
 	elseif not slot1 then
-		setImageSprite(slot7, LoadSprite("ui/equipmenttransformui_atlas", "unselect"))
-		setActive(slot7, true)
+		setImageSprite(slot6, LoadSprite("ui/equipmenttransformui_atlas", "unselect"))
+		setActive(slot6, true)
 	else
-		setActive(slot7, false)
+		setActive(slot6, false)
 	end
 
-	slot8 = slot1 and slot1.template.shipId
+	slot7 = slot1 and slot1.template.shipId
 
-	setActive(slot0.sourceEquipItem:Find("EquipShip"), slot8)
+	setActive(slot0.sourceEquipItem:Find("EquipShip"), slot7)
 
-	if slot8 then
-		slot0.loader:GetSprite("qicon/" .. getProxy(BayProxy):getShipById(slot8):getPainting(), "", slot0.sourceEquipItem:Find("EquipShip/Image"))
+	if slot7 then
+		slot0.loader:GetSprite("qicon/" .. getProxy(BayProxy):getShipById(slot7):getPainting(), "", slot0.sourceEquipItem:Find("EquipShip/Image"))
 	end
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._tf:Find("BG"), function ()
 		uv0:closeView()
 	end)
@@ -341,7 +341,7 @@ slot0.didEnter = function(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0.loader:Clear()
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end

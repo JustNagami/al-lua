@@ -4,7 +4,7 @@ slot0 = pg.CameraFixMgr
 slot0.ASPECT_RATIO_UPDATE = "aspect_ratio_update"
 slot1 = 211
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	slot0.orientation = Screen.orientation
 	slot0.adpterTr = GameObject.Find("UICamera/Adpter").transform
 	slot0.adpterCanvas = slot0.adpterTr:GetComponent("Canvas")
@@ -30,7 +30,7 @@ slot0.Init = function(slot0, slot1)
 	slot1()
 end
 
-slot0.SetMaskAsTopLayer = function(slot0, slot1)
+function slot0.SetMaskAsTopLayer(slot0, slot1)
 	if slot1 then
 		slot0.adpterCanvas.sortingOrder = 1000
 	else
@@ -38,7 +38,7 @@ slot0.SetMaskAsTopLayer = function(slot0, slot1)
 	end
 end
 
-slot0.AddListener = function(slot0)
+function slot0.AddListener(slot0)
 	slot0:Clear()
 
 	if not slot0.handle then
@@ -49,7 +49,7 @@ slot0.AddListener = function(slot0)
 	LateUpdateBeat:AddListener(slot0.handle)
 end
 
-slot0.LateUpdate = function(slot0)
+function slot0.LateUpdate(slot0)
 	if slot0.shouldFix then
 		slot0.shouldFix = false
 
@@ -66,7 +66,7 @@ slot0.LateUpdate = function(slot0)
 	end
 end
 
-slot0.Adapt = function(slot0)
+function slot0.Adapt(slot0)
 	slot2 = false
 
 	if slot0.aspectRatio < slot0.currentWidth / slot0.currentHeight then
@@ -92,7 +92,7 @@ slot0.Adapt = function(slot0)
 	slot0:emit(uv0.ASPECT_RATIO_UPDATE, slot0.targetRatio)
 end
 
-slot0.AdaptTo = function(slot0, slot1, slot2)
+function slot0.AdaptTo(slot0, slot1, slot2)
 	slot4 = NotchAdapt.CheckNotchRatio
 
 	if slot0.currentWidth / slot0.currentHeight <= slot2 then
@@ -133,7 +133,7 @@ slot0.AdaptTo = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.Padding = function(slot0)
+function slot0.Padding(slot0)
 	slot2 = slot0.paddingCanvas.sizeDelta.x
 	slot3 = slot0.paddingCanvas.sizeDelta.y
 	slot4 = 0
@@ -158,7 +158,7 @@ slot0.Padding = function(slot0)
 		slot0.bottomPanel.sizeDelta = Vector2(slot9, slot2)
 
 		if slot8 < uv0 then
-			slot10 = uv0 - slot8
+			slot10 = uv0 - slot8 - 1
 			slot0.topPanel.anchoredPosition3D = Vector3(0, slot10, 0)
 			slot0.bottomPanel.anchoredPosition3D = Vector3(0, -slot10, 0)
 		else
@@ -189,14 +189,14 @@ slot0.Padding = function(slot0)
 	end
 end
 
-slot0.ResetPadding = function(slot0)
+function slot0.ResetPadding(slot0)
 	slot0.topPanel.sizeDelta = Vector2.zero
 	slot0.bottomPanel.sizeDelta = Vector2.zero
 	slot0.leftPanel.sizeDelta = Vector2.zero
 	slot0.rightPanel.sizeDelta = Vector2.zero
 end
 
-slot0.GetBattleUIRatio = function(slot0)
+function slot0.GetBattleUIRatio(slot0)
 	if ADAPT_NOTICE < slot0.currentWidth / slot0.currentHeight and NotchAdapt.CheckNotchRatio < slot0.targetRatio then
 		return NotchAdapt.CheckNotchRatio
 	end
@@ -204,20 +204,20 @@ slot0.GetBattleUIRatio = function(slot0)
 	return slot0.targetRatio
 end
 
-slot0.GetCurrentWidth = function(slot0)
+function slot0.GetCurrentWidth(slot0)
 	return slot0.currentWidth
 end
 
-slot0.GetCurrentHeight = function(slot0)
+function slot0.GetCurrentHeight(slot0)
 	return slot0.currentHeight
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	if slot0.handle then
 		LateUpdateBeat:RemoveListener(slot0.handle)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Clear()
 end

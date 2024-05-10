@@ -2,7 +2,7 @@ slot0 = class("ReturnAwardPage", import("...base.BaseActivityPage"))
 slot0.INVITER = 1
 slot0.RETURNER = 2
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	slot1 = {
 		InviterPage,
 		ReturnerPage
@@ -21,17 +21,17 @@ slot0.OnFirstFlush = function(slot0)
 	end)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	assert(slot0.page)
 	slot0.page:Update(slot0.activity)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	assert(slot0.page)
 	slot0.page:Dispose()
 end
 
-slot0.UseSecondPage = function(slot0, slot1)
+function slot0.UseSecondPage(slot0, slot1)
 	return slot1.data1 > 1
 end
 

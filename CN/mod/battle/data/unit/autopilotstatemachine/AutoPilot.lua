@@ -6,7 +6,7 @@ slot0.Battle.AutoPilot = slot2
 slot2.__name = "AutoPilot"
 slot2.PILOT_VALVE = 0.5
 
-slot2.Ctor = function(slot0, slot1, slot2)
+function slot2.Ctor(slot0, slot1, slot2)
 	slot0._aiCfg = slot2
 	slot0._target = slot1
 
@@ -18,30 +18,30 @@ slot2.Ctor = function(slot0, slot1, slot2)
 	slot0._currentStep:Active(slot0._target)
 end
 
-slot2.GetDirection = function(slot0)
+function slot2.GetDirection(slot0)
 	return slot0._currentStep:GetDirection(slot0._target:GetPosition())
 end
 
-slot2.GetTarget = function(slot0)
+function slot2.GetTarget(slot0)
 	return slot0._target
 end
 
-slot2.InputWeaponStateChange = function(slot0)
+function slot2.InputWeaponStateChange(slot0)
 end
 
-slot2.SetHiveUnit = function(slot0, slot1)
+function slot2.SetHiveUnit(slot0, slot1)
 	slot0._hiveUnit = slot1
 end
 
-slot2.GetHiveUnit = function(slot0)
+function slot2.GetHiveUnit(slot0)
 	return slot0._hiveUnit
 end
 
-slot2.OnHiveUnitDead = function(slot0)
+function slot2.OnHiveUnitDead(slot0)
 	slot0._target:OnMotherDead()
 end
 
-slot2.NextStep = function(slot0)
+function slot2.NextStep(slot0)
 	if slot0._stepList[slot0._currentStep:GetToIndex()] == nil then
 		slot1 = slot0._aiCfg.default
 	end
@@ -51,7 +51,7 @@ slot2.NextStep = function(slot0)
 	slot0._currentStep:Active(slot0._target)
 end
 
-slot2.generateList = function(slot0)
+function slot2.generateList(slot0)
 	slot0._stepList = {}
 
 	for slot4, slot5 in ipairs(slot0._aiCfg.list) do

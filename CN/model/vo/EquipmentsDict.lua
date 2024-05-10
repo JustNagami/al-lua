@@ -1,6 +1,6 @@
 slot0 = class("EquipmentsDict")
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 	slot1 = {}
 
 	for slot6, slot7 in pairs(getProxy(EquipmentProxy):GetEquipmentsRaw()) do
@@ -18,22 +18,23 @@ slot0.Ctor = function(slot0)
 	slot0.data = slot1
 end
 
-slot0.GetSameTypeInEquips = function(slot0, slot1)
+function slot0.GetSameTypeInEquips(slot0, slot1)
 	slot2 = {}
 	slot3 = slot0.data
+	slot4 = Equipment.getConfigData(slot1)
 
-	while slot1 ~= nil do
-		if slot3[slot1] then
-			table.insertto(slot2, slot3[slot1])
+	while slot4 do
+		if slot3[slot4.id] then
+			table.insertto(slot2, slot3[slot4.id])
 		end
 
-		slot1 = pg.equip_data_template[slot1] and pg.equip_data_template[slot1].next
+		slot4 = slot4.next and Equipment.getConfigData(slot4.next)
 	end
 
 	return slot2
 end
 
-slot0.GetEquipmentTransformCandicates = function(slot0, slot1)
+function slot0.GetEquipmentTransformCandicates(slot0, slot1)
 	slot2 = _.map(slot0:GetSameTypeInEquips(slot1), function (slot0)
 		return {
 			type = DROP_TYPE_EQUIP,
@@ -59,7 +60,7 @@ slot0.GetEquipmentTransformCandicates = function(slot0, slot1)
 	return slot2
 end
 
-slot0.GetEquipTraceBack = function(slot0, slot1, slot2, slot3)
+function slot0.GetEquipTraceBack(slot0, slot1, slot2, slot3)
 	slot4 = slot0.data
 	slot2 = slot2 or {
 		slot1
@@ -108,7 +109,7 @@ slot0.GetEquipTraceBack = function(slot0, slot1, slot2, slot3)
 	return slot3
 end
 
-slot0.GetSortedEquipTraceBack = function(slot0, ...)
+function slot0.GetSortedEquipTraceBack(slot0, ...)
 	slot1 = slot0:GetEquipTraceBack(...)
 
 	table.sort(slot1, function (slot0, slot1)
@@ -128,7 +129,7 @@ slot0.GetSortedEquipTraceBack = function(slot0, ...)
 	return slot1
 end
 
-slot0.FindTheEquip = function(slot0, slot1)
+function slot0.FindTheEquip(slot0, slot1)
 	slot2 = slot0.data
 
 	if not slot1 or not slot2[slot1.id] then
@@ -142,12 +143,12 @@ slot0.FindTheEquip = function(slot0, slot1)
 	end
 end
 
-slot0.AddEquipment = function(slot0, slot1)
+function slot0.AddEquipment(slot0, slot1)
 	slot2[slot1.id] = slot0.data[slot1.id] or {}
 	slot2[slot1.id][slot0:FindTheEquip(slot1) or #slot2[slot1.id] + 1] = slot1
 end
 
-slot0.RemoveEquipment = function(slot0, slot1)
+function slot0.RemoveEquipment(slot0, slot1)
 	slot2 = slot0.data
 
 	if not slot1 or not slot2[slot1.id] then
@@ -161,7 +162,7 @@ slot0.RemoveEquipment = function(slot0, slot1)
 	table.remove(slot2[slot1.id], slot3)
 end
 
-slot0.UpdateEquipment = function(slot0, slot1)
+function slot0.UpdateEquipment(slot0, slot1)
 	if slot1.count == 0 then
 		slot0:RemoveEquipment(slot1)
 	else

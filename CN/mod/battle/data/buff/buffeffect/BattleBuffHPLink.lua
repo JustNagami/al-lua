@@ -5,11 +5,11 @@ slot0.Battle.BattleBuffHPLink.__name = "BattleBuffHPLink"
 slot1 = slot0.Battle.BattleBuffHPLink
 slot1.FX_TYPE = slot0.Battle.BattleBuffEffect.FX_TYPE_LINK
 
-slot1.Ctor = function(slot0, slot1)
+function slot1.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 end
 
-slot1.SetArgs = function(slot0, slot1, slot2)
+function slot1.SetArgs(slot0, slot1, slot2)
 	slot0._number = slot0._tempData.arg_list.number or 0
 	slot0._absorbRate = slot3.absorb or 0
 	slot0._restoreRate = 0
@@ -20,7 +20,7 @@ slot1.SetArgs = function(slot0, slot1, slot2)
 	end
 end
 
-slot1.onTakeDamage = function(slot0, slot1, slot2, slot3)
+function slot1.onTakeDamage(slot0, slot1, slot2, slot3)
 	if slot3.isShare then
 		return
 	end
@@ -50,7 +50,7 @@ slot1.onTakeDamage = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot1.onRemove = function(slot0, slot1, slot2)
+function slot1.onRemove(slot0, slot1, slot2)
 	if slot2:GetCaster() and slot3:IsAlive() and slot0._restoreRate > 0 and slot3 ~= slot1 and math.floor(slot0._sumDMG * slot0._restoreRate * slot3:GetAttrByName("healingRate")) ~= 0 then
 		slot3:UpdateHP(slot5, {
 			isMiss = false,

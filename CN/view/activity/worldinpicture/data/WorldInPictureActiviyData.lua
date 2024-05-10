@@ -1,6 +1,6 @@
 slot0 = class("WorldInPictureActiviyData")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.activity = slot1
 	slot0.config = pg.activity_event_grid[slot1.data1]
 	slot0.travelPoint = slot1.data2
@@ -30,7 +30,7 @@ slot0.Ctor = function(slot0, slot1)
 	end
 end
 
-slot0.WarpDrawArea = function(slot0, slot1)
+function slot0.WarpDrawArea(slot0, slot1)
 	slot3 = slot1[2]
 	slot5 = slot1[4]
 	slot6 = {}
@@ -44,73 +44,73 @@ slot0.WarpDrawArea = function(slot0, slot1)
 	return slot6
 end
 
-slot0.GetMapRowAndColumn = function(slot0)
+function slot0.GetMapRowAndColumn(slot0)
 	return slot0.size[1], slot0.size[2]
 end
 
-slot0.GetTravelPoint = function(slot0)
+function slot0.GetTravelPoint(slot0)
 	return slot0.travelPoint
 end
 
-slot0.GetDrawPoint = function(slot0)
+function slot0.GetDrawPoint(slot0)
 	return slot0.drawPoint
 end
 
-slot0.GetTravelProgress = function(slot0)
+function slot0.GetTravelProgress(slot0)
 	return #slot0.travelList
 end
 
-slot0.GetMaxTravelCnt = function(slot0)
+function slot0.GetMaxTravelCnt(slot0)
 	slot1, slot2 = slot0:GetMapRowAndColumn()
 
 	return slot1 * slot2
 end
 
-slot0.IsTravelAll = function(slot0)
+function slot0.IsTravelAll(slot0)
 	return slot0:GetMaxTravelCnt() <= slot0:GetTravelProgress()
 end
 
-slot0.GetDrawProgress = function(slot0)
+function slot0.GetDrawProgress(slot0)
 	return #slot0.drawList
 end
 
-slot0.GetMaxDrawCnt = function(slot0)
+function slot0.GetMaxDrawCnt(slot0)
 	return #slot0.drawAreaList
 end
 
-slot0.IsDrawAll = function(slot0)
+function slot0.IsDrawAll(slot0)
 	return slot0:GetMaxDrawCnt() <= slot0:GetDrawProgress()
 end
 
-slot0.GetTravelList = function(slot0)
+function slot0.GetTravelList(slot0)
 	return slot0.travelList
 end
 
-slot0.GetDrawList = function(slot0)
+function slot0.GetDrawList(slot0)
 	return slot0.drawList
 end
 
-slot0.GetAwardList = function(slot0)
+function slot0.GetAwardList(slot0)
 	return slot0.awardList
 end
 
-slot0.IsFirstTravel = function(slot0)
+function slot0.IsFirstTravel(slot0)
 	return #slot0.travelList == 1
 end
 
-slot0.OutSide = function(slot0, slot1, slot2)
+function slot0.OutSide(slot0, slot1, slot2)
 	slot3, slot4 = slot0:GetMapRowAndColumn()
 
 	return slot1 <= 0 or slot2 <= 0 or slot3 < slot1 or slot4 < slot2
 end
 
-slot0.IsOpened = function(slot0, slot1, slot2)
+function slot0.IsOpened(slot0, slot1, slot2)
 	slot3, slot4 = slot0:GetMapRowAndColumn()
 
 	return not slot0:OutSide(slot1, slot2) and table.contains(slot0.travelList, (slot1 - 1) * slot4 + slot2)
 end
 
-slot0.CanSelect = function(slot0, slot1, slot2)
+function slot0.CanSelect(slot0, slot1, slot2)
 	if #slot0.travelList == 0 then
 		return true
 	end
@@ -129,11 +129,11 @@ slot0.CanSelect = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.ExistBox = function(slot0, slot1, slot2)
+function slot0.ExistBox(slot0, slot1, slot2)
 	return slot0.boxItems[slot1] and slot0.boxItems[slot1][slot2] == true
 end
 
-slot0.AnyAreaCanDraw = function(slot0)
+function slot0.AnyAreaCanDraw(slot0)
 	return _.any(slot0.drawAreaList, function (slot0)
 		return not uv0:IsDrawed(slot0[1].x, slot0[1].y) and _.all(slot0, function (slot0)
 			return uv0:IsOpened(slot0.x, slot0.y)
@@ -141,13 +141,13 @@ slot0.AnyAreaCanDraw = function(slot0)
 	end)
 end
 
-slot0.GetDrawableArea = function(slot0, slot1, slot2)
+function slot0.GetDrawableArea(slot0, slot1, slot2)
 	return _.detect(slot0.drawAreaList, function (slot0)
 		return slot0[1] == Vector2(uv0, uv1)
 	end)
 end
 
-slot0.GetDrawableAreasState = function(slot0)
+function slot0.GetDrawableAreasState(slot0)
 	return _.map(slot0.drawAreaList, function (slot0)
 		return {
 			position = slot0[1],
@@ -158,7 +158,7 @@ slot0.GetDrawableAreasState = function(slot0)
 	end)
 end
 
-slot0.GetDrawIndex = function(slot0, slot1, slot2)
+function slot0.GetDrawIndex(slot0, slot1, slot2)
 	slot3 = -1
 
 	for slot7, slot8 in ipairs(slot0.drawAreaList) do
@@ -174,11 +174,11 @@ slot0.GetDrawIndex = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.IsDrawed = function(slot0, slot1, slot2)
+function slot0.IsDrawed(slot0, slot1, slot2)
 	return table.contains(slot0.drawList, slot0:GetDrawIndex(slot1, slot2))
 end
 
-slot0.CanDraw = function(slot0, slot1, slot2)
+function slot0.CanDraw(slot0, slot1, slot2)
 	if slot0:IsDrawed(slot1, slot2) then
 		return false
 	end
@@ -204,7 +204,7 @@ slot0.CanDraw = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.Convert2DrawAreaHead = function(slot0, slot1, slot2)
+function slot0.Convert2DrawAreaHead(slot0, slot1, slot2)
 	slot3, slot4 = nil
 
 	for slot8, slot9 in ipairs(slot0.drawAreaList) do
@@ -223,11 +223,11 @@ slot0.Convert2DrawAreaHead = function(slot0, slot1, slot2)
 	return slot3[1].x, slot3[1].y, slot4
 end
 
-slot0.GetDrawAnimData = function(slot0, slot1, slot2)
+function slot0.GetDrawAnimData(slot0, slot1, slot2)
 	return slot0.drawAreaAnimList[slot0:GetDrawIndex(slot1, slot2)]
 end
 
-slot0.FindNextTravelable = function(slot0)
+function slot0.FindNextTravelable(slot0)
 	if slot0:GetTravelPoint() <= 0 then
 		return nil
 	end
@@ -245,7 +245,7 @@ slot0.FindNextTravelable = function(slot0)
 	return nil
 end
 
-slot0.FindNextDrawableAreaHead = function(slot0)
+function slot0.FindNextDrawableAreaHead(slot0)
 	if slot0:GetDrawPoint() <= 0 then
 		return nil
 	end

@@ -2,7 +2,7 @@ slot0 = class("AmusementParkShopMediator", import("view.base.ContextMediator"))
 slot0.ON_ACT_SHOPPING = "AmusementParkShopMediator:ON_ACT_SHOPPING"
 slot0.GO_SCENE = "GO_SCENE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD)
 
 	assert(slot2, "Activity Type ACTIVITY_TYPE_SHOP_PROGRESS_REWARD Not exist")
@@ -22,13 +22,13 @@ slot0.register = function(slot0)
 	slot0:HandleSpecialReach(slot2)
 end
 
-slot0.TransActivity2ShopData = function(slot0, slot1)
+function slot0.TransActivity2ShopData(slot0, slot1)
 	if slot1 and not slot1:isEnd() then
 		slot0.viewComponent:SetShop(ActivityShop.New(slot1))
 	end
 end
 
-slot0.AddSpecialList = function(slot0, slot1)
+function slot0.AddSpecialList(slot0, slot1)
 	slot2 = {}
 
 	if pg.gameset.activity_lottery_rewards then
@@ -36,19 +36,17 @@ slot0.AddSpecialList = function(slot0, slot1)
 		slot4 = pg.gameset.activity_lottery_rewards.description or {}
 
 		for slot6, slot7 in slot3(slot4) do
-			table.insert(slot2, {
-				type = slot7[2][1],
-				id = slot7[2][2],
-				count = slot7[2][3],
-				HasGot = table.contains(slot1.data3_list, slot7[1])
-			})
+			slot8 = Drop.Create(slot7[2])
+			slot8.HasGot = table.contains(slot1.data3_list, slot7[1])
+
+			table.insert(slot2, slot8)
 		end
 	end
 
 	slot0.viewComponent:SetSpecial(slot2)
 end
 
-slot0.HandleSpecialReach = function(slot0, slot1)
+function slot0.HandleSpecialReach(slot0, slot1)
 	if not pg.gameset.activity_lottery_rewards or not pg.gameset.activity_lottery_rewards.description then
 		return
 	end
@@ -73,14 +71,14 @@ slot0.HandleSpecialReach = function(slot0, slot1)
 	return false
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then

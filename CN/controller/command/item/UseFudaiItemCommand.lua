@@ -1,6 +1,6 @@
 slot0 = class("UseFudaiItemCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.id
 	slot5 = slot2.callback
@@ -9,18 +9,15 @@ slot0.execute = function(slot0, slot1)
 		return
 	end
 
-	slot7 = getProxy(BagProxy):getItemById(slot3)
-	slot8 = slot7:getTempCfgTable()
-
-	if slot7.count < slot4 then
+	if getProxy(BagProxy):getItemById(slot3).count < slot4 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 		return
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
+	slot8 = pg.ConnectionMgr.GetInstance()
 
-	slot9:Send(15002, {
+	slot8:Send(15002, {
 		id = slot3,
 		count = slot4
 	}, 15003, function (slot0)
@@ -28,7 +25,7 @@ slot0.execute = function(slot0, slot1)
 			slot1 = {}
 
 			uv0:removeItemById(uv1, uv2)
-			assert(uv3.usage == ItemUsage.DROP, "未处理类型")
+			assert(uv3:getConfig("usage") == ItemUsage.DROP or uv3:getConfig("usage") == ItemUsage.DROP_TEMPLATE, "未处理类型")
 			existCall(uv4, PlayerConst.addTranDrop(slot0.drop_list))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))

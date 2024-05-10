@@ -31,7 +31,7 @@ slot1 = {
 	{
 		id = "NG005",
 		condition = function ()
-			return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommandRoomMediator")
+			return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator")
 		end,
 		args = function ()
 			return {}
@@ -133,10 +133,19 @@ slot1 = {
 		args = function ()
 			return {}
 		end
+	},
+	{
+		id = "tb_20",
+		condition = function ()
+			return not LOCK_EDUCATE_SYSTEM and getProxy(EducateProxy):IsUnlockSecretary()
+		end,
+		args = function ()
+			return {}
+		end
 	}
 }
 
-slot0.Execute = function(slot0, slot1)
+function slot0.Execute(slot0, slot1)
 	if IsUnityEditor and not ENABLE_GUIDE then
 		if slot1 then
 			slot1()
@@ -185,7 +194,7 @@ slot0.Execute = function(slot0, slot1)
 	end, slot1)
 end
 
-slot0.PlayNextOne = function(slot0, slot1, slot2)
+function slot0.PlayNextOne(slot0, slot1, slot2)
 	if not slot1 then
 		return
 	end

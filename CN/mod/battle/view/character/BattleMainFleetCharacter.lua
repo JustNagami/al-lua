@@ -6,27 +6,27 @@ slot3 = class("BattleMainFleetCharacter", slot0.Battle.BattlePlayerCharacter)
 slot0.Battle.BattleMainFleetCharacter = slot3
 slot3.__name = "BattleMainFleetCharacter"
 
-slot3.Ctor = function(slot0)
+function slot3.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot3.Update = function(slot0)
+function slot3.Update(slot0)
 	uv0.super.Update(slot0)
 	slot0:UpdateArrowBarPostition()
 end
 
-slot3.AddArrowBar = function(slot0, slot1)
+function slot3.AddArrowBar(slot0, slot1)
 	uv0.super.AddArrowBar(slot0, slot1)
 	setImageSprite(findTF(slot0._arrowBar, "icon"), LoadSprite("qicon/" .. slot0._unitData:GetTemplate().painting) or LoadSprite("heroicon/unknown"))
 end
 
-slot3.UpdateHPBarPosition = function(slot0)
+function slot3.UpdateHPBarPosition(slot0)
 	if not slot0._inViewArea then
 		uv0.super.UpdateHPBarPosition(slot0)
 	end
 end
 
-slot3.GetReferenceVector = function(slot0, slot1)
+function slot3.GetReferenceVector(slot0, slot1)
 	if not slot0._inViewArea then
 		return uv0.super.GetReferenceVector(slot0, slot1)
 	else

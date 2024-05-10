@@ -16,7 +16,7 @@ slot0.ON_GET_THEMPLATE_DATA = "NewBackYardThemeTemplateMediator:ON_GET_THEMPLATE
 slot0.ON_GET_SPCAIL_TYPE_TEMPLATE = "NewBackYardThemeTemplateMediator:ON_GET_SPCAIL_TYPE_TEMPLATE"
 slot0.GO_DECORATION = "NewBackYardThemeTemplateMediator:GO_DECORATION"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.GO_DECORATION, function (slot0)
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD, {
 			openDecoration = true
@@ -33,11 +33,12 @@ slot0.register = function(slot0)
 			callback = slot2
 		})
 	end)
-	slot0:bind(uv0.ON_REFRESH, function (slot0, slot1, slot2, slot3)
+	slot0:bind(uv0.ON_REFRESH, function (slot0, slot1, slot2, slot3, slot4)
 		uv0:sendNotification(GAME.BACKYARD_REFRESH_SHOP_TEMPLATE, {
+			timeType = slot3,
 			type = slot1,
 			page = slot2,
-			force = slot3
+			force = slot4
 		})
 	end)
 	slot0:bind(uv0.ON_SEARCH, function (slot0, slot1, slot2)
@@ -115,7 +116,7 @@ slot0.register = function(slot0)
 		})
 	end)
 	slot0:bind(uv0.ON_APPLY_TEMPLATE, function (slot0, slot1, slot2)
-		slot4 = function()
+		function slot4()
 			uv0:sendNotification(GAME.BACKYARD_APPLY_THEME_TEMPLATE, {
 				template = uv1
 			})
@@ -157,9 +158,7 @@ slot0.register = function(slot0)
 				wrap = ChargeScene.TYPE_DIAMOND
 			})
 		elseif slot1 == PlayerConst.ResDormMoney then
-			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
-				wrap = ChargeScene.TYPE_GIFT
-			})
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
 		end
 	end)
 	slot0:bind(uv0.FETCH_ALL_THEME, function (slot0, slot1)
@@ -176,7 +175,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:SetPlayer(getProxy(PlayerProxy):getData())
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.FRIEND_SEARCH_DONE,
@@ -199,7 +198,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 	slot4 = slot1:getType()
 

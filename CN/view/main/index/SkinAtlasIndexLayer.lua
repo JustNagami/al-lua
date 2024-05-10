@@ -50,7 +50,7 @@ slot1 = {
 	end
 }
 
-slot0.filterByExtra = function(slot0, slot1)
+function slot0.filterByExtra(slot0, slot1)
 	if not slot1 or slot1 == uv0.ExtraALL then
 		return true
 	end
@@ -64,7 +64,7 @@ slot0.filterByExtra = function(slot0, slot1)
 	return false
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	uv0.super.init(slot0)
 
 	slot1 = slot0.contextData
@@ -72,13 +72,19 @@ slot0.init = function(slot0)
 	slot0.indexDatas = slot1.defaultIndex or {}
 end
 
-slot0.didEnter = function(slot0)
+function slot0.BlurPanel(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+		weight = LayerWeightConst.SECOND_LAYER + 1
+	})
+end
+
+function slot0.didEnter(slot0)
 	slot0.contextData = slot0:InitData()
 
 	uv0.super.didEnter(slot0)
 end
 
-slot0.InitData = function(slot0)
+function slot0.InitData(slot0)
 	return {
 		indexDatas = Clone(slot0.indexDatas),
 		customPanels = {

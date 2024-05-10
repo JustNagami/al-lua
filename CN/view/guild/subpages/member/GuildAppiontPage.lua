@@ -1,6 +1,6 @@
 slot0 = class("GuildAppiontPage", import(".GuildMemberBasePage"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "GuildAppiontPage"
 end
 
@@ -11,7 +11,7 @@ slot1 = {
 	"normal"
 }
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	uv0.super.OnLoaded(slot0)
 
 	slot0.dutyContainer = slot0:findTF("frame/duty")
@@ -26,17 +26,17 @@ slot0.OnLoaded = function(slot0)
 	slot0.toggles = slot0:findTF("frame/duty"):GetComponent(typeof(ToggleGroup))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-slot0.ShouldShow = function(slot0)
+function slot0.ShouldShow(slot0)
 	return slot0.memberVO.id ~= slot0.playerVO.id
 end
 
-slot0.OnShow = function(slot0)
+function slot0.OnShow(slot0)
 	slot3 = slot0.guildVO
 	slot5 = slot3:getEnableDuty(slot3:getDutyByMemberId(slot0.playerVO.id), slot0.memberVO.duty)
 	slot6 = slot3:getAssistantMaxCount()
@@ -135,7 +135,7 @@ slot0.OnShow = function(slot0)
 	slot0.levelTF.text = "Lv." .. slot2.level
 
 	onButton(slot0, slot0.confirmBtn, function ()
-		slot0 = function()
+		function slot0()
 			uv0:emit(GuildMemberMediator.SET_DUTY, uv1.id, uv2)
 			uv0:Hide()
 		end
@@ -151,7 +151,7 @@ slot0.OnShow = function(slot0)
 	end, SFX_CONFIRM)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	slot0.toggles:SetAllTogglesOff()
 	uv0.super.Hide(slot0)
 end

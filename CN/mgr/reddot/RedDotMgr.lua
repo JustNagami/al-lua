@@ -6,7 +6,7 @@ require("Mgr/RedDot/Include")
 slot0 = pg.RedDotMgr
 slot1 = true
 
-slot2 = function(...)
+function slot2(...)
 	if uv0 then
 		originalPrint(...)
 	end
@@ -18,13 +18,12 @@ slot0.TYPES = {
 	ACT_RETURN = 16,
 	COMMANDER = 10,
 	RYZA_TASK = 21,
-	ISLAND = 22,
-	EVENT = 15,
-	SERVER = 12,
 	BLUEPRINT = 14,
 	BUILD = 4,
+	SERVER = 12,
+	ISLAND = 22,
 	ACT_NEWBIE = 17,
-	VOTE_OREDER = 18,
+	EVENT = 15,
 	ATTIRE = 6,
 	FRIEND = 8,
 	NEW_SERVER = 20,
@@ -37,7 +36,7 @@ slot0.TYPES = {
 	SCHOOL = 13
 }
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	slot0.conditions = {}
 	slot0.nodeList = {}
 
@@ -48,7 +47,7 @@ slot0.Init = function(slot0, slot1)
 	end
 end
 
-slot0.BindConditions = function(slot0)
+function slot0.BindConditions(slot0)
 	slot0:BindCondition(uv0.TYPES.COURTYARD, function ()
 		return getProxy(DormProxy):IsShowRedDot()
 	end)
@@ -65,7 +64,7 @@ slot0.BindConditions = function(slot0)
 		return getProxy(GuildProxy):ShouldShowTip()
 	end)
 	slot0:BindCondition(uv0.TYPES.ATTIRE, function ()
-		return getProxy(AttireProxy):IsShowRedDot()
+		return getProxy(AttireProxy):IsShowRedDot() or getProxy(SettingsProxy):ShouldEducateCharTip()
 	end)
 	slot0:BindCondition(uv0.TYPES.COLLECTION, function ()
 		return getProxy(CollectionProxy):hasFinish() or getProxy(AppreciateProxy):isGalleryHaveNewRes() or getProxy(AppreciateProxy):isMusicHaveNewRes() or getProxy(AppreciateProxy):isMangaHaveNewRes()
@@ -113,9 +112,6 @@ slot0.BindConditions = function(slot0)
 
 		return slot1 or slot3
 	end)
-	slot0:BindCondition(uv0.TYPES.VOTE_OREDER, function ()
-		return getProxy(VoteProxy):GetOrderBook()
-	end)
 	slot0:BindCondition(uv0.TYPES.MEMORY_REVIEW, function ()
 		if getProxy(PlayerProxy):getRawData() then
 			slot1 = slot0.id
@@ -138,11 +134,11 @@ slot0.BindConditions = function(slot0)
 	end)
 end
 
-slot0.BindCondition = function(slot0, slot1, slot2)
+function slot0.BindCondition(slot0, slot1, slot2)
 	slot0.conditions[slot1] = slot2
 end
 
-slot0.RegisterRedDotNodes = function(slot0, slot1)
+function slot0.RegisterRedDotNodes(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		slot0:RegisterRedDotNode(slot6)
 	end
@@ -150,7 +146,7 @@ slot0.RegisterRedDotNodes = function(slot0, slot1)
 	slot0:_NotifyAll()
 end
 
-slot0.RegisterRedDotNode = function(slot0, slot1)
+function slot0.RegisterRedDotNode(slot0, slot1)
 	for slot6, slot7 in ipairs(slot1:GetTypes()) do
 		if not slot0.nodeList[slot7] then
 			slot0.nodeList[slot7] = {}
@@ -162,7 +158,7 @@ slot0.RegisterRedDotNode = function(slot0, slot1)
 	slot1:Init()
 end
 
-slot0.UnRegisterRedDotNodes = function(slot0, slot1)
+function slot0.UnRegisterRedDotNodes(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		slot0:UnRegisterRedDotNode(slot6)
 	end
@@ -170,7 +166,7 @@ slot0.UnRegisterRedDotNodes = function(slot0, slot1)
 	uv0.cache = {}
 end
 
-slot0.UnRegisterRedDotNode = function(slot0, slot1)
+function slot0.UnRegisterRedDotNode(slot0, slot1)
 	for slot6, slot7 in ipairs(slot1:GetTypes()) do
 		slot8 = slot0.nodeList[slot7] or {}
 
@@ -183,7 +179,7 @@ slot0.UnRegisterRedDotNode = function(slot0, slot1)
 	end
 end
 
-slot3 = function(slot0, slot1)
+function slot3(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		slot7 = nil
 
@@ -201,7 +197,7 @@ slot3 = function(slot0, slot1)
 	return false
 end
 
-slot0.NotifyAll = function(slot0, slot1)
+function slot0.NotifyAll(slot0, slot1)
 	uv0.cache = {}
 	slot2 = ipairs
 	slot3 = slot0.nodeList[slot1] or {}
@@ -213,11 +209,11 @@ slot0.NotifyAll = function(slot0, slot1)
 	uv0.cache = {}
 end
 
-slot0._NotifyAll = function(slot0)
+function slot0._NotifyAll(slot0)
 	uv0.cache = {}
 	slot1 = {}
 
-	slot2 = function(slot0, slot1)
+	function slot2(slot0, slot1)
 		slot0:SetData(uv0(uv1, slot0:GetTypes()))
 		onNextTick(slot1)
 	end
@@ -235,7 +231,7 @@ slot0._NotifyAll = function(slot0)
 	end)
 end
 
-slot0.DebugNodes = function(slot0)
+function slot0.DebugNodes(slot0)
 	for slot4, slot5 in pairs(slot0.nodeList) do
 		uv0("type : ", slot4)
 

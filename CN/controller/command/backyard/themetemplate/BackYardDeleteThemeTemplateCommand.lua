@@ -1,10 +1,10 @@
 slot0 = class("BackYardDeleteThemeTemplateCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot4 = getProxy(DormProxy)
 	slot5 = slot4:GetCustomThemeTemplateById(slot1:getBody().templateId)
 
-	slot6 = function(slot0)
+	function slot6(slot0)
 		if not uv0:IsPushed() then
 			if slot0 then
 				slot0()
@@ -44,7 +44,7 @@ slot0.execute = function(slot0, slot1)
 		end)
 	end
 
-	slot7 = function(slot0)
+	function slot7(slot0)
 		BackYardThemeTempalteUtil.ClearCaches({
 			uv0:GetTextureName(),
 			uv0:GetTextureIconName()

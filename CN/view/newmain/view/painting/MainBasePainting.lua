@@ -5,7 +5,7 @@ slot3 = 3
 slot4 = 4
 slot5 = nil
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	pg.DelegateInfo.New(slot0)
 
 	slot0.container = slot1
@@ -19,19 +19,19 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	slot0.longPressEvent = slot1:GetComponent("UILongPressTrigger").onLongPressed
 end
 
-slot0.GetCenterPos = function(slot0)
+function slot0.GetCenterPos(slot0)
 	return slot0.chatTf.parent:InverseTransformPoint(slot0.container.position)
 end
 
-slot0.IsLoading = function(slot0)
+function slot0.IsLoading(slot0)
 	return slot0.state == uv0
 end
 
-slot0.IsLoaded = function(slot0)
+function slot0.IsLoaded(slot0)
 	return slot0.state == uv0
 end
 
-slot0.Load = function(slot0, slot1, slot2)
+function slot0.Load(slot0, slot1)
 	slot0.isPuase = false
 	slot0.isExited = false
 	slot0.state = uv0
@@ -41,7 +41,7 @@ slot0.Load = function(slot0, slot1, slot2)
 	slot0:OnLoad(function ()
 		uv0.state = uv1
 
-		if uv2 then
+		if uv0.triggerWhenLoaded then
 			uv0:TriggerEventAtFirstTime()
 		end
 
@@ -49,7 +49,7 @@ slot0.Load = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.Unload = function(slot0)
+function slot0.Unload(slot0)
 	slot0.state = uv0
 
 	removeOnButton(slot0.container)
@@ -58,9 +58,22 @@ slot0.Unload = function(slot0)
 	slot0.cvLoader:Stop()
 	slot0:RemoveTimer()
 	slot0:OnUnload()
+
+	slot0.paintingName = nil
 end
 
-slot0.InitClickEvent = function(slot0)
+function slot0.UnloadOnlyPainting(slot0)
+	slot0.state = uv0
+
+	removeOnButton(slot0.container)
+	slot0.longPressEvent:RemoveAllListeners()
+	slot0:RemoveTimer()
+	slot0:OnUnload()
+
+	slot0.paintingName = nil
+end
+
+function slot0.InitClickEvent(slot0)
 	onButton(slot0, slot0.container, function ()
 		uv0:OnClick()
 		uv0:TriggerPersonalTask(uv0.ship.groupId)
@@ -79,21 +92,19 @@ slot0.InitClickEvent = function(slot0)
 	end)
 end
 
-slot0.TriggerPersonalTask = function(slot0, slot1)
+function slot0.TriggerPersonalTask(slot0, slot1)
 	if slot0.isFoldState then
 		return
 	end
 
-	if getProxy(TaskProxy):GetFlagShipInterActionTask() then
-		pg.m02:sendNotification(GAME.UPDATE_TASK_PROGRESS, {
-			taskId = slot3.id
-		})
-	end
+	slot0:TriggerInterActionTask()
 
-	for slot7, slot8 in ipairs(pg.task_data_trigger.all) do
-		if pg.task_data_trigger[slot8].group_id == slot1 then
-			if not slot2:getFinishTaskById(slot9.task_id) then
-				slot0:CheckStoryDownload(slot10, function ()
+	slot2 = getProxy(TaskProxy)
+
+	for slot6, slot7 in ipairs(pg.task_data_trigger.all) do
+		if pg.task_data_trigger[slot7].group_id == slot1 then
+			if not slot2:getFinishTaskById(slot8.task_id) then
+				slot0:CheckStoryDownload(slot9, function ()
 					pg.m02:sendNotification(GAME.TRIGGER_TASK, uv0)
 				end)
 
@@ -103,7 +114,17 @@ slot0.TriggerPersonalTask = function(slot0, slot1)
 	end
 end
 
-slot0.CheckStoryDownload = function(slot0, slot1, slot2)
+function slot0.TriggerInterActionTask(slot0)
+	if getProxy(TaskProxy):GetFlagShipInterActionTaskList() and #slot2 > 0 then
+		for slot6, slot7 in ipairs(slot2) do
+			pg.m02:sendNotification(GAME.UPDATE_TASK_PROGRESS, {
+				taskId = slot7.id
+			})
+		end
+	end
+end
+
+function slot0.CheckStoryDownload(slot0, slot1, slot2)
 	slot3 = {}
 	slot4 = slot1
 
@@ -130,8 +151,20 @@ slot0.CheckStoryDownload = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.TriggerEventAtFirstTime = function(slot0)
-	slot1 = function(slot0)
+function slot0.TriggerEventAtFirstTime(slot0)
+	if not slot0:IsLoaded() then
+		slot0.triggerWhenLoaded = true
+
+		return
+	end
+
+	slot0.triggerWhenLoaded = false
+
+	slot0:OnFirstTimeTriggerEvent()
+end
+
+function slot0.OnFirstTimeTriggerEvent(slot0)
+	function slot1(slot0)
 		uv0:_TriggerEvent(slot0)
 	end
 
@@ -146,7 +179,7 @@ slot0.TriggerEventAtFirstTime = function(slot0)
 	end
 end
 
-slot0._TriggerEvent = function(slot0, slot1)
+function slot0._TriggerEvent(slot0, slot1)
 	if uv0.assistantEvents[slot1].dialog ~= "" then
 		slot0:DisplayWord(slot2.dialog)
 	else
@@ -154,7 +187,7 @@ slot0._TriggerEvent = function(slot0, slot1)
 	end
 end
 
-slot0.TriggerEvent = function(slot0, slot1)
+function slot0.TriggerEvent(slot0, slot1)
 	if slot0.isDragAndZoomState then
 		return
 	end
@@ -168,7 +201,7 @@ slot0.TriggerEvent = function(slot0, slot1)
 	slot0:OnTriggerEvent()
 end
 
-slot0.TriggerNextEventAuto = function(slot0)
+function slot0.TriggerNextEventAuto(slot0)
 	if slot0.isPuase or slot0.isExited then
 		return
 	end
@@ -188,18 +221,24 @@ slot0.TriggerNextEventAuto = function(slot0)
 	slot0.timer:Start()
 end
 
-slot0.OnStartChatting = function(slot0)
+function slot0.OnStartChatting(slot0)
 	slot0.chatting = true
 end
 
-slot0.OnEndChatting = function(slot0)
+function slot0.OnEndChatting(slot0)
 	slot0.chatting = false
 end
 
-slot0.DisplayWord = function(slot0, slot1)
+function slot0.GetWordAndCv(slot0, slot1, slot2)
+	slot3, slot4, slot5, slot6, slot7, slot8 = ShipWordHelper.GetCvDataForShip(slot0.ship, slot2)
+
+	return slot3, slot4, slot5, slot6, slot7, slot8
+end
+
+function slot0.DisplayWord(slot0, slot1)
 	slot0:OnStartChatting()
 
-	slot2, slot3, slot4, slot5, slot6, slot7 = ShipWordHelper.GetCvDataForShip(slot0.ship, slot1)
+	slot2, slot3, slot4, slot5, slot6, slot7 = slot0:GetWordAndCv(slot0.ship, slot1)
 
 	if not slot4 or slot4 == nil or slot4 == "" or slot4 == "nil" then
 		slot0:OnEndChatting()
@@ -215,11 +254,11 @@ slot0.DisplayWord = function(slot0, slot1)
 
 	slot0:AdjustChatPosition()
 	slot0:OnDisplayWorld(slot1)
-	slot0:RegistChatSkipAction(slot1)
+	slot0:RegisterChatSkipAction(slot1)
 	slot0:PlayCvAndAnimation(slot6, slot5, slot3)
 end
 
-slot0.RegistChatSkipAction = function(slot0, slot1)
+function slot0.RegisterChatSkipAction(slot0, slot1)
 	removeOnButton(slot0.chatTf)
 	onButton(slot0, slot0.chatTf, function ()
 		if uv0 == "mission_complete" or uv0 == "mission" then
@@ -232,7 +271,7 @@ slot0.RegistChatSkipAction = function(slot0, slot1)
 	end)
 end
 
-slot0.PlayCvAndAnimation = function(slot0, slot1, slot2, slot3)
+function slot0.PlayCvAndAnimation(slot0, slot1, slot2, slot3)
 	if getProxy(ContextProxy):getContextByMediator(NewShipMediator) then
 		slot0:OnEndChatting()
 
@@ -261,16 +300,19 @@ slot0.PlayCvAndAnimation = function(slot0, slot1, slot2, slot3)
 			uv0:StartChatAnimtion(uv1, slot0)
 		end
 	}, function ()
-		uv0:TriggerNextEventAuto()
 		uv0:OnDisplayWordEnd()
 	end)
 end
 
-slot0.PlayCV = function(slot0, slot1, slot2, slot3, slot4)
-	slot0.cvLoader:Load(slot0.ship, slot3, 0, slot4)
+function slot0.OnDisplayWordEnd(slot0)
+	slot0:TriggerNextEventAuto()
 end
 
-slot0.AdjustChatPosition = function(slot0)
+function slot0.PlayCV(slot0, slot1, slot2, slot3, slot4)
+	slot0.cvLoader:Load(pg.CriMgr.GetCVBankName(ShipWordHelper.RawGetCVKey(slot0.ship.skinId)), slot3, 0, slot4)
+end
+
+function slot0.AdjustChatPosition(slot0)
 	if CHAT_POP_STR_LEN < #slot0.chatText:GetComponent(typeof(Text)).text then
 		slot1.alignment = TextAnchor.MiddleLeft
 	else
@@ -288,7 +330,7 @@ slot0.AdjustChatPosition = function(slot0)
 	end
 end
 
-slot0.StartChatAnimtion = function(slot0, slot1, slot2)
+function slot0.StartChatAnimtion(slot0, slot1, slot2)
 	slot3 = getProxy(SettingsProxy):ShouldShipMainSceneWord() and 1 or 0
 	slot5 = slot1 > 0 and slot1 or 3
 
@@ -297,7 +339,7 @@ slot0.StartChatAnimtion = function(slot0, slot1, slot2)
 	end))
 end
 
-slot0.StopChatAnimtion = function(slot0)
+function slot0.StopChatAnimtion(slot0)
 	if LeanTween.isTweening(slot0.chatTf.gameObject) then
 		LeanTween.cancel(slot0.chatTf.gameObject)
 	end
@@ -307,11 +349,11 @@ slot0.StopChatAnimtion = function(slot0)
 	slot0:OnEndChatting()
 end
 
-slot0.OnStopVoice = function(slot0)
+function slot0.OnStopVoice(slot0)
 	slot0.cvLoader:Stop()
 end
 
-slot0.CollectIdleEvents = function(slot0, slot1)
+function slot0.CollectIdleEvents(slot0, slot1)
 	slot2 = {}
 
 	if getProxy(EventProxy):hasFinishState() and slot1 ~= "event_complete" then
@@ -337,27 +379,27 @@ slot0.CollectIdleEvents = function(slot0, slot1)
 	return slot2
 end
 
-slot0.CollectTouchEvents = function(slot0)
+function slot0.CollectTouchEvents(slot0)
 	return uv0.filterAssistantEvents(uv0.PaintingTouchEvents, slot0.ship.skinId, slot0.ship:getCVIntimacy())
 end
 
-slot0.GetTouchEvent = function(slot0, slot1)
+function slot0.GetTouchEvent(slot0, slot1)
 	return uv0.filterAssistantEvents(uv0.getAssistantTouchEvents(slot1, slot0.ship.skinId), slot0.ship.skinId, 0)
 end
 
-slot0.GetIdleEvents = function(slot0)
+function slot0.GetIdleEvents(slot0)
 	return uv0.filterAssistantEvents(uv0.IdleEvents, slot0.ship.skinId, 0)
 end
 
-slot0.GetEventConfig = function(slot0, slot1)
+function slot0.GetEventConfig(slot0, slot1)
 	return uv0.assistantEvents[slot1]
 end
 
-slot0.GetSpecialTouchEvent = function(slot0, slot1)
+function slot0.GetSpecialTouchEvent(slot0, slot1)
 	return uv0.getPaintingTouchEvents(slot1)
 end
 
-slot0.RemoveTimer = function(slot0)
+function slot0.RemoveTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -365,11 +407,11 @@ slot0.RemoveTimer = function(slot0)
 	end
 end
 
-slot0.IsExited = function(slot0)
+function slot0.IsExited(slot0)
 	return slot0.isExited
 end
 
-slot0.Fold = function(slot0, slot1, slot2)
+function slot0.Fold(slot0, slot1, slot2)
 	slot0.isFoldState = slot1
 
 	slot0:RemoveMoveTimer()
@@ -385,7 +427,7 @@ slot0.Fold = function(slot0, slot1, slot2)
 	slot0:OnFold(slot1)
 end
 
-slot0.RemoveMoveTimer = function(slot0)
+function slot0.RemoveMoveTimer(slot0)
 	if slot0.moveTimer then
 		slot0.moveTimer:Stop()
 
@@ -393,7 +435,7 @@ slot0.RemoveMoveTimer = function(slot0)
 	end
 end
 
-slot0.EnableOrDisableMove = function(slot0, slot1)
+function slot0.EnableOrDisableMove(slot0, slot1)
 	slot0.isDragAndZoomState = slot1
 
 	slot0:RemoveMoveTimer()
@@ -409,15 +451,15 @@ slot0.EnableOrDisableMove = function(slot0, slot1)
 	slot0:OnEnableOrDisableDragAndZoom(slot1)
 end
 
-slot0.GetOffset = function(slot0)
+function slot0.GetOffset(slot0)
 	return 0
 end
 
-slot0.IslimitYPos = function(slot0)
+function slot0.IslimitYPos(slot0)
 	return false
 end
 
-slot0.Puase = function(slot0)
+function slot0.Puase(slot0)
 	slot0.isPuase = true
 
 	slot0:RemoveMoveTimer()
@@ -427,21 +469,25 @@ slot0.Puase = function(slot0)
 	slot0:OnPuase()
 end
 
-slot0.Resume = function(slot0)
+function slot0.Resume(slot0)
 	slot0.isPuase = false
 
 	slot0:TriggerNextEventAuto()
 	slot0:OnResume()
 end
 
-slot0.updateShip = function(slot0, slot1)
+function slot0.updateShip(slot0, slot1)
+	if slot1 and slot0.ship.id == slot1.id then
+		slot0.ship = slot1
+	end
+
 	slot0:OnUpdateShip(slot1)
 end
 
-slot0.OnUpdateShip = function(slot0, slot1)
+function slot0.OnUpdateShip(slot0, slot1)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0.isExited = true
 
 	pg.DelegateInfo.Dispose(slot0)
@@ -453,46 +499,44 @@ slot0.Dispose = function(slot0)
 	slot0.cvLoader:Dispose()
 
 	slot0.cvLoader = nil
+	slot0.triggerWhenLoaded = false
 
 	slot0:RemoveTimer()
 	slot0:RemoveMoveTimer()
 end
 
-slot0.OnLoad = function(slot0, slot1)
+function slot0.OnLoad(slot0, slot1)
 	slot1()
 end
 
-slot0.OnUnload = function(slot0)
+function slot0.OnUnload(slot0)
 end
 
-slot0.OnClick = function(slot0)
+function slot0.OnClick(slot0)
 end
 
-slot0.OnLongPress = function(slot0)
+function slot0.OnLongPress(slot0)
 end
 
-slot0.OnTriggerEvent = function(slot0)
+function slot0.OnTriggerEvent(slot0)
 end
 
-slot0.OnTriggerEventAuto = function(slot0)
+function slot0.OnTriggerEventAuto(slot0)
 end
 
-slot0.OnDisplayWorld = function(slot0, slot1)
+function slot0.OnDisplayWorld(slot0, slot1)
 end
 
-slot0.OnDisplayWordEnd = function(slot0)
+function slot0.OnFold(slot0, slot1)
 end
 
-slot0.OnFold = function(slot0, slot1)
+function slot0.OnEnableOrDisableDragAndZoom(slot0, slot1)
 end
 
-slot0.OnEnableOrDisableDragAndZoom = function(slot0, slot1)
+function slot0.OnPuase(slot0)
 end
 
-slot0.OnPuase = function(slot0)
-end
-
-slot0.OnResume = function(slot0)
+function slot0.OnResume(slot0)
 end
 
 return slot0

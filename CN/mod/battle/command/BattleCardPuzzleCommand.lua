@@ -6,11 +6,11 @@ slot3 = class("BattleCardPuzzleCommand", slot0.MVC.Command)
 slot0.Battle.BattleCardPuzzleCommand = slot3
 slot3.__name = "BattleCardPuzzleCommand"
 
-slot3.Ctor = function(slot0)
+function slot3.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot3.Initialize = function(slot0)
+function slot3.Initialize(slot0)
 	slot0:Init()
 	uv0.super.Initialize(slot0)
 
@@ -20,7 +20,7 @@ slot3.Initialize = function(slot0)
 	slot0:AddEvent()
 end
 
-slot3.DoPrologue = function(slot0)
+function slot3.DoPrologue(slot0)
 	pg.UIMgr.GetInstance():Marching()
 	slot0._uiMediator:SeaSurfaceShift(45, 0, nil, function ()
 		uv0._uiMediator:OpeningEffect(function ()
@@ -39,13 +39,13 @@ slot3.DoPrologue = function(slot0)
 	end)
 end
 
-slot3.Init = function(slot0)
+function slot3.Init(slot0)
 	slot0._unitDataList = {}
 
 	slot0:initWaveModule()
 end
 
-slot3.initWaveModule = function(slot0)
+function slot3.initWaveModule(slot0)
 	slot0._waveUpdater = uv0.Battle.BattleWaveUpdater.New(function (slot0, slot1, slot2)
 		uv0._dataProxy:SpawnMonster(slot0, slot1, slot2, uv1.Battle.BattleConfig.FOE_CODE)
 	end, function (slot0)
@@ -66,7 +66,7 @@ slot3.initWaveModule = function(slot0)
 	end)
 end
 
-slot3.Clear = function(slot0)
+function slot3.Clear(slot0)
 	for slot4, slot5 in pairs(slot0._unitDataList) do
 		slot0:UnregisterUnitEvent(slot5)
 
@@ -76,13 +76,13 @@ slot3.Clear = function(slot0)
 	slot0._waveUpdater:Clear()
 end
 
-slot3.Reinitialize = function(slot0)
+function slot3.Reinitialize(slot0)
 	slot0._state:Deactive()
 	slot0:Clear()
 	slot0:Init()
 end
 
-slot3.Dispose = function(slot0)
+function slot3.Dispose(slot0)
 	uv0.Battle.BattleDataProxy.Update = uv0.Battle.BattleDebugConsole.ProxyUpdateNormal
 	uv0.Battle.BattleDataProxy.UpdateAutoComponent = uv0.Battle.BattleDebugConsole.ProxyUpdateAutoComponentNormal
 
@@ -92,27 +92,27 @@ slot3.Dispose = function(slot0)
 	uv1.super.Dispose(slot0)
 end
 
-slot3.AddEvent = function(slot0)
+function slot3.AddEvent(slot0)
 	slot0._dataProxy:RegisterEventListener(slot0, uv0.STAGE_DATA_INIT_FINISH, slot0.onInitBattle)
 	slot0._dataProxy:RegisterEventListener(slot0, uv0.ADD_UNIT, slot0.onAddUnit)
 	slot0._dataProxy:RegisterEventListener(slot0, uv0.REMOVE_UNIT, slot0.onRemoveUnit)
 	slot0._dataProxy:RegisterEventListener(slot0, uv0.SHUT_DOWN_PLAYER, slot0.onPlayerShutDown)
 end
 
-slot3.RemoveEvent = function(slot0)
+function slot3.RemoveEvent(slot0)
 	slot0._dataProxy:UnregisterEventListener(slot0, uv0.STAGE_DATA_INIT_FINISH)
 	slot0._dataProxy:UnregisterEventListener(slot0, uv0.ADD_UNIT)
 	slot0._dataProxy:UnregisterEventListener(slot0, uv0.REMOVE_UNIT)
 	slot0._dataProxy:UnregisterEventListener(slot0, uv0.SHUT_DOWN_PLAYER)
 end
 
-slot3.onInitBattle = function(slot0)
+function slot3.onInitBattle(slot0)
 	slot0._userFleet = slot0._dataProxy:GetFleetByIFF(uv0.Battle.BattleConfig.FRIENDLY_CODE)
 
 	slot0._waveUpdater:SetWavesData(slot0._dataProxy:GetStageInfo())
 end
 
-slot3.onAddUnit = function(slot0, slot1)
+function slot3.onAddUnit(slot0, slot1)
 	slot3 = slot1.Data.unit
 
 	slot0:RegisterUnitEvent(slot3)
@@ -124,7 +124,7 @@ slot3.onAddUnit = function(slot0, slot1)
 	end
 end
 
-slot3.RegisterUnitEvent = function(slot0, slot1)
+function slot3.RegisterUnitEvent(slot0, slot1)
 	slot1:RegisterEventListener(slot0, uv0.WILL_DIE, slot0.onWillDie)
 	slot1:RegisterEventListener(slot0, uv0.DYING, slot0.onUnitDying)
 
@@ -133,7 +133,7 @@ slot3.RegisterUnitEvent = function(slot0, slot1)
 	end
 end
 
-slot3.UnregisterUnitEvent = function(slot0, slot1)
+function slot3.UnregisterUnitEvent(slot0, slot1)
 	slot1:UnregisterEventListener(slot0, uv0.WILL_DIE)
 	slot1:UnregisterEventListener(slot0, uv0.DYING)
 
@@ -142,7 +142,7 @@ slot3.UnregisterUnitEvent = function(slot0, slot1)
 	end
 end
 
-slot3.onRemoveUnit = function(slot0, slot1)
+function slot3.onRemoveUnit(slot0, slot1)
 	slot2 = slot1.Data.UID
 
 	slot0._waveUpdater:RemoveMonster(slot2)
@@ -156,16 +156,16 @@ slot3.onRemoveUnit = function(slot0, slot1)
 	slot0._unitDataList[slot2] = nil
 end
 
-slot3.onPlayerShutDown = function(slot0, slot1)
+function slot3.onPlayerShutDown(slot0, slot1)
 	slot0:CalcStatistic()
 	slot0._state:BattleEnd()
 end
 
-slot3.onUnitDying = function(slot0, slot1)
+function slot3.onUnitDying(slot0, slot1)
 	slot0._dataProxy:KillUnit(slot1.Dispatcher:GetUniqueID())
 end
 
-slot3.onWillDie = function(slot0, slot1)
+function slot3.onWillDie(slot0, slot1)
 	slot2 = slot1.Dispatcher
 
 	slot0._dataProxy:CalcBattleScoreWhenDead(slot2)
@@ -177,10 +177,10 @@ slot3.onWillDie = function(slot0, slot1)
 	end
 end
 
-slot3.onShutDownPlayer = function(slot0, slot1)
+function slot3.onShutDownPlayer(slot0, slot1)
 	slot0._dataProxy:ShutdownPlayerUnit(slot1.Dispatcher:GetUniqueID())
 end
 
-slot3.CalcStatistic = function(slot0)
+function slot3.CalcStatistic(slot0)
 	slot0._dataProxy:CalcCardPuzzleScoreAtEnd(slot0._userFleet)
 end

@@ -1,14 +1,14 @@
 slot0 = class("LevelInfoView", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "LevelStageInfoView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:InitUI()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0:isShowing() then
 		slot0:Hide()
 	end
@@ -23,23 +23,23 @@ slot0.OnDestroy = function(slot0)
 	end
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	setActive(slot0._tf, true)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	slot0:clear()
 	setActive(slot0._tf, false)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-slot0.setCBFunc = function(slot0, slot1, slot2)
+function slot0.setCBFunc(slot0, slot1, slot2)
 	slot0.onConfirm = slot1
 	slot0.onCancel = slot2
 end
 
-slot0.InitUI = function(slot0)
+function slot0.InitUI(slot0)
 	slot0.titleBG = slot0:findTF("panel/title")
 	slot0.titleBGDecoration = slot0:findTF("panel/title/Image")
 	slot0.titleIcon = slot0:findTF("panel/title/icon")
@@ -110,7 +110,7 @@ end
 slot1 = 525
 slot2 = 373
 
-slot0.set = function(slot0, slot1, slot2)
+function slot0.set(slot0, slot1, slot2)
 	slot0:cancelTween()
 
 	slot0.chapter = slot1
@@ -339,7 +339,7 @@ slot0.set = function(slot0, slot1, slot2)
 	table.insert(slot0.delayTween, LeanTween.moveX(slot0.passState, 0, 0.35):setEase(LeanTweenType.easeInOutSine):setDelay(0.3).uniqueId)
 end
 
-slot0.cancelTween = function(slot0)
+function slot0.cancelTween(slot0)
 	_.each(slot0.delayTween, function (slot0)
 		LeanTween.cancel(slot0)
 	end)
@@ -347,7 +347,7 @@ slot0.cancelTween = function(slot0)
 	slot0.delayTween = {}
 end
 
-slot0.updateAchieve = function(slot0, slot1, slot2, slot3)
+function slot0.updateAchieve(slot0, slot1, slot2, slot3)
 	if slot1 == UIItemList.EventUpdate then
 		slot5 = findTF(slot3, "desc")
 
@@ -358,27 +358,19 @@ slot0.updateAchieve = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.updateDrop = function(slot0, slot1, slot2, slot3)
+function slot0.updateDrop(slot0, slot1, slot2, slot3)
 	if slot1 == UIItemList.EventUpdate then
-		slot4 = slot0.awards[slot2 + 1]
-
-		updateDrop(slot3, {
-			type = slot4[1],
-			id = slot4[2],
-			count = slot4[3]
-		})
+		updateDrop(slot3, Drop.Create(slot0.awards[slot2 + 1]))
 		onButton(slot0, slot3, function ()
-			slot1 = {
+			if ({
 				[99.0] = true
-			}
+			})[uv0:getConfig("type")] then
+				slot2 = uv1
 
-			if pg.item_data_statistics[uv0[2]] and slot1[slot0.type] then
-				slot3 = uv1
-
-				slot3:emit(LevelMediator2.GET_CHAPTER_DROP_SHIP_LIST, uv1.chapter.id, function (slot0)
+				slot2:emit(LevelMediator2.GET_CHAPTER_DROP_SHIP_LIST, uv1.chapter.id, function (slot0)
 					slot2 = {}
 
-					for slot6, slot7 in ipairs(uv0.display_icon) do
+					for slot6, slot7 in ipairs(uv0:getConfig("display_icon")) do
 						slot9 = slot7[2]
 						slot2[#slot2 + 1] = {
 							type = slot8,
@@ -390,18 +382,18 @@ slot0.updateDrop = function(slot0, slot1, slot2, slot3)
 					uv1:emit(BaseUI.ON_DROP_LIST, {
 						item2Row = true,
 						itemList = slot2,
-						content = uv0.display
+						content = uv0:getConfig("display")
 					})
 					uv1:initTestShowDrop(uv0, Clone(slot2))
 				end)
 			else
-				uv1:emit(BaseUI.ON_DROP, uv2)
+				uv1:emit(BaseUI.ON_DROP, uv0)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-slot0.getChapterAwards = function(slot0)
+function slot0.getChapterAwards(slot0)
 	slot1 = slot0.chapter
 	slot2 = Clone(slot1:getConfig("awards"))
 
@@ -411,10 +403,19 @@ slot0.getChapterAwards = function(slot0)
 		end
 	end
 
-	slot5 = {}
-	slot6 = {}
+	slot4 = {
+		slot1:getConfig("boss_expedition_id"),
+		slot1:getConfig("ai_expedition_list")
+	}
 
-	slot7 = function(slot0)
+	if slot1:getPlayType() == ChapterConst.TypeMultiStageBoss then
+		table.insert(slot4, pg.chapter_model_multistageboss[slot1.id].boss_expedition_id)
+	end
+
+	slot6 = {}
+	slot7 = {}
+
+	function slot8(slot0)
 		for slot4, slot5 in ipairs(uv0) do
 			if slot5 == slot0 then
 				return false
@@ -424,33 +425,30 @@ slot0.getChapterAwards = function(slot0)
 		return true
 	end
 
-	for slot11, slot12 in ipairs(_.flatten({
-		slot1:getConfig("boss_expedition_id"),
-		slot1:getConfig("ai_expedition_list")
-	})) do
-		if checkExist(pg.expedition_activity_template[slot12], {
+	for slot12, slot13 in ipairs(_.flatten(slot4)) do
+		if checkExist(pg.expedition_activity_template[slot13], {
 			"pt_drop_display"
-		}) and type(slot13) == "table" then
-			for slot17, slot18 in ipairs(slot13) do
-				if slot7(slot18[2]) then
-					table.insert(slot5, slot18[2])
+		}) and type(slot14) == "table" then
+			for slot18, slot19 in ipairs(slot14) do
+				if slot8(slot19[2]) then
+					table.insert(slot6, slot19[2])
 
-					slot6[slot18[2]] = {}
+					slot7[slot19[2]] = {}
 				end
 
-				slot6[slot18[2]][slot18[1]] = true
+				slot7[slot19[2]][slot19[1]] = true
 			end
 		end
 	end
 
-	slot8 = getProxy(ActivityProxy)
+	slot9 = getProxy(ActivityProxy)
 
-	for slot12 = #slot5, 1, -1 do
-		for slot16, slot17 in pairs(slot6[slot5[slot12]]) do
-			if slot8:getActivityById(slot16) and not slot18:isEnd() then
+	for slot13 = #slot6, 1, -1 do
+		for slot17, slot18 in pairs(slot7[slot6[slot13]]) do
+			if slot9:getActivityById(slot17) and not slot19:isEnd() then
 				table.insert(slot2, 1, {
 					2,
-					id2ItemId(slot5[slot12])
+					id2ItemId(slot6[slot13])
 				})
 
 				break
@@ -461,7 +459,7 @@ slot0.getChapterAwards = function(slot0)
 	return slot2
 end
 
-slot0.initTestShowDrop = function(slot0, slot1, slot2)
+function slot0.initTestShowDrop(slot0, slot1, slot2)
 	if IsUnityEditor then
 		if IsNil(pg.MsgboxMgr.GetInstance()._go.transform:Find("button_test_show_drop")) then
 			slot4 = GameObject.New("button_test_show_drop")
@@ -485,19 +483,19 @@ slot0.initTestShowDrop = function(slot0, slot1, slot2)
 			uv1:emit(BaseUI.ON_DROP_LIST, {
 				item2Row = true,
 				itemList = uv0,
-				content = uv2.display
+				content = uv2:getConfig("display")
 			})
 		end)
 	end
 end
 
-slot0.clearTestShowDrop = function(slot0)
+function slot0.clearTestShowDrop(slot0)
 	if IsUnityEditor and not IsNil(pg.MsgboxMgr.GetInstance()._go.transform:Find("button_test_show_drop")) then
 		Destroy(slot2)
 	end
 end
 
-slot0.ShowChapterRewardPanel = function(slot0)
+function slot0.ShowChapterRewardPanel(slot0)
 	if slot0.rewardPanel == nil then
 		slot0.rewardPanel = ChapterRewardPanel.New(slot0._tf.parent, slot0.event, slot0.contextData)
 
@@ -507,7 +505,7 @@ slot0.ShowChapterRewardPanel = function(slot0)
 	slot0.rewardPanel:ActionInvoke("Enter", slot0.chapter)
 end
 
-slot0.ClearChapterRewardPanel = function(slot0)
+function slot0.ClearChapterRewardPanel(slot0)
 	if slot0.rewardPanel ~= nil then
 		slot0.rewardPanel:Destroy()
 
@@ -515,7 +513,7 @@ slot0.ClearChapterRewardPanel = function(slot0)
 	end
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	slot0:cancelTween()
 	slot0.dropList:each(function (slot0, slot1)
 		clearDrop(slot1)

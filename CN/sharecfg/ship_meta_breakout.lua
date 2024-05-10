@@ -14,6 +14,14 @@ pg.ship_meta_breakout = setmetatable({
 		9701032,
 		9701033,
 		9701034,
+		9701041,
+		9701042,
+		9701043,
+		9701044,
+		9701051,
+		9701052,
+		9701053,
+		9701054,
 		9702011,
 		9702012,
 		9702013,
@@ -38,6 +46,10 @@ pg.ship_meta_breakout = setmetatable({
 		9702062,
 		9702063,
 		9702064,
+		9702071,
+		9702072,
+		9702073,
+		9702074,
 		9703011,
 		9703012,
 		9703013,
@@ -74,6 +86,10 @@ pg.ship_meta_breakout = setmetatable({
 		9705042,
 		9705043,
 		9705044,
+		9705051,
+		9705052,
+		9705053,
+		9705054,
 		9706011,
 		9706012,
 		9706013,
@@ -305,6 +321,132 @@ pg.base.ship_meta_breakout = {
 		id = 9701034,
 		item1 = 21024,
 		pre_id = 9701033,
+		weapon_ids = {}
+	},
+	[9701041] = {
+		breakout_view = "习得技能【破敌之炬·金伯利】/全武器效率提高2%",
+		gold = 500,
+		breakout_id = 9701042,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701041,
+		item1 = 21029,
+		pre_id = 0,
+		weapon_ids = {
+			80101
+		}
+	},
+	[9701042] = {
+		breakout_view = "鱼雷底座+1/鱼雷预装填+1/全武器效率提高3%",
+		gold = 1500,
+		breakout_id = 9701043,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701042,
+		item1 = 21029,
+		pre_id = 9701041,
+		weapon_ids = {
+			105,
+			105
+		}
+	},
+	[9701043] = {
+		breakout_view = "【破敌之炬·金伯利】升级/全武器效率提高5%",
+		gold = 2500,
+		breakout_id = 9701044,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701043,
+		item1 = 21029,
+		pre_id = 9701042,
+		weapon_ids = {
+			80102
+		}
+	},
+	[9701044] = {
+		breakout_view = "无",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701044,
+		item1 = 21029,
+		pre_id = 9701043,
+		weapon_ids = {}
+	},
+	[9701051] = {
+		breakout_view = "习得技能【逐光之焰·吸血鬼】I/鱼雷效率提高5%",
+		gold = 500,
+		breakout_id = 9701052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701051,
+		item1 = 21032,
+		pre_id = 0,
+		weapon_ids = {
+			80221
+		}
+	},
+	[9701052] = {
+		breakout_view = "鱼雷底座+1/鱼雷预装填+1/主炮效率提高10%",
+		gold = 1500,
+		breakout_id = 9701053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701052,
+		item1 = 21032,
+		pre_id = 9701051,
+		weapon_ids = {
+			105,
+			105
+		}
+	},
+	[9701053] = {
+		breakout_view = "【逐光之焰·吸血鬼】升级/全武器效率提高5%",
+		gold = 2500,
+		breakout_id = 9701054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701053,
+		item1 = 21032,
+		pre_id = 9701052,
+		weapon_ids = {
+			80222
+		}
+	},
+	[9701054] = {
+		breakout_view = "无",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701054,
+		item1 = 21032,
+		pre_id = 9701053,
 		weapon_ids = {}
 	},
 	[9702011] = {
@@ -683,6 +825,69 @@ pg.base.ship_meta_breakout = {
 		id = 9702064,
 		item1 = 21028,
 		pre_id = 9702063,
+		weapon_ids = {}
+	},
+	[9702071] = {
+		breakout_view = "获得【摇曳之火·水星纪念】/主炮效率提高5%",
+		gold = 1000,
+		breakout_id = 9702072,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9702071,
+		item1 = 21030,
+		pre_id = 0,
+		weapon_ids = {
+			170411
+		}
+	},
+	[9702072] = {
+		breakout_view = "主炮底座+1/主炮效率提高10%",
+		gold = 3000,
+		breakout_id = 9702073,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9702072,
+		item1 = 21030,
+		pre_id = 9702071,
+		weapon_ids = {
+			7200,
+			7200
+		}
+	},
+	[9702073] = {
+		breakout_view = "【摇曳之火·水星纪念】升级/主炮效率提高15%",
+		gold = 10000,
+		breakout_id = 9702074,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9702073,
+		item1 = 21030,
+		pre_id = 9702072,
+		weapon_ids = {
+			170412
+		}
+	},
+	[9702074] = {
+		breakout_view = "无",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9702074,
+		item1 = 21030,
+		pre_id = 9702073,
 		weapon_ids = {}
 	},
 	[9703011] = {
@@ -1277,6 +1482,73 @@ pg.base.ship_meta_breakout = {
 		id = 9705044,
 		item1 = 21019,
 		pre_id = 9705043,
+		weapon_ids = {}
+	},
+	[9705051] = {
+		breakout_view = "习得技能【构造之理·罗德尼】/主炮底座+1/主炮效率提高5%",
+		gold = 1000,
+		breakout_id = 9705052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9705051,
+		item1 = 21031,
+		pre_id = 0,
+		weapon_ids = {
+			24200,
+			24200
+		}
+	},
+	[9705052] = {
+		breakout_view = "副炮底座+2/主炮效率提高10%",
+		gold = 3000,
+		breakout_id = 9705053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9705052,
+		item1 = 21031,
+		pre_id = 9705051,
+		weapon_ids = {
+			22100,
+			22100,
+			22100
+		}
+	},
+	[9705053] = {
+		breakout_view = "【构造之理·罗德尼】升级/主炮底座+1/主炮效率提高15%",
+		gold = 10000,
+		breakout_id = 9705054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9705053,
+		item1 = 21031,
+		pre_id = 9705052,
+		weapon_ids = {
+			24200,
+			24200,
+			24200
+		}
+	},
+	[9705054] = {
+		breakout_view = "无",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9705054,
+		item1 = 21031,
+		pre_id = 9705053,
 		weapon_ids = {}
 	},
 	[9706011] = {

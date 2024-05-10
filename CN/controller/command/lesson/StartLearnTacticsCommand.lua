@@ -1,6 +1,6 @@
 slot0 = class("StartLearnTacticsCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.shipId
 	slot5 = slot2.skillPos
@@ -23,7 +23,7 @@ slot0.execute = function(slot0, slot1)
 		if slot0.result == 0 then
 			slot3 = Student.New(slot0.class_info)
 
-			slot3:setTime(pg.item_data_template[uv0].usage_arg[1])
+			slot3:setTime(Item.getConfigData(uv0).usage_arg[1])
 			slot3:setLesson(uv0)
 			getProxy(NavalAcademyProxy):addStudent(slot3)
 			uv1:removeItemById(uv2.id, 1)

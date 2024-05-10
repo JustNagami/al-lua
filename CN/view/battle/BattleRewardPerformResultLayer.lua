@@ -1,6 +1,6 @@
 slot0 = class("BattleRewardRerformResultLayer", import(".BattleResultLayer"))
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	setText(slot0._levelText, pg.expedition_data_template[slot0.contextData.stageId].name)
 
 	slot3 = rtf(slot0._grade)
@@ -27,17 +27,17 @@ slot0.didEnter = function(slot0)
 	end, SFX_CONFIRM)
 end
 
-slot0.skip = function(slot0)
+function slot0.skip(slot0)
 	if slot0._stateFlag == BattleResultLayer.STATE_REPORTED then
 		slot0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
 	end
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	triggerButton(slot0._skipBtn)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	LeanTween.cancel(go(slot0._tf))
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end

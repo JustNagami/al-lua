@@ -12,13 +12,13 @@ slot0.ON_CHANGE_FLEET = "LimitChallengePreCombatMediator:ON_CHANGE_FLEET"
 slot0.ON_CMD_SKILL = "LimitChallengePreCombatMediator:ON_CMD_SKILL"
 slot0.ON_SELECT_COMMANDER = "LimitChallengePreCombatMediator:ON_SELECT_COMMANDER"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bindEvent()
 
 	slot0.ships = getProxy(BayProxy):getRawData()
 
 	slot0.viewComponent:SetShips(slot0.ships)
-	slot0.viewComponent:SetOpenCommander(pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommandRoomMediator") and not LOCK_COMMANDER)
+	slot0.viewComponent:SetOpenCommander(pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator") and not LOCK_COMMANDER)
 
 	slot3 = _.map({
 		FleetProxy.CHALLENGE_FLEET_ID,
@@ -38,7 +38,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:SetStageID(slot0.contextData.stageId)
 end
 
-slot0.bindEvent = function(slot0)
+function slot0.bindEvent(slot0)
 	slot0:bind(uv0.ON_CHANGE_FLEET, function (slot0, slot1)
 		uv0:changeFleet(slot1)
 	end)
@@ -210,7 +210,7 @@ slot0.bindEvent = function(slot0)
 	end)
 end
 
-slot0.onAutoBtn = function(slot0, slot1)
+function slot0.onAutoBtn(slot0, slot1)
 	slot0:sendNotification(GAME.AUTO_BOT, {
 		isActiveBot = slot1.isOn,
 		toggle = slot1.toggle,
@@ -218,7 +218,7 @@ slot0.onAutoBtn = function(slot0, slot1)
 	})
 end
 
-slot0.onAutoSubBtn = function(slot0, slot1)
+function slot0.onAutoSubBtn(slot0, slot1)
 	slot0:sendNotification(GAME.AUTO_SUB, {
 		isActiveSub = slot1.isOn,
 		toggle = slot1.toggle,
@@ -226,7 +226,7 @@ slot0.onAutoSubBtn = function(slot0, slot1)
 	})
 end
 
-slot0.changeFleet = function(slot0, slot1)
+function slot0.changeFleet(slot0, slot1)
 	slot0.contextData.fleetIndex = table.indexof(slot0.contextData.fleets, _.detect(slot0.contextData.fleets, function (slot0)
 		return slot0.id == uv0
 	end))
@@ -236,7 +236,7 @@ slot0.changeFleet = function(slot0, slot1)
 	slot0.viewComponent:SetFleetStepper()
 end
 
-slot0.refreshEdit = function(slot0, slot1)
+function slot0.refreshEdit(slot0, slot1)
 	slot0.viewComponent:UpdateFleetView(false)
 
 	slot2 = slot0.contextData.fleets
@@ -245,7 +245,7 @@ slot0.refreshEdit = function(slot0, slot1)
 	getProxy(FleetProxy):updateFleet(slot1)
 end
 
-slot0.removeShipFromFleet = function(slot0, slot1, slot2)
+function slot0.removeShipFromFleet(slot0, slot1, slot2)
 	if not slot1:canRemove(slot2) then
 		slot3, slot4 = slot1:getShipPos(slot2)
 
@@ -259,14 +259,14 @@ slot0.removeShipFromFleet = function(slot0, slot1, slot2)
 	return true
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.BEGIN_STAGE_DONE,
 		GAME.BEGIN_STAGE_ERRO
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.BEGIN_STAGE_DONE then
@@ -282,11 +282,11 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	uv0.super.remove(slot0)
 end
 
-slot0.getDockCallbackFuncs = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.getDockCallbackFuncs(slot0, slot1, slot2, slot3, slot4)
 	slot5 = getProxy(BayProxy)
 
 	return function (slot0, slot1)
@@ -333,16 +333,16 @@ slot0.getDockCallbackFuncs = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.onSelectCommander = function(slot0, slot1, slot2)
+function slot0.onSelectCommander(slot0, slot1, slot2)
 	slot3 = _.detect(slot0, function (slot0)
 		return slot0.id == uv0
 	end)
 
 	assert(slot3)
-	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 		maxCount = 1,
-		mode = CommandRoomScene.MODE_SELECT,
-		fleetType = CommandRoomScene.FLEET_TYPE_LIMIT_CHALLENGE,
+		mode = CommanderCatScene.MODE_SELECT,
+		fleetType = CommanderCatScene.FLEET_TYPE_LIMIT_CHALLENGE,
 		activeCommander = slot3:getCommanderByPos(slot1),
 		ignoredIds = {},
 		onCommander = function (slot0)

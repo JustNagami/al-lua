@@ -12,7 +12,7 @@ slot0.ON_AUTO = "BattleMediator:ON_AUTO"
 slot0.ON_PUZZLE_RELIC = "BattleMediator.ON_PUZZLE_RELIC"
 slot0.ON_PUZZLE_CARD = "BattleMediator.ON_PUZZLE_CARD"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot1 = pg.BrightnessMgr.GetInstance()
 
 	slot1:SetScreenNeverSleep(true)
@@ -122,13 +122,27 @@ slot0.register = function(slot0)
 					}
 				}))
 			end
-		elseif uv0 == SYSTEM_BOSS_RUSH and getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
+		elseif uv0 == SYSTEM_BOSS_RUSH then
+			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
+				getProxy(ContextProxy):GetPrevContext(1):addChild(Context.New({
+					mediator = BossRushTotalRewardPanelMediator,
+					viewComponent = BossRushTotalRewardPanel,
+					data = {
+						isLayer = true,
+						rewards = getProxy(ActivityProxy):PopBossRushAwards()
+					}
+				}))
+			end
+		elseif uv0 == SYSTEM_BOSS_SINGLE and getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
 			getProxy(ContextProxy):GetPrevContext(1):addChild(Context.New({
-				mediator = BossRushTotalRewardPanelMediator,
-				viewComponent = BossRushTotalRewardPanel,
+				mediator = BossSingleTotalRewardPanelMediator,
+				viewComponent = BossSingleTotalRewardPanel,
 				data = {
+					isAutoFight = false,
 					isLayer = true,
-					rewards = getProxy(ActivityProxy):PopBossRushAwards()
+					rewards = getProxy(ChapterProxy):PopBossSingleRewards(),
+					continuousBattleTimes = uv1.contextData.continuousBattleTimes,
+					totalBattleTimes = uv1.contextData.totalBattleTimes
 				}
 			}))
 		end
@@ -151,7 +165,18 @@ slot0.register = function(slot0)
 	end)
 
 	if slot0.contextData.continuousBattleTimes and slot0.contextData.continuousBattleTimes > 0 then
-		if not getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
+		if slot2 == SYSTEM_BOSS_SINGLE then
+			if not getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
+				slot3 = CreateShell(slot0.contextData)
+				slot3.LayerWeightMgr_weight = LayerWeightConst.BASE_LAYER
+
+				slot0:addSubLayers(Context.New({
+					mediator = BossSingleContinuousOperationMediator,
+					viewComponent = BossSingleContinuousOperationPanel,
+					data = slot3
+				}))
+			end
+		elseif not getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
 			slot3 = CreateShell(slot0.contextData)
 			slot3.LayerWeightMgr_weight = LayerWeightConst.BASE_LAYER
 
@@ -172,7 +197,7 @@ slot0.register = function(slot0)
 	end
 end
 
-slot0.onAutoBtn = function(slot0, slot1)
+function slot0.onAutoBtn(slot0, slot1)
 	slot0:sendNotification(GAME.AUTO_BOT, {
 		isActiveBot = slot1.isOn,
 		toggle = slot1.toggle,
@@ -180,7 +205,7 @@ slot0.onAutoBtn = function(slot0, slot1)
 	})
 end
 
-slot0.onPauseBtn = function(slot0)
+function slot0.onPauseBtn(slot0)
 	slot1 = ys.Battle.BattleState.GetInstance()
 
 	if slot0.contextData.system == SYSTEM_PROLOGUE or slot0.contextData.system == SYSTEM_PERFORM then
@@ -272,7 +297,7 @@ slot0.onPauseBtn = function(slot0)
 	end
 end
 
-slot0.warnFunc = function(slot0, slot1)
+function slot0.warnFunc(slot0, slot1)
 	slot2 = ys.Battle.BattleState.GetInstance()
 	slot3 = slot0.contextData.system
 	slot4, slot5 = nil
@@ -301,10 +326,10 @@ slot0.warnFunc = function(slot0, slot1)
 	})
 end
 
-slot0.guideDispatch = function(slot0)
+function slot0.guideDispatch(slot0)
 end
 
-slot1 = function(slot0, slot1, slot2, slot3)
+function slot1(slot0, slot1, slot2, slot3)
 	slot4 = {}
 
 	for slot8, slot9 in ipairs(slot1:getActiveEquipments()) do
@@ -325,7 +350,7 @@ slot1 = function(slot0, slot1, slot2, slot3)
 
 	slot5 = {}
 
-	slot6 = function(slot0)
+	function slot6(slot0)
 		return {
 			level = slot0.level,
 			id = ys.Battle.BattleDataFunction.SkillTranform(uv1, uv0:RemapSkillId(slot0.id))
@@ -417,7 +442,7 @@ slot1 = function(slot0, slot1, slot2, slot3)
 	}
 end
 
-slot2 = function(slot0, slot1)
+function slot2(slot0, slot1)
 	slot2 = slot0:getProperties(slot1)
 	slot3 = slot0:getConfig("id")
 
@@ -454,7 +479,7 @@ slot2 = function(slot0, slot1)
 	}
 end
 
-slot0.GenBattleData = function(slot0)
+function slot0.GenBattleData(slot0)
 	slot1 = {}
 	slot0._battleData = slot1
 	slot1.battleType = slot0.contextData.system
@@ -527,7 +552,7 @@ slot0.GenBattleData = function(slot0)
 
 		slot0.mainShips = {}
 
-		slot17 = function(slot0, slot1, slot2)
+		function slot17(slot0, slot1, slot2)
 			slot4 = slot0.hpRant * 0.0001
 
 			if table.contains(uv0, slot0.id) then
@@ -587,7 +612,7 @@ slot0.GenBattleData = function(slot0)
 
 		slot0.mainShips = {}
 
-		slot16 = function(slot0, slot1, slot2)
+		function slot16(slot0, slot1, slot2)
 			slot4 = slot0.hpRant * 0.0001
 
 			if table.contains(uv0, slot0.id) then
@@ -787,8 +812,6 @@ slot0.GenBattleData = function(slot0)
 					level = 1,
 					id = slot20
 				})
-
-				slot1.WorldBossSupportDays = slot19
 			end
 		end
 	elseif slot2 == SYSTEM_HP_SHARE_ACT_BOSS or slot2 == SYSTEM_ACT_BOSS or slot2 == SYSTEM_ACT_BOSS_SP or slot2 == SYSTEM_BOSS_EXPERIMENT then
@@ -801,7 +824,7 @@ slot0.GenBattleData = function(slot0)
 			slot11 = {}
 			slot12 = {}
 
-			slot13 = function(slot0, slot1, slot2, slot3)
+			function slot13(slot0, slot1, slot2, slot3)
 				if table.contains(uv0, slot0) then
 					BattleVertify.cloneShipVertiry = true
 				end
@@ -838,7 +861,7 @@ slot0.GenBattleData = function(slot0)
 			slot26 = 0
 			slot27 = slot3.oil_cost > 0
 
-			slot28 = function(slot0, slot1)
+			function slot28(slot0, slot1)
 				if uv0 then
 					slot2 = slot0:getEndCost().oil
 
@@ -890,7 +913,7 @@ slot0.GenBattleData = function(slot0)
 		slot12 = {}
 		slot13 = {}
 
-		slot14 = function(slot0, slot1, slot2, slot3)
+		function slot14(slot0, slot1, slot2, slot3)
 			table.insert(uv2.mainShips, slot0)
 			table.insert(slot3, slot0)
 			table.insert(slot2, uv0(uv1, slot0, slot1))
@@ -955,7 +978,7 @@ slot0.GenBattleData = function(slot0)
 		slot16 = {}
 		slot17 = {}
 
-		slot18 = function(slot0, slot1, slot2, slot3)
+		function slot18(slot0, slot1, slot2, slot3)
 			if table.contains(uv0, slot0) then
 				BattleVertify.cloneShipVertiry = true
 			end
@@ -993,7 +1016,7 @@ slot0.GenBattleData = function(slot0)
 		slot29 = slot7:GetOilLimit()
 		slot30 = slot3.oil_cost > 0
 
-		slot31 = function(slot0, slot1)
+		function slot31(slot0, slot1)
 			slot2 = 0
 
 			if uv0 then
@@ -1026,7 +1049,7 @@ slot0.GenBattleData = function(slot0)
 		slot14 = {}
 		slot15 = {}
 
-		slot16 = function(slot0, slot1, slot2, slot3)
+		function slot16(slot0, slot1, slot2, slot3)
 			if table.contains(uv0, slot0) then
 				BattleVertify.cloneShipVertiry = true
 			end
@@ -1061,7 +1084,7 @@ slot0.GenBattleData = function(slot0)
 		slot23 = getProxy(PlayerProxy):getRawData()
 		slot25 = slot3.oil_cost > 0
 
-		slot26 = function(slot0, slot1)
+		function slot26(slot0, slot1)
 			slot2 = 0
 
 			if uv0 then
@@ -1103,6 +1126,75 @@ slot0.GenBattleData = function(slot0)
 		slot1.CardPuzzleCommonHPValue = slot0.contextData.hp
 		slot1.CardPuzzleRelicList = slot8
 		slot1.CardPuzzleCombatID = slot0.contextData.puzzleCombatID
+	elseif slot2 == SYSTEM_BOSS_SINGLE then
+		if slot0.contextData.mainFleetId then
+			slot8 = getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId]
+			slot9 = _.values(slot8:getCommanders())
+			slot1.CommanderList = slot8:buildBattleBuffList()
+			slot0.mainShips = {}
+			slot10 = {}
+			slot11 = {}
+			slot12 = {}
+
+			function slot13(slot0, slot1, slot2, slot3)
+				if table.contains(uv0, slot0) then
+					BattleVertify.cloneShipVertiry = true
+				end
+
+				uv0[#uv0 + 1] = slot0
+				slot4 = uv1:getShipById(slot0)
+
+				table.insert(uv4.mainShips, slot4)
+				table.insert(slot3, slot4)
+				table.insert(slot2, uv2(uv3, slot4, slot1))
+			end
+
+			slot15 = slot8:getTeamByName(TeamType.Vanguard)
+
+			for slot19, slot20 in ipairs(slot8:getTeamByName(TeamType.Main)) do
+				slot13(slot20, slot9, slot1.MainUnitList, slot10)
+			end
+
+			for slot19, slot20 in ipairs(slot15) do
+				slot13(slot20, slot9, slot1.VanguardUnitList, slot11)
+			end
+
+			slot16 = slot7[slot0.contextData.mainFleetId + 10]
+			slot17 = _.values(slot16:getCommanders())
+
+			for slot22, slot23 in ipairs(slot16:getTeamByName(TeamType.Submarine)) do
+				slot13(slot23, slot17, slot1.SubUnitList, slot12)
+			end
+
+			slot20 = getProxy(PlayerProxy):getRawData()
+			slot21 = getProxy(ActivityProxy):getActivityById(slot0.contextData.actId)
+			slot1.ChapterBuffIDs = slot21:GetBuffIdsByStageId(slot0.contextData.stageId)
+			slot23 = slot21:GetEnemyDataByStageId(slot0.contextData.stageId):GetOilLimit()
+			slot24 = 0
+			slot25 = slot3.oil_cost > 0
+
+			(function (slot0, slot1)
+				if uv0 then
+					slot2 = slot0:getEndCost().oil
+
+					if slot1 > 0 then
+						cost = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot2)
+					end
+
+					uv1 = uv1 + slot2
+				end
+			end)(slot8, slot23[1] or 0)
+			slot26(slot16, slot23[2] or 0)
+
+			if slot16:isLegalToFight() == true and slot24 <= slot20.oil then
+				slot1.SubFlag = 1
+				slot1.TotalSubAmmo = 1
+			end
+
+			slot1.SubCommanderList = slot16:buildBattleBuffList()
+
+			slot0.viewComponent:setFleet(slot10, slot11, slot12)
+		end
 	elseif slot0.contextData.mainFleetId then
 		slot6 = slot2 == SYSTEM_DUEL
 		slot8, slot9 = nil
@@ -1112,7 +1204,7 @@ slot0.GenBattleData = function(slot0)
 		slot11 = {}
 		slot12 = {}
 
-		slot13 = function(slot0, slot1, slot2)
+		function slot13(slot0, slot1, slot2)
 			for slot6, slot7 in ipairs(slot0) do
 				if table.contains(uv0, slot7) then
 					BattleVertify.cloneShipVertiry = true
@@ -1307,7 +1399,7 @@ slot0.GenBattleData = function(slot0)
 	end
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.FINISH_STAGE_DONE,
 		GAME.FINISH_STAGE_ERROR,
@@ -1323,7 +1415,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 	slot4 = ys.Battle.BattleState.GetInstance()
 	slot5 = slot0.contextData.system
@@ -1429,7 +1521,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(false)
 end
 

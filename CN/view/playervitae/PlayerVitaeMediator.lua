@@ -9,8 +9,22 @@ slot0.CHANGE_RANDOM_SETTING = "PlayerVitaeMediator:CHANGE_RANDOM_SETTING"
 slot0.GO_SCENE = "PlayerVitaeMediator:GO_SCENE"
 slot0.ON_SWITCH_RANDOM_FLAG_SHIP_BTN = "PlayerVitaeMediator:ON_SWITCH_RANDOM_FLAG_SHIP_BTN"
 slot0.OPEN_CRYPTOLALIA = "PlayerVitaeMediator:OPEN_CRYPTOLALIA"
+slot0.ON_SEL_EDUCATE_CHAR = "PlayerVitaeMediator:ON_SEL_EDUCATE_CHAR"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_SEL_EDUCATE_CHAR, function (slot0)
+		uv0:addSubLayers(Context.New({
+			mediator = EducateCharDockMediator,
+			viewComponent = EducateCharDockScene,
+			data = {
+				OnSelected = function (slot0)
+					uv0:sendNotification(GAME.CHANGE_EDUCATE, {
+						id = slot0
+					})
+				end
+			}
+		}))
+	end)
 	slot0:bind(uv0.OPEN_CRYPTOLALIA, function (slot0, slot1)
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA, {
 			groupId = slot1
@@ -94,7 +108,7 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.ReSortShipIds = function(slot0, slot1, slot2)
+function slot0.ReSortShipIds(slot0, slot1, slot2)
 	slot3 = {}
 	slot4 = math.max(#slot1, #slot2)
 
@@ -121,17 +135,19 @@ slot0.ReSortShipIds = function(slot0, slot1, slot2)
 	return slot5
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.CHANGE_PLAYER_NAME_DONE,
 		SetShipSkinCommand.SKIN_UPDATED,
 		GAME.UPDATE_SKINCONFIG,
 		GAME.CHANGE_PLAYER_ICON_DONE,
-		PaintingConst.NotifyPaintingDownloadFinish
+		PaintingConst.NotifyPaintingDownloadFinish,
+		GAME.CHANGE_EDUCATE_DONE,
+		GAME.CLEAR_EDUCATE_TIP
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.CHANGE_PLAYER_NAME_DONE then
@@ -148,6 +164,14 @@ slot0.handleNotification = function(slot0, slot1)
 		if slot0.viewComponent.shipsPage and slot0.viewComponent.shipsPage:GetLoaded() then
 			slot0.viewComponent.shipsPage:UpdateCardPaintingTag()
 		end
+	elseif slot2 == GAME.CHANGE_EDUCATE_DONE then
+		slot0.viewComponent:UpdatePainting(true)
+
+		if slot0.viewComponent.shipsPage and slot0.viewComponent.shipsPage:GetLoaded() then
+			slot0.viewComponent.shipsPage:UpdateEducateChar()
+		end
+	elseif slot2 == GAME.CLEAR_EDUCATE_TIP and slot0.viewComponent.shipsPage and slot0.viewComponent.shipsPage:GetLoaded() then
+		slot0.viewComponent.shipsPage:UpdateEducateCharTrTip()
 	end
 end
 

@@ -1,22 +1,22 @@
 slot0 = class("SixthAnniversaryIslandShopLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SixthAnniversaryIslandShopUI"
 end
 
-slot0.setShop = function(slot0, slot1)
+function slot0.setShop(slot0, slot1)
 	slot0.shop = slot1
 	slot0.goodsList = slot1:getSortGoods()
 	slot0.activity = getProxy(ActivityProxy):getActivityById(slot1.activityId)
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 
 	setText(slot0.rtRes:Find("Text"), slot0.player:getResById(350) or 0)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:BlurPanel(slot0._tf)
@@ -59,7 +59,7 @@ slot0.init = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.updateGoodsCard = function(slot0, slot1, slot2)
+function slot0.updateGoodsCard(slot0, slot1, slot2)
 	slot3 = slot2:CheckCntLimit()
 
 	setActive(slot1:Find("mask"), not slot3)
@@ -73,12 +73,12 @@ slot0.updateGoodsCard = function(slot0, slot1, slot2)
 		count = slot2:getConfig("num")
 	})
 	onNextTick(function ()
-		changeToScrollText(uv0:Find("Text"), uv1.cfg.name)
+		changeToScrollText(uv0:Find("Text"), uv1:getConfig("name"))
 	end)
-	GetImageSpriteFromAtlasAsync(getDropIcon({
+	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = slot2:getConfig("resource_category"),
 		id = slot2:getConfig("resource_type")
-	}), "", slot1:Find("res_icon"))
+	}):getIcon(), "", slot1:Find("res_icon"))
 	setText(slot1:Find("btn_pay/cost"), slot2:getConfig("resource_num"))
 	setText(slot1:Find("btn_unable/cost"), slot2:getConfig("resource_num"))
 
@@ -89,11 +89,11 @@ slot0.updateGoodsCard = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.refreshGoodsCard = function(slot0, slot1)
+function slot0.refreshGoodsCard(slot0, slot1)
 	slot0:updateGoodsCard(slot0.goodsCardDic[slot1], slot0.shop:getGoodsById(slot1))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot1 = pg.TimeMgr.GetInstance()
 	slot0.timer = Timer.New(function ()
 		uv0.delta = uv0.delta and uv0.delta - 1 or uv0.activity.stopTime - uv1:GetServerTime()
@@ -111,7 +111,7 @@ slot0.didEnter = function(slot0)
 	slot0.goodsItemList:align(#slot0.goodsList)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0.timer:Stop()
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end

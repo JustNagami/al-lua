@@ -14,7 +14,7 @@ slot1 = {
 slot2 = 1
 slot3 = 3.5
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
 	slot1 = slot0._tf
@@ -25,7 +25,7 @@ slot0.OnInit = function(slot0)
 	}
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	uv0.super.OnFirstFlush(slot0)
 
 	slot3 = slot0.btnList
@@ -40,7 +40,7 @@ slot0.OnFirstFlush = function(slot0)
 	setImageAlpha(slot0.prints[2], 0)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	if slot0.LT then
 		for slot4, slot5 in ipairs(slot0.LT) do
 			LeanTween.resume(slot5)
@@ -98,7 +98,7 @@ slot0.OnUpdateFlush = function(slot0)
 	end
 end
 
-slot0.OnHideFlush = function(slot0)
+function slot0.OnHideFlush(slot0)
 	if slot0.LT then
 		for slot4, slot5 in ipairs(slot0.LT) do
 			LeanTween.pause(slot5)
@@ -106,7 +106,7 @@ slot0.OnHideFlush = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0.LT then
 		for slot4, slot5 in ipairs(slot0.LT) do
 			LeanTween.cancel(slot5)

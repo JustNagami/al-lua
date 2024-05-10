@@ -1575,6 +1575,20 @@ pg.name_code = {
 		code = "貄",
 		nation = 0
 	},
+	[227] = {
+		name = "能代(μ兵装)",
+		type = 1,
+		id = 227,
+		code = "貅(μ兵装)",
+		nation = 0
+	},
+	[228] = {
+		name = "金刚(μ兵装)",
+		type = 1,
+		id = 228,
+		code = "鲤(μ兵装)",
+		nation = 0
+	},
 	[250] = {
 		name = "伊9",
 		type = 1,
@@ -2658,6 +2672,48 @@ pg.name_code = {
 		type = 1,
 		id = 528,
 		code = "圣戴安娜.改",
+		nation = 0
+	},
+	[529] = {
+		name = "苏维埃同盟",
+		type = 1,
+		id = 529,
+		code = "苏维埃萨尤斯",
+		nation = 0
+	},
+	[530] = {
+		name = "同盟",
+		type = 1,
+		id = 530,
+		code = "萨尤斯",
+		nation = 0
+	},
+	[531] = {
+		name = "腓特烈·卡尔",
+		type = 1,
+		id = 531,
+		code = "腓德雷卡·卡尔 ",
+		nation = 0
+	},
+	[532] = {
+		name = "欧根亲王(μ兵装)",
+		type = 1,
+		id = 532,
+		code = "萨沃伊亲王(μ兵装)",
+		nation = 0
+	},
+	[533] = {
+		name = "博伊西(μ兵装)",
+		type = 1,
+		id = 533,
+		code = "树城(μ兵装)",
+		nation = 0
+	},
+	[534] = {
+		name = "小信浓",
+		type = 1,
+		id = 534,
+		code = "小鵗",
 		nation = 0
 	},
 	[10000] = {

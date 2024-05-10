@@ -17,7 +17,7 @@ slot4 = TouchBits
 slot5 = {}
 slot6 = tolua.initget(slot5)
 
-slot5.__index = function(slot0, slot1)
+function slot5.__index(slot0, slot1)
 	if uv0(uv1, slot1) == nil and uv0(uv2, slot1) ~= nil then
 		return slot2(slot0)
 	end
@@ -25,7 +25,7 @@ slot5.__index = function(slot0, slot1)
 	return slot2
 end
 
-slot5.New = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot5.New(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	return uv0({
 		fingerId = slot0 or 0,
 		position = slot1 or uv1,
@@ -37,7 +37,7 @@ slot5.New = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	}, uv2)
 end
 
-slot5.Init = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function slot5.Init(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot0.fingerId = slot1
 	slot0.position = slot2
 	slot0.rawPosition = slot3
@@ -47,13 +47,13 @@ slot5.Init = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot0.phase = slot7
 end
 
-slot5.Destroy = function(slot0)
+function slot5.Destroy(slot0)
 	slot0.position = nil
 	slot0.rawPosition = nil
 	slot0.deltaPosition = nil
 end
 
-slot5.GetMask = function(...)
+function slot5.GetMask(...)
 	slot1 = 0
 
 	for slot5 = 1, #{

@@ -1,6 +1,6 @@
 slot0 = class("ChapterAirSupportAIAction", import(".ChapterMissileExplodeAction"))
 
-slot0.PlayAIAction = function(slot0, slot1, slot2, slot3)
+function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
 	seriesAsync({
 		function (slot0)
 			slot1 = uv0.viewComponent
@@ -17,7 +17,7 @@ slot0.PlayAIAction = function(slot0, slot1, slot2, slot3)
 		end,
 		function (slot0)
 			uv0.viewComponent.levelStageView:SwitchBottomStagePanel(false)
-			uv0.viewComponent.grid:HideMissileAimingMark()
+			uv0.viewComponent.grid:HideAirSupportAimingMark()
 			slot0()
 		end,
 		slot3

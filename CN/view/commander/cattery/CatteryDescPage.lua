@@ -2,11 +2,11 @@ slot0 = class("CatteryDescPage", import("...base.BaseSubView"))
 slot0.CHANGE_STYLE = "CatteryDescPage:CHANGE_STYLE"
 slot0.CHANGE_COMMANDER = "CatteryDescPage:CHANGE_COMMANDER"
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CatteryDescPage"
 end
 
-slot0.OnCatteryUpdate = function(slot0, slot1)
+function slot0.OnCatteryUpdate(slot0, slot1)
 	slot0:Flush(slot1)
 
 	if slot0.page and slot0.page:GetLoaded() and slot0.page:isShowing() then
@@ -14,7 +14,7 @@ slot0.OnCatteryUpdate = function(slot0, slot1)
 	end
 end
 
-slot0.OnCatteryStyleUpdate = function(slot0, slot1)
+function slot0.OnCatteryStyleUpdate(slot0, slot1)
 	slot0.cattery = slot1
 
 	slot0:UpdateCatteryStyle()
@@ -24,7 +24,7 @@ slot0.OnCatteryStyleUpdate = function(slot0, slot1)
 	end
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.closeBtn = slot0:findTF("right/close_btn")
 	slot0.styleIcon = slot0:findTF("left/bg/mask/icon"):GetComponent(typeof(Image))
 	slot0.char = slot0:findTF("left/bg/char")
@@ -34,6 +34,7 @@ slot0.OnLoaded = function(slot0)
 	slot0.commanderLevelTxt = slot0.commanderExp:Find("level/Text"):GetComponent(typeof(Text))
 	slot0.commanderExpTxt = slot0.commanderExp:Find("value_bg/Text"):GetComponent(typeof(Text))
 	slot0.commanderExpImg = slot0.commanderExp:Find("exp/Image")
+	slot0.pageContainer = slot0._tf:Find("")
 	slot1 = slot0:findTF("left/tags")
 	slot0.toggleGroup = slot1:GetComponent(typeof(ToggleGroup))
 	slot0.pagesTF = slot0:findTF("right/pages")
@@ -47,7 +48,7 @@ slot0.OnLoaded = function(slot0)
 	}
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:bind(uv0.CHANGE_STYLE, function (slot0, slot1)
 		uv0:PreviewCatteryStyle(slot1)
 	end, SFX_PANEL)
@@ -58,7 +59,7 @@ slot0.OnInit = function(slot0)
 		uv0:Hide()
 	end, SFX_PANEL)
 
-	slot4 = function()
+	function slot4()
 		uv0:Hide()
 	end
 
@@ -75,7 +76,7 @@ slot0.OnInit = function(slot0)
 	end
 end
 
-slot0.SwitchPage = function(slot0, slot1)
+function slot0.SwitchPage(slot0, slot1)
 	if slot0.page == slot0.pages[slot1] then
 		return
 	end
@@ -94,7 +95,7 @@ slot0.SwitchPage = function(slot0, slot1)
 	slot0:FlushCatteryInfo()
 end
 
-slot0.Update = function(slot0, slot1, slot2)
+function slot0.Update(slot0, slot1, slot2)
 	slot0:Show()
 
 	slot0.home = slot1
@@ -102,17 +103,25 @@ slot0.Update = function(slot0, slot1, slot2)
 	slot0.page = nil
 
 	triggerToggle(slot0.tags[1], true)
-	slot0:Flush(slot2)
+
+	if slot2 then
+		slot0:Flush(slot2)
+	end
 end
 
-slot0.Flush = function(slot0, slot1)
+function slot0.Show(slot0)
+	uv0.super.Show(slot0)
+	slot0:emit(CommanderHomeLayer.DESC_PAGE_OPEN)
+end
+
+function slot0.Flush(slot0, slot1)
 	slot0.cattery = slot1
 
 	slot0:FlushCatteryInfo()
 	slot0:UpdateCatteryStyle()
 end
 
-slot0.FlushCatteryInfo = function(slot0)
+function slot0.FlushCatteryInfo(slot0)
 	slot1 = false
 
 	if isa(slot0.page, CommanderHomeSelCommanderPage) then
@@ -124,7 +133,7 @@ slot0.FlushCatteryInfo = function(slot0)
 	slot2 = slot0.home
 end
 
-slot0.UpdateCommander = function(slot0, slot1)
+function slot0.UpdateCommander(slot0, slot1)
 	slot0:ReturnChar()
 
 	if slot1 ~= nil then
@@ -147,11 +156,11 @@ slot0.UpdateCommander = function(slot0, slot1)
 	setActive(slot0.commanderEmpty, not slot2)
 end
 
-slot0.PreviewCatteryCommader = function(slot0, slot1)
+function slot0.PreviewCatteryCommader(slot0, slot1)
 	slot0:UpdateCommander(slot1)
 end
 
-slot0.UpdateCatteryStyle = function(slot0)
+function slot0.UpdateCatteryStyle(slot0)
 	slot1 = slot0.cattery
 	slot2 = slot1:_GetStyle_()
 
@@ -162,17 +171,17 @@ slot0.UpdateCatteryStyle = function(slot0)
 	end
 end
 
-slot0.PreviewCatteryStyle = function(slot0, slot1)
+function slot0.PreviewCatteryStyle(slot0, slot1)
 	slot0.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. pg.commander_home_style[slot1].name, "")
 end
 
-slot0.LoadChar = function(slot0, slot1)
+function slot0.LoadChar(slot0, slot1)
 	slot0.painting = slot1:getPainting()
 
 	setCommanderPaintingPrefab(slot0.char, slot0.painting, "info")
 end
 
-slot0.ReturnChar = function(slot0)
+function slot0.ReturnChar(slot0)
 	if slot0.painting then
 		retCommanderPaintingPrefab(slot0.char, slot0.painting)
 
@@ -180,7 +189,8 @@ slot0.ReturnChar = function(slot0)
 	end
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
+	slot0:emit(CommanderHomeLayer.DESC_PAGE_CLOSE)
 	slot0.toggleGroup:SetAllTogglesOff()
 	uv0.super.Hide(slot0)
 
@@ -191,7 +201,7 @@ slot0.Hide = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0:ReturnChar()
 
 	for slot4, slot5 in ipairs(slot0.pages) do

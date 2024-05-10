@@ -39,15 +39,15 @@ slot0.MotionCombinations = {
 	RRB = "isAttack5"
 }
 
-slot0.MatchAction = function(slot0)
+function slot0.MatchAction(slot0)
 	return uv0.MotionCombinations[slot0] ~= nil
 end
 
-slot0.GetMatchAction = function(slot0)
+function slot0.GetMatchAction(slot0)
 	return uv0.MotionCombinations[slot0]
 end
 
-slot0.GetMonsterAction = function(slot0)
+function slot0.GetMonsterAction(slot0)
 	return "isAttack"
 end
 

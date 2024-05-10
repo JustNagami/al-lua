@@ -11,7 +11,7 @@ slot2 = RaycastBits
 slot3 = {}
 slot4 = tolua.initget(slot3)
 
-slot3.__index = function(slot0, slot1)
+function slot3.__index(slot0, slot1)
 	if uv0(uv1, slot1) == nil and uv0(uv2, slot1) ~= nil then
 		return slot2(slot0)
 	end
@@ -19,7 +19,7 @@ slot3.__index = function(slot0, slot1)
 	return slot2
 end
 
-slot3.New = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot3.New(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = {
 		collider = slot0,
 		distance = slot1,
@@ -34,7 +34,7 @@ slot3.New = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	return slot6
 end
 
-slot3.Init = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot3.Init(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot0.collider = slot1
 	slot0.distance = slot2
 	slot0.normal = slot3
@@ -43,17 +43,17 @@ slot3.Init = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot0.transform = slot6
 end
 
-slot3.Get = function(slot0)
+function slot3.Get(slot0)
 	return slot0.collider, slot0.distance, slot0.normal, slot0.point, slot0.rigidbody, slot0.transform
 end
 
-slot3.Destroy = function(slot0)
+function slot3.Destroy(slot0)
 	slot0.collider = nil
 	slot0.rigidbody = nil
 	slot0.transform = nil
 end
 
-slot3.GetMask = function(...)
+function slot3.GetMask(...)
 	slot1 = 0
 
 	for slot5 = 1, #{

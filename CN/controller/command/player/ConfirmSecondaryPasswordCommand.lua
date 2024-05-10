@@ -1,6 +1,6 @@
 slot0 = class("ConfirmSecondaryPasswordCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = pg.UIMgr.GetInstance()
 
 	slot3:LoadingOn()

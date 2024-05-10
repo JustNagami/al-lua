@@ -6,18 +6,18 @@ slot0.Battle.FreeFloatOxyState = class("FreeFloatOxyState", slot0.Battle.IOxySta
 slot0.Battle.FreeFloatOxyState.__name = "FreeFloatOxyState"
 slot3 = slot0.Battle.FreeFloatOxyState
 
-slot3.Ctor = function(slot0)
+function slot3.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot3.GetWeaponUseableList = function(slot0)
+function slot3.GetWeaponUseableList(slot0)
 	return {
 		uv0.OXY_STATE.DIVE,
 		uv0.OXY_STATE.FLOAT
 	}
 end
 
-slot3.UpdateCldData = function(slot0, slot1, slot2)
+function slot3.UpdateCldData(slot0, slot1, slot2)
 	slot4 = slot0:GetDiveState()
 	slot1:GetCldData().Surface = slot4
 
@@ -26,26 +26,26 @@ slot3.UpdateCldData = function(slot0, slot1, slot2)
 	end
 end
 
-slot3.GetDiveState = function(slot0)
+function slot3.GetDiveState(slot0)
 	return uv0.OXY_STATE.FLOAT
 end
 
-slot3.GetBubbleFlag = function(slot0)
+function slot3.GetBubbleFlag(slot0)
 	return false
 end
 
-slot3.DoUpdateOxy = function(slot0, slot1)
-	slot1:OxyRecover()
+function slot3.DoUpdateOxy(slot0, slot1)
+	slot1:OxyRecover(uv0.Battle.OxyState.STATE_FREE_FLOAT)
 end
 
-slot3.IsVisible = function(slot0)
+function slot3.IsVisible(slot0)
 	return true
 end
 
-slot3.GetBarVisible = function(slot0)
+function slot3.GetBarVisible(slot0)
 	return true
 end
 
-slot3.RunMode = function(slot0)
+function slot3.RunMode(slot0)
 	return true
 end

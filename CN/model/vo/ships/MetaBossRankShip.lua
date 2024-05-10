@@ -1,6 +1,6 @@
 slot0 = class("MetaBossRankShip", import(".CheckCustomNameShip"))
 
-slot0.IsOwner = function(slot0)
+function slot0.IsOwner(slot0)
 	return false
 end
 

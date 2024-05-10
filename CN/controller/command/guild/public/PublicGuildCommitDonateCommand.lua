@@ -1,6 +1,6 @@
 slot0 = class("PublicGuildCommitDonateCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	if not getProxy(GuildProxy):GetPublicGuild():GetDonateTaskById(slot1:getBody().id) then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_not_exist_donate_task"))
 
@@ -44,18 +44,11 @@ slot0.execute = function(slot0, slot1)
 				guildCoin = slot4
 			})
 			slot2:updatePlayer(slot3)
-
-			slot5 = uv1:getCommitItem()
-
-			uv2:sendNotification(GAME.CONSUME_ITEM, Item.New({
-				id = slot5[2],
-				type = slot5[1],
-				count = slot5[3]
-			}))
+			uv2:sendNotification(GAME.CONSUME_ITEM, Drop.Create(uv1:getCommitItem()))
 
 			slot6 = {}
 
-			table.insert(slot6, Item.New({
+			table.insert(slot6, Drop.New({
 				type = DROP_TYPE_RESOURCE,
 				id = PlayerConst.ResGuildCoin,
 				count = slot4

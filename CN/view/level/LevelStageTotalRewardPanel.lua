@@ -1,12 +1,12 @@
 slot0 = class("LevelStageTotalRewardPanel", import("view.level.BaseTotalRewardPanel"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "LevelStageTotalRewardPanel"
 end
 
 slot1 = 0.15
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	uv0.super.init(slot0)
 
 	slot0.itemList = slot0.boxView:Find("Content/ItemGrid")
@@ -26,7 +26,7 @@ slot0.init = function(slot0)
 	setText(slot0.boxView:Find("Content/TitleSub/Text"), i18n("settle_rewards_text"))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	uv0.super.didEnter(slot0)
 
 	slot2 = PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0
@@ -47,7 +47,7 @@ slot0.didEnter = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:SkipAnim()
 
 	if slot0.metaExpView then
@@ -57,7 +57,7 @@ slot0.willExit = function(slot0)
 	uv0.super.willExit(slot0)
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	slot1 = slot0.contextData
 
 	onButton(slot0, slot0._tf:Find("BG"), function ()
@@ -75,7 +75,7 @@ slot0.UpdateView = function(slot0)
 			PlayerPrefs.SetInt("autoFight_firstUse_sp", 1)
 			PlayerPrefs.Save()
 
-			slot2 = function()
+			function slot2()
 				uv0.contextData.spItemID = nil
 
 				uv0:UpdateSPItem()
@@ -236,7 +236,7 @@ slot0.UpdateView = function(slot0)
 	end)
 end
 
-slot0.UpdateSPItem = function(slot0)
+function slot0.UpdateSPItem(slot0)
 	slot2 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
 
 	if slot0.contextData.chapter:getConfig("special_operation_list") == "" then
@@ -267,18 +267,13 @@ slot0.UpdateSPItem = function(slot0)
 		end
 
 		slot3 = uv0[slot1 + 1]
+		slot4 = tonumber(slot3.benefit_condition)
 
 		setText(slot2:Find("Active/Desc"), slot3.desc)
 
-		slot5 = _.detect(uv1, function (slot0)
+		slot6 = _.detect(uv1, function (slot0)
 			return slot0.configId == uv0
-		end) or {
-			count = 0,
-			id = tonumber(slot3.benefit_condition),
-			type = DROP_TYPE_ITEM
-		}
-		slot5.type = DROP_TYPE_ITEM
-		slot6 = slot5.count > 0
+		end) and slot5.count > 0
 
 		setActive(slot2:Find("Active"), slot6)
 		setActive(slot2:Find("Block"), not slot6)
@@ -290,7 +285,11 @@ slot0.UpdateSPItem = function(slot0)
 		end
 
 		setActive(slot2:Find("Active/Item"), true)
-		updateDrop(slot2:Find("Active/Item/Icon"), slot5)
+		updateDrop(slot2:Find("Active/Item/Icon"), Drop.New({
+			id = slot4,
+			type = DROP_TYPE_ITEM,
+			count = slot5 and slot5.count or 0
+		}))
 		onButton(uv2, slot2, function ()
 			uv0.contextData.spItemID = not uv0.contextData.spItemID and uv1 or nil
 
@@ -307,7 +306,7 @@ slot0.UpdateSPItem = function(slot0)
 	end)
 end
 
-slot0.SkipAnim = function(slot0)
+function slot0.SkipAnim(slot0)
 	if not slot0.isRewardAnimating then
 		return
 	end

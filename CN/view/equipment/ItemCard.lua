@@ -1,6 +1,6 @@
 slot0 = class("ItemCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.go = slot1
 	slot0.bg = findTF(slot1, "bg")
 	slot0.countTF = findTF(slot1, "bg/icon_bg/count"):GetComponent(typeof(Text))
@@ -10,11 +10,11 @@ slot0.Ctor = function(slot0, slot1)
 	ClearTweenItemAlphaAndWhite(slot0.go)
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	slot0.itemVO = slot1
 
 	if not IsNil(slot0.timeLimitTag) then
-		setActive(slot0.timeLimitTag, slot1:getConfig("time_limit") == 1)
+		setActive(slot0.timeLimitTag, slot1:getConfig("time_limit") == 1 or Item.InTimeLimitSkinAssigned(slot1.id))
 	end
 
 	updateItem(rtf(slot0.bg), slot1)
@@ -24,7 +24,7 @@ slot0.update = function(slot0, slot1)
 	slot0.nameTF.text = slot0:ShortenString(slot1:getConfig("name"), 6)
 end
 
-slot0.ShortenString = function(slot0, slot1, slot2)
+function slot0.ShortenString(slot0, slot1, slot2)
 	slot3 = 1
 	slot4 = 0
 	slot5 = 0
@@ -51,11 +51,11 @@ slot0.ShortenString = function(slot0, slot1, slot2)
 	return string.sub(slot1, 1, slot5 - 1) .. ".."
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	ClearTweenItemAlphaAndWhite(slot0.go)
 end
 
-slot0.dispose = function(slot0)
+function slot0.dispose(slot0)
 end
 
 return slot0

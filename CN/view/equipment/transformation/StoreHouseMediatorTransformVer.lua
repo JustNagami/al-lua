@@ -12,7 +12,7 @@ slot0.ITEM_GO_SCENE = "item go scene"
 slot0.OPEN_EQUIPSKIN_INDEX_LAYER = "EquipmentMediator:OPEN_EQUIPSKIN_INDEX_LAYER"
 slot0.OPEN_EQUIPMENT_INDEX = "OPEN_EQUIPMENT_INDEX"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	if not slot0.contextData.warp then
 		slot0.contextData.warp = getProxy(SettingsProxy):getEquipSceneIndex()
 	end
@@ -103,14 +103,14 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setSources(slot0.contextData.sourceVOs)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		uv0.NO_UPDATE
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == uv0.NO_UPDATE then
@@ -118,7 +118,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	getProxy(SettingsProxy):setEquipSceneIndex(slot0.contextData.warp)
 end
 

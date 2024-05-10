@@ -1,6 +1,6 @@
 slot0 = class("ReplaceRivalsCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = getProxy(MilitaryExerciseProxy):getSeasonInfo()
 	slot4 = slot3:getconsumeGem()
 

@@ -1,6 +1,6 @@
 slot0 = class("SixthAnniversaryJPHotSpringMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringMediator"))
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.UNLOCK_SLOT, function (slot0, slot1)
 		slot2 = uv0.activity
 		slot2, slot3 = slot2:GetUpgradeCost()

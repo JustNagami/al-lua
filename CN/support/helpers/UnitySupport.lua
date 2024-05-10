@@ -1,62 +1,62 @@
-tf = function(slot0)
+function tf(slot0)
 	return slot0.transform
 end
 
-go = function(slot0)
+function go(slot0)
 	return tf(slot0).gameObject
 end
 
-rtf = function(slot0)
+function rtf(slot0)
 	return slot0.transform
 end
 
-findGO = function(slot0, slot1)
+function findGO(slot0, slot1)
 	assert(slot0, "object or transform should exist")
 
 	return tf(slot0):Find(slot1) and slot2.gameObject
 end
 
-findTF = function(slot0, slot1)
+function findTF(slot0, slot1)
 	assert(slot0, "object or transform should exist " .. slot1)
 
 	return tf(slot0):Find(slot1)
 end
 
-Instantiate = function(slot0)
+function Instantiate(slot0)
 	return Object.Instantiate(go(slot0))
 end
 
 instantiate = Instantiate
 
-Destroy = function(slot0)
+function Destroy(slot0)
 	Object.Destroy(go(slot0))
 end
 
 destroy = Destroy
 
-SetActive = function(slot0, slot1)
+function SetActive(slot0, slot1)
 	LuaHelper.SetActiveForLua(slot0, tobool(slot1))
 end
 
 setActive = SetActive
 
-isActive = function(slot0)
+function isActive(slot0)
 	return go(slot0).activeSelf
 end
 
-SetName = function(slot0, slot1)
+function SetName(slot0, slot1)
 	slot0.name = slot1
 end
 
 setName = SetName
 
-SetParent = function(slot0, slot1, slot2)
+function SetParent(slot0, slot1, slot2)
 	LuaHelper.SetParentForLua(slot0, slot1, tobool(slot2))
 end
 
 setParent = SetParent
 
-setText = function(slot0, slot1)
+function setText(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -64,7 +64,7 @@ setText = function(slot0, slot1)
 	slot0.GetComponent(slot0, typeof(Text)).text = tostring(slot1)
 end
 
-setTextEN = function(slot0, slot1)
+function setTextEN(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -72,7 +72,7 @@ setTextEN = function(slot0, slot1)
 	slot0.GetComponent(slot0, typeof(Text)).text = tostring(splitByWordEN(slot1, slot0))
 end
 
-setBestFitTextEN = function(slot0, slot1, slot2)
+function setBestFitTextEN(slot0, slot1, slot2)
 	if not slot1 then
 		return
 	end
@@ -95,7 +95,7 @@ setBestFitTextEN = function(slot0, slot1, slot2)
 	end
 end
 
-setTextFont = function(slot0, slot1)
+function setTextFont(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -103,11 +103,11 @@ setTextFont = function(slot0, slot1)
 	slot0.GetComponent(slot0, typeof(Text)).font = slot1
 end
 
-getText = function(slot0)
+function getText(slot0)
 	return slot0.GetComponent(slot0, typeof(Text)).text
 end
 
-setInputText = function(slot0, slot1)
+function setInputText(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -115,11 +115,11 @@ setInputText = function(slot0, slot1)
 	slot0.GetComponent(slot0, typeof(InputField)).text = slot1
 end
 
-getInputText = function(slot0)
+function getInputText(slot0)
 	return slot0.GetComponent(slot0, typeof(InputField)).text
 end
 
-onInputEndEdit = function(slot0, slot1, slot2)
+function onInputEndEdit(slot0, slot1, slot2)
 	slot3 = slot1:GetComponent(typeof(InputField)).onEndEdit
 
 	pg.DelegateInfo.Add(slot0, slot3)
@@ -127,19 +127,19 @@ onInputEndEdit = function(slot0, slot1, slot2)
 	slot3:AddListener(slot2)
 end
 
-activateInputField = function(slot0)
+function activateInputField(slot0)
 	slot0:GetComponent(typeof(InputField)):ActivateInputField()
 end
 
-setButtonText = function(slot0, slot1, slot2)
+function setButtonText(slot0, slot1, slot2)
 	setWidgetText(slot0, slot1, slot2)
 end
 
-setWidgetText = function(slot0, slot1, slot2)
+function setWidgetText(slot0, slot1, slot2)
 	setText(findTF(slot0, slot2 or "Text"), slot1)
 end
 
-setWidgetTextEN = function(slot0, slot1, slot2)
+function setWidgetTextEN(slot0, slot1, slot2)
 	setTextEN(findTF(slot0, slot2 or "Text"), slot1)
 end
 
@@ -147,7 +147,7 @@ slot0 = nil
 slot1 = true
 slot2 = -1
 
-onButton = function(slot0, slot1, slot2, slot3, slot4)
+function onButton(slot0, slot1, slot2, slot3, slot4)
 	slot5 = GetOrAddComponent(slot1, typeof(Button))
 
 	assert(slot5, "could not found Button component on " .. slot1.name)
@@ -172,13 +172,13 @@ onButton = function(slot0, slot1, slot2, slot3, slot4)
 	end)
 end
 
-removeOnButton = function(slot0)
+function removeOnButton(slot0)
 	if slot0.GetComponent(slot0, typeof(Button)) ~= nil then
 		slot1.onClick:RemoveAllListeners()
 	end
 end
 
-removeAllOnButton = function(slot0)
+function removeAllOnButton(slot0)
 	for slot5 = 1, slot0.GetComponentsInChildren(slot0, typeof(Button)).Length do
 		if slot1[slot5 - 1] ~= nil then
 			slot6.onClick:RemoveAllListeners()
@@ -186,7 +186,7 @@ removeAllOnButton = function(slot0)
 	end
 end
 
-ClearAllText = function(slot0)
+function ClearAllText(slot0)
 	for slot5 = 1, slot0.GetComponentsInChildren(slot0, typeof(Text)).Length do
 		if slot1[slot5 - 1] ~= nil then
 			slot6.text = ""
@@ -194,7 +194,7 @@ ClearAllText = function(slot0)
 	end
 end
 
-onLongPressTrigger = function(slot0, slot1, slot2, slot3)
+function onLongPressTrigger(slot0, slot1, slot2, slot3)
 	slot4 = GetOrAddComponent(slot1, typeof(UILongPressTrigger))
 
 	assert(slot4, "could not found UILongPressTrigger component on " .. slot1.name)
@@ -213,25 +213,25 @@ onLongPressTrigger = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-removeOnLongPressTrigger = function(slot0)
+function removeOnLongPressTrigger(slot0)
 	if slot0.GetComponent(slot0, typeof(UILongPressTrigger)) ~= nil then
 		slot1.onLongPressed:RemoveAllListeners()
 	end
 end
 
-setButtonEnabled = function(slot0, slot1)
+function setButtonEnabled(slot0, slot1)
 	GetComponent(slot0, typeof(Button)).interactable = slot1
 end
 
-setToggleEnabled = function(slot0, slot1)
+function setToggleEnabled(slot0, slot1)
 	GetComponent(slot0, typeof(Toggle)).interactable = slot1
 end
 
-setSliderEnable = function(slot0, slot1)
+function setSliderEnable(slot0, slot1)
 	GetComponent(slot0, typeof(Slider)).interactable = slot1
 end
 
-triggerButton = function(slot0)
+function triggerButton(slot0)
 	uv0 = false
 	uv1 = -1
 
@@ -242,7 +242,7 @@ end
 
 slot3 = true
 
-onToggle = function(slot0, slot1, slot2, slot3, slot4)
+function onToggle(slot0, slot1, slot2, slot3, slot4)
 	assert(slot2, "callback should exist")
 
 	slot6 = GetComponent(slot1, typeof(Toggle)).onValueChanged
@@ -268,13 +268,13 @@ onToggle = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-removeOnToggle = function(slot0)
+function removeOnToggle(slot0)
 	if GetComponent(slot0, typeof(Toggle)) ~= nil then
 		slot1.onValueChanged:RemoveAllListeners()
 	end
 end
 
-triggerToggle = function(slot0, slot1)
+function triggerToggle(slot0, slot1)
 	uv0 = false
 
 	if GetComponent(slot0, typeof(Toggle)).isOn ~= tobool(slot1) then
@@ -286,7 +286,7 @@ triggerToggle = function(slot0, slot1)
 	uv0 = true
 end
 
-triggerToggleWithoutNotify = function(slot0, slot1)
+function triggerToggleWithoutNotify(slot0, slot1)
 	uv0 = false
 
 	LuaHelper.ChangeToggleValueWithoutNotify(GetComponent(slot0, typeof(Toggle)), tobool(slot1))
@@ -294,7 +294,7 @@ triggerToggleWithoutNotify = function(slot0, slot1)
 	uv0 = true
 end
 
-onSlider = function(slot0, slot1, slot2)
+function onSlider(slot0, slot1, slot2)
 	slot3 = GetComponent(slot1, typeof(Slider)).onValueChanged
 
 	assert(slot2, "callback should exist")
@@ -303,7 +303,7 @@ onSlider = function(slot0, slot1, slot2)
 	slot3:AddListener(slot2)
 end
 
-setSlider = function(slot0, slot1, slot2, slot3)
+function setSlider(slot0, slot1, slot2, slot3)
 	slot4 = GetComponent(slot0, typeof(Slider))
 
 	assert(slot4, "slider should exist")
@@ -313,20 +313,20 @@ setSlider = function(slot0, slot1, slot2, slot3)
 	slot4.value = slot3
 end
 
-eachChild = function(slot0, slot1)
+function eachChild(slot0, slot1)
 	for slot7 = tf(slot0).childCount - 1, 0, -1 do
 		slot1(slot2.GetChild(slot2, slot7))
 	end
 end
 
-removeAllChildren = function(slot0)
+function removeAllChildren(slot0)
 	eachChild(slot0, function (slot0)
 		tf(slot0).transform:SetParent(nil, false)
 		Destroy(slot0)
 	end)
 end
 
-scrollTo = function(slot0, slot1, slot2)
+function scrollTo(slot0, slot1, slot2)
 	Canvas.ForceUpdateCanvases()
 
 	slot3 = GetComponent(slot0, typeof(ScrollRect))
@@ -341,11 +341,11 @@ scrollTo = function(slot0, slot1, slot2)
 	end)
 end
 
-scrollToBottom = function(slot0)
+function scrollToBottom(slot0)
 	scrollTo(slot0, 0, 0)
 end
 
-onScroll = function(slot0, slot1, slot2)
+function onScroll(slot0, slot1, slot2)
 	slot3 = GetComponent(slot1, typeof(ScrollRect)).onValueChanged
 
 	assert(slot2, "callback should exist")
@@ -354,7 +354,7 @@ onScroll = function(slot0, slot1, slot2)
 	slot3:AddListener(slot2)
 end
 
-ClearEventTrigger = function(slot0)
+function ClearEventTrigger(slot0)
 	slot0.RemovePointClickFunc(slot0)
 	slot0.RemovePointDownFunc(slot0)
 	slot0.RemovePointEnterFunc(slot0)
@@ -371,18 +371,18 @@ ClearEventTrigger = function(slot0)
 	slot0.RemoveMoveFunc(slot0)
 end
 
-ClearLScrollrect = function(slot0)
+function ClearLScrollrect(slot0)
 	slot0.onStart = nil
 	slot0.onInitItem = nil
 	slot0.onUpdateItem = nil
 	slot0.onReturnItem = nil
 end
 
-GetComponent = function(slot0, slot1)
+function GetComponent(slot0, slot1)
 	return slot0.GetComponent(slot0, slot1)
 end
 
-GetOrAddComponent = function(slot0, slot1)
+function GetOrAddComponent(slot0, slot1)
 	assert(slot0, "objectOrTransform not found: " .. debug.traceback())
 
 	slot2 = slot1
@@ -396,13 +396,13 @@ GetOrAddComponent = function(slot0, slot1)
 	return LuaHelper.GetOrAddComponentForLua(slot0, slot2)
 end
 
-RemoveComponent = function(slot0, slot1)
+function RemoveComponent(slot0, slot1)
 	if slot0.GetComponent(slot0, slot1) then
 		Object.Destroy(slot2)
 	end
 end
 
-SetCompomentEnabled = function(slot0, slot1, slot2)
+function SetCompomentEnabled(slot0, slot1, slot2)
 	slot3 = slot0:GetComponent(slot1)
 
 	assert(slot3, "compoment not found")
@@ -410,7 +410,7 @@ SetCompomentEnabled = function(slot0, slot1, slot2)
 	slot3.enabled = tobool(slot2)
 end
 
-GetInChildren = function(slot0, slot1)
+function GetInChildren(slot0, slot1)
 	return (function (slot0, slot1)
 		if not slot0 then
 			return nil
@@ -434,15 +434,15 @@ GetInChildren = function(slot0, slot1)
 	end)(slot0, slot1)
 end
 
-onNextTick = function(slot0)
+function onNextTick(slot0)
 	FrameTimer.New(slot0, 1, 1):Start()
 end
 
-onDelayTick = function(slot0, slot1)
+function onDelayTick(slot0, slot1)
 	Timer.New(slot0, slot1, 1):Start()
 end
 
-seriesAsync = function(slot0, slot1)
+function seriesAsync(slot0, slot1)
 	slot2 = 0
 	slot3 = #slot0
 	slot4 = nil
@@ -458,7 +458,7 @@ seriesAsync = function(slot0, slot1)
 	end)()
 end
 
-seriesAsyncExtend = function(slot0, slot1)
+function seriesAsyncExtend(slot0, slot1)
 	slot2 = nil
 
 	(function (...)
@@ -470,8 +470,8 @@ seriesAsyncExtend = function(slot0, slot1)
 	end)()
 end
 
-parallelAsync = function(slot0, slot1)
-	slot3 = function()
+function parallelAsync(slot0, slot1)
+	function slot3()
 		uv0 = uv0 - 1
 
 		if uv0 == 0 and uv1 then
@@ -488,7 +488,7 @@ parallelAsync = function(slot0, slot1)
 	end
 end
 
-limitedParallelAsync = function(slot0, slot1, slot2)
+function limitedParallelAsync(slot0, slot1, slot2)
 	if #slot0 == 0 then
 		slot2()
 
@@ -497,7 +497,7 @@ limitedParallelAsync = function(slot0, slot1, slot2)
 
 	slot6 = nil
 
-	slot6 = function()
+	function slot6()
 		uv0 = uv0 - 1
 
 		if uv0 == 0 then
@@ -514,7 +514,7 @@ limitedParallelAsync = function(slot0, slot1, slot2)
 	end
 end
 
-setImageSprite = function(slot0, slot1, slot2)
+function setImageSprite(slot0, slot1, slot2)
 	if IsNil(slot0) then
 		assert(false)
 
@@ -532,33 +532,33 @@ setImageSprite = function(slot0, slot1, slot2)
 	end
 end
 
-clearImageSprite = function(slot0)
+function clearImageSprite(slot0)
 	GetComponent(slot0, typeof(Image)).sprite = nil
 end
 
-getImageSprite = function(slot0)
+function getImageSprite(slot0)
 	return GetComponent(slot0, typeof(Image)) and slot1.sprite
 end
 
-tex2sprite = function(slot0)
+function tex2sprite(slot0)
 	return UnityEngine.Sprite.Create(slot0, UnityEngine.Rect.New(0, 0, slot0.width, slot0.height), Vector2(0.5, 0.5), 100)
 end
 
-setFillAmount = function(slot0, slot1)
+function setFillAmount(slot0, slot1)
 	GetComponent(slot0, typeof(Image)).fillAmount = slot1
 end
 
-string2vector3 = function(slot0)
+function string2vector3(slot0)
 	slot1 = string.split(slot0, ",")
 
 	return Vector3(slot1[1], slot1[2], slot1[3])
 end
 
-getToggleState = function(slot0)
+function getToggleState(slot0)
 	return slot0.GetComponent(slot0, typeof(Toggle)).isOn
 end
 
-setLocalPosition = function(slot0, slot1)
+function setLocalPosition(slot0, slot1)
 	slot2 = tf(slot0).localPosition
 	slot1.x = slot1.x or slot2.x
 	slot1.y = slot1.y or slot2.y
@@ -566,14 +566,14 @@ setLocalPosition = function(slot0, slot1)
 	tf(slot0).localPosition = slot1
 end
 
-setAnchoredPosition = function(slot0, slot1)
+function setAnchoredPosition(slot0, slot1)
 	slot3 = rtf(slot0).anchoredPosition
 	slot1.x = slot1.x or slot3.x
 	slot1.y = slot1.y or slot3.y
 	slot2.anchoredPosition = slot1
 end
 
-setAnchoredPosition3D = function(slot0, slot1)
+function setAnchoredPosition3D(slot0, slot1)
 	slot3 = rtf(slot0).anchoredPosition3D
 	slot1.x = slot1.x or slot3.x
 	slot1.y = slot1.y or slot3.y
@@ -581,11 +581,11 @@ setAnchoredPosition3D = function(slot0, slot1)
 	slot2.anchoredPosition3D = slot1
 end
 
-getAnchoredPosition = function(slot0)
+function getAnchoredPosition(slot0)
 	return rtf(slot0).anchoredPosition
 end
 
-setLocalScale = function(slot0, slot1)
+function setLocalScale(slot0, slot1)
 	slot2 = tf(slot0).localScale
 	slot1.x = slot1.x or slot2.x
 	slot1.y = slot1.y or slot2.y
@@ -593,7 +593,7 @@ setLocalScale = function(slot0, slot1)
 	tf(slot0).localScale = slot1
 end
 
-setLocalRotation = function(slot0, slot1)
+function setLocalRotation(slot0, slot1)
 	slot2 = tf(slot0).localRotation
 	slot1.x = slot1.x or slot2.x
 	slot1.y = slot1.y or slot2.y
@@ -601,7 +601,7 @@ setLocalRotation = function(slot0, slot1)
 	tf(slot0).localRotation = slot1
 end
 
-setLocalEulerAngles = function(slot0, slot1)
+function setLocalEulerAngles(slot0, slot1)
 	slot2 = tf(slot0).localEulerAngles
 	slot1.x = slot1.x or slot2.x
 	slot1.y = slot1.y or slot2.y
@@ -609,11 +609,11 @@ setLocalEulerAngles = function(slot0, slot1)
 	tf(slot0).localEulerAngles = slot1
 end
 
-ActivateInputField = function(slot0)
+function ActivateInputField(slot0)
 	GetComponent(slot0, typeof(InputField)):ActivateInputField()
 end
 
-onInputChanged = function(slot0, slot1, slot2)
+function onInputChanged(slot0, slot1, slot2)
 	slot3 = GetComponent(slot1, typeof(InputField)).onValueChanged
 
 	slot3:RemoveAllListeners()
@@ -621,69 +621,69 @@ onInputChanged = function(slot0, slot1, slot2)
 	slot3:AddListener(slot2)
 end
 
-getImageColor = function(slot0)
+function getImageColor(slot0)
 	return GetComponent(slot0, typeof(Image)).color
 end
 
-setImageColor = function(slot0, slot1)
+function setImageColor(slot0, slot1)
 	GetComponent(slot0, typeof(Image)).color = slot1
 end
 
-getImageAlpha = function(slot0)
+function getImageAlpha(slot0)
 	return GetComponent(slot0, typeof(Image)).color.a
 end
 
-setImageAlpha = function(slot0, slot1)
+function setImageAlpha(slot0, slot1)
 	slot2 = GetComponent(slot0, typeof(Image))
 	slot3 = slot2.color
 	slot3.a = slot1
 	slot2.color = slot3
 end
 
-getImageRaycastTarget = function(slot0)
+function getImageRaycastTarget(slot0)
 	return GetComponent(slot0, typeof(Image)).raycastTarget
 end
 
-setImageRaycastTarget = function(slot0, slot1)
+function setImageRaycastTarget(slot0, slot1)
 	GetComponent(slot0, typeof(Image)).raycastTarget = tobool(slot1)
 end
 
-getCanvasGroupAlpha = function(slot0)
+function getCanvasGroupAlpha(slot0)
 	return GetComponent(slot0, typeof(CanvasGroup)).alpha
 end
 
-setCanvasGroupAlpha = function(slot0, slot1)
+function setCanvasGroupAlpha(slot0, slot1)
 	GetComponent(slot0, typeof(CanvasGroup)).alpha = slot1
 end
 
-setActiveViaLayer = function(slot0, slot1)
+function setActiveViaLayer(slot0, slot1)
 	UIUtil.SetUIActiveViaLayer(go(slot0), slot1)
 end
 
-setActiveViaCG = function(slot0, slot1)
+function setActiveViaCG(slot0, slot1)
 	UIUtil.SetUIActiveViaCG(go(slot0), slot1)
 end
 
-getTextColor = function(slot0)
+function getTextColor(slot0)
 	return GetComponent(slot0, typeof(Text)).color
 end
 
-setTextColor = function(slot0, slot1)
+function setTextColor(slot0, slot1)
 	GetComponent(slot0, typeof(Text)).color = slot1
 end
 
-getTextAlpha = function(slot0)
+function getTextAlpha(slot0)
 	return GetComponent(slot0, typeof(Text)).color.a
 end
 
-setTextAlpha = function(slot0, slot1)
+function setTextAlpha(slot0, slot1)
 	slot2 = GetComponent(slot0, typeof(Text))
 	slot3 = slot2.color
 	slot3.a = slot1
 	slot2.color = slot3
 end
 
-setSizeDelta = function(slot0, slot1)
+function setSizeDelta(slot0, slot1)
 	if not GetComponent(slot0, typeof(RectTransform)) then
 		return
 	end
@@ -694,17 +694,17 @@ setSizeDelta = function(slot0, slot1)
 	slot2.sizeDelta = slot3
 end
 
-getOutlineColor = function(slot0)
+function getOutlineColor(slot0)
 	return GetComponent(slot0, typeof(Outline)).effectColor
 end
 
-setOutlineColor = function(slot0, slot1)
+function setOutlineColor(slot0, slot1)
 	GetComponent(slot0, typeof(Outline)).effectColor = slot1
 end
 
 slot4 = {}
 
-pressPersistTrigger = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function pressPersistTrigger(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	assert(defaultValue(slot6, 0.25) > 0, "maxSpeed less than zero")
 	assert(slot0, "should exist objectOrTransform")
 
@@ -714,7 +714,7 @@ pressPersistTrigger = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, 
 
 	slot9 = uv0[slot0]
 
-	slot10 = function()
+	function slot10()
 		if uv0 then
 			uv0:Stop()
 
@@ -757,18 +757,18 @@ pressPersistTrigger = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, 
 	return slot8, slot10
 end
 
-getSpritePivot = function(slot0)
+function getSpritePivot(slot0)
 	slot1 = slot0.bounds
 
 	return Vector2(-slot1.center.x / slot1.extents.x / 2 + 0.5, -slot1.center.y / slot1.extents.y / 2 + 0.5)
 end
 
-resetAspectRatio = function(slot0)
+function resetAspectRatio(slot0)
 	slot1 = GetComponent(slot0, "Image")
 	GetComponent(slot0, "AspectRatioFitter").aspectRatio = slot1.preferredWidth / slot1.preferredHeight
 end
 
-cloneTplTo = function(slot0, slot1, slot2)
+function cloneTplTo(slot0, slot1, slot2)
 	slot3 = tf(Instantiate(slot0))
 
 	slot3:SetParent(tf(slot1), false)
@@ -784,7 +784,7 @@ end
 slot5 = nil
 slot6 = {}
 
-setGray = function(slot0, slot1, slot2)
+function setGray(slot0, slot1, slot2)
 	slot2 = defaultValue(slot2, true)
 
 	if not slot1 and not uv0[slot0] then
@@ -821,7 +821,7 @@ setGray = function(slot0, slot1, slot2)
 	end
 end
 
-setBlackMask = function(slot0, slot1, slot2)
+function setBlackMask(slot0, slot1, slot2)
 	slot4 = nil
 
 	if not GetComponent(slot0, "UIMaterialAdjuster") then
@@ -837,13 +837,13 @@ setBlackMask = function(slot0, slot1, slot2)
 	slot3.enabled = slot1
 end
 
-long2int = function(slot0)
+function long2int(slot0)
 	slot1, slot2 = int64.tonum2(slot0)
 
 	return slot1
 end
 
-OnSliderWithButton = function(slot0, slot1, slot2)
+function OnSliderWithButton(slot0, slot1, slot2)
 	slot3 = slot1:GetComponent("Slider")
 	slot4 = slot3.onValueChanged
 
@@ -864,7 +864,7 @@ OnSliderWithButton = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-addSlip = function(slot0, slot1, slot2, slot3, slot4)
+function addSlip(slot0, slot1, slot2, slot3, slot4)
 	slot5 = GetOrAddComponent(slot1, "EventTriggerListener")
 	slot6 = nil
 	slot7 = 0
@@ -902,7 +902,7 @@ addSlip = function(slot0, slot1, slot2, slot3, slot4)
 	end)
 end
 
-getSizeRate = function()
+function getSizeRate()
 	slot0 = pg.UIMgr.GetInstance().LevelMain.transform.rect
 	slot1 = UnityEngine.Screen
 

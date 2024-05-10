@@ -11,11 +11,11 @@ slot0.ConfigData = {
 	name_old = "equipment_info_change_name_a"
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ItemChangeNoticeBox"
 end
 
-slot0.UpdateView = function(slot0, slot1)
+function slot0.UpdateView(slot0, slot1)
 	slot0:PreRefresh(slot1)
 
 	rtf(slot0.viewParent._window).sizeDelta = Vector2.New(1000, 638)

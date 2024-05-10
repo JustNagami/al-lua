@@ -1,16 +1,16 @@
 slot0 = class("MetaSkillUnlockPanel", import(".MsgboxSubPanel"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "MetaSkillUnlockBox"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:findUI()
 	slot0:initData()
 	slot0:addListener()
 end
 
-slot0.UpdateView = function(slot0, slot1)
+function slot0.UpdateView(slot0, slot1)
 	slot0:PreRefresh(slot1)
 	slot0:updateContent(slot1)
 
@@ -19,7 +19,7 @@ slot0.UpdateView = function(slot0, slot1)
 	slot0:PostRefresh(slot1)
 end
 
-slot0.findUI = function(slot0)
+function slot0.findUI(slot0)
 	slot0.tipText = slot0:findTF("Tip")
 	slot0.materialTpl = slot0:findTF("Material")
 	slot0.materialContainer = slot0:findTF("MaterialContainer")
@@ -31,14 +31,14 @@ slot0.findUI = function(slot0)
 	setText(slot0:findTF("Text", slot0.confirmBtn), i18n("word_ok"))
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.curMetaShipID = nil
 	slot0.curUnlockSkillID = nil
 	slot0.curUnlockMaterialID = nil
 	slot0.curUnlockMaterialNeedCount = nil
 end
 
-slot0.addListener = function(slot0)
+function slot0.addListener(slot0)
 	onButton(slot0, slot0.confirmBtn, function ()
 		if not uv0.curUnlockMaterialID then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("meta_unlock_skill_select"))
@@ -77,7 +77,7 @@ slot0.addListener = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.updateContent = function(slot0, slot1)
+function slot0.updateContent(slot0, slot1)
 	slot2 = slot1.metaShipVO
 	slot0.curMetaShipID = slot2.id
 	slot4 = slot1.skillID

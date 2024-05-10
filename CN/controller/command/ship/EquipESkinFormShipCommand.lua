@@ -1,6 +1,6 @@
 slot0 = class("EquipESkinFormShipCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.oldShipPos
 	slot5 = slot2.newShipId
@@ -25,7 +25,7 @@ slot0.execute = function(slot0, slot1)
 		return
 	end
 
-	slot12 = function()
+	function slot12()
 		if not uv0:getEquipmnentSkinById(uv1) or slot0.count == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_count_noenough"))
 

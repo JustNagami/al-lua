@@ -8,7 +8,7 @@ slot1 = {
 	hp2 = "5"
 }
 
-slot0.InitUI = function(slot0, slot1)
+function slot0.InitUI(slot0, slot1)
 	slot0.type = slot1.type
 	slot2 = slot0._tf
 	slot2 = slot2:Find("Image")
@@ -38,7 +38,7 @@ slot0.InitUI = function(slot0, slot1)
 	end)
 end
 
-slot0.InitRegister = function(slot0, slot1)
+function slot0.InitRegister(slot0, slot1)
 	slot0:Register("move", function (slot0)
 		if isa(slot0, MoveRyza) then
 			slot0:AddItem(uv0.type)

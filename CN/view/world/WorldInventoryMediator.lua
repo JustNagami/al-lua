@@ -5,7 +5,7 @@ slot0.OnOpenAllocateLayer = "WorldInventoryMediator.OnOpenAllocateLayer"
 slot0.OPEN_MODULEINFO_LAYER = "WorldInventoryMediator:OPEN_MODULEINFO_LAYER"
 slot0.OPEN_EQUIPMENT_INDEX = "OPEN_EQUIPMENT_INDEX"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.OnUseItem, function (slot0, slot1, slot2, slot3)
 		uv0:sendNotification(GAME.WORLD_ITEM_USE, {
 			itemID = slot1,
@@ -53,7 +53,7 @@ slot0.register = function(slot0)
 
 	slot4 = getProxy(EquipmentProxy):getEquipments(true)
 
-	for slot8, slot9 in pairs(getProxy(BayProxy):getEquipsInShips()) do
+	for slot8, slot9 in ipairs(getProxy(BayProxy):getEquipsInShips()) do
 		table.insert(slot4, slot9)
 	end
 
@@ -63,21 +63,20 @@ slot0.register = function(slot0)
 	}))
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		EquipmentProxy.EQUIPMENT_UPDATED,
 		GAME.USE_ITEM_DONE,
 		GAME.DESTROY_EQUIPMENTS_DONE,
 		BagProxy.ITEM_UPDATED,
 		uv0.BATCHDESTROY_MODE,
-		GAME.EQUIP_TO_SHIP_DONE,
 		GAME.REVERT_EQUIPMENT_DONE,
 		GAME.FRAG_SELL_DONE,
 		GAME.TRANSFORM_EQUIPMENT_AWARD_FINISHED
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == EquipmentProxy.EQUIPMENT_UPDATED then

@@ -1,6 +1,6 @@
 slot0 = class("Challenge2ResetRequestCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody().mode
 	slot3 = slot1:getBody().isInfiniteSeasonClear
 

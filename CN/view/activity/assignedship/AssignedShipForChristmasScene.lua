@@ -1,6 +1,6 @@
 slot0 = class("AssignedShipForChristmasScene", import(".BaseAssignedShipScene"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "AssignedShipUI2"
 end
 

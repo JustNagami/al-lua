@@ -1,6 +1,6 @@
 slot0 = class("Match3Page", import("...base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("AD")
 	slot0.item = slot0:findTF("item", slot0.bg)
 	slot0.items = slot0:findTF("items", slot0.bg)
@@ -8,13 +8,13 @@ slot0.OnInit = function(slot0)
 	slot0.itemList = UIItemList.New(slot0.items, slot0.item)
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	slot0.drop = slot0.activity:getConfig("config_client").drop
 	slot0.id = slot0.activity:getConfig("config_client").gameId
 	slot0.day = #slot0.drop
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	setActive(slot0.item, false)
 
 	slot1 = getProxy(MiniGameProxy)
@@ -56,11 +56,11 @@ slot0.OnFirstFlush = function(slot0)
 	end)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	slot0.itemList:align(slot0.day)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

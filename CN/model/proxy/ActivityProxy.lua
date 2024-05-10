@@ -15,7 +15,7 @@ slot0.ACTIVITY_SHOW_RED_PACKET_AWARDS = "ActivityProxy ACTIVITY_SHOW_RED_PACKET_
 slot0.ACTIVITY_SHOW_SHAKE_BEADS_RESULT = "ActivityProxy ACTIVITY_SHOW_SHAKE_BEADS_RESULT"
 slot0.ACTIVITY_PT_ID = 110
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:on(11200, function (slot0)
 		uv0.data = {}
 		uv0.params = {}
@@ -44,6 +44,10 @@ slot0.register = function(slot0)
 					table.insert(uv0.buffActs, slot6.id)
 				elseif slot7 == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
 					uv0:InitActtivityFleet(slot6, slot5)
+				elseif slot7 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
+					uv0:InitActtivityFleet(slot6, slot5)
+				elseif slot7 == ActivityConst.ACTIVITY_TYPE_EVENT_SINGLE then
+					uv0:CheckDailyEventRequest(slot6)
 				end
 
 				uv0.data[slot5.id] = slot6
@@ -173,7 +177,7 @@ slot0.register = function(slot0)
 	slot0.extraDatas = {}
 end
 
-slot0.getAliveActivityByType = function(slot0, slot1)
+function slot0.getAliveActivityByType(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.data) do
 		if slot6:getConfig("type") == slot1 and not slot6:isEnd() then
 			return slot6
@@ -181,7 +185,7 @@ slot0.getAliveActivityByType = function(slot0, slot1)
 	end
 end
 
-slot0.getActivityByType = function(slot0, slot1)
+function slot0.getActivityByType(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.data) do
 		if slot6:getConfig("type") == slot1 then
 			return slot6
@@ -189,7 +193,7 @@ slot0.getActivityByType = function(slot0, slot1)
 	end
 end
 
-slot0.getActivitiesByType = function(slot0, slot1)
+function slot0.getActivitiesByType(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in pairs(slot0.data) do
@@ -201,7 +205,7 @@ slot0.getActivitiesByType = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getActivitiesByTypes = function(slot0, slot1)
+function slot0.getActivitiesByTypes(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in pairs(slot0.data) do
@@ -213,7 +217,7 @@ slot0.getActivitiesByTypes = function(slot0, slot1)
 	return slot2
 end
 
-slot0.GetEarliestActByType = function(slot0, slot1)
+function slot0.GetEarliestActByType(slot0, slot1)
 	slot3 = _.select(slot0:getActivitiesByType(slot1), function (slot0)
 		return not slot0:isEnd()
 	end)
@@ -225,7 +229,7 @@ slot0.GetEarliestActByType = function(slot0, slot1)
 	return slot3[1]
 end
 
-slot0.getMilitaryExerciseActivity = function(slot0)
+function slot0.getMilitaryExerciseActivity(slot0)
 	slot1 = nil
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -239,8 +243,8 @@ slot0.getMilitaryExerciseActivity = function(slot0)
 	return Clone(slot1)
 end
 
-slot0.getPanelActivities = function(slot0)
-	slot1 = function(slot0)
+function slot0.getPanelActivities(slot0)
+	function slot1(slot0)
 		slot1 = slot0:getConfig("type")
 
 		if slot0:isShow() and not slot0:isAfterShow() then
@@ -273,7 +277,7 @@ slot0.getPanelActivities = function(slot0)
 	return slot2
 end
 
-slot0.checkHxActivity = function(slot0, slot1)
+function slot0.checkHxActivity(slot0, slot1)
 	if slot0.hxList and #slot0.hxList > 0 then
 		for slot5 = 1, #slot0.hxList do
 			if slot0.hxList[slot5] == slot1 then
@@ -285,7 +289,7 @@ slot0.checkHxActivity = function(slot0, slot1)
 	return false
 end
 
-slot0.getBannerDisplays = function(slot0)
+function slot0.getBannerDisplays(slot0)
 	return _(pg.activity_banner.all):chain():map(function (slot0)
 		return pg.activity_banner[slot0]
 	end):filter(function (slot0)
@@ -293,7 +297,7 @@ slot0.getBannerDisplays = function(slot0)
 	end):value()
 end
 
-slot0.getActiveBannerByType = function(slot0, slot1)
+function slot0.getActiveBannerByType(slot0, slot1)
 	if not pg.activity_banner.get_id_list_by_type[slot1] then
 		return nil
 	end
@@ -307,13 +311,13 @@ slot0.getActiveBannerByType = function(slot0, slot1)
 	return nil
 end
 
-slot0.getNoticeBannerDisplays = function(slot0)
+function slot0.getNoticeBannerDisplays(slot0)
 	return _.map(pg.activity_banner_notice.all, function (slot0)
 		return pg.activity_banner_notice[slot0]
 	end)
 end
 
-slot0.findNextAutoActivity = function(slot0)
+function slot0.findNextAutoActivity(slot0)
 	slot1 = nil
 	slot3 = pg.TimeMgr.GetInstance():GetServerTime()
 
@@ -379,7 +383,7 @@ slot0.findNextAutoActivity = function(slot0)
 	return slot1
 end
 
-slot0.findRefluxAutoActivity = function(slot0)
+function slot0.findRefluxAutoActivity(slot0)
 	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_REFLUX) and not slot1:isEnd() and not slot1.autoActionForbidden then
 		slot2 = pg.TimeMgr.GetInstance()
 
@@ -389,7 +393,7 @@ slot0.findRefluxAutoActivity = function(slot0)
 	end
 end
 
-slot0.existRefluxAwards = function(slot0)
+function slot0.existRefluxAwards(slot0)
 	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_REFLUX) and not slot1:isEnd() then
 		for slot6 = #pg.return_pt_template.all, 1, -1 do
 			if slot2[slot2.all[slot6]].pt_require <= slot1.data3 and slot1.data4 < slot7 then
@@ -419,15 +423,15 @@ slot0.existRefluxAwards = function(slot0)
 	end
 end
 
-slot0.getActivityById = function(slot0, slot1)
+function slot0.getActivityById(slot0, slot1)
 	return Clone(slot0.data[slot1])
 end
 
-slot0.RawGetActivityById = function(slot0, slot1)
+function slot0.RawGetActivityById(slot0, slot1)
 	return slot0.data[slot1]
 end
 
-slot0.updateActivity = function(slot0, slot1)
+function slot0.updateActivity(slot0, slot1)
 	assert(slot0.data[slot1.id], "activity should exist" .. slot1.id)
 	assert(isa(slot1, Activity), "activity should instance of Activity")
 
@@ -450,7 +454,7 @@ slot0.updateActivity = function(slot0, slot1)
 	})
 end
 
-slot0.addActivity = function(slot0, slot1)
+function slot0.addActivity(slot0, slot1)
 	assert(slot0.data[slot1.id] == nil, "activity already exist" .. slot1.id)
 	assert(isa(slot1, Activity), "activity should instance of Activity")
 
@@ -464,7 +468,7 @@ slot0.addActivity = function(slot0, slot1)
 	end
 end
 
-slot0.deleteActivityById = function(slot0, slot1)
+function slot0.deleteActivityById(slot0, slot1)
 	assert(slot0.data[slot1], "activity should exist" .. slot1)
 
 	slot0.data[slot1] = nil
@@ -472,11 +476,11 @@ slot0.deleteActivityById = function(slot0, slot1)
 	slot0.facade:sendNotification(uv0.ACTIVITY_DELETED, slot1)
 end
 
-slot0.IsActivityNotEnd = function(slot0, slot1)
+function slot0.IsActivityNotEnd(slot0, slot1)
 	return slot0.data[slot1] and not slot0.data[slot1]:isEnd()
 end
 
-slot0.readyToAchieveByType = function(slot0, slot1)
+function slot0.readyToAchieveByType(slot0, slot1)
 	slot2 = false
 
 	for slot7, slot8 in ipairs(slot0:getActivitiesByType(slot1)) do
@@ -490,7 +494,7 @@ slot0.readyToAchieveByType = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getBuildActivityCfgByID = function(slot0, slot1)
+function slot0.getBuildActivityCfgByID(slot0, slot1)
 	for slot6, slot7 in ipairs(slot0:getActivitiesByTypes({
 		ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1,
 		ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
@@ -503,7 +507,7 @@ slot0.getBuildActivityCfgByID = function(slot0, slot1)
 	return nil
 end
 
-slot0.getNoneActBuildActivityCfgByID = function(slot0, slot1)
+function slot0.getNoneActBuildActivityCfgByID(slot0, slot1)
 	for slot6, slot7 in ipairs(slot0:getActivitiesByTypes({
 		ActivityConst.ACTIVITY_TYPE_BUILD
 	})) do
@@ -515,7 +519,7 @@ slot0.getNoneActBuildActivityCfgByID = function(slot0, slot1)
 	return nil
 end
 
-slot0.getBuffShipList = function(slot0)
+function slot0.getBuffShipList(slot0)
 	_.each(slot0:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHIP_BUFF), function (slot0)
 		if slot0 and not slot0:isEnd() then
 			if not pg.activity_expup_ship[slot0:getConfig("config_id")] then
@@ -531,7 +535,7 @@ slot0.getBuffShipList = function(slot0)
 	return {}
 end
 
-slot0.getVirtualItemNumber = function(slot0, slot1)
+function slot0.getVirtualItemNumber(slot0, slot1)
 	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG) and not slot2:isEnd() then
 		return slot2.data1KeyValueList[1][slot1] and slot2.data1KeyValueList[1][slot1] or 0
 	end
@@ -539,7 +543,7 @@ slot0.getVirtualItemNumber = function(slot0, slot1)
 	return 0
 end
 
-slot0.removeVitemById = function(slot0, slot1, slot2)
+function slot0.removeVitemById(slot0, slot1, slot2)
 	slot3 = slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 
 	assert(slot3, "vbagType invalid")
@@ -551,7 +555,7 @@ slot0.removeVitemById = function(slot0, slot1, slot2)
 	slot0:updateActivity(slot3)
 end
 
-slot0.addVitemById = function(slot0, slot1, slot2)
+function slot0.addVitemById(slot0, slot1, slot2)
 	slot3 = slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 
 	assert(slot3, "vbagType invalid")
@@ -566,12 +570,12 @@ slot0.addVitemById = function(slot0, slot1, slot2)
 
 	slot0:updateActivity(slot3)
 
-	if pg.item_data_statistics[slot1].link_id ~= 0 and slot0:getActivityById(slot5) and not slot6:isEnd() then
-		PlayerResChangeCommand.UpdateActivity(slot6, slot2)
+	if Item.getConfigData(slot1).link_id ~= 0 and slot0:getActivityById(slot4) and not slot5:isEnd() then
+		PlayerResChangeCommand.UpdateActivity(slot5, slot2)
 	end
 end
 
-slot0.monitorTaskList = function(slot0, slot1)
+function slot0.monitorTaskList(slot0, slot1)
 	if slot1 and not slot1:isEnd() and slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR and getProxy(TaskProxy):isReceiveTasks(slot1:getConfig("config_data")[1] or {}) then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
@@ -580,11 +584,11 @@ slot0.monitorTaskList = function(slot0, slot1)
 	end
 end
 
-slot0.InitActtivityFleet = function(slot0, slot1, slot2)
+function slot0.InitActtivityFleet(slot0, slot1, slot2)
 	getProxy(FleetProxy):addActivityFleet(slot1, slot2.group_list)
 end
 
-slot0.InitActivityBossData = function(slot0, slot1)
+function slot0.InitActivityBossData(slot0, slot1)
 	if not pg.activity_event_worldboss[slot1:getConfig("config_id")] then
 		return
 	end
@@ -601,7 +605,7 @@ slot0.InitActivityBossData = function(slot0, slot1)
 	end
 end
 
-slot0.AddInstagramTimer = function(slot0, slot1)
+function slot0.AddInstagramTimer(slot0, slot1)
 	slot0:RemoveInstagramTimer()
 
 	slot3, slot4 = slot0.data[slot1]:GetNextPushTime()
@@ -609,7 +613,7 @@ slot0.AddInstagramTimer = function(slot0, slot1)
 	if slot3 then
 		slot5 = pg.TimeMgr.GetInstance()
 
-		slot7 = function()
+		function slot7()
 			uv0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
 				arg2 = 0,
 				activity_id = uv1,
@@ -631,7 +635,7 @@ slot0.AddInstagramTimer = function(slot0, slot1)
 	end
 end
 
-slot0.RemoveInstagramTimer = function(slot0)
+function slot0.RemoveInstagramTimer(slot0)
 	if slot0.instagramTimer then
 		slot0.instagramTimer:Stop()
 
@@ -639,7 +643,7 @@ slot0.RemoveInstagramTimer = function(slot0)
 	end
 end
 
-slot0.RegisterRequestTime = function(slot0, slot1, slot2)
+function slot0.RegisterRequestTime(slot0, slot1, slot2)
 	if not slot1 or slot1 <= 0 then
 		return
 	end
@@ -647,35 +651,11 @@ slot0.RegisterRequestTime = function(slot0, slot1, slot2)
 	slot0.requestTime[slot1] = slot2
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	slot0:RemoveInstagramTimer()
 end
 
-slot0.ExistSkinCouponActivityAndItemId = function(slot0, slot1)
-	return slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) and not slot2:isEnd() and table.contains(slot2.data1_list, slot1) and slot2.data1 == 1
-end
-
-slot0.ExistSkinCoupon = function(slot0, slot1)
-	return slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) and not slot2:isEnd() and table.contains(slot2.data1_list, slot1)
-end
-
-slot0.ExistSkinCouponActivity = function(slot0)
-	return slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) and not slot1:isEnd()
-end
-
-slot0.MarkSkinCoupon = function(slot0, slot1)
-	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) and not slot2:isEnd() then
-		slot2.data1 = 1
-
-		if not table.contains(slot2.data1_list, slot1) then
-			table.insert(slot2.data1_list, slot1)
-		end
-
-		slot0:updateActivity(slot2)
-	end
-end
-
-slot0.addActivityParameter = function(slot0, slot1)
+function slot0.addActivityParameter(slot0, slot1)
 	slot3 = slot1.stopTime
 
 	for slot7, slot8 in ipairs(slot1:getConfig("config_data")) do
@@ -686,7 +666,7 @@ slot0.addActivityParameter = function(slot0, slot1)
 	end
 end
 
-slot0.getActivityParameter = function(slot0, slot1)
+function slot0.getActivityParameter(slot0, slot1)
 	if slot0.params[slot1] then
 		slot2, slot3 = unpack(slot0.params[slot1])
 
@@ -696,7 +676,7 @@ slot0.getActivityParameter = function(slot0, slot1)
 	end
 end
 
-slot0.IsShowFreeBuildMark = function(slot0, slot1)
+function slot0.IsShowFreeBuildMark(slot0, slot1)
 	slot5 = ActivityConst.ACTIVITY_TYPE_BUILD_FREE
 
 	for slot5, slot6 in ipairs(slot0:getActivitiesByType(slot5)) do
@@ -708,7 +688,7 @@ slot0.IsShowFreeBuildMark = function(slot0, slot1)
 	return false
 end
 
-slot0.getBuildFreeActivityByBuildId = function(slot0, slot1)
+function slot0.getBuildFreeActivityByBuildId(slot0, slot1)
 	slot5 = ActivityConst.ACTIVITY_TYPE_BUILD_FREE
 
 	for slot5, slot6 in ipairs(slot0:getActivitiesByType(slot5)) do
@@ -720,13 +700,13 @@ slot0.getBuildFreeActivityByBuildId = function(slot0, slot1)
 	end
 end
 
-slot0.getBuildPoolActivity = function(slot0, slot1)
+function slot0.getBuildPoolActivity(slot0, slot1)
 	if slot1:IsActivity() then
 		return slot0:getActivityById(slot1.activityId)
 	end
 end
 
-slot0.getEnterReadyActivity = function(slot0)
+function slot0.getEnterReadyActivity(slot0)
 	slot3 = {}
 
 	for slot7, slot8 in ipairs(_.keys({
@@ -734,7 +714,8 @@ slot0.getEnterReadyActivity = function(slot0)
 		[ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2] = function (slot0)
 			return not slot0:checkBattleTimeInBossAct()
 		end,
-		[ActivityConst.ACTIVITY_TYPE_BOSSRUSH] = false
+		[ActivityConst.ACTIVITY_TYPE_BOSSRUSH] = false,
+		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE] = false
 	})) do
 		slot3[slot8] = 0
 	end
@@ -745,6 +726,8 @@ slot0.getEnterReadyActivity = function(slot0)
 		end
 	end
 
+	table.sort(slot2)
+
 	for slot7, slot8 in ipairs(slot2) do
 		if slot3[slot8] > 0 then
 			return slot0.data[slot3[slot8]]
@@ -752,7 +735,7 @@ slot0.getEnterReadyActivity = function(slot0)
 	end
 end
 
-slot0.AtelierActivityAllSlotIsEmpty = function(slot0)
+function slot0.AtelierActivityAllSlotIsEmpty(slot0)
 	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK) or slot1:isEnd() then
 		return false
 	end
@@ -766,7 +749,7 @@ slot0.AtelierActivityAllSlotIsEmpty = function(slot0)
 	return true
 end
 
-slot0.OwnAtelierActivityItemCnt = function(slot0, slot1, slot2)
+function slot0.OwnAtelierActivityItemCnt(slot0, slot1, slot2)
 	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK) or slot3:isEnd() then
 		return false
 	end
@@ -774,7 +757,7 @@ slot0.OwnAtelierActivityItemCnt = function(slot0, slot1, slot2)
 	return slot3:GetItems()[slot1] and slot2 <= slot5.count
 end
 
-slot0.refreshActivityBuffs = function(slot0)
+function slot0.refreshActivityBuffs(slot0)
 	slot0.actBuffs = {}
 	slot1 = 1
 
@@ -799,7 +782,7 @@ slot0.refreshActivityBuffs = function(slot0)
 	end
 end
 
-slot0.getActivityBuffs = function(slot0)
+function slot0.getActivityBuffs(slot0)
 	if underscore.any(slot0.buffActs, function (slot0)
 		return not uv0.data[slot0] or uv0.data[slot0]:isEnd()
 	end) or underscore.any(slot0.actBuffs, function (slot0)
@@ -811,24 +794,24 @@ slot0.getActivityBuffs = function(slot0)
 	return slot0.actBuffs
 end
 
-slot0.getShipModExpActivity = function(slot0)
+function slot0.getShipModExpActivity(slot0)
 	return underscore.select(slot0:getActivityBuffs(), function (slot0)
 		return slot0:ShipModExpUsage()
 	end)
 end
 
-slot0.getBackyardEnergyActivityBuffs = function(slot0)
+function slot0.getBackyardEnergyActivityBuffs(slot0)
 	return underscore.select(slot0:getActivityBuffs(), function (slot0)
 		return slot0:BackyardEnergyUsage()
 	end)
 end
 
-slot0.InitContinuousTime = function(slot0, slot1)
+function slot0.InitContinuousTime(slot0, slot1)
 	slot0.continuousOpeartionTime = slot1
 	slot0.continuousOpeartionTotalTime = slot1
 end
 
-slot0.UseContinuousTime = function(slot0)
+function slot0.UseContinuousTime(slot0)
 	if not slot0.continuousOpeartionTime then
 		return
 	end
@@ -836,23 +819,23 @@ slot0.UseContinuousTime = function(slot0)
 	slot0.continuousOpeartionTime = slot0.continuousOpeartionTime - 1
 end
 
-slot0.GetContinuousTime = function(slot0)
+function slot0.GetContinuousTime(slot0)
 	return slot0.continuousOpeartionTime, slot0.continuousOpeartionTotalTime
 end
 
-slot0.AddBossRushAwards = function(slot0, slot1)
+function slot0.AddBossRushAwards(slot0, slot1)
 	slot0.bossrushAwards = slot0.bossrushAwards or {}
 
 	table.insertto(slot0.bossrushAwards, slot1)
 end
 
-slot0.PopBossRushAwards = function(slot0)
+function slot0.PopBossRushAwards(slot0)
 	slot0.bossrushAwards = nil
 
 	return slot0.bossrushAwards or {}
 end
 
-slot0.GetBossRushRuntime = function(slot0, slot1)
+function slot0.GetBossRushRuntime(slot0, slot1)
 	if not slot0.extraDatas[slot1] then
 		slot0.extraDatas[slot1] = {
 			record = 0
@@ -862,7 +845,7 @@ slot0.GetBossRushRuntime = function(slot0, slot1)
 	return slot0.extraDatas[slot1]
 end
 
-slot0.GetActivityBossRuntime = function(slot0, slot1)
+function slot0.GetActivityBossRuntime(slot0, slot1)
 	if not slot0.extraDatas[slot1] then
 		slot0.extraDatas[slot1] = {
 			buffIds = {},
@@ -875,7 +858,7 @@ slot0.GetActivityBossRuntime = function(slot0, slot1)
 	return slot0.extraDatas[slot1]
 end
 
-slot0.GetTaskActivities = function(slot0)
+function slot0.GetTaskActivities(slot0)
 	table.Foreach(Activity.GetType2Class(), function (slot0, slot1)
 		if not isa(slot1, ITaskActivity) then
 			return
@@ -887,19 +870,19 @@ slot0.GetTaskActivities = function(slot0)
 	return {}
 end
 
-slot0.setSurveyState = function(slot0, slot1)
+function slot0.setSurveyState(slot0, slot1)
 	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SURVEY) and not slot2:isEnd() then
 		slot0.surveyState = slot1
 	end
 end
 
-slot0.isSurveyDone = function(slot0)
+function slot0.isSurveyDone(slot0)
 	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SURVEY) and not slot1:isEnd() then
 		return slot0.surveyState and slot0.surveyState > 0
 	end
 end
 
-slot0.isSurveyOpen = function(slot0)
+function slot0.isSurveyOpen(slot0)
 	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SURVEY) and not slot1:isEnd() then
 		slot2 = slot1:getConfig("config_data")
 		slot4 = slot2[2]
@@ -910,7 +893,7 @@ slot0.isSurveyOpen = function(slot0)
 	end
 end
 
-slot0.GetActBossLinkPTActID = function(slot0, slot1)
+function slot0.GetActBossLinkPTActID(slot0, slot1)
 	return table.Find(slot0.data, function (slot0, slot1)
 		if slot1:getConfig("type") ~= ActivityConst.ACTIVITY_TYPE_PT_BUFF then
 			return
@@ -918,6 +901,14 @@ slot0.GetActBossLinkPTActID = function(slot0, slot1)
 
 		return slot1:getDataConfig("link_id") == uv0
 	end) and slot2.id
+end
+
+function slot0.CheckDailyEventRequest(slot0, slot1)
+	if slot1:CheckDailyEventRequest() then
+		slot0:sendNotification(GAME.SINGLE_EVENT_REFRESH, {
+			actId = slot1.id
+		})
+	end
 end
 
 return slot0

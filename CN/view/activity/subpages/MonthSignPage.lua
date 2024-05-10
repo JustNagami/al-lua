@@ -2,7 +2,7 @@ slot0 = class("MonthSignPage", import("...base.BaseActivityPage"))
 slot0.SHOW_RE_MONTH_SIGN = "show re month sign award"
 slot0.MONTH_SIGN_SHOW = {}
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("bg")
 	slot0.items = slot0:findTF("items")
 	slot0.item = slot0:findTF("item", slot0.items)
@@ -17,7 +17,7 @@ slot0.OnInit = function(slot0)
 	end)
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	slot0.config = pg.activity_month_sign[slot0.activity.data2]
 
 	if not slot0.config then
@@ -33,7 +33,7 @@ slot0.OnDataSetting = function(slot0)
 	end
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	slot1 = pg.TimeMgr.GetInstance()
 	slot1 = slot1:GetServerTime()
 	slot0.list = UIItemList.New(slot0.items, slot0.item)
@@ -44,11 +44,7 @@ slot0.OnFirstFlush = function(slot0)
 			slot3 = slot1 + 1
 
 			updateDrop(slot2, _.map(uv0.config["day" .. slot3], function (slot0)
-				return {
-					type = slot0[1],
-					id = slot0[2],
-					count = slot0[3]
-				}
+				return Drop.Create(slot0)
 			end)[1])
 			onButton(uv0, slot2, function ()
 				if #uv0 == 1 then
@@ -78,7 +74,7 @@ slot0.OnFirstFlush = function(slot0)
 	end)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	if slot0:isDirtyRes() then
 		return
 	end
@@ -112,10 +108,10 @@ slot0.OnUpdateFlush = function(slot0)
 	end
 end
 
-slot0.showReMonthSign = function(slot0)
+function slot0.showReMonthSign(slot0)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	removeAllChildren(slot0.items)
 
 	slot0.monthSignPageTool = nil
@@ -125,11 +121,11 @@ slot0.OnDestroy = function(slot0)
 	slot0.monthSignReSignUI = nil
 end
 
-slot0.UseSecondPage = function(slot0, slot1)
+function slot0.UseSecondPage(slot0, slot1)
 	return tonumber(pg.TimeMgr.GetInstance():CurrentSTimeDesc("%m", true)) == pg.activity_template[slot1.id].config_client[1]
 end
 
-slot0.isDirtyRes = function(slot0)
+function slot0.isDirtyRes(slot0)
 	if slot0.specialTag and slot0:getUIName() ~= slot0.activity:getConfig("page_info").ui_name2 then
 		return true
 	end

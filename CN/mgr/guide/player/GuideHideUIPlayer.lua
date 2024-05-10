@@ -1,6 +1,6 @@
 slot0 = class("GuideHideUIPlayer", import(".GuidePlayer"))
 
-slot0.OnExecution = function(slot0, slot1, slot2)
+function slot0.OnExecution(slot0, slot1, slot2)
 	slot4 = {}
 
 	for slot8, slot9 in ipairs(slot1:GetHideNodes()) do
@@ -23,7 +23,7 @@ slot0.OnExecution = function(slot0, slot1, slot2)
 	parallelAsync(slot4, slot2)
 end
 
-slot0.RegisterEvent = function(slot0, slot1, slot2)
+function slot0.RegisterEvent(slot0, slot1, slot2)
 	slot2()
 end
 

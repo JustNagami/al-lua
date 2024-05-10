@@ -1,6 +1,6 @@
 slot0 = class("UrExchangeItemPage", import("...base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.exchangeBtn = slot0:findTF("AD/exchange")
 	slot0.exchangeTip = slot0:findTF("AD/exchange/tip")
 	slot0.battleBtn = slot0:findTF("AD/battle")
@@ -45,7 +45,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	slot1 = pg.gameset.urpt_chapter_max.description
 	slot2 = slot1[1]
 	slot3 = slot1[2]
@@ -53,18 +53,18 @@ slot0.OnFirstFlush = function(slot0)
 	slot0.progressTxt.text = slot4 .. "/" .. slot3
 
 	setFillAmount(slot0.progress, slot4 / slot3)
-	updateDrop(slot0.itemTF, {
+	updateDrop(slot0.itemTF, Drop.New({
 		count = 0,
-		type = 2,
+		type = DROP_TYPE_ITEM,
 		id = slot2
-	})
+	}))
 	setActive(slot0.exchangeTip, NotifyTipHelper.ShouldShowUrTip())
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

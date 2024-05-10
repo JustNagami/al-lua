@@ -13,7 +13,7 @@ slot1.C_GALLERY_MUSIC = "C_GALLERY_MUSIC"
 slot1.C_BATTLE_CV_EXTRA = "C_BATTLE_CV_EXTRA"
 slot1.NEXT_VER = 40
 
-slot1.Init = function(slot0, slot1)
+function slot1.Init(slot0, slot1)
 	print("initializing cri manager...")
 	seriesAsync({
 		function (slot0)
@@ -43,7 +43,7 @@ slot1.Init = function(slot0, slot1)
 	}, slot1)
 end
 
-slot1.InitCri = function(slot0, slot1)
+function slot1.InitCri(slot0, slot1)
 	slot0.criInitializer = GameObject.Find("CRIWARE"):GetComponent(typeof(CriWareInitializer))
 	slot0.criInitializer.fileSystemConfig.numberOfLoaders = 128
 	slot0.criInitializer.manaConfig.numberOfDecoders = 128
@@ -76,7 +76,7 @@ slot1.InitCri = function(slot0, slot1)
 	end)
 end
 
-slot1.PlayBGM = function(slot0, slot1, slot2)
+function slot1.PlayBGM(slot0, slot1, slot2)
 	if slot0.bgmName == "bgm-" .. slot1 then
 		return
 	end
@@ -90,40 +90,42 @@ slot1.PlayBGM = function(slot0, slot1, slot2)
 	end)
 end
 
-slot1.StopBGM = function(slot0)
+function slot1.StopBGM(slot0)
 	slot0.criInst:StopBGM(CriWareMgr.CRI_FADE_TYPE.FADE_INOUT)
 
 	slot0.bgmName = nil
 end
 
-slot1.StopPlaybackInfoForce = function(slot0, slot1)
+function slot1.StopPlaybackInfoForce(slot0, slot1)
 	slot1.playback:Stop(true)
 end
 
-slot1.LoadCV = function(slot0, slot1, slot2)
+function slot1.LoadCV(slot0, slot1, slot2)
 	slot0:LoadCueSheet(uv0.GetCVBankName(slot1), slot2)
 end
 
-slot1.LoadBattleCV = function(slot0, slot1, slot2)
+function slot1.LoadBattleCV(slot0, slot1, slot2)
 	slot0:LoadCueSheet(uv0.GetBattleCVBankName(slot1), slot2)
 end
 
-slot1.UnloadCVBank = function(slot0)
+function slot1.UnloadCVBank(slot0)
 	uv0.GetInstance():UnloadCueSheet(slot0)
 end
 
-slot1.GetCVBankName = function(slot0)
+function slot1.GetCVBankName(slot0)
 	return "cv-" .. slot0
 end
 
-slot1.GetBattleCVBankName = function(slot0)
+function slot1.GetBattleCVBankName(slot0)
 	return "cv-" .. slot0 .. "-battle"
 end
 
-slot1.CheckFModeEvent = function(slot0, slot1, slot2, slot3)
+function slot1.CheckFModeEvent(slot0, slot1, slot2, slot3)
 	if not slot1 then
 		return
 	end
+
+	slot4, slot5 = nil
 
 	string.gsub(slot1, "event:/cv/(.+)/(.+)", function (slot0, slot1)
 		uv0 = "cv-" .. slot0 .. (tobool(ShipWordHelper.CVBattleKey[string.gsub(slot1, "_%w+", "")]) and "-battle" or "")
@@ -133,19 +135,29 @@ slot1.CheckFModeEvent = function(slot0, slot1, slot2, slot3)
 		uv0 = "tb-" .. slot0
 		uv1 = slot1
 	end)
+	string.gsub(slot1, "event:/educate/(.+)/(.+)", function (slot0, slot1)
+		uv0 = "educate-" .. slot0
+		uv1 = slot1
+	end)
 
-	if nil and slot5 then
+	if string.find(slot1, "event:/educate%-cv/") then
+		slot6 = string.split(slot1, "/")
+		slot5 = slot6[#slot6]
+		slot4 = slot6[#slot6 - 1]
+	end
+
+	if slot4 and slot5 then
 		slot2(slot4, slot5)
 	else
 		slot3(string.gsub(string.gsub(slot1, "event:/(battle)/(.+)", "%1-%2"), "event:/(ui)/(.+)", "%1-%2"))
 	end
 end
 
-slot1.CheckHasCue = function(slot0, slot1, slot2)
+function slot1.CheckHasCue(slot0, slot1, slot2)
 	return CriAtom.GetCueSheet(slot1) ~= nil and slot3.acb:Exists(slot2)
 end
 
-slot1.PlaySoundEffect_V3 = function(slot0, slot1, slot2)
+function slot1.PlaySoundEffect_V3(slot0, slot1, slot2)
 	slot0:CheckFModeEvent(slot1, function (slot0, slot1)
 		uv0:PlayCV_V3(slot0, slot1, uv1)
 	end, function (slot0)
@@ -153,7 +165,7 @@ slot1.PlaySoundEffect_V3 = function(slot0, slot1, slot2)
 	end)
 end
 
-slot1.PlayMultipleSound_V3 = function(slot0, slot1, slot2)
+function slot1.PlayMultipleSound_V3(slot0, slot1, slot2)
 	slot0:CheckFModeEvent(slot1, function (slot0, slot1)
 		uv0:CreateCvMultipleHandler(slot0, slot1, uv1)
 	end, function (slot0)
@@ -161,7 +173,7 @@ slot1.PlayMultipleSound_V3 = function(slot0, slot1, slot2)
 	end)
 end
 
-slot1.StopSoundEffect_V3 = function(slot0, slot1)
+function slot1.StopSoundEffect_V3(slot0, slot1)
 	slot0:CheckFModeEvent(slot1, function (slot0, slot1)
 		uv0:StopCV_V3()
 	end, function (slot0)
@@ -169,7 +181,7 @@ slot1.StopSoundEffect_V3 = function(slot0, slot1)
 	end)
 end
 
-slot1.UnloadSoundEffect_V3 = function(slot0, slot1)
+function slot1.UnloadSoundEffect_V3(slot0, slot1)
 	slot0:CheckFModeEvent(slot1, function (slot0, slot1)
 		uv0:UnloadCueSheet(slot0)
 	end, function (slot0)
@@ -177,7 +189,7 @@ slot1.UnloadSoundEffect_V3 = function(slot0, slot1)
 	end)
 end
 
-slot1.PlayCV_V3 = function(slot0, slot1, slot2, slot3)
+function slot1.PlayCV_V3(slot0, slot1, slot2, slot3)
 	assert(slot1, "cueSheetName can not be nil.")
 	assert(slot2, "cueName can not be nil.")
 	slot0.criInst:PlayVoice(slot2, CriWareMgr.CRI_FADE_TYPE.NONE, slot1, function (slot0)
@@ -187,7 +199,7 @@ slot1.PlayCV_V3 = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot1.CreateCvMultipleHandler = function(slot0, slot1, slot2, slot3)
+function slot1.CreateCvMultipleHandler(slot0, slot1, slot2, slot3)
 	if not slot0.luHandle then
 		slot0.luHandle = LateUpdateBeat:CreateListener(slot0.LateCvHandler, slot0)
 
@@ -214,7 +226,7 @@ slot1.CreateCvMultipleHandler = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot1.LateCvHandler = function(slot0)
+function slot1.LateCvHandler(slot0)
 	for slot4, slot5 in ipairs(slot0.cvCacheDataList) do
 		slot6 = slot5[1]
 		slot7 = slot5[2]
@@ -251,11 +263,11 @@ slot1.LateCvHandler = function(slot0)
 	end
 end
 
-slot1.StopCV_V3 = function(slot0)
+function slot1.StopCV_V3(slot0)
 	slot0.criInst:GetChannelData(uv0.C_VOICE).channelPlayer:Stop()
 end
 
-slot1.PlaySE_V3 = function(slot0, slot1, slot2)
+function slot1.PlaySE_V3(slot0, slot1, slot2)
 	assert(slot1, "cueName can not be nil.")
 	slot0.criInst:PlayAnySE(slot1, nil, function (slot0)
 		if uv0 ~= nil then
@@ -264,16 +276,16 @@ slot1.PlaySE_V3 = function(slot0, slot1, slot2)
 	end)
 end
 
-slot1.StopSE_V3 = function(slot0)
+function slot1.StopSE_V3(slot0)
 	slot0.criInst:GetChannelData(uv0.C_SE).channelPlayer:Stop()
 	slot0.criInst:GetChannelData(uv0.C_BATTLE_SE).channelPlayer:Stop()
 end
 
-slot1.StopSEBattle_V3 = function(slot0)
+function slot1.StopSEBattle_V3(slot0)
 	slot0.criInst:GetChannelData(uv0.C_BATTLE_SE).channelPlayer:Stop()
 end
 
-slot1.LoadCueSheet = function(slot0, slot1, slot2)
+function slot1.LoadCueSheet(slot0, slot1, slot2)
 	slot3 = CueData.GetCueData()
 	slot3.cueSheetName = slot1
 
@@ -282,38 +294,38 @@ slot1.LoadCueSheet = function(slot0, slot1, slot2)
 	end, true)
 end
 
-slot1.UnloadCueSheet = function(slot0, slot1)
+function slot1.UnloadCueSheet(slot0, slot1)
 	slot0.criInst:UnloadCueSheet(slot1)
 end
 
-slot1.getCVVolume = function(slot0)
+function slot1.getCVVolume(slot0)
 	return PlayerPrefs.GetFloat("cv_vol", DEFAULT_CVVOLUME)
 end
 
-slot1.setCVVolume = function(slot0, slot1)
+function slot1.setCVVolume(slot0, slot1)
 	PlayerPrefs.SetFloat("cv_vol", slot1)
 	CriAtom.SetCategoryVolume(uv0.Category_CV, slot1)
 end
 
-slot1.getBGMVolume = function(slot0)
+function slot1.getBGMVolume(slot0)
 	return PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME)
 end
 
-slot1.setBGMVolume = function(slot0, slot1)
+function slot1.setBGMVolume(slot0, slot1)
 	PlayerPrefs.SetFloat("bgm_vol", slot1)
 	CriAtom.SetCategoryVolume(uv0.Category_BGM, slot1)
 end
 
-slot1.getSEVolume = function(slot0)
+function slot1.getSEVolume(slot0)
 	return PlayerPrefs.GetFloat("se_vol", DEFAULT_SEVOLUME)
 end
 
-slot1.setSEVolume = function(slot0, slot1)
+function slot1.setSEVolume(slot0, slot1)
 	PlayerPrefs.SetFloat("se_vol", slot1)
 	CriAtom.SetCategoryVolume(uv0.Category_SE, slot1)
 end
 
-slot1.InitBgmCfg = function(slot0, slot1)
+function slot1.InitBgmCfg(slot0, slot1)
 	slot0.isDefaultBGM = false
 
 	if OPEN_SPECIAL_IP_BGM and PLATFORM_CODE == PLATFORM_US then
@@ -331,7 +343,7 @@ slot1.InitBgmCfg = function(slot0, slot1)
 		}
 		slot4 = ""
 
-		slot5 = function(slot0)
+		function slot5(slot0)
 			slot2 = "\","
 			slot3, slot4 = string.find(slot0, "\"country\":\"")
 
@@ -346,7 +358,7 @@ slot1.InitBgmCfg = function(slot0, slot1)
 			return slot0
 		end
 
-		slot6 = function(slot0)
+		function slot6(slot0)
 			slot1 = false
 
 			for slot5, slot6 in ipairs(uv0) do
@@ -381,10 +393,10 @@ slot1.InitBgmCfg = function(slot0, slot1)
 	end
 end
 
-slot1.IsDefaultBGM = function(slot0)
+function slot1.IsDefaultBGM(slot0)
 	return slot0.isDefaultBGM
 end
 
-slot1.getAtomSource = function(slot0, slot1)
+function slot1.getAtomSource(slot0, slot1)
 	return GetComponent(GameObject.Find("CRIWARE/" .. slot1), "CriAtomSource")
 end

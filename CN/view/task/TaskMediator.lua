@@ -9,7 +9,7 @@ slot0.ON_SUBMIT_WEEK_TASK = "TaskMediator:ON_SUBMIT_WEEK_TASK"
 slot0.CLICK_GET_ALL = "TaskMediator:CLICK_GET_ALL"
 slot0.ON_DROP = "TaskMediator:ON_DROP"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_SUBMIT_WEEK_TASK, function (slot0, slot1)
 		uv0:sendNotification(GAME.SUBMIT_WEEK_TASK, {
 			id = slot1.id
@@ -38,7 +38,7 @@ slot0.register = function(slot0)
 				mediator = EquipmentInfoMediator,
 				viewComponent = EquipmentInfoLayer,
 				data = {
-					equipmentId = slot1.cfg.id,
+					equipmentId = slot1:getConfig("id"),
 					type = EquipmentInfoMediator.TYPE_DISPLAY,
 					onRemoved = slot2,
 					LayerWeightMgr_weight = LayerWeightConst.THIRD_LAYER
@@ -49,7 +49,7 @@ slot0.register = function(slot0)
 				mediator = SpWeaponInfoMediator,
 				viewComponent = SpWeaponInfoLayer,
 				data = {
-					spWeaponConfigId = slot1.cfg.id,
+					spWeaponConfigId = slot1:getConfig("id"),
 					type = SpWeaponInfoLayer.TYPE_DISPLAY,
 					onRemoved = slot2,
 					LayerWeightMgr_weight = LayerWeightConst.THIRD_LAYER
@@ -96,7 +96,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:SetWeekTaskProgressInfo(getProxy(TaskProxy):GetWeekTaskProgressInfo())
 end
 
-slot0.SetTaskVOs = function(slot0)
+function slot0.SetTaskVOs(slot0)
 	slot3 = getProxy(BagProxy)
 
 	for slot7, slot8 in pairs(getProxy(TaskProxy):getData()) do
@@ -110,7 +110,7 @@ slot0.SetTaskVOs = function(slot0)
 	slot0.viewComponent:setTaskVOs(slot2)
 end
 
-slot0.enterLevel = function(slot0, slot1)
+function slot0.enterLevel(slot0, slot1)
 	if getProxy(ChapterProxy):getChapterById(slot1) then
 		slot4 = {
 			mapIdx = slot3:getConfig("map")
@@ -126,7 +126,7 @@ slot0.enterLevel = function(slot0, slot1)
 	end
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		TaskProxy.TASK_ADDED,
 		TaskProxy.TASK_UPDATED,
@@ -147,7 +147,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == TaskProxy.TASK_ADDED then
@@ -224,7 +224,7 @@ slot0.handleNotification = function(slot0, slot1)
 
 			slot4:RefreshWeekTaskPageBefore(slot3.id)
 
-			slot4 = function()
+			function slot4()
 				uv0.viewComponent:RefreshWeekTaskPage()
 			end
 
@@ -234,7 +234,7 @@ slot0.handleNotification = function(slot0, slot1)
 				slot4()
 			end
 		elseif slot2 == GAME.SUBMIT_WEEK_TASK_PROGRESS_DONE then
-			slot4 = function()
+			function slot4()
 				uv0.viewComponent:RefreshWeekTaskProgress()
 			end
 
@@ -244,7 +244,7 @@ slot0.handleNotification = function(slot0, slot1)
 				slot4()
 			end
 		elseif slot2 == GAME.SUBMIT_AVATAR_TASK_DONE then
-			slot4 = function()
+			function slot4()
 				uv0.viewComponent:refreshPage()
 
 				if uv1.callback then
@@ -270,11 +270,11 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.accepetActivityTask = function(slot0)
+function slot0.accepetActivityTask(slot0)
 	slot0:sendNotification(GAME.ACCEPT_ACTIVITY_TASK)
 end
 
-slot0.PlayStoryForTaskAct = function(slot0, slot1, slot2)
+function slot0.PlayStoryForTaskAct(slot0, slot1, slot2)
 	slot4 = nil
 
 	for slot8, slot9 in ipairs(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)) do

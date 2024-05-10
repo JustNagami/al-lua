@@ -1,10 +1,10 @@
 slot0 = class("WorldMediaCollectionFileGroupLayer", import(".WorldMediaCollectionSubLayer"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "WorldMediaCollectionFileGroupUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.scroll = slot0._tf:Find("ScrollRect")
 	slot0.scrollComp = slot0.scroll:GetComponent("LScrollRect")
 
@@ -15,7 +15,7 @@ slot0.OnInit = function(slot0)
 	slot0.emptyTip = slot0._tf:Find("EmptyTip")
 	slot0.fileGroups = {}
 
-	slot0.scrollComp.onUpdateItem = function(slot0, ...)
+	function slot0.scrollComp.onUpdateItem(slot0, ...)
 		uv0:OnUpdateFileGroup(slot0 + 1, ...)
 	end
 
@@ -27,7 +27,7 @@ slot0.OnInit = function(slot0)
 	slot0.loader = AutoLoader.New()
 end
 
-slot0.UpdateGroupList = function(slot0)
+function slot0.UpdateGroupList(slot0)
 	slot1 = nowWorld():GetCollectionProxy()
 
 	table.clear(slot0.fileGroups)
@@ -65,7 +65,7 @@ slot0.UpdateGroupList = function(slot0)
 	setText(slot0.progressText, slot3 .. "/" .. slot2)
 end
 
-slot0.BlurTip = function(slot0)
+function slot0.BlurTip(slot0)
 	pg.UIMgr.GetInstance():OverlayPanelPB(slot0.emptyTip, {
 		pbList = {
 			slot0.emptyTip:Find("EmptyTip")
@@ -78,7 +78,7 @@ slot0.BlurTip = function(slot0)
 	slot0.blurFlag = true
 end
 
-slot0.UnBlurTip = function(slot0)
+function slot0.UnBlurTip(slot0)
 	if slot0.blurFlag then
 		pg.UIMgr.GetInstance():UnblurPanel(slot0.emptyTip, slot0._tf)
 	end
@@ -86,7 +86,7 @@ slot0.UnBlurTip = function(slot0)
 	slot0.blurFlag = nil
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	uv0.super.Show(slot0)
 
 	if slot0.blurFlag then
@@ -94,7 +94,7 @@ slot0.Show = function(slot0)
 	end
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	LeanTween.cancel(go(slot0.content))
 	slot0.scrollComp:SetDraggingStatus(false)
 	slot0.scrollComp:StopMovement()
@@ -105,7 +105,7 @@ slot0.Hide = function(slot0)
 	uv0.super.Hide(slot0)
 end
 
-slot0.OnUpdateFileGroup = function(slot0, slot1, slot2)
+function slot0.OnUpdateFileGroup(slot0, slot1, slot2)
 	if slot0.exited then
 		return
 	end

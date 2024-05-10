@@ -27,12 +27,12 @@ slot0.baseMoveDistance = 100
 slot0.baseDuration = 0.8
 slot0.selectOffsetPos = Vector2(107, 61)
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:DisposeEntranceTplDic()
 	uv0.super.Dispose(slot0)
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	uv0.super.Init(slot0)
 
 	slot0.entranceTplDic = {}
@@ -40,7 +40,7 @@ slot0.Init = function(slot0)
 	slot0.areaLockPressingAward = {}
 end
 
-slot0.UpdateAtlas = function(slot0, slot1)
+function slot0.UpdateAtlas(slot0, slot1)
 	if slot0.atlas ~= slot1 then
 		slot0:RemoveAtlasListener()
 		slot0:DisposeEntranceTplDic()
@@ -55,7 +55,7 @@ slot0.UpdateAtlas = function(slot0, slot1)
 	end
 end
 
-slot0.AddAtlasListener = function(slot0)
+function slot0.AddAtlasListener(slot0)
 	if slot0.atlas then
 		slot0.atlas:AddListener(WorldAtlas.EventUpdatePortMark, slot0.onUpdatePortMark)
 	end
@@ -63,7 +63,7 @@ slot0.AddAtlasListener = function(slot0)
 	uv0.super.AddAtlasListener(slot0)
 end
 
-slot0.RemoveAtlasListener = function(slot0)
+function slot0.RemoveAtlasListener(slot0)
 	if slot0.atlas then
 		slot0.atlas:RemoveListener(WorldAtlas.EventUpdatePortMark, slot0.onUpdatePortMark)
 	end
@@ -71,7 +71,7 @@ slot0.RemoveAtlasListener = function(slot0)
 	uv0.super.RemoveAtlasListener(slot0)
 end
 
-slot0.LoadModel = function(slot0, slot1)
+function slot0.LoadModel(slot0, slot1)
 	slot2 = {}
 
 	if not slot0.tfModel then
@@ -97,13 +97,13 @@ slot0.LoadModel = function(slot0, slot1)
 	end)
 end
 
-slot0.ReturnModel = function(slot0)
+function slot0.ReturnModel(slot0)
 	if slot0.tfModel then
 		PoolMgr.GetInstance():ReturnPrefab("model/worldmapmodel", "WorldMapModel", go(slot0.tfModel), true)
 	end
 end
 
-slot0.LoadScene = function(slot0, slot1)
+function slot0.LoadScene(slot0, slot1)
 	slot2 = SceneOpMgr.Inst
 
 	slot2:LoadSceneAsync("scenes/worldmap3d", "WorldMap3D", LoadSceneMode.Additive, function (slot0, slot1)
@@ -188,7 +188,7 @@ slot0.LoadScene = function(slot0, slot1)
 	end)
 end
 
-slot0.ReturnScene = function(slot0)
+function slot0.ReturnScene(slot0)
 	slot0:ReturnModel()
 
 	if slot0.transform then
@@ -207,7 +207,7 @@ slot0.ReturnScene = function(slot0)
 	end
 end
 
-slot0.ShowOrHide = function(slot0, slot1)
+function slot0.ShowOrHide(slot0, slot1)
 	uv0.super.ShowOrHide(slot0, slot1)
 
 	if slot1 then
@@ -217,14 +217,14 @@ slot0.ShowOrHide = function(slot0, slot1)
 	end
 end
 
-slot0.GetOffsetMapPos = function(slot0)
+function slot0.GetOffsetMapPos(slot0)
 	slot1 = uv0.selectOffsetPos
 	slot3 = math.rad(-slot0.tfEntity.localEulerAngles.y)
 
 	return Vector2(slot1.x * math.cos(slot3) - slot1.y * math.sin(slot3), slot1.y * math.cos(slot3) + slot1.x * math.sin(slot3))
 end
 
-slot0.UpdateSelect = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateSelect(slot0, slot1, slot2, slot3)
 	if slot1 then
 		slot0.nowArea = slot1:GetAreaId()
 
@@ -238,12 +238,12 @@ slot0.UpdateSelect = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.UpdateModelMask = function(slot0)
+function slot0.UpdateModelMask(slot0)
 	uv0.super.UpdateModelMask(slot0)
 	slot0:UpdateAreaLock()
 end
 
-slot0.UpdateEntranceMask = function(slot0, slot1)
+function slot0.UpdateEntranceMask(slot0, slot1)
 	slot2 = slot0.entranceTplDic[slot1.id]
 
 	if slot1:HasPort() then
@@ -253,12 +253,12 @@ slot0.UpdateEntranceMask = function(slot0, slot1)
 	uv0.super.UpdateEntranceMask(slot0, slot1)
 end
 
-slot0.OnUpdateProgress = function(slot0, slot1, slot2, slot3)
+function slot0.OnUpdateProgress(slot0, slot1, slot2, slot3)
 	uv0.super.OnUpdateProgress(slot0, slot1, slot2, slot3)
 	slot0:UpdateAreaLock()
 end
 
-slot0.UpdateAreaLock = function(slot0)
+function slot0.UpdateAreaLock(slot0)
 	for slot4 = 1, 5 do
 		slot5 = nowWorld():CheckAreaUnlock(slot4)
 
@@ -275,7 +275,7 @@ slot0.UpdateAreaLock = function(slot0)
 	end
 end
 
-slot0.OnUpdateActiveEntrance = function(slot0, slot1, slot2, slot3)
+function slot0.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
 	uv0.super.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
 
 	if slot3 then
@@ -293,7 +293,7 @@ slot0.OnUpdateActiveEntrance = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.OnUpdatePressingAward = function(slot0, slot1, slot2, slot3)
+function slot0.OnUpdatePressingAward(slot0, slot1, slot2, slot3)
 	slot3 = slot3 or slot0.atlas.transportDic
 
 	for slot7, slot8 in pairs(slot3) do
@@ -311,7 +311,7 @@ slot0.OnUpdatePressingAward = function(slot0, slot1, slot2, slot3)
 	uv0.super.OnUpdatePressingAward(slot0, slot1, slot2, slot3)
 end
 
-slot0.OnUpdatePortMark = function(slot0, slot1, slot2, slot3)
+function slot0.OnUpdatePortMark(slot0, slot1, slot2, slot3)
 	for slot7, slot8 in pairs(slot3) do
 		if slot8 then
 			slot0.entranceTplDic[slot7]:UpdatePort(slot0.atlas:GetEntrancePortInfo(slot7))
@@ -319,19 +319,19 @@ slot0.OnUpdatePortMark = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.NewEntranceTplDic = function(slot0)
+function slot0.NewEntranceTplDic(slot0)
 	for slot4, slot5 in pairs(slot0.atlas.entranceDic) do
 		slot0.entranceTplDic[slot5.id] = slot0:NewEntranceTpl(slot5)
 	end
 end
 
-slot0.DisposeEntranceTplDic = function(slot0)
+function slot0.DisposeEntranceTplDic(slot0)
 	WPool:ReturnArray(_.values(slot0.entranceTplDic))
 
 	slot0.entranceTplDic = {}
 end
 
-slot0.NewEntranceTpl = function(slot0, slot1)
+function slot0.NewEntranceTpl(slot0, slot1)
 	slot2 = WPool:Get(WSEntranceTpl)
 
 	slot2.transform:SetParent(slot0.tfSpriteScene, false)
@@ -346,18 +346,18 @@ slot0.NewEntranceTpl = function(slot0, slot1)
 	return slot2
 end
 
-slot0.FindEntranceTpl = function(slot0, slot1)
+function slot0.FindEntranceTpl(slot0, slot1)
 	return slot0.entranceTplDic[slot1.id]
 end
 
-slot0.UpdateScale = function(slot0, slot1)
+function slot0.UpdateScale(slot0, slot1)
 	slot1 = slot1 or 0
 	slot2 = slot0.tfCamera.localEulerAngles.x / 180 * math.pi
 	slot4 = uv0.baseDistance * (1 - slot1) + slot0.frontDistance * slot1 - slot0.tfCamera.localPosition.y / -math.sin(slot2)
 	slot0.tfCamera.localPosition = slot0.tfCamera.localPosition + Vector3(0, -math.sin(slot2) * slot4, math.cos(slot2) * slot4)
 end
 
-slot0.FocusPos = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.FocusPos(slot0, slot1, slot2, slot3, slot4, slot5)
 	if slot0.twRotateId then
 		LeanTween.cancel(slot0.twRotateId)
 
@@ -412,7 +412,7 @@ slot0.FocusPos = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	return existCall(slot5)
 end
 
-slot0.FocusPosInArea = function(slot0, slot1, slot2, slot3)
+function slot0.FocusPosInArea(slot0, slot1, slot2, slot3)
 	if slot1 then
 		slot4 = pg.world_regions_data[slot1]
 
@@ -422,7 +422,7 @@ slot0.FocusPosInArea = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.SwitchArea = function(slot0, slot1, slot2, slot3)
+function slot0.SwitchArea(slot0, slot1, slot2, slot3)
 	slot4 = {}
 
 	if slot2 and tobool(slot1) ~= tobool(slot0.nowArea) then
@@ -452,8 +452,8 @@ slot0.SwitchArea = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.SwitchMode = function(slot0, slot1, slot2, slot3)
-	slot4 = function(slot0)
+function slot0.SwitchMode(slot0, slot1, slot2, slot3)
+	function slot4(slot0)
 		setActive(uv0.tfAreaScene, true)
 		uv0.tfAreaScene:GetComponent("FMultiSpriteRenderCtrl"):Init()
 
@@ -476,7 +476,7 @@ slot0.SwitchMode = function(slot0, slot1, slot2, slot3)
 		uv0.wsTimer:AddTween(slot2)
 	end
 
-	slot5 = function(slot0)
+	function slot5(slot0)
 		setActive(uv0.tfMapScene, true)
 		uv0.tfMapScene:GetComponent("FMultiSpriteRenderCtrl"):Init()
 
@@ -499,7 +499,7 @@ slot0.SwitchMode = function(slot0, slot1, slot2, slot3)
 		uv0.wsTimer:AddTween(slot2)
 	end
 
-	slot6 = function(slot0)
+	function slot6(slot0)
 		setActive(uv0.tfMapModel, true)
 
 		slot1 = {}
@@ -546,7 +546,7 @@ slot0.SwitchMode = function(slot0, slot1, slot2, slot3)
 		end)
 	end
 
-	slot7 = function()
+	function slot7()
 		uv0:BreathRotate(not uv1)
 
 		return existCall(uv2)
@@ -569,7 +569,7 @@ slot0.LowRotation = -5
 slot0.HeightRotation = 5
 slot0.BreathTime = 18
 
-slot0.BreathRotate = function(slot0, slot1)
+function slot0.BreathRotate(slot0, slot1)
 	if slot0.twRotateId then
 		LeanTween.cancel(slot0.twRotateId)
 
@@ -582,7 +582,7 @@ slot0.BreathRotate = function(slot0, slot1)
 
 	slot2 = -1
 
-	slot3 = function()
+	function slot3()
 		uv0 = -1 * uv0
 		uv1.twRotateId = LeanTween.rotateY(go(uv1.tfEntity), uv0 == 1 and uv2.HeightRotation or uv2.LowRotation, uv2.BreathTime):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function ()
 			uv0()
@@ -594,7 +594,7 @@ slot0.BreathRotate = function(slot0, slot1)
 	end)):setDelay(1).uniqueId
 end
 
-slot0.CheckIsTweening = function(slot0)
+function slot0.CheckIsTweening(slot0)
 	while #slot0.twFocusIds > 0 and not LeanTween.isTweening(slot0.twFocusIds[1]) do
 		table.remove(slot0.twFocusIds, 1)
 	end
@@ -602,7 +602,7 @@ slot0.CheckIsTweening = function(slot0)
 	return slot0.isTransAnim or #slot0.twFocusIds > 0
 end
 
-slot0.ActiveTrans = function(slot0, slot1)
+function slot0.ActiveTrans(slot0, slot1)
 	if not slot0.entranceTplDic[slot1.id].portCamp then
 		slot3 = slot0.tfMapSelect
 		slot3 = slot3:Find("A" .. slot1:GetColormaskUniqueID() .. "_2")
@@ -628,7 +628,7 @@ slot0.ActiveTrans = function(slot0, slot1)
 	end
 end
 
-slot0.DisplayTransport = function(slot0, slot1, slot2)
+function slot0.DisplayTransport(slot0, slot1, slot2)
 	slot3 = {}
 
 	for slot7, slot8 in pairs(slot0.atlas.transportDic) do
@@ -640,7 +640,7 @@ slot0.DisplayTransport = function(slot0, slot1, slot2)
 	slot0:UpdateTransMark(slot3, slot2)
 end
 
-slot0.UpdateTransMark = function(slot0, slot1, slot2)
+function slot0.UpdateTransMark(slot0, slot1, slot2)
 	for slot6, slot7 in pairs(slot1) do
 		if slot7 then
 			slot0.isTransAnim = true
@@ -660,7 +660,7 @@ slot0.UpdateTransMark = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.UpdateActiveMark = function(slot0)
+function slot0.UpdateActiveMark(slot0)
 	slot1 = nowWorld()
 	slot1 = slot1:GetActiveMap()
 	slot1 = slot1:CkeckTransport()

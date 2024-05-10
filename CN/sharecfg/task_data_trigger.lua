@@ -728,6 +728,38 @@ pg.task_data_trigger = {
 		id = 93,
 		task_id = 5951
 	},
+	[94] = {
+		group_id = 50102,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 94,
+		task_id = 5961
+	},
+	[95] = {
+		group_id = 50601,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 95,
+		task_id = 5971
+	},
+	[96] = {
+		group_id = 10730,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 96,
+		task_id = 5981
+	},
+	[97] = {
+		group_id = 90701,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 97,
+		task_id = 5991
+	},
 	all = {
 		1,
 		2,
@@ -819,6 +851,10 @@ pg.task_data_trigger = {
 		90,
 		91,
 		92,
-		93
+		93,
+		94,
+		95,
+		96,
+		97
 	}
 }

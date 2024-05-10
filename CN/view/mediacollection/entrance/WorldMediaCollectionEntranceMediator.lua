@@ -4,7 +4,7 @@ slot0.OPEN_CRYPTOLALIA = "WorldMediaCollectionEntranceMediator:OPEN_CRYPTOLALIA"
 slot0.OPEN_ARCHIVE = "WorldMediaCollectionEntranceMediator:OPEN_ARCHIVE"
 slot0.OPEN_RECORD = "WorldMediaCollectionEntranceMediator:OPEN_RECORD"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.OPEN_CRYPTOLALIA, function (slot0)
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA)
 	end)
@@ -25,11 +25,11 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot2 = slot1:getName()
 	slot3 = slot1:getBody()
 end

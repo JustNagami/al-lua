@@ -13,7 +13,7 @@ slot0.OnStartPerform = "WorldMediator.OnStartPerform"
 slot0.OnStartAutoSwitch = "WorldMediator.OnStartAutoSwitch"
 slot0.OnMoveAndOpenLayer = "WorldMediator.OnMoveAndOpenLayer"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.OnMapOp, function (slot0, slot1)
 		uv0:sendNotification(GAME.WORLD_MAP_OP, slot1)
 	end)
@@ -42,10 +42,7 @@ slot0.register = function(slot0)
 			end)
 		end
 
-		slot3 = {
-			len = select("#", ...),
-			...
-		}
+		slot3 = packEx(...)
 
 		pg.UIMgr.GetInstance():LoadingOn()
 		seriesAsync(slot2, function ()
@@ -66,10 +63,7 @@ slot0.register = function(slot0)
 			end)
 		end
 
-		slot3 = {
-			len = select("#", ...),
-			...
-		}
+		slot3 = packEx(...)
 
 		pg.UIMgr.GetInstance():LoadingOn()
 		seriesAsync(slot2, function ()
@@ -106,7 +100,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	slot2 = WorldGuider.GetInstance()
 
 	_.each(slot2:GetWorldGuiderNotifies(), function (slot0)
@@ -136,7 +130,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot2 = slot1:getName()
 	slot4 = WorldGuider.GetInstance()
 
@@ -190,7 +184,7 @@ slot0.handleNotification = function(slot0, slot1)
 			end
 
 			if slot0.routine then
-				slot3 = function()
+				function slot3()
 					uv0:routine()
 				end
 			else
@@ -205,11 +199,11 @@ slot0.handleNotification = function(slot0, slot1)
 					slot5 = slot2
 					slot2 = {}
 
-					slot3 = function()
+					function slot3()
 						uv0:OpDone(uv1 .. "Done", uv2, uv3)
 					end
 				else
-					slot3 = function()
+					function slot3()
 						uv0:OpDone(uv1 .. "Done", uv2)
 					end
 				end

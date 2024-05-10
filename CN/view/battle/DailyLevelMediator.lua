@@ -11,7 +11,7 @@ slot0.ON_CHALLENGE_OPEN_DOCK = "DailyLevelMediator:ON_CHALLENGE_OPEN_DOCK"
 slot0.ON_CHALLENGE_OPEN_RANK = "DailyLevelMediator:ON_CHALLENGE_OPEN_RANK"
 slot0.ON_QUICK_BATTLE = "DailyLevelMediator:ON_QUICK_BATTLE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot1 = getProxy(DailyLevelProxy)
 	slot2 = slot0.viewComponent
 
@@ -62,11 +62,11 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.CheckShipExpItemOverflow = function(slot0, slot1, slot2)
-	slot4 = pg.item_data_statistics
-
+function slot0.CheckShipExpItemOverflow(slot0, slot1, slot2)
 	if _.any(pg.expedition_data_template[slot1].award_display, function (slot0)
-		return slot0[1] == DROP_TYPE_ITEM and uv0[slot0[2]].type == Item.EXP_BOOK_TYPE and uv0[slot0[2]].max_num <= getProxy(BagProxy):getItemCountById(slot0[2])
+		slot2 = Item.getConfigData(slot0[2])
+
+		return slot0[1] == DROP_TYPE_ITEM and slot2.type == Item.EXP_BOOK_TYPE and slot2.max_num <= getProxy(BagProxy):getItemCountById(slot0[2])
 	end) then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("player_expResource_mail_fullBag"),
@@ -78,7 +78,7 @@ slot0.CheckShipExpItemOverflow = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.DAILY_LEVEL_QUICK_BATTLE_DONE,
@@ -86,7 +86,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == PlayerProxy.UPDATED then
@@ -107,7 +107,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.DisplayAwards = function(slot0, slot1)
+function slot0.DisplayAwards(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(slot1) do

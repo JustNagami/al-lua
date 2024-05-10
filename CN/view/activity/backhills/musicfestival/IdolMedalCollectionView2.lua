@@ -1,41 +1,47 @@
 slot0 = class("IdolMedalCollectionView2", import("view.base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.GetContainerPositions(slot0)
+	return {
+		32.4,
+		132.7
+	}
+end
+
+function slot0.GetActivityID(slot0)
+	return ActivityConst.MUSIC_FESTIVAL_MEDALCOLLECTION_2020
+end
+
+function slot0.getUIName(slot0)
 	return "IdolMedalCollectionUI2"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0:initData()
 	slot0:findUI()
 	slot0:addListener()
 end
 
-slot1 = {
-	32.4,
-	132.7
-}
-
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:checkAward()
 	slot0:UpdateView()
 	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.activityProxy = getProxy(ActivityProxy)
-	slot0.activityData = slot0.activityProxy:getActivityById(ActivityConst.MUSIC_FESTIVAL_MEDALCOLLECTION_2020)
+	slot0.activityData = slot0.activityProxy:getActivityById(slot0:GetActivityID())
 	slot0.allIDList = slot0.activityData:GetPicturePuzzleIds()
 	slot0.activatableIDList = slot0.activityData.data1_list
 	slot0.activeIDList = slot0.activityData.data2_list
 end
 
-slot2 = {}
+slot1 = {}
 
-slot0.findUI = function(slot0)
+function slot0.findUI(slot0)
 	slot0.bg = slot0:findTF("BG")
 	slot1 = slot0:findTF("NotchAdapt")
 	slot0.backBtn = slot0:findTF("BackBtn", slot1)
@@ -103,7 +109,7 @@ slot0.findUI = function(slot0)
 	end)
 end
 
-slot0.addListener = function(slot0)
+function slot0.addListener(slot0)
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:closeView()
 	end, SFX_CANCEL)
@@ -141,7 +147,7 @@ slot0.addListener = function(slot0)
 
 	onButton(slot0, slot0.buttonShare, function ()
 		setAnchoredPosition(uv0.medalContainer, {
-			x = uv1[1]
+			x = uv0:GetContainerPositions()[1]
 		})
 		setActive(uv0.selectPanel, false)
 		setActive(uv0.buttonNext, false)
@@ -168,7 +174,7 @@ slot0.addListener = function(slot0)
 
 		slot8 = GetOrAddComponent(slot6, "EventTriggerListener")
 
-		slot9 = function()
+		function slot9()
 			if not uv0.overlayingImage then
 				return
 			end
@@ -258,7 +264,7 @@ slot0.addListener = function(slot0)
 	end
 end
 
-slot0.SwitchSelectedImage = function(slot0, slot1)
+function slot0.SwitchSelectedImage(slot0, slot1)
 	if slot0.lastSelectedImage == slot1 then
 		return
 	end
@@ -274,7 +280,7 @@ slot0.SwitchSelectedImage = function(slot0, slot1)
 	end
 end
 
-slot0.ResetPanel = function(slot0)
+function slot0.ResetPanel(slot0)
 	for slot4, slot5 in ipairs(slot0.listShowOnPanel) do
 		table.insert(slot0.listStayInPanel, slot5)
 		setParent(slot5, slot0.selectPanelContainer)
@@ -285,7 +291,7 @@ slot0.ResetPanel = function(slot0)
 	table.clear(uv0)
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	if slot0.pageIndex == 1 then
 		slot0:updateMedalContainerView()
 	end
@@ -295,7 +301,7 @@ slot0.UpdateView = function(slot0)
 	end
 
 	setAnchoredPosition(slot0.medalContainer, {
-		x = uv0[slot0.pageIndex]
+		x = slot0:GetContainerPositions()[slot0.pageIndex]
 	})
 	setActive(slot0.selectPanel, slot0.pageIndex == 2)
 
@@ -309,13 +315,13 @@ slot0.UpdateView = function(slot0)
 	setText(slot0.progressText, setColorStr(tostring(#slot0.activeIDList), COLOR_RED) .. "/" .. #slot0.allIDList)
 end
 
-slot0.updateMedalContainerView = function(slot0)
+function slot0.updateMedalContainerView(slot0)
 	for slot4, slot5 in ipairs(slot0.allIDList) do
 		slot0:updateMedalView(slot0.allIDList, slot5)
 	end
 end
 
-slot0.updateMedalView = function(slot0, slot1, slot2)
+function slot0.updateMedalView(slot0, slot1, slot2)
 	slot3 = table.indexof(slot1, slot2, 1)
 	slot4 = table.contains(slot0.activeIDList, slot2)
 	slot5 = table.contains(slot0.activatableIDList, slot2) and not slot4
@@ -338,22 +344,22 @@ slot0.updateMedalView = function(slot0, slot1, slot2)
 	setText(slot10, "")
 end
 
-slot0.updateAfterSubmit = function(slot0)
+function slot0.updateAfterSubmit(slot0)
 end
 
-slot0.UpdateActivity = function(slot0)
+function slot0.UpdateActivity(slot0)
 	slot0:initData()
 	slot0:checkAward()
 	slot0:UpdateView()
 end
 
-slot0.SwitchPage = function(slot0, slot1)
+function slot0.SwitchPage(slot0, slot1)
 	slot0.pageIndex = math.clamp(slot0.pageIndex + slot1, 1, #slot0.pages)
 
 	slot0:UpdateView()
 end
 
-slot0.checkAward = function(slot0)
+function slot0.checkAward(slot0)
 	if #slot0.activeIDList == #slot0.allIDList and slot0.activityData.data1 ~= 1 then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,

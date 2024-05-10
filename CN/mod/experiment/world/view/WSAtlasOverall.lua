@@ -8,7 +8,7 @@ slot0.Listeners = {
 	onUpdateActiveEntrance = "OnUpdateActiveEntrance"
 }
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	if slot0.tfActiveMarkRect then
 		slot0:RemoveExtraMarkPrefab(slot0.tfActiveMarkRect)
 		Destroy(slot0.tfActiveMarkRect)
@@ -18,7 +18,7 @@ slot0.Dispose = function(slot0)
 	uv0.super.Dispose(slot0)
 end
 
-slot0.LoadScene = function(slot0, slot1)
+function slot0.LoadScene(slot0, slot1)
 	slot2 = SceneOpMgr.Inst
 
 	slot2:LoadSceneAsync("scenes/worldoverview", "WorldOverview", LoadSceneMode.Additive, function (slot0, slot1)
@@ -54,7 +54,7 @@ slot0.LoadScene = function(slot0, slot1)
 	end)
 end
 
-slot0.ReturnScene = function(slot0)
+function slot0.ReturnScene(slot0)
 	if slot0.tfEntity then
 		SceneOpMgr.Inst:UnloadSceneAsync("scenes/worldoverview", "WorldOverview")
 
@@ -62,7 +62,7 @@ slot0.ReturnScene = function(slot0)
 	end
 end
 
-slot0.BuildActiveMark = function(slot0)
+function slot0.BuildActiveMark(slot0)
 	uv0.super.BuildActiveMark(slot0)
 	slot0:DoUpdatExtraMark(slot0.tfActiveMark, "overview_player", true)
 
@@ -75,7 +75,7 @@ slot0.BuildActiveMark = function(slot0)
 	slot0:DoUpdatExtraMark(slot0.tfActiveMarkRect, "overview_player_rect", true)
 end
 
-slot0.OnUpdateActiveEntrance = function(slot0, slot1, slot2, slot3)
+function slot0.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
 	uv0.super.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
 
 	if slot3 then
@@ -85,7 +85,7 @@ slot0.OnUpdateActiveEntrance = function(slot0, slot1, slot2, slot3)
 	setActive(slot0.tfActiveMarkRect, slot3)
 end
 
-slot0.UpdateStaticMark = function(slot0, slot1, slot2)
+function slot0.UpdateStaticMark(slot0, slot1, slot2)
 	slot0:RemoveExtraMarkPrefab(slot0.tfMarkScene)
 
 	slot3 = pairs
@@ -104,7 +104,7 @@ slot0.UpdateStaticMark = function(slot0, slot1, slot2)
 	uv0.super.UpdateStaticMark(slot0, slot1)
 end
 
-slot0.UpdateTargetEntrance = function(slot0, slot1)
+function slot0.UpdateTargetEntrance(slot0, slot1)
 	slot2 = slot0.atlas:GetEntrance(slot1)
 	slot3 = slot0.atlas:GetActiveEntrance()
 	slot0.tfActiveMark.localEulerAngles = Vector3(0, calcPositionAngle(slot2.config.area_pos[1] - slot3.config.area_pos[1], slot2.config.area_pos[2] - slot3.config.area_pos[2]), 0)

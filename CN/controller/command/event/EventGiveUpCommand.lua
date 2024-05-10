@@ -1,6 +1,6 @@
 slot0 = class("EventGiveUpCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	if getProxy(EventProxy):findInfoById(slot1:getBody().id):IsActivityType() then
 		slot0:sendNotification(GAME.ACT_COLLECTION_EVENT_OP, {
 			arg2 = 0,
@@ -23,7 +23,7 @@ slot0.execute = function(slot0, slot1)
 	end
 end
 
-slot0.OnCancel = function(slot0)
+function slot0.OnCancel(slot0)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("event_giveup_success"))
 
 	slot2, slot3 = getProxy(EventProxy):findInfoById(slot0)

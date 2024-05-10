@@ -1,6 +1,6 @@
 slot0 = class("GuildGoodsCard", import(".BaseGoodsCard"))
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0._go = slot1
@@ -23,7 +23,7 @@ slot0.Ctor = function(slot0, slot1)
 	setActive(slot0.discountTF, false)
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	if slot0.goods ~= slot1 then
 		slot0.goods = slot1
 
@@ -39,7 +39,7 @@ slot0.update = function(slot0, slot1)
 	setActive(slot0.selloutTag, not slot2)
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	if string.match(slot0.goods:getConfig("goods_name"), "(%d+)") then
 		setText(slot0.nameTF, shortenString(slot1, 5))
 	else
@@ -58,7 +58,7 @@ slot0.Init = function(slot0)
 	setImageColor(slot0.itemIconFrameTF, shipRarity2FrameColor(slot2 + 1))
 end
 
-slot0.OnDispose = function(slot0)
+function slot0.OnDispose(slot0)
 	slot0.goods = nil
 end
 

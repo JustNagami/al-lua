@@ -1,6 +1,6 @@
 slot0 = class("ShipExpItemUsageCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	pg.DelegateInfo.New(slot0)
 
 	slot2 = slot1:Find("name")
@@ -32,19 +32,19 @@ slot0.Ctor = function(slot0, slot1)
 	end, nil, true, true, 0.15, SFX_PANEL)
 end
 
-slot0.SetCallBack = function(slot0, slot1)
+function slot0.SetCallBack(slot0, slot1)
 	slot0.callback = slot1
 end
 
-slot0.GetItem = function(slot0, slot1)
-	return getProxy(BagProxy):getItemById(slot1) or Item.New({
+function slot0.GetItem(slot0, slot1)
+	return getProxy(BagProxy):getItemById(slot1) or Drop.New({
 		count = 0,
 		type = DROP_TYPE_ITEM,
 		id = slot1
 	})
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	slot0.value = 0
 	slot2 = slot0:GetItem(slot1)
 	slot0.item = slot2
@@ -64,7 +64,7 @@ slot0.Update = function(slot0, slot1)
 	slot0:UpdateValue()
 end
 
-slot0.UpdateValue = function(slot0, slot1)
+function slot0.UpdateValue(slot0, slot1)
 	slot0.value = math.min(slot0.value, slot0.item.count)
 	slot0.value = math.max(slot0.value, 0)
 	slot0.valueTxt.text = slot0.value
@@ -74,12 +74,12 @@ slot0.UpdateValue = function(slot0, slot1)
 	end
 end
 
-slot0.ForceUpdateValue = function(slot0, slot1)
+function slot0.ForceUpdateValue(slot0, slot1)
 	slot0.value = slot1
 	slot0.valueTxt.text = slot0.value
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 end
 

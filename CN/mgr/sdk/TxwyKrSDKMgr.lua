@@ -1,6 +1,6 @@
 slot1 = TxwyKrSdkMgr.inst
 
-GoLoginScene = function()
+function GoLoginScene()
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -11,7 +11,7 @@ GoLoginScene = function()
 	gcAll()
 end
 
-SDKLogined = function(slot0, slot1, slot2, slot3)
+function SDKLogined(slot0, slot1, slot2, slot3)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -29,7 +29,7 @@ SDKLogined = function(slot0, slot1, slot2, slot3)
 	})
 end
 
-SDKLogouted = function(slot0)
+function SDKLogouted(slot0)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -41,7 +41,7 @@ SDKLogouted = function(slot0)
 	})
 end
 
-PaySuccess = function(slot0, slot1)
+function PaySuccess(slot0, slot1)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -51,7 +51,7 @@ PaySuccess = function(slot0, slot1)
 	getProxy(ShopsProxy):removeWaitTimer()
 end
 
-PayFailed = function(slot0, slot1)
+function PayFailed(slot0, slot1)
 	getProxy(ShopsProxy):removeWaitTimer()
 
 	if not tonumber(slot1) then
@@ -125,7 +125,7 @@ return {
 		uv0:UnlockAchievement()
 	end,
 	QueryWithProduct = function ()
-		slot1 = function(slot0, slot1)
+		function slot1(slot0, slot1)
 			for slot5, slot6 in ipairs(pg.pay_data_display.all) do
 				if pg.pay_data_display[slot6].id_str == slot0 and slot7.money ~= slot1 then
 					originalPrint(string.format("<color=#ff0000>%s的商品价格和本地的价格不同</color> 本地价格：%s, 服务器价格：%s", slot7.name, slot7.money, slot1))

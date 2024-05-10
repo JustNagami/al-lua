@@ -3,52 +3,52 @@ slot0.INACTIVE = 1
 slot0.ACTIVE = 2
 slot0.FINISH = 3
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.type = slot1.build_id
 	slot0.time = slot1.time
 	slot0.finishTime = slot1.finish_time
 	slot0.state = slot0.INACTIVE
 end
 
-slot0.setId = function(slot0, slot1)
+function slot0.setId(slot0, slot1)
 	slot0.id = slot1
 end
 
-slot0.setState = function(slot0, slot1)
+function slot0.setState(slot0, slot1)
 	slot0.state = slot1
 end
 
-slot0.isFinish = function(slot0)
+function slot0.isFinish(slot0)
 	return slot0.finishTime <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-slot0.finish = function(slot0)
+function slot0.finish(slot0)
 	slot0.time = 0
 	slot0.finishTime = pg.TimeMgr.GetInstance():GetServerTime()
 	slot0.state = slot0.FINISH
 end
 
-slot0.active = function(slot0)
+function slot0.active(slot0)
 	slot0.finishTime = pg.TimeMgr.GetInstance():GetServerTime() + slot0.time
 	slot0.state = slot0.ACTIVE
 end
 
-slot0.setIsStart = function(slot0, slot1)
+function slot0.setIsStart(slot0, slot1)
 	slot0.isStart = slot1
 end
 
-slot0.getLeftTime = function(slot0)
+function slot0.getLeftTime(slot0)
 	return slot0.finishTime - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-slot0.getBuildConsume = function(slot0, slot1, slot2)
+function slot0.getBuildConsume(slot0, slot1, slot2)
 	slot3 = pg.draw_data_template[slot0]
 	slot4 = nil
 
 	return (slot1 ~= 1 or slot3.use_gem_1[math.min(slot2 + 1, #slot3.use_gem_1)]) and slot3.use_gem_10[math.min(slot2 + 1, #slot3.use_gem_10)]
 end
 
-slot0.canBuildShipByBuildId = function(slot0, slot1, slot2)
+function slot0.canBuildShipByBuildId(slot0, slot1, slot2)
 	slot1 = slot1 or 1
 
 	if not pg.ship_data_create_material[slot0] then
@@ -61,10 +61,10 @@ slot0.canBuildShipByBuildId = function(slot0, slot1, slot2)
 
 	if slot2 then
 		slot6 = getProxy(ActivityProxy):getBuildFreeActivityByBuildId(slot0)
-		slot8 = getDropName({
+		slot8 = Drop.New({
 			type = DROP_TYPE_VITEM,
 			id = slot6:getConfig("config_client")[1]
-		})
+		}):getName()
 
 		if not slot6 or slot6:isEnd() then
 			return false, i18n("tip_build_ticket_expired", slot8)
@@ -105,7 +105,7 @@ slot0.canBuildShipByBuildId = function(slot0, slot1, slot2)
 	return true
 end
 
-slot0.canQuickBuildShip = function(slot0)
+function slot0.canQuickBuildShip(slot0)
 	if not getProxy(BuildShipProxy):getBuildShip(slot0) then
 		return false, i18n("ship_buildShipImmediately_error_noSHip")
 	end
@@ -129,7 +129,7 @@ slot0.canQuickBuildShip = function(slot0)
 	return true
 end
 
-slot0.getPageFromPoolType = function(slot0)
+function slot0.getPageFromPoolType(slot0)
 	for slot5, slot6 in pairs({
 		[BuildShipScene.PAGE_BUILD] = {
 			1,

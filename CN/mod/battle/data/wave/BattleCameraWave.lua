@@ -5,11 +5,11 @@ slot0.Battle.BattleCameraWave = class("BattleCameraWave", slot0.Battle.BattleWav
 slot0.Battle.BattleCameraWave.__name = "BattleCameraWave"
 slot2 = slot0.Battle.BattleCameraWave
 
-slot2.Ctor = function(slot0)
+function slot2.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot2.SetWaveData = function(slot0, slot1)
+function slot2.SetWaveData(slot0, slot1)
 	uv0.super.SetWaveData(slot0, slot1)
 
 	slot0._pause = slot0._param.pause
@@ -20,7 +20,7 @@ slot2.SetWaveData = function(slot0, slot1)
 	slot0._zoomBounce = slot0._param.zoomBounce
 end
 
-slot2.DoWave = function(slot0)
+function slot2.DoWave(slot0)
 	uv0.super.DoWave(slot0)
 
 	slot1 = uv1.Battle.BattleCameraUtil.GetInstance()

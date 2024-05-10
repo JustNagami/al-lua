@@ -38,7 +38,7 @@ slot1 = {
 }
 slot2 = 0
 
-slot0.GetBgAndBgm = function()
+function slot0.GetBgAndBgm()
 	slot0 = uv0
 
 	if getProxy(ActivityProxy):RawGetActivityById(pg.gameset.dayandnight_bgm.key_value) and not slot1:isEnd() then
@@ -54,7 +54,7 @@ slot0.GetBgAndBgm = function()
 	end
 end
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._tf = slot1
 	slot0._go = slot1.gameObject
 	slot0.paintingCanvases = {
@@ -66,11 +66,11 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.isloading = false
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "MainBGView"
 end
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	slot0.ship = slot1
 
 	slot0:ClearSpecailBg()
@@ -99,11 +99,11 @@ slot0.Init = function(slot0, slot1)
 	end
 end
 
-slot0.Refresh = function(slot0, slot1)
+function slot0.Refresh(slot0, slot1)
 	slot0:Init(slot1)
 end
 
-slot0.SetSpecailBg = function(slot0, slot1)
+function slot0.SetSpecailBg(slot0, slot1)
 	slot0.isloading = true
 	slot2 = pg.DynamicBgMgr.GetInstance()
 
@@ -115,7 +115,7 @@ slot0.SetSpecailBg = function(slot0, slot1)
 	end)
 end
 
-slot0.SetMapBg = function(slot0, slot1, slot2)
+function slot0.SetMapBg(slot0, slot1, slot2)
 	slot0.isloading = true
 	slot0.effectGo = nil
 
@@ -151,7 +151,7 @@ slot0.SetMapBg = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.ClearMapBg = function(slot0)
+function slot0.ClearMapBg(slot0)
 	if not IsNil(slot0.effectGo) then
 		Object.Destroy(slot0.effectGo)
 
@@ -166,7 +166,7 @@ slot0.ClearMapBg = function(slot0)
 	slot0.mapLoaderKey = nil
 end
 
-slot0.AdjustMapEffect = function(slot0, slot1)
+function slot0.AdjustMapEffect(slot0, slot1)
 	slot2 = -math.huge
 
 	for slot7 = 1, slot1:GetComponentsInChildren(typeof(Canvas)).Length do
@@ -187,7 +187,7 @@ slot0.AdjustMapEffect = function(slot0, slot1)
 	end
 end
 
-slot0.SetCommonBg = function(slot0, slot1)
+function slot0.SetCommonBg(slot0, slot1)
 	setActive(slot0._tf, true)
 
 	slot0.isloading = true
@@ -200,7 +200,7 @@ slot0.SetCommonBg = function(slot0, slot1)
 	end)
 end
 
-slot0.ClearSpecailBg = function(slot0)
+function slot0.ClearSpecailBg(slot0)
 	if slot0.isSpecialBg then
 		pg.DynamicBgMgr.GetInstance():ClearBg(slot0:getUIName())
 
@@ -208,11 +208,15 @@ slot0.ClearSpecailBg = function(slot0)
 	end
 end
 
-slot0.IsLoading = function(slot0)
+function slot0.IsLoading(slot0)
 	return slot0.isloading
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Disable(slot0)
+	slot0:ClearSpecailBg()
+end
+
+function slot0.Dispose(slot0)
 	slot0:ClearSpecailBg()
 	slot0:ClearMapBg()
 end

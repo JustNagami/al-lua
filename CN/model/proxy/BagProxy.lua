@@ -1,7 +1,7 @@
 slot0 = class("BagProxy", import(".NetProxy"))
 slot0.ITEM_UPDATED = "item updated"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:on(15001, function (slot0)
 		uv0.data = {}
 
@@ -32,17 +32,17 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.addExtraData = function(slot0, slot1, slot2)
+function slot0.addExtraData(slot0, slot1, slot2)
 	slot0.extraItemData[slot1] = slot0.extraItemData[slot1] or {}
 
 	table.insert(slot0.extraItemData[slot1], slot2)
 end
 
-slot0.removeExtraData = function(slot0, slot1, slot2)
+function slot0.removeExtraData(slot0, slot1, slot2)
 	table.removebyvalue(slot0.extraItemData[slot1] or {}, slot2)
 end
 
-slot0.addItemById = function(slot0, slot1, slot2, slot3)
+function slot0.addItemById(slot0, slot1, slot2, slot3)
 	assert(slot2 > 0, "count should greater than zero")
 
 	if slot1 == ITEM_ID_CUBE then
@@ -52,7 +52,7 @@ slot0.addItemById = function(slot0, slot1, slot2, slot3)
 	slot0:updateItem(slot1, slot2, slot3)
 end
 
-slot0.removeItemById = function(slot0, slot1, slot2, slot3)
+function slot0.removeItemById(slot0, slot1, slot2, slot3)
 	assert(slot2 > 0, "count should greater than zero")
 
 	if slot1 == ITEM_ID_CUBE then
@@ -62,7 +62,7 @@ slot0.removeItemById = function(slot0, slot1, slot2, slot3)
 	slot0:updateItem(slot1, -slot2, slot3)
 end
 
-slot0.getItemsByExclude = function(slot0)
+function slot0.getItemsByExclude(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -95,7 +95,7 @@ slot0.getItemsByExclude = function(slot0)
 	return slot1
 end
 
-slot0.getItemsByType = function(slot0, slot1)
+function slot0.getItemsByType(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in pairs(slot0.data) do
@@ -107,7 +107,7 @@ slot0.getItemsByType = function(slot0, slot1)
 	return Clone(slot2)
 end
 
-slot0.ExitTypeItems = function(slot0, slot1)
+function slot0.ExitTypeItems(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.data) do
 		if slot6:getConfig("type") == slot1 and slot6.count > 0 then
 			return true
@@ -117,7 +117,7 @@ slot0.ExitTypeItems = function(slot0, slot1)
 	return false
 end
 
-slot0.GetItemsByCondition = function(slot0, slot1)
+function slot0.GetItemsByCondition(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in pairs(slot0.data) do
@@ -141,25 +141,7 @@ slot0.GetItemsByCondition = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getTempItemByType = function(slot0, slot1)
-	slot2 = {}
-
-	for slot6, slot7 in ipairs(pg.item_data_statistics.all) do
-		if pg.item_data_statistics[slot7].type == slot1 then
-			slot2[slot7] = true
-		end
-	end
-
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot2[slot7.configId] then
-			slot2[slot8] = Clone(slot7)
-		end
-	end
-
-	return slot2
-end
-
-slot0.getItemById = function(slot0, slot1)
+function slot0.getItemById(slot0, slot1)
 	if slot0.data[slot1] ~= nil then
 		return slot0.data[slot1]:clone()
 	end
@@ -167,7 +149,7 @@ slot0.getItemById = function(slot0, slot1)
 	return nil
 end
 
-slot0.RawGetItemById = function(slot0, slot1)
+function slot0.RawGetItemById(slot0, slot1)
 	if slot0.data[slot1] ~= nil then
 		return slot0.data[slot1]
 	end
@@ -175,15 +157,21 @@ slot0.RawGetItemById = function(slot0, slot1)
 	return nil
 end
 
-slot0.getItemCountById = function(slot0, slot1)
-	return slot0.data[slot1] and slot2.count or 0
+function slot0.getItemCountById(slot0, slot1)
+	slot2 = slot0.data[slot1] and slot0.data[slot1].count or 0
+
+	if slot0.extraItemData[slot1] and #slot0.extraItemData[slot1] > 0 then
+		slot2 = math.max(slot2, 1)
+	end
+
+	return slot2
 end
 
-slot0.getBoxCount = function(slot0)
+function slot0.getBoxCount(slot0)
 	return table.getCount(slot0:getItemsByType(Item.EQUIPMENT_BOX_TYPE_5))
 end
 
-slot0.getCanComposeCount = function(slot0)
+function slot0.getCanComposeCount(slot0)
 	slot1 = 0
 
 	for slot6, slot7 in pairs(pg.compose_data_template.all) do
@@ -197,7 +185,7 @@ slot0.getCanComposeCount = function(slot0)
 	return slot1
 end
 
-slot0.updateItem = function(slot0, slot1, slot2, slot3)
+function slot0.updateItem(slot0, slot1, slot2, slot3)
 	slot4 = slot0.data[slot1] or Item.New({
 		count = 0,
 		id = slot1
@@ -224,10 +212,12 @@ slot0.updateItem = function(slot0, slot1, slot2, slot3)
 	slot0.facade:sendNotification(uv0.ITEM_UPDATED, slot4:clone())
 end
 
-slot0.canUpgradeFlagShipEquip = function(slot0)
+function slot0.canUpgradeFlagShipEquip(slot0)
 	if getProxy(BayProxy):getEquipment2ByflagShip() then
-		for slot7, slot8 in pairs(pg.equip_data_template[slot2.id].trans_use_item) do
-			if not slot0:getItemById(slot8[1]) or slot9.count < slot8[2] then
+		slot6 = "trans_use_item"
+
+		for slot6, slot7 in pairs(slot2:getConfig(slot6)) do
+			if not slot0:getItemById(slot7[1]) or slot8.count < slot7[2] then
 				return false
 			end
 		end
@@ -236,16 +226,28 @@ slot0.canUpgradeFlagShipEquip = function(slot0)
 	end
 end
 
-slot0.AddLimitCnt = function(slot0, slot1, slot2)
+function slot0.AddLimitCnt(slot0, slot1, slot2)
 	slot0.limitList[slot1] = (slot0.limitList[slot1] or 0) + slot2
 end
 
-slot0.GetLimitCntById = function(slot0, slot1)
+function slot0.GetLimitCntById(slot0, slot1)
 	return slot0.limitList[slot1] or 0
 end
 
-slot0.ClearLimitCnt = function(slot0, slot1)
+function slot0.ClearLimitCnt(slot0, slot1)
 	slot0.limitList[slot1] = 0
+end
+
+function slot0.GetSkinShopDiscountItemList(slot0)
+	slot1 = {}
+
+	for slot5, slot6 in pairs(slot0.data) do
+		if slot6.count > 0 and slot6:IsSkinShopDiscountType() then
+			table.insert(slot1, slot6)
+		end
+	end
+
+	return slot1
 end
 
 return slot0

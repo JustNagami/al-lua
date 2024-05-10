@@ -1,12 +1,12 @@
 slot0 = class("MainUrShipReFetchSequence", import("...base.ContextMediator"))
 slot0.ON_TIME_UP = "MainUrShipReFetchSequence:ON_TIME_UP"
 
-slot0.Ctor = function(slot0)
+function slot0.Ctor(slot0)
 	uv0.super.Ctor(slot0, BaseEventLogic.New())
 	pg.m02:registerMediator(slot0)
 end
 
-slot0.Execute = function(slot0, slot1)
+function slot0.Execute(slot0, slot1)
 	if #getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GRAFTING) == 0 then
 		slot1()
 
@@ -16,15 +16,15 @@ slot0.Execute = function(slot0, slot1)
 	slot0:CheckUrShipAct(slot3, slot1)
 end
 
-slot1 = function(slot0)
+function slot1(slot0)
 	return getProxy(ActivityProxy):getActivityById(slot0) and not slot2:isEnd()
 end
 
-slot2 = function(slot0)
+function slot2(slot0)
 	return slot0 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or slot0 == ActivityConst.ACTIVITY_TYPE_BUILD or slot0 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
 end
 
-slot3 = function(slot0)
+function slot3(slot0)
 	if not slot0 or slot0:isEnd() then
 		return false
 	end
@@ -36,7 +36,7 @@ slot3 = function(slot0)
 	return pg.activity_template[slot1] and uv1(slot2.type)
 end
 
-slot0.CheckUrShipAct = function(slot0, slot1, slot2)
+function slot0.CheckUrShipAct(slot0, slot1, slot2)
 	slot3 = {}
 
 	for slot7, slot8 in pairs(slot1) do
@@ -50,7 +50,7 @@ slot0.CheckUrShipAct = function(slot0, slot1, slot2)
 	seriesAsync(slot3, slot2)
 end
 
-slot4 = function(slot0)
+function slot4(slot0)
 	if not getProxy(ActivityProxy):getActivityById(slot0) or slot2:isEnd() then
 		return false
 	end
@@ -62,8 +62,8 @@ slot4 = function(slot0)
 	return slot8 < slot6 and math.min(slot6, slot8 + 1) * slot4.exchange_request <= slot2.data1
 end
 
-slot0.TryFetchUrShips = function(slot0, slot1, slot2)
-	slot3 = function()
+function slot0.TryFetchUrShips(slot0, slot1, slot2)
+	function slot3()
 		uv0:TryFetchUrShips(uv1, uv2)
 	end
 
@@ -74,21 +74,21 @@ slot0.TryFetchUrShips = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.ShowFetchShipMsgbox = function(slot0, slot1, slot2)
+function slot0.ShowFetchShipMsgbox(slot0, slot1, slot2)
 	slot0.callback = slot2
 	slot0.page = UrShipRefetchWindow.New(pg.UIMgr.GetInstance().UIMain)
 
 	slot0.page:ExecuteAction("Show", slot1)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.GRAFTING_ACT_OP_DONE,
 		MainUrShipReFetchSequence.ON_TIME_UP
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.GRAFTING_ACT_OP_DONE and uv0(slot3.linkActType) then
@@ -116,7 +116,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	if slot0.page then
 		slot0.page:Destroy()
 
@@ -124,12 +124,12 @@ slot0.Clear = function(slot0)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	pg.m02:removeMediator(slot0.__cname)
 	slot0:Clear()
 end
 
-slot0.addSubLayers = function(slot0, slot1, slot2, slot3)
+function slot0.addSubLayers(slot0, slot1, slot2, slot3)
 	assert(isa(slot1, Context), "should be an instance of Context")
 
 	slot6 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator)

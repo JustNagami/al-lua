@@ -5,11 +5,11 @@ slot2 = class("BattleBossCharacter", slot0.Battle.BattleEnemyCharacter)
 slot0.Battle.BattleBossCharacter = slot2
 slot2.__name = "BattleBossCharacter"
 
-slot2.Ctor = function(slot0)
+function slot2.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot2.Dispose = function(slot0)
+function slot2.Dispose(slot0)
 	if not slot0._chargeTimer.paused then
 		slot0._chargeTimer:Stop()
 	end
@@ -20,11 +20,18 @@ slot2.Dispose = function(slot0)
 		slot0._castClock = nil
 	end
 
+	if slot0._aimBiarBar then
+		slot0._factory:GetHPBarPool():DestroyObj(slot0._aimBiarBar:GetGO())
+		slot0._aimBiarBar:Dispose()
+
+		slot0._aimBiarBar = nil
+	end
+
 	LeanTween.cancel(slot0._HPBar)
 	uv0.super.Dispose(slot0)
 end
 
-slot2.Update = function(slot0)
+function slot2.Update(slot0)
 	uv0.super.Update(slot0)
 	slot0:UpdateCastClockPosition()
 
@@ -39,21 +46,21 @@ slot2.Update = function(slot0)
 	end
 end
 
-slot2.UpdateVigilantBarPosition = function(slot0)
+function slot2.UpdateVigilantBarPosition(slot0)
 	slot0._vigilantBar:UpdateVigilantBarPosition(slot0._referenceVector + slot0._hpBarOffset)
 end
 
-slot2.RegisterWeaponListener = function(slot0, slot1)
+function slot2.RegisterWeaponListener(slot0, slot1)
 	uv0.super.RegisterWeaponListener(slot0, slot1)
 	slot1:RegisterEventListener(slot0, uv1.WEAPON_INTERRUPT, slot0.onWeaponInterrupted)
 end
 
-slot2.UnregisterWeaponListener = function(slot0, slot1)
+function slot2.UnregisterWeaponListener(slot0, slot1)
 	uv0.super.UnregisterWeaponListener(slot0, slot1)
 	slot1:UnregisterEventListener(slot0, uv1.WEAPON_INTERRUPT)
 end
 
-slot2.AddHPBar = function(slot0, slot1, slot2)
+function slot2.AddHPBar(slot0, slot1, slot2)
 	slot0._HPBar = slot1
 	slot0._HPBarTf = slot1.transform
 
@@ -73,7 +80,7 @@ slot2.AddHPBar = function(slot0, slot1, slot2)
 	slot0:initBarrierBar()
 end
 
-slot2.SetTemplateInfo = function(slot0)
+function slot2.SetTemplateInfo(slot0)
 	slot2 = ""
 
 	if slot0._unitData:GetTemplate() then
@@ -98,7 +105,7 @@ slot2.SetTemplateInfo = function(slot0)
 	SetActive(slot0._barrierBar, false)
 end
 
-slot2.SetBossData = function(slot0, slot1)
+function slot2.SetBossData(slot0, slot1)
 	slot0._bossBarInfoList = {}
 	slot0._HPBarTotalCount = slot1.hpBarNum or 1
 	slot0._hideBarNum = slot1.hideBarNum
@@ -106,11 +113,11 @@ slot2.SetBossData = function(slot0, slot1)
 	slot0._bossIndex = slot1.bossCount
 end
 
-slot2.GetBossIndex = function(slot0)
+function slot2.GetBossIndex(slot0)
 	return slot0._bossIndex
 end
 
-slot2.initBarComponent = function(slot0)
+function slot2.initBarComponent(slot0)
 	slot0._stepHP = slot0:GetUnitData():GetMaxHP() / slot0._HPBarTotalCount
 	slot2 = 1
 	slot0._resTotalCount = 5
@@ -174,7 +181,7 @@ slot2.initBarComponent = function(slot0)
 	end, 1)
 end
 
-slot2.UpdateHpBar = function(slot0)
+function slot2.UpdateHpBar(slot0)
 	if slot0._cacheHP == slot0._unitData:GetCurrentHP() then
 		return
 	end
@@ -212,7 +219,7 @@ slot2.UpdateHpBar = function(slot0)
 	slot0._cacheHP = slot1
 end
 
-slot2.generateTween = function(slot0)
+function slot2.generateTween(slot0)
 	slot1 = slot0._bossBarInfoList[slot0._currentFmod]
 	duration = duration or 0.7
 
@@ -221,7 +228,7 @@ slot2.generateTween = function(slot0)
 	end))
 end
 
-slot2.GetCurrentFmod = function(slot0)
+function slot2.GetCurrentFmod(slot0)
 	slot2, slot3 = math.modf(slot0._unitData:GetCurrentHP() / slot0._stepHP)
 
 	if math.fmod(slot2 + 1, slot0._resTotalCount) == 0 then
@@ -231,7 +238,7 @@ slot2.GetCurrentFmod = function(slot0)
 	return slot4, slot3, slot2
 end
 
-slot2.SortBar = function(slot0, slot1, slot2)
+function slot2.SortBar(slot0, slot1, slot2)
 	if slot1 == slot0._currentFmod then
 		return
 	elseif slot0._currentFmod < slot1 then
@@ -268,7 +275,7 @@ slot2.SortBar = function(slot0, slot1, slot2)
 	end
 end
 
-slot2.SetHPBarCountText = function(slot0, slot1)
+function slot2.SetHPBarCountText(slot0, slot1)
 	if slot0._hideBarNum then
 		slot0._HPBarCountText.text = "X??"
 	else
@@ -276,7 +283,7 @@ slot2.SetHPBarCountText = function(slot0, slot1)
 	end
 end
 
-slot2.UpdateHPBarPosition = function(slot0)
+function slot2.UpdateHPBarPosition(slot0)
 	if slot0._normalHPTF and not slot0._hideHP then
 		slot0._hpBarPos:Copy(slot0._referenceVector):Add(slot0._hpBarOffset)
 
@@ -284,7 +291,7 @@ slot2.UpdateHPBarPosition = function(slot0)
 	end
 end
 
-slot2.onWeaponPreCast = function(slot0, slot1)
+function slot2.onWeaponPreCast(slot0, slot1)
 	uv0.super.onWeaponPreCast(slot0, slot1)
 
 	slot2 = slot1.Data
@@ -296,7 +303,7 @@ slot2.onWeaponPreCast = function(slot0, slot1)
 	end
 end
 
-slot2.onWeaponPrecastFinish = function(slot0, slot1)
+function slot2.onWeaponPrecastFinish(slot0, slot1)
 	uv0.super.onWeaponPrecastFinish(slot0, slot1)
 
 	slot3 = slot1.Data.armor
@@ -314,11 +321,11 @@ slot2.onWeaponPrecastFinish = function(slot0, slot1)
 	end
 end
 
-slot2.onWeaponInterrupted = function(slot0, slot1)
+function slot2.onWeaponInterrupted(slot0, slot1)
 	slot0._unitData:StateChange(uv0.Battle.UnitState.STATE_INTERRUPT)
 end
 
-slot2.initArmorBar = function(slot0, slot1)
+function slot2.initArmorBar(slot0, slot1)
 	if slot1 and slot1 ~= 0 then
 		slot0._armor = slot1
 		slot0._totalArmor = slot1
@@ -328,7 +335,7 @@ slot2.initArmorBar = function(slot0, slot1)
 	end
 end
 
-slot2.OnUpdateHP = function(slot0, slot1)
+function slot2.OnUpdateHP(slot0, slot1)
 	slot2 = slot1.Data.preShieldHP
 
 	if slot0._barrier and slot2 < 0 then
@@ -348,36 +355,36 @@ slot2.OnUpdateHP = function(slot0, slot1)
 	end
 end
 
-slot2.updateWeaponArmor = function(slot0)
+function slot2.updateWeaponArmor(slot0)
 	slot0._armorProgress.fillAmount = slot0._armor / slot0._totalArmor
 end
 
-slot2.initCastClock = function(slot0, slot1, slot2)
+function slot2.initCastClock(slot0, slot1, slot2)
 	slot0._castClock:Casting(slot1, slot2)
 
 	slot0._castFinishTime = pg.TimeMgr.GetInstance():GetCombatTime() + slot1
 	slot0._castDuration = slot1
 end
 
-slot2.UpdateCastClock = function(slot0)
+function slot2.UpdateCastClock(slot0)
 	slot0._castClock:UpdateCastClock()
 end
 
-slot2.updateComponentDiveInvisible = function(slot0)
+function slot2.updateComponentDiveInvisible(slot0)
 	uv0.super.updateComponentDiveInvisible(slot0)
 	SetActive(slot0._HPBarTf, true)
 end
 
-slot2.updateComponentVisible = function(slot0)
+function slot2.updateComponentVisible(slot0)
 	uv0.super.updateComponentVisible(slot0)
 	SetActive(slot0._HPBarTf, true)
 end
 
-slot2.initBarrierBar = function(slot0)
+function slot2.initBarrierBar(slot0)
 	slot0._unitData:RegisterEventListener(slot0, uv0.BARRIER_STATE_CHANGE, slot0.onBarrierStateChange)
 end
 
-slot2.onBarrierStateChange = function(slot0, slot1)
+function slot2.onBarrierStateChange(slot0, slot1)
 	slot3 = slot1.Data.barrierDuration
 
 	SetActive(slot0._barrierBar, slot1.Data.barrierDurability > 0)
@@ -397,23 +404,29 @@ slot2.onBarrierStateChange = function(slot0, slot1)
 	end
 end
 
-slot2.updateBarrierBar = function(slot0)
+function slot2.updateBarrierBar(slot0)
 	slot0._barrierProgress.fillAmount = slot0._barrier / slot0._totalBarrier
 end
 
-slot2.updateBarrierClock = function(slot0)
+function slot2.updateBarrierClock(slot0)
 	slot0._barrierClock:UpdateBarrierClockProgress()
 end
 
-slot2.initBarrierClock = function(slot0, slot1)
+function slot2.initBarrierClock(slot0, slot1)
 	slot0._barrierClock:Shielding(slot1)
 end
 
-slot2.AddAimBiasBar = function(slot0, slot1)
+function slot2.AddAimBiasBar(slot0, slot1)
 	slot0._normalHPTF = slot1
 	slot0._aimBiarBarTF = slot1:Find("biasBar")
 	slot0._aimBiarBar = uv0.Battle.BattleAimbiasBar.New(slot0._aimBiarBarTF)
 
 	slot0._aimBiarBar:ConfigAimBias(slot0._unitData:GetAimBias())
 	slot0._aimBiarBar:UpdateAimBiasProgress()
+end
+
+function slot2.AddModel(slot0, slot1)
+	uv0.super.AddModel(slot0, slot1)
+
+	slot0._tf.position = slot0._unitData:GetPosition()
 end

@@ -102,31 +102,33 @@ slot26 = {
 	{}
 }
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	slot0._tf = slot1
 	slot0._event = slot3
 	slot0._gameData = slot2
 	slot0.menuUI = findTF(slot0._tf, "ui/menuUI")
-	slot0.battleScrollRect = GetComponent(findTF(slot0.menuUI, "battList"), typeof(ScrollRect))
+	slot0.battleScrollRect = GetComponent(findTF(slot0.menuUI, "ad/battList"), typeof(ScrollRect))
 	slot0.totalTimes = slot0._gameData.total_times
 	slot0.battleItems = {}
 	slot0.dropItems = {}
+	slot4 = GetComponent(findTF(slot0.menuUI, "desc"), typeof(Image))
 
-	onButton(slot0._event, findTF(slot0.menuUI, "rightPanelBg/arrowUp"), function ()
+	slot4:SetNativeSize()
+	onButton(slot0._event, findTF(slot0.menuUI, "ad/rightPanelBg/arrowUp"), function ()
 		if uv0.battleScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
 			slot0 = 1
 		end
 
 		scrollTo(uv0.battleScrollRect, 0, slot0)
 	end, SFX_CANCEL)
-	onButton(slot0._event, findTF(slot0.menuUI, "rightPanelBg/arrowDown"), function ()
+	onButton(slot0._event, findTF(slot0.menuUI, "ad/rightPanelBg/arrowDown"), function ()
 		if uv0.battleScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
 			slot0 = 0
 		end
 
 		scrollTo(uv0.battleScrollRect, 0, slot0)
 	end, SFX_CANCEL)
-	onButton(slot0._event, findTF(slot0.menuUI, "btnBack"), function ()
+	onButton(slot0._event, findTF(slot0.menuUI, "ad/btnBack"), function ()
 		uv0._event:emit(BeachGuardGameView.CLOSE_GAME)
 	end, SFX_CANCEL)
 	onButton(slot0._event, findTF(slot0.menuUI, "btnRule"), function ()
@@ -135,7 +137,7 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	onButton(slot0._event, findTF(slot0.menuUI, "btnStart"), function ()
 		uv0._event:emit(BeachGuardGameView.READY_START)
 	end, SFX_CANCEL)
-	onButton(slot0._event, findTF(slot0.menuUI, "btnGameBook"), function ()
+	onButton(slot0._event, findTF(slot0.menuUI, "ad/btnGameBook"), function ()
 		if isActive(uv0.bookUI) then
 			setActive(uv0.bookUI, false)
 		else
@@ -143,15 +145,15 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 		end
 	end, SFX_CANCEL)
 
-	slot4 = findTF(slot0.menuUI, "tplBattleItem")
-	slot5 = slot0._gameData.drop
+	slot5 = findTF(slot0.menuUI, "tplBattleItem")
+	slot6 = slot0._gameData.drop
 
-	for slot9 = 1, 7 do
-		slot10 = tf(instantiate(slot4))
-		slot10.name = "battleItem_" .. slot9
+	for slot10 = 1, 7 do
+		slot11 = tf(instantiate(slot5))
+		slot11.name = "battleItem_" .. slot10
 
-		setParent(slot10, findTF(slot0.menuUI, "battList/Viewport/Content"))
-		GetSpriteFromAtlasAsync(slot0._gameData.path, "battleDesc" .. slot9, function (slot0)
+		setParent(slot11, findTF(slot0.menuUI, "ad/battList/Viewport/Content"))
+		GetSpriteFromAtlasAsync(slot0._gameData.path, "battleDesc" .. slot10, function (slot0)
 			if slot0 then
 				setImageSprite(findTF(uv0, "state_open/desc"), slot0, true)
 				setImageSprite(findTF(uv0, "state_clear/desc"), slot0, true)
@@ -160,32 +162,32 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 			end
 		end)
 
-		slot12 = findTF(slot10, "icon")
+		slot13 = findTF(slot11, "icon")
 
-		updateDrop(slot12, {
-			type = slot5[slot9][1],
-			id = slot5[slot9][2],
-			amount = slot5[slot9][3]
+		updateDrop(slot13, {
+			type = slot6[slot10][1],
+			id = slot6[slot10][2],
+			amount = slot6[slot10][3]
 		})
-		onButton(slot0._event, slot12, function ()
+		onButton(slot0._event, slot13, function ()
 			uv0._event:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
-		table.insert(slot0.dropItems, slot12)
-		setActive(slot10, true)
-		table.insert(slot0.battleItems, slot10)
+		table.insert(slot0.dropItems, slot13)
+		setActive(slot11, true)
+		table.insert(slot0.battleItems, slot11)
 	end
 
 	slot0.bookUI = findTF(slot0.menuUI, "bookUI")
 
 	setActive(slot0.bookUI, false)
 
-	slot10 = SFX_PANEL
+	slot11 = SFX_PANEL
 
 	onButton(slot0._event, findTF(slot0.bookUI, "bottom"), function ()
 		if isActive(uv0.bookUI) then
 			setActive(uv0.bookUI, false)
 		end
-	end, slot10)
+	end, slot11)
 
 	slot0.selectTagIndex = nil
 	slot0.selectGridIndex = nil
@@ -195,40 +197,40 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	slot0.iconDesc = findTF(slot0.bookUI, "bg/icon/img_desc")
 	slot0.descBoundTxt = findTF(slot0.bookUI, "bg/descBound/desc")
 	slot0.descBoundTitle = findTF(slot0.bookUI, "bg/descBound/title")
-	slot6 = 8
+	slot7 = 8
 
-	for slot10 = 1, 3 do
-		slot11 = slot10
-		slot12 = findTF(slot0.bookUI, "bg/tag" .. slot10)
+	for slot11 = 1, 3 do
+		slot12 = slot11
+		slot13 = findTF(slot0.bookUI, "bg/tag" .. slot11)
 
-		if slot10 == 3 then
-			setActive(slot12, false)
+		if slot11 == 3 then
+			setActive(slot13, false)
 		end
 
-		onButton(slot0._event, slot12, function ()
+		onButton(slot0._event, slot13, function ()
 			uv0:selectBookTag(uv1)
 		end, SFX_PANEL)
-		table.insert(slot0.bookUITags, slot12)
+		table.insert(slot0.bookUITags, slot13)
 	end
 
-	slot7 = findTF(slot0.bookUI, "bg/gridTpl")
+	slot8 = findTF(slot0.bookUI, "bg/gridTpl")
 
-	for slot11 = 1, slot6 do
-		slot12 = slot11
-		slot13 = tf(instantiate(slot7))
+	for slot12 = 1, slot7 do
+		slot13 = slot12
+		slot14 = tf(instantiate(slot8))
 
-		setActive(slot13, true)
-		setParent(slot13, findTF(slot0.bookUI, "container/Viewport/Content"))
-		onButton(slot0._event, slot13, function ()
+		setActive(slot14, true)
+		setParent(slot14, findTF(slot0.bookUI, "container/Viewport/Content"))
+		onButton(slot0._event, slot14, function ()
 			uv0:selectGrid(uv1)
 		end, SFX_PANEL)
-		table.insert(slot0.grids, slot13)
+		table.insert(slot0.grids, slot14)
 	end
 
 	slot0:selectBookTag(1)
 end
 
-slot0.selectBookTag = function(slot0, slot1)
+function slot0.selectBookTag(slot0, slot1)
 	if slot0.selectTagIndex ~= slot1 then
 		slot0.selectTagIndex = slot1
 		slot0.bookDatas = uv0[slot1]
@@ -262,7 +264,7 @@ slot0.selectBookTag = function(slot0, slot1)
 	end
 end
 
-slot0.selectGrid = function(slot0, slot1)
+function slot0.selectGrid(slot0, slot1)
 	if slot0.selectGridIndex ~= slot1 then
 		slot0.selectGridIndex = slot1
 		slot2 = slot0.bookDatas[slot1]
@@ -295,14 +297,14 @@ slot0.selectGrid = function(slot0, slot1)
 	end
 end
 
-slot0.updateBookUI = function(slot0)
+function slot0.updateBookUI(slot0)
 end
 
-slot0.show = function(slot0, slot1)
+function slot0.show(slot0, slot1)
 	setActive(slot0.menuUI, slot1)
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	slot2 = slot0:getGameUsedTimes(slot1)
 	slot3 = slot0:getGameTimes(slot1)
 
@@ -340,7 +342,7 @@ slot0.update = function(slot0, slot1)
 	slot0:CheckGet(slot1)
 end
 
-slot0.CheckGet = function(slot0, slot1)
+function slot0.CheckGet(slot0, slot1)
 	setActive(findTF(slot0.menuUI, "got"), false)
 
 	if slot0:getUltimate(slot1) and slot2 ~= 0 then
@@ -361,15 +363,15 @@ slot0.CheckGet = function(slot0, slot1)
 	end
 end
 
-slot0.getGameTimes = function(slot0, slot1)
+function slot0.getGameTimes(slot0, slot1)
 	return slot1.count
 end
 
-slot0.getGameUsedTimes = function(slot0, slot1)
+function slot0.getGameUsedTimes(slot0, slot1)
 	return slot1.usedtime
 end
 
-slot0.getUltimate = function(slot0, slot1)
+function slot0.getUltimate(slot0, slot1)
 	return slot1.ultimate
 end
 

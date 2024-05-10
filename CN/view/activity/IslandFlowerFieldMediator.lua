@@ -1,7 +1,7 @@
 slot0 = class("IslandFlowerFieldMediator", import("..base.ContextMediator"))
 slot0.GET_FLOWER_AWARD = "IslandFlowerFieldMediator.GET_FLOWER_AWARD"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot1 = getProxy(ActivityProxy)
 	slot2 = slot0.viewComponent
 
@@ -14,14 +14,14 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.ISLAND_FLOWER_GET_DONE,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.ISLAND_FLOWER_GET_DONE then

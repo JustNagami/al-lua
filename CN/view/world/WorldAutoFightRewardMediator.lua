@@ -1,6 +1,6 @@
 slot0 = class("WorldAutoFightRewardMediator", ContextMediator)
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 end
 
 return slot0

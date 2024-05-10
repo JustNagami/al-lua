@@ -1,6 +1,6 @@
 slot0 = class("ShipProfileExCvBtn", import(".ShipProfileCvBtn"))
 
-slot0.Init = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.Init(slot0, slot1, slot2, slot3, slot4, slot5)
 	uv0.super.Init(slot0, slot1, slot2, slot3, slot4)
 
 	slot0.favor = slot5
@@ -22,7 +22,7 @@ slot0.Init = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.wordData.maxfavor = slot5
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot2 = slot0.voice.unlock_condition[1] < 0 or (slot0.wordData.textContent == nil or slot0.wordData.textContent == "nil" or slot0.wordData.textContent == "")
 
 	setActive(slot0._tf, not slot2)
@@ -33,7 +33,7 @@ slot0.Update = function(slot0)
 	end
 end
 
-slot0.UpdateCvBtn = function(slot0)
+function slot0.UpdateCvBtn(slot0)
 	slot3, slot4 = slot0.shipGroup:VoiceReplayCodition(slot0.voice)
 	slot0.nameTxt.text = slot3 and slot1.voice_name .. "Ex" or "???"
 
@@ -44,6 +44,10 @@ slot0.UpdateCvBtn = function(slot0)
 			pg.TipsMgr.GetInstance():ShowTips(uv0)
 		end, SFX_PANEL)
 	end
+end
+
+function slot0.isEx(slot0)
+	return slot0.shipGroup:VoiceReplayCodition(slot0.voice)
 end
 
 return slot0

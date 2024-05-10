@@ -5,7 +5,7 @@ for slot5, slot6 in ipairs({
 		slot0 = class("Object")
 		slot0.colliderSize = nil
 
-		slot0.Ctor = function(slot0, slot1, slot2, slot3)
+		function slot0.Ctor(slot0, slot1, slot2, slot3)
 			slot0.rt = slot1
 			slot0.pos = slot2
 
@@ -17,29 +17,29 @@ for slot5, slot6 in ipairs({
 			slot0:Show("base")
 		end
 
-		slot0.UpdatePos = function(slot0, slot1)
+		function slot0.UpdatePos(slot0, slot1)
 			slot0.pos = slot0.pos + slot1
 
 			setAnchoredPosition(slot0.rt, slot0.pos)
 		end
 
-		slot0.Show = function(slot0, slot1)
+		function slot0.Show(slot0, slot1)
 			slot0.state = slot1
 
 			setActive(slot0.rt, true)
 		end
 
-		slot0.Trigger = function(slot0, slot1)
+		function slot0.Trigger(slot0, slot1)
 			slot0.isTriggered = true
 
 			slot0:TriggerEffect(slot1)
 		end
 
-		slot0.TriggerEffect = function(slot0, slot1)
+		function slot0.TriggerEffect(slot0, slot1)
 			slot1:TriggerEffect(slot0)
 		end
 
-		slot0.Clear = function(slot0)
+		function slot0.Clear(slot0)
 			table.removebyvalue(slot0.controller.queue, slot0)
 			Destroy(slot0.rt)
 		end
@@ -62,7 +62,7 @@ for slot5, slot6 in ipairs({
 			}
 		}
 
-		slot0.Trigger = function(slot0, slot1)
+		function slot0.Trigger(slot0, slot1)
 			slot0.isTriggered = true
 
 			if not slot1.invincibleTime then
@@ -85,7 +85,7 @@ for slot5, slot6 in ipairs({
 			}
 		}
 
-		slot0.Trigger = function(slot0, slot1)
+		function slot0.Trigger(slot0, slot1)
 			slot0.isTriggered = true
 
 			if not slot1.invincibleTime then
@@ -99,7 +99,7 @@ for slot5, slot6 in ipairs({
 		slot0 = class("Obstacle", uv0.Object)
 		slot0.actionDic = {}
 
-		slot0.Ctor = function(slot0, slot1, slot2, slot3)
+		function slot0.Ctor(slot0, slot1, slot2, slot3)
 			slot0.rt = slot1
 			slot0.pos = slot2
 
@@ -117,7 +117,7 @@ for slot5, slot6 in ipairs({
 			slot0:Show("base")
 		end
 
-		slot0.ActionCallback = function(slot0)
+		function slot0.ActionCallback(slot0)
 			switch(slot0.state, {
 				base = function ()
 				end,
@@ -130,7 +130,7 @@ for slot5, slot6 in ipairs({
 			})
 		end
 
-		slot0.Show = function(slot0, ...)
+		function slot0.Show(slot0, ...)
 			uv0.super.Show(slot0, ...)
 
 			slot0.action = slot0.actionDic[slot0.state]
@@ -138,7 +138,7 @@ for slot5, slot6 in ipairs({
 			slot0.comSpineAnim:SetAction(slot0.action, 0)
 		end
 
-		slot0.Trigger = function(slot0, slot1)
+		function slot0.Trigger(slot0, slot1)
 			slot0.isTriggered = true
 
 			if slot1.invincibleTime then
@@ -210,7 +210,7 @@ for slot5, slot6 in ipairs({
 			base = "bomb_normal"
 		}
 
-		slot0.Trigger = function(slot0, slot1)
+		function slot0.Trigger(slot0, slot1)
 			slot0.isTriggered = true
 
 			if slot1.invincibleTime then
@@ -242,7 +242,7 @@ for slot5, slot6 in ipairs({
 			}
 		}
 
-		slot0.Trigger = function(slot0, slot1)
+		function slot0.Trigger(slot0, slot1)
 			slot0.isTriggered = true
 
 			slot0:TriggerEffect(slot1)
@@ -271,7 +271,7 @@ for slot5, slot6 in ipairs({
 			}
 		}
 
-		slot0.Ctor = function(slot0, slot1, slot2, slot3)
+		function slot0.Ctor(slot0, slot1, slot2, slot3)
 			slot0.rt = slot1
 			slot0.pos = slot2
 
@@ -304,14 +304,14 @@ for slot5, slot6 in ipairs({
 			slot0:Show("base")
 		end
 
-		slot0.UpdatePos = function(slot0, slot1, slot2)
+		function slot0.UpdatePos(slot0, slot1, slot2)
 			slot0.pos = slot0.pos + slot1
 			slot0.pos.y = math.clamp(slot0.pos.y, -slot2, slot2)
 
 			setAnchoredPosition(slot0.rt, slot0.pos)
 		end
 
-		slot0.ActionCallback = function(slot0)
+		function slot0.ActionCallback(slot0)
 			switch(slot0.action, {
 				ride = function ()
 				end,
@@ -335,7 +335,7 @@ for slot5, slot6 in ipairs({
 			})
 		end
 
-		slot0.Show = function(slot0, ...)
+		function slot0.Show(slot0, ...)
 			uv0.super.Show(slot0, ...)
 			switch(slot0.state, {
 				base = function ()
@@ -365,7 +365,7 @@ for slot5, slot6 in ipairs({
 			slot0.comSpineAnim:SetAction(slot0.action, 0)
 		end
 
-		slot0.TriggerEffect = function(slot0, slot1)
+		function slot0.TriggerEffect(slot0, slot1)
 			switch(slot1.__cname, {
 				MoreTime = function ()
 					uv0.controller:AddTime(RacingMiniGameConfig.ITEM_ADD_TIME)
@@ -400,7 +400,7 @@ for slot5, slot6 in ipairs({
 			})
 		end
 
-		slot0.UpdateInvincibility = function(slot0, slot1)
+		function slot0.UpdateInvincibility(slot0, slot1)
 			assert(slot0.invincibleTime)
 
 			slot0.invincibleTime = slot0.invincibleTime - slot1

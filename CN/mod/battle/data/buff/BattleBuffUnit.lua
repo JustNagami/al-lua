@@ -14,7 +14,7 @@ slot3.DEFAULT_ANI_FX_CONFIG = {
 	}
 }
 
-slot3.Ctor = function(slot0, slot1, slot2, slot3)
+function slot3.Ctor(slot0, slot1, slot2, slot3)
 	slot2 = slot2 or 1
 	slot0._id = slot1
 
@@ -40,11 +40,11 @@ slot3.Ctor = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot3.SetTemplate = function(slot0, slot1, slot2)
+function slot3.SetTemplate(slot0, slot1, slot2)
 	slot0._tempData = uv0.Battle.BattleDataFunction.GetBuffTemplate(slot1, slot2)
 end
 
-slot3.Attach = function(slot0, slot1)
+function slot3.Attach(slot0, slot1)
 	slot0._owner = slot1
 	slot0._stack = 1
 
@@ -53,28 +53,28 @@ slot3.Attach = function(slot0, slot1)
 	slot0:SetRemoveTime()
 end
 
-slot3.Stack = function(slot0, slot1)
+function slot3.Stack(slot0, slot1)
 	slot0._stack = math.min(slot0._stack + 1, slot0._tempData.stack)
 
 	slot0:onTrigger(uv0.ON_STACK, slot1)
 	slot0:SetRemoveTime()
 end
 
-slot3.SetOrb = function(slot0, slot1, slot2)
+function slot3.SetOrb(slot0, slot1, slot2)
 	for slot6, slot7 in ipairs(slot0._effectList) do
 		slot7:SetOrb(slot0, slot1, slot2)
 	end
 end
 
-slot3.SetOrbDuration = function(slot0, slot1)
+function slot3.SetOrbDuration(slot0, slot1)
 	slot0._time = slot1 + slot0._time
 end
 
-slot3.SetOrbLevel = function(slot0, slot1)
+function slot3.SetOrbLevel(slot0, slot1)
 	slot0._level = slot1
 end
 
-slot3.SetCommander = function(slot0, slot1)
+function slot3.SetCommander(slot0, slot1)
 	slot0._commander = slot1
 
 	for slot5, slot6 in ipairs(slot0._effectList) do
@@ -82,15 +82,15 @@ slot3.SetCommander = function(slot0, slot1)
 	end
 end
 
-slot3.GetEffectList = function(slot0)
+function slot3.GetEffectList(slot0)
 	return slot0._effectList
 end
 
-slot3.GetCommander = function(slot0)
+function slot3.GetCommander(slot0)
 	return slot0._commander
 end
 
-slot3.UpdateStack = function(slot0, slot1, slot2)
+function slot3.UpdateStack(slot0, slot1, slot2)
 	if slot0._stack == slot2 then
 		return
 	end
@@ -106,7 +106,7 @@ slot3.UpdateStack = function(slot0, slot1, slot2)
 	}))
 end
 
-slot3.Remove = function(slot0, slot1)
+function slot3.Remove(slot0, slot1)
 	slot2 = slot0._owner
 	slot3 = slot0._id
 
@@ -120,7 +120,7 @@ slot3.Remove = function(slot0, slot1)
 	slot2:GetBuffList()[slot3] = nil
 end
 
-slot3.Update = function(slot0, slot1, slot2)
+function slot3.Update(slot0, slot1, slot2)
 	if slot0:IsTimeToRemove(slot2) then
 		slot0:Remove(slot2)
 	else
@@ -130,14 +130,14 @@ slot3.Update = function(slot0, slot1, slot2)
 	end
 end
 
-slot3.SetArgs = function(slot0, slot1)
+function slot3.SetArgs(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0._effectList) do
 		slot6:SetCaster(slot0._caster)
 		slot6:SetArgs(slot1, slot0)
 	end
 end
 
-slot3.Trigger = function(slot0, slot1, slot2)
+function slot3.Trigger(slot0, slot1, slot2)
 	slot3 = slot0:GetBuffList() or {}
 	slot4 = {}
 
@@ -152,7 +152,7 @@ slot3.Trigger = function(slot0, slot1, slot2)
 	end
 end
 
-slot3.DisptachSkillFloat = function(slot0, slot1, slot2, slot3)
+function slot3.DisptachSkillFloat(slot0, slot1, slot2, slot3)
 	if slot3.trigger == nil or table.contains(slot3.trigger, slot2) then
 		slot4 = nil
 
@@ -185,7 +185,7 @@ slot3.DisptachSkillFloat = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot3.IsSubmarineSpecial = function(slot0)
+function slot3.IsSubmarineSpecial(slot0)
 	slot1 = slot0._triggerSearchTable[uv0.Battle.BattleConst.BuffEffectType.ON_SUBMARINE_FREE_SPECIAL] or {}
 
 	for slot5, slot6 in ipairs(slot1) do
@@ -197,7 +197,7 @@ slot3.IsSubmarineSpecial = function(slot0)
 	return false
 end
 
-slot3.onTrigger = function(slot0, slot1, slot2, slot3)
+function slot3.onTrigger(slot0, slot1, slot2, slot3)
 	if slot0._triggerSearchTable[slot1] == nil or #slot4 == 0 then
 		return
 	end
@@ -228,14 +228,14 @@ slot3.onTrigger = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot3.SetRemoveTime = function(slot0)
+function slot3.SetRemoveTime(slot0)
 	slot1 = pg.TimeMgr.GetInstance():GetCombatTime()
 	slot0._buffStartTimeStamp = slot1
 	slot0._RemoveTime = slot1 + slot0._time
 	slot0._cancelTime = nil
 end
 
-slot3.IsTimeToRemove = function(slot0, slot1)
+function slot3.IsTimeToRemove(slot0, slot1)
 	if slot0._isCancel then
 		return true
 	elseif slot0._cancelTime and slot0._cancelTime <= slot1 then
@@ -247,47 +247,47 @@ slot3.IsTimeToRemove = function(slot0, slot1)
 	end
 end
 
-slot3.GetBuffLifeTime = function(slot0)
+function slot3.GetBuffLifeTime(slot0)
 	return slot0._time
 end
 
-slot3.GetBuffStartTime = function(slot0)
+function slot3.GetBuffStartTime(slot0)
 	return slot0._buffStartTimeStamp
 end
 
-slot3.Interrupt = function(slot0)
+function slot3.Interrupt(slot0)
 	for slot4, slot5 in ipairs(slot0._effectList) do
 		slot5:Interrupt()
 	end
 end
 
-slot3.Clear = function(slot0)
+function slot3.Clear(slot0)
 	for slot4, slot5 in ipairs(slot0._effectList) do
 		slot5:Clear()
 	end
 end
 
-slot3.GetID = function(slot0)
+function slot3.GetID(slot0)
 	return slot0._id
 end
 
-slot3.GetCaster = function(slot0)
+function slot3.GetCaster(slot0)
 	return slot0._caster
 end
 
-slot3.GetLv = function(slot0)
+function slot3.GetLv(slot0)
 	return slot0._level or 1
 end
 
-slot3.GetDuration = function(slot0)
+function slot3.GetDuration(slot0)
 	return slot0._time
 end
 
-slot3.GetStack = function(slot0)
+function slot3.GetStack(slot0)
 	return slot0._stack or 1
 end
 
-slot3.SetToCancel = function(slot0, slot1)
+function slot3.SetToCancel(slot0, slot1)
 	if slot1 then
 		if not slot0._cancelTime then
 			slot0._cancelTime = pg.TimeMgr.GetInstance():GetCombatTime() + slot1
@@ -297,7 +297,7 @@ slot3.SetToCancel = function(slot0, slot1)
 	end
 end
 
-slot3.Dispose = function(slot0)
+function slot3.Dispose(slot0)
 	slot0._triggerSearchTable = nil
 	slot0._commander = nil
 end

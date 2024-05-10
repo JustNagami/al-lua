@@ -1,23 +1,23 @@
 slot0 = class("RefluxTaskView", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "RefluxTaskUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:initData()
 	slot0:initUI()
 	slot0:updateUI()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
-slot0.OnBackPress = function(slot0)
+function slot0.OnBackPress(slot0)
 	slot0:Hide()
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.taskProxy = getProxy(TaskProxy)
 	slot0.refluxProxy = getProxy(RefluxProxy)
 	slot0.totalDayCount = pg.return_task_template[pg.return_task_template.all[#pg.return_task_template.all]].reward_date
@@ -26,7 +26,7 @@ slot0.initData = function(slot0)
 	slot0.lastSubmitTaskIDList = {}
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	slot1 = slot0:findTF("DayImg")
 	slot0.daySpriteList = {}
 
@@ -76,28 +76,28 @@ slot0.initUI = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.updateData = function(slot0)
+function slot0.updateData(slot0)
 	slot0.taskVOList = slot0:getTaskVOList()
 	slot0.taskVOListForShow = slot0:getTaskVOListForShow()
 end
 
-slot0.updateUI = function(slot0)
+function slot0.updateUI(slot0)
 	slot0:updateData()
 	slot0:updateTaskList()
 	slot0:updateTaskProgress()
 	slot0:updateOneStepBtn()
 end
 
-slot0.updateOutline = function(slot0)
+function slot0.updateOutline(slot0)
 end
 
-slot0.updateItem = function(slot0, slot1, slot2)
+function slot0.updateItem(slot0, slot1, slot2)
 	slot3 = slot0:findTF("Icon", slot1)
 
 	setText(slot0:findTF("Count", slot1), slot2.count)
 
 	if slot2.type ~= DROP_TYPE_SHIP then
-		setImageSprite(slot3, LoadSprite(getDropIcon(slot2)))
+		setImageSprite(slot3, LoadSprite(slot2:getIcon()))
 	else
 		setImageSprite(slot3, LoadSprite("QIcon/" .. Ship.New({
 			configId = slot2.id
@@ -105,11 +105,11 @@ slot0.updateItem = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateTaskList = function(slot0)
+function slot0.updateTaskList(slot0)
 	slot0.taskUIList:align(#slot0.taskVOListForShow)
 end
 
-slot0.updateTask = function(slot0, slot1, slot2)
+function slot0.updateTask(slot0, slot1, slot2)
 	slot3 = slot0:findTF("Go", slot1)
 	slot7 = slot0:findTF("Get", slot1)
 
@@ -142,7 +142,7 @@ slot0.updateTask = function(slot0, slot1, slot2)
 		})
 	end, SFX_PANEL)
 	onButton(slot0, slot0:findTF("Btn", slot7), function ()
-		slot0 = function()
+		function slot0()
 			pg.m02:sendNotification(GAME.SUBMIT_TASK, uv0.id)
 			uv1:setLastSubmitTask({
 				uv0.id
@@ -164,7 +164,7 @@ slot0.updateTask = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.updateTaskProgress = function(slot0)
+function slot0.updateTaskProgress(slot0)
 	slot1 = slot0:getTaskVOList()
 	slot2 = 0
 	slot3 = #slot1
@@ -178,7 +178,7 @@ slot0.updateTaskProgress = function(slot0)
 	setText(slot0.taskProgressText, slot2 .. "/" .. slot3)
 end
 
-slot0.updateOneStepBtn = function(slot0)
+function slot0.updateOneStepBtn(slot0)
 	slot1 = 0
 
 	for slot6, slot7 in ipairs(slot0:getTaskVOList()) do
@@ -190,7 +190,7 @@ slot0.updateOneStepBtn = function(slot0)
 	setActive(slot0.oneStepBtnDisable, slot1 <= 1)
 end
 
-slot0.getTaskVOList = function(slot0)
+function slot0.getTaskVOList(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(pg.return_task_template.all) do
@@ -200,7 +200,7 @@ slot0.getTaskVOList = function(slot0)
 	return slot1
 end
 
-slot0.getTaskVOListForShow = function(slot0)
+function slot0.getTaskVOListForShow(slot0)
 	slot1 = {}
 	slot2 = {}
 
@@ -246,15 +246,15 @@ slot0.getTaskVOListForShow = function(slot0)
 	return slot5
 end
 
-slot0.getTaskUnlockSignCount = function(slot0, slot1)
+function slot0.getTaskUnlockSignCount(slot0, slot1)
 	return pg.return_task_template[slot1.id].reward_date
 end
 
-slot0.isTaskUnlocked = function(slot0, slot1)
+function slot0.isTaskUnlocked(slot0, slot1)
 	return slot0:getTaskUnlockSignCount(slot1) <= slot0.refluxProxy.signCount
 end
 
-slot0.isTaskOverflow = function(slot0, slot1)
+function slot0.isTaskOverflow(slot0, slot1)
 	slot2 = getProxy(PlayerProxy):getRawData()
 	slot4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1])
 	slot5 = slot0:getTaskAwardForShow(slot1)
@@ -269,7 +269,7 @@ slot0.isTaskOverflow = function(slot0, slot1)
 	return slot8, slot9
 end
 
-slot0.isTaskListOverflow = function(slot0)
+function slot0.isTaskListOverflow(slot0)
 	slot1 = {}
 
 	for slot6, slot7 in ipairs(slot0:getTaskVOList()) do
@@ -303,15 +303,15 @@ slot0.isTaskListOverflow = function(slot0)
 	return slot4, slot5
 end
 
-slot0.setLastSubmitTask = function(slot0, slot1)
+function slot0.setLastSubmitTask(slot0, slot1)
 	slot0.lastSubmitTaskIDList = slot1
 end
 
-slot0.clearLastSubmitTask = function(slot0)
+function slot0.clearLastSubmitTask(slot0)
 	slot0.lastSubmitTaskIDList = {}
 end
 
-slot0.calcLastSubmitTaskPT = function(slot0)
+function slot0.calcLastSubmitTaskPT(slot0)
 	slot1 = 0
 	slot2 = 0
 
@@ -330,7 +330,7 @@ slot0.calcLastSubmitTaskPT = function(slot0)
 	}
 end
 
-slot0.getTaskAwardForShow = function(slot0, slot1)
+function slot0.getTaskAwardForShow(slot0, slot1)
 	slot5 = slot0.refluxProxy.returnLV
 	slot6 = nil
 
@@ -345,21 +345,21 @@ slot0.getTaskAwardForShow = function(slot0, slot1)
 	slot7 = {}
 	slot9 = slot3.award_display[slot6]
 
-	table.insert(slot7, {
+	table.insert(slot7, Drop.New({
 		type = slot9[1],
 		id = slot9[2],
 		count = slot9[3]
-	})
-	table.insert(slot7, {
+	}))
+	table.insert(slot7, Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = slot3.pt_item,
 		count = slot3.pt_award
-	})
+	}))
 
 	return slot7
 end
 
-slot0.isAnyTaskCanGetAward = function()
+function slot0.isAnyTaskCanGetAward()
 	slot0 = getProxy(TaskProxy)
 	slot1 = getProxy(RefluxProxy)
 	slot2 = {}
@@ -368,11 +368,11 @@ slot0.isAnyTaskCanGetAward = function()
 		table.insert(slot2, slot0:getTaskVO(slot7))
 	end
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		return pg.return_task_template[slot0.id].reward_date
 	end
 
-	slot4 = function(slot0)
+	function slot4(slot0)
 		return uv0(slot0) <= uv1.signCount
 	end
 

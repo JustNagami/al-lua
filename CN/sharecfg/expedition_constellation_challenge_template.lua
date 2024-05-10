@@ -609,6 +609,441 @@ pg.expedition_constellation_challenge_template = {
 			}
 		}
 	},
+	[10022] = {
+		painting = "gecheng",
+		button_style = 7,
+		information_icon = "gecheng_constellation",
+		id = 10022,
+		dungeon_id = 5124,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"晦明之变 ",
+				"星之辉形态下，自身受到伤害降低<color=#92fc63>40%</color>，同时生成5个环绕自身的护盾（每个为防弹次数<color=#92fc63>30</color>的平射盾），一面护盾被击破后转换形态；星之暗形态下，摩羯座化身自身耐久越低造成的伤害越高，最多提高<color=#92fc63>20%</color>，累计受到自身最大耐久30%的伤害后转换形态；摩羯座化身在开始时进入星之辉形态"
+			},
+			{
+				"星之领域",
+				"摩羯座化身在不同形态下存在对应的领域效果：星之辉领域，自身每秒回复<color=#92fc63>0.5%</color>最大耐久；星之暗领域，敌方角色每20秒损失其<color=#92fc63>0.5%</color>最大耐久"
+			}
+		},
+		award_display = {
+			{
+				14,
+				208,
+				1
+			}
+		}
+	},
+	[10023] = {
+		painting = "gecheng",
+		button_style = 7,
+		information_icon = "gecheng_constellation",
+		id = 10023,
+		dungeon_id = 5123,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"晦明之变 ",
+				"星之辉形态下，自身受到伤害降低<color=#92fc63>60%</color>，同时生成5个环绕自身的护盾（每个为防弹次数<color=#92fc63>50</color>的平射盾），一面护盾被击破后转换形态；星之暗形态下，摩羯座化身自身耐久越低造成的伤害越高，最多提高<color=#92fc63>40%</color>，累计受到自身最大耐久30%的伤害后转换形态；摩羯座化身在开始时进入星之辉形态"
+			},
+			{
+				"星之领域",
+				"摩羯座化身在不同形态下存在对应的领域效果：星之辉领域，自身每秒回复<color=#92fc63>0.75%</color>最大耐久；星之暗领域，敌方角色每20秒损失其<color=#92fc63>0.75%</color>最大耐久"
+			}
+		},
+		award_display = {
+			{
+				15,
+				10008,
+				1
+			}
+		}
+	},
+	[10024] = {
+		painting = "gecheng",
+		button_style = 7,
+		information_icon = "gecheng_constellation",
+		id = 10024,
+		dungeon_id = 5122,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"晦明之变 ",
+				"星之辉形态下，自身受到伤害降低<color=#92fc63>80%</color>，同时生成5个环绕自身的护盾（每个为防弹次数<color=#92fc63>70</color>的平射盾），一面护盾被击破后转换形态；星之暗形态下，摩羯座化身自身耐久越低造成的伤害越高，最多提高<color=#92fc63>60%</color>，累计受到自身最大耐久30%的伤害后转换形态；摩羯座化身在开始时进入星之辉形态"
+			},
+			{
+				"星之领域",
+				"摩羯座化身在不同形态下存在对应的领域效果：星之辉领域，自身每秒回复<color=#92fc63>1%</color>最大耐久；星之暗领域，敌方角色每20秒损失其<color=#92fc63>1%</color>最大耐久"
+			}
+		},
+		award_display = {
+			{
+				14,
+				10008,
+				1
+			}
+		}
+	},
+	[10025] = {
+		painting = "niukasier",
+		button_style = 7,
+		information_icon = "niukasier_constellation",
+		id = 10025,
+		dungeon_id = 5127,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"甘醴之瓶 ",
+				"水瓶座化身开场召唤【甘醴之瓶】，【甘醴之瓶】每秒回复自身<color=#92fc63>0.5%</color>最大耐久，【甘醴之瓶】回复自身耐久至100%时，水瓶座化身回复自身1%最大耐久；【甘醴之瓶】被击破6秒后会被再次召唤"
+			},
+			{
+				"生命之泉",
+				"【甘醴之瓶】在场时，水瓶座化身受到的伤害降低<color=#92fc63>40%</color>；【甘醴之瓶】被击破时，水瓶座化身造成的伤害提高<color=#92fc63>0.5%</color>"
+			}
+		},
+		award_display = {
+			{
+				14,
+				209,
+				1
+			}
+		}
+	},
+	[10026] = {
+		painting = "niukasier",
+		button_style = 7,
+		information_icon = "niukasier_constellation",
+		id = 10026,
+		dungeon_id = 5126,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"甘醴之瓶 ",
+				"水瓶座化身开场召唤【甘醴之瓶】，【甘醴之瓶】每秒回复自身<color=#92fc63>1%</color>最大耐久，【甘醴之瓶】回复自身耐久至100%时，水瓶座化身回复自身1%最大耐久；【甘醴之瓶】被击破6秒后会被再次召唤"
+			},
+			{
+				"生命之泉",
+				"【甘醴之瓶】在场时，水瓶座化身受到的伤害降低<color=#92fc63>60%</color>；【甘醴之瓶】被击破时，水瓶座化身造成的伤害提高<color=#92fc63>1%</color>"
+			}
+		},
+		award_display = {
+			{
+				15,
+				10009,
+				1
+			}
+		}
+	},
+	[10027] = {
+		painting = "niukasier",
+		button_style = 7,
+		information_icon = "niukasier_constellation",
+		id = 10027,
+		dungeon_id = 5125,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"甘醴之瓶 ",
+				"水瓶座化身开场召唤【甘醴之瓶】，【甘醴之瓶】每秒回复自身<color=#92fc63>2%</color>最大耐久，【甘醴之瓶】回复自身耐久至100%时，水瓶座化身回复自身1%最大耐久；【甘醴之瓶】被击破6秒后会被再次召唤"
+			},
+			{
+				"生命之泉",
+				"【甘醴之瓶】在场时，水瓶座化身受到的伤害降低<color=#92fc63>80%</color>；【甘醴之瓶】被击破时，水瓶座化身造成的伤害提高<color=#92fc63>2%</color>"
+			}
+		},
+		award_display = {
+			{
+				14,
+				10009,
+				1
+			}
+		}
+	},
+	[10028] = {
+		painting = "yuekegongjue",
+		button_style = 7,
+		information_icon = "yuekegongjue_constellation",
+		id = 10028,
+		dungeon_id = 5130,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"守望相助 ",
+				"双鱼座化身-约克公爵在场时，每20秒对最远的敌方单位发射一组跨射弹幕，6秒内降低被命中的敌方单位航速40%；双鱼座化身-英王乔治五世在场时，每20秒为双鱼座化身-约克公爵回复其<color=#92fc63>1%</color>,最大耐久"
+			},
+			{
+				"双鱼之绊",
+				"双鱼座化身同时在场时，受到的伤害降低<color=#92fc63>10%</color>；双鱼座化身-约克公爵被击破时，双鱼座化身-英王乔治五世受到的伤害降低<color=#92fc63>10%</color>、立即回复自身<color=#92fc63>2%</color>最大耐久，之后每20秒回复自身<color=#92fc63>2%</color>最大耐久；双鱼座化身-英王乔治五世被击破时，双鱼座化身-约克公爵造成的伤害提高<color=#92fc63>10%</color>、跨射弹幕效果强化：对最远和最近的敌方单位发射一组跨射弹幕，之后每20秒再次触发，被命中的敌方单位受到的伤害增加<color=#92fc63>4%</color>"
+			}
+		},
+		award_display = {
+			{
+				14,
+				210,
+				1
+			}
+		}
+	},
+	[10029] = {
+		painting = "yuekegongjue",
+		button_style = 7,
+		information_icon = "yuekegongjue_constellation",
+		id = 10029,
+		dungeon_id = 5129,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"守望相助 ",
+				"双鱼座化身-约克公爵在场时，每20秒对最远的敌方单位发射一组跨射弹幕，6秒内降低被命中的敌方单位航速40%；双鱼座化身-英王乔治五世在场时，每20秒为双鱼座化身-约克公爵回复其<color=#92fc63>2%</color>,最大耐久"
+			},
+			{
+				"双鱼之绊",
+				"双鱼座化身同时在场时，受到的伤害降低<color=#92fc63>20%</color>；双鱼座化身-约克公爵被击破时，双鱼座化身-英王乔治五世受到的伤害降低<color=#92fc63>20%</color>、立即回复自身<color=#92fc63>4%</color>最大耐久，之后每20秒回复自身<color=#92fc63>4%</color>最大耐久；双鱼座化身-英王乔治五世被击破时，双鱼座化身-约克公爵造成的伤害提高<color=#92fc63>20%</color>、跨射弹幕效果强化：对最远和最近的敌方单位发射一组跨射弹幕，之后每20秒再次触发，被命中的敌方单位受到的伤害增加<color=#92fc63>6%</color>"
+			}
+		},
+		award_display = {
+			{
+				15,
+				10010,
+				1
+			}
+		}
+	},
+	[10030] = {
+		painting = "yuekegongjue",
+		button_style = 7,
+		information_icon = "yuekegongjue_constellation",
+		id = 10030,
+		dungeon_id = 5128,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"守望相助 ",
+				"双鱼座化身-约克公爵在场时，每20秒对最远的敌方单位发射一组跨射弹幕，6秒内降低被命中的敌方单位航速40%；双鱼座化身-英王乔治五世在场时，每20秒为双鱼座化身-约克公爵回复其<color=#92fc63>3%</color>,最大耐久"
+			},
+			{
+				"双鱼之绊",
+				"双鱼座化身同时在场时，受到的伤害降低<color=#92fc63>30%</color>；双鱼座化身-约克公爵被击破时，双鱼座化身-英王乔治五世受到的伤害降低<color=#92fc63>30%</color>、立即回复自身<color=#92fc63>6%</color>最大耐久，之后每20秒回复自身<color=#92fc63>6%</color>最大耐久；双鱼座化身-英王乔治五世被击破时，双鱼座化身-约克公爵造成的伤害提高<color=#92fc63>30%</color>、跨射弹幕效果强化：对最远和最近的敌方单位发射一组跨射弹幕，之后每20秒再次触发，被命中的敌方单位受到的伤害增加<color=#92fc63>8%</color>"
+			}
+		},
+		award_display = {
+			{
+				14,
+				10010,
+				1
+			}
+		}
+	},
+	[10031] = {
+		painting = "xuefeng",
+		button_style = 7,
+		information_icon = "xuefeng_constellation",
+		id = 10031,
+		dungeon_id = 5133,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"不沉之力 ",
+				"白羊座化身每20秒对最近的敌方单位发射一轮弹幕；战斗开始后15秒及之后每20秒将自身受到的伤害降至1，受到<color=#92fc63>40</color>次伤害后解除"
+			},
+			{
+				"生命之球",
+				"战斗开始后20秒及之后每40秒白羊座化身召唤3个持续20秒的生命之球，生命之球每0.3秒为包含白羊座化身在内的全场己方单位提供等效于自身最大耐久值100%的治疗效果；生命之球消失或被击破后白羊座化身自身造成的伤害提高<color=#92fc63>1%</color>"
+			}
+		},
+		award_display = {
+			{
+				14,
+				211,
+				1
+			}
+		}
+	},
+	[10032] = {
+		painting = "xuefeng",
+		button_style = 7,
+		information_icon = "xuefeng_constellation",
+		id = 10032,
+		dungeon_id = 5132,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"不沉之力 ",
+				"白羊座化身每20秒对最近的敌方单位发射一轮弹幕；战斗开始后15秒及之后每20秒将自身受到的伤害降至1，受到<color=#92fc63>70</color>次伤害后解除"
+			},
+			{
+				"生命之球",
+				"战斗开始后20秒及之后每40秒白羊座化身召唤3个持续20秒的生命之球，生命之球每0.3秒为包含白羊座化身在内的全场己方单位提供等效于自身最大耐久值100%的治疗效果；生命之球消失或被击破后白羊座化身自身造成的伤害提高<color=#92fc63>2%</color>"
+			}
+		},
+		award_display = {
+			{
+				15,
+				10011,
+				1
+			}
+		}
+	},
+	[10033] = {
+		painting = "xuefeng",
+		button_style = 7,
+		information_icon = "xuefeng_constellation",
+		id = 10033,
+		dungeon_id = 5131,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"不沉之力 ",
+				"白羊座化身每20秒对最近的敌方单位发射一轮弹幕；战斗开始后15秒及之后每20秒将自身受到的伤害降至1，受到<color=#92fc63>100</color>次伤害后解除"
+			},
+			{
+				"生命之球",
+				"战斗开始后20秒及之后每40秒白羊座化身召唤3个持续20秒的生命之球，生命之球每0.3秒为包含白羊座化身在内的全场己方单位提供等效于自身最大耐久值100%的治疗效果；生命之球消失或被击破后白羊座化身自身造成的伤害提高<color=#92fc63>3%</color>"
+			}
+		},
+		award_display = {
+			{
+				14,
+				10011,
+				1
+			}
+		}
+	},
+	[10034] = {
+		painting = "gaoxiong",
+		button_style = 7,
+		information_icon = "gaoxiong_constellation",
+		id = 10034,
+		dungeon_id = 5136,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"钢刃架势 ",
+				"金牛座化身战斗开始后进入【钢刃架势】；在【钢刃架势】状态下，金牛座化身受到炮击、雷击、航空伤害降低<color=#92fc63>30%</color>；架势被打断后该效果消失，10秒后再次进入【钢刃架势】"
+			},
+			{
+				"光风霁月",
+				"金牛座化身【钢刃架势】被打断后对自身最近的敌方单位释放一轮特殊斩击，被命中的敌方单位受到伤害提高<color=#92fc63>2%</color>，可以叠加"
+			}
+		},
+		award_display = {
+			{
+				14,
+				212,
+				1
+			}
+		}
+	},
+	[10035] = {
+		painting = "gaoxiong",
+		button_style = 7,
+		information_icon = "gaoxiong_constellation",
+		id = 10035,
+		dungeon_id = 5135,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"钢刃架势 ",
+				"金牛座化身战斗开始后进入【钢刃架势】；在【钢刃架势】状态下，金牛座化身受到炮击、雷击、航空伤害降低<color=#92fc63>60%</color>；架势被打断后该效果消失，10秒后再次进入【钢刃架势】"
+			},
+			{
+				"光风霁月",
+				"金牛座化身【钢刃架势】被打断后对自身最近的敌方单位释放一轮特殊斩击，被命中的敌方单位受到伤害提高<color=#92fc63>4%</color>，可以叠加"
+			}
+		},
+		award_display = {
+			{
+				15,
+				10012,
+				1
+			}
+		}
+	},
+	[10036] = {
+		painting = "gaoxiong",
+		button_style = 7,
+		information_icon = "gaoxiong_constellation",
+		id = 10036,
+		dungeon_id = 5134,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"钢刃架势 ",
+				"金牛座化身战斗开始后进入【钢刃架势】；在【钢刃架势】状态下，金牛座化身受到炮击、雷击、航空伤害降低<color=#92fc63>90%</color>；架势被打断后该效果消失，10秒后再次进入【钢刃架势】"
+			},
+			{
+				"光风霁月",
+				"金牛座化身【钢刃架势】被打断后对自身最近的敌方单位释放一轮特殊斩击，被命中的敌方单位受到伤害提高<color=#92fc63>6%</color>，可以叠加"
+			}
+		},
+		award_display = {
+			{
+				14,
+				10012,
+				1
+			}
+		}
+	},
 	all = {
 		10001,
 		10002,
@@ -630,6 +1065,21 @@ pg.expedition_constellation_challenge_template = {
 		10018,
 		10019,
 		10020,
-		10021
+		10021,
+		10022,
+		10023,
+		10024,
+		10025,
+		10026,
+		10027,
+		10028,
+		10029,
+		10030,
+		10031,
+		10032,
+		10033,
+		10034,
+		10035,
+		10036
 	}
 }

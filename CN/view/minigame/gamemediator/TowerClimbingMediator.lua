@@ -4,7 +4,7 @@ slot0.ON_MODIFY_DATA = "TowerClimbingMediator:ON_MODIFY_DATA"
 slot0.ON_COLLECTION = "TowerClimbingMediator:ON_COLLECTION"
 slot0.ON_RECORD_MAP_SCORE = "TowerClimbingMediator:ON_RECORD_MAP_SCORE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_RECORD_MAP_SCORE, function (slot0, slot1, slot2)
 		uv0:sendNotification(GAME.SEND_MINI_GAME_OP, {
 			hubid = 9,
@@ -69,14 +69,14 @@ slot0.register = function(slot0)
 	end
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SEND_MINI_GAME_OP_DONE,
 		GAME.REMOVE_LAYERS
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.SEND_MINI_GAME_OP_DONE then

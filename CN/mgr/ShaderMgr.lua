@@ -3,7 +3,7 @@ slot0 = pg
 slot0.ShaderMgr = singletonClass("ShaderMgr")
 slot1 = slot0.ShaderMgr
 
-slot0.ShaderMgr.Init = function(slot0, slot1)
+function slot0.ShaderMgr.Init(slot0, slot1)
 	print("initializing shader manager...")
 	Shader.DisableKeyword("LOW_DEVICE_PERFORMANCE")
 	parallelAsync({
@@ -23,11 +23,11 @@ slot0.ShaderMgr.Init = function(slot0, slot1)
 	end)
 end
 
-slot1.GetShader = function(slot0, slot1)
+function slot1.GetShader(slot0, slot1)
 	return ResourceMgr.Inst:GetShader(slot1)
 end
 
-slot1.GetBlurMaterialSync = function(slot0)
+function slot1.GetBlurMaterialSync(slot0)
 	if slot0.blurMaterial ~= nil then
 		return slot0.blurMaterial
 	else
@@ -39,7 +39,7 @@ slot1.GetBlurMaterialSync = function(slot0)
 	end
 end
 
-slot1.BlurTexture = function(slot0, slot1)
+function slot1.BlurTexture(slot0, slot1)
 	slot2 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
 		typeof("System.Int32"),
 		typeof("System.Int32"),
@@ -108,7 +108,7 @@ slot1.BlurTexture = function(slot0, slot1)
 	return slot2
 end
 
-slot1.SetSpineUIOutline = function(slot0, slot1, slot2)
+function slot1.SetSpineUIOutline(slot0, slot1, slot2)
 	slot5 = Material.New(slot0:GetShader("M02/Unlit Colored_Alpha_UI_Outline"))
 
 	slot5:SetColor("_OutlineColor", slot2)
@@ -118,6 +118,6 @@ slot1.SetSpineUIOutline = function(slot0, slot1, slot2)
 	GetComponent(slot1, "SkeletonGraphic").material = slot5
 end
 
-slot1.DelSpineUIOutline = function(slot0, slot1)
+function slot1.DelSpineUIOutline(slot0, slot1)
 	GetComponent(slot1, "SkeletonGraphic").material = nil
 end

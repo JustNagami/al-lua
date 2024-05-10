@@ -1,10 +1,10 @@
 slot0 = class("Msgbox4ContentItems", import(".MsgboxSubPanel"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "Msgbox4ContentItems"
 end
 
-slot0.OnRefresh = function(slot0, slot1)
+function slot0.OnRefresh(slot0, slot1)
 	rtf(slot0.viewParent._window).sizeDelta = Vector2.New(1000, 638)
 
 	setText(slot0._tf:Find("content"), slot1.content)

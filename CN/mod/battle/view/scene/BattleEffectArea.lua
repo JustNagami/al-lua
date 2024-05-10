@@ -7,7 +7,7 @@ slot0.Battle.BattleEffectArea = slot3
 slot3.__name = "BattleEffectArea"
 slot4 = Vector3(0, 3.5, -5)
 
-slot3.Ctor = function(slot0, slot1, slot2, slot3)
+function slot3.Ctor(slot0, slot1, slot2, slot3)
 	slot0._go = slot1
 	slot0._aoeData = slot2
 	slot0._topCover = slot3
@@ -15,7 +15,7 @@ slot3.Ctor = function(slot0, slot1, slot2, slot3)
 	slot0:Init()
 end
 
-slot3.Init = function(slot0)
+function slot3.Init(slot0)
 	slot0._tf = slot0._go.transform
 	slot0._areaType = slot0._aoeData:GetAreaType()
 
@@ -26,11 +26,11 @@ slot3.Init = function(slot0)
 	end
 
 	if slot0._aoeData:GetIFF() == uv1.FOE_CODE then
-		slot0.GetAngle = function()
+		function slot0.GetAngle()
 			return uv0._aoeData:GetAngle() * -1 + 180
 		end
 	else
-		slot0.GetAngle = function()
+		function slot0.GetAngle()
 			return uv0._aoeData:GetAngle() * -1
 		end
 	end
@@ -38,13 +38,13 @@ slot3.Init = function(slot0)
 	slot0:Update()
 end
 
-slot3.Update = function(slot0)
+function slot3.Update(slot0)
 	slot0:UpdateScale()
 	slot0:UpdatePosition()
 	slot0:UpdateRotation()
 end
 
-slot3.updateCubeScale = function(slot0)
+function slot3.updateCubeScale(slot0)
 	slot1 = 1
 	slot2 = 1
 
@@ -62,7 +62,7 @@ slot3.updateCubeScale = function(slot0)
 	slot0._preHeight = slot2
 end
 
-slot3.updateColumnScale = function(slot0)
+function slot3.updateColumnScale(slot0)
 	if slot0._aoeData:GetRange() == slot0._preRange then
 		return
 	end
@@ -71,7 +71,7 @@ slot3.updateColumnScale = function(slot0)
 	slot0._preRange = slot1
 end
 
-slot3.UpdatePosition = function(slot0)
+function slot3.UpdatePosition(slot0)
 	if slot0._topCover then
 		slot0._tf.position = slot0._aoeData:GetPosition() + uv0
 	else
@@ -79,7 +79,7 @@ slot3.UpdatePosition = function(slot0)
 	end
 end
 
-slot3.UpdateRotation = function(slot0)
+function slot3.UpdateRotation(slot0)
 	if slot0._preAngle == slot0:GetAngle() then
 		return
 	end
@@ -88,7 +88,7 @@ slot3.UpdateRotation = function(slot0)
 	slot0._preAngle = slot1
 end
 
-slot3.Dispose = function(slot0)
+function slot3.Dispose(slot0)
 	uv0.Battle.BattleResourceManager.GetInstance():DestroyOb(slot0._go)
 
 	slot0._go = nil

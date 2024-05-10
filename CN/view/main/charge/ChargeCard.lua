@@ -1,6 +1,6 @@
 slot0 = class("ChargeCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.go = slot1
 	slot0.tr = tf(slot1)
 	slot0.icon = slot0.tr:Find("real_tpl/item_icon")
@@ -48,7 +48,7 @@ slot0.Ctor = function(slot0, slot1)
 	setActive(slot0.countDown, false)
 end
 
-slot0.update = function(slot0, slot1, slot2, slot3)
+function slot0.update(slot0, slot1, slot2, slot3)
 	slot0.goods = slot1
 	slot4 = slot1:isChargeType() and slot1:isTecShipShowGift()
 
@@ -79,7 +79,7 @@ slot0.update = function(slot0, slot1, slot2, slot3)
 	slot0:destoryTimer()
 end
 
-slot0.updateCharge = function(slot0, slot1, slot2, slot3)
+function slot0.updateCharge(slot0, slot1, slot2, slot3)
 	setActive(slot0.tag, true)
 	setActive(slot0.mask, false)
 	setActive(slot0.maskState, false)
@@ -176,6 +176,9 @@ slot0.updateCharge = function(slot0, slot1, slot2, slot3)
 	if slot1:getConfig("limit_type") == 2 then
 		setText(slot0.limitText, i18n("charge_limit_all", slot12 - slot11, slot12))
 		setActive(slot0.mask, slot12 - slot11 <= 0)
+	elseif slot10 == 4 then
+		setText(slot0.limitText, i18n("charge_limit_daily", slot12 - slot11, slot12))
+		setActive(slot0.mask, slot12 - slot11 <= 0)
 	else
 		setText(slot0.limitText, "")
 	end
@@ -226,7 +229,7 @@ slot0.updateCharge = function(slot0, slot1, slot2, slot3)
 	setButtonEnabled(slot0.tr, not isActive(slot0.mask))
 end
 
-slot0.updateGemItem = function(slot0, slot1, slot2)
+function slot0.updateGemItem(slot0, slot1, slot2)
 	setActive(slot0.mask, false)
 	setActive(slot0.maskState, false)
 	setText(slot0.limitText, "")
@@ -244,6 +247,8 @@ slot0.updateGemItem = function(slot0, slot1, slot2)
 			setText(slot0.limitText, i18n("charge_limit_daily", slot5 - slot1.groupCount, slot5))
 		elseif slot6 == 2 then
 			setText(slot0.limitText, i18n("charge_limit_weekly", slot5 - slot1.groupCount, slot5))
+		elseif slot6 == 3 then
+			setText(slot0.limitText, i18n("charge_limit_monthly", slot5 - slot1.groupCount, slot5))
 		end
 	end
 
@@ -324,7 +329,7 @@ slot0.updateGemItem = function(slot0, slot1, slot2)
 	setActive(slot0.name, true)
 
 	if #slot1:getConfig("effect_args") > 0 then
-		if pg.item_data_statistics[slot9[1]] then
+		if Item.getConfigData(slot9[1]) then
 			setScrollText(slot0.name, slot10.name)
 			slot0:updateImport(slot10.display_icon, slot10.display)
 		end
@@ -343,17 +348,13 @@ slot0.updateGemItem = function(slot0, slot1, slot2)
 	setButtonEnabled(slot0.tr, not isActive(slot0.mask))
 end
 
-slot0.updateImport = function(slot0, slot1, slot2)
+function slot0.updateImport(slot0, slot1, slot2)
 	setActive(slot0.important, true)
 
 	slot3 = {}
 
 	for slot7, slot8 in ipairs(slot1) do
-		table.insert(slot3, {
-			type = slot8[1],
-			id = slot8[2],
-			count = slot8[3]
-		})
+		table.insert(slot3, Drop.Create(slot8))
 	end
 
 	for slot7 = 1, slot0.grid.childCount do
@@ -370,7 +371,7 @@ slot0.updateImport = function(slot0, slot1, slot2)
 	setText(slot0.importantTip, string.gsub(slot2, "$1", #slot3))
 end
 
-slot0.updateCountdown = function(slot0, slot1)
+function slot0.updateCountdown(slot0, slot1)
 	slot2 = false
 
 	if slot1 then
@@ -412,7 +413,7 @@ slot0.updateCountdown = function(slot0, slot1)
 	slot0.updateTimer.func()
 end
 
-slot0.destoryTimer = function(slot0)
+function slot0.destoryTimer(slot0)
 	if slot0.updateTimer then
 		slot0.updateTimer:Stop()
 

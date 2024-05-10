@@ -634,7 +634,7 @@ slot32 = {
 	"ra"
 }
 
-slot33 = function(slot0, slot1, slot2)
+function slot33(slot0, slot1, slot2)
 	slot3 = slot0.pos
 	slot4 = ""
 
@@ -651,27 +651,27 @@ slot33 = function(slot0, slot1, slot2)
 	slot0.pos = slot3 + 4
 end
 
-slot34 = function(slot0)
+function slot34(slot0)
 	return uv0(slot0, ".long", {
 		"0x" .. uv1(slot0.op)
 	})
 end
 
-slot35 = function(slot0)
+function slot35(slot0)
 	slot1 = slot0.pos
 	slot2, slot3, slot4, slot5 = uv0(slot0.code, slot1 + 1, slot1 + 4)
 
 	return uv1(uv2(slot2, 24), uv2(slot3, 16), uv2(slot4, 8), slot5)
 end
 
-slot36 = function(slot0)
+function slot36(slot0)
 	slot1 = slot0.pos
 	slot2, slot3, slot4, slot5 = uv0(slot0.code, slot1 + 1, slot1 + 4)
 
 	return uv1(uv2(slot5, 24), uv2(slot4, 16), uv2(slot3, 8), slot2)
 end
 
-slot37 = function(slot0)
+function slot37(slot0)
 	slot1 = slot0:get()
 	slot2 = {}
 	slot3 = nil
@@ -798,7 +798,7 @@ slot37 = function(slot0)
 	return uv11(slot0, slot5, slot2)
 end
 
-slot38 = function(slot0, slot1, slot2)
+function slot38(slot0, slot1, slot2)
 	slot1 = slot1 or 0
 	slot3 = slot2 and slot1 + slot2 or #slot0.code
 	slot3 = slot3 - slot3 % 4

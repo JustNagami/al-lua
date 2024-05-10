@@ -1,16 +1,16 @@
 slot0 = class("AprilFoolBulinSubView", import("view.base.BaseSubPanel"))
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0.pieceId = slot2
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "AprilFoolBulinSubView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA) or slot1:isEnd() then
 		slot0:Destroy()
 
@@ -44,41 +44,41 @@ slot0.OnInit = function(slot0)
 	end)
 end
 
-slot0.SetPosition = function(slot0, slot1)
+function slot0.SetPosition(slot0, slot1)
 	setAnchoredPosition(slot0._tf, slot1)
 end
 
-slot0.SetParent = function(slot0, slot1)
+function slot0.SetParent(slot0, slot1)
 	setParent(slot0._tf, slot1)
 end
 
-slot0.ShowAprilFoolBulin = function(slot0, slot1, slot2, slot3)
-	slot4, slot5 = nil
+function slot0.ShowAprilFoolBulin(slot0, slot1, slot2)
+	slot3, slot4 = nil
 
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA) or slot4:isEnd() then
+	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA) or slot3:isEnd() then
 		return
 	end
 
-	if not pg.activity_event_picturepuzzle[slot4.id] then
+	if not pg.activity_event_picturepuzzle[slot3.id] then
 		return
 	end
 
-	if not slot5.pickup_picturepuzzle[slot1] or table.contains(slot4.data2_list, slot6) then
+	if not slot4.pickup_picturepuzzle[table.indexof(slot4.pickup_views, slot0.__cname)] or table.contains(slot3.data2_list, slot6) then
 		return
 	end
 
-	if not _G[slot4:getConfig("config_client").subView] then
+	if not _G[slot3:getConfig("config_client").subView] then
 		return
 	end
 
 	slot7.New(slot0, slot6):Load()
 
-	if slot2 then
-		slot8.buffer:SetParent(slot2)
+	if slot1 then
+		slot8.buffer:SetParent(slot1)
 	end
 
-	if slot3 then
-		slot8.buffer:SetPosition(slot3)
+	if slot2 then
+		slot8.buffer:SetPosition(slot2)
 	end
 
 	return slot8

@@ -1,7 +1,7 @@
 slot0 = class("ChangeChatRoomCommand", pm.SimpleCommand)
 slot1 = 99
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 
 	if not getProxy(PlayerProxy) then

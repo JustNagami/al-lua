@@ -1,22 +1,22 @@
 slot0 = class("LevelAmbushView", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "LevelAmbushView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:InitData()
 	slot0:InitUI()
 	setActive(slot0._tf, true)
 end
 
-slot0.InitData = function(slot0)
+function slot0.InitData(slot0)
 	slot0.chapter = slot0.contextData.chapterVO
 	slot0.fleet = slot0.chapter.fleet
 	slot0.template = pg.expedition_data_template[slot0.chapter:getChapterCell(slot0.fleet.line.row, slot0.fleet.line.column).attachmentId]
 end
 
-slot0.InitUI = function(slot0)
+function slot0.InitUI(slot0)
 	slot1 = findTF(slot0._tf, "window")
 
 	GetImageSpriteFromAtlasAsync("enemies/" .. slot0.template.icon, "", findTF(slot0._tf, "window/ship/icon"))
@@ -44,10 +44,10 @@ slot0.InitUI = function(slot0)
 	LeanTween.scaleY(slot1.gameObject, 1, 0.3):setOnComplete(System.Action(slot0.onComplete))
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
-slot0.SetFuncOnComplete = function(slot0, slot1)
+function slot0.SetFuncOnComplete(slot0, slot1)
 	slot0.onComplete = slot1
 end
 

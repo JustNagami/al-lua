@@ -1467,17 +1467,36 @@ pg.login = {
 	},
 	[44] = {
 		id = 44,
-		op_play = 1,
 		login_static = "login",
+		date = "stop",
+		op_play = 0,
+		op_time = "",
+		login_cri = "",
+		bgm = ""
+	},
+	[45] = {
+		id = 45,
+		login_static = "login",
+		date = "stop",
+		op_play = 0,
+		op_time = "",
+		login_cri = "",
+		bgm = ""
+	},
+	[46] = {
+		id = 46,
+		login_static = "login",
+		op_play = 0,
+		op_time = "",
 		login_cri = "",
 		bgm = "",
 		date = {
 			"timer",
 			{
 				{
-					2023,
-					12,
-					21
+					2024,
+					2,
+					6
 				},
 				{
 					0,
@@ -1488,8 +1507,182 @@ pg.login = {
 			{
 				{
 					2024,
-					1,
-					4
+					2,
+					22
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[47] = {
+		id = 47,
+		login_static = "login",
+		op_play = 0,
+		op_time = "",
+		login_cri = "",
+		bgm = "",
+		date = {
+			"timer",
+			{
+				{
+					2024,
+					2,
+					29
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					3,
+					14
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[48] = {
+		id = 48,
+		login_static = "login",
+		op_play = 0,
+		op_time = "",
+		login_cri = "",
+		bgm = "",
+		date = {
+			"timer",
+			{
+				{
+					2024,
+					3,
+					28
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					3,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[49] = {
+		id = 49,
+		login_static = "login_0401",
+		op_play = 0,
+		op_time = "",
+		login_cri = "",
+		bgm = "votefes-start",
+		date = {
+			"timer",
+			{
+				{
+					2024,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					4,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[52] = {
+		id = 52,
+		login_static = "login",
+		op_play = 0,
+		op_time = "",
+		login_cri = "",
+		bgm = "",
+		date = {
+			"timer",
+			{
+				{
+					2024,
+					4,
+					2
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					4,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[53] = {
+		id = 53,
+		op_play = 1,
+		login_static = "login",
+		login_cri = "",
+		bgm = "",
+		date = {
+			"timer",
+			{
+				{
+					2024,
+					4,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					9
 				},
 				{
 					23,
@@ -1501,9 +1694,9 @@ pg.login = {
 		op_time = {
 			{
 				{
-					2023,
-					12,
-					21
+					2024,
+					4,
+					25
 				},
 				{
 					0,
@@ -1514,8 +1707,8 @@ pg.login = {
 			{
 				{
 					2024,
-					1,
-					4
+					5,
+					9
 				},
 				{
 					23,
@@ -1563,6 +1756,13 @@ pg.login = {
 		41,
 		42,
 		43,
-		44
+		44,
+		45,
+		46,
+		47,
+		48,
+		49,
+		52,
+		53
 	}
 }

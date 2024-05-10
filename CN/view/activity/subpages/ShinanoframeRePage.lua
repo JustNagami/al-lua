@@ -1,6 +1,6 @@
 slot0 = class("ShinanoframeRePage", import("...base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("AD")
 	slot0.goBtn = slot0:findTF("GoBtn", slot0.bg)
 	slot0.getBtn = slot0:findTF("GetBtn", slot0.bg)
@@ -16,10 +16,10 @@ slot0.OnInit = function(slot0)
 	setActive(slot0.gotTag, false)
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	onButton(slot0, slot0.goBtn, function ()
 		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {})
 	end, SFX_PANEL)
@@ -32,7 +32,7 @@ slot0.OnFirstFlush = function(slot0)
 	setParent(LoadAndInstantiateSync("IconFrame", pg.activity_event_avatarframe[slot0.activity:getConfig("config_id")].icon_frame), findTF(slot0.bg, "icon"), false)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	if pg.activity_event_avatarframe[slot0.activity:getConfig("config_id")].target < slot0.activity.data1 then
 		slot1 = slot2
 	end
@@ -51,7 +51,7 @@ slot0.OnUpdateFlush = function(slot0)
 	setActive(slot0.gotTag, slot5)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

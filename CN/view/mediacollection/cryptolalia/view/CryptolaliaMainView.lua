@@ -1,6 +1,6 @@
 slot0 = class("CryptolaliaMainView")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	setmetatable(slot0, {
 		__index = function (slot0, slot1)
 			return rawget(slot0, "class")[slot1] and slot2[slot1] or uv0[slot1]
@@ -10,7 +10,7 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.downloadBtnAnim = slot0.downloadBtn:GetComponent(typeof(Animation))
 end
 
-slot0.Flush = function(slot0, slot1, slot2, slot3)
+function slot0.Flush(slot0, slot1, slot2, slot3)
 	if not slot0.cryptolalia or slot0.cryptolalia.id ~= slot1.id then
 		slot0.shipName.text = slot1:GetShipName()
 		slot0.nameTxt.text = slot1:GetName()
@@ -33,7 +33,7 @@ slot0.Flush = function(slot0, slot1, slot2, slot3)
 	slot0.cryptolalia = slot1
 end
 
-slot0.AddTimer = function(slot0, slot1, slot2)
+function slot0.AddTimer(slot0, slot1, slot2)
 	if slot2 then
 		slot3 = ""
 		slot0.timer = Timer.New(function ()
@@ -52,7 +52,7 @@ slot0.AddTimer = function(slot0, slot1, slot2)
 	slot0.timeTxt.text = ""
 end
 
-slot0.FlushState = function(slot0, slot1, slot2, slot3)
+function slot0.FlushState(slot0, slot1, slot2, slot3)
 	slot4 = slot3 and Cryptolalia.STATE_DOWNLOADING or slot1:GetState(slot2)
 
 	setActive(slot0.lockBtn, Cryptolalia.STATE_LOCK == slot4)
@@ -69,7 +69,7 @@ slot0.FlushState = function(slot0, slot1, slot2, slot3)
 	setActive(slot0.deleteBtn, Cryptolalia.STATE_PLAYABLE == slot4)
 	setText(slot0.deleteBtn:Find("label"), i18n("cryptolalia_delete_res", slot1:GetResSize(slot2)))
 	setActive(slot0.stateBtn, Cryptolalia.STATE_PLAYABLE ~= slot4)
-	setActive(slot0.switchBtn, false)
+	setActive(slot0.switchBtn, slot4 ~= Cryptolalia.STATE_DOWNLOADING and PLATFORM_CODE == PLATFORM_CH and slot1:IsMultiVersion())
 
 	slot5 = Vector2(0, 0)
 	slot6 = Vector2(20, -9.2)
@@ -90,7 +90,7 @@ slot0.FlushState = function(slot0, slot1, slot2, slot3)
 	slot0.state = slot4
 end
 
-slot1 = function(slot0, slot1, slot2)
+function slot1(slot0, slot1, slot2)
 	LoadSpriteAtlasAsync("CryptolaliaShip/" .. slot1, "cd", function (slot0)
 		if uv0.exited then
 			return
@@ -103,7 +103,7 @@ slot1 = function(slot0, slot1, slot2)
 	end)
 end
 
-slot2 = function(slot0, slot1, slot2)
+function slot2(slot0, slot1, slot2)
 	LoadSpriteAtlasAsync("CryptolaliaShip/" .. slot1, "name", function (slot0)
 		if uv0.exited then
 			return
@@ -116,7 +116,7 @@ slot2 = function(slot0, slot1, slot2)
 	end)
 end
 
-slot3 = function(slot0, slot1, slot2)
+function slot3(slot0, slot1, slot2)
 	LoadSpriteAtlasAsync("CryptolaliaShip/" .. slot1, "name", function (slot0)
 		if uv0.exited then
 			return
@@ -129,7 +129,7 @@ slot3 = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.LoadCryptolaliaSpriteForShipGroup = function(slot0, slot1)
+function slot0.LoadCryptolaliaSpriteForShipGroup(slot0, slot1)
 	slot0.cg.blocksRaycasts = false
 
 	parallelAsync({
@@ -141,7 +141,7 @@ slot0.LoadCryptolaliaSpriteForShipGroup = function(slot0, slot1)
 	end)
 end
 
-slot0.RemoveTimer = function(slot0)
+function slot0.RemoveTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -149,7 +149,7 @@ slot0.RemoveTimer = function(slot0)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0.exited = true
 
 	slot0:RemoveTimer()

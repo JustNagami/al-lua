@@ -1,22 +1,22 @@
 slot0 = class("SkinExperienceDiplayPage", import("...base.BaseSubView"))
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	uv0.super.Ctor(slot0, slot1, slot2, slot3)
 	slot0:bind(NewMainScene.ON_SKIN_FREEUSAGE_DESC, function (slot0, slot1)
 		uv0:ExecuteAction("Show", slot1)
 	end)
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ExSkinListUI"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.uilist = UIItemList.New(slot0:findTF("window/list/content"), slot0:findTF("window/list/content/tpl"))
 	slot0.skinTimers = {}
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0:findTF("window/top/btnBack"), function ()
 		uv0:Hide()
 	end, SFX_CANCEL)
@@ -28,7 +28,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	uv0.super.Show(slot0)
 	slot0:Display(slot1)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
@@ -36,12 +36,12 @@ slot0.Show = function(slot0, slot1)
 	})
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, pg.UIMgr.GetInstance()._normalUIMain)
 end
 
-slot0.Display = function(slot0, slot1)
+function slot0.Display(slot0, slot1)
 	slot0:Clear()
 	slot0.uilist:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
@@ -72,7 +72,7 @@ slot0.Display = function(slot0, slot1)
 	slot0.uilist:align(#slot1)
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	for slot4, slot5 in pairs(slot0.skinTimers) do
 		slot5:Stop()
 	end
@@ -80,7 +80,7 @@ slot0.Clear = function(slot0)
 	slot0.skinTimers = {}
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0:Clear()
 
 	slot0.skinTimers = nil

@@ -1,10 +1,10 @@
 slot0 = class("WorldAssignedItemView", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "StoreHouseItemAssignedView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = slot0._tf
 	slot1 = slot1:Find("operate")
 	slot0.ulist = UIItemList.New(slot1:Find("got/bottom/list"), slot1:Find("got/bottom/list/tpl"))
@@ -68,17 +68,17 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	setActive(slot0._tf, true)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 	setActive(slot0._tf, false)
 end
 
-slot0.updateValue = function(slot0)
+function slot0.updateValue(slot0)
 	setText(slot0.valueText, slot0.count)
 
 	slot1 = slot0.ulist
@@ -92,7 +92,7 @@ slot0.updateValue = function(slot0)
 	end)
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	slot0.count = 1
 	slot0.selectedIndex = nil
 	slot0.selectedItem = nil
@@ -119,7 +119,7 @@ slot0.update = function(slot0, slot1)
 					uv0.selectedItem = uv2
 				end
 			end, SFX_PANEL)
-			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1].cfg.name)
+			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1]:getConfig("name"))
 
 			uv0.selectedItem = uv0.selectedItem or slot2
 		end

@@ -1,6 +1,6 @@
 slot0 = class("SubmitWeekTaskCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	if not getProxy(TaskProxy):GetWeekTaskProgressInfo():GetSubTask(slot1:getBody().id) or not slot6:IsFinished() then
 		return
 	end
@@ -13,11 +13,7 @@ slot0.execute = function(slot0, slot1)
 		if slot0.result == 0 then
 			slot2 = uv0:GetAward()
 
-			table.insert({}, Item.New({
-				type = slot2[1],
-				id = slot2[2],
-				count = slot2[3]
-			}))
+			table.insert({}, Drop.Create(slot2))
 			uv1:AddProgress(slot2[3])
 			uv1:RemoveSubTask(uv2)
 

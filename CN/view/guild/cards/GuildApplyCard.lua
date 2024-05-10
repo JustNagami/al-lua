@@ -1,6 +1,6 @@
 slot0 = class("GuildApplyCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.go = slot1
 	slot0.tf = tf(slot1)
 	slot0.nameTF = slot0.tf:Find("bg/name_bg/Text"):GetComponent(typeof(Text))
@@ -21,7 +21,7 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.colorBlue = Color(0.6274509803921569, 0.7058823529411765, 0.9764705882352941)
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -52,7 +52,7 @@ slot0.Update = function(slot0, slot1)
 	slot0.policy.text = slot1:getPolicyName()
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 end
 
 return slot0

@@ -1,25 +1,25 @@
 slot0 = class("BossRushBattleResultLayer", import("view.base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BattleResultBossRushUI"
 end
 
-slot0.Ctor = function(slot0, ...)
+function slot0.Ctor(slot0, ...)
 	uv0.super.Ctor(slot0, ...)
 
 	slot0.loader = AutoLoader.New()
 end
 
-slot0.GetAtalsName = function(slot0)
+function slot0.GetAtalsName(slot0)
 	return "ui/battleresult_atlas"
 end
 
-slot0.preload = function(slot0, slot1)
+function slot0.preload(slot0, slot1)
 	slot0.loader:LoadBundle(slot0:GetAtalsName())
 	existCall(slot1)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = slot0._tf:Find("main/Series")
 	slot0.resultScroll = slot1:Find("Scroll")
 	slot0.resultList = slot1:Find("Scroll/List")
@@ -44,7 +44,7 @@ slot2 = {
 	"3c3c3c7f"
 }
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, true, {
 		lockGlobalBlur = true,
 		groupName = LayerWeightConst.GROUP_COMBAT
@@ -154,7 +154,7 @@ slot0.didEnter = function(slot0)
 	slot11 = 0
 	slot12 = 0
 
-	slot13 = function(slot0, slot1, slot2)
+	function slot13(slot0, slot1, slot2)
 		UIItemList.StaticAlign(slot0, slot0:GetChild(0), 2, function (slot0, slot1, slot2)
 			if slot0 ~= UIItemList.EventUpdate then
 				return
@@ -179,11 +179,11 @@ slot0.didEnter = function(slot0)
 		end)
 	end
 
-	slot14 = function(slot0, slot1, slot2)
+	function slot14(slot0, slot1, slot2)
 		setActive(slot0:Find("result/mvpBG"), slot1 == slot2)
 	end
 
-	slot15 = function(slot0, slot1, slot2, slot3)
+	function slot15(slot0, slot1, slot2, slot3)
 		UIItemList.StaticAlign(slot0, slot0:GetChild(0), #slot1, function (slot0, slot1, slot2)
 			if slot0 ~= UIItemList.EventUpdate then
 				return
@@ -230,7 +230,7 @@ slot0.didEnter = function(slot0)
 		end)
 	end
 
-	slot16 = function(slot0, slot1, slot2, slot3, slot4)
+	function slot16(slot0, slot1, slot2, slot3, slot4)
 		slot5 = 0
 
 		if not (slot4 and slot4.statistics) then
@@ -287,7 +287,7 @@ slot0.didEnter = function(slot0)
 		end)
 	end
 
-	slot17 = function(slot0, slot1, slot2, slot3)
+	function slot17(slot0, slot1, slot2, slot3)
 		slot4 = slot0:Find("Title/Label")
 		slot5 = slot0:Find("Title/Letter")
 		slot6 = {
@@ -341,7 +341,7 @@ slot0.didEnter = function(slot0)
 		uv4(slot0:Find("BG/commanderExp/commander_container"), slot1.oldCmds, slot1.cmds)
 	end
 
-	slot18 = function()
+	function slot18()
 		UIItemList.StaticAlign(uv3.resultList, uv3.resultList:GetChild(0), #(uv0 == 1 and uv1 or uv2), function (slot0, slot1, slot2)
 			if slot0 ~= UIItemList.EventUpdate then
 				return
@@ -354,7 +354,7 @@ slot0.didEnter = function(slot0)
 		end)
 	end
 
-	slot19 = function()
+	function slot19()
 		UIItemList.StaticAlign(uv3.resultList, uv3.resultList:GetChild(0), #(uv0 == 1 and uv1 or uv2), function (slot0, slot1, slot2)
 			if slot0 ~= UIItemList.EventUpdate then
 				return
@@ -427,15 +427,15 @@ slot0.didEnter = function(slot0)
 	end
 end
 
-slot0.HideConfirmPanel = function(slot0)
+function slot0.HideConfirmPanel(slot0)
 	setActive(slot0.rightBottomPanel:Find("confirmBtn"), false)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	triggerButton(slot0.rightBottomPanel:Find("confirmBtn"))
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 	slot0.loader:Clear()
 end

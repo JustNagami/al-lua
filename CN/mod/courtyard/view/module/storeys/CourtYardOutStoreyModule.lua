@@ -1,7 +1,7 @@
 slot0 = class("CourtYardOutStoreyModule", import(".CourtYardStoreyModule"))
 slot1 = true
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.scrollrect = slot0._tf:Find("scrollRect")
 	slot0.scroll = slot0.scrollrect:GetComponent(typeof(ScrollRect))
 	slot0.rectTF = slot0._tf:Find("scrollRect/bg/rect")
@@ -11,10 +11,10 @@ slot0.OnInit = function(slot0)
 	slot0.rotationBtn = slot0.selectedTF:Find("panel/rotation")
 	slot0.removeBtn = slot0.selectedTF:Find("panel/cancel")
 	slot0.confirmBtn = slot0.selectedTF:Find("panel/ok")
-	slot0.dragBtn = CourtYardStoreyDragBtn.New(slot0.selectedTF:Find("panel/move"))
+	slot0.dragBtn = CourtYardStoreyDragBtn.New(slot0.selectedTF:Find("panel/animroot"), slot0.rectTF)
 end
 
-slot0.EnableZoom = function(slot0, slot1)
+function slot0.EnableZoom(slot0, slot1)
 	slot0.scroll.enabled = slot1
 end
 

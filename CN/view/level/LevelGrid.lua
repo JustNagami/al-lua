@@ -2,7 +2,7 @@ slot0 = class("LevelGrid", import("..base.BasePanel"))
 slot1 = require("Mgr/Pool/PoolPlural")
 slot0.MapDefaultPos = Vector3(420, -1000, -1000)
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	uv0.super.init(slot0)
 
 	slot0.levelCam = GameObject.Find("LevelCamera"):GetComponent(typeof(Camera))
@@ -25,7 +25,6 @@ slot0.init = function(slot0)
 	slot0.lastSelectedId = -1
 	slot0.quadState = -1
 	slot0.subTeleportTargetLine = nil
-	slot0.subTeleportMode = false
 	slot0.missileStrikeTargetLine = nil
 	slot0.cellEdges = {}
 	slot0.walls = {}
@@ -33,13 +32,13 @@ slot0.init = function(slot0)
 	slot0.loader = AutoLoader.New()
 end
 
-slot0.ExtendItem = function(slot0, slot1, slot2)
+function slot0.ExtendItem(slot0, slot1, slot2)
 	if IsNil(slot0[slot1]) then
 		slot0[slot1] = slot2
 	end
 end
 
-slot0.getFleetPool = function(slot0, slot1)
+function slot0.getFleetPool(slot0, slot1)
 	if not slot0.pools["fleet_" .. slot1] then
 		slot4 = slot0.shipTpl
 
@@ -55,7 +54,7 @@ slot0.getFleetPool = function(slot0, slot1)
 	return slot3
 end
 
-slot0.getChampionPool = function(slot0, slot1)
+function slot0.getChampionPool(slot0, slot1)
 	if not slot0.pools["champion_" .. slot1] then
 		slot4 = slot0.championTpl
 
@@ -71,7 +70,7 @@ slot0.getChampionPool = function(slot0, slot1)
 	return slot3
 end
 
-slot0.AddEdgePool = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.AddEdgePool(slot0, slot1, slot2, slot3, slot4, slot5)
 	if slot0.edgePools[slot1] then
 		return
 	end
@@ -113,7 +112,7 @@ slot0.AddEdgePool = function(slot0, slot1, slot2, slot3, slot4, slot5)
 			end)
 		end
 	}, function ()
-		slot0 = function(slot0)
+		function slot0(slot0)
 			go(slot0):GetComponent(typeof(Image)).enabled = true
 			slot1.color = type(uv0) == "table" and Color.New(unpack(uv0)) or Color.white
 			slot1.sprite = uv1 and uv2 or nil
@@ -138,7 +137,7 @@ slot0.AddEdgePool = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	end)
 end
 
-slot0.GetEdgePool = function(slot0, slot1)
+function slot0.GetEdgePool(slot0, slot1)
 	assert(slot1, "Missing Key")
 
 	slot2 = slot0.edgePools[slot1]
@@ -148,7 +147,7 @@ slot0.GetEdgePool = function(slot0, slot1)
 	return slot2
 end
 
-slot0.initAll = function(slot0, slot1)
+function slot0.initAll(slot0, slot1)
 	seriesAsync({
 		function (slot0)
 			uv0:initPlane()
@@ -211,12 +210,13 @@ slot0.initAll = function(slot0, slot1)
 		end,
 		function ()
 			uv0:OnChangeSubAutoAttack()
+			uv0:updateQuadCells(ChapterConst.QuadStateNormal)
 			existCall(uv1)
 		end
 	})
 end
 
-slot0.clearAll = function(slot0)
+function slot0.clearAll(slot0)
 	for slot4, slot5 in pairs(slot0.tweens) do
 		LeanTween.cancel(slot4)
 	end
@@ -295,7 +295,7 @@ end
 
 slot2 = 640
 
-slot0.initDrag = function(slot0)
+function slot0.initDrag(slot0)
 	slot1, slot2, slot3 = getSizeRate()
 	slot4 = slot0.contextData.chapterVO
 	slot5 = slot4.theme
@@ -325,7 +325,7 @@ slot0.initDrag = function(slot0)
 	end)
 end
 
-slot0.initPlane = function(slot0)
+function slot0.initPlane(slot0)
 	slot2 = slot0.contextData.chapterVO.theme
 	slot0.levelCam.fieldOfView = slot2.fov
 	slot3 = nil
@@ -481,7 +481,7 @@ slot0.initPlane = function(slot0)
 	end
 end
 
-slot0.updatePoisonArea = function(slot0)
+function slot0.updatePoisonArea(slot0)
 	if not GetOrAddComponent(slot0:findTF("plane/display/mask"), "RawImage").enabled then
 		return
 	end
@@ -489,7 +489,7 @@ slot0.updatePoisonArea = function(slot0)
 	slot2.texture = slot0:getPoisonTex()
 end
 
-slot0.getPoisonTex = function(slot0)
+function slot0.getPoisonTex(slot0)
 	slot2 = slot0:findTF("plane/display")
 	slot5 = math.floor(256 / (slot2.sizeDelta.x / slot2.sizeDelta.y))
 	slot6 = nil
@@ -514,7 +514,7 @@ slot0.getPoisonTex = function(slot0)
 		end
 	end
 
-	slot9 = function(slot0)
+	function slot9(slot0)
 		for slot4 = slot0.x, slot0.w + slot0.x do
 			for slot8 = slot0.y, slot0.h + slot0.y do
 				uv0:SetPixel(slot4, slot8, Color.New(1, 1, 1, 0))
@@ -533,13 +533,13 @@ slot0.getPoisonTex = function(slot0)
 	return slot6
 end
 
-slot0.showFleetPoisonDamage = function(slot0, slot1, slot2)
+function slot0.showFleetPoisonDamage(slot0, slot1, slot2)
 	if slot0.cellFleets[slot0.contextData.chapterVO.fleets[slot1].id] then
 		slot5:showPoisonDamage(slot2)
 	end
 end
 
-slot0.clearPlane = function(slot0)
+function slot0.clearPlane(slot0)
 	slot0:killQuadTws()
 	slot0:killPresentTws()
 	slot0:ClearEdges()
@@ -561,7 +561,7 @@ slot0.clearPlane = function(slot0)
 	pg.PoolMgr.GetInstance():ReturnPrefab("chapter/plane", "", slot1.gameObject)
 end
 
-slot0.initFleets = function(slot0, slot1)
+function slot0.initFleets(slot0, slot1)
 	if slot0.cellFleets then
 		existCall(slot1)
 
@@ -579,7 +579,7 @@ slot0.initFleets = function(slot0, slot1)
 	end, slot1)
 end
 
-slot0.InitFleetCell = function(slot0, slot1, slot2)
+function slot0.InitFleetCell(slot0, slot1, slot2)
 	if not slot0.contextData.chapterVO:getFleetById(slot1):isValid() then
 		existCall(slot2)
 
@@ -606,7 +606,7 @@ slot0.InitFleetCell = function(slot0, slot1, slot2)
 	slot0:RefreshFleetCell(slot1, slot2)
 end
 
-slot0.RefreshFleetCells = function(slot0, slot1)
+function slot0.RefreshFleetCells(slot0, slot1)
 	if not slot0.cellFleets then
 		slot0:initFleets(slot1)
 
@@ -639,7 +639,7 @@ slot0.RefreshFleetCells = function(slot0, slot1)
 	end, slot1)
 end
 
-slot0.RefreshFleetCell = function(slot0, slot1, slot2)
+function slot0.RefreshFleetCell(slot0, slot1, slot2)
 	slot5 = slot0.cellFleets[slot1]
 	slot6, slot7 = nil
 
@@ -678,7 +678,7 @@ slot0.RefreshFleetCell = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.clearFleets = function(slot0)
+function slot0.clearFleets(slot0)
 	if slot0.cellFleets then
 		for slot4, slot5 in pairs(slot0.cellFleets) do
 			slot0:ClearFleetCell(slot4)
@@ -688,7 +688,7 @@ slot0.clearFleets = function(slot0)
 	end
 end
 
-slot0.ClearFleetCell = function(slot0, slot1)
+function slot0.ClearFleetCell(slot0, slot1)
 	if not slot0.cellFleets[slot1] then
 		return
 	end
@@ -708,7 +708,7 @@ slot0.ClearFleetCell = function(slot0, slot1)
 	slot0.cellFleets[slot1] = nil
 end
 
-slot0.UpdateFleets = function(slot0, slot1)
+function slot0.UpdateFleets(slot0, slot1)
 	table.ParallelIpairsAsync(slot0.contextData.chapterVO.fleets, function (slot0, slot1, slot2)
 		if slot1:getFleetType() == FleetType.Support then
 			return slot2()
@@ -718,7 +718,7 @@ slot0.UpdateFleets = function(slot0, slot1)
 	end, slot1)
 end
 
-slot0.updateFleet = function(slot0, slot1, slot2)
+function slot0.updateFleet(slot0, slot1, slot2)
 	slot5 = slot0.contextData.chapterVO:getFleetById(slot1)
 
 	if slot0.cellFleets[slot1] then
@@ -747,9 +747,9 @@ slot0.updateFleet = function(slot0, slot1, slot2)
 				slot15.overrideSorting = true
 				slot15.sortingOrder = ChapterConst.PriorityMax
 				slot0.opBtns[slot1] = slot14
-			end
 
-			setActive(slot14, true)
+				slot0:UpdateOpBtns()
+			end
 
 			slot14.position = slot4.tfOp.position
 			slot15 = slot9 and ChapterConst.IsBossCell(slot9)
@@ -760,16 +760,17 @@ slot0.updateFleet = function(slot0, slot1, slot2)
 			end
 
 			slot15 = slot15 or slot16
+			slot18 = slot13 and slot7 and slot10
 
-			setActive(slot14:Find("retreat"):Find("retreat"), slot13 and slot7 and not slot0.subTeleportMode and slot10 and not slot15 and _.any(slot3.fleets, function (slot0)
+			setActive(slot14:Find("retreat"):Find("retreat"), slot18 and not slot15 and _.any(slot3.fleets, function (slot0)
 				return slot0.id ~= uv0.id and slot0:getFleetType() == FleetType.Normal and slot0:isValid()
 			end))
-			setActive(slot18:Find("escape"), slot13 and slot7 and not slot0.subTeleportMode and slot15)
-			setActive(slot18, slot18:Find("retreat").gameObject.activeSelf or slot18:Find("escape").gameObject.activeSelf)
+			setActive(slot19:Find("escape"), slot18 and slot15)
+			setActive(slot19, slot19:Find("retreat").gameObject.activeSelf or slot19:Find("escape").gameObject.activeSelf)
 
-			if slot18.gameObject.activeSelf then
-				onButton(slot0, slot18, function ()
-					if uv0.parent:isfrozen() or uv0.subTeleportMode then
+			if slot19.gameObject.activeSelf then
+				onButton(slot0, slot19, function ()
+					if uv0.parent:isfrozen() then
 						return
 					end
 
@@ -827,19 +828,19 @@ slot0.updateFleet = function(slot0, slot1, slot2)
 			setActive(slot14:Find("exchange"), false)
 			setActive(slot4.tfAmmo, not slot12)
 
-			slot20, slot21 = slot3:getFleetAmmo(slot5)
-			slot22 = slot21 .. "/" .. slot20
+			slot21, slot22 = slot3:getFleetAmmo(slot5)
+			slot23 = slot22 .. "/" .. slot21
 
-			if slot21 == 0 then
-				slot22 = setColorStr(slot22, COLOR_RED)
+			if slot22 == 0 then
+				slot23 = setColorStr(slot23, COLOR_RED)
 			end
 
-			setText(slot4.tfAmmoText, slot22)
+			setText(slot4.tfAmmoText, slot23)
 
 			if slot10 or slot12 then
-				slot23 = slot3:getChampion(slot6.row, slot6.column)
+				slot24 = slot3:getChampion(slot6.row, slot6.column)
 
-				if slot10 and slot11 == ChapterConst.AttachChampion and slot23:getPoolType() == ChapterConst.TemplateChampion then
+				if slot10 and slot11 == ChapterConst.AttachChampion and slot24:getPoolType() == ChapterConst.TemplateChampion then
 					slot4.tfArrow.anchoredPosition = Vector2(0, 180)
 					slot4.tfAmmo.anchoredPosition = Vector2(60, 100)
 				else
@@ -862,7 +863,7 @@ slot0.updateFleet = function(slot0, slot1, slot2)
 			end
 
 			slot4:SetActiveNoPassIcon(slot3:existBarrier(slot6.row, slot6.column))
-			slot4:UpdateIconRecorded(table.contains(slot5:GetStatusStrategy(), ChapterConst.StrategyIntelligenceRecorded))
+			slot4:UpdateIconRecordedFlag(table.contains(slot5:GetStatusStrategy(), ChapterConst.StrategyIntelligenceRecorded))
 		elseif slot8 == FleetType.Submarine then
 			slot9 = slot3:existEnemy(ChapterConst.SubjectPlayer, slot6.row, slot6.column) or slot3:existAlly(slot5)
 
@@ -887,11 +888,17 @@ slot0.updateFleet = function(slot0, slot1, slot2)
 	existCall(slot2)
 end
 
-slot0.GetCellFleet = function(slot0, slot1)
+function slot0.UpdateOpBtns(slot0)
+	table.Foreach(slot0.opBtns, function (slot0, slot1)
+		setActive(slot1, uv0.quadState == ChapterConst.QuadStateNormal)
+	end)
+end
+
+function slot0.GetCellFleet(slot0, slot1)
 	return slot0.cellFleets[slot1]
 end
 
-slot0.initTargetArrow = function(slot0)
+function slot0.initTargetArrow(slot0)
 	slot0.arrowTarget = cloneTplTo(slot0.arrowTpl, slot0._tf)
 	slot2 = slot0.arrowTarget
 
@@ -903,7 +910,7 @@ slot0.initTargetArrow = function(slot0)
 	setActive(slot0.arrowTarget, false)
 end
 
-slot0.updateTargetArrow = function(slot0, slot1)
+function slot0.updateTargetArrow(slot0, slot1)
 	slot2 = slot0.contextData.chapterVO
 	slot4 = slot0.cellRoot
 	slot5 = slot0.arrowTarget
@@ -943,7 +950,7 @@ slot0.updateTargetArrow = function(slot0, slot1)
 	end
 end
 
-slot0.clearTargetArrow = function(slot0)
+function slot0.clearTargetArrow(slot0)
 	if not IsNil(slot0.arrowTarget) then
 		Destroy(slot0.arrowTarget)
 
@@ -951,7 +958,7 @@ slot0.clearTargetArrow = function(slot0)
 	end
 end
 
-slot0.InitDestinationMark = function(slot0)
+function slot0.InitDestinationMark(slot0)
 	slot1 = cloneTplTo(slot0.destinationMarkTpl, slot0._tf)
 
 	pg.ViewUtils.SetLayer(tf(slot1), Layer.UI)
@@ -964,7 +971,7 @@ slot0.InitDestinationMark = function(slot0)
 	slot0.destinationMark = tf(slot1)
 end
 
-slot0.UpdateDestinationMark = function(slot0, slot1)
+function slot0.UpdateDestinationMark(slot0, slot1)
 	if not slot1 then
 		slot0.destinationMark:SetParent(slot0._tf)
 		setActive(go(slot0.destinationMark), false)
@@ -982,7 +989,7 @@ slot0.UpdateDestinationMark = function(slot0, slot1)
 	end
 end
 
-slot0.ClearDestinationMark = function(slot0)
+function slot0.ClearDestinationMark(slot0)
 	if not IsNil(slot0.destinationMark) then
 		Destroy(slot0.destinationMark)
 
@@ -990,7 +997,7 @@ slot0.ClearDestinationMark = function(slot0)
 	end
 end
 
-slot0.initChampions = function(slot0, slot1)
+function slot0.initChampions(slot0, slot1)
 	if slot0.cellChampions then
 		existCall(slot1)
 
@@ -1010,7 +1017,7 @@ slot0.initChampions = function(slot0, slot1)
 	end, slot1)
 end
 
-slot0.InitChampion = function(slot0, slot1, slot2)
+function slot0.InitChampion(slot0, slot1, slot2)
 	slot3 = slot0.contextData.chapterVO
 	slot4 = slot3.champions[slot1]
 	slot5 = slot4:getPoolType()
@@ -1063,13 +1070,13 @@ slot0.InitChampion = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateChampions = function(slot0, slot1)
+function slot0.updateChampions(slot0, slot1)
 	table.ParallelIpairsAsync(slot0.cellChampions, function (slot0, slot1, slot2)
 		uv0:updateChampion(slot0, slot2)
 	end, slot1)
 end
 
-slot0.updateChampion = function(slot0, slot1, slot2)
+function slot0.updateChampion(slot0, slot1, slot2)
 	slot5 = slot0.contextData.chapterVO.champions[slot1]
 
 	if slot0.cellChampions[slot1] and slot5 then
@@ -1077,7 +1084,7 @@ slot0.updateChampion = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateOni = function(slot0)
+function slot0.updateOni(slot0)
 	slot2 = nil
 
 	for slot6, slot7 in ipairs(slot0.contextData.chapterVO.champions) do
@@ -1093,7 +1100,7 @@ slot0.updateOni = function(slot0)
 	end
 end
 
-slot0.clearChampions = function(slot0)
+function slot0.clearChampions(slot0)
 	if slot0.cellChampions then
 		for slot4, slot5 in ipairs(slot0.cellChampions) do
 			if slot5 then
@@ -1109,7 +1116,7 @@ slot0.clearChampions = function(slot0)
 	end
 end
 
-slot0.initCell = function(slot0, slot1, slot2)
+function slot0.initCell(slot0, slot1, slot2)
 	if slot0.contextData.chapterVO:getChapterCell(slot1, slot2) then
 		slot5 = slot3.theme.cellSize
 		slot6 = ChapterCell.Line2QuadName(slot1, slot2)
@@ -1170,7 +1177,7 @@ slot0.initCell = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.clearCell = function(slot0, slot1, slot2)
+function slot0.clearCell(slot0, slot1, slot2)
 	slot6 = slot0.quadRoot:Find(ChapterCell.Line2QuadName(slot1, slot2))
 
 	if not IsNil(slot0.cellRoot:Find(ChapterCell.Line2Name(slot1, slot2))) then
@@ -1192,7 +1199,7 @@ slot0.clearCell = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.UpdateItemCells = function(slot0)
+function slot0.UpdateItemCells(slot0)
 	if not slot0.contextData.chapterVO then
 		return
 	end
@@ -1202,7 +1209,7 @@ slot0.UpdateItemCells = function(slot0)
 	end
 end
 
-slot0.updateAttachments = function(slot0)
+function slot0.updateAttachments(slot0)
 	for slot4 = 0, ChapterConst.MaxRow - 1 do
 		for slot8 = 0, ChapterConst.MaxColumn - 1 do
 			slot0:updateAttachment(slot4, slot8)
@@ -1214,7 +1221,7 @@ slot0.updateAttachments = function(slot0)
 	slot0:displayEscapeGrid()
 end
 
-slot0.UpdateFloor = function(slot0)
+function slot0.UpdateFloor(slot0)
 	slot3 = {}
 
 	for slot7, slot8 in pairs(slot0.contextData.chapterVO.cells) do
@@ -1329,7 +1336,7 @@ slot0.UpdateFloor = function(slot0)
 	end
 end
 
-slot0.updateExtraAttachments = function(slot0)
+function slot0.updateExtraAttachments(slot0)
 	for slot6, slot7 in pairs(slot0.contextData.chapterVO:GetChapterCellAttachemnts()) do
 		slot8 = slot7.row
 		slot9 = slot7.column
@@ -1365,7 +1372,7 @@ slot0.updateExtraAttachments = function(slot0)
 	end
 end
 
-slot0.updateAttachment = function(slot0, slot1, slot2)
+function slot0.updateAttachment(slot0, slot1, slot2)
 	if not slot0.contextData.chapterVO:getChapterCell(slot1, slot2) then
 		return
 	end
@@ -1478,7 +1485,7 @@ slot0.updateAttachment = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.InitWalls = function(slot0)
+function slot0.InitWalls(slot0)
 	slot1 = slot0.contextData.chapterVO
 
 	for slot5 = slot0.indexMin.x, slot0.indexMax.x do
@@ -1521,7 +1528,7 @@ slot3 = {
 	}
 }
 
-slot0.InitWallDirection = function(slot0, slot1, slot2)
+function slot0.InitWallDirection(slot0, slot1, slot2)
 	slot3 = slot0.contextData.chapterVO
 
 	if bit.band(slot1.forbiddenDirections, slot2) == 0 then
@@ -1552,7 +1559,7 @@ slot0.InitWallDirection = function(slot0, slot1, slot2)
 	slot10.BanCount = slot10.BanCount + (slot8 and 2 or 1)
 end
 
-slot0.UpdateWeatherCells = function(slot0)
+function slot0.UpdateWeatherCells(slot0)
 	for slot5, slot6 in pairs(slot0.contextData.chapterVO.cells) do
 		slot7 = nil
 
@@ -1586,7 +1593,7 @@ slot0.UpdateWeatherCells = function(slot0)
 	end
 end
 
-slot0.updateQuadCells = function(slot0, slot1)
+function slot0.updateQuadCells(slot0, slot1)
 	slot1 = slot1 or ChapterConst.QuadStateNormal
 	slot0.quadState = slot1
 
@@ -1603,9 +1610,11 @@ slot0.updateQuadCells = function(slot0, slot1)
 	elseif slot1 == ChapterConst.QuadStateExpel then
 		slot0:UpdateQuadStateAirExpel()
 	end
+
+	slot0:UpdateOpBtns()
 end
 
-slot0.PlayQuadsParallelAnim = function(slot0, slot1)
+function slot0.PlayQuadsParallelAnim(slot0, slot1)
 	slot0:frozen()
 	table.ParallelIpairsAsync(slot1, function (slot0, slot1, slot2)
 		slot3 = ChapterCell.Line2QuadName(slot1.row, slot1.column)
@@ -1622,14 +1631,14 @@ slot0.PlayQuadsParallelAnim = function(slot0, slot1)
 	end)
 end
 
-slot0.updateQuadBase = function(slot0)
+function slot0.updateQuadBase(slot0)
 	if slot0.contextData.chapterVO.fleet == nil then
 		return
 	end
 
 	slot0:killPresentTws()
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		if not slot0 or not slot0:IsWalkable() then
 			return
 		end
@@ -1692,7 +1701,7 @@ slot0.updateQuadBase = function(slot0)
 	end
 end
 
-slot0.UpdateQuadStateNormal = function(slot0)
+function slot0.UpdateQuadStateNormal(slot0)
 	slot1 = slot0.contextData.chapterVO
 	slot2 = slot1.fleet
 	slot3 = nil
@@ -1729,7 +1738,7 @@ slot0.UpdateQuadStateNormal = function(slot0)
 	end)
 end
 
-slot0.UpdateQuadStateBarrierSetting = function(slot0)
+function slot0.UpdateQuadStateBarrierSetting(slot0)
 	slot2 = slot0.contextData.chapterVO
 	slot4 = slot2.fleet.line
 
@@ -1761,7 +1770,7 @@ slot0.UpdateQuadStateBarrierSetting = function(slot0)
 	end)
 end
 
-slot0.UpdateQuadStateTeleportSub = function(slot0)
+function slot0.UpdateQuadStateTeleportSub(slot0)
 	if not _.detect(slot0.contextData.chapterVO.fleets, function (slot0)
 		return slot0:getFleetType() == FleetType.Submarine
 	end) then
@@ -1773,13 +1782,13 @@ slot0.UpdateQuadStateTeleportSub = function(slot0)
 	end))
 end
 
-slot0.UpdateQuadStateMissileStrike = function(slot0)
+function slot0.UpdateQuadStateMissileStrike(slot0)
 	slot0:PlayQuadsParallelAnim(_.filter(_.values(slot0.contextData.chapterVO.cells), function (slot0)
 		return slot0:IsWalkable() and not uv0:getQuadCellPic(slot0)
 	end))
 end
 
-slot0.UpdateQuadStateAirExpel = function(slot0)
+function slot0.UpdateQuadStateAirExpel(slot0)
 	slot1 = slot0.contextData.chapterVO
 
 	if not slot0.airSupportTarget or not slot2.source then
@@ -1795,7 +1804,7 @@ slot0.UpdateQuadStateAirExpel = function(slot0)
 	slot0:PlayQuadsParallelAnim(slot1:calcWalkableCells(ChapterConst.SubjectChampion, slot3.row, slot3.column, 1))
 end
 
-slot0.ClickGridCell = function(slot0, slot1)
+function slot0.ClickGridCell(slot0, slot1)
 	if slot0.quadState == ChapterConst.QuadStateBarrierSetting then
 		slot0:OnBarrierSetting(slot1)
 	elseif slot0.quadState == ChapterConst.QuadStateTeleportSub then
@@ -1811,7 +1820,7 @@ slot0.ClickGridCell = function(slot0, slot1)
 	end
 end
 
-slot0.OnBarrierSetting = function(slot0, slot1)
+function slot0.OnBarrierSetting(slot0, slot1)
 	slot3 = slot0.contextData.chapterVO
 	slot5 = slot3.fleet.line
 
@@ -1837,12 +1846,11 @@ slot0.OnBarrierSetting = function(slot0, slot1)
 	end)(slot1.row, slot1.column)
 end
 
-slot0.PrepareSubTeleport = function(slot0)
+function slot0.PrepareSubTeleport(slot0)
 	slot1 = slot0.contextData.chapterVO
 	slot2 = slot1:GetSubmarineFleet()
 	slot3 = slot0.cellFleets[slot2.id]
 	slot4 = slot2.startPos
-	slot0.subTeleportMode = true
 
 	for slot8, slot9 in pairs(slot1.fleets) do
 		if slot9:getFleetType() == FleetType.Normal then
@@ -1866,7 +1874,7 @@ slot0.PrepareSubTeleport = function(slot0)
 	slot3:ResetCanvasOrder()
 end
 
-slot0.TurnOffSubTeleport = function(slot0)
+function slot0.TurnOffSubTeleport(slot0)
 	slot0.subTeleportTargetLine = nil
 	slot1 = slot0.contextData.chapterVO
 
@@ -1875,7 +1883,6 @@ slot0.TurnOffSubTeleport = function(slot0)
 	slot0:ClearEdges("SubmarineHunting")
 	slot0:UpdateDestinationMark()
 
-	slot0.subTeleportMode = false
 	slot4 = slot1.subAutoAttack == 1
 
 	slot0.cellFleets[slot1:GetSubmarineFleet().id]:SetActiveModel(slot4)
@@ -1891,7 +1898,7 @@ slot0.TurnOffSubTeleport = function(slot0)
 	slot0:ShowHuntingRange()
 end
 
-slot0.OnTeleportConfirm = function(slot0, slot1)
+function slot0.OnTeleportConfirm(slot0, slot1)
 	if slot0.contextData.chapterVO:getChapterCell(slot1.row, slot1.column) and slot3:IsWalkable() and not slot2:existBarrier(slot1.row, slot1.column) then
 		if slot2:GetSubmarineFleet().startPos.row == slot1.row and slot4.startPos.column == slot1.column then
 			return
@@ -1914,7 +1921,7 @@ slot0.OnTeleportConfirm = function(slot0, slot1)
 	end
 end
 
-slot0.ShowPathInArrows = function(slot0, slot1)
+function slot0.ShowPathInArrows(slot0, slot1)
 	slot2 = slot0.contextData.chapterVO
 	slot3 = Clone(slot1)
 
@@ -1947,7 +1954,7 @@ slot0.ShowPathInArrows = function(slot0, slot1)
 	end
 end
 
-slot0.ShowMissileAimingMarks = function(slot0, slot1)
+function slot0.ShowMissileAimingMarks(slot0, slot1)
 	_.each(slot1, function (slot0)
 		slot1 = uv0.loader
 
@@ -1961,11 +1968,11 @@ slot0.ShowMissileAimingMarks = function(slot0, slot1)
 	end)
 end
 
-slot0.HideMissileAimingMarks = function(slot0)
+function slot0.HideMissileAimingMarks(slot0)
 	slot0.loader:ReturnGroup("MissileAimingMarks")
 end
 
-slot0.ShowMissileAimingMark = function(slot0, slot1)
+function slot0.ShowMissileAimingMark(slot0, slot1)
 	slot2 = slot0.loader
 
 	slot2:GetPrefab("ui/miaozhun02", "miaozhun02", function (slot0)
@@ -1977,18 +1984,18 @@ slot0.ShowMissileAimingMark = function(slot0, slot1)
 	end, "MissileAimingMark")
 end
 
-slot0.HideMissileAimingMark = function(slot0)
+function slot0.HideMissileAimingMark(slot0)
 	slot0.loader:ClearRequest("MissileAimingMark")
 end
 
-slot0.OnMissileAiming = function(slot0, slot1)
+function slot0.OnMissileAiming(slot0, slot1)
 	slot0:HideMissileAimingMark()
 	slot0:ShowMissileAimingMark(slot1)
 
 	slot0.missileStrikeTargetLine = slot1
 end
 
-slot0.ShowAirSupportAimingMark = function(slot0, slot1)
+function slot0.ShowAirSupportAimingMark(slot0, slot1)
 	slot2 = slot0.loader
 
 	slot2:GetPrefab("ui/miaozhun03", "miaozhun03", function (slot0)
@@ -2000,18 +2007,18 @@ slot0.ShowAirSupportAimingMark = function(slot0, slot1)
 	end, "AirSupportAimingMark")
 end
 
-slot0.HideAirSupportAimingMark = function(slot0)
+function slot0.HideAirSupportAimingMark(slot0)
 	slot0.loader:ClearRequest("AirSupportAimingMark")
 end
 
-slot0.OnAirSupportAiming = function(slot0, slot1)
+function slot0.OnAirSupportAiming(slot0, slot1)
 	slot0:HideAirSupportAimingMark()
 	slot0:ShowAirSupportAimingMark(slot1)
 
 	slot0.missileStrikeTargetLine = slot1
 end
 
-slot0.ShowAirExpelAimingMark = function(slot0)
+function slot0.ShowAirExpelAimingMark(slot0)
 	if not slot0.airSupportTarget or not slot1.source then
 		return
 	end
@@ -2020,7 +2027,7 @@ slot0.ShowAirExpelAimingMark = function(slot0)
 	slot4 = slot0.cellRoot
 	slot4 = slot4:Find(ChapterCell.Line2Name(slot2.row, slot2.column))
 
-	slot5 = function(slot0, slot1)
+	function slot5(slot0, slot1)
 		setParent(slot0, uv0)
 
 		GetOrAddComponent(slot0, typeof(Canvas)).overrideSorting = true
@@ -2069,12 +2076,12 @@ slot0.ShowAirExpelAimingMark = function(slot0)
 	end, "AirExpelAimingMark")
 end
 
-slot0.HideAirExpelAimingMark = function(slot0)
+function slot0.HideAirExpelAimingMark(slot0)
 	slot0.loader:ReturnGroup("AirExpelAimingMark")
 end
 
-slot0.OnAirExpelSelect = function(slot0, slot1)
-	slot3 = function()
+function slot0.OnAirExpelSelect(slot0, slot1)
+	function slot3()
 		uv0:HideAirExpelAimingMark()
 		uv0:ShowAirExpelAimingMark()
 		uv0:updateQuadBase()
@@ -2084,17 +2091,19 @@ slot0.OnAirExpelSelect = function(slot0, slot1)
 	slot0.airSupportTarget = slot0.airSupportTarget or {}
 	slot4 = slot0.airSupportTarget
 
-	if slot0.contextData.chapterVO:GetEnemy(slot1.row, slot1.column) and ChapterConst.IsBossCell(slot5) then
-		if not slot4.source then
+	if slot0.contextData.chapterVO:GetEnemy(slot1.row, slot1.column) then
+		if ChapterConst.IsBossCell(slot5) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelscene_airexpel_select_boss"))
 
 			return
 		end
 
-		slot5 = nil
-	end
+		if slot2:existFleet(FleetType.Normal, slot1.row, slot1.column) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelscene_airexpel_select_battle"))
 
-	if slot5 then
+			return
+		end
+
 		if slot4.source and table.equal(slot4.source:GetLine(), slot5:GetLine()) then
 			slot5 = nil
 		end
@@ -2143,11 +2152,11 @@ slot0.OnAirExpelSelect = function(slot0, slot1)
 	end
 end
 
-slot0.CleanAirSupport = function(slot0)
+function slot0.CleanAirSupport(slot0)
 	slot0.airSupportTarget = nil
 end
 
-slot0.startQuadTween = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.startQuadTween(slot0, slot1, slot2, slot3, slot4)
 	if slot0.presentTws[slot1] then
 		LeanTween.cancel(slot0.presentTws[slot1].uniqueId)
 
@@ -2165,7 +2174,7 @@ slot0.startQuadTween = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.cancelQuadTween = function(slot0, slot1, slot2)
+function slot0.cancelQuadTween(slot0, slot1, slot2)
 	if slot0.quadTws[slot1] then
 		LeanTween.cancel(slot0.quadTws[slot1].uniqueId)
 
@@ -2175,7 +2184,7 @@ slot0.cancelQuadTween = function(slot0, slot1, slot2)
 	setImageAlpha(slot2, ChapterConst.CellEaseOutAlpha)
 end
 
-slot0.killQuadTws = function(slot0)
+function slot0.killQuadTws(slot0)
 	for slot4, slot5 in pairs(slot0.quadTws) do
 		LeanTween.cancel(slot5.uniqueId)
 	end
@@ -2183,7 +2192,7 @@ slot0.killQuadTws = function(slot0)
 	slot0.quadTws = {}
 end
 
-slot0.killPresentTws = function(slot0)
+function slot0.killPresentTws(slot0)
 	for slot4, slot5 in pairs(slot0.presentTws) do
 		LeanTween.cancel(slot5.uniqueId)
 	end
@@ -2191,7 +2200,7 @@ slot0.killPresentTws = function(slot0)
 	slot0.presentTws = {}
 end
 
-slot0.startMarkTween = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.startMarkTween(slot0, slot1, slot2, slot3, slot4)
 	if not slot0.markTws[slot1] then
 		setImageAlpha(slot2, slot3 or 1)
 
@@ -2203,7 +2212,7 @@ slot0.startMarkTween = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.cancelMarkTween = function(slot0, slot1, slot2, slot3)
+function slot0.cancelMarkTween(slot0, slot1, slot2, slot3)
 	if slot0.markTws[slot1] then
 		LeanTween.cancel(slot0.markTws[slot1].uniqueId)
 
@@ -2213,7 +2222,7 @@ slot0.cancelMarkTween = function(slot0, slot1, slot2, slot3)
 	setImageAlpha(slot2, slot3 or ChapterConst.CellEaseOutAlpha)
 end
 
-slot0.moveFleet = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.moveFleet(slot0, slot1, slot2, slot3, slot4)
 	slot8 = slot0.cellFleets[slot0.contextData.chapterVO.fleet.id]
 
 	slot8:SetSpineVisible(true)
@@ -2262,7 +2271,7 @@ slot0.moveFleet = function(slot0, slot1, slot2, slot3, slot4)
 	end)
 end
 
-slot0.moveSub = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.moveSub(slot0, slot1, slot2, slot3, slot4)
 	slot7 = slot0.cellFleets[slot0.contextData.chapterVO.fleets[slot1].id]
 
 	slot0:updateQuadCells(ChapterConst.QuadStateFrozen)
@@ -2279,17 +2288,17 @@ slot0.moveSub = function(slot0, slot1, slot2, slot3, slot4)
 	end)
 end
 
-slot0.moveChampion = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.moveChampion(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot0.contextData.chapterVO
 	slot7 = slot0.cellChampions[slot1]
 
-	slot8 = function(slot0)
+	function slot8(slot0)
 	end
 
-	slot9 = function(slot0)
+	function slot9(slot0)
 	end
 
-	slot10 = function()
+	function slot10()
 		if uv0.GetRotatePivot then
 			uv1.rotation = uv0:GetRotatePivot().transform.localRotation
 		end
@@ -2307,7 +2316,7 @@ slot0.moveChampion = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.moveTransport = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.moveTransport(slot0, slot1, slot2, slot3, slot4)
 	slot0:updateQuadCells(ChapterConst.QuadStateFrozen)
 	slot0:moveCellView(slot0.cellFleets[slot0.contextData.chapterVO.fleets[slot1].id], slot2, slot3, function (slot0)
 	end, function (slot0)
@@ -2319,7 +2328,7 @@ slot0.moveTransport = function(slot0, slot1, slot2, slot3, slot4)
 	end)
 end
 
-slot0.moveCellView = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.moveCellView(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot7 = slot0.contextData.chapterVO
 	slot8 = nil
 	slot8 = coroutine.create(function ()
@@ -2392,7 +2401,7 @@ slot0.moveCellView = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	end)()
 end
 
-slot0.moveStep = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.moveStep(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot7 = slot0.contextData.chapterVO:GetQuickPlayFlag() and ChapterConst.ShipStepQuickPlayScale or 1
 	slot8 = nil
 
@@ -2432,7 +2441,7 @@ slot0.moveStep = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	end))
 end
 
-slot0.teleportSubView = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.teleportSubView(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot7 = slot0.contextData.chapterVO
 
 	slot0:PlaySubAnimation(slot1, true, function ()
@@ -2443,7 +2452,7 @@ slot0.teleportSubView = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6
 	end)
 end
 
-slot0.CellToScreen = function(slot0, slot1, slot2)
+function slot0.CellToScreen(slot0, slot1, slot2)
 	slot3 = slot0._tf:Find(ChapterConst.PlaneName .. "/cells")
 
 	assert(slot3, "plane not exist.")
@@ -2496,7 +2505,7 @@ slot5 = {
 	}
 }
 
-slot0.AddCellEdge = function(slot0, slot1, slot2, ...)
+function slot0.AddCellEdge(slot0, slot1, slot2, ...)
 	slot3 = 0
 	slot4 = 1
 
@@ -2517,7 +2526,7 @@ slot0.AddCellEdge = function(slot0, slot1, slot2, ...)
 	slot0:CreateEdge(slot3, slot2, ...)
 end
 
-slot0.AddOutlines = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.AddOutlines(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = {}
 	slot7 = {}
 
@@ -2558,11 +2567,11 @@ slot0.AddOutlines = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0:CreateOutlineCorners(slot7, slot2, slot3, slot4, slot5 .. "_corner")
 end
 
-slot0.isHuntingRangeVisible = function(slot0)
+function slot0.isHuntingRangeVisible(slot0)
 	return slot0.contextData.huntingRangeVisibility % 2 == 0
 end
 
-slot0.toggleHuntingRange = function(slot0)
+function slot0.toggleHuntingRange(slot0)
 	slot0:hideQuadMark(ChapterConst.MarkHuntingRange)
 	slot0:ClearEdges("SubmarineHunting")
 
@@ -2576,7 +2585,7 @@ slot0.toggleHuntingRange = function(slot0)
 	slot0:updateChampions()
 end
 
-slot0.ShowHuntingRange = function(slot0)
+function slot0.ShowHuntingRange(slot0)
 	if not slot0.contextData.chapterVO:GetSubmarineFleet() then
 		return
 	end
@@ -2586,14 +2595,14 @@ slot0.ShowHuntingRange = function(slot0)
 	end), false)
 end
 
-slot0.RefreshHuntingRange = function(slot0, slot1, slot2)
+function slot0.RefreshHuntingRange(slot0, slot1, slot2)
 	slot0:showQuadMark(slot1, ChapterConst.MarkHuntingRange, "cell_hunting_range", Vector2(100, 100), slot0.material_Add, slot2)
 	_.each(slot1, function (slot0)
 		uv0:AddCellEdge(uv1, slot0, not uv2, nil, , "SubmarineHunting")
 	end)
 end
 
-slot0.ShowStaticHuntingRange = function(slot0)
+function slot0.ShowStaticHuntingRange(slot0)
 	slot0:hideQuadMark(ChapterConst.MarkHuntingRange)
 	slot0:ClearEdges("SubmarineHunting")
 
@@ -2608,7 +2617,7 @@ slot0.ShowStaticHuntingRange = function(slot0)
 	end), true)
 end
 
-slot0.ShowTargetHuntingRange = function(slot0, slot1)
+function slot0.ShowTargetHuntingRange(slot0, slot1)
 	slot0:hideQuadMark(ChapterConst.MarkHuntingRange)
 	slot0:ClearEdges("SubmarineHunting")
 
@@ -2633,7 +2642,7 @@ slot0.ShowTargetHuntingRange = function(slot0, slot1)
 	slot0:updateChampions()
 end
 
-slot0.OnChangeSubAutoAttack = function(slot0)
+function slot0.OnChangeSubAutoAttack(slot0)
 	if not slot0.contextData.chapterVO:GetSubmarineFleet() then
 		return
 	end
@@ -2650,7 +2659,7 @@ slot0.OnChangeSubAutoAttack = function(slot0)
 	end)
 end
 
-slot0.displayEscapeGrid = function(slot0)
+function slot0.displayEscapeGrid(slot0)
 	if not slot0.contextData.chapterVO:existOni() then
 		return
 	end
@@ -2664,15 +2673,15 @@ slot0.displayEscapeGrid = function(slot0)
 	end), ChapterConst.MarkEscapeGrid, "cell_escape_grid", Vector2(105, 105))
 end
 
-slot0.showQuadMark = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.showQuadMark(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot0:ShowAnyQuadMark(slot1, slot2, slot3, slot4, slot5, false, slot6)
 end
 
-slot0.ShowTopQuadMark = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.ShowTopQuadMark(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot0:ShowAnyQuadMark(slot1, slot2, slot3, slot4, slot5, true, slot6)
 end
 
-slot0.ShowAnyQuadMark = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function slot0.ShowAnyQuadMark(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot8 = slot0.contextData.chapterVO
 
 	for slot12, slot13 in pairs(slot1) do
@@ -2714,7 +2723,7 @@ slot0.ShowAnyQuadMark = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6
 	end
 end
 
-slot0.hideQuadMark = function(slot0, slot1)
+function slot0.hideQuadMark(slot0, slot1)
 	if slot1 and not slot0.markQuads[slot1] then
 		return
 	end
@@ -2735,11 +2744,11 @@ slot0.hideQuadMark = function(slot0, slot1)
 	end
 end
 
-slot0.CreateEdgeIndex = function(slot0, slot1, slot2, slot3)
+function slot0.CreateEdgeIndex(slot0, slot1, slot2, slot3)
 	return ChapterCell.Line2Name(slot0, slot1) .. (slot3 and "_" .. slot3 or "") .. "_" .. slot2
 end
 
-slot0.CreateEdge = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.CreateEdge(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	if slot1 <= 0 or slot1 >= 16 then
 		return
 	end
@@ -2784,7 +2793,7 @@ slot0.CreateEdge = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	end
 end
 
-slot0.ClearEdge = function(slot0, slot1)
+function slot0.ClearEdge(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.cellEdges) do
 		for slot10 = 1, 4 do
 			if slot6[slot0.CreateEdgeIndex(slot1.row, slot1.column, slot10, slot5)] then
@@ -2799,7 +2808,7 @@ slot0.ClearEdge = function(slot0, slot1)
 	end
 end
 
-slot0.ClearEdges = function(slot0, slot1)
+function slot0.ClearEdges(slot0, slot1)
 	if not next(slot0.cellEdges) then
 		return
 	end
@@ -2818,7 +2827,7 @@ slot0.ClearEdges = function(slot0, slot1)
 	end
 end
 
-slot0.CreateOutlines = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.CreateOutlines(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = slot0.contextData.chapterVO
 	slot7 = slot6.theme.cellSize + slot6.theme.cellSpace
 
@@ -2873,7 +2882,7 @@ slot0.CreateOutlines = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	end
 end
 
-slot0.CreateOutlineCorners = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.CreateOutlineCorners(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = slot0.contextData.chapterVO
 
 	for slot10, slot11 in pairs(slot1) do
@@ -2904,12 +2913,12 @@ slot0.CreateOutlineCorners = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	end
 end
 
-slot0.updateCoastalGunAttachArea = function(slot0)
+function slot0.updateCoastalGunAttachArea(slot0)
 	slot0:hideQuadMark(ChapterConst.MarkCoastalGun)
 	slot0:showQuadMark(slot0.contextData.chapterVO:getCoastalGunArea(), ChapterConst.MarkCoastalGun, "cell_coastal_gun", Vector2(110, 110), nil, false)
 end
 
-slot0.InitIdolsAnim = function(slot0)
+function slot0.InitIdolsAnim(slot0)
 	if not pg.chapter_pop_template[slot0.contextData.chapterVO.id] then
 		return
 	end
@@ -2932,7 +2941,7 @@ slot0.InitIdolsAnim = function(slot0)
 	end
 end
 
-slot0.ClearIdolsAnim = function(slot0)
+function slot0.ClearIdolsAnim(slot0)
 	if slot0.idols then
 		for slot4, slot5 in ipairs(slot0.idols) do
 			slot5:Clear()
@@ -2944,17 +2953,17 @@ slot0.ClearIdolsAnim = function(slot0)
 	end
 end
 
-slot0.GetEnemyCellView = function(slot0, slot1)
+function slot0.GetEnemyCellView(slot0, slot1)
 	return _.detect(slot0.cellChampions, function (slot0)
 		return slot0:GetLine().row == uv0.row and slot1.column == uv0.column
 	end) or slot0.attachmentCells[ChapterCell.Line2Name(slot1.row, slot1.column)]
 end
 
-slot0.TransformLine2PlanePos = function(slot0, slot1)
+function slot0.TransformLine2PlanePos(slot0, slot1)
 	return string.char(string.byte("A") + slot1.column - slot0.indexMin.y) .. string.char(string.byte("1") + slot1.row - slot0.indexMin.x)
 end
 
-slot0.AlignListContainer = function(slot0, slot1)
+function slot0.AlignListContainer(slot0, slot1)
 	for slot6 = slot1, slot0.childCount - 1 do
 		setActive(slot0:GetChild(slot6), false)
 	end
@@ -2968,13 +2977,13 @@ slot0.AlignListContainer = function(slot0, slot1)
 	end
 end
 
-slot0.frozen = function(slot0)
+function slot0.frozen(slot0)
 	slot0.forzenCount = (slot0.forzenCount or 0) + 1
 
 	slot0.parent:frozen()
 end
 
-slot0.unfrozen = function(slot0)
+function slot0.unfrozen(slot0)
 	if slot0.exited then
 		return
 	end
@@ -2984,11 +2993,11 @@ slot0.unfrozen = function(slot0)
 	slot0.parent:unfrozen()
 end
 
-slot0.isfrozen = function(slot0)
+function slot0.isfrozen(slot0)
 	return slot0.parent.frozenCount > 0
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	slot0:clearAll()
 
 	if (slot0.forzenCount or 0) > 0 then

@@ -1,21 +1,21 @@
 slot1 = class("MapBuilderShinano", import(".MapBuilder"))
 
-slot1.Ctor = function(slot0, ...)
+function slot1.Ctor(slot0, ...)
 	uv0.super.Ctor(slot0, ...)
 
 	slot0.chapterTFsById = {}
 	slot0.chaptersInBackAnimating = {}
 end
 
-slot1.GetType = function(slot0)
+function slot1.GetType(slot0)
 	return uv0.TYPESHINANO
 end
 
-slot1.getUIName = function(slot0)
+function slot1.getUIName(slot0)
 	return "Shinano_levels"
 end
 
-slot1.OnInit = function(slot0)
+function slot1.OnInit(slot0)
 	slot0.tpl = slot0._tf:Find("level_tpl")
 
 	setActive(slot0.tpl, false)
@@ -37,13 +37,13 @@ slot1.OnInit = function(slot0)
 	slot0:InitTransformMapBtn(slot0._tf:Find("huigui"), -1, slot1.prefabItem[3])
 end
 
-slot1.OnShow = function(slot0)
+function slot1.OnShow(slot0)
 	setActive(slot0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
 	setActive(slot0.sceneParent.topChapter:Find("title_chapter"), true)
 	setActive(slot0.sceneParent.topChapter:Find("type_skirmish"), true)
 end
 
-slot1.OnHide = function(slot0)
+function slot1.OnHide(slot0)
 	setActive(slot0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
 	setActive(slot0.sceneParent.topChapter:Find("title_chapter"), false)
 
@@ -59,7 +59,7 @@ slot1.OnHide = function(slot0)
 	uv0.super.OnHide(slot0)
 end
 
-slot1.TrySwitchNextMap = function(slot0, slot1)
+function slot1.TrySwitchNextMap(slot0, slot1)
 	if not getProxy(ChapterProxy):getMapById(slot0.sceneParent.contextData.mapIdx + slot1) then
 		return
 	end
@@ -81,7 +81,7 @@ slot1.TrySwitchNextMap = function(slot0, slot1)
 	return true
 end
 
-slot1.InitTransformMapBtn = function(slot0, slot1, slot2, slot3)
+function slot1.InitTransformMapBtn(slot0, slot1, slot2, slot3)
 	onButton(slot0.sceneParent, slot1, function ()
 		if uv0.sceneParent:isfrozen() then
 			return
@@ -126,7 +126,7 @@ slot1.InitTransformMapBtn = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot1.Update = function(slot0, slot1)
+function slot1.Update(slot0, slot1)
 	slot0.float.pivot = Vector2(0.5, 0.5)
 	slot0.float.anchoredPosition = Vector2(0, 0)
 
@@ -135,14 +135,12 @@ slot1.Update = function(slot0, slot1)
 	uv0.super.Update(slot0, slot1)
 end
 
-slot1.UpdateButtons = function(slot0)
+function slot1.UpdateButtons(slot0)
 	slot0.sceneParent:updateDifficultyBtns()
 	slot0.sceneParent:updateActivityBtns()
 end
 
-slot1.PostUpdateMap = function(slot0, slot1)
-	slot4 = getProxy(ChapterProxy):getMapsByActivities()
-
+function slot1.PostUpdateMap(slot0, slot1)
 	setActive(slot0._tf:Find("rumeng"), false)
 	setActive(slot0._tf:Find("huigui"), false)
 
@@ -150,62 +148,58 @@ slot1.PostUpdateMap = function(slot0, slot1)
 		setActive(slot0.sceneParent.btnPrev, false)
 		setActive(slot0.sceneParent.btnNext, false)
 
-		slot7 = _.detect(slot4, function (slot0)
-			return slot0.id == uv0.id + 1
-		end)
+		slot6 = getProxy(ChapterProxy):getMapById(slot1.id + 1)
 
-		setActive(slot5, slot7)
-		setActive(slot6, _.detect(slot4, function (slot0)
-			return slot0.id == uv0.id - 1
-		end))
+		setActive(slot4, slot6)
+		setActive(slot5, getProxy(ChapterProxy):getMapById(slot1.id - 1))
+		LeanTween.cancel(go(slot4), true)
 		LeanTween.cancel(go(slot5), true)
-		LeanTween.cancel(go(slot6), true)
 
-		if slot7 then
-			slot9 = tf(slot5).localScale
-			slot10 = tf(slot5)
-			slot10 = slot10:GetChild(0)
-			slot10 = slot10:Find("Quad")
-			slot10 = slot10:GetComponent(typeof(MeshRenderer)).sharedMaterial
-			slot12 = Clone(slot10:GetColor("_MainColor"))
-			slot13 = LeanTween.value(go(slot5), 0, 1, 0.8)
-			slot13 = slot13:setOnUpdate(System.Action_float(function (slot0)
+		if slot6 then
+			slot8 = tf(slot4).localScale
+			slot9 = tf(slot4)
+			slot9 = slot9:GetChild(0)
+			slot9 = slot9:Find("Quad")
+			slot9 = slot9:GetComponent(typeof(MeshRenderer)).sharedMaterial
+			slot11 = Clone(slot9:GetColor("_MainColor"))
+			slot12 = LeanTween.value(go(slot4), 0, 1, 0.8)
+			slot12 = slot12:setOnUpdate(System.Action_float(function (slot0)
 				uv0.a = uv1.a * slot0
 
 				uv2:SetColor("_MainColor", uv0)
 			end))
-			slot13 = slot13:setEase(LeanTweenType.easeInCubic)
+			slot12 = slot12:setEase(LeanTweenType.easeInCubic)
 
-			slot0:RecordTween("rumengAlphaTween", slot13:setOnComplete(System.Action(function ()
+			slot0:RecordTween("rumengAlphaTween", slot12:setOnComplete(System.Action(function ()
 				uv0:SetColor("_MainColor", uv1)
 			end)).id)
 
 			return
 		end
 
-		if slot8 then
-			slot9 = tf(slot6).localScale
-			slot10 = tf(slot6)
-			slot10 = slot10:GetChild(0)
-			slot10 = slot10:Find("Quad")
-			slot10 = slot10:GetComponent(typeof(MeshRenderer)).sharedMaterial
-			slot12 = Clone(slot10:GetColor("_MainColor"))
-			slot13 = LeanTween.value(go(slot6), 0, 1, 0.8)
-			slot13 = slot13:setOnUpdate(System.Action_float(function (slot0)
+		if slot7 then
+			slot8 = tf(slot5).localScale
+			slot9 = tf(slot5)
+			slot9 = slot9:GetChild(0)
+			slot9 = slot9:Find("Quad")
+			slot9 = slot9:GetComponent(typeof(MeshRenderer)).sharedMaterial
+			slot11 = Clone(slot9:GetColor("_MainColor"))
+			slot12 = LeanTween.value(go(slot5), 0, 1, 0.8)
+			slot12 = slot12:setOnUpdate(System.Action_float(function (slot0)
 				uv0.a = uv1.a * slot0
 
 				uv2:SetColor("_MainColor", uv0)
 			end))
-			slot13 = slot13:setEase(LeanTweenType.easeInCubic)
+			slot12 = slot12:setEase(LeanTweenType.easeInCubic)
 
-			slot0:RecordTween("huiguiAlphaTween", slot13:setOnComplete(System.Action(function ()
+			slot0:RecordTween("huiguiAlphaTween", slot12:setOnComplete(System.Action(function ()
 				uv0:SetColor("_MainColor", uv1)
 			end)).id)
 		end
 	end
 end
 
-slot1.UpdateMapItems = function(slot0)
+function slot1.UpdateMapItems(slot0)
 	if not slot0:isShowing() then
 		return
 	end
@@ -224,7 +218,7 @@ slot1.UpdateMapItems = function(slot0)
 		end
 	end
 
-	slot8 = function(slot0, slot1, slot2)
+	function slot8(slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = uv0[slot1 + 1]
 
@@ -311,7 +305,7 @@ slot1.UpdateMapItems = function(slot0)
 	end
 end
 
-slot1.UpdateMapItem = function(slot0, slot1, slot2)
+function slot1.UpdateMapItem(slot0, slot1, slot2)
 	slot3 = slot2:getConfigTable()
 
 	setAnchoredPosition(slot1, {
@@ -463,7 +457,7 @@ slot1.UpdateMapItem = function(slot0, slot1, slot2)
 	end, SFX_UI_WEIGHANCHOR_SELECT)
 end
 
-slot1.PlayChapterItemAnimation = function(slot0, slot1, slot2, slot3)
+function slot1.PlayChapterItemAnimation(slot0, slot1, slot2, slot3)
 	slot4 = findTF(slot1, "main")
 	slot6 = findTF(slot4, "circle")
 	slot7 = findTF(slot4, "info/bk")
@@ -489,7 +483,7 @@ slot1.PlayChapterItemAnimation = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot1.PlayChapterItemAnimationBackward = function(slot0, slot1, slot2, slot3)
+function slot1.PlayChapterItemAnimationBackward(slot0, slot1, slot2, slot3)
 	slot4 = findTF(slot1, "main")
 	slot6 = findTF(slot4, "circle")
 	slot7 = findTF(slot4, "info/bk")
@@ -519,7 +513,7 @@ slot1.PlayChapterItemAnimationBackward = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot1.UpdateChapterTF = function(slot0, slot1)
+function slot1.UpdateChapterTF(slot0, slot1)
 	if slot0.chapterTFsById[slot1] then
 		slot3 = getProxy(ChapterProxy):getChapterById(slot1)
 
@@ -528,7 +522,7 @@ slot1.UpdateChapterTF = function(slot0, slot1)
 	end
 end
 
-slot1.AddChapterTF = function(slot0, slot1)
+function slot1.AddChapterTF(slot0, slot1)
 	slot2 = slot0.data
 
 	if slot0.chapterTFsById[slot1] then
@@ -551,7 +545,7 @@ slot1.AddChapterTF = function(slot0, slot1)
 	end
 end
 
-slot1.TryOpenChapter = function(slot0, slot1)
+function slot1.TryOpenChapter(slot0, slot1)
 	if slot0.chapterTFsById[slot1] then
 		triggerButton(slot2:Find("main"))
 	end

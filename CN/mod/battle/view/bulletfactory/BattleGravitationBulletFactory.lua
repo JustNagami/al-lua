@@ -4,15 +4,15 @@ slot0.Battle.BattleGravitationBulletFactory = singletonClass("BattleGravitationB
 slot0.Battle.BattleGravitationBulletFactory.__name = "BattleGravitationBulletFactory"
 slot1 = slot0.Battle.BattleGravitationBulletFactory
 
-slot1.Ctor = function(slot0)
+function slot1.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot1.MakeBullet = function(slot0)
+function slot1.MakeBullet(slot0)
 	return uv0.Battle.BattleTorpedoBullet.New()
 end
 
-slot1.onBulletHitFunc = function(slot0, slot1, slot2)
+function slot1.onBulletHitFunc(slot0, slot1, slot2)
 	if slot0:GetBulletData():GetPierceCount() <= 0 then
 		return
 	end
@@ -23,19 +23,21 @@ slot1.onBulletHitFunc = function(slot0, slot1, slot2)
 
 	uv1.Battle.PlayBattleSFX(slot7:GetHitSFX())
 
-	slot12 = slot7:GetTemplate().extra_param.buff_id
+	slot11 = slot7:GetTemplate().extra_param
+	slot12 = slot11.buff_id
+	slot13 = slot11.buff_level or 1
 
 	uv0.GetDataProxy():SpawnLastingColumnArea(slot7:GetEffectField(), slot7:GetIFF(), pg.Tool.FilterY(slot7:GetPosition():Clone()), slot5.range, slot5.time, function (slot0)
 		if uv0:CanDealDamage() then
 			for slot4, slot5 in ipairs(slot0) do
 				if slot5.Active then
-					uv1:GetSceneMediator():GetCharacter(slot5.UID):GetUnitData():AddBuff(uv2.Battle.BattleBuffUnit.New(uv3))
+					uv1:GetSceneMediator():GetCharacter(slot5.UID):GetUnitData():AddBuff(uv2.Battle.BattleBuffUnit.New(uv3, uv4))
 
-					if not uv4.noIntervalDMG then
-						uv5:HandleDamage(uv0, slot6)
+					if not uv5.noIntervalDMG then
+						uv6:HandleDamage(uv0, slot6)
 					end
 
-					if pg.Tool.FilterY(uv6 - slot6:GetPosition()).magnitude < (uv4.force or 0.1) then
+					if pg.Tool.FilterY(uv7 - slot6:GetPosition()).magnitude < (uv5.force or 0.1) then
 						slot6:SetUncontrollableSpeed(slot9, 0.001, 1e-06)
 					else
 						slot6:SetUncontrollableSpeed(slot9, slot8, 1e-07)
@@ -90,11 +92,11 @@ slot1.onBulletHitFunc = function(slot0, slot1, slot2)
 	end, true):SetDiveFilter(slot7:GetDiveFilter())
 end
 
-slot1.onBulletMissFunc = function(slot0)
+function slot1.onBulletMissFunc(slot0)
 	uv0.onBulletHitFunc(slot0)
 end
 
-slot1.MakeModel = function(slot0, slot1, slot2)
+function slot1.MakeModel(slot0, slot1, slot2)
 	slot3 = slot1:GetBulletData()
 	slot4 = slot3:GetTemplate()
 	slot5 = slot0:GetDataProxy()

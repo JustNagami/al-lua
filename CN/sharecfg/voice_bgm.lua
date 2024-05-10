@@ -91,16 +91,16 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "login",
+		default_bgm = "song-Cyanidin-full",
 		special_bgm = "",
 		time = "",
-		bgm = "login"
+		bgm = "song-Cyanidin-full"
 	},
 	NewMainScene = {
-		default_bgm = "main-christmas",
+		default_bgm = "main",
 		special_bgm = "",
 		time = "",
-		bgm = "main-christmas"
+		bgm = "main"
 	},
 	HoloLiveLinkGameView = {
 		default_bgm = "holo-fff-inst",
@@ -163,10 +163,10 @@ pg.voice_bgm = {
 		bgm = "idol-BlueSpirit-inst"
 	},
 	NewShopsScene = {
-		default_bgm = "battle-ucnf",
+		default_bgm = "song-Alizarin-full-inst",
 		special_bgm = "",
 		time = "",
-		bgm = "battle-ucnf"
+		bgm = "song-Alizarin-full-inst"
 	},
 	SkinShopScene = {
 		default_bgm = "main",
@@ -721,10 +721,10 @@ pg.voice_bgm = {
 		bgm = "theme-designshipVI"
 	},
 	SurveyPage = {
-		default_bgm = "theme-starsea-core",
+		default_bgm = "level02",
 		special_bgm = "",
 		time = "",
-		bgm = "theme-starsea-core"
+		bgm = "level02"
 	},
 	CrusingDisplayActPage = {
 		default_bgm = "blueocean-image",
@@ -1180,5 +1180,335 @@ pg.voice_bgm = {
 		special_bgm = "",
 		time = "",
 		bgm = "newyear2"
+	},
+	SkinMagazinePage4 = {
+		default_bgm = "story-dazy-style",
+		special_bgm = "",
+		time = "",
+		bgm = "story-dazy-style"
+	},
+	NewYear24LoginPage = {
+		default_bgm = "theme-SeaAndSun-image",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-SeaAndSun-image"
+	},
+	BeachGamePage = {
+		default_bgm = "main-SeaAndSun",
+		special_bgm = "",
+		time = "",
+		bgm = "main-SeaAndSun"
+	},
+	DeXiMainPage = {
+		default_bgm = "story-midgard",
+		special_bgm = "",
+		time = "",
+		bgm = "story-midgard"
+	},
+	DexiV4PtPage = {
+		default_bgm = "story-midgard",
+		special_bgm = "",
+		time = "",
+		bgm = "story-midgard"
+	},
+	DeXiQianShaoReRePtPage = {
+		default_bgm = "bsm-6",
+		special_bgm = "",
+		time = "",
+		bgm = "bsm-6"
+	},
+	HuttenV2LoginPage = {
+		default_bgm = "bsm-4",
+		special_bgm = "",
+		time = "",
+		bgm = "bsm-4"
+	},
+	FeiyunLoginPage = {
+		default_bgm = "main-chunjie3",
+		special_bgm = "",
+		time = "",
+		bgm = "main-chunjie3"
+	},
+	ColoringAnshanUI = {
+		default_bgm = "main-chunjie",
+		special_bgm = "",
+		time = "",
+		bgm = "main-chunjie"
+	},
+	TaiyuanAlterItemPage = {
+		default_bgm = "main-chunjie3",
+		special_bgm = "",
+		time = "",
+		bgm = "main-chunjie3"
+	},
+	SkinMagazineSpringPage1 = {
+		default_bgm = "main-chunjie4-2",
+		special_bgm = "",
+		time = "",
+		bgm = "main-chunjie4-2"
+	},
+	NewYearGreetingPtPage = {
+		default_bgm = "main-chunjie3",
+		special_bgm = "",
+		time = "",
+		bgm = "main-chunjie3"
+	},
+	FireworksPt2024Page = {
+		default_bgm = "main-chunjie3",
+		special_bgm = "",
+		time = "",
+		bgm = "main-chunjie3"
+	},
+	SpringFestival2024Scene = {
+		default_bgm = "main-chunjie2",
+		special_bgm = "",
+		time = "",
+		bgm = "main-chunjie2"
+	},
+	ActivityBossHuanChangScene = {
+		default_bgm = "main-chunjie5-1",
+		special_bgm = "",
+		time = "",
+		bgm = "main-chunjie5-1"
+	},
+	EducateMemoryLayer = {
+		default_bgm = "story-richang-quiet",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-quiet"
+	},
+	EducatePolaroidLayer = {
+		default_bgm = "story-richang-quiet",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-quiet"
+	},
+	EducateEndingLayer = {
+		default_bgm = "story-richang-quiet",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-quiet"
+	},
+	EducateScheduleScene = {
+		default_bgm = "level",
+		special_bgm = "",
+		time = "",
+		bgm = "level"
+	},
+	EducateMapScene = {
+		default_bgm = "votefes-start",
+		special_bgm = "",
+		time = "",
+		bgm = "votefes-start"
+	},
+	EducateCharDockScene = {
+		default_bgm = "story-richang-8",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-8"
+	},
+	EducateCharProfileScene = {
+		default_bgm = "story-richang-8",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-8"
+	},
+	SkinMagazineSpringPage2 = {
+		default_bgm = "Main-chunjie4-2",
+		special_bgm = "",
+		time = "",
+		bgm = "Main-chunjie4-2"
+	},
+	LanternFestivalView = {
+		default_bgm = "story-china",
+		special_bgm = "",
+		time = "",
+		bgm = "story-china"
+	},
+	ChkalovTecCatchupPage = {
+		default_bgm = "theme-designshipVI",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-designshipVI"
+	},
+	MaoxiV4FramePage = {
+		default_bgm = "story-richang-sooth",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-sooth"
+	},
+	MaoxiV4TaskPage = {
+		default_bgm = "story-richang-sooth",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-sooth"
+	},
+	MaoxiV4MainPage = {
+		default_bgm = "theme-antarctica",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-antarctica"
+	},
+	MaoxiV4PtPage = {
+		default_bgm = "story-antarctica-serious",
+		special_bgm = "",
+		time = "",
+		bgm = "story-antarctica-serious"
+	},
+	SleeplessCityPage = {
+		default_bgm = "story-nonightcity",
+		special_bgm = "",
+		time = "",
+		bgm = "story-nonightcity"
+	},
+	YidaliSPMainPage = {
+		default_bgm = "battle-boss-italy",
+		special_bgm = "",
+		time = "",
+		bgm = "battle-boss-italy"
+	},
+	YidaliSPPTPage = {
+		default_bgm = "theme-arbitrator-tower",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-arbitrator-tower"
+	},
+	YidaliSPV2LoginPage = {
+		default_bgm = "story-italy",
+		special_bgm = "",
+		time = "",
+		bgm = "story-italy"
+	},
+	MonopolyPtPage = {
+		default_bgm = "story-richang-2",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-2"
+	},
+	MonopolyPtScene = {
+		default_bgm = "story-richang-3",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-3"
+	},
+	OtherWorldMainPage = {
+		default_bgm = "story-mmorpg",
+		special_bgm = "",
+		time = "",
+		bgm = "story-mmorpg"
+	},
+	OtherworldTerminalLayer = {
+		default_bgm = "story-mmorpg",
+		special_bgm = "",
+		time = "",
+		bgm = "story-mmorpg"
+	},
+	OtherworldBackHillScene = {
+		default_bgm = "Story-musicanniversary-gorgeous",
+		special_bgm = "",
+		time = "",
+		bgm = "Story-musicanniversary-gorgeous"
+	},
+	OtherWorldTempleScene = {
+		default_bgm = "Theme-SeaAndSun-soft",
+		special_bgm = "",
+		time = "",
+		bgm = "Theme-SeaAndSun-soft"
+	},
+	OtherWorldTaskLayer = {
+		default_bgm = "story-mmorpg",
+		special_bgm = "",
+		time = "",
+		bgm = "story-mmorpg"
+	},
+	OtherworldMapScene = {
+		default_bgm = "story-mmorpg",
+		special_bgm = "",
+		time = "",
+		bgm = "story-mmorpg"
+	},
+	AprilFoolDiscovery2024Page = {
+		default_bgm = "story-battle-16bit-SFC",
+		special_bgm = "",
+		time = "",
+		bgm = "story-battle-16bit-SFC"
+	},
+	MaoxiV3MainPage = {
+		default_bgm = "battle-deepecho",
+		special_bgm = "",
+		time = "",
+		bgm = "battle-deepecho"
+	},
+	MaoxiV3PtPage = {
+		default_bgm = "battle-deepecho",
+		special_bgm = "",
+		time = "",
+		bgm = "battle-deepecho"
+	},
+	LoginSignRe1Page = {
+		default_bgm = "battle-boss-deepecho",
+		special_bgm = "",
+		time = "",
+		bgm = "battle-boss-deepecho"
+	},
+	MaoxiV3FrameLightPage = {
+		default_bgm = "bgm-cccp2",
+		special_bgm = "",
+		time = "",
+		bgm = "bgm-cccp2"
+	},
+	VotingResulitAwardPage = {
+		default_bgm = "votefes-up",
+		special_bgm = "",
+		time = "",
+		bgm = "votefes-up"
+	},
+	LittleChaijunRePage = {
+		default_bgm = "bar-soft",
+		special_bgm = "",
+		time = "",
+		bgm = "bar-soft"
+	},
+	LycorisActivationPage = {
+		default_bgm = "theme-akagi-inside",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-akagi-inside"
+	},
+	IdolV3MainPage = {
+		default_bgm = "song-Alizarin-full",
+		special_bgm = "",
+		time = "",
+		bgm = "song-Alizarin-full"
+	},
+	IdolV3PtPage = {
+		default_bgm = "song-Cyanidin-full-inst",
+		special_bgm = "",
+		time = "",
+		bgm = "song-Cyanidin-full-inst"
+	},
+	MusicFestivalScene3 = {
+		default_bgm = "song-Cyanidin-full-inst",
+		special_bgm = "",
+		time = "",
+		bgm = "song-Cyanidin-full-inst"
+	},
+	SkinMagazinePage5 = {
+		default_bgm = "story-richang-11",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-11"
+	},
+	XiaoXinNongPtPage = {
+		default_bgm = "story-richang-10",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-10"
+	},
+	XiefeierIdolMusicPage = {
+		default_bgm = "song-Alizarin-full-inst",
+		special_bgm = "",
+		time = "",
+		bgm = "song-Alizarin-full-inst"
 	}
 }

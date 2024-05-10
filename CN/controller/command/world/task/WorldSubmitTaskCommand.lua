@@ -1,6 +1,6 @@
 slot0 = class("WorldSubmitTaskCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot4 = nowWorld()
 	slot5 = slot4:GetInventoryProxy()
 
@@ -44,7 +44,7 @@ slot0.execute = function(slot0, slot1)
 			taskId = uv0
 		}, 33208, function (slot0)
 			if slot0.result == 0 then
-				slot1 = function(slot0, slot1, slot2)
+				function slot1(slot0, slot1, slot2)
 					slot3 = getProxy(BayProxy)
 					slot4 = {}
 					slot5 = {}

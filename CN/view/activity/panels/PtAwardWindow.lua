@@ -1,6 +1,6 @@
 slot0 = class("PtAwardWindow")
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	slot0._tf = slot1
 	slot0.binder = slot2
 	slot3 = slot0._tf
@@ -32,7 +32,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.UpdateList = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.UpdateList(slot0, slot1, slot2, slot3, slot4)
 	assert(#slot1 == #slot2)
 	slot0.UIlist:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
@@ -56,11 +56,7 @@ slot0.UpdateList = function(slot0, slot1, slot2, slot3, slot4)
 			end
 
 			setText(slot2:Find("target/title"), uv2.resTitle)
-			updateDrop(slot2:Find("award"), {
-				type = slot3[1],
-				id = slot3[2],
-				count = slot3[3]
-			}, {
+			updateDrop(slot2:Find("award"), Drop.Create(slot3), {
 				hideName = true
 			})
 			onButton(uv2.binder, slot2:Find("award"), function ()
@@ -68,11 +64,13 @@ slot0.UpdateList = function(slot0, slot1, slot2, slot3, slot4)
 			end, SFX_PANEL)
 			setActive(slot2:Find("award/mask"), slot1 + 1 <= uv3)
 
-			if uv4 then
-				setActive(slot2:Find("mask"), pg.TimeMgr.GetInstance():GetServerTime() < uv4[slot1 + 1])
-				setText(slot2:Find("mask/Text"), i18n("unlock_date_tip", slot7:STimeDescS(slot8, "%m"), slot7:STimeDescS(slot8, "%d")))
-			else
-				setActive(slot2:Find("mask"), false)
+			if not IsNil(slot2:Find("mask")) then
+				if uv4 then
+					setActive(slot2:Find("mask"), pg.TimeMgr.GetInstance():GetServerTime() < uv4[slot1 + 1])
+					setText(slot2:Find("mask/Text"), i18n("unlock_date_tip", slot7:STimeDescS(slot8, "%m"), slot7:STimeDescS(slot8, "%d")))
+				else
+					setActive(slot2:Find("mask"), false)
+				end
 			end
 		end
 	end)
@@ -80,52 +78,54 @@ slot0.UpdateList = function(slot0, slot1, slot2, slot3, slot4)
 	scrollTo(slot0.scrollPanel, 0, 1 - slot3 * 166 / (#slot2 * 166 + 20 - 570))
 end
 
-slot0.Show = function(slot0, slot1)
-	slot2 = slot1.dropList
-	slot3 = slot1.targets
-	slot4 = slot1.level
-	slot5 = slot1.count
+function slot0.Show(slot0, slot1)
 	slot6 = slot1.resId
-	slot8 = slot1.unlockStamps
-	slot9 = ""
 	slot0.resIcon = nil
 
-	if slot1.type == 2 then
-		slot0.cntTitle = i18n("pt_total_count", i18n("pt_cosume", slot9))
-		slot0.resTitle = i18n("pt_cosume", slot9)
-		slot0.cntTitle = string.gsub(slot0.cntTitle, "：", "")
-	elseif slot7 == 3 then
-		slot0.cntTitle = i18n("pt_ship_now")
-		slot0.resTitle = i18n("pt_ship_goal")
-	elseif slot7 == 4 then
-		slot0.cntTitle = i18n("cumulative_victory_now_tip")
-		slot0.resTitle = i18n("cumulative_victory_target_tip")
-	elseif slot7 == 5 then
-		slot0.cntTitle = i18n("npcfriendly_total_count")
-		slot0.resTitle = i18n("npcfriendly_count")
-	elseif slot7 == 6 then
-		slot0.cntTitle = i18n("activity_yanhua_tip3")
-		slot0.resTitle = i18n("activity_yanhua_tip2")
-	else
-		slot0.cntTitle = i18n("pt_total_count", slot9)
-		slot0.resTitle = i18n("target_get_tip")
-		slot0.cntTitle = string.gsub(slot0.cntTitle, "：", "")
-	end
-
+	slot0:UpdateTitle(slot1.type)
 	slot0:updateResIcon(slot1.resId, slot1.resIcon, slot1.type)
-	slot0:UpdateList(slot2, slot3, slot4, slot8)
+	slot0:UpdateList(slot1.dropList, slot1.targets, slot1.level, slot1.unlockStamps)
 
-	slot0.totalTxt.text = slot5
+	slot0.totalTxt.text = slot1.count
 	slot0.totalTitleTxt.text = slot0.cntTitle
 
 	Canvas.ForceUpdateCanvases()
 	setActive(slot0._tf, true)
 end
 
-slot0.updateResIcon = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateTitle(slot0, slot1)
+	slot2 = ""
+
+	if slot1 == 2 then
+		slot0.cntTitle = i18n("pt_total_count", i18n("pt_cosume", slot2))
+		slot0.resTitle = i18n("pt_cosume", slot2)
+		slot0.cntTitle = string.gsub(slot0.cntTitle, "：", "")
+	elseif slot1 == 3 then
+		slot0.cntTitle = i18n("pt_ship_now")
+		slot0.resTitle = i18n("pt_ship_goal")
+	elseif slot1 == 4 then
+		slot0.cntTitle = i18n("cumulative_victory_now_tip")
+		slot0.resTitle = i18n("cumulative_victory_target_tip")
+	elseif slot1 == 5 then
+		slot0.cntTitle = i18n("npcfriendly_total_count")
+		slot0.resTitle = i18n("npcfriendly_count")
+	elseif slot1 == 6 then
+		slot0.cntTitle = i18n("activity_yanhua_tip3")
+		slot0.resTitle = i18n("activity_yanhua_tip2")
+	else
+		slot0.cntTitle = i18n("pt_total_count", slot2)
+		slot0.resTitle = i18n("target_get_tip")
+		slot0.cntTitle = string.gsub(slot0.cntTitle, "：", "")
+	end
+end
+
+function slot0.updateResIcon(slot0, slot1, slot2, slot3)
 	if slot3 == 2 or slot3 ~= 3 and slot3 ~= 4 and slot3 ~= 5 and slot3 ~= 6 then
 		if slot1 then
-			slot0.resIcon = pg.item_data_statistics[id2ItemId(slot1)].icon
+			slot0.resIcon = Drop.New({
+				type = DROP_TYPE_RESOURCE,
+				id = slot1
+			}):getIcon()
 		elseif slot2 then
 			slot0.resIcon = slot2
 		end
@@ -139,11 +139,11 @@ slot0.updateResIcon = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	setActive(slot0._tf, false)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Hide()
 	removeOnButton(slot0._tf)
 	removeOnButton(slot0.closeBtn)

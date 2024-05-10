@@ -18,15 +18,15 @@ slot4 = {
 	}
 }
 
-slot5 = function(slot0)
+function slot5(slot0)
 	return uv0[slot0]
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BackYardThemeTemplateDescPage"
 end
 
-slot0.ThemeTemplateUpdate = function(slot0, slot1)
+function slot0.ThemeTemplateUpdate(slot0, slot1)
 	if slot0.template and slot0.template.id == slot1.id then
 		slot0.template = slot1
 
@@ -34,89 +34,47 @@ slot0.ThemeTemplateUpdate = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateDorm = function(slot0, slot1)
+function slot0.UpdateDorm(slot0, slot1)
 	slot0.dorm = slot1
 end
 
-slot0.PlayerUpdated = function(slot0, slot1)
+function slot0.PlayerUpdated(slot0, slot1)
 	slot0.player = slot1
 end
 
-slot0.OnLoaded = function(slot0)
-	slot1 = slot0:findTF("icon/icon")
-	slot0.icon = slot1:GetComponent(typeof(Image))
-	slot1 = slot0:findTF("ID")
-	slot0.idTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0:findTF("ID_label")
-	slot0.idLabel = slot1:GetComponent(typeof(Text))
-	slot0.copyBtn = slot0:findTF("copy")
-	slot1 = slot0:findTF("name/Text")
-	slot0.nameTxt = slot1:GetComponent(typeof(Text))
-	slot0.sortBtn = slot0:findTF("sort")
-	slot0.sortArr = slot0:findTF("sort/arr")
-	slot1 = slot0:findTF("sort/Text")
-	slot0.sortTxt = slot1:GetComponent(typeof(Text))
-	slot0.filterBtn = slot0:findTF("filter")
-	slot1 = slot0:findTF("filter/Text")
-	slot0.filterTxt = slot1:GetComponent(typeof(Text))
-
-	setActive(slot0.sortBtn, false)
-	setActive(slot0.filterBtn, false)
-
-	slot0.mainPanel = slot0:findTF("main")
-	slot1 = slot0.mainPanel
-	slot1 = slot1:Find("time")
-	slot0.timeTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0.mainPanel
-	slot0.btn1 = slot1:Find("desc_btn")
-	slot1 = slot0.mainPanel
-	slot1 = slot1:Find("desc_btn/btn_word2")
-	slot0.btn1Txt = slot1:GetComponent(typeof(Image))
-	slot1 = slot0.mainPanel
-	slot0.btn2 = slot1:Find("push_btn")
-	slot1 = slot0.mainPanel
-	slot1 = slot1:Find("push_btn/btn_word1")
-	slot0.btn2Txt = slot1:GetComponent(typeof(Image))
-	slot1 = slot0.mainPanel
-	slot0.heart = slot1:Find("heart")
-	slot1 = slot0.mainPanel
-	slot0.heartSel = slot1:Find("heart/sel")
-	slot1 = slot0.mainPanel
-	slot1 = slot1:Find("heart/Text")
-	slot0.heartTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0.mainPanel
-	slot0.collection = slot1:Find("collection")
-	slot1 = slot0.mainPanel
-	slot0.collectionSel = slot1:Find("collection/sel")
-	slot1 = slot0.mainPanel
-	slot1 = slot1:Find("collection/Text")
-	slot0.collectionTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0.mainPanel
-	slot1 = slot1:Find("search1")
-	slot0.label1 = slot1:GetComponent(typeof(Text))
-
-	setActive(slot0.label1.gameObject, false)
-
-	slot0.contextData.sortPage.OnChange = function(slot0)
-		uv0.filterTxt.text = slot0
-	end
-
+function slot0.OnLoaded(slot0)
+	slot0.adpter = slot0:findTF("adpter")
+	slot0.frame = slot0:findTF("adpter/frame")
+	slot0.icon = slot0:findTF("adpter/frame/icon"):GetComponent(typeof(Image))
+	slot0.idTxt = slot0:findTF("adpter/frame/ID"):GetComponent(typeof(Text))
+	slot0.idLabel = slot0:findTF("adpter/frame/ID_label"):GetComponent(typeof(Text))
+	slot0.copyBtn = slot0:findTF("adpter/frame/copy")
+	slot0.nameTxt = slot0:findTF("adpter/frame/name"):GetComponent(typeof(Text))
+	slot0.mainPanel = slot0:findTF("adpter/frame/main")
+	slot0.timeTxt = slot0.mainPanel:Find("time"):GetComponent(typeof(Text))
+	slot0.btn1 = slot0.mainPanel:Find("desc_btn")
+	slot0.btn1Txt = slot0.mainPanel:Find("desc_btn/Text"):GetComponent(typeof(Text))
+	slot0.btn2 = slot0.mainPanel:Find("push_btn")
+	slot0.btn2Txt = slot0.mainPanel:Find("push_btn/Text"):GetComponent(typeof(Text))
+	slot0.heart = slot0.mainPanel:Find("heart")
+	slot0.heartSel = slot0.mainPanel:Find("heart/sel")
+	slot0.heartTxt = slot0.mainPanel:Find("heart/Text"):GetComponent(typeof(Text))
+	slot0.collection = slot0.mainPanel:Find("collection")
+	slot0.collectionSel = slot0.mainPanel:Find("collection/sel")
+	slot0.collectionTxt = slot0.mainPanel:Find("collection/Text"):GetComponent(typeof(Text))
 	slot0.idLabel.text = i18n("word_theme") .. "ID:"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0.copyBtn, function ()
 		if uv0.player then
 			UniPasteBoard.SetClipBoardString(uv0.template.id)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_id_copy_ok"))
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.filterBtn, function ()
-		uv0.contextData.sortPage:ExecuteAction("SetUp")
-	end, SFX_PANEL)
 end
 
-slot0.SetUp = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.SetUp(slot0, slot1, slot2, slot3, slot4)
 	slot0.pageType = slot1
 	slot0.template = slot2
 	slot0.dorm = slot3
@@ -127,7 +85,7 @@ slot0.SetUp = function(slot0, slot1, slot2, slot3, slot4)
 	slot0:Show()
 end
 
-slot0.RefreshSortBtn = function(slot0)
+function slot0.RefreshSortBtn(slot0)
 	slot1, slot2 = nil
 
 	if slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
@@ -137,32 +95,17 @@ slot0.RefreshSortBtn = function(slot0)
 		slot1 = 1
 	end
 
-	slot0.filterTxt.text = BackYardThemeTemplateSortPanel.GetChineseByIndex(slot1)
 	slot0.sortFlag = slot2
-
-	onButton(slot0, slot0.sortBtn, function ()
-		uv0.sortFlag = not uv0.sortFlag
-
-		uv1(uv0.sortFlag)
-
-		if uv0.OnSortChange then
-			uv0.OnSortChange(uv0.sortFlag)
-		end
-	end, SFX_PANEL)
-	(function (slot0)
-		uv0.sortArr.localScale = Vector3(1, slot0 and 1 or -1, 1)
-		uv0.sortTxt.text = slot0 and i18n("word_asc") or i18n("word_desc")
-	end)(slot0.sortFlag)
 end
 
-slot0.Flush = function(slot0)
+function slot0.Flush(slot0)
 	slot0:UpdateWindow()
 	slot0:UpdatePlayer()
 	slot0:UpdateLikeInfo()
 	slot0["Update" .. slot0.pageType](slot0)
 end
 
-slot0.Update1 = function(slot0)
+function slot0.Update1(slot0)
 	onButton(slot0, slot0.btn1, function ()
 		uv0.contextData.infoPage:ExecuteAction("SetUp", uv0.template, uv0.dorm, uv0.player)
 	end, SFX_PANEL)
@@ -179,9 +122,12 @@ slot0.Update1 = function(slot0)
 			end
 		})
 	end, SFX_PANEL)
+
+	slot0.btn1Txt.text = i18n("courtyard_label_detail")
+	slot0.btn2Txt.text = i18n("courtyard_label_place_pnekey")
 end
 
-slot0.Update2 = function(slot0)
+function slot0.Update2(slot0)
 	slot1 = slot0.template
 
 	onButton(slot0, slot0.btn1, function ()
@@ -198,15 +144,20 @@ slot0.Update2 = function(slot0)
 	if not slot1:IsPushed() then
 		slot0.timeTxt.text = i18n("backyard_theme_upload_cnt", getProxy(DormProxy):GetUploadThemeTemplateCnt(), BackYardConst.MAX_UPLOAD_THEME_CNT)
 	end
+
+	slot0.btn1Txt.text = i18n("courtyard_label_delete")
+	slot0.btn2Txt.text = slot2 and i18n("courtyard_label_cancel_share") or i18n("courtyard_label_share")
 end
 
-slot0.Update3 = function(slot0)
+function slot0.Update3(slot0)
 	slot0:Update1()
 
 	slot0.timeTxt.text = i18n("backyard_theme_template_collection_cnt") .. getProxy(DormProxy):GetThemeTemplateCollectionCnt() .. "/" .. BackYardConst.MAX_COLLECTION_CNT
+	slot0.btn1Txt.text = i18n("courtyard_label_detail")
+	slot0.btn2Txt.text = i18n("courtyard_label_place_pnekey")
 end
 
-slot0.UpdatePlayer = function(slot0)
+function slot0.UpdatePlayer(slot0)
 	if not slot0.template:ExistPlayerInfo() then
 		slot0:emit(NewBackYardThemeTemplateMediator.GET_TEMPLATE_PLAYERINFO, slot0.pageType, slot0.template)
 	else
@@ -255,7 +206,7 @@ slot0.UpdatePlayer = function(slot0)
 	end
 end
 
-slot0.UpdateLikeInfo = function(slot0)
+function slot0.UpdateLikeInfo(slot0)
 	slot1 = slot0.template
 	slot0.heartTxt.text = i18n("backyard_theme_word_like") .. slot1:GetLikeCnt()
 	slot0.collectionTxt.text = i18n("backyard_theme_word_collection") .. slot1:GetCollectionCnt()
@@ -290,86 +241,48 @@ slot0.UpdateLikeInfo = function(slot0)
 	setActive(slot0.collectionSel, slot1:IsCollected() or slot2)
 end
 
-slot0.UpdateWindow = function(slot0)
-	slot1 = function(slot0)
-		slot1 = -224
-		slot2 = -314
-		slot3 = 0
-		slot4 = 0
+function slot0.UpdateWindow(slot0)
+	slot1 = true
 
-		if slot0 == uv0 then
-			slot4 = 338
-			slot3 = 580
-		elseif slot0 == uv1 then
-			slot4 = 265
-			slot3 = 505
-			slot1 = -153
-			slot2 = -230
-		elseif slot0 == uv2 then
-			slot4 = 196
-			slot3 = 436
-			slot1 = -145
-			slot2 = -237
+	if slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot0.frame.sizeDelta = Vector2(slot0.frame.sizeDelta.x, 456)
+	elseif slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		if slot0.template:IsPushed() then
+			slot0.frame.sizeDelta = Vector2(slot0.frame.sizeDelta.x, 456)
+		else
+			slot1 = false
+			slot0.frame.sizeDelta = Vector2(slot0.frame.sizeDelta.x, 395)
 		end
-
-		setAnchoredPosition(uv3.btn1, {
-			y = slot1
-		})
-		setAnchoredPosition(uv3.btn2, {
-			y = slot1
-		})
-
-		uv3._tf.sizeDelta = Vector2(uv3._tf.sizeDelta.x, slot3)
-		uv3.mainPanel.sizeDelta = Vector2(uv3.mainPanel.sizeDelta.x, slot4)
-
-		setActive(uv3.heart, slot0 ~= uv2)
-		setActive(uv3.collection, slot0 ~= uv2)
-		setAnchoredPosition(uv3.heart, {
-			y = slot2
-		})
-		setAnchoredPosition(uv3.collection, {
-			y = slot2
-		})
-	end
-
-	slot2, slot3 = nil
-	slot4 = uv3(slot0.pageType)
-
-	if slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		slot5 = slot0.template:IsPushed() and uv1 or uv2
-
-		slot1(slot5)
-
-		slot2 = slot4[1]
-		slot3 = slot5 == uv1 and slot4[3] or slot4[2]
 	elseif slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		slot1(uv1)
-
-		slot2 = slot4[1]
-		slot3 = slot4[2]
-	elseif slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		slot1(uv1)
-
-		slot2 = slot4[1]
-		slot3 = slot4[2]
+		slot0.frame.sizeDelta = Vector2(slot0.frame.sizeDelta.x, 456)
 	end
 
-	slot0.btn1Txt.sprite = GetSpriteFromAtlas("ui/NewBackYardTemplateUI_atlas", slot2)
-
-	slot0.btn1Txt:SetNativeSize()
-
-	slot0.btn2Txt.sprite = GetSpriteFromAtlas("ui/NewBackYardTemplateUI_atlas", slot3)
-
-	slot0.btn2Txt:SetNativeSize()
+	setActive(slot0.heart, slot1)
+	setActive(slot0.collection, slot1)
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
+	slot0.isShowing = true
+
 	uv0.super.Show(slot0)
-	slot0._tf:SetSiblingIndex(3)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.adpter, {
+		pbList = {
+			slot0:findTF("adpter/frame")
+		}
+	})
 end
 
-slot0.OnDestroy = function(slot0)
-	slot0.contextData.sortPage.OnChange = nil
+function slot0.Hide(slot0)
+	slot0.isShowing = false
+
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.adpter, slot0._tf)
+	uv0.super.Hide(slot0)
+end
+
+function slot0.OnDestroy(slot0)
+	if slot0.isShowing then
+		slot0:Hide()
+	end
 
 	if slot0.preLoadIcon then
 		slot1 = slot0.preLoadIcon.name

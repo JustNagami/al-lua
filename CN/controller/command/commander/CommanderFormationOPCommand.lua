@@ -1,6 +1,6 @@
 slot0 = class("CommanderFormationOPCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody().data
 	slot4 = slot3.FleetType
 	slot5 = getProxy(CommanderProxy)
@@ -154,11 +154,11 @@ slot0.execute = function(slot0, slot1)
 			slot14 = slot7:getActivityFleets()[slot12]
 			slot16 = pg.activity_template[slot12] and slot15.type or 0
 
-			slot17 = function(slot0)
+			function slot17(slot0)
 				for slot4, slot5 in pairs(uv0) do
 					slot6 = uv1 ~= slot4
 
-					if uv2 == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
+					if uv2 == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 or uv2 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
 						slot6 = slot4 == ActivityBossMediatorTemplate.GetPairedFleetIndex(uv1)
 					end
 
@@ -251,7 +251,7 @@ slot0.execute = function(slot0, slot1)
 		elseif slot8.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
 			slot16 = {}
 
-			slot17 = function(slot0)
+			function slot17(slot0)
 				for slot4, slot5 in pairs(uv0) do
 					for slot9, slot10 in pairs(slot5) do
 						if uv1 ~= slot10 then
@@ -349,7 +349,7 @@ slot0.execute = function(slot0, slot1)
 				uv0[slot0.id] = slot0
 			end)
 
-			slot15 = function(slot0)
+			function slot15(slot0)
 				for slot4, slot5 in pairs(uv0) do
 					if uv1 ~= slot4 then
 						for slot11, slot12 in pairs(slot5:getCommanders()) do

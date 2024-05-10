@@ -2,7 +2,7 @@ slot0 = class("JiuJiuExpeditionCollectionMediator", import("...base.ContextMedia
 slot0.ON_GET = "JiuJiuExpeditionCollectionMediator:ON_GET"
 slot1 = 691
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	if PLATFORM_CODE == PLATFORM_JP then
 		slot0:bind(uv0.ON_GET, function (slot0, slot1)
 			pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
@@ -17,7 +17,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:SetData(slot1, slot2, slot3, slot4)
 end
 
-slot0.GetCollectionData = function()
+function slot0.GetCollectionData()
 	slot2 = pg.activity_event_adventure[1].boss_list
 	slot3 = {}
 	slot4 = getProxy(ActivityProxy):getActivityById(uv0)
@@ -63,13 +63,13 @@ slot0.GetCollectionData = function()
 	return slot2, slot3, slot8, slot4.data2_list[1] or slot8
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED and slot3.id == uv0 then

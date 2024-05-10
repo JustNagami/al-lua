@@ -1,6 +1,6 @@
 slot0 = UnityEngine
 
-flog = function(slot0, slot1)
+function flog(slot0, slot1)
 	if slot0 and slot1 and pg.ConnectionMgr.GetInstance():isConnected() then
 		pg.m02:sendNotification(GAME.SEND_CMD, {
 			cmd = "log",
@@ -10,14 +10,14 @@ flog = function(slot0, slot1)
 	end
 end
 
-throttle = function(slot0, slot1, slot2)
+function throttle(slot0, slot1, slot2)
 	slot3, slot4, slot5 = nil
 	slot6 = 0
 
-	slot7 = function()
+	function slot7()
 		uv0 = uv1 and Time.unscaledTime or 0
 		uv2 = nil
-		uv3 = uv4(unpack(uv5, 1, uv5.len))
+		uv3 = uv4(unpackEx(uv5))
 
 		if not uv2 then
 			uv5 = nil
@@ -31,10 +31,7 @@ throttle = function(slot0, slot1, slot2)
 			uv0 = slot0
 		end
 
-		uv3 = {
-			len = select("#", ...),
-			...
-		}
+		uv3 = packEx(...)
 
 		if uv2 - (slot0 - uv0) <= 0 or uv2 < slot1 then
 			if uv4 then
@@ -44,7 +41,7 @@ throttle = function(slot0, slot1, slot2)
 			end
 
 			uv0 = slot0
-			uv5 = uv6(unpack(uv3, 1, uv3.len))
+			uv5 = uv6(unpackEx(uv3))
 
 			if not uv4 then
 				uv3 = nil
@@ -59,10 +56,10 @@ throttle = function(slot0, slot1, slot2)
 	end
 end
 
-debounce = function(slot0, slot1, slot2)
+function debounce(slot0, slot1, slot2)
 	slot3, slot4, slot5, slot6, slot7 = nil
 
-	slot7 = function()
+	function slot7()
 		if Time.unscaledTime - uv0 < uv1 and slot0 > 0 then
 			uv2 = Timer.New(uv3, uv1 - slot0, 1)
 
@@ -71,7 +68,7 @@ debounce = function(slot0, slot1, slot2)
 			uv2 = nil
 
 			if not uv4 then
-				uv5 = uv6(unpack(uv7, 1, uv7.len))
+				uv5 = uv6(unpackEx(uv7))
 
 				if not uv2 then
 					uv7 = nil
@@ -83,10 +80,7 @@ debounce = function(slot0, slot1, slot2)
 	end
 
 	return function (...)
-		uv0 = {
-			len = select("#", ...),
-			...
-		}
+		uv0 = packEx(...)
 		uv1 = Time.unscaledTime
 		slot0 = uv2 and not uv3
 
@@ -97,7 +91,7 @@ debounce = function(slot0, slot1, slot2)
 		end
 
 		if slot0 then
-			uv6 = uv7(unpack(uv0, 1, uv0.len))
+			uv6 = uv7(unpackEx(uv0))
 			uv0 = nil
 		end
 
@@ -105,7 +99,7 @@ debounce = function(slot0, slot1, slot2)
 	end
 end
 
-createLog = function(slot0, slot1)
+function createLog(slot0, slot1)
 	if LOG and slot1 then
 		return function (...)
 			print(uv0 .. ": ", ...)
@@ -118,13 +112,13 @@ createLog = function(slot0, slot1)
 	end
 end
 
-getProxy = function(slot0)
+function getProxy(slot0)
 	assert(pg.m02, "game is not started")
 
 	return pg.m02:retrieveProxy(slot0.__cname)
 end
 
-LoadAndInstantiateAsync = function(slot0, slot1, slot2, slot3, slot4)
+function LoadAndInstantiateAsync(slot0, slot1, slot2, slot3, slot4)
 	slot5, slot1 = HXSet.autoHxShift(slot0 .. "/", slot1)
 	slot5 = ResourceMgr.Inst
 
@@ -133,7 +127,7 @@ LoadAndInstantiateAsync = function(slot0, slot1, slot2, slot3, slot4)
 	end), defaultValue(slot3, true), defaultValue(slot4, true))
 end
 
-LoadAndInstantiateSync = function(slot0, slot1, slot2, slot3)
+function LoadAndInstantiateSync(slot0, slot1, slot2, slot3)
 	slot4, slot1 = HXSet.autoHxShift(slot0 .. "/", slot1)
 
 	return Instantiate(ResourceMgr.Inst:getAssetSync(slot4 .. slot1, slot1, defaultValue(slot2, true), defaultValue(slot3, true)))
@@ -141,13 +135,13 @@ end
 
 slot1 = {}
 
-LoadSprite = function(slot0, slot1)
+function LoadSprite(slot0, slot1)
 	slot2, slot3 = HXSet.autoHxShiftPath(slot0, slot1)
 
 	return ResourceMgr.Inst:getAssetSync(slot2, slot3 or "", typeof(Sprite), true, false)
 end
 
-LoadSpriteAtlasAsync = function(slot0, slot1, slot2)
+function LoadSpriteAtlasAsync(slot0, slot1, slot2)
 	slot3, slot4 = HXSet.autoHxShiftPath(slot0, slot1)
 	slot3 = ResourceMgr.Inst
 
@@ -156,23 +150,23 @@ LoadSpriteAtlasAsync = function(slot0, slot1, slot2)
 	end), true, false)
 end
 
-LoadSpriteAsync = function(slot0, slot1)
+function LoadSpriteAsync(slot0, slot1)
 	LoadSpriteAtlasAsync(slot0, nil, slot1)
 end
 
-LoadAny = function(slot0, slot1, slot2)
+function LoadAny(slot0, slot1, slot2)
 	slot3, slot4 = HXSet.autoHxShiftPath(slot0, slot1)
 
 	return ResourceMgr.Inst:getAssetSync(slot3, slot4, slot2, true, false)
 end
 
-LoadAnyAsync = function(slot0, slot1, slot2, slot3)
+function LoadAnyAsync(slot0, slot1, slot2, slot3)
 	slot4, slot5 = HXSet.autoHxShiftPath(slot0, slot1)
 
 	return ResourceMgr.Inst:getAssetAsync(slot4, slot5, slot2, slot3, true, false)
 end
 
-LoadImageSpriteAtlasAsync = function(slot0, slot1, slot2, slot3)
+function LoadImageSpriteAtlasAsync(slot0, slot1, slot2, slot3)
 	slot4 = slot2:GetComponent(typeof(Image))
 	slot4.enabled = false
 	uv0[slot4] = slot0
@@ -190,11 +184,11 @@ LoadImageSpriteAtlasAsync = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-LoadImageSpriteAsync = function(slot0, slot1, slot2)
+function LoadImageSpriteAsync(slot0, slot1, slot2)
 	LoadImageSpriteAtlasAsync(slot0, nil, slot1, slot2)
 end
 
-GetSpriteFromAtlas = function(slot0, slot1)
+function GetSpriteFromAtlas(slot0, slot1)
 	slot3, slot4 = HXSet.autoHxShiftPath(slot0, slot1)
 	slot3 = PoolMgr.GetInstance()
 
@@ -205,7 +199,7 @@ GetSpriteFromAtlas = function(slot0, slot1)
 	return nil
 end
 
-GetSpriteFromAtlasAsync = function(slot0, slot1, slot2)
+function GetSpriteFromAtlasAsync(slot0, slot1, slot2)
 	slot3, slot4 = HXSet.autoHxShiftPath(slot0, slot1)
 	slot3 = PoolMgr.GetInstance()
 
@@ -214,7 +208,7 @@ GetSpriteFromAtlasAsync = function(slot0, slot1, slot2)
 	end)
 end
 
-GetImageSpriteFromAtlasAsync = function(slot0, slot1, slot2, slot3)
+function GetImageSpriteFromAtlasAsync(slot0, slot1, slot2, slot3)
 	slot0, slot1 = HXSet.autoHxShiftPath(slot0, slot1)
 	slot4 = slot2:GetComponent(typeof(Image))
 	slot4.enabled = false
@@ -233,15 +227,15 @@ GetImageSpriteFromAtlasAsync = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-SetAction = function(slot0, slot1, slot2)
+function SetAction(slot0, slot1, slot2)
 	GetComponent(slot0, "SkeletonGraphic").AnimationState:SetAnimation(0, slot1, defaultValue(slot2, true))
 end
 
-SetActionCallback = function(slot0, slot1)
+function SetActionCallback(slot0, slot1)
 	GetOrAddComponent(slot0, typeof(SpineAnimUI)):SetActionCallBack(slot1)
 end
 
-emojiText = function(slot0, slot1)
+function emojiText(slot0, slot1)
 	slot2 = ResourceMgr.Inst:loadAssetBundleSync("emojis")
 	slot4 = GetComponent(slot0, "MeshRenderer")
 	slot5 = Shader.Find("UI/Unlit/Transparent")
@@ -268,12 +262,12 @@ emojiText = function(slot0, slot1)
 	ResourceMgr.Inst:ClearBundleRef("emojis", false, false)
 end
 
-setPaintingImg = function(slot0, slot1)
+function setPaintingImg(slot0, slot1)
 	setImageSprite(slot0, LoadSprite("painting/" .. slot1) or LoadSprite("painting/unknown"))
 	resetAspectRatio(slot0)
 end
 
-setPaintingPrefab = function(slot0, slot1, slot2, slot3)
+function setPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot4 = findTF(slot0, "fitter")
 
 	assert(slot4, "请添加子物体fitter")
@@ -307,25 +301,28 @@ end
 
 slot2 = {}
 
-setPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
+function setPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
+	slot5 = slot1
+
+	if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot1, 0) ~= 0 then
+		slot1 = slot1 .. "_n"
+	end
+
+	LoadPaintingPrefabAsync(slot0, slot5, slot1, slot2, slot3)
+end
+
+function LoadPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
 	slot5 = findTF(slot0, "fitter")
 
 	assert(slot5, "请添加子物体fitter")
 	removeAllChildren(slot5)
 
 	slot6 = GetOrAddComponent(slot5, "PaintingScaler")
-	slot6.FrameName = slot2 or ""
+	slot6.FrameName = slot3 or ""
 	slot6.Tween = 1
-	slot7 = slot1
+	uv0[slot0] = slot2
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot1, 0) ~= 0 then
-		slot1 = slot1 .. "_n"
-	end
-
-	uv0[slot0] = slot1
-	slot8 = PoolMgr.GetInstance()
-
-	slot8:GetPainting(slot1, true, function (slot0)
+	PoolMgr.GetInstance():GetPainting(slot2, true, function (slot0)
 		if IsNil(uv0) or uv1[uv0] ~= uv2 then
 			PoolMgr.GetInstance():ReturnPainting(uv2, slot0)
 
@@ -342,8 +339,12 @@ setPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
 			setActive(slot1, false)
 		end
 
+		if not IsNil(findTF(slot0, "Drag")) then
+			setActive(slot2, false)
+		end
+
 		if not IsNil(findTF(slot0, "hx")) then
-			setActive(slot2, HXSet.isHx())
+			setActive(slot3, HXSet.isHx())
 		end
 
 		if uv5 then
@@ -352,7 +353,7 @@ setPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
 	end)
 end
 
-retPaintingPrefab = function(slot0, slot1, slot2)
+function retPaintingPrefab(slot0, slot1, slot2)
 	if slot0 and slot1 then
 		if findTF(slot0, "fitter") and slot3.childCount > 0 and not IsNil(slot3.GetChild(slot3, 0)) then
 			if not IsNil(findTF(slot4, "Touch")) then
@@ -374,7 +375,7 @@ retPaintingPrefab = function(slot0, slot1, slot2)
 	end
 end
 
-checkPaintingPrefab = function(slot0, slot1, slot2, slot3, slot4)
+function checkPaintingPrefab(slot0, slot1, slot2, slot3, slot4)
 	slot5 = findTF(slot0, "fitter")
 
 	assert(slot5, "请添加子物体fitter")
@@ -393,7 +394,7 @@ checkPaintingPrefab = function(slot0, slot1, slot2, slot3, slot4)
 	return slot5, slot1, slot8
 end
 
-onLoadedPaintingPrefab = function(slot0)
+function onLoadedPaintingPrefab(slot0)
 	slot1 = slot0.paintingTF
 	slot3 = slot0.defaultPaintingName
 
@@ -410,7 +411,7 @@ onLoadedPaintingPrefab = function(slot0)
 	ShipExpressionHelper.SetExpression(slot2.GetChild(slot2, 0), slot3)
 end
 
-onLoadedPaintingPrefabAsync = function(slot0)
+function onLoadedPaintingPrefabAsync(slot0)
 	slot1 = slot0.paintingTF
 	slot2 = slot0.fitterTF
 	slot4 = slot0.paintingName
@@ -442,7 +443,7 @@ onLoadedPaintingPrefabAsync = function(slot0)
 	end
 end
 
-setCommanderPaintingPrefab = function(slot0, slot1, slot2, slot3)
+function setCommanderPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot4, slot5, slot6 = checkPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot7 = PoolMgr.GetInstance()
 
@@ -455,7 +456,7 @@ setCommanderPaintingPrefab = function(slot0, slot1, slot2, slot3)
 	end, "commanderpainting/")
 end
 
-setCommanderPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
+function setCommanderPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
 	slot5, slot6, slot7 = checkPaintingPrefab(slot0, slot1, slot2, slot4)
 	uv0[slot0] = slot6
 	slot8 = PoolMgr.GetInstance()
@@ -472,11 +473,11 @@ setCommanderPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
 	end, "commanderpainting/")
 end
 
-retCommanderPaintingPrefab = function(slot0, slot1)
+function retCommanderPaintingPrefab(slot0, slot1)
 	retPaintingPrefab(slot0, slot1, "commanderpainting/")
 end
 
-setMetaPaintingPrefab = function(slot0, slot1, slot2, slot3)
+function setMetaPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot4, slot5, slot6 = checkPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot7 = PoolMgr.GetInstance()
 
@@ -489,7 +490,7 @@ setMetaPaintingPrefab = function(slot0, slot1, slot2, slot3)
 	end, "metapainting/")
 end
 
-setMetaPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
+function setMetaPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
 	slot5, slot6, slot7 = checkPaintingPrefab(slot0, slot1, slot2, slot4)
 	uv0[slot0] = slot6
 	slot8 = PoolMgr.GetInstance()
@@ -506,11 +507,11 @@ setMetaPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
 	end, "metapainting/")
 end
 
-retMetaPaintingPrefab = function(slot0, slot1)
+function retMetaPaintingPrefab(slot0, slot1)
 	retPaintingPrefab(slot0, slot1, "metapainting/")
 end
 
-setGuildPaintingPrefab = function(slot0, slot1, slot2, slot3)
+function setGuildPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot4, slot5, slot6 = checkPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot7 = PoolMgr.GetInstance()
 
@@ -523,7 +524,7 @@ setGuildPaintingPrefab = function(slot0, slot1, slot2, slot3)
 	end, "guildpainting/")
 end
 
-setGuildPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
+function setGuildPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
 	slot5, slot6, slot7 = checkPaintingPrefab(slot0, slot1, slot2, slot4)
 	uv0[slot0] = slot6
 	slot8 = PoolMgr.GetInstance()
@@ -540,11 +541,11 @@ setGuildPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
 	end, "guildpainting/")
 end
 
-retGuildPaintingPrefab = function(slot0, slot1)
+function retGuildPaintingPrefab(slot0, slot1)
 	retPaintingPrefab(slot0, slot1, "guildpainting/")
 end
 
-setShopPaintingPrefab = function(slot0, slot1, slot2, slot3)
+function setShopPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot4, slot5, slot6 = checkPaintingPrefab(slot0, slot1, slot2, slot3)
 	slot7 = PoolMgr.GetInstance()
 
@@ -557,11 +558,11 @@ setShopPaintingPrefab = function(slot0, slot1, slot2, slot3)
 	end, "shoppainting/")
 end
 
-retShopPaintingPrefab = function(slot0, slot1)
+function retShopPaintingPrefab(slot0, slot1)
 	retPaintingPrefab(slot0, slot1, "shoppainting/")
 end
 
-setBuildPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
+function setBuildPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
 	slot5, slot6, slot7 = checkPaintingPrefab(slot0, slot1, slot2, slot4)
 	uv0[slot0] = slot6
 	slot8 = PoolMgr.GetInstance()
@@ -578,19 +579,19 @@ setBuildPaintingPrefabAsync = function(slot0, slot1, slot2, slot3, slot4)
 	end, "buildpainting/")
 end
 
-retBuildPaintingPrefab = function(slot0, slot1)
+function retBuildPaintingPrefab(slot0, slot1)
 	retPaintingPrefab(slot0, slot1, "buildpainting/")
 end
 
-setColorCount = function(slot0, slot1, slot2)
+function setColorCount(slot0, slot1, slot2)
 	setText(slot0, string.format(slot1 < slot2 and "<color=" .. COLOR_RED .. ">%d</color>/%d" or "%d/%d", slot1, slot2))
 end
 
-setColorStr = function(slot0, slot1)
+function setColorStr(slot0, slot1)
 	return "<color=" .. slot1 .. ">" .. slot0 .. "</color>"
 end
 
-setSizeStr = function(slot0, slot1)
+function setSizeStr(slot0, slot1)
 	slot2, slot3 = string.gsub(slot0, "[<]size=%d+[>]", "<size=" .. slot1 .. ">")
 
 	if slot3 == 0 then
@@ -600,7 +601,7 @@ setSizeStr = function(slot0, slot1)
 	return slot2
 end
 
-getBgm = function(slot0)
+function getBgm(slot0)
 	slot1 = pg.voice_bgm[slot0]
 
 	if pg.CriMgr.GetInstance():IsDefaultBGM() then
@@ -625,11 +626,11 @@ getBgm = function(slot0)
 	end
 end
 
-playStory = function(slot0, slot1)
+function playStory(slot0, slot1)
 	pg.NewStoryMgr.GetInstance():Play(slot0, slot1)
 end
 
-errorMessage = function(slot0)
+function errorMessage(slot0)
 	if ERROR_MESSAGE[slot0] == nil then
 		slot1 = ERROR_MESSAGE[9999] .. ":" .. slot0
 	end
@@ -637,7 +638,7 @@ errorMessage = function(slot0)
 	return slot1
 end
 
-errorTip = function(slot0, slot1, ...)
+function errorTip(slot0, slot1, ...)
 	slot3 = nil
 	slot3 = (not pg.gametip[slot0 .. "_error"] or slot2.tip) and pg.gametip.common_error.tip
 
@@ -650,7 +651,7 @@ errorTip = function(slot0, slot1, ...)
 	end
 end
 
-colorNumber = function(slot0, slot1)
+function colorNumber(slot0, slot1)
 	slot2 = "@COLOR_SCOPE"
 	slot0 = string.gsub(string.gsub(slot0, "<color=#%x+>", function (slot0)
 		table.insert(uv0, slot0)
@@ -673,7 +674,7 @@ colorNumber = function(slot0, slot1)
 	end
 end
 
-getBounds = function(slot0)
+function getBounds(slot0)
 	slot1 = LuaHelper.GetWorldCorners(rtf(slot0))
 	slot2 = Bounds.New(slot1[0], Vector3.zero)
 
@@ -682,7 +683,7 @@ getBounds = function(slot0)
 	return slot2
 end
 
-slot3 = function(slot0, slot1)
+function slot3(slot0, slot1)
 	slot0.localScale = Vector3.one
 	slot0.anchorMin = Vector2.zero
 	slot0.anchorMax = Vector2.one
@@ -747,7 +748,7 @@ slot4 = {
 	}
 }
 
-setFrame = function(slot0, slot1, slot2)
+function setFrame(slot0, slot1, slot2)
 	slot1 = tostring(slot1)
 
 	if slot2 or #slot1 > 1 or #slot1 == 1 and tonumber(slot1) > 5 then
@@ -773,7 +774,7 @@ setFrame = function(slot0, slot1, slot2)
 	end
 end
 
-setIconColorful = function(slot0, slot1, slot2, slot3)
+function setIconColorful(slot0, slot1, slot2, slot3)
 	slot3 = slot3 or {
 		[6] = {
 			name = "IconColorful",
@@ -802,7 +803,7 @@ setIconColorful = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-setIconStars = function(slot0, slot1, slot2)
+function setIconStars(slot0, slot1, slot2)
 	slot3 = findTF(slot0, "icon_bg/startpl")
 
 	if findTF(slot0, "icon_bg/stars") and slot3 then
@@ -823,32 +824,32 @@ setIconStars = function(slot0, slot1, slot2)
 	setActive(slot4, true)
 end
 
-slot5 = function(slot0, slot1)
+function slot5(slot0, slot1)
 	if not IsNil(findTF(slot0, "icon_bg/slv")) then
 		setActive(slot2, slot1 > 0)
 		setText(findTF(slot2, "Text"), slot1)
 	end
 end
 
-setIconName = function(slot0, slot1, slot2)
+function setIconName(slot0, slot1, slot2)
 	if not IsNil(findTF(slot0, "name")) then
 		setText(slot3, slot1)
 		setTextAlpha(slot3, (slot2.hideName or slot2.anonymous) and 0 or 1)
 	end
 end
 
-setIconCount = function(slot0, slot1)
+function setIconCount(slot0, slot1)
 	if not IsNil(findTF(slot0, "icon_bg/count")) then
 		setText(slot2, slot1 and (type(slot1) ~= "number" or slot1 > 0) and slot1 or "")
 	end
 end
 
-updateEquipment = function(slot0, slot1, slot2)
+function updateEquipment(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 
 	assert(slot1, "equipmentVo can not be nil.")
 
-	slot3 = EquipmentRarity.Rarity2Print(slot1.config.rarity)
+	slot3 = EquipmentRarity.Rarity2Print(slot1:getConfig("rarity"))
 
 	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
 	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
@@ -861,45 +862,43 @@ updateEquipment = function(slot0, slot1, slot2)
 		16,
 		16
 	})
-	GetImageSpriteFromAtlasAsync("equips/" .. slot1.config.icon, "", slot4)
-	setIconStars(slot0, true, slot1.config.rarity)
-	uv1(slot0, slot1.config.level - 1)
-	setIconName(slot0, slot1.config.name, slot2)
+	GetImageSpriteFromAtlasAsync("equips/" .. slot1:getConfig("icon"), "", slot4)
+	setIconStars(slot0, true, slot1:getConfig("rarity"))
+	uv1(slot0, slot1:getConfig("level") - 1)
+	setIconName(slot0, slot1:getConfig("name"), slot2)
 	setIconCount(slot0, slot1.count)
-	setIconColorful(slot0, slot1.config.rarity, slot2)
+	setIconColorful(slot0, slot1:getConfig("rarity"), slot2)
 end
 
-updateItem = function(slot0, slot1, slot2)
+function updateItem(slot0, slot1, slot2)
 	slot2 = slot2 or {}
-	slot3 = pg.item_data_statistics[slot1.id]
 
-	assert(slot3, "找不到道具配置: " .. slot1.id)
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. ItemRarity.Rarity2Print(slot3.rarity), findTF(slot0, "icon_bg"))
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. ItemRarity.Rarity2Print(slot1:getConfig("rarity")), findTF(slot0, "icon_bg"))
 
-	slot5 = nil
+	slot4 = nil
 
-	if slot3.type == 9 then
-		slot5 = "frame6"
+	if slot1:getConfig("type") == 9 then
+		slot4 = "frame6"
 	end
 
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4, slot5)
+	setFrame(findTF(slot0, "icon_bg/frame"), slot3, slot4)
 
-	slot6 = findTF(slot0, "icon_bg/icon")
-	slot7 = slot1.icon or slot3.icon
+	slot5 = findTF(slot0, "icon_bg/icon")
+	slot6 = slot1.icon or slot1:getConfig("icon")
 
-	if slot3.type == Item.LOVE_LETTER_TYPE then
+	if slot1:getConfig("type") == Item.LOVE_LETTER_TYPE then
 		assert(slot1.extra, "without extra data")
 
-		slot7 = "SquareIcon/" .. ShipGroup.getDefaultSkin(slot1.extra).prefab
+		slot6 = "SquareIcon/" .. ShipGroup.getDefaultSkin(slot1.extra).prefab
 	end
 
-	GetImageSpriteFromAtlasAsync(slot7, "", slot6)
+	GetImageSpriteFromAtlasAsync(slot6, "", slot5)
 	setIconStars(slot0, false)
-	setIconName(slot0, slot3.name, slot2)
-	setIconColorful(slot0, slot3.rarity + 1, slot2)
+	setIconName(slot0, slot1.getName(slot1), slot2)
+	setIconColorful(slot0, slot1.getConfig(slot1, "rarity") + 1, slot2)
 end
 
-updateWorldItem = function(slot0, slot1, slot2)
+function updateWorldItem(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 	slot3 = pg.world_item_data_template[slot1.id]
 
@@ -915,7 +914,7 @@ updateWorldItem = function(slot0, slot1, slot2)
 	setIconColorful(slot0, slot3.rarity + 1, slot2)
 end
 
-updateWorldCollection = function(slot0, slot1, slot2)
+function updateWorldCollection(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 
 	assert(WorldCollectionProxy.GetCollectionTemplate(slot1.id), "world_collection_file_template 和 world_collection_record_template 表中找不到配置: " .. slot1.id)
@@ -930,7 +929,7 @@ updateWorldCollection = function(slot0, slot1, slot2)
 	setIconColorful(slot0, slot4, slot2)
 end
 
-updateWorldBuff = function(slot0, slot1, slot2)
+function updateWorldBuff(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 	slot3 = pg.world_SLGbuff_data[slot1]
 
@@ -955,7 +954,7 @@ updateWorldBuff = function(slot0, slot1, slot2)
 	end
 end
 
-updateShip = function(slot0, slot1, slot2)
+function updateShip(slot0, slot1, slot2)
 	slot3 = slot1:rarity2bgPrint()
 	slot4 = slot1:getPainting()
 
@@ -1031,57 +1030,45 @@ updateShip = function(slot0, slot1, slot2)
 	end
 
 	setIconStars(slot0, slot2.initStar, slot1:getStar())
-	setIconName(slot0, slot1:getName(), slot2)
+	setIconName(slot0, slot2.isSkin and slot1:GetSkinConfig().name or slot1:getName(), slot2)
 	setIconColorful(slot0, slot2.isSkin and 5 or slot1:getRarity(), slot2)
 end
 
-updateCommander = function(slot0, slot1, slot2)
-	slot4 = ShipRarity.Rarity2Print(slot1:getRarity())
-	slot5 = slot1:getPainting()
+function updateCommander(slot0, slot1, slot2)
+	slot3 = pg.commander_data_template[slot1]
+	slot5 = ShipRarity.Rarity2Print(slot3.rarity)
+	slot6 = slot3.painting
 
 	if (slot2 or {}).anonymous then
-		slot4 = 1
-		slot5 = "unknown"
+		slot5 = 1
+		slot6 = "unknown"
 	end
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (slot2.isSkin and "-skin" or slot4), findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (slot2.isSkin and "-skin" or slot5), findTF(slot0, "icon_bg"))
+	setFrame(findTF(slot0, "icon_bg/frame"), slot5)
 
 	if slot2.gray then
-		setGray(slot6, true, true)
+		setGray(slot7, true, true)
 	end
 
-	GetImageSpriteFromAtlasAsync(slot2.Q and "QIcon/" or "SquareIcon/" .. slot5, "", findTF(slot0, "icon_bg/icon"))
-
-	if findTF(slot0, "icon_bg/lv") then
-		setActive(slot9, true)
-
-		if findTF(slot9, "Text") and slot1.level then
-			setText(slot10, slot1.level)
-		end
-	end
-
-	setIconStars(slot0, slot2.initStar, slot1.getStar(slot1))
-	setIconName(slot0, slot1.getName(slot1), slot2)
+	GetImageSpriteFromAtlasAsync("CommanderIcon/" .. slot6, "", findTF(slot0, "icon_bg/icon"))
+	setIconStars(slot0, slot2.initStar, 0)
+	setIconName(slot0, slot3.name, slot2)
 end
 
-updateStrategy = function(slot0, slot1, slot2)
+function updateStrategy(slot0, slot1, slot2)
 	slot2 = slot2 or {}
-	slot3 = slot2.isWorldBuff and pg.world_SLGbuff_data[slot1.id] or pg.strategy_data_template[slot1.id]
+	slot3 = ItemRarity.Rarity2Print(ItemRarity.Gray)
 
-	assert(slot3, "找不到策略配置: " .. slot1.id)
-
-	slot4 = ItemRarity.Rarity2Print(ItemRarity.Gray)
-
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
-	GetImageSpriteFromAtlasAsync((slot2.isWorldBuff and "world/buff/" or "strategyicon/") .. slot3.icon, "", findTF(slot0, "icon_bg/icon"))
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
+	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
+	GetImageSpriteFromAtlasAsync((slot1.isWorldBuff and "world/buff/" or "strategyicon/") .. slot1:getIcon(), "", findTF(slot0, "icon_bg/icon"))
 	setIconStars(slot0, false)
-	setIconName(slot0, slot3.name, slot2)
+	setIconName(slot0, slot1:getName(), slot2)
 	setIconColorful(slot0, 1, slot2)
 end
 
-updateFurniture = function(slot0, slot1, slot2)
+function updateFurniture(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 	slot4 = ItemRarity.Rarity2Print(pg.furniture_data_template[slot1].rarity) or ItemRarity.Gray
 
@@ -1093,7 +1080,7 @@ updateFurniture = function(slot0, slot1, slot2)
 	setIconColorful(slot0, slot3.rarity + 1, slot2)
 end
 
-updateSpWeapon = function(slot0, slot1, slot2)
+function updateSpWeapon(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 
 	assert(slot1, "spWeaponVO can not be nil.")
@@ -1120,7 +1107,7 @@ updateSpWeapon = function(slot0, slot1, slot2)
 	setIconColorful(slot0, slot1:GetRarity(), slot2)
 end
 
-UpdateSpWeaponSlot = function(slot0, slot1, slot2)
+function UpdateSpWeaponSlot(slot0, slot1, slot2)
 	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. ItemRarity.Rarity2Print(slot1:GetRarity()), findTF(slot0, "Icon/Mask/icon_bg"))
 
 	slot4 = findTF(slot0, "Icon/Mask/icon_bg/icon")
@@ -1138,7 +1125,7 @@ end
 
 slot6 = nil
 
-findCullAndClipWorldRect = function(slot0)
+function findCullAndClipWorldRect(slot0)
 	if #slot0 == 0 then
 		return false
 	end
@@ -1160,7 +1147,7 @@ findCullAndClipWorldRect = function(slot0)
 	return true, Vector4(slot2.x, slot2.y, slot3.x, slot3.y)
 end
 
-rectIntersect = function(slot0, slot1)
+function rectIntersect(slot0, slot1)
 	slot4 = math.max(slot0.y, slot1.y)
 	slot5 = math.min(slot0.y + slot0.height, slot1.y + slot1.height)
 
@@ -1171,59 +1158,29 @@ rectIntersect = function(slot0, slot1)
 	return uv0.Rect.New(0, 0, 0, 0)
 end
 
-getDropInfo = function(slot0)
+function getDropInfo(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(slot0) do
-		slot8 = slot6[2]
-		slot9 = slot6[3] or 1
+		slot7.count = Drop.Create(slot6).count or 1
 
-		if slot6[1] == DROP_TYPE_SHIP then
-			table.insert(slot1, Ship.New({
-				configId = slot8
-			}):getConfig("name") .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_EQUIP then
-			table.insert(slot1, Equipment.New({
-				id = slot8
-			}):getConfig("name") .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_RESOURCE then
-			table.insert(slot1, Item.New({
-				id = id2ItemId(slot8)
-			}):getConfig("name") .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_ITEM then
-			table.insert(slot1, Item.New({
-				id = slot8
-			}):getConfig("name") .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_VITEM then
-			table.insert(slot1, Item.New({
-				id = slot8
-			}):getConfig("name") .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_FURNITURE then
-			table.insert(slot1, Furniture.New({
-				id = slot8
-			}):getConfig("name") .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_STRATEGY then
-			table.insert(slot1, pg.strategy_data_template[slot8].name .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_SKIN or slot7 == DROP_TYPE_SKIN_TIMELIMIT then
-			table.insert(slot1, pg.ship_skin_template[slot8].name .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_EQUIPMENT_SKIN then
-			table.insert(slot1, pg.equip_skin_template[slot8].name .. "x" .. slot9)
-		elseif slot7 == DROP_TYPE_BUFF then
-			table.insert(slot1, pg.benefit_buff_template[slot8].name .. "x" .. slot9)
+		if slot7.type == DROP_TYPE_EMOJI then
+			table.insert(slot1, slot7.getName(slot7))
+		else
+			table.insert(slot1, slot7.getName(slot7) .. "x" .. slot7.count)
 		end
 	end
 
 	return table.concat(slot1, "、")
 end
 
-updateDrop = function(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = updateDropCfg(slot1)
-	slot4 = slot1.type or slot1.dropType
-	slot5 = nil
-	slot7 = nil
+function updateDrop(slot0, slot1, slot2)
+	Drop.Change(slot1)
 
-	for slot11, slot12 in ipairs({
+	slot2 = slot2 or {}
+	slot4 = nil
+
+	for slot8, slot9 in ipairs({
 		{
 			"icon_bg/slv"
 		},
@@ -1247,16 +1204,16 @@ updateDrop = function(slot0, slot1, slot2)
 			DROP_TYPE_SHIP
 		}
 	}) do
-		slot7 = slot0.Find(slot0, slot12[1])
+		slot4 = slot0.Find(slot0, slot9[1])
 
-		if slot4 ~= slot12[2] and not IsNil(slot7) then
-			setActive(slot7, false)
+		if slot1.type ~= slot9[2] and not IsNil(slot4) then
+			setActive(slot4, false)
 		end
 	end
 
 	slot0:Find("icon_bg/frame"):GetComponent(typeof(Image)).enabled = true
 
-	setIconColorful(slot0, getDropRarity(slot1), slot2, {
+	setIconColorful(slot0, slot1:getDropRarity(), slot2, {
 		[5] = {
 			name = "Item_duang5",
 			active = function (slot0, slot1)
@@ -1270,126 +1227,11 @@ updateDrop = function(slot0, slot1, slot2)
 		2,
 		2
 	})
-	switch(slot4, {
-		[DROP_TYPE_RESOURCE] = function ()
-			updateItem(uv0, Item.New({
-				id = id2ItemId(uv1.id)
-			}), uv2)
-		end,
-		[DROP_TYPE_ITEM] = function ()
-			updateItem(uv0, Item.New({
-				id = uv1.id,
-				extra = uv1.extra
-			}), uv2)
-		end,
-		[DROP_TYPE_EQUIP] = function ()
-			updateEquipment(uv0, Equipment.New({
-				id = uv1.id
-			}), uv2)
-		end,
-		[DROP_TYPE_SHIP] = function ()
-			updateShip(uv0, uv1.ship, uv2)
-		end,
-		[DROP_TYPE_NPC_SHIP] = function ()
-			updateShip(uv0, uv1.ship, uv2)
-		end,
-		[DROP_TYPE_FURNITURE] = function ()
-			updateFurniture(uv0, uv1.id, uv2)
-		end,
-		[DROP_TYPE_STRATEGY] = function ()
-			uv0.isWorldBuff = uv1.isWorldBuff
-
-			updateStrategy(uv2, Item.New({
-				id = uv1.id
-			}), uv0)
-		end,
-		[DROP_TYPE_SKIN] = function ()
-			uv0.isSkin = true
-			uv0.isNew = uv1.isNew
-
-			updateShip(uv2, Ship.New({
-				configId = tonumber(uv3.ship_group .. "1"),
-				skin_id = uv1.id
-			}), uv0)
-		end,
-		[DROP_TYPE_EQUIPMENT_SKIN] = function ()
-			updateEquipmentSkin(uv0, {
-				rarity = uv1.rarity,
-				icon = uv1.icon,
-				name = uv1.name,
-				count = uv2.count
-			}, uv3)
-		end,
-		[DROP_TYPE_VITEM] = function ()
-			updateItem(uv0, Item.New({
-				id = uv1.id
-			}), uv2)
-		end,
-		[DROP_TYPE_WORLD_ITEM] = function ()
-			updateWorldItem(uv0, WorldItem.New({
-				id = uv1.id
-			}), uv2)
-		end,
-		[DROP_TYPE_WORLD_COLLECTION] = function ()
-			updateWorldCollection(uv0, uv1, uv2)
-		end,
-		[DROP_TYPE_CHAT_FRAME] = function ()
-			updateAttire(uv0, AttireConst.TYPE_CHAT_FRAME, uv1, uv2)
-		end,
-		[DROP_TYPE_ICON_FRAME] = function ()
-			updateAttire(uv0, AttireConst.TYPE_ICON_FRAME, uv1, uv2)
-		end,
-		[DROP_TYPE_EMOJI] = function ()
-			updateEmoji(uv0, uv1, uv2)
-		end,
-		[DROP_TYPE_LOVE_LETTER] = function ()
-			uv0 = 1
-
-			updateItem(uv1, Item.New({
-				id = uv2.id,
-				extra = uv2.count
-			}), uv3)
-		end,
-		[DROP_TYPE_SPWEAPON] = function ()
-			updateSpWeapon(uv0, SpWeapon.New({
-				id = uv1.id
-			}), uv2)
-		end,
-		[DROP_TYPE_META_PT] = function ()
-			updateItem(uv0, Item.New({
-				id = uv1.id
-			}), uv2)
-		end,
-		[DROP_TYPE_SKIN_TIMELIMIT] = function ()
-			uv0.isSkin = true
-			uv0.isTimeLimit = true
-			uv1 = 1
-
-			updateShip(uv2, Ship.New({
-				configId = tonumber(uv3.ship_group .. "1"),
-				skin_id = uv4.id
-			}), uv0)
-		end,
-		[DROP_TYPE_RYZA_DROP] = function ()
-			AtelierMaterial.UpdateRyzaItem(uv0, uv1.item, uv2)
-		end,
-		[DROP_TYPE_WORKBENCH_DROP] = function ()
-			WorkBenchItem.UpdateDrop(uv0, uv1.item, uv2)
-		end,
-		[DROP_TYPE_FEAST_DROP] = function ()
-			WorkBenchItem.UpdateDrop(uv0, WorkBenchItem.New({
-				configId = uv1.id,
-				count = uv1.count
-			}), uv2)
-		end,
-		[DROP_TYPE_BUFF] = function ()
-			updateBuff(uv0, uv1.id, uv2)
-		end
-	})
-	setIconCount(slot0, slot5 or slot1.count)
+	slot1:UpdateDropTpl(slot0, slot2)
+	setIconCount(slot0, slot2.count or slot1:getCount())
 end
 
-updateBuff = function(slot0, slot1, slot2)
+function updateBuff(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 	slot3 = ItemRarity.Rarity2Print(ItemRarity.Gray)
 
@@ -1405,223 +1247,26 @@ updateBuff = function(slot0, slot1, slot2)
 	setIconColorful(slot0, ItemRarity.Gold + 1, slot2)
 end
 
-slot7, slot8 = nil
+function updateAttire(slot0, slot1, slot2, slot3)
+	slot4 = 4
 
-slot9 = function(slot0, slot1)
-	if slot1 == "cfg" then
-		assert(false, string.format("without drop_type_%d config from id_%d", slot0.type or slot0.dropType, slot0.id))
-	end
-end
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
+	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
 
-updateDropCfg = function(slot0)
-	if slot0.cfg then
-		return slot0.cfg
-	end
-
-	uv0 = uv0 or {
-		[DROP_TYPE_RESOURCE] = function (slot0)
-			slot0.cfg = pg.item_data_statistics[id2ItemId(slot0.id)]
-			slot0.desc = slot0.cfg.display
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_ITEM] = function (slot0)
-			slot0.cfg = pg.item_data_statistics[slot0.id]
-			slot0.desc = slot0.cfg.display
-
-			if slot0.cfg.type == Item.LOVE_LETTER_TYPE then
-				slot0.desc = string.gsub(slot0.desc, "$1", ShipGroup.getDefaultShipNameByGroupID(slot0.extra))
-			end
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_VITEM] = function (slot0)
-			slot0.cfg = pg.item_data_statistics[slot0.id]
-			slot0.desc = slot0.cfg.display
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_LOVE_LETTER] = function (slot0)
-			slot0.cfg = pg.item_data_statistics[slot0.id]
-			slot0.desc = string.gsub(slot0.cfg.display, "$1", ShipGroup.getDefaultShipNameByGroupID(slot0.count))
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_EQUIP] = function (slot0)
-			slot0.cfg = pg.equip_data_statistics[slot0.id]
-			slot0.desc = slot0.cfg.descrip
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_SHIP] = function (slot0)
-			slot0.cfg = pg.ship_data_statistics[slot0.id]
-			slot1, slot2, slot3 = ShipWordHelper.GetWordAndCV(slot0.cfg.skin_id, ShipWordHelper.WORD_TYPE_DROP)
-			slot0.desc = slot3 or i18n("ship_drop_desc_default")
-			slot0.ship = Ship.New({
-				configId = slot0.id,
-				skin_id = slot0.skinId,
-				propose = slot0.propose
-			})
-			slot0.ship.remoulded = slot0.remoulded
-			slot0.ship.virgin = slot0.virgin
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_FURNITURE] = function (slot0)
-			slot0.cfg = pg.furniture_data_template[slot0.id]
-			slot0.desc = slot0.cfg.describe
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_SKIN] = function (slot0)
-			slot0.cfg = pg.ship_skin_template[slot0.id]
-			slot1, slot2, slot0.desc = ShipWordHelper.GetWordAndCV(slot0.id, ShipWordHelper.WORD_TYPE_DROP)
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_SKIN_TIMELIMIT] = function (slot0)
-			slot0.cfg = pg.ship_skin_template[slot0.id]
-			slot1, slot2, slot0.desc = ShipWordHelper.GetWordAndCV(slot0.id, ShipWordHelper.WORD_TYPE_DROP)
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_EQUIPMENT_SKIN] = function (slot0)
-			slot0.cfg = pg.equip_skin_template[slot0.id]
-			slot0.desc = slot0.cfg.desc
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_WORLD_ITEM] = function (slot0)
-			slot0.cfg = pg.world_item_data_template[slot0.id]
-			slot0.desc = slot0.cfg.display
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_ICON_FRAME] = function (slot0)
-			slot0.cfg = pg.item_data_frame[slot0.id]
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_CHAT_FRAME] = function (slot0)
-			slot0.cfg = pg.item_data_chat[slot0.id]
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_SPWEAPON] = function (slot0)
-			slot0.cfg = pg.spweapon_data_statistics[slot0.id]
-			slot0.desc = slot0.cfg.descrip
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_RYZA_DROP] = function (slot0)
-			slot0.cfg = pg.activity_ryza_item[slot0.id]
-			slot0.item = AtelierMaterial.New({
-				configId = slot0.id
-			})
-			slot0.desc = slot0.item:GetDesc()
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_NPC_SHIP] = function (slot0)
-			slot0.ship = getProxy(BayProxy):getShipById(slot0.id)
-			slot0.cfg = pg.ship_data_statistics[slot0.ship.configId]
-			slot1, slot2, slot3 = ShipWordHelper.GetWordAndCV(slot0.cfg.skin_id, ShipWordHelper.WORD_TYPE_DROP)
-			slot0.desc = slot3 or i18n("ship_drop_desc_default")
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_STRATEGY] = function (slot0)
-			slot0.cfg = slot0.isWorldBuff and pg.world_SLGbuff_data[slot0.id] or pg.strategy_data_template[slot0.id]
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_EMOJI] = function (slot0)
-			slot0.cfg = pg.emoji_template[slot0.id]
-			slot0.desc = slot0.cfg.item_desc
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_WORLD_COLLECTION] = function (slot0)
-			slot0.cfg = WorldCollectionProxy.GetCollectionTemplate(slot0.id)
-			slot0.desc = slot0.cfg.name
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_META_PT] = function (slot0)
-			slot0.cfg = pg.item_data_statistics[pg.ship_strengthen_meta[slot0.id].itemid]
-			slot0.desc = slot0.cfg.display
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_WORKBENCH_DROP] = function (slot0)
-			slot0.cfg = pg.activity_workbench_item[slot0.id]
-			slot0.item = WorkBenchItem.New({
-				configId = slot0.id
-			})
-			slot0.desc = slot0.item:GetDesc()
-
-			return slot0.cfg
-		end,
-		[DROP_TYPE_BUFF] = function (slot0)
-			slot0.cfg = pg.benefit_buff_template[slot0.id]
-			slot0.desc = slot0.cfg.desc
-
-			return slot0.cfg
-		end
-	}
-	uv1 = uv1 or function (slot0)
-		if DROP_TYPE_USE_ACTIVITY_DROP < (slot0.type or slot0.dropType) then
-			slot0.cfg = pg.activity_drop_type[slot1].relevance and pg[slot2][slot0.id]
-
-			return slot0.cfg
-		end
-	end
-
-	if IsUnityEditor then
-		setmetatable(slot0, setmetatable({
-			__index = function (slot0, slot1)
-				if not uv0 or not uv0.__index then
-					return uv1(slot0, slot1)
-				elseif type(uv0.__index) == "table" then
-					return defaultValue(uv0.__index[slot1], uv1(slot0, slot1))
-				elseif type(uv0.__index) == "function" then
-					return defaultValue(uv0.__index(slot0, slot1), uv1(slot0, slot1))
-				else
-					warning(type(uv0.__index))
-				end
-			end
-		}, {
-			__index = getmetatable(slot0)
-		}))
-		setmetatable(slot0, slot1)
-
-		return switch(slot0.type or slot0.dropType, uv0, uv1, slot0)
-	else
-		return switch(slot0.type or slot0.dropType, uv0, uv1, slot0)
-	end
-end
-
-updateAttire = function(slot0, slot1, slot2, slot3)
-	slot4 = slot2
-	slot5 = 4
-
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot5, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot5)
-
-	slot6 = findTF(slot0, "icon_bg/icon")
-	slot7 = nil
+	slot5 = findTF(slot0, "icon_bg/icon")
+	slot6 = nil
 
 	if slot1 == AttireConst.TYPE_CHAT_FRAME then
-		slot7 = "chat_frame"
+		slot6 = "chat_frame"
 	elseif slot1 == AttireConst.TYPE_ICON_FRAME then
-		slot7 = "icon_frame"
+		slot6 = "icon_frame"
 	end
 
-	GetImageSpriteFromAtlasAsync("Props/" .. slot7, "", slot6)
-	setIconName(slot0, slot4.name, slot3)
+	GetImageSpriteFromAtlasAsync("Props/" .. slot6, "", slot5)
+	setIconName(slot0, slot2.name, slot3)
 end
 
-updateEmoji = function(slot0, slot1, slot2)
+function updateEmoji(slot0, slot1, slot2)
 	GetImageSpriteFromAtlasAsync("Props/" .. "icon_emoji", "", findTF(slot0, "icon_bg/icon"))
 
 	slot5 = 4
@@ -1631,90 +1276,7 @@ updateEmoji = function(slot0, slot1, slot2)
 	setIconName(slot0, slot1.name, slot2)
 end
 
-slot10, slot11 = nil
-
-GetOwnedDropCount = function(slot0)
-	if not uv0 then
-		uv0 = {
-			[DROP_TYPE_RESOURCE] = function (slot0)
-				return getProxy(PlayerProxy):getRawData():getResById(slot0.id), true
-			end,
-			[DROP_TYPE_ITEM] = function (slot0)
-				slot1 = getProxy(BagProxy):getItemCountById(slot0.id)
-
-				if updateDropCfg(slot0).type == Item.LOVE_LETTER_TYPE then
-					return math.min(slot1, 1), true
-				else
-					return slot1, true
-				end
-			end,
-			[DROP_TYPE_EQUIP] = function (slot0)
-				slot1 = pg.equip_data_template[slot0.id].group
-
-				assert(pg.equip_data_template.get_id_list_by_group[slot1], "equip groupId not exist")
-
-				return underscore.reduce(pg.equip_data_template.get_id_list_by_group[slot1], 0, function (slot0, slot1)
-					return slot0 + (getProxy(EquipmentProxy):getEquipmentById(slot1) and slot2.count or 0) + getProxy(BayProxy):GetEquipCountInShips(slot1)
-				end)
-			end,
-			[DROP_TYPE_SHIP] = function (slot0)
-				return getProxy(BayProxy):getConfigShipCount(slot0.id)
-			end,
-			[DROP_TYPE_FURNITURE] = function (slot0)
-				return getProxy(DormProxy):getRawData():GetOwnFurnitureCount(slot0.id)
-			end,
-			[DROP_TYPE_STRATEGY] = function (slot0)
-				return slot0.count, tobool(slot0.count)
-			end,
-			[DROP_TYPE_SKIN] = function (slot0)
-				return getProxy(ShipSkinProxy):getSkinCountById(slot0.id)
-			end,
-			[DROP_TYPE_SKIN_TIMELIMIT] = function (slot0)
-				return getProxy(ShipSkinProxy):getSkinCountById(slot0.id)
-			end,
-			[DROP_TYPE_VITEM] = function (slot0)
-				if updateDropCfg(slot0).virtual_type == 22 then
-					return getProxy(ActivityProxy):getActivityById(slot0.cfg.link_id) and slot1.data1 or 0, true
-				end
-			end,
-			[DROP_TYPE_EQUIPMENT_SKIN] = function (slot0)
-				return (getProxy(EquipmentProxy):getEquipmnentSkinById(slot0.id) and slot1.count or 0) + getProxy(BayProxy):GetEquipSkinCountInShips(slot0.id)
-			end,
-			[DROP_TYPE_RYZA_DROP] = function (slot0)
-				return getProxy(ActivityProxy):getActivityById(pg.activity_drop_type[slot0.type].activity_id):GetItemById(slot0.id) and slot1.count or 0
-			end,
-			[DROP_TYPE_ICON_FRAME] = function (slot0)
-				return getProxy(AttireProxy):getAttireFrame(AttireConst.TYPE_ICON_FRAME, slot0.id) and (not slot1:expiredType() or not not slot1:isExpired()) and 1 or 0
-			end,
-			[DROP_TYPE_CHAT_FRAME] = function (slot0)
-				return getProxy(AttireProxy):getAttireFrame(AttireConst.TYPE_CHAT_FRAME, slot0.id) and (not slot1:expiredType() or not not slot1:isExpired()) and 1 or 0
-			end,
-			[DROP_TYPE_WORLD_ITEM] = function (slot0)
-				if nowWorld().type ~= World.TypeFull then
-					assert(false)
-
-					return 0, false
-				else
-					return slot1:GetInventoryProxy():GetItemCount(slot0.id), false
-				end
-			end
-		}
-
-		uv1 = function(slot0)
-			if DROP_TYPE_USE_ACTIVITY_DROP < (slot0.type or slot0.dropType) then
-				return getProxy(ActivityProxy):getActivityById(pg.activity_drop_type[slot1].activity_id):getVitemNumber(slot0.id)
-			else
-				return 0, false
-			end
-		end
-	end
-
-	assert(slot0.type or slot0.dropType or slot0.id, string.format("drop error: type_%d id_%d", slot0.type or slot0.dropType, slot0.id))
-
-	return switch(slot0.type or slot0.dropType, uv0, uv1, slot0)
-end
-
-updateEquipmentSkin = function(slot0, slot1, slot2)
+function updateEquipmentSkin(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 	slot3 = EquipmentRarity.Rarity2Print(slot1.rarity)
 
@@ -1727,44 +1289,7 @@ updateEquipmentSkin = function(slot0, slot1, slot2)
 	setIconColorful(slot0, slot1.rarity, slot2)
 end
 
-getDropRarity = function(slot0)
-	return switch(slot0.type, {
-		[DROP_TYPE_RESOURCE] = function ()
-			return pg.item_data_statistics[id2ItemId(uv0.id)].rarity + 1
-		end,
-		[DROP_TYPE_ITEM] = function ()
-			return pg.item_data_statistics[uv0.id].rarity + 1
-		end,
-		[DROP_TYPE_EQUIP] = function ()
-			return pg.equip_data_statistics[uv0.id].rarity
-		end,
-		[DROP_TYPE_SHIP] = function ()
-			return pg.ship_data_statistics[uv0.id].rarity
-		end,
-		[DROP_TYPE_FURNITURE] = function ()
-			return pg.furniture_data_template[uv0.id].comfortable + 1
-		end,
-		[DROP_TYPE_SKIN] = function ()
-			return 5
-		end,
-		[DROP_TYPE_SKIN_TIMELIMIT] = function ()
-			return 5
-		end,
-		[DROP_TYPE_VITEM] = function ()
-			return pg.item_data_statistics[uv0.id].rarity + 1
-		end,
-		[DROP_TYPE_WORLD_ITEM] = function ()
-			return pg.world_item_data_template[uv0.id].rarity
-		end,
-		[DROP_TYPE_BUFF] = function ()
-			return ItemRarity.Gold
-		end
-	}, function ()
-		return 1
-	end)
-end
-
-NoPosMsgBox = function(slot0, slot1, slot2, slot3)
+function NoPosMsgBox(slot0, slot1, slot2, slot3)
 	slot4 = nil
 	slot5 = {}
 
@@ -1801,7 +1326,7 @@ NoPosMsgBox = function(slot0, slot1, slot2, slot3)
 	})
 end
 
-openDestroyEquip = function()
+function openDestroyEquip()
 	if pg.m02:hasMediator(EquipmentMediator.__cname) then
 		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(EquipmentMediator) and slot2.data.shipId then
 			pg.m02:sendNotification(GAME.REMOVE_LAYERS, {
@@ -1820,7 +1345,7 @@ openDestroyEquip = function()
 	})
 end
 
-OpenSpWeaponPage = function()
+function OpenSpWeaponPage()
 	if pg.m02:hasMediator(EquipmentMediator.__cname) then
 		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(EquipmentMediator) and slot2.data.shipId then
 			pg.m02:sendNotification(GAME.REMOVE_LAYERS, {
@@ -1839,7 +1364,7 @@ OpenSpWeaponPage = function()
 	})
 end
 
-openDockyardClear = function()
+function openDockyardClear()
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 		blockLock = true,
 		mode = DockyardScene.MODE_DESTROY,
@@ -1852,7 +1377,7 @@ openDockyardClear = function()
 	})
 end
 
-openDockyardIntensify = function()
+function openDockyardIntensify()
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 		mode = DockyardScene.MODE_OVERVIEW,
 		onClick = function (slot0, slot1)
@@ -1865,12 +1390,12 @@ openDockyardIntensify = function()
 	})
 end
 
-GoShoppingMsgBox = function(slot0, slot1, slot2)
+function GoShoppingMsgBox(slot0, slot1, slot2)
 	if slot2 then
 		slot3 = ""
 
 		for slot7, slot8 in ipairs(slot2) do
-			slot3 = slot3 .. i18n(slot8[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", pg.item_data_statistics[slot8[1]].name, slot8[2])
+			slot3 = slot3 .. i18n(slot8[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", Item.getConfigData(slot8[1]).name, slot8[2])
 
 			if slot7 < #slot2 then
 				slot3 = slot3 .. i18n("text_noRes_info_tip_link")
@@ -1891,7 +1416,7 @@ GoShoppingMsgBox = function(slot0, slot1, slot2)
 	})
 end
 
-shoppingBatch = function(slot0, slot1, slot2, slot3, slot4)
+function shoppingBatch(slot0, slot1, slot2, slot3, slot4)
 	slot5 = pg.shop_template[slot0]
 
 	assert(slot5, "shop_template中找不到商品id：" .. slot0)
@@ -1909,7 +1434,7 @@ shoppingBatch = function(slot0, slot1, slot2, slot3, slot4)
 
 	if slot5 ~= nil and slot1.id then
 		print(slot10 * slot5.num, "--", slot10)
-		assert(pg.item_data_statistics[slot1.id], "item config should be existence")
+		assert(Item.getConfigData(slot1.id), "item config should be existence")
 
 		slot13 = Item.New({
 			id = slot1.id
@@ -1954,9 +1479,11 @@ shoppingBatch = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-gotoChargeScene = function(slot0, slot1)
-	if getProxy(ContextProxy):getContextByMediator(ChargeMediator) then
-		pg.m02:retrieveMediator(slot3.mediator.__cname):getViewComponent():switchSubViewByTogger(slot0)
+function gotoChargeScene(slot0, slot1)
+	slot2 = getProxy(ContextProxy)
+
+	if instanceof(getProxy(ContextProxy):getCurrentContext().mediator, ChargeMediator) then
+		slot3.mediator:getViewComponent():switchSubViewByTogger(slot0)
 	else
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
 			wrap = slot0 or ChargeScene.TYPE_ITEM,
@@ -1965,7 +1492,7 @@ gotoChargeScene = function(slot0, slot1)
 	end
 end
 
-clearDrop = function(slot0)
+function clearDrop(slot0)
 	clearImageSprite(findTF(slot0, "icon_bg"))
 	clearImageSprite(findTF(slot0, "icon_bg/frame"))
 	clearImageSprite(findTF(slot0, "icon_bg/icon"))
@@ -1975,13 +1502,13 @@ clearDrop = function(slot0)
 	end
 end
 
-slot12 = {
+slot7 = {
 	red = Color.New(1, 0.25, 0.25),
 	blue = Color.New(0.11, 0.55, 0.64),
 	yellow = Color.New(0.92, 0.52, 0)
 }
 
-updateSkill = function(slot0, slot1, slot2, slot3)
+function updateSkill(slot0, slot1, slot2, slot3)
 	slot4 = findTF(slot0, "skill")
 	slot5 = findTF(slot0, "lock")
 	slot6 = findTF(slot0, "unknown")
@@ -2001,16 +1528,16 @@ updateSkill = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot13 = true
+slot8 = true
 
-onBackButton = function(slot0, slot1, slot2, slot3)
+function onBackButton(slot0, slot1, slot2, slot3)
 	slot4 = GetOrAddComponent(slot1, "UILongPressTrigger")
 
 	assert(slot2, "callback should exist")
 
 	slot4.longPressThreshold = defaultValue(slot3, 1)
 
-	slot5 = function(slot0)
+	function slot5(slot0)
 		return function ()
 			if uv0 then
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3(SOUND_BACK)
@@ -2041,22 +1568,22 @@ onBackButton = function(slot0, slot1, slot2, slot3)
 	end))
 end
 
-GetZeroTime = function()
+function GetZeroTime()
 	return pg.TimeMgr.GetInstance():GetNextTime(0, 0, 0)
 end
 
-GetHalfHour = function()
+function GetHalfHour()
 	return pg.TimeMgr.GetInstance():GetNextTime(0, 0, 0, 1800)
 end
 
-GetNextHour = function(slot0)
+function GetNextHour(slot0)
 	slot2, slot3 = pg.TimeMgr.GetInstance():parseTimeFrom(pg.TimeMgr.GetInstance():GetServerTime())
 
 	return slot2 * 86400 + (slot3 + slot0) * 3600
 end
 
-GetPerceptualSize = function(slot0)
-	slot1 = function(slot0)
+function GetPerceptualSize(slot0)
+	function slot1(slot0)
 		if not slot0 then
 			return 0, 1
 		elseif slot0 > 240 then
@@ -2090,7 +1617,7 @@ GetPerceptualSize = function(slot0)
 	return slot3
 end
 
-shortenString = function(slot0, slot1)
+function shortenString(slot0, slot1)
 	slot2 = 1
 	slot3 = 0
 	slot4 = 0
@@ -2114,7 +1641,7 @@ shortenString = function(slot0, slot1)
 	return string.sub(slot0, 1, slot4 - 1) .. ".."
 end
 
-shouldShortenString = function(slot0, slot1)
+function shouldShortenString(slot0, slot1)
 	slot2 = 1
 	slot3 = 0
 	slot4 = 0
@@ -2138,7 +1665,7 @@ shouldShortenString = function(slot0, slot1)
 	return true
 end
 
-nameValidityCheck = function(slot0, slot1, slot2, slot3)
+function nameValidityCheck(slot0, slot1, slot2, slot3)
 	slot4 = true
 	slot5, slot6 = utf8_to_unicode(slot0)
 	slot7 = filterEgyUnicode(filterSpecChars(slot0))
@@ -2165,7 +1692,7 @@ nameValidityCheck = function(slot0, slot1, slot2, slot3)
 	return slot4
 end
 
-checkSpaceValid = function(slot0)
+function checkSpaceValid(slot0)
 	if PLATFORM_CODE == PLATFORM_US then
 		return true
 	end
@@ -2173,7 +1700,7 @@ checkSpaceValid = function(slot0)
 	return slot0 == string.gsub(string.gsub(slot0, " ", ""), "　", "")
 end
 
-filterSpecChars = function(slot0)
+function filterSpecChars(slot0)
 	slot1 = {}
 	slot2 = 0
 	slot3 = 0
@@ -2270,11 +1797,11 @@ filterSpecChars = function(slot0)
 	return table.concat(slot1), slot2 + slot3 + slot4
 end
 
-filterEgyUnicode = function(slot0)
+function filterEgyUnicode(slot0)
 	return string.gsub(string.gsub(slot0, "\\xf0\\x93[\\x80-\\x8f][\\x80-\\xbf]", ""), "\\xf0\\x93\\x90[\\x80-\\xaf]", "")
 end
 
-shiftPanel = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
+function shiftPanel(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
 	slot3 = slot3 or 0.2
 
 	if slot5 then
@@ -2306,7 +1833,7 @@ shiftPanel = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, sl
 	return slot10
 end
 
-TweenValue = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function TweenValue(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot8 = LeanTween.value(go(slot0), slot1, slot2, slot3):setOnUpdate(System.Action_float(function (slot0)
 		if uv0 then
 			uv0(slot0)
@@ -2324,25 +1851,25 @@ TweenValue = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	return slot8
 end
 
-rotateAni = function(slot0, slot1, slot2)
+function rotateAni(slot0, slot1, slot2)
 	return LeanTween.rotate(rtf(slot0), 360 * slot1, slot2):setLoopClamp()
 end
 
-blinkAni = function(slot0, slot1, slot2, slot3)
+function blinkAni(slot0, slot1, slot2, slot3)
 	return LeanTween.alpha(rtf(slot0), slot3 or 0, slot1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(slot2 or 0)
 end
 
-scaleAni = function(slot0, slot1, slot2, slot3)
+function scaleAni(slot0, slot1, slot2, slot3)
 	return LeanTween.scale(rtf(slot0), slot3 or 0, slot1):setLoopPingPong(slot2 or 0)
 end
 
-floatAni = function(slot0, slot1, slot2, slot3)
+function floatAni(slot0, slot1, slot2, slot3)
 	return LeanTween.moveY(rtf(slot0), slot0.localPosition.y + slot1, slot2):setLoopPingPong(slot3 or 0)
 end
 
-slot14 = tostring
+slot9 = tostring
 
-tostring = function(slot0)
+function tostring(slot0)
 	if slot0 == nil then
 		return "nil"
 	end
@@ -2358,7 +1885,7 @@ tostring = function(slot0)
 	return slot1
 end
 
-wordVer = function(slot0, slot1)
+function wordVer(slot0, slot1)
 	if slot0.match(slot0, ChatConst.EmojiCodeMatch) then
 		return 0, slot0
 	end
@@ -2415,7 +1942,7 @@ wordVer = function(slot0, slot1)
 	end
 end
 
-wordLegalMatch = function(slot0, slot1, slot2, slot3, slot4)
+function wordLegalMatch(slot0, slot1, slot2, slot3, slot4)
 	if slot2 > #slot0 then
 		return slot3, slot2, slot4
 	end
@@ -2437,12 +1964,12 @@ wordLegalMatch = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot15 = string.byte("a")
-slot16 = string.byte("z")
-slot17 = string.byte("A")
-slot18 = string.byte("Z")
+slot10 = string.byte("a")
+slot11 = string.byte("z")
+slot12 = string.byte("A")
+slot13 = string.byte("Z")
 
-slot19 = function(slot0)
+function slot14(slot0)
 	if not slot0 then
 		return slot0
 	end
@@ -2460,7 +1987,7 @@ slot19 = function(slot0)
 	end
 end
 
-wordVerMatch = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function wordVerMatch(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	if slot3 > #slot0 then
 		return slot5, slot6, slot7
 	end
@@ -2487,7 +2014,7 @@ wordVerMatch = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	return slot5, slot6, slot7
 end
 
-wordSplit = function(slot0)
+function wordSplit(slot0)
 	slot1 = {}
 
 	for slot5 in slot0.gmatch(slot0, "[-\\xc2-\\xf4][\\x80-\\xbf]*") do
@@ -2497,11 +2024,11 @@ wordSplit = function(slot0)
 	return slot1
 end
 
-contentWrap = function(slot0, slot1, slot2)
+function contentWrap(slot0, slot1, slot2)
 	return #LuaHelper.WrapContent(slot0, slot1, slot2) ~= #slot0, slot3
 end
 
-cancelRich = function(slot0)
+function cancelRich(slot0)
 	slot1 = nil
 
 	for slot5 = 1, 20 do
@@ -2515,7 +2042,7 @@ cancelRich = function(slot0)
 	return slot0
 end
 
-getSkillConfig = function(slot0)
+function getSkillConfig(slot0)
 	if not require("GameCfg.buff.buff_" .. slot0) then
 		warning("找不到技能配置: " .. slot0)
 
@@ -2534,7 +2061,7 @@ getSkillConfig = function(slot0)
 	return slot2
 end
 
-getSkillName = function(slot0)
+function getSkillName(slot0)
 	if pg.skill_data_template[slot0] or pg.skill_data_display[slot0] then
 		return HXSet.hxLan(slot1.name)
 	else
@@ -2542,7 +2069,7 @@ getSkillName = function(slot0)
 	end
 end
 
-getSkillDescGet = function(slot0, slot1)
+function getSkillDescGet(slot0, slot1)
 	if not (slot1 and pg.skill_world_display[slot0] and setmetatable({}, {
 		__index = function (slot0, slot1)
 			return pg.skill_world_display[uv0][slot1] or pg.skill_data_template[uv0][slot1]
@@ -2566,7 +2093,7 @@ getSkillDescGet = function(slot0, slot1)
 	return HXSet.hxLan(slot3)
 end
 
-getSkillDescLearn = function(slot0, slot1, slot2)
+function getSkillDescLearn(slot0, slot1, slot2)
 	if not (slot2 and pg.skill_world_display[slot0] and setmetatable({}, {
 		__index = function (slot0, slot1)
 			return pg.skill_world_display[uv0][slot1] or pg.skill_data_template[uv0][slot1]
@@ -2594,7 +2121,7 @@ getSkillDescLearn = function(slot0, slot1, slot2)
 	return HXSet.hxLan(slot4)
 end
 
-getSkillDesc = function(slot0, slot1, slot2)
+function getSkillDesc(slot0, slot1, slot2)
 	if not (slot2 and pg.skill_world_display[slot0] and setmetatable({}, {
 		__index = function (slot0, slot1)
 			return pg.skill_world_display[uv0][slot1] or pg.skill_data_template[uv0][slot1]
@@ -2616,11 +2143,11 @@ getSkillDesc = function(slot0, slot1, slot2)
 	return HXSet.hxLan(slot4)
 end
 
-specialGSub = function(slot0, slot1, slot2)
+function specialGSub(slot0, slot1, slot2)
 	return string.gsub(string.gsub(string.gsub(string.gsub(slot0, "<color=#", "<color=NNN"), "#", ""), slot1, string.gsub(slot2, "%%", "%%%%")), "<color=NNN", "<color=#")
 end
 
-topAnimation = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function topAnimation(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = {}
 	slot4 = slot4 or 0.27
 	slot7 = 0.05
@@ -2665,7 +2192,7 @@ topAnimation = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	return slot6
 end
 
-cancelTweens = function(slot0)
+function cancelTweens(slot0)
 	assert(slot0, "must provide cancel targets, LeanTween.cancelAll is not allow")
 
 	for slot4, slot5 in ipairs(slot0) do
@@ -2675,13 +2202,13 @@ cancelTweens = function(slot0)
 	end
 end
 
-getOfflineTimeStamp = function(slot0)
+function getOfflineTimeStamp(slot0)
 	slot3 = ""
 
 	return (pg.TimeMgr.GetInstance():GetServerTime() - slot0 > 59 or i18n("just_now")) and (slot2 > 3599 or i18n("several_minutes_before", math.floor(slot2 / 60))) and (slot2 > 86399 or i18n("several_hours_before", math.floor(slot2 / 3600))) and i18n("several_days_before", math.floor(slot2 / 86400))
 end
 
-playMovie = function(slot0, slot1, slot2)
+function playMovie(slot0, slot1, slot2)
 	if not IsNil(GameObject.Find("OverlayCamera/Overlay/UITop/MoviePanel")) then
 		slot4 = pg.UIMgr.GetInstance()
 
@@ -2734,7 +2261,7 @@ end
 
 PaintCameraAdjustOn = false
 
-cameraPaintViewAdjust = function(slot0)
+function cameraPaintViewAdjust(slot0)
 	if PaintCameraAdjustOn ~= slot0 then
 		slot1 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(CanvasScaler))
 
@@ -2757,11 +2284,11 @@ cameraPaintViewAdjust = function(slot0)
 	end
 end
 
-ManhattonDist = function(slot0, slot1)
+function ManhattonDist(slot0, slot1)
 	return math.abs(slot0.row - slot1.row) + math.abs(slot0.column - slot1.column)
 end
 
-checkFirstHelpShow = function(slot0)
+function checkFirstHelpShow(slot0)
 	if not getProxy(SettingsProxy):checkReadHelp(slot0) then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
@@ -2774,7 +2301,7 @@ end
 preOrientation = nil
 preNotchFitterEnabled = false
 
-openPortrait = function(slot0)
+function openPortrait(slot0)
 	enableNotch(slot0, true)
 
 	preOrientation = Input.deviceOrientation:ToString()
@@ -2787,7 +2314,7 @@ openPortrait = function(slot0)
 	cameraPaintViewAdjust(true)
 end
 
-closePortrait = function(slot0)
+function closePortrait(slot0)
 	enableNotch(slot0, false)
 
 	Screen.autorotateToPortrait = false
@@ -2803,7 +2330,7 @@ closePortrait = function(slot0)
 	cameraPaintViewAdjust(false)
 end
 
-enableNotch = function(slot0, slot1)
+function enableNotch(slot0, slot1)
 	if slot0 == nil then
 		return
 	end
@@ -2820,7 +2347,7 @@ enableNotch = function(slot0, slot1)
 	end
 end
 
-comma_value = function(slot0)
+function comma_value(slot0)
 	slot1 = slot0
 	slot2 = 0
 
@@ -2835,9 +2362,9 @@ comma_value = function(slot0)
 	return slot1
 end
 
-slot20 = 0.2
+slot15 = 0.2
 
-SwitchPanel = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function SwitchPanel(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot3 = defaultValue(slot3, uv0)
 
 	if slot5 then
@@ -2863,7 +2390,7 @@ SwitchPanel = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	return slot7
 end
 
-updateActivityTaskStatus = function(slot0)
+function updateActivityTaskStatus(slot0)
 	slot1 = slot0.getConfig(slot0, "config_id")
 	slot2, slot3 = getActivityTask(slot0, true)
 
@@ -2879,9 +2406,9 @@ updateActivityTaskStatus = function(slot0)
 	return false
 end
 
-updateCrusingActivityTask = function(slot0)
+function updateCrusingActivityTask(slot0)
 	slot1 = getProxy(TaskProxy)
-	slot2 = math.floor((pg.TimeMgr.GetInstance():GetServerTime() - slot0:getStartTime()) / 86400) + 1
+	slot2 = slot0:getNDay()
 	slot6 = "config_data"
 
 	for slot6, slot7 in ipairs(slot0:getConfig(slot6)) do
@@ -2900,7 +2427,7 @@ updateCrusingActivityTask = function(slot0)
 	return false
 end
 
-setShipCardFrame = function(slot0, slot1, slot2)
+function setShipCardFrame(slot0, slot1, slot2)
 	slot0.localScale = Vector3.one
 	slot0.anchorMin = Vector2.zero
 	slot0.anchorMax = Vector2.one
@@ -2918,7 +2445,7 @@ setShipCardFrame = function(slot0, slot1, slot2)
 	end
 end
 
-setRectShipCardFrame = function(slot0, slot1, slot2)
+function setRectShipCardFrame(slot0, slot1, slot2)
 	slot0.localScale = Vector3.one
 	slot0.anchorMin = Vector2.zero
 	slot0.anchorMax = Vector2.one
@@ -2935,7 +2462,7 @@ setRectShipCardFrame = function(slot0, slot1, slot2)
 	end
 end
 
-setFrameEffect = function(slot0, slot1)
+function setFrameEffect(slot0, slot1)
 	if slot1 then
 		slot2 = slot1 .. "(Clone)"
 
@@ -2960,7 +2487,7 @@ setFrameEffect = function(slot0, slot1)
 	setActive(slot0, slot1)
 end
 
-setProposeMarkIcon = function(slot0, slot1)
+function setProposeMarkIcon(slot0, slot1)
 	slot3 = slot1.propose and not slot1:ShowPropose()
 
 	if slot0:Find("proposeShipCard(Clone)") then
@@ -2978,7 +2505,7 @@ setProposeMarkIcon = function(slot0, slot1)
 	end
 end
 
-flushShipCard = function(slot0, slot1)
+function flushShipCard(slot0, slot1)
 	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. slot1:rarity2bgPrint(), "", findTF(slot0, "content/bg"))
 
 	slot5 = slot1 and {
@@ -3016,7 +2543,7 @@ flushShipCard = function(slot0, slot1)
 	setProposeMarkIcon(slot0.Find(slot0, "content/dockyard/propose"), slot1)
 end
 
-TweenItemAlphaAndWhite = function(slot0)
+function TweenItemAlphaAndWhite(slot0)
 	LeanTween.cancel(slot0)
 
 	slot1 = GetOrAddComponent(slot0, "CanvasGroup")
@@ -3029,13 +2556,13 @@ TweenItemAlphaAndWhite = function(slot0)
 	end
 end
 
-ClearTweenItemAlphaAndWhite = function(slot0)
+function ClearTweenItemAlphaAndWhite(slot0)
 	LeanTween.cancel(slot0)
 
 	GetOrAddComponent(slot0, "CanvasGroup").alpha = 0
 end
 
-getGroupOwnSkins = function(slot0)
+function getGroupOwnSkins(slot0)
 	slot1 = {}
 	slot3 = getProxy(ShipSkinProxy):getSkinList()
 
@@ -3050,7 +2577,7 @@ getGroupOwnSkins = function(slot0)
 	return slot1
 end
 
-split = function(slot0, slot1)
+function split(slot0, slot1)
 	slot2 = {}
 
 	if not slot0 then
@@ -3081,7 +2608,7 @@ split = function(slot0, slot1)
 	return slot2
 end
 
-NumberToChinese = function(slot0, slot1)
+function NumberToChinese(slot0, slot1)
 	slot2 = ""
 
 	for slot7 = 1, #slot0 do
@@ -3093,43 +2620,42 @@ NumberToChinese = function(slot0, slot1)
 	return slot2
 end
 
-getActivityTask = function(slot0, slot1)
+function getActivityTask(slot0, slot1)
 	slot2 = getProxy(TaskProxy)
-	slot4 = pg.TimeMgr.GetInstance()
-	slot6, slot7, slot8 = nil
-	slot12 = #slot0:getConfig("config_data")
+	slot5, slot6, slot7 = nil
+	slot11 = #slot0:getConfig("config_data")
 
-	for slot12 = math.max(slot0.data3, 1), math.min(slot4:DiffDay(slot0.data1, slot4:GetServerTime()) + 1, slot12) do
-		for slot17, slot18 in ipairs(_.flatten({
-			slot3[slot12]
+	for slot11 = math.max(slot0.data3, 1), math.min(slot0:getNDay(slot0.data1), slot11) do
+		for slot16, slot17 in ipairs(_.flatten({
+			slot3[slot11]
 		})) do
-			if slot2.getTaskById(slot2, slot18) then
-				return slot6.id, slot6
+			if slot2.getTaskById(slot2, slot17) then
+				return slot5.id, slot5
 			end
 
-			if slot7 then
-				if slot2.getFinishTaskById(slot2, slot18) then
-					slot7 = slot8
+			if slot6 then
+				if slot2.getFinishTaskById(slot2, slot17) then
+					slot6 = slot7
 				elseif slot1 then
-					return slot18
+					return slot17
 				else
-					return slot7.id, slot7
+					return slot6.id, slot6
 				end
 			else
-				slot7 = slot2.getFinishTaskById(slot2, slot18)
-				slot8 = slot8 or slot18
+				slot6 = slot2.getFinishTaskById(slot2, slot17)
+				slot7 = slot7 or slot17
 			end
 		end
 	end
 
-	if slot7 then
-		return slot7.id, slot7
+	if slot6 then
+		return slot6.id, slot6
 	else
-		return slot8
+		return slot7
 	end
 end
 
-setImageFromImage = function(slot0, slot1, slot2)
+function setImageFromImage(slot0, slot1, slot2)
 	GetComponent(slot0, "Image").sprite = GetComponent(slot1, "Image").sprite
 
 	if slot2 then
@@ -3137,7 +2663,7 @@ setImageFromImage = function(slot0, slot1, slot2)
 	end
 end
 
-skinTimeStamp = function(slot0)
+function skinTimeStamp(slot0)
 	slot1, slot2, slot3, slot4 = pg.TimeMgr.GetInstance():parseTimeFrom(slot0)
 
 	if slot1 >= 1 then
@@ -3151,7 +2677,7 @@ skinTimeStamp = function(slot0)
 	end
 end
 
-skinCommdityTimeStamp = function(slot0)
+function skinCommdityTimeStamp(slot0)
 	if math.floor(math.max(slot0 - pg.TimeMgr.GetInstance():GetServerTime(), 0) / 86400) > 0 then
 		return i18n("time_remaining_tip") .. slot3 .. i18n("word_date")
 	elseif math.floor(slot2 / 3600) > 0 then
@@ -3163,7 +2689,7 @@ skinCommdityTimeStamp = function(slot0)
 	end
 end
 
-InstagramTimeStamp = function(slot0)
+function InstagramTimeStamp(slot0)
 	if (pg.TimeMgr.GetInstance():GetServerTime() - slot0) / 86400 > 1 then
 		return i18n("ins_word_day", math.floor(slot3))
 	elseif slot2 / 3600 > 1 then
@@ -3175,7 +2701,7 @@ InstagramTimeStamp = function(slot0)
 	end
 end
 
-InstagramReplyTimeStamp = function(slot0)
+function InstagramReplyTimeStamp(slot0)
 	if (pg.TimeMgr.GetInstance():GetServerTime() - slot0) / 86400 > 1 then
 		return i18n1(math.floor(slot3) .. "d")
 	elseif slot2 / 3600 > 1 then
@@ -3187,7 +2713,7 @@ InstagramReplyTimeStamp = function(slot0)
 	end
 end
 
-attireTimeStamp = function(slot0)
+function attireTimeStamp(slot0)
 	slot1, slot2, slot3, slot4 = pg.TimeMgr.GetInstance():parseTimeFrom(slot0)
 
 	if slot1 <= 0 and slot2 <= 0 and slot3 <= 0 and slot4 <= 0 then
@@ -3197,7 +2723,7 @@ attireTimeStamp = function(slot0)
 	end
 end
 
-checkExist = function(slot0, ...)
+function checkExist(slot0, ...)
 	for slot5, slot6 in ipairs({
 		...
 	}) do
@@ -3214,7 +2740,7 @@ checkExist = function(slot0, ...)
 	return slot0
 end
 
-AcessWithinNull = function(slot0, slot1)
+function AcessWithinNull(slot0, slot1)
 	if slot0 == nil then
 		return
 	end
@@ -3224,7 +2750,7 @@ AcessWithinNull = function(slot0, slot1)
 	return slot0[slot1]
 end
 
-showRepairMsgbox = function()
+function showRepairMsgbox()
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideYes = true,
 		hideNo = true,
@@ -3264,7 +2790,7 @@ showRepairMsgbox = function()
 	})
 end
 
-resourceVerify = function(slot0, slot1)
+function resourceVerify(slot0, slot1)
 	if CSharpVersion > 35 then
 		BundleWizard.Inst:GetGroupMgr("DEFAULT_RES"):StartVerifyForLua()
 
@@ -3281,7 +2807,7 @@ resourceVerify = function(slot0, slot1)
 		pg.UIMgr.GetInstance():LoadingOn()
 	end
 
-	slot6 = function()
+	function slot6()
 		if uv0 then
 			setActive(uv0, false)
 		else
@@ -3335,7 +2861,7 @@ resourceVerify = function(slot0, slot1)
 	end)(slot4.Length - 1)
 end
 
-splitByWordEN = function(slot0, slot1)
+function splitByWordEN(slot0, slot1)
 	slot3 = ""
 	slot4 = ""
 	slot6 = slot1.GetComponent(slot1, typeof(Text))
@@ -3359,7 +2885,7 @@ splitByWordEN = function(slot0, slot1)
 	return slot3
 end
 
-checkBirthFormat = function(slot0)
+function checkBirthFormat(slot0)
 	if #slot0 ~= 8 then
 		return false
 	end
@@ -3378,7 +2904,7 @@ checkBirthFormat = function(slot0)
 	return true
 end
 
-isHalfBodyLive2D = function(slot0)
+function isHalfBodyLive2D(slot0)
 	return _.any({
 		"biaoqiang",
 		"z23",
@@ -3391,7 +2917,7 @@ isHalfBodyLive2D = function(slot0)
 	end)
 end
 
-GetServerState = function(slot0)
+function GetServerState(slot0)
 	slot1 = -1
 	slot2 = 0
 	slot3 = 1
@@ -3420,11 +2946,11 @@ GetServerState = function(slot0)
 	end)
 end
 
-setScrollText = function(slot0, slot1)
+function setScrollText(slot0, slot1)
 	GetOrAddComponent(slot0, "ScrollText"):SetText(slot1)
 end
 
-changeToScrollText = function(slot0, slot1)
+function changeToScrollText(slot0, slot1)
 	assert(GetComponent(slot0, typeof(Text)), "without component<Text>")
 
 	if not slot0.Find(slot0, "subText") then
@@ -3440,9 +2966,9 @@ changeToScrollText = function(slot0, slot1)
 	setScrollText(slot3, slot1)
 end
 
-slot21, slot22, slot23, slot24 = nil
+slot16, slot17, slot18, slot19 = nil
 
-slot21 = function(slot0, slot1, slot2)
+function slot16(slot0, slot1, slot2)
 	slot3 = slot0.Find(slot0, "base")
 	slot4, slot5, slot6 = Equipment.GetInfoTrans(slot1, slot2)
 
@@ -3477,7 +3003,7 @@ slot21 = function(slot0, slot1, slot2)
 	end
 end
 
-slot22 = function(slot0, slot1, slot2, slot3)
+function slot17(slot0, slot1, slot2, slot3)
 	uv0(slot0, slot2, slot3)
 
 	if not slot2.sub or #slot2.sub == 0 then
@@ -3487,18 +3013,18 @@ slot22 = function(slot0, slot1, slot2, slot3)
 	uv1(slot0.Find(slot0, "subs"), slot1, slot2.sub, slot3)
 end
 
-slot23 = function(slot0, slot1, slot2, slot3)
+function slot18(slot0, slot1, slot2, slot3)
 	removeAllChildren(slot0)
 	uv0(slot0, slot1, slot2, slot3)
 end
 
-slot24 = function(slot0, slot1, slot2, slot3)
+function slot19(slot0, slot1, slot2, slot3)
 	for slot7, slot8 in ipairs(slot2) do
 		uv0(cloneTplTo(slot1, slot0), slot1, slot8, slot3)
 	end
 end
 
-updateEquipInfo = function(slot0, slot1, slot2, slot3)
+function updateEquipInfo(slot0, slot1, slot2, slot3)
 	uv0(slot0.Find(slot0, "attrs"), slot0.Find(slot0, "attr_tpl"), slot1.attrs, slot3)
 	setActive(slot0.Find(slot0, "skill"), slot2)
 
@@ -3555,17 +3081,21 @@ updateEquipInfo = function(slot0, slot1, slot2, slot3)
 		end
 	end
 
-	for slot12, slot13 in ipairs(ShipType.FilterOverQuZhuType(ShipType.AllShipType)) do
-		slot14 = slot12 <= slot5.childCount and slot5:GetChild(slot12 - 1) or cloneTplTo(slot6, slot5)
+	UIItemList.StaticAlign(slot5, slot6, #ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), slot7, slot8), function (slot0, slot1, slot2)
+		slot1 = slot1 + 1
 
-		GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(slot13), slot14)
-		setActive(slot14:Find("main"), slot7[slot13] and not slot8[slot13])
-		setActive(slot14:Find("sub"), slot8[slot13] and not slot7[slot13])
-		setImageAlpha(slot14, not slot7[slot13] and not slot8[slot13] and 0.3 or 1)
-	end
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1]
+
+			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(slot3), slot2)
+			setActive(slot2:Find("main"), uv1[slot3] and not uv2[slot3])
+			setActive(slot2:Find("sub"), uv2[slot3] and not uv1[slot3])
+			setImageAlpha(slot2, not uv1[slot3] and not uv2[slot3] and 0.3 or 1)
+		end
+	end)
 end
 
-updateEquipUpgradeInfo = function(slot0, slot1, slot2)
+function updateEquipUpgradeInfo(slot0, slot1, slot2)
 	uv0(slot0:Find("attrs"), slot0:Find("attr_tpl"), slot1.attrs, slot2)
 	setActive(slot0:Find("weapon"), #slot1.weapon.sub > 0)
 
@@ -3584,7 +3114,7 @@ updateEquipUpgradeInfo = function(slot0, slot1, slot2)
 	end
 end
 
-setCanvasOverrideSorting = function(slot0, slot1)
+function setCanvasOverrideSorting(slot0, slot1)
 	slot2 = slot0.parent
 
 	slot0.SetParent(slot0, pg.LayerWeightMgr.GetInstance().uiOrigin, false)
@@ -3602,7 +3132,7 @@ setCanvasOverrideSorting = function(slot0, slot1)
 	slot0.SetParent(slot0, slot2, false)
 end
 
-createNewGameObject = function(slot0, slot1)
+function createNewGameObject(slot0, slot1)
 	slot2 = GameObject.New()
 
 	if slot0 then
@@ -3614,7 +3144,7 @@ createNewGameObject = function(slot0, slot1)
 	return GetOrAddComponent(slot2, "RectTransform")
 end
 
-CreateShell = function(slot0)
+function CreateShell(slot0)
 	if type(slot0) ~= "table" and type(slot0) ~= "userdata" then
 		return slot0
 	end
@@ -3624,7 +3154,7 @@ CreateShell = function(slot0)
 	}, slot0))
 end
 
-CameraFittingSettin = function(slot0)
+function CameraFittingSettin(slot0)
 	slot1 = GetComponent(slot0, typeof(Camera))
 
 	if 1.7777777777777777 > Screen.width / Screen.height then
@@ -3633,7 +3163,7 @@ CameraFittingSettin = function(slot0)
 	end
 end
 
-SwitchSpecialChar = function(slot0, slot1)
+function SwitchSpecialChar(slot0, slot1)
 	if PLATFORM_CODE ~= PLATFORM_US then
 		slot0 = slot0:gsub(" ", " "):gsub("\t", "    ")
 	end
@@ -3645,7 +3175,7 @@ SwitchSpecialChar = function(slot0, slot1)
 	return slot0
 end
 
-AfterCheck = function(slot0, slot1)
+function AfterCheck(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(slot0) do
@@ -3663,10 +3193,10 @@ AfterCheck = function(slot0, slot1)
 	end
 end
 
-CompareFuncs = function(slot0, slot1)
+function CompareFuncs(slot0, slot1)
 	slot2 = {}
 
-	slot3 = function(slot0, slot1)
+	function slot3(slot0, slot1)
 		uv0[slot0] = uv0[slot0] or {}
 		uv0[slot0][slot1] = uv0[slot0][slot1] or uv1[slot0](slot1)
 
@@ -3688,7 +3218,7 @@ CompareFuncs = function(slot0, slot1)
 	end
 end
 
-DropResultIntegration = function(slot0)
+function DropResultIntegration(slot0)
 	slot1 = {}
 	slot2 = 1
 
@@ -3721,7 +3251,7 @@ DropResultIntegration = function(slot0)
 					return 4
 				elseif slot2 == 59900 then
 					return 5
-				elseif (pg.item_data_statistics[slot2] and slot3.type or 0) == 9 then
+				elseif (Item.getConfigData(slot2) and slot3.type or 0) == 9 then
 					return 6
 				elseif slot4 == 5 then
 					return 7
@@ -3742,7 +3272,7 @@ DropResultIntegration = function(slot0)
 			if slot0.type == DROP_TYPE_SHIP then
 				slot1 = pg.ship_data_statistics[slot0.id]
 			elseif slot0.type == DROP_TYPE_ITEM then
-				slot1 = pg.item_data_statistics[slot0.id]
+				slot1 = Item.getConfigData(slot0.id)
 			end
 
 			return (slot1 and slot1.rarity or 0) * -1
@@ -3753,7 +3283,7 @@ DropResultIntegration = function(slot0)
 	}))
 end
 
-getLoginConfig = function()
+function getLoginConfig()
 	slot0 = pg.TimeMgr.GetInstance():GetServerTime()
 	slot1 = 1
 
@@ -3782,7 +3312,7 @@ getLoginConfig = function()
 	return slot4, slot4 and slot3 or slot2, pg.login[slot1].bgm, slot5, slot6 == "" and slot6 or table.concat(slot6[1][1])
 end
 
-setIntimacyIcon = function(slot0, slot1, slot2)
+function setIntimacyIcon(slot0, slot1, slot2)
 	slot3 = {}
 	slot4 = nil
 
@@ -3812,22 +3342,22 @@ setIntimacyIcon = function(slot0, slot1, slot2)
 	return slot4
 end
 
-slot25 = nil
+slot20 = nil
 
-nowWorld = function()
+function nowWorld()
 	uv0 = uv0 or getProxy(WorldProxy)
 
 	return uv0 and uv0.world
 end
 
-removeWorld = function()
+function removeWorld()
 	uv0.world:Dispose()
 
 	uv0.world = nil
 	uv0 = nil
 end
 
-switch = function(slot0, slot1, slot2, ...)
+function switch(slot0, slot1, slot2, ...)
 	if slot1[slot0] then
 		return slot1[slot0](...)
 	elseif slot2 then
@@ -3835,7 +3365,7 @@ switch = function(slot0, slot1, slot2, ...)
 	end
 end
 
-parseTimeConfig = function(slot0)
+function parseTimeConfig(slot0)
 	if type(slot0[1]) == "table" then
 		return slot0[2], slot0[1]
 	else
@@ -3843,7 +3373,7 @@ parseTimeConfig = function(slot0)
 	end
 end
 
-slot26 = {
+slot21 = {
 	__add = function (slot0, slot1)
 		return NewPos(slot0.x + slot1.x, slot0.y + slot1.y)
 	end,
@@ -3865,7 +3395,7 @@ slot26 = {
 	end
 }
 
-NewPos = function(slot0, slot1)
+function NewPos(slot0, slot1)
 	assert(slot0 and slot1)
 
 	slot2 = setmetatable({
@@ -3873,11 +3403,11 @@ NewPos = function(slot0, slot1)
 		y = slot1
 	}, uv0)
 
-	slot2.SqrMagnitude = function(slot0)
+	function slot2.SqrMagnitude(slot0)
 		return slot0.x * slot0.x + slot0.y * slot0.y
 	end
 
-	slot2.Normalize = function(slot0)
+	function slot2.Normalize(slot0)
 		if slot0:SqrMagnitude() > 1e-05 then
 			return slot0 * 1 / math.sqrt(slot1)
 		else
@@ -3888,23 +3418,23 @@ NewPos = function(slot0, slot1)
 	return slot2
 end
 
-slot27 = nil
+slot22 = nil
 
-Timekeeping = function()
+function Timekeeping()
 	warning(Time.realtimeSinceStartup - (uv0 or Time.realtimeSinceStartup), Time.realtimeSinceStartup)
 
 	uv0 = Time.realtimeSinceStartup
 end
 
-GetRomanDigit = function(slot0)
+function GetRomanDigit(slot0)
 	return string.char(226, 133, 160 + slot0 - 1)
 end
 
-quickPlayAnimator = function(slot0, slot1)
+function quickPlayAnimator(slot0, slot1)
 	slot0:GetComponent(typeof(Animator)):Play(slot1, -1, 0)
 end
 
-getSurveyUrl = function(slot0)
+function getSurveyUrl(slot0)
 	slot1 = pg.survey_data_template[slot0]
 	slot2 = nil
 
@@ -3948,7 +3478,7 @@ getSurveyUrl = function(slot0)
 	return slot11
 end
 
-GetMoneySymbol = function()
+function GetMoneySymbol()
 	if PLATFORM_CH == PLATFORM_CODE then
 		return "￥"
 	elseif PLATFORM_JP == PLATFORM_CODE then
@@ -3964,7 +3494,7 @@ GetMoneySymbol = function()
 	return ""
 end
 
-FilterVarchar = function(slot0)
+function FilterVarchar(slot0)
 	assert(type(slot0) == "string" or type(slot0) == "table")
 
 	if slot0 == "" then
@@ -3974,7 +3504,7 @@ FilterVarchar = function(slot0)
 	return slot0
 end
 
-getGameset = function(slot0)
+function getGameset(slot0)
 	slot1 = pg.gameset[slot0]
 
 	assert(slot1)
@@ -3985,7 +3515,7 @@ getGameset = function(slot0)
 	}
 end
 
-GetItemsOverflowDic = function(slot0)
+function GetItemsOverflowDic(slot0)
 	slot0 = slot0 or {}
 	slot1 = {
 		[DROP_TYPE_ITEM] = {},
@@ -3998,17 +3528,16 @@ GetItemsOverflowDic = function(slot0)
 	while #slot0 > 0 do
 		switch(table.remove(slot0).type, {
 			[DROP_TYPE_ITEM] = function ()
-				if uv0:getTempConfig("open_directly") == 1 then
+				if uv0:getConfig("open_directly") == 1 then
 					slot3 = "display_icon"
 
 					for slot3, slot4 in ipairs(uv0:getConfig(slot3)) do
-						table.insert(uv1, Item.New({
-							type = slot4[1],
-							id = slot4[2],
-							count = slot4[3]
-						}))
+						slot5 = Drop.Create(slot4)
+						slot5.count = slot5.count * uv0.count
+
+						table.insert(uv1, slot5)
 					end
-				elseif uv0:IsShipExpType() then
+				elseif uv0:getSubClass():IsShipExpType() then
 					uv2[uv0.type][uv0.id] = defaultValue(uv2[uv0.type][uv0.id], 0) + uv0.count
 				end
 			end,
@@ -4030,40 +3559,40 @@ GetItemsOverflowDic = function(slot0)
 	return slot1
 end
 
-CheckOverflow = function(slot0)
-	slot2 = slot0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
+function CheckOverflow(slot0)
+	slot2 = slot0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
 	slot3 = slot0[DROP_TYPE_EQUIP]
 	slot4 = slot0[DROP_TYPE_SHIP]
 	slot5 = getProxy(PlayerProxy):getRawData()
 
-	if (slot0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0) > 0 and slot5.OilMax(slot5, slot1) then
-		return false, i18n("oil_max_tip_title") .. i18n("resource_max_tip_mail")
+	if (slot0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0) > 0 and slot5.GoldMax(slot5, slot1) then
+		return false, "gold"
 	end
 
-	if slot2 > 0 and slot5.GoldMax(slot5, slot2) then
-		return false, i18n("gold_max_tip_title") .. i18n("resource_max_tip_mail")
+	if slot2 > 0 and slot5.OilMax(slot5, slot2) then
+		return false, "oil"
 	end
 
 	slot6 = getProxy(EquipmentProxy):getCapacity()
 
 	if slot3 > 0 and slot5.getMaxEquipmentBag(slot5) < slot3 + slot6 then
-		return false, i18n("mail_takeAttachment_error_magazine_full")
+		return false, "equip"
 	end
 
 	slot7 = getProxy(BayProxy):getShipCount()
 
 	if slot4 > 0 and slot5.getMaxShipBag(slot5) < slot4 + slot7 then
-		return false, i18n("mail_takeAttachment_error_dockYrad_full")
+		return false, "ship"
 	end
 
 	return true
 end
 
-CheckShipExpOverflow = function(slot0)
+function CheckShipExpOverflow(slot0)
 	slot1 = getProxy(BagProxy)
 
 	for slot5, slot6 in pairs(slot0[DROP_TYPE_ITEM]) do
-		if pg.item_data_statistics[slot5].max_num < slot1.getItemCountById(slot1, slot5) + slot6 then
+		if Item.getConfigData(slot5).max_num < slot1.getItemCountById(slot1, slot5) + slot6 then
 			return false
 		end
 	end
@@ -4071,7 +3600,7 @@ CheckShipExpOverflow = function(slot0)
 	return true
 end
 
-slot28 = {
+slot23 = {
 	[17.0] = "item_type17_tip2",
 	tech = "techpackage_item_use_confirm",
 	[16.0] = "item_type16_tip2",
@@ -4079,35 +3608,70 @@ slot28 = {
 	[13.0] = "item_type13_tip2"
 }
 
-RegisterDetailButton = function(slot0, slot1, slot2)
-	updateDropCfg(slot2)
+function RegisterDetailButton(slot0, slot1, slot2)
+	Drop.Change(slot2)
 	switch(slot2.type, {
 		[DROP_TYPE_ITEM] = function ()
-			if uv1[getProxy(TechnologyProxy):getItemCanUnlockBluePrint(uv0.id) and "tech" or uv0.cfg.type] then
+			if uv0:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
+				slot1 = Item.getConfigData(uv0.id).usage_arg[3]
+
+				if Item.InTimeLimitSkinAssigned(uv0.id) then
+					slot1 = table.mergeArray(slot0[2], slot1, true)
+				end
+
+				slot2 = {}
+
+				for slot6, slot7 in ipairs(slot0[2]) do
+					slot2[slot7] = true
+				end
+
+				onButton(uv1, uv2, function ()
+					uv0:closeView()
+					pg.m02:sendNotification(GAME.LOAD_LAYERS, {
+						parentContext = getProxy(ContextProxy):getCurrentContext(),
+						context = Context.New({
+							viewComponent = SelectSkinLayer,
+							mediator = SkinAtlasMediator,
+							data = {
+								mode = SelectSkinLayer.MODE_VIEW,
+								itemId = uv1.id,
+								selectableSkinList = underscore.map(uv2, function (slot0)
+									return SelectableSkin.New({
+										id = slot0,
+										isTimeLimit = uv0[slot0] or false
+									})
+								end)
+							}
+						})
+					})
+				end, SFX_PANEL)
+				setActive(uv2, true)
+
+				return
+			end
+
+			if uv3[getProxy(TechnologyProxy):getItemCanUnlockBluePrint(uv0.id) and "tech" or uv0:getConfig("type")] then
 				slot1 = {
 					item2Row = true,
-					itemList = underscore.map(uv0.cfg.display_icon, function (slot0)
-						return {
-							type = slot0[1],
-							id = slot0[2],
-							count = slot0[3]
-						}
-					end),
-					content = i18n(uv1[slot0])
+					content = i18n(uv3[slot0]),
+					itemList = underscore.map(slot3:getConfig("display_icon"), function (slot0)
+						return Drop.Create(slot0)
+					end)
 				}
+				slot3 = uv0
 
 				if slot0 == 11 then
-					onButton(uv2, uv3, function ()
+					onButton(uv1, uv2, function ()
 						uv0:emit(BaseUI.ON_DROP_LIST_OWN, uv1)
 					end, SFX_PANEL)
 				else
-					onButton(uv2, uv3, function ()
+					onButton(uv1, uv2, function ()
 						uv0:emit(BaseUI.ON_DROP_LIST, uv1)
 					end, SFX_PANEL)
 				end
 			end
 
-			setActive(uv3, tobool(uv1[slot0]))
+			setActive(uv2, tobool(uv3[slot0]))
 		end,
 		[DROP_TYPE_EQUIP] = function ()
 			onButton(uv0, uv1, function ()
@@ -4126,8 +3690,8 @@ RegisterDetailButton = function(slot0, slot1, slot2)
 	end)
 end
 
-UpdateOwnDisplay = function(slot0, slot1)
-	slot2, slot3 = GetOwnedDropCount(slot1)
+function UpdateOwnDisplay(slot0, slot1)
+	slot2, slot3 = slot1:getOwnedCount()
 
 	setActive(slot0, slot3 and slot2 > 0)
 
@@ -4137,7 +3701,7 @@ UpdateOwnDisplay = function(slot0, slot1)
 	end
 end
 
-checkCullResume = function(slot0)
+function checkCullResume(slot0)
 	if not ReflectionHelp.RefCallMethodEx(typeof("UnityEngine.CanvasRenderer"), "GetMaterial", GetComponent(slot0, "CanvasRenderer"), {
 		typeof("System.Int32")
 	}, {
@@ -4151,4 +3715,39 @@ checkCullResume = function(slot0)
 	end
 
 	return true
+end
+
+function parseEquipCode(slot0)
+	slot1 = {}
+
+	if slot0 and slot0 ~= "" then
+		slot1 = string.split(base64.dec(slot0), "/")
+		slot1[5], slot1[6] = unpack(string.split(slot1[5], "\\"))
+
+		if #slot1 < 6 or slot0 ~= base64.enc(table.concat({
+			table.concat(underscore.first(slot1, 5), "/"),
+			slot1[6]
+		}, "\\")) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_illegal"))
+
+			slot1 = {}
+		end
+	end
+
+	for slot5 = 1, 6 do
+		slot1[slot5] = slot1[slot5] and tonumber(slot1[slot5], 32) or 0
+	end
+
+	return slot1
+end
+
+function buildEquipCode(slot0)
+	return base64.enc(table.concat({
+		table.concat(underscore.map(slot0:getAllEquipments(), function (slot0)
+			return ConversionBase(32, slot0 and slot0.id or 0)
+		end), "/"),
+		ConversionBase(32, checkExist(slot0:GetSpWeapon(), {
+			"id"
+		}) or 0)
+	}, "\\"))
 end

@@ -1,10 +1,10 @@
 slot0 = class("MetaCharacter", import("..BaseVO"))
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.ship_strengthen_meta
 end
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	assert(slot1.id)
 	assert(slot2)
 
@@ -39,7 +39,7 @@ slot0.Ctor = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.getBreakOutInfo = function(slot0)
+function slot0.getBreakOutInfo(slot0)
 	assert(slot0.shipVO)
 
 	slot1 = slot0.shipVO
@@ -53,7 +53,7 @@ slot0.getBreakOutInfo = function(slot0)
 	return slot0.beakOutInfo
 end
 
-slot0.getSpecialMaterialInfoToMaxStar = function(slot0)
+function slot0.getSpecialMaterialInfoToMaxStar(slot0)
 	slot1 = slot0:getBreakOutInfo()
 	slot2 = {
 		count = 0,
@@ -70,7 +70,7 @@ slot0.getSpecialMaterialInfoToMaxStar = function(slot0)
 	end
 end
 
-slot0.getCurRepairExp = function(slot0)
+function slot0.getCurRepairExp(slot0)
 	slot1 = 0
 
 	for slot5, slot6 in pairs(slot0.attrs) do
@@ -80,23 +80,23 @@ slot0.getCurRepairExp = function(slot0)
 	return slot1
 end
 
-slot0.getMaxRepairExp = function(slot0)
+function slot0.getMaxRepairExp(slot0)
 	return slot0.maxRepairExp
 end
 
-slot0.getRepairRate = function(slot0)
+function slot0.getRepairRate(slot0)
 	return slot0:getCurRepairExp() / slot0:getMaxRepairExp()
 end
 
-slot0.isMaxRepairExp = function(slot0)
+function slot0.isMaxRepairExp(slot0)
 	return slot0:getCurRepairExp() == slot0:getMaxRepairExp()
 end
 
-slot0.getAttrAddition = function(slot0, slot1)
+function slot0.getAttrAddition(slot0, slot1)
 	return slot0:getRepairAddition(slot1) + slot0:getPercentageAddition(slot1)
 end
 
-slot0.getPercentageAddition = function(slot0, slot1)
+function slot0.getPercentageAddition(slot0, slot1)
 	slot2 = 0
 	slot3 = slot0:getRepairRate() * 100
 
@@ -109,7 +109,7 @@ slot0.getPercentageAddition = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getRepairAddition = function(slot0, slot1)
+function slot0.getRepairAddition(slot0, slot1)
 	slot2 = 0
 
 	if slot0.attrs[slot1] and slot3:isLock() then
@@ -123,7 +123,7 @@ slot0.getRepairAddition = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getTotalMaxAddition = function(slot0)
+function slot0.getTotalMaxAddition(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.attrs) do
@@ -160,7 +160,7 @@ slot0.getTotalMaxAddition = function(slot0)
 	return slot1
 end
 
-slot0.getFinalAddition = function(slot0, slot1)
+function slot0.getFinalAddition(slot0, slot1)
 	assert(slot1, "shipVO can not be nil")
 
 	slot3 = slot0:getTotalMaxAddition()
@@ -172,19 +172,19 @@ slot0.getFinalAddition = function(slot0, slot1)
 	return slot2
 end
 
-slot0.getAttrVO = function(slot0, slot1)
+function slot0.getAttrVO(slot0, slot1)
 	return slot0.attrs[slot1]
 end
 
-slot0.existAttr = function(slot0, slot1)
+function slot0.existAttr(slot0, slot1)
 	return not slot0:getAttrVO(slot1):isLock()
 end
 
-slot0.getEffects = function(slot0)
+function slot0.getEffects(slot0)
 	return slot0.effects
 end
 
-slot0.getUnlockedVoiceList = function(slot0)
+function slot0.getUnlockedVoiceList(slot0)
 	slot2 = slot0:getRepairRate() * 100
 	slot3 = {}
 
@@ -199,7 +199,7 @@ slot0.getUnlockedVoiceList = function(slot0)
 	return slot3
 end
 
-slot0.getUnlockVoiceRepairPercent = function(slot0, slot1)
+function slot0.getUnlockVoiceRepairPercent(slot0, slot1)
 	slot3 = 0
 
 	for slot7, slot8 in ipairs(slot0:getEffects()) do

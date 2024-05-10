@@ -6,7 +6,7 @@ slot0.TOGGLE_BLACK = "FriendInfoMediator:TOGGLE_BLACK"
 slot0.INFORM = "FriendInfoMediator:INFORM"
 slot0.INFORM_BACKYARD = "FriendInfoMediator:INFORM_BACKYARD"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot1 = slot0.contextData.friend
 
 	assert(slot1, "friend is nil")
@@ -77,7 +77,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setFriendProxy(slot2)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.VISIT_BACKYARD_DONE,
 		GAME.GET_BLACK_LIST_DONE,
@@ -89,7 +89,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.VISIT_BACKYARD_DONE then

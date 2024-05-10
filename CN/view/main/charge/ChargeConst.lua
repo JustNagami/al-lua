@@ -1,7 +1,7 @@
 ChargeConst = {}
 slot0 = ChargeConst
 
-slot0.getBuyCount = function(slot0, slot1)
+function slot0.getBuyCount(slot0, slot1)
 	if not slot0 then
 		return 0
 	end
@@ -9,7 +9,7 @@ slot0.getBuyCount = function(slot0, slot1)
 	return slot0[slot1] and slot2.buyCount or 0
 end
 
-slot0.getGroupLimit = function(slot0, slot1)
+function slot0.getGroupLimit(slot0, slot1)
 	if not slot0 then
 		return 0
 	end
@@ -23,7 +23,7 @@ slot0.getGroupLimit = function(slot0, slot1)
 	return 0
 end
 
-slot0.getGoodsLimitInfo = function(slot0)
+function slot0.getGoodsLimitInfo(slot0)
 	slot1, slot2, slot3 = nil
 
 	if pg.shop_template[slot0] then
@@ -49,7 +49,7 @@ slot0.getGoodsLimitInfo = function(slot0)
 	return slot1, slot2, slot3
 end
 
-slot0.isNeedSetBirth = function()
+function slot0.isNeedSetBirth()
 	if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetIsPlatform() and not pg.SdkMgr.GetInstance():GetIsBirthSet() then
 		return true
 	end

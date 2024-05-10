@@ -13,9 +13,10 @@ slot0.ON_SUPPORT_SHOP = "BuildShipMediator ON_SUPPORT_SHOP"
 slot0.OPEN_PRAY_PAGE = "BuildShipMediator OPEN_PRAY_PAGE"
 slot0.CLOSE_PRAY_PAGE = "BuildShipMediator CLOSE_PRAY_PAGE"
 slot0.ON_BUILDPOOL_EXCHANGE = "BuildShipMediator:ON_BUILDPOOL_EXCHANGE"
+slot0.ON_BUILDPOOL_UR_EXCHANGE = "BuildShipMediator.ON_BUILDPOOL_UR_EXCHANGE"
 slot0.ON_SUPPORT_EXCHANGE = "BuildShipMediator:ON_SUPPORT_EXCHANGE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot2 = getProxy(PlayerProxy):getData()
 
 	slot0.viewComponent:setPlayer(slot2)
@@ -118,6 +119,12 @@ slot0.register = function(slot0)
 			activity_id = slot1
 		})
 	end)
+	slot0:bind(uv0.ON_BUILDPOOL_UR_EXCHANGE, function (slot0)
+		uv0:addSubLayers(Context.New({
+			viewComponent = BuildShipRegularExchangeLayer,
+			mediator = BuildShipRegularExchangeMediator
+		}))
+	end)
 	slot0.viewComponent:updateQueueTip(slot7:getFinishCount())
 	slot0.viewComponent:setPools(getProxy(BuildShipProxy):GetPools())
 
@@ -126,7 +133,7 @@ slot0.register = function(slot0)
 	end
 end
 
-slot0.buildFinishComeback = function(slot0)
+function slot0.buildFinishComeback(slot0)
 	if table.getCount(getProxy(BuildShipProxy):getData()) == 0 and slot0.viewComponent then
 		if (BuildShip.getPageFromPoolType(slot1:getLastBuildShipPoolType()) or BuildShipScene.PAGE_BUILD) == BuildShipScene.PAGE_PRAY and (not getProxy(ActivityProxy):getActivityById(ActivityConst.ACTIVITY_PRAY_POOL) or slot3:isEnd()) then
 			slot2 = BuildShipScene.PAGE_BUILD
@@ -136,7 +143,7 @@ slot0.buildFinishComeback = function(slot0)
 	end
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.BUILD_SHIP_DONE,
 		BagProxy.ITEM_UPDATED,
@@ -146,12 +153,14 @@ slot0.listNotificationInterests = function(slot0)
 		BuildShipProxy.REMOVED,
 		GAME.BEGIN_STAGE_DONE,
 		GAME.ACTIVITY_BUILD_POOL_EXCHANGE_DONE,
+		GAME.REGULAR_BUILD_POOL_EXCHANGE_DONE,
 		ActivityProxy.ACTIVITY_UPDATED,
-		GAME.SUPPORT_SHIP_DONE
+		GAME.SUPPORT_SHIP_DONE,
+		BuildShipProxy.REGULAR_BUILD_POOL_COUNT_UPDATE
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == PlayerProxy.UPDATED then
@@ -226,7 +235,7 @@ slot0.handleNotification = function(slot0, slot1)
 			seriesAsync(slot4, function ()
 				uv0.viewComponent:emit(BaseUI.ON_AWARD, {
 					items = underscore.map(uv1.ships, function (slot0)
-						slot1 = Item.New({
+						slot1 = Drop.New({
 							count = 1,
 							type = DROP_TYPE_SHIP,
 							id = slot0.configId
@@ -260,7 +269,9 @@ slot0.handleNotification = function(slot0, slot1)
 					slot0.viewComponent:RefreshFreeBuildActivity()
 				end
 			end
-		elseif slot2 == GAME.ACTIVITY_BUILD_POOL_EXCHANGE_DONE then
+		elseif slot2 == BuildShipProxy.REGULAR_BUILD_POOL_COUNT_UPDATE then
+			slot0.viewComponent:RefreshRegularExchangeCount()
+		elseif slot2 == GAME.ACTIVITY_BUILD_POOL_EXCHANGE_DONE or slot2 == GAME.REGULAR_BUILD_POOL_EXCHANGE_DONE then
 			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
 		end
 	end

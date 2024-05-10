@@ -6,13 +6,13 @@ slot1 = {
 	1
 }
 
-slot0.Update = function(slot0, slot1, slot2)
+function slot0.Update(slot0, slot1, slot2)
 	slot0.paper = slot1
 
 	uv0.super.Update(slot0, slot2)
 end
 
-slot0.GetAssetPath = function(slot0)
+function slot0.GetAssetPath(slot0)
 	if not slot0.paper then
 		return "furnitrues/base/floor_4"
 	end
@@ -26,7 +26,7 @@ slot0.GetAssetPath = function(slot0)
 	end
 end
 
-slot0.OnLoaded = function(slot0, slot1)
+function slot0.OnLoaded(slot0, slot1)
 	rtf(slot1).sizeDelta = Vector2(1888, 944)
 	rtf(slot1).anchorMin = Vector2(0.5, 1)
 	rtf(slot1).anchorMax = Vector2(0.5, 1)
@@ -39,13 +39,13 @@ slot0.OnLoaded = function(slot0, slot1)
 		slot0:InitSpine(slot1)
 	end
 
-	tf(slot1):SetSiblingIndex(_courtyard:GetView():GetRect():GetSiblingIndex())
+	tf(slot1):SetSiblingIndex(slot0:GetRect():GetSiblingIndex())
 
 	slot3 = uv0[slot0.level]
 	slot1.transform.localScale = Vector3(slot3, slot3, 1)
 end
 
-slot0.InitSpine = function(slot0, slot1)
+function slot0.InitSpine(slot0, slot1)
 	slot2, slot3 = slot0.paper:GetSpineNameAndAction()
 
 	if slot3 then

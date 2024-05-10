@@ -1,10 +1,10 @@
 slot0 = class("EquipDestoryConfirmWindow", import("view.base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "DestoryConfirmWindow"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.closeBtn = slot0:findTF("window/top/btnBack")
 
 	setActive(slot0:findTF("window/top/bg/infomation/title_en"), PLATFORM_CODE ~= PLATFORM_US)
@@ -29,7 +29,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0:findTF("Placeholder", slot0.urInput), i18n("box_ship_del_click"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0.cancelBtn, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
@@ -47,11 +47,11 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.SetCallBack = function(slot0, slot1)
+function slot0.SetCallBack(slot0, slot1)
 	slot0.callback = slot1
 end
 
-slot0.Confirm = function(slot0)
+function slot0.Confirm(slot0)
 	if slot0.key then
 		if slot0.key ~= tonumber(getInputText(slot0.urInput)) then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("destory_ship_input_erro"))
@@ -67,7 +67,7 @@ slot0.Confirm = function(slot0)
 	end
 end
 
-slot0.Show = function(slot0, slot1, slot2)
+function slot0.Show(slot0, slot1, slot2)
 	uv0.super.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 
@@ -79,17 +79,17 @@ slot0.Show = function(slot0, slot1, slot2)
 	slot0:UpdateEquips()
 end
 
-slot0.Updatelayout = function(slot0)
+function slot0.Updatelayout(slot0)
 	slot1 = {}
 
 	if underscore.any(slot0.equips, function (slot0)
-		return slot0.config.rarity >= 4
+		return slot0:getConfig("rarity") >= 4
 	end) then
 		table.insert(slot1, i18n("destroy_high_rarity_tip"))
 	end
 
 	if underscore.any(slot0.equips, function (slot0)
-		return slot0.config.level > 1
+		return slot0:getConfig("level") > 1
 	end) then
 		table.insert(slot1, i18n("destroy_high_intensify_tip", ""))
 	end
@@ -111,13 +111,13 @@ slot0.Updatelayout = function(slot0)
 	setActive(slot0.urInput, slot2)
 end
 
-slot0.UpdateEquips = function(slot0)
+function slot0.UpdateEquips(slot0)
 	mergeSort(slot0.equips, CompareFuncs({
 		function (slot0)
-			return -slot0.config.rarity
+			return -slot0:getConfig("rarity")
 		end,
 		function (slot0)
-			return -slot0.config.level
+			return -slot0:getConfig("level")
 		end
 	}, true))
 
@@ -157,7 +157,7 @@ slot0.UpdateEquips = function(slot0)
 	slot2:align(#slot0.equips)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 
@@ -167,7 +167,7 @@ slot0.Hide = function(slot0)
 	setInputText(slot0.urInput, "")
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0:isShowing() then
 		slot0:Hide()
 	end

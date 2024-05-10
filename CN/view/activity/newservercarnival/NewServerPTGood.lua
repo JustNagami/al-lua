@@ -6,11 +6,11 @@ slot0.GoodType = {
 	RandomLimit = 3
 }
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.newserver_shop_template
 end
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.id = slot1
 	slot0.configId = slot1
 	slot0.configID = slot1
@@ -19,7 +19,7 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.isMultiEachLimit = false
 end
 
-slot0.updateAllInfo = function(slot0, slot1)
+function slot0.updateAllInfo(slot0, slot1)
 	slot2 = slot1.data2KeyValueList[slot0.configId]
 	slot3 = slot2.dataMap
 	slot0.count = slot2.value
@@ -33,27 +33,27 @@ slot0.updateAllInfo = function(slot0, slot1)
 	end
 end
 
-slot0.updateCount = function(slot0, slot1)
+function slot0.updateCount(slot0, slot1)
 	slot0.count = slot0.count - slot1
 end
 
-slot0.isLeftCount = function(slot0)
+function slot0.isLeftCount(slot0)
 	return slot0.count > 0
 end
 
-slot0.getCount = function(slot0)
+function slot0.getCount(slot0)
 	return slot0.count
 end
 
-slot0.isSelectable = function(slot0)
+function slot0.isSelectable(slot0)
 	return slot0:getConfig("goods_type") == uv0.GoodType.MultiTotalLimit or slot1 == uv0.GoodType.MultiEachLimit
 end
 
-slot0.getContainIDList = function(slot0)
+function slot0.getContainIDList(slot0)
 	return slot0:getConfig("goods")
 end
 
-slot0.getUnlockIndex = function(slot0)
+function slot0.getUnlockIndex(slot0)
 	return slot0:getConfig("unlock_time") / 604800 + 1
 end
 

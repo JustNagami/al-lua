@@ -1,16 +1,16 @@
 slot0 = class("InstagramLayer", import("...base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "InstagramUI"
 end
 
-slot0.SetProxy = function(slot0, slot1)
+function slot0.SetProxy(slot0, slot1)
 	slot0.proxy = slot1
 	slot0.instagramVOById = slot1:GetData()
 	slot0.messages = slot1:GetMessages()
 end
 
-slot0.UpdateSelectedInstagram = function(slot0, slot1)
+function slot0.UpdateSelectedInstagram(slot0, slot1)
 	if slot0.contextData.instagram and slot0.contextData.instagram.id == slot1 then
 		slot0.contextData.instagram = slot0.instagramVOById[slot1]
 
@@ -18,7 +18,7 @@ slot0.UpdateSelectedInstagram = function(slot0, slot1)
 	end
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = GameObject.Find("MainObject")
 	slot0.downloadmgr = BulletinBoardMgr.Inst
 	slot0.listTF = slot0:findTF("list")
@@ -47,13 +47,14 @@ slot0.init = function(slot0)
 	slot0.scroll = slot0:findTF("main/right_panel/center/bottom/scroll")
 	slot0.sprites = {}
 	slot0.timers = {}
+	slot0.toDownloadList = {}
 
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 end
 
-slot0.SetImageByUrl = function(slot0, slot1, slot2, slot3)
+function slot0.SetImageByUrl(slot0, slot1, slot2, slot3)
 	slot4 = slot2:GetComponent(typeof(Image))
 
 	if not slot1 or slot1 == "" then
@@ -73,6 +74,10 @@ slot0.SetImageByUrl = function(slot0, slot1, slot2, slot3)
 		slot6 = slot0.downloadmgr
 
 		slot6:GetSprite("ins", "1", slot1, UnityEngine.Events.UnityAction_UnityEngine_Sprite(function (slot0)
+			if uv0.exited then
+				return
+			end
+
 			if not uv0.sprites then
 				return
 			end
@@ -85,10 +90,11 @@ slot0.SetImageByUrl = function(slot0, slot1, slot2, slot3)
 				uv3()
 			end
 		end))
+		table.insert(slot0.toDownloadList, slot1)
 	end
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.closeBtn, function ()
 		if uv0.inDetail then
 			uv0:ExitDetail()
@@ -112,7 +118,7 @@ slot0.didEnter = function(slot0)
 
 	slot0.cards = {}
 
-	slot0.list.onInitItem = function(slot0)
+	function slot0.list.onInitItem(slot0)
 		slot1 = InstagramCard.New(slot0, uv0)
 
 		onButton(uv0, slot1._go, function ()
@@ -122,7 +128,7 @@ slot0.didEnter = function(slot0)
 		uv0.cards[slot0] = slot1
 	end
 
-	slot0.list.onUpdateItem = function(slot0, slot1)
+	function slot0.list.onUpdateItem(slot0, slot1)
 		if not uv0.cards[slot1] then
 			uv0.cards[slot1] = InstagramCard.New(slot1)
 		end
@@ -133,7 +139,7 @@ slot0.didEnter = function(slot0)
 	slot0:InitList()
 end
 
-slot0.InitList = function(slot0)
+function slot0.InitList(slot0)
 	slot0.display = _.map(slot0.messages, function (slot0)
 		return {
 			time = slot0:GetLasterUpdateTime(),
@@ -153,7 +159,7 @@ slot0.InitList = function(slot0)
 	setActive(slot0.noMsgTF, #slot0.display == 0)
 end
 
-slot0.UpdateInstagram = function(slot0, slot1, slot2)
+function slot0.UpdateInstagram(slot0, slot1, slot2)
 	for slot6, slot7 in pairs(slot0.cards) do
 		if slot7.instagram and slot7.instagram.id == slot1 then
 			slot7:Update(slot0.instagramVOById[slot1], slot2)
@@ -161,7 +167,7 @@ slot0.UpdateInstagram = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.EnterDetail = function(slot0, slot1)
+function slot0.EnterDetail(slot0, slot1)
 	slot0.contextData.instagram = slot1
 
 	setActive(slot0.mainTF, true)
@@ -179,7 +185,7 @@ slot0.EnterDetail = function(slot0, slot1)
 	scrollTo(slot0.scroll, 0, 1)
 end
 
-slot0.ExitDetail = function(slot0)
+function slot0.ExitDetail(slot0)
 	if slot0.contextData.instagram and not slot1:IsReaded() then
 		slot0:emit(InstagramMediator.ON_READED, slot1.id)
 	end
@@ -196,13 +202,13 @@ slot0.ExitDetail = function(slot0)
 	slot0:CloseCommentPanel()
 end
 
-slot0.RefreshInstagram = function(slot0)
+function slot0.RefreshInstagram(slot0)
 	if slot0.contextData.instagram:GetFastestRefreshTime() and slot2 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
 		slot0:emit(InstagramMediator.ON_REPLY_UPDATE, slot1.id)
 	end
 end
 
-slot0.InitDetailPage = function(slot0)
+function slot0.InitDetailPage(slot0)
 	slot1 = slot0.contextData.instagram
 
 	slot0:SetImageByUrl(slot1:GetImage(), slot0.imageTF)
@@ -228,7 +234,7 @@ slot0.InitDetailPage = function(slot0)
 	slot0:UpdateCommentList()
 end
 
-slot0.UpdateLikeBtn = function(slot0)
+function slot0.UpdateLikeBtn(slot0)
 	if not slot0.contextData.instagram:IsLiking() then
 		onButton(slot0, slot0.likeBtn, function ()
 			uv0:emit(InstagramMediator.ON_LIKE, uv1.id)
@@ -243,7 +249,7 @@ slot0.UpdateLikeBtn = function(slot0)
 	slot0.likeCntTxt.text = i18n("ins_word_like", slot1:GetLikeCnt())
 end
 
-slot0.UpdateCommentList = function(slot0)
+function slot0.UpdateCommentList(slot0)
 	if not slot0.contextData.instagram then
 		return
 	end
@@ -291,7 +297,7 @@ slot0.UpdateCommentList = function(slot0)
 	slot0.commentList:align(#slot2)
 end
 
-slot0.UpdateReplys = function(slot0, slot1, slot2)
+function slot0.UpdateReplys(slot0, slot1, slot2)
 	slot3, slot4 = slot2:GetCanDisplayReply()
 	slot5 = UIItemList.New(slot1:Find("replys"), slot1:Find("replys/sub"))
 
@@ -317,7 +323,7 @@ slot0.UpdateReplys = function(slot0, slot1, slot2)
 	slot5:align(#slot3)
 end
 
-slot0.OpenCommentPanel = function(slot0)
+function slot0.OpenCommentPanel(slot0)
 	if not slot0.contextData.instagram:CanOpenComment() then
 		return
 	end
@@ -344,13 +350,31 @@ slot0.OpenCommentPanel = function(slot0)
 	slot3:align(#slot2)
 end
 
-slot0.CloseCommentPanel = function(slot0)
+function slot0.CloseCommentPanel(slot0)
 	slot0.commentPanel.sizeDelta = Vector2(642.6, 150)
 
 	setActive(slot0.optionalPanel, false)
 end
 
-slot0.willExit = function(slot0)
+function slot0.onBackPressed(slot0)
+	if slot0.inDetail then
+		slot0:ExitDetail()
+
+		return
+	end
+
+	uv0.super.onBackPressed(slot0)
+end
+
+function slot0.willExit(slot0)
+	slot1 = ipairs
+	slot2 = slot0.toDownloadList or {}
+
+	for slot4, slot5 in slot1(slot2) do
+		slot0.downloadmgr:StopLoader(slot5)
+	end
+
+	slot0.toDownloadList = {}
 	slot4 = pg.UIMgr.GetInstance()._normalUIMain
 
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot4)

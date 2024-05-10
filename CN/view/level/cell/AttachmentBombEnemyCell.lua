@@ -2,11 +2,11 @@ slot0 = class("AttachmentBombEnemyCell", import("view.level.cell.StaticCellView"
 slot0.StateLive = 1
 slot0.StateDead = 2
 
-slot0.GetOrder = function(slot0)
+function slot0.GetOrder(slot0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	slot1 = slot0.info
 
 	if IsNil(slot0.go) then

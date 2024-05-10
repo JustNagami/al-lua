@@ -4,7 +4,7 @@ slot0.ON_LOGOUT = "NewSettingsMediator:ON_LOGOUT"
 slot0.ON_SECON_PWD_STATE_CHANGE = "NewSettingsMediator:ON_SECON_PWD_STATE_CHANGE"
 slot0.OPEN_YOSTAR_ALERT_VIEW = "NewSettingsMediator:OPEN_YOSTAR_ALERT_VIEW"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_LOGOUT, function (slot0)
 		uv0:sendNotification(GAME.LOGOUT, {
 			code = 0
@@ -12,7 +12,7 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		uv0.SHOW_DESC,
 		uv0.ON_SECON_PWD_STATE_CHANGE,
@@ -25,7 +25,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == uv0.SHOW_DESC then

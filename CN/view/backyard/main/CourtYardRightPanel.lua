@@ -1,66 +1,53 @@
 slot0 = class("CourtYardRightPanel", import(".CourtYardBasePanel"))
 
-slot0.GetUIName = function(slot0)
+function slot0.GetUIName(slot0)
 	return "main/rightPanel"
 end
 
-slot0.init = function(slot0)
-	slot0.floorLabel = slot0:findTF("floor_label")
-	slot0.floorTxt = slot0:findTF("floor_label/Text"):GetComponent(typeof(Text))
-	slot0.floorBtn = slot0:findTF("floor_btn")
-	slot0.floorBtnLock = slot0.floorBtn:Find("mask")
-	slot0.switcherPage = CourtYardSwitcherPage.New(slot0._tf, slot0.parent)
-	slot0.buffPage = CourtYardBuffPage.New(slot0._tf, slot0.parent)
+function slot0.init(slot0)
+	slot0.buffBtn = slot0._tf:Find("buff")
+	slot0.buffPage = CourtYardBuffPage.New(slot0._tf.parent.parent, slot0.parent)
 end
 
-slot0.OnRegister = function(slot0)
-	onButton(slot0, slot0.floorBtn, function ()
-		if uv0.dorm.level < Dorm.MAX_LEVEL then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("sec_floor_limit_tip"))
-		else
-			uv0.switcherPage:ExecuteAction("Flush", uv0.dorm)
+function slot0.GenBuffData(slot0)
+	slot1 = {}
+
+	for slot5, slot6 in ipairs(BuffHelper.GetBackYardPlayerBuffs()) do
+		if slot6:isActivate() then
+			table.insert(slot1, slot6)
+		end
+	end
+
+	return slot1
+end
+
+function slot0.OnRegister(slot0)
+	onButton(slot0, slot0.buffBtn, function ()
+		if #(uv0.buffList or uv0:GenBuffData()) > 0 then
+			uv0.buffPage:ExecuteAction("Show", slot0)
 		end
 	end, SFX_PANEL)
-	slot0:SetActive(slot0.floorLabel, slot0:IsInner())
 end
 
-slot0.OnVisitRegister = function(slot0)
-	slot0:SetActive(slot0.floorBtn, false)
-	slot0:SetActive(slot0.floorLabel, false)
+function slot0.OnVisitRegister(slot0)
+	setActive(slot0._tf, false)
 end
 
-slot0.OnFlush = function(slot0, slot1)
+function slot0.OnFlush(slot0, slot1)
 	slot2 = slot0.dorm
 
-	if bit.band(slot1 or bit.bor(BackYardConst.DORM_UPDATE_TYPE_LEVEL, BackYardConst.DORM_UPDATE_TYPE_USEFOOD), BackYardConst.DORM_UPDATE_TYPE_LEVEL) > 0 then
-		slot0:UpdateFloor()
-		slot0:SetActive(slot0.floorBtnLock, not slot2:IsMaxLevel())
+	if bit.band(slot1 or bit.bor(BackYardConst.DORM_UPDATE_TYPE_LEVEL, BackYardConst.DORM_UPDATE_TYPE_USEFOOD, BackYardConst.DORM_UPDATE_TYPE_SHIP), BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 and slot0:IsInner() then
+		slot0.buffList = slot0:GenBuffData()
+
+		setActive(slot0.buffBtn, #slot0.buffList > 0)
 	end
 
-	if bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 and slot0:IsInner() then
-		slot3 = {}
-
-		for slot7, slot8 in ipairs(BuffHelper.GetBackYardPlayerBuffs()) do
-			if slot8:isActivate() then
-				table.insert(slot3, slot8)
-			end
-		end
-
-		if #slot3 > 0 and not slot0.isInitBuffPage then
-			slot0.isInitBuffPage = true
-
-			slot0.buffPage:ExecuteAction("Show", slot3)
-		elseif slot0.isInitBuffPage then
-			slot0.buffPage:ExecuteAction("Flush", slot3)
-		end
+	if bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_SHIP) > 0 then
+		-- Nothing
 	end
 end
 
-slot0.UpdateFloor = function(slot0)
-	slot0.floorTxt.text = (slot0.contextData.floor or 1) .. "F"
-end
-
-slot0.GetMoveX = function(slot0)
+function slot0.GetMoveX(slot0)
 	return {
 		{
 			slot0._tf,
@@ -69,24 +56,12 @@ slot0.GetMoveX = function(slot0)
 	}
 end
 
-slot0.onBackPressed = function(slot0)
-	if slot0.switcherPage:GetLoaded() and slot0.switcherPage:isShowing() then
-		slot0.switcherPage:Hide()
+function slot0.OnDispose(slot0)
+	if slot0.buffPage then
+		slot0.buffPage:Destroy()
 
-		return true
+		slot0.buffPage = nil
 	end
-
-	return false
-end
-
-slot0.OnDispose = function(slot0)
-	slot0.switcherPage:Destroy()
-
-	slot0.switcherPage = nil
-
-	slot0.buffPage:Destroy()
-
-	slot0.buffPage = nil
 end
 
 return slot0

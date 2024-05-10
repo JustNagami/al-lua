@@ -5,7 +5,7 @@ slot3 = Vector3(30, 0, 0)
 slot4 = Vector3(0.1, 0.1, 0.1)
 slot5 = Vector3(330, 0, 0)
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.rawImage = slot1
 
 	setActive(slot0.rawImage, false)
@@ -20,7 +20,7 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.displayHitFX = false
 end
 
-slot0.configUI = function(slot0, slot1)
+function slot0.configUI(slot0, slot1)
 	slot0.healTF = slot1
 
 	setActive(slot0.healTF, false)
@@ -34,19 +34,19 @@ slot0.configUI = function(slot0, slot1)
 	end)
 end
 
-slot0.setDisplayWeapon = function(slot0, slot1, slot2, slot3)
+function slot0.setDisplayWeapon(slot0, slot1, slot2, slot3)
 	slot0.weaponIds = slot1
 	slot0.equipSkinId = slot2 or 0
 
 	slot0:onWeaponUpdate()
 end
 
-slot0.SetFXMode = function(slot0, slot1, slot2)
+function slot0.SetFXMode(slot0, slot1, slot2)
 	slot0.displayFireFX = slot1
 	slot0.displayHitFX = slot2
 end
 
-slot0.load = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.load(slot0, slot1, slot2, slot3, slot4)
 	assert(not slot0.loading and not slot0.loaded, "load function can be called only once.")
 
 	slot0.loading = true
@@ -80,7 +80,7 @@ slot0.load = function(slot0, slot1, slot2, slot3, slot4)
 	slot5:StartPreload(function ()
 		uv0.seaView = ys.Battle.BattleMap.New(uv1)
 
-		slot0 = function(slot0)
+		function slot0(slot0)
 			uv0.loading = false
 			uv0.loaded = true
 
@@ -160,7 +160,7 @@ slot0.load = function(slot0, slot1, slot2, slot3, slot4)
 	pg.UIMgr.GetInstance():LoadingOn()
 end
 
-slot0.attachOrbit = function(slot0)
+function slot0.attachOrbit(slot0)
 	if pg.equip_skin_template[slot0.equipSkinId].orbit_combat ~= "" then
 		slot0.orbitList = {}
 		slot3 = ResourceMgr.Inst
@@ -179,7 +179,7 @@ slot0.attachOrbit = function(slot0)
 	end
 end
 
-slot0.playShipAnims = function(slot0)
+function slot0.playShipAnims(slot0)
 	if slot0.loaded and slot0.seaAnimator then
 		slot1 = {
 			"attack",
@@ -187,7 +187,7 @@ slot0.playShipAnims = function(slot0)
 			"dead"
 		}
 
-		slot2 = function(slot0)
+		function slot2(slot0)
 			if uv0.seaAnimator then
 				uv0.seaAnimator:SetActionCallBack(nil)
 			end
@@ -221,13 +221,13 @@ slot0.playShipAnims = function(slot0)
 	end
 end
 
-slot0.onWeaponUpdate = function(slot0)
+function slot0.onWeaponUpdate(slot0)
 	if slot0.loaded and slot0.weaponIds then
 		if slot0.seaAnimator then
 			slot0.seaAnimator:SetActionCallBack(nil)
 		end
 
-		slot1 = function()
+		function slot1()
 			slot0 = pairs
 			slot1 = uv0.weaponList or {}
 
@@ -282,12 +282,12 @@ slot0.onWeaponUpdate = function(slot0)
 			slot0:MakeWeapon(slot0.weaponIds)
 			slot0:SeaFire()
 		elseif slot0.weaponIds[1] then
-			slot0:MakeBuff(pg.equip_data_statistics[slot2].skill_id[1])
+			slot0:MakeBuff(Equipment.getConfigData(slot2).skill_id[1])
 		end
 	end
 end
 
-slot0.SeaFire = function(slot0)
+function slot0.SeaFire(slot0)
 	slot1 = 1
 
 	if slot0._fireTimer then
@@ -298,7 +298,7 @@ slot0.SeaFire = function(slot0)
 		slot3 = pg.TimeMgr.GetInstance()
 		slot0._fireTimer = slot3:AddBattleTimer("barrageFireTimer", -1, 1.5, function ()
 			if uv0.weaponList[uv1] then
-				slot1 = function()
+				function slot1()
 					slot0 = 1
 					slot1 = 0
 
@@ -369,7 +369,7 @@ slot0.SeaFire = function(slot0)
 	end
 end
 
-slot0.MakeBuff = function(slot0, slot1)
+function slot0.MakeBuff(slot0, slot1)
 	slot2 = getSkillConfig(slot1)
 	slot4 = slot2.effect_list[1].arg_list.time
 	slot5 = require("GameCfg.skill.skill_" .. slot2.effect_list[1].arg_list.skill_id)
@@ -387,7 +387,7 @@ slot0.MakeBuff = function(slot0, slot1)
 	end)
 end
 
-slot0.MakeWeapon = function(slot0, slot1)
+function slot0.MakeWeapon(slot0, slot1)
 	slot0.weaponList = {}
 	slot0.bulletList = {}
 	slot0.aircraftList = {}
@@ -395,7 +395,7 @@ slot0.MakeWeapon = function(slot0, slot1)
 	slot3 = ys.Battle.BattleConst
 
 	for slot7, slot8 in ipairs(slot1) do
-		for slot13, slot14 in ipairs(pg.equip_data_statistics[slot8].weapon_id) do
+		for slot13, slot14 in ipairs(Equipment.getConfigData(slot8).weapon_id) do
 			if slot14 <= 0 then
 				break
 			end
@@ -427,7 +427,7 @@ slot0.MakeWeapon = function(slot0, slot1)
 	end
 end
 
-slot0.getEmitterHost = function(slot0)
+function slot0.getEmitterHost(slot0)
 	if not slot0._emitterHost then
 		slot0._emitterHost = ys.Battle.BattlePlayerUnit.New(1, ys.Battle.BattleConfig.FRIENDLY_CODE)
 
@@ -440,7 +440,7 @@ slot0.getEmitterHost = function(slot0)
 	return slot0._emitterHost
 end
 
-slot0.createEmitterCannon = function(slot0, slot1, slot2, slot3)
+function slot0.createEmitterCannon(slot0, slot1, slot2, slot3)
 	slot4 = slot0:getEmitterHost()
 
 	return ys.Battle.BattleBulletEmitter.New(function (slot0, slot1, slot2, slot3, slot4)
@@ -479,7 +479,7 @@ slot0.createEmitterCannon = function(slot0, slot1, slot2, slot3)
 
 		slot9:SetBulletData(slot6)
 
-		slot10 = function(slot0)
+		function slot10(slot0)
 			uv0:SetGO(slot0)
 			uv0:AddRotateScript()
 
@@ -519,7 +519,7 @@ slot0.createEmitterCannon = function(slot0, slot1, slot2, slot3)
 	end, slot1)
 end
 
-slot0.createEmitterAir = function(slot0, slot1, slot2, slot3)
+function slot0.createEmitterAir(slot0, slot1, slot2, slot3)
 	return ys.Battle.BattleBulletEmitter.New(function (slot0, slot1, slot2, slot3, slot4)
 		slot5 = {
 			id = uv0,
@@ -529,7 +529,7 @@ slot0.createEmitterAir = function(slot0, slot1, slot2, slot3)
 		slot7 = math.deg2Rad * slot2
 		slot8 = Vector3(math.cos(slot7), 0, math.sin(slot7))
 
-		slot9 = function(slot0)
+		function slot9(slot0)
 			slot1 = uv0 + Vector3(uv1.position_offset[1] + uv2, uv1.position_offset[2], uv1.position_offset[3] + uv3)
 			slot0.transform.localPosition = slot1
 			slot0.transform.localScale = uv4
@@ -561,7 +561,7 @@ slot0.createEmitterAir = function(slot0, slot1, slot2, slot3)
 	end, slot1)
 end
 
-slot0.AddSelfDestroyBullet = function(slot0, slot1, slot2)
+function slot0.AddSelfDestroyBullet(slot0, slot1, slot2)
 	if not slot0.displayHitFX then
 		return
 	end
@@ -582,7 +582,7 @@ slot0.AddSelfDestroyBullet = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.RemoveBullet = function(slot0, slot1, slot2)
+function slot0.RemoveBullet(slot0, slot1, slot2)
 	Object.Destroy(slot0.bulletList[slot1]._go)
 	table.remove(slot0.bulletList, slot1)
 
@@ -601,7 +601,7 @@ slot0.RemoveBullet = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.SeaUpdate = function(slot0)
+function slot0.SeaUpdate(slot0)
 	slot1 = 0
 	slot2 = -20
 	slot3 = 60
@@ -666,23 +666,23 @@ slot0.SeaUpdate = function(slot0)
 	end)
 end
 
-slot0.GetFXOffsets = function(slot0, slot1)
+function slot0.GetFXOffsets(slot0, slot1)
 	return slot0._FXOffset[slot1 or 1]
 end
 
-slot0.GetAttachPoint = function(slot0)
+function slot0.GetAttachPoint(slot0)
 	return slot0._FXAttachPoint
 end
 
-slot0.GetGO = function(slot0)
+function slot0.GetGO(slot0)
 	return slot0.seaCharacter
 end
 
-slot0.GetSpecificFXScale = function(slot0)
+function slot0.GetSpecificFXScale(slot0)
 	return {}
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	pg.TimeMgr.GetInstance():RemoveAllBattleTimer()
 
 	slot0._emitterHost = nil

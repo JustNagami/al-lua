@@ -8,8 +8,18 @@ slot0.OPEN_ACTIVITY = "NewSkinShopMediator:OPEN_ACTIVITY"
 slot0.ON_SHOPPING_BY_ACT = "NewSkinShopMediator:ON_SHOPPING_BY_ACT"
 slot0.ON_SHOPPING = "NewSkinShopMediator:ON_SHOPPING"
 slot0.ON_RECORD_ANIM_PREVIEW_BTN = "NewSkinShopMediator:ON_RECORD_ANIM_PREVIEW_BTN"
+slot0.ON_ITEM_PURCHASE = "NewSkinShopMediator:ON_ITEM_PURCHASE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_ITEM_PURCHASE, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.USE_ITEM, {
+			count = 1,
+			id = slot1,
+			arg = {
+				slot2
+			}
+		})
+	end)
 	slot0:bind(uv0.ON_RECORD_ANIM_PREVIEW_BTN, function (slot0, slot1)
 		uv0:sendNotification(GAME.RECORD_SKIN_ANIM_PREVIEW, {
 			isOpen = slot1
@@ -46,6 +56,7 @@ slot0.register = function(slot0)
 			mediator = NewBackYardShopMediator,
 			viewComponent = NewBackYardShopLayer,
 			data = {
+				topLayer = true,
 				page = 5
 			}
 		}))
@@ -62,7 +73,7 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SKIN_SHOPPIGN_DONE,
 		GAME.SKIN_COUPON_SHOPPING_DONE,
@@ -72,7 +83,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 	slot4 = slot1:getType()
 

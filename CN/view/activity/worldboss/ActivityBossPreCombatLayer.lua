@@ -4,15 +4,11 @@ slot2 = {
 	[99.0] = true
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ActivityBossPrecombatUI"
 end
 
-slot0.ResUISettings = function(slot0)
-	return true
-end
-
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0:CommonInit()
 
 	slot0._formationLogic = BaseFormation.New(slot0._tf, slot0._heroContainer, slot0._heroInfo, slot0._gridTFs)
@@ -20,7 +16,7 @@ slot0.init = function(slot0)
 	slot0:Register()
 end
 
-slot0.CommonInit = function(slot0)
+function slot0.CommonInit(slot0)
 	slot0.eventTriggers = {}
 	slot0._startBtn = slot0:findTF("right/start")
 	slot0._costContainer = slot0:findTF("right/start/cost_container")
@@ -107,7 +103,7 @@ slot0.CommonInit = function(slot0)
 	setText(slot0._bonus:Find("title"), i18n("expedition_extra_drop_tip"))
 end
 
-slot0.Register = function(slot0)
+function slot0.Register(slot0)
 	slot1 = slot0._formationLogic
 
 	slot1:AddLoadComplete(function ()
@@ -249,20 +245,20 @@ slot0.Register = function(slot0)
 	end
 end
 
-slot0.SetPlayerInfo = function(slot0, slot1)
+function slot0.SetPlayerInfo(slot0, slot1)
 end
 
-slot0.SetSubFlag = function(slot0, slot1)
+function slot0.SetSubFlag(slot0, slot1)
 	slot0._subUseable = slot1 or false
 end
 
-slot0.SetShips = function(slot0, slot1)
+function slot0.SetShips(slot0, slot1)
 	slot0._shipVOs = slot1
 
 	slot0._formationLogic:SetShipVOs(slot0._shipVOs)
 end
 
-slot0.SetStageID = function(slot0, slot1)
+function slot0.SetStageID(slot0, slot1)
 	removeAllChildren(slot0._spoilsContainer)
 
 	slot0._stageID = slot1
@@ -292,7 +288,7 @@ slot0.SetStageID = function(slot0, slot1)
 				type = slot9[1]
 			})
 			onButton(slot0, slot10, function ()
-				if pg.item_data_statistics[uv0[2]] and uv1[slot0.type] then
+				if Item.getConfigData(uv0[2]) and uv1[slot0.type] then
 					slot2 = {}
 
 					for slot6, slot7 in ipairs(slot0.display_icon) do
@@ -315,7 +311,7 @@ slot0.SetStageID = function(slot0, slot1)
 		end
 	end
 
-	slot5 = function(slot0, slot1)
+	function slot5(slot0, slot1)
 		if type(slot0) == "table" then
 			setActive(slot1, true)
 			setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
@@ -356,7 +352,7 @@ slot0.SetStageID = function(slot0, slot1)
 	end
 end
 
-slot0.SetFleets = function(slot0, slot1)
+function slot0.SetFleets(slot0, slot1)
 	slot0._fleetVOs = {}
 
 	_.each(_.filter(_.values(slot1), function (slot0)
@@ -367,7 +363,7 @@ slot0.SetFleets = function(slot0, slot1)
 	slot0:CheckLegalFleet()
 end
 
-slot0.SetCurrentFleet = function(slot0, slot1)
+function slot0.SetCurrentFleet(slot0, slot1)
 	slot0._currentFleetVO = slot0._fleetVOs[slot1]
 
 	slot0._formationLogic:SetFleetVO(slot0._currentFleetVO)
@@ -382,11 +378,11 @@ slot0.SetCurrentFleet = function(slot0, slot1)
 	end
 end
 
-slot0.SetTicketItemID = function(slot0, slot1)
+function slot0.SetTicketItemID(slot0, slot1)
 	slot0._ticketItemID = slot1
 end
 
-slot0.CheckLegalFleet = function(slot0)
+function slot0.CheckLegalFleet(slot0)
 	slot0._legalFleetIdList = {}
 
 	for slot4, slot5 in pairs(slot0._fleetVOs) do
@@ -398,7 +394,7 @@ slot0.CheckLegalFleet = function(slot0)
 	table.sort(slot0._legalFleetIdList)
 end
 
-slot0.UpdateFleetView = function(slot0, slot1)
+function slot0.UpdateFleetView(slot0, slot1)
 	slot0:displayFleetInfo()
 	slot0:updateFleetBg()
 	slot0._formationLogic:UpdateGridVisibility()
@@ -414,17 +410,17 @@ slot0.UpdateFleetView = function(slot0, slot1)
 	end
 end
 
-slot0.updateFleetBg = function(slot0)
+function slot0.updateFleetBg(slot0)
 	setActive(slot0._bgFleet, slot0._currentFleetVO:getFleetType() == FleetType.Normal)
 	setActive(slot0._bgSub, slot1 == FleetType.Submarine)
 end
 
-slot0.resetFormationComponent = function(slot0)
+function slot0.resetFormationComponent(slot0)
 	SetActive(slot0._gridTFs.main[1]:Find("flag"), #slot0._currentFleetVO:getTeamByName(TeamType.Main) ~= 0)
 	SetActive(slot0._gridTFs.submarine[1]:Find("flag"), #slot0._currentFleetVO:getTeamByName(TeamType.Submarine) ~= 0)
 end
 
-slot0.uiStartAnimating = function(slot0)
+function slot0.uiStartAnimating(slot0)
 	slot1 = 0
 	slot2 = 0.3
 
@@ -432,12 +428,12 @@ slot0.uiStartAnimating = function(slot0)
 	shiftPanel(slot0._right, 0, nil, slot2, slot1, true, true)
 end
 
-slot0.uiExitAnimating = function(slot0)
+function slot0.uiExitAnimating(slot0)
 	shiftPanel(slot0._middle, -840, nil, , , true, true)
 	shiftPanel(slot0._right, 470, nil, , , true, true)
 end
 
-slot0.quickExitFunc = function(slot0)
+function slot0.quickExitFunc(slot0)
 	if slot0._currentForm == PreCombatLayer.FORM_EDIT then
 		slot0:emit(ActivityBossPreCombatMediator.ON_ABORT_EDIT)
 	end
@@ -445,7 +441,7 @@ slot0.quickExitFunc = function(slot0)
 	uv0.super.quickExitFunc(slot0)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._backBtn, function ()
 		slot0 = {}
 
@@ -574,7 +570,7 @@ slot0.didEnter = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.displayFleetInfo = function(slot0)
+function slot0.displayFleetInfo(slot0)
 	setActive(slot0._vanguardGS.parent, slot0._currentFleetVO:getFleetType() == FleetType.Normal)
 	setActive(slot0._mainGS.parent, slot1 == FleetType.Normal)
 	setActive(slot0._subGS.parent, slot1 == FleetType.Submarine)
@@ -590,37 +586,40 @@ slot0.displayFleetInfo = function(slot0)
 	setText(slot0._bonus:Find("Text"), slot11)
 
 	if slot11 <= 0 then
-		setImageSprite(slot0._ticket:Find("icon"), LoadSprite(itemId2icon(pg.player_resource[slot0._ticketItemID].itemid), ""))
+		setImageSprite(slot0._ticket:Find("icon"), LoadSprite(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot0._ticketItemID
+		}):getIcon(), ""))
 
-		slot15 = getProxy(PlayerProxy):getRawData():getResource(slot0._ticketItemID)
-		slot16 = 1
-		slot17 = slot0._ticket:Find("checkbox")
+		slot14 = getProxy(PlayerProxy):getRawData():getResource(slot0._ticketItemID)
+		slot15 = 1
+		slot16 = slot0._ticket:Find("checkbox")
 
 		if slot6 == SYSTEM_BOSS_EXPERIMENT then
-			slot16 = 0
+			slot15 = 0
 
-			triggerToggle(slot17, false)
-			setToggleEnabled(slot17, false)
+			triggerToggle(slot16, false)
+			setToggleEnabled(slot16, false)
 		elseif slot6 == SYSTEM_HP_SHARE_ACT_BOSS then
-			triggerToggle(slot17, true)
-			setToggleEnabled(slot17, false)
+			triggerToggle(slot16, true)
+			setToggleEnabled(slot16, false)
 		elseif slot6 == SYSTEM_ACT_BOSS_SP then
 			setActive(slot0._ticket, false)
 		elseif slot6 == SYSTEM_ACT_BOSS then
-			slot18 = slot15 > 0
+			slot17 = slot14 > 0
 
-			setToggleEnabled(slot17, slot18)
-			triggerToggle(slot17, slot18 and getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1)
+			setToggleEnabled(slot16, slot17)
+			triggerToggle(slot16, slot17 and getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1)
 		end
 
-		if slot15 < slot16 then
-			slot15 = setColorStr(slot15, COLOR_RED) or slot15
+		if slot14 < slot15 then
+			slot14 = setColorStr(slot14, COLOR_RED) or slot14
 		end
 
-		slot19 = slot0._ticket
+		slot18 = slot0._ticket
 
-		setText(slot19:Find("Text"), slot16 .. "/" .. slot15)
-		onToggle(slot0, slot17, function (slot0)
+		setText(slot18:Find("Text"), slot15 .. "/" .. slot14)
+		onToggle(slot0, slot16, function (slot0)
 			getProxy(SettingsProxy):setActBossExchangeTicketTip(slot0 and 1 or 0)
 		end, SFX_PANEL, SFX_CANCEL)
 	end
@@ -666,17 +665,17 @@ slot0.displayFleetInfo = function(slot0)
 	setText(slot0._fleetNameText, Fleet.DEFAULT_NAME_BOSS_ACT[slot0._currentFleetVO.id])
 end
 
-slot0.SetFleetStepper = function(slot0)
+function slot0.SetFleetStepper(slot0)
 	SetActive(slot0._nextPage, false)
 	SetActive(slot0._prevPage, false)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 	triggerButton(slot0._backBtn)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 	slot0._formationLogic:Destroy()
 

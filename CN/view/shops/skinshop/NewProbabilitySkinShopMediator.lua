@@ -3,7 +3,7 @@ slot0.OPEN_CHARGE_BIRTHDAY = "NewProbabilitySkinShopMediator:OPEN_CHARGE_BIRTHDA
 slot0.CHARGE = "NewProbabilitySkinShopMediator:CHARGE"
 slot0.OPEN_CHARGE_ITEM_PANEL = "NewProbabilitySkinShopMediator:OPEN_CHARGE_ITEM_PANEL"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	uv0.super.register(slot0)
 	slot0:bind(uv0.OPEN_CHARGE_BIRTHDAY, function (slot0, slot1)
 		uv0:addSubLayers(Context.New({
@@ -28,7 +28,7 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	slot1 = uv0.super.listNotificationInterests(slot0)
 
 	table.insert(slot1, GAME.CHARGE_SUCCESS)
@@ -36,7 +36,7 @@ slot0.listNotificationInterests = function(slot0)
 	return slot1
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	uv0.super.handleNotification(slot0, slot1)
 
 	slot3 = slot1:getBody()

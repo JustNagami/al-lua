@@ -5,15 +5,15 @@ slot0.GAME_STATE_GAMING = 1
 slot0.GAME_STATE_END = 2
 slot0.config_init = false
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CardPairsUI"
 end
 
-slot0.setPlayerData = function(slot0, slot1)
+function slot0.setPlayerData(slot0, slot1)
 	slot0.playerData = slot1
 end
 
-slot0.setActivityData = function(slot0, slot1)
+function slot0.setActivityData(slot0, slot1)
 	slot0.activityData = slot1
 
 	if not slot0.config_init then
@@ -42,10 +42,10 @@ slot0.setActivityData = function(slot0, slot1)
 	end
 end
 
-slot0.checkActivityEnd = function(slot0)
+function slot0.checkActivityEnd(slot0)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.backBtn = slot0:findTF("top/back", slot0._tf)
 	slot0.cardTpl = slot0:findTF("res/card", slot0._tf)
 	slot0.cardCon = slot0:findTF("card_con/layout", slot0._tf)
@@ -60,7 +60,7 @@ slot0.init = function(slot0)
 	slot0:hideChild(slot0:findTF("res", slot0._tf))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:emit(uv1.ON_BACK)
 	end, SOUND_BACK)
@@ -175,21 +175,21 @@ slot0.didEnter = function(slot0)
 	end
 end
 
-slot0.setAllCardEnale = function(slot0, slot1)
+function slot0.setAllCardEnale(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.cardList) do
 		slot6:setEnable(slot1)
 	end
 end
 
-slot0.setTimeTxt = function(slot0, slot1)
+function slot0.setTimeTxt(slot0, slot1)
 	setText(slot0.timeTxt, slot0:getTimeFormat(slot1))
 end
 
-slot0.getTimeFormat = function(slot0, slot1)
+function slot0.getTimeFormat(slot0, slot1)
 	return (math.floor(slot1 / 60000) >= 10 and slot2 or "0" .. slot2) .. "'" .. (math.floor(slot1 % 60000 / 1000) >= 10 and slot3 or "0" .. slot3) .. "'" .. (math.floor(slot1 % 1000 / 10) >= 10 and slot4 or "0" .. slot4)
 end
 
-slot0.updateTimes = function(slot0)
+function slot0.updateTimes(slot0)
 	if math.ceil(os.difftime(pg.TimeMgr.GetInstance():GetServerTime(), slot0.activityData.data3) / 86400) < 0 then
 		slot2 = 0
 	end
@@ -203,7 +203,7 @@ slot0.updateTimes = function(slot0)
 	setText(slot0.timesTxt, slot0.lastTimes >= 0 and slot0.lastTimes or 0)
 end
 
-slot0.gameInit = function(slot0)
+function slot0.gameInit(slot0)
 	setActive(slot0.maskBtn, false)
 	setActive(slot0.endTips, false)
 
@@ -241,7 +241,7 @@ slot0.gameInit = function(slot0)
 	slot0:checkGameState()
 end
 
-slot0.checkGameState = function(slot0)
+function slot0.checkGameState(slot0)
 	if slot0.gameState == slot0.GAME_STATE_BEGIN then
 		slot0:showAllCard()
 	elseif slot0.gameState == slot0.GAME_STATE_GAMING then
@@ -251,7 +251,7 @@ slot0.checkGameState = function(slot0)
 	end
 end
 
-slot0.gameEndHandler = function(slot0)
+function slot0.gameEndHandler(slot0)
 	slot0.gameState = slot0.GAME_STATE_END
 
 	slot0:checkGameState()
@@ -279,7 +279,7 @@ slot0.gameEndHandler = function(slot0)
 	setActive(slot0.endTips, true)
 end
 
-slot0.showAllCard = function(slot0)
+function slot0.showAllCard(slot0)
 	slot0:setAllCardEnale(false)
 
 	slot0.timer = Timer.New(function ()
@@ -308,7 +308,7 @@ slot0.showAllCard = function(slot0)
 	slot0.timer:Start()
 end
 
-slot0.clearAllCard = function(slot0, slot1)
+function slot0.clearAllCard(slot0, slot1)
 	if slot0.timer ~= nil then
 		slot0.timer:Stop()
 
@@ -328,13 +328,13 @@ slot0.clearAllCard = function(slot0, slot1)
 	end
 end
 
-slot0.hideChild = function(slot0, slot1)
+function slot0.hideChild(slot0, slot1)
 	for slot6 = 0, slot1.childCount - 1 do
 		setActive(slot1:GetChild(slot6), false)
 	end
 end
 
-slot0.tryFirstPlayStory = function(slot0)
+function slot0.tryFirstPlayStory(slot0)
 	if slot0.activityData:getConfig("config_client")[1] then
 		if slot0.activityData:getConfig("config_client")[1][1] ~= nil and not pg.NewStoryMgr.GetInstance():IsPlayed(slot1) then
 			slot2 = pg.NewStoryMgr.GetInstance()
@@ -352,7 +352,7 @@ slot0.tryFirstPlayStory = function(slot0)
 	end
 end
 
-slot0.clearCountTimer = function(slot0)
+function slot0.clearCountTimer(slot0)
 	if slot0.countTimer ~= nil then
 		slot0.countTimer:Stop()
 
@@ -360,7 +360,7 @@ slot0.clearCountTimer = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:clearAllCard(true)
 	slot0:clearCountTimer()
 

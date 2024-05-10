@@ -1,6 +1,6 @@
 slot0 = class("BuildPoolExchangeCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	if not getProxy(ActivityProxy):getActivityById(slot1:getBody().activity_id) or slot4:isEnd() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("common_activity_end"))
 

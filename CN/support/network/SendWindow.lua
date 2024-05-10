@@ -4,7 +4,7 @@ slot0.SendWindow = class("SendWindow")
 slot1 = slot0.SendWindow
 slot2 = nil
 
-slot1.Ctor = function(slot0, slot1, slot2)
+function slot1.Ctor(slot0, slot1, slot2)
 	slot0.connectionMgr = slot1
 	slot0.packetIdx = defaultValue(slot2, 0)
 	slot0.isSending = false
@@ -13,19 +13,19 @@ slot1.Ctor = function(slot0, slot1, slot2)
 	uv0 = {}
 end
 
-slot1.setPacketIdx = function(slot0, slot1)
+function slot1.setPacketIdx(slot0, slot1)
 	slot0.packetIdx = slot1
 end
 
-slot1.getPacketIdx = function(slot0)
+function slot1.getPacketIdx(slot0)
 	return slot0.packetIdx
 end
 
-slot1.incPacketIdx = function(slot0)
+function slot1.incPacketIdx(slot0)
 	slot0.packetIdx = slot0.packetIdx + 1
 end
 
-slot1.Queue = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function slot1.Queue(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	table.insert(slot0.toSends, {
 		slot1,
 		slot2,
@@ -50,7 +50,7 @@ slot1.Queue = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot0:StartSend()
 end
 
-slot1.StartSend = function(slot0)
+function slot1.StartSend(slot0)
 	if #slot0.toSends > 0 then
 		slot0:Send(unpack(slot0.toSends[1]))
 	else
@@ -58,7 +58,7 @@ slot1.StartSend = function(slot0)
 	end
 end
 
-slot1.Send = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+function slot1.Send(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot0.isSending = true
 	slot0.currentCS = slot1
 
@@ -175,7 +175,7 @@ slot1.Send = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	end
 end
 
-slot1.stopTimer = function(slot0)
+function slot1.stopTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -183,7 +183,7 @@ slot1.stopTimer = function(slot0)
 	end
 end
 
-slot1.onData = function(slot0)
+function slot1.onData(slot0)
 	originalPrint("Network Receive idx: " .. slot0.idx .. " cmd: " .. slot0.cmd)
 
 	slot1 = uv0.Packer.GetInstance():Unpack(slot0.cmd, slot0:getLuaStringBuffer())

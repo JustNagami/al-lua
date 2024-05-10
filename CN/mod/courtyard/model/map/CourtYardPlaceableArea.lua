@@ -1,56 +1,56 @@
 slot0 = class("CourtYardPlaceableArea", import("...CourtYardDispatcher"))
 
-slot0.Ctor = function(slot0, slot1)
-	uv0.super.Ctor(slot0)
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1)
 
-	slot0.sizeX = slot1.x
-	slot0.sizeY = slot1.y
-	slot0.minSizeX = slot1.z
-	slot0.minSizeY = slot1.w
+	slot0.sizeX = slot2.x
+	slot0.sizeY = slot2.y
+	slot0.minSizeX = slot2.z
+	slot0.minSizeY = slot2.w
 	slot0.map = {}
 	slot0.mats = {}
 	slot0.chars = {}
 
-	for slot5 = 0, slot0.sizeX do
-		slot0.map[slot5] = {}
+	for slot6 = 0, slot0.sizeX do
+		slot0.map[slot6] = {}
 
-		for slot9 = 0, slot0.sizeY do
-			slot0.map[slot5][slot9] = false
+		for slot10 = 0, slot0.sizeY do
+			slot0.map[slot6][slot10] = false
 		end
 	end
 
 	slot0.depthMap = CourtYardDepthMap.New(slot0.sizeX + 1, slot0.sizeY + 1)
 end
 
-slot0.GetRange = function(slot0)
+function slot0.GetRange(slot0)
 	return Vector4(slot0.sizeX, slot0.sizeY, slot0.minSizeX, slot0.minSizeY)
 end
 
-slot0.GetRangeWithoutWall = function(slot0)
+function slot0.GetRangeWithoutWall(slot0)
 	return Vector4(slot0.sizeX - 1, slot0.sizeY - 1, slot0.minSizeX, slot0.minSizeY)
 end
 
-slot0.UpdateMinRange = function(slot0, slot1)
+function slot0.UpdateMinRange(slot0, slot1)
 	slot0.minSizeX = slot1.x
 	slot0.minSizeY = slot1.y
 end
 
-slot0.LockPosition = function(slot0, slot1)
+function slot0.LockPosition(slot0, slot1)
 	slot0.map[slot1.x][slot1.y] = true
 end
 
-slot0._ClearLockPosition = function(slot0, slot1)
+function slot0._ClearLockPosition(slot0, slot1)
 	if slot1:GetMarkPosition() then
 		slot0:ClearLockPosition(slot2)
 		slot1:ClearMarkPosition()
 	end
 end
 
-slot0.ClearLockPosition = function(slot0, slot1)
+function slot0.ClearLockPosition(slot0, slot1)
 	slot0.map[slot1.x][slot1.y] = false
 end
 
-slot0.AddItem = function(slot0, slot1)
+function slot0.AddItem(slot0, slot1)
 	assert(isa(slot1, CourtYardDepthItem))
 
 	if slot1:GetDeathType() == CourtYardConst.DEPTH_TYPE_MAT then
@@ -76,7 +76,7 @@ slot0.AddItem = function(slot0, slot1)
 	slot0:DispatchEvent(CourtYardEvent.ADD_ITEM, slot1)
 end
 
-slot0.RemoveItem = function(slot0, slot1)
+function slot0.RemoveItem(slot0, slot1)
 	assert(isa(slot1, CourtYardDepthItem))
 
 	if slot1:GetDeathType() == CourtYardConst.DEPTH_TYPE_MAT then
@@ -107,7 +107,7 @@ slot0.RemoveItem = function(slot0, slot1)
 	end
 end
 
-slot0.RemoveItemAndRefresh = function(slot0, slot1)
+function slot0.RemoveItemAndRefresh(slot0, slot1)
 	slot0:RemoveItem(slot1)
 	_.each(_.map(slot0.chars, function (slot0)
 		return slot0
@@ -117,7 +117,7 @@ slot0.RemoveItemAndRefresh = function(slot0, slot1)
 	end)
 end
 
-slot0.AddItemAndRefresh = function(slot0, slot1)
+function slot0.AddItemAndRefresh(slot0, slot1)
 	slot0:AddItem(slot1)
 	_.each(_.map(slot0.chars, function (slot0)
 		return slot0
@@ -127,7 +127,7 @@ slot0.AddItemAndRefresh = function(slot0, slot1)
 	end)
 end
 
-slot0.GetPositions = function(slot0)
+function slot0.GetPositions(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.map) do
@@ -139,7 +139,7 @@ slot0.GetPositions = function(slot0)
 	return slot1
 end
 
-slot0.IsEmptyPosition = function(slot0, slot1)
+function slot0.IsEmptyPosition(slot0, slot1)
 	if not slot0.map[slot1.x] then
 		return false
 	end
@@ -147,19 +147,19 @@ slot0.IsEmptyPosition = function(slot0, slot1)
 	return slot0.map[slot1.x][slot1.y] == false
 end
 
-slot0.InSide = function(slot0, slot1)
+function slot0.InSide(slot0, slot1)
 	return slot0.minSizeX <= slot1.x and slot0.minSizeY <= slot1.y and slot1.x <= slot0.sizeX and slot1.y <= slot0.sizeY
 end
 
-slot0.LegalPosition = function(slot0, slot1, slot2)
+function slot0.LegalPosition(slot0, slot1, slot2)
 	return slot0:InSide(slot1) and (slot0:IsEmptyPosition(slot1) or slot2:GetDeathType() == CourtYardConst.DEPTH_TYPE_MAT)
 end
 
-slot0.GetItems = function(slot0)
+function slot0.GetItems(slot0)
 	return slot0.depthMap.sortedItems
 end
 
-slot0.GetMatItems = function(slot0)
+function slot0.GetMatItems(slot0)
 	table.sort(slot0.mats, function (slot0, slot1)
 		if slot0:GetInitSizeCnt() == slot1:GetInitSizeCnt() then
 			slot4 = slot0:GetPosition()
@@ -174,13 +174,13 @@ slot0.GetMatItems = function(slot0)
 	return slot0.mats
 end
 
-slot0.GetEmptyPositions = function(slot0, slot1)
+function slot0.GetEmptyPositions(slot0, slot1)
 	return _.select(slot0:GetPositions(), function (slot0)
 		return uv0:LegalPosition(slot0, uv1)
 	end)
 end
 
-slot0.GetRandomPosition = function(slot0, slot1)
+function slot0.GetRandomPosition(slot0, slot1)
 	if #slot0:GetEmptyPositions(slot1) > 0 then
 		return slot2[math.random(1, #slot2)]
 	end
@@ -188,7 +188,7 @@ slot0.GetRandomPosition = function(slot0, slot1)
 	return nil
 end
 
-slot0.GetEmptyArea = function(slot0, slot1)
+function slot0.GetEmptyArea(slot0, slot1)
 	for slot6, slot7 in ipairs(slot1:GetInitSize()) do
 		if slot0:_GetEmptyArea(slot1, slot7[1], slot7[2]) then
 			return slot8
@@ -198,8 +198,8 @@ slot0.GetEmptyArea = function(slot0, slot1)
 	return nil
 end
 
-slot0._GetEmptyArea = function(slot0, slot1, slot2, slot3)
-	slot4 = function(slot0)
+function slot0._GetEmptyArea(slot0, slot1, slot2, slot3)
+	function slot4(slot0)
 		slot1 = {}
 
 		for slot5 = slot0.x, slot0.x + uv0 - 1 do
@@ -224,7 +224,7 @@ slot0._GetEmptyArea = function(slot0, slot1, slot2, slot3)
 	return nil
 end
 
-slot0._GetNextPositionForMove = function(slot0, slot1)
+function slot0._GetNextPositionForMove(slot0, slot1)
 	if #_.select(slot1:GetAroundPositions(), function (slot0)
 		return uv0:LegalPosition(slot0, uv1)
 	end) > 0 then
@@ -234,7 +234,7 @@ slot0._GetNextPositionForMove = function(slot0, slot1)
 	return nil
 end
 
-slot0.GetMapNotIncludeItem = function(slot0, slot1)
+function slot0.GetMapNotIncludeItem(slot0, slot1)
 	slot2 = slot1:GetAreaByPosition(slot1:GetPosition())
 	slot3 = {}
 
@@ -253,7 +253,7 @@ slot0.GetMapNotIncludeItem = function(slot0, slot1)
 	return slot3
 end
 
-slot0.__GetNextPositionForMove = function(slot0, slot1)
+function slot0.__GetNextPositionForMove(slot0, slot1)
 	slot2 = slot0:GetMapNotIncludeItem(slot1)
 
 	if #_.select(slot1:GetAroundPositions(), function (slot0)
@@ -269,7 +269,7 @@ slot0.__GetNextPositionForMove = function(slot0, slot1)
 	return nil
 end
 
-slot0.GetNextPositionForMove = function(slot0, slot1)
+function slot0.GetNextPositionForMove(slot0, slot1)
 	if slot1:GetInitSizeCnt() == 1 then
 		return slot0:_GetNextPositionForMove(slot1)
 	else
@@ -277,7 +277,7 @@ slot0.GetNextPositionForMove = function(slot0, slot1)
 	end
 end
 
-slot0.AreaWithInfo = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.AreaWithInfo(slot0, slot1, slot2, slot3, slot4)
 	return _.map(slot1:GetAreaByPosition(slot2), function (slot0)
 		return {
 			flag = (uv0 or uv1:LegalPosition(slot0, uv2)) and 1 or 2,
@@ -287,7 +287,7 @@ slot0.AreaWithInfo = function(slot0, slot1, slot2, slot3, slot4)
 	end)
 end
 
-slot0.CanRotateItem = function(slot0, slot1)
+function slot0.CanRotateItem(slot0, slot1)
 	if slot1:HasParent() then
 		return slot1:GetParent():CanRotateChild(slot1)
 	elseif isa(slot1, CourtYardCanPutFurniture) and slot1:AnyNotRotateChilds() then
@@ -301,7 +301,7 @@ slot0.CanRotateItem = function(slot0, slot1)
 	end
 end
 
-slot0.GetAroundEmptyPosition = function(slot0, slot1)
+function slot0.GetAroundEmptyPosition(slot0, slot1)
 	slot3 = {}
 	slot4 = slot1:GetPosition()
 
@@ -332,12 +332,12 @@ slot0.GetAroundEmptyPosition = function(slot0, slot1)
 	assert(false)
 end
 
-slot0.GetAroundEmptyArea = function(slot0, slot1, slot2)
+function slot0.GetAroundEmptyArea(slot0, slot1, slot2)
 	slot3 = slot1:GetInitSize()
 	slot4 = slot3[1][1]
 	slot5 = slot3[1][2]
 
-	slot7 = function(slot0, slot1)
+	function slot7(slot0, slot1)
 		return math.abs(slot0.x + slot0.y - (slot1.x + slot1.y))
 	end
 
@@ -363,7 +363,7 @@ slot0.GetAroundEmptyArea = function(slot0, slot1, slot2)
 	return nil
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:ClearListeners()
 end
 

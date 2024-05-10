@@ -5,11 +5,11 @@ slot2 = class("BattleBuffAddAdditiveSpeed", slot0.Battle.BattleBuffEffect)
 slot0.Battle.BattleBuffAddAdditiveSpeed = slot2
 slot2.__name = "BattleBuffAddAdditiveSpeed"
 
-slot2.Ctor = function(slot0, slot1)
+function slot2.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 end
 
-slot2.SetArgs = function(slot0, slot1, slot2)
+function slot2.SetArgs(slot0, slot1, slot2)
 	slot0._singularity = slot0._tempData.arg_list.singularity or {
 		x = 0,
 		z = 0
@@ -25,7 +25,7 @@ slot2.SetArgs = function(slot0, slot1, slot2)
 	end
 end
 
-slot2.onUpdate = function(slot0, slot1, slot2)
+function slot2.onUpdate(slot0, slot1, slot2)
 	slot3 = nil
 	slot4 = pg.Tool.FilterY((slot0._casterGravity and slot2:GetCaster():GetPosition() + slot0._singularityOffset or slot0._staticSingularity) - slot1:GetPosition())
 	slot5 = slot4.normalized
@@ -40,6 +40,6 @@ slot2.onUpdate = function(slot0, slot1, slot2)
 	slot1:SetAdditiveSpeed(slot5 * slot6)
 end
 
-slot2.onRemove = function(slot0, slot1, slot2)
+function slot2.onRemove(slot0, slot1, slot2)
 	slot1:RemoveAdditiveSpeed()
 end

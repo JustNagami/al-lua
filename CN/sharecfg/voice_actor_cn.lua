@@ -1571,5 +1571,45 @@ pg.voice_actor_CN = {
 	{
 		code = 393,
 		actor_name = "佐土原香织"
+	},
+	{
+		code = 394,
+		actor_name = "又吉爱"
+	},
+	{
+		code = 395,
+		actor_name = "佐佐木未来"
+	},
+	{
+		code = 396,
+		actor_name = "牧野天音"
+	},
+	{
+		code = 397,
+		actor_name = "羽月理惠"
+	},
+	{
+		code = 398,
+		actor_name = "户松遥"
+	},
+	{
+		code = 399,
+		actor_name = "佳穗成美"
+	},
+	{
+		code = 400,
+		actor_name = "Marika"
+	},
+	[402] = {
+		code = 402,
+		actor_name = "岩井映美里"
+	},
+	[403] = {
+		code = 403,
+		actor_name = "真野美月"
+	},
+	[404] = {
+		code = 404,
+		actor_name = "佐仓薰"
 	}
 }

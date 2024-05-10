@@ -1,19 +1,19 @@
 slot0 = class("CourtYardPaper")
 
-slot0.Ctor = function(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot1.configId or slot0.id
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.id = slot2.id
+	slot0.configId = slot2.configId or slot0.id
 	slot0.config = pg.furniture_data_template[slot0.configId]
 end
 
-slot0.IsDirty = function(slot0)
+function slot0.IsDirty(slot0)
 	return true
 end
 
-slot0.UnDirty = function(slot0)
+function slot0.UnDirty(slot0)
 end
 
-slot0.GetObjType = function(slot0)
+function slot0.GetObjType(slot0)
 	if slot0.config.spine ~= nil then
 		return CourtYardConst.OBJ_TYPE_SPINE
 	else
@@ -21,21 +21,21 @@ slot0.GetObjType = function(slot0)
 	end
 end
 
-slot0.GetPicture = function(slot0)
+function slot0.GetPicture(slot0)
 	return slot0.config.picture
 end
 
-slot0.GetSpineNameAndAction = function(slot0)
+function slot0.GetSpineNameAndAction(slot0)
 	slot1 = slot0.config.spine[1]
 
 	return slot1[1], slot1[2]
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return slot0.config.type
 end
 
-slot0.ToTable = function(slot0)
+function slot0.ToTable(slot0)
 	return {
 		dir = 1,
 		parent = 0,

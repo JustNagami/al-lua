@@ -7,7 +7,7 @@ slot5 = require("protobuf.wire_format")
 
 module("protobuf.encoder")
 
-_VarintSize = function(slot0)
+function _VarintSize(slot0)
 	if slot0 <= 127 then
 		return 1
 	end
@@ -47,7 +47,7 @@ _VarintSize = function(slot0)
 	return 10
 end
 
-_SignedVarintSize = function(slot0)
+function _SignedVarintSize(slot0)
 	if slot0 < 0 then
 		return 10
 	end
@@ -91,11 +91,11 @@ _SignedVarintSize = function(slot0)
 	return 10
 end
 
-_TagSize = function(slot0)
+function _TagSize(slot0)
 	return _VarintSize(uv0.PackTag(slot0, 0))
 end
 
-_SimpleSizer = function(slot0)
+function _SimpleSizer(slot0)
 	return function (slot0, slot1, slot2)
 		slot3 = _TagSize(slot0)
 
@@ -129,7 +129,7 @@ _SimpleSizer = function(slot0)
 	end
 end
 
-_ModifiedSizer = function(slot0, slot1)
+function _ModifiedSizer(slot0, slot1)
 	return function (slot0, slot1, slot2)
 		slot3 = _TagSize(slot0)
 
@@ -163,7 +163,7 @@ _ModifiedSizer = function(slot0, slot1)
 	end
 end
 
-_FixedSizer = function(slot0)
+function _FixedSizer(slot0)
 	return function (slot0, slot1, slot2)
 		slot3 = _TagSize(slot0)
 
@@ -206,7 +206,7 @@ SFixed64Sizer = Fixed64Sizer
 DoubleSizer = Fixed64Sizer
 BoolSizer = _FixedSizer(1)
 
-StringSizer = function(slot0, slot1, slot2)
+function StringSizer(slot0, slot1, slot2)
 	slot3 = _TagSize(slot0)
 	slot4 = _VarintSize
 
@@ -232,7 +232,7 @@ StringSizer = function(slot0, slot1, slot2)
 	end
 end
 
-BytesSizer = function(slot0, slot1, slot2)
+function BytesSizer(slot0, slot1, slot2)
 	slot3 = _TagSize(slot0)
 	slot4 = _VarintSize
 
@@ -258,7 +258,7 @@ BytesSizer = function(slot0, slot1, slot2)
 	end
 end
 
-MessageSizer = function(slot0, slot1, slot2)
+function MessageSizer(slot0, slot1, slot2)
 	slot3 = _TagSize(slot0)
 	slot4 = _VarintSize
 
@@ -287,7 +287,7 @@ end
 slot6 = slot4.varint_encoder
 slot8 = slot4.varint_encoder64
 
-_VarintBytes = function(slot0)
+function _VarintBytes(slot0)
 	uv0(function (slot0)
 		uv0[#uv0 + 1] = slot0
 	end, slot0)
@@ -295,11 +295,11 @@ _VarintBytes = function(slot0)
 	return uv1.concat({})
 end
 
-TagBytes = function(slot0, slot1)
+function TagBytes(slot0, slot1)
 	return _VarintBytes(uv0.PackTag(slot0, slot1))
 end
 
-_SimpleEncoder = function(slot0, slot1, slot2)
+function _SimpleEncoder(slot0, slot1, slot2)
 	return function (slot0, slot1, slot2)
 		if slot2 then
 			slot3 = TagBytes(slot0, uv0.WIRETYPE_LENGTH_DELIMITED)
@@ -340,7 +340,7 @@ _SimpleEncoder = function(slot0, slot1, slot2)
 	end
 end
 
-_ModifiedEncoder = function(slot0, slot1, slot2, slot3)
+function _ModifiedEncoder(slot0, slot1, slot2, slot3)
 	return function (slot0, slot1, slot2)
 		if slot2 then
 			slot3 = TagBytes(slot0, uv0.WIRETYPE_LENGTH_DELIMITED)
@@ -381,7 +381,7 @@ _ModifiedEncoder = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-_StructPackEncoder = function(slot0, slot1, slot2)
+function _StructPackEncoder(slot0, slot1, slot2)
 	return function (slot0, slot1, slot2)
 		slot3 = uv0.struct_pack
 
@@ -434,7 +434,7 @@ SFixed64Encoder = _StructPackEncoder(slot5.WIRETYPE_FIXED64, 8, slot0.byte("q"))
 FloatEncoder = _StructPackEncoder(slot5.WIRETYPE_FIXED32, 4, slot0.byte("f"))
 DoubleEncoder = _StructPackEncoder(slot5.WIRETYPE_FIXED64, 8, slot0.byte("d"))
 
-BoolEncoder = function(slot0, slot1, slot2)
+function BoolEncoder(slot0, slot1, slot2)
 	slot3 = " "
 	slot4 = ""
 
@@ -483,7 +483,7 @@ BoolEncoder = function(slot0, slot1, slot2)
 	end
 end
 
-StringEncoder = function(slot0, slot1, slot2)
+function StringEncoder(slot0, slot1, slot2)
 	slot3 = TagBytes(slot0, uv0.WIRETYPE_LENGTH_DELIMITED)
 	slot4 = uv1
 
@@ -507,7 +507,7 @@ StringEncoder = function(slot0, slot1, slot2)
 	end
 end
 
-BytesEncoder = function(slot0, slot1, slot2)
+function BytesEncoder(slot0, slot1, slot2)
 	slot3 = TagBytes(slot0, uv0.WIRETYPE_LENGTH_DELIMITED)
 	slot4 = uv1
 
@@ -531,7 +531,7 @@ BytesEncoder = function(slot0, slot1, slot2)
 	end
 end
 
-MessageEncoder = function(slot0, slot1, slot2)
+function MessageEncoder(slot0, slot1, slot2)
 	slot3 = TagBytes(slot0, uv0.WIRETYPE_LENGTH_DELIMITED)
 	slot4 = uv1
 

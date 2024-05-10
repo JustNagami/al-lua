@@ -11,27 +11,27 @@ slot0.ChannelBits = {
 	})
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NotificationUI"
 end
 
-slot0.getGroupName = function(slot0)
+function slot0.getGroupName(slot0)
 	return "group_NotificationUI"
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 end
 
-slot0.setInGuild = function(slot0, slot1)
+function slot0.setInGuild(slot0, slot1)
 	slot0.inGuild = slot1
 end
 
-slot0.setMessages = function(slot0, slot1)
+function slot0.setMessages(slot0, slot1)
 	slot0.messages = slot1
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.close = slot0:findTF("close")
 	slot0.frame = slot0:findTF("frame")
 	slot0.contain = slot0.frame:Find("contain")
@@ -127,13 +127,13 @@ slot0.init = function(slot0)
 	uv0.ChannelBits.recv = getProxy(SettingsProxy):GetChatFlag()
 end
 
-slot0.adjustMsgListPanel = function(slot0)
+function slot0.adjustMsgListPanel(slot0)
 	slot0.listContainerTF = slot0.contain:Find("ListContainer")
 	slot0.listTF = slot0.contain:Find("ListContainer/list")
 	GetComponent(slot0.listTF, "LayoutElement").preferredHeight = slot0.listContainerTF.rect.size.y - 69.01791
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:adjustMsgListPanel()
 
 	slot0.currentForm = slot0.contextData.form
@@ -254,7 +254,7 @@ slot0.didEnter = function(slot0)
 	rtf(slot0._tf).offsetMin = Vector2(0, 0)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
 	if isActive(slot0.changeRoomPanel) then
@@ -264,7 +264,7 @@ slot0.onBackPressed = function(slot0)
 	end
 end
 
-slot0.initFilter = function(slot0)
+function slot0.initFilter(slot0)
 	slot0.recvTypes = UIItemList.New(slot0.typeBtns, slot0.typeTpl)
 
 	slot0.recvTypes:make(function (slot0, slot1, slot2)
@@ -287,7 +287,7 @@ slot0.initFilter = function(slot0)
 	slot0.recvTypes:align(#ChatConst.RecvChannels)
 end
 
-slot0.updateFilter = function(slot0)
+function slot0.updateFilter(slot0)
 	slot1 = ChatConst.RecvChannels
 	slot2 = slot0.recvTypes
 
@@ -313,11 +313,11 @@ slot0.updateFilter = function(slot0)
 	slot0.filteredMessages = _.slice(slot0.filteredMessages, #slot0.filteredMessages - uv0.MaxCount + 1, uv0.MaxCount)
 end
 
-slot0.updateChatChannel = function(slot0)
+function slot0.updateChatChannel(slot0)
 	setImageSprite(slot0.channelSend:Find("Text"), slot0.bottomChannelTextSprites[uv0.ChannelBits.send], true)
 end
 
-slot0.updateChannelSendPop = function(slot0)
+function slot0.updateChannelSendPop(slot0)
 	slot3 = slot0.channelSendPop
 	slot2 = UIItemList.New(slot3:Find("type_send"), slot0.bottomChannelTpl)
 
@@ -352,13 +352,13 @@ slot0.updateChannelSendPop = function(slot0)
 	end)()
 end
 
-slot0.updateRoom = function(slot0)
+function slot0.updateRoom(slot0)
 	setText(slot0.enterRoomTip:Find("text"), i18n("main_notificationLayer_enter_room", slot0.player.chatRoomId == 0 and "" or slot0.player.chatRoomId))
 	setText(slot0:findTF("Text", slot0.roomBtn), slot0.player.chatRoomId == 0 and i18n("common_not_enter_room") or slot0.player.chatRoomId)
 	slot0:showEnterRommTip()
 end
 
-slot0.showChangeRoomPanel = function(slot0)
+function slot0.showChangeRoomPanel(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:UnblurPanel(slot0._tf)
@@ -434,7 +434,7 @@ slot0.showChangeRoomPanel = function(slot0)
 	setActive(slot0.changeRoomPanel, true)
 end
 
-slot0.closeChangeRoomPanel = function(slot0)
+function slot0.closeChangeRoomPanel(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0.changeRoomPanel, slot0._tf)
 
 	if slot0.currentForm == uv0.FORM_BATTLE then
@@ -450,7 +450,7 @@ slot0.closeChangeRoomPanel = function(slot0)
 	setActive(slot0.changeRoomPanel, false)
 end
 
-slot0.removeAllBubble = function(slot0)
+function slot0.removeAllBubble(slot0)
 	slot1 = ipairs
 	slot2 = slot0.bubbleCards or {}
 
@@ -480,7 +480,7 @@ slot0.removeAllBubble = function(slot0)
 	slot0.worldBossCards = {}
 end
 
-slot0.updateAll = function(slot0)
+function slot0.updateAll(slot0)
 	slot0:removeAllBubble()
 
 	slot4 = uv0.InitCount
@@ -494,7 +494,7 @@ slot0.updateAll = function(slot0)
 	setActive(slot0.emptySign, PLATFORM_CODE == PLATFORM_JP and #slot0.filteredMessages <= 0)
 end
 
-slot0.append = function(slot0, slot1, slot2, slot3)
+function slot0.append(slot0, slot1, slot2, slot3)
 	if #slot0.filteredMessages >= uv0.MaxCount * 2 then
 		slot0:updateFilter()
 		slot0:updateAll()
@@ -521,7 +521,7 @@ slot0.append = function(slot0, slot1, slot2, slot3)
 	setActive(slot0.emptySign, PLATFORM_CODE == PLATFORM_JP and #slot0.filteredMessages <= 0)
 end
 
-slot0.appendOthers = function(slot0, slot1, slot2)
+function slot0.appendOthers(slot0, slot1, slot2)
 	slot4 = slot0.poolBubble.others
 	slot5 = slot0.prefabOthers
 
@@ -554,7 +554,7 @@ slot0.appendOthers = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.appendPublic = function(slot0, slot1, slot2)
+function slot0.appendPublic(slot0, slot1, slot2)
 	slot3 = nil
 
 	if slot1.id == 4 then
@@ -574,7 +574,7 @@ slot0.appendPublic = function(slot0, slot1, slot2)
 	slot3:update(slot1)
 end
 
-slot0.appendTopPublic = function(slot0, slot1)
+function slot0.appendTopPublic(slot0, slot1)
 	if 120 - (pg.TimeMgr.GetInstance():GetServerTime() - slot1.timestamp) <= 0 then
 		return
 	end
@@ -599,7 +599,7 @@ slot0.appendTopPublic = function(slot0, slot1)
 	slot0._topTimer:Start()
 end
 
-slot0.showEnterRommTip = function(slot0)
+function slot0.showEnterRommTip(slot0)
 	if slot0.player.chatRoomId == 0 then
 		return
 	end
@@ -615,10 +615,10 @@ slot0.showEnterRommTip = function(slot0)
 	end
 end
 
-slot0.getPos = function(slot0, slot1)
+function slot0.getPos(slot0, slot1)
 end
 
-slot0.displayEmojiPanel = function(slot0)
+function slot0.displayEmojiPanel(slot0)
 	slot1 = slot0.emoji.position
 
 	slot0:emit(NotificationMediator.OPEN_EMOJI, function (slot0)
@@ -626,7 +626,7 @@ slot0.displayEmojiPanel = function(slot0)
 	end, Vector3(slot1.x, slot1.y, 0))
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0.currentForm == uv0.FORM_BATTLE then
 		if isActive(slot0.changeRoomPanel) then
 			slot0:closeChangeRoomPanel()
@@ -670,14 +670,14 @@ slot0.willExit = function(slot0)
 	getProxy(GuildProxy):ClearNewChatMsgCnt()
 end
 
-slot0.insertEmojiToInputText = function(slot0, slot1)
+function slot0.insertEmojiToInputText(slot0, slot1)
 	slot0.input.text = slot0.input.text .. string.gsub(ChatConst.EmojiIconCode, "code", slot1)
 end
 
-slot0.addLateUpdateListener = function(slot0)
+function slot0.addLateUpdateListener(slot0)
 end
 
-slot0.removeLateUpdateListener = function(slot0)
+function slot0.removeLateUpdateListener(slot0)
 end
 
 return slot0

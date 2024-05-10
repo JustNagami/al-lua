@@ -2,7 +2,7 @@ slot0 = class("NewBackYardShopMediator", import("...base.ContextMediator"))
 slot0.ON_SHOPPING = "NewBackYardShopMediator:ON_SHOPPING"
 slot0.ON_CHARGE = "NewBackYardShopMediator:ON_CHARGE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_SHOPPING, function (slot0, slot1, slot2)
 		uv0:sendNotification(GAME.BUY_FURNITURE, {
 			furnitureIds = slot1,
@@ -23,22 +23,20 @@ slot0.register = function(slot0)
 				wrap = ChargeScene.TYPE_DIAMOND
 			})
 		elseif slot1 == PlayerConst.ResDormMoney then
-			uv0:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
-				wrap = ChargeScene.TYPE_GIFT
-			})
+			uv0:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
 		end
 	end)
 	slot0.viewComponent:SetDorm(getProxy(DormProxy):getRawData())
 	slot0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	if slot0.contextData.onRemove then
 		slot0.contextData.onRemove()
 	end
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.BUY_FURNITURE_DONE,
@@ -46,7 +44,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 	slot4 = slot1:getType()
 

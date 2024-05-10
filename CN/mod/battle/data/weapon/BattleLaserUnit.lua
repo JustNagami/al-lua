@@ -10,11 +10,11 @@ slot4.STATE_ATTACK = "FIB"
 slot4.BEAM_STATE_READY = "beamStateReady"
 slot4.BEAM_STATE_OVER_HEAT = "beamStateOverHeat"
 
-slot4.Ctor = function(slot0)
+function slot4.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot4.Clear = function(slot0)
+function slot4.Clear(slot0)
 	if slot0._alertTimer then
 		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._alertTimer)
 	end
@@ -32,7 +32,7 @@ slot4.Clear = function(slot0)
 	uv0.super.Clear(slot0)
 end
 
-slot4.Update = function(slot0)
+function slot4.Update(slot0)
 	slot0:UpdateReload()
 
 	if slot0._currentState == slot0.STATE_READY then
@@ -60,7 +60,7 @@ slot4.Update = function(slot0)
 	end
 end
 
-slot4.DoAttack = function(slot0, slot1)
+function slot4.DoAttack(slot0, slot1)
 	if slot1 == nil or not slot1:IsAlive() or slot0:outOfFireRange(slot1) then
 		slot1 = nil
 	end
@@ -86,12 +86,12 @@ slot4.DoAttack = function(slot0, slot1)
 	slot0:CheckAndShake()
 end
 
-slot4.SetTemplateData = function(slot0, slot1)
+function slot4.SetTemplateData(slot0, slot1)
 	uv0.super.SetTemplateData(slot0, slot1)
 	slot0:initBeamList()
 end
 
-slot4.initBeamList = function(slot0)
+function slot4.initBeamList(slot0)
 	slot1 = slot0._tmpData.barrage_ID
 	slot0._alertList = {}
 	slot0._beamList = {}
@@ -101,7 +101,7 @@ slot4.initBeamList = function(slot0)
 	end
 end
 
-slot4.updateBeamList = function(slot0)
+function slot4.updateBeamList(slot0)
 	slot1 = pg.TimeMgr.GetInstance():GetCombatTime() - slot0._attackStartTime
 	slot2 = 0
 
@@ -133,7 +133,7 @@ slot4.updateBeamList = function(slot0)
 	end
 end
 
-slot4.createBeam = function(slot0, slot1)
+function slot4.createBeam(slot0, slot1)
 	slot4 = uv0.GetBarrageTmpDataFromID(slot1:GetBeamInfoID())
 	slot11 = slot0._host
 	slot13 = slot0._dataProxy:SpawnLastingCubeArea(uv1.AOEField.SURFACE, slot11:GetIFF(), Vector3(slot0._hostPos.x + slot4.offset_x, 0, slot0._hostPos.z + slot4.offset_z), slot4.delta_offset_x, slot4.delta_offset_z, slot4.delay, function (slot0)
@@ -151,7 +151,7 @@ slot4.createBeam = function(slot0, slot1)
 	if slot0._aimPos == nil then
 		slot1:SetAimAngle(0)
 	elseif slot4.offset_prioritise then
-		slot1:SetAimPosition(slot0._aimPos, slot12)
+		slot1:SetAimPosition(slot0._aimPos, slot12, slot11)
 	else
 		slot14 = nil
 
@@ -176,7 +176,7 @@ slot4.createBeam = function(slot0, slot1)
 	slot1:ChangeBeamState(slot1.BEAM_STATE_ATTACK)
 end
 
-slot4.doBeamDamage = function(slot0, slot1)
+function slot4.doBeamDamage(slot0, slot1)
 	slot1:DealDamage()
 
 	slot2 = slot0:Spawn(slot1:GetBulletID())
@@ -197,7 +197,7 @@ slot4.doBeamDamage = function(slot0, slot1)
 	slot0._dataProxy:RemoveBulletUnit(slot2:GetUniqueID())
 end
 
-slot4.EnterCoolDown = function(slot0)
+function slot4.EnterCoolDown(slot0)
 	slot0._attackStartTime = nil
 
 	uv0.super.EnterCoolDown(slot0)

@@ -1,49 +1,68 @@
 slot0 = class("VoteGroupRaceRankPage", import("....base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "GroupRaceRank"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
+	slot0.cards = {}
 	slot0.title1 = slot0:findTF("stages/title1")
 	slot0.title2 = slot0:findTF("stages/title2")
-	slot0.uilist = UIItemList.New(slot0:findTF("scrollrect/content"), slot0:findTF("scrollrect/content/tpl"))
-	slot0.webBtn = slot0:findTF("web")
+	slot0.scrollRect = slot0:findTF("scrollrect"):GetComponent("LScrollRect")
 
-	setActive(slot0.webBtn, false)
-	onButton(slot0, slot0.webBtn, function ()
-		if uv0.phase == VoteGroup.DISPLAY_STAGE then
-			Application.OpenURL(pg.gameset.vote_web_url.description)
-		else
-			uv0:emit(VoteMediator.ON_WEB)
-		end
-	end, SFX_PANEL)
-	setActive(slot0._tf, true)
+	function slot0.scrollRect.onInitItem(slot0)
+		uv0:OnInitItem(slot0)
+	end
+
+	function slot0.scrollRect.onUpdateItem(slot0, slot1)
+		uv0:OnUpdateItem(slot0, slot1)
+	end
+
+	setText(slot0:findTF("titles/rank_title"), i18n("vote_label_rank"))
+	setText(slot0:findTF("titles/votes"), i18n("word_votes"))
+	setText(slot0:findTF("tip"), i18n("vote_label_rank_fresh_time_tip"))
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	slot0.voteGroup = slot1
 	slot0.phase = slot1:GetStage()
 
-	setActive(slot0.title1, slot0.phase == VoteGroup.VOTE_STAGE or slot0.phase == VoteGroup.STTLEMENT_STAGE)
-	setActive(slot0.title2, slot0.phase == VoteGroup.DISPLAY_STAGE)
+	setActive(slot0.title1, slot0.phase == VoteGroup.VOTE_STAGE)
+	setActive(slot0.title2, slot0.phase ~= VoteGroup.VOTE_STAGE)
+	setActive(slot0:findTF("tip"), slot0.phase == VoteGroup.VOTE_STAGE)
 	slot0:UpdateList()
 end
 
-slot0.UpdateList = function(slot0)
-	slot0.uilist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+function slot0.UpdateList(slot0)
+	slot0.displays = slot0.voteGroup:GetRankList()
 
-			setText(slot2:Find("number"), slot1 + 1)
-			setText(slot2:Find("name"), shortenString(slot3:getShipName(), 6))
-			setText(slot2:Find("Text"), uv1.voteGroup:GetVotes(slot3))
-		end
-	end)
-	slot0.uilist:align(#slot0.voteGroup:getList())
+	slot0.scrollRect:SetTotalCount(#slot0.displays)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnInitItem(slot0, slot1)
+	slot0.cards[slot1] = slot0:NewCard(slot1)
+end
+
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	slot4 = slot0.displays[slot1 + 1]
+	slot6 = slot1 + 1
+
+	slot0.cards[slot2].Update(slot4, slot6, slot0.voteGroup:GetVotes(slot4), slot0.voteGroup:GetRiseColor(slot6))
+end
+
+function slot0.NewCard(slot0, slot1)
+	slot2 = slot1.transform
+
+	return {
+		Update = function (slot0, slot1, slot2, slot3)
+			setText(uv0:Find("number"), setColorStr(slot1, slot3))
+			setText(uv0:Find("name"), setColorStr(shortenString(slot0:getShipName(), 6), slot3))
+			setText(uv0:Find("Text"), setColorStr(slot2, slot3))
+		end
+	}
+end
+
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

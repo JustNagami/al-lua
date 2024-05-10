@@ -1,6 +1,6 @@
 slot0 = class("JapanSixthLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	setActive(slot0.item, false)
 
 	slot1 = slot0.itemList
@@ -22,7 +22,7 @@ slot0.OnFirstFlush = function(slot0)
 	end)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	uv0.super.OnUpdateFlush(slot0)
 	setText(slot0.bg:Find("Text"), slot0.nday .. "/" .. slot0.Day)
 end

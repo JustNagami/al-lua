@@ -1,6 +1,6 @@
 slot0 = class("ActivityMediator", import("..base.ContextMediator"))
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0.contextData.singleActivity = true
 
 	slot0:bind(ActivityMediator.EVENT_OPERATION, function (slot0, slot1)
@@ -23,7 +23,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:selectActivity(getProxy(ActivityProxy):getActivityById(slot0.contextData.id))
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		ActivityProxy.ACTIVITY_ADDED,
 		ActivityProxy.ACTIVITY_UPDATED,
@@ -36,7 +36,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == ActivityProxy.ACTIVITY_ADDED or slot2 == ActivityProxy.ACTIVITY_UPDATED then

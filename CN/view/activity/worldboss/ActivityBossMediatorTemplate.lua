@@ -20,7 +20,7 @@ slot1 = {
 	"word_hard"
 }
 
-slot0.GetPairedFleetIndex = function(slot0)
+function slot0.GetPairedFleetIndex(slot0)
 	if slot0 < Fleet.SUBMARINE_FLEET_ID then
 		return slot0 + 10
 	else
@@ -28,7 +28,7 @@ slot0.GetPairedFleetIndex = function(slot0)
 	end
 end
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0.contextData.mediatorClass = slot0.class
 	slot0.activityProxy = getProxy(ActivityProxy)
 	slot0.timeMgr = pg.TimeMgr.GetInstance()
@@ -77,7 +77,7 @@ slot0.register = function(slot0)
 	pg.GuildMsgBoxMgr.GetInstance():NotificationForBattle()
 end
 
-slot0.BindEvent = function(slot0)
+function slot0.BindEvent(slot0)
 	slot1 = getProxy(FleetProxy)
 	slot2 = slot0.activityProxy
 
@@ -194,7 +194,10 @@ slot0.BindEvent = function(slot0)
 									end,
 									btnType = pg.MsgboxMgr.BUTTON_BLUE_WITH_ICON,
 									iconName = {
-										pg.item_data_statistics[id2ItemId(uv0.contextData.TicketID or 1)].icon
+										Drop.New({
+											type = DROP_TYPE_RESOURCE,
+											id = uv0.contextData.TicketID or 1
+										}):getIcon()
 									}
 								}
 							},
@@ -495,11 +498,11 @@ slot0.BindEvent = function(slot0)
 		}))
 	end)
 	slot0:bind(uv0.ON_SELECT_COMMANDER, function (slot0, slot1, slot2)
-		uv2:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
+		uv2:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 			maxCount = 1,
-			mode = CommandRoomScene.MODE_SELECT,
+			mode = CommanderCatScene.MODE_SELECT,
 			activeCommander = uv0:getActivityFleets()[uv1.id][slot1]:getCommanders()[slot2],
-			fleetType = CommandRoomScene.FLEET_TYPE_ACTBOSS,
+			fleetType = CommanderCatScene.FLEET_TYPE_ACTBOSS,
 			ignoredIds = {},
 			onCommander = function (slot0)
 				return true
@@ -553,6 +556,17 @@ slot0.BindEvent = function(slot0)
 		})
 	end)
 	slot0:bind(uv0.ONEN_BUFF_SELECT, function (slot0)
+		(function (slot0)
+			if not slot0 or slot0:isEnd() then
+				return
+			end
+
+			if not slot0:getConfig("config_client").buff_scene then
+				return
+			end
+
+			uv0 = _G[slot1]
+		end)(uv0.contextData.activity)
 		uv0:addSubLayers(Context.New({
 			mediator = ActivityBossBuffSelectMediator,
 			viewComponent = ActivityBossBuffSelectLayer,
@@ -564,7 +578,7 @@ slot0.BindEvent = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		ActivityProxy.ACTIVITY_ADDED,
 		ActivityProxy.ACTIVITY_UPDATED,
@@ -580,7 +594,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == ActivityProxy.ACTIVITY_ADDED or slot2 == ActivityProxy.ACTIVITY_UPDATED then
@@ -630,28 +644,28 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.RequestAndUpdateView = function(slot0)
+function slot0.RequestAndUpdateView(slot0)
 	slot0:sendNotification(GAME.ACTIVITY_BOSS_PAGE_UPDATE, {
 		activity_id = slot0.contextData.activityID
 	})
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	slot0.viewComponent:UpdateView()
 end
 
-slot0.UpdateRankData = function(slot0, slot1)
+function slot0.UpdateRankData(slot0, slot1)
 	slot0.viewComponent:UpdateRank(slot1)
 end
 
-slot0.UpdateActivityData = function(slot0, slot1)
+function slot0.UpdateActivityData(slot0, slot1)
 	slot0.contextData.activity = slot1
 	slot0.contextData.bossHP = slot1:GetBossHP()
 	slot0.contextData.mileStones = slot1:GetMileStones()
 	slot0.contextData.stageTickets = slot1:GetTickets()
 end
 
-slot0.getDockCallbackFuncs4ActicityFleet = function(slot0, slot1, slot2)
+function slot0.getDockCallbackFuncs4ActicityFleet(slot0, slot1, slot2)
 	slot3 = getProxy(BayProxy)
 	slot4 = getProxy(FleetProxy)
 	slot5 = getProxy(ActivityProxy)

@@ -20,7 +20,7 @@ slot0.gameTime = 0
 slot0.gameStepTime = 0
 slot0.deltaTime = 0
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	uv0.game_id = slot0
 	uv0.hub_id = slot1
 	uv0.total_times = pg.mini_game_hub[uv0.hub_id]
@@ -28,7 +28,7 @@ slot0.Init = function(slot0, slot1)
 	uv0.total_times = pg.mini_game_hub[uv0.hub_id].reward_need
 end
 
-slot0.initRoundData = function(slot0, slot1)
+function slot0.initRoundData(slot0, slot1)
 	for slot6, slot7 in pairs(LaunchBallGameConst.game_round) do
 		if slot7.type == slot0 and slot7.type_index == slot1 then
 			uv0.gameRoundData = slot7
@@ -40,19 +40,19 @@ slot0.initRoundData = function(slot0, slot1)
 	end
 end
 
-slot0.SetPlayer = function(slot0)
+function slot0.SetPlayer(slot0)
 	uv0.selectPlayer = slot0
 end
 
-slot0.GetGameTimes = function()
+function slot0.GetGameTimes()
 	return uv0.GetMiniGameHubData().count
 end
 
-slot0.GetGameUseTimes = function()
+function slot0.GetGameUseTimes()
 	return uv0.GetMiniGameHubData().usedtime or 0
 end
 
-slot0.GetGameRound = function()
+function slot0.GetGameRound()
 	slot0 = uv0.GetGameUseTimes()
 
 	if uv0.GetGameTimes() and slot1 > 0 then
@@ -62,11 +62,11 @@ slot0.GetGameRound = function()
 	end
 end
 
-slot0.GetMiniGameData = function()
+function slot0.GetMiniGameData()
 	return getProxy(MiniGameProxy):GetMiniGameData(uv0.game_id)
 end
 
-slot0.GetMiniGameHubData = function()
+function slot0.GetMiniGameHubData()
 	return getProxy(MiniGameProxy):GetHubByHubId(uv0.hub_id)
 end
 
@@ -82,7 +82,7 @@ slot0.series_score = 10
 slot0.enemyColors = {}
 slot0.enemyStopTime = nil
 
-slot0.Prepare = function()
+function slot0.Prepare()
 	uv0.gameTime = uv0.game_time
 	uv0.gameStepTime = 0
 	uv0.scoreNum = 0
@@ -118,7 +118,7 @@ slot0.result_pass_skill_count = "pass_skill_count"
 slot0.reuslt_double_skill_time = "double_skill_time"
 slot0.reuslt_double_pass_skill_time = "double_pass_skill_time"
 
-slot0.UpdateGameResultData = function(slot0, slot1)
+function slot0.UpdateGameResultData(slot0, slot1)
 	print(slot0 .. "  update count  = " .. slot1)
 
 	if slot0 == uv0.reuslt_double_skill_time then
@@ -140,11 +140,11 @@ slot0.UpdateGameResultData = function(slot0, slot1)
 	end
 end
 
-slot0.AddGameResultData = function(slot0, slot1)
+function slot0.AddGameResultData(slot0, slot1)
 	uv0.gameResultData[slot0] = uv0.gameResultData[slot0] + slot1
 end
 
-slot0.GetBuff = function(slot0)
+function slot0.GetBuff(slot0)
 	if uv0.buffs and #uv0.buffs > 0 then
 		for slot4, slot5 in ipairs(uv0.buffs) do
 			if slot5.data.type == slot0 then
@@ -156,7 +156,7 @@ slot0.GetBuff = function(slot0)
 	return nil
 end
 
-slot0.GetScore = function(slot0, slot1, slot2, slot3)
+function slot0.GetScore(slot0, slot1, slot2, slot3)
 	slot4 = 0
 	slot4 = slot0 * uv0.base_score
 
@@ -179,11 +179,11 @@ slot0.GetScore = function(slot0, slot1, slot2, slot3)
 	return slot4
 end
 
-slot0.Sign = function(slot0, slot1, slot2)
+function slot0.Sign(slot0, slot1, slot2)
 	return (slot0.x - slot2.x) * (slot1.y - slot2.y) - (slot1.x - slot2.x) * (slot0.y - slot2.y)
 end
 
-slot0.PointInRect = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.PointInRect(slot0, slot1, slot2, slot3, slot4)
 	slot5, slot6, slot7, slot8, slot9, slot10 = nil
 	slot6 = uv0.Sign(slot0, slot2, slot3)
 	slot7 = uv0.Sign(slot0, slot3, slot4)

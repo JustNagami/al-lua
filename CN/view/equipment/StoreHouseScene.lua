@@ -6,17 +6,17 @@ slot4 = 2
 slot5 = 1
 slot6 = 2
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "StoreHouseUI"
 end
 
-slot0.setEquipments = function(slot0, slot1)
+function slot0.setEquipments(slot0, slot1)
 	slot0.equipmentVOs = slot1
 
 	slot0:setEquipmentByIds(slot1)
 end
 
-slot0.setEquipmentByIds = function(slot0, slot1)
+function slot0.setEquipmentByIds(slot0, slot1)
 	slot0.equipmentVOByIds = {}
 
 	for slot5, slot6 in pairs(slot1) do
@@ -29,7 +29,7 @@ end
 slot7 = require("view.equipment.EquipmentSortCfg")
 slot8 = require("view.equipment.SpWeaponSortCfg")
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.filterEquipWaitting = 0
 	slot1 = slot0.contextData
 	slot0.topItems = slot0:findTF("topItems")
@@ -115,9 +115,10 @@ slot0.init = function(slot0)
 	slot0.blueprintAssignedItemView = BlueprintAssignedItemView.New(slot0.topItems, slot0.event)
 	slot0.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(slot0.topItems, slot0.event)
 	slot0.isEquipingOn = false
+	slot0.msgBox = SelectSkinMsgbox.New(slot0._tf, slot0.event)
 end
 
-slot0.setEquipment = function(slot0, slot1)
+function slot0.setEquipment(slot0, slot1)
 	slot2 = #slot0.equipmentVOs + 1
 
 	for slot6, slot7 in ipairs(slot0.equipmentVOs) do
@@ -138,14 +139,14 @@ slot0.setEquipment = function(slot0, slot1)
 	end
 end
 
-slot0.setEquipmentUpdate = function(slot0)
+function slot0.setEquipmentUpdate(slot0)
 	if slot0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON then
 		slot0:filterEquipment()
 		slot0:updateCapacity()
 	end
 end
 
-slot0.addShipEquipment = function(slot0, slot1)
+function slot0.addShipEquipment(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.equipmentVOs) do
 		if EquipmentProxy.SameEquip(slot6, slot1) then
 			slot0.equipmentVOs[slot5] = slot1
@@ -157,7 +158,7 @@ slot0.addShipEquipment = function(slot0, slot1)
 	table.insert(slot0.equipmentVOs, slot1)
 end
 
-slot0.removeShipEquipment = function(slot0, slot1)
+function slot0.removeShipEquipment(slot0, slot1)
 	for slot5 = #slot0.equipmentVOs, 1, -1 do
 		if EquipmentProxy.SameEquip(slot0.equipmentVOs[slot5], slot1) then
 			table.remove(slot0.equipmentVOs, slot5)
@@ -165,7 +166,7 @@ slot0.removeShipEquipment = function(slot0, slot1)
 	end
 end
 
-slot0.setEquipmentSkin = function(slot0, slot1)
+function slot0.setEquipmentSkin(slot0, slot1)
 	slot2 = true
 
 	for slot6, slot7 in pairs(slot0.equipmentVOs) do
@@ -188,18 +189,18 @@ slot0.setEquipmentSkin = function(slot0, slot1)
 	end
 end
 
-slot0.setEquipmentSkinUpdate = function(slot0)
+function slot0.setEquipmentSkinUpdate(slot0)
 	if slot0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON then
 		slot0:filterEquipment()
 		slot0:updateCapacity()
 	end
 end
 
-slot0.SetSpWeapons = function(slot0, slot1)
+function slot0.SetSpWeapons(slot0, slot1)
 	slot0.spweaponVOs = slot1
 end
 
-slot0.SetSpWeaponUpdate = function(slot0)
+function slot0.SetSpWeaponUpdate(slot0)
 	if slot0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON and slot0.page == uv0 then
 		slot0:filterEquipment()
 		slot0:UpdateSpweaponCapacity()
@@ -208,7 +209,7 @@ slot0.SetSpWeaponUpdate = function(slot0)
 	end
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	setText(slot0:findTF("tip", slot0.selectPanel), i18n("equipment_select_device_destroy_tip"))
 	setActive(slot0:findTF("adapt/stamp", slot0.topItems), getProxy(TaskProxy):mingshiTouchFlagEnabled())
 	onButton(slot0, slot0:findTF("adapt/stamp", slot0.topItems), function ()
@@ -313,217 +314,69 @@ slot0.didEnter = function(slot0)
 		triggerToggle(uv0.sortBtn, false)
 	end, SFX_PANEL)
 	onButton(slot0, slot0.indexBtn, function ()
-		uv0:emit(EquipmentMediator.OPEN_EQUIPMENT_INDEX, uv0.page == uv1 and {
-			indexDatas = Clone(uv0.contextData.indexDatas),
-			customPanels = {
-				minHeight = 650,
-				typeIndex = {
-					mode = CustomIndexLayer.Mode.OR,
-					options = IndexConst.EquipmentTypeIndexs,
-					names = IndexConst.EquipmentTypeNames
-				},
-				equipPropertyIndex = {
-					mode = CustomIndexLayer.Mode.OR,
-					options = IndexConst.EquipPropertyIndexs,
-					names = IndexConst.EquipPropertyNames
-				},
-				equipPropertyIndex2 = {
-					mode = CustomIndexLayer.Mode.OR,
-					options = IndexConst.EquipPropertyIndexs,
-					names = IndexConst.EquipPropertyNames
-				},
-				equipAmmoIndex1 = {
-					mode = CustomIndexLayer.Mode.OR,
-					options = IndexConst.EquipAmmoIndexs_1,
-					names = IndexConst.EquipAmmoIndexs_1_Names
-				},
-				equipAmmoIndex2 = {
-					mode = CustomIndexLayer.Mode.OR,
-					options = IndexConst.EquipAmmoIndexs_2,
-					names = IndexConst.EquipAmmoIndexs_2_Names
-				},
-				equipCampIndex = {
-					mode = CustomIndexLayer.Mode.AND,
-					options = IndexConst.EquipCampIndexs,
-					names = IndexConst.EquipCampNames
-				},
-				rarityIndex = {
-					mode = CustomIndexLayer.Mode.AND,
-					options = IndexConst.EquipmentRarityIndexs,
-					names = IndexConst.RarityNames
-				},
-				extraIndex = {
-					mode = CustomIndexLayer.Mode.OR,
-					options = IndexConst.EquipmentExtraIndexs,
-					names = IndexConst.EquipmentExtraNames
-				}
-			},
-			groupList = {
-				{
-					dropdown = false,
-					titleTxt = "indexsort_type",
-					titleENTxt = "indexsort_typeeng",
-					tags = {
-						"typeIndex"
-					}
-				},
-				{
-					dropdown = true,
-					titleTxt = "indexsort_index",
-					titleENTxt = "indexsort_indexeng",
-					tags = {
-						"equipPropertyIndex",
-						"equipPropertyIndex2",
-						"equipAmmoIndex1",
-						"equipAmmoIndex2"
-					}
-				},
-				{
-					dropdown = false,
-					titleTxt = "indexsort_camp",
-					titleENTxt = "indexsort_campeng",
-					tags = {
-						"equipCampIndex"
-					}
-				},
-				{
-					dropdown = false,
-					titleTxt = "indexsort_rarity",
-					titleENTxt = "indexsort_rarityeng",
-					tags = {
-						"rarityIndex"
-					}
-				},
-				{
-					dropdown = false,
-					titleTxt = "indexsort_extraindex",
-					titleENTxt = "indexsort_indexeng",
-					tags = {
-						"extraIndex"
-					}
-				}
-			},
-			dropdownLimit = {
-				equipPropertyIndex = {
-					include = {
-						typeIndex = IndexConst.EquipmentTypeAll
-					},
-					exclude = {}
-				},
-				equipPropertyIndex2 = {
-					include = {
-						typeIndex = IndexConst.EquipmentTypeEquip
-					},
-					exclude = {
-						typeIndex = IndexConst.EquipmentTypeAll
-					}
-				},
-				equipAmmoIndex1 = {
-					include = {
-						typeIndex = IndexConst.BitAll({
-							IndexConst.EquipmentTypeSmallCannon,
-							IndexConst.EquipmentTypeMediumCannon,
-							IndexConst.EquipmentTypeBigCannon
-						})
-					},
-					exclude = {
-						typeIndex = IndexConst.EquipmentTypeAll
-					}
-				},
-				equipAmmoIndex2 = {
-					include = {
-						typeIndex = IndexConst.BitAll({
-							IndexConst.EquipmentTypeWarshipTorpedo,
-							IndexConst.EquipmentTypeSubmaraineTorpedo
-						})
-					},
-					exclude = {
-						typeIndex = IndexConst.EquipmentTypeAll
-					}
-				}
-			},
-			callback = function (slot0)
-				uv0.contextData.indexDatas.typeIndex = slot0.typeIndex
-				uv0.contextData.indexDatas.equipPropertyIndex = slot0.equipPropertyIndex
-				uv0.contextData.indexDatas.equipPropertyIndex2 = slot0.equipPropertyIndex2
-				uv0.contextData.indexDatas.equipAmmoIndex1 = slot0.equipAmmoIndex1
-				uv0.contextData.indexDatas.equipAmmoIndex2 = slot0.equipAmmoIndex2
-				uv0.contextData.indexDatas.equipCampIndex = slot0.equipCampIndex
-				uv0.contextData.indexDatas.rarityIndex = slot0.rarityIndex
-				uv0.contextData.indexDatas.extraIndex = slot0.extraIndex
+		uv0:emit(EquipmentMediator.OPEN_EQUIPMENT_INDEX, switch(uv0.page, {
+			[uv1] = function ()
+				return setmetatable({
+					indexDatas = Clone(uv0.contextData.indexDatas),
+					callback = function (slot0)
+						uv0.contextData.indexDatas.typeIndex = slot0.typeIndex
+						uv0.contextData.indexDatas.equipPropertyIndex = slot0.equipPropertyIndex
+						uv0.contextData.indexDatas.equipPropertyIndex2 = slot0.equipPropertyIndex2
+						uv0.contextData.indexDatas.equipAmmoIndex1 = slot0.equipAmmoIndex1
+						uv0.contextData.indexDatas.equipAmmoIndex2 = slot0.equipAmmoIndex2
+						uv0.contextData.indexDatas.equipCampIndex = slot0.equipCampIndex
+						uv0.contextData.indexDatas.rarityIndex = slot0.rarityIndex
+						uv0.contextData.indexDatas.extraIndex = slot0.extraIndex
 
-				if uv0.filterBusyToggle:GetComponent(typeof(Toggle)) then
-					if bit.band(slot0.extraIndex, IndexConst.EquipmentExtraEquiping) > 0 then
-						uv0:SetShowBusyFlag(true)
+						if uv0.filterBusyToggle:GetComponent(typeof(Toggle)) then
+							if bit.band(slot0.extraIndex, IndexConst.EquipmentExtraEquiping) > 0 then
+								uv0:SetShowBusyFlag(true)
+							end
+
+							triggerToggle(uv0.filterBusyToggle, uv0:GetShowBusyFlag())
+						else
+							uv0:filterEquipment()
+						end
 					end
+				}, {
+					__index = StoreHouseConst.EQUIPMENT_INDEX_COMMON
+				})
+			end,
+			[uv2] = function ()
+				return setmetatable({
+					indexDatas = Clone(uv0.contextData.spweaponIndexDatas),
+					callback = function (slot0)
+						uv0.contextData.spweaponIndexDatas.typeIndex = slot0.typeIndex
+						uv0.contextData.spweaponIndexDatas.rarityIndex = slot0.rarityIndex
 
-					triggerToggle(uv0.filterBusyToggle, uv0:GetShowBusyFlag())
-				else
-					uv0:filterEquipment()
-				end
+						uv0:filterEquipment()
+					end
+				}, {
+					__index = StoreHouseConst.SPWEAPON_INDEX_COMMON
+				})
 			end
-		} or uv0.page == uv2 and {
-			indexDatas = Clone(uv0.contextData.spweaponIndexDatas),
-			customPanels = {
-				typeIndex = {
-					mode = CustomIndexLayer.Mode.OR,
-					options = IndexConst.SpWeaponTypeIndexs,
-					names = IndexConst.SpWeaponTypeNames
-				},
-				rarityIndex = {
-					mode = CustomIndexLayer.Mode.AND,
-					options = IndexConst.SpWeaponRarityIndexs,
-					names = IndexConst.SpWeaponRarityNames
-				}
-			},
-			groupList = {
-				{
-					dropdown = false,
-					titleTxt = "indexsort_type",
-					titleENTxt = "indexsort_typeeng",
-					tags = {
-						"typeIndex"
-					}
-				},
-				{
-					dropdown = false,
-					titleTxt = "indexsort_rarity",
-					titleENTxt = "indexsort_rarityeng",
-					tags = {
-						"rarityIndex"
-					}
-				}
-			},
-			callback = function (slot0)
-				uv0.contextData.spweaponIndexDatas.typeIndex = slot0.typeIndex
-				uv0.contextData.spweaponIndexDatas.rarityIndex = slot0.rarityIndex
-
-				uv0:filterEquipment()
-			end
-		})
+		}))
 	end, SFX_PANEL)
 	onButton(slot0, slot0.equipSkinFilteBtn, function ()
-		slot0.equipSkinSort = uv0.equipSkinSort or IndexConst.EquipSkinSortType
-		slot0.equipSkinIndex = uv0.equipSkinIndex or IndexConst.Flags2Bits({
-			IndexConst.EquipSkinIndexAll
-		})
-		slot0.equipSkinTheme = uv0.equipSkinTheme or IndexConst.Flags2Str({
-			IndexConst.EquipSkinThemeAll
-		})
-
-		slot0.callback = function(slot0)
-			uv0.equipSkinSort = slot0.equipSkinSort
-			uv0.equipSkinIndex = slot0.equipSkinIndex
-			uv0.equipSkinTheme = slot0.equipSkinTheme
-
-			uv0:filterEquipment()
-		end
-
 		uv0:emit(EquipmentMediator.OPEN_EQUIPSKIN_INDEX_LAYER, {
 			display = {
 				equipSkinIndex = IndexConst.FlagRange2Bits(IndexConst.EquipSkinIndexAll, IndexConst.EquipSkinIndexAux),
 				equipSkinTheme = IndexConst.FlagRange2Str(IndexConst.EquipSkinThemeAll, IndexConst.EquipSkinThemeEnd)
-			}
+			},
+			equipSkinSort = uv0.equipSkinSort or IndexConst.EquipSkinSortType,
+			equipSkinIndex = uv0.equipSkinIndex or IndexConst.Flags2Bits({
+				IndexConst.EquipSkinIndexAll
+			}),
+			equipSkinTheme = uv0.equipSkinTheme or IndexConst.Flags2Str({
+				IndexConst.EquipSkinThemeAll
+			}),
+			callback = function (slot0)
+				uv0.equipSkinSort = slot0.equipSkinSort
+				uv0.equipSkinIndex = slot0.equipSkinIndex
+				uv0.equipSkinTheme = slot0.equipSkinTheme
+
+				uv0:filterEquipment()
+			end
 		})
 	end, SFX_PANEL)
 
@@ -634,7 +487,7 @@ slot0.didEnter = function(slot0)
 		slot0 = {}
 
 		if underscore.any(uv0.selectedIds, function (slot0)
-			return uv0.equipmentVOByIds[slot0[1]].config.rarity >= 4 or slot1.level > 1
+			return uv0.equipmentVOByIds[slot0[1]]:getConfig("rarity") >= 4 or slot1:getConfig("level") > 1
 		end) then
 			table.insert(slot0, function (slot0)
 				uv0.equipDestroyConfirmWindow:Load()
@@ -692,18 +545,22 @@ slot0.didEnter = function(slot0)
 		end
 	end
 
-	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, 1, slot0.topItems)
+	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, slot0.topItems)
 end
 
-slot0.isDefaultStatus = function(slot0)
-	return (not slot0.contextData.indexDatas.typeIndex or slot0.contextData.indexDatas.typeIndex == IndexConst.EquipmentTypeAll) and (not slot0.contextData.indexDatas.equipPropertyIndex or slot0.contextData.indexDatas.equipPropertyIndex == IndexConst.EquipPropertyAll) and (not slot0.contextData.indexDatas.equipPropertyIndex2 or slot0.contextData.indexDatas.equipPropertyIndex2 == IndexConst.EquipPropertyAll) and (not slot0.contextData.indexDatas.equipAmmoIndex1 or slot0.contextData.indexDatas.equipAmmoIndex1 == IndexConst.EquipAmmoAll_1) and (not slot0.contextData.indexDatas.equipAmmoIndex2 or slot0.contextData.indexDatas.equipAmmoIndex2 == IndexConst.EquipAmmoAll_2) and (not slot0.contextData.indexDatas.equipCampIndex or slot0.contextData.indexDatas.equipCampIndex == IndexConst.EquipCampAll) and (not slot0.contextData.indexDatas.rarityIndex or slot0.contextData.indexDatas.rarityIndex == IndexConst.EquipmentRarityAll) and (not slot0.contextData.indexDatas.extraIndex or slot0.contextData.indexDatas.extraIndex == IndexConst.EquipmentExtraNone)
+function slot0.isDefaultStatus(slot0)
+	return underscore(slot0.contextData.indexDatas):chain():keys():all(function (slot0)
+		return uv0.contextData.indexDatas[slot0] == StoreHouseConst.EQUIPMENT_INDEX_COMMON.customPanels[slot0].options[1]
+	end):value()
 end
 
-slot0.isDefaultSpWeaponIndexData = function(slot0)
-	return (not slot0.contextData.spweaponIndexDatas.typeIndex or slot0.contextData.spweaponIndexDatas.typeIndex == IndexConst.SpWeaponTypeAll) and (not slot0.contextData.spweaponIndexDatas.rarityIndex or slot0.contextData.spweaponIndexDatas.rarityIndex == IndexConst.SpWeaponRarityAll)
+function slot0.isDefaultSpWeaponIndexData(slot0)
+	return underscore(slot0.contextData.spweaponIndexDatas):chain():keys():all(function (slot0)
+		return uv0.contextData.spweaponIndexDatas[slot0] == StoreHouseConst.SPWEAPON_INDEX_COMMON.customPanels[slot0].options[1]
+	end):value()
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
 	if isActive(slot0.sortPanel) then
@@ -721,7 +578,7 @@ slot0.onBackPressed = function(slot0)
 	end
 end
 
-slot0.updateCapacity = function(slot0)
+function slot0.updateCapacity(slot0)
 	if slot0.contextData.warp == StoreHouseConst.WARP_TO_MATERIAL then
 		return
 	end
@@ -730,23 +587,23 @@ slot0.updateCapacity = function(slot0)
 	setText(slot0.capacityTF, slot0.capacity .. "/" .. slot0.player:getMaxEquipmentBag())
 end
 
-slot0.setCapacity = function(slot0, slot1)
+function slot0.setCapacity(slot0, slot1)
 	slot0.capacity = slot1
 end
 
-slot0.UpdateSpweaponCapacity = function(slot0)
+function slot0.UpdateSpweaponCapacity(slot0)
 	slot1 = getProxy(EquipmentProxy)
 
 	setText(slot0.capacityTF, slot1:GetSpWeaponCount() .. "/" .. slot1:GetSpWeaponCapacity())
 end
 
-slot0.setShip = function(slot0, slot1)
+function slot0.setShip(slot0, slot1)
 	slot0.shipVO = slot1
 
 	setActive(slot0.bottomPanel, not tobool(slot1))
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 
 	if slot0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON and slot0.page == uv0 then
@@ -756,8 +613,8 @@ slot0.setPlayer = function(slot0, slot1)
 	end
 end
 
-slot0.initSort = function(slot0)
-	slot4 = function()
+function slot0.initSort(slot0)
+	function slot4()
 		uv0.asc = not uv0.asc
 		uv0.contextData.asc = uv0.asc
 
@@ -794,7 +651,7 @@ slot0.initSort = function(slot0)
 	end
 end
 
-slot0.UpdateWeaponWrapButtons = function(slot0)
+function slot0.UpdateWeaponWrapButtons(slot0)
 	setActive(slot0.indexBtn, slot0.page == uv0 or slot1 == uv1)
 	setActive(slot0.sortBtn, slot1 == uv0 or slot1 == uv1)
 	setActive(slot0.BatchDisposeBtn, slot1 == uv0)
@@ -805,38 +662,38 @@ slot0.UpdateWeaponWrapButtons = function(slot0)
 	slot0:updatePageFilterButtons(slot1)
 end
 
-slot0.updatePageFilterButtons = function(slot0, slot1)
+function slot0.updatePageFilterButtons(slot0, slot1)
 	for slot5, slot6 in ipairs(uv0.sort) do
 		triggerToggle(slot0.sortButtons[slot5], false)
 		setActive(slot0.sortButtons[slot5], table.contains(slot6.pages, slot1))
 	end
 end
 
-slot0.initEquipments = function(slot0)
+function slot0.initEquipments(slot0)
 	slot0.isInitWeapons = true
 	slot1 = slot0.equipmentView
 	slot0.equipmentRect = slot1:GetComponent("LScrollRect")
 
-	slot0.equipmentRect.onInitItem = function(slot0)
+	function slot0.equipmentRect.onInitItem(slot0)
 		uv0:initEquipment(slot0)
 	end
 
-	slot0.equipmentRect.onUpdateItem = function(slot0, slot1)
+	function slot0.equipmentRect.onUpdateItem(slot0, slot1)
 		uv0:updateEquipment(slot0, slot1)
 	end
 
-	slot0.equipmentRect.onReturnItem = function(slot0, slot1)
+	function slot0.equipmentRect.onReturnItem(slot0, slot1)
 		uv0:returnEquipment(slot0, slot1)
 	end
 
-	slot0.equipmentRect.onStart = function()
+	function slot0.equipmentRect.onStart()
 		uv0:updateSelected()
 	end
 
 	slot0.equipmentRect.decelerationRate = 0.07
 end
 
-slot0.initEquipment = function(slot0, slot1)
+function slot0.initEquipment(slot0, slot1)
 	slot2 = EquipmentItem.New(slot1)
 
 	onButton(slot0, slot2.unloadBtn, function ()
@@ -853,7 +710,7 @@ slot0.initEquipment = function(slot0, slot1)
 	slot0.equipmetItems[slot1] = slot2
 end
 
-slot0.updateEquipment = function(slot0, slot1, slot2)
+function slot0.updateEquipment(slot0, slot1, slot2)
 	slot3 = slot0.equipmetItems[slot2]
 
 	assert(slot3, "without init item")
@@ -942,7 +799,7 @@ slot0.updateEquipment = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.returnEquipment = function(slot0, slot1, slot2)
+function slot0.returnEquipment(slot0, slot1, slot2)
 	if slot0.exited then
 		return
 	end
@@ -953,14 +810,14 @@ slot0.returnEquipment = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateEquipmentCount = function(slot0, slot1)
+function slot0.updateEquipmentCount(slot0, slot1)
 	slot0.equipmentRect:SetTotalCount(slot1 or #slot0.loadEquipmentVOs, -1)
 	setActive(slot0.listEmptyTF, (slot1 or #slot0.loadEquipmentVOs) <= 0)
 	setText(slot0.listEmptyTxt, i18n("list_empty_tip_storehouseui_equip"))
 	Canvas.ForceUpdateCanvases()
 end
 
-slot0.filterEquipment = function(slot0)
+function slot0.filterEquipment(slot0)
 	if slot0.filterEquipWaitting > 0 then
 		slot0.filterEquipWaitting = slot0.filterEquipWaitting - 1
 
@@ -990,13 +847,13 @@ slot0.filterEquipment = function(slot0)
 		end
 	end
 
-	slot3 = table.mergeArray({}, {
+	slot3 = {
 		slot0.contextData.indexDatas.equipPropertyIndex,
 		slot0.contextData.indexDatas.equipPropertyIndex2
-	}, true)
+	}
 
 	for slot7, slot8 in pairs(slot2) do
-		if (slot8.count > 0 or slot8.shipId) and slot0:checkFitBusyCondition(slot8) and IndexConst.filterEquipByType(slot8, slot0.contextData.indexDatas.typeIndex) and IndexConst.filterEquipByProperty(slot8, slot3) and IndexConst.filterEquipAmmo1(slot8, slot0.contextData.indexDatas.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(slot8, slot0.contextData.indexDatas.equipAmmoIndex2) and IndexConst.filterEquipByCamp(slot8, slot0.contextData.indexDatas.equipCampIndex) and IndexConst.filterEquipByRarity(slot8, slot0.contextData.indexDatas.rarityIndex) and IndexConst.filterEquipByExtra(slot8, slot0.contextData.indexDatas.extraIndex, slot0:GetShowBusyFlag()) then
+		if (slot8.count > 0 or slot8.shipId) and slot0:checkFitBusyCondition(slot8) and IndexConst.filterEquipByType(slot8, slot0.contextData.indexDatas.typeIndex) and IndexConst.filterEquipByProperty(slot8, slot3) and IndexConst.filterEquipAmmo1(slot8, slot0.contextData.indexDatas.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(slot8, slot0.contextData.indexDatas.equipAmmoIndex2) and IndexConst.filterEquipByCamp(slot8, slot0.contextData.indexDatas.equipCampIndex) and IndexConst.filterEquipByRarity(slot8, slot0.contextData.indexDatas.rarityIndex) and IndexConst.filterEquipByExtra(slot8, slot0.contextData.indexDatas.extraIndex) then
 			table.insert(slot0.loadEquipmentVOs, slot8)
 		end
 	end
@@ -1025,7 +882,7 @@ slot0.filterEquipment = function(slot0)
 	slot0:updateCapacity()
 end
 
-slot0.filterEquipSkin = function(slot0)
+function slot0.filterEquipSkin(slot0)
 	slot1 = slot0.equipSkinIndex
 	slot2 = slot0.equipSkinTheme
 	slot4 = {}
@@ -1069,7 +926,7 @@ slot0.filterEquipSkin = function(slot0)
 	setActive(slot0.sortImgDec, not slot0.asc)
 end
 
-slot0.filterSpWeapon = function(slot0)
+function slot0.filterSpWeapon(slot0)
 	if slot0.page ~= uv0 then
 		assert(false, "不是特殊兵装分页")
 	end
@@ -1104,15 +961,15 @@ slot0.filterSpWeapon = function(slot0)
 	slot0:UpdateSpweaponCapacity()
 end
 
-slot0.GetShowBusyFlag = function(slot0)
+function slot0.GetShowBusyFlag(slot0)
 	return slot0.isEquipingOn
 end
 
-slot0.SetShowBusyFlag = function(slot0, slot1)
+function slot0.SetShowBusyFlag(slot0, slot1)
 	slot0.isEquipingOn = slot1
 end
 
-slot0.Scroll2Equip = function(slot0, slot1)
+function slot0.Scroll2Equip(slot0, slot1)
 	if slot0.contextData.warp ~= StoreHouseConst.WARP_TO_WEAPON or slot0.page ~= uv0 then
 		return
 	end
@@ -1128,17 +985,17 @@ slot0.Scroll2Equip = function(slot0, slot1)
 	end
 end
 
-slot0.ScrollEquipPos = function(slot0, slot1)
+function slot0.ScrollEquipPos(slot0, slot1)
 	slot2 = slot0.equipmentView:Find("equipment_grid"):GetComponent(typeof(GridLayoutGroup))
 
 	slot0.equipmentRect:ScrollTo((slot1 - slot0.equipmentView.rect.height * 0.5) / ((slot2.cellSize.y + slot2.spacing.y) * math.ceil(#slot0.loadEquipmentVOs / slot2.constraintCount) - slot2.spacing.y + slot0.equipmentRect.paddingFront + slot0.equipmentRect.paddingEnd - slot0.equipmentView.rect.height > 0 and slot5 or slot4))
 end
 
-slot0.checkFitBusyCondition = function(slot0, slot1)
-	return slot0.mode ~= StoreHouseConst.DESTROY and slot0:GetShowBusyFlag() or not slot1.shipId
+function slot0.checkFitBusyCondition(slot0, slot1)
+	return not slot1.shipId or slot0:GetShowBusyFlag() and slot0.mode ~= StoreHouseConst.DESTROY
 end
 
-slot0.setItems = function(slot0, slot1)
+function slot0.setItems(slot0, slot1)
 	slot0.itemVOs = slot1
 
 	if slot0.isInitItems and slot0.contextData.warp == StoreHouseConst.WARP_TO_MATERIAL then
@@ -1146,28 +1003,31 @@ slot0.setItems = function(slot0, slot1)
 	end
 end
 
-slot0.initItems = function(slot0)
+function slot0.initItems(slot0)
 	slot0.isInitItems = true
 	slot1 = slot0.itemView
 	slot0.itemRect = slot1:GetComponent("LScrollRect")
 
-	slot0.itemRect.onInitItem = function(slot0)
+	function slot0.itemRect.onInitItem(slot0)
 		uv0:initItem(slot0)
 	end
 
-	slot0.itemRect.onUpdateItem = function(slot0, slot1)
+	function slot0.itemRect.onUpdateItem(slot0, slot1)
 		uv0:updateItem(slot0, slot1)
 	end
 
-	slot0.itemRect.onReturnItem = function(slot0, slot1)
+	function slot0.itemRect.onReturnItem(slot0, slot1)
 		uv0:returnItem(slot0, slot1)
 	end
 
 	slot0.itemRect.decelerationRate = 0.07
 end
 
-slot0.sortItems = function(slot0)
+function slot0.sortItems(slot0)
 	table.sort(slot0.itemVOs, CompareFuncs({
+		function (slot0)
+			return -slot0:getConfig("order")
+		end,
 		function (slot0)
 			return -slot0:getConfig("rarity")
 		end,
@@ -1181,11 +1041,11 @@ slot0.sortItems = function(slot0)
 	Canvas.ForceUpdateCanvases()
 end
 
-slot0.initItem = function(slot0, slot1)
+function slot0.initItem(slot0, slot1)
 	slot0.itemCards[slot1] = ItemCard.New(slot1)
 end
 
-slot0.updateItem = function(slot0, slot1, slot2)
+function slot0.updateItem(slot0, slot1, slot2)
 	slot3 = slot0.itemCards[slot2]
 
 	assert(slot3, "without init item")
@@ -1274,6 +1134,63 @@ slot0.updateItem = function(slot0, slot1, slot2)
 			onButton(slot0, slot3.go, function ()
 				uv0:emit(uv1.ON_ITEM_EXTRA, uv2.id, uv2.extra)
 			end, SFX_PANEL)
+		elseif slot4:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
+			onButton(slot0, slot3.go, function ()
+				slot0 = uv0
+
+				slot0:emit(uv1.ON_ITEM, uv2.id, function ()
+					slot0 = uv0:getConfig("usage_arg")
+
+					if uv0:IsAllSkinOwner() then
+						slot1 = Drop.New({
+							count = 1,
+							type = DROP_TYPE_ITEM,
+							id = slot0[5]
+						})
+
+						uv1.msgBox:ExecuteAction("Show", {
+							content = i18n("blackfriday_pack_select_skinall_dialog", uv0:getConfig("name"), slot1:getName()),
+							leftDrop = {
+								count = 1,
+								type = DROP_TYPE_ITEM,
+								id = uv0.id
+							},
+							rightDrop = slot1,
+							onYes = function ()
+								uv0:emit(EquipmentMediator.ON_USE_ITEM, uv1.id, 1, {
+									0
+								})
+							end
+						})
+					else
+						slot1 = {}
+
+						for slot5, slot6 in ipairs(slot0[2]) do
+							slot1[slot6] = true
+						end
+
+						uv1:emit(EquipmentMediator.ITEM_ADD_LAYER, Context.New({
+							viewComponent = SelectSkinLayer,
+							mediator = SkinAtlasMediator,
+							data = {
+								mode = SelectSkinLayer.MODE_SELECT,
+								itemId = uv0.id,
+								selectableSkinList = underscore.map(uv0:GetValidSkinList(), function (slot0)
+									return SelectableSkin.New({
+										id = slot0,
+										isTimeLimit = uv0[slot0] or false
+									})
+								end),
+								OnConfirm = function (slot0)
+									uv0:emit(EquipmentMediator.ON_USE_ITEM, uv1.id, 1, {
+										slot0
+									})
+								end
+							}
+						}))
+					end
+				end)
+			end, SFX_PANEL)
 		else
 			onButton(slot0, slot3.go, function ()
 				uv0:emit(uv1.ON_ITEM, uv2.id)
@@ -1282,7 +1199,7 @@ slot0.updateItem = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.returnItem = function(slot0, slot1, slot2)
+function slot0.returnItem(slot0, slot1, slot2)
 	if slot0.exited then
 		return
 	end
@@ -1293,7 +1210,7 @@ slot0.returnItem = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.selectCount = function(slot0)
+function slot0.selectCount(slot0)
 	slot1 = 0
 
 	for slot5, slot6 in ipairs(slot0.selectedIds) do
@@ -1303,7 +1220,7 @@ slot0.selectCount = function(slot0)
 	return slot1
 end
 
-slot0.selectEquip = function(slot0, slot1, slot2)
+function slot0.selectEquip(slot0, slot1, slot2)
 	if not slot0:checkDestroyGold(slot1, slot2) then
 		return
 	end
@@ -1367,21 +1284,21 @@ slot0.selectEquip = function(slot0, slot1, slot2)
 	slot0:updateSelected()
 end
 
-slot0.unselecteAllEquips = function(slot0)
+function slot0.unselecteAllEquips(slot0)
 	slot0.selectedIds = {}
 
 	slot0:updateSelected()
 end
 
-slot0.checkDestroyGold = function(slot0, slot1, slot2)
+function slot0.checkDestroyGold(slot0, slot1, slot2)
 	slot3 = 0
 	slot4 = false
 
 	for slot8, slot9 in pairs(slot0.selectedIds) do
 		slot10 = slot9[2]
 
-		if pg.equip_data_template[slot9[1]] then
-			slot3 = slot3 + (slot11.destory_gold or 0) * slot10
+		if Equipment.CanInBag(slot9[1]) then
+			slot3 = slot3 + (Equipment.getConfigData(slot9[1]).destory_gold or 0) * slot10
 		end
 
 		if slot1 and slot9[1] == slot1.configId then
@@ -1390,7 +1307,7 @@ slot0.checkDestroyGold = function(slot0, slot1, slot2)
 	end
 
 	if not slot4 and slot1 and slot2 > 0 then
-		slot3 = slot3 + (pg.equip_data_template[slot1.configId].destory_gold or 0) * slot2
+		slot3 = slot3 + (slot1:getConfig("destory_gold") or 0) * slot2
 	end
 
 	if slot0.player:GoldMax(slot3) then
@@ -1402,7 +1319,7 @@ slot0.checkDestroyGold = function(slot0, slot1, slot2)
 	return true
 end
 
-slot0.updateSelected = function(slot0)
+function slot0.updateSelected(slot0)
 	for slot4, slot5 in pairs(slot0.equipmetItems) do
 		if slot5.equipmentVO then
 			slot6 = false
@@ -1438,7 +1355,7 @@ slot0.updateSelected = function(slot0)
 	end
 end
 
-slot0.SwitchToDestroy = function(slot0)
+function slot0.SwitchToDestroy(slot0)
 	slot0.page = uv0
 	slot0.filterEquipWaitting = slot0.filterEquipWaitting + 1
 
@@ -1446,13 +1363,13 @@ slot0.SwitchToDestroy = function(slot0)
 	triggerButton(slot0.BatchDisposeBtn)
 end
 
-slot0.SwitchToSpWeaponStoreHouse = function(slot0)
+function slot0.SwitchToSpWeaponStoreHouse(slot0)
 	slot0.page = uv0
 
 	triggerToggle(slot0.weaponToggle, true)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.blurPanel, slot0._tf)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.topItems, slot0._tf)
 
@@ -1466,6 +1383,7 @@ slot0.willExit = function(slot0)
 	slot0.assignedItemView:Destroy()
 	slot0.blueprintAssignedItemView:Destroy()
 	slot0.equipDestroyConfirmWindow:Destroy()
+	slot0.msgBox:Destroy()
 end
 
 return slot0

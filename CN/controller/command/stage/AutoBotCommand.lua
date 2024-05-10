@@ -1,6 +1,6 @@
 slot0 = class("AutoBotCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.isActiveBot
 	slot4 = slot2.toggle
@@ -29,11 +29,11 @@ slot0.execute = function(slot0, slot1)
 	end
 end
 
-slot0.autoBotSatisfied = function()
+function slot0.autoBotSatisfied()
 	return getProxy(ChapterProxy) and slot0:getChapterById(AUTO_ENABLE_CHAPTER):isClear()
 end
 
-slot0.activeBotHelp = function(slot0)
+function slot0.activeBotHelp(slot0)
 	slot1 = getProxy(PlayerProxy)
 
 	if not slot0 then
@@ -81,7 +81,7 @@ slot0.activeBotHelp = function(slot0)
 	slot1.botHelp = true
 end
 
-slot0.GetAutoBotMark = function(slot0)
+function slot0.GetAutoBotMark(slot0)
 	if slot0 == SYSTEM_WORLD or slot0 == SYSTEM_WORLD_BOSS then
 		return "_" .. SYSTEM_WORLD
 	elseif slot0 == SYSTEM_GUILD then

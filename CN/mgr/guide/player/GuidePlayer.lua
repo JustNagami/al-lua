@@ -1,6 +1,6 @@
 slot0 = class("GuidePlayer")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._tf = slot1
 	slot0.bgCg = slot1:Find("BG"):GetComponent(typeof(CanvasGroup))
 	slot0.windowContainer = slot1:Find("windows")
@@ -13,7 +13,7 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.root = slot1:Find("target")
 end
 
-slot0.Execute = function(slot0, slot1, slot2)
+function slot0.Execute(slot0, slot1, slot2)
 	seriesAsync({
 		function (slot0)
 			uv0:HideDialogueWindows()
@@ -48,7 +48,7 @@ slot0.Execute = function(slot0, slot1, slot2)
 	}, slot2)
 end
 
-slot0.CheckBaseUI = function(slot0, slot1, slot2)
+function slot0.CheckBaseUI(slot0, slot1, slot2)
 	if not slot1:ShouldCheckBaseUI() then
 		slot2()
 
@@ -66,11 +66,11 @@ slot0.CheckBaseUI = function(slot0, slot1, slot2)
 	end)
 end
 
-slot1 = function(slot0, slot1)
+function slot1(slot0, slot1)
 	return not (IsNil(slot0:GetComponent(typeof(Image)).sprite) or slot1 and slot2.sprite.name == slot1)
 end
 
-slot0.CheckSprite = function(slot0, slot1, slot2)
+function slot0.CheckSprite(slot0, slot1, slot2)
 	if not slot1:ShouldCheckSpriteUI() then
 		slot2()
 
@@ -109,7 +109,7 @@ slot0.CheckSprite = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.ClearSpriteTimer = function(slot0)
+function slot0.ClearSpriteTimer(slot0)
 	if slot0.spriteTimer then
 		slot0.spriteTimer:Stop()
 
@@ -117,11 +117,11 @@ slot0.ClearSpriteTimer = function(slot0)
 	end
 end
 
-slot0.UpdateStyle = function(slot0, slot1)
+function slot0.UpdateStyle(slot0, slot1)
 	slot0.bgCg.alpha = slot1:GetAlpha()
 end
 
-slot0.DoDelay = function(slot0, slot1, slot2)
+function slot0.DoDelay(slot0, slot1, slot2)
 	if slot1:GetDelay() <= 0 then
 		slot2()
 
@@ -133,7 +133,7 @@ slot0.DoDelay = function(slot0, slot1, slot2)
 	slot0.delayTimer:Start()
 end
 
-slot0.OnSceneEnter = function(slot0)
+function slot0.OnSceneEnter(slot0)
 	if slot0.waitSceneData and pg.NewGuideMgr.GetInstance():ExistScene(slot0.waitSceneData.sceneName) then
 		slot0:ClearWaitUntilSceneTimer()
 		slot0.waitSceneData.callback()
@@ -142,7 +142,7 @@ slot0.OnSceneEnter = function(slot0)
 	end
 end
 
-slot0.WaitUntilSceneEnter = function(slot0, slot1, slot2)
+function slot0.WaitUntilSceneEnter(slot0, slot1, slot2)
 	if not slot1:ShouldWaitScene() then
 		slot2()
 
@@ -163,7 +163,7 @@ slot0.WaitUntilSceneEnter = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.AddWaitUntilSceneTimer = function(slot0)
+function slot0.AddWaitUntilSceneTimer(slot0)
 	slot0.waitUntilSceneTimer = Timer.New(function ()
 		uv0:ClearWaitUntilSceneTimer()
 		pg.NewGuideMgr.GetInstance():Stop()
@@ -172,7 +172,7 @@ slot0.AddWaitUntilSceneTimer = function(slot0)
 	slot0.waitUntilSceneTimer:Start()
 end
 
-slot0.ClearWaitUntilSceneTimer = function(slot0)
+function slot0.ClearWaitUntilSceneTimer(slot0)
 	if slot0.waitUntilSceneTimer then
 		slot0.waitUntilSceneTimer:Stop()
 
@@ -180,7 +180,7 @@ slot0.ClearWaitUntilSceneTimer = function(slot0)
 	end
 end
 
-slot0.ShowDialogueWindow = function(slot0, slot1, slot2)
+function slot0.ShowDialogueWindow(slot0, slot1, slot2)
 	if not slot1:ShouldShowDialogue() then
 		slot0:HideDialogueWindows()
 		slot2()
@@ -202,7 +202,7 @@ slot0.ShowDialogueWindow = function(slot0, slot1, slot2)
 	seriesAsync(slot3, slot2)
 end
 
-slot0.UpdateDialogue = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateDialogue(slot0, slot1, slot2, slot3)
 	slot0:ActiveDialogueWindow(slot2)
 
 	slot4 = slot1:GetStyleData()
@@ -237,7 +237,7 @@ slot0.UpdateDialogue = function(slot0, slot1, slot2, slot3)
 	}, slot3)
 end
 
-slot0.LoadCounsellor = function(slot0, slot1, slot2)
+function slot0.LoadCounsellor(slot0, slot1, slot2)
 	if not slot0.counsellors[slot1] then
 		slot3 = ResourceMgr.Inst
 
@@ -255,7 +255,7 @@ slot0.LoadCounsellor = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.LoadDialogueWindow = function(slot0, slot1, slot2)
+function slot0.LoadDialogueWindow(slot0, slot1, slot2)
 	slot3 = ResourceMgr.Inst
 
 	slot3:getAssetAsync("guideitem/window_" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
@@ -271,36 +271,37 @@ slot0.LoadDialogueWindow = function(slot0, slot1, slot2)
 	end), true, true)
 end
 
-slot0.ActiveDialogueWindow = function(slot0, slot1)
+function slot0.ActiveDialogueWindow(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.dialogueWindows) do
 		setActive(slot6, slot6 == slot1)
 	end
 end
 
-slot0.HideDialogueWindows = function(slot0)
+function slot0.HideDialogueWindows(slot0)
 	for slot4, slot5 in pairs(slot0.dialogueWindows) do
 		setActive(slot5, false)
 	end
 end
 
-slot2 = function(slot0, slot1, slot2)
-	if slot2.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
-		slot0.uiDuplicator:Duplicate(slot1, {
+function slot2(slot0, slot1, slot2, slot3)
+	if slot3.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
+		slot0.uiDuplicator:Duplicate(slot2, {
 			clearAllEvent = true
 		})
-	elseif slot2.type == GuideStep.HIGH_TYPE_LINE then
-		slot3 = 15
-		slot4 = slot0._tf:InverseTransformPoint(slot1.position)
+	elseif slot3.type == GuideStep.HIGH_TYPE_LINE then
+		slot4 = slot1.isWorld and 15 or 55
+		slot5 = slot0._tf:InverseTransformPoint(slot2.position)
 
 		slot0.uiLoader:LoadHighLightArea({
-			position = Vector3(slot4.x, slot4.y, 0) + Vector3((slot1.pivot.x - 0.5) * slot3, (slot1.pivot.y - 0.5) * slot3, 0),
-			sizeDelta = Vector2(slot1.sizeDelta.x + slot3, slot1.sizeDelta.y + slot3),
-			pivot = slot1.pivot
+			position = Vector3(slot5.x, slot5.y, 0) + Vector3((slot2.pivot.x - 0.5) * slot4, (slot2.pivot.y - 0.5) * slot4, 0),
+			sizeDelta = Vector2(slot2.sizeDelta.x + slot4, slot2.sizeDelta.y + slot4),
+			pivot = slot2.pivot,
+			isWorld = slot1.isWorld
 		})
 	end
 end
 
-slot0.UpdateHighLight = function(slot0, slot1, slot2)
+function slot0.UpdateHighLight(slot0, slot1, slot2)
 	if #slot1:GetHighLightTarget() <= 0 then
 		slot2()
 
@@ -320,8 +321,8 @@ slot0.UpdateHighLight = function(slot0, slot1, slot2)
 					return
 				end
 
-				uv0(uv1, slot0, uv2)
-				uv3()
+				uv0(uv1, uv2, slot0, uv3)
+				uv4()
 			end)
 		end)
 	end
@@ -329,7 +330,7 @@ slot0.UpdateHighLight = function(slot0, slot1, slot2)
 	parallelAsync(slot4, slot2)
 end
 
-slot0.SearchUI = function(slot0, slot1, slot2)
+function slot0.SearchUI(slot0, slot1, slot2)
 	slot0.uiFinder:Search({
 		path = slot1.path,
 		delay = slot1.delay,
@@ -339,7 +340,7 @@ slot0.SearchUI = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.SearchWithoutDelay = function(slot0, slot1, slot2)
+function slot0.SearchWithoutDelay(slot0, slot1, slot2)
 	slot0.uiFinder:SearchWithoutDelay({
 		path = slot1.path,
 		delay = slot1.delay,
@@ -349,7 +350,7 @@ slot0.SearchWithoutDelay = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.RegisterEvent = function(slot0, slot1, slot2)
+function slot0.RegisterEvent(slot0, slot1, slot2)
 	if slot1:ExistTrigger() then
 		removeOnButton(slot0._tf)
 		slot2()
@@ -375,13 +376,17 @@ slot0.RegisterEvent = function(slot0, slot1, slot2)
 	end, SFX_PANEL)
 end
 
-slot0.HideCounsellors = function(slot0)
+function slot0.NextOne(slot0)
+	triggerButton(slot0._tf)
+end
+
+function slot0.HideCounsellors(slot0)
 	for slot4, slot5 in pairs(slot0.counsellors) do
 		setActive(slot5, false)
 	end
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	slot0:HideCounsellors()
 	slot0:HideDialogueWindows()
 	slot0:ClearSpriteTimer()
@@ -399,11 +404,11 @@ slot0.Clear = function(slot0)
 	slot0.uiLoader:Clear()
 end
 
-slot0.OnExecution = function(slot0, slot1, slot2)
+function slot0.OnExecution(slot0, slot1, slot2)
 	slot2()
 end
 
-slot0.OnClear = function(slot0)
+function slot0.OnClear(slot0)
 end
 
 return slot0

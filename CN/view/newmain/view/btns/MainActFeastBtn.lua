@@ -1,6 +1,6 @@
 slot0 = class("MainActFeastBtn", import(".MainBaseActivityBtn"))
 
-slot0.InShowTime = function(slot0)
+function slot0.InShowTime(slot0)
 	slot0.config = {
 		param = "0",
 		name = "event_minigame",
@@ -18,7 +18,7 @@ slot0.InShowTime = function(slot0)
 	return getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST) and not slot1:isEnd()
 end
 
-slot0.CustomOnClick = function(slot0)
+function slot0.CustomOnClick(slot0)
 	slot0:emit(NewMainMediator.GO_SCENE, SCENE.FEAST)
 end
 

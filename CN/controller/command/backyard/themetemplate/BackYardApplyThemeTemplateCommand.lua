@@ -1,11 +1,11 @@
 slot0 = class("BackYardApplyThemeTemplateCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.callback
 	slot5 = getProxy(DormProxy)
 
-	slot6 = function(slot0, slot1)
+	function slot6(slot0, slot1)
 		if #slot0 == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_theme_template_list_is_empty"))
 
@@ -57,8 +57,8 @@ slot0.execute = function(slot0, slot1)
 	end
 end
 
-slot0.GetAllFloorFurnitures = function()
-	slot0 = function(slot0, slot1)
+function slot0.GetAllFloorFurnitures()
+	function slot0(slot0, slot1)
 		slot4 = {}
 
 		if getProxy(DormProxy):getRawData():GetTheme(slot0) then
@@ -78,7 +78,7 @@ slot0.GetAllFloorFurnitures = function()
 	return slot1
 end
 
-slot0.WarpList = function(slot0)
+function slot0.WarpList(slot0)
 	slot1 = getProxy(DormProxy):getRawData()
 	slot2 = slot1:GetMapSize()
 	slot3 = slot2.x
@@ -86,7 +86,7 @@ slot0.WarpList = function(slot0)
 	slot5 = slot2.z
 	slot6 = slot2.w
 
-	slot7 = function(slot0)
+	function slot7(slot0)
 		assert(slot0.position, slot0.id)
 
 		return not slot0:isPaper() and (slot0.position.x < uv0 or slot0.position.y < uv1)

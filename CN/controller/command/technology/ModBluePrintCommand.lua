@@ -1,6 +1,6 @@
 slot0 = class("ModBluePrintCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.count
 
@@ -43,10 +43,10 @@ slot0.execute = function(slot0, slot1)
 		count = slot3
 	}, 63205, function (slot0)
 		if slot0.result == 0 then
-			uv0:sendNotification(GAME.CONSUME_ITEM, Item.New({
+			uv0:sendNotification(GAME.CONSUME_ITEM, Drop.New({
+				type = DROP_TYPE_ITEM,
 				count = uv1,
-				id = uv2,
-				type = DROP_TYPE_ITEM
+				id = uv2
 			}))
 			uv3:addExp(uv3:getItemExp() * uv1)
 
@@ -134,7 +134,7 @@ slot0.execute = function(slot0, slot1)
 	end)
 end
 
-slot0.upgradeStar = function(slot0, slot1)
+function slot0.upgradeStar(slot0, slot1)
 	slot4 = getProxy(CollectionProxy):getShipGroup(Clone(slot1).groupId)
 
 	if pg.ship_data_breakout[slot1.configId].breakout_id ~= 0 then

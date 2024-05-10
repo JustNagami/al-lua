@@ -50,11 +50,11 @@ slot0.AttachEnemyTypes = {
 	slot0.AttachChampion
 }
 
-slot0.IsEnemyAttach = function(slot0)
+function slot0.IsEnemyAttach(slot0)
 	return table.contains(uv0.AttachEnemyTypes, slot0)
 end
 
-slot0.IsBossCell = function(slot0)
+function slot0.IsBossCell(slot0)
 	if slot0.attachment == uv0.AttachBoss then
 		return true
 	end
@@ -68,6 +68,14 @@ slot0.IsBossCell = function(slot0)
 	end
 
 	return slot1.type == uv0.ExpeditionTypeBoss or slot1.type == uv0.ExpeditionTypeMulBoss
+end
+
+function slot0.GetDestroyFX(slot0)
+	if not pg.expedition_data_template[slot0.attachmentId] or slot1.SLG_destroy_FX == "" then
+		return "huoqiubaozha"
+	else
+		return slot1.SLG_destroy_FX
+	end
 end
 
 slot0.Story = 1
@@ -141,6 +149,8 @@ slot0.StrategyExpel = 1001
 slot0.StrategyAirSupportFoe = 94
 slot0.StrategyAirSupportFriendly = 95
 slot0.StrategyIntelligenceRecorded = 96
+slot0.StrategyBuffTypeNormal = 0
+slot0.StrategyBuffTypeOnlyBoss = 1
 slot0.StrategyForms = {
 	slot0.StrategyFormSignleLine,
 	slot0.StrategyFormDoubleLine,
@@ -167,7 +177,7 @@ slot0.TraitNone = 0
 slot0.TraitLurk = 1
 slot0.TraitVirgin = 2
 
-slot0.NeedMarkAsLurk = function(slot0)
+function slot0.NeedMarkAsLurk(slot0)
 	if slot0.flag ~= ChapterConst.CellFlagActive then
 		return false
 	end
@@ -191,7 +201,7 @@ slot0.NeedMarkAsLurk = function(slot0)
 	end
 end
 
-slot0.NeedEasePathCell = function(slot0)
+function slot0.NeedEasePathCell(slot0)
 	if slot0.attachment == uv0.AttachNone then
 		return true
 	elseif slot0.attachment == uv0.AttachAmbush then
@@ -225,7 +235,7 @@ slot0.NeedEasePathCell = function(slot0)
 	return false
 end
 
-slot0.NeedClearStep = function(slot0)
+function slot0.NeedClearStep(slot0)
 	if slot0.attachment == uv0.AttachAmbush and slot0.flag == ChapterConst.CellFlagAmbush then
 		return true
 	end
@@ -250,13 +260,13 @@ slot0.AchieveType4 = 4
 slot0.AchieveType5 = 5
 slot0.AchieveType6 = 6
 
-slot0.IsAchieved = function(slot0)
+function slot0.IsAchieved(slot0)
 	slot1 = false
 
 	return (slot0.type == uv0.AchieveType4 or slot0.type == uv0.AchieveType5) and slot0.count >= 1 or slot0.config <= slot0.count
 end
 
-slot0.GetAchieveDesc = function(slot0, slot1)
+function slot0.GetAchieveDesc(slot0, slot1)
 	slot2 = false
 
 	if _.detect(slot1.achieves, function (slot0)
@@ -361,7 +371,7 @@ slot0.Status2Stg = setmetatable({}, {
 })
 slot0.Buff2Stg = {}
 
-slot1 = function(slot0, slot1)
+function slot1(slot0, slot1)
 	if slot1.buff_id == 0 then
 		return
 	end
@@ -375,7 +385,7 @@ end
 
 slot0.HpGreen = 3000
 
-slot0.GetAmbushDisplay = function(slot0)
+function slot0.GetAmbushDisplay(slot0)
 	slot1, slot2 = nil
 
 	if not slot0 then
@@ -411,11 +421,11 @@ slot0.ShipStepDuration = 0.5
 slot0.ShipStepQuickPlayScale = 0.5
 slot0.ShipMoveTailLength = 2
 
-slot0.GetRepairParams = function()
+function slot0.GetRepairParams()
 	return 1, 3, 100
 end
 
-slot0.GetShamRepairParams = function()
+function slot0.GetShamRepairParams()
 	return 1, 3, 100
 end
 
@@ -544,7 +554,7 @@ slot0.AirDominance = {
 	}
 }
 
-slot0.IsAtelierMap = function(slot0)
+function slot0.IsAtelierMap(slot0)
 	return slot0:getConfig("on_activity") == ActivityConst.RYZA_MAP_ACT_ID
 end
 
@@ -560,7 +570,7 @@ slot0.AUTOFIGHT_STOP_REASON = {
 }
 chapter_skip_battle = PlayerPrefs.GetInt("chapter_skip_battle") or 0
 
-switch_chapter_skip_battle = function()
+function switch_chapter_skip_battle()
 	chapter_skip_battle = 1 - chapter_skip_battle
 
 	PlayerPrefs.SetInt("chapter_skip_battle", chapter_skip_battle)

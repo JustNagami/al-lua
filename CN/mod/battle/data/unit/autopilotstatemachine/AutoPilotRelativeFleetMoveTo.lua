@@ -4,11 +4,11 @@ slot1 = class("AutoPilotRelativeFleetMoveTo", slot0.Battle.IPilot)
 slot0.Battle.AutoPilotRelativeFleetMoveTo = slot1
 slot1.__name = "AutoPilotRelativeFleetMoveTo"
 
-slot1.Ctor = function(slot0, ...)
+function slot1.Ctor(slot0, ...)
 	uv0.super.Ctor(slot0, ...)
 end
 
-slot1.SetParameter = function(slot0, slot1, slot2)
+function slot1.SetParameter(slot0, slot1, slot2)
 	uv0.super.SetParameter(slot0, slot1, slot2)
 
 	slot0._offsetX = slot1.offsetX
@@ -18,7 +18,7 @@ slot1.SetParameter = function(slot0, slot1, slot2)
 	slot0._targetFleetVO = uv1.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(uv1.Battle.BattleConfig.FRIENDLY_CODE)
 end
 
-slot1.GetDirection = function(slot0, slot1)
+function slot1.GetDirection(slot0, slot1)
 	if slot0:IsExpired() then
 		slot0:Finish()
 

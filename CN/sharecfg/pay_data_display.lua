@@ -60,6 +60,12 @@ pg.pay_data_display = setmetatable({
 		60,
 		61,
 		62,
+		63,
+		64,
+		65,
+		66,
+		67,
+		68,
 		1000,
 		1001,
 		1002,
@@ -74,6 +80,8 @@ pg.pay_data_display = setmetatable({
 		1011,
 		1012,
 		1013,
+		1014,
+		1015,
 		2001,
 		2002,
 		2003,
@@ -94,6 +102,12 @@ pg.pay_data_display = setmetatable({
 		2018,
 		2019,
 		2020,
+		2021,
+		2022,
+		2023,
+		2024,
+		2025,
+		2026,
 		5001,
 		5002,
 		5003,
@@ -5533,7 +5547,7 @@ pg.base.pay_data_display = {
 		first_pay_double = 0,
 		extra_service = 3,
 		descrip = "可获得1980钻，自选促销礼物盒*1，和大量其他奖励",
-		airijp_id = "com.yostarjp.azurlane.diamond144",
+		airijp_id = "com.yostarjp.azurlane.diamond155",
 		extra_service_item = {
 			{
 				2,
@@ -5631,7 +5645,7 @@ pg.base.pay_data_display = {
 		first_pay_double = 0,
 		extra_service = 3,
 		descrip = "可获得3280钻，豪华自选促销礼物盒*1，和大量其他奖励",
-		airijp_id = "com.yostarjp.azurlane.diamond145",
+		airijp_id = "com.yostarjp.azurlane.diamond156",
 		extra_service_item = {
 			{
 				2,
@@ -6012,6 +6026,684 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40922,
+				1
+			}
+		}
+	},
+	[63] = {
+		subject = "绚烂缤纷夜福袋·Ⅱ",
+		limit_group = 0,
+		descrip_extra = "*福袋将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "绚烂缤纷夜福袋·Ⅱ",
+		name_display = "绚烂缤纷夜福袋·Ⅱ",
+		type_order = 2,
+		extra_gem = 0,
+		id = 63,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai10",
+		skin_inquire_relation = 86201,
+		id_str = "com.bilibili.blhx.zuanshi163",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2024钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond149",
+		extra_service_item = {
+			{
+				2,
+				86201,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					12,
+					28
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					1,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86201,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81201,
+				1
+			}
+		}
+	},
+	[64] = {
+		subject = "2023泳装礼盒·Ⅱ复刻",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "2023泳装礼盒·Ⅱ复刻",
+		name_display = "2023泳装礼盒·Ⅱ复刻",
+		type_order = 2,
+		extra_gem = 0,
+		id = 64,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihe11_l",
+		skin_inquire_relation = 69923,
+		id_str = "com.bilibili.blhx.zuanshi164",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2023钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond150",
+		extra_service_item = {
+			{
+				2,
+				69923,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42046,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2023,
+					12,
+					28
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					1,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69923,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42046,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40923,
+				1
+			}
+		}
+	},
+	[65] = {
+		subject = "2024年春节福袋·I",
+		limit_group = 0,
+		descrip_extra = "*福袋将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "2024年春节福袋·I",
+		name_display = "2024年春节福袋·I",
+		type_order = 2,
+		extra_gem = 0,
+		id = 65,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai11",
+		skin_inquire_relation = 86202,
+		id_str = "com.bilibili.blhx.zuanshi165",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2024钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond151",
+		extra_service_item = {
+			{
+				2,
+				86202,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86202,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81202,
+				1
+			}
+		}
+	},
+	[66] = {
+		subject = "2023年春节福袋·I复刻",
+		limit_group = 0,
+		descrip_extra = "*福袋将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "2023年春节福袋·I复刻",
+		name_display = "2023年春节福袋·I复刻",
+		type_order = 2,
+		extra_gem = 0,
+		id = 66,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudaiqp1",
+		skin_inquire_relation = 69924,
+		id_str = "com.bilibili.blhx.zuanshi166",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2023钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond152",
+		extra_service_item = {
+			{
+				2,
+				69924,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42046,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69924,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42046,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40924,
+				1
+			}
+		}
+	},
+	[67] = {
+		subject = "2024年春节福袋·II",
+		limit_group = 0,
+		descrip_extra = "*福袋将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "2024年春节福袋·II",
+		name_display = "2024年春节福袋·II",
+		type_order = 2,
+		extra_gem = 0,
+		id = 67,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai12",
+		skin_inquire_relation = 86203,
+		id_str = "com.bilibili.blhx.zuanshi167",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2024钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond153",
+		extra_service_item = {
+			{
+				2,
+				86203,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					2,
+					6
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86203,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81203,
+				1
+			}
+		}
+	},
+	[68] = {
+		subject = "2023年春节福袋·II复刻",
+		limit_group = 0,
+		descrip_extra = "*福袋将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "2023年春节福袋·II复刻",
+		name_display = "2023年春节福袋·II复刻",
+		type_order = 2,
+		extra_gem = 0,
+		id = 68,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudaiqp2",
+		skin_inquire_relation = 69925,
+		id_str = "com.bilibili.blhx.zuanshi168",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2023钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond154",
+		extra_service_item = {
+			{
+				2,
+				69925,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42046,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					2,
+					6
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69925,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42046,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40925,
 				1
 			}
 		}
@@ -7060,6 +7752,156 @@ pg.base.pay_data_display = {
 		},
 		sub_display = {
 			7014,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1014] = {
+		subject = "特许巡游凭证",
+		limit_group = 0,
+		descrip_extra = "*需要通过任务达成对应巡游进度后才可获取",
+		type = 0,
+		limit_arg = 1,
+		name = "特许巡游凭证(2024.2)",
+		name_display = "特许巡游凭证",
+		type_order = 4,
+		extra_gem = 0,
+		id = 1014,
+		money = 68,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass16",
+		first_pay_double = 0,
+		extra_service = 4,
+		descrip = "可获得1500巡游点数，同时解锁特许巡游奖励·梧限定换装和其他奖励",
+		airijp_id = "com.yostarjp.azurlane.seasonpass15",
+		extra_service_item = {
+			{
+				1,
+				4015,
+				1500
+			},
+			{
+				8,
+				59526,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					2,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					3,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4015,
+				1500
+			}
+		},
+		sub_display = {
+			7015,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1015] = {
+		subject = "特许巡游凭证",
+		limit_group = 0,
+		descrip_extra = "*需要通过任务达成对应巡游进度后才可获取",
+		type = 0,
+		limit_arg = 1,
+		name = "特许巡游凭证(2024.4)",
+		name_display = "特许巡游凭证",
+		type_order = 4,
+		extra_gem = 0,
+		id = 1015,
+		money = 68,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass17",
+		first_pay_double = 0,
+		extra_service = 4,
+		descrip = "可获得1500巡游点数，同时解锁特许巡游奖励·柏限定换装和其他奖励",
+		airijp_id = "com.yostarjp.azurlane.seasonpass16",
+		extra_service_item = {
+			{
+				1,
+				4016,
+				1500
+			},
+			{
+				8,
+				59541,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4016,
+				1500
+			}
+		},
+		sub_display = {
+			7016,
 			1500
 		},
 		ignorePlatform = {},
@@ -8579,6 +9421,489 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40029,
+				1
+			}
+		}
+	},
+	[2021] = {
+		subject = "海上传奇支援组合包",
+		limit_group = 0,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		limit_arg = 2,
+		name = "海上传奇支援组合包",
+		name_display = "海上传奇支援组合包",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2021,
+		money = 128,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "haishangchuanqi",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao112",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得换装自选券、心智魔方、舰艇演习数据T2和物资奖励！",
+		airijp_id = "com.yostarjp.azurlane.package112",
+		extra_service_item = {
+			{
+				2,
+				59550,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				1,
+				1,
+				30000
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					1,
+					18
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				59550,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40030,
+				1
+			}
+		}
+	},
+	[2022] = {
+		subject = "魔方支援礼包1",
+		limit_group = 0,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		limit_arg = 2,
+		name = "魔方支援礼包1",
+		name_display = "魔方支援礼包1",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2022,
+		money = 12,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "mofangzhiyuan1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao113",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得心智魔方*10",
+		airijp_id = "com.yostarjp.azurlane.package113",
+		extra_service_item = {
+			{
+				2,
+				20001,
+				10
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					1,
+					18
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				20001,
+				10
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40031,
+				1
+			}
+		}
+	},
+	[2023] = {
+		subject = "魔方支援礼包2",
+		limit_group = 0,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		limit_arg = 2,
+		name = "魔方支援礼包2",
+		name_display = "魔方支援礼包2",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2023,
+		money = 30,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "mofangzhiyuan2",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao114",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得心智魔方*20",
+		airijp_id = "com.yostarjp.azurlane.package114",
+		extra_service_item = {
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					1,
+					18
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40032,
+				1
+			}
+		}
+	},
+	[2024] = {
+		subject = "魔方支援礼包3",
+		limit_group = 0,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		limit_arg = 2,
+		name = "魔方支援礼包3",
+		name_display = "魔方支援礼包3",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2024,
+		money = 56,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "mofangzhiyuan3",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao115",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得心智魔方*30",
+		airijp_id = "com.yostarjp.azurlane.package115",
+		extra_service_item = {
+			{
+				2,
+				20001,
+				30
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					1,
+					18
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				20001,
+				30
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40033,
+				1
+			}
+		}
+	},
+	[2025] = {
+		subject = "日常补给礼包",
+		limit_group = 0,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		limit_arg = 1,
+		name = "日常补给礼包",
+		name_display = "日常补给礼包",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2025,
+		money = 6,
+		tag = 2,
+		gem = 0,
+		limit_type = 4,
+		time = "always",
+		picture = "richang",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao116",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "购买礼包可获得心智魔方*1和石油*1200",
+		airijp_id = "com.yostarjp.azurlane.package116",
+		extra_service_item = {
+			{
+				1,
+				2,
+				1200
+			},
+			{
+				2,
+				20001,
+				1
+			}
+		},
+		display = {
+			{
+				1,
+				2,
+				1200
+			},
+			{
+				2,
+				20001,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40043,
+				1
+			}
+		}
+	},
+	[2026] = {
+		subject = "舰艇教材礼包",
+		limit_group = 0,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		limit_arg = 4,
+		name = "舰艇教材礼包(2024春)",
+		name_display = "舰艇教材礼包",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2026,
+		money = 18,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "boxSkill",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao118",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得大量教材奖励",
+		airijp_id = "com.yostarjp.azurlane.package118",
+		extra_service_item = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			},
+			{
+				2,
+				16003,
+				3
+			},
+			{
+				2,
+				16013,
+				3
+			},
+			{
+				2,
+				16023,
+				3
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					4,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					11,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40023,
 				1
 			}
 		}

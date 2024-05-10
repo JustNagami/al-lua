@@ -6,7 +6,7 @@ slot0.TYPE_L2D = 4
 slot0.TYPE_PAINTING = 8
 slot0.TYPE_CIPHER = 16
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	PoolMgr.GetInstance():GetUI("RepairUI", true, function (slot0)
 		uv0._go = slot0
 		uv0._tf = uv0._go.transform
@@ -32,7 +32,7 @@ slot0.Init = function(slot0, slot1)
 	end)
 end
 
-slot0.InitDefaultResBtn = function(slot0)
+function slot0.InitDefaultResBtn(slot0)
 	return {
 		type = uv0.TYPE_DEFAULT_RES,
 		text = i18n("msgbox_repair"),
@@ -46,7 +46,7 @@ slot0.InitDefaultResBtn = function(slot0)
 	}
 end
 
-slot0.InitL2dBtn = function(slot0)
+function slot0.InitL2dBtn(slot0)
 	return {
 		type = uv0.TYPE_L2D,
 		text = i18n("msgbox_repair_l2d"),
@@ -60,7 +60,7 @@ slot0.InitL2dBtn = function(slot0)
 	}
 end
 
-slot0.InitPaintingBtn = function(slot0)
+function slot0.InitPaintingBtn(slot0)
 	return {
 		type = uv0.TYPE_PAINTING,
 		text = i18n("msgbox_repair_painting"),
@@ -74,7 +74,7 @@ slot0.InitPaintingBtn = function(slot0)
 	}
 end
 
-slot0.InitCipherBtn = function(slot0)
+function slot0.InitCipherBtn(slot0)
 	return {
 		type = uv0.TYPE_CIPHER,
 		text = i18n("msgbox_repair_cipher"),
@@ -88,7 +88,7 @@ slot0.InitCipherBtn = function(slot0)
 	}
 end
 
-slot0.Repair = function(slot0, slot1)
+function slot0.Repair(slot0, slot1)
 	slot2 = slot1 or bit.bor(uv0.TYPE_DEFAULT_RES, uv0.TYPE_L2D, uv0.TYPE_PAINTING, uv0.TYPE_CIPHER)
 	slot3 = {}
 
@@ -101,7 +101,7 @@ slot0.Repair = function(slot0, slot1)
 	slot0:Show(slot3)
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	pg.DelegateInfo.New(slot0)
 	slot0._go:SetActive(true)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
@@ -129,7 +129,7 @@ slot0.Show = function(slot0, slot1)
 	end, SFX_PANEL)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	pg.DelegateInfo.Dispose(slot0)
 	slot0._go:SetActive(false)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0.parentTr)

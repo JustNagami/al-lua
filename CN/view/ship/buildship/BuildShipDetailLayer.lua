@@ -9,33 +9,33 @@ slot4 = {
 	"resources/1"
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BuildShipDetailUI1"
 end
 
-slot0.setItems = function(slot0, slot1)
+function slot0.setItems(slot0, slot1)
 	slot0.itemVO = slot1[ITEM_ID_EQUIP_QUICK_FINISH] or {
 		count = 0,
 		id = ITEM_ID_EQUIP_QUICK_FINISH
 	}
 end
 
-slot0.setWorkCount = function(slot0, slot1)
+function slot0.setWorkCount(slot0, slot1)
 	slot0.workCount = slot1
 end
 
-slot0.setBuildSpeedUpRemind = function(slot0, slot1)
+function slot0.setBuildSpeedUpRemind(slot0, slot1)
 	slot0.isStopSpeedUpRemind = slot1
 end
 
 slot0.MODEL_INDEX = 2
 
-slot0.setProjectList = function(slot0, slot1)
+function slot0.setProjectList(slot0, slot1)
 	slot0.projectList = slot1
 	slot0.MODEL = uv0.MODEL_INDEX < #slot0.projectList and uv1 or uv2
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.UIMgr = pg.UIMgr.GetInstance()
 	slot0.multLineTF = slot0:findTF("list_mult_line")
 	slot0.multLineContain = slot0:findTF("list_mult_line/content")
@@ -56,11 +56,11 @@ slot0.init = function(slot0)
 	setText(slot0:findTF("title/text"), i18n("build_detail_intro"))
 end
 
-slot0.updatePlayer = function(slot0, slot1)
+function slot0.updatePlayer(slot0, slot1)
 	slot0._player = slot1
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0.projectTFs = {}
 	slot1 = slot0.multList
 
@@ -117,7 +117,7 @@ slot0.didEnter = function(slot0)
 	end)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if slot0.isPlayAnim then
 		return
 	end
@@ -125,7 +125,7 @@ slot0.onBackPressed = function(slot0)
 	slot0:emit(uv0.ON_BACK_PRESSED, true)
 end
 
-slot0.getNeedCount = function(slot0)
+function slot0.getNeedCount(slot0)
 	slot1 = 0
 
 	for slot5, slot6 in ipairs(slot0.projectList) do
@@ -137,15 +137,15 @@ slot0.getNeedCount = function(slot0)
 	return slot1
 end
 
-slot0.updateListCount = function(slot0)
+function slot0.updateListCount(slot0)
 	setText(slot0.listCountTF, slot0.workCount)
 end
 
-slot0.updateItem = function(slot0)
+function slot0.updateItem(slot0)
 	setText(slot0.quickCountTF, slot0.itemVO.count)
 end
 
-slot0.initProjectList = function(slot0)
+function slot0.initProjectList(slot0)
 	slot1 = pairs
 	slot2 = slot0.buildTimers or {}
 
@@ -164,15 +164,15 @@ slot0.initProjectList = function(slot0)
 	setActive(slot0.noneBg, #slot0.projectList <= 0)
 end
 
-slot0.initMultLine = function(slot0)
+function slot0.initMultLine(slot0)
 	slot0.multList:align(#slot0.projectList)
 end
 
-slot0.initSingleLine = function(slot0)
+function slot0.initSingleLine(slot0)
 	slot0.singleList:align(#slot0.projectList)
 end
 
-slot0.updateProject = function(slot0, slot1, slot2)
+function slot0.updateProject(slot0, slot1, slot2)
 	assert(isa(slot2, BuildShip), "必须是实例BuildShip")
 
 	if IsNil(slot0.projectTFs[slot1]) then
@@ -239,7 +239,7 @@ slot0.updateProject = function(slot0, slot1, slot2)
 			end
 		end, SFX_UI_BUILDING_FASTBUILDING)
 
-		slot13 = function()
+		function slot13()
 			pg.TimeMgr.GetInstance():RemoveTimer(uv0.buildTimers[uv1])
 
 			uv0.buildTimers[uv1] = nil
@@ -248,7 +248,7 @@ slot0.updateProject = function(slot0, slot1, slot2)
 			setActive(uv3, true)
 		end
 
-		slot14 = function(slot0)
+		function slot14(slot0)
 			setText(uv0, pg.TimeMgr.GetInstance():DescCDTime(slot0))
 		end
 
@@ -285,7 +285,7 @@ slot0.updateProject = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.playGetShipAnimate = function(slot0, slot1, slot2)
+function slot0.playGetShipAnimate(slot0, slot1, slot2)
 	slot0.canvasgroup.blocksRaycasts = false
 	slot0.isPlayAnim = true
 	slot0.onLoading = true
@@ -307,7 +307,7 @@ slot0.playGetShipAnimate = function(slot0, slot1, slot2)
 	}, 4.5, true)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
 
 	for slot4, slot5 in pairs(slot0.buildTimers) do
@@ -344,7 +344,7 @@ slot0.willExit = function(slot0)
 	end)
 end
 
-slot0.playCV = function(slot0, slot1)
+function slot0.playCV(slot0, slot1)
 	slot0:stopCV()
 
 	slot2 = "event:/cv/build/" .. slot1
@@ -354,7 +354,7 @@ slot0.playCV = function(slot0, slot1)
 	slot0.voiceContent = slot2
 end
 
-slot0.stopCV = function(slot0)
+function slot0.stopCV(slot0)
 	if slot0.voiceContent then
 		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(slot0.voiceContent)
 	end

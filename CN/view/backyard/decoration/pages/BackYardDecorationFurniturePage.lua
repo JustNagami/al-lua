@@ -1,6 +1,7 @@
 slot0 = class("BackYardDecorationFurniturePage", import(".BackYardDecorationBasePage"))
+slot0.SELECTED_FURNITRUE = "BackYardDecorationFurniturePage:SELECTED_FURNITRUE"
 
-slot1 = function(slot0)
+function slot1(slot0)
 	if not uv0.PageTypeList then
 		uv0.PageTypeList = {
 			0,
@@ -10,42 +11,59 @@ slot1 = function(slot0)
 			3,
 			4,
 			5,
-			6
+			6,
+			8
 		}
 	end
 
 	return uv0.PageTypeList[slot0]
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BackYardDecorationFurniturePage"
 end
 
-slot0.OnFurnitureUpdated = function(slot0, slot1)
+function slot0.OnFurnitureUpdated(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.cards) do
 		if slot6.furniture:getConfig("id") == slot1:getConfig("id") then
-			slot6:Flush(slot1, slot0:GetPutCntByConfigId(slot0.dorm, slot1:getConfig("id")))
+			slot7, slot8 = slot0:GetPutCntByConfigId(slot0.dorm, slot1:getConfig("id"))
+
+			slot6:Flush(slot1, slot7, slot8)
 		end
 	end
 end
 
-slot0.GetPutCntByConfigId = function(slot0, slot1, slot2)
+function slot0.GetPutCntByConfigId(slot0, slot1, slot2)
 	slot3 = 0
+	slot4 = {}
 
-	for slot7, slot8 in pairs(slot1:GetThemeList()) do
-		slot3 = slot3 + slot8:GetSameFurnitureCnt(slot2)
+	for slot8, slot9 in pairs(slot1:GetThemeList()) do
+		slot10 = slot9:GetSameFurnitureCnt(slot2)
+		slot3 = slot3 + slot10
+
+		if slot10 > 0 then
+			table.insert(slot4, slot8)
+		end
 	end
 
-	return slot3
+	slot5 = 0
+
+	if #slot4 > 1 then
+		slot5 = getProxy(DormProxy).floor
+	elseif #slot4 == 1 then
+		slot5 = slot4[1]
+	end
+
+	return slot3, slot5
 end
 
-slot0.OnDisplayList = function(slot0)
+function slot0.OnDisplayList(slot0)
 	slot0.displays = slot0:GetDisplays()
 
 	slot0:SortDisplays()
 end
 
-slot0.SortDisplays = function(slot0)
+function slot0.SortDisplays(slot0)
 	if not slot0.contextData.filterPanel:GetLoaded() then
 		slot1 = {}
 
@@ -57,10 +75,14 @@ slot0.SortDisplays = function(slot0)
 
 		table.sort(slot0.displays, function (slot0, slot1)
 			if uv0[slot0.id] == uv0[slot1.id] then
-				if uv1 == BackYardDecorationFilterPanel.ORDER_MODE_ASC then
-					return slot0.id < slot1.id
-				elseif uv1 == BackYardDecorationFilterPanel.ORDER_MODE_DASC then
-					return slot1.id < slot0.id
+				if (slot0.newFlag and 1 or 0) == (slot1.newFlag and 1 or 0) then
+					if uv1 == BackYardDecorationFilterPanel.ORDER_MODE_ASC then
+						return slot0.id < slot1.id
+					elseif uv1 == BackYardDecorationFilterPanel.ORDER_MODE_DASC then
+						return slot1.id < slot0.id
+					end
+				else
+					return slot5 < slot4
 				end
 			else
 				return slot2 < slot3
@@ -76,19 +98,26 @@ slot0.SortDisplays = function(slot0)
 	slot0:OnFilterDone(slot0.contextData.filterPanel:GetFilterData())
 end
 
-slot0.OnOrderModeUpdated = function(slot0)
+function slot0.OnOrderModeUpdated(slot0)
 	slot0:SortDisplays()
 end
 
-slot0.change2ScrPos = function(slot0, slot1)
+function slot0.change2ScrPos(slot0, slot1)
 	return LuaHelper.ScreenToLocal(slot0:GetComponent("RectTransform"), slot1, GameObject.Find("UICamera"):GetComponent("Camera"))
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
+	slot0:bind(BackYardDecorationPutlistPage.SELECTED_FURNITRUE, function ()
+		uv0:ClearMark()
+	end)
+	slot0:bind(BackYardDecrationLayer.INNER_SELECTED_FURNITRUE, function (slot0, slot1)
+		uv0:Selected(slot1)
+	end)
+
 	slot1 = slot0._tf
 	slot0.scrollRect = slot1:GetComponent("LScrollRect")
 
-	slot1 = function()
+	function slot1()
 		if uv0.timer then
 			uv0.timer:Stop()
 
@@ -96,13 +125,13 @@ slot0.OnLoaded = function(slot0)
 		end
 	end
 
-	slot2 = function(slot0)
+	function slot2(slot0)
 		uv0.timer = Timer.New(slot0, 0.8, 1)
 
 		uv0.timer:Start()
 	end
 
-	slot3 = function(slot0)
+	function slot3(slot0)
 		slot1 = uv0.change2ScrPos(uv1._tf:Find("content"), slot0.position)
 		slot2 = nil
 
@@ -156,28 +185,61 @@ slot0.OnLoaded = function(slot0)
 				uv1:emit(BackYardDecorationMediator.REMOVE_PAPER, slot3.furniture)
 			elseif slot3 and not slot3:HasMask() then
 				uv1:emit(BackYardDecorationMediator.ADD_FURNITURE, Clone(slot3.furniture))
+			elseif slot3 and slot3:HasMask() then
+				uv1:ClearMark()
+
+				uv1.selectedId = slot3.furniture.id
+
+				slot3:UpdateMark(uv1.selectedId)
+				uv1:emit(BackYardDecorationMediator.ON_SELECTED_FURNITRUE, slot3.furniture.id)
+				uv1:emit(uv3.SELECTED_FURNITRUE)
 			end
 		end
 	end)
 end
 
-slot0.OnInitItem = function(slot0, slot1)
+function slot0.ClearMark(slot0)
+	for slot4, slot5 in pairs(slot0.cards) do
+		slot5:UpdateMark(-1)
+	end
+
+	slot0.selectedId = nil
+end
+
+function slot0.Selected(slot0, slot1)
+	slot0:ClearMark()
+
+	for slot5, slot6 in pairs(slot0.cards) do
+		if slot6.furniture.id == slot1 then
+			slot6:UpdateMark(slot1)
+		end
+	end
+
+	slot0.selectedId = slot1
+end
+
+function slot0.OnInitItem(slot0, slot1)
 	slot0.cards[slot1] = BackYardDecorationCard.New(slot1)
 end
 
-slot0.OnUpdateItem = function(slot0, slot1, slot2)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
 	if not slot0.cards[slot2] then
 		slot0:OnInitItem(slot2)
 
 		slot3 = slot0.cards[slot2]
 	end
 
-	slot4 = slot0.lastDiaplys[slot1 + 1]
+	if not slot0.lastDiaplys[slot1 + 1] then
+		return
+	end
 
-	slot3:Update(slot4, slot0:GetPutCntByConfigId(slot0.dorm, slot4:getConfig("id")))
+	slot10, slot11 = slot0:GetPutCntByConfigId(slot0.dorm, slot4:getConfig("id"))
+
+	slot3:Update(slot4, slot10, slot11, slot0.selectedId or -1)
+	slot3:PlayEnterAnimation()
 end
 
-slot0.GetDisplays = function(slot0)
+function slot0.GetDisplays(slot0)
 	slot1 = {}
 	slot2 = slot0.dorm:GetPurchasedFurnitures()
 	slot5 = ipairs
@@ -192,13 +254,13 @@ slot0.GetDisplays = function(slot0)
 	return slot1
 end
 
-slot0.OnFilterDone = function(slot0, slot1)
+function slot0.OnFilterDone(slot0, slot1)
 	slot0.displays = slot1
 
 	slot0:SetTotalCount()
 end
 
-slot0.SetTotalCount = function(slot0)
+function slot0.SetTotalCount(slot0)
 	if not slot0.searchKey or slot0.searchKey == "" then
 		slot0.lastDiaplys = slot0.displays
 	else
@@ -214,11 +276,11 @@ slot0.SetTotalCount = function(slot0)
 	slot0.scrollRect:SetTotalCount(#slot0.lastDiaplys)
 end
 
-slot0.OnSearchKeyChanged = function(slot0)
+function slot0.OnSearchKeyChanged(slot0)
 	slot0:SetTotalCount()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 

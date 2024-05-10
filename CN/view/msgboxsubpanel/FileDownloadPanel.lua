@@ -1,18 +1,18 @@
 slot0 = class("FileDownloadPanel", import(".MsgboxSubPanel"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "FileDownloadBox"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:findUI()
 	slot0:addListener()
 end
 
-slot0.UpdateView = function(slot0, slot1)
+function slot0.UpdateView(slot0, slot1)
 	slot2 = slot1.onYes
 
-	slot1.onYes = function()
+	function slot1.onYes()
 		pg.FileDownloadMgr.GetInstance():SetRemind(uv0.curStopValue)
 		uv1()
 	end
@@ -25,13 +25,13 @@ slot0.UpdateView = function(slot0, slot1)
 	slot0:PostRefresh(slot1)
 end
 
-slot0.findUI = function(slot0)
+function slot0.findUI(slot0)
 	slot0.contextText = slot0:findTF("Context")
 	slot0.toggleTF = slot0:findTF("Toggle")
 	slot0.tickTF = slot0:findTF("Tip/TickBG/Tick", slot0.toggleTF)
 end
 
-slot0.addListener = function(slot0)
+function slot0.addListener(slot0)
 	slot0.curStopValue = false
 
 	onToggle(slot0, slot0.toggleTF, function (slot0)

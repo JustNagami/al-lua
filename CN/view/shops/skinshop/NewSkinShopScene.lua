@@ -11,30 +11,30 @@ slot0.optionsPath = {
 	"overlay/blur_panel/adapt/top/option"
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewSkinShopUI"
 end
 
-slot0.forceGC = function(slot0)
+function slot0.forceGC(slot0)
 	return true
 end
 
-slot0.ResUISettings = function(slot0)
+function slot0.ResUISettings(slot0)
 	return {
 		anim = true,
 		showType = PlayerResUI.TYPE_GEM
 	}
 end
 
-slot0.GetAllCommodity = function(slot0)
+function slot0.GetAllCommodity(slot0)
 	return getProxy(ShipSkinProxy):GetAllSkins()
 end
 
-slot0.GetPlayer = function(slot0)
+function slot0.GetPlayer(slot0)
 	return getProxy(PlayerProxy):getRawData()
 end
 
-slot0.GetShopTypeIdBySkinId = function(slot0, slot1)
+function slot0.GetShopTypeIdBySkinId(slot0, slot1)
 	slot2 = pg.ship_skin_template.get_id_list_by_shop_type_id
 
 	if not uv0.shopTypeIdList then
@@ -56,7 +56,7 @@ slot0.GetShopTypeIdBySkinId = function(slot0, slot1)
 	end
 end
 
-slot0.GetSkinClassify = function(slot0, slot1, slot2)
+function slot0.GetSkinClassify(slot0, slot1, slot2)
 	slot3 = {}
 	slot4 = {}
 
@@ -84,7 +84,7 @@ slot0.GetSkinClassify = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.GetReturnSkins = function(slot0)
+function slot0.GetReturnSkins(slot0)
 	if not slot0.returnSkins then
 		slot0.returnSkins = getProxy(ShipSkinProxy):GetEncoreSkins()
 	end
@@ -92,7 +92,7 @@ slot0.GetReturnSkins = function(slot0)
 	return slot0.returnSkins
 end
 
-slot0.GetReturnSkinMap = function(slot0)
+function slot0.GetReturnSkinMap(slot0)
 	if not slot0.encoreSkinMap then
 		slot0.encoreSkinMap = {}
 
@@ -104,7 +104,7 @@ slot0.GetReturnSkinMap = function(slot0)
 	return slot0.encoreSkinMap
 end
 
-slot0.OnFurnitureUpdate = function(slot0, slot1)
+function slot0.OnFurnitureUpdate(slot0, slot1)
 	if not slot0.mainView.commodity then
 		return
 	end
@@ -114,10 +114,12 @@ slot0.OnFurnitureUpdate = function(slot0, slot1)
 	end
 end
 
-slot0.OnShopping = function(slot0, slot1)
+function slot0.OnShopping(slot0, slot1)
 	if not slot0.mainView.commodity then
 		return
 	end
+
+	slot0.mainView:ClosePurchaseView()
 
 	if slot0.mainView.commodity.id == slot1 then
 		if _.detect(slot0:GetAllCommodity(), function (slot0)
@@ -126,13 +128,15 @@ slot0.OnShopping = function(slot0, slot1)
 			slot0.mainView:Flush(slot3)
 		end
 
+		slot0:UpdateCouponBtn()
+		slot0:UpdateVoucherBtn()
 		slot0:UpdateCommodities(slot2, false)
 
 		slot0.commodities = slot2
 	end
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.cgGroup = slot0._tf:GetComponent(typeof(CanvasGroup))
 	slot0.backBtn = slot0:findTF("overlay/blur_panel/adapt/top/back_btn")
 	slot0.atlasBtn = slot0:findTF("overlay/bottom/bg/atlas")
@@ -147,6 +151,10 @@ slot0.init = function(slot0)
 
 	setText(slot0.inptuTr:Find("holder"), i18n("skinatlas_search_holder"))
 
+	slot0.couponTr = slot0:findTF("overlay/blur_panel/adapt/top/discount/coupon")
+	slot0.couponSelTr = slot0.couponTr:Find("selected")
+	slot0.voucherTr = slot0:findTF("overlay/blur_panel/adapt/top/discount/voucher")
+	slot0.voucherSelTr = slot0.voucherTr:Find("selected")
 	slot0.rollingCircleRect = RollingCircleRect.New(slot0:findTF("overlay/left/mask/content/0"), slot0:findTF("overlay/left"))
 
 	slot0.rollingCircleRect:SetCallback(slot0, uv0.OnSelectSkinPage, uv0.OnConfirmSkinPage)
@@ -159,11 +167,11 @@ slot0.init = function(slot0)
 	slot0.scrollrect = slot1:GetComponent("LScrollRect")
 	slot0.scrollrect.isNewLoadingMethod = true
 
-	slot0.scrollrect.onInitItem = function(slot0)
+	function slot0.scrollrect.onInitItem(slot0)
 		uv0:OnInitItem(slot0)
 	end
 
-	slot0.scrollrect.onUpdateItem = function(slot0, slot1)
+	function slot0.scrollrect.onUpdateItem(slot0, slot1)
 		uv0:OnUpdateItem(slot0, slot1)
 	end
 
@@ -177,7 +185,7 @@ slot0.init = function(slot0)
 	Input.multiTouchEnabled = false
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
@@ -201,32 +209,67 @@ slot0.didEnter = function(slot0)
 	onInputChanged(slot0, slot0.inptuTr, function ()
 		uv0:OnSearch()
 	end)
-
-	slot1 = true
-
-	onButton(slot0, slot0.changeBtn, function ()
-		uv0 = not uv0
-
-		setActive(uv1.inptuTr, uv0)
-		setActive(uv1.indexBtn, uv0)
-		setActive(uv1.live2dFilter, not uv0)
-
-		if getInputText(uv1.inptuTr) ~= "" then
-			setInputText(uv1.inptuTr, "")
+	onToggle(slot0, slot0.changeBtn, function (slot0)
+		if slot0 and getInputText(uv0.inptuTr) ~= "" then
+			setInputText(uv0.inptuTr, "")
 		end
-
-		setImageSprite(uv1.changeBtn, GetSpriteFromAtlas("ui/SkinShopUI_atlas", uv0 and "search_on" or "search_off", true))
 	end, SFX_PANEL)
-	triggerButton(slot0.changeBtn)
 	onButton(slot0, slot0.live2dFilter, function ()
 		uv0.defaultIndex.extraIndex = uv0.defaultIndex.extraIndex == SkinIndexLayer.ExtraL2D and SkinIndexLayer.ExtraALL or SkinIndexLayer.ExtraL2D
 
 		uv0:OnFilter(uv0.defaultIndex)
 	end, SFX_PANEL)
+
+	slot0.isFilterCoupon = false
+
+	onButton(slot0, slot0.couponTr, function ()
+		if not SkinCouponActivity.StaticExistActivityAndCoupon() then
+			uv0.isFilterCoupon = false
+
+			uv0:UpdateCouponBtn()
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+
+			return
+		end
+
+		uv0.isFilterCoupon = not uv0.isFilterCoupon
+
+		setActive(uv0.couponSelTr, uv0.isFilterCoupon)
+		uv0:OnFilter(uv0.defaultIndex)
+	end, SFX_PANEL)
+
+	slot0.isFilterVoucher = false
+
+	onButton(slot0, slot0.voucherTr, function ()
+		uv0.isFilterVoucher = not uv0.isFilterVoucher
+
+		setActive(uv0.voucherSelTr, uv0.isFilterVoucher)
+		uv0:OnFilter(uv0.defaultIndex)
+	end, SFX_PANEL)
 	slot0:SetUp()
 end
 
-slot0.OnSelectSkinPage = function(slot0, slot1)
+function slot0.UpdateCouponBtn(slot0)
+	slot1 = SkinCouponActivity.StaticExistActivityAndCoupon() and (not slot0.contextData.mode or slot0.contextData.mode == uv0.MODE_OVERVIEW)
+
+	if slot0.isFilterCoupon and not slot1 then
+		slot0.isFilterCoupon = false
+	end
+
+	slot0.couponTr.localScale = slot1 and Vector3(1, 1, 1) or Vector3(0, 0, 0)
+end
+
+function slot0.UpdateVoucherBtn(slot0)
+	slot2 = #getProxy(BagProxy):GetSkinShopDiscountItemList() > 0 and (not slot0.contextData.mode or slot0.contextData.mode == uv0.MODE_OVERVIEW)
+
+	if slot0.isFilterVoucher and not slot2 then
+		slot0.isFilterVoucher = false
+	end
+
+	slot0.voucherTr.localScale = slot2 and Vector3(1, 1, 1) or Vector3(0, 0, 0)
+end
+
+function slot0.OnSelectSkinPage(slot0, slot1)
 	if slot0.selectedSkinPageItem then
 		setActive(slot0.selectedSkinPageItem._tr:Find("selected"), false)
 		setActive(slot0.selectedSkinPageItem._tr:Find("name"), true)
@@ -238,7 +281,7 @@ slot0.OnSelectSkinPage = function(slot0, slot1)
 	slot0.selectedSkinPageItem = slot1
 end
 
-slot0.OnConfirmSkinPage = function(slot0, slot1)
+function slot0.OnConfirmSkinPage(slot0, slot1)
 	if slot0.skinPageID ~= slot1:GetID() then
 		slot0.skinPageID = slot2
 
@@ -248,7 +291,7 @@ slot0.OnConfirmSkinPage = function(slot0, slot1)
 	end
 end
 
-slot0.OnFilter = function(slot0, slot1)
+function slot0.OnFilter(slot0, slot1)
 	slot0.defaultIndex = {
 		typeIndex = slot1.typeIndex,
 		campIndex = slot1.campIndex,
@@ -265,18 +308,20 @@ slot0.OnFilter = function(slot0, slot1)
 	setActive(slot0.indexBtnSel, slot1.typeIndex ~= ShipIndexConst.TypeAll or slot1.campIndex ~= ShipIndexConst.CampAll or slot1.rarityIndex ~= ShipIndexConst.RarityAll or slot1.extraIndex ~= SkinIndexLayer.ExtraALL)
 end
 
-slot0.OnSearch = function(slot0)
+function slot0.OnSearch(slot0)
 	if slot0.commodities then
 		slot0:UpdateCommodities(slot0.commodities, true)
 	end
 end
 
-slot0.SetUp = function(slot0)
+function slot0.SetUp(slot0)
 	slot1 = slot0.contextData.mode or uv0.MODE_OVERVIEW
 	slot2 = slot0:GetAllCommodity()
 	slot0.cgGroup.blocksRaycasts = false
 
 	slot0:UpdateTitle(slot1)
+	slot0:UpdateCouponBtn()
+	slot0:UpdateVoucherBtn()
 	setActive(slot0.rollingCircleMaskTr, slot1 == uv0.MODE_OVERVIEW)
 
 	if slot1 == uv0.MODE_EXPERIENCE then
@@ -303,7 +348,7 @@ slot0.SetUp = function(slot0)
 	end)
 end
 
-slot0.UpdateTitle = function(slot0, slot1)
+function slot0.UpdateTitle(slot0, slot1)
 	slot0.title.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", ({
 		"huanzhuangshagndian",
 		"title_01"
@@ -319,7 +364,7 @@ slot0.UpdateTitle = function(slot0, slot1)
 	slot0.titleEn:SetNativeSize()
 end
 
-slot7 = function(slot0, slot1)
+function slot7(slot0, slot1)
 	slot2 = pg.skin_page_template
 	slot4, slot5 = nil
 
@@ -357,7 +402,7 @@ slot7 = function(slot0, slot1)
 	setText(slot1._tr:Find("eng"), slot5)
 end
 
-slot0.InitSkinClassify = function(slot0, slot1, slot2, slot3)
+function slot0.InitSkinClassify(slot0, slot1, slot2, slot3)
 	slot5 = {}
 
 	for slot9, slot10 in ipairs(slot0:GetSkinClassify(slot1, slot2)) do
@@ -391,7 +436,7 @@ slot0.InitSkinClassify = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.IsType = function(slot0, slot1, slot2)
+function slot0.IsType(slot0, slot1, slot2)
 	if slot2:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
 		return slot1 == uv0
 	elseif slot1 == uv1 then
@@ -405,7 +450,7 @@ slot0.IsType = function(slot0, slot1, slot2)
 	return false
 end
 
-slot0.ToVShip = function(slot0, slot1)
+function slot0.ToVShip(slot0, slot1)
 	if not slot0.vship then
 		slot0.vship = {
 			getNation = function ()
@@ -428,7 +473,7 @@ slot0.ToVShip = function(slot0, slot1)
 	return slot0.vship
 end
 
-slot0.IsFilterType = function(slot0, slot1, slot2)
+function slot0.IsFilterType(slot0, slot1, slot2)
 	if not ShipSkin.New({
 		id = slot2:getSkinId()
 	}):GetDefaultShipConfig() then
@@ -440,13 +485,13 @@ slot0.IsFilterType = function(slot0, slot1, slot2)
 	return ShipIndexConst.filterByType(slot6, slot1.typeIndex) and ShipIndexConst.filterByCamp(slot6, slot1.campIndex) and ShipIndexConst.filterByRarity(slot6, slot1.rarityIndex) and SkinIndexLayer.filterByExtra(slot4, slot1.extraIndex)
 end
 
-slot0.IsSearchType = function(slot0, slot1, slot2)
+function slot0.IsSearchType(slot0, slot1, slot2)
 	return ShipSkin.New({
 		id = slot2:getSkinId()
 	}):IsMatchKey(slot1)
 end
 
-slot8 = function(slot0, slot1)
+function slot8(slot0, slot1)
 	if ((slot0.type == Goods.TYPE_ACTIVITY or slot0.type == Goods.TYPE_ACTIVITY_EXTRA) and 0 or slot0:GetPrice()) == ((slot1.type == Goods.TYPE_ACTIVITY or slot1.type == Goods.TYPE_ACTIVITY_EXTRA) and 0 or slot1:GetPrice()) then
 		return slot0.id < slot1.id
 	else
@@ -454,7 +499,7 @@ slot8 = function(slot0, slot1)
 	end
 end
 
-slot0.Sort = function(slot0, slot1, slot2)
+function slot0.Sort(slot0, slot1, slot2)
 	if (slot1.buyCount == 0 and 1 or 0) == (slot2.buyCount == 0 and 1 or 0) then
 		if slot1:getConfig("order") == slot2:getConfig("order") then
 			return uv0(slot1, slot2)
@@ -466,16 +511,37 @@ slot0.Sort = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.UpdateCommodities = function(slot0, slot1, slot2, slot3)
+function slot0.IsCouponType(slot0, slot1, slot2)
+	if slot1 and not SkinCouponActivity.StaticIsShop(slot2.id) then
+		return false
+	end
+
+	return true
+end
+
+function slot0.IsVoucherType(slot0, slot1, slot2)
+	if slot1 and not slot2 then
+		return false
+	end
+
+	return true
+end
+
+function slot0.UpdateCommodities(slot0, slot1, slot2, slot3)
 	slot0:ClearCards()
 
 	slot0.cards = {}
 	slot0.displays = {}
+	slot0.canUseVoucherCache = {}
 
 	for slot7, slot8 in ipairs(slot1) do
-		if slot0:IsType(slot0.skinPageID, slot8) and slot0:IsFilterType(slot0.defaultIndex, slot8) and slot0:IsSearchType(getInputText(slot0.inptuTr), slot8) then
+		slot9 = slot8:CanUseVoucherType()
+
+		if slot0:IsType(slot0.skinPageID, slot8) and slot0:IsFilterType(slot0.defaultIndex, slot8) and slot0:IsSearchType(getInputText(slot0.inptuTr), slot8) and slot0:IsCouponType(slot0.isFilterCoupon, slot8) and slot0:IsVoucherType(slot0.isFilterVoucher, slot9) then
 			table.insert(slot0.displays, slot8)
 		end
+
+		slot0.canUseVoucherCache[slot8.id] = slot9
 	end
 
 	table.sort(slot0.displays, function (slot0, slot1)
@@ -503,25 +569,29 @@ slot0.UpdateCommodities = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.OnInitItem = function(slot0, slot1)
+function slot0.OnInitItem(slot0, slot1)
 	slot2 = NewShopSkinCard.New(slot1)
 
 	onButton(slot0, slot2._go, function ()
-		for slot3, slot4 in pairs(uv0.cards) do
+		if not uv0.commodity then
+			return
+		end
+
+		for slot3, slot4 in pairs(uv1.cards) do
 			slot4:UpdateSelected(false)
 		end
 
-		uv0.selectedId = uv1.commodity.id
+		uv1.selectedId = uv0.commodity.id
 
-		uv1:UpdateSelected(true)
-		uv0:UpdateMainView(uv1.commodity)
-		uv0:GCHandle()
+		uv0:UpdateSelected(true)
+		uv1:UpdateMainView(uv0.commodity)
+		uv1:GCHandle()
 	end, SFX_PANEL)
 
 	slot0.cards[slot1] = slot2
 end
 
-slot0.OnUpdateItem = function(slot0, slot1, slot2)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
 	if not slot0.cards[slot2] then
 		slot0:OnInitItem(slot2)
 
@@ -541,7 +611,7 @@ slot0.OnUpdateItem = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.GCHandle = function(slot0)
+function slot0.GCHandle(slot0)
 	uv0.GCCNT = (uv0.GCCNT or 0) + 1
 
 	if uv0.GCCNT == 3 then
@@ -551,11 +621,11 @@ slot0.GCHandle = function(slot0)
 	end
 end
 
-slot0.UpdateMainView = function(slot0, slot1)
+function slot0.UpdateMainView(slot0, slot1)
 	slot0.mainView:Flush(slot1)
 end
 
-slot0.GetCommodityIndex = function(slot0, slot1)
+function slot0.GetCommodityIndex(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0.displays) do
 		if slot6.id == slot1 then
 			return slot5
@@ -563,7 +633,7 @@ slot0.GetCommodityIndex = function(slot0, slot1)
 	end
 end
 
-slot0.OnPrevCommodity = function(slot0)
+function slot0.OnPrevCommodity(slot0)
 	if not slot0.selectedId then
 		return
 	end
@@ -573,7 +643,7 @@ slot0.OnPrevCommodity = function(slot0)
 	end
 end
 
-slot0.OnNextCommodity = function(slot0)
+function slot0.OnNextCommodity(slot0)
 	if not slot0.selectedId then
 		return
 	end
@@ -583,7 +653,7 @@ slot0.OnNextCommodity = function(slot0)
 	end
 end
 
-slot0.CheckCardBound = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.CheckCardBound(slot0, slot1, slot2, slot3, slot4)
 	slot5 = getBounds(slot0.scrollrect.gameObject.transform)
 
 	if slot3 then
@@ -599,7 +669,7 @@ slot0.CheckCardBound = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.TriggerCommodity = function(slot0, slot1, slot2)
+function slot0.TriggerCommodity(slot0, slot1, slot2)
 	slot3 = slot0.displays[slot1]
 	slot4 = slot0.displays[slot1 + slot2]
 	slot5, slot6 = nil
@@ -623,7 +693,7 @@ slot0.TriggerCommodity = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.ClearCards = function(slot0)
+function slot0.ClearCards(slot0)
 	if not slot0.cards then
 		return
 	end
@@ -635,7 +705,7 @@ slot0.ClearCards = function(slot0)
 	slot0.cards = nil
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:ClearCards()
 	ClearLScrollrect(slot0.scrollrect)
 

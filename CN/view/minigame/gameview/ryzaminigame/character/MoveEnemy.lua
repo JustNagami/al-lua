@@ -1,6 +1,6 @@
 slot0 = class("MoveEnemy", import("view.miniGame.gameView.RyzaMiniGame.character.TargetMove"))
 
-slot0.InitUI = function(slot0, slot1)
+function slot0.InitUI(slot0, slot1)
 	slot0.hp = slot1.hp or 3
 	slot0.hpMax = slot0.hp
 	slot0.speed = slot1.speed or 1
@@ -18,7 +18,7 @@ slot0.InitUI = function(slot0, slot1)
 	end)
 end
 
-slot0.InitRegister = function(slot0, slot1)
+function slot0.InitRegister(slot0, slot1)
 	slot0:Register("burn", function ()
 		uv0:Hurt(1)
 	end, {
@@ -29,7 +29,7 @@ slot0.InitRegister = function(slot0, slot1)
 	})
 end
 
-slot0.Hurt = function(slot0, slot1)
+function slot0.Hurt(slot0, slot1)
 	slot0.hp = slot0.hp - slot1
 
 	slot0.responder:SyncStatus(slot0, "hp", {
@@ -56,7 +56,7 @@ slot0.SpeedDistance = {
 	4
 }
 
-slot0.TimeUpdate = function(slot0, slot1)
+function slot0.TimeUpdate(slot0, slot1)
 	if not slot0.lock then
 		slot2, slot3 = slot0:GetMoveInfo()
 		slot4 = nil
@@ -104,7 +104,7 @@ slot0.TimeUpdate = function(slot0, slot1)
 	end
 end
 
-slot0.MoveDelta = function(slot0, slot1, slot2)
+function slot0.MoveDelta(slot0, slot1, slot2)
 	if (slot1 - slot0.realPos).x == 0 and slot3.y == 0 then
 		return NewPos(0, 0)
 	else
@@ -112,7 +112,7 @@ slot0.MoveDelta = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.GetMoveInfo = function(slot0)
+function slot0.GetMoveInfo(slot0)
 	if slot0.responder:SearchRyza(slot0, slot0.search) and slot0.responder:Wayfinding(slot0) and #slot1 > 0 then
 		slot2 = slot1[#slot1]
 
@@ -130,27 +130,27 @@ slot0.GetMoveInfo = function(slot0)
 	return nil, NewPos(0, 0)
 end
 
-slot0.ClearWander = function(slot0)
+function slot0.ClearWander(slot0)
 	slot0.wanderPos = nil
 	slot0.wanderDir = nil
 	slot0.wanderTime = nil
 end
 
-slot0.PlayWait = function(slot0)
+function slot0.PlayWait(slot0)
 	slot0:PlayAnim("Wait_" .. (string.split(slot0.status, "_")[2] or "S"))
 end
 
-slot0.PlayMove = function(slot0, slot1)
+function slot0.PlayMove(slot0, slot1)
 	slot0:PlayAnim("Move_" .. slot1)
 end
 
-slot0.PlayDamage = function(slot0)
+function slot0.PlayDamage(slot0)
 	if not slot0.lock then
 		slot0:PlayAnim("Damage_" .. (string.split(slot0.status, "_")[2] or "S"))
 	end
 end
 
-slot0.PlayDead = function(slot0)
+function slot0.PlayDead(slot0)
 	slot0:SetHide(false)
 	slot0:PlayAnim("Dead_" .. (string.split(slot0.status, "_")[2] or "S"))
 end
@@ -160,23 +160,23 @@ slot0.loopDic = {
 	Move = true
 }
 
-slot0.GetUIHeight = function(slot0)
+function slot0.GetUIHeight(slot0)
 	return 128
 end
 
-slot0.SetHide = function(slot0, slot1)
+function slot0.SetHide(slot0, slot1)
 	uv0.super.SetHide(slot0, slot1)
 	slot0:UpdateAlpha()
 end
 
 slot1 = 7
 
-slot0.UpdateAlpha = function(slot0)
+function slot0.UpdateAlpha(slot0)
 	slot1 = 1
 	GetOrAddComponent(slot0._tf, typeof(CanvasGroup)).alpha = not slot0.hide and 1 or slot0.responder.reactorRyza.hide and (slot0.responder.reactorRyza.realPos - slot0.realPos):SqrMagnitude() < uv0 * uv0 and 0.7 or 0
 end
 
-slot0.TimeTrigger = function(slot0, slot1)
+function slot0.TimeTrigger(slot0, slot1)
 	if slot0.hp > 0 and slot0.responder:CollideRyza(slot0) then
 		slot0:Calling("hit", {
 			1,

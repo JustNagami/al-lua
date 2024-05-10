@@ -4,7 +4,7 @@ slot3 = Mathf
 slot4 = {}
 slot5 = tolua.initget(slot4)
 
-slot4.__index = function(slot0, slot1)
+function slot4.__index(slot0, slot1)
 	if uv0(uv1, slot1) == nil and uv0(uv2, slot1) ~= nil then
 		return slot2(slot0)
 	end
@@ -12,7 +12,7 @@ slot4.__index = function(slot0, slot1)
 	return slot2
 end
 
-slot4.__call = function(slot0, slot1, slot2, slot3, slot4)
+function slot4.__call(slot0, slot1, slot2, slot3, slot4)
 	return uv0({
 		r = slot1 or 0,
 		g = slot2 or 0,
@@ -21,7 +21,7 @@ slot4.__call = function(slot0, slot1, slot2, slot3, slot4)
 	}, uv1)
 end
 
-slot4.New = function(slot0, slot1, slot2, slot3)
+function slot4.New(slot0, slot1, slot2, slot3)
 	return uv0({
 		r = slot0 or 0,
 		g = slot1 or 0,
@@ -30,32 +30,32 @@ slot4.New = function(slot0, slot1, slot2, slot3)
 	}, uv1)
 end
 
-slot4.Set = function(slot0, slot1, slot2, slot3, slot4)
+function slot4.Set(slot0, slot1, slot2, slot3, slot4)
 	slot0.r = slot1
 	slot0.g = slot2
 	slot0.b = slot3
 	slot0.a = slot4 or 1
 end
 
-slot4.Get = function(slot0)
+function slot4.Get(slot0)
 	return slot0.r, slot0.g, slot0.b, slot0.a
 end
 
-slot4.Equals = function(slot0, slot1)
+function slot4.Equals(slot0, slot1)
 	return slot0.r == slot1.r and slot0.g == slot1.g and slot0.b == slot1.b and slot0.a == slot1.a
 end
 
-slot4.Lerp = function(slot0, slot1, slot2)
+function slot4.Lerp(slot0, slot1, slot2)
 	slot2 = uv0.Clamp01(slot2)
 
 	return uv1.New(slot0.r + slot2 * (slot1.r - slot0.r), slot0.g + slot2 * (slot1.g - slot0.g), slot0.b + slot2 * (slot1.b - slot0.b), slot0.a + slot2 * (slot1.a - slot0.a))
 end
 
-slot4.LerpUnclamped = function(slot0, slot1, slot2)
+function slot4.LerpUnclamped(slot0, slot1, slot2)
 	return uv0.New(slot0.r + slot2 * (slot1.r - slot0.r), slot0.g + slot2 * (slot1.g - slot0.g), slot0.b + slot2 * (slot1.b - slot0.b), slot0.a + slot2 * (slot1.a - slot0.a))
 end
 
-slot4.HSVToRGB = function(slot0, slot1, slot2, slot3)
+function slot4.HSVToRGB(slot0, slot1, slot2, slot3)
 	if slot3 then
 		-- Nothing
 	end
@@ -134,7 +134,7 @@ slot4.HSVToRGB = function(slot0, slot1, slot2, slot3)
 	return slot4
 end
 
-slot6 = function(slot0, slot1, slot2, slot3)
+function slot6(slot0, slot1, slot2, slot3)
 	if slot1 ~= 0 then
 		slot5 = 0
 		slot7 = 0
@@ -158,7 +158,7 @@ slot6 = function(slot0, slot1, slot2, slot3)
 	return 0, 0, slot4
 end
 
-slot4.RGBToHSV = function(slot0)
+function slot4.RGBToHSV(slot0)
 	if slot0.g < slot0.b and slot0.r < slot0.b then
 		return uv0(4, slot0.b, slot0.r, slot0.g)
 	elseif slot0.r < slot0.g then
@@ -168,11 +168,11 @@ slot4.RGBToHSV = function(slot0)
 	end
 end
 
-slot4.GrayScale = function(slot0)
+function slot4.GrayScale(slot0)
 	return 0.299 * slot0.r + 0.587 * slot0.g + 0.114 * slot0.b
 end
 
-slot4.NewHex = function(slot0)
+function slot4.NewHex(slot0)
 	slot1 = {}
 
 	for slot5 = 1, 4 do
@@ -186,23 +186,23 @@ slot4.NewHex = function(slot0)
 	return uv0.New(unpack(slot1))
 end
 
-slot4.ToHex = function(slot0, slot1)
+function slot4.ToHex(slot0, slot1)
 	return slot1 and string.format("%.2X%.2X%.2X%.2X", slot0.r * 255, slot0.g * 255, slot0.b * 255, slot0.a * 255) or string.format("%.2X%.2X%.2X", slot0.r * 255, slot0.g * 255, slot0.b * 255)
 end
 
-slot4.__tostring = function(slot0)
+function slot4.__tostring(slot0)
 	return string.format("RGBA(%f,%f,%f,%f)", slot0.r, slot0.g, slot0.b, slot0.a)
 end
 
-slot4.__add = function(slot0, slot1)
+function slot4.__add(slot0, slot1)
 	return uv0.New(slot0.r + slot1.r, slot0.g + slot1.g, slot0.b + slot1.b, slot0.a + slot1.a)
 end
 
-slot4.__sub = function(slot0, slot1)
+function slot4.__sub(slot0, slot1)
 	return uv0.New(slot0.r - slot1.r, slot0.g - slot1.g, slot0.b - slot1.b, slot0.a - slot1.a)
 end
 
-slot4.__mul = function(slot0, slot1)
+function slot4.__mul(slot0, slot1)
 	if uv0(slot1) == "number" then
 		return uv1.New(slot0.r * slot1, slot0.g * slot1, slot0.b * slot1, slot0.a * slot1)
 	elseif getmetatable(slot1) == uv1 then
@@ -210,71 +210,71 @@ slot4.__mul = function(slot0, slot1)
 	end
 end
 
-slot4.__div = function(slot0, slot1)
+function slot4.__div(slot0, slot1)
 	return uv0.New(slot0.r / slot1, slot0.g / slot1, slot0.b / slot1, slot0.a / slot1)
 end
 
-slot4.__eq = function(slot0, slot1)
+function slot4.__eq(slot0, slot1)
 	return slot0.r == slot1.r and slot0.g == slot1.g and slot0.b == slot1.b and slot0.a == slot1.a
 end
 
-slot5.red = function()
+function slot5.red()
 	return uv0.New(1, 0, 0, 1)
 end
 
-slot5.green = function()
+function slot5.green()
 	return uv0.New(0, 1, 0, 1)
 end
 
-slot5.blue = function()
+function slot5.blue()
 	return uv0.New(0, 0, 1, 1)
 end
 
-slot5.white = function()
+function slot5.white()
 	return uv0.New(1, 1, 1, 1)
 end
 
-slot5.black = function()
+function slot5.black()
 	return uv0.New(0, 0, 0, 1)
 end
 
-slot5.yellow = function()
+function slot5.yellow()
 	return uv0.New(1, 0.9215686, 0.01568628, 1)
 end
 
-slot5.cyan = function()
+function slot5.cyan()
 	return uv0.New(0, 1, 1, 1)
 end
 
-slot5.magenta = function()
+function slot5.magenta()
 	return uv0.New(1, 0, 1, 1)
 end
 
-slot5.gray = function()
+function slot5.gray()
 	return uv0.New(0.5, 0.5, 0.5, 1)
 end
 
-slot5.clear = function()
+function slot5.clear()
 	return uv0.New(0, 0, 0, 0)
 end
 
-slot5.buttonDisabled = function()
+function slot5.buttonDisabled()
 	return uv0.New(0.7843137254901961, 0.7843137254901961, 0.7843137254901961, 0.5)
 end
 
-slot5.ReisalinGold = function()
+function slot5.ReisalinGold()
 	return uv0.New(1, 0.90196, 0.50196, 1)
 end
 
-slot5.gamma = function(slot0)
+function slot5.gamma(slot0)
 	return uv0.New(uv1.LinearToGammaSpace(slot0.r), uv1.LinearToGammaSpace(slot0.g), uv1.LinearToGammaSpace(slot0.b), slot0.a)
 end
 
-slot5.linear = function(slot0)
+function slot5.linear(slot0)
 	return uv0.New(uv1.GammaToLinearSpace(slot0.r), uv1.GammaToLinearSpace(slot0.g), uv1.GammaToLinearSpace(slot0.b), slot0.a)
 end
 
-slot5.maxColorComponent = function(slot0)
+function slot5.maxColorComponent(slot0)
 	return uv0.Max(uv0.Max(slot0.r, slot0.g), slot0.b)
 end
 

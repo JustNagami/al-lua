@@ -1,10 +1,10 @@
 slot0 = class("WinConditionDisplayPanel", BaseSubView)
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "WinConditionDisplayPanel"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = slot0._tf
 	slot0.listTF = slot1:Find("window/bg/awards/awardList")
 	slot1 = slot0._tf
@@ -45,7 +45,7 @@ slot1 = {
 	"b"
 }
 
-slot0.UpdateList = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.UpdateList(slot0, slot1, slot2, slot3, slot4)
 	slot5 = nil
 
 	if #slot3 == 3 then
@@ -101,7 +101,7 @@ slot0.UpdateList = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.Enter = function(slot0, slot1)
+function slot0.Enter(slot0, slot1)
 	setText(slot0.winCondDesc, i18n(slot1:getConfig("win_condition_display")))
 	setText(slot0.loseCondDesc, i18n(slot1:getConfig("lose_condition_display")))
 
@@ -117,7 +117,7 @@ slot0.Enter = function(slot0, slot1)
 	Canvas.ForceUpdateCanvases()
 end
 
-slot0.UpdateRewardList = function(slot0, slot1)
+function slot0.UpdateRewardList(slot0, slot1)
 	if not pg.chapter_defense[slot1.id] then
 		return
 	end

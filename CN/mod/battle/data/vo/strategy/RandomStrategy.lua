@@ -10,7 +10,7 @@ slot3.STOP_DURATION_MIN = 10
 slot3.MOVE_DURATION_MAX = 60
 slot3.MOVE_DURATION_MIN = 20
 
-slot3.Ctor = function(slot0, slot1)
+function slot3.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0._stopCount = 0
@@ -19,18 +19,18 @@ slot3.Ctor = function(slot0, slot1)
 	slot0._speedCross = Vector3.zero
 end
 
-slot3.GetStrategyType = function(slot0)
+function slot3.GetStrategyType(slot0)
 	return uv0.Battle.BattleJoyStickAutoBot.RANDOM
 end
 
-slot3.Input = function(slot0, slot1, slot2)
+function slot3.Input(slot0, slot1, slot2)
 	uv0.super.Input(slot0, slot1, slot2)
 	slot0:shiftTick(0, 10)
 end
 
 slot4 = Vector3.up
 
-slot3._moveTick = function(slot0)
+function slot3._moveTick(slot0)
 	if slot0._moveCount <= 0 then
 		slot0:shiftTick(-1)
 	else
@@ -42,7 +42,7 @@ slot3._moveTick = function(slot0)
 	end
 end
 
-slot3._stopTick = function(slot0)
+function slot3._stopTick(slot0)
 	if slot0._stopCount <= 0 then
 		slot0:shiftTick(0, 10)
 	else
@@ -50,7 +50,7 @@ slot3._stopTick = function(slot0)
 	end
 end
 
-slot3.shiftTick = function(slot0, slot1, slot2)
+function slot3.shiftTick(slot0, slot1, slot2)
 	slot0._stopWeight = slot1 or slot0._stopWeight
 	slot0._moveWeight = slot2 or slot0._moveWeight
 
@@ -69,7 +69,7 @@ slot3.shiftTick = function(slot0, slot1, slot2)
 	end
 end
 
-slot3.generateTargetPoint = function(slot0)
+function slot3.generateTargetPoint(slot0)
 	slot1 = slot0._fleetVO:GetLeaderPersonality()
 	slot2 = slot1.front_rate
 	slot3 = slot1.rear_rate

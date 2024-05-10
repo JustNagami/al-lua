@@ -1,6 +1,6 @@
 slot0 = class("GuideStoryStep", import(".GuideStep"))
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0.stories = {}
@@ -10,11 +10,11 @@ slot0.Ctor = function(slot0, slot1)
 	end
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return GuideStep.TYPE_STORY
 end
 
-slot0.GetStories = function(slot0)
+function slot0.GetStories(slot0)
 	return slot0.stories
 end
 

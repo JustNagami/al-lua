@@ -1,6 +1,6 @@
 slot0 = class("CrusingDisplayActPage", import("view.base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bgBase = slot0._tf:Find("bg_base")
 	slot0.bgPay = slot0._tf:Find("bg_pay")
 	slot0.btnGoBase = slot0._tf:Find("AD/btn_go_base")
@@ -48,11 +48,11 @@ slot0.OnInit = function(slot0)
 	slot0.textPay = slot1:Find("text_pay")
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	slot0.isPay = slot0.activity.data2 == 1
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	setActive(slot0.textPay:Find("before"), not slot0.isPay)
 	setActive(slot0.textPay:Find("after"), slot0.isPay)
 	setActive(slot0.btnPay, not slot0.isPay)
@@ -83,7 +83,7 @@ slot0.OnUpdateFlush = function(slot0)
 	end)
 end
 
-slot0.OnHideFlush = function(slot0)
+function slot0.OnHideFlush(slot0)
 	if slot0.LTFirst then
 		LeanTween.cancel(slot0.LTFirst)
 
@@ -91,7 +91,7 @@ slot0.OnHideFlush = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0.LTFirst then
 		LeanTween.cancel(slot0.LTFirst)
 

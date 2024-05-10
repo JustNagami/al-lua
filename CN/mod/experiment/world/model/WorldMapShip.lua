@@ -10,24 +10,24 @@ slot0.EventHpRantChange = "WorldMapShip.EventHpRantChange"
 slot0.EventUpdateBuff = "WorldMapShip.EventUpdateBuff"
 slot0.EventUpdateBroken = "WorldMapShip.EventUpdateBroken"
 
-slot0.Build = function(slot0)
+function slot0.Build(slot0)
 	slot0.id = nil
 	slot0.hpRant = 10000
 	slot0.buffs = {}
 	slot0.triggers = {}
 end
 
-slot0.Setup = function(slot0, slot1)
+function slot0.Setup(slot0, slot1)
 	slot0.id = slot1.id
 	slot0.hpRant = slot1.hp_rant
 	slot0.buffs = WorldConst.ParsingBuffs(slot1.buff_list)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Clear()
 end
 
-slot0.GetImportWorldShipVO = function(slot0)
+function slot0.GetImportWorldShipVO(slot0)
 	return setmetatable({
 		triggers = slot0.triggers,
 		isBroken = slot0:IsBroken(),
@@ -42,7 +42,7 @@ slot0.GetImportWorldShipVO = function(slot0)
 				slot3 = slot1.limit
 
 				for slot8, slot9 in ipairs(slot0:getAllEquipments()) do
-					if slot9 and table.contains(slot3, slot9.config.id) then
+					if slot9 and table.contains(slot3, slot9:getConfig("id")) then
 						slot2 = true
 
 						break
@@ -74,7 +74,7 @@ slot0.GetImportWorldShipVO = function(slot0)
 	})
 end
 
-slot0.UpdateHpRant = function(slot0, slot1)
+function slot0.UpdateHpRant(slot0, slot1)
 	if slot0.hpRant ~= slot1 then
 		slot0.hpRant = slot1
 
@@ -82,23 +82,23 @@ slot0.UpdateHpRant = function(slot0, slot1)
 	end
 end
 
-slot0.IsValid = function(slot0)
+function slot0.IsValid(slot0)
 	return tobool(WorldConst.FetchRawShipVO(slot0.id))
 end
 
-slot0.IsAlive = function(slot0)
+function slot0.IsAlive(slot0)
 	return slot0.hpRant > 0
 end
 
-slot0.IsHpFull = function(slot0)
+function slot0.IsHpFull(slot0)
 	return slot0.hpRant == 10000
 end
 
-slot0.IsHpSafe = function(slot0)
+function slot0.IsHpSafe(slot0)
 	return slot0.hpRant >= 3000
 end
 
-slot0.GetBuffList = function(slot0)
+function slot0.GetBuffList(slot0)
 	slot1 = underscore.filter(underscore.values(slot0.buffs), function (slot0)
 		return slot0:GetFloor() > 0
 	end)
@@ -110,7 +110,7 @@ slot0.GetBuffList = function(slot0)
 	return slot1
 end
 
-slot0.GetBuff = function(slot0, slot1)
+function slot0.GetBuff(slot0, slot1)
 	if not slot0.buffs[slot1] then
 		slot0.buffs[slot1] = WorldBuff.New()
 
@@ -123,7 +123,7 @@ slot0.GetBuff = function(slot0, slot1)
 	return slot0.buffs[slot1]
 end
 
-slot0.AddBuff = function(slot0, slot1, slot2)
+function slot0.AddBuff(slot0, slot1, slot2)
 	assert(slot1 and slot2)
 	slot0:GetBuff(slot1):AddFloor(slot2)
 
@@ -134,7 +134,7 @@ slot0.AddBuff = function(slot0, slot1, slot2)
 	slot0:DispatchEvent(uv0.EventUpdateBuff)
 end
 
-slot0.RemoveBuff = function(slot0, slot1, slot2)
+function slot0.RemoveBuff(slot0, slot1, slot2)
 	slot3 = slot0:GetBuff(slot1)
 
 	if slot2 then
@@ -150,34 +150,34 @@ slot0.RemoveBuff = function(slot0, slot1, slot2)
 	slot0:DispatchEvent(uv0.EventUpdateBuff)
 end
 
-slot0.IsBuffMax = function(slot0, slot1)
+function slot0.IsBuffMax(slot0, slot1)
 	return WorldBuff.GetTemplate(slot1).buff_maxfloor <= slot0:GetBuff(slot1):GetFloor()
 end
 
-slot0.Rebirth = function(slot0)
+function slot0.Rebirth(slot0)
 	assert(slot0.hpRant <= 0)
 	slot0:UpdateHpRant(pg.gameset.world_death_hpfix.key_value)
 	slot0:AddBuff(WorldConst.BrokenBuffId, 1)
 end
 
-slot0.Repair = function(slot0)
+function slot0.Repair(slot0)
 	slot0:UpdateHpRant(10000)
 	slot0:RemoveBuff(WorldConst.BrokenBuffId)
 end
 
-slot0.Regenerate = function(slot0, slot1)
+function slot0.Regenerate(slot0, slot1)
 	slot0:UpdateHpRant(math.min(10000, slot0.hpRant + slot1))
 end
 
-slot0.RegenerateValue = function(slot0, slot1)
+function slot0.RegenerateValue(slot0, slot1)
 	slot0:UpdateHpRant(math.min(10000, slot0.hpRant + math.floor(slot1 / WorldConst.FetchShipVO(slot0.id):getProperties(nil, true, false)[AttributeType.Durability] * 10000)))
 end
 
-slot0.IsBroken = function(slot0)
+function slot0.IsBroken(slot0)
 	return slot0:GetBuff(WorldConst.BrokenBuffId):GetFloor() > 0
 end
 
-slot0.GetShipBuffProperties = function(slot0)
+function slot0.GetShipBuffProperties(slot0)
 	slot1 = {}
 	slot2 = {}
 
@@ -186,7 +186,7 @@ slot0.GetShipBuffProperties = function(slot0)
 	return slot1, slot2
 end
 
-slot0.GetShipPowerBuffProperties = function(slot0)
+function slot0.GetShipPowerBuffProperties(slot0)
 	slot1 = {}
 
 	WorldConst.ExtendPropertiesRatesFromBuffList(slot1, slot0:GetBuffList())

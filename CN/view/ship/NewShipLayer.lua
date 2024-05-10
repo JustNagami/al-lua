@@ -7,15 +7,15 @@ slot0.STAR_ANIMATION_DUR3 = 0.4
 slot0.STAR_ANIMATION_DUR4 = 0.26
 slot1 = 19
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewShipUI"
 end
 
-slot0.getLayerWeight = function(slot0)
+function slot0.getLayerWeight(slot0)
 	return LayerWeightConst.THIRD_LAYER
 end
 
-slot0.preload = function(slot0, slot1)
+function slot0.preload(slot0, slot1)
 	slot2 = slot0.contextData.ship
 
 	LoadSpriteAsync("newshipbg/bg_" .. slot2:rarity2bgPrintForGet(), function (slot0)
@@ -26,7 +26,7 @@ slot0.preload = function(slot0, slot1)
 	end)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0._animator = GetComponent(slot0._tf, "Animator")
 	slot0._canvasGroup = GetOrAddComponent(slot0._tf, typeof(CanvasGroup))
 	slot0._shake = slot0:findTF("shake_panel")
@@ -83,7 +83,7 @@ slot0.init = function(slot0)
 	slot0:PauseAnimation()
 end
 
-slot0.voice = function(slot0, slot1)
+function slot0.voice(slot0, slot1)
 	if not slot1 then
 		return
 	end
@@ -95,7 +95,7 @@ slot0.voice = function(slot0, slot1)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot1)
 end
 
-slot0.stopVoice = function(slot0)
+function slot0.stopVoice(slot0)
 	if slot0._currentVoice then
 		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(slot0._currentVoice)
 	end
@@ -103,7 +103,7 @@ slot0.stopVoice = function(slot0)
 	slot0._currentVoice = nil
 end
 
-slot0.setShip = function(slot0, slot1)
+function slot0.setShip(slot0, slot1)
 	slot0:recyclePainting()
 
 	slot0._shipVO = slot1
@@ -349,12 +349,12 @@ slot0.setShip = function(slot0, slot1)
 	end)
 end
 
-slot0.PauseAnimation = function(slot0)
+function slot0.PauseAnimation(slot0)
 	slot0._canvasGroup.alpha = 0
 	slot0._animator.enabled = false
 end
 
-slot0.ResumeAnimation = function(slot0)
+function slot0.ResumeAnimation(slot0)
 	slot0._canvasGroup.alpha = 1
 	slot0._animator.enabled = true
 	slot0.isOpeningEnd = true
@@ -364,7 +364,7 @@ slot0.ResumeAnimation = function(slot0)
 	end
 end
 
-slot0.DisplayWord = function(slot0)
+function slot0.DisplayWord(slot0)
 	slot1 = nil
 	slot2 = ""
 	slot3 = nil
@@ -395,11 +395,11 @@ slot0.DisplayWord = function(slot0)
 	end)
 end
 
-slot0.updateShip = function(slot0, slot1)
+function slot0.updateShip(slot0, slot1)
 	slot0._shipVO = slot1
 end
 
-slot0.switch2Property = function(slot0)
+function slot0.switch2Property(slot0)
 	setActive(slot0.newTF, false)
 	setActive(slot0._dialogue, false)
 	setActive(slot0.rarityTF, false)
@@ -414,7 +414,7 @@ slot0.switch2Property = function(slot0)
 	slot0:DisplayNewShipDocumentView()
 end
 
-slot0.showExitTip = function(slot0, slot1)
+function slot0.showExitTip(slot0, slot1)
 	slot2 = slot0._shipVO:GetLockState()
 
 	if slot0._shipVO.virgin and slot2 == Ship.LOCK_STATE_UNLOCK then
@@ -454,16 +454,16 @@ slot0.showExitTip = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateLockButton = function(slot0, slot1)
+function slot0.UpdateLockButton(slot0, slot1)
 	setActive(slot0._lockBtn, slot1 ~= Ship.LOCK_STATE_LOCK)
 	setActive(slot0._unlockBtn, slot1 ~= Ship.LOCK_STATE_UNLOCK)
 end
 
-slot0.updateLockTF = function(slot0, slot1)
+function slot0.updateLockTF(slot0, slot1)
 	setActive(slot0._lockTF, not slot1)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._lockBtn, function ()
 		uv0:StopAutoExitTimer()
 		uv0:emit(NewShipMediator.ON_LOCK, {
@@ -527,7 +527,7 @@ slot0.didEnter = function(slot0)
 	pg.SystemGuideMgr.GetInstance():Play(slot0)
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if slot0.inAnimating then
 		return
 	end
@@ -544,7 +544,7 @@ slot0.onBackPressed = function(slot0)
 	triggerButton(slot0.clickTF)
 end
 
-slot0.paintView = function(slot0)
+function slot0.paintView(slot0)
 	slot1 = {}
 	slot2 = slot0._shake.childCount
 	slot3 = 0
@@ -617,7 +617,7 @@ slot0.paintView = function(slot0)
 		uv0:hidePaintView()
 	end, SFX_CANCEL)
 
-	uv0.hidePaintView = function(slot0, slot1)
+	function uv0.hidePaintView(slot0, slot1)
 		if not slot1 and not uv0 then
 			return
 		end
@@ -646,14 +646,16 @@ slot0.paintView = function(slot0)
 	end
 end
 
-slot0.recyclePainting = function(slot0)
+function slot0.recyclePainting(slot0)
 	if slot0._shipVO then
 		retPaintingPrefab(slot0._paintingTF, slot0._shipVO:getPainting())
 		retPaintingPrefab(slot0._paintingShadowTF, slot0._shipVO:getPainting())
+
+		slot0._shipVO = nil
 	end
 end
 
-slot0.starsAnimation = function(slot0)
+function slot0.starsAnimation(slot0)
 	slot0.inAnimating = true
 
 	if slot0._shipVO:getMaxStar() >= 6 and PlayerPrefs.GetInt(RARE_SHIP_VIBRATE, 1) > 0 then
@@ -792,7 +794,7 @@ slot0.starsAnimation = function(slot0)
 	end)
 end
 
-slot0.playOpening = function(slot0, slot1)
+function slot0.playOpening(slot0, slot1)
 	if slot0._shipVO:isMetaShip() and not getProxy(ContextProxy):getContextByMediator(BuildShipMediator) then
 		if slot1 then
 			slot1()
@@ -819,11 +821,11 @@ slot0.playOpening = function(slot0, slot1)
 	end
 end
 
-slot0.ClearTweens = function(slot0, slot1)
+function slot0.ClearTweens(slot0, slot1)
 	slot0:cleanManagedTween(true)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
 	slot0:StopAutoExitTimer()
 	slot0:DestroyNewShipDocumentView()
@@ -869,7 +871,7 @@ slot0.willExit = function(slot0)
 	cameraPaintViewAdjust(false)
 end
 
-slot0.DisplayNewShipDocumentView = function(slot0)
+function slot0.DisplayNewShipDocumentView(slot0)
 	slot0.newShipDocumentView = NewShipDocumentView.New(slot0._shake:Find("ForNotch"), slot0.event, slot0.contextData)
 
 	slot0.newShipDocumentView:Load()
@@ -883,13 +885,13 @@ slot0.DisplayNewShipDocumentView = function(slot0)
 	slot0.newShipDocumentView:ActionInvoke("RefreshUI")
 end
 
-slot0.DestroyNewShipDocumentView = function(slot0)
+function slot0.DestroyNewShipDocumentView(slot0)
 	if slot0.newShipDocumentView and slot0.newShipDocumentView:CheckState(BaseSubView.STATES.INITED) then
 		slot0.newShipDocumentView:Destroy()
 	end
 end
 
-slot0.StopAutoExitTimer = function(slot0)
+function slot0.StopAutoExitTimer(slot0)
 	if not slot0.autoExitTimer then
 		return
 	end

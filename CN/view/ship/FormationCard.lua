@@ -3,7 +3,7 @@ slot1 = 0
 slot2 = 1
 slot3 = 2
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.go = slot1
 	slot0.tr = slot1.transform
 	slot0.content = slot0.tr:Find("content")
@@ -13,7 +13,6 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.lvTxt = slot0.detailTF:Find("top/level"):GetComponent(typeof(Text))
 	slot0.shipType = slot0.detailTF:Find("top/type")
 	slot0.propsTr = slot0.detailTF:Find("info")
-	slot0.propsTr1 = slot0.detailTF:Find("info1")
 	slot0.nameTxt = slot0.detailTF:Find("name_mask/name")
 	slot0.frame = slot0.content:Find("front/frame")
 	slot0.UIlist = UIItemList.New(slot0.content:Find("front/stars"), slot0.content:Find("front/stars/star_tpl"))
@@ -21,13 +20,12 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.proposeMark = slot0.content:Find("front/propose")
 	slot0.otherBg = slot0.content:Find("front/bg_other")
 
-	setActive(slot0.propsTr1, false)
 	setActive(slot0.shipState, false)
 
 	slot0.loader = AutoLoader.New()
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	if slot1 then
 		setActive(slot0.content, true)
 
@@ -39,7 +37,7 @@ slot0.update = function(slot0, slot1)
 	end
 end
 
-slot0.flush = function(slot0)
+function slot0.flush(slot0)
 	slot1 = slot0.shipVO
 	slot0.lvTxt.text = "Lv." .. slot1.level
 	slot3 = slot1:getStar()
@@ -66,7 +64,7 @@ slot0.flush = function(slot0)
 	setImageSprite(slot0.shipType, GetSpriteFromAtlas("shiptype", shipType2print(slot0.shipVO:getShipType())))
 end
 
-slot0.updateProps = function(slot0, slot1)
+function slot0.updateProps(slot0, slot1)
 	for slot5 = 0, 2 do
 		slot6 = slot0.propsTr:GetChild(slot5)
 
@@ -81,22 +79,7 @@ slot0.updateProps = function(slot0, slot1)
 	end
 end
 
-slot0.updateProps1 = function(slot0, slot1)
-	for slot5 = 0, 2 do
-		slot6 = slot0.propsTr1:GetChild(slot5)
-
-		if slot5 < #slot1 then
-			slot6.gameObject:SetActive(true)
-
-			slot6:GetChild(0):GetComponent("Text").text = slot1[slot5 + 1][1]
-			slot6:GetChild(1):GetComponent("Text").text = slot1[slot5 + 1][2]
-		else
-			slot6.gameObject:SetActive(false)
-		end
-	end
-end
-
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	if slot0.shipVO then
 		retPaintingPrefab(slot0.paintingTr, slot1:getPainting())
 	end

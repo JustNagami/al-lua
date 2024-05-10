@@ -1,15 +1,15 @@
 slot0 = class("NewServerGiftPage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewServerGiftPage"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:initData()
 	slot0:initUI()
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.player = getProxy(PlayerProxy):getData()
 	slot0.activity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_GIFT)
 	slot0.goodIdList = slot0.activity:getConfig("config_data")
@@ -17,7 +17,7 @@ slot0.initData = function(slot0)
 	slot0:updateGiftGoodsVOList()
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	slot0.content = slot0:findTF("scrollrect/content")
 	slot0.soldOutTF = slot0:findTF("sold_out")
 
@@ -39,7 +39,7 @@ slot0.initUI = function(slot0)
 	slot0.giftItemList:align(#slot0.giftGoodsVOList)
 end
 
-slot0.initGift = function(slot0, slot1)
+function slot0.initGift(slot0, slot1)
 	slot2 = ChargeCard.New(slot1)
 
 	onButton(slot0, slot2.tr, function ()
@@ -49,7 +49,7 @@ slot0.initGift = function(slot0, slot1)
 	slot0.chargeCardTable[slot1] = slot2
 end
 
-slot0.updateGift = function(slot0, slot1, slot2)
+function slot0.updateGift(slot0, slot1, slot2)
 	if not slot0.chargeCardTable[slot1] then
 		slot0.initGift(slot1)
 
@@ -61,14 +61,14 @@ slot0.updateGift = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.confirm = function(slot0, slot1)
+function slot0.confirm(slot0, slot1)
 	if not slot1 then
 		return
 	end
 
 	slot2 = {}
 
-	if type(pg.item_data_statistics[Clone(slot1):getConfig("effect_args")[1]].display_icon) == "table" then
+	if type(Item.getConfigData(Clone(slot1):getConfig("effect_args")[1]).display_icon) == "table" then
 		for slot9, slot10 in ipairs(slot5) do
 			table.insert(slot2, {
 				type = slot10[1],
@@ -99,17 +99,17 @@ slot0.confirm = function(slot0, slot1)
 	})
 end
 
-slot0.onUpdatePlayer = function(slot0, slot1)
+function slot0.onUpdatePlayer(slot0, slot1)
 	slot0.player = slot1
 end
 
-slot0.onUpdateGift = function(slot0)
+function slot0.onUpdateGift(slot0)
 	slot0:updateGiftGoodsVOList()
 	slot0.giftItemList:align(#slot0.giftGoodsVOList)
 	setActive(slot0.soldOutTF, #slot0.giftGoodsVOList == 0)
 end
 
-slot0.updateGiftGoodsVOList = function(slot0)
+function slot0.updateGiftGoodsVOList(slot0)
 	slot0.normalList = getProxy(ShopsProxy):GetNormalList()
 	slot0.giftGoodsVOList = {}
 	slot1 = pg.shop_template
@@ -133,7 +133,7 @@ slot0.updateGiftGoodsVOList = function(slot0)
 	slot0.giftGoodsVOList = slot2
 end
 
-slot0.isTip = function(slot0)
+function slot0.isTip(slot0)
 	if not slot0.playerId then
 		slot0.playerId = getProxy(PlayerProxy):getData().id
 	end
@@ -141,7 +141,7 @@ slot0.isTip = function(slot0)
 	return PlayerPrefs.GetInt("newserver_gift_first_" .. slot0.playerId) == 0
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
 return slot0

@@ -1,10 +1,10 @@
 slot0 = class("DestroyConfirmView", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "StoreHouseDestroyConfirmView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = slot0._tf
 	slot0.destroyBonusList = slot1:Find("frame/bg/scrollview/list")
 	slot1 = slot0.destroyBonusList
@@ -30,28 +30,28 @@ slot0.OnInit = function(slot0)
 	end, SFX_UI_EQUIPMENT_RESOLVE)
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	setActive(slot0._tf, true)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 	setActive(slot0._tf, false)
 end
 
-slot0.SetConfirmBtnCB = function(slot0, slot1)
+function slot0.SetConfirmBtnCB(slot0, slot1)
 	slot0.confirmBtnCB = slot1
 end
 
-slot0.DisplayDestroyBonus = function(slot0, slot1)
+function slot0.DisplayDestroyBonus(slot0, slot1)
 	slot0.selectedIds = slot1
 	slot2 = {}
 	slot3 = 0
 
 	for slot7, slot8 in ipairs(slot0.selectedIds) do
-		if pg.equip_data_template[slot8[1]] then
-			slot10 = slot9.destory_item or {}
+		if Equipment.CanInBag(slot8[1]) then
+			slot10 = Equipment.getConfigData(slot8[1]).destory_item or {}
 			slot3 = slot3 + (slot9.destory_gold or 0) * slot8[2]
 
 			for slot15, slot16 in ipairs(slot10) do
@@ -99,7 +99,7 @@ slot0.DisplayDestroyBonus = function(slot0, slot1)
 
 			updateDrop(slot2, slot3)
 
-			slot4, slot5 = contentWrap(slot3.cfg.name, 10, 2)
+			slot4, slot5 = contentWrap(slot3:getConfig("name"), 10, 2)
 
 			if slot4 then
 				slot5 = slot5 .. "..."
@@ -108,10 +108,10 @@ slot0.DisplayDestroyBonus = function(slot0, slot1)
 			setText(slot2:Find("name"), slot5)
 			onButton(uv1, slot2, function ()
 				if uv0.type == DROP_TYPE_RESOURCE or uv0.type == DROP_TYPE_ITEM then
-					uv1:emit(BaseUI.ON_ITEM, uv0.cfg.id)
+					uv1:emit(BaseUI.ON_ITEM, uv0:getConfig("id"))
 				elseif uv0.type == DROP_TYPE_EQUIP then
 					uv1:emit(BaseUI.ON_EQUIPMENT, {
-						equipmentId = uv0.cfg.id,
+						equipmentId = uv0:getConfig("id"),
 						type = EquipmentInfoMediator.TYPE_DISPLAY
 					})
 				end

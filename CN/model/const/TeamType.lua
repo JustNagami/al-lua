@@ -16,7 +16,8 @@ slot0.VanguardShipType = {
 	ShipType.LeiXun,
 	ShipType.ChaoXun,
 	ShipType.Yunshu,
-	ShipType.DaoQuV
+	ShipType.DaoQuV,
+	ShipType.FengFanV
 }
 slot0.MainShipType = {
 	ShipType.ZhanXun,
@@ -26,7 +27,8 @@ slot0.MainShipType = {
 	ShipType.HangZhan,
 	ShipType.WeiXiu,
 	ShipType.ZhongPao,
-	ShipType.DaoQuM
+	ShipType.DaoQuM,
+	ShipType.FengFanM
 }
 slot0.SubShipType = {
 	ShipType.QianTing,
@@ -37,7 +39,7 @@ slot0.VanguardMax = 3
 slot0.MainMax = 3
 slot0.SubmarineMax = 3
 
-slot0.GetTeamShipMax = function(slot0)
+function slot0.GetTeamShipMax(slot0)
 	if slot0 == uv0.Vanguard then
 		return uv0.VanguardMax
 	elseif slot0 == uv0.Main then
@@ -54,10 +56,12 @@ slot0.TeamPos = {
 	REAR = "Rear",
 	CONSORT = "Consort",
 	SUB_LEADER = "SubLeader",
-	SUB_CONSORT = "SubConsort"
+	SUB_CONSORT = "SubConsort",
+	UPPER_CONSORT = "UpperConsort",
+	LOWER_CONSORT = "LowerConsort"
 }
 
-slot0.GetShipTypeListFromTeam = function(slot0)
+function slot0.GetShipTypeListFromTeam(slot0)
 	return uv0[slot0]
 end
 
@@ -73,7 +77,7 @@ for slot6, slot7 in pairs({
 	end
 end
 
-slot0.GetTeamFromShipType = function(slot0)
+function slot0.GetTeamFromShipType(slot0)
 	return uv0[slot0]
 end
 

@@ -7,19 +7,19 @@ slot0.UNLOCK_EQUIPMENT_SKIN_POS = {
 	5
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ShipEquipView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:InitEquipment()
 end
 
-slot0.SetShareData = function(slot0, slot1)
+function slot0.SetShareData(slot0, slot1)
 	slot0.shareData = slot1
 end
 
-slot0.GetShipVO = function(slot0)
+function slot0.GetShipVO(slot0)
 	if slot0.shareData and slot0.shareData.shipVO then
 		return slot0.shareData.shipVO
 	end
@@ -27,11 +27,11 @@ slot0.GetShipVO = function(slot0)
 	return nil
 end
 
-slot0.UpdateUI = function(slot0)
+function slot0.UpdateUI(slot0)
 	slot0:UpdateEquipments(slot0:GetShipVO())
 end
 
-slot0.InitEquipment = function(slot0)
+function slot0.InitEquipment(slot0)
 	slot0.mainPanel = slot0._parentTf.parent
 	slot0.equipRCon = slot0._parentTf:Find("equipment_r_container")
 	slot0.equipLCon = slot0._parentTf:Find("equipment_l_container")
@@ -73,7 +73,7 @@ slot0.InitEquipment = function(slot0)
 	slot0.onSelected = false
 end
 
-slot0.InitEvent = function(slot0)
+function slot0.InitEvent(slot0)
 	onButton(slot0, slot0.equipSkinBtn, function ()
 		slot0, slot1 = ShipStatus.ShipStatusCheck("onModify", uv0:GetShipVO())
 
@@ -93,7 +93,7 @@ slot0.InitEvent = function(slot0)
 	end
 end
 
-slot0.OnSelected = function(slot0, slot1)
+function slot0.OnSelected(slot0, slot1)
 	slot2 = pg.UIMgr.GetInstance()
 
 	if slot1 then
@@ -101,7 +101,7 @@ slot0.OnSelected = function(slot0, slot1)
 		slot4 = {}
 		slot5 = {}
 
-		slot6 = function(slot0, slot1)
+		function slot6(slot0, slot1)
 			eachChild(slot0, function (slot0)
 				table.insert(uv0, slot0)
 			end)
@@ -140,7 +140,7 @@ slot0.OnSelected = function(slot0, slot1)
 	slot0.onSelected = slot1
 end
 
-slot0.UpdateEquipments = function(slot0, slot1)
+function slot0.UpdateEquipments(slot0, slot1)
 	slot2 = slot1:getActiveEquipments()
 
 	for slot6, slot7 in ipairs(slot1.equipments) do
@@ -172,7 +172,7 @@ slot0.UpdateEquipments = function(slot0, slot1)
 	slot0:UpdateSpWeaponPanel(slot1:GetSpWeapon())
 end
 
-slot0.UpdateEquipmentPanel = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateEquipmentPanel(slot0, slot1, slot2, slot3)
 	slot4 = slot0.equipmentPanels[slot1]
 	slot5 = findTF(slot4, "info")
 	slot7 = findTF(slot5, "efficiency")
@@ -233,11 +233,11 @@ slot0.UpdateEquipmentPanel = function(slot0, slot1, slot2, slot3)
 
 		updateEquipment(slot0:findTF("IconTpl", slot5), slot2)
 
-		slot16 = slot2.config.name
+		slot16 = slot2:getConfig("name")
 
-		if slot2.config.ammo_icon[1] then
+		if slot2:getConfig("ammo_icon")[1] then
 			setActive(findTF(slot5, "cont/icon_ammo"), true)
-			setImageSprite(findTF(slot5, "cont/icon_ammo"), GetSpriteFromAtlas("ammo", slot2.config.ammo_icon[1]))
+			setImageSprite(findTF(slot5, "cont/icon_ammo"), GetSpriteFromAtlas("ammo", slot2:getConfig("ammo_icon")[1]))
 		else
 			setActive(findTF(slot5, "cont/icon_ammo"), false)
 		end
@@ -250,7 +250,7 @@ slot0.UpdateEquipmentPanel = function(slot0, slot1, slot2, slot3)
 		slot18 = underscore.filter(slot2:GetPropertiesInfo().attrs, function (slot0)
 			return not slot0.type or slot0.type ~= AttributeType.AntiSiren
 		end)
-		slot20 = slot2.config.skill_id[1] and slot2:isDevice() and {
+		slot20 = slot2:getConfig("skill_id")[1] and slot2:isDevice() and {
 			1,
 			2,
 			5
@@ -332,7 +332,7 @@ slot0.UpdateEquipmentPanel = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.equipmentCheck = function(slot0, slot1)
+function slot0.equipmentCheck(slot0, slot1)
 	if not slot0:GetShipVO() then
 		return false
 	end
@@ -364,7 +364,7 @@ slot0.equipmentCheck = function(slot0, slot1)
 		slot8 = #slot7
 
 		while slot8 > 0 do
-			if not slot7[slot8] or not table.contains(slot2, slot9.config.type) then
+			if not slot7[slot8] or not table.contains(slot2, slot9:getConfig("type")) then
 				table.remove(slot7, slot8)
 			end
 
@@ -380,7 +380,7 @@ slot0.equipmentCheck = function(slot0, slot1)
 				slot10 = 1
 
 				for slot14, slot15 in ipairs(slot4) do
-					if not table.contains(slot9.config.label, slot15) then
+					if not table.contains(slot9:getConfig("label"), slot15) then
 						slot10 = slot10 * 0
 					end
 				end
@@ -399,9 +399,9 @@ slot0.equipmentCheck = function(slot0, slot1)
 	return #slot7 > 0
 end
 
-slot0.equipmentEnhance = function(slot0, slot1)
+function slot0.equipmentEnhance(slot0, slot1)
 	slot2 = 1
-	slot3 = slot1.config.label
+	slot3 = slot1:getConfig("label")
 
 	if slot0.label then
 		slot2 = 1
@@ -418,7 +418,7 @@ slot0.equipmentEnhance = function(slot0, slot1)
 	return slot2 == 1
 end
 
-slot0.UpdateSpWeaponPanel = function(slot0, slot1)
+function slot0.UpdateSpWeaponPanel(slot0, slot1)
 	slot2 = slot0.equipmentB1
 
 	setActive(findTF(slot2, "info"), slot1)
@@ -505,7 +505,7 @@ slot0.UpdateSpWeaponPanel = function(slot0, slot1)
 	end, SFX_UI_DOCKYARD_EQUIPADD)
 end
 
-slot0.switch2EquipmentSkinPage = function(slot0)
+function slot0.switch2EquipmentSkinPage(slot0)
 	if slot0.equipSkinLogicPanel:isTweening() then
 		return
 	end
@@ -519,7 +519,7 @@ slot0.switch2EquipmentSkinPage = function(slot0)
 	slot0.equipSkinLogicPanel:updateAll(slot0:GetShipVO())
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	setParent(slot0.equipmentR, slot0._tf)
 	setParent(slot0.equipmentL, slot0._tf)
 	setParent(slot0.equipmentB, slot0._tf)

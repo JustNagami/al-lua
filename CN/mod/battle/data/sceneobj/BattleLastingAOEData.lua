@@ -5,7 +5,7 @@ slot2 = class("BattleLastingAOEData", slot0.Battle.BattleAOEData)
 slot0.Battle.BattleLastingAOEData = slot2
 slot2.__name = "BattleLastingAOEData"
 
-slot2.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot2.Ctor(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	uv0.super.Ctor(slot0, slot1, slot2, slot3, slot5)
 
 	slot0._exitCldFunc = slot4
@@ -17,7 +17,7 @@ slot2.Ctor = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot0._handledList = {}
 end
 
-slot2.Dispose = function(slot0)
+function slot2.Dispose(slot0)
 	for slot4, slot5 in pairs(slot0._handledList) do
 		slot0._exitCldFunc(slot4)
 
@@ -30,7 +30,7 @@ slot2.Dispose = function(slot0)
 	uv0.super.Dispose(slot0)
 end
 
-slot2.Settle = function(slot0)
+function slot2.Settle(slot0)
 	slot1 = {}
 	slot2 = {}
 
@@ -55,7 +55,7 @@ slot2.Settle = function(slot0)
 	end
 end
 
-slot2.frequentlySettle = function(slot0)
+function slot2.frequentlySettle(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(slot0._cldObjList) do
@@ -78,14 +78,10 @@ slot2.frequentlySettle = function(slot0)
 	slot0._cldComponent:GetCldData().func(slot0._cldObjList)
 end
 
-slot2.ForceExit = function(slot0, slot1)
+function slot2.ForceExit(slot0, slot1)
 	slot2 = nil
 
-	print(slot1)
-
 	for slot6, slot7 in pairs(slot0._handledList) do
-		print(slot6.UID)
-
 		if slot6.UID == slot1 then
 			slot2 = slot6
 
@@ -93,12 +89,7 @@ slot2.ForceExit = function(slot0, slot1)
 		end
 	end
 
-	if slot0.fff then
-		print("ooooooo")
-	end
-
 	if slot2 then
-		print("eeeeeee")
 		slot0._exitCldFunc(slot2)
 
 		slot0._handledList[slot2] = nil

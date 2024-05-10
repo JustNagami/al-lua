@@ -36,7 +36,7 @@ slot0.Fields = {
 	destGridId = "number"
 }
 
-slot0.Apply = function(slot0)
+function slot0.Apply(slot0)
 	assert(not slot0.applied, "current op has been applied.")
 
 	slot0.applied = true
@@ -239,7 +239,7 @@ slot0.Apply = function(slot0)
 	end
 end
 
-slot0.ApplyAttachmentUpdate = function(slot0)
+function slot0.ApplyAttachmentUpdate(slot0)
 	slot1 = getProxy(WorldProxy)
 	slot3 = nowWorld():GetActiveMap()
 
@@ -262,7 +262,7 @@ slot0.ApplyAttachmentUpdate = function(slot0)
 	end
 end
 
-slot0.ApplyNetUpdate = function(slot0)
+function slot0.ApplyNetUpdate(slot0)
 	slot1 = getProxy(WorldProxy)
 	slot3 = nowWorld():GetActiveMap()
 
@@ -308,7 +308,7 @@ slot0.ApplyNetUpdate = function(slot0)
 	end
 end
 
-slot0.AddCallbackWhenApplied = function(slot0, slot1)
+function slot0.AddCallbackWhenApplied(slot0, slot1)
 	if not slot0.callbacksWhenApplied then
 		slot0.callbacksWhenApplied = {}
 	end

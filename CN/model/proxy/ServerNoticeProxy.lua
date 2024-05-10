@@ -3,7 +3,7 @@ slot0.SERVER_NOTICES_UPDATE = "server notices update"
 slot0.KEY_NEWLY_ID = "server_notice.newly_id"
 slot0.KEY_STOP_REMIND = "server_notice.dont_remind"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0.data = {}
 
 	slot0:on(11300, function (slot0)
@@ -32,7 +32,65 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.getServerNotices = function(slot0, slot1)
+function slot0.testData(slot0, slot1)
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "DEWENJUN layer test",
+		title_image = "<config type = 2 param = {'OTHERWORLD_MAP', {openTerminal = true,terminalPage = 2, testData = asddws}} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1301,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(1)
+	}))
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "DEWENJUN test",
+		title_image = "<config type = 2 param = {'OTHERWORLD_MAP'} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1302,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(2)
+	}))
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "URL test",
+		title_image = "<config type = 1 param = 'https://www.google.com' />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1303,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(3)
+	}))
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "URL test",
+		title_image = "<config type = 2 param = {'scene court yard', {OpenShop = true}} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1304,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(4)
+	}))
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "URL test",
+		title_image = "<config type = 3 param = 5292 />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1305,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(4)
+	}))
+end
+
+function slot0.getServerNotices(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(slot0.data) do
@@ -44,7 +102,7 @@ slot0.getServerNotices = function(slot0, slot1)
 	return slot2
 end
 
-slot0.needAutoOpen = function(slot0)
+function slot0.needAutoOpen(slot0)
 	slot1 = true
 
 	if PlayerPrefs.HasKey(uv0.KEY_STOP_REMIND) then
@@ -63,7 +121,7 @@ slot0.needAutoOpen = function(slot0)
 	return slot1
 end
 
-slot0.setStopRemind = function(slot0, slot1)
+function slot0.setStopRemind(slot0, slot1)
 	if slot1 then
 		PlayerPrefs.SetInt(uv0.KEY_STOP_REMIND, pg.TimeMgr.GetInstance():GetServerTime())
 	else
@@ -73,17 +131,17 @@ slot0.setStopRemind = function(slot0, slot1)
 	PlayerPrefs.Save()
 end
 
-slot0.getStopRemind = function(slot0)
+function slot0.getStopRemind(slot0)
 	return PlayerPrefs.HasKey(uv0.KEY_STOP_REMIND)
 end
 
-slot0.setStopNewTip = function(slot0)
+function slot0.setStopNewTip(slot0)
 	PlayerPrefs.SetInt(uv0.KEY_NEWLY_ID, slot0:getUniqueCode())
 	PlayerPrefs.Save()
 	slot0:sendNotification(uv0.SERVER_NOTICES_UPDATE)
 end
 
-slot0.hasNewNotice = function(slot0)
+function slot0.hasNewNotice(slot0)
 	if PlayerPrefs.HasKey(uv0.KEY_NEWLY_ID) and PlayerPrefs.GetInt(uv0.KEY_NEWLY_ID) == slot0:getUniqueCode() then
 		return false
 	end
@@ -91,7 +149,7 @@ slot0.hasNewNotice = function(slot0)
 	return true
 end
 
-slot0.getUniqueCode = function(slot0)
+function slot0.getUniqueCode(slot0)
 	return _.reduce(slot0.data, 0, function (slot0, slot1)
 		return slot0 + slot1:getUniqueCode()
 	end)

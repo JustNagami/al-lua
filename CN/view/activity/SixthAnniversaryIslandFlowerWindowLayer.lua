@@ -1,10 +1,10 @@
 slot0 = class("SixthAnniversaryIslandFlowerWindowLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SixthAnniversaryIslandFlowerWindow"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:BlurPanel(slot0._tf)
@@ -37,10 +37,10 @@ slot0.init = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 

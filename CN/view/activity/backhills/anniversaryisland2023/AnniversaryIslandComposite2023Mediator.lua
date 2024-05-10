@@ -3,7 +3,7 @@ slot0.OPEN_FORMULA = "OPEN_FORMULA"
 slot0.OPEN_STOREHOUSE = "AnniversaryIslandComposite2023Mediator:OPEN_STOREHOUSE"
 slot0.OPEN_UPGRADE_PANEL = "AnniversaryIslandComposite2023Mediator:OPEN_UPGRADE_PANEL"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(GAME.WORKBENCH_COMPOSITE, function (slot0, slot1, slot2)
 		uv0:sendNotification(GAME.WORKBENCH_COMPOSITE, {
 			formulaId = slot1,
@@ -37,7 +37,7 @@ slot0.register = function(slot0)
 	getProxy(SettingsProxy):SetWorkbenchDailyTip()
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.WORKBENCH_COMPOSITE_DONE,
 		ActivityProxy.ACTIVITY_UPDATED,
@@ -45,7 +45,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.WORKBENCH_COMPOSITE_DONE then
@@ -64,7 +64,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 end
 
 return slot0

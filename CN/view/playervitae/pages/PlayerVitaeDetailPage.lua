@@ -1,15 +1,15 @@
 slot0 = class("PlayerVitaeDetailPage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "PlayerVitaeDetailPage"
 end
 
-slot0.OnPlayerNameChange = function(slot0, slot1)
+function slot0.OnPlayerNameChange(slot0, slot1)
 	slot0.player = slot1
 	slot0.nameTxt.text = slot1.name
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.medalTpl = slot0:findTF("medalList/tpl")
 	slot0.emblemIcon = slot0:findTF("power/medal"):GetComponent(typeof(Image))
 	slot0.emblemTxt = slot0:findTF("power/medal_text"):GetComponent(typeof(Image))
@@ -43,21 +43,16 @@ slot0.OnLoaded = function(slot0)
 	slot0:MatchResolution()
 end
 
-slot0.PreCalcAspect = function(slot0, slot1)
+function slot0.PreCalcAspect(slot0, slot1)
 	return slot0.rect.height / slot1
 end
 
-slot0.MatchResolution = function(slot0)
-	print(slot0._parentTf.rect.height, slot0._tf.rect.height)
-
+function slot0.MatchResolution(slot0)
 	slot1 = uv0.PreCalcAspect(slot0._parentTf, slot0._tf.rect.height)
-
-	print(slot1)
-
 	slot0._tf.localScale = Vector3(slot1, slot1, 1)
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0.modityNameBtn, function ()
 		slot0, slot1 = uv0.player:canModifyName()
 
@@ -78,10 +73,7 @@ slot0.OnInit = function(slot0)
 	onButton(slot0, slot0.attireBtn, function ()
 		uv0:emit(PlayerVitaeMediator.ON_ATTIRE)
 	end, SFX_PANEL)
-
-	slot4 = getProxy(AttireProxy)
-
-	setActive(slot0.attireBtnTip, _.any(slot4:needTip(), function (slot0)
+	setActive(slot0.attireBtnTip, _.any(getProxy(AttireProxy):needTip(), function (slot0)
 		return slot0 == true
 	end))
 	onInputEndEdit(slot0, slot0.inputField, function (slot0)
@@ -100,9 +92,10 @@ slot0.OnInit = function(slot0)
 
 		uv0:emit(PlayerVitaeMediator.CHANGE_MANIFESTO, slot0)
 	end)
+	slot0._tf:SetAsFirstSibling()
 end
 
-slot0.Show = function(slot0, slot1, slot2)
+function slot0.Show(slot0, slot1, slot2)
 	uv0.super.Show(slot0)
 
 	slot0.player = slot1
@@ -117,7 +110,7 @@ slot0.Show = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.DoEnterAnimation = function(slot0)
+function slot0.DoEnterAnimation(slot0)
 	for slot4, slot5 in ipairs(slot0.animPanels) do
 		slot6 = slot5.localPosition.x
 		slot5.localPosition = Vector3(slot6 + 800, slot5.localPosition.y, 0)
@@ -126,7 +119,7 @@ slot0.DoEnterAnimation = function(slot0)
 	end
 end
 
-slot0.UpdateMedals = function(slot0)
+function slot0.UpdateMedals(slot0)
 	slot3 = 353
 	slot4 = 30
 
@@ -150,7 +143,7 @@ slot0.UpdateMedals = function(slot0)
 	setActive(slot0.medalTpl, slot2 ~= 0)
 end
 
-slot0.UpdatePower = function(slot0)
+function slot0.UpdatePower(slot0)
 	slot1 = getProxy(MilitaryExerciseProxy):RawGetSeasonInfo()
 	slot2 = SeasonInfo.getEmblem(slot1.score, slot1.rank)
 
@@ -182,7 +175,7 @@ slot0.UpdatePower = function(slot0)
 	slot0.collectionTxt.text = getProxy(CollectionProxy):getCollectionRate() * 100 .. "%"
 end
 
-slot0.UpdateInfo = function(slot0)
+function slot0.UpdateInfo(slot0)
 	slot0.nameTxt.text = slot0.player.name
 	slot0.idTxt.text = slot0.player.id
 	slot0.levelTxt.text = "LV." .. slot0.player.level
@@ -191,7 +184,7 @@ slot0.UpdateInfo = function(slot0)
 	setInputText(slot0.inputField, slot0.player:GetManifesto())
 end
 
-slot0.UpdateStatistics = function(slot0)
+function slot0.UpdateStatistics(slot0)
 	slot3 = Vector2(355, 25)
 	slot4 = slot0.statisticTpl.anchoredPosition
 	slot5 = slot0.statisticTpl.sizeDelta.x
@@ -211,7 +204,7 @@ slot0.UpdateStatistics = function(slot0)
 	end
 end
 
-slot0.GetDisplayStatisticsData = function(slot0)
+function slot0.GetDisplayStatisticsData(slot0)
 	slot1 = slot0.player
 
 	return {
@@ -242,7 +235,7 @@ slot0.GetDisplayStatisticsData = function(slot0)
 	}
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	for slot4, slot5 in ipairs(slot0.animPanels) do
 		if LeanTween.isTweening(slot5.gameObject) then
 			LeanTween.cancel(slot5.gameObject)

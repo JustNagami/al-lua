@@ -12,16 +12,20 @@ slot0.ON_UNEQUIP_EQUIPMENT_SKIN = "EquipmentMediator:ON_UNEQUIP_EQUIPMENT_SKIN"
 slot0.ON_USE_ITEM = "EquipmentMediator:ON_USE_ITEM"
 slot0.NO_UPDATE = "EquipmentMediator:NO_UPDATE"
 slot0.ITEM_GO_SCENE = "item go scene"
+slot0.ITEM_ADD_LAYER = "EquipmentMediator.ITEM_ADD_LAYER"
 slot0.OPEN_EQUIPSKIN_INDEX_LAYER = "EquipmentMediator:OPEN_EQUIPSKIN_INDEX_LAYER"
 slot0.OPEN_EQUIPMENT_INDEX = "OPEN_EQUIPMENT_INDEX"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	if not slot0.contextData.warp then
 		slot0.contextData.warp = getProxy(SettingsProxy):getEquipSceneIndex()
 	end
 
 	slot0:bind(uv0.ITEM_GO_SCENE, function (slot0, slot1, slot2)
 		uv0:sendNotification(GAME.GO_SCENE, slot1, slot2)
+	end)
+	slot0:bind(uv0.ITEM_ADD_LAYER, function (slot0, slot1)
+		uv0:addSubLayers(slot1)
 	end)
 	slot0:bind(uv0.ON_USE_ITEM, function (slot0, slot1, slot2, slot3)
 		uv0:sendNotification(GAME.USE_ITEM, {
@@ -142,7 +146,7 @@ slot0.register = function(slot0)
 	else
 		slot3 = slot0.equipmentProxy:getEquipments(true)
 
-		for slot7, slot8 in pairs(slot1:getEquipsInShips()) do
+		for slot7, slot8 in ipairs(slot1:getEquipsInShips()) do
 			table.insert(slot3, slot8)
 		end
 
@@ -172,7 +176,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 end
 
-slot0.UpdateSpWeapons = function(slot0)
+function slot0.UpdateSpWeapons(slot0)
 	slot2 = getProxy(BayProxy):GetSpWeaponsInShips(getProxy(BayProxy):RawGetShipById(slot0.contextData.shipId))
 
 	for slot7, slot8 in ipairs(_.values(getProxy(EquipmentProxy):GetSpWeapons())) do
@@ -184,7 +188,7 @@ slot0.UpdateSpWeapons = function(slot0)
 	slot0.viewComponent:SetSpWeapons(slot2)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		EquipmentProxy.EQUIPMENT_UPDATED,
 		BayProxy.SHIP_EQUIPMENT_ADDED,
@@ -209,7 +213,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == EquipmentProxy.EQUIPMENT_UPDATED then
@@ -291,7 +295,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	getProxy(SettingsProxy):setEquipSceneIndex(slot0.contextData.warp)
 end
 

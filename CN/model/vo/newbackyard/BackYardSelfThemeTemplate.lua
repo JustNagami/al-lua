@@ -1,12 +1,12 @@
 slot0 = class("BackYardSelfThemeTemplate", import(".BackYardBaseThemeTemplate"))
 
-slot0.Ctor = function(slot0, slot1, slot2)
+function slot0.Ctor(slot0, slot1, slot2)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0.floor = slot2 or 1
 end
 
-slot0.GetAllFurniture = function(slot0)
+function slot0.GetAllFurniture(slot0)
 	if not slot0.furnitruesByIds then
 		slot0.furnitruesByIds = slot0:InitFurnitures({
 			mapSize = slot0:GetMapSize(),
@@ -18,7 +18,7 @@ slot0.GetAllFurniture = function(slot0)
 	return slot0.furnitruesByIds
 end
 
-slot0.AddFurniture = function(slot0, slot1, slot2)
+function slot0.AddFurniture(slot0, slot1, slot2)
 	slot3 = slot0:GetAllFurniture()
 	slot4 = {}
 
@@ -41,45 +41,45 @@ slot0.AddFurniture = function(slot0, slot1, slot2)
 	return slot5
 end
 
-slot0.DeleteFurniture = function(slot0, slot1)
+function slot0.DeleteFurniture(slot0, slot1)
 	if slot0:GetAllFurniture()[slot1] then
 		slot2[slot1] = nil
 	end
 end
 
-slot0.GetFurniture = function(slot0, slot1)
+function slot0.GetFurniture(slot0, slot1)
 	return slot0:GetAllFurniture()[slot1]
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return BackYardConst.THEME_TEMPLATE_USAGE_TYPE_SELF
 end
 
-slot0.IsSystem = function(slot0)
+function slot0.IsSystem(slot0)
 	return false
 end
 
-slot0.IsCollected = function(slot0)
+function slot0.IsCollected(slot0)
 	return true
 end
 
-slot0.IsLiked = function(slot0)
+function slot0.IsLiked(slot0)
 	return true
 end
 
-slot0.UnLoad = function(slot0)
+function slot0.UnLoad(slot0)
 	slot0.time = 0
 end
 
-slot0.Upload = function(slot0)
+function slot0.Upload(slot0)
 	slot0.time = pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-slot0.CanDispaly = function(slot0)
+function slot0.CanDispaly(slot0)
 	return slot0:IsPushed() or not slot1 and slot0:ExistLocalImage()
 end
 
-slot0.IsUsing = function(slot0, slot1)
+function slot0.IsUsing(slot0, slot1)
 	if table.getCount(slot1) ~= table.getCount(slot0:GetWarpFurnitures()) then
 		return false, Vector2(slot3, slot4)
 	end
@@ -128,14 +128,14 @@ slot0.IsUsing = function(slot0, slot1)
 	return true
 end
 
-slot0.GetMissFurnitures = function(slot0, slot1)
+function slot0.GetMissFurnitures(slot0, slot1)
 	if #slot1 == #slot0:GetWarpFurnitures() then
 		return
 	end
 
 	slot3 = {}
 
-	slot4 = function(slot0, slot1)
+	function slot4(slot0, slot1)
 		for slot5, slot6 in ipairs(slot0) do
 			if not slot1[slot6.id] then
 				slot1[slot6.id] = 0
@@ -150,7 +150,7 @@ slot0.GetMissFurnitures = function(slot0, slot1)
 	slot4(slot2, slot5)
 	slot4(slot1, {})
 
-	slot7 = function(slot0)
+	function slot7(slot0)
 		return {
 			count = 1,
 			name = pg.furniture_data_template[slot0].name
@@ -172,11 +172,11 @@ slot0.GetMissFurnitures = function(slot0, slot1)
 	return slot3
 end
 
-slot0.getName = function(slot0)
+function slot0.getName(slot0)
 	return slot0:GetName()
 end
 
-slot0.getIcon = function(slot0)
+function slot0.getIcon(slot0)
 	return "themeicon"
 end
 

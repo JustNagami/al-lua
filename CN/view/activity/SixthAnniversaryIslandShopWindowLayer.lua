@@ -1,23 +1,23 @@
 slot0 = class("SixthAnniversaryIslandShopWindowLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SixthAnniversaryIslandGoodsWindow"
 end
 
-slot0.setGoods = function(slot0, slot1)
+function slot0.setGoods(slot0, slot1)
 	slot0.goods = slot1
 	slot0.singleCost = slot1:getConfig("resource_num")
-	slot0.max = math.floor(GetOwnedDropCount({
+	slot0.max = math.floor(Drop.New({
 		type = slot1:getConfig("resource_category"),
 		id = slot1:getConfig("resource_type")
-	}) / slot0.singleCost)
+	}):getOwnedCount() / slot0.singleCost)
 
 	if slot1:getConfig("num_limit") ~= 0 then
 		slot0.max = math.min(slot0.max, math.max(slot1:GetPurchasableCnt(), 0))
 	end
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:BlurPanel(slot0._tf)
@@ -62,10 +62,10 @@ slot0.init = function(slot0)
 
 	onButton(slot0, slot4:Find("content/bottom/btn_confirm"), function ()
 		if uv0.max < uv0.count then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", getDropName({
+			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", Drop.New({
 				type = uv0.goods:getConfig("resource_category"),
 				id = uv0.goods:getConfig("resource_type")
-			})))
+			}):getName()))
 
 			return
 		end
@@ -74,14 +74,14 @@ slot0.init = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.updateCount = function(slot0, slot1)
+function slot0.updateCount(slot0, slot1)
 	slot0.count = math.clamp(slot0.count + slot1, 1, math.max(slot0.max, 1))
 
 	setText(slot0.rtCount, slot0.count)
 	setText(slot0.rtCost, slot0.count * slot0.singleCost)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot1 = slot0.goods
 	slot2 = {
 		type = slot1:getConfig("commodity_type"),
@@ -92,7 +92,7 @@ slot0.didEnter = function(slot0)
 
 	updateDrop(slot3:Find("icon/IconTpl"), slot2)
 
-	slot4, slot5 = GetOwnedDropCount(slot2)
+	slot4, slot5 = slot2:getOwnedCount()
 
 	setActive(slot3:Find("owner"), slot5)
 
@@ -100,19 +100,19 @@ slot0.didEnter = function(slot0)
 		setText(slot3:Find("owner"), i18n("word_own1") .. slot4)
 	end
 
-	setText(slot3:Find("line/name"), slot2.cfg.name)
-	setText(slot3:Find("line/content/Text"), string.gsub(slot2.desc or slot2.cfg.desc, "<[^>]+>", ""))
-	GetImageSpriteFromAtlasAsync(getDropIcon({
+	setText(slot3:Find("line/name"), slot2:getConfig("name"))
+	setText(slot3:Find("line/content/Text"), string.gsub(slot2.desc or slot2:getConfig("desc"), "<[^>]+>", ""))
+	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = slot1:getConfig("resource_category"),
 		id = slot1:getConfig("resource_type")
-	}), "", slot0._tf:Find("content/calc/cost/icon"))
+	}):getIcon(), "", slot0._tf:Find("content/calc/cost/icon"))
 
 	slot0.count = 1
 
 	slot0:updateCount(0)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 

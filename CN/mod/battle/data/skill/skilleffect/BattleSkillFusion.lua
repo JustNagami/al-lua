@@ -10,7 +10,7 @@ slot3.FREEZE_POS = {
 	[-1] = Vector3(10000, 0, 58)
 }
 
-slot3.Ctor = function(slot0, slot1, slot2)
+function slot3.Ctor(slot0, slot1, slot2)
 	slot6 = slot2
 
 	uv0.super.Ctor(slot0, slot1, slot6)
@@ -44,15 +44,15 @@ slot3.Ctor = function(slot0, slot1, slot2)
 	slot0._duration = slot0._tempData.arg_list.duration
 end
 
-slot3.DoDataEffect = function(slot0, slot1, slot2)
+function slot3.DoDataEffect(slot0, slot1, slot2)
 	slot0:doFusion(slot1)
 end
 
-slot3.DoDataEffectWithoutTarget = function(slot0, slot1, slot2)
+function slot3.DoDataEffectWithoutTarget(slot0, slot1, slot2)
 	slot0:doFusion(slot1)
 end
 
-slot3.doFusion = function(slot0, slot1)
+function slot3.doFusion(slot0, slot1)
 	slot3 = uv0.TargetShipTag(slot1, {
 		ship_tag_list = slot0._elementTagList
 	}, uv0.TargetAllHelp(slot1))
@@ -144,7 +144,7 @@ slot3.doFusion = function(slot0, slot1)
 	end, true)
 end
 
-slot3.Clear = function(slot0)
+function slot3.Clear(slot0)
 	pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._fusionTimer)
 	uv0.super.Clear(slot0)
 end

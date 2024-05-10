@@ -12,11 +12,11 @@ slot0.Listeners = {}
 slot0.EventUpdateMapIndex = "WorldEntrance.EventUpdateMapIndex"
 slot0.EventUpdateDisplayMarks = "WorldEntrance.EventUpdateDisplayMarks"
 
-slot0.DebugPrint = function(slot0)
+function slot0.DebugPrint(slot0)
 	return string.format("入口 [id: %s] [原始地图: %s] [所属区域: %s] [所属海域: %s]", slot0.id, slot0:GetBaseMapId(), slot0.config.regions, slot0.config.world)
 end
 
-slot0.Setup = function(slot0, slot1, slot2)
+function slot0.Setup(slot0, slot1, slot2)
 	slot0.id = slot1
 	slot6 = slot0.id
 
@@ -43,39 +43,39 @@ slot0.Setup = function(slot0, slot1, slot2)
 	}
 end
 
-slot0.IsOpen = function(slot0)
+function slot0.IsOpen(slot0)
 	return slot0:GetBaseMap():IsMapOpen()
 end
 
-slot0.GetBaseMapId = function(slot0)
+function slot0.GetBaseMapId(slot0)
 	return slot0.config.chapter
 end
 
-slot0.GetBaseMap = function(slot0)
+function slot0.GetBaseMap(slot0)
 	return nowWorld():GetMap(slot0:GetBaseMapId())
 end
 
-slot0.GetColormaskUniqueID = function(slot0)
+function slot0.GetColormaskUniqueID(slot0)
 	return slot0.config.color_id
 end
 
-slot0.GetAreaId = function(slot0)
+function slot0.GetAreaId(slot0)
 	return slot0.config.regions
 end
 
-slot0.IsPressing = function(slot0)
+function slot0.IsPressing(slot0)
 	return slot0:GetBaseMap().isPressing
 end
 
-slot0.HasPort = function(slot0, slot1)
+function slot0.HasPort(slot0, slot1)
 	return slot0:GetPortId() > 0 and (not slot1 or pg.world_port_data[slot2].port_camp == nowWorld():GetRealm())
 end
 
-slot0.GetPortId = function(slot0)
+function slot0.GetPortId(slot0)
 	return slot0.config.port_map_icon
 end
 
-slot0.UpdateActive = function(slot0, slot1)
+function slot0.UpdateActive(slot0, slot1)
 	if slot0.active ~= slot1 then
 		slot0.active = slot1
 
@@ -85,7 +85,7 @@ slot0.UpdateActive = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateDisplayMarks = function(slot0, slot1, slot2)
+function slot0.UpdateDisplayMarks(slot0, slot1, slot2)
 	slot0.marks[slot1] = slot0.marks[slot1] + (slot2 and 1 or -1)
 
 	if slot0.marks[slot1] == 0 and slot2 or slot0.marks[slot1] == 1 and not slot2 then
@@ -93,21 +93,21 @@ slot0.UpdateDisplayMarks = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.GetDisplayMarks = function(slot0)
+function slot0.GetDisplayMarks(slot0)
 	return slot0.marks
 end
 
-slot0.GetSairenMapId = function(slot0)
+function slot0.GetSairenMapId(slot0)
 	return slot0.config.sairen_chapter[1]
 end
 
-slot0.UpdateSairenMark = function(slot0, slot1)
+function slot0.UpdateSairenMark(slot0, slot1)
 	if tobool(slot0.becomeSairen) ~= tobool(slot1) then
 		slot0.becomeSairen = slot1
 	end
 end
 
-slot0.GetAchievementAwards = function(slot0)
+function slot0.GetAchievementAwards(slot0)
 	return _.map(slot0.config.target_drop_show, function (slot0)
 		return {
 			star = slot0[1],

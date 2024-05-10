@@ -20,7 +20,7 @@ slot1 = {
 slot0.TASK_PROGRESS_UPDATE = 0
 slot0.TASK_PROGRESS_APPEND = 1
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.id = slot1.id
 	slot0.configId = slot1.id
 	slot0.progress = slot1.progress or 0
@@ -28,55 +28,55 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.submitTime = slot1.submit_time or 0
 end
 
-slot0.isClientTrigger = function(slot0)
+function slot0.isClientTrigger(slot0)
 	return slot0:getConfig("sub_type") > 2000 and slot0:getConfig("sub_type") < 3000
 end
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.task_data_template
 end
 
-slot0.isGuildTask = function(slot0)
+function slot0.isGuildTask(slot0)
 	return slot0:getConfig("type") == uv0.TYPE_GUILD_WEEKLY
 end
 
-slot0.IsRoutineType = function(slot0)
+function slot0.IsRoutineType(slot0)
 	return slot0:getConfig("type") == uv0.TYPE_ROUTINE
 end
 
-slot0.IsActRoutineType = function(slot0)
+function slot0.IsActRoutineType(slot0)
 	return slot0:getConfig("type") == uv0.TYPE_ACTIVITY_ROUTINE
 end
 
-slot0.IsActType = function(slot0)
+function slot0.IsActType(slot0)
 	return slot0:getConfig("type") == uv0.TYPE_ACTIVITY
 end
 
-slot0.IsWeeklyType = function(slot0)
+function slot0.IsWeeklyType(slot0)
 	return slot0:getConfig("type") == uv0.TYPE_WEEKLY or slot0:getConfig("type") == uv0.TYPE_NEW_WEEKLY
 end
 
-slot0.IsBackYardInterActionType = function(slot0)
+function slot0.IsBackYardInterActionType(slot0)
 	return slot0:getConfig("sub_type") == 2010
 end
 
-slot0.IsFlagShipInterActionType = function(slot0)
+function slot0.IsFlagShipInterActionType(slot0)
 	return slot0:getConfig("sub_type") == 2011
 end
 
-slot0.IsGuildAddLivnessType = function(slot0)
+function slot0.IsGuildAddLivnessType(slot0)
 	return slot0:getConfig("type") == uv0.TYPE_ROUTINE or slot1 == uv0.TYPE_WEEKLY or slot1 == uv0.TYPE_GUILD_WEEKLY or slot1 == uv0.TYPE_NEW_WEEKLY
 end
 
-slot0.isLock = function(slot0)
+function slot0.isLock(slot0)
 	return getProxy(PlayerProxy):getRawData().level < slot0:getConfig("level")
 end
 
-slot0.isFinish = function(slot0)
+function slot0.isFinish(slot0)
 	return slot0:getConfig("target_num") <= slot0:getProgress()
 end
 
-slot0.getProgress = function(slot0)
+function slot0.getProgress(slot0)
 	slot1 = slot0.progress
 
 	if slot0:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
@@ -104,15 +104,15 @@ slot0.getProgress = function(slot0)
 	return slot1 or 0
 end
 
-slot0.getTargetNumber = function(slot0)
+function slot0.getTargetNumber(slot0)
 	return slot0:getConfig("target_num")
 end
 
-slot0.isReceive = function(slot0)
+function slot0.isReceive(slot0)
 	return slot0.submitTime > 0
 end
 
-slot0.getTaskStatus = function(slot0)
+function slot0.getTaskStatus(slot0)
 	if slot0:isLock() then
 		return -1
 	end
@@ -128,8 +128,8 @@ slot0.getTaskStatus = function(slot0)
 	return 0
 end
 
-slot0.onAdded = function(slot0)
-	slot1 = function()
+function slot0.onAdded(slot0)
+	function slot1()
 		if uv0:getConfig("sub_type") == 29 then
 			if _.any(getProxy(SkirmishProxy):getRawData(), function (slot0)
 				return slot0:getConfig("task_id") == uv0.id
@@ -144,7 +144,7 @@ slot0.onAdded = function(slot0)
 			slot0 = nil
 
 			if getProxy(ContextProxy):getCurrentContext().mediator.__cname ~= TaskMediator.__cname then
-				slot0 = function()
+				function slot0()
 					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.TASK, {
 						page = uv0[uv1:GetRealType()]
 					})
@@ -161,7 +161,7 @@ slot0.onAdded = function(slot0)
 		end
 	end
 
-	slot2 = function()
+	function slot2()
 		if not table.contains({
 			"LevelScene",
 			"BattleScene",
@@ -182,19 +182,19 @@ slot0.onAdded = function(slot0)
 	end
 end
 
-slot0.updateProgress = function(slot0, slot1)
+function slot0.updateProgress(slot0, slot1)
 	slot0.progress = slot1
 end
 
-slot0.isSelectable = function(slot0)
+function slot0.isSelectable(slot0)
 	return slot0:getConfig("award_choice") ~= nil and type(slot1) == "table" and #slot1 > 0
 end
 
-slot0.judgeOverflow = function(slot0, slot1, slot2, slot3)
+function slot0.judgeOverflow(slot0, slot1, slot2, slot3)
 	return uv0.StaticJudgeOverflow(slot1, slot2, slot3, slot0:getTaskStatus() == 1, slot0:ShowOnTaskScene(), slot0:getConfig("award_display"))
 end
 
-slot0.StaticJudgeOverflow = function(slot0, slot1, slot2, slot3, slot4, slot5)
+function slot0.StaticJudgeOverflow(slot0, slot1, slot2, slot3, slot4, slot5)
 	if slot3 and slot4 then
 		slot6 = getProxy(PlayerProxy):getData()
 		slot8 = slot0 or slot6.gold
@@ -211,10 +211,9 @@ slot0.StaticJudgeOverflow = function(slot0, slot1, slot2, slot3, slot4, slot5)
 		slot19 = {}
 
 		for slot24, slot25 in ipairs(slot5) do
-			slot27 = slot25[2]
-			slot28 = slot25[3]
+			slot26, slot27, slot28 = unpack(slot25)
 
-			if slot25[1] == DROP_TYPE_RESOURCE then
+			if slot26 == DROP_TYPE_RESOURCE then
 				if slot27 == PlayerConst.ResGold then
 					if slot8 + slot28 - slot11 > 0 then
 						slot14 = true
@@ -235,7 +234,7 @@ slot0.StaticJudgeOverflow = function(slot0, slot1, slot2, slot3, slot4, slot5)
 					})
 				end
 			elseif not LOCK_UR_SHIP and slot26 == DROP_TYPE_VITEM then
-				if pg.item_data_statistics[slot27].virtual_type == 20 and slot10 + slot28 - slot13 > 0 then
+				if Item.getConfigData(slot27).virtual_type == 20 and slot10 + slot28 - slot13 > 0 then
 					slot16 = true
 
 					table.insert(slot19, {
@@ -244,7 +243,7 @@ slot0.StaticJudgeOverflow = function(slot0, slot1, slot2, slot3, slot4, slot5)
 						count = setColorStr(slot30, COLOR_RED)
 					})
 				end
-			elseif slot26 == DROP_TYPE_ITEM and pg.item_data_statistics[slot27].type == Item.EXP_BOOK_TYPE and pg.item_data_statistics[slot27].max_num < getProxy(BagProxy):getItemCountById(slot27) + slot28 then
+			elseif slot26 == DROP_TYPE_ITEM and Item.getConfigData(slot27).type == Item.EXP_BOOK_TYPE and Item.getConfigData(slot27).max_num < getProxy(BagProxy):getItemCountById(slot27) + slot28 then
 				slot17 = true
 
 				table.insert(slot19, {
@@ -259,7 +258,7 @@ slot0.StaticJudgeOverflow = function(slot0, slot1, slot2, slot3, slot4, slot5)
 	end
 end
 
-slot0.IsUrTask = function(slot0)
+function slot0.IsUrTask(slot0)
 	if not LOCK_UR_SHIP then
 		slot2 = pg.gameset.urpt_chapter_max.description[1]
 
@@ -271,7 +270,7 @@ slot0.IsUrTask = function(slot0)
 	end
 end
 
-slot0.GetRealType = function(slot0)
+function slot0.GetRealType(slot0)
 	if slot0:getConfig("priority_type") == 0 then
 		slot1 = slot0:getConfig("type")
 	end
@@ -279,18 +278,16 @@ slot0.GetRealType = function(slot0)
 	return slot1
 end
 
-slot0.IsOverflowShipExpItem = function(slot0)
-	slot1 = function(slot0, slot1)
-		return pg.item_data_statistics[slot0].max_num < getProxy(BagProxy):getItemCountById(slot0) + slot1
+function slot0.IsOverflowShipExpItem(slot0)
+	function slot1(slot0, slot1)
+		return Item.getConfigData(slot0).max_num < getProxy(BagProxy):getItemCountById(slot0) + slot1
 	end
 
-	slot3 = pg.item_data_statistics
+	for slot6, slot7 in ipairs(slot0:getConfig("award_display")) do
+		slot9 = slot7[2]
+		slot10 = slot7[3]
 
-	for slot7, slot8 in ipairs(slot0:getConfig("award_display")) do
-		slot10 = slot8[2]
-		slot11 = slot8[3]
-
-		if slot8[1] == DROP_TYPE_ITEM and slot3[slot10].type == Item.EXP_BOOK_TYPE and slot1(slot10, slot11) then
+		if slot7[1] == DROP_TYPE_ITEM and Item.getConfigData(slot9).type == Item.EXP_BOOK_TYPE and slot1(slot9, slot10) then
 			return true
 		end
 	end
@@ -298,7 +295,7 @@ slot0.IsOverflowShipExpItem = function(slot0)
 	return false
 end
 
-slot0.ShowOnTaskScene = function(slot0)
+function slot0.ShowOnTaskScene(slot0)
 	slot1 = slot0:getConfig("visibility") == 1
 
 	if slot0.id == 17268 then
@@ -312,7 +309,7 @@ slot0.ShowOnTaskScene = function(slot0)
 	return slot1
 end
 
-slot0.isAvatarTask = function(slot0)
+function slot0.isAvatarTask(slot0)
 	return false
 end
 

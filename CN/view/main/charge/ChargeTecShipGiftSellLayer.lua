@@ -1,26 +1,26 @@
 slot0 = class("ChargeTecShipGiftSellLayer", import("...base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ChargeTecShipGiftSellLayer"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0:initData()
 	slot0:findUI()
 	slot0:addListener()
 	slot0:initUIText()
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	slot0:updateGiftList()
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.showGoodVO = slot0.contextData.showGoodVO
 	slot0.chargedList = slot0.contextData.chargedList
 	slot0.goodVOList = slot0.showGoodVO:getSameGroupTecShipGift()
@@ -53,11 +53,11 @@ slot0.initData = function(slot0)
 	end
 end
 
-slot0.initUIText = function(slot0)
+function slot0.initUIText(slot0)
 	setText(slot0:findTF("Adapt/TipBG/Text"), i18n("tech_package_tip"))
 end
 
-slot0.findUI = function(slot0)
+function slot0.findUI(slot0)
 	slot0.bg = slot0:findTF("BG")
 	slot0.itemTpl = slot0:findTF("ItemTpl")
 
@@ -75,13 +75,13 @@ slot0.findUI = function(slot0)
 	end)
 end
 
-slot0.addListener = function(slot0)
+function slot0.addListener(slot0)
 	onButton(slot0, slot0.bg, function ()
 		uv0:closeView()
 	end, SFX_PANEL)
 end
 
-slot0.updateGiftTF = function(slot0, slot1, slot2)
+function slot0.updateGiftTF(slot0, slot1, slot2)
 	slot9 = slot0:findTF("Title", slot1)
 	slot10 = slot0:findTF("GiftImage", slot1)
 	slot11 = slot0:findTF("Desc1", slot1)
@@ -101,7 +101,7 @@ slot0.updateGiftTF = function(slot0, slot1, slot2)
 		setGray(slot1, true, true)
 	end
 
-	slot18 = function()
+	function slot18()
 		pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
 			shopId = uv0.id
 		})
@@ -129,11 +129,7 @@ slot0.updateGiftTF = function(slot0, slot1, slot2)
 	slot23 = "display"
 
 	for slot23, slot24 in ipairs(slot2:getConfig(slot23)) do
-		table.insert(slot19, {
-			type = slot24[1],
-			id = slot24[2],
-			count = slot24[3]
-		})
+		table.insert(slot19, Drop.Create(slot24))
 	end
 
 	slot20 = UIItemList.New(slot13, slot0.itemTpl)
@@ -147,13 +143,13 @@ slot0.updateGiftTF = function(slot0, slot1, slot2)
 			onButton(uv0, slot4, function ()
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-			setScrollText(uv0:findTF("TextMask/Text", slot2), getDropName(slot6))
+			setScrollText(uv0:findTF("TextMask/Text", slot2), slot6:getName())
 		end
 	end)
 	slot20:align(#slot19)
 end
 
-slot0.updateGiftList = function(slot0)
+function slot0.updateGiftList(slot0)
 	slot0.giftUIItemList:align(#slot0.goodVOShowList)
 end
 

@@ -5,7 +5,7 @@ slot0.ON_AUTO_TRAVEL = "WorldInPictureMediator:ON_AUTO_TRAVEL"
 slot0.ON_AUTO_DRAW = "WorldInPictureMediator:ON_AUTO_DRAW"
 slot0.RESULT_ONEKEY_AWARD = "WorldInPictureMediator:RESULT_ONEKEY_AWARD"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.ON_AUTO_TRAVEL, function (slot0, slot1, slot2, slot3)
 		uv0:sendNotification(GAME.WORLDIN_PICTURE_OP, {
 			auto = true,
@@ -53,14 +53,14 @@ slot0.register = function(slot0)
 	slot0.viewComponent:SetData(WorldInPictureActiviyData.New(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE)))
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.WORLDIN_PICTURE_OP_DONE,
 		GAME.WORLDIN_PICTURE_OP_ERRO
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.WORLDIN_PICTURE_OP_DONE then

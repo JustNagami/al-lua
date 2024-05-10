@@ -4,15 +4,15 @@ slot2 = {
 	[99.0] = true
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "LimitChallengePreCombatUI"
 end
 
-slot0.tempCache = function(slot0)
+function slot0.tempCache(slot0)
 	return true
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0:CommonInit()
 
 	slot0._formationLogic = BaseFormation.New(slot0._tf, slot0._heroContainer, slot0._heroInfo, slot0._gridTFs)
@@ -20,7 +20,7 @@ slot0.init = function(slot0)
 	slot0:Register()
 end
 
-slot0.CommonInit = function(slot0)
+function slot0.CommonInit(slot0)
 	slot0.eventTriggers = {}
 	slot0._startBtn = slot0:findTF("right/start")
 	slot0._costContainer = slot0:findTF("right/start/cost_container")
@@ -99,7 +99,7 @@ slot0.CommonInit = function(slot0)
 	slot0.commanderFormationPanel = LimitChallengeCommanderFormationPage.New(slot0._tf, slot0.event, slot0.contextData)
 end
 
-slot0.Register = function(slot0)
+function slot0.Register(slot0)
 	slot1 = slot0._formationLogic
 
 	slot1:AddLoadComplete(function ()
@@ -223,22 +223,22 @@ slot0.Register = function(slot0)
 	end)
 end
 
-slot0.SetPlayerInfo = function(slot0, slot1)
+function slot0.SetPlayerInfo(slot0, slot1)
 end
 
-slot0.SetSubFlag = function(slot0, slot1)
+function slot0.SetSubFlag(slot0, slot1)
 	slot0._subUseable = slot1 or false
 
 	slot0:UpdateSubToggle()
 end
 
-slot0.SetShips = function(slot0, slot1)
+function slot0.SetShips(slot0, slot1)
 	slot0._shipVOs = slot1
 
 	slot0._formationLogic:SetShipVOs(slot0._shipVOs)
 end
 
-slot0.SetStageID = function(slot0, slot1)
+function slot0.SetStageID(slot0, slot1)
 	removeAllChildren(slot0._spoilsContainer)
 
 	slot0._stageID = slot1
@@ -267,7 +267,7 @@ slot0.SetStageID = function(slot0, slot1)
 			type = slot9[1]
 		})
 		onButton(slot0, slot10, function ()
-			if pg.item_data_statistics[uv0[2]] and uv1[slot0.type] then
+			if Item.getConfigData(uv0[2]) and uv1[slot0.type] then
 				slot2 = {}
 
 				for slot6, slot7 in ipairs(slot0.display_icon) do
@@ -289,7 +289,7 @@ slot0.SetStageID = function(slot0, slot1)
 		end, SFX_PANEL)
 	end
 
-	slot5 = function(slot0, slot1)
+	function slot5(slot0, slot1)
 		if type(slot0) == "table" then
 			setActive(slot1, true)
 			setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
@@ -322,7 +322,7 @@ slot0.SetStageID = function(slot0, slot1)
 	end
 end
 
-slot0.SetFleets = function(slot0, slot1)
+function slot0.SetFleets(slot0, slot1)
 	slot0._fleetVOs = {}
 	slot0._legalFleetIdList = {}
 
@@ -333,7 +333,7 @@ slot0.SetFleets = function(slot0, slot1)
 	end)
 end
 
-slot0.SetCurrentFleet = function(slot0, slot1)
+function slot0.SetCurrentFleet(slot0, slot1)
 	slot0._currentFleetVO = slot0._fleetVOs[slot1]
 
 	slot0._formationLogic:SetFleetVO(slot0._currentFleetVO)
@@ -349,15 +349,15 @@ slot0.SetCurrentFleet = function(slot0, slot1)
 	slot0:updateCommanderFormation()
 end
 
-slot0.SetOpenCommander = function(slot0, slot1)
+function slot0.SetOpenCommander(slot0, slot1)
 	slot0.isOpenCommander = slot1
 end
 
-slot0.CheckLegalFleet = function(slot0)
+function slot0.CheckLegalFleet(slot0)
 	assert(false)
 end
 
-slot0.UpdateFleetView = function(slot0, slot1)
+function slot0.UpdateFleetView(slot0, slot1)
 	slot0:displayFleetInfo()
 	slot0:updateFleetBg()
 	slot0._formationLogic:UpdateGridVisibility()
@@ -378,17 +378,17 @@ slot0.UpdateFleetView = function(slot0, slot1)
 	setActive(slot0.btnSub:Find("off"), slot2 ~= FleetType.Submarine)
 end
 
-slot0.updateFleetBg = function(slot0)
+function slot0.updateFleetBg(slot0)
 	setActive(slot0._bgFleet, slot0._currentFleetVO:getFleetType() == FleetType.Normal)
 	setActive(slot0._bgSub, slot1 == FleetType.Submarine)
 end
 
-slot0.resetFormationComponent = function(slot0)
+function slot0.resetFormationComponent(slot0)
 	SetActive(slot0._gridTFs.main[1]:Find("flag"), #slot0._currentFleetVO:getTeamByName(TeamType.Main) ~= 0)
 	SetActive(slot0._gridTFs.submarine[1]:Find("flag"), #slot0._currentFleetVO:getTeamByName(TeamType.Submarine) ~= 0)
 end
 
-slot0.uiStartAnimating = function(slot0)
+function slot0.uiStartAnimating(slot0)
 	slot1 = 0
 	slot2 = 0.3
 
@@ -396,12 +396,12 @@ slot0.uiStartAnimating = function(slot0)
 	shiftPanel(slot0._right, 0, nil, slot2, slot1, true, true)
 end
 
-slot0.uiExitAnimating = function(slot0)
+function slot0.uiExitAnimating(slot0)
 	shiftPanel(slot0._middle, -840, nil, , , true, true)
 	shiftPanel(slot0._right, 470, nil, , , true, true)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._backBtn, function ()
 		slot0 = uv0
 
@@ -476,7 +476,7 @@ slot0.didEnter = function(slot0)
 	})
 end
 
-slot0.UpdateSubToggle = function(slot0)
+function slot0.UpdateSubToggle(slot0)
 	if slot0.autoFlag and slot0._subUseable == true then
 		setActive(slot0._autoSubToggle, true)
 		triggerToggle(slot0._autoSubToggle, ys.Battle.BattleState.IsAutoSubActive())
@@ -485,7 +485,7 @@ slot0.UpdateSubToggle = function(slot0)
 	end
 end
 
-slot0.displayFleetInfo = function(slot0)
+function slot0.displayFleetInfo(slot0)
 	setActive(slot0._vanguardGS.parent, slot0._currentFleetVO:getFleetType() == FleetType.Normal)
 	setActive(slot0._mainGS.parent, slot1 == FleetType.Normal)
 	setActive(slot0._subGS.parent, slot1 == FleetType.Submarine)
@@ -503,7 +503,7 @@ slot0.displayFleetInfo = function(slot0)
 	uv0.tweenNumText(slot0._costText, (function ()
 		slot2 = pg.battle_cost_template[uv0].oil_cost > 0
 
-		slot3 = function(slot0, slot1)
+		function slot3(slot0, slot1)
 			slot2 = 0
 
 			if uv0 then
@@ -521,24 +521,24 @@ slot0.displayFleetInfo = function(slot0)
 	end)())
 end
 
-slot0.SetFleetStepper = function(slot0)
+function slot0.SetFleetStepper(slot0)
 	SetActive(slot0._nextPage, slot0._curFleetIndex < #slot0._legalFleetIdList)
 	SetActive(slot0._prevPage, slot0._curFleetIndex > 1)
 end
 
-slot0.updateCommanderFormation = function(slot0)
+function slot0.updateCommanderFormation(slot0)
 	if slot0.isOpenCommander then
 		slot0.commanderFormationPanel:Load()
 		slot0.commanderFormationPanel:ActionInvoke("Update", slot0._currentFleetVO)
 	end
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 	triggerButton(slot0._backBtn)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
 	slot0.commanderFormationPanel:Destroy()
 	slot0._formationLogic:Destroy()

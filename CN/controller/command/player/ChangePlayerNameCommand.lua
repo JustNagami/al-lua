@@ -1,6 +1,6 @@
 slot0 = class("ChangePlayerNameCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.type or 1
 	slot5 = slot2.onSuccess
@@ -35,7 +35,7 @@ slot0.execute = function(slot0, slot1)
 	end
 end
 
-slot0.ModifyNameByItem = function(slot0, slot1, slot2, slot3)
+function slot0.ModifyNameByItem(slot0, slot1, slot2, slot3)
 	slot4, slot5 = slot1:canModifyName()
 
 	if not slot4 then
@@ -55,7 +55,7 @@ slot0.ModifyNameByItem = function(slot0, slot1, slot2, slot3)
 			return
 		end
 
-		slot9 = Item.New({
+		slot9 = Drop.New({
 			type = DROP_TYPE_ITEM,
 			id = id2ItemId(slot7[2]),
 			count = slot7[3]
@@ -67,7 +67,7 @@ slot0.ModifyNameByItem = function(slot0, slot1, slot2, slot3)
 			return
 		end
 
-		slot9 = Item.New({
+		slot9 = Drop.New({
 			type = DROP_TYPE_ITEM,
 			id = slot7[2],
 			count = slot7[3]
@@ -80,7 +80,7 @@ slot0.ModifyNameByItem = function(slot0, slot1, slot2, slot3)
 
 	slot10 = pg.gameset.player_name_cold_time.key_value
 
-	slot11 = function()
+	function slot11()
 		pg.ConnectionMgr.GetInstance():Send(11007, {
 			type = 1,
 			name = uv0
@@ -90,11 +90,7 @@ slot0.ModifyNameByItem = function(slot0, slot1, slot2, slot3)
 
 				uv0:updateModifyNameColdTime(pg.TimeMgr.GetInstance():GetServerTime() + uv2)
 				uv3:updatePlayer(uv0)
-				uv4:sendNotification(GAME.CONSUME_ITEM, Item.New({
-					type = uv5[1],
-					id = uv5[2],
-					count = uv5[3]
-				}))
+				uv4:sendNotification(GAME.CONSUME_ITEM, Drop.Create(uv5))
 
 				if uv6 then
 					uv6()
@@ -116,7 +112,7 @@ slot0.ModifyNameByItem = function(slot0, slot1, slot2, slot3)
 	})
 end
 
-slot0.ForceModifyName = function(slot0, slot1, slot2, slot3)
+function slot0.ForceModifyName(slot0, slot1, slot2, slot3)
 	slot4 = getProxy(PlayerProxy)
 	slot5 = pg.ConnectionMgr.GetInstance()
 

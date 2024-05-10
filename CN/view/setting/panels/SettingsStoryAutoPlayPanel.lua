@@ -1,18 +1,18 @@
 slot0 = class("SettingsStoryAutoPlayPanel", import(".SettingsBasePanel"))
 
-slot0.GetUIName = function(slot0)
+function slot0.GetUIName(slot0)
 	return "SettingsStoryAutoplay"
 end
 
-slot0.GetTitle = function(slot0)
+function slot0.GetTitle(slot0)
 	return i18n("story_autoplay_setting_label")
 end
 
-slot0.GetTitleEn = function(slot0)
+function slot0.GetTitleEn(slot0)
 	return "  / AUTO"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.btns = {}
 
 	for slot5, slot6 in ipairs({
@@ -30,7 +30,7 @@ slot0.OnInit = function(slot0)
 	end
 end
 
-slot0.OnUpdate = function(slot0)
+function slot0.OnUpdate(slot0)
 	triggerToggle(slot0.btns[getProxy(SettingsProxy):GetStoryAutoPlayFlag() and 2 or 1], true)
 end
 

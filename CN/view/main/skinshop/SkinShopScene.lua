@@ -21,28 +21,28 @@ slot3 = {
 	}
 }
 
-slot0.forceGC = function(slot0)
+function slot0.forceGC(slot0)
 	return true
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SkinShopUI"
 end
 
-slot0.ResUISettings = function(slot0)
+function slot0.ResUISettings(slot0)
 	return {
 		anim = true,
 		showType = PlayerResUI.TYPE_GEM
 	}
 end
 
-slot0.setSkins = function(slot0, slot1)
+function slot0.setSkins(slot0, slot1)
 	slot0.skinList = slot1
 
 	slot0:filterSkins()
 end
 
-slot0.SetEncoreSkins = function(slot0, slot1)
+function slot0.SetEncoreSkins(slot0, slot1)
 	slot0.existAnyEncoreSkin = #slot1 > 0
 	slot0.encoreSkinMap = {}
 
@@ -51,18 +51,18 @@ slot0.SetEncoreSkins = function(slot0, slot1)
 	end
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.playerVO = slot1
 	slot0.skinTicket = slot0.playerVO:getSkinTicket()
 end
 
-slot0.filterSkins = function(slot0)
+function slot0.filterSkins(slot0)
 	slot0.skinGoodsVOs = getProxy(ShipSkinProxy):GetAllSkins()
 
 	slot0:updateShipRect()
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.downloads = {}
 	slot0.bottomTF = slot0:findTF("Main/bottom")
 	slot0.topTF = slot0:findTF("Main/blur_panel/adapt/top")
@@ -137,7 +137,7 @@ slot0.init = function(slot0)
 	}
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:bind(uv0.EVENT_ON_CARD_CLICK, function (slot0, slot1)
 		uv0:OnCardClick(slot1)
 	end)
@@ -214,7 +214,7 @@ slot0.didEnter = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnSkinListUpdate = function(slot0, slot1)
+function slot0.OnSkinListUpdate(slot0, slot1)
 	slot2 = slot1 == 0
 
 	setActive(slot0.emptyTr, slot2)
@@ -223,11 +223,11 @@ slot0.OnSkinListUpdate = function(slot0, slot1)
 	setActive(slot0.namePanel, not slot2)
 end
 
-slot0.OnSearch = function(slot0)
+function slot0.OnSearch(slot0)
 	slot0:updateShipRect()
 end
 
-slot0.OnFilter = function(slot0, slot1)
+function slot0.OnFilter(slot0, slot1)
 	slot0.defaultIndex = {
 		typeIndex = slot1.typeIndex,
 		campIndex = slot1.campIndex,
@@ -240,7 +240,7 @@ slot0.OnFilter = function(slot0, slot1)
 	setActive(slot0.indexBtnSel, slot1.typeIndex ~= ShipIndexConst.TypeAll or slot1.campIndex ~= ShipIndexConst.CampAll or slot1.rarityIndex ~= ShipIndexConst.RarityAll or slot1.extraIndex ~= SkinIndexLayer.ExtraALL)
 end
 
-slot0.JumpToSkinById = function(slot0, slot1)
+function slot0.JumpToSkinById(slot0, slot1)
 	slot2 = -1
 	slot3 = {}
 
@@ -270,7 +270,7 @@ slot0.JumpToSkinById = function(slot0, slot1)
 	end)
 end
 
-slot0.SwitchCharBg = function(slot0, slot1)
+function slot0.SwitchCharBg(slot0, slot1)
 	slot2 = slot0.furnBg
 	slot3 = slot0.charBg
 
@@ -289,7 +289,7 @@ slot0.SwitchCharBg = function(slot0, slot1)
 		return
 	end
 
-	slot5 = function()
+	function slot5()
 		setActive(uv0.charParent, uv0.inSkinMode)
 		setActive(uv0.furParent, not uv0.inSkinMode)
 	end
@@ -325,7 +325,7 @@ slot0.SwitchCharBg = function(slot0, slot1)
 	slot0:updatePrice(slot4)
 end
 
-slot0.initSkinPage = function(slot0)
+function slot0.initSkinPage(slot0)
 	slot1 = {}
 	slot0.countByIds = {}
 
@@ -410,7 +410,7 @@ slot0.initSkinPage = function(slot0)
 	slot0:UpdateViewMode(slot2)
 end
 
-slot0.onSwitch = function(slot0, slot1)
+function slot0.onSwitch(slot0, slot1)
 	if slot1 > 0 then
 		slot2 = table.remove(slot0.pageTFs, 1)
 
@@ -426,11 +426,11 @@ slot0.onSwitch = function(slot0, slot1)
 	triggerToggle(slot0.pageTFs[slot0.mid]:Find("toggle"), true)
 end
 
-slot0.onRelease = function(slot0)
+function slot0.onRelease(slot0)
 	slot0:index2PageId(tonumber(go(slot0.pageTFs[slot0.mid]).name))
 end
 
-slot0.index2PageId = function(slot0, slot1)
+function slot0.index2PageId(slot0, slot1)
 	slot0.contextData.pageId = slot1
 	slot0.isSwitch = true
 
@@ -439,7 +439,7 @@ slot0.index2PageId = function(slot0, slot1)
 	slot0:SwitchCntPlusPlus()
 end
 
-slot0.UpdateViewMode = function(slot0, slot1)
+function slot0.UpdateViewMode(slot0, slot1)
 	slot2, slot3, slot4 = nil
 
 	if slot0.viewMode == uv0.SHOP_TYPE_TIMELIMIT then
@@ -454,7 +454,7 @@ slot0.UpdateViewMode = function(slot0, slot1)
 	setImageSprite(slot0.titleEn, GetSpriteFromAtlas("ui/SkinShopUI_atlas", uv1[slot0.viewMode][2]), true)
 end
 
-slot0.UpdateTagStyle = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateTagStyle(slot0, slot1, slot2, slot3)
 	if slot2[slot3] then
 		setImageSprite(slot1:Find("name"), GetSpriteFromAtlas("SkinClassified", "text_" .. slot2[slot3].res .. "01"), true)
 		setImageSprite(slot1:Find("selected/Image"), GetSpriteFromAtlas("SkinClassified", "text_" .. slot2[slot3].res), true)
@@ -470,7 +470,7 @@ slot0.UpdateTagStyle = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.updateMainView = function(slot0, slot1)
+function slot0.updateMainView(slot0, slot1)
 	slot2 = slot1.shipSkinConfig
 	slot0.showCardId = slot1.goodsVO.id
 	slot0.nameTxt.text = ShipGroup.getDefaultShipConfig(slot2.ship_group).name
@@ -522,7 +522,7 @@ slot0.updateMainView = function(slot0, slot1)
 	slot0.goodsId = slot1.goodsVO.id
 end
 
-slot0.UpdateLiveToggle = function(slot0, slot1, slot2)
+function slot0.UpdateLiveToggle(slot0, slot1, slot2)
 	slot3 = ShipSkin.New({
 		id = slot1
 	})
@@ -570,7 +570,7 @@ slot0.UpdateLiveToggle = function(slot0, slot1, slot2)
 	slot0.skinId = slot1
 end
 
-slot0.UpdateSpineState = function(slot0, slot1, slot2)
+function slot0.UpdateSpineState(slot0, slot1, slot2)
 	slot5 = PathMgr.FileExists(PathMgr.getAssetBundle(HXSet.autoHxShiftPath("SpinePainting/" .. string.lower(pg.ship_skin_template[slot1.id].painting), nil, true)))
 
 	setActive(slot0.l2dUnDownload, not slot5)
@@ -594,7 +594,7 @@ slot0.UpdateSpineState = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.LoadSpine = function(slot0, slot1)
+function slot0.LoadSpine(slot0, slot1)
 	slot0:recyclePainting()
 	slot0:UnLoadLive2d()
 	slot0:UnloadSpine()
@@ -612,7 +612,7 @@ slot0.LoadSpine = function(slot0, slot1)
 	end)
 end
 
-slot0.UnloadSpine = function(slot0, slot1)
+function slot0.UnloadSpine(slot0, slot1)
 	if slot0.spinePainting then
 		slot0.spinePainting:Dispose()
 
@@ -620,7 +620,7 @@ slot0.UnloadSpine = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateLive2dDownloadState = function(slot0, slot1, slot2)
+function slot0.UpdateLive2dDownloadState(slot0, slot1, slot2)
 	slot5 = PathMgr.FileExists(PathMgr.getAssetBundle(HXSet.autoHxShiftPath("live2d/" .. string.lower(pg.ship_skin_template[slot1.id].painting), nil, true)))
 
 	setActive(slot0.l2dUnDownload, not slot5)
@@ -659,7 +659,7 @@ slot0.UpdateLive2dDownloadState = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.LoadL2d = function(slot0, slot1)
+function slot0.LoadL2d(slot0, slot1)
 	slot0:recyclePainting()
 	slot0:UnLoadLive2d()
 	slot0:UnloadSpine()
@@ -686,7 +686,7 @@ slot0.LoadL2d = function(slot0, slot1)
 	end)
 end
 
-slot0.UnLoadLive2d = function(slot0, slot1)
+function slot0.UnLoadLive2d(slot0, slot1)
 	if slot0.live2dChar then
 		slot0.live2dChar:Dispose()
 
@@ -694,7 +694,7 @@ slot0.UnLoadLive2d = function(slot0, slot1)
 	end
 end
 
-slot0.setBg = function(slot0, slot1, slot2, slot3)
+function slot0.setBg(slot0, slot1, slot2, slot3)
 	slot5 = Ship.New({
 		configId = slot1.id,
 		skin_id = slot2.id
@@ -717,14 +717,14 @@ slot0.setBg = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.GetCurBgTransform = function(slot0)
+function slot0.GetCurBgTransform(slot0)
 	slot1 = nil
 	slot0.bgType = not slot0.bgType
 
 	return (slot0.bgType or slot0.bg2) and slot0.bg1
 end
 
-slot0.AnimBg = function(slot0)
+function slot0.AnimBg(slot0)
 	slot1, slot2 = nil
 
 	if slot0.bgType then
@@ -749,7 +749,7 @@ slot0.AnimBg = function(slot0)
 	end))
 end
 
-slot0.onBuyDone = function(slot0, slot1)
+function slot0.onBuyDone(slot0, slot1)
 	if _.detect(slot0.skinGoodsVOs, function (slot0)
 		return slot0.id == uv0
 	end) then
@@ -762,7 +762,7 @@ slot0.onBuyDone = function(slot0, slot1)
 	end
 end
 
-slot0.OnFurnitureUpdate = function(slot0, slot1)
+function slot0.OnFurnitureUpdate(slot0, slot1)
 	if slot0.goodsId and slot1 and Goods.ExistFurniture(slot0.goodsId) and Goods.Id2FurnitureId(slot0.goodsId) == slot1 then
 		slot0:updateBuyBtn(_.detect(slot0.skinGoodsVOs, function (slot0)
 			return slot0.id == uv0.goodsId
@@ -770,7 +770,7 @@ slot0.OnFurnitureUpdate = function(slot0, slot1)
 	end
 end
 
-slot0.updateBuyBtn = function(slot0, slot1)
+function slot0.updateBuyBtn(slot0, slot1)
 	slot3 = nil
 
 	if slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
@@ -807,29 +807,21 @@ slot0.updateBuyBtn = function(slot0, slot1)
 		onButton(slot0, slot0.buyBtn, function ()
 			if uv0.type == Goods.TYPE_SKIN then
 				if uv1.showCardId == slot0.id then
-					slot2 = i18n("charge_scene_buy_confirm", slot0:GetPrice(), uv2.name)
-
 					if uv0:isDisCount() and slot0:IsItemDiscountType() then
-						slot2 = i18n("discount_coupon_tip", slot1, slot0:GetDiscountItem().name, uv2.name)
-					end
-
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = slot2,
-						onYes = function ()
-							if uv0 then
-								uv1:emit(SkinShopMediator.ON_SHOPPING_BY_ACT, uv2.id, 1)
-							else
-								uv1:emit(SkinShopMediator.ON_SHOPPING, uv2.id, 1)
+						uv1:emit(SkinShopMediator.ON_SHOPPING_BY_ACT, slot0.id, 1)
+					else
+						pg.MsgboxMgr.GetInstance():ShowMsgBox({
+							content = i18n("charge_scene_buy_confirm", slot0:GetPrice(), uv2.name),
+							onYes = function ()
+								uv0:emit(SkinShopMediator.ON_SHOPPING, uv1.id, 1)
 							end
-						end
-					})
+						})
+					end
+				else
+					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[9999])
 
 					return
 				end
-
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[9999])
-
-				return
 			end
 		end, SFX_PANEL)
 		onButton(slot0, slot0.activityBtn, function ()
@@ -876,7 +868,7 @@ slot0.updateBuyBtn = function(slot0, slot1)
 	end, SFX_PANEL)
 end
 
-slot0.showTimeLimitSkinWindow = function(slot0, slot1)
+function slot0.showTimeLimitSkinWindow(slot0, slot1)
 	slot2 = slot1:getConfig("resource_num")
 	slot5 = pg.ship_skin_template[slot1:getSkinId()]
 
@@ -898,7 +890,7 @@ slot0.showTimeLimitSkinWindow = function(slot0, slot1)
 	})
 end
 
-slot0.addShopTimer = function(slot0, slot1)
+function slot0.addShopTimer(slot0, slot1)
 	slot3 = slot1.goodsVO:getSkinId()
 
 	if slot0.skinTimer then
@@ -959,7 +951,7 @@ slot0.addShopTimer = function(slot0, slot1)
 	slot0.shopTimer.func()
 end
 
-slot0.removeShopTimer = function(slot0)
+function slot0.removeShopTimer(slot0)
 	if slot0.shopTimer then
 		slot0.shopTimer:Stop()
 
@@ -967,7 +959,7 @@ slot0.removeShopTimer = function(slot0)
 	end
 end
 
-slot0.updatePrice = function(slot0, slot1)
+function slot0.updatePrice(slot0, slot1)
 	slot3 = uv0[slot1:getSkinId()]
 	slot5 = slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit
 
@@ -1003,14 +995,14 @@ slot0.updatePrice = function(slot0, slot1)
 	end
 end
 
-slot0.loadPainting = function(slot0, slot1, slot2)
+function slot0.loadPainting(slot0, slot1, slot2)
 	slot0:recyclePainting()
 	slot0:UnLoadLive2d()
 	slot0:UnloadSpine()
 	slot0:setPaintingPrefab(slot0.paintingTF, slot1, "chuanwu", slot2)
 end
 
-slot0.setPaintingPrefab = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.setPaintingPrefab(slot0, slot1, slot2, slot3, slot4)
 	slot5 = findTF(slot1, "fitter")
 
 	assert(slot5, "请添加子物体fitter")
@@ -1045,7 +1037,7 @@ slot0.setPaintingPrefab = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.recyclePainting = function(slot0)
+function slot0.recyclePainting(slot0)
 	if slot0.painting then
 		retPaintingPrefab(slot0.paintingTF, slot0.painting)
 	end
@@ -1053,7 +1045,7 @@ slot0.recyclePainting = function(slot0)
 	slot0.painting = nil
 end
 
-slot0.loadChar = function(slot0, slot1, slot2)
+function slot0.loadChar(slot0, slot1, slot2)
 	slot0:recycleChar()
 
 	slot3 = pg.UIMgr.GetInstance()
@@ -1081,7 +1073,7 @@ slot0.loadChar = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.recycleChar = function(slot0)
+function slot0.recycleChar(slot0)
 	if not IsNil(slot0.modelTf) then
 		slot0.modelTf.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
 		PoolMgr.GetInstance():ReturnSpineChar(slot0.prefabName, slot0.modelTf.gameObject)
@@ -1094,7 +1086,7 @@ slot0.recycleChar = function(slot0)
 	end
 end
 
-slot0.OnCardClick = function(slot0, slot1)
+function slot0.OnCardClick(slot0, slot1)
 	if slot0.card and slot0.contextData.key == slot1.goodsVO:getKey() then
 		return
 	end
@@ -1131,23 +1123,23 @@ slot0.OnCardClick = function(slot0, slot1)
 	slot0:SwitchCntPlusPlus()
 end
 
-slot0.UpdateSkinOrFurnitureMode = function(slot0, slot1)
+function slot0.UpdateSkinOrFurnitureMode(slot0, slot1)
 	setActive(slot0.switchBtn, slot1)
 	setActive(slot0.furnBg, slot1)
 	setActive(slot0.bgMask, slot1)
 end
 
-slot0.initShips = function(slot0)
+function slot0.initShips(slot0)
 	slot0.cards = {}
 	slot1 = slot0.bottomTF
 	slot1 = slot1:Find("scroll")
 	slot0.shipRect = slot1:GetComponent("LScrollRect")
 
-	slot0.shipRect.onInitItem = function(slot0)
+	function slot0.shipRect.onInitItem(slot0)
 		uv0.cards[slot0] = ShopSkinCard.New(slot0, uv0)
 	end
 
-	slot0.shipRect.onUpdateItem = function(slot0, slot1)
+	function slot0.shipRect.onUpdateItem(slot0, slot1)
 		if not uv0.cards[slot1] then
 			uv0.cards[slot1] = ShopSkinCard.New(slot1, uv0)
 		end
@@ -1163,7 +1155,7 @@ slot0.initShips = function(slot0)
 	end
 end
 
-slot0.SwitchCntPlusPlus = function(slot0)
+function slot0.SwitchCntPlusPlus(slot0)
 	slot0.switchCnt = slot0.switchCnt + 1
 
 	if slot0.switchCnt >= 2 then
@@ -1173,7 +1165,7 @@ slot0.SwitchCntPlusPlus = function(slot0)
 	end
 end
 
-slot0.onNext = function(slot0)
+function slot0.onNext(slot0)
 	if slot0.index == #slot0.displays then
 		return
 	end
@@ -1206,7 +1198,7 @@ slot0.onNext = function(slot0)
 			end
 		end
 
-		slot6 = function()
+		function slot6()
 			return getBounds(uv0.card._tf).size.x < math.ceil(getBounds(uv1._tf):GetMax().x - getBounds(uv0.bottomTF:Find("scroll")):GetMax().x)
 		end
 
@@ -1216,7 +1208,7 @@ slot0.onNext = function(slot0)
 	end
 end
 
-slot0.onPrev = function(slot0)
+function slot0.onPrev(slot0)
 	if slot0.index == 1 then
 		return
 	end
@@ -1247,7 +1239,7 @@ slot0.onPrev = function(slot0)
 			end
 		end
 
-		slot5 = function()
+		function slot5()
 			return getBounds(uv0.bottomTF:Find("scroll/content")):GetMin().x < getBounds(uv0.bottomTF:Find("scroll")):GetMin().x and getBounds(uv0.card._tf):GetMin().x < slot0:GetMin().x
 		end
 
@@ -1257,19 +1249,19 @@ slot0.onPrev = function(slot0)
 	end
 end
 
-slot0.updateShipRect = function(slot0, slot1)
+function slot0.updateShipRect(slot0, slot1)
 	slot0.card = nil
 
 	if slot0.contextData.pageId and slot0.shipRect then
 		slot0.displays = {}
 
-		slot2 = function(slot0)
+		function slot2(slot0)
 			return uv0.encoreSkinMap[slot0] == true
 		end
 
 		slot3 = {}
 
-		slot4 = function(slot0)
+		function slot4(slot0)
 			if #uv0 == 0 then
 				for slot4, slot5 in ipairs(uv1.skinGoodsVOs) do
 					if slot5:getConfig("genre") == ShopArgs.SkinShop then
@@ -1292,7 +1284,7 @@ slot0.updateShipRect = function(slot0, slot1)
 			end
 		end
 
-		slot5 = function(slot0, slot1)
+		function slot5(slot0, slot1)
 			if ((slot0.type == Goods.TYPE_ACTIVITY or slot0.type == Goods.TYPE_ACTIVITY_EXTRA) and 0 or slot0:GetPrice()) == ((slot1.type == Goods.TYPE_ACTIVITY or slot1.type == Goods.TYPE_ACTIVITY_EXTRA) and 0 or slot1:GetPrice()) then
 				return slot0.id < slot1.id
 			else
@@ -1322,7 +1314,7 @@ slot0.updateShipRect = function(slot0, slot1)
 	end
 end
 
-slot0.ToVShip = function(slot0, slot1)
+function slot0.ToVShip(slot0, slot1)
 	if not slot0.vship then
 		slot0.vship = {
 			getNation = function ()
@@ -1345,7 +1337,7 @@ slot0.ToVShip = function(slot0, slot1)
 	return slot0.vship
 end
 
-slot0.MatchIndex = function(slot0, slot1)
+function slot0.MatchIndex(slot0, slot1)
 	if not slot1:GetDefaultShipConfig() then
 		return false
 	end
@@ -1355,7 +1347,7 @@ slot0.MatchIndex = function(slot0, slot1)
 	return ShipIndexConst.filterByType(slot3, slot0.defaultIndex.typeIndex) and ShipIndexConst.filterByCamp(slot3, slot0.defaultIndex.campIndex) and ShipIndexConst.filterByRarity(slot3, slot0.defaultIndex.rarityIndex) and SkinIndexLayer.filterByExtra(slot1, slot0.defaultIndex.extraIndex)
 end
 
-slot0.addVerticalDrag = function(slot0, slot1, slot2, slot3)
+function slot0.addVerticalDrag(slot0, slot1, slot2, slot3)
 	slot4 = GetOrAddComponent(slot1, "EventTriggerListener")
 	slot5 = 90
 	slot6 = nil
@@ -1401,7 +1393,7 @@ slot0.addVerticalDrag = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	for slot4, slot5 in ipairs(slot0.cards) do
 		slot5:Dispose()
 	end

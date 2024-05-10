@@ -1,10 +1,10 @@
 slot0 = class("CommanderFormationPage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CommanderFormationUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.samllTF = slot0:findTF("small")
 
 	setActive(slot0.samllTF, true)
@@ -27,21 +27,15 @@ slot0.OnInit = function(slot0)
 	slot0.restAllBtn = slot0:findTF("rest_all", slot0.descFrameTF)
 	slot0.quickBtn = slot0:findTF("quick_btn", slot0.descFrameTF)
 	slot0.recordPanel = slot0:findTF("record_panel")
-	slot2 = slot0.recordPanel
-	slot2 = slot0.recordPanel
 	slot0.recordCommanders = {
-		slot2:Find("current/commanders/commander1/frame/info"),
-		slot2:Find("current/commanders/commander2/frame/info")
+		slot0.recordPanel:Find("current/commanders/commander1/frame/info"),
+		slot0.recordPanel:Find("current/commanders/commander2/frame/info")
 	}
-	slot2 = slot0.recordPanel
-	slot2 = slot0.recordPanel
 	slot0.reocrdSkills = {
-		slot2:Find("current/commanders/commander1/skill_info"),
-		slot2:Find("current/commanders/commander2/skill_info")
+		slot0.recordPanel:Find("current/commanders/commander1/skill_info"),
+		slot0.recordPanel:Find("current/commanders/commander2/skill_info")
 	}
-	slot2 = slot0.recordPanel
-	slot3 = slot0.recordPanel
-	slot0.recordList = UIItemList.New(slot2:Find("record/content"), slot3:Find("record/content/commanders"))
+	slot0.recordList = UIItemList.New(slot0.recordPanel:Find("record/content"), slot0.recordPanel:Find("record/content/commanders"))
 
 	onButton(slot0, slot0.samllTF, function ()
 		uv0:openDescPanel()
@@ -61,15 +55,15 @@ slot0.OnInit = function(slot0)
 	onButton(slot0, slot0.quickBtn, function ()
 		uv0:OpenRecordPanel()
 	end, SFX_PANEL)
-
-	slot3 = slot0.recordPanel
-
-	onButton(slot0, slot3:Find("back"), function ()
+	onButton(slot0, slot0.recordPanel:Find("back"), function ()
 		uv0:CloseRecordPanel()
 	end, SFX_PANEL)
+	setText(slot0:findTF("desc/frame/atttr_panel/abilitys/title/Text"), i18n("commander_subtile_ablity"))
+	setText(slot0:findTF("desc/frame/atttr_panel/talents/title/Text"), i18n("commander_subtile_talent"))
+	setText(slot0:findTF("record_panel/current/title/Text"), i18n("commander_formation_prefab_fleet"))
 end
 
-slot0.Update = function(slot0, slot1, slot2)
+function slot0.Update(slot0, slot1, slot2)
 	slot0.fleet = slot1
 	slot0.prefabFleets = slot2
 	slot3 = slot0.fleet:getCommanders()
@@ -83,7 +77,7 @@ slot0.Update = function(slot0, slot1, slot2)
 	slot0:updateRecordPanel()
 end
 
-slot0.openDescPanel = function(slot0, slot1)
+function slot0.openDescPanel(slot0, slot1)
 	slot2 = slot1 or 0.2
 
 	if LeanTween.isTweening(go(slot0.samllTF)) or LeanTween.isTweening(go(slot0.descFrameTF)) then
@@ -107,7 +101,7 @@ slot0.openDescPanel = function(slot0, slot1)
 	slot0._tf:SetAsLastSibling()
 end
 
-slot0.closeDescPanel = function(slot0, slot1)
+function slot0.closeDescPanel(slot0, slot1)
 	slot2 = slot1 or 0.2
 
 	if LeanTween.isTweening(go(slot0.samllTF)) or LeanTween.isTweening(go(slot0.descFrameTF)) then
@@ -132,7 +126,7 @@ slot0.closeDescPanel = function(slot0, slot1)
 	slot0.contextData.inDescPage = false
 end
 
-slot0.updateDesc = function(slot0)
+function slot0.updateDesc(slot0)
 	slot1 = slot0.fleet:getCommanders()
 
 	for slot5 = 1, CommanderConst.MAX_FORMATION_POS do
@@ -146,7 +140,7 @@ slot0.updateDesc = function(slot0)
 	slot0:updateAdditions()
 end
 
-slot0.updateAdditions = function(slot0)
+function slot0.updateAdditions(slot0)
 	slot1 = slot0.fleet
 	slot2 = _.values(slot1:getCommandersTalentDesc())
 	slot3, slot4 = slot1:getCommandersAddition()
@@ -177,7 +171,7 @@ slot0.updateAdditions = function(slot0)
 	Canvas.ForceUpdateCanvases()
 end
 
-slot0.updateSkillTF = function(slot0, slot1, slot2)
+function slot0.updateSkillTF(slot0, slot1, slot2)
 	setActive(slot2, slot1)
 
 	if slot1 then
@@ -195,7 +189,7 @@ slot0.updateSkillTF = function(slot0, slot1, slot2)
 	removeOnButton(slot2)
 end
 
-slot0.updateCommander = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.updateCommander(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot1:Find("add")
 	slot6 = slot1:Find("info")
 
@@ -224,12 +218,12 @@ slot0.updateCommander = function(slot0, slot1, slot2, slot3, slot4)
 	setActive(slot6, slot3)
 end
 
-slot0.OpenRecordPanel = function(slot0)
+function slot0.OpenRecordPanel(slot0)
 	setActive(slot0.descFrameTF, false)
 	setActive(slot0.recordPanel, true)
 end
 
-slot0.updateRecordPanel = function(slot0)
+function slot0.updateRecordPanel(slot0)
 	slot1 = slot0.fleet:getCommanders()
 
 	for slot5, slot6 in ipairs(slot0.recordCommanders) do
@@ -247,7 +241,7 @@ slot0.updateRecordPanel = function(slot0)
 	slot0.recordList:align(#slot0.prefabFleets)
 end
 
-slot0.UpdatePrefabFleet = function(slot0, slot1, slot2, slot3)
+function slot0.UpdatePrefabFleet(slot0, slot1, slot2, slot3)
 	slot4 = slot2:Find("fleet_name")
 
 	onInputEndEdit(slot0, slot4, function ()
@@ -303,12 +297,12 @@ slot0.UpdatePrefabFleet = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.CloseRecordPanel = function(slot0)
+function slot0.CloseRecordPanel(slot0)
 	setActive(slot0.descFrameTF, true)
 	setActive(slot0.recordPanel, false)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0:isShowing() then
 		LeanTween.cancel(go(slot0.samllTF))
 		LeanTween.cancel(go(slot0.descFrameTF))

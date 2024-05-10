@@ -4,13 +4,11 @@ slot0.EVENT_OPERATION = "event operation"
 slot0.GO_SHOPS_LAYER = "event go shop layer"
 slot0.GO_SHOPS_LAYER_STEEET = "event go shop layer in shopstreet"
 slot0.BATTLE_OPERA = "event difficult sel"
-slot0.REQUEST_VOTE_INFO = "event request vote info"
-slot0.GO_VOTE_LAYER = "event go vote layer"
-slot0.GO_FISRT_VOTE = "event go first vote"
 slot0.GO_BACKYARD = "event go backyard"
 slot0.GO_LOTTERY = "event go lottery"
 slot0.EVENT_COLORING_ACHIEVE = "event coloring achieve"
 slot0.ON_TASK_SUBMIT = "event on task submit"
+slot0.ON_TASK_SUBMIT_ONESTEP = "event on task submit one step"
 slot0.ON_TASK_GO = "event on task go"
 slot0.OPEN_LAYER = "event OPEN_LAYER"
 slot0.CLOSE_LAYER = "event CLOSE_LAYER"
@@ -27,7 +25,6 @@ slot0.SPECIAL_BATTLE_OPERA = "special battle opera"
 slot0.NEXT_DISPLAY_AWARD = "next display awards"
 slot0.GO_PRAY_POOL = "go pray pool"
 slot0.SELECT_ACTIVITY = "event select activity"
-slot0.OPEN_VOTEBOOK = "event open vote book"
 slot0.FETCH_INSTARGRAM = "fetch instagram"
 slot0.MUSIC_GAME_OPERATOR = "get music game final prize"
 slot0.SHOW_NEXT_ACTIVITY = "show next activity"
@@ -41,8 +38,12 @@ slot0.ON_SHAKE_BEADS_RESULT = "on shake beads result"
 slot0.GO_PERFORM_COMBAT = "ActivityMediator.GO_PERFORM_COMBAT"
 slot0.ON_AWARD_WINDOW = "ActivityMediator:ON_AWARD_WINDOW"
 slot0.GO_CARDPUZZLE_COMBAT = "ActivityMediator.GO_CARDPUZZLE_COMBAT"
+slot0.CHARGE = "ActivityMediator.CHARGE"
+slot0.BUY_ITEM = "ActivityMediator.BUY_ITEM"
+slot0.OPEN_CHARGE_ITEM_PANEL = "ActivityMediator.OPEN_CHARGE_ITEM_PANEL"
+slot0.OPEN_CHARGE_BIRTHDAY = "ActivityMediator.OPEN_CHARGE_BIRTHDAY"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0.UIAvalibleCallbacks = {}
 
 	slot0:bind(uv0.ON_AWARD_WINDOW, function (slot0, slot1, slot2, slot3)
@@ -58,12 +59,6 @@ slot0.register = function(slot0)
 	end)
 	slot0:bind(uv0.GO_MINI_GAME, function (slot0, slot1)
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, slot1)
-	end)
-	slot0:bind(uv0.OPEN_VOTEBOOK, function (slot0)
-		uv0:addSubLayers(Context.New({
-			mediator = VoteOrderBookMediator,
-			viewComponent = VoteOrderBookLayer
-		}))
 	end)
 	slot0:bind(uv0.GO_SUBMARINE_RUN, function (slot0, slot1)
 		uv0:sendNotification(GAME.BEGIN_STAGE, {
@@ -208,31 +203,6 @@ slot0.register = function(slot0)
 			})
 		end
 	end)
-	slot0:bind(uv0.REQUEST_VOTE_INFO, function (slot0, slot1)
-		uv0:sendNotification(GAME.REQUEST_VOTE_INFO, slot1)
-	end)
-	slot0:bind(uv0.GO_VOTE_LAYER, function (slot0, slot1)
-		if not _.detect(pg.activity_vote.all, function (slot0)
-			return pg.TimeMgr.GetInstance():inTime(pg.activity_vote[slot0].time_show) and slot1.is_in_game == 1
-		end) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_not_start"))
-
-			return
-		end
-
-		uv0:sendNotification(GAME.REQUEST_VOTE_INFO, {
-			configId = slot2,
-			callback = function ()
-				uv0:sendNotification(GAME.GO_SCENE, SCENE.VOTE)
-			end
-		})
-	end)
-	slot0:bind(uv0.GO_FISRT_VOTE, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
-			mediator = VoteFameHallMediator,
-			viewComponent = VoteFameHallLayer
-		}))
-	end)
 	slot0:bind(uv0.GO_LOTTERY, function (slot0)
 		uv0:addSubLayers(Context.New({
 			mediator = LotteryMediator,
@@ -248,8 +218,13 @@ slot0.register = function(slot0)
 	slot0:bind(uv0.EVENT_COLORING_ACHIEVE, function (slot0, slot1)
 		uv0:sendNotification(GAME.COLORING_ACHIEVE, slot1)
 	end)
-	slot0:bind(uv0.ON_TASK_SUBMIT, function (slot0, slot1)
-		uv0:sendNotification(GAME.SUBMIT_TASK, slot1.id)
+	slot0:bind(uv0.ON_TASK_SUBMIT, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.SUBMIT_TASK, slot1.id, slot2)
+	end)
+	slot0:bind(uv0.ON_TASK_SUBMIT_ONESTEP, function (slot0, slot1)
+		uv0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
+			resultList = slot1
+		})
 	end)
 	slot0:bind(uv0.ON_TASK_GO, function (slot0, slot1)
 		uv0:sendNotification(GAME.TASK_GO, {
@@ -316,6 +291,33 @@ slot0.register = function(slot0)
 			combatID = slot1
 		})
 	end)
+	slot0:bind(uv0.CHARGE, function (slot0, slot1)
+		uv0:sendNotification(GAME.CHARGE_OPERATION, {
+			shopId = slot1
+		})
+	end)
+	slot0:bind(uv0.BUY_ITEM, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.SHOPPING, {
+			id = slot1,
+			count = slot2
+		})
+	end)
+	slot0:bind(uv0.OPEN_CHARGE_ITEM_PANEL, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
+			mediator = ChargeItemPanelMediator,
+			viewComponent = ChargeItemPanelLayer,
+			data = {
+				panelConfig = slot1
+			}
+		}))
+	end)
+	slot0:bind(uv0.OPEN_CHARGE_BIRTHDAY, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
+			mediator = ChargeBirthdayMediator,
+			viewComponent = ChargeBirthdayLayer,
+			data = {}
+		}))
+	end)
 	slot0.viewComponent:setActivities(getProxy(ActivityProxy):getPanelActivities())
 
 	slot3 = getProxy(PlayerProxy):getRawData()
@@ -324,7 +326,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setFlagShip(getProxy(BayProxy):getShipById(slot3.character))
 end
 
-slot0.onUIAvalible = function(slot0)
+function slot0.onUIAvalible(slot0)
 	slot0.UIAvalible = true
 
 	_.each(slot0.UIAvalibleCallbacks, function (slot0)
@@ -332,7 +334,7 @@ slot0.onUIAvalible = function(slot0)
 	end)
 end
 
-slot0.initNotificationHandleDic = function(slot0)
+function slot0.initNotificationHandleDic(slot0)
 	slot0.handleDic = {
 		[ActivityProxy.ACTIVITY_ADDED] = function (slot0, slot1)
 			if slot1:getBody():getConfig("type") == ActivityConst.ACTIVITY_TYPE_LOTTERY then
@@ -417,12 +419,6 @@ slot0.initNotificationHandleDic = function(slot0)
 			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1:getBody().awards)
 		end,
 		[VoteProxy.VOTE_ORDER_BOOK_DELETE] = function (slot0, slot1)
-			slot2 = slot1:getBody()
-			slot3 = slot0.viewComponent.pageDic or {}
-
-			if slot3[ActivityConst.VOTE_ORDER_BOOK_PHASE_1] or slot3[ActivityConst.VOTE_ORDER_BOOK_PHASE_2] or slot3[ActivityConst.VOTE_ORDER_BOOK_PHASE_3] or slot3[ActivityConst.VOTE_ORDER_BOOK_PHASE_4] or slot3[ActivityConst.VOTE_ORDER_BOOK_PHASE_5] or slot3[ActivityConst.VOTE_ORDER_BOOK_PHASE_6] or slot3[ActivityConst.VOTE_ORDER_BOOK_PHASE_7] or slot3[ActivityConst.VOTE_ORDER_BOOK_PHASE_8] then
-				slot4:UpdateOrderBookBtn(slot2)
-			end
 		end,
 		[VoteProxy.VOTE_ORDER_BOOK_UPDATE] = function (...)
 			uv0.handleDic[VoteProxy.VOTE_ORDER_BOOK_DELETE](...)
@@ -474,11 +470,27 @@ slot0.initNotificationHandleDic = function(slot0)
 			slot2 = slot1:getBody()
 
 			slot0.viewComponent:loadLayers()
+		end,
+		[GAME.CHARGE_SUCCESS] = function (slot0, slot1)
+			slot0.viewComponent:updateTaskLayers()
+			slot0.viewComponent:OnChargeSuccess(Goods.Create({
+				shop_id = slot1:getBody().shopId
+			}, Goods.TYPE_CHARGE))
+		end,
+		[GAME.SHOPPING_DONE] = function (slot0, slot1)
+			slot3 = slot0.viewComponent
+
+			slot3:emit(BaseUI.ON_ACHIEVE, slot1:getBody().awards, function ()
+				uv0.viewComponent:updateTaskLayers()
+			end)
+		end,
+		[GAME.ACT_MANUAL_SIGN_DONE] = function (slot0, slot1)
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1:getBody().awards)
 		end
 	}
 end
 
-slot0.showNextActivity = function(slot0)
+function slot0.showNextActivity(slot0)
 	if not getProxy(ActivityProxy) then
 		return
 	end

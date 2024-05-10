@@ -1,6 +1,6 @@
 slot0 = class("FushunEliteBeastChar", import(".FushunBeastChar"))
 
-slot0.Hurt = function(slot0, slot1)
+function slot0.Hurt(slot0, slot1)
 	if slot0:IsDeath() or slot0:IsEscape() then
 		return
 	end
@@ -14,7 +14,7 @@ slot0.Hurt = function(slot0, slot1)
 	slot0.animator:SetTrigger("damage")
 end
 
-slot0.UpdateHp = function(slot0, slot1)
+function slot0.UpdateHp(slot0, slot1)
 	uv0.super.UpdateHp(slot0, slot1)
 	slot0.animator:SetInteger("hp", slot0.hp)
 end

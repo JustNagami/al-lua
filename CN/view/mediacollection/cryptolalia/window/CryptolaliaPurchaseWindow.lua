@@ -1,10 +1,10 @@
 slot0 = class("CryptolaliaPurchaseWindow", import("view.base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CryptolaliaPurchaseWindowui"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.icon = slot0:findTF("window/cover/icon"):GetComponent(typeof(Image))
 	slot0.signature = slot0:findTF("window/cover/signature"):GetComponent(typeof(Image))
 	slot0.name = slot0:findTF("window/cover/name"):GetComponent(typeof(Text))
@@ -20,7 +20,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0.exchangeBtn:Find("Text"), i18n("cryptolalia_exchange"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
@@ -39,7 +39,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	uv0.super.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
@@ -70,14 +70,16 @@ slot0.Show = function(slot0, slot1)
 	slot0.gemCntTxt.text = setColorStr(slot5, getProxy(PlayerProxy):getRawData():getResource(slot3.id) < slot3.count and COLOR_RED or COLOR_GREEN) .. setColorStr("/" .. slot3.count, "#AFAFAF")
 	slot7 = slot1:GetCost(Cryptolalia.COST_TYPE_TICKET)
 	slot0.ticketCntTxt.text = setColorStr(slot8, slot4:getResource(slot7.id) < slot7.count and COLOR_RED or COLOR_GREEN) .. setColorStr("/" .. slot7.count, "#AFAFAF")
+
+	triggerToggle(slot0.ticketToggle, true)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0.exited = true
 end
 

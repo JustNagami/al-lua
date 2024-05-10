@@ -1,6 +1,6 @@
 slot0 = class("WarspiteTransformationPage", import("view.base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("AD", slot0._tf)
 	slot0.btn = slot0:findTF("battle_btn", slot0.bg)
 	slot0.tip = slot0:findTF("help", slot0.bg)
@@ -10,7 +10,7 @@ slot0.OnInit = function(slot0)
 	slot0.score = slot0:findTF("highscore", slot0.bg)
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	if slot0.activity.data4 == 0 and slot1.data2 >= 7 then
 		slot0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 3,
@@ -28,7 +28,7 @@ slot0.OnDataSetting = function(slot0)
 	end
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	slot1 = slot0.activity
 	slot2 = slot1:getConfig("config_client")[2]
 	slot3 = {
@@ -37,7 +37,7 @@ slot0.OnFirstFlush = function(slot0)
 		count = slot2[3]
 	}
 
-	slot7 = function()
+	function slot7()
 		uv0:emit(BaseUI.ON_DROP, uv1)
 	end
 
@@ -67,7 +67,7 @@ slot0.OnFirstFlush = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	slot1 = slot0.activity
 	slot2 = pg.TimeMgr.GetInstance()
 	slot3 = slot2:DiffDay(slot1.data1, slot2:GetServerTime()) + 1

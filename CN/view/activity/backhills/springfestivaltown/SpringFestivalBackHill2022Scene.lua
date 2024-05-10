@@ -1,6 +1,6 @@
 slot0 = class("SpringFestivalBackHill2022Scene", import("..TemplateMV.BackHillTemplate"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SpringFestivalBackHill2022UI"
 end
 
@@ -8,7 +8,7 @@ slot0.edge2area = {
 	default = "_sdPlace"
 }
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	uv0.super.init(slot0)
 
 	slot0.top = slot0:findTF("top")
@@ -35,7 +35,7 @@ slot0.init = function(slot0)
 	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestival2022Graph"))
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0:findTF("top/back"), function ()
 		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
@@ -78,14 +78,11 @@ slot0.didEnter = function(slot0)
 		}))
 	end)
 	slot0:BindItemSkinShop()
-	slot0:BindItemBuildShip({
-		page = BuildShipScene.PAGE_BUILD,
-		projectName = BuildShipScene.PROJECTS.LIGHT
-	})
+	slot0:BindItemBuildShip()
 	slot0:UpdateView()
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	slot1, slot2 = nil
 	slot3 = getProxy(ActivityProxy)
 
@@ -96,7 +93,7 @@ slot0.UpdateView = function(slot0)
 	setActive(slot0.upper_longtenghuyue:Find("Tip"), Activity.IsActivityReady(slot3:getActivityById(ActivityConst.ANSHAN_CHANGCHUN_GAIZAO_ID)))
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0:clearStudents()
 	uv0.super.willExit(slot0)
 end

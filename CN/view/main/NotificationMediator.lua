@@ -5,7 +5,7 @@ slot0.OPEN_INFO = "NotificationMediator:OPEN_INFO"
 slot0.OPEN_EMOJI = "NotificationMediator:OPEN_EMOJI"
 slot0.BATTLE_CHAT_CLOSE = "NotificationMediator:BATTLE_CHAT_CLOSE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getRawData())
 
 	slot4 = slot0.viewComponent
@@ -61,6 +61,8 @@ slot0.register = function(slot0)
 					hideNo = true,
 					content = i18n("chat_msg_ban", os.date("%Y/%m/%d %H:%M:%S", slot4.chatMsgBanTime))
 				})
+			elseif PLATFORM_CODE == PLATFORM_CH and LuaHelper.GetCHPackageType() ~= PACKAGE_TYPE_BILI and slot4.level < 70 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("chat_level_not_enough", 70))
 			elseif slot4.level < 10 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("chat_level_not_enough", 10))
 			elseif slot8 - slot7 < 10 then
@@ -117,7 +119,7 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SEND_CMD_DONE,
 		ChatProxy.NEW_MSG,
@@ -131,7 +133,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == ChatProxy.NEW_MSG or slot2 == FriendProxy.FRIEND_NEW_MSG or slot2 == GuildProxy.NEW_MSG_ADDED then
@@ -187,7 +189,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.getAllMessages = function(slot0)
+function slot0.getAllMessages(slot0)
 	slot1 = {}
 
 	_.each(getProxy(ChatProxy):getRawData(), function (slot0)
@@ -211,7 +213,7 @@ slot0.getAllMessages = function(slot0)
 	end):value()
 end
 
-slot0.onChangeChatRoomDone = function(slot0, slot1)
+function slot0.onChangeChatRoomDone(slot0, slot1)
 	if slot0.viewComponent.tempRoomSendBits then
 		NotificationLayer.ChannelBits.send = slot0.viewComponent.tempRoomSendBits
 	end

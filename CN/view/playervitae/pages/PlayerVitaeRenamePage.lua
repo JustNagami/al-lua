@@ -1,10 +1,10 @@
 slot0 = class("PlayerVitaeRenamePage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "PlayerVitaeRenamePage"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.content = slot0:findTF("frame/border/tip"):GetComponent(typeof(Text))
 	slot0.confirmBtn = slot0:findTF("frame/queren")
 	slot0.cancelBtn = slot0:findTF("frame/cancel")
@@ -17,7 +17,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0.cancelBtn:Find("Image"), i18n("word_cancel"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0.confirmBtn, function ()
 		uv0:emit(PlayerVitaeMediator.ON_CHANGE_PLAYER_NAME, getInputText(uv0.inputField))
 		setInputText(uv0.inputField, "")
@@ -31,32 +31,14 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	uv0.super.Show(slot0)
 
-	slot3 = nil
-	slot4 = 0
-
-	if slot1:getModifyNameComsume()[1] == DROP_TYPE_RESOURCE then
-		slot3 = Item.New({
-			id = id2ItemId(slot2[2]),
-			type = DROP_TYPE_ITEM,
-			count = slot2[3]
-		})
-		slot4 = slot1:getResById(slot2[2])
-	elseif slot2[1] == DROP_TYPE_ITEM then
-		slot3 = Item.New({
-			id = slot2[2],
-			type = DROP_TYPE_ITEM,
-			count = slot2[3]
-		})
-		slot4 = getProxy(BagProxy):getItemCountById(slot2[2])
-	end
-
-	slot0.content.text = i18n("player_name_change_windows_tip", slot3:getConfig("name"), slot4 .. "/" .. slot2[3])
+	slot2 = Drop.Create(slot1:getModifyNameComsume())
+	slot0.content.text = i18n("player_name_change_windows_tip", slot2:getName(), slot2:getOwnedCount() .. "/" .. slot2.count)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0:Hide()
 end
 

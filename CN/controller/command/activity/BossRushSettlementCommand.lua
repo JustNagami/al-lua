@@ -1,6 +1,6 @@
 slot0 = class("BossRushSettlementCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = pg.ConnectionMgr.GetInstance()
 
 	slot3:Send(11202, {
@@ -59,7 +59,7 @@ slot0.execute = function(slot0, slot1)
 	end)
 end
 
-slot0.ConcludeEXP = function(slot0, slot1, slot2)
+function slot0.ConcludeEXP(slot0, slot1, slot2)
 	slot3 = slot0.system
 	slot4 = slot0.arg1
 	slot5 = BossRushSeriesData.New({
@@ -121,7 +121,7 @@ slot0.ConcludeEXP = function(slot0, slot1, slot2)
 	return slot6
 end
 
-slot0.addShipsExp = function(slot0, slot1)
+function slot0.addShipsExp(slot0, slot1)
 	slot2 = {}
 	slot3 = {}
 	slot4 = getProxy(BayProxy)
@@ -157,7 +157,7 @@ slot0.addShipsExp = function(slot0, slot1)
 	return slot2, slot3
 end
 
-slot0.GenerateCommanderExp = function(slot0)
+function slot0.GenerateCommanderExp(slot0)
 	slot1 = {}
 	slot2 = {}
 	slot3 = getProxy(CommanderProxy)
@@ -178,31 +178,24 @@ slot0.GenerateCommanderExp = function(slot0)
 	return slot1, slot2
 end
 
-slot0.GeneralLoot = function(slot0)
-	slot1 = {}
-	slot2 = {}
+function slot0.GeneralLoot(slot0)
+	for slot5, slot6 in pairs({
+		drops = slot0.drop_info,
+		extraDrops = slot0.extra_drop_info
+	}) do
+		slot1[slot5] = PlayerConst.addTranDrop(slot6)
 
-	slot3 = function(slot0, slot1)
-		for slot5, slot6 in ipairs(slot0) do
-			slot7 = Item.New(slot6)
-
-			table.insert(slot1, slot7)
-
-			if slot7.type == DROP_TYPE_SHIP then
-				slot7.virgin = getProxy(CollectionProxy) and slot9.shipGroups[pg.ship_data_template[slot7.id].group_type] == nil
+		underscore.each(slot1[slot5], function (slot0)
+			if slot0.type == DROP_TYPE_SHIP then
+				slot0.virgin = getProxy(CollectionProxy) and slot2.shipGroups[pg.ship_data_template[slot0.id].group_type] == nil
 			end
-
-			pg.m02:sendNotification(GAME.ADD_ITEM, slot7)
-		end
+		end)
 	end
 
-	slot3(slot0.drop_info, slot1)
-	slot3(slot0.extra_drop_info, slot2)
-
-	return slot1, slot2
+	return slot1.drops, slot1.extraDrops
 end
 
-slot0.GeneralPlayerCosume = function(slot0, slot1, slot2, slot3)
+function slot0.GeneralPlayerCosume(slot0, slot1, slot2, slot3)
 	slot5 = getProxy(PlayerProxy):getData()
 	slot6 = {
 		oldPlayer = {

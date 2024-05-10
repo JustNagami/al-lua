@@ -3,11 +3,11 @@ slot0.PageEmojiNums = 8
 slot0.Frequently_Used_Emoji_Num = 6
 slot0.True_Emoji_Num_Of_Page = 15
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "EmojiUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.emojiGroup = slot0:findTF("frame/group")
 	slot0.emojiType = slot0:findTF("type", slot0.emojiGroup)
 	slot0.emojiEvent = slot0:findTF("frame/bg/mask/event")
@@ -43,7 +43,7 @@ slot0.init = function(slot0)
 	slot0.emojiProxy = getProxy(EmojiProxy)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_CANCEL)
@@ -54,7 +54,7 @@ slot0.didEnter = function(slot0)
 	})
 end
 
-slot0.display = function(slot0)
+function slot0.display(slot0)
 	slot1 = UIItemList.New(slot0.emojiGroup, slot0.emojiType)
 
 	slot1:make(function (slot0, slot1, slot2)
@@ -91,7 +91,7 @@ slot0.display = function(slot0)
 	triggerToggle(slot0.emojiGroup:GetChild(0), true)
 end
 
-slot0.filter = function(slot0, slot1)
+function slot0.filter(slot0, slot1)
 	slot2 = _.map(pg.emoji_template.all, function (slot0)
 		if pg.emoji_template[slot0].achieve == 0 then
 			return pg.emoji_template[slot0]
@@ -175,15 +175,18 @@ slot0.filter = function(slot0, slot1)
 
 		slot0:clearItem(slot11)
 
-		slot13 = UIItemList.New(slot11, slot11:Find("face"))
+		slot13 = GetComponent(slot11, typeof(GridLayoutGroup))
+		slot14 = UIItemList.New(slot11, slot11:Find("face"))
 
-		slot13:make(function (slot0, slot1, slot2)
+		slot14:make(function (slot0, slot1, slot2)
 			slot3 = uv0[slot1 + 1]
 
 			if slot0 == UIItemList.EventUpdate then
 				PoolMgr.GetInstance():GetPrefab("emoji/" .. slot3.pic, slot3.pic, true, function (slot0)
 					if not IsNil(uv0) then
 						slot0.name = uv1.pic
+						tf(slot0).sizeDelta = Vector2(uv2.cellSize.x, uv2.cellSize.y)
+						tf(slot0).anchoredPosition = Vector2.zero
 
 						if slot0:GetComponent("Animator") then
 							slot1.enabled = false
@@ -195,26 +198,26 @@ slot0.filter = function(slot0, slot1)
 
 						setParent(slot0, uv0, false)
 
-						if table.contains(uv2, uv1.id) then
-							cloneTplTo(uv3.newTag, uv0, "newtag")
-							uv3.emojiProxy:removeNewEmojiID(uv1.id)
+						if table.contains(uv3, uv1.id) then
+							cloneTplTo(uv4.newTag, uv0, "newtag")
+							uv4.emojiProxy:removeNewEmojiID(uv1.id)
 						end
 					else
 						PoolMgr.GetInstance():ReturnPrefab("emoji/" .. uv1.pic, uv1.pic, slot0)
 					end
 				end)
-				onButton(uv2, slot2, function ()
+				onButton(uv3, slot2, function ()
 					getProxy(ChatProxy):addUsedEmoji(uv0.id)
 					uv1.contextData.callback(uv0.id)
 					triggerButton(uv1._tf)
 				end, SFX_PANEL)
 			end
 		end)
-		slot13:align(#_.slice(slot2, slot10 * uv0.PageEmojiNums + 1, uv0.PageEmojiNums))
+		slot14:align(#_.slice(slot2, slot10 * uv0.PageEmojiNums + 1, uv0.PageEmojiNums))
 	end
 end
 
-slot0.emojiIconFliter = function(slot0)
+function slot0.emojiIconFliter(slot0)
 	slot1 = pg.emoji_small_template
 	slot2 = {}
 
@@ -315,12 +318,12 @@ slot0.emojiIconFliter = function(slot0)
 	end
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 	triggerButton(slot0._tf)
 end
 
-slot0.clearItem = function(slot0, slot1)
+function slot0.clearItem(slot0, slot1)
 	eachChild(slot1, function (slot0)
 		if slot0.childCount > 0 then
 			if slot0:Find("newtag") then
@@ -334,7 +337,7 @@ slot0.clearItem = function(slot0, slot1)
 	end)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	eachChild(slot0.emojiContent, function (slot0)
 		uv0:clearItem(slot0)
 	end)

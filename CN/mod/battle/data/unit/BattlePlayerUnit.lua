@@ -9,13 +9,13 @@ slot0.Battle.BattlePlayerUnit = class("BattlePlayerUnit", slot0.Battle.BattleUni
 slot0.Battle.BattlePlayerUnit.__name = "BattlePlayerUnit"
 slot7 = slot0.Battle.BattlePlayerUnit
 
-slot7.Ctor = function(slot0, slot1, slot2)
+function slot7.Ctor(slot0, slot1, slot2)
 	uv0.super.Ctor(slot0, slot1, slot2)
 
 	slot0._type = uv1.UnitType.PLAYER_UNIT
 end
 
-slot7.Retreat = function(slot0)
+function slot7.Retreat(slot0)
 	uv0.super.Retreat(slot0)
 	slot0:SetDeathReason(uv1.UnitDeathReason.LEAVE)
 	slot0:DeacActionClear()
@@ -23,48 +23,49 @@ slot7.Retreat = function(slot0)
 	slot0._battleProxy:KillUnit(slot0:GetUniqueID())
 end
 
-slot7.DeadActionEvent = function(slot0)
+function slot7.DeadActionEvent(slot0)
 	slot0:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.WILL_DIE, {}))
 	slot0:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.SHUT_DOWN_PLAYER, {}))
 	slot0._unitState:ChangeState(uv0.Battle.UnitState.STATE_DEAD)
 end
 
-slot7.IsSpectre = function(slot0)
+function slot7.IsSpectre(slot0)
 	slot1 = nil
+	slot1 = (slot0:GetAttr()[uv0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY] == nil or slot0:GetAttrByName(slot2)) and uv1.PLAYER_DEFAULT
 
-	return ((slot0:GetAttr()[uv0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY] == nil or slot0:GetAttrByName(slot2)) and uv1.PLAYER_DEFAULT) <= uv1.SPECTRE_UNIT_TYPE
+	return slot1 <= uv1.SPECTRE_UNIT_TYPE, slot1
 end
 
-slot7.InitCurrentHP = function(slot0, slot1)
+function slot7.InitCurrentHP(slot0, slot1)
 	slot0:SetCurrentHP(math.ceil(slot0:GetMaxHP() * slot1))
 	slot0:TriggerBuff(uv0.BuffEffectType.ON_HP_RATIO_UPDATE, {})
 end
 
-slot7.SetSkinId = function(slot0, slot1)
+function slot7.SetSkinId(slot0, slot1)
 	slot0._skinId = slot1
 end
 
-slot7.GetSkinID = function(slot0)
+function slot7.GetSkinID(slot0)
 	return slot0._skinId
 end
 
-slot7.GetDefaultSkinID = function(slot0)
+function slot7.GetDefaultSkinID(slot0)
 	return slot0._tmpData.skin_id
 end
 
-slot7.ActionKeyOffsetUseable = function(slot0)
+function slot7.ActionKeyOffsetUseable(slot0)
 	return slot0._skinData.spine_action_offset
 end
 
-slot7.GetShipName = function(slot0)
+function slot7.GetShipName(slot0)
 	return slot0._shipName or slot0._tmpData.name
 end
 
-slot7.SetShipName = function(slot0, slot1)
+function slot7.SetShipName(slot0, slot1)
 	slot0._shipName = slot1
 end
 
-slot7.SetTemplate = function(slot0, slot1, slot2, slot3)
+function slot7.SetTemplate(slot0, slot1, slot2, slot3)
 	uv0.super.SetTemplate(slot0, slot1)
 
 	slot0._tmpData = uv1.GetPlayerShipTmpDataFromID(slot0._tmpID)
@@ -89,7 +90,7 @@ slot7.SetTemplate = function(slot0, slot1, slot2, slot3)
 	slot0:setStandardLabelTag()
 end
 
-slot7.overrideSkin = function(slot0, slot1, slot2)
+function slot7.overrideSkin(slot0, slot1, slot2)
 	slot0._skinData = uv0.GetPlayerShipSkinDataFromID(slot1)
 	slot3 = {
 		"prefab",
@@ -107,7 +108,7 @@ slot7.overrideSkin = function(slot0, slot1, slot2)
 	end)
 end
 
-slot7.overrideWeaponInfo = function(slot0, slot1, slot2)
+function slot7.overrideWeaponInfo(slot0, slot1, slot2)
 	if slot0._overrideBaseInfo then
 		slot0._tmpData.base_list = slot0._overrideBaseInfo
 	end
@@ -117,20 +118,20 @@ slot7.overrideWeaponInfo = function(slot0, slot1, slot2)
 	end
 end
 
-slot7.SetWeaponInfo = function(slot0, slot1, slot2)
+function slot7.SetWeaponInfo(slot0, slot1, slot2)
 	slot0._overrideBaseInfo = slot1
 	slot0._overridePreloadInfo = slot2
 end
 
-slot7.SetRarity = function(slot0, slot1)
+function slot7.SetRarity(slot0, slot1)
 	slot0._rarity = slot1
 end
 
-slot7.SetIntimacy = function(slot0, slot1)
+function slot7.SetIntimacy(slot0, slot1)
 	slot0._intimacy = slot1
 end
 
-slot7.setWeapon = function(slot0, slot1)
+function slot7.setWeapon(slot0, slot1)
 	slot2 = slot0._tmpData.default_equip_list
 	slot3 = slot0._tmpData.base_list
 	slot4 = slot0._proficiencyList
@@ -147,7 +148,7 @@ slot7.setWeapon = function(slot0, slot1)
 			slot11 = slot4[slot9]
 			slot12 = slot5[slot9]
 
-			slot13 = function(slot0, slot1, slot2)
+			function slot13(slot0, slot1, slot2)
 				for slot7 = 1, uv0[uv1] do
 					slot9 = uv2:AddWeapon(slot0, slot1, slot2, uv3, uv1):GetTemplateData().type
 
@@ -205,17 +206,17 @@ slot7.setWeapon = function(slot0, slot1)
 	end
 end
 
-slot7.SetPriorityWeaponSkin = function(slot0, slot1)
+function slot7.SetPriorityWeaponSkin(slot0, slot1)
 	if not slot0._priorityWeaponSkinID then
 		slot0._priorityWeaponSkinID = slot1
 	end
 end
 
-slot7.GetPriorityWeaponSkin = function(slot0)
+function slot7.GetPriorityWeaponSkin(slot0)
 	return slot0._priorityWeaponSkinID
 end
 
-slot7.AddWeapon = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot7.AddWeapon(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot0._totalWeapon[#slot0._totalWeapon + 1] = uv0.CreateWeaponUnit(slot1, slot0, slot4, slot5)
 
 	if slot2 then
@@ -256,7 +257,7 @@ slot7.AddWeapon = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	return slot7
 end
 
-slot7.RemoveWeapon = function(slot0, slot1)
+function slot7.RemoveWeapon(slot0, slot1)
 	slot3 = nil
 
 	if uv0.GetWeaponPropertyDataFromID(slot1).type == uv1.STRIKE_AIRCRAFT then
@@ -318,7 +319,7 @@ slot7.RemoveWeapon = function(slot0, slot1)
 	return slot3
 end
 
-slot7.RemoveWeaponByLabel = function(slot0, slot1)
+function slot7.RemoveWeaponByLabel(slot0, slot1)
 	slot2 = nil
 
 	for slot6, slot7 in ipairs(slot0._totalWeapon) do
@@ -389,11 +390,11 @@ slot7.RemoveWeaponByLabel = function(slot0, slot1)
 	return slot2
 end
 
-slot7.AddFleetAntiAirWeapon = function(slot0, slot1)
+function slot7.AddFleetAntiAirWeapon(slot0, slot1)
 	slot0._fleetAAList[#slot0._fleetAAList + 1] = slot1
 end
 
-slot7.RemoveFleetAntiAirWeapon = function(slot0, slot1)
+function slot7.RemoveFleetAntiAirWeapon(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0._fleetAAList) do
 		if slot6 == slot1 then
 			table.remove(slot0._fleetAAList, slot5)
@@ -403,11 +404,11 @@ slot7.RemoveFleetAntiAirWeapon = function(slot0, slot1)
 	end
 end
 
-slot7.AddFleetRangeAntiAirWeapon = function(slot0, slot1)
+function slot7.AddFleetRangeAntiAirWeapon(slot0, slot1)
 	slot0._fleetRangeAAList[#slot0._fleetRangeAAList + 1] = slot1
 end
 
-slot7.RemoveFleetRangeAntiAirWeapon = function(slot0, slot1)
+function slot7.RemoveFleetRangeAntiAirWeapon(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0._fleetRangeAAList) do
 		if slot6 == slot1 then
 			table.remove(slot0._fleetRangeAAList, slot5)
@@ -417,14 +418,14 @@ slot7.RemoveFleetRangeAntiAirWeapon = function(slot0, slot1)
 	end
 end
 
-slot7.ShiftWeapon = function(slot0, slot1)
+function slot7.ShiftWeapon(slot0, slot1)
 end
 
-slot7.GetManualWeaponParallel = function(slot0)
+function slot7.GetManualWeaponParallel(slot0)
 	return slot0._tmpData.parallel_max
 end
 
-slot7.CeaseAllWeapon = function(slot0, slot1)
+function slot7.CeaseAllWeapon(slot0, slot1)
 	if slot1 then
 		for slot5, slot6 in ipairs(slot0._totalWeapon) do
 			slot6:Cease()
@@ -438,21 +439,21 @@ slot7.CeaseAllWeapon = function(slot0, slot1)
 	uv0.super.CeaseAllWeapon(slot0, slot1)
 end
 
-slot7.LeaderSetting = function(slot0)
+function slot7.LeaderSetting(slot0)
 	if uv0.GetWords(slot0:GetSkinID(), "hp_warning", slot0:GetIntimacy()) and slot2 ~= "" then
 		slot0._warningValue = uv1.WARNING_HP_RATE * slot0:GetMaxHP()
 	end
 end
 
-slot7.UpdateHP = function(slot0, slot1, slot2, slot3, slot4)
-	uv0.super.UpdateHP(slot0, slot1, slot2, slot3, slot4)
+function slot7.UpdateHP(slot0, slot1, slot2, slot3, slot4)
+	slot5 = uv0.super.UpdateHP(slot0, slot1, slot2, slot3, slot4)
 
 	if slot0._warningValue and slot0._currentHP < slot0._warningValue and not isHeal then
 		slot0._warningValue = nil
-		slot6 = "hp_warning"
+		slot7 = "hp_warning"
 
-		slot0:DispatchVoice(slot6)
-		slot0:DispatchChat(uv1.GetWords(slot0:GetSkinID(), slot6, slot0:GetIntimacy()), 2.5, slot6)
+		slot0:DispatchVoice(slot7)
+		slot0:DispatchChat(uv1.GetWords(slot0:GetSkinID(), slot7, slot0:GetIntimacy()), 2.5, slot7)
 	end
 
 	if slot0._mainUnitWarningValue and slot0._currentHP < slot0._mainUnitWarningValue and slot0._currentHP > 0 and not isHeal then
@@ -460,9 +461,11 @@ slot7.UpdateHP = function(slot0, slot1, slot2, slot3, slot4)
 
 		pg.TipsMgr.GetInstance():ShowTips(i18n("battle_main_emergent", slot0:GetShipName()))
 	end
+
+	return slot5
 end
 
-slot7.SetMainFleetUnit = function(slot0)
+function slot7.SetMainFleetUnit(slot0)
 	uv0.super.SetMainFleetUnit(slot0)
 
 	if slot0._IFF == uv1.FRIENDLY_CODE then
@@ -470,10 +473,10 @@ slot7.SetMainFleetUnit = function(slot0)
 	end
 end
 
-slot7.UpdatePrecastMoveLimit = function(slot0)
+function slot7.UpdatePrecastMoveLimit(slot0)
 end
 
-slot7.setStandardLabelTag = function(slot0)
+function slot7.setStandardLabelTag(slot0)
 	uv0.super.setStandardLabelTag(slot0)
 
 	slot2 = #slot0:GetManualWeaponParallel()
@@ -488,13 +491,13 @@ slot7.setStandardLabelTag = function(slot0)
 	end
 end
 
-slot7.ConfigBubbleFX = function(slot0)
+function slot7.ConfigBubbleFX(slot0)
 	slot0._bubbleFX = uv0.PLAYER_SUB_BUBBLE_FX
 
 	slot0._oxyState:SetBubbleTemplate(uv0.PLAYER_SUB_BUBBLE_INIT, uv0.PLAYER_SUB_BUBBLE_INTERVAL)
 end
 
-slot7.OxyConsume = function(slot0)
+function slot7.OxyConsume(slot0)
 	uv0.super.OxyConsume(slot0)
 
 	if slot0._currentOxy <= 0 then
@@ -502,40 +505,40 @@ slot7.OxyConsume = function(slot0)
 	end
 end
 
-slot7.SetFormationIndex = function(slot0, slot1)
+function slot7.SetFormationIndex(slot0, slot1)
 	slot0._formationIndex = slot1
 end
 
-slot7.setAttrFromOutBattle = function(slot0, slot1, slot2)
+function slot7.setAttrFromOutBattle(slot0, slot1, slot2)
 	uv0.SetPlayerAttrFromOutBattle(slot0, slot1, slot2)
 end
 
-slot7.SetFleetVO = function(slot0, slot1)
+function slot7.SetFleetVO(slot0, slot1)
 	slot0._fleet = slot1
 	slot0._subRaidLine, slot0._subRetreatLine = slot0._fleet:GetSubmarineBaseLine()
 end
 
-slot7.GetTemplate = function(slot0)
+function slot7.GetTemplate(slot0)
 	return slot0._tmpData
 end
 
-slot7.GetRarity = function(slot0)
+function slot7.GetRarity(slot0)
 	return slot0._rarity or slot0._tmpData.rarity
 end
 
-slot7.GetIntimacy = function(slot0)
+function slot7.GetIntimacy(slot0)
 	return slot0._intimacy or 0
 end
 
-slot7.GetAutoPilotPreference = function(slot0)
+function slot7.GetAutoPilotPreference(slot0)
 	return slot0._personality
 end
 
-slot7.GetFleetVO = function(slot0)
+function slot7.GetFleetVO(slot0)
 	return slot0._fleet
 end
 
-slot7.InitCldComponent = function(slot0)
+function slot7.InitCldComponent(slot0)
 	uv0.super.InitCldComponent(slot0)
 	slot0._cldComponent:SetCldData({
 		type = uv1.CldType.SHIP,

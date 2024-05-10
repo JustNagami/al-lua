@@ -3,13 +3,13 @@ pg.SystemGuideMgr = singletonClass("SystemGuideMgr")
 slot0 = pg.SystemGuideMgr
 slot1 = nil
 
-slot0.Init = function(slot0, slot1)
+function slot0.Init(slot0, slot1)
 	uv0 = require("GameCfg.guide.newguide.SSG001")
 
 	slot1()
 end
 
-slot2 = function(slot0)
+function slot2(slot0)
 	if getProxy(PlayerProxy) then
 		return pg.NewStoryMgr.GetInstance():IsPlayed(slot0)
 	end
@@ -17,13 +17,13 @@ slot2 = function(slot0)
 	return false
 end
 
-slot3 = function(slot0)
+function slot3(slot0)
 	if slot0 then
 		slot0()
 	end
 end
 
-slot4 = function(slot0, slot1, slot2)
+function slot4(slot0, slot1, slot2)
 	if pg.SeriesGuideMgr.GetInstance():isRunning() then
 		uv0(slot2)
 
@@ -56,7 +56,7 @@ slot4 = function(slot0, slot1, slot2)
 	pg.NewGuideMgr.GetInstance():Play(slot0, slot1, slot2)
 end
 
-slot0.Play = function(slot0, slot1, slot2)
+function slot0.Play(slot0, slot1, slot2)
 	if IsUnityEditor and not ENABLE_GUIDE then
 		if slot2 then
 			slot2()
@@ -86,7 +86,7 @@ slot0.Play = function(slot0, slot1, slot2)
 	uv3(slot4.id, slot4.args(slot1), slot2)
 end
 
-slot0.PlayChapter = function(slot0, slot1, slot2)
+function slot0.PlayChapter(slot0, slot1, slot2)
 	if slot1.id == 1160002 then
 		slot0:PlayByGuideId("NG0011", nil, slot2)
 	elseif slot1:isTypeDefence() then
@@ -96,18 +96,18 @@ slot0.PlayChapter = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.PlayByGuideId = function(slot0, slot1, slot2, slot3)
+function slot0.PlayByGuideId(slot0, slot1, slot2, slot3)
 	uv0(slot1, slot2, slot3)
 end
 
-slot0.FixGuide = function(slot0, slot1)
+function slot0.FixGuide(slot0, slot1)
 	if not uv0("FixGuide") then
 		uv1("FixGuide")
 		slot1()
 	end
 end
 
-slot0.PlayDailyLevel = function(slot0, slot1)
+function slot0.PlayDailyLevel(slot0, slot1)
 	if not uv0("NG0015") then
 		pg.m02:sendNotification(GAME.STORY_UPDATE, {
 			storyId = "NG0015"
@@ -116,22 +116,7 @@ slot0.PlayDailyLevel = function(slot0, slot1)
 	end
 end
 
-slot0.PlayBackYardThemeTemplate = function(slot0)
-	if getProxy(DormProxy):getRawData():IsMaxLevel() and not pg.NewStoryMgr.GetInstance():GetPlayedFlag(90021) then
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			modal = true,
-			hideNo = true,
-			hideClose = true,
-			content = i18n("open_backyard_theme_template_tip"),
-			weight = LayerWeightConst.TOP_LAYER
-		})
-		pg.m02:sendNotification(GAME.STORY_UPDATE, {
-			storyId = "NG0020"
-		})
-	end
-end
-
-slot0.PlayCommander = function(slot0)
+function slot0.PlayCommander(slot0)
 	slot1 = {
 		"ZHIHUIMIAO2",
 		"NG006",
@@ -181,6 +166,6 @@ slot0.PlayCommander = function(slot0)
 	seriesAsync(slot3)
 end
 
-slot0.PlayGuildAssaultFleet = function(slot0, slot1)
+function slot0.PlayGuildAssaultFleet(slot0, slot1)
 	slot0:PlayByGuideId("GNG001", {}, slot1)
 end

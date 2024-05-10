@@ -3,11 +3,11 @@ slot0.TYPE_MONTH_CARD = "MonthCard"
 slot0.TYPE_GIFTPACKAGE = "GiftPackage"
 slot0.TYPE_CURSING = "Crusing"
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ChargeTipUI"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.container = slot0:findTF("frame/window")
 	slot0.closeBtn = slot0:findTF("frame/top/btnBack")
 	slot0.confirmBtn = slot0:findTF("frame/confirm")
@@ -16,11 +16,11 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0.confirmBtn:Find("Text"), i18n("msgbox_text_confirm"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.window = {}
 end
 
-slot1 = function(slot0)
+function slot1(slot0)
 	if slot0:getConfig("extra_service") == Goods.MONTH_CARD then
 		return uv0.TYPE_MONTH_CARD
 	elseif slot1 == Goods.ITEM_BOX then
@@ -30,7 +30,7 @@ slot1 = function(slot0)
 	end
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	assert(slot1:isChargeType())
 	uv0.super.Show(slot0)
 
@@ -57,7 +57,7 @@ slot0.Show = function(slot0, slot1)
 	})
 end
 
-slot0.LoadWindow = function(slot0, slot1, slot2)
+function slot0.LoadWindow(slot0, slot1, slot2)
 	if slot0.window[slot1] then
 		slot2()
 
@@ -73,7 +73,7 @@ slot0.LoadWindow = function(slot0, slot1, slot2)
 	end), true, true)
 end
 
-slot0.UpdateWindow = function(slot0, slot1, slot2)
+function slot0.UpdateWindow(slot0, slot1, slot2)
 	setActive(slot0.window[slot1], true)
 
 	if slot0["Update" .. slot1] then
@@ -83,7 +83,7 @@ slot0.UpdateWindow = function(slot0, slot1, slot2)
 	slot2()
 end
 
-slot2 = function(slot0, slot1)
+function slot2(slot0, slot1)
 	slot2 = UIItemList.New(slot0:Find("awards"), slot0:Find("awards/award"))
 
 	slot2:make(function (slot0, slot1, slot2)
@@ -100,7 +100,7 @@ slot2 = function(slot0, slot1)
 	slot2:align(#slot1)
 end
 
-slot0.UpdateMonthCard = function(slot0, slot1)
+function slot0.UpdateMonthCard(slot0, slot1)
 	setText(slot1:Find("title/label/txt"), i18n("chargetip_monthcard_1"))
 	setText(slot1:Find("title/Text"), "X" .. slot0.chargeCommodity:getConfig("gem") + slot0.chargeCommodity:getConfig("extra_gem"))
 	setText(slot1:Find("sub_title"), i18n("chargetip_monthcard_2"))
@@ -110,24 +110,30 @@ slot0.UpdateMonthCard = function(slot0, slot1)
 	})
 end
 
-slot0.UpdateGiftPackage = function(slot0, slot1)
+function slot0.UpdateGiftPackage(slot0, slot1)
 	setText(slot1:Find("title"), i18n("chargetip_giftpackage"))
 
-	slot2 = slot0.chargeCommodity:GetDropItem()
+	slot3 = UIItemList.New(slot1:Find("list/content"), slot1:Find("list/content/award"))
 
-	updateDrop(slot1:Find("award"), {
-		type = slot2[1],
-		id = slot2[2],
-		count = slot2[3]
-	})
-	setActive(slot1:Find("award"), true)
+	slot3:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
+
+			updateDrop(slot2, {
+				type = slot3[1],
+				id = slot3[2],
+				count = slot3[3]
+			})
+		end
+	end)
+	slot3:align(#slot0.chargeCommodity:GetDropItem())
 	setActive(slot1:Find("icon"), false)
 	setAnchoredPosition(slot0.confirmBtn, {
 		y = -550
 	})
 end
 
-slot0.UpdateCrusing = function(slot0, slot1)
+function slot0.UpdateCrusing(slot0, slot1)
 	setText(slot1:Find("title"), i18n("chargetip_crusing"))
 	setText(slot1:Find("sub_title"), i18n("charge_tip_crusing_label"))
 	uv0(slot1, slot0.chargeCommodity:getConfig("display"))
@@ -136,7 +142,7 @@ slot0.UpdateCrusing = function(slot0, slot1)
 	})
 end
 
-slot0.RegisterEvent = function(slot0)
+function slot0.RegisterEvent(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
@@ -148,7 +154,7 @@ slot0.RegisterEvent = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 	removeOnButton(slot0._tf)
 	removeOnButton(slot0.closeBtn)
@@ -163,7 +169,7 @@ slot0.Hide = function(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	if slot0:isShowing() then
 		slot0:Hide()
 	end

@@ -6,7 +6,7 @@ slot3 = class("BattleArcEffect")
 slot0.Battle.BattleArcEffect = slot3
 slot3.__name = "BattleArcEffect"
 
-slot3.Ctor = function(slot0, slot1, slot2, slot3, slot4)
+function slot3.Ctor(slot0, slot1, slot2, slot3, slot4)
 	slot0._go = slot1
 	slot0._characterA = slot2
 	slot0._unitA = slot2:GetUnitData()
@@ -22,7 +22,7 @@ slot3.Ctor = function(slot0, slot1, slot2, slot3, slot4)
 	slot0._material:SetVector("_PosEnd", slot0._vectorB)
 end
 
-slot3.Update = function(slot0)
+function slot3.Update(slot0)
 	if slot0._unitA:IsAlive() and slot0._unitB:IsAlive() then
 		slot1 = slot0._characterA:GetBonePos(slot0._boundBone)
 		slot2 = slot0._unitB:GetPosition()
@@ -40,13 +40,13 @@ slot3.Update = function(slot0)
 	end
 end
 
-slot3.ConfigCallback = function(slot0, slot1)
+function slot3.ConfigCallback(slot0, slot1)
 	slot0._callback = slot1
 
 	pg.EffectMgr.GetInstance():PlayBattleEffect(slot0._go, Vector3.zero, true, slot0._callback)
 end
 
-slot3.Dispose = function(slot0)
+function slot3.Dispose(slot0)
 	slot0._callback = nil
 	slot0._material = nil
 	slot0._go = nil

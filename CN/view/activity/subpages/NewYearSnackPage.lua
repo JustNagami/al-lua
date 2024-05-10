@@ -1,6 +1,6 @@
 slot0 = class("NewYearSnackPage", import("...base.BaseActivityPage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.progressTpl = slot0:findTF("ProgressTpl")
 	slot0.progressTplContainer = slot0:findTF("ProgressList")
 	slot0.progressUIItemList = UIItemList.New(slot0.progressTplContainer, slot0.progressTpl)
@@ -8,7 +8,7 @@ slot0.OnInit = function(slot0)
 	slot0.goBtn = slot0:findTF("GoBtn")
 end
 
-slot0.OnDataSetting = function(slot0)
+function slot0.OnDataSetting(slot0)
 	slot4 = getProxy(MiniGameProxy):GetHubByHubId(getProxy(MiniGameProxy):GetMiniGameData(slot0.activity:getConfig("config_client").linkMiniGameID):getConfig("hub_id"))
 	slot0.needCount = slot4:getConfig("reward_need")
 	slot0.leftCount = slot4.count
@@ -17,7 +17,7 @@ slot0.OnDataSetting = function(slot0)
 	slot0.curDay = slot0.leftCount + slot0.playedCount
 end
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	slot0.progressUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot4 = uv0:findTF("Unlocked", slot2)
@@ -57,13 +57,13 @@ slot0.OnFirstFlush = function(slot0)
 	slot0:tryGetFinalAward()
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
-slot0.tryGetFinalAward = function(slot0)
+function slot0.tryGetFinalAward(slot0)
 	slot4 = getProxy(MiniGameProxy):GetHubByHubId(getProxy(MiniGameProxy):GetMiniGameData(slot0.activity:getConfig("config_client").linkMiniGameID):getConfig("hub_id"))
 	slot7 = slot4.ultimate > 0
 
@@ -76,7 +76,7 @@ slot0.tryGetFinalAward = function(slot0)
 	end
 end
 
-slot0.IsTip = function()
+function slot0.IsTip()
 	if getProxy(ActivityProxy):getActivityById(pg.activity_const.NEWYEAR_SNACK_PAGE_ID.act_id) and not slot0:isEnd() then
 		slot4 = getProxy(MiniGameProxy):GetHubByHubId(getProxy(MiniGameProxy):GetMiniGameData(slot0:getConfig("config_client").linkMiniGameID):getConfig("hub_id"))
 		slot7 = slot4.ultimate > 0

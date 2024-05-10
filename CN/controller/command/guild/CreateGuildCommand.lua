@@ -1,6 +1,6 @@
 slot0 = class("CreateGuildCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody():getName()
 
 	if getProxy(PlayerProxy):getData():getTotalGem() < pg.gameset.create_guild_cost.key_value then

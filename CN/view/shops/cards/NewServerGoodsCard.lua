@@ -1,6 +1,6 @@
 slot0 = class("NewServerGoodsCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._go = slot1
 	slot0._tf = slot1.transform
 	slot0._tr = slot1.transform
@@ -23,7 +23,7 @@ slot0.Ctor = function(slot0, slot1)
 	setText(slot0._tr:Find("item/count_contain/label"), i18n("activity_shop_exchange_count"))
 end
 
-slot0.Update = function(slot0, slot1, slot2)
+function slot0.Update(slot0, slot1, slot2)
 	slot0.shop = slot2
 
 	if slot1 ~= slot0.commodity then
@@ -38,14 +38,14 @@ slot0.Update = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.Flush = function(slot0)
+function slot0.Flush(slot0)
 	slot0.cntTxt.text = slot0.commodity:GetCanPurchaseCnt() .. "/" .. slot0.commodity:GetCanPurchaseMaxCnt()
 
 	setActive(slot0.sellOutMaskTF, not slot0.commodity:CanPurchase())
 	setActive(slot0.levelMaskTF, not slot0.commodity:IsOpening(slot0.shop:GetStartTime()))
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	if string.match(slot0.commodity:GetDesc().name, "(%d+)") then
 		setText(slot0.nameTF, shortenString(slot2, 5))
 	else
@@ -53,12 +53,9 @@ slot0.Init = function(slot0)
 	end
 
 	slot3 = slot0.commodity:GetConsume()
-
-	updateDropCfg(slot3)
-
 	slot0.consumeTxtTF.text = slot3.count
 
-	GetImageSpriteFromAtlasAsync(slot3.cfg.icon, "", slot0.consumeIconTF)
+	GetImageSpriteFromAtlasAsync(slot3:getConfig("icon"), "", slot0.consumeIconTF)
 
 	slot0.itemCountTF.text = slot0.commodity:GetDropCnt()
 
@@ -70,7 +67,7 @@ slot0.Init = function(slot0)
 	setImageColor(slot0.itemIconFrameTF, shipRarity2FrameColor(slot4 + 1))
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 end
 
 return slot0

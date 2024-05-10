@@ -2,11 +2,11 @@ slot0 = class("ShipExpLayer", import("..base.BaseUI"))
 slot0.TypeDefault = 0
 slot0.TypeClass = 1
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ShipExpUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0._grade = slot0:findTF("grade")
 	slot0._gradeLabel = slot0:findTF("label", slot0._grade)
 	slot0._levelText = slot0:findTF("Text", slot0._grade)
@@ -21,7 +21,7 @@ slot0.init = function(slot0)
 	setActive(slot0._topBar, false)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0.tweenTFs = {}
 	slot0.timerId = {}
 
@@ -34,7 +34,7 @@ slot0.didEnter = function(slot0)
 	slot0:display()
 end
 
-slot0.display = function(slot0)
+function slot0.display(slot0)
 	setActive(slot0._grade, true)
 	setText(slot0._levelText, slot0.contextData.title)
 
@@ -88,7 +88,7 @@ slot0.display = function(slot0)
 		slot20 = findTF(slot18, "exp_progress")
 		slot0._maxRightDelay = math.max(slot0._maxRightDelay, slot2[slot9.id].level - slot9.level + slot8 * 0.5)
 
-		slot21 = function()
+		function slot21()
 			SetActive(uv0, true)
 
 			slot1 = uv2:getLevelExpConfig().exp
@@ -105,7 +105,7 @@ slot0.display = function(slot0)
 					setText(uv0, "+" .. math.ceil(slot0))
 				end)
 
-				slot3 = function(slot0)
+				function slot3(slot0)
 					SetActive(uv0, true)
 					SetActive(uv1, true)
 					LeanTween.moveY(rtf(uv0), uv0.localPosition.y + 30, 0.5):setOnComplete(System.Action(function ()
@@ -224,7 +224,7 @@ slot0.display = function(slot0)
 	end
 end
 
-slot0.skip = function(slot0)
+function slot0.skip(slot0)
 	if _.any(slot0._skipExp, function (slot0)
 		return slot0
 	end) then
@@ -240,7 +240,7 @@ slot0.skip = function(slot0)
 	end
 end
 
-slot0.PlayAnimation = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function slot0.PlayAnimation(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	slot7 = LeanTween.value(slot1.gameObject, slot2, slot3, slot4)
 	slot7 = slot7:setDelay(slot5)
 
@@ -250,7 +250,7 @@ slot0.PlayAnimation = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	table.insert(slot0.tweenTFs, slot1)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	for slot4, slot5 in pairs(slot0.tweenTFs) do
 		if LeanTween.isTweening(go(slot5)) then
 			LeanTween.cancel(go(slot5))

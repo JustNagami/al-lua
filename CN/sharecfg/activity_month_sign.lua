@@ -180,7 +180,7 @@ pg.activity_month_sign = {
 		day21 = {
 			{
 				5,
-				100045,
+				100057,
 				1
 			}
 		},
@@ -435,7 +435,7 @@ pg.activity_month_sign = {
 		day21 = {
 			{
 				5,
-				100046,
+				100058,
 				1
 			}
 		},
@@ -491,8 +491,8 @@ pg.activity_month_sign = {
 		day29 = {
 			{
 				1,
-				1,
-				1
+				2,
+				450
 			}
 		},
 		day30 = {
@@ -690,7 +690,7 @@ pg.activity_month_sign = {
 		day21 = {
 			{
 				5,
-				100047,
+				100059,
 				1
 			}
 		},
@@ -945,7 +945,7 @@ pg.activity_month_sign = {
 		day21 = {
 			{
 				5,
-				100048,
+				100060,
 				1
 			}
 		},
@@ -1200,7 +1200,7 @@ pg.activity_month_sign = {
 		day21 = {
 			{
 				5,
-				100049,
+				100061,
 				1
 			}
 		},

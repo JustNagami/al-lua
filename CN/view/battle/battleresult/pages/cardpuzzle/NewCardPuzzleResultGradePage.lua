@@ -1,6 +1,6 @@
 slot0 = class("NewCardPuzzleResultGradePage", import("..NewBattleResultGradePage"))
 
-slot0.LoadBG = function(slot0, slot1)
+function slot0.LoadBG(slot0, slot1)
 	slot3 = ResourceMgr.Inst
 
 	slot3:getAssetAsync("BattleResultItems/" .. "CommonBg", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
@@ -20,7 +20,7 @@ slot0.LoadBG = function(slot0, slot1)
 	end), false, false)
 end
 
-slot0.LoadGrade = function(slot0, slot1)
+function slot0.LoadGrade(slot0, slot1)
 	slot2, slot3 = NewBattleResultUtil.Score2Grade(slot0.contextData.score)
 
 	LoadImageSpriteAsync(slot2, slot0.gradeIcon, true)
@@ -31,7 +31,7 @@ slot0.LoadGrade = function(slot0, slot1)
 	end
 end
 
-slot0.SetUp = function(slot0, slot1)
+function slot0.SetUp(slot0, slot1)
 	slot0:Show()
 	seriesAsync({
 		function (slot0)

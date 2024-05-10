@@ -1,22 +1,22 @@
 slot0 = class("EquipmentDesignLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "EquipmentDesignUI"
 end
 
-slot0.setItems = function(slot0, slot1)
+function slot0.setItems(slot0, slot1)
 	slot0.itemVOs = slot1
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 end
 
-slot0.setCapacity = function(slot0, slot1)
+function slot0.setCapacity(slot0, slot1)
 	slot0.capacity = slot1
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.designScrollView = slot0:findTF("equipment_scrollview")
 	slot0.equipmentTpl = slot0:findTF("equipment_tpl")
 	slot0.equipmentContainer = slot0:findTF("equipment_grid", slot0.designScrollView)
@@ -46,14 +46,14 @@ slot0.init = function(slot0)
 	})
 end
 
-slot0.SetParentTF = function(slot0, slot1)
+function slot0.SetParentTF(slot0, slot1)
 	slot0.parentTF = slot1
 	slot0.equipmentView = slot0:findTF("equipment_scrollview", slot0.parentTF)
 
 	setActive(slot0.equipmentView, false)
 end
 
-slot0.SetTopContainer = function(slot0, slot1)
+function slot0.SetTopContainer(slot0, slot1)
 	slot0.topPanel = slot1
 end
 
@@ -63,7 +63,7 @@ slot1 = {
 	"sort_count"
 }
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	setParent(slot0._tf, slot0.parentTF)
 	slot0._tf:SetSiblingIndex(slot0.equipmentView:GetSiblingIndex())
 
@@ -218,12 +218,12 @@ slot0.didEnter = function(slot0)
 	slot0:initTags()
 end
 
-slot0.isDefaultStatus = function(slot0)
+function slot0.isDefaultStatus(slot0)
 	return (not slot0.contextData.indexDatas.typeIndex or slot0.contextData.indexDatas.typeIndex == IndexConst.EquipmentTypeAll) and (not slot0.contextData.indexDatas.equipPropertyIndex or slot0.contextData.indexDatas.equipPropertyIndex == IndexConst.EquipPropertyAll) and (not slot0.contextData.indexDatas.equipPropertyIndex2 or slot0.contextData.indexDatas.equipPropertyIndex2 == IndexConst.EquipPropertyAll) and (not slot0.contextData.indexDatas.equipAmmoIndex1 or slot0.contextData.indexDatas.equipAmmoIndex1 == IndexConst.EquipAmmoAll_1) and (not slot0.contextData.indexDatas.equipAmmoIndex2 or slot0.contextData.indexDatas.equipAmmoIndex2 == IndexConst.EquipAmmoAll_2) and (not slot0.contextData.indexDatas.equipCampIndex or slot0.contextData.indexDatas.equipCampIndex == IndexConst.EquipCampAll) and (not slot0.contextData.indexDatas.rarityIndex or slot0.contextData.indexDatas.rarityIndex == IndexConst.EquipmentRarityAll)
 end
 
-slot0.initTags = function(slot0)
-	slot4 = function()
+function slot0.initTags(slot0)
+	function slot4()
 		uv0.asc = not uv0.asc
 		uv0.contextData.asc = uv0.asc
 
@@ -263,38 +263,36 @@ slot0.initTags = function(slot0)
 	triggerToggle(slot0.tagTFs[slot0.contextData.index], true)
 end
 
-slot0.initDesigns = function(slot0)
+function slot0.initDesigns(slot0)
 	slot1 = slot0.designScrollView
 	slot0.scollRect = slot1:GetComponent("LScrollRect")
 	slot0.scollRect.decelerationRate = 0.07
 
-	slot0.scollRect.onInitItem = function(slot0)
+	function slot0.scollRect.onInitItem(slot0)
 		uv0:initDesign(slot0)
 	end
 
-	slot0.scollRect.onUpdateItem = function(slot0, slot1)
+	function slot0.scollRect.onUpdateItem(slot0, slot1)
 		uv0:updateDesign(slot0, slot1)
 	end
 
-	slot0.scollRect.onReturnItem = function(slot0, slot1)
+	function slot0.scollRect.onReturnItem(slot0, slot1)
 		uv0:returnDesign(slot0, slot1)
 	end
 
 	slot0.desgins = {}
 end
 
-slot2 = function(slot0, slot1)
-	slot3 = slot1.config
-
-	setImageSprite(findTF(slot0, "name_bg/tag"), GetSpriteFromAtlas("equiptype", EquipType.type2Tag(slot3.type)))
+function slot2(slot0, slot1)
+	setImageSprite(findTF(slot0, "name_bg/tag"), GetSpriteFromAtlas("equiptype", EquipType.type2Tag(slot1:getConfig("type"))))
 	eachChild(findTF(slot0, "attrs"), function (slot0)
 		setActive(slot0, false)
 	end)
 
-	slot4 = underscore.filter(slot1:GetPropertiesInfo().attrs, function (slot0)
+	slot3 = underscore.filter(slot1:GetPropertiesInfo().attrs, function (slot0)
 		return not slot0.type or slot0.type ~= AttributeType.AntiSiren
 	end)
-	slot6 = slot3.skill_id[1] and slot1:isDevice() and {
+	slot5 = slot1:getConfig("skill_id")[1] and slot1:isDevice() and {
 		1,
 		2,
 		5
@@ -305,26 +303,26 @@ slot2 = function(slot0, slot1)
 		3
 	}
 
-	for slot10, slot11 in ipairs(slot6) do
-		setActive(slot2:Find("attr_" .. slot11), true)
+	for slot9, slot10 in ipairs(slot5) do
+		setActive(slot2:Find("attr_" .. slot10), true)
 
-		if slot11 == 5 then
-			setText(slot12:Find("value"), getSkillName(slot5))
+		if slot10 == 5 then
+			setText(slot11:Find("value"), getSkillName(slot4))
 		else
+			slot12 = ""
 			slot13 = ""
-			slot14 = ""
 
-			if #slot4 > 0 then
-				slot13, slot14 = Equipment.GetInfoTrans(table.remove(slot4, 1))
+			if #slot3 > 0 then
+				slot12, slot13 = Equipment.GetInfoTrans(table.remove(slot3, 1))
 			end
 
-			setText(slot12:Find("tag"), slot13)
-			setText(slot12:Find("value"), slot14)
+			setText(slot11:Find("tag"), slot12)
+			setText(slot11:Find("value"), slot13)
 		end
 	end
 end
 
-slot0.createDesign = function(slot0, slot1)
+function slot0.createDesign(slot0, slot1)
 	slot2 = findTF(slot1, "info/count")
 	slot3 = findTF(slot1, "mask")
 	slot5 = {
@@ -334,14 +332,14 @@ slot0.createDesign = function(slot0, slot1)
 
 	ClearTweenItemAlphaAndWhite(slot5.go)
 
-	slot5.getItemById = function(slot0, slot1)
+	function slot5.getItemById(slot0, slot1)
 		return slot0.itemVOs[slot1] or Item.New({
 			count = 0,
 			id = slot1
 		})
 	end
 
-	slot5.update = function(slot0, slot1, slot2)
+	function slot5.update(slot0, slot1, slot2)
 		slot0.designId = slot1
 		slot0.itemVOs = slot2
 		slot3 = pg.compose_data_template[slot1]
@@ -352,7 +350,7 @@ slot0.createDesign = function(slot0, slot1)
 
 		TweenItemAlphaAndWhite(slot0.go)
 
-		slot5 = pg.equip_data_statistics[slot4]
+		slot5 = Equipment.getConfigData(slot4)
 
 		assert(slot5, "必须存在装备" .. slot4)
 		setText(slot0.nameTxt, shortenString(slot5.name, 6))
@@ -375,14 +373,14 @@ slot0.createDesign = function(slot0, slot1)
 		end)()
 	end
 
-	slot5.clear = function(slot0)
+	function slot5.clear(slot0)
 		ClearTweenItemAlphaAndWhite(slot0.go)
 	end
 
 	return slot5
 end
 
-slot0.initDesign = function(slot0, slot1)
+function slot0.initDesign(slot0, slot1)
 	slot2 = slot0:createDesign(slot1)
 	slot5 = tf(slot2.go)
 
@@ -393,7 +391,7 @@ slot0.initDesign = function(slot0, slot1)
 	slot0.desgins[slot1] = slot2
 end
 
-slot0.updateDesign = function(slot0, slot1, slot2)
+function slot0.updateDesign(slot0, slot1, slot2)
 	if not slot0.desgins[slot2] then
 		slot0:initDesign(slot2)
 
@@ -403,7 +401,7 @@ slot0.updateDesign = function(slot0, slot1, slot2)
 	slot3:update(slot0.desginIds[slot1 + 1], slot0.itemVOs)
 end
 
-slot0.returnDesign = function(slot0, slot1, slot2)
+function slot0.returnDesign(slot0, slot1, slot2)
 	if slot0.exited then
 		return
 	end
@@ -413,44 +411,36 @@ slot0.returnDesign = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.getDesignVO = function(slot0, slot1)
+function slot0.getDesignVO(slot0, slot1)
 	slot2 = {
-		equipmentCfg = pg.equip_data_statistics[slot3[slot1].equip_id],
+		equipmentCfg = Equipment.getConfigData(slot3[slot1].equip_id),
 		designCfg = slot3[slot1],
 		id = slot1,
-		itemCount = slot5,
-		canMakeCount = math.floor(slot5 / slot3[slot1].material_num)
+		itemCount = slot4,
+		canMakeCount = math.floor(slot4 / slot3[slot1].material_num)
 	}
 	slot3 = pg.compose_data_template
-	slot5 = slot0:getItemById(slot3[slot1].material_id).count
+	slot4 = slot0:getItemById(slot3[slot1].material_id).count
 	slot2.canMake = math.min(slot2.canMakeCount, 1)
-	slot6 = slot3[slot1].equip_id
+	slot5 = slot3[slot1].equip_id
+	slot6 = Equipment.getConfigData(slot5)
 
-	assert(pg.equip_data_statistics[slot6], "equip_data_statistics not exist: " .. slot6)
-	assert(pg.equip_data_template[slot6], "equip_data_template not exist: " .. slot6)
+	assert(slot6, "equip config not exist: " .. slot5)
 
-	if setmetatable({}, {
-		__index = function (slot0, slot1)
-			return uv0[slot1] or uv1[slot1]
-		end
-	}).weapon_id and #slot10 > 0 and pg.weapon_property[slot10[1]] then
-		slot9[AttributeType.CD] = slot11.reload_max
-	end
+	slot2.config = slot6
 
-	slot2.config = slot9
-
-	slot2.getNation = function(slot0)
+	function slot2.getNation(slot0)
 		return uv0.nationality
 	end
 
-	slot2.getConfig = function(slot0, slot1)
+	function slot2.getConfig(slot0, slot1)
 		return uv0[slot1]
 	end
 
 	return slot2
 end
 
-slot0.filter = function(slot0, slot1, slot2)
+function slot0.filter(slot0, slot1, slot2)
 	GetSpriteFromAtlasAsync("ui/commonui_atlas", slot0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on", function (slot0)
 		setImageSprite(uv0.indexBtn, slot0, true)
 	end)
@@ -550,14 +540,14 @@ slot0.filter = function(slot0, slot1, slot2)
 	setActive(slot0.sortImgDec, not slot0.asc)
 end
 
-slot0.getItemById = function(slot0, slot1)
+function slot0.getItemById(slot0, slot1)
 	return slot0.itemVOs[slot1] or Item.New({
 		count = 0,
 		id = slot1
 	})
 end
 
-slot0.showDesignDesc = function(slot0, slot1)
+function slot0.showDesignDesc(slot0, slot1)
 	slot0.isShowDesc = true
 
 	if IsNil(slot0.msgBoxTF) then
@@ -573,15 +563,15 @@ slot0.showDesignDesc = function(slot0, slot1)
 	})
 
 	updateEquipInfo(slot2:Find("bg/attrs/content"), slot5:GetPropertiesInfo(), slot5:GetSkill())
-	GetImageSpriteFromAtlasAsync("equips/" .. slot5.config.icon, "", slot2:Find("bg/frame/icon"))
-	changeToScrollText(slot2:Find("bg/name"), slot5.config.name)
-	UIItemList.New(slot2:Find("bg/frame/stars"), slot2:Find("bg/frame/stars/sarttpl")):align(slot5.config.rarity)
-	setImageSprite(findTF(slot2, "bg/frame/type"), GetSpriteFromAtlas("equiptype", EquipType.type2Tag(slot5.config.type)))
-	setText(slot2:Find("bg/frame/speciality/Text"), slot5.config.speciality ~= "无" and slot5.config.speciality or i18n1("—"))
+	GetImageSpriteFromAtlasAsync("equips/" .. slot5:getConfig("icon"), "", slot2:Find("bg/frame/icon"))
+	changeToScrollText(slot2:Find("bg/name"), slot5:getConfig("name"))
+	UIItemList.New(slot2:Find("bg/frame/stars"), slot2:Find("bg/frame/stars/sarttpl")):align(slot5:getConfig("rarity"))
+	setImageSprite(findTF(slot2, "bg/frame/type"), GetSpriteFromAtlas("equiptype", EquipType.type2Tag(slot5:getConfig("type"))))
+	setText(slot2:Find("bg/frame/speciality/Text"), slot5:getConfig("speciality") ~= "无" and slot5:getConfig("speciality") or i18n1("—"))
 
-	slot2:Find("bg/frame"):GetComponent(typeof(Image)).sprite = LoadSprite("bg/equipment_bg_" .. slot5.config.rarity)
+	slot2:Find("bg/frame"):GetComponent(typeof(Image)).sprite = LoadSprite("bg/equipment_bg_" .. slot5:getConfig("rarity"))
 	slot9 = findTF(slot2, "bg/frame/numbers")
-	slot10 = slot5.config.tech or 1
+	slot10 = slot5:getConfig("tech") or 1
 
 	for slot14 = 0, slot9.childCount - 1 do
 		setActive(slot9:GetChild(slot14), slot14 == slot10)
@@ -635,7 +625,7 @@ slot0.showDesignDesc = function(slot0, slot1)
 	end, SFX_CANCEL)
 end
 
-slot0.hideMsgBox = function(slot0)
+function slot0.hideMsgBox(slot0)
 	if not IsNil(slot0.msgBoxTF) then
 		slot0.isShowDesc = nil
 
@@ -644,7 +634,7 @@ slot0.hideMsgBox = function(slot0)
 	end
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if isActive(slot0.indexPanel) then
 		triggerButton(slot0.indexPanel)
 
@@ -659,7 +649,7 @@ slot0.onBackPressed = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.indexPanel, slot0._tf)
 
 	if slot0.leftEventTrigger then

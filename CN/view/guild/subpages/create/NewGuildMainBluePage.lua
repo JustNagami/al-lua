@@ -1,6 +1,6 @@
 slot0 = class("NewGuildMainBluePage", import(".NewGuildMainRedPage"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewGuildBlueUI"
 end
 

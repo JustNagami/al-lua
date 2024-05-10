@@ -1,14 +1,14 @@
 slot0 = class("SVSalvageResult", import("view.base.BaseSubView"))
 slot0.HideView = "SVSalvageResult.HideView"
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SVSalvageResult"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot1 = slot0._tf
 	slot0.rtPanel = slot1:Find("window/display_panel")
 	slot2 = slot0.rtPanel
@@ -79,20 +79,20 @@ slot0.OnInit = function(slot0)
 	end, SFX_CONFIRM)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	setActive(slot0._tf, true)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 	setActive(slot0._tf, false)
 end
 
-slot0.Setup = function(slot0, slot1)
+function slot0.Setup(slot0, slot1)
 	slot0.fleetId = slot1
 end
 

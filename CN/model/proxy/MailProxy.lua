@@ -4,7 +4,7 @@ slot0.MAIL_OPENNED = "mail openned"
 slot0.MAIL_ATTACHMENT_TAKEN = "mail attachment taken"
 slot0.UPDATE_ATTACHMENT_COUNT = "UPDATE_ATTACHMENT_COUNT"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0.init = false
 	slot0.dirty = false
 	slot0.unread = 0
@@ -20,13 +20,13 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.resetData = function(slot0)
+function slot0.resetData(slot0)
 	slot0.data = {}
 	slot0.init = false
 	slot0.dirty = false
 end
 
-slot0.addMail = function(slot0, slot1)
+function slot0.addMail(slot0, slot1)
 	assert(isa(slot1, Mail), "should be an instance of Mail")
 	assert(slot0.data[slot1.id] == nil, "mail already exist")
 
@@ -35,7 +35,7 @@ slot0.addMail = function(slot0, slot1)
 	slot0.data[slot1.id]:display("added")
 end
 
-slot0.getMails = function(slot0)
+function slot0.getMails(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -45,17 +45,17 @@ slot0.getMails = function(slot0)
 	return Clone(slot1)
 end
 
-slot0.getMailById = function(slot0, slot1)
+function slot0.getMailById(slot0, slot1)
 	if slot0.data[slot1] ~= nil then
 		return slot0.data[slot1]:clone()
 	end
 end
 
-slot0.GetAttachmentCount = function(slot0)
+function slot0.GetAttachmentCount(slot0)
 	return slot0._existAttachmentCount
 end
 
-slot0.getOldestMail = function(slot0)
+function slot0.getOldestMail(slot0)
 	slot1 = nil
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -67,7 +67,7 @@ slot0.getOldestMail = function(slot0)
 	return slot1 and slot1:clone()
 end
 
-slot0.getNewestMail = function(slot0)
+function slot0.getNewestMail(slot0)
 	slot1 = nil
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -79,7 +79,7 @@ slot0.getNewestMail = function(slot0)
 	return slot1 and slot1:clone()
 end
 
-slot0.takeMailAttachment = function(slot0, slot1)
+function slot0.takeMailAttachment(slot0, slot1)
 	assert(isa(slot1, Mail), "should be an instance of Mail")
 
 	slot1.isTaken = true
@@ -88,7 +88,7 @@ slot0.takeMailAttachment = function(slot0, slot1)
 	slot0.facade:sendNotification(uv0.MAIL_ATTACHMENT_TAKEN, slot1:clone())
 end
 
-slot0.updateMail = function(slot0, slot1)
+function slot0.updateMail(slot0, slot1)
 	assert(isa(slot1, Mail), "should be an instance of Mail")
 	assert(slot0.data[slot1.id] ~= nil, "ship should exist")
 
@@ -97,12 +97,12 @@ slot0.updateMail = function(slot0, slot1)
 	slot0.data[slot1.id]:display("updated")
 end
 
-slot0.removeMail = function(slot0, slot1)
+function slot0.removeMail(slot0, slot1)
 	assert(isa(slot1, Mail), "should be an instance of Mail")
 	slot0:removeMailById(slot1.id)
 end
 
-slot0.removeMailById = function(slot0, slot1)
+function slot0.removeMailById(slot0, slot1)
 	slot2 = slot0.data[slot1]
 
 	assert(slot0.data[slot1] ~= nil, "mail should exist")
@@ -113,27 +113,27 @@ slot0.removeMailById = function(slot0, slot1)
 	slot0:updateTotal(slot0.total - 1)
 end
 
-slot0.hasMailById = function(slot0, slot1)
+function slot0.hasMailById(slot0, slot1)
 	return slot0.data[slot1] ~= nil
 end
 
-slot0.unpdateExistAttachment = function(slot0, slot1)
+function slot0.unpdateExistAttachment(slot0, slot1)
 	slot0._existAttachmentCount = slot1
 
 	slot0:sendNotification(uv0.UPDATE_ATTACHMENT_COUNT)
 end
 
-slot0.updateTotal = function(slot0, slot1)
+function slot0.updateTotal(slot0, slot1)
 	slot0.total = slot1
 
 	slot0:sendNotification(uv0.MAIL_TOTAL, slot0.total)
 end
 
-slot0.getUnreadCount = function(slot0)
+function slot0.getUnreadCount(slot0)
 	return slot0.unread
 end
 
-slot0.GetAttchmentDic = function(slot0)
+function slot0.GetAttchmentDic(slot0)
 	slot1 = {
 		[DROP_TYPE_ITEM] = {},
 		[DROP_TYPE_RESOURCE] = {},
@@ -173,7 +173,7 @@ slot0.GetAttchmentDic = function(slot0)
 	return slot1
 end
 
-slot0.getMailAttachments = function(slot0)
+function slot0.getMailAttachments(slot0)
 	slot1 = {}
 
 	for slot6, slot7 in ipairs(slot0:getMails()) do
@@ -185,14 +185,14 @@ slot0.getMailAttachments = function(slot0)
 	return slot1
 end
 
-slot0.getAllAttachment = function(slot0)
+function slot0.getAllAttachment(slot0)
 	slot2 = {}
 
 	_.each(slot0:getMailAttachments(), function (slot0)
 		_.each(slot0.attachments or {}, function (slot0)
-			if slot0.dropType == DROP_TYPE_LOVE_LETTER then
+			if slot0.type == DROP_TYPE_LOVE_LETTER then
 				table.insert(uv0, slot0)
-			elseif uv1[slot0.dropType .. "_" .. slot0.id] then
+			elseif uv1[slot0.type .. "_" .. slot0.id] then
 				uv1[slot1].count = uv1[slot1].count + slot0.count
 			else
 				uv1[slot1] = slot0

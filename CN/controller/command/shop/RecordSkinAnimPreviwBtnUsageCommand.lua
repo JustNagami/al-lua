@@ -1,6 +1,6 @@
 slot0 = class("RecordSkinAnimPreviwBtnUsageCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(16203, {
 		flag = slot1:getBody().isOpen and 1 or 0
 	}, 16204, function (slot0)

@@ -1,10 +1,10 @@
 slot0 = class("BlueprintAssignedItemView", import(".AssignedItemView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "BlueprintItemAssignedView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
 	slot1 = slot0._tf
@@ -40,14 +40,14 @@ slot0.OnInit = function(slot0)
 		if not uv0.isAllNeedZero and slot2 < slot1 then
 			table.insert(slot3, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("blueprint_select_overflow_tip", uv0.cfg.name, uv1 - uv2),
+					content = i18n("blueprint_select_overflow_tip", uv0:getConfig("name"), uv1 - uv2),
 					onYes = slot0
 				})
 			end)
 		end
 
 		seriesAsync(slot3, function ()
-			uv0:emit(EquipmentMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, uv0.itemVO:getTempCfgTable().usage_arg[uv0.selectedIndex])
+			uv0:emit(EquipmentMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, uv0.itemVO:getConfig("usage_arg")[uv0.selectedIndex])
 			uv0:Hide()
 		end)
 	end, SFX_PANEL)
@@ -68,7 +68,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.GetBlueprintNeed = function(slot0, slot1)
+function slot0.GetBlueprintNeed(slot0, slot1)
 	slot0.technologyProxy = slot0.technologyProxy or getProxy(TechnologyProxy)
 	slot2 = slot0.technologyProxy:getBluePrintById(slot0.technologyProxy:GetBlueprint4Item(slot1))
 	slot0.bagProxy = slot0.bagProxy or getProxy(BagProxy)
@@ -76,13 +76,13 @@ slot0.GetBlueprintNeed = function(slot0, slot1)
 	return math.max(slot2:getUseageMaxItem() + (slot0.isSwitch and slot2:getFateMaxLeftOver() or 0) - slot0.bagProxy:getItemCountById(slot2:getItemId()), 0)
 end
 
-slot0.checkBlueprintIsUnlock = function(slot0, slot1)
+function slot0.checkBlueprintIsUnlock(slot0, slot1)
 	slot0.technologyProxy = slot0.technologyProxy or getProxy(TechnologyProxy)
 
 	return slot0.technologyProxy:getBluePrintById(slot0.technologyProxy:GetBlueprint4Item(slot1)):isUnlock()
 end
 
-slot0.updateValue = function(slot0)
+function slot0.updateValue(slot0)
 	slot0.isAllNeedZero = underscore.all(slot0.displayDrops, function (slot0)
 		return uv0:GetBlueprintNeed(slot0.id) == 0
 	end)
@@ -103,7 +103,7 @@ slot0.updateValue = function(slot0)
 	end)
 end
 
-slot0.updateCountText = function(slot0)
+function slot0.updateCountText(slot0)
 	slot1 = slot0.displayDrops[slot0.selectedIndex]
 	slot2 = slot0.count * slot1.count
 	slot3 = slot0:GetBlueprintNeed(slot1.id)
@@ -112,7 +112,7 @@ slot0.updateCountText = function(slot0)
 	setActive(slot0.countOver, not slot0.isAllNeedZero and slot3 < slot2)
 end
 
-slot0.update = function(slot0, slot1)
+function slot0.update(slot0, slot1)
 	slot0.count = 1
 	slot0.selectedIndex = nil
 	slot0.selectedItem = nil
@@ -140,7 +140,7 @@ slot0.update = function(slot0, slot1)
 				end
 			end, SFX_PANEL)
 			triggerToggle(slot2, slot1 == 1)
-			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1].cfg.name)
+			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1]:getConfig("name"))
 
 			uv0.selectedItem = uv0.selectedItem or slot2
 
@@ -152,11 +152,11 @@ slot0.update = function(slot0, slot1)
 	triggerToggle(slot0.selectedItem, true)
 	triggerToggle(slot0.toggleSwitch, true)
 
-	slot2 = {
+	slot2 = Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = slot1.id,
 		count = slot1.count
-	}
+	})
 
 	updateDrop(slot0.itemTF:Find("left/IconTpl"), setmetatable({
 		count = 0

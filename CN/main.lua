@@ -26,7 +26,7 @@ PLATFORM = LuaHelper.GetPlatformInt()
 SDK_EXIT_CODE = 99
 
 if not IsUnityEditor then
-	assert = function()
+	function assert()
 	end
 end
 
@@ -35,7 +35,7 @@ ReflectionHelp.RefSetField(typeof("ResourceMgr"), "_asyncMax", ResourceMgr.Inst,
 tf(GameObject.Find("EventSystem")):GetComponent(typeof(EventSystem)).sendNavigationEvents = false
 
 if IsUnityEditor then
-	luaIdeDebugFunc = function()
+	function luaIdeDebugFunc()
 		breakInfoFun = require("LuaDebugjit")("localhost", 7003)
 		time = Timer.New(breakInfoFun, 0.5, -1, 1)
 
@@ -60,7 +60,7 @@ slot0 = pg.PushNotificationMgr.GetInstance()
 
 slot0:Init()
 
-OnApplicationPause = function(slot0)
+function OnApplicationPause(slot0)
 	originalPrint("OnApplicationPause: " .. tostring(slot0))
 
 	if not pg.m02 then
@@ -78,7 +78,7 @@ OnApplicationPause = function(slot0)
 	pg.m02:sendNotification(GAME.ON_APPLICATION_PAUSE, slot0)
 end
 
-OnApplicationExit = function()
+function OnApplicationExit()
 	originalPrint("OnApplicationExit")
 
 	if pg.FileDownloadMgr.GetInstance():IsRunning() then
@@ -92,6 +92,10 @@ OnApplicationExit = function()
 	end
 
 	if pg.NewGuideMgr.GetInstance():IsBusy() then
+		return
+	end
+
+	if pg.PerformMgr.GetInstance():IsRunning() then
 		return
 	end
 
@@ -180,10 +184,10 @@ OnApplicationExit = function()
 	slot11:onBackPressed()
 end
 
-OnReceiveMemoryWarning = function()
+function OnReceiveMemoryWarning()
 end
 
-PressBack = function()
+function PressBack()
 	if not IsNil(pg.MsgboxMgr.GetInstance()._go) then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("confirm_app_exit"),
@@ -280,6 +284,9 @@ seriesAsync({
 			end,
 			function (slot0)
 				pg.SceneAnimMgr.GetInstance():Init(slot0)
+			end,
+			function (slot0)
+				pg.PerformMgr.GetInstance():Init(slot0)
 			end
 		}, slot0)
 	end

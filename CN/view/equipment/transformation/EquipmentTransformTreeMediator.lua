@@ -1,7 +1,7 @@
 slot0 = class("EquipmentTransformTreeMediator", import("view.base.ContextMediator"))
 slot0.OPEN_LAYER = "OPEN_LAYER"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:BindEvent()
 
 	slot0.env = {}
@@ -12,13 +12,13 @@ slot0.register = function(slot0)
 	slot0.env.nationsTree = EquipmentProxy.EquipmentTransformTreeTemplate
 end
 
-slot0.BindEvent = function(slot0)
+function slot0.BindEvent(slot0)
 	slot0:bind(uv0.OPEN_LAYER, function (slot0, ...)
 		uv0:addSubLayers(...)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.TRANSFORM_EQUIPMENT_DONE,
 		PlayerProxy.UPDATED,
@@ -28,7 +28,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == PlayerProxy.UPDATED or slot2 == BagProxy.ITEM_UPDATED then

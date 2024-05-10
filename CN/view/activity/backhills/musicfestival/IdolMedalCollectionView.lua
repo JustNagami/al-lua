@@ -3,26 +3,26 @@ slot0.FADE_OUT_TIME = 1
 slot0.PAGE_NUM = 5
 slot0.MEDAL_NUM_PER_PAGE = 3
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "IdolMedalCollectionUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0:initData()
 	slot0:findUI()
 	slot0:addListener()
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:checkAward()
 	setText(slot0.progressText, setColorStr(tostring(#slot0.activeIDList), COLOR_RED) .. "/" .. #slot0.allIDList)
 	triggerToggle(slot0.switchBtnList[1], true)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.activityProxy = getProxy(ActivityProxy)
 	slot0.activityData = slot0.activityProxy:getActivityById(ActivityConst.IDOL_MEDAL_COLLECTION)
 	slot0.allIDList = slot0.activityData:GetPicturePuzzleIds()
@@ -42,7 +42,7 @@ slot0.initData = function(slot0)
 	slot0.newMedalID = nil
 end
 
-slot0.findUI = function(slot0)
+function slot0.findUI(slot0)
 	slot0.bg = slot0:findTF("BG")
 	slot1 = slot0:findTF("NotchAdapt")
 	slot0.backBtn = slot0:findTF("BackBtn", slot1)
@@ -63,12 +63,12 @@ slot0.findUI = function(slot0)
 	end
 end
 
-slot0.addListener = function(slot0)
+function slot0.addListener(slot0)
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:closeView()
 	end, SFX_CANCEL)
 
-	slot4 = function()
+	function slot4()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.music_collection.tip
@@ -105,13 +105,13 @@ slot0.addListener = function(slot0)
 	end)
 end
 
-slot0.updateMedalContainerView = function(slot0, slot1)
+function slot0.updateMedalContainerView(slot0, slot1)
 	for slot6, slot7 in ipairs(slot0.pageIDList[slot1]) do
 		slot0:updateMedalView(slot2, slot7)
 	end
 end
 
-slot0.updateMedalView = function(slot0, slot1, slot2)
+function slot0.updateMedalView(slot0, slot1, slot2)
 	slot4 = table.contains(slot0.activeIDList, slot2)
 	slot5 = table.contains(slot0.activatableIDList, slot2) and not slot4
 	slot7 = slot0.medalItemList[table.indexof(slot1, slot2, 1)]
@@ -139,7 +139,7 @@ slot0.updateMedalView = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateSwitchBtnTF = function(slot0)
+function slot0.updateSwitchBtnTF(slot0)
 	for slot4, slot5 in ipairs(slot0.switchBtnList) do
 		slot7 = slot0:findTF("Text", slot0:findTF("Tip", slot5))
 
@@ -154,7 +154,7 @@ slot0.updateSwitchBtnTF = function(slot0)
 	end
 end
 
-slot0.updateAfterSubmit = function(slot0, slot1)
+function slot0.updateAfterSubmit(slot0, slot1)
 	slot0.activityProxy = getProxy(ActivityProxy)
 	slot0.activityData = slot0.activityProxy:getActivityById(ActivityConst.IDOL_MEDAL_COLLECTION)
 	slot0.activatableIDList = slot0.activityData.data1_list
@@ -166,10 +166,10 @@ slot0.updateAfterSubmit = function(slot0, slot1)
 	slot0:checkAward()
 end
 
-slot0.UpdateActivity = function(slot0)
+function slot0.UpdateActivity(slot0)
 end
 
-slot0.caculateActivatable = function(slot0, slot1)
+function slot0.caculateActivatable(slot0, slot1)
 	slot3 = 0
 
 	for slot7, slot8 in ipairs(slot0.pageIDList[slot1]) do
@@ -183,7 +183,7 @@ slot0.caculateActivatable = function(slot0, slot1)
 	return slot3
 end
 
-slot0.checkAward = function(slot0)
+function slot0.checkAward(slot0)
 	if #slot0.activeIDList == #slot0.allIDList and slot0.activityData.data1 ~= 1 then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,

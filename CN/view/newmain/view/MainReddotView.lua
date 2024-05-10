@@ -1,6 +1,6 @@
 slot0 = class("MainReddotView")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._tf = tf(slot1)
 	slot0.listener = {}
 	slot0.redDotMgr = pg.RedDotMgr.GetInstance()
@@ -52,18 +52,18 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.redDotMgr:RegisterRedDotNodes(slot0.nodes)
 end
 
-slot0.AddNode = function(slot0, slot1)
+function slot0.AddNode(slot0, slot1)
 	table.insert(slot0.nodes, slot1)
 	slot0.redDotMgr:RegisterRedDotNode(slot1)
 	slot1:RefreshSelf()
 end
 
-slot0.RemoveNode = function(slot0, slot1)
+function slot0.RemoveNode(slot0, slot1)
 	table.removebyvalue(slot0.nodes, slot1)
 	slot0.redDotMgr:UnRegisterRedDotNode(slot1)
 end
 
-slot0.Refresh = function(slot0)
+function slot0.Refresh(slot0)
 	for slot4, slot5 in ipairs(slot0.nodes) do
 		if slot5.Resume then
 			slot5:Resume()
@@ -73,7 +73,7 @@ slot0.Refresh = function(slot0)
 	slot0.redDotMgr:_NotifyAll()
 end
 
-slot0.Disable = function(slot0)
+function slot0.Disable(slot0)
 	for slot4, slot5 in ipairs(slot0.nodes) do
 		if slot5.Puase then
 			slot5:Puase()
@@ -81,9 +81,12 @@ slot0.Disable = function(slot0)
 	end
 end
 
-slot0.GetNotifyType = function(slot0)
+function slot0.GetNotifyType(slot0)
 	if not slot0.listener or #slot0.listener == 0 then
 		slot0.listener = {
+			[pg.RedDotMgr.TYPES.ATTIRE] = {
+				GAME.EDUCATE_GET_ENDINGS_DONE
+			},
 			[pg.RedDotMgr.TYPES.TASK] = {
 				TaskProxy.TASK_UPDATED,
 				AvatarFrameProxy.FRAME_TASK_UPDATED
@@ -132,10 +135,6 @@ slot0.GetNotifyType = function(slot0)
 			},
 			[pg.RedDotMgr.TYPES.ACT_RETURN] = {
 				GAME.REMOVE_LAYERS
-			},
-			[pg.RedDotMgr.TYPES.VOTE_OREDER] = {
-				VoteProxy.VOTE_ORDER_BOOK_DELETE,
-				VoteProxy.VOTE_ORDER_BOOK_UPDATE
 			}
 		}
 	end
@@ -143,7 +142,7 @@ slot0.GetNotifyType = function(slot0)
 	return slot0.listener
 end
 
-slot0.Notify = function(slot0, slot1)
+function slot0.Notify(slot0, slot1)
 	for slot5, slot6 in pairs(slot0:GetNotifyType()) do
 		for slot10, slot11 in ipairs(slot6) do
 			if slot11 == slot1 then
@@ -153,7 +152,7 @@ slot0.Notify = function(slot0, slot1)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0.redDotMgr:UnRegisterRedDotNodes(slot0.nodes)
 
 	slot0.listener = nil

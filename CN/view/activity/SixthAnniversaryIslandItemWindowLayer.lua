@@ -1,10 +1,10 @@
 slot0 = class("SixthAnniversaryIslandItemWindowLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SixthAnniversaryIslandItemWindow"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:BlurPanel(slot0._tf)
@@ -20,12 +20,12 @@ slot0.init = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot4, slot5 = unpack(slot0.contextData.drop.count and {
 		slot1.count,
 		true
 	} or {
-		GetOwnedDropCount(slot1)
+		slot1:getOwnedCount()
 	})
 
 	setActive(slot0._tf:Find("content/main"):Find("owner"), slot5)
@@ -37,11 +37,11 @@ slot0.didEnter = function(slot0)
 	slot1.count = nil
 
 	updateDrop(slot2:Find("icon/IconTpl"), slot1)
-	setText(slot2:Find("line/name"), slot1.cfg.name)
-	setText(slot2:Find("line/content/Text"), slot1.desc or slot1.cfg.desc)
+	setText(slot2:Find("line/name"), slot1:getConfig("name"))
+	setText(slot2:Find("line/content/Text"), slot1.desc or slot1:getConfig("desc"))
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 

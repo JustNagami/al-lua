@@ -4,11 +4,11 @@ slot0.Battle.BattleClearWave = class("BattleClearWave", slot0.Battle.BattleWaveI
 slot0.Battle.BattleClearWave.__name = "BattleClearWave"
 slot1 = slot0.Battle.BattleClearWave
 
-slot1.Ctor = function(slot0)
+function slot1.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot1.DoWave = function(slot0)
+function slot1.DoWave(slot0)
 	uv0.super.DoWave(slot0)
 
 	slot1 = uv1.Battle.BattleState.GetInstance()

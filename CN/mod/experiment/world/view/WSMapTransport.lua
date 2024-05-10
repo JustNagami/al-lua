@@ -17,15 +17,15 @@ slot0.Listeners = {
 	onArrived = "OnArrived"
 }
 
-slot0.GetResName = function()
+function slot0.GetResName()
 	return "world_cell_transport"
 end
 
-slot0.GetName = function(slot0, slot1, slot2)
+function slot0.GetName(slot0, slot1, slot2)
 	return "transport_" .. slot0 .. "_" .. slot1 .. "_" .. slot2
 end
 
-slot0.Setup = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.Setup(slot0, slot1, slot2, slot3, slot4)
 	slot0.row = slot1
 	slot0.column = slot2
 	slot0.dir = slot3
@@ -36,7 +36,7 @@ slot0.Setup = function(slot0, slot1, slot2, slot3, slot4)
 	slot0:Init()
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0.wsMapPath:RemoveListener(WSMapPath.EventStartTrip, slot0.onStartTrip)
 	slot0.wsMapPath:RemoveListener(WSMapPath.EventArrived, slot0.onArrived)
 	slot0:DisposeUpdateTimer()
@@ -44,7 +44,7 @@ slot0.Dispose = function(slot0)
 	slot0:Clear()
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	slot1 = slot0.transform
 	slot0.rtClick = slot1:Find("click")
 	slot0.rtBottom = slot1:Find("bottom")
@@ -78,21 +78,21 @@ slot0.Init = function(slot0)
 	end
 end
 
-slot0.UpdateAlpha = function(slot0, slot1)
+function slot0.UpdateAlpha(slot0, slot1)
 	setImageAlpha(slot0.rtBottom, slot1)
 	setImageAlpha(slot0.rtDanger, slot1)
 	setImageAlpha(slot0.rtForbid, slot1)
 end
 
-slot0.OnStartTrip = function(slot0)
+function slot0.OnStartTrip(slot0)
 	slot0:StartUpdateTimer()
 end
 
-slot0.OnArrived = function(slot0)
+function slot0.OnArrived(slot0)
 	slot0:DisposeUpdateTimer()
 end
 
-slot0.StartUpdateTimer = function(slot0)
+function slot0.StartUpdateTimer(slot0)
 	if slot0.wsMapPath.wsObject.class == WSMapFleet then
 		slot0:DisposeUpdateTimer()
 
@@ -114,7 +114,7 @@ slot0.StartUpdateTimer = function(slot0)
 	end
 end
 
-slot0.DisposeUpdateTimer = function(slot0)
+function slot0.DisposeUpdateTimer(slot0)
 	if slot0.updateTimer then
 		slot0.updateTimer:Stop()
 

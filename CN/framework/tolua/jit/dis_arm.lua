@@ -803,7 +803,7 @@ slot40 = {
 	"ror"
 }
 
-slot41 = function(slot0, slot1, slot2)
+function slot41(slot0, slot1, slot2)
 	slot3 = slot0.pos
 	slot4 = ""
 
@@ -824,13 +824,13 @@ slot41 = function(slot0, slot1, slot2)
 	slot0.pos = slot3 + 4
 end
 
-slot42 = function(slot0)
+function slot42(slot0)
 	return uv0(slot0, ".long", {
 		"0x" .. uv1(slot0.op)
 	})
 end
 
-slot43 = function(slot0, slot1, slot2)
+function slot43(slot0, slot1, slot2)
 	slot3 = uv0[uv1(uv2(slot1, 16), 15)]
 	slot4, slot5 = nil
 
@@ -889,7 +889,7 @@ slot43 = function(slot0, slot1, slot2)
 	return slot4
 end
 
-slot44 = function(slot0, slot1, slot2)
+function slot44(slot0, slot1, slot2)
 	slot3 = uv0[uv1(uv2(slot1, 16), 15)]
 	slot4 = uv1(slot1, 255) * 4
 
@@ -908,7 +908,7 @@ slot44 = function(slot0, slot1, slot2)
 	end
 end
 
-slot45 = function(slot0, slot1, slot2, slot3)
+function slot45(slot0, slot1, slot2, slot3)
 	if slot1 == "s" then
 		return uv0("s%d", 2 * uv1(uv2(slot0, slot2), 15) + uv1(uv2(slot0, slot3), 1))
 	else
@@ -916,7 +916,7 @@ slot45 = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot46 = function(slot0)
+function slot46(slot0)
 	slot1 = slot0.pos
 	slot2, slot3, slot4, slot5 = uv0(slot0.code, slot1 + 1, slot1 + 4)
 	slot6 = uv1(uv2(slot5, 24), uv2(slot4, 16), uv2(slot3, 8), slot2)
@@ -1102,7 +1102,7 @@ slot46 = function(slot0)
 	return uv23(slot0, slot10 .. slot8, slot7)
 end
 
-slot47 = function(slot0, slot1, slot2)
+function slot47(slot0, slot1, slot2)
 	slot1 = slot1 or 0
 	slot3 = slot2 and slot1 + slot2 or #slot0.code
 	slot0.pos = slot1

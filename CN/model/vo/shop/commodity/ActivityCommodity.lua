@@ -1,10 +1,10 @@
 slot0 = class("ActivityCommodity", import(".BaseCommodity"))
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_shop_template
 end
 
-slot0.CheckCntLimit = function(slot0)
+function slot0.CheckCntLimit(slot0)
 	if slot0:getConfig("num_limit") == 0 then
 		return true
 	end
@@ -12,7 +12,7 @@ slot0.CheckCntLimit = function(slot0)
 	return slot0:GetPurchasableCnt() > 0
 end
 
-slot0.CheckArgLimit = function(slot0)
+function slot0.CheckArgLimit(slot0)
 	if not slot0:getConfig("limit_args") or slot1 == "" or #slot1 == 0 then
 		return true
 	end
@@ -39,7 +39,7 @@ slot0.CheckArgLimit = function(slot0)
 	return slot2
 end
 
-slot1 = function(slot0, slot1)
+function slot1(slot0, slot1)
 	if getProxy(BayProxy):getMetaShipByGroupId(slot1) then
 		slot4 = slot2:getMetaCharacter():getSpecialMaterialInfoToMaxStar()
 		slot5 = getProxy(BagProxy):getItemCountById(slot4.itemID)
@@ -54,7 +54,7 @@ slot1 = function(slot0, slot1)
 	return 0
 end
 
-slot0.GetTranCntWhenFull = function(slot0, slot1)
+function slot0.GetTranCntWhenFull(slot0, slot1)
 	slot3 = 0
 	slot4 = nil
 
@@ -67,11 +67,7 @@ slot0.GetTranCntWhenFull = function(slot0, slot1)
 
 				if slot9[1] == ShopArgs.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL and uv0(slot0, slot11) - slot1 < 0 then
 					slot3 = math.abs(slot15)
-					slot4 = {
-						type = slot13[1],
-						id = slot13[2],
-						count = slot13[3]
-					}
+					slot4 = Drop.Create(slot13)
 				end
 			end
 		end
@@ -80,26 +76,28 @@ slot0.GetTranCntWhenFull = function(slot0, slot1)
 	return slot3, slot4
 end
 
-slot0.CheckTimeLimit = function(slot0)
+function slot0.CheckTimeLimit(slot0)
 	slot1 = false
 	slot2 = false
-	slot4 = slot0:getConfig("commodity_id")
+	slot3 = false
+	slot6 = Item.getConfigData(slot0:getConfig("commodity_id"))
 
-	if slot0:getConfig("commodity_type") == DROP_TYPE_VITEM and pg.item_data_statistics[slot4].virtual_type == 22 then
+	if slot0:getConfig("commodity_type") == DROP_TYPE_VITEM and slot6.virtual_type == 22 then
 		slot1 = true
+		slot3 = true
 
-		if getProxy(ActivityProxy):getActivityById(pg.item_data_statistics[slot4].link_id) and not slot6:isEnd() then
+		if getProxy(ActivityProxy):getActivityById(slot6.link_id) and not slot8:isEnd() then
 			slot2 = true
 		end
-	elseif slot3 == DROP_TYPE_ITEM and pg.item_data_statistics[slot4].time_limit == 1 then
-		slot1 = true
+	elseif slot4 == DROP_TYPE_ITEM and slot6.time_limit == 1 then
+		slot1 = false
 		slot2 = true
 	end
 
-	return slot1, slot2
+	return slot1, slot2, slot3
 end
 
-slot0.canPurchase = function(slot0)
+function slot0.canPurchase(slot0)
 	slot1, slot2, slot3 = slot0:CheckCntLimit()
 	slot4, slot5, slot6 = slot0:CheckArgLimit()
 
@@ -114,7 +112,7 @@ slot0.canPurchase = function(slot0)
 	return true
 end
 
-slot0.getSkinId = function(slot0)
+function slot0.getSkinId(slot0)
 	if slot0:getConfig("commodity_type") == DROP_TYPE_SKIN then
 		return slot0:getConfig("commodity_id")
 	end
@@ -122,11 +120,11 @@ slot0.getSkinId = function(slot0)
 	return nil
 end
 
-slot0.checkCommodityType = function(slot0, slot1)
+function slot0.checkCommodityType(slot0, slot1)
 	return slot0:getConfig("commodity_type") == slot1
 end
 
-slot0.GetPurchasableCnt = function(slot0)
+function slot0.GetPurchasableCnt(slot0)
 	slot2 = slot0:getConfig("commodity_id")
 
 	if slot0:getConfig("commodity_type") == DROP_TYPE_SKIN then
@@ -150,12 +148,12 @@ slot0.GetPurchasableCnt = function(slot0)
 	end
 end
 
-slot0.GetConsume = function(slot0)
-	return {
+function slot0.GetConsume(slot0)
+	return Drop.New({
 		type = slot0:getConfig("resource_category"),
 		id = slot0:getConfig("resource_type"),
 		count = slot0:getConfig("resource_num")
-	}
+	})
 end
 
 return slot0

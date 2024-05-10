@@ -8,7 +8,7 @@ slot6 = tostring
 
 module("protobuf.text_format")
 
-format = function(slot0)
+function format(slot0)
 	for slot5 = 1, uv0.len(slot0), 16 do
 		slot6 = ""
 		slot10 = slot1
@@ -23,9 +23,9 @@ end
 
 slot8 = require("protobuf.descriptor").FieldDescriptor
 
-msg_format_indent = function(slot0, slot1, slot2)
+function msg_format_indent(slot0, slot1, slot2)
 	for slot6, slot7 in slot1.ListFields(slot1) do
-		slot8 = function(slot0)
+		function slot8(slot0)
 			slot1 = uv0.name
 
 			uv1(uv2.rep(" ", uv3))
@@ -55,7 +55,7 @@ msg_format_indent = function(slot0, slot1, slot2)
 	end
 end
 
-msg_format = function(slot0)
+function msg_format(slot0)
 	msg_format_indent(function (slot0)
 		uv0[#uv0 + 1] = slot0
 	end, slot0, 0)

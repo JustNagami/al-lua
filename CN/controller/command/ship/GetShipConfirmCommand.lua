@@ -1,6 +1,6 @@
 slot0 = class("GetShipConfirmCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = pg.ConnectionMgr.GetInstance()
 
 	slot2:Send(12045, {

@@ -1,6 +1,6 @@
 slot0 = class("ArchivesWorldBossCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._go = slot1
 	slot0._tf = slot1.transform
 	slot0.icon = slot0._tf:Find("icon"):GetComponent(typeof(Image))
@@ -29,7 +29,7 @@ slot0.Ctor = function(slot0, slot1)
 	setActive(slot0.arrTr, false)
 end
 
-slot0.Update = function(slot0, slot1)
+function slot0.Update(slot0, slot1)
 	slot0.data = slot1
 	slot0.bossId = slot1.id
 	slot0.metaProgressVO = slot1.progress
@@ -37,7 +37,7 @@ slot0.Update = function(slot0, slot1)
 	slot0:Flush()
 end
 
-slot0.Flush = function(slot0)
+function slot0.Flush(slot0)
 	slot1 = slot0.metaProgressVO
 	slot3 = slot0.bossId == WorldBossConst.GetArchivesId() and WorldBossConst.GetAchieveState() ~= WorldBossConst.ACHIEVE_STATE_NOSTART
 	slot5 = not slot1.metaPtData:CanGetNextAward()
@@ -91,19 +91,19 @@ slot0.Flush = function(slot0)
 	setActive(slot0.tip, slot4:CanGetAward())
 end
 
-slot0.Select = function(slot0)
+function slot0.Select(slot0)
 	setActive(slot0.arrTr, true)
 	LeanTween.value(slot0.arrTr.gameObject, slot0.arrLpos.x, slot0.arrLpos.x - 20, 0.9):setOnUpdate(System.Action_float(function (slot0)
 		uv0.arrTr.localPosition = Vector3(slot0, uv0.arrLpos.y, 0)
 	end)):setLoopPingPong()
 end
 
-slot0.UnSelect = function(slot0)
+function slot0.UnSelect(slot0)
 	setActive(slot0.arrTr, false)
 	LeanTween.cancel(slot0.arrTr.gameObject)
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:UnSelect()
 end
 

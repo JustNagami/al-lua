@@ -16,7 +16,7 @@ slot10 = slot3.select
 slot4.BLOCKSIZE = 2048
 slot4._VERSION = "LTN12 1.0.3"
 
-slot5.cycle = function(slot0, slot1, slot2)
+function slot5.cycle(slot0, slot1, slot2)
 	uv0.assert(slot0)
 
 	return function (slot0)
@@ -27,7 +27,7 @@ slot5.cycle = function(slot0, slot1, slot2)
 	end
 end
 
-slot5.chain = function(...)
+function slot5.chain(...)
 	slot0 = {
 		...
 	}
@@ -65,21 +65,21 @@ slot5.chain = function(...)
 	end
 end
 
-slot11 = function()
+function slot11()
 	return nil
 end
 
-slot6.empty = function()
+function slot6.empty()
 	return uv0
 end
 
-slot6.error = function(slot0)
+function slot6.error(slot0)
 	return function ()
 		return nil, uv0
 	end
 end
 
-slot6.file = function(slot0, slot1)
+function slot6.file(slot0, slot1)
 	if slot0 then
 		return function ()
 			if not uv0:read(uv1.BLOCKSIZE) then
@@ -93,7 +93,7 @@ slot6.file = function(slot0, slot1)
 	end
 end
 
-slot6.simplify = function(slot0)
+function slot6.simplify(slot0)
 	uv0.assert(slot0)
 
 	return function ()
@@ -108,7 +108,7 @@ slot6.simplify = function(slot0)
 	end
 end
 
-slot6.string = function(slot0)
+function slot6.string(slot0)
 	if slot0 then
 		slot1 = 1
 
@@ -126,7 +126,7 @@ slot6.string = function(slot0)
 	end
 end
 
-slot6.rewind = function(slot0)
+function slot6.rewind(slot0)
 	uv0.assert(slot0)
 
 	slot1 = {}
@@ -144,7 +144,7 @@ slot6.rewind = function(slot0)
 	end
 end
 
-slot6.chain = function(slot0, slot1, ...)
+function slot6.chain(slot0, slot1, ...)
 	if ... then
 		slot1 = uv0.chain(slot1, ...)
 	end
@@ -209,7 +209,7 @@ slot6.chain = function(slot0, slot1, ...)
 	end
 end
 
-slot6.cat = function(...)
+function slot6.cat(...)
 	slot1 = uv0.remove({
 		...
 	}, 1)
@@ -231,7 +231,7 @@ slot6.cat = function(...)
 	end
 end
 
-slot7.table = function(slot0)
+function slot7.table(slot0)
 	return function (slot0, slot1)
 		if slot0 then
 			uv0.insert(uv1, slot0)
@@ -241,7 +241,7 @@ slot7.table = function(slot0)
 	end, slot0 or {}
 end
 
-slot7.simplify = function(slot0)
+function slot7.simplify(slot0)
 	uv0.assert(slot0)
 
 	return function (slot0, slot1)
@@ -257,7 +257,7 @@ slot7.simplify = function(slot0)
 	end
 end
 
-slot7.file = function(slot0, slot1)
+function slot7.file(slot0, slot1)
 	if slot0 then
 		return function (slot0, slot1)
 			if not slot0 then
@@ -273,21 +273,21 @@ slot7.file = function(slot0, slot1)
 	end
 end
 
-slot12 = function()
+function slot12()
 	return 1
 end
 
-slot7.null = function()
+function slot7.null()
 	return uv0
 end
 
-slot7.error = function(slot0)
+function slot7.error(slot0)
 	return function ()
 		return nil, uv0
 	end
 end
 
-slot7.chain = function(slot0, slot1, ...)
+function slot7.chain(slot0, slot1, ...)
 	if ... then
 		slot2 = {
 			slot0,
@@ -324,7 +324,7 @@ slot7.chain = function(slot0, slot1, ...)
 	end
 end
 
-slot8.step = function(slot0, slot1)
+function slot8.step(slot0, slot1)
 	slot2, slot3 = slot0()
 	slot4, slot5 = slot1(slot2, slot3)
 
@@ -335,7 +335,7 @@ slot8.step = function(slot0, slot1)
 	end
 end
 
-slot8.all = function(slot0, slot1, slot2)
+function slot8.all(slot0, slot1, slot2)
 	uv0.assert(slot0 and slot1)
 
 	slot2 = slot2 or uv1.step

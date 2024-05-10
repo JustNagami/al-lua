@@ -1,6 +1,6 @@
 slot0 = class("BattleActivityBossResultLayer", import(".BattleResultLayer"))
 
-slot0.showRightBottomPanel = function(slot0)
+function slot0.showRightBottomPanel(slot0)
 	setActive(slot0._blurConatiner:Find("activitybossConfirmPanel"), true)
 	uv0.super.showRightBottomPanel(slot0)
 	SetActive(slot0._rightBottomPanel, false)
@@ -42,32 +42,35 @@ slot0.showRightBottomPanel = function(slot0)
 	setText(slot6:Find("Text"), slot13)
 
 	if slot13 <= 0 then
-		setImageSprite(slot7:Find("icon"), GetSpriteFromAtlas(itemId2icon(pg.player_resource[slot12].itemid), ""))
+		setImageSprite(slot7:Find("icon"), GetSpriteFromAtlas(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot12
+		}):getIcon(), ""))
 
 		slot19 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
 		slot18 = getProxy(PlayerProxy):getRawData():getResource(slot12) > 0
-		slot24 = 1
-		slot25 = slot7:Find("checkbox")
+		slot23 = 1
+		slot24 = slot7:Find("checkbox")
 
 		if slot2 == SYSTEM_BOSS_EXPERIMENT then
-			slot24 = 0
+			slot23 = 0
 
-			triggerToggle(slot25, false)
-			setToggleEnabled(slot25, false)
+			triggerToggle(slot24, false)
+			setToggleEnabled(slot24, false)
 		elseif slot2 == SYSTEM_HP_SHARE_ACT_BOSS then
-			triggerToggle(slot25, true)
-			setToggleEnabled(slot25, false)
+			triggerToggle(slot24, true)
+			setToggleEnabled(slot24, false)
 		elseif slot2 == SYSTEM_ACT_BOSS then
-			setToggleEnabled(slot25, slot18)
-			triggerToggle(slot25, slot18 and slot19)
+			setToggleEnabled(slot24, slot18)
+			triggerToggle(slot24, slot18 and slot19)
 		end
 
-		if slot23 < slot24 then
-			slot23 = setColorStr(slot23, COLOR_RED) or slot23
+		if slot22 < slot23 then
+			slot22 = setColorStr(slot22, COLOR_RED) or slot22
 		end
 
-		setText(slot7:Find("Text"), slot24 .. "/" .. slot23)
-		onToggle(slot0, slot25, function (slot0)
+		setText(slot7:Find("Text"), slot23 .. "/" .. slot22)
+		onToggle(slot0, slot24, function (slot0)
 			uv0 = slot0
 
 			getProxy(SettingsProxy):setActBossExchangeTicketTip(slot0 and 1 or 0)
@@ -124,7 +127,7 @@ slot0.showRightBottomPanel = function(slot0)
 	end)
 end
 
-slot0.PassMsgbox = function(slot0, slot1, slot2)
+function slot0.PassMsgbox(slot0, slot1, slot2)
 	getProxy(ContextProxy):GetPrevContext(1).data.msg = {
 		type = slot1,
 		param = slot2
@@ -133,7 +136,7 @@ slot0.PassMsgbox = function(slot0, slot1, slot2)
 	pg.m02:sendNotification(GAME.GO_BACK)
 end
 
-slot0.HideConfirmPanel = function(slot0)
+function slot0.HideConfirmPanel(slot0)
 	setActive(slot0._blurConatiner:Find("activitybossConfirmPanel"), false)
 end
 

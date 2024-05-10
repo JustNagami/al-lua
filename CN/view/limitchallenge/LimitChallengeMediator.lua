@@ -1,11 +1,11 @@
 slot0 = class("LimitChallengeMediator", import("..base.ContextMediator"))
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bindEvent()
 	slot0:tryGetAward()
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		LimitChallengeConst.REQ_CHALLENGE_INFO_DONE,
 		LimitChallengeConst.GET_CHALLENGE_AWARD_DONE,
@@ -13,7 +13,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == LimitChallengeConst.REQ_CHALLENGE_INFO_DONE then
@@ -27,7 +27,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.bindEvent = function(slot0)
+function slot0.bindEvent(slot0)
 	slot0:bind(LimitChallengeConst.OPEN_PRE_COMBAT_LAYER, function (slot0, slot1)
 		uv0:addSubLayers(Context.New({
 			mediator = LimitChallengePreCombatMediator,
@@ -40,7 +40,7 @@ slot0.bindEvent = function(slot0)
 	end)
 end
 
-slot0.tryGetAward = function(slot0)
+function slot0.tryGetAward(slot0)
 	if #getProxy(LimitChallengeProxy):getMissAwardChallengeIDLIst() > 0 then
 		slot0:sendNotification(LimitChallengeConst.GET_CHALLENGE_AWARD, {
 			challengeIDList = slot1

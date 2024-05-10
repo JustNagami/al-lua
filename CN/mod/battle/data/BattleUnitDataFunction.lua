@@ -35,7 +35,7 @@ slot32 = pg.strategy_data_template
 slot0.Battle.BattleDataFunction = slot0.Battle.BattleDataFunction or {}
 slot33 = slot0.Battle.BattleDataFunction
 
-slot33.CreateBattleUnitData = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11)
+function slot33.CreateBattleUnitData(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11)
 	slot12, slot13 = nil
 
 	if slot1 == uv0.UnitType.PLAYER_UNIT then
@@ -100,7 +100,7 @@ slot33.CreateBattleUnitData = function(slot0, slot1, slot2, slot3, slot4, slot5,
 					skin = slot19.skin
 				}
 			else
-				slot20 = slot19.equipmentInfo and slot19.equipmentInfo.config.torpedo_ammo or 0
+				slot20 = slot19.equipmentInfo and slot19.equipmentInfo:getConfig("torpedo_ammo") or 0
 
 				if not slot13 or slot18 <= slot13 or #uv2.GetWeaponDataFromID(slot19.id).weapon_id then
 					slot14[#slot14 + 1] = {
@@ -125,7 +125,7 @@ slot33.CreateBattleUnitData = function(slot0, slot1, slot2, slot3, slot4, slot5,
 	return slot12
 end
 
-slot33.InitUnitSkill = function(slot0, slot1, slot2)
+function slot33.InitUnitSkill(slot0, slot1, slot2)
 	slot3 = slot0.skills or {}
 
 	for slot7, slot8 in pairs(slot3) do
@@ -133,7 +133,7 @@ slot33.InitUnitSkill = function(slot0, slot1, slot2)
 	end
 end
 
-slot33.GetEquipSkill = function(slot0, slot1)
+function slot33.GetEquipSkill(slot0, slot1)
 	slot2 = Ship.WEAPON_COUNT
 	slot3 = {}
 
@@ -164,7 +164,7 @@ slot33.GetEquipSkill = function(slot0, slot1)
 	return slot3
 end
 
-slot33.AttachWeather = function(slot0, slot1)
+function slot33.AttachWeather(slot0, slot1)
 	if table.contains(slot1, uv0.WEATHER.NIGHT) then
 		slot2 = slot0:GetTemplate().type
 
@@ -202,7 +202,7 @@ slot33.AttachWeather = function(slot0, slot1)
 	end
 end
 
-slot33.AttachSmoke = function(slot0)
+function slot33.AttachSmoke(slot0)
 	if slot0:GetUnitType() == uv0.UnitType.ENEMY_UNIT or slot1 == uv0.UnitType.BOSS_UNIT then
 		if slot0:GetAimBias() then
 			slot2 = slot0:GetAimBias()
@@ -228,13 +228,13 @@ slot33.AttachSmoke = function(slot0)
 	end
 end
 
-slot33.InitEquipSkill = function(slot0, slot1, slot2)
+function slot33.InitEquipSkill(slot0, slot1, slot2)
 	for slot7, slot8 in ipairs(uv0.GetEquipSkill(slot0, slot2)) do
 		slot1:AddBuff(uv1.Battle.BattleBuffUnit.New(slot8, 1, slot1))
 	end
 end
 
-slot33.InitCommanderSkill = function(slot0, slot1, slot2)
+function slot33.InitCommanderSkill(slot0, slot1, slot2)
 	slot0 = slot0 or {}
 	slot3 = uv0.Battle.BattleState.GetInstance():GetBattleType()
 
@@ -260,7 +260,7 @@ slot33.InitCommanderSkill = function(slot0, slot1, slot2)
 	end
 end
 
-slot33.CreateWeaponUnit = function(slot0, slot1, slot2, slot3, slot4)
+function slot33.CreateWeaponUnit(slot0, slot1, slot2, slot3, slot4)
 	slot3 = slot3 or -1
 	slot5 = slot1:GetUnitType()
 	slot6 = nil
@@ -334,7 +334,7 @@ slot33.CreateWeaponUnit = function(slot0, slot1, slot2, slot3, slot4)
 	return slot6
 end
 
-slot33.CreateAircraftUnit = function(slot0, slot1, slot2, slot3)
+function slot33.CreateAircraftUnit(slot0, slot1, slot2, slot3)
 	slot4 = nil
 
 	assert(uv0.GetAircraftTmpDataFromID(slot1) ~= nil, "找不到飞机配置：id = " .. slot1)
@@ -348,7 +348,7 @@ slot33.CreateAircraftUnit = function(slot0, slot1, slot2, slot3)
 	return slot4
 end
 
-slot33.CreateAllInStrike = function(slot0)
+function slot33.CreateAllInStrike(slot0)
 	slot3 = 0
 	slot4 = {}
 
@@ -363,7 +363,7 @@ slot33.CreateAllInStrike = function(slot0)
 	return slot4
 end
 
-slot33.ExpandAllinStrike = function(slot0)
+function slot33.ExpandAllinStrike(slot0)
 	if #uv0.GetPlayerShipModelFromID(slot0:GetTemplateID()).airassist_time > 0 then
 		slot5 = uv1.Battle.BattleAllInStrike.New(slot3[#slot3])
 
@@ -377,7 +377,7 @@ slot33.ExpandAllinStrike = function(slot0)
 	end
 end
 
-slot33.CreateAirFighterUnit = function(slot0, slot1)
+function slot33.CreateAirFighterUnit(slot0, slot1)
 	slot2 = nil
 	slot2 = uv1.Battle.BattleAirFighterUnit.New(slot0)
 
@@ -388,43 +388,43 @@ slot33.CreateAirFighterUnit = function(slot0, slot1)
 	return slot2
 end
 
-slot33.GetPlayerShipTmpDataFromID = function(slot0)
+function slot33.GetPlayerShipTmpDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>ship_data_statistics<< 找不到玩家船只配置：id = " .. slot0)
 
 	return Clone(uv0[slot0])
 end
 
-slot33.GetPlayerShipModelFromID = function(slot0)
+function slot33.GetPlayerShipModelFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>ship_data_template<< 找不到玩家船只模组配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetPlayerShipSkinDataFromID = function(slot0)
+function slot33.GetPlayerShipSkinDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>ship_skin_template<< 找不到舰娘皮肤配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetShipTypeTmp = function(slot0)
+function slot33.GetShipTypeTmp(slot0)
 	assert(uv0[slot0] ~= nil, ">>ship_data_by_type<< 找不到舰船类型配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetMonsterTmpDataFromID = function(slot0)
+function slot33.GetMonsterTmpDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>enemy_data_statistics<< 找不到敌方船只配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetAircraftTmpDataFromID = function(slot0)
+function slot33.GetAircraftTmpDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>aircraft_template<< 找不到飞机配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetWeaponDataFromID = function(slot0)
+function slot33.GetWeaponDataFromID(slot0)
 	if slot0 ~= Equipment.EQUIPMENT_STATE_EMPTY and slot0 ~= Equipment.EQUIPMENT_STATE_LOCK then
 		assert(uv0[slot0] ~= nil, ">>equip_data_statistics<< 找不到武器类装备配置：id = " .. slot0)
 	end
@@ -432,53 +432,53 @@ slot33.GetWeaponDataFromID = function(slot0)
 	return uv0[slot0]
 end
 
-slot33.GetEquipDataTemplate = function(slot0)
+function slot33.GetEquipDataTemplate(slot0)
 	assert(uv0[slot0] ~= nil, ">>equip_data_template<< 找不到武器装备模板：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetSpWeaponDataFromID = function(slot0)
+function slot33.GetSpWeaponDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>spweapon_data_statistics<< 找不到特殊兵装配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetWeaponPropertyDataFromID = function(slot0)
+function slot33.GetWeaponPropertyDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>weapon_property<< 找不到武器行为配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetFormationTmpDataFromID = function(slot0)
+function slot33.GetFormationTmpDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>formation_template<<找不到阵型配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetAITmpDataFromID = function(slot0)
+function slot33.GetAITmpDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>auto_pilot_template<< 找不到移动ai配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetShipPersonality = function(slot0)
+function slot33.GetShipPersonality(slot0)
 	assert(uv0[slot0] ~= nil, ">>shipPersonality<< 找不到性格配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetEnemyTypeDataByType = function(slot0)
+function slot33.GetEnemyTypeDataByType(slot0)
 	assert(uv0[slot0] ~= nil, ">>enemy_data_by_type<< 找不到怪物类型：type = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetArenaBuffByShipType = function(slot0)
+function slot33.GetArenaBuffByShipType(slot0)
 	return uv0.GetShipTypeTmp(slot0).arena_buff
 end
 
-slot33.GetPlayerUnitDurabilityExtraAddition = function(slot0, slot1)
+function slot33.GetPlayerUnitDurabilityExtraAddition(slot0, slot1)
 	if slot0 == SYSTEM_DUEL then
 		assert(uv0[slot1] ~= nil, ">>ship_level<< 找不到等级配置：level = " .. slot1)
 
@@ -488,27 +488,27 @@ slot33.GetPlayerUnitDurabilityExtraAddition = function(slot0, slot1)
 	end
 end
 
-slot33.GetSkillDataTemplate = function(slot0)
+function slot33.GetSkillDataTemplate(slot0)
 	assert(uv0[slot0] ~= nil, ">>skill_data_template<< 找不到技能配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetShipTransformDataTemplate = function(slot0)
+function slot33.GetShipTransformDataTemplate(slot0)
 	return uv1[uv0.GetPlayerShipModelFromID(slot0).group_type]
 end
 
-slot33.GetShipMetaFromDataTemplate = function(slot0)
+function slot33.GetShipMetaFromDataTemplate(slot0)
 	return uv1[uv0.GetPlayerShipModelFromID(slot0).group_type]
 end
 
-slot33.GetEquipSkinDataFromID = function(slot0)
+function slot33.GetEquipSkinDataFromID(slot0)
 	assert(uv0[slot0] ~= nil, ">>equip_skin_template<< 找不到装备皮肤配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.GetEquipSkin = function(slot0)
+function slot33.GetEquipSkin(slot0)
 	assert(uv0[slot0] ~= nil, ">>equip_skin_template<< 找不到装备皮肤配置：id = " .. slot0)
 
 	slot1 = uv0[slot0]
@@ -516,7 +516,7 @@ slot33.GetEquipSkin = function(slot0)
 	return slot1.bullet_name, slot1.derivate_bullet, slot1.derivate_torpedo, slot1.derivate_boom, slot1.fire_fx_name, slot1.hit_fx_name
 end
 
-slot33.GetEquipSkinSFX = function(slot0)
+function slot33.GetEquipSkinSFX(slot0)
 	assert(uv0[slot0] ~= nil, ">>equip_skin_template<< 找不到装备皮肤配置：id = " .. slot0)
 
 	slot1 = uv0[slot0]
@@ -524,7 +524,7 @@ slot33.GetEquipSkinSFX = function(slot0)
 	return slot1.hit_sfx, slot1.miss_sfx
 end
 
-slot33.GetSpecificGuildBossEnemyList = function(slot0, slot1)
+function slot33.GetSpecificGuildBossEnemyList(slot0, slot1)
 	slot4 = {}
 
 	if uv0[slot0].expedition_id[1] == slot1 then
@@ -534,7 +534,7 @@ slot33.GetSpecificGuildBossEnemyList = function(slot0, slot1)
 	return slot4
 end
 
-slot33.GetSpecificEnemyList = function(slot0, slot1)
+function slot33.GetSpecificEnemyList(slot0, slot1)
 	slot5 = nil
 
 	for slot9, slot10 in ipairs(uv1[uv0[slot0].config_id].ex_expedition_enemy) do
@@ -548,13 +548,21 @@ slot33.GetSpecificEnemyList = function(slot0, slot1)
 	return slot5
 end
 
-slot33.GetSpecificWorldJointEnemyList = function(slot0, slot1, slot2)
+function slot33.GetMetaBossTemplate(slot0)
+	return uv0[slot0]
+end
+
+function slot33.GetMetaBossLevelTemplate(slot0, slot1)
+	return uv1[uv0.GetMetaBossTemplate(slot0).boss_level_id + slot1 - 1]
+end
+
+function slot33.GetSpecificWorldJointEnemyList(slot0, slot1, slot2)
 	return {
-		pg.world_boss_level[uv0[slot1].boss_level_id + slot2 - 1].enemy_id
+		uv0.GetMetaBossLevelTemplate(slot1, slot2).enemy_id
 	}
 end
 
-slot33.IncreaseAttributes = function(slot0, slot1, slot2)
+function slot33.IncreaseAttributes(slot0, slot1, slot2)
 	for slot6, slot7 in ipairs(slot2) do
 		if slot7[slot1] ~= nil and type(slot7[slot1]) == "number" then
 			slot0 = slot0 + slot7[slot1]
@@ -562,7 +570,7 @@ slot33.IncreaseAttributes = function(slot0, slot1, slot2)
 	end
 end
 
-slot33.CreateAirFighterWeaponUnit = function(slot0, slot1, slot2, slot3)
+function slot33.CreateAirFighterWeaponUnit(slot0, slot1, slot2, slot3)
 	slot4 = nil
 
 	assert(uv0.GetWeaponPropertyDataFromID(slot0) ~= nil, "找不到武器配置：id = " .. slot0)
@@ -597,13 +605,13 @@ slot33.CreateAirFighterWeaponUnit = function(slot0, slot1, slot2, slot3)
 	return slot4
 end
 
-slot33.GetWords = function(slot0, slot1, slot2)
+function slot33.GetWords(slot0, slot1, slot2)
 	slot3, slot4, slot5 = ShipWordHelper.GetWordAndCV(slot0, slot1, 1, true, slot2)
 
 	return slot5
 end
 
-slot33.SkillTranform = function(slot0, slot1)
+function slot33.SkillTranform(slot0, slot1)
 	if uv0.GetSkillDataTemplate(slot1).system_transform[slot0] == nil then
 		return slot1
 	else
@@ -611,7 +619,7 @@ slot33.SkillTranform = function(slot0, slot1)
 	end
 end
 
-slot33.GenerateHiddenBuff = function(slot0)
+function slot33.GenerateHiddenBuff(slot0)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(uv0.GetPlayerShipModelFromID(slot0).hide_buff_list) do
@@ -624,11 +632,11 @@ slot33.GenerateHiddenBuff = function(slot0)
 	return slot2
 end
 
-slot33.GetDivingFilter = function(slot0)
+function slot33.GetDivingFilter(slot0)
 	return uv0[slot0].diving_filter
 end
 
-slot33.GeneratePlayerSubmarinPhase = function(slot0, slot1, slot2, slot3, slot4)
+function slot33.GeneratePlayerSubmarinPhase(slot0, slot1, slot2, slot3, slot4)
 	return {
 		{
 			index = 0,
@@ -664,13 +672,13 @@ slot33.GeneratePlayerSubmarinPhase = function(slot0, slot1, slot2, slot3, slot4)
 	}
 end
 
-slot33.GetEnvironmentBehaviour = function(slot0)
+function slot33.GetEnvironmentBehaviour(slot0)
 	assert(uv0[slot0] ~= nil, ">>battle_environment_behaviour_template<< 找不到环境行为配置：id = " .. slot0)
 
 	return uv0[slot0]
 end
 
-slot33.AttachUltimateBonus = function(slot0)
+function slot33.AttachUltimateBonus(slot0)
 	if not Ship.IsMaxStarByTmpID(slot0:GetTemplateID()) then
 		return
 	end
@@ -686,7 +694,7 @@ slot33.AttachUltimateBonus = function(slot0)
 	end
 end
 
-slot33.AuxBoost = function(slot0)
+function slot33.AuxBoost(slot0)
 	for slot5, slot6 in ipairs(slot0:GetEquipment()) do
 		if slot6 and slot6.equipment and table.contains(EquipType.DeviceEquipTypes, slot6.equipment.type) then
 			slot7 = slot6.equipment
@@ -703,7 +711,7 @@ slot33.AuxBoost = function(slot0)
 	end
 end
 
-slot33.GetSLGStrategyBuffByCombatBuffID = function(slot0)
+function slot33.GetSLGStrategyBuffByCombatBuffID(slot0)
 	for slot4, slot5 in pairs(uv0) do
 		if slot5.buff_id == slot0 then
 			return slot5

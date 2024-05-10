@@ -22,7 +22,7 @@ slot0.TowerCardType2Color = {
 	"yellow"
 }
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._tf = tf(slot1)
 	slot0.bgTF = slot0._tf:Find("BG")
 	slot0.iconBG = slot0._tf:Find("IconBG")
@@ -35,23 +35,23 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.keywordListContainer = slot0._tf:Find("KeywordList")
 end
 
-slot0.SetData = function(slot0, slot1)
+function slot0.SetData(slot0, slot1)
 	slot0.data = slot1
 end
 
-slot0.GetSkillIconBG = function(slot0, slot1)
+function slot0.GetSkillIconBG(slot0, slot1)
 	return "icon_bg_" .. uv0.TowerCardType2Color[slot1]
 end
 
-slot0.GetRarityBG = function(slot0, slot1)
+function slot0.GetRarityBG(slot0, slot1)
 	return uv0[slot1]
 end
 
-slot0.GetCardCost = function(slot0)
+function slot0.GetCardCost(slot0)
 	return slot0.data:GetCost()
 end
 
-slot0.UpdateView = function(slot0)
+function slot0.UpdateView(slot0)
 	slot4 = slot0.data
 
 	setImageSprite(slot0.iconTF, LoadSprite(slot4:GetIconPath(), ""), true)
@@ -105,7 +105,7 @@ slot0.UpdateView = function(slot0)
 	TweenItemAlphaAndWhite(go(slot0._tf))
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	ClearTweenItemAlphaAndWhite(go(slot0._tf))
 end
 

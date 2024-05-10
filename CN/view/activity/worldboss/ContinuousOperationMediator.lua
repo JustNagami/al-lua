@@ -2,7 +2,7 @@ slot0 = class("ContinuousOperationMediator", import("view.base.ContextMediator")
 slot0.CONTINUE_OPERATION = "ContinuousOperationMediator:CONTINUE_OPERATION"
 slot0.ON_REENTER = "ContinuousOperationMediator:ON_REENTER"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(GAME.PAUSE_BATTLE, function ()
 		uv0:sendNotification(GAME.PAUSE_BATTLE)
 	end)
@@ -27,14 +27,14 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		NewBattleResultMediator.ON_ENTER_BATTLE_RESULT,
 		NewBattleResultMediator.ON_COMPLETE_BATTLE_RESULT
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == NewBattleResultMediator.ON_ENTER_BATTLE_RESULT then
@@ -45,7 +45,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 end
 
 return slot0

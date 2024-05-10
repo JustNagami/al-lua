@@ -1,6 +1,6 @@
 slot0 = class("HarvestClassResourceCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 
 	if getProxy(NavalAcademyProxy):GetClassVO():GetCanGetResCnt() <= 0 then
@@ -15,10 +15,9 @@ slot0.execute = function(slot0, slot1)
 		type = 0
 	}, 22010, function (slot0)
 		if slot0.result == 0 then
-			slot2 = uv0:GetResourceType()
-			slot3 = Item.New({
+			slot3 = Drop.New({
 				type = DROP_TYPE_ITEM,
-				id = slot2,
+				id = uv0:GetResourceType(),
 				count = uv1
 			})
 
@@ -30,7 +29,7 @@ slot0.execute = function(slot0, slot1)
 				[id2res(PlayerConst.ResClassField)] = uv1 * uv0:GetTarget()
 			})
 			getProxy(PlayerProxy):updatePlayer(slot5)
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commission_get_award", pg.item_data_statistics[slot2].name, uv1))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commission_get_award", slot3:getConfig("name"), uv1))
 			getProxy(NavalAcademyProxy):getCourse():SetProficiency(slot0.exp_in_well)
 			uv2:sendNotification(GAME.HARVEST_CLASS_RES_DONE, {
 				award = slot3,

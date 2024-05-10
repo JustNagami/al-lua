@@ -1,11 +1,11 @@
 slot0 = class("ExercisePreCombatLayer", import("view.battle.PreCombatLayer"))
 slot1 = import("..ship.FormationUI")
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "PreCombatUI"
 end
 
-slot0.ResUISettings = function(slot0)
+function slot0.ResUISettings(slot0)
 	return {
 		order = 5,
 		anim = true,
@@ -13,13 +13,13 @@ slot0.ResUISettings = function(slot0)
 	}
 end
 
-slot0.CommonInit = function(slot0)
+function slot0.CommonInit(slot0)
 	uv0.super.CommonInit(slot0)
 
 	slot0._ticket = slot0._costContainer:Find("ticket")
 end
 
-slot0.Register = function(slot0)
+function slot0.Register(slot0)
 	slot1 = slot0._formationLogic
 
 	slot1:AddLoadComplete(function ()
@@ -144,7 +144,7 @@ slot0.Register = function(slot0)
 	end)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:disableAllStepper()
 	onButton(slot0, slot0._backBtn, function ()
 		slot0 = {}
@@ -269,12 +269,12 @@ slot0.didEnter = function(slot0)
 	end
 end
 
-slot0.disableAllStepper = function(slot0)
+function slot0.disableAllStepper(slot0)
 	SetActive(slot0._nextPage, false)
 	SetActive(slot0._prevPage, false)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0._currentForm == uv0.FORM_EDIT then
 		slot1 = getProxy(FleetProxy)
 		slot0.contextData.EdittingFleet = slot1.EdittingFleet

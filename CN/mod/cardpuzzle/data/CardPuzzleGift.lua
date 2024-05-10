@@ -12,7 +12,7 @@ slot0.EFFECT_TYPE = {
 	BATTLE_BUFF = 2
 }
 
-slot0.CreateByNetData = function(slot0)
+function slot0.CreateByNetData(slot0)
 	slot1 = {}
 
 	for slot5 = 1, slot0.num do
@@ -24,35 +24,35 @@ slot0.CreateByNetData = function(slot0)
 	return slot1
 end
 
-slot0.bindConfigTable = function(slot0)
+function slot0.bindConfigTable(slot0)
 	return pg.puzzle_relics_template
 end
 
-slot0.GetIconPath = function(slot0)
+function slot0.GetIconPath(slot0)
 	return "roguegifts/" .. slot0:getConfig("icon")
 end
 
-slot0.GetConfigId = function(slot0)
+function slot0.GetConfigId(slot0)
 	return slot0.configId
 end
 
-slot0.GetName = function(slot0)
+function slot0.GetName(slot0)
 	return slot0:getConfig("name")
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return slot0:getConfig("type")
 end
 
-slot0.GetDesc = function(slot0)
+function slot0.GetDesc(slot0)
 	return slot0:getConfig("desc")
 end
 
-slot0.GetRarity = function(slot0)
+function slot0.GetRarity(slot0)
 	return slot0:getConfig("rarity")
 end
 
-slot0.GetEffects = function(slot0)
+function slot0.GetEffects(slot0)
 	return _.map(slot0:getConfig("arg_list"), function (slot0)
 		slot1 = pg.puzzle_relics_effect[slot0]
 
@@ -62,7 +62,7 @@ slot0.GetEffects = function(slot0)
 	end)
 end
 
-slot0.GetAttributeBonus = function(slot0, slot1)
+function slot0.GetAttributeBonus(slot0, slot1)
 	slot2 = {}
 
 	if slot0:GetType() ~= uv0.TYPE.GLOBAL then

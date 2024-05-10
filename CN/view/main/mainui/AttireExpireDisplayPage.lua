@@ -1,14 +1,14 @@
 slot0 = class("AttireExpireDisplayPage", import("...base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "AttireOverDueUI"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.uilist = UIItemList.New(slot0:findTF("window/sliders/scrollrect/content"), slot0:findTF("window/sliders/scrollrect/content/tpl"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0:findTF("window/confirm_btn"), function ()
 		uv0:Hide()
 	end, SFX_CANCEL)
@@ -20,7 +20,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	uv0.super.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
@@ -28,7 +28,7 @@ slot0.Show = function(slot0, slot1)
 	slot0:Display(slot1)
 end
 
-slot0.Display = function(slot0, slot1)
+function slot0.Display(slot0, slot1)
 	slot0.uilist:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = uv0[slot1 + 1]
@@ -43,7 +43,7 @@ slot0.Display = function(slot0, slot1)
 	slot0.uilist:align(#slot1)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, pg.UIMgr.GetInstance()._normalUIMain)
 end
 

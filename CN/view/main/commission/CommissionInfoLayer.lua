@@ -1,10 +1,10 @@
 slot0 = class("CommissionInfoLayer", import("...base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "CommissionInfoUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.frame = slot0:findTF("frame")
 	slot0.resourcesTF = slot0:findTF("resources", slot0.frame)
 	slot0.oilTF = slot0:findTF("canteen/bubble/Text", slot0.resourcesTF):GetComponent(typeof(Text))
@@ -14,7 +14,7 @@ slot0.init = function(slot0)
 	slot0.goldbubbleTF = slot0:findTF("merchant/bubble", slot0.resourcesTF)
 	slot0.classbubbleTF = slot0:findTF("class/bubble", slot0.resourcesTF)
 	slot3 = slot0.classbubbleTF:Find("icon")
-	slot3:GetComponent(typeof(Image)).sprite = LoadSprite(pg.item_data_statistics[getProxy(NavalAcademyProxy):GetClassVO():GetResourceType()].icon)
+	slot3:GetComponent(typeof(Image)).sprite = LoadSprite(Item.getConfigData(getProxy(NavalAcademyProxy):GetClassVO():GetResourceType()).icon)
 	slot0.projectContainer = slot0:findTF("main/content", slot0.frame)
 	slot0.items = {
 		CommissionInfoEventItem.New(slot0:findTF("frame/main/content/event"), slot0),
@@ -36,7 +36,7 @@ slot0.init = function(slot0)
 	slot0.metaBossBtn = CommissionMetaBossBtn.New(slot0:findTF("frame/link_btns/btns/meta_boss"), slot0.event)
 end
 
-slot0.UpdateUrItemEntrance = function(slot0)
+function slot0.UpdateUrItemEntrance(slot0)
 	if not LOCK_UR_SHIP then
 		slot1 = pg.gameset.urpt_chapter_max.description
 		slot3 = slot1[2]
@@ -53,7 +53,7 @@ slot0.UpdateUrItemEntrance = function(slot0)
 	end
 end
 
-slot0.updateCrusingEntrance = function(slot0)
+function slot0.updateCrusingEntrance(slot0)
 	if getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING) and not slot1:isEnd() then
 		setActive(slot0.activityCrusingBtn, true)
 
@@ -70,7 +70,7 @@ slot0.updateCrusingEntrance = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.NotifyIns = function(slot0, slot1, slot2)
+function slot0.NotifyIns(slot0, slot1, slot2)
 	slot3 = slot1:ExistMsg() and (not slot2 or slot2:isEnd())
 
 	setActive(slot0.activityInsBtn, slot3)
@@ -82,7 +82,7 @@ slot0.NotifyIns = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.UpdateLinkPanel = function(slot0)
+function slot0.UpdateLinkPanel(slot0)
 	slot1 = false
 
 	for slot5 = 1, slot0.linkBtnPanel.childCount do
@@ -96,7 +96,7 @@ slot0.UpdateLinkPanel = function(slot0)
 	setActive(slot0.linkBtnPanel.parent, slot1)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.oilbubbleTF, function ()
 		if LeanTween.isTweening(go(uv0.frame)) then
 			return
@@ -131,31 +131,31 @@ slot0.didEnter = function(slot0)
 	slot0.metaBossBtn:Flush()
 end
 
-slot0.InitItems = function(slot0)
+function slot0.InitItems(slot0)
 	for slot4, slot5 in ipairs(slot0.items) do
 		slot5:Init()
 	end
 end
 
-slot0.OnUpdateEventInfo = function(slot0)
+function slot0.OnUpdateEventInfo(slot0)
 	slot0.items[1]:Update()
 end
 
-slot0.OnUpdateClass = function(slot0)
+function slot0.OnUpdateClass(slot0)
 	slot0.items[2]:Update()
 end
 
-slot0.OnUpdateTechnology = function(slot0)
+function slot0.OnUpdateTechnology(slot0)
 	slot0.items[3]:Update()
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.playerVO = slot1
 
 	slot0:updateResource(slot1)
 end
 
-slot0.updateResource = function(slot0, slot1)
+function slot0.updateResource(slot0, slot1)
 	slot3 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
 
 	setActive(slot0.oilbubbleTF, slot1.oilField ~= 0)
@@ -167,12 +167,12 @@ slot0.updateResource = function(slot0, slot1)
 	slot0.classTF.text = slot3
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 	triggerButton(slot0._tf)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 
 	for slot4, slot5 in ipairs(slot0.items) do

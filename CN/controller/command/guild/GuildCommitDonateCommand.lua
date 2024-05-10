@@ -1,6 +1,6 @@
 slot0 = class("GuildCommitDonateCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody().taskId
 
 	if not getProxy(GuildProxy):getData() then
@@ -56,18 +56,11 @@ slot0.execute = function(slot0, slot1)
 				guildCoin = slot6
 			})
 			slot2:updatePlayer(slot3)
-
-			slot7 = uv1:getCommitItem()
-
-			uv2:sendNotification(GAME.CONSUME_ITEM, Item.New({
-				id = slot7[2],
-				type = slot7[1],
-				count = slot7[3]
-			}))
+			uv2:sendNotification(GAME.CONSUME_ITEM, Drop.Create(uv1:getCommitItem()))
 
 			slot8 = {}
 
-			table.insert(slot8, Item.New({
+			table.insert(slot8, Drop.New({
 				type = DROP_TYPE_RESOURCE,
 				id = PlayerConst.ResGuildCoin,
 				count = slot6

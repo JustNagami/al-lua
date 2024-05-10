@@ -1,6 +1,6 @@
 slot0 = class("FragResolvePanel", BaseSubPanel)
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "FragResolveUI"
 end
 
@@ -9,7 +9,7 @@ slot1 = {
 	"resolve"
 }
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bagProxy = getProxy(BagProxy)
 	slot0.technologyProxy = getProxy(TechnologyProxy)
 	slot0.toggles = {}
@@ -63,21 +63,21 @@ slot0.OnInit = function(slot0)
 	slot0:Trigger("control")
 end
 
-slot0.OnShow = function(slot0)
+function slot0.OnShow(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-slot0.OnHide = function(slot0)
+function slot0.OnHide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-slot0.Reset = function(slot0)
+function slot0.Reset(slot0)
 	if slot0.resolveItems then
 		table.clear(slot0.resolveItems)
 	end
 end
 
-slot0.Resetcontrol = function(slot0)
+function slot0.Resetcontrol(slot0)
 	slot0.blueprintItems = slot0.GetAllBluePrintStrengthenItems()
 	slot2 = slot0.controlPanel
 
@@ -175,7 +175,7 @@ slot0.Resetcontrol = function(slot0)
 	slot0:Updatecontrol()
 end
 
-slot0.Updatecontrol = function(slot0)
+function slot0.Updatecontrol(slot0)
 	slot1 = slot0.controlPanel
 	slot2 = slot1:Find("got/list")
 
@@ -194,7 +194,7 @@ slot0.Updatecontrol = function(slot0)
 	setButtonEnabled(slot6, slot3 and #slot3 > 0)
 end
 
-slot0.Resetresolve = function(slot0)
+function slot0.Resetresolve(slot0)
 	slot1 = slot0.resolvePanel
 	slot2 = slot1:Find("preview/got/list")
 	slot3 = slot1:Find("result/got/list")
@@ -208,7 +208,7 @@ slot0.Resetresolve = function(slot0)
 			onButton(uv1, slot2:Find("icon/icon_bg"), function ()
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-			setText(slot2:Find("name_panel/name"), slot3.cfg.name)
+			setText(slot2:Find("name_panel/name"), slot3:getConfig("name"))
 			setText(slot2:Find("name_panel/number"), "x " .. slot3.curCount)
 		end
 	end)
@@ -218,7 +218,7 @@ slot0.Resetresolve = function(slot0)
 
 	for slot10, slot11 in pairs(slot4) do
 		slot12 = slot11
-		slot13 = pg.item_data_statistics[slot12.id]
+		slot13 = Item.getConfigData(slot12.id)
 
 		assert(slot13, "Can't find the price " .. slot12.id)
 
@@ -241,7 +241,7 @@ slot0.Resetresolve = function(slot0)
 			onButton(uv1, slot2:Find("icon/icon_bg"), function ()
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-			setText(slot2:Find("name_panel/name"), slot3.cfg.name)
+			setText(slot2:Find("name_panel/name"), slot3:getConfig("name"))
 			setText(slot2:Find("name_panel/number"), "x " .. slot3.count)
 		end
 	end)
@@ -253,7 +253,7 @@ slot0.Resetresolve = function(slot0)
 	end)
 end
 
-slot0.GetAllBluePrintStrengthenItems = function()
+function slot0.GetAllBluePrintStrengthenItems()
 	slot0 = {}
 	slot1 = getProxy(TechnologyProxy)
 	slot2 = getProxy(BagProxy)
@@ -269,26 +269,26 @@ slot0.GetAllBluePrintStrengthenItems = function()
 				slot14 = 0
 			end
 
-			table.insert(slot0, {
+			table.insert(slot0, Drop.New({
 				id = slot12.id,
 				type = DROP_TYPE_ITEM,
 				count = slot12.count,
 				maxCount = slot14
-			})
+			}))
 		end
 	end
 
 	return slot0
 end
 
-slot0.Trigger = function(slot0, slot1)
+function slot0.Trigger(slot0, slot1)
 	if slot0.toggles[slot1] then
 		slot0.buffer:Show()
 		triggerToggle(slot2, true)
 	end
 end
 
-slot0.Back = function(slot0)
+function slot0.Back(slot0)
 	if getToggleState(slot0.toggles.resolve) then
 		triggerToggle(slot0.toggles.control, true)
 	elseif getToggleState(slot0.toggles.control) then

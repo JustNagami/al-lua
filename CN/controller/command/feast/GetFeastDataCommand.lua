@@ -1,6 +1,6 @@
 slot0 = class("GetFeastDataCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.callback
 	slot5 = pg.ConnectionMgr.GetInstance()
@@ -26,7 +26,7 @@ slot0.execute = function(slot0, slot1)
 	end)
 end
 
-slot0.FixStoryList = function(slot0, slot1)
+function slot0.FixStoryList(slot0, slot1)
 	slot3 = {}
 
 	for slot7, slot8 in pairs(slot1:GetInvitedFeastShips()) do

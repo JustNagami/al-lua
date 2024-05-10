@@ -1,9 +1,9 @@
 slot0 = class("FeastProxy", import("model.proxy.NetProxy"))
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 end
 
-slot1 = function(slot0, slot1, slot2)
+function slot1(slot0, slot1, slot2)
 	if slot0:getRawData() ~= nil then
 		slot2()
 
@@ -16,7 +16,7 @@ slot1 = function(slot0, slot1, slot2)
 	})
 end
 
-slot2 = function(slot0, slot1, slot2)
+function slot2(slot0, slot1, slot2)
 	slot4 = slot1:getConfig("config_data")[1] or 5
 
 	if not slot0:getRawData():ShouldRandomShips() then
@@ -35,7 +35,7 @@ slot2 = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.RequestData = function(slot0, slot1)
+function slot0.RequestData(slot0, slot1)
 	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST) or slot2:isEnd() then
 		slot1()
 
@@ -52,7 +52,7 @@ slot0.RequestData = function(slot0, slot1)
 	}, slot1)
 end
 
-slot0.SetData = function(slot0, slot1)
+function slot0.SetData(slot0, slot1)
 	assert(isa(slot1, FeastDorm))
 
 	slot0.data = slot1
@@ -60,19 +60,19 @@ slot0.SetData = function(slot0, slot1)
 	slot0:AddRefreshTimer()
 end
 
-slot0.UpdateData = function(slot0, slot1)
+function slot0.UpdateData(slot0, slot1)
 	assert(isa(slot1, FeastDorm))
 
 	slot0.data = slot1
 end
 
-slot0.GetConsumeList = function(slot0)
+function slot0.GetConsumeList(slot0)
 	slot5 = pg.activity_partyinvitation_template[(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST):getConfig("config_data")[3] or {})[1]]
 
 	return slot5.invitationID[2], slot5.giftID[2]
 end
 
-slot3 = function(slot0)
+function slot3(slot0)
 	slot2 = {}
 	slot3 = {}
 
@@ -91,7 +91,7 @@ slot3 = function(slot0)
 	return slot2, slot3
 end
 
-slot4 = function(slot0, slot1, slot2, slot3)
+function slot4(slot0, slot1, slot2, slot3)
 	slot4 = {}
 
 	for slot8, slot9 in pairs(slot0) do
@@ -130,7 +130,7 @@ slot4 = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.RandomShips = function(slot0, slot1, slot2)
+function slot0.RandomShips(slot0, slot1, slot2)
 	slot3 = pg.activity_partyinvitation_template or {}
 	slot4 = {}
 
@@ -162,7 +162,7 @@ slot0.RandomShips = function(slot0, slot1, slot2)
 	return slot10
 end
 
-slot0.AddRefreshTimer = function(slot0)
+function slot0.AddRefreshTimer(slot0)
 	slot0:RemoveRefreshTimer()
 
 	slot0.timer = Timer.New(function ()
@@ -177,7 +177,7 @@ slot0.AddRefreshTimer = function(slot0)
 	slot0.timer:Start()
 end
 
-slot0.RemoveRefreshTimer = function(slot0)
+function slot0.RemoveRefreshTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -185,11 +185,11 @@ slot0.RemoveRefreshTimer = function(slot0)
 	end
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	slot0:RemoveRefreshTimer()
 end
 
-slot0.GetBuffList = function(slot0)
+function slot0.GetBuffList(slot0)
 	if not getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_PT_ACT) or slot1:isEnd() then
 		return {}
 	end
@@ -197,7 +197,7 @@ slot0.GetBuffList = function(slot0)
 	return slot1:GetBuffList()
 end
 
-slot0.GetTaskList = function(slot0)
+function slot0.GetTaskList(slot0)
 	slot1 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_TASK_ACT)
 
 	assert(slot1)
@@ -215,7 +215,7 @@ slot0.GetTaskList = function(slot0)
 	return slot2
 end
 
-slot0.GetPtActData = function(slot0)
+function slot0.GetPtActData(slot0)
 	slot1 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_PT_ACT)
 
 	assert(slot1)
@@ -223,7 +223,7 @@ slot0.GetPtActData = function(slot0)
 	return ActivityPtData.New(slot1)
 end
 
-slot0.GetSubmittedTaskStories = function(slot0)
+function slot0.GetSubmittedTaskStories(slot0)
 	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST) or slot1:isEnd() then
 		return {}
 	end
@@ -245,7 +245,7 @@ slot0.GetSubmittedTaskStories = function(slot0)
 	return slot4
 end
 
-slot0.ShouldTipPt = function(slot0)
+function slot0.ShouldTipPt(slot0)
 	if slot0:GetPtActData():AnyAwardCanGet() then
 		return true
 	end
@@ -253,7 +253,7 @@ slot0.ShouldTipPt = function(slot0)
 	return false
 end
 
-slot0.ShouldTipFeastTask = function(slot0)
+function slot0.ShouldTipFeastTask(slot0)
 	slot1 = getProxy(TaskProxy)
 
 	for slot6, slot7 in ipairs(slot0:GetTaskList()) do
@@ -265,7 +265,7 @@ slot0.ShouldTipFeastTask = function(slot0)
 	return false
 end
 
-slot0.ShouldTipTask = function(slot0)
+function slot0.ShouldTipTask(slot0)
 	if slot0:ShouldTipPt() then
 		return true
 	end
@@ -277,7 +277,7 @@ slot0.ShouldTipTask = function(slot0)
 	return false
 end
 
-slot0.ShouldTipInvitation = function(slot0)
+function slot0.ShouldTipInvitation(slot0)
 	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 	slot2, slot3 = slot0:GetConsumeList()
 	slot4 = slot1:getVitemNumber(slot2)
@@ -292,7 +292,7 @@ slot0.ShouldTipInvitation = function(slot0)
 	return false
 end
 
-slot0.ShouldTip = function(slot0)
+function slot0.ShouldTip(slot0)
 	if not slot0.data then
 		return false
 	end
@@ -330,7 +330,7 @@ slot0.ShouldTip = function(slot0)
 	return false
 end
 
-slot0.HandleTaskStories = function(slot0, slot1, slot2)
+function slot0.HandleTaskStories(slot0, slot1, slot2)
 	if not slot0:GetSubmittedTaskStories() or table.getCount(slot3) == 0 then
 		if slot2 then
 			slot2()

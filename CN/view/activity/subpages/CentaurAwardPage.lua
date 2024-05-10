@@ -1,6 +1,6 @@
 slot0 = class("CentaurAwardPage", import(".TemplatePage.SkinTemplatePage"))
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	uv0.super.OnUpdateFlush(slot0)
 	setText(slot0.dayTF, slot0.nday .. "/" .. #slot0.taskGroup)
 	eachChild(slot0.items, function (slot0)

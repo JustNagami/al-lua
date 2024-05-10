@@ -1,36 +1,36 @@
 slot0 = class("SelectTechnologyLayer", import("..base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SelectTechnologyUI"
 end
 
-slot0.ResUISettings = function(slot0)
+function slot0.ResUISettings(slot0)
 	return true
 end
 
-slot0.setPlayer = function(slot0, slot1)
+function slot0.setPlayer(slot0, slot1)
 	slot0.playerVO = slot1
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
 		weight = LayerWeightConst.LOWER_LAYER
 	})
 
 	slot0.bg = slot0:findTF("frame/bg")
 	slot0.bluePrintBtn = slot0:findTF("blueprint_btn", slot0.bg)
-	slot0.bluePrintBtnTip = slot0.bluePrintBtn:Find("word/tip")
+	slot0.bluePrintBtnTip = slot0.bluePrintBtn:Find("tip")
 	slot0.technologyBtn = slot0:findTF("technology_btn", slot0.bg)
-	slot0.technologyBtnTip = slot0.technologyBtn:Find("word/tip")
+	slot0.technologyBtnTip = slot0.technologyBtn:Find("tip")
 	slot0.fleetBtn = slot0:findTF("fleet_btn", slot0.bg)
-	slot0.fleetBtnTip = slot0.fleetBtn:Find("word/tip")
+	slot0.fleetBtnTip = slot0.fleetBtn:Find("tip")
 	slot0.transformBtn = slot0:findTF("transform_btn", slot0.bg)
-	slot0.transformBtnTip = slot0.transformBtn:Find("word/tip")
+	slot0.transformBtnTip = slot0.transformBtn:Find("tip")
 
 	setActive(slot0.transformBtn, not LOCK_EQUIPMENT_TRANSFORM)
 
 	slot0.metaBtn = slot0:findTF("meta_btn", slot0.bg)
-	slot0.metaBtnTip = slot0.metaBtn:Find("word/tip")
+	slot0.metaBtnTip = slot0.metaBtn:Find("tip")
 
 	setActive(slot0.metaBtn, true)
 
@@ -43,7 +43,7 @@ slot0.init = function(slot0)
 	end
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:checkSystemOpen("ShipBluePrintMediator", slot0.bluePrintBtn)
 	slot0:checkSystemOpen("TechnologyMediator", slot0.technologyBtn)
 	slot0:checkSystemOpen("EquipmentTransformTreeMediator", slot0.transformBtn)
@@ -81,7 +81,7 @@ slot0.didEnter = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.checkSystemOpen = function(slot0, slot1, slot2)
+function slot0.checkSystemOpen(slot0, slot1, slot2)
 	if slot1 == "MetaCharacterMediator" then
 		slot3 = true
 
@@ -125,27 +125,27 @@ slot0.checkSystemOpen = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.notifyTechnology = function(slot0, slot1)
+function slot0.notifyTechnology(slot0, slot1)
 	setActive(slot0.technologyBtnTip, slot1)
 end
 
-slot0.notifyBlueprint = function(slot0, slot1)
+function slot0.notifyBlueprint(slot0, slot1)
 	setActive(slot0.bluePrintBtnTip, slot1)
 end
 
-slot0.notifyFleet = function(slot0, slot1)
+function slot0.notifyFleet(slot0, slot1)
 	setActive(slot0.fleetBtnTip, slot1)
 end
 
-slot0.notifyTransform = function(slot0, slot1)
+function slot0.notifyTransform(slot0, slot1)
 	setActive(slot0.transformBtnTip, slot1)
 end
 
-slot0.notifyMeta = function(slot0, slot1)
+function slot0.notifyMeta(slot0, slot1)
 	setActive(slot0.metaBtnTip, slot1)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 end
 
 return slot0

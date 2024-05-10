@@ -5,29 +5,29 @@ slot0.Battle.CardPuzzleHandCardButton = class("CardPuzzleHandCardButton")
 slot2 = slot0.Battle.CardPuzzleHandCardButton
 slot2.__name = "CardPuzzleHandCardButton"
 
-slot2.Ctor = function(slot0, slot1)
+function slot2.Ctor(slot0, slot1)
 	slot0._go = slot1
 
 	slot0:init()
 end
 
-slot2.SetCardInfo = function(slot0, slot1)
+function slot2.SetCardInfo(slot0, slot1)
 	slot0._cardInfo = slot1
 
 	slot0:updateCardView()
 end
 
-slot2.UpdateTotalCost = function(slot0)
+function slot2.UpdateTotalCost(slot0)
 	if slot0._cardInfo then
 		setText(slot0._costTxt, slot0._cardInfo:GetTotalCost())
 	end
 end
 
-slot2.ConfigCallback = function(slot0, slot1)
+function slot2.ConfigCallback(slot0, slot1)
 	slot0._callback = slot1
 end
 
-slot2.init = function(slot0)
+function slot2.init(slot0)
 	slot0._btnTF = slot0._go.transform
 	slot0._icon = slot0._btnTF:Find("skill_icon/unfill")
 	slot0._costTxt = slot0._btnTF:Find("cost/cost_label")
@@ -55,7 +55,7 @@ slot2.init = function(slot0)
 	end)
 end
 
-slot2.updateCardView = function(slot0)
+function slot2.updateCardView(slot0)
 	if slot0._cardInfo then
 		setActive(slot0._btnTF, true)
 		setText(slot0._costTxt, slot0._cardInfo:GetTotalCost())
@@ -79,5 +79,5 @@ slot2.updateCardView = function(slot0)
 	end
 end
 
-slot2.Dispose = function(slot0)
+function slot2.Dispose(slot0)
 end

@@ -1,6 +1,6 @@
 slot0 = class("UpgradeCommanderCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.materialIds
 	slot5 = slot2.skillId
@@ -44,22 +44,21 @@ slot0.execute = function(slot0, slot1)
 
 	slot12 = 0
 	slot13 = 0
-	slot14 = 0
+	slot14 = CommanderCatUtil.CalcCommanderConsume(slot4)
 
 	for slot18, slot19 in ipairs(slot4) do
 		if not slot6:getCommanderById(slot19) or slot3 == slot19 then
 			return
 		end
 
-		slot12 = slot12 + slot20:getUpgradeConsume()
-		slot13 = slot13 + slot20:getDestoryedSkillExp(slot7.groupId)
-		slot14 = slot14 + slot20:getDestoryedExp(slot7.groupId)
+		slot12 = slot12 + slot20:getDestoryedSkillExp(slot7.groupId)
+		slot13 = slot13 + slot20:getDestoryedExp(slot7.groupId)
 	end
 
-	slot14 = math.floor(slot14)
 	slot13 = math.floor(slot13)
+	slot12 = math.floor(slot12)
 
-	if getProxy(PlayerProxy):getData().gold < slot12 then
+	if getProxy(PlayerProxy):getData().gold < slot14 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
@@ -99,7 +98,7 @@ slot0.execute = function(slot0, slot1)
 	end)
 end
 
-slot0.clearHardChapterCommanders = function(slot0, slot1)
+function slot0.clearHardChapterCommanders(slot0, slot1)
 	for slot7, slot8 in pairs(getProxy(ChapterProxy):getRawData()) do
 		for slot13, slot14 in pairs(slot8:getEliteFleetCommanders()) do
 			for slot18, slot19 in pairs(slot14) do
@@ -112,7 +111,7 @@ slot0.clearHardChapterCommanders = function(slot0, slot1)
 	end
 end
 
-slot0.clearActivityCommanders = function(slot0, slot1)
+function slot0.clearActivityCommanders(slot0, slot1)
 	getProxy(FleetProxy):removeActivityFleetCommander(slot1)
 end
 

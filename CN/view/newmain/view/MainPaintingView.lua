@@ -2,10 +2,11 @@ slot0 = class("MainPaintingView", import("view.base.BaseEventLogic"))
 slot0.STATE_PAINTING = 1
 slot0.STATE_L2D = 2
 slot0.STATE_SPINE_PAINTING = 3
+slot0.STATE_EDUCATE_CHAR = 4
 slot0.PAINT_DEFAULT_POS_X = -600
 slot0.DEFAULT_HEIGHT = -10
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	uv0.super.Ctor(slot0, slot3)
 
 	slot0._tf = slot1
@@ -19,7 +20,8 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	slot0.paintings = {
 		MainMeshImagePainting.New(slot0._tf, slot0.chatTf),
 		MainLive2dPainting.New(slot0._tf, slot0.chatTf),
-		MainSpinePainting.New(slot0._tf, slot0.chatTf, slot0._bgGo)
+		MainSpinePainting.New(slot0._tf, slot0.chatTf, slot0._bgGo),
+		MainEducateCharPainting.New(slot0._tf, slot0.chatTf)
 	}
 	slot0.bgOffset = slot0._bgTf.localPosition - slot0._tf.localPosition
 	slot0.cg = slot0._tf:GetComponent(typeof(CanvasGroup))
@@ -27,7 +29,7 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	slot0:Register()
 end
 
-slot0.Register = function(slot0)
+function slot0.Register(slot0)
 	slot0:bind(NewMainScene.ON_STOP_PAITING_VOICE, function (slot0)
 		uv0:OnStopVoice()
 	end)
@@ -37,25 +39,30 @@ slot0.Register = function(slot0)
 	slot0:bind(NewMainScene.ENABLE_PAITING_MOVE, function (slot0, slot1)
 		uv0:EnableOrDisableMove(slot1)
 	end)
+	slot0:bind(NewMainScene.ON_ENTER_DONE, function (slot0)
+		if uv0.painting then
+			uv0.painting:TriggerEventAtFirstTime()
+		end
+	end)
 end
 
-slot0.OnChatStateChange = function(slot0, slot1)
+function slot0.OnChatStateChange(slot0, slot1)
 	if not slot1 then
 		slot0.painting:StopChatAnimtion()
 	end
 end
 
-slot0.OnStopVoice = function(slot0)
+function slot0.OnStopVoice(slot0)
 	if slot0.painting then
 		slot0.painting:OnStopVoice()
 	end
 end
 
-slot0.IsLive2DState = function(slot0)
+function slot0.IsLive2DState(slot0)
 	return uv0.STATE_L2D == slot0.state
 end
 
-slot0.IsLoading = function(slot0)
+function slot0.IsLoading(slot0)
 	if slot0.painting and slot0.painting:IsLoading() then
 		return true
 	end
@@ -63,50 +70,46 @@ slot0.IsLoading = function(slot0)
 	return false
 end
 
-slot0.Init = function(slot0, slot1, slot2)
+function slot0.Init(slot0, slot1)
 	slot0.ship = slot1
 
 	slot0:AdjustPosition(slot1)
 
-	slot3, slot4 = uv0.GetAssistantStatus(slot1)
-	slot5 = slot0.paintings[slot3]
+	slot2, slot3 = uv0.GetAssistantStatus(slot1)
+	slot4 = slot0.paintings[slot2]
 
 	if slot0.painting then
 		slot0.painting:Unload()
 	end
 
-	slot5:Load(slot1, slot2)
+	slot4:Load(slot1)
 
-	slot0.painting = slot5
-	slot0.state = slot3
+	slot0.painting = slot4
+	slot0.state = slot2
 	slot0.bgToggle = PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot0.painting.paintingName, 0)
 end
 
-slot0.Refresh = function(slot0, slot1, slot2)
-	slot3 = uv0.GetAssistantStatus(slot1)
-	slot4 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot0.painting.paintingName, 0)
+function slot0.Refresh(slot0, slot1)
+	slot2 = uv0.GetAssistantStatus(slot1)
+	slot3 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot0.painting.paintingName, 0)
 
-	if slot1.skinId == slot0.ship.skinId and slot1.id == slot0.ship.id and slot0.state == slot3 and slot0.bgToggle == slot4 then
+	if slot1.skinId == slot0.ship.skinId and slot1.id == slot0.ship.id and slot0.state == slot2 and slot0.bgToggle == slot3 and slot1:GetRecordPosKey() == slot0.ship:GetRecordPosKey() then
 		slot0.painting:Resume()
-
-		if slot2 then
-			slot0.painting:TriggerEventAtFirstTime()
-			slot0.painting:updateShip(slot1)
-		end
+		slot0.painting:updateShip(slot1)
 	else
-		slot0:Init(slot1, slot2)
+		slot0:Init(slot1)
 	end
 
 	setActive(slot0.chatTxt.gameObject, false)
 	setActive(slot0.chatTxt.gameObject, true)
 end
 
-slot0.Disable = function(slot0)
+function slot0.Disable(slot0)
 	slot0.painting:Puase()
 end
 
-slot0.AdjustPosition = function(slot0, slot1)
-	slot2, slot3, slot4 = getProxy(SettingsProxy):getSkinPosSetting(slot1.skinId)
+function slot0.AdjustPosition(slot0, slot1)
+	slot2, slot3, slot4 = getProxy(SettingsProxy):getSkinPosSetting(slot1)
 
 	if slot2 then
 		slot0._tf.anchoredPosition = Vector2(slot2, slot3)
@@ -121,23 +124,29 @@ slot0.AdjustPosition = function(slot0, slot1)
 	end
 end
 
-slot0.GetAssistantStatus = function(slot0)
+function slot0.GetAssistantStatus(slot0)
 	slot1 = slot0:getPainting()
 	slot2 = getProxy(SettingsProxy)
 	slot4 = PathMgr.FileExists(PathMgr.getAssetBundle(HXSet.autoHxShiftPath("spinepainting/" .. slot1)))
-	slot6 = PathMgr.FileExists(PathMgr.getAssetBundle(HXSet.autoHxShiftPath("live2d/" .. slot1)))
+	slot6 = uv0.Live2dIsDownload(HXSet.autoHxShiftPath("live2d/" .. slot1)) and PathMgr.FileExists(PathMgr.getAssetBundle(slot5))
 	slot7 = slot2:getCharacterSetting(slot0.id, SHIP_FLAG_BG)
 
 	if slot2:getCharacterSetting(slot0.id, SHIP_FLAG_SP) and slot4 then
 		return uv0.STATE_SPINE_PAINTING, slot7
 	elseif slot2:getCharacterSetting(slot0.id, SHIP_FLAG_L2D) and slot6 then
 		return uv0.STATE_L2D, slot7
+	elseif isa(slot0, VirtualEducateCharShip) then
+		return uv0.STATE_EDUCATE_CHAR, slot7
 	else
 		return uv0.STATE_PAINTING, slot7
 	end
 end
 
-slot0.Fold = function(slot0, slot1, slot2)
+function slot0.Live2dIsDownload(slot0)
+	return GroupHelper.GetGroupMgrByName("L2D"):CheckF(slot0) == DownloadState.None or slot2 == DownloadState.UpdateSuccess
+end
+
+function slot0.Fold(slot0, slot1, slot2)
 	if slot1 then
 		slot4 = Vector3(0 - slot0.painting:GetOffset(), 0, 0)
 
@@ -157,7 +166,7 @@ slot0.Fold = function(slot0, slot1, slot2)
 	slot0.painting:Fold(slot1, slot2)
 end
 
-slot0.EnableOrDisableMove = function(slot0, slot1)
+function slot0.EnableOrDisableMove(slot0, slot1)
 	slot0.painting:EnableOrDisableMove(slot1)
 
 	if slot1 then
@@ -167,7 +176,7 @@ slot0.EnableOrDisableMove = function(slot0, slot1)
 	end
 end
 
-slot0.EnableDragAndZoom = function(slot0)
+function slot0.EnableDragAndZoom(slot0)
 	slot0.isEnableDrag = true
 	slot1 = slot0._tf.parent.gameObject
 	slot2 = GetOrAddComponent(slot1, typeof(PinchZoom))
@@ -223,7 +232,7 @@ slot0.EnableDragAndZoom = function(slot0)
 	slot0:AdjustPosition(slot0.ship)
 end
 
-slot0.DisableDragAndZoom = function(slot0)
+function slot0.DisableDragAndZoom(slot0)
 	if slot0.isEnableDrag then
 		slot1 = slot0._tf.parent:GetComponent(typeof(EventTriggerListener))
 
@@ -236,7 +245,7 @@ slot0.DisableDragAndZoom = function(slot0)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:disposeEvent()
 	slot0:DisableDragAndZoom()
 
@@ -253,7 +262,7 @@ slot0.Dispose = function(slot0)
 	slot0.paintings = nil
 end
 
-slot0.Screen2Local = function(slot0, slot1)
+function slot0.Screen2Local(slot0, slot1)
 	slot4 = LuaHelper.ScreenToLocal(slot0:GetComponent("RectTransform"), slot1, GameObject.Find("UICamera"):GetComponent("Camera"))
 
 	return Vector3(slot4.x, slot4.y, 0)

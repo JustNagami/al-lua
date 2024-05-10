@@ -1,6 +1,6 @@
 slot0 = class("ShenshengxvmuPage", import(".TemplatePage.PtTemplatePage"))
 
-slot0.OnFirstFlush = function(slot0)
+function slot0.OnFirstFlush(slot0)
 	uv0.super.OnFirstFlush(slot0)
 	setActive(slot0.displayBtn, false)
 	setActive(slot0.awardTF, false)
@@ -11,7 +11,7 @@ slot0.OnFirstFlush = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	uv0.super.OnUpdateFlush(slot0)
 	setActive(slot0.battleBtn, isActive(slot0.battleBtn) and pg.TimeMgr.GetInstance():inTime(slot0.activity:getConfig("config_client")))
 	setActive(slot0:findTF("got", slot0.bg), not slot0.ptData:CanGetNextAward())

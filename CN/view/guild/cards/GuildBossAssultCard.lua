@@ -1,6 +1,6 @@
 slot0 = class("GuildBossAssultCard")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._tr = tf(slot1)
 	slot0._go = slot1
 	slot0.mask = findTF(slot0._tr, "mask"):GetComponent(typeof(Image))
@@ -15,7 +15,7 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.tag = findTF(slot0._tr, "tag")
 end
 
-slot0.Flush = function(slot0, slot1, slot2)
+function slot0.Flush(slot0, slot1, slot2)
 	slot0.shipNameTxt.text = slot2:getName()
 	slot0.ship = slot2
 	slot0.member = slot1
@@ -58,7 +58,7 @@ end
 
 slot1 = "meta_huoxing"
 
-slot0.LoadMetaEffect = function(slot0, slot1)
+function slot0.LoadMetaEffect(slot0, slot1)
 	if slot0.loading then
 		slot0.destoryMetaEffect = not slot1
 
@@ -90,7 +90,7 @@ slot0.LoadMetaEffect = function(slot0, slot1)
 	end
 end
 
-slot0.RemoveMetaEffect = function(slot0)
+function slot0.RemoveMetaEffect(slot0)
 	if slot0.metaEffect then
 		PoolMgr.GetInstance():ReturnUI(uv0, slot0.metaEffect)
 
@@ -98,7 +98,7 @@ slot0.RemoveMetaEffect = function(slot0)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:RemoveMetaEffect()
 
 	slot0.destoryMetaEffect = true

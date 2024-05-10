@@ -6,7 +6,7 @@ for slot4, slot5 in ipairs(pg.item_lack.all) do
 	end
 end
 
-slot0.ShowItemTip = function(slot0, slot1, slot2)
+function slot0.ShowItemTip(slot0, slot1, slot2)
 	if slot0 == DROP_TYPE_RESOURCE then
 		slot1 = pg.player_resource[slot1] and pg.player_resource[slot1].itemid or nil
 	elseif slot0 ~= DROP_TYPE_ITEM then
@@ -28,19 +28,19 @@ slot0.ShowItemTip = function(slot0, slot1, slot2)
 	return true
 end
 
-slot0.ShowItemTipbyID = function(...)
+function slot0.ShowItemTipbyID(...)
 	return uv0.ShowItemTip(DROP_TYPE_ITEM, ...)
 end
 
-slot0.CanShowTip = function(slot0)
+function slot0.CanShowTip(slot0)
 	return tobool(uv0.DetailConfig[slot0])
 end
 
-slot0.ShowRingBuyTip = function()
-	GoShoppingMsgBox(i18n("switch_to_shop_tip_2", string.format("<color=#92FC63FF>%s</color>", pg.item_data_statistics[15006].name)), ChargeScene.TYPE_ITEM)
+function slot0.ShowRingBuyTip()
+	GoShoppingMsgBox(i18n("switch_to_shop_tip_2", string.format("<color=#92FC63FF>%s</color>", Item.getConfigData(ITEM_ID_FOR_PROPOSE).name)), ChargeScene.TYPE_ITEM)
 end
 
-slot0.ShowGoldBuyTip = function(slot0)
+function slot0.ShowGoldBuyTip(slot0)
 	GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 		{
 			59001,
@@ -50,7 +50,7 @@ slot0.ShowGoldBuyTip = function(slot0)
 	})
 end
 
-slot0.ShowOilBuyTip = function(slot0, slot1)
+function slot0.ShowOilBuyTip(slot0, slot1)
 	if not ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, getProxy(PlayerProxy):getRawData().buyOilCount) then
 		return
 	end
@@ -91,20 +91,20 @@ slot0.ShowOilBuyTip = function(slot0, slot1)
 	return true
 end
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "Msgbox4ItemGo"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.list = slot0.findTF(slot0, "skipable_list")
 	slot0.tpl = slot0.findTF(slot0, "tpl", slot0.list)
 	slot0.title = slot0.findTF(slot0, "name")
 end
 
-slot0.OnRefresh = function(slot0, slot1)
+function slot0.OnRefresh(slot0, slot1)
 	setActive(slot0.viewParent._btnContainer, false)
 
-	slot3 = pg.item_data_statistics[slot1.itemId].name
+	slot3 = Item.getConfigData(slot1.itemId).name
 
 	setText(slot0.title, slot1.msgTitle or i18n("item_lack_title", slot3, slot3))
 	UIItemList.StaticAlign(slot0.list, slot0.tpl, #slot1.descriptions, function (slot0, slot1, slot2)

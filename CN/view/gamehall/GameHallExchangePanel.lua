@@ -1,11 +1,11 @@
 slot0 = class("GameHallExchangePanel")
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3)
 	slot0._tf = slot1
 	slot0._parentTf = slot2
 	slot0._event = slot3
 	slot4 = pg.player_resource[GameRoomProxy.coin_res_id].itemid
-	slot0.itemCfg = pg.item_data_statistics[slot4]
+	slot0.itemCfg = Item.getConfigData(slot4)
 	slot0.coinMax = pg.gameset.game_coin_max.key_value
 	slot0.gameCoinGold = pg.gameset.game_coin_gold.description
 
@@ -57,7 +57,7 @@ slot0.Ctor = function(slot0, slot1, slot2, slot3)
 	setActive(findTF(slot0._tf, "top/bg/infomation/title_en"), PLATFORM_CODE ~= PLATFORM_US)
 end
 
-slot0.exchangeCoin = function(slot0)
+function slot0.exchangeCoin(slot0)
 	if slot0.coinCount == 0 then
 		return
 	end
@@ -68,7 +68,7 @@ slot0.exchangeCoin = function(slot0)
 	})
 end
 
-slot0.coinCountChange = function(slot0)
+function slot0.coinCountChange(slot0)
 	if slot0.coinCount < 0 then
 		slot0.coinCount = 0
 	end
@@ -92,7 +92,7 @@ slot0.coinCountChange = function(slot0)
 	setText(slot0.disCountText, slot3 .. "%OFF")
 end
 
-slot0.getDiscount = function(slot0, slot1)
+function slot0.getDiscount(slot0, slot1)
 	if slot1 <= 0 then
 		slot1 = 1
 	end
@@ -104,7 +104,7 @@ slot0.getDiscount = function(slot0, slot1)
 	return 0
 end
 
-slot0.getPriceByCount = function(slot0, slot1)
+function slot0.getPriceByCount(slot0, slot1)
 	for slot5 = #slot0.gameCoinGold, 1, -1 do
 		if slot0.gameCoinGold[slot5][1] < slot1 then
 			return slot6[2]
@@ -114,7 +114,7 @@ slot0.getPriceByCount = function(slot0, slot1)
 	return 0
 end
 
-slot0.updateUI = function(slot0)
+function slot0.updateUI(slot0)
 	slot0.coinCount = 0
 	slot0.myCoinCount = getProxy(GameRoomProxy):getCoin()
 	slot0.myGold = getProxy(PlayerProxy):getRawData().gold
@@ -124,7 +124,7 @@ slot0.updateUI = function(slot0)
 	slot0:coinCountChange()
 end
 
-slot0.setVisible = function(slot0, slot1)
+function slot0.setVisible(slot0, slot1)
 	if slot1 then
 		slot0.bulrFlag = true
 
@@ -139,11 +139,11 @@ slot0.setVisible = function(slot0, slot1)
 	slot0:updateUI()
 end
 
-slot0.getVisible = function(slot0)
+function slot0.getVisible(slot0)
 	return isActive(slot0._tf)
 end
 
-slot0.dispose = function(slot0)
+function slot0.dispose(slot0)
 	if slot0.bulrFlag == true then
 		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 

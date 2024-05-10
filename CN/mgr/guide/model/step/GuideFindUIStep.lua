@@ -5,14 +5,15 @@ slot0.EVENT_TYPE_CLICK = 3
 slot0.EVENT_TYPE_STICK = 4
 slot0.SHOW_UI = 5
 slot0.TRIGGER_TYPE_BUTTONEX = 6
+slot0.SNAP_PAGE = 7
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0.eventUI = slot0:GenEventSearchData(slot1.ui)
 end
 
-slot0.GenEventSearchData = function(slot0, slot1)
+function slot0.GenEventSearchData(slot0, slot1)
 	if not slot1 then
 		return nil
 	end
@@ -41,7 +42,8 @@ slot0.GenEventSearchData = function(slot0, slot1)
 		isLevelPoint = slot1.isLevelPoint,
 		image = slot1.image,
 		customPosition = slot1.pos or slot3 or slot1.eulerAngles or slot1.isLevelPoint,
-		clearChildEvent = slot1.eventPath ~= nil
+		clearChildEvent = slot1.eventPath ~= nil,
+		keepScrollTxt = slot1.keepScrollTxt
 	}
 	slot5, slot6 = nil
 
@@ -60,15 +62,16 @@ slot0.GenEventSearchData = function(slot0, slot1)
 	slot2.childIndex = slot1.eventIndex
 	slot2.eventPath = slot1.eventPath
 	slot2.fingerPos = slot1.fingerPos
+	slot2.slipAnim = slot5 == uv0.SNAP_PAGE
 
 	return slot2
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return GuideStep.TYPE_FINDUI
 end
 
-slot0.GetEventUI = function(slot0)
+function slot0.GetEventUI(slot0)
 	return slot0.eventUI
 end
 

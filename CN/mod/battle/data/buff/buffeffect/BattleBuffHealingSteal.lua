@@ -5,16 +5,16 @@ slot0.Battle.BattleBuffHealingSteal.__name = "BattleBuffHealingSteal"
 slot1 = slot0.Battle.BattleBuffHealingSteal
 slot1.FX_TYPE = slot0.Battle.BattleBuffEffect.FX_TYPE_LINK
 
-slot1.Ctor = function(slot0, slot1)
+function slot1.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 end
 
-slot1.SetArgs = function(slot0, slot1, slot2)
+function slot1.SetArgs(slot0, slot1, slot2)
 	slot0._stealRate = slot0._tempData.arg_list.stealingRate or 1
 	slot0._absorbRate = slot3.arsorbRate or 1
 end
 
-slot1.onTakeHealing = function(slot0, slot1, slot2, slot3)
+function slot1.onTakeHealing(slot0, slot1, slot2, slot3)
 	slot4 = slot3.damage
 
 	if slot2:GetCaster() and slot5:IsAlive() and slot5 ~= slot1 then

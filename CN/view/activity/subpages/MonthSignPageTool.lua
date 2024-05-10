@@ -1,10 +1,10 @@
 slot0 = class("MonthSignPageTool")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0._event = slot1
 end
 
-slot0.onAcheve = function(slot0, slot1, slot2)
+function slot0.onAcheve(slot0, slot1, slot2)
 	slot3 = nil
 	slot3 = coroutine.create(function ()
 		if table.getCount(uv0) > 0 then
@@ -42,7 +42,7 @@ slot0.onAcheve = function(slot0, slot1, slot2)
 			coroutine.yield()
 
 			slot5 = _.filter(uv0, function (slot0)
-				return slot0.type == DROP_TYPE_NPC_SHIP
+				return slot0.type == DROP_TYPE_OPERATION
 			end)
 			slot7 = getProxy(BayProxy):getNewShip(true)
 

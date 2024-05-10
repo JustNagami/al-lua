@@ -3,73 +3,90 @@ SCENE = {
 	WORLDBOSS = "scene worldboss",
 	ANNIVERSARY_ISLAND_BACKHILL_2023 = "anniversary island 2023",
 	EQUIPMENT_TRANSFORM = "equip transform",
-	COMMANDERINFO = "scene commander info",
+	COMMANDERCAT = "scene commander cat room",
 	ROGUE_FINAL_REWARD = "ROGUE_FINAL_REWARD",
-	SPRING_TOWN = "springfestival town",
+	COURTYARD = "scene court yard",
 	COMBATLOAD = "scene combat load",
-	DAILYLEVEL = "scene dailylevel",
+	NAVALTACTICS = "naval tactics",
 	IDOL_MEDAL_COLLECTION_SCENE2 = "IDOL_MEDAL_COLLECTION_SCENE2",
 	SKINATALAS = "scene skinatals",
+	GUILD = "scene guild",
 	NEWGUILD = "scene newguild",
-	CARD_TOWER_MODE_SELECT = "CARD_TOWER_MODE_SELECT",
 	PLAYER_INFO = "scene player info",
 	SETTINGS = "scene settings",
-	CARD_TOWER_DIFFICULTY_SELECT = "CARD_TOWER_DIFFICULTY_SELECT",
-	COLLECTSHIP = "scene collect ship",
+	VOTEENTRANCE = "scene vote entrance",
+	CARD_TOWER_MODE_SELECT = "CARD_TOWER_MODE_SELECT",
 	CRUSING = "crusing",
 	CARD_TOWER_CHARACTER_SELECT_DETAIL = "CARD_TOWER_CHARACTER_SELECT_DETAIL",
 	CARD_TOWER_CELL_SELECT = "CARD_TOWER_CELL_SELECT",
 	NEWMEIXIV4_SKIRMISH = "newmeixiv4 skirmish",
-	GUILD = "scene guild",
+	SPRING_TOWN = "springfestival town",
 	CHARGE = "scene charge",
 	SKINSHOP = "scene skinshop",
-	MEDIA_COLLECTION_ENTRANCE = "media collection entrance",
-	AMUSEMENT_PARK = "amusement park",
-	MONOPOLY_PT = "MONOPOLY_PT",
+	EDUCATE_MAP = "EDUCATE_MAP",
 	DOA_MEDAL_COLLECTION_SCENE = "scene doa medal collection",
+	MONOPOLY_PT = "MONOPOLY_PT",
+	MEDIA_COLLECTION_ENTRANCE = "media collection entrance",
 	ANNIVERSARY_ISLAND_SPRING = "anniversary island spring",
-	TRANSITION = "scene transition",
+	COLLECTSHIP = "scene collect ship",
 	MUSIC_FESTIVAL = "music festival",
-	SPWEAPON_STOREHOUSE = "spweapon storehouse",
-	SINGLE_ACTIVITY = "single activity",
-	NEWYEAR_BACKHILL_2022 = "scene NEWYEAR BACKHILL 2022",
+	HARBOR_BACKHILL = "HARBOR_BACKHILL",
+	TEMPESTA_MEDAL_COLLECTION = "tempesta medal collection",
+	SPRING_FESTIVAL_BACKHILL_2024 = "SPRING_FESTIVAL_BACKHILL_2024",
 	SHIP_PROFILE = "ship profile",
 	SIXTH_ANNIVERSARY_JP_HOTSPRING = "SIXTH_ANNIVERSARY_JP_HOTSPRING",
-	ACT_BOSS_SPF = "act boss spf",
+	EDUCATE_DOCK = "EDUCATE_DOCK",
 	TECHNOLOGY = "technology",
 	BACKHILL_FIFTH_ANNIVERSARY = "BACKHILL FIFTH ANNIVERSARY",
-	ATELIER_COMPOSITE = "ATELIER_COMPOSITE",
-	RYZA_TASK = "ryza task scene",
-	ANNIVERSARY_ISLAND_WORKBENCH = "anniversary island workbench",
-	RANDOM_DOCKYARD = "random dockyard",
+	TRANSITION = "scene transition",
+	EQUIP_CODE = "equip code",
+	SPWEAPON_STOREHOUSE = "spweapon storehouse",
+	CARD_TOWER_DIFFICULTY_SELECT = "CARD_TOWER_DIFFICULTY_SELECT",
 	EVENT = "scene event",
 	REFLUX = "reflux",
-	SUMMARY = "summary",
-	BACKHILL_SUMMERPARK_2022 = "BACKHILL_SUMMERPARK_2022",
+	OTHERWORLD_MAP = "OTHERWORLD_MAP",
+	MUSIC_FESTIVAL3 = "music festival 3",
 	BATTLE = "scene battle",
 	PROPINFO = "scene prop info",
-	IDOLMASTER_MEDAL_COLLECTION_SCENE = "idolmaster medal collection scent",
-	NAVALTACTICS = "naval tactics",
-	SCULPTURE = "sculpture",
-	CREATE_PLAYER = "scene create player",
-	RESOLVESHIPS = "scene resolve ships",
+	SINGLE_ACTIVITY = "single activity",
+	OTHER_WORLD_TEMPLE_SCENE = "other world temple scene",
+	BACKYARD_THEME_TEMPLATE = "backyard theme template",
+	CHUZHENG = "scene chuzheng",
+	NEWYEAR_BACKHILL_2022 = "scene NEWYEAR BACKHILL 2022",
 	MAINUI = "scene mainUI",
-	WORLD = "scene world",
+	ACT_BOSS_SPF = "act boss spf",
+	ATELIER_COMPOSITE = "ATELIER_COMPOSITE",
 	ACTIVITY = "scene activity",
 	REDPACKEYLOTTERY = "scene RED PACKEY LOTTERY",
 	BULLETINBOARD = "scene bulletinboard",
+	RYZA_TASK = "ryza task scene",
 	IDOL_MEDAL_COLLECTION_SCENE = "idol medal collection scene",
+	ANNIVERSARY_ISLAND_WORKBENCH = "anniversary island workbench",
 	BACKYARD = "scene court yard",
+	FRIEND = "scene friend",
 	RYZA_URBAN_AREA = "RYZA_URBAN_AREA",
+	RANDOM_DOCKYARD = "random dockyard",
+	HOLOLIVE_MEDAL = "hololive medal",
+	BACKHILL_SUMMERPARK_2022 = "BACKHILL_SUMMERPARK_2022",
 	NEWYEAR_BACKHILL = "scene NEWYEAR BACKHILL",
+	IDOLMASTER_MEDAL_COLLECTION_SCENE = "idolmaster medal collection scent",
 	WORLD_FLEET_SELECT = "world fleet select",
+	PUBLIC_GUILD = "public guild",
 	SPRING_FESTIVAL_BACKHILL_2023 = "SPRING FESTIVAL BackHill 2023",
+	DOA2_MEDAL_COLLECTION_SCENE = "scene doa2 medal collection",
 	SECRET_SHIPYARD = "SECRET_SHIPYARD",
+	DOALINK_ISLAND = "scene DOALink Island",
+	RESOLVESHIPS = "scene resolve ships",
 	RESOLVEEQUIP = "scene resolve equip",
 	DOCKYARD = "scene dockyard",
 	TASK = "scene task",
 	JIUJIU_EXPEDITION = "jiujiu expedition ",
+	SIXTH_ANNIVERSARY_JP_DARK = "SIXTH_ANNIVERSARY_JP_DARK",
+	WORLD = "scene world",
+	SENRANKAGURA_TRAIN = "SENRANKAGURA_TRAIN",
 	CHALLENGE_MAIN_SCENE = "challenge main scene",
+	OTHERWORLD_BACKHILL = "OTHERWORLD_BACKHILL",
+	SELECT_SKIN = "scene select skin",
 	WORLD_COLLECTION = "world collection",
 	SNAPSHOT = "snapshot",
 	SELTECHNOLOGY = "seltechnology",
@@ -85,59 +102,64 @@ SCENE = {
 	HOTSPRING_REDPACKET = "hotSpring redpacket",
 	BILLBOARD = "scene billboard",
 	ROGUE_FINAL_RESULT = "ROGUE_FINAL_RESULT",
+	OTHER_WORLD_TASK_LAYER = "other world task scene",
 	SHOP = "scene shop",
 	CRYPTOLALIA = "scene Cryptolalia",
-	BACKYARD_THEME_TEMPLATE = "backyard theme template",
+	CASTLE_MAIN = "CASTLE_MAIN",
 	ANNIVERSARY_ISLAND_SPRING_TASK = "anniversary island spring task",
 	IMAS_STAGE = "IdolMaster Stage",
 	SELECT_TRANSFORM_EQUIPMENT = "select transform equipment",
 	PROBABILITY_SKINSHOP = "scene probability skinshop",
 	BOSSRUSH_MAIN = "bossrush main",
-	CHUZHENG = "scene chuzheng",
+	EDUCATE_SCHEDULE = "EDUCATE_SCHEDULE",
+	SENRANKAGURA_MEDAL = "SENRANKAGURA_MEDAL",
 	GETBOAT = "scene get boat",
 	NAVALACADEMYSCENE = "naval academy scene",
 	ANNIVERSARY = "anniversary",
 	US_CASTLE_2023 = "US_CASTLE_2023",
+	EDUCATE = "EDUCATE",
 	HOLOLIVE_LINKLINK_SELECT_SCENE = "hololive linklink select scene",
 	LEVEL = "scene level",
 	LIMIT_CHALLENGE = "limit challenge",
+	NEWYEAR_BACKHILL_2024 = "NEWYEAR_BACKHILL_2024",
 	NEWYEAR_SQUARE = "newyear square",
 	MONOPOLY_WORLD = "MONOPOLY WORLD",
-	COURTYARD = "scene court yard",
+	DAILYLEVEL = "scene dailylevel",
 	TRAININGCAMP = "trainingcamp",
 	LINK_LINK = "link link",
 	HOTSPRING_SHOP = "hotSpring shop",
 	ISLAND_TASK = "island task",
 	ATTIRE = "scene attire",
-	FRIEND = "scene friend",
+	VOTESCHEDULE = "scene vote schedule",
 	CLASS = "scene class",
 	THIRD_ANNIVERSARY_AKIBA = "third anniversary Akiba",
 	VOTE = "scene vote",
 	LOGIN = "scene login",
 	PHYSICS2D_TEST = "physics2d test",
-	HOLOLIVE_MEDAL = "hololive medal",
+	SUMMARY = "summary",
 	MUSIC_FESTIVAL2 = "music festival 2",
+	IDOL_MEDAL_COLLECTION_SCENE3 = "IDOL_MEDAL_COLLECTION_SCENE3",
 	SUMMER_FEAST = "summer feast",
 	REDPACKEY = "scene RED PACKEY",
-	COMMANDROOM = "scene command room",
 	LAUNCH_BALL_TASK = "LAUNCH_BALL_TASK",
 	SSSS_ACADEMY = "SSSS ACADEMY",
 	BIANDUI = "scene biandui",
 	SIXTH_ANNIVERSARY_JP = "SIXTH_ANNIVERSARY_JP",
 	COLORING = "scene coloring",
-	PUBLIC_GUILD = "public guild",
+	SENRANKAGURA_BACKHILL = "SENRANKAGURA_BACKHILL",
+	AMUSEMENT_PARK = "amusement park",
 	ACT_BOSS_BATTLE = "act boss battle",
 	NEW_SERVER_CARNIVAL = "new server carnival",
 	CARD_PAIRS = "card pairs",
-	DOA2_MEDAL_COLLECTION_SCENE = "scene doa2 medal collection",
+	SCULPTURE = "sculpture",
 	BACK_CHARGE = "back charge",
 	CARD_TOWER_CHARACTER_SELECT = "CARD_TOWER_CHARACTER_SELECT",
 	SSSS_MEDAL_COLLECTION = "SSSS_MEDAL_COLLECTION",
-	DOALINK_ISLAND = "scene DOALink Island",
+	CREATE_PLAYER = "scene create player",
 	ZUMA_PT_SHOP = "ZUMA_PT_SHOP",
 	GAME_HALL = "game hall",
 	WORLDINPICTURE = "world in picture",
-	SIXTH_ANNIVERSARY_JP_DARK = "SIXTH_ANNIVERSARY_JP_DARK",
+	EDUCATE_PROFILE = "EDUCATE_PROFILE",
 	SHIPINFO = "scene shipinfo",
 	DEPOTSCENE = "scene depot scene",
 	BACKHILL_CAMPUSFESTIVAL_2022 = "BACKHILL_CAMPUSFESTIVAL_2022",
@@ -149,6 +171,14 @@ SCENE = {
 	AMUSEMENT_PARK2 = "amusement park 2"
 }
 slot0 = {
+	[SCENE.EDUCATE_PROFILE] = function (slot0, slot1)
+		slot0.mediator = EducateCharProfileMediator
+		slot0.viewComponent = EducateCharProfileScene
+	end,
+	[SCENE.EDUCATE_DOCK] = function (slot0, slot1)
+		slot0.mediator = EducateCharDockScene
+		slot0.viewComponent = EducateCharDockMediator
+	end,
 	[SCENE.US_CASTLE_2023] = function (slot0, slot1)
 		slot0.mediator = BackHillMediatorTemplate
 		slot0.viewComponent = USCastle2023Scene
@@ -323,17 +353,21 @@ slot0 = {
 		slot0.mediator = VoteMediator
 		slot0.viewComponent = VoteScene
 	end,
+	[SCENE.VOTESCHEDULE] = function (slot0, slot1)
+		slot0.mediator = VoteScheduleMediator
+		slot0.viewComponent = VoteScheduleScene
+	end,
+	[SCENE.VOTEENTRANCE] = function (slot0, slot1)
+		slot0.mediator = VoteEntranceMediator
+		slot0.viewComponent = VoteEntranceScene
+	end,
 	[SCENE.CLASS] = function (slot0, slot1)
 		slot0.mediator = ClassMediator
 		slot0.viewComponent = ClassLayer
 	end,
-	[SCENE.COMMANDROOM] = function (slot0, slot1)
-		slot0.mediator = CommandRoomMediator
-		slot0.viewComponent = CommandRoomScene
-	end,
-	[SCENE.COMMANDERINFO] = function (slot0, slot1)
-		slot0.mediator = CommanderInfoMediator
-		slot0.viewComponent = CommanderInfoScene
+	[SCENE.COMMANDERCAT] = function (slot0, slot1)
+		slot0.mediator = CommanderCatMediator
+		slot0.viewComponent = CommanderCatScene
 	end,
 	[SCENE.COLORING] = function (slot0, slot1)
 		slot0.mediator = ColoringMediator
@@ -380,8 +414,8 @@ slot0 = {
 		slot0.viewComponent = TrainingCampScene
 	end,
 	[SCENE.BULLETINBOARD] = function (slot0, slot1)
-		slot0.mediator = BulletinBoardMediator
-		slot0.viewComponent = BulletinBoardLayer
+		slot0.mediator = NewBulletinBoardMediator
+		slot0.viewComponent = NewBulletinBoardLayer
 	end,
 	[SCENE.SKINSHOP] = function (slot0, slot1)
 		slot0.mediator = NewSkinShopMediator
@@ -394,6 +428,10 @@ slot0 = {
 	[SCENE.SKINATALAS] = function (slot0, slot1)
 		slot0.mediator = SkinAtlasMediator
 		slot0.viewComponent = SkinAtlasScene
+	end,
+	[SCENE.SELECT_SKIN] = function (slot0, slot1)
+		slot0.mediator = SkinAtlasMediator
+		slot0.viewComponent = SelectSkinLayer
 	end,
 	[SCENE.WORLDBOSS] = function (slot0, slot1)
 		slot0.mediator = WorldBossMediator
@@ -415,6 +453,10 @@ slot0 = {
 	[SCENE.MUSIC_FESTIVAL2] = function (slot0, slot1)
 		slot0.mediator = MusicFestivalMediator
 		slot0.viewComponent = MusicFestivalScene2
+	end,
+	[SCENE.MUSIC_FESTIVAL3] = function (slot0, slot1)
+		slot0.mediator = MusicFestivalMediator
+		slot0.viewComponent = MusicFestivalScene3
 	end,
 	[SCENE.HOLOLIVE_MEDAL] = function (slot0, slot1)
 		slot0.mediator = HololiveMedalCollectionMediator
@@ -496,6 +538,10 @@ slot0 = {
 	[SCENE.IDOL_MEDAL_COLLECTION_SCENE2] = function (slot0, slot1)
 		slot0.mediator = IdolMedalCollectionMediator
 		slot0.viewComponent = IdolMedalCollectionView2
+	end,
+	[SCENE.IDOL_MEDAL_COLLECTION_SCENE3] = function (slot0, slot1)
+		slot0.mediator = IdolMedalCollectionMediator
+		slot0.viewComponent = IdolMedalCollectionView3
 	end,
 	[SCENE.PHYSICS2D_TEST] = function (slot0, slot1)
 		slot0.mediator = Physics2dMediator
@@ -717,20 +763,84 @@ slot0 = {
 	[SCENE.SECRET_SHIPYARD] = function (slot0, slot1)
 		slot0.mediator = SecretShipyardMediator
 		slot0.viewComponent = SecretShipyardScene
+	end,
+	[SCENE.CASTLE_MAIN] = function (slot0, slot1)
+		slot0.mediator = CastleMainMediator
+		slot0.viewComponent = CastleMainScene
+	end,
+	[SCENE.EQUIP_CODE] = function (slot0, slot1)
+		slot0.mediator = EquipCodeMediator
+		slot0.viewComponent = EquipCodeScene
+	end,
+	[SCENE.HARBOR_BACKHILL] = function (slot0, slot1)
+		slot0.mediator = BackHillMediatorTemplate
+		slot0.viewComponent = HarborBackHillScene
+	end,
+	[SCENE.TEMPESTA_MEDAL_COLLECTION] = function (slot0, slot1)
+		slot0.mediator = TempestaMedalCollectionMediator
+		slot0.viewComponent = TempestaMedalCollectionScene
+	end,
+	[SCENE.SENRANKAGURA_TRAIN] = function (slot0, slot1)
+		slot0.mediator = SenrankaguraTrainMediator
+		slot0.viewComponent = SenrankaguraTrainScene
+	end,
+	[SCENE.SENRANKAGURA_MEDAL] = function (slot0, slot1)
+		slot0.mediator = SenrankaguraMedalMediator
+		slot0.viewComponent = SenrankaguraMedalScene
+	end,
+	[SCENE.SENRANKAGURA_BACKHILL] = function (slot0, slot1)
+		slot0.mediator = BackHillMediatorTemplate
+		slot0.viewComponent = SenrankaguraBackHillScene
+	end,
+	[SCENE.NEWYEAR_BACKHILL_2024] = function (slot0, slot1)
+		slot0.mediator = BackHillMediatorTemplate
+		slot0.viewComponent = NewYearFestival2024Scene
+	end,
+	[SCENE.SPRING_FESTIVAL_BACKHILL_2024] = function (slot0, slot1)
+		slot0.mediator = SpringFestival2024Mediator
+		slot0.viewComponent = SpringFestival2024Scene
+	end,
+	[SCENE.EDUCATE] = function (slot0, slot1)
+		slot0.mediator = EducateMediator
+		slot0.viewComponent = EducateScene
+	end,
+	[SCENE.EDUCATE_SCHEDULE] = function (slot0, slot1)
+		slot0.mediator = EducateScheduleMediator
+		slot0.viewComponent = EducateScheduleScene
+	end,
+	[SCENE.EDUCATE_MAP] = function (slot0, slot1)
+		slot0.mediator = EducateMapMediator
+		slot0.viewComponent = EducateMapScene
+	end,
+	[SCENE.OTHER_WORLD_TASK_LAYER] = function (slot0, slot1)
+		slot0.mediator = OtherWorldTaskMediator
+		slot0.viewComponent = OtherWorldTaskLayer
+	end,
+	[SCENE.OTHER_WORLD_TEMPLE_SCENE] = function (slot0, slot1)
+		slot0.mediator = OtherWorldTempleMediator
+		slot0.viewComponent = OtherWorldTempleScene
+	end,
+	[SCENE.OTHERWORLD_BACKHILL] = function (slot0, slot1)
+		slot0.mediator = OtherworldBackHilllMediator
+		slot0.viewComponent = OtherworldBackHillScene
+	end,
+	[SCENE.OTHERWORLD_MAP] = function (slot0, slot1)
+		slot0.mediator = OtherworldMapMediator
+		slot0.viewComponent = OtherworldMapScene
 	end
 }
 
-SCENE.SetSceneInfo = function(slot0, slot1)
+function SCENE.SetSceneInfo(slot0, slot1)
 	assert(slot0.class == Context, "class error")
 	switch(slot1, uv0, nil, slot0, slot1)
 
 	slot0.scene = slot1
 end
 
-SCENE.GetInvitationPage = function(slot0)
+function SCENE.GetInvitationPage(slot0)
 	slot2 = nil
 
-	if slot0.getTempCfgTable(slot0).open_ui[1] == "login_year" then
+	if slot0.getConfig(slot0, "open_ui")[1] == "login_year" then
 		slot2 = AssignedShipScene
 	elseif slot1 == "login_santa" then
 		slot2 = AssignedShipForChristmasScene
@@ -938,10 +1048,46 @@ slot1 = {
 			paintingNameList = slot3,
 			finishFunc = slot1
 		})
+	end,
+	EquipCodeShareMediator = function (slot0, slot1)
+		slot2 = {}
+
+		table.insert(slot2, function (slot0)
+			pg.m02:sendNotification(GAME.EQUIP_CODE_REQUEST, {
+				shipGroupId = uv0.context.data.shipGroupId,
+				callback = slot0
+			})
+		end)
+		seriesAsync(slot2, slot1)
+	end,
+	BuildShipRegularExchangeMediator = function (slot0, slot1)
+		slot2 = {}
+
+		for slot6, slot7 in ipairs(pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID].exchange_ship_id) do
+			PaintingConst.AddPaintingNameByShipConfigID(slot2, slot7)
+		end
+
+		PaintingConst.PaintingDownload({
+			isShowBox = false,
+			paintingNameList = slot2,
+			finishFunc = slot1
+		})
+	end,
+	EducateMediator = function (slot0, slot1)
+		EducateHelper.ReqEducateDataCheck(slot1)
+	end,
+	CourtYardMediator = function (slot0, slot1)
+		if not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "BackYardMediator") then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("word_systemClose"))
+
+			return
+		end
+
+		slot1()
 	end
 }
 
-SCENE.CheckPreloadData = function(slot0, slot1)
+function SCENE.CheckPreloadData(slot0, slot1)
 	switch(slot0.context.mediator.__cname, uv0, function (slot0, slot1)
 		slot1()
 	end, slot0, slot1)

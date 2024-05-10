@@ -1,10 +1,10 @@
 slot0 = class("NewBossExperimentResultStatisticsPage", import("..hpShareActBoss.NewHpShareActBossResultStatisticsPage"))
 
-slot0.GetTicketUseCount = function(slot0)
+function slot0.GetTicketUseCount(slot0)
 	return 0
 end
 
-slot0.UpdateTicket = function(slot0, slot1)
+function slot0.UpdateTicket(slot0, slot1)
 	uv0.super.UpdateTicket(slot0, slot1)
 
 	slot2 = slot1:Find("playAgain/ticket/checkbox")
@@ -13,7 +13,7 @@ slot0.UpdateTicket = function(slot0, slot1)
 	setToggleEnabled(slot2, false)
 end
 
-slot0.OnPlayAgain = function(slot0, slot1)
+function slot0.OnPlayAgain(slot0, slot1)
 	slot0:emit(NewBattleResultMediator.REENTER_STAGE)
 end
 

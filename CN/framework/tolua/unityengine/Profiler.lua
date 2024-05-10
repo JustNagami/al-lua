@@ -19,7 +19,7 @@ slot3 = {
 }
 slot5 = {}
 
-slot6 = function(slot0)
+function slot6(slot0)
 	slot1 = #uv0 + 1
 
 	for slot5, slot6 in ipairs(uv0) do
@@ -31,7 +31,7 @@ slot6 = function(slot0)
 	return slot1
 end
 
-slot7 = function(slot0)
+function slot7(slot0)
 	if #uv0 > 0 and debug.getinfo(5, "f") then
 		if slot1 < uv1(slot2.func) and debug.getinfo(6, "f") then
 			slot4 = uv1(slot2.func) or slot4
@@ -44,7 +44,7 @@ slot7 = function(slot0)
 	end
 end
 
-slot8 = function(slot0, slot1, slot2)
+function slot8(slot0, slot1, slot2)
 	uv0()
 	table.insert(uv1, slot1)
 
@@ -56,7 +56,7 @@ slot8 = function(slot0, slot1, slot2)
 	uv2.BeginSample(slot2.id)
 end
 
-slot9 = function(slot0, slot1, slot2)
+function slot9(slot0, slot1, slot2)
 	uv0()
 	table.insert(uv1, slot1)
 
@@ -73,7 +73,7 @@ slot9 = function(slot0, slot1, slot2)
 	uv2.BeginSample(slot3)
 end
 
-profiler_hook = function(slot0, slot1)
+function profiler_hook(slot0, slot1)
 	if slot0 == "call" then
 		slot2 = nil
 

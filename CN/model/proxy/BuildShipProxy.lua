@@ -4,8 +4,9 @@ slot0.TIMEUP = "BuildShipProxy TIMEUP"
 slot0.UPDATED = "BuildShipProxy UPDATED"
 slot0.REMOVED = "BuildShipProxy REMOVED"
 slot0.DRAW_COUNT_UPDATE = "BuildShipProxy DRAW_COUNT_UPDATE"
+slot0.REGULAR_BUILD_POOL_COUNT_UPDATE = "BuildShipProxy.REGULAR_BUILD_POOL_COUNT_UPDATE"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:on(12024, function (slot0)
 		uv0.data = {}
 		uv0.workCount = slot0.worklist_count
@@ -20,10 +21,12 @@ slot0.register = function(slot0)
 		end
 
 		uv0:setBuildShipState()
+
+		uv0.regularExchangeCount = slot0.exchange_count
 	end)
 end
 
-slot0.GetPools = function(slot0)
+function slot0.GetPools(slot0)
 	slot1 = {}
 	slot6 = {
 		ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1,
@@ -71,13 +74,13 @@ slot0.GetPools = function(slot0)
 	return slot1
 end
 
-slot0.GetPoolsWithoutNewServer = function(slot0)
+function slot0.GetPoolsWithoutNewServer(slot0)
 	return _.select(slot0:GetPools(), function (slot0)
 		return not (slot0:IsActivity() and slot0:IsNewServerBuild())
 	end)
 end
 
-slot0.setBuildShipState = function(slot0)
+function slot0.setBuildShipState(slot0)
 	slot0:removeBuildTimer()
 
 	slot0.buildIndex = 0
@@ -102,7 +105,7 @@ slot0.setBuildShipState = function(slot0)
 	end
 end
 
-slot0.getNextBuildShip = function(slot0)
+function slot0.getNextBuildShip(slot0)
 	slot1 = nil
 
 	if slot0.data[slot0.buildIndex + 1] and slot2.state == BuildShip.INACTIVE then
@@ -113,7 +116,7 @@ slot0.getNextBuildShip = function(slot0)
 	return slot1
 end
 
-slot0.activeNextBuild = function(slot0)
+function slot0.activeNextBuild(slot0)
 	if slot0:getNextBuildShip() then
 		slot1:active()
 		slot0:updateBuildShip(slot0.buildIndex, slot1)
@@ -121,14 +124,14 @@ slot0.activeNextBuild = function(slot0)
 	end
 end
 
-slot0.addBuildTimer = function(slot0)
+function slot0.addBuildTimer(slot0)
 	if slot0.buildTimers[slot0.buildIndex] then
 		slot0.buildTimers[slot1]:Stop()
 
 		slot0.buildTimers[slot1] = nil
 	end
 
-	slot2 = function()
+	function slot2()
 		uv0:activeNextBuild()
 		uv0.data[uv1]:finish()
 		uv0.data[uv1]:display("- build finish -")
@@ -150,15 +153,15 @@ slot0.addBuildTimer = function(slot0)
 	end
 end
 
-slot0.getMaxWorkCount = function(slot0)
+function slot0.getMaxWorkCount(slot0)
 	return slot0.workCount
 end
 
-slot0.getBuildShipCount = function(slot0)
+function slot0.getBuildShipCount(slot0)
 	return table.getCount(slot0.data)
 end
 
-slot0.removeBuildTimer = function(slot0)
+function slot0.removeBuildTimer(slot0)
 	slot1 = pairs
 	slot2 = slot0.buildTimers or {}
 
@@ -169,7 +172,7 @@ slot0.removeBuildTimer = function(slot0)
 	slot0.buildTimers = nil
 end
 
-slot0.remove = function(slot0)
+function slot0.remove(slot0)
 	slot0:removeBuildTimer()
 
 	if slot0.exchangeItemTimer then
@@ -179,11 +182,11 @@ slot0.remove = function(slot0)
 	end
 end
 
-slot0.getBuildShip = function(slot0, slot1)
+function slot0.getBuildShip(slot0, slot1)
 	return Clone(slot0.data[slot1])
 end
 
-slot0.getFinishCount = function(slot0)
+function slot0.getFinishCount(slot0)
 	slot1 = 0
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -195,11 +198,11 @@ slot0.getFinishCount = function(slot0)
 	return slot1
 end
 
-slot0.getNeedFinishCount = function(slot0)
+function slot0.getNeedFinishCount(slot0)
 	return table.getCount(slot0.data) - slot0:getFinishCount()
 end
 
-slot0.getActiveCount = function(slot0)
+function slot0.getActiveCount(slot0)
 	slot1 = 0
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -211,7 +214,7 @@ slot0.getActiveCount = function(slot0)
 	return slot1
 end
 
-slot0.getFinishedIndex = function(slot0)
+function slot0.getFinishedIndex(slot0)
 	for slot4, slot5 in ipairs(slot0.data) do
 		if slot5.state == BuildShip.FINISH then
 			return slot4
@@ -219,7 +222,7 @@ slot0.getFinishedIndex = function(slot0)
 	end
 end
 
-slot0.canBuildShip = function(slot0, slot1)
+function slot0.canBuildShip(slot0, slot1)
 	slot2 = slot0:getActiveCount()
 
 	if getProxy(BagProxy):getItemById(pg.ship_data_create_material[slot1].use_item) and slot3.number_1 <= slot5.count then
@@ -227,7 +230,7 @@ slot0.canBuildShip = function(slot0, slot1)
 	end
 end
 
-slot0.getActiveOrFinishedCount = function(slot0)
+function slot0.getActiveOrFinishedCount(slot0)
 	slot1 = 0
 
 	for slot5, slot6 in pairs(slot0.data) do
@@ -239,24 +242,24 @@ slot0.getActiveOrFinishedCount = function(slot0)
 	return slot1
 end
 
-slot0.getDrawCount = function(slot0)
+function slot0.getDrawCount(slot0)
 	return {
 		drawCount1 = slot0.drawCount1,
 		drawCount10 = slot0.drawCount10
 	}
 end
 
-slot0.increaseDrawCount = function(slot0, slot1)
+function slot0.increaseDrawCount(slot0, slot1)
 	if slot1 == 1 then
 		slot0.drawCount1 = slot0.drawCount1 + 1
 	elseif slot1 == 10 then
 		slot0.drawCount10 = slot0.drawCount10 + 1
 	end
 
-	slot0.facade:sendNotification(uv0.DRAW_COUNT_UPDATE, slot0:getDrawCount())
+	slot0:sendNotification(uv0.DRAW_COUNT_UPDATE, slot0:getDrawCount())
 end
 
-slot0.addBuildShip = function(slot0, slot1)
+function slot0.addBuildShip(slot0, slot1)
 	assert(isa(slot1, BuildShip), "should be an instance of BuildShip")
 	table.insert(slot0.data, slot1)
 
@@ -272,52 +275,62 @@ slot0.addBuildShip = function(slot0, slot1)
 		assert(false, "激活的建船数量大于最大数量")
 	end
 
-	slot0.facade:sendNotification(uv0.ADDED, slot1:clone())
+	slot0:sendNotification(uv0.ADDED, slot1:clone())
 end
 
-slot0.finishBuildShip = function(slot0, slot1)
+function slot0.finishBuildShip(slot0, slot1)
 	if slot0.buildTimers[slot1] then
 		slot0.buildTimers[slot1].func()
 	end
 end
 
-slot0.updateBuildShip = function(slot0, slot1, slot2)
+function slot0.updateBuildShip(slot0, slot1, slot2)
 	assert(isa(slot2, BuildShip), "should be an instance of BuildShip")
 
 	slot0.data[slot1] = slot2:clone()
 
-	slot0.facade:sendNotification(uv0.UPDATED, {
+	slot0:sendNotification(uv0.UPDATED, {
 		index = slot1,
 		buildShip = slot2:clone()
 	})
 end
 
-slot0.removeBuildShipByIndex = function(slot0, slot1)
+function slot0.removeBuildShipByIndex(slot0, slot1)
 	assert(slot0.data[slot1]:clone() ~= nil, "buildShip should exist")
 
 	slot0.lastPoolType = slot0.data[slot1].type
 
 	table.remove(slot0.data, slot1)
-	slot0.facade:sendNotification(uv0.REMOVED, {
+	slot0:sendNotification(uv0.REMOVED, {
 		index = slot1,
 		buildShip = slot2
 	})
 end
 
-slot0.getSkipBatchBuildFlag = function(slot0)
+function slot0.getSkipBatchBuildFlag(slot0)
 	return slot0.skipBatchFlag or false
 end
 
-slot0.setSkipBatchBuildFlag = function(slot0, slot1)
+function slot0.setSkipBatchBuildFlag(slot0, slot1)
 	slot0.skipBatchFlag = slot1
 end
 
-slot0.getLastBuildShipPoolType = function(slot0)
+function slot0.getLastBuildShipPoolType(slot0)
 	return slot0.lastPoolType or 0
 end
 
-slot0.getSupportShipCost = function(slot0)
+function slot0.getSupportShipCost(slot0)
 	return pg.gameset.supports_config.description[1]
+end
+
+function slot0.changeRegularExchangeCount(slot0, slot1)
+	slot0.regularExchangeCount = math.clamp(slot0.regularExchangeCount + slot1, 0, pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID].exchange_request)
+
+	slot0:sendNotification(uv0.REGULAR_BUILD_POOL_COUNT_UPDATE)
+end
+
+function slot0.getRegularExchangeCount(slot0)
+	return slot0.regularExchangeCount
 end
 
 return slot0

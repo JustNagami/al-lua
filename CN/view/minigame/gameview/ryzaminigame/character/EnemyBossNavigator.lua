@@ -1,7 +1,7 @@
 slot0 = class("EnemyBossNavigator", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyNavigator"))
 slot0.SkillDistance = 10
 
-slot0.InitUI = function(slot0, slot1)
+function slot0.InitUI(slot0, slot1)
 	uv0.super.InitUI(slot0, slot1)
 
 	slot0.hp = slot1.hp or 4
@@ -11,10 +11,10 @@ slot0.InitUI = function(slot0, slot1)
 	slot0.damageDic = {}
 end
 
-slot0.InitRegister = function(slot0, slot1)
+function slot0.InitRegister(slot0, slot1)
 end
 
-slot0.TimeTrigger = function(slot0, slot1)
+function slot0.TimeTrigger(slot0, slot1)
 	uv0.super.TimeTrigger(slot0, slot1)
 
 	slot5 = slot0
@@ -28,7 +28,7 @@ slot0.TimeTrigger = function(slot0, slot1)
 	end
 end
 
-slot0.GetUIHeight = function(slot0)
+function slot0.GetUIHeight(slot0)
 	return 192
 end
 

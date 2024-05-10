@@ -1,13 +1,13 @@
 slot2 = class("ChampionCellView", DecorateClass(import(".EnemyCellView"), import(".SpineCellView")))
 
-slot2.Ctor = function(slot0)
+function slot2.Ctor(slot0)
 	uv0.Ctor(slot0)
 	uv1.Ctor(slot0)
 
 	slot0.autoLoader = AutoLoader.New()
 end
 
-slot2.InitChampionCellTransform = function(slot0)
+function slot2.InitChampionCellTransform(slot0)
 	uv0.InitCellTransform(slot0)
 
 	slot0.tfEffectFound = slot0.tf:Find("effect_found")
@@ -19,7 +19,7 @@ slot2.InitChampionCellTransform = function(slot0)
 	slot0.tfBufficons = slot0.tf:Find("random_buff_container")
 end
 
-slot2.UpdateChampionCell = function(slot0, slot1, slot2, slot3)
+function slot2.UpdateChampionCell(slot0, slot1, slot2, slot3)
 	slot4 = slot2.trait ~= ChapterConst.TraitLurk and slot2.flag == ChapterConst.CellFlagActive and not slot1:existFleet(FleetType.Transport, slot2.row, slot2.column)
 
 	setActive(slot0.tfFighting, slot4 and slot1:existEnemy(ChapterConst.SubjectChampion, slot2.row, slot2.column))
@@ -41,14 +41,14 @@ slot2.UpdateChampionCell = function(slot0, slot1, slot2, slot3)
 	existCall(slot3)
 end
 
-slot2.LoadSpine = function(slot0, slot1, slot2, slot3, slot4)
+function slot2.LoadSpine(slot0, slot1, slot2, slot3, slot4)
 	uv0.LoadSpine(slot0, slot1, slot2, nil, function ()
 		existCall(uv0)
 		uv1:LoadExtraEffects(uv2)
 	end)
 end
 
-slot2.LoadExtraEffects = function(slot0, slot1)
+function slot2.LoadExtraEffects(slot0, slot1)
 	if slot1 and #slot1 > 0 then
 		slot3 = slot0.autoLoader
 
@@ -64,7 +64,7 @@ slot2.LoadExtraEffects = function(slot0, slot1)
 	end
 end
 
-slot2.Clear = function(slot0)
+function slot2.Clear(slot0)
 	uv0.ClearSpine(slot0)
 	uv1.Clear(slot0)
 

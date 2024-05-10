@@ -6,11 +6,11 @@ slot3 = class("BattleEnvironmentBehaviourDamage", slot0.Battle.BattleEnvironment
 slot0.Battle.BattleEnvironmentBehaviourDamage = slot3
 slot3.__name = "BattleEnvironmentBehaviourDamage"
 
-slot3.Ctor = function(slot0)
+function slot3.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 end
 
-slot3.SetTemplate = function(slot0, slot1)
+function slot3.SetTemplate(slot0, slot1)
 	uv0.super.SetTemplate(slot0, slot1)
 
 	slot0._rate = slot0._tmpData.hp_rate or 0
@@ -18,7 +18,7 @@ slot3.SetTemplate = function(slot0, slot1)
 	slot0._offset = slot0._tmpData.offset or 0
 end
 
-slot3.doBehaviour = function(slot0)
+function slot3.doBehaviour(slot0)
 	for slot4, slot5 in ipairs(slot0._cldUnitList) do
 		slot7, slot8 = slot5:GetHP()
 
@@ -30,7 +30,7 @@ slot3.doBehaviour = function(slot0)
 
 		if not slot5:IsAlive() then
 			uv0.Battle.BattleAttr.Spirit(slot5)
-			uv0.Battle.BattleAttr.Whosyourdaddy(slot5)
+			uv0.Battle.BattleAttr.AppendInvincible(slot5)
 		end
 	end
 

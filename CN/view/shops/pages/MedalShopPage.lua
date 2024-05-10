@@ -1,14 +1,14 @@
 slot0 = class("MedalShopPage", import(".MilitaryShopPage"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "MedalShop"
 end
 
-slot0.CanOpen = function(slot0)
+function slot0.CanOpen(slot0)
 	return true
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.exploitTF = slot0._tf:Find("res_exploit/bg/Text"):GetComponent(typeof(Text))
 	slot0.timerTF = slot0._tf:Find("time/day"):GetComponent(typeof(Text))
 
@@ -17,12 +17,12 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0._tf:Find("time/text_day"), i18n("word_date"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.purchaseWindow = MedalShopPurchasePanel.New(slot0._tf, slot0.event)
 	slot0.multiWindow = MedalShopMultiWindow.New(slot0._tf, slot0.event)
 end
 
-slot0.UpdateShop = function(slot0, ...)
+function slot0.UpdateShop(slot0, ...)
 	uv0.super.UpdateShop(slot0, ...)
 
 	if slot0.purchaseWindow:isShowing() then
@@ -34,14 +34,14 @@ slot0.UpdateShop = function(slot0, ...)
 	end
 end
 
-slot0.OnUpdatePlayer = function(slot0)
+function slot0.OnUpdatePlayer(slot0)
 end
 
-slot0.OnUpdateItems = function(slot0)
+function slot0.OnUpdateItems(slot0)
 	slot0.exploitTF.text = slot0.items[ITEM_ID_SILVER_HOOK] and slot1[ITEM_ID_SILVER_HOOK].count or 0
 end
 
-slot0.OnInitItem = function(slot0, slot1)
+function slot0.OnInitItem(slot0, slot1)
 	slot2 = MedalGoodsCard.New(slot1)
 
 	onButton(slot0, slot2._go, function ()
@@ -57,7 +57,7 @@ slot0.OnInitItem = function(slot0, slot1)
 	slot0.cards[slot1] = slot2
 end
 
-slot0.OnCardClick = function(slot0, slot1)
+function slot0.OnCardClick(slot0, slot1)
 	if slot1.goods:Selectable() then
 		slot0.purchaseWindow:ExecuteAction("Show", {
 			id = slot1.goods.id,
@@ -103,7 +103,7 @@ slot0.OnCardClick = function(slot0, slot1)
 	end
 end
 
-slot0.AddTimer = function(slot0)
+function slot0.AddTimer(slot0)
 	slot1 = slot0.shop.nextTime + 1
 	slot0.timer = Timer.New(function ()
 		if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
@@ -118,11 +118,11 @@ slot0.AddTimer = function(slot0)
 	slot0.timer.func()
 end
 
-slot0.OnTimeOut = function(slot0)
+function slot0.OnTimeOut(slot0)
 	slot0:emit(NewShopsMediator.REFRESH_MEDAL_SHOP, false)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	uv0.super.OnDestroy(slot0)
 	slot0.purchaseWindow:Destroy()
 	slot0.multiWindow:Destroy()

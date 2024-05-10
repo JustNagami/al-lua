@@ -1,18 +1,23 @@
 slot0 = class("CourtYardController")
 
-slot0.Ctor = function(slot0, slot1)
-	slot0.system = slot1.system
-	slot0.storeyId = slot1.storeyId
-	slot0.storeyDatas = slot1.storeys
-	slot0.storey = slot0:System2Storey(slot1)
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.bridge = slot1
+	slot0.system = slot2.system
+	slot0.storeyId = slot2.storeyId
+	slot0.storeyDatas = slot2.storeys
+	slot0.storey = slot0:System2Storey(slot2)
 	slot0.isInit = false
 end
 
-slot0.IsLoaed = function(slot0)
+function slot0.GetBridge(slot0)
+	return slot0.bridge
+end
+
+function slot0.IsLoaed(slot0)
 	return slot0.isInit
 end
 
-slot0.SetUp = function(slot0)
+function slot0.SetUp(slot0)
 	slot1 = slot0.storeyDatas[slot0.storeyId]
 
 	slot0.storey:SetLevel(slot1.level)
@@ -57,28 +62,26 @@ slot0.SetUp = function(slot0)
 
 		uv0.isInit = true
 
-		if _courtyard then
-			_courtyard:SendNotification(CourtYardEvent._INITED)
-		end
+		uv0:SendNotification(CourtYardEvent._INITED)
 	end)
 end
 
-slot0.Update = function(slot0)
+function slot0.Update(slot0)
 	if slot0.storey then
 		slot0.storey:Update()
 	end
 end
 
-slot0.GetStorey = function(slot0)
+function slot0.GetStorey(slot0)
 	return slot0.storey
 end
 
-slot0.AddFurniture = function(slot0, slot1, slot2)
+function slot0.AddFurniture(slot0, slot1, slot2)
 	if not slot0.storey then
 		return
 	end
 
-	slot3 = function(slot0, slot1)
+	function slot3(slot0, slot1)
 		slot2 = uv0:DataToFurnitureVO(uv1)
 
 		slot2:Init(slot1, uv1.dir or 1)
@@ -86,7 +89,10 @@ slot0.AddFurniture = function(slot0, slot1, slot2)
 		return uv0.storey:IsLegalAreaForFurniture(slot2, slot1)
 	end
 
-	if not slot0.storey:CanAddFurniture(slot0:DataToFurnitureVO(slot1)) then
+	slot4 = slot0:DataToFurnitureVO(slot1)
+	slot4.selectedFlag = slot1.selected
+
+	if not slot0.storey:CanAddFurniture(slot4) then
 		return
 	end
 
@@ -103,13 +109,13 @@ slot0.AddFurniture = function(slot0, slot1, slot2)
 		slot4:Init(slot6, slot1.dir or 1)
 		slot0.storey:AddFurniture(slot4, slot2)
 	else
-		_courtyard:SendNotification(CourtYardEvent._ADD_ITEM_FAILED, slot4.id)
+		slot0:SendNotification(CourtYardEvent._ADD_ITEM_FAILED, slot4.id)
 	end
 
 	slot0:CheckChange()
 end
 
-slot0.AddShip = function(slot0, slot1)
+function slot0.AddShip(slot0, slot1)
 	if not slot0.storey then
 		return
 	end
@@ -118,11 +124,11 @@ slot0.AddShip = function(slot0, slot1)
 		slot2:SetPosition(slot3)
 		slot0.storey:AddShip(slot2)
 	else
-		_courtyard:SendNotification(CourtYardEvent._NO_POS_TO_ADD_SHIP, slot2.id)
+		slot0:SendNotification(CourtYardEvent._NO_POS_TO_ADD_SHIP, slot2.id)
 	end
 end
 
-slot0.AddVisitorShip = function(slot0, slot1)
+function slot0.AddVisitorShip(slot0, slot1)
 	if not slot0.storey then
 		return
 	end
@@ -133,74 +139,82 @@ slot0.AddVisitorShip = function(slot0, slot1)
 	end
 end
 
-slot0.ExitShip = function(slot0, slot1)
+function slot0.ExitShip(slot0, slot1)
 	slot0.storey:ExitShip(slot1)
 end
 
-slot0.Extend = function(slot0)
-	_courtyard:SendNotification(CourtYardEvent._EXTEND)
+function slot0.Extend(slot0)
+	slot0:SendNotification(CourtYardEvent._EXTEND)
 end
 
-slot0.LevelUp = function(slot0)
+function slot0.LevelUp(slot0)
 	slot0.storey:LevelUp(id)
 end
 
-slot0.DragShip = function(slot0, slot1)
+function slot0.DragShip(slot0, slot1)
 	slot0.storey:DragShip(slot1)
-	_courtyard:SendNotification(CourtYardEvent._DRAG_ITEM)
+	slot0:SendNotification(CourtYardEvent._DRAG_ITEM)
 end
 
-slot0.DragingShip = function(slot0, slot1, slot2)
+function slot0.DragingShip(slot0, slot1, slot2)
 	slot0.storey:DragingShip(slot1, slot2)
 end
 
-slot0.DragShipEnd = function(slot0, slot1, slot2)
+function slot0.DragShipEnd(slot0, slot1, slot2)
 	slot0.storey:DragShipEnd(slot1, slot2)
-	_courtyard:SendNotification(CourtYardEvent._DRAG_ITEM_END)
+	slot0:SendNotification(CourtYardEvent._DRAG_ITEM_END)
 end
 
-slot0.TouchShip = function(slot0, slot1)
+function slot0.TouchShip(slot0, slot1)
 	slot0.storey:TouchShip(slot1)
-	_courtyard:SendNotification(CourtYardEvent._TOUCH_SHIP, slot1)
+	slot0:SendNotification(CourtYardEvent._TOUCH_SHIP, slot1)
 end
 
-slot0.GetShipInimacy = function(slot0, slot1)
-	_courtyard:SendNotification(GAME.BACKYARD_ADD_INTIMACY, slot1)
+function slot0.GetShipInimacy(slot0, slot1)
+	slot0:SendNotification(GAME.BACKYARD_ADD_INTIMACY, slot1)
 end
 
-slot0.GetShipCoin = function(slot0, slot1)
-	_courtyard:SendNotification(GAME.BACKYARD_ADD_MONEY, slot1)
+function slot0.GetShipCoin(slot0, slot1)
+	slot0:SendNotification(GAME.BACKYARD_ADD_MONEY, slot1)
 end
 
-slot0.ClearShipCoin = function(slot0, slot1)
+function slot0.ClearShipCoin(slot0, slot1)
 	slot0.storey:ClearShipCoin(slot1)
 end
 
-slot0.ClearShipIntimacy = function(slot0, slot1)
+function slot0.ClearShipIntimacy(slot0, slot1)
 	slot0.storey:ClearShipIntimacy(slot1)
 end
 
-slot0.UpdateShipCoinAndIntimacy = function(slot0, slot1, slot2, slot3)
+function slot0.UpdateShipCoinAndIntimacy(slot0, slot1, slot2, slot3)
 	slot0.storey:UpdateShipCoin(slot1, slot2)
 	slot0.storey:UpdateShipIntimacy(slot1, slot3)
 end
 
-slot0.AddShipExp = function(slot0, slot1, slot2)
+function slot0.AddShipExp(slot0, slot1, slot2)
 	slot0.storey:AddShipExp(slot1, slot2)
 end
 
-slot0.ShipAnimtionFinish = function(slot0, slot1, slot2)
+function slot0.ShipAnimtionFinish(slot0, slot1, slot2)
 	slot0.storey:ShipAnimtionFinish(slot1, slot2)
 end
 
-slot0.GetMaxCntForShip = function(slot0)
-	return #slot0.storey:GetEmptyPositions(CourtYardShip.New(Ship.New({
+function slot0.GetMaxCntForShip(slot0)
+	return #slot0.storey:GetEmptyPositions(CourtYardShip.New(slot0, Ship.New({
 		id = 999,
 		configId = 100001
 	}))) + table.getCount(slot0.storey:GetShips())
 end
 
-slot0.SelectFurnitureByConfigId = function(slot0, slot1)
+function slot0.SelectFurnitureByConfigId(slot0, slot1)
+	if slot0.storey.wallPaper and slot0.storey.wallPaper.configId == slot1 then
+		return
+	end
+
+	if slot0.storey.floorPaper and slot0.storey.floorPaper.configId == slot1 then
+		return
+	end
+
 	slot2 = nil
 
 	for slot6, slot7 in pairs(slot0.storey.furnitures) do
@@ -213,79 +227,89 @@ slot0.SelectFurnitureByConfigId = function(slot0, slot1)
 
 	if slot2 then
 		slot0:SelectFurniture(slot2.id)
+	else
+		pg.TipsMgr.GetInstance():ShowTips(i18n("courtyard_tip_furniture_not_in_layer"))
 	end
 end
 
-slot0.SelectFurniture = function(slot0, slot1)
+function slot0.SelectFurniture(slot0, slot1)
 	if slot0.storey:InEidtMode() then
 		slot0.storey:SelectFurniture(slot1)
+
+		if slot0.storey:GetFurniture(slot1):GetOpFlag() then
+			slot0:SendNotification(CourtYardEvent._FURNITURE_SELECTED, slot2.configId)
+		end
 	else
 		slot0.storey:ClickFurniture(slot1)
 	end
 end
 
-slot0.PlayFurnitureVoice = function(slot0, slot1)
+function slot0.PlayFurnitureVoice(slot0, slot1)
 	slot0.storey:PlayFurnitureVoice(slot1)
 end
 
-slot0.PlayMusicalInstruments = function(slot0, slot1)
+function slot0.PlayMusicalInstruments(slot0, slot1)
 	slot0.storey:PlayMusicalInstruments(slot1)
 end
 
-slot0.StopPlayMusicalInstruments = function(slot0, slot1)
+function slot0.StopPlayMusicalInstruments(slot0, slot1)
 	slot0.storey:StopPlayMusicalInstruments(slot1)
 end
 
-slot0.PlayFurnitureBg = function(slot0, slot1)
+function slot0.PlayFurnitureBg(slot0, slot1)
 	slot0.storey:PlayFurnitureBg(slot1)
 end
 
-slot0.UnSelectFurniture = function(slot0, slot1)
+function slot0.UnSelectFurniture(slot0, slot1)
 	slot0.storey:UnSelectFurniture(slot1)
+
+	if not slot0.storey:GetFurniture(slot1):GetOpFlag() then
+		slot0:SendNotification(CourtYardEvent._FURNITURE_SELECTED, -99999)
+	end
 end
 
-slot0.BeginDragFurniture = function(slot0, slot1)
+function slot0.BeginDragFurniture(slot0, slot1)
 	slot0.storey:BeginDragFurniture(slot1)
-	_courtyard:SendNotification(CourtYardEvent._DRAG_ITEM)
+	slot0:SendNotification(CourtYardEvent._DRAG_ITEM)
 end
 
-slot0.DragingFurniture = function(slot0, slot1, slot2)
+function slot0.DragingFurniture(slot0, slot1, slot2)
 	slot0.storey:DragingFurniture(slot1, slot2)
 end
 
-slot0.DragFurnitureEnd = function(slot0, slot1, slot2)
+function slot0.DragFurnitureEnd(slot0, slot1, slot2)
 	slot0.storey:DragFurnitureEnd(slot1, slot2)
 	slot0:CheckChange()
-	_courtyard:SendNotification(CourtYardEvent._DRAG_ITEM_END)
+	slot0:SendNotification(CourtYardEvent._DRAG_ITEM_END)
 end
 
-slot0.FurnitureAnimtionFinish = function(slot0, slot1, slot2)
+function slot0.FurnitureAnimtionFinish(slot0, slot1, slot2)
 	slot0.storey:FurnitureAnimtionFinish(slot1, slot2)
 end
 
-slot0.RotateFurniture = function(slot0, slot1)
+function slot0.RotateFurniture(slot0, slot1)
 	slot0.storey:RotateFurniture(slot1)
 	slot0:CheckChange()
 end
 
-slot0.RemoveFurniture = function(slot0, slot1)
+function slot0.RemoveFurniture(slot0, slot1)
 	slot0.storey:RemoveFurniture(slot1)
 	slot0:CheckChange()
 end
 
-slot0.RemovePaper = function(slot0, slot1)
+function slot0.RemovePaper(slot0, slot1)
 	slot0.storey:RemovePaper(slot1)
 	slot0:CheckChange()
 end
 
-slot0.ClearFurnitures = function(slot0)
+function slot0.ClearFurnitures(slot0)
 	slot0.storey:RemoveAllFurniture()
 	slot0:CheckChange()
 end
 
-slot0.SaveFurnitures = function(slot0)
+function slot0.SaveFurnitures(slot0)
 	if slot0.storey.recoder:HasChange() then
-		_courtyard:SendNotification(GAME.PUT_FURNITURE, {
+		slot0:SendNotification(GAME.PUT_FURNITURE, {
 			tip = true,
 			furnsPos = slot0.storey:ToTable()
 		})
@@ -294,11 +318,11 @@ slot0.SaveFurnitures = function(slot0)
 	slot0:ExitEditMode()
 end
 
-slot0.GetStoreyData = function(slot0)
+function slot0.GetStoreyData(slot0)
 	return slot0.storey:ToTable()
 end
 
-slot0.RestoreFurnitures = function(slot0)
+function slot0.RestoreFurnitures(slot0)
 	slot0:ClearFurnitures()
 
 	for slot5, slot6 in ipairs(slot0.storey.recoder:GetHeadSample()) do
@@ -308,28 +332,28 @@ slot0.RestoreFurnitures = function(slot0)
 	slot0:ExitEditMode()
 end
 
-slot0.EnterEditMode = function(slot0)
+function slot0.EnterEditMode(slot0)
 	slot0.storey:EnterEditMode()
-	_courtyard:SendNotification(CourtYardEvent._ENTER_MODE)
+	slot0:SendNotification(CourtYardEvent._ENTER_MODE)
 end
 
-slot0.ExitEditMode = function(slot0)
+function slot0.ExitEditMode(slot0)
 	slot0.storey:ExitEditMode()
-	_courtyard:SendNotification(CourtYardEvent._EXIT_MODE)
+	slot0:SendNotification(CourtYardEvent._EXIT_MODE)
 end
 
-slot0.CheckChange = function(slot0)
+function slot0.CheckChange(slot0)
 	slot1, slot2 = slot0.storey:GetDirty()
 
 	if slot1 and slot2 then
-		_courtyard:SendNotification(CourtYardEvent._SYN_FURNITURE, {
+		slot0:SendNotification(CourtYardEvent._SYN_FURNITURE, {
 			slot1,
 			slot2
 		})
 	end
 end
 
-slot0.Quit = function(slot0)
+function slot0.Quit(slot0)
 	if slot0.storey:InEidtMode() then
 		if slot0.storey.recoder:HasChange() then
 			slot0.storey:DispatchEvent(CourtYardEvent.REMIND_SAVE)
@@ -337,23 +361,23 @@ slot0.Quit = function(slot0)
 			slot0:ExitEditMode()
 		end
 	else
-		_courtyard:SendNotification(CourtYardEvent._QUIT)
+		slot0:SendNotification(CourtYardEvent._QUIT)
 	end
 end
 
-slot0.IsVisit = function(slot0)
+function slot0.IsVisit(slot0)
 	return slot0.system == CourtYardConst.SYSTEM_VISIT
 end
 
-slot0.IsFeast = function(slot0)
+function slot0.IsFeast(slot0)
 	return slot0.system == CourtYardConst.SYSTEM_FEAST
 end
 
-slot0.IsEditModeOrIsVisit = function(slot0)
+function slot0.IsEditModeOrIsVisit(slot0)
 	return slot0:IsVisit() or slot0.storey:InEidtMode()
 end
 
-slot0.Receive = function(slot0, slot1, ...)
+function slot0.Receive(slot0, slot1, ...)
 	if not slot0.storey then
 		return
 	end
@@ -361,26 +385,26 @@ slot0.Receive = function(slot0, slot1, ...)
 	slot0:__slot1_None__(...)
 end
 
-slot0.OnTakeThemePhoto = function(slot0)
+function slot0.OnTakeThemePhoto(slot0)
 	if slot0.storey then
 		slot0.storey:DispatchEvent(CourtYardEvent.TAKE_PHOTO)
 	end
 end
 
-slot0.OnEndTakeThemePhoto = function(slot0)
+function slot0.OnEndTakeThemePhoto(slot0)
 	if slot0.storey then
 		slot0.storey:DispatchEvent(CourtYardEvent.END_TAKE_PHOTO)
 	end
 end
 
-slot0.OnApplicationPaused = function(slot0)
+function slot0.OnApplicationPaused(slot0)
 	if slot0.storey then
 		slot0.storey:StopAllDragState()
-		_courtyard:SendNotification(CourtYardEvent._DRAG_ITEM_END)
+		slot0:SendNotification(CourtYardEvent._DRAG_ITEM_END)
 	end
 end
 
-slot0.OnOpenLayerOrCloseLayer = function(slot0, slot1, slot2)
+function slot0.OnOpenLayerOrCloseLayer(slot0, slot1, slot2)
 	if not slot2 or not slot0.storey then
 		return
 	end
@@ -388,13 +412,13 @@ slot0.OnOpenLayerOrCloseLayer = function(slot0, slot1, slot2)
 	slot0.storey:DispatchEvent(CourtYardEvent.OPEN_LAYER, slot1)
 end
 
-slot0.OnBackPressed = function(slot0)
+function slot0.OnBackPressed(slot0)
 	if slot0.storey then
 		slot0.storey:DispatchEvent(CourtYardEvent.BACK_PRESSED)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	if slot0.storey then
 		slot0.storey:Dispose()
 
@@ -402,55 +426,61 @@ slot0.Dispose = function(slot0)
 	end
 end
 
-slot0.IsFloorPaper = function(slot0)
+function slot0.IsFloorPaper(slot0)
 	return pg.furniture_data_template[slot0.configId].type == Furniture.TYPE_FLOORPAPER
 end
 
-slot0.DataToFurnitureVO = function(slot0, slot1)
+function slot0.DataToFurnitureVO(slot0, slot1)
 	if pg.furniture_data_template[slot1.configId].type == Furniture.TYPE_WALLPAPER or slot2.type == Furniture.TYPE_FLOORPAPER then
-		return CourtYardPaper.New(slot1)
+		return CourtYardPaper.New(slot0, slot1)
 	elseif slot2.type == Furniture.TYPE_FOLLOWER then
-		return CourtYardFollowerFurniture.New(slot1)
+		return CourtYardFollowerFurniture.New(slot0, slot1)
 	elseif slot2.type == Furniture.TYPE_RANDOM_CONTROLLER then
-		return CourtYardRandomControllerFurniture.New(slot1)
+		return CourtYardRandomControllerFurniture.New(slot0, slot1)
 	elseif slot2.type == Furniture.TYPE_MAT then
-		return CourtYardMatFurniture.New(slot1)
+		return CourtYardMatFurniture.New(slot0, slot1)
 	elseif slot2.type == Furniture.TYPE_TRANSPORT then
-		return CourtYardTransportFurniture.New(slot1)
+		return CourtYardTransportFurniture.New(slot0, slot1)
 	elseif slot2.type == Furniture.TYPE_WALL_MAT then
-		return CourtYardWallMatFurniture.New(slot1)
+		return CourtYardWallMatFurniture.New(slot0, slot1)
 	elseif slot2.type == Furniture.TYPE_STAGE or slot2.type == Furniture.TYPE_ARCH then
-		return CourtYardStageFurniture.New(slot1)
+		return CourtYardStageFurniture.New(slot0, slot1)
 	elseif slot2.type == Furniture.TYPE_MOVEABLE then
-		return CourtYardMoveableFurniture.New(slot1)
+		return CourtYardMoveableFurniture.New(slot0, slot1)
 	elseif slot2.belong == 1 and slot2.canputon == 1 then
-		return CourtYardCanPutFurniture.New(slot1)
+		return CourtYardCanPutFurniture.New(slot0, slot1)
 	elseif slot2.belong > 1 then
-		return CourtYardWallFurniture.New(slot1)
+		return CourtYardWallFurniture.New(slot0, slot1)
 	else
-		return CourtYardFurniture.New(slot1)
+		return CourtYardFurniture.New(slot0, slot1)
 	end
 end
 
-slot0.DataToShip = function(slot0, slot1)
+function slot0.DataToShip(slot0, slot1)
 	if slot0.system == CourtYardConst.SYSTEM_FEAST then
-		return CourtYardFeastShip.New(slot1)
+		return CourtYardFeastShip.New(slot0, slot1)
 	else
-		return CourtYardShip.New(slot1)
+		return CourtYardShip.New(slot0, slot1)
 	end
 end
 
-slot0.DataToVisitorShip = function(slot0, slot1)
-	return CourtYardVisitorShip.New(slot1)
+function slot0.DataToVisitorShip(slot0, slot1)
+	return CourtYardVisitorShip.New(slot0, slot1)
 end
 
-slot0.System2Storey = function(slot0, slot1)
+function slot0.System2Storey(slot0, slot1)
 	slot2 = Vector4(slot1.mapSize.z + 1, slot1.mapSize.w + 1, slot1.mapSize.x, slot1.mapSize.y)
 
 	if slot1.system == CourtYardConst.SYSTEM_OUTSIDE then
-		return CourtYardOutStorey.New(slot1.storeyId, slot1.style, slot2)
+		return CourtYardOutStorey.New(slot0, slot1.storeyId, slot1.style, slot2)
 	else
-		return CourtYardStorey.New(slot1.storeyId, slot1.style, slot2)
+		return CourtYardStorey.New(slot0, slot1.storeyId, slot1.style, slot2)
+	end
+end
+
+function slot0.SendNotification(slot0, ...)
+	if slot0.bridge then
+		slot0.bridge:SendNotification(...)
 	end
 end
 

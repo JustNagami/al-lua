@@ -1,6 +1,6 @@
 slot0 = class("SubmitTaskCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot3 = slot1:getType()
 	slot4 = nil
 	slot5 = {}
@@ -118,7 +118,7 @@ slot0.execute = function(slot0, slot1)
 
 				if not uv4 then
 					for slot5 = #slot1, 1, -1 do
-						if slot1[slot5].dropType == DROP_TYPE_VITEM then
+						if slot1[slot5].type == DROP_TYPE_VITEM then
 							table.remove(slot1, slot5)
 						end
 					end
@@ -146,7 +146,7 @@ slot0.execute = function(slot0, slot1)
 	end)
 end
 
-slot0.AddGuildLivness = function(slot0)
+function slot0.AddGuildLivness(slot0)
 	if slot0:IsGuildAddLivnessType() then
 		slot3 = 0
 		slot4 = false
@@ -177,7 +177,7 @@ slot0.AddGuildLivness = function(slot0)
 	end
 end
 
-slot0.InTaskScene = function(slot0)
+function slot0.InTaskScene(slot0)
 	return getProxy(ContextProxy):getCurrentContext().mediator == TaskMediator
 end
 

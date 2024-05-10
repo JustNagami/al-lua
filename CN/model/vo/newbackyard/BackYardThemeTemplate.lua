@@ -1,20 +1,20 @@
 slot0 = class("BackYardThemeTemplate", import(".BackYardBaseThemeTemplate"))
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 
 	slot0.isFetched = slot1.is_fetch
 end
 
-slot0.GetType = function(slot0)
+function slot0.GetType(slot0)
 	return BackYardConst.THEME_TEMPLATE_USAGE_TYPE_OTHER
 end
 
-slot0.ShouldFetch = function(slot0)
+function slot0.ShouldFetch(slot0)
 	return not slot0.isFetched
 end
 
-slot0.GetAllFurniture = function(slot0)
+function slot0.GetAllFurniture(slot0)
 	if not slot0.furnitruesByIds then
 		slot0.furnitruesByIds = slot0:InitFurnitures({
 			skipCheck = true,
@@ -27,11 +27,11 @@ slot0.GetAllFurniture = function(slot0)
 	return slot0.furnitruesByIds
 end
 
-slot0.GetMapSize = function(slot0)
+function slot0.GetMapSize(slot0)
 	return Dorm.StaticGetMapSize(4)
 end
 
-slot0.GetFurnitureCnt = function(slot0)
+function slot0.GetFurnitureCnt(slot0)
 	if not slot0.furnitureCnts then
 		slot0.furnitureCnts = {}
 

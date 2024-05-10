@@ -1,6 +1,6 @@
 slot0 = class("GalleryLikeCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot5 = slot2.likeCBFunc
 	slot6 = getProxy(AppreciateProxy)

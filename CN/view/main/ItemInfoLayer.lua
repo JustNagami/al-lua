@@ -6,11 +6,11 @@ slot3 = {
 	COMPOSE = 1
 }
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ItemInfoUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = slot0:getWeightFromData()
 	})
@@ -69,15 +69,11 @@ slot0.init = function(slot0)
 	slot0.operateMaxButton = slot0.operatePanel:Find("count/max")
 end
 
-slot0.setDrop = function(slot0, slot1)
+function slot0.setDrop(slot0, slot1)
 	if slot1.type == DROP_TYPE_SHIP then
 		slot0:setItemInfo(slot1, slot0.itemTF)
 	elseif slot1.type == DROP_TYPE_ITEM then
-		if slot1.extra then
-			slot1.count = 1
-		else
-			slot1.count = getProxy(BagProxy):getItemCountById(slot1.id)
-		end
+		slot1.count = getProxy(BagProxy):getItemCountById(slot1.id)
 
 		slot0:setItem(slot1)
 	else
@@ -85,7 +81,7 @@ slot0.setDrop = function(slot0, slot1)
 	end
 end
 
-slot0.setItemInfo = function(slot0, slot1, slot2)
+function slot0.setItemInfo(slot0, slot1, slot2)
 	updateDrop(slot2:Find("left/IconTpl"), setmetatable({
 		count = 0
 	}, {
@@ -93,42 +89,42 @@ slot0.setItemInfo = function(slot0, slot1, slot2)
 	}))
 	UpdateOwnDisplay(slot2:Find("left/own"), slot1)
 	RegisterDetailButton(slot0, slot2:Find("left/detail"), slot1)
-	setText(slot2:Find("display_panel/name_container/name/Text"), slot1.cfg.name)
+	setText(slot2:Find("display_panel/name_container/name/Text"), slot1:getConfig("name"))
 	setText(slot2:Find("display_panel/desc/Text"), slot1.desc)
 	setActive(slot2:Find("display_panel/name_container/shiptype"), slot1.type == DROP_TYPE_SHIP)
 
 	if slot1.type == DROP_TYPE_SHIP then
-		GetImageSpriteFromAtlasAsync("shiptype", shipType2print(slot1.cfg.type), slot3, false)
+		GetImageSpriteFromAtlasAsync("shiptype", shipType2print(slot1:getConfig("type")), slot3, false)
 	end
 end
 
-slot0.updateItemCount = function(slot0, slot1)
+function slot0.updateItemCount(slot0, slot1)
 	slot0.countTF.text = slot1
 end
 
-slot0.setItem = function(slot0, slot1)
+function slot0.setItem(slot0, slot1)
 	slot0:setItemInfo(slot1, slot0.itemTF)
 
-	slot0.itemVO = Item.New(slot1)
+	slot0.itemVO = slot1:getSubClass()
 
 	eachChild(slot0.btnContent, function (slot0)
 		setActive(slot0, slot0 == uv0.okBtn)
 	end)
 
-	if not slot0.itemVO:getTempCfgTable() then
+	if not Item.CanInBag(slot0.itemVO.id) then
 		return
 	end
 
-	if slot2.compose_number > 0 and slot2.compose_number <= slot0.itemVO.count then
+	if slot0.itemVO:getConfig("compose_number") > 0 and slot2 <= slot0.itemVO.count then
 		slot0:setItemInfo(slot1, slot0.operatePanel:Find("item"))
 
-		slot0.operateMax = slot0.itemVO.count / slot2.compose_number
+		slot0.operateMax = slot0.itemVO.count / slot2
 
 		setActive(slot0.composeBtn, true)
 		setActive(slot0.okBtn, false)
 	end
 
-	if slot2.usage == ItemUsage.SOS then
+	if slot0.itemVO:getConfig("usage") == ItemUsage.SOS then
 		setText(slot0.useBtn:Find("text"), 1)
 		setActive(slot0.useBtn, true)
 		setActive(slot0.okBtn, false)
@@ -180,11 +176,17 @@ slot0.setItem = function(slot0, slot1)
 				uv0:closeView()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER)
 			end, SFX_PANEL)
+		elseif slot3 == Item.SKIN_ASSIGNED_TYPE then
+			setActive(slot0.useOneBtn, slot0.contextData.confirmCall)
+			onButton(slot0, slot0.useOneBtn, function ()
+				uv0.contextData.confirmCall()
+				uv0:closeView()
+			end, SFX_PANEL)
 		end
 	end
 end
 
-slot0.closeView = function(slot0)
+function slot0.closeView(slot0)
 	if slot0.playing then
 		return
 	end
@@ -192,7 +194,7 @@ slot0.closeView = function(slot0)
 	uv0.super.closeView(slot0)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	if slot0:findTF("OpenBox(Clone)") then
 		SetActive(slot1, false)
 	end
@@ -261,20 +263,20 @@ slot0.didEnter = function(slot0)
 	onButton(slot0, slot0.operateBtns.Confirm, function ()
 		uv0:emit(ItemInfoMediator.COMPOSE_ITEM, uv0.itemVO.id, uv0.operateCount)
 
-		slot0 = uv0.itemVO:getTempCfgTable()
+		slot0 = uv0.itemVO:getConfig("compose_number")
 
-		if uv0.itemVO.count - uv0.operateCount * slot0.compose_number < slot0.compose_number then
+		if slot0 > uv0.itemVO.count - uv0.operateCount * slot0 then
 			triggerButton(uv0.operateBtns.Cancel)
 		else
 			uv0:SetOperateCount(1)
 		end
 	end, SFX_CONFIRM)
 	onButton(slot0, slot0.operateBtns.Resolve, function ()
-		uv0:emit(ItemInfoMediator.SELL_BLUEPRINT, {
+		uv0:emit(ItemInfoMediator.SELL_BLUEPRINT, Drop.New({
 			type = DROP_TYPE_ITEM,
 			id = uv0.itemVO.id,
 			count = uv0.operateCount
-		})
+		}))
 	end, SFX_CONFIRM)
 
 	slot2 = getProxy(PlayerProxy)
@@ -303,31 +305,31 @@ slot0.didEnter = function(slot0)
 	end)()
 end
 
-slot0.UpdateCount = function(slot0, slot1)
+function slot0.UpdateCount(slot0, slot1)
 	if slot0.operateMode == uv0.COMPOSE then
-		if not slot0.itemVO:getTempCfgTable().target_id or slot2.target_id <= 0 then
+		if not slot0.itemVO:getConfig("target_id") or slot2 <= 0 then
 			return false
 		end
 
-		return slot0.operateCount ~= math.clamp(slot1, 1, math.floor(slot0.itemVO.count / slot2.compose_number))
+		return slot0.operateCount ~= math.clamp(slot1, 1, math.floor(slot0.itemVO.count / slot0.itemVO:getConfig("compose_number")))
 	elseif slot0.operateMode == uv0.RESOLVE then
 		return slot0.operateCount ~= math.clamp(slot1, 1, slot0.itemVO.count)
 	end
 end
 
-slot0.SetOperateCount = function(slot0, slot1)
+function slot0.SetOperateCount(slot0, slot1)
 	if slot0.operateMode == uv0.COMPOSE then
-		if not slot0.itemVO:getTempCfgTable().target_id or slot2.target_id <= 0 then
+		if not slot0.itemVO:getConfig("target_id") or slot2 <= 0 then
 			return
 		end
 
-		if slot0.operateCount ~= math.clamp(slot1, 1, math.floor(slot0.itemVO.count / slot2.compose_number)) then
+		if slot0.operateCount ~= math.clamp(slot1, 1, math.floor(slot0.itemVO.count / slot0.itemVO:getConfig("compose_number"))) then
 			slot0.operateCount = slot1
 
 			slot0:UpdateComposeCount()
 		end
 
-		slot0:updateItemCount(slot0.itemVO.count - slot0.operateCount * slot2.compose_number)
+		slot0:updateItemCount(slot0.itemVO.count - slot0.operateCount * slot3)
 	elseif slot0.operateMode == uv0.RESOLVE and slot0.operateCount ~= math.clamp(slot1, 0, slot0.operateMax) then
 		slot0.operateCount = slot1
 
@@ -336,23 +338,23 @@ slot0.SetOperateCount = function(slot0, slot1)
 	end
 end
 
-slot0.UpdateComposeCount = function(slot0)
+function slot0.UpdateComposeCount(slot0)
 	slot1 = slot0.operateCount
 
 	setText(slot0.operateValue, slot1)
 
-	slot2 = slot0.itemVO
-	slot3 = {}
+	slot2 = {}
+	slot6 = slot0.itemVO
 
-	table.insert(slot3, {
+	table.insert(slot2, {
 		type = DROP_TYPE_ITEM,
-		id = slot2:getTempCfgTable().target_id,
+		id = slot6:getConfig("target_id"),
 		count = slot1
 	})
 
-	slot7 = #slot3
+	slot6 = #slot2
 
-	slot8 = function(slot0, slot1, slot2)
+	function slot7(slot0, slot1, slot2)
 		slot1 = slot1 + 1
 
 		if slot0 == UIItemList.EventUpdate then
@@ -363,17 +365,17 @@ slot0.UpdateComposeCount = function(slot0)
 		end
 	end
 
-	UIItemList.StaticAlign(slot0.operateBonusList, slot0.operateBonusTpl, slot7, slot8)
+	UIItemList.StaticAlign(slot0.operateBonusList, slot0.operateBonusTpl, slot6, slot7)
 
-	for slot7, slot8 in pairs(slot0.operateBtns) do
-		setActive(slot8, slot7 == "Confirm" or slot7 == "Cancel")
+	for slot6, slot7 in pairs(slot0.operateBtns) do
+		setActive(slot7, slot6 == "Confirm" or slot6 == "Cancel")
 	end
 
 	setText(slot0.operateCountdesc, i18n("compose_amount_prefix"))
 	setActive(slot0.keepFateTog, false)
 end
 
-slot0.UpdateResolvePanel = function(slot0)
+function slot0.UpdateResolvePanel(slot0)
 	slot1 = slot0.operateCount
 
 	setText(slot0.operateValue, slot1)
@@ -390,7 +392,7 @@ slot0.UpdateResolvePanel = function(slot0)
 
 	slot7 = #slot3
 
-	slot8 = function(slot0, slot1, slot2)
+	function slot8(slot0, slot1, slot2)
 		slot1 = slot1 + 1
 
 		if slot0 == UIItemList.EventUpdate then
@@ -418,7 +420,7 @@ slot0.UpdateResolvePanel = function(slot0)
 	setButtonEnabled(slot0.operateBtns.Resolve, slot1 > 0)
 end
 
-slot0.UpdateBlueprintResolveNum = function(slot0)
+function slot0.UpdateBlueprintResolveNum(slot0)
 	slot1 = slot0.itemVO.count
 
 	if slot0.itemVO:getConfig("type") == Item.BLUEPRINT_TYPE then
@@ -433,7 +435,7 @@ slot0.UpdateBlueprintResolveNum = function(slot0)
 	slot0.operateMax = slot1
 end
 
-slot0.UpdateSpeedUpResolveNum = function(slot0)
+function slot0.UpdateSpeedUpResolveNum(slot0)
 	slot1 = slot0.itemVO.count
 
 	if slot0.itemVO:getConfig("type") == Item.TEC_SPEEDUP_TYPE then
@@ -441,7 +443,7 @@ slot0.UpdateSpeedUpResolveNum = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if slot0.leftEventTrigger then
 		ClearEventTrigger(slot0.leftEventTrigger)
 	end
@@ -453,7 +455,7 @@ slot0.willExit = function(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-slot0.PlayOpenBox = function(slot0, slot1, slot2)
+function slot0.PlayOpenBox(slot0, slot1, slot2)
 	if not slot1 or slot1 == "" then
 		slot2()
 

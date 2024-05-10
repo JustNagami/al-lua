@@ -1,6 +1,6 @@
 slot0 = class("MangaReadCommand", pm.SimpleCommand)
 
-slot0.execute = function(slot0, slot1)
+function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.mangaID
 	slot4 = slot2.mangaCB

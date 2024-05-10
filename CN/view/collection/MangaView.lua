@@ -1,11 +1,11 @@
 slot0 = class("MangaView", import("..base.BaseSubView"))
 slot0.MangaGroupName = "MANGA"
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "MangaUI"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0:initData()
 	slot0:initUI()
 	slot0:addListener()
@@ -15,17 +15,17 @@ slot0.OnInit = function(slot0)
 	slot0:tryShowTipMsgBox()
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0.resLoader:Clear()
 	slot0:stopUpdateEmpty()
 	slot0:stopUpdateDownloadBtnPanel()
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	return true
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.appreciateProxy = getProxy(AppreciateProxy)
 	slot0.resLoader = AutoLoader.New()
 	slot0.isShowNotRead = false
@@ -35,7 +35,7 @@ slot0.initData = function(slot0)
 	slot0.mangaIDListForShow = slot0:getMangaIDListForShow()
 end
 
-slot0.initUI = function(slot0)
+function slot0.initUI(slot0)
 	setLocalPosition(slot0._tf, Vector2.zero)
 
 	slot0._tf.anchorMin = Vector2.zero
@@ -59,14 +59,14 @@ slot0.initUI = function(slot0)
 	slot0:initUIText()
 end
 
-slot0.initUIText = function(slot0)
+function slot0.initUIText(slot0)
 	setText(slot0:findTF("ShowingAll/Text", slot0.readFilteBtn), i18n("cartoon_notall"))
 	setText(slot0:findTF("ShowingNotRead/Text", slot0.readFilteBtn), i18n("cartoon_notall"))
 	setText(slot0:findTF("Content/Bottom/BottomNotRead/Tag/Text", slot0.mangaTpl), i18n("cartoon_notall"))
 	setText(slot0:findTF("Text", slot0.emptyPanel), i18n("cartoon_haveno"))
 end
 
-slot0.addListener = function(slot0)
+function slot0.addListener(slot0)
 	onButton(slot0, slot0.likeFilteBtn, function ()
 		uv0.isShowLike = not uv0.isShowLike
 		uv0.mangaIDListForShow = uv0:getMangaIDListForShow()
@@ -114,7 +114,7 @@ slot0.addListener = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.updateMangaTpl = function(slot0, slot1, slot2)
+function slot0.updateMangaTpl(slot0, slot1, slot2)
 	slot3 = tf(slot2)
 	slot4 = slot0.mangaIDListForShow[slot1]
 
@@ -151,7 +151,7 @@ slot0.updateMangaTpl = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.initEmpty = function(slot0, slot1)
+function slot0.initEmpty(slot0, slot1)
 	slot2 = tf(slot1)
 
 	setActive(slot0:findTF("TopSpecial", slot2), false)
@@ -197,7 +197,7 @@ slot0.initEmpty = function(slot0, slot1)
 	slot0:startUpdateEmpty(slot1)
 end
 
-slot0.updateEmpty = function(slot0, slot1)
+function slot0.updateEmpty(slot0, slot1)
 	slot3 = slot0:findTF("Update", tf(slot1))
 	slot5 = slot0:findTF("Text", slot0:findTF("Btn", slot3))
 	slot7 = slot0:findTF("Slider", slot0:findTF("Progress", slot3))
@@ -242,7 +242,7 @@ slot0.updateEmpty = function(slot0, slot1)
 	end
 end
 
-slot0.startUpdateEmpty = function(slot0, slot1)
+function slot0.startUpdateEmpty(slot0, slot1)
 	if slot0.timer then
 		slot0.timer:Stop()
 	end
@@ -255,22 +255,22 @@ slot0.startUpdateEmpty = function(slot0, slot1)
 	slot0:updateEmpty(slot1)
 end
 
-slot0.stopUpdateEmpty = function(slot0, slot1)
+function slot0.stopUpdateEmpty(slot0, slot1)
 	if slot0.timer then
 		slot0.timer:Stop()
 	end
 end
 
-slot0.updateMangaList = function(slot0)
+function slot0.updateMangaList(slot0)
 	slot0.resLoader:Clear()
 
-	slot0.lScrollRectSC.onReturnItem = function(slot0, slot1)
+	function slot0.lScrollRectSC.onReturnItem(slot0, slot1)
 		if uv0.mangaIDListForShow[slot0 + 1] == false then
 			uv0:stopUpdateEmpty(slot1)
 		end
 	end
 
-	slot0.lScrollRectSC.onUpdateItem = function(slot0, slot1)
+	function slot0.lScrollRectSC.onUpdateItem(slot0, slot1)
 		if uv0.mangaIDListForShow[slot0 + 1] == false then
 			uv0:initEmpty(slot1)
 			uv0:updateEmpty(slot1)
@@ -282,7 +282,7 @@ slot0.updateMangaList = function(slot0)
 	slot0.lScrollRectSC:SetTotalCount(#slot0.mangaIDListForShow)
 end
 
-slot0.initDownloadBtnPanel = function(slot0)
+function slot0.initDownloadBtnPanel(slot0)
 	slot1 = slot0:findTF("Btn", slot0.downloadBtnPanel)
 	slot2 = slot0:findTF("Text", slot1)
 	slot3 = slot0:findTF("Progress", slot0.downloadBtnPanel)
@@ -306,7 +306,7 @@ slot0.initDownloadBtnPanel = function(slot0)
 	slot0:startUpdateDownloadBtnPanel()
 end
 
-slot0.updateDownloadBtnPanel = function(slot0)
+function slot0.updateDownloadBtnPanel(slot0)
 	slot2 = slot0:findTF("Text", slot0:findTF("Btn", slot0.downloadBtnPanel))
 	slot4 = slot0:findTF("Slider", slot0:findTF("Progress", slot0.downloadBtnPanel))
 
@@ -350,7 +350,7 @@ slot0.updateDownloadBtnPanel = function(slot0)
 	end
 end
 
-slot0.startUpdateDownloadBtnPanel = function(slot0)
+function slot0.startUpdateDownloadBtnPanel(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 	end
@@ -363,13 +363,13 @@ slot0.startUpdateDownloadBtnPanel = function(slot0)
 	slot0:updateDownloadBtnPanel()
 end
 
-slot0.stopUpdateDownloadBtnPanel = function(slot0)
+function slot0.stopUpdateDownloadBtnPanel(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 	end
 end
 
-slot0.updatePanel = function(slot0)
+function slot0.updatePanel(slot0)
 	slot1 = #slot0.mangaIDListForShow <= 0
 	slot2 = #slot0.mangaIDListForShow == 1 and slot0.mangaIDListForShow[1] == false
 
@@ -386,7 +386,7 @@ slot0.updatePanel = function(slot0)
 	end
 end
 
-slot0.updateBtnList = function(slot0)
+function slot0.updateBtnList(slot0)
 	setActive(slot0:findTF("On", slot0.likeFilteBtn), slot0.isShowLike)
 	setActive(slot0:findTF("ShowingAll", slot0.readFilteBtn), not slot0.isShowNotRead)
 	setActive(slot0:findTF("ShowingNotRead", slot0.readFilteBtn), slot0.isShowNotRead)
@@ -394,9 +394,9 @@ slot0.updateBtnList = function(slot0)
 	setActive(slot0:findTF("Down", slot0.orderBtn), not slot0.isUpOrder)
 end
 
-slot0.tryShowTipMsgBox = function(slot0)
+function slot0.tryShowTipMsgBox(slot0)
 	if slot0.appreciateProxy:isMangaHaveNewRes() then
-		slot2 = function()
+		function slot2()
 			PlayerPrefs.SetInt("mangaVersion", MangaConst.Version)
 			uv0:emit(CollectionScene.UPDATE_RED_POINT)
 		end
@@ -412,7 +412,7 @@ slot0.tryShowTipMsgBox = function(slot0)
 	end
 end
 
-slot0.openMangaViewLayer = function(slot0, slot1)
+function slot0.openMangaViewLayer(slot0, slot1)
 	LoadContextCommand.LoadLayerOnTopContext(Context.New({
 		mediator = MangaFullScreenMediator,
 		viewComponent = MangaFullScreenLayer,
@@ -427,7 +427,7 @@ slot0.openMangaViewLayer = function(slot0, slot1)
 	}))
 end
 
-slot0.updateLineAfterRead = function(slot0, slot1)
+function slot0.updateLineAfterRead(slot0, slot1)
 	if slot0:findTF(tostring(table.indexof(slot0.mangaIDListForShow, slot1) - 1), slot0.mangaContainer) then
 		slot8 = MangaConst.isMangaEverReadByID(slot1)
 
@@ -438,11 +438,11 @@ slot0.updateLineAfterRead = function(slot0, slot1)
 	end
 end
 
-slot0.updateToMangaID = function(slot0, slot1)
+function slot0.updateToMangaID(slot0, slot1)
 	slot0.lScrollRectSC:SetTotalCount(#slot0.mangaIDListForShow, defaultValue(slot0.lScrollRectSC:HeadIndexToValue(table.indexof(slot0.mangaIDListForShow, slot1) - 1), -1))
 end
 
-slot0.getMangaIDListForShow = function(slot0, slot1)
+function slot0.getMangaIDListForShow(slot0, slot1)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(pg.cartoon.all) do
@@ -485,11 +485,11 @@ slot0.getMangaIDListForShow = function(slot0, slot1)
 	return slot2
 end
 
-slot0.isMangaExist = function(slot0, slot1)
+function slot0.isMangaExist(slot0, slot1)
 	return slot0.group:CheckF(MangaConst.MANGA_PATH_PREFIX .. slot1) == DownloadState.None or slot3 == DownloadState.UpdateSuccess
 end
 
-slot0.isNeedShowDownBtn = function(slot0)
+function slot0.isNeedShowDownBtn(slot0)
 	if Application.isEditor then
 		return false
 	end

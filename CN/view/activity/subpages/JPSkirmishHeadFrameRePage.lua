@@ -1,6 +1,6 @@
 slot0 = class("JPSkirmishHeadFrameRePage", import(".TemplatePage.FrameReTemplatePage"))
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.bg = slot0:findTF("AD")
 	slot0.battleBtn = slot0:findTF("GoBtn", slot0.bg)
 	slot0.getBtn = slot0:findTF("GetBtn", slot0.bg)
@@ -10,7 +10,7 @@ slot0.OnInit = function(slot0)
 	slot0.frameGot = slot0:findTF("GotTag", slot0.bg)
 end
 
-slot0.OnUpdateFlush = function(slot0)
+function slot0.OnUpdateFlush(slot0)
 	if slot0.avatarConfig.target < slot0.activity.data1 then
 		slot1 = slot2 or slot1
 	end

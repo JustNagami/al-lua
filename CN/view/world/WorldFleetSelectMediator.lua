@@ -6,7 +6,7 @@ slot0.OnSelectEliteCommander = "WorldFleetSelectMediator.OnSelectEliteCommander"
 slot0.OnCommanderFormationOp = "WorldFleetSelectMediator.OnCommanderFormationOp"
 slot0.OnCommanderSkill = "WorldFleetSelectMediator.OnCommanderSkill"
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.OnSelectShip, function (slot0, slot1, slot2, slot3)
 		slot4 = tobool(slot2[slot3])
 		slot5 = {}
@@ -105,10 +105,10 @@ slot0.register = function(slot0)
 		}))
 	end)
 	slot0:bind(uv0.OnSelectEliteCommander, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 			maxCount = 1,
-			mode = CommandRoomScene.MODE_SELECT,
-			fleetType = CommandRoomScene.FLEET_TYPE_WORLD,
+			mode = CommanderCatScene.MODE_SELECT,
+			fleetType = CommanderCatScene.FLEET_TYPE_WORLD,
 			fleets = uv0.contextData.fleets,
 			activeCommander = Fleet.New({
 				ship_list = {},
@@ -163,7 +163,7 @@ slot0.register = function(slot0)
 	slot0.viewComponent:setCommanderPrefabs(getProxy(CommanderProxy):getPrefabFleet())
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.WORLD_ACTIVATE_DONE,
 		GAME.WORLD_FLEET_REDEPLOY_DONE,
@@ -172,7 +172,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == GAME.WORLD_ACTIVATE_DONE then
@@ -202,7 +202,7 @@ slot0.handleNotification = function(slot0, slot1)
 	end
 end
 
-slot0.GetDockCallbackFuncs = function(slot0, slot1, slot2, slot3)
+function slot0.GetDockCallbackFuncs(slot0, slot1, slot2, slot3)
 	slot4 = getProxy(BayProxy)
 
 	return function (slot0, slot1)
@@ -238,7 +238,7 @@ slot0.GetDockCallbackFuncs = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.SetFleetSuccess = function(slot0)
+function slot0.SetFleetSuccess(slot0)
 	slot1 = {
 		inPort = true
 	}

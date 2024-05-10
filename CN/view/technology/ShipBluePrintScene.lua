@@ -7,45 +7,44 @@ slot5 = -10
 slot6 = 2.3
 slot7 = 0.3
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ShipBluePrintUI"
 end
 
-slot0.setVersion = function(slot0, slot1)
+function slot0.setVersion(slot0, slot1)
 	slot0.version = slot1
 end
 
-slot0.setShipVOs = function(slot0, slot1)
+function slot0.setShipVOs(slot0, slot1)
 	slot0.shipVOs = slot1
 end
 
-slot0.getShipById = function(slot0, slot1)
+function slot0.getShipById(slot0, slot1)
 	return slot0.shipVOs[slot1]
 end
 
-slot0.setTaskVOs = function(slot0, slot1)
+function slot0.setTaskVOs(slot0, slot1)
 	slot0.taskVOs = slot1
 end
 
-slot0.getTaskById = function(slot0, slot1)
+function slot0.getTaskById(slot0, slot1)
 	return slot0.taskVOs[slot1] or Task.New({
 		id = slot1
 	})
 end
 
-slot0.getItemById = function(slot0, slot1)
+function slot0.getItemById(slot0, slot1)
 	return getProxy(BagProxy):getItemById(slot1) or Item.New({
 		count = 0,
-		type = DROP_TYPE_ITEM,
 		id = slot1
 	})
 end
 
-slot0.setShipBluePrints = function(slot0, slot1)
+function slot0.setShipBluePrints(slot0, slot1)
 	slot0.bluePrintByIds = slot1
 end
 
-slot0.updateShipBluePrintVO = function(slot0, slot1)
+function slot0.updateShipBluePrintVO(slot0, slot1)
 	if slot1 then
 		slot0.bluePrintByIds[slot1.id] = slot1
 	end
@@ -53,7 +52,7 @@ slot0.updateShipBluePrintVO = function(slot0, slot1)
 	slot0:initShips()
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.main = slot0:findTF("main")
 	slot0.centerPanel = slot0:findTF("center_panel", slot0.main)
 	slot0.blurPanel = slot0:findTF("blur_panel")
@@ -199,7 +198,7 @@ slot0.init = function(slot0)
 	slot0.svQuickExchange = BlueprintQuickExchangeView.New(slot0._tf, slot0.event)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot1 = getProxy(TechnologyProxy):getConfigMaxVersion()
 
 	if not slot0.contextData.shipBluePrintVO then
@@ -388,7 +387,7 @@ slot0.didEnter = function(slot0)
 	LeanTween.alpha(rtf(slot0.skillArrRight), 0.25, 1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 end
 
-slot0.updateVersionBtnTip = function(slot0)
+function slot0.updateVersionBtnTip(slot0)
 	slot3 = {}
 
 	for slot7 = 1, getProxy(TechnologyProxy):getConfigMaxVersion() do
@@ -400,7 +399,7 @@ slot0.updateVersionBtnTip = function(slot0)
 	setActive(slot0.versionBtn:Find("tip"), slot1:CheckPursuingCostTip(slot3))
 end
 
-slot0.updateVersionPanelBtnTip = function(slot0)
+function slot0.updateVersionPanelBtnTip(slot0)
 	for slot6 = 1, getProxy(TechnologyProxy):getConfigMaxVersion() do
 		setActive(slot0.versionPanel:Find("window/content/version_" .. slot6 .. "/tip"), slot1:CheckPursuingCostTip({
 			slot6
@@ -408,7 +407,7 @@ slot0.updateVersionPanelBtnTip = function(slot0)
 	end
 end
 
-slot0.updateAllPursuingCostTip = function(slot0)
+function slot0.updateAllPursuingCostTip(slot0)
 	slot0:updateVersionBtnTip()
 	slot0:updateVersionPanelBtnTip()
 
@@ -417,7 +416,7 @@ slot0.updateAllPursuingCostTip = function(slot0)
 	end
 end
 
-slot0.switchHide = function(slot0)
+function slot0.switchHide(slot0)
 	LeanTween.cancel(slot0.bottomPanel)
 	LeanTween.cancel(slot0.topPanel)
 	LeanTween.cancel(slot0.topBg)
@@ -442,7 +441,7 @@ slot0.switchHide = function(slot0)
 	setImageRaycastTarget(slot0.speedupBtn, slot1)
 end
 
-slot0.switchState = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.switchState(slot0, slot1, slot2, slot3, slot4)
 	slot5 = {}
 
 	if slot0.flag then
@@ -485,7 +484,7 @@ slot0.switchState = function(slot0, slot1, slot2, slot3, slot4)
 	seriesAsync(slot5, slot4)
 end
 
-slot0.switchUI = function(slot0, slot1, slot2, slot3)
+function slot0.switchUI(slot0, slot1, slot2, slot3)
 	LeanTween.cancel(slot0.leftPanle)
 	LeanTween.cancel(slot0.rightPanel)
 	LeanTween.cancel(slot0.centerPanel)
@@ -513,7 +512,7 @@ slot0.switchUI = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.createShipItem = function(slot0, slot1)
+function slot0.createShipItem(slot0, slot1)
 	slot2 = {
 		init = function (slot0)
 			slot0._go = uv0
@@ -606,7 +605,7 @@ slot0.createShipItem = function(slot0, slot1)
 	return slot2
 end
 
-slot0.initShips = function(slot0)
+function slot0.initShips(slot0)
 	slot0:checkStory()
 	slot0:filterBlueprints()
 
@@ -675,7 +674,7 @@ slot0.initShips = function(slot0)
 	end)
 end
 
-slot0.filterBlueprints = function(slot0)
+function slot0.filterBlueprints(slot0)
 	if slot0.contextData.shipBluePrintVO then
 		slot0.version = slot0.contextData.shipBluePrintVO:getConfig("blueprint_version")
 
@@ -710,7 +709,7 @@ slot0.filterBlueprints = function(slot0)
 	}))
 end
 
-slot0.setSelectedBluePrint = function(slot0)
+function slot0.setSelectedBluePrint(slot0)
 	assert(slot0.contextData.shipBluePrintVO, "should exist blue print")
 	slot0:updateInfo()
 	slot0:updatePainting()
@@ -745,7 +744,7 @@ slot0.setSelectedBluePrint = function(slot0)
 	end
 end
 
-slot0.updateMod = function(slot0)
+function slot0.updateMod(slot0)
 	if slot0.noUpdateMod then
 		return
 	end
@@ -754,7 +753,7 @@ slot0.updateMod = function(slot0)
 	slot0:updateModAdditionPanel()
 end
 
-slot0.updateModInfo = function(slot0, slot1)
+function slot0.updateModInfo(slot0, slot1)
 	slot2 = slot0:getShipById(slot1.shipId)
 	slot3 = slot0.contextData.shipBluePrintVO
 	slot4 = intProperties(slot3:getShipProperties(slot2))
@@ -762,7 +761,7 @@ slot0.updateModInfo = function(slot0, slot1)
 	slot6.level = slot6:getMaxLevel()
 	slot7 = intProperties(slot6:getShipProperties(slot2))
 
-	slot8 = function(slot0, slot1, slot2, slot3)
+	function slot8(slot0, slot1, slot2, slot3)
 		slot4 = uv0:findTF("attr_bg/name", slot0)
 		slot5 = uv0:findTF("attr_bg/value", slot0)
 		slot6 = uv0:findTF("attr_bg/max", slot0)
@@ -829,24 +828,24 @@ slot0.updateModInfo = function(slot0, slot1)
 	end
 end
 
-slot0.inModAnim = function(slot0)
+function slot0.inModAnim(slot0)
 	return slot0.inAnim
 end
 
-slot0.formatModLvTxt = function(slot0, slot1, slot2)
+function slot0.formatModLvTxt(slot0, slot1, slot2)
 	return "<size=45>" .. slot1 .. "</size>/<size=27>" .. slot2 .. "</size>"
 end
 
 slot8 = 0.2
 
-slot0.doModAnim = function(slot0, slot1, slot2)
+function slot0.doModAnim(slot0, slot1, slot2)
 	slot0:clearLeanTween()
 
 	slot0.inAnim = true
 	slot3 = {}
 
 	if slot1.level ~= slot2:getMaxLevel() then
-		slot5 = function(slot0, slot1, slot2)
+		function slot5(slot0, slot1, slot2)
 			slot0 = Clone(slot0)
 			slot0.level = slot1
 			slot0.exp = slot2
@@ -877,7 +876,7 @@ slot0.doModAnim = function(slot0, slot1, slot2)
 	else
 		slot4 = slot2:getMaxFateLevel()
 
-		slot5 = function(slot0, slot1, slot2)
+		function slot5(slot0, slot1, slot2)
 			slot0 = Clone(slot0)
 			slot0.fateLevel = slot1
 			slot0.exp = slot2
@@ -917,7 +916,7 @@ slot0.doModAnim = function(slot0, slot1, slot2)
 	end)
 end
 
-slot0.doAttrsAinm = function(slot0, slot1, slot2, slot3)
+function slot0.doAttrsAinm(slot0, slot1, slot2, slot3)
 	slot4 = {}
 	slot5 = slot0:getShipById(slot1.shipId)
 	slot6 = intProperties(slot1:getShipProperties(slot5))
@@ -952,7 +951,7 @@ end
 
 slot9 = 0.1
 
-slot0.doAttrAnim = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9)
+function slot0.doAttrAnim(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9)
 	table.insert(slot0.leanTweens, slot1)
 
 	slot10 = {}
@@ -977,7 +976,7 @@ slot0.doAttrAnim = function(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slo
 	end)
 end
 
-slot0.clearLeanTween = function(slot0, slot1)
+function slot0.clearLeanTween(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.leanTweens) do
 		if LeanTween.isTweening(go(slot6)) then
 			LeanTween.cancel(go(slot6))
@@ -995,7 +994,7 @@ slot0.clearLeanTween = function(slot0, slot1)
 	slot0.leanTweens = {}
 end
 
-slot0.updateModPanel = function(slot0)
+function slot0.updateModPanel(slot0)
 	slot1 = slot0.contextData.shipBluePrintVO
 	slot2 = slot0:getShipById(slot1.shipId)
 	slot6 = 0
@@ -1005,7 +1004,7 @@ slot0.updateModPanel = function(slot0)
 		slot9 = getProxy(TechnologyProxy)
 		slot7 = math.min(slot9:calcMaxPursuingCount(slot1), slot1:getUseageMaxItem())
 
-		slot8 = function(slot0)
+		function slot8(slot0)
 			slot3 = Clone(uv0)
 
 			slot3:addExp(slot0 * uv0:getItemExp())
@@ -1043,7 +1042,7 @@ slot0.updateModPanel = function(slot0)
 				})
 			end
 		end, SFX_PANEL)
-		setScrollText(findTF(slot0.itemInfo, "name/Text"), slot10.cfg.name)
+		setScrollText(findTF(slot0.itemInfo, "name/Text"), slot10:getConfig("name"))
 
 		slot15 = getProxy(PlayerProxy)
 		slot15 = slot15:getRawData()
@@ -1076,7 +1075,7 @@ slot0.updateModPanel = function(slot0)
 	else
 		slot7 = math.min(slot4.count, slot1:getUseageMaxItem())
 
-		slot8 = function(slot0)
+		function slot8(slot0)
 			slot3 = Clone(uv0)
 
 			slot3:addExp(slot0 * uv0:getItemExp())
@@ -1217,7 +1216,7 @@ slot0.updateModPanel = function(slot0)
 	setActive(slot0.fittingBtnEffect, false)
 end
 
-slot0.updateFittingPanel = function(slot0)
+function slot0.updateFittingPanel(slot0)
 	slot1 = slot0.contextData.shipBluePrintVO
 	slot2 = slot0:getShipById(slot1.shipId)
 	slot6 = 0
@@ -1227,7 +1226,7 @@ slot0.updateFittingPanel = function(slot0)
 		slot9 = getProxy(TechnologyProxy)
 		slot7 = math.min(slot9:calcMaxPursuingCount(slot1), slot1:getFateUseageMaxItem())
 
-		slot8 = function(slot0)
+		function slot8(slot0)
 			slot3 = Clone(uv0)
 
 			slot3:addExp(slot0 * uv0:getItemExp())
@@ -1265,7 +1264,7 @@ slot0.updateFittingPanel = function(slot0)
 				})
 			end
 		end, SFX_PANEL)
-		setScrollText(findTF(slot0.fittingItemInfo, "name/Text"), slot10.cfg.name)
+		setScrollText(findTF(slot0.fittingItemInfo, "name/Text"), slot10:getConfig("name"))
 
 		slot15 = getProxy(PlayerProxy)
 		slot15 = slot15:getRawData()
@@ -1298,7 +1297,7 @@ slot0.updateFittingPanel = function(slot0)
 	else
 		slot7 = math.min(slot4.count, slot1:getFateUseageMaxItem())
 
-		slot8 = function(slot0)
+		function slot8(slot0)
 			slot3 = Clone(uv0)
 
 			slot3:addExp(slot0 * uv0:getItemExp())
@@ -1485,7 +1484,7 @@ slot0.updateFittingPanel = function(slot0)
 	slot8(slot6)
 end
 
-slot0.updateFittingInfo = function(slot0, slot1)
+function slot0.updateFittingInfo(slot0, slot1)
 	slot2 = slot0:getShipById(slot1.shipId)
 	slot3 = slot0.contextData.shipBluePrintVO
 
@@ -1519,7 +1518,7 @@ slot0.updateFittingInfo = function(slot0, slot1)
 	end
 end
 
-slot0.updateFittingAttrPanel = function(slot0, slot1, slot2)
+function slot0.updateFittingAttrPanel(slot0, slot1, slot2)
 	setText(slot0:findTF("attr/name/Text", slot0.fittingAttrPanel), " + " .. defaultValue((slot2 or slot1):attrSpecialAddition()[AttributeType.Luck], 0))
 
 	slot0.blinkTarget = slot0.blinkTarget or {
@@ -1569,7 +1568,7 @@ slot0.updateFittingAttrPanel = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.updateModAdditionPanel = function(slot0)
+function slot0.updateModAdditionPanel(slot0)
 	for slot7 = slot0.modAdditionContainer.childCount - 1, #slot0.contextData.shipBluePrintVO:specialStrengthens() do
 		slot0:cloneTplTo(slot0.modAdditionTpl, slot0.modAdditionContainer)
 	end
@@ -1585,7 +1584,7 @@ slot0.updateModAdditionPanel = function(slot0)
 	end
 end
 
-slot0.updateAdvanceTF = function(slot0, slot1, slot2, slot3)
+function slot0.updateAdvanceTF(slot0, slot1, slot2, slot3)
 	slot4 = slot1.level < slot3.level
 
 	setActive(slot2:Find("mask"), slot4)
@@ -1601,7 +1600,7 @@ slot0.updateAdvanceTF = function(slot0, slot1, slot2, slot3)
 
 	slot8 = slot0:findTF("scroll_rect/info", slot0.modAdditionPanel)
 
-	slot9 = function(slot0, slot1)
+	function slot9(slot0, slot1)
 		slot2 = slot1[2]
 		slot7 = Ship.New({
 			configId = slot2
@@ -1653,7 +1652,7 @@ slot0.updateAdvanceTF = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.updateInfo = function(slot0)
+function slot0.updateInfo(slot0)
 	slot2 = nil
 
 	if slot0.contextData.shipBluePrintVO:isFetched() then
@@ -1733,7 +1732,7 @@ slot0.updateInfo = function(slot0)
 	setActive(slot0.lockPanel, slot9 and not slot12)
 end
 
-slot0.updateTasksProgress = function(slot0)
+function slot0.updateTasksProgress(slot0)
 	for slot7 = slot0.progressContainer.childCount, #slot0.contextData.shipBluePrintVO:getTaskIds() do
 		cloneTplTo(slot0.progressTpl, slot0.progressContainer)
 	end
@@ -1757,7 +1756,7 @@ slot0.updateTasksProgress = function(slot0)
 	end
 end
 
-slot0.updatePainting = function(slot0)
+function slot0.updatePainting(slot0)
 	slot2 = slot0.contextData.shipBluePrintVO:getShipVO()
 
 	if slot0.lastPaintingName and slot0.lastPaintingName ~= slot2:getPainting() then
@@ -1773,7 +1772,7 @@ slot0.updatePainting = function(slot0)
 	slot0:paintBreath()
 end
 
-slot0.updateProperty = function(slot0)
+function slot0.updateProperty(slot0)
 	slot2 = slot0.contextData.shipBluePrintVO:getShipVO()
 
 	slot0.propertyPanel:initProperty(slot2.configId, PropertyPanel.TypeFlat)
@@ -1831,7 +1830,7 @@ slot0.updateProperty = function(slot0)
 	end, SFX_CONFIRM)
 end
 
-slot0.updateTaskList = function(slot0)
+function slot0.updateTaskList(slot0)
 	for slot7 = slot0.taskContainer.childCount, #slot0.contextData.shipBluePrintVO:getTaskIds() do
 		cloneTplTo(slot0.taskTpl, slot0.taskContainer)
 	end
@@ -1863,7 +1862,7 @@ slot0.updateTaskList = function(slot0)
 	end
 end
 
-slot0.createTask = function(slot0, slot1)
+function slot0.createTask(slot0, slot1)
 	slot2 = {
 		title = slot0:findTF("title/name", slot1),
 		desc = slot0:findTF("desc/Text", slot1),
@@ -1918,7 +1917,7 @@ slot0.createTask = function(slot0, slot1)
 		end
 	end, SFX_PANEL)
 
-	slot2.update = function(slot0, slot1)
+	function slot2.update(slot0, slot1)
 		slot0:clearTimer()
 
 		slot0.autoCommit = true
@@ -1930,7 +1929,7 @@ slot0.createTask = function(slot0, slot1)
 		slot0:updateProgress(slot1)
 	end
 
-	slot2.updateItemInfo = function(slot0, slot1)
+	function slot2.updateItemInfo(slot0, slot1)
 		slot0.taskVO = slot1
 
 		changeToScrollText(slot0.title, slot1:getConfig("name"))
@@ -1964,7 +1963,7 @@ slot0.createTask = function(slot0, slot1)
 		setText(slot0.numberTF, slot1.index)
 	end
 
-	slot2.updateView = function(slot0, slot1)
+	function slot2.updateView(slot0, slot1)
 		slot3 = false
 		slot4 = false
 		slot5 = false
@@ -1994,7 +1993,7 @@ slot0.createTask = function(slot0, slot1)
 		setActive(slot0.timerClose, slot2 == ShipBluePrint.TASK_STATE_PAUSE and slot1.leftTime and slot1.leftTime > 0)
 	end
 
-	slot2.updateProgress = function(slot0, slot1)
+	function slot2.updateProgress(slot0, slot1)
 		slot3 = slot1:getProgress() / slot1:getConfig("target_num")
 
 		if slot1.taskState == ShipBluePrint.TASK_STATE_WAIT then
@@ -2042,7 +2041,7 @@ slot0.createTask = function(slot0, slot1)
 		setText(slot0.progreshadow, math.min(slot4, 100) .. "%")
 	end
 
-	slot2.addTimer = function(slot0, slot1, slot2)
+	function slot2.addTimer(slot0, slot1, slot2)
 		slot0:clearTimer()
 
 		slot0.taskTimer = Timer.New(function ()
@@ -2059,7 +2058,7 @@ slot0.createTask = function(slot0, slot1)
 		slot0.taskTimer.func()
 	end
 
-	slot2.clearTimer = function(slot0)
+	function slot2.clearTimer(slot0)
 		if slot0.taskTimer then
 			slot0.taskTimer:Stop()
 
@@ -2067,7 +2066,7 @@ slot0.createTask = function(slot0, slot1)
 		end
 	end
 
-	slot2.clear = function(slot0)
+	function slot2.clear(slot0)
 		slot0:clearTimer()
 
 		if slot0.itemSliderLT then
@@ -2080,7 +2079,7 @@ slot0.createTask = function(slot0, slot1)
 	return slot2
 end
 
-slot0.openPreView = function(slot0)
+function slot0.openPreView(slot0)
 	if slot0.contextData.shipBluePrintVO then
 		setActive(slot0.preViewer, true)
 		setParent(slot0.blurPanel, slot0._tf)
@@ -2122,7 +2121,7 @@ slot0.MAX_LEVEL_ATTRS = {
 	AttributeType.Dodge
 }
 
-slot0.updateMaxLevelAttrs = function(slot0, slot1)
+function slot0.updateMaxLevelAttrs(slot0, slot1)
 	if not slot1:isFetched() then
 		return
 	end
@@ -2147,7 +2146,7 @@ slot0.updateMaxLevelAttrs = function(slot0, slot1)
 	end
 end
 
-slot0.closePreview = function(slot0, slot1)
+function slot0.closePreview(slot0, slot1)
 	if slot0.previewer then
 		slot0.previewer:clear()
 
@@ -2166,15 +2165,15 @@ slot0.closePreview = function(slot0, slot1)
 	slot0.isShowPreview = nil
 end
 
-slot0.playLoadingAni = function(slot0)
+function slot0.playLoadingAni(slot0)
 	setActive(slot0.seaLoading, true)
 end
 
-slot0.stopLoadingAni = function(slot0)
+function slot0.stopLoadingAni(slot0)
 	setActive(slot0.seaLoading, false)
 end
 
-slot0.showBarrage = function(slot0)
+function slot0.showBarrage(slot0)
 	slot0.previewer = WeaponPreviewer.New(slot0.rawImage)
 	slot1 = slot0.previewer
 
@@ -2191,11 +2190,11 @@ slot0.showBarrage = function(slot0)
 	end)
 end
 
-slot0.getWaponIdsById = function(slot0, slot1)
+function slot0.getWaponIdsById(slot0, slot1)
 	return uv0[slot1].weapon_ids
 end
 
-slot0.getAllWeaponIds = function(slot0)
+function slot0.getAllWeaponIds(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(slot0.breakIds) do
@@ -2217,7 +2216,7 @@ slot0.getAllWeaponIds = function(slot0)
 	return slot1
 end
 
-slot0.getStages = function(slot0, slot1)
+function slot0.getStages(slot0, slot1)
 	slot2 = {}
 	slot3 = math.floor(slot1.configId / 10)
 
@@ -2231,7 +2230,7 @@ slot0.getStages = function(slot0, slot1)
 	return slot2
 end
 
-slot0.switchStage = function(slot0, slot1)
+function slot0.switchStage(slot0, slot1)
 	if slot0.breakOutId == slot1 then
 		return
 	end
@@ -2243,7 +2242,7 @@ slot0.switchStage = function(slot0, slot1)
 	end
 end
 
-slot0.clearTimers = function(slot0)
+function slot0.clearTimers(slot0)
 	slot1 = pairs
 	slot2 = slot0.taskTFs or {}
 
@@ -2252,7 +2251,7 @@ slot0.clearTimers = function(slot0)
 	end
 end
 
-slot0.cloneTplTo = function(slot0, slot1, slot2)
+function slot0.cloneTplTo(slot0, slot1, slot2)
 	slot3 = tf(Instantiate(slot1))
 
 	SetActive(slot3, true)
@@ -2261,7 +2260,7 @@ slot0.cloneTplTo = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	if isActive(slot0.msgPanel) then
 		pg.UIMgr.GetInstance():UnblurPanel(slot0.msgPanel, slot0.top)
 		setActive(slot0.msgPanel, false)
@@ -2281,7 +2280,7 @@ slot0.onBackPressed = function(slot0)
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	if isActive(slot0.msgPanel) then
 		pg.UIMgr.GetInstance():UnblurPanel(slot0.msgPanel, slot0.top)
 		setActive(slot0.msgPanel, false)
@@ -2324,19 +2323,19 @@ slot0.willExit = function(slot0)
 	slot0.svQuickExchange:Destroy()
 end
 
-slot0.paintBreath = function(slot0)
+function slot0.paintBreath(slot0)
 	LeanTween.cancel(go(slot0.painting))
 	LeanTween.moveY(rtf(slot0.painting), uv0, uv1):setLoopPingPong():setEase(LeanTweenType.easeInOutCubic):setFrom(0)
 end
 
-slot0.buildStartAni = function(slot0, slot1, slot2)
+function slot0.buildStartAni(slot0, slot1, slot2)
 	if slot1 == "researchStartWindow" then
 		slot0.progressPanel.localScale = Vector3(0, 1, 1)
 
 		LeanTween.scale(slot0.progressPanel, Vector3(1, 1, 1), 0.2):setDelay(2)
 	end
 
-	slot3 = function()
+	function slot3()
 		uv0.awakenAni:SetActive(true)
 
 		uv0.awakenPlay = true
@@ -2375,7 +2374,7 @@ slot0.buildStartAni = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.showFittingMsgPanel = function(slot0, slot1)
+function slot0.showFittingMsgPanel(slot0, slot1)
 	slot2 = pg.UIMgr.GetInstance()
 
 	slot2:BlurPanel(slot0.msgPanel)
@@ -2447,7 +2446,7 @@ slot0.showFittingMsgPanel = function(slot0, slot1)
 	end)()
 end
 
-slot0.showUnlockPanel = function(slot0)
+function slot0.showUnlockPanel(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:BlurPanel(slot0.unlockPanel)
@@ -2455,23 +2454,23 @@ slot0.showUnlockPanel = function(slot0)
 
 	slot1 = slot0.contextData.shipBluePrintVO.id
 	slot2 = slot0.contextData.shipBluePrintVO
-	slot2 = slot2:getUnlockItem()
-	slot3 = slot0.contextData.shipBluePrintVO
-	slot3 = slot3:getShipVO()
-	slot4 = slot3:getPainting()
-	slot5 = slot0.unlockPanel
-	slot5 = slot5:Find("window/content")
-
-	GetImageSpriteFromAtlasAsync("shipYardIcon/" .. slot4, slot4, slot5:Find("Image/mask/icon"), true)
-	setText(slot5:Find("words/Text"), i18n("techpackage_item_use_1", slot3:getName()))
-	setText(slot5:Find("words/Text_2"), i18n("techpackage_item_use_2", getDropName({
+	slot3 = Drop.New({
 		type = DROP_TYPE_ITEM,
-		id = slot2
-	})))
+		id = slot2:getUnlockItem()
+	})
+	slot4 = slot0.contextData.shipBluePrintVO
+	slot4 = slot4:getShipVO()
+	slot5 = slot4:getPainting()
+	slot6 = slot0.unlockPanel
+	slot6 = slot6:Find("window/content")
+
+	GetImageSpriteFromAtlasAsync("shipYardIcon/" .. slot5, slot5, slot6:Find("Image/mask/icon"), true)
+	setText(slot6:Find("words/Text"), i18n("techpackage_item_use_1", slot4:getName()))
+	setText(slot6:Find("words/Text_2"), i18n("techpackage_item_use_2", slot3:getName()))
 
 	slot10 = slot0.unlockPanel
 
-	GetImageSpriteFromAtlasAsync(pg.item_data_statistics[slot2].icon, "", slot10:Find("window/confirm_btn/Image/Image"))
+	GetImageSpriteFromAtlasAsync(slot3:getIcon(), "", slot10:Find("window/confirm_btn/Image/Image"))
 
 	slot8 = slot0.unlockPanel
 
@@ -2486,7 +2485,7 @@ slot0.showUnlockPanel = function(slot0)
 	end, SFX_CANCEL)
 end
 
-slot0.checkStory = function(slot0)
+function slot0.checkStory(slot0)
 	slot0.storyMgr = slot0.storyMgr or pg.NewStoryMgr.GetInstance()
 
 	if ({

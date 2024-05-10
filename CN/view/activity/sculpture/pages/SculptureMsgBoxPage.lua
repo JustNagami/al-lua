@@ -1,10 +1,10 @@
 slot0 = class("SculptureMsgBoxPage", import("view.base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "SculptureMsgboxUI"
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 	slot0.contentTxt = slot0:findTF("frame/Text"):GetComponent(typeof(Text))
 	slot0.nextBtn = slot0:findTF("frame/btn")
 	slot0.confirmBtn = slot0:findTF("frame/btn_confrim")
@@ -17,7 +17,7 @@ slot0.OnLoaded = function(slot0)
 	setText(slot0:findTF("frame/tip"), i18n("sculpture_close_tip"))
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	onButton(slot0, slot0.confirmBtn, function ()
 		if uv0.settings.onYes then
 			uv0.settings.onYes()
@@ -37,7 +37,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Show = function(slot0, slot1)
+function slot0.Show(slot0, slot1)
 	uv0.super.Show(slot0)
 
 	slot0.settings = slot1
@@ -70,7 +70,7 @@ slot0.Show = function(slot0, slot1)
 	setActive(slot0.confirmBtn, not slot1.nextBtn)
 end
 
-slot0.LoadChar = function(slot0, slot1)
+function slot0.LoadChar(slot0, slot1)
 	if slot0.charName == slot1 then
 		return
 	end
@@ -93,7 +93,7 @@ slot0.LoadChar = function(slot0, slot1)
 	slot0.charName = slot1
 end
 
-slot0.ClearChar = function(slot0)
+function slot0.ClearChar(slot0)
 	if slot0.charName and slot0.charGo then
 		PoolMgr.GetInstance():ReturnSpineChar(slot0.charName, slot0.charGo)
 
@@ -102,7 +102,7 @@ slot0.ClearChar = function(slot0)
 	end
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0:ClearChar()
 end
 

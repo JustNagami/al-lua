@@ -12,11 +12,11 @@ slot4.ATTR_PRE = {
 	[slot3.WeaponDamageAttr.AIR] = "injureRatioByAir"
 }
 
-slot4.Ctor = function(slot0, slot1)
+function slot4.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
 end
 
-slot4.SetArgs = function(slot0, slot1, slot2)
+function slot4.SetArgs(slot0, slot1, slot2)
 	slot3 = slot0._tempData.arg_list
 	slot0._convert = slot3.convert_rate
 	slot0._duration = slot3.duration
@@ -24,13 +24,13 @@ slot4.SetArgs = function(slot0, slot1, slot2)
 	slot0._attrTable = {}
 end
 
-slot4.onTakeDamage = function(slot0, slot1, slot2, slot3)
+function slot4.onTakeDamage(slot0, slot1, slot2, slot3)
 	if slot3.damageAttr then
 		slot0._attrTable[slot4] = (slot0._attrTable[slot4] or 0) + slot3.damage
 	end
 end
 
-slot4.onRemove = function(slot0, slot1, slot2)
+function slot4.onRemove(slot0, slot1, slot2)
 	slot3 = 0
 	slot4 = nil
 
@@ -50,7 +50,7 @@ slot4.onRemove = function(slot0, slot1, slot2)
 	slot1:AddBuff(uv1.Battle.BattleBuffSelfModifyUnit.New(slot6.id, 1, slot1, slot6))
 end
 
-slot4.generateBuff = function(slot0, slot1, slot2, slot3)
+function slot4.generateBuff(slot0, slot1, slot2, slot3)
 	return {
 		{
 			time = slot1

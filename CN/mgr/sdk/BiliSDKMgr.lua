@@ -6,13 +6,13 @@ PACKAGE_TYPE_SHAJOY = 2
 PACKAGE_TYPE_UNION = 3
 PACKAGE_TYPE_YYX = 4
 
-StartSdkLogin = function()
+function StartSdkLogin()
 	Timer.New(function ()
 		uv0:OnLoginTimeOut()
 	end, 30, 1):Start()
 end
 
-GoLoginScene = function()
+function GoLoginScene()
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -23,7 +23,7 @@ GoLoginScene = function()
 	gcAll()
 end
 
-SDKLogined = function(slot0, slot1, slot2, slot3)
+function SDKLogined(slot0, slot1, slot2, slot3)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -49,7 +49,7 @@ SDKLogined = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-SDKLogouted = function(slot0)
+function SDKLogouted(slot0)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -61,7 +61,7 @@ SDKLogouted = function(slot0)
 	})
 end
 
-PaySuccess = function(slot0, slot1)
+function PaySuccess(slot0, slot1)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -75,7 +75,7 @@ PaySuccess = function(slot0, slot1)
 	})
 end
 
-PayFailed = function(slot0, slot1)
+function PayFailed(slot0, slot1)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -122,7 +122,7 @@ PayFailed = function(slot0, slot1)
 	end
 end
 
-OnSDKInitFailed = function(slot0)
+function OnSDKInitFailed(slot0)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -136,7 +136,7 @@ OnSDKInitFailed = function(slot0)
 	})
 end
 
-ShowMsgBox = function(slot0)
+function ShowMsgBox(slot0)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -149,32 +149,32 @@ ShowMsgBox = function(slot0)
 	})
 end
 
-OnShowLicenceFailed = function()
+function OnShowLicenceFailed()
 end
 
-OnShowPrivateFailed = function()
+function OnShowPrivateFailed()
 end
 
-OnShareSuccess = function()
+function OnShareSuccess()
 end
 
-OnShareFailed = function()
+function OnShareFailed()
 end
 
-CloseAgreementView = function()
+function CloseAgreementView()
 end
 
-OnDeleteAccountSuccess = function()
+function OnDeleteAccountSuccess()
 	pg.m02:sendNotification(GAME.LOGOUT, {
 		code = 0
 	})
 end
 
-OnDeleteAccountDisable = function()
+function OnDeleteAccountDisable()
 	pg.TipsMgr.GetInstance():ShowTips("功能未开启")
 end
 
-OnDeleteAccountFailed = function()
+function OnDeleteAccountFailed()
 	pg.TipsMgr.GetInstance():ShowTips("注销失败")
 end
 
@@ -244,7 +244,11 @@ return {
 	BindCPU = function ()
 	end,
 	DeleteAccount = function ()
-		uv0:DeleteAccount()
+		if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_UNION then
+			uv0:DeleteAccountForUO(getProxy(PlayerProxy):getRawData() and slot4:GetName() or "", getProxy(ServerProxy):getRawData()[getProxy(UserProxy):getRawData() and slot1.server or 0] and slot2.name or "", slot4 and tostring(slot4.level) or "0", pg.TimeMgr.GetInstance():STimeDescS(slot4 and slot4:GetRegisterTime() or 0, "%Y/%m/%d"))
+		else
+			uv0:DeleteAccount()
+		end
 	end,
 	OnAndoridBackPress = function ()
 		if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI or slot0 == PACKAGE_TYPE_SHAJOY then
@@ -314,5 +318,8 @@ return {
 	end,
 	Survey = function (slot0)
 		uv0:OpenWeb(slot0)
+	end,
+	IsHuaweiPackage = function ()
+		return uv0:isHuawei()
 	end
 }

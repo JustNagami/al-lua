@@ -1,15 +1,15 @@
 slot0 = class("DOAPPMiniGameView", import("view.miniGame.MiniGameTemplateView"))
 slot0.canSelectStage = false
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "DOAPPMiniGameUI"
 end
 
-slot0.getGameController = function(slot0)
+function slot0.getGameController(slot0)
 	return DOAPPMiniGameController
 end
 
-slot0.initPageUI = function(slot0)
+function slot0.initPageUI(slot0)
 	uv0.super.initPageUI(slot0)
 
 	slot3 = slot0.rtTitlePage
@@ -86,7 +86,7 @@ slot0.initPageUI = function(slot0)
 	end)
 end
 
-slot1 = function(slot0, slot1, slot2, slot3)
+function slot1(slot0, slot1, slot2, slot3)
 	eachChild(slot0:Find("mask"), function (slot0)
 		setActive(slot0, slot0.name == uv0)
 	end)
@@ -101,10 +101,10 @@ slot1 = function(slot0, slot1, slot2, slot3)
 	end)
 end
 
-slot0.initOpenUISwich = function(slot0)
+function slot0.initOpenUISwich(slot0)
 	uv0.super.initOpenUISwich(slot0)
 
-	slot0.openSwitchDic.result = function()
+	function slot0.openSwitchDic.result()
 		uv0(uv1.rtTitlePage:Find("result/window/self"), uv1.gameController:GetResultInfo(false))
 		uv0(uv1.rtTitlePage:Find("result/window/other"), uv1.gameController:GetResultInfo(true))
 
@@ -113,20 +113,20 @@ slot0.initOpenUISwich = function(slot0)
 		end
 	end
 
-	slot0.openSwitchDic.select = function()
+	function slot0.openSwitchDic.select()
 		triggerToggle(uv0.rtTitlePage:Find("select/content/Marie"), true)
 	end
 end
 
-slot0.initBackPressSwitch = function(slot0)
+function slot0.initBackPressSwitch(slot0)
 	uv0.super.initBackPressSwitch(slot0)
 
-	slot0.backPressSwitchDic.select = function()
+	function slot0.backPressSwitchDic.select()
 		uv0:openUI("main")
 	end
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0.gameController:willExit()
 end
 

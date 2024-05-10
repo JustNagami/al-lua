@@ -9,13 +9,13 @@ slot0 = {
 	y = pg.gameset.air_dominance_y.key_value
 }
 
-calcAirDominanceValue = function(slot0, slot1)
+function calcAirDominanceValue(slot0, slot1)
 	slot2 = slot0:getAircraftCount()
 
 	return defaultValue(slot0:getProperties(slot1)[AttributeType.Air], 0) * (defaultValue(slot2[EquipType.FighterAircraft], 0) * uv0.p + defaultValue(slot2[EquipType.TorpedoAircraft], 0) * uv0.q + defaultValue(slot2[EquipType.BomberAircraft], 0) * uv0.s + defaultValue(slot2[EquipType.SeaPlane], 0) * uv0.t) * (0.8 + slot0.level * uv0.r / 100) / 100 + defaultValue(slot0:getEquipmentProperties()[AttributeType.AirDominate], 0)
 end
 
-calcAirDominanceStatus = function(slot0, slot1, slot2)
+function calcAirDominanceStatus(slot0, slot1, slot2)
 	slot1 = slot1 * uv0.a / (slot2 + uv0.a)
 
 	if slot0 == 0 then
@@ -83,7 +83,7 @@ calcAirDominanceStatus = function(slot0, slot1, slot2)
 	end
 end
 
-calcPositionAngle = function(slot0, slot1)
+function calcPositionAngle(slot0, slot1)
 	slot2 = Vector3(slot0, slot1, 0)
 	slot3 = Vector3.up
 	slot4 = Vector2.Angle(slot2, slot3)
@@ -91,7 +91,7 @@ calcPositionAngle = function(slot0, slot1)
 	return Vector3.Cross(slot2, slot3).z > 0 and slot4 or -slot4
 end
 
-DOAParabolaCalc = function(slot0, slot1, slot2)
+function DOAParabolaCalc(slot0, slot1, slot2)
 	assert(slot2 < slot1 * slot1 * slot0 / 2, "x is unreal")
 
 	slot3 = slot0 * math.sqrt(slot1 / 2)
@@ -112,7 +112,7 @@ DOAParabolaCalc = function(slot0, slot1, slot2)
 	return slot4
 end
 
-mergeSort = function(slot0, slot1)
+function mergeSort(slot0, slot1)
 	slot1 = slot1 or function (slot0, slot1)
 		return slot0 <= slot1
 	end
@@ -157,7 +157,7 @@ mergeSort = function(slot0, slot1)
 	end)(1, #slot0)
 end
 
-LineLine = function(slot0, slot1, slot2, slot3)
+function LineLine(slot0, slot1, slot2, slot3)
 	slot4 = false
 	slot5, slot6 = nil
 
@@ -170,4 +170,97 @@ LineLine = function(slot0, slot1, slot2, slot3)
 	end
 
 	return slot4, slot5, slot6
+end
+
+function ConversionBase(slot0, slot1)
+	slot2 = {
+		0
+	}
+	slot3 = 0
+
+	while slot1 > 0 do
+		slot3 = slot3 + 1
+		slot2[slot3] = slot1 % slot0
+
+		if slot2[slot3] < 10 then
+			slot2[slot3] = string.format("%c", slot2[slot3] + 48)
+		else
+			slot2[slot3] = string.format("%c", slot2[slot3] + 55)
+		end
+
+		slot1 = math.floor(slot1 / slot0)
+	end
+
+	for slot7 = 1, math.floor(#slot2 / 2) do
+		slot2[#slot2 - slot7 + 1] = slot2[slot7]
+		slot2[slot7] = slot2[#slot2 - slot7 + 1]
+	end
+
+	return table.concat(slot2)
+end
+
+base64 = {}
+slot1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+
+function base64.enc(slot0)
+	slot1 = slot0:gsub(".", function (slot0)
+		slot1 = ""
+		slot2 = slot0:byte()
+
+		for slot6 = 8, 1, -1 do
+			slot1 = slot1 .. (slot2 % 2^slot6 - slot2 % 2^(slot6 - 1) > 0 and "1" or "0")
+		end
+
+		return slot1
+	end) .. "0000"
+
+	return slot1:gsub("%d%d%d?%d?%d?%d?", function (slot0)
+		if #slot0 < 6 then
+			return ""
+		end
+
+		slot1 = 0
+
+		for slot5 = 1, 6 do
+			slot1 = slot1 + (slot0:sub(slot5, slot5) == "1" and 2^(6 - slot5) or 0)
+		end
+
+		return uv0:sub(slot1 + 1, slot1 + 1)
+	end) .. ({
+		"",
+		"==",
+		"="
+	})[#slot0 % 3 + 1]
+end
+
+function base64.dec(slot0)
+	slot0 = string.gsub(slot0, "[^" .. uv0 .. "=]", "")
+	slot1 = slot0:gsub(".", function (slot0)
+		if slot0 == "=" then
+			return ""
+		end
+
+		slot1 = ""
+		slot2 = uv0:find(slot0) - 1
+
+		for slot6 = 6, 1, -1 do
+			slot1 = slot1 .. (slot2 % 2^slot6 - slot2 % 2^(slot6 - 1) > 0 and "1" or "0")
+		end
+
+		return slot1
+	end)
+
+	return slot1:gsub("%d%d%d?%d?%d?%d?%d?%d?", function (slot0)
+		if #slot0 ~= 8 then
+			return ""
+		end
+
+		slot1 = 0
+
+		for slot5 = 1, 8 do
+			slot1 = slot1 + (slot0:sub(slot5, slot5) == "1" and 2^(8 - slot5) or 0)
+		end
+
+		return string.char(slot1)
+	end)
 end

@@ -4,16 +4,16 @@ slot2 = "#70747F"
 slot3 = "#BCBCBC"
 slot4 = "#FFFFFF"
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot0.recordList = {}
 	slot0.displays = {}
 end
 
-slot0.Add = function(slot0, slot1)
+function slot0.Add(slot0, slot1)
 	table.insert(slot0.recordList, slot1)
 end
 
-slot0.GetContentList = function(slot0)
+function slot0.GetContentList(slot0)
 	for slot5, slot6 in ipairs(slot0:Convert()) do
 		table.insert(slot0.displays, slot6)
 	end
@@ -21,7 +21,7 @@ slot0.GetContentList = function(slot0)
 	return slot0.displays
 end
 
-slot0.Convert = function(slot0)
+function slot0.Convert(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in ipairs(slot0.recordList) do
@@ -37,7 +37,7 @@ slot0.Convert = function(slot0)
 	return slot1
 end
 
-slot5 = function(slot0)
+function slot5(slot0)
 	slot2 = slot0
 
 	for slot6, slot7 in ipairs({
@@ -52,7 +52,7 @@ slot5 = function(slot0)
 	return slot2
 end
 
-slot0.CollectAsideContent = function(slot0, slot1, slot2)
+function slot0.CollectAsideContent(slot0, slot1, slot2)
 	slot4 = {}
 
 	for slot8, slot9 in ipairs(slot2:GetSequence()) do
@@ -65,7 +65,7 @@ slot0.CollectAsideContent = function(slot0, slot1, slot2)
 	})
 end
 
-slot0.CollectDialogueContent = function(slot0, slot1, slot2)
+function slot0.CollectDialogueContent(slot0, slot1, slot2)
 	slot3 = slot2:GetPaintingIcon()
 	slot4 = slot2:GetName()
 	slot5 = ""
@@ -105,12 +105,12 @@ slot0.CollectDialogueContent = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.Clear = function(slot0)
+function slot0.Clear(slot0)
 	slot0.recordList = {}
 	slot0.displays = {}
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Clear()
 end
 

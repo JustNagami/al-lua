@@ -1,6 +1,6 @@
 slot0 = class("ValentineQteGameResultWindow")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	pg.DelegateInfo.New(slot0)
 
 	slot0._tf = slot1
@@ -24,7 +24,7 @@ slot0.Ctor = function(slot0, slot1)
 	setActive(slot0.nameTxt.gameObject, false)
 end
 
-slot0.Init = function(slot0)
+function slot0.Init(slot0)
 	onButton(slot0, slot0.backBtn, function ()
 		if uv0.callback then
 			uv0.callback()
@@ -39,7 +39,7 @@ slot0.Init = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.Show = function(slot0, slot1, slot2)
+function slot0.Show(slot0, slot1, slot2)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 
 	slot0.statistics = slot1
@@ -49,7 +49,7 @@ slot0.Show = function(slot0, slot1, slot2)
 	slot0:Flush()
 end
 
-slot0.Flush = function(slot0)
+function slot0.Flush(slot0)
 	slot0.scoreTxt.text = slot0.statistics.Score
 	slot0.perfectTxt.text = slot0.statistics.Perfect
 	slot0.greatTxt.text = slot0.statistics.Great
@@ -59,7 +59,7 @@ slot0.Flush = function(slot0)
 	slot0.chatTxt.text = slot0:GetChatTxt(slot0.statistics.Score)
 end
 
-slot0.GetChatTxt = function(slot0, slot1)
+function slot0.GetChatTxt(slot0, slot1)
 	slot2 = nil
 
 	for slot6, slot7 in ipairs(ValentineQteGameConst.CHAT_CONTENT) do
@@ -80,7 +80,7 @@ slot0.GetChatTxt = function(slot0, slot1)
 	end
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 
 	slot0.callback = nil
@@ -88,7 +88,7 @@ slot0.Hide = function(slot0)
 	setActive(slot0._tf, false)
 end
 
-slot0.Destroy = function(slot0)
+function slot0.Destroy(slot0)
 	slot0:Hide()
 	pg.DelegateInfo.Dispose(slot0)
 end

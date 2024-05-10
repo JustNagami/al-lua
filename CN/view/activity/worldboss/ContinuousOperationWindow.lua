@@ -1,11 +1,11 @@
 slot0 = class("ContinuousOperationWindow", import("view.base.BaseUI"))
 slot1 = 15
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ContinuousOperationWindowUI"
 end
 
-slot0.ResUISettings = function(slot0)
+function slot0.ResUISettings(slot0)
 	return {
 		reset = true,
 		gemOffsetX = 628,
@@ -13,7 +13,7 @@ slot0.ResUISettings = function(slot0)
 	}
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0.panel = slot0._tf:Find("window/panel")
 	slot0._countSelect = slot0.panel:Find("content")
 	slot0._pageUtil = PageUtil.New(slot0._countSelect:Find("value_bg/left"), slot0._countSelect:Find("value_bg/right"), slot0._countSelect:Find("max"), slot0._countSelect:Find("value_bg/value"))
@@ -28,11 +28,11 @@ slot0.init = function(slot0)
 	setText(slot0.panel:Find("ticket/Text"), i18n("multiple_sorties_challenge_ticket_use"))
 end
 
-slot0.SetActivity = function(slot0, slot1)
+function slot0.SetActivity(slot0, slot1)
 	slot0.activity = slot1
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	onButton(slot0, slot0.panel:Find("battle"), function ()
 		if getProxy(PlayerProxy):getRawData().oil < uv0.contextData.oilCost * uv0.contextData.battleTimes then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
@@ -59,10 +59,13 @@ slot0.didEnter = function(slot0)
 		uv0:UpdateContent()
 	end, SFX_PANEL, SFX_CANCEL)
 
-	slot7 = LoadSprite(itemId2icon(pg.player_resource[pg.activity_event_worldboss[slot0.activity:getConfig("config_id")].ticket].itemid), "")
+	slot6 = LoadSprite(Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = pg.activity_event_worldboss[slot0.activity:getConfig("config_id")].ticket
+	}):getIcon(), "")
 
-	slot0.consumeText:AddSprite("ticket", slot7)
-	setImageSprite(slot0.panel:Find("ticket/Text/Icon"), slot7)
+	slot0.consumeText:AddSprite("ticket", slot6)
+	setImageSprite(slot0.panel:Find("ticket/Text/Icon"), slot6)
 	slot0._pageUtil:setNumUpdate(function (slot0)
 		uv0.contextData.battleTimes = slot0
 
@@ -77,7 +80,7 @@ slot0.didEnter = function(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-slot0.UpdateContent = function(slot0)
+function slot0.UpdateContent(slot0)
 	slot10 = tostring(slot7)
 
 	if (slot0.contextData.useTicket and math.clamp(slot0.contextData.battleTimes - slot0.activity:GetStageBonus(slot0.contextData.stageId), 0, getProxy(PlayerProxy):getRawData():getResource(pg.activity_event_worldboss[slot0.activity:getConfig("config_id")].ticket)) or 0) > 0 then
@@ -106,7 +109,7 @@ slot0.UpdateContent = function(slot0)
 	slot0.consumeText.text = slot13
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot0._pageUtil:Dispose()
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end

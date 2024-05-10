@@ -9,11 +9,11 @@ AIRI_PLATFORM_AMAZON = "amazon"
 AIRI_PLATFORM_GPS = "gps"
 AIRI_SDK_INITED = false
 
-GoLoginScene = function()
+function GoLoginScene()
 	print("JP do nothing")
 end
 
-AiriInitResult = function(slot0)
+function AiriInitResult(slot0)
 	pg.UIMgr.GetInstance():LoadingOff()
 
 	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
@@ -24,19 +24,19 @@ AiriInitResult = function(slot0)
 	end
 end
 
-AiriGoLogin = function(slot0)
+function AiriGoLogin(slot0)
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LOGIN, {
 		loginPlatform = slot0
 	})
 	gcAll()
 end
 
-AiriLogin = function(slot0)
+function AiriLogin(slot0)
 	slot1 = pg.UIMgr.GetInstance()
 
 	slot1:LoadingOff()
 
-	slot1 = function()
+	function slot1()
 		pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
 			user = User.New({
 				type = 1,
@@ -77,7 +77,7 @@ AiriLogin = function(slot0)
 	end
 end
 
-AiriTranscodeResult = function(slot0)
+function AiriTranscodeResult(slot0)
 	pg.UIMgr.GetInstance():LoadingOff()
 
 	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
@@ -87,7 +87,7 @@ AiriTranscodeResult = function(slot0)
 	end
 end
 
-AiriBuyResult = function(slot0)
+function AiriBuyResult(slot0)
 	uv0.OnAiriBuying = -1
 
 	pg.UIMgr.GetInstance():LoadingOff()
@@ -106,7 +106,7 @@ AiriBuyResult = function(slot0)
 	end
 end
 
-SetBirthResult = function(slot0)
+function SetBirthResult(slot0)
 	pg.UIMgr.GetInstance():LoadingOff()
 
 	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
@@ -114,7 +114,7 @@ SetBirthResult = function(slot0)
 	end
 end
 
-LinkSocialResult = function(slot0)
+function LinkSocialResult(slot0)
 	uv0.EndAiriTimeout()
 
 	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
@@ -122,7 +122,7 @@ LinkSocialResult = function(slot0)
 	end
 end
 
-UnlinkSocialResult = function(slot0)
+function UnlinkSocialResult(slot0)
 	uv0.EndAiriTimeout()
 
 	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
@@ -132,7 +132,7 @@ UnlinkSocialResult = function(slot0)
 	end
 end
 
-VerificationCodeResult = function(slot0)
+function VerificationCodeResult(slot0)
 	pg.UIMgr.GetInstance():LoadingOff()
 
 	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
@@ -143,7 +143,7 @@ VerificationCodeResult = function(slot0)
 	end
 end
 
-OnAppPauseForSDK = function(slot0)
+function OnAppPauseForSDK(slot0)
 	if not AIRI_SDK_INITED then
 		return
 	end
@@ -155,7 +155,7 @@ OnAppPauseForSDK = function(slot0)
 	end
 end
 
-AccountDeleteResult = function(slot0, slot1, slot2, slot3, slot4)
+function AccountDeleteResult(slot0, slot1, slot2, slot3, slot4)
 	slot5 = pg.UIMgr.GetInstance()
 
 	slot5:LoadingOff()
@@ -184,7 +184,7 @@ AccountDeleteResult = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-AccountRebornResult = function(slot0, slot1)
+function AccountRebornResult(slot0, slot1)
 	slot2 = pg.UIMgr.GetInstance()
 
 	slot2:LoadingOff()
@@ -196,6 +196,10 @@ AccountRebornResult = function(slot0, slot1)
 	}) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("tip_account_del_reborn"))
 	end
+end
+
+function OnYoStarMessageReceivedRespone(slot0, slot1, slot2, slot3)
+	warning("OnYoStarMessageReceivedRespone")
 end
 
 return {

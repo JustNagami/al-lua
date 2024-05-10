@@ -1,6 +1,6 @@
 slot0 = class("AnniversaryIslandHotSpringMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringMediator"))
 
-slot0.register = function(slot0)
+function slot0.register(slot0)
 	slot0:bind(uv0.OPEN_CHUANWU, function (slot0, slot1, slot2)
 		uv0:OnSelShips(slot1, slot2)
 	end)
@@ -22,7 +22,7 @@ slot0.register = function(slot0)
 	end)
 end
 
-slot0.OnSelected = function(slot0, slot1, slot2, slot3)
+function slot0.OnSelected(slot0, slot1, slot2, slot3)
 	slot5 = slot0.activity
 	slot4 = Clone(slot5:GetShipIds())
 	slot7 = slot0.activity
@@ -101,7 +101,7 @@ slot0.OnSelected = function(slot0, slot1, slot2, slot3)
 	slot3()
 end
 
-slot0.listNotificationInterests = function(slot0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		ActivityProxy.ACTIVITY_UPDATED,
@@ -110,7 +110,7 @@ slot0.listNotificationInterests = function(slot0)
 	}
 end
 
-slot0.handleNotification = function(slot0, slot1)
+function slot0.handleNotification(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	if slot1:getName() == nil then

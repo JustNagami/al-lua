@@ -22,7 +22,9 @@ pg.activity_task_permanent = setmetatable({
 		6017,
 		6018,
 		6019,
-		6020
+		6020,
+		6021,
+		6022
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -526,5 +528,42 @@ pg.base.activity_task_permanent = {
 			35256,
 			35257
 		}
+	},
+	[6021] = {
+		gametip = "可获得{namecode:46}限定换装「悠闲春日」",
+		banner_route = "permanent_changliang",
+		gametip_extra = "最快7日获得",
+		over_pt = 0,
+		task_extra = "",
+		id = 6021,
+		activity_name = "悠闲春日",
+		over_task_id = "",
+		eliminate_task_id = {
+			35258,
+			35259,
+			35260,
+			35261,
+			35262,
+			35263,
+			35264,
+			35265,
+			35266,
+			35267,
+			35268,
+			35269,
+			35270,
+			35271
+		}
+	},
+	[6022] = {
+		gametip = "可获得角色{namecode:475}",
+		banner_route = "permanent_u410",
+		gametip_extra = "最快7日获得",
+		over_pt = 0,
+		task_extra = "",
+		id = 6022,
+		activity_name = "特别锻炼",
+		over_task_id = "",
+		eliminate_task_id = {}
 	}
 }

@@ -1,51 +1,51 @@
 slot0 = class("ZumaPTShopWindowLayer", import("...base.BaseUI"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "ZumaPTShopWindowUI"
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	slot0:initData()
 	slot0:findUI()
 	slot0:addListener()
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0:updateGoodInfoPanel()
 	slot0:updateBuyPanelWithNum(1)
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 	slot0.pageUtil:Dispose()
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	slot0:closeView()
 end
 
-slot0.initData = function(slot0)
+function slot0.initData(slot0)
 	slot0.actShopVO = slot0.contextData.actShopVO
 	slot0.goodVO = slot0.contextData.goodVO
 	slot0.perCost = slot0.goodVO:getConfig("resource_num")
-	slot0.maxBuyCount = math.floor(GetOwnedDropCount({
+	slot0.maxBuyCount = math.floor(Drop.New({
 		type = slot0.goodVO:getConfig("resource_category"),
 		id = slot0.goodVO:getConfig("resource_type")
-	}) / slot0.perCost)
+	}):getOwnedCount() / slot0.perCost)
 
 	if slot0.goodVO:getConfig("num_limit") ~= 0 then
 		slot0.maxBuyCount = math.min(slot0.maxBuyCount, math.max(slot0.goodVO:GetPurchasableCnt(), 0))
 	end
 
 	slot0.curBuyCount = 1
-	slot0.costItemInfo = {
+	slot0.costItemInfo = Drop.New({
 		type = slot0.goodVO:getConfig("resource_category"),
 		id = slot0.goodVO:getConfig("resource_type")
-	}
+	})
 end
 
-slot0.findUI = function(slot0)
+function slot0.findUI(slot0)
 	slot0.bg = slot0:findTF("BG")
 	slot1 = slot0:findTF("Panel")
 	slot2 = slot0:findTF("Info", slot1)
@@ -69,8 +69,8 @@ slot0.findUI = function(slot0)
 	slot0.cancelBtn = slot0:findTF("CancelBtn", slot1)
 end
 
-slot0.addListener = function(slot0)
-	slot1 = function()
+function slot0.addListener(slot0)
+	function slot1()
 		uv0:closeView()
 	end
 
@@ -78,7 +78,7 @@ slot0.addListener = function(slot0)
 	onButton(slot0, slot0.cancelBtn, slot1, SFX_CANCEL)
 	onButton(slot0, slot0.confirmBtn, function ()
 		if uv0.maxBuyCount < uv0.curBuyCount then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", getDropName(uv0.costItemInfo)))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", uv0.costItemInfo:getName()))
 
 			return
 		end
@@ -100,17 +100,17 @@ slot0.addListener = function(slot0)
 	slot0.pageUtil:setDefaultNum(1)
 end
 
-slot0.updateGoodInfoPanel = function(slot0)
+function slot0.updateGoodInfoPanel(slot0)
 	slot1 = slot0.goodVO
-	slot2 = {
+	slot2 = Drop.New({
 		type = slot1:getConfig("commodity_type"),
 		id = slot1:getConfig("commodity_id"),
 		count = slot1:getConfig("num")
-	}
+	})
 
 	updateDrop(slot0.itemTF, slot2)
 
-	slot3, slot4 = GetOwnedDropCount(slot2)
+	slot3, slot4 = slot2:getOwnedCount()
 
 	setActive(slot0.countTF, slot4)
 
@@ -118,11 +118,11 @@ slot0.updateGoodInfoPanel = function(slot0)
 		setText(slot0.countText, slot3)
 	end
 
-	setText(slot0.nameText, slot2.cfg.name)
-	setText(slot0.descText, string.gsub(slot2.desc or slot2.cfg.desc, "<[^>]+>", ""))
+	setText(slot0.nameText, slot2:getConfig("name"))
+	setText(slot0.descText, string.gsub(slot2.desc or slot2:getConfig("desc"), "<[^>]+>", ""))
 end
 
-slot0.updateBuyPanelWithNum = function(slot0, slot1)
+function slot0.updateBuyPanelWithNum(slot0, slot1)
 	slot0.curBuyCount = slot1 or 0
 
 	setText(slot0.buyNumText, slot0.curBuyCount)

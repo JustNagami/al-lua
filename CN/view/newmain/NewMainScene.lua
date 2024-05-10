@@ -6,6 +6,7 @@ slot0.ON_CHANGE_SKIN = "NewMainScene:ON_CHANGE_SKIN"
 slot0.ON_BUFF_DESC = "NewMainScene:ON_BUFF_DESC"
 slot0.ON_SKIN_FREEUSAGE_DESC = "NewMainScene:ON_SKIN_FREEUSAGE_DESC"
 slot0.ENABLE_PAITING_MOVE = "NewMainScene:ENABLE_PAITING_MOVE"
+slot0.ON_ENTER_DONE = "NewMainScene:ON_ENTER_DONE"
 slot0.ON_REMOVE_LAYER = "NewMainScene:ON_REMOVE_LAYER"
 slot0.ON_PLAYER_UPDATE = "NewMainScene:ON_PLAYER_UPDATE"
 slot0.ON_CHAT_MSG_UPDATE = "NewMainScene:ON_CHAT_MSG_UPDATE"
@@ -14,11 +15,11 @@ slot0.ON_ACT_BTN_UPDATE = "NewMainScene:ON_ACT_BTN_UPDATE"
 slot0.ON_ZERO_HOUR = "NewMainScene:ON_ZERO_HOUR"
 slot0.ON_BUFF_UPDATE = "NewMainScene:ON_BUFF_UPDATE"
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "NewMainUI"
 end
 
-slot0.ResUISettings = function(slot0)
+function slot0.ResUISettings(slot0)
 	return {
 		showType = PlayerResUI.TYPE_ALL,
 		anim = not slot0.resAnimFlag,
@@ -26,18 +27,18 @@ slot0.ResUISettings = function(slot0)
 	}
 end
 
-slot0.needCache = function(slot0)
+function slot0.needCache(slot0)
 	return true
 end
 
-slot0.PlayBGM = function(slot0)
+function slot0.PlayBGM(slot0)
 end
 
-slot0.GetFlagShip = function(slot0)
+function slot0.GetFlagShip(slot0)
 	return getProxy(PlayerProxy):getRawData():GetFlagShip()
 end
 
-slot0.PlayBgm = function(slot0, slot1)
+function slot0.PlayBgm(slot0, slot1)
 	slot2 = nil
 
 	if slot1:IsBgmSkin() and getProxy(SettingsProxy):IsBGMEnable() then
@@ -53,7 +54,7 @@ slot0.PlayBgm = function(slot0, slot1)
 	end
 end
 
-slot0.ShowOrHideResUI = function(slot0, slot1)
+function slot0.ShowOrHideResUI(slot0, slot1)
 	if not slot0.isInit then
 		return
 	end
@@ -61,7 +62,7 @@ slot0.ShowOrHideResUI = function(slot0, slot1)
 	uv0.super.ShowOrHideResUI(slot0, slot1)
 end
 
-slot0.init = function(slot0)
+function slot0.init(slot0)
 	slot0:Register()
 
 	slot0.mainCG = GetOrAddComponent(slot0:findTF("main"), typeof(CanvasGroup))
@@ -85,14 +86,20 @@ slot0.init = function(slot0)
 	slot0.effectView = MainEffectView.New(slot0:findTF("paint/effect"))
 	slot0.buffDescPage = MainBuffDescPage.New(slot0._tf, slot0.event)
 	slot0.skinExperiencePage = SkinExperienceDiplayPage.New(slot0._tf, slot0.event)
-	slot0.liveAreaPage = MainLiveAreaPage.New(slot0._tf, slot0.event)
+
+	if USE_OLD_MAIN_LIVE_AREA_UI then
+		slot0.liveAreaPage = MainLiveAreaOldPage.New(slot0._tf, slot0.event)
+	else
+		slot0.liveAreaPage = MainLiveAreaPage.New(slot0._tf, slot0.event)
+	end
+
 	slot0.calibrationPage = MainCalibrationPage.New(slot0._tf, slot0.event)
 	slot0.sequenceView = MainSequenceView.New()
 	slot0.awakeSequenceView = MainAwakeSequenceView.New()
 	slot0.adpterView = MainAdpterView.New(slot0:findTF("main/top_bg"), slot0:findTF("main/bottom_bg"), slot0:findTF("main/bg/right"))
 end
 
-slot0.Register = function(slot0)
+function slot0.Register(slot0)
 	slot0:bind(uv0.FOLD, function (slot0, slot1)
 		uv0:FoldPanels(slot1)
 	end)
@@ -101,7 +108,7 @@ slot0.Register = function(slot0)
 	end)
 end
 
-slot0.didEnter = function(slot0)
+function slot0.didEnter(slot0)
 	slot0.mainCG.blocksRaycasts = false
 	slot1 = nil
 
@@ -133,7 +140,7 @@ slot0.didEnter = function(slot0)
 
 			uv0:PlayBgm(uv1)
 			uv0.iconView:Init(uv1)
-			uv0.paintingView:Init(uv1, true)
+			uv0.paintingView:Init(uv1)
 			uv0.effectView:Init(uv1)
 			uv0.chatRoomView:Init()
 			uv0.buffView:Init()
@@ -144,11 +151,13 @@ slot0.didEnter = function(slot0)
 			uv0.sequenceView:Execute(slot0)
 		end
 	}, function ()
+		uv0:emit(uv1.ON_ENTER_DONE)
+
 		uv0.mainCG.blocksRaycasts = true
 	end)
 end
 
-slot0.PlayEnterAnimation = function(slot0, slot1)
+function slot0.PlayEnterAnimation(slot0, slot1)
 	slot0.adpterView:Init()
 	slot0:_FoldPanels(true, 0)
 
@@ -158,7 +167,7 @@ slot0.PlayEnterAnimation = function(slot0, slot1)
 	onDelayTick(slot1, 0.51)
 end
 
-slot0.BlurView = function(slot0)
+function slot0.BlurView(slot0)
 	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, slot0.mainCG.gameObject.transform, {
 		pbList = {
 			slot0:findTF("main/frame/chatPreview"),
@@ -169,7 +178,7 @@ slot0.BlurView = function(slot0)
 	slot0:ShowOrHideResUI(true)
 end
 
-slot0._FoldPanels = function(slot0, slot1, slot2)
+function slot0._FoldPanels(slot0, slot1, slot2)
 	for slot6, slot7 in ipairs(slot0.panels) do
 		slot7:Fold(slot1, slot2)
 	end
@@ -182,7 +191,7 @@ slot0._FoldPanels = function(slot0, slot1, slot2)
 	slot0.buffView:Fold(slot1, slot2)
 end
 
-slot0.FoldPanels = function(slot0, slot1)
+function slot0.FoldPanels(slot0, slot1)
 	if slot1 then
 		slot0.mainCG.blocksRaycasts = false
 	else
@@ -199,7 +208,7 @@ slot0.FoldPanels = function(slot0, slot1)
 	slot0.calibrationPage:ExecuteAction("ShowOrHide", slot1, slot0.iconView.ship)
 end
 
-slot0.SwitchToNextShip = function(slot0)
+function slot0.SwitchToNextShip(slot0)
 	if slot0.paintingView:IsLoading() or slot0.iconView:IsLoading() or slot0.bgView:IsLoading() then
 		return
 	end
@@ -208,12 +217,12 @@ slot0.SwitchToNextShip = function(slot0)
 		slot0.bgView:Refresh(slot2)
 		slot0:PlayBgm(slot2)
 		slot0.iconView:Refresh(slot2)
-		slot0.paintingView:Refresh(slot2, false)
+		slot0.paintingView:Refresh(slot2)
 		slot0.effectView:Refresh(slot2)
 	end
 end
 
-slot0.OnVisible = function(slot0)
+function slot0.OnVisible(slot0)
 	slot0.mainCG.blocksRaycasts = false
 
 	seriesAsync({
@@ -229,7 +238,7 @@ slot0.OnVisible = function(slot0)
 
 			uv0.bgView:Refresh(slot1)
 			uv0.iconView:Refresh(slot1)
-			uv0.paintingView:Refresh(slot1, true)
+			uv0.paintingView:Refresh(slot1)
 			uv0.effectView:Refresh(slot1)
 			uv0.chatRoomView:Refresh()
 			uv0.buffView:Refresh()
@@ -243,12 +252,14 @@ slot0.OnVisible = function(slot0)
 			uv0.sequenceView:Execute(slot0)
 		end
 	}, function ()
+		uv0:emit(uv1.ON_ENTER_DONE)
+
 		uv0.mainCG.blocksRaycasts = true
 	end)
 	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(slot0.mainCG.gameObject.transform, true)
 end
 
-slot0.OnDisVisible = function(slot0)
+function slot0.OnDisVisible(slot0)
 	for slot4, slot5 in ipairs(slot0.panels) do
 		slot5:Disable()
 	end
@@ -261,18 +272,19 @@ slot0.OnDisVisible = function(slot0)
 	slot0.bannerView:Disable()
 	pg.redDotHelper:Disable()
 	slot0.buffDescPage:Disable()
+	slot0.bgView:Disable()
 	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(slot0.mainCG.gameObject.transform, false)
 	slot0.sequenceView:Disable()
 	slot0.awakeSequenceView:Disable()
 end
 
-slot0.OnLogOut = function(slot0)
+function slot0.OnLogOut(slot0)
 	if slot0.calibrationPage and slot0.calibrationPage:GetLoaded() and slot0.calibrationPage:isShowing() then
 		triggerButton(slot0.calibrationPage.backBtn)
 	end
 end
 
-slot0.onBackPressed = function(slot0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
 	if slot0.liveAreaPage and slot0.liveAreaPage:GetLoaded() and slot0.liveAreaPage:isShowing() then
@@ -291,7 +303,7 @@ slot0.onBackPressed = function(slot0)
 	pg.PushNotificationMgr.GetInstance():PushAll()
 end
 
-slot0.willExit = function(slot0)
+function slot0.willExit(slot0)
 	slot4 = slot0._tf
 
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.mainCG.gameObject.transform, slot4)

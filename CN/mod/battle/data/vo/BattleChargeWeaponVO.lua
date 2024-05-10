@@ -6,16 +6,16 @@ slot0.Battle.BattleChargeWeaponVO.__name = "BattleChargeWeaponVO"
 slot4 = slot0.Battle.BattleChargeWeaponVO
 slot4.GCD = slot0.Battle.BattleConfig.ChargeWeaponConfig.GCD
 
-slot4.Ctor = function(slot0)
+function slot4.Ctor(slot0)
 	uv0.super.Ctor(slot0, uv0.GCD)
 end
 
-slot4.AppendWeapon = function(slot0, slot1)
+function slot4.AppendWeapon(slot0, slot1)
 	uv0.super.AppendWeapon(slot0, slot1)
 	slot1:SetPlayerChargeWeaponVO(slot0)
 end
 
-slot4.GetCurrentWeaponIconIndex = function(slot0)
+function slot4.GetCurrentWeaponIconIndex(slot0)
 	if slot0:GetHeadWeapon() == nil then
 		return 1
 	elseif slot1:GetType() == uv0.POINT_HIT_AND_LOCK then
@@ -27,12 +27,12 @@ slot4.GetCurrentWeaponIconIndex = function(slot0)
 	end
 end
 
-slot4.Deduct = function(slot0, slot1)
+function slot4.Deduct(slot0, slot1)
 	uv0.super.Deduct(slot0, slot1)
 	slot0:ResetFocus()
 end
 
-slot4.ResetFocus = function(slot0)
+function slot4.ResetFocus(slot0)
 	if slot0._focus then
 		slot1 = uv0.Battle.BattleCameraUtil.GetInstance()
 

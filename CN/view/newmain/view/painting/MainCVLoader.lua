@@ -1,17 +1,17 @@
 slot0 = class("MainCVLoader")
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 end
 
-slot0.Load = function(slot0, slot1, slot2, slot3, slot4)
-	if slot0.preCvCueSheetName == pg.CriMgr.GetCVBankName(ShipWordHelper.RawGetCVKey(slot1.skinId)) then
+function slot0.Load(slot0, slot1, slot2, slot3, slot4)
+	if slot0.preCvCueSheetName == slot1 then
 		slot0:Play(slot2, slot3, slot4)
 	else
 		slot0:Unload()
 
-		slot7 = pg.CriMgr.GetInstance()
+		slot5 = pg.CriMgr.GetInstance()
 
-		slot7:LoadCueSheet(slot6, function (slot0)
+		slot5:LoadCueSheet(slot1, function (slot0)
 			uv0.preCvCueSheetName = uv1
 
 			if slot0 then
@@ -23,10 +23,10 @@ slot0.Load = function(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-slot0.Play = function(slot0, slot1, slot2, slot3)
+function slot0.Play(slot0, slot1, slot2, slot3)
 	slot0:Stop()
 
-	slot4 = function()
+	function slot4()
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0, function (slot0)
 			if slot0 then
 				uv0._currentVoice = slot0.playback
@@ -47,7 +47,7 @@ slot0.Play = function(slot0, slot1, slot2, slot3)
 	end
 end
 
-slot0.Stop = function(slot0)
+function slot0.Stop(slot0)
 	slot0:RemoveTimer()
 
 	if slot0._currentVoice then
@@ -55,7 +55,7 @@ slot0.Stop = function(slot0)
 	end
 end
 
-slot0.Unload = function(slot0)
+function slot0.Unload(slot0)
 	slot0:Stop()
 
 	if slot0.preCvCueSheetName then
@@ -65,7 +65,7 @@ slot0.Unload = function(slot0)
 	end
 end
 
-slot0.RemoveTimer = function(slot0)
+function slot0.RemoveTimer(slot0)
 	if slot0.timer then
 		slot0.timer:Stop()
 
@@ -73,7 +73,7 @@ slot0.RemoveTimer = function(slot0)
 	end
 end
 
-slot0.Dispose = function(slot0)
+function slot0.Dispose(slot0)
 	slot0:Unload()
 end
 

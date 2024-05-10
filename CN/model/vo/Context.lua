@@ -4,7 +4,7 @@ slot0.TRANS_TYPE = {
 	ONE_BY_ONE = 2
 }
 
-slot0.Ctor = function(slot0, slot1)
+function slot0.Ctor(slot0, slot1)
 	slot1 = slot1 or {}
 	slot0.mediator = slot1.mediator
 	slot0.viewComponent = slot1.viewComponent
@@ -17,7 +17,7 @@ slot0.Ctor = function(slot0, slot1)
 	slot0.transType = defaultValue(slot1.transType, uv0.TRANS_TYPE.CROSS)
 end
 
-slot0.extendData = function(slot0, slot1)
+function slot0.extendData(slot0, slot1)
 	if slot1 == nil then
 		return
 	end
@@ -29,7 +29,7 @@ slot0.extendData = function(slot0, slot1)
 	end
 end
 
-slot0.addChild = function(slot0, slot1)
+function slot0.addChild(slot0, slot1)
 	assert(isa(slot1, Context), "should be an instance of Context")
 	assert(slot1.parent == nil, "context already has parent")
 
@@ -38,13 +38,13 @@ slot0.addChild = function(slot0, slot1)
 	table.insert(slot0.children, slot1)
 end
 
-slot0.addChilds = function(slot0, slot1)
+function slot0.addChilds(slot0, slot1)
 	_.each(slot1, function (slot0)
 		uv0:addChild(slot0)
 	end)
 end
 
-slot0.removeChild = function(slot0, slot1)
+function slot0.removeChild(slot0, slot1)
 	slot5 = Context
 
 	assert(isa(slot1, slot5), "should be an instance of Context")
@@ -58,7 +58,7 @@ slot0.removeChild = function(slot0, slot1)
 	return nil
 end
 
-slot0.retriveLastChild = function(slot0)
+function slot0.retriveLastChild(slot0)
 	for slot4 = #slot0.children, 1, -1 do
 		if not slot0.children[slot4].data.isSubView then
 			return slot0.children[slot4]:retriveLastChild()
@@ -68,7 +68,7 @@ slot0.retriveLastChild = function(slot0)
 	return slot0
 end
 
-slot0.GetHierarchy = function(slot0)
+function slot0.GetHierarchy(slot0)
 	slot1 = {
 		slot0
 	}
@@ -85,7 +85,7 @@ slot0.GetHierarchy = function(slot0)
 	return slot2
 end
 
-slot0.getContextByMediator = function(slot0, slot1)
+function slot0.getContextByMediator(slot0, slot1)
 	return (function (slot0, slot1)
 		if slot0.mediator == slot1 then
 			return slot0
@@ -101,7 +101,7 @@ slot0.getContextByMediator = function(slot0, slot1)
 	end)(slot0, slot1)
 end
 
-slot0.onContextRemoved = function(slot0)
+function slot0.onContextRemoved(slot0)
 	return slot0.onRemoved and slot0.onRemoved()
 end
 

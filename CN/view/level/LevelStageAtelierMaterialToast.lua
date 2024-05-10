@@ -1,20 +1,20 @@
 slot0 = class("LevelStageAtelierMaterialToast", import("view.base.BaseSubPanel"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "LevelStageAtelierMaterialToast"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 end
 
-slot0.OnLoaded = function(slot0)
+function slot0.OnLoaded(slot0)
 end
 
 slot1 = 26
 slot2 = 47
 slot3 = 196
 
-slot0.Play = function(slot0, slot1)
+function slot0.Play(slot0, slot1)
 	slot2 = slot0.contextData.settings
 
 	setText(slot0._tf:Find("Title"), slot2.title)
@@ -60,7 +60,7 @@ slot0.Play = function(slot0, slot1)
 	end)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
 	LeanTween.cancel(slot0._go)
 end

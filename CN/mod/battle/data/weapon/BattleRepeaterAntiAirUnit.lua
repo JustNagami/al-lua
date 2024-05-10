@@ -11,13 +11,13 @@ slot8 = class("BattleRepeaterAntiAirUnit", slot0.Battle.BattleWeaponUnit)
 slot0.Battle.BattleRepeaterAntiAirUnit = slot8
 slot8.__name = "BattleRepeaterAntiAirUnit"
 
-slot8.Ctor = function(slot0)
+function slot8.Ctor(slot0)
 	uv0.super.Ctor(slot0)
 
 	slot0._dataProxy = uv1.Battle.BattleDataProxy.GetInstance()
 end
 
-slot8.FilterTarget = function(slot0)
+function slot8.FilterTarget(slot0)
 	slot2 = {}
 	slot3 = slot0._host:GetIFF()
 	slot4 = 1
@@ -32,7 +32,7 @@ slot8.FilterTarget = function(slot0)
 	return slot2
 end
 
-slot8.Fire = function(slot0)
+function slot8.Fire(slot0)
 	slot0._dataProxy:SpawnColumnArea(uv2.AOEField.AIR, slot0._host:GetIFF(), slot0._host:GetPosition(), slot0._tmpData.range * 2, -1, function (slot0)
 		if not uv0._dataProxy then
 			return

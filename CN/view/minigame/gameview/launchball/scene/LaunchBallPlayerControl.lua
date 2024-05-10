@@ -295,7 +295,7 @@ slot16 = {
 	}
 }
 
-slot17 = function(slot0, slot1, slot2)
+function slot17(slot0, slot1, slot2)
 	slot3 = {
 		ctor = function (slot0)
 			slot0.playerTf = uv0
@@ -742,14 +742,14 @@ slot17 = function(slot0, slot1, slot2)
 	return slot3
 end
 
-slot0.Ctor = function(slot0, slot1, slot2, slot3, slot4)
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
 	slot0._topContent = slot1
 	slot0._content = slot2
 	slot0._tpl = slot3
 	slot0._eventCall = slot4
 end
 
-slot0.setPlayerData = function(slot0, slot1)
+function slot0.setPlayerData(slot0, slot1)
 	if slot0.player and slot0.player:getId() ~= slot1.id then
 		slot0.player:dispose()
 
@@ -760,7 +760,7 @@ slot0.setPlayerData = function(slot0, slot1)
 	end
 end
 
-slot0.createPlayer = function(slot0, slot1)
+function slot0.createPlayer(slot0, slot1)
 	slot3 = uv0(tf(instantiate(findTF(slot0._tpl, slot1.tpl))), slot1, slot0._eventCall)
 
 	slot3:setContent(slot0._content)
@@ -768,7 +768,7 @@ slot0.createPlayer = function(slot0, slot1)
 	return slot3
 end
 
-slot0.start = function(slot0)
+function slot0.start(slot0)
 	slot0.playerId = LaunchBallGameVo.selectPlayer
 
 	slot0:setPlayerData(uv0[slot0.playerId])
@@ -777,7 +777,7 @@ slot0.start = function(slot0)
 	slot0.effects = {}
 end
 
-slot0.step = function(slot0)
+function slot0.step(slot0)
 	if LaunchBallGameVo.joyStickData and LaunchBallGameVo.joyStickData.active and LaunchBallGameVo.joyStickData.angle then
 		slot0.player:setAngle(LaunchBallGameVo.joyStickData.angle)
 	end
@@ -815,7 +815,7 @@ slot0.step = function(slot0)
 	slot0.player:step()
 end
 
-slot0.eventCall = function(slot0, slot1, slot2)
+function slot0.eventCall(slot0, slot1, slot2)
 	if slot1 == LaunchBallGameScene.CHANGE_AMULET then
 		-- Nothing
 	elseif slot1 == LaunchBallGameScene.PLAYER_EFFECT then
@@ -845,25 +845,25 @@ slot0.eventCall = function(slot0, slot1, slot2)
 	end
 end
 
-slot0.press = function(slot0, slot1)
+function slot0.press(slot0, slot1)
 	if slot1 == KeyCode.J and slot0.player then
 		slot0.player:fire()
 	end
 end
 
-slot0.joystickActive = function(slot0, slot1)
+function slot0.joystickActive(slot0, slot1)
 	if not slot1 and slot0.player then
 		slot0.player:fire()
 	end
 end
 
-slot0.useSkill = function(slot0)
+function slot0.useSkill(slot0)
 	if slot0.player then
 		slot0.player:useSkill()
 	end
 end
 
-slot0.clear = function(slot0)
+function slot0.clear(slot0)
 	slot0.player:clear()
 end
 

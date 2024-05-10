@@ -1,10 +1,10 @@
 slot0 = class("LevelRemasterView", import("..base.BaseSubView"))
 
-slot0.getUIName = function(slot0)
+function slot0.getUIName(slot0)
 	return "LevelRemasterView"
 end
 
-slot0.OnInit = function(slot0)
+function slot0.OnInit(slot0)
 	slot0.content = slot0:findTF("list/content")
 	slot1 = slot0.content
 	slot0.item = slot1:Find("item")
@@ -205,7 +205,7 @@ slot0.OnInit = function(slot0)
 	end, SFX_PANEL)
 end
 
-slot0.OnDestroy = function(slot0)
+function slot0.OnDestroy(slot0)
 	slot0.onItem = nil
 
 	if slot0:isShowing() then
@@ -213,19 +213,19 @@ slot0.OnDestroy = function(slot0)
 	end
 end
 
-slot0.Show = function(slot0)
+function slot0.Show(slot0)
 	uv0.super.Show(slot0)
 	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 end
 
-slot0.Hide = function(slot0)
+function slot0.Hide(slot0)
 	uv0.super.Hide(slot0)
 	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-slot0.set = function(slot0, slot1, slot2)
+function slot0.set(slot0, slot1, slot2)
 	slot0.templates = {}
 
 	for slot6, slot7 in ipairs(pg.re_map_template.all) do
@@ -237,7 +237,7 @@ slot0.set = function(slot0, slot1, slot2)
 	slot0:flush(slot2)
 end
 
-slot0.flush = function(slot0, slot1)
+function slot0.flush(slot0, slot1)
 	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Hide()
 	end, SFX_CANCEL)
@@ -287,11 +287,11 @@ slot0.flush = function(slot0, slot1)
 	triggerToggle(slot2[slot1 and 2 or 1], true)
 end
 
-slot0.flushOnly = function(slot0)
+function slot0.flushOnly(slot0)
 	slot0.itemList:align(math.max(math.ceil(#slot0.temp / 2) * 2, 4))
 end
 
-slot0.updateTicketDisplay = function(slot0)
+function slot0.updateTicketDisplay(slot0)
 	slot2 = getProxy(ChapterProxy).remasterDailyCount > 0
 
 	SetActive(slot0.getRemasterTF, not slot2)
