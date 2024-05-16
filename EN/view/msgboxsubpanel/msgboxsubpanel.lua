@@ -6,13 +6,9 @@ function slot0.Load(slot0)
 	end
 
 	slot0._state = uv0.STATES.LOADING
-	slot1 = pg.UIMgr.GetInstance()
 
-	slot1:LoadingOn()
-
-	slot1 = PoolMgr.GetInstance()
-
-	slot1:GetUI(slot0:getUIName(), false, function (slot0)
+	pg.UIMgr.GetInstance():LoadingOn()
+	PoolMgr.GetInstance():GetUI(slot0:getUIName(), false, function (slot0)
 		if uv0._state == uv1.STATES.DESTROY then
 			pg.UIMgr.GetInstance():LoadingOff()
 			uv2:ReturnUI(uv0:getUIName(), slot0)

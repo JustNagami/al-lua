@@ -3,25 +3,22 @@ slot0 = class("ChangePlayerIconCommand", pm.SimpleCommand)
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.characterId
-	slot5 = slot2.skinPage
 	slot6 = slot2.callback
-	slot8 = getProxy(PlayerProxy):getData()
 
 	if type(slot2.characterId) == "number" then
-		if slot8.character == slot3 then
-			if slot5 then
+		if getProxy(PlayerProxy):getData().character == slot3 then
+			if slot2.skinPage then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("change_skin_secretary_ship"))
 			end
 
 			return
 		else
-			slot4 = {}
-
 			for slot12 = 1, #slot8.characters do
-				slot4[slot12] = slot8.characters[slot12]
 			end
 
-			for slot12 = 1, #slot4 do
+			for slot12 = 1, #{
+				[slot12] = slot8.characters[slot12]
+			} do
 				if slot4[slot12] == slot3 then
 					slot4[slot12] = slot4[1]
 					slot4[1] = slot4[slot12]
@@ -32,9 +29,13 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
+	if #slot4 <= 0 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_error"))
 
-	slot9:Send(11011, {
+		return
+	end
+
+	pg.ConnectionMgr.GetInstance():Send(11011, {
 		character = slot4
 	}, 11012, function (slot0)
 		if slot0.result == 0 then

@@ -107,9 +107,8 @@ function slot0.Ctor(slot0, slot1)
 
 	for slot11 = 1, uv5 do
 		slot12 = slot11
-		slot14 = PoolMgr.GetInstance()
 
-		slot14:GetSpineChar(table.remove(slot7, math.random(1, #slot7)), true, function (slot0)
+		PoolMgr.GetInstance():GetSpineChar(table.remove(slot7, math.random(1, #slot7)), true, function (slot0)
 			slot1 = tf(slot0):GetComponent(typeof(SpineAnimUI))
 
 			slot1:SetAction("stand2", 0)
@@ -142,7 +141,6 @@ function slot0.Ctor(slot0, slot1)
 
 	slot0.bataiTf = findTF(slot0.pos, "batai")
 	slot0.coinChar = nil
-	slot8 = PoolMgr.GetInstance()
 
 	function slot12(slot0)
 		uv0.coinChar = tf(slot0)
@@ -152,7 +150,7 @@ function slot0.Ctor(slot0, slot1)
 		setLocalScale(slot0, uv1)
 	end
 
-	slot8:GetSpineChar(uv7, true, slot12)
+	PoolMgr.GetInstance():GetSpineChar(uv7, true, slot12)
 
 	slot0.content.anchoredPosition = Vector2(0, 0)
 	slot8 = GetOrAddComponent(slot0.content, typeof(EventTriggerListener))

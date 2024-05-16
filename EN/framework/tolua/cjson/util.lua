@@ -1,12 +1,11 @@
 slot0 = require("cjson")
 
 function slot1(slot0)
-	slot1 = 0
 	slot2 = 0
 
 	for slot6, slot7 in pairs(slot0) do
 		if type(slot6) == "number" then
-			if slot1 < slot6 then
+			if 0 < slot6 then
 				slot1 = slot6
 			end
 
@@ -112,10 +111,10 @@ return {
 			end
 		end
 
-		slot2 = slot1.read(slot1, "*a")
+		slot2 = slot1:read("*a")
 
 		if slot0 ~= nil then
-			slot1.close(slot1)
+			slot1:close()
 		end
 
 		if slot2 == nil then
@@ -138,10 +137,10 @@ return {
 			end
 		end
 
-		slot2.write(slot2, slot1)
+		slot2:write(slot1)
 
 		if slot0 ~= nil then
-			slot2.close(slot2)
+			slot2:close()
 		end
 	end,
 	compare_values = function (slot0, slot1)
@@ -157,10 +156,12 @@ return {
 			return slot0 == slot1
 		end
 
-		slot4 = {}
+		slot4 = {
+			[slot8] = true
+		}
 
 		for slot8, slot9 in pairs(slot0) do
-			slot4[slot8] = true
+			-- Nothing
 		end
 
 		for slot8, slot9 in pairs(slot1) do
@@ -186,13 +187,11 @@ return {
 	end,
 	run_test = function (slot0, slot1, slot2, slot3, slot4)
 		function slot5(slot0, slot1, slot2)
-			slot3 = {
-				[true] = ":success",
-				[false] = ":error"
-			}
-
 			if slot1 ~= nil then
-				slot0 = slot0 .. slot3[slot1]
+				slot0 = slot0 .. ({
+					[true] = ":success",
+					[false] = ":error"
+				})[slot1]
 			end
 
 			print(("[%s] %s"):format(slot0, uv0(slot2, false)))
@@ -225,30 +224,27 @@ return {
 		return slot8, slot6
 	end,
 	run_test_group = function (slot0)
-		function slot1(slot0, slot1, slot2)
-			if type(slot0) == "string" and #slot0 > 0 then
-				print("==> " .. slot0)
-			end
-
-			slot1(unpack(slot2 or {}))
-			print()
-		end
-
 		for slot5, slot6 in ipairs(slot0) do
 			if slot6[4] == nil then
-				slot1(unpack(slot6))
+				function (slot0, slot1, slot2)
+					if type(slot0) == "string" and #slot0 > 0 then
+						print("==> " .. slot0)
+					end
+
+					slot1(unpack(slot2 or {}))
+					print()
+				end(unpack(slot6))
 			else
 				uv0(unpack(slot6))
 			end
 		end
 	end,
 	run_script = function (slot0, slot1)
-		slot2 = slot1 or {}
 		slot3 = nil
 
 		if _G.setfenv then
 			if loadstring(slot0) then
-				setfenv(slot3, slot2)
+				setfenv(slot3, slot1 or {})
 			end
 		else
 			slot3 = load(slot0, nil, , slot2)

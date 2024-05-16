@@ -25,10 +25,9 @@ function slot0.OnFirstFlush(slot0)
 		assert(uv0.taskProxy:getTaskById(uv0.taskList[slot1 + 1]) or uv0.taskProxy:getFinishTaskById(slot3), "without this task by id: " .. slot3)
 
 		if slot0 == UIItemList.EventInit then
-			slot5 = uv0
 			slot6 = slot4:getConfig("award_display")[1]
 
-			updateDrop(slot5:findTF("item", slot2), {
+			updateDrop(uv0:findTF("item", slot2), {
 				type = slot6[1],
 				id = slot6[2],
 				count = slot6[3]
@@ -51,11 +50,9 @@ function slot0.OnFirstFlush(slot0)
 end
 
 function slot0.OnUpdateFlush(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0.taskList) do
 		if slot0.taskProxy:getFinishTaskById(slot6) ~= nil then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 

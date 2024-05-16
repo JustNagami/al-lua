@@ -23,10 +23,8 @@ function slot0.InitFacilityCross(slot0, slot1, slot2, slot3, slot4)
 end
 
 function slot0.getStudents(slot0, slot1, slot2)
-	slot3 = {}
-
 	if not getProxy(ActivityProxy):getActivityById(slot0) then
-		return slot3
+		return {}
 	end
 
 	if slot5:getConfig("config_client") and slot6.ships then
@@ -57,9 +55,7 @@ function slot0.InitStudents(slot0, slot1, slot2, slot3)
 		end
 	end
 
-	slot6 = #slot5
 	slot0.academyStudents = {}
-	slot7 = {}
 
 	for slot11, slot12 in pairs(slot4) do
 		if not slot0.academyStudents[slot11] then
@@ -69,8 +65,8 @@ function slot0.InitStudents(slot0, slot1, slot2, slot3)
 
 			slot15:attach()
 			slot15:setPathFinder(slot0.graphPath)
-			slot15:SetPositionTable(slot7)
-			slot15:setCurrentIndex(slot0.ChooseRandomPos(slot5, (slot6 - 2) % #slot5 + 1) and slot14.id)
+			slot15:SetPositionTable({})
+			slot15:setCurrentIndex(slot0.ChooseRandomPos(slot5, (#slot5 - 2) % #slot5 + 1) and slot14.id)
 			slot15:SetOnTransEdge(function (slot0, slot1, slot2)
 				slot0._tf:SetParent(uv0[uv0.edge2area[math.min(slot1, slot2) .. "_" .. math.max(slot1, slot2)] or uv0.edge2area.default])
 			end)
@@ -185,7 +181,7 @@ function slot0.BindItemSkinShop(slot0)
 	end)
 end
 
-function slot0.BindItemBuildShip(slot0, slot1)
+function slot0.BindItemBuildShip(slot0)
 	slot0:InitFacilityCross(slot0._map, slot0._upper, "xianshijianzao", function ()
 		slot0 = nil
 		slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILD)
@@ -204,7 +200,7 @@ function slot0.BindItemBuildShip(slot0, slot1)
 			return
 		end
 
-		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.GETBOAT, uv1 or {
+		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.GETBOAT, {
 			page = BuildShipScene.PAGE_BUILD,
 			projectName = slot0
 		})
@@ -243,7 +239,7 @@ function slot0.UpdateBuildingTip(slot0, slot1, slot2)
 		slot4 = 0
 
 		if slot0[1] == DROP_TYPE_VITEM then
-			assert(AcessWithinNull(pg.item_data_statistics[slot2], "link_id") == uv0.id)
+			assert(AcessWithinNull(Item.getConfigData(slot2), "link_id") == uv0.id)
 
 			slot4 = uv0:GetMaterialCount(slot2)
 		elseif DROP_TYPE_USE_ACTIVITY_DROP < slot1 then

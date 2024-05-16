@@ -8,46 +8,37 @@ function slot0.register(slot0)
 
 	slot0:on(20201, function (slot0)
 		uv0.avatarFrames = {}
-
-		function slot1(slot0, slot1)
-			slot2 = {}
-
-			for slot6, slot7 in ipairs(slot1) do
-				table.insert(slot2, uv0:createAvatarFrameTask(slot0, slot7))
-			end
-
-			table.insert(uv0.avatarFrames, {
-				actId = slot0,
-				tasks = slot2
-			})
-		end
-
 		slot2 = getProxy(ActivityTaskProxy)
 
 		for slot6, slot7 in ipairs(slot0.info) do
-			slot9 = slot7.tasks
-
 			if pg.activity_template[slot7.act_id].type == ActivityConst.ACTIVITY_TYPE_PT_OTHER then
-				slot1(slot8, slot9)
+				function (slot0, slot1)
+					slot2 = {}
+
+					for slot6, slot7 in ipairs(slot1) do
+						table.insert(slot2, uv0:createAvatarFrameTask(slot0, slot7))
+					end
+
+					table.insert(uv0.avatarFrames, {
+						actId = slot0,
+						tasks = slot2
+					})
+				end(slot8, slot7.tasks)
 			elseif slot10 == ActivityConst.ACTIVITY_TYPE_TASK_RYZA or slot10 == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
 				slot2:initActList(slot8, slot9)
 			end
 		end
 	end)
 	slot0:on(20202, function (slot0)
-		function slot1(slot0, slot1)
-			for slot5, slot6 in ipairs(slot1) do
-				uv0:updateAvatarTask(slot0, slot6)
-			end
-		end
-
 		slot2 = getProxy(ActivityTaskProxy)
 
 		for slot6, slot7 in ipairs(slot0.info) do
-			slot9 = slot7.tasks
-
 			if pg.activity_template[slot7.act_id].type == ActivityConst.ACTIVITY_TYPE_PT_OTHER then
-				slot1(slot8, slot9)
+				function (slot0, slot1)
+					for slot5, slot6 in ipairs(slot1) do
+						uv0:updateAvatarTask(slot0, slot6)
+					end
+				end(slot8, slot7.tasks)
 			elseif slot10 == ActivityConst.ACTIVITY_TYPE_TASK_RYZA or slot10 == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
 				slot2:updateActList(slot8, slot9)
 			end
@@ -56,19 +47,15 @@ function slot0.register(slot0)
 		uv0.facade:sendNotification(uv1.FRAME_TASK_UPDATED)
 	end)
 	slot0:on(20203, function (slot0)
-		function slot1(slot0, slot1)
-			for slot5, slot6 in ipairs(slot1) do
-				uv0:addAvatarTask(slot0, uv0:createAvatarFrameTask(slot0, slot6))
-			end
-		end
-
 		slot2 = getProxy(ActivityTaskProxy)
 
 		for slot6, slot7 in ipairs(slot0.info) do
-			slot9 = slot7.tasks
-
 			if pg.activity_template[slot7.act_id].type == ActivityConst.ACTIVITY_TYPE_PT_OTHER then
-				slot1(slot8, slot9)
+				function (slot0, slot1)
+					for slot5, slot6 in ipairs(slot1) do
+						uv0:addAvatarTask(slot0, uv0:createAvatarFrameTask(slot0, slot6))
+					end
+				end(slot8, slot7.tasks)
 			elseif slot10 == ActivityConst.ACTIVITY_TYPE_TASK_RYZA or slot10 == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
 				slot2:addActList(slot8, slot9)
 			end
@@ -77,19 +64,15 @@ function slot0.register(slot0)
 		uv0.facade:sendNotification(uv1.FRAME_TASK_UPDATED)
 	end)
 	slot0:on(20204, function (slot0)
-		function slot1(slot0, slot1)
-			for slot5, slot6 in ipairs(slot1) do
-				uv0:removeAvatarTask(slot0, slot6.id)
-			end
-		end
-
 		slot2 = getProxy(ActivityTaskProxy)
 
 		for slot6, slot7 in ipairs(slot0.info) do
-			slot9 = slot7.tasks
-
 			if pg.activity_template[slot7.act_id].type == ActivityConst.ACTIVITY_TYPE_PT_OTHER then
-				slot1(slot8, slot9)
+				function (slot0, slot1)
+					for slot5, slot6 in ipairs(slot1) do
+						uv0:removeAvatarTask(slot0, slot6.id)
+					end
+				end(slot8, slot7.tasks)
 			elseif slot10 == ActivityConst.ACTIVITY_TYPE_TASK_RYZA or slot10 == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
 				slot2:removeActList(slot8, slot9)
 			end

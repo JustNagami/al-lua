@@ -17,9 +17,7 @@ function slot0.Update(slot0)
 	slot2 = slot0.config
 
 	if IsNil(slot0.go) then
-		slot3 = slot0:GetLoader()
-
-		slot3:GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function (slot0)
+		slot0:GetLoader():GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function (slot0)
 			slot0.name = "enemy_" .. uv0.attachmentId
 			uv1.go = slot0
 			uv1.tf = tf(slot0)

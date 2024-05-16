@@ -1,8 +1,7 @@
 slot0 = class("BackYardUploadThemeTemplateCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot4 = getProxy(DormProxy)
-	slot5 = slot4:GetCustomThemeTemplateById(slot1:getBody().templateId)
+	slot5 = getProxy(DormProxy):GetCustomThemeTemplateById(slot1:getBody().templateId)
 
 	function slot7(slot0)
 		uv0:Upload()
@@ -11,9 +10,7 @@ function slot0.execute(slot0, slot1)
 	end
 
 	function slot8()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(19111, {
+		pg.ConnectionMgr.GetInstance():Send(19111, {
 			pos = uv0.pos
 		}, 19112, function (slot0)
 			if slot0.result == 0 then
@@ -24,24 +21,18 @@ function slot0.execute(slot0, slot1)
 		end)
 	end
 
-	(function (slot0)
-		slot1 = pg.UIMgr.GetInstance()
-
-		slot1:LoadingOn()
+	function (slot0)
+		pg.UIMgr.GetInstance():LoadingOn()
 		seriesAsync({
 			function (slot0)
-				slot2 = uv0
-
-				BackYardThemeTempalteUtil.UploadTexture(slot2:GetTextureName(), function (slot0)
+				BackYardThemeTempalteUtil.UploadTexture(uv0:GetTextureName(), function (slot0)
 					if slot0 then
 						uv0()
 					end
 				end)
 			end,
 			function (slot0)
-				slot2 = uv0
-
-				BackYardThemeTempalteUtil.UploadTexture(slot2:GetTextureIconName(), function (slot0)
+				BackYardThemeTempalteUtil.UploadTexture(uv0:GetTextureIconName(), function (slot0)
 					if slot0 then
 						uv0()
 					end
@@ -51,7 +42,7 @@ function slot0.execute(slot0, slot1)
 			pg.UIMgr.GetInstance():LoadingOff()
 			uv0()
 		end)
-	end)(function ()
+	end(function ()
 		uv0()
 	end)
 end

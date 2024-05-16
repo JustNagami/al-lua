@@ -7,8 +7,7 @@ end
 function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
-	slot1 = slot0._tf
-	slot0.countOver = slot1:Find("operate/calc/value_bg/over_count")
+	slot0.countOver = slot0._tf:Find("operate/calc/value_bg/over_count")
 
 	setText(slot0.countOver, i18n("blueprint_select_overflow"))
 	onButton(slot0, slot0.maxBtn, function ()
@@ -33,34 +32,27 @@ function slot0.OnInit(slot0)
 		end
 
 		slot0 = uv0.displayDrops[uv0.selectedIndex]
-		slot1 = uv0.count * slot0.count
-		slot2 = uv0:GetBlueprintNeed(slot0.id)
 		slot3 = {}
 
-		if not uv0.isAllNeedZero and slot2 < slot1 then
+		if not uv0.isAllNeedZero and uv0:GetBlueprintNeed(slot0.id) < uv0.count * slot0.count then
 			table.insert(slot3, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("blueprint_select_overflow_tip", uv0.cfg.name, uv1 - uv2),
+					content = i18n("blueprint_select_overflow_tip", uv0:getConfig("name"), uv1 - uv2),
 					onYes = slot0
 				})
 			end)
 		end
 
 		seriesAsync(slot3, function ()
-			uv0:emit(EquipmentMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, uv0.itemVO:getTempCfgTable().usage_arg[uv0.selectedIndex])
+			uv0:emit(EquipmentMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, uv0.itemVO:getConfig("usage_arg")[uv0.selectedIndex])
 			uv0:Hide()
 		end)
 	end, SFX_PANEL)
 
-	slot1 = slot0._tf
-	slot0.toggleSwitch = slot1:Find("operate/got/top/switch_btn")
-	slot2 = slot0.toggleSwitch
+	slot0.toggleSwitch = slot0._tf:Find("operate/got/top/switch_btn")
 
-	setText(slot2:Find("Text_off"), i18n("show_design_demand_count"))
-
-	slot2 = slot0.toggleSwitch
-
-	setText(slot2:Find("Text_on"), i18n("show_fate_demand_count"))
+	setText(slot0.toggleSwitch:Find("Text_off"), i18n("show_design_demand_count"))
+	setText(slot0.toggleSwitch:Find("Text_on"), i18n("show_fate_demand_count"))
 	onToggle(slot0, slot0.toggleSwitch, function (slot0)
 		uv0.isSwitch = slot0
 
@@ -88,10 +80,7 @@ function slot0.updateValue(slot0)
 	end)
 
 	slot0:updateCountText()
-
-	slot1 = slot0.ulist
-
-	slot1:each(function (slot0, slot1)
+	slot0.ulist:each(function (slot0, slot1)
 		if not isActive(slot1) then
 			return
 		end
@@ -140,7 +129,7 @@ function slot0.update(slot0, slot1)
 				end
 			end, SFX_PANEL)
 			triggerToggle(slot2, slot1 == 1)
-			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1].cfg.name)
+			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1]:getConfig("name"))
 
 			uv0.selectedItem = uv0.selectedItem or slot2
 
@@ -152,11 +141,11 @@ function slot0.update(slot0, slot1)
 	triggerToggle(slot0.selectedItem, true)
 	triggerToggle(slot0.toggleSwitch, true)
 
-	slot2 = {
+	slot2 = Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = slot1.id,
 		count = slot1.count
-	}
+	})
 
 	updateDrop(slot0.itemTF:Find("left/IconTpl"), setmetatable({
 		count = 0

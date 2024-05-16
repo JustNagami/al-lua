@@ -102,17 +102,15 @@ function slot0.RefreshCookData(slot0)
 end
 
 function slot0.UpdateCookData(slot0)
-	slot1 = 0
 	slot0.receivedTasks = {}
-	slot2 = underscore.rest(slot0.cookTaskIds, 1)
 
 	for slot6, slot7 in ipairs(slot0.cookTaskIds) do
 		if slot0.taskProxy:getTaskVO(slot7):isReceive() then
 			table.insert(slot0.receivedTasks, slot8)
 
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 
-			table.removebyvalue(slot2, slot7)
+			table.removebyvalue(underscore.rest(slot0.cookTaskIds, 1), slot7)
 		end
 	end
 
@@ -190,15 +188,13 @@ function slot0.ClearRole(slot0)
 end
 
 function slot0.PlayRoleAnim(slot0)
-	slot3 = slot0.modelTf:GetComponent("SpineAnimUI")
-
 	setActive(slot0.foodTF, false)
 	setActive(slot0.dialogTF, false)
 	setActive(slot0:findTF("shine", slot0.cookBtn), false)
 
 	if slot0.taskProxy:getTaskVO(slot0.curTaskId):getTaskStatus() == 2 then
 		setAnchoredPosition(slot0.roleTF, uv0)
-		slot3:SetAction("normal", 0)
+		slot0.modelTf:GetComponent("SpineAnimUI"):SetAction("normal", 0)
 		setActive(slot0.foodTF, true)
 		setActive(slot0.dialogTF, true)
 		setActive(slot0:findTF("shine", slot0.cookBtn), not slot2 and slot0.remainCnt > 0)

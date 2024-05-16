@@ -16,16 +16,15 @@ function slot0.OpCall(slot0, slot1)
 end
 
 function slot0.OpSwitchMap(slot0, slot1, slot2)
-	slot2 = defaultValue(slot2, function ()
-		uv0:OpInteractive()
-	end)
 	slot4 = nowWorld():GetActiveMap()
 
 	if not uv0:GetInMap() then
 		slot0:OpDone()
 		slot1:Apply()
 		slot3:TriggerAutoFight(slot3.isAutoSwitch or World.ReplacementMapType(slot3:GetActiveEntrance(), slot3:GetActiveMap()) == "complete_chapter" and getProxy(SettingsProxy):GetWorldFlag("auto_save_area"))
-		slot0:OpSetInMap(true, slot2)
+		slot0:OpSetInMap(true, defaultValue(slot2, function ()
+			uv0:OpInteractive()
+		end))
 	elseif slot1.destMapId ~= slot4.id or slot1.destGridId ~= slot4.gid then
 		slot5 = {}
 
@@ -44,9 +43,8 @@ function slot0.OpSwitchMap(slot0, slot1, slot2)
 			uv0:Apply()
 
 			slot2 = uv1:GetActiveMap()
-			slot3 = uv1
 
-			slot3:TriggerAutoFight(uv1.isAutoSwitch or World.ReplacementMapType(uv1:GetActiveEntrance(), slot2) == "complete_chapter" and getProxy(SettingsProxy):GetWorldFlag("auto_save_area"))
+			uv1:TriggerAutoFight(uv1.isAutoSwitch or World.ReplacementMapType(uv1:GetActiveEntrance(), slot2) == "complete_chapter" and getProxy(SettingsProxy):GetWorldFlag("auto_save_area"))
 			assert(slot2, "active map not exist")
 			parallelAsync({
 				function (slot0)
@@ -149,10 +147,9 @@ function slot0.OpInteractive(slot0, slot1)
 	table.insert(slot4, function (slot0)
 		if uv0:CheckEventForMsg() then
 			slot2 = getProxy(EventProxy).eventForMsg.id or 0
-			slot3 = pg.collection_template[slot2] and pg.collection_template[slot2].title or ""
 
 			if uv1.isAutoFight then
-				uv1:AddAutoInfo("message", i18n("autofight_entrust", slot3))
+				uv1:AddAutoInfo("message", i18n("autofight_entrust", pg.collection_template[slot2] and pg.collection_template[slot2].title or ""))
 				slot0()
 			else
 				function slot4()
@@ -203,9 +200,7 @@ function slot0.OpInteractive(slot0, slot1)
 
 		if uv0.isLoss then
 			if WorldConst.IsRookieMap(uv0.id) then
-				slot2 = uv1
-
-				slot2:OpStory(WorldConst.GetRookieBattleLoseStory(), true, false, false, function ()
+				uv1:OpStory(WorldConst.GetRookieBattleLoseStory(), true, false, false, function ()
 					uv0:OpKillWorld()
 				end)
 
@@ -282,17 +277,17 @@ function slot0.OpInteractive(slot0, slot1)
 					elseif uv2.isAutoFight or PlayerPrefs.GetInt("world_skip_precombat", 0) == 1 then
 						uv4:emit(WorldMediator.OnStart, slot3, slot2, slot1)
 					else
-						slot7 = {}
-
 						if pg.world_expedition_data[slot3] and slot5.battle_type and slot5.battle_type ~= 0 then
-							slot7.mediator = WorldBossInformationMediator
-							slot7.viewComponent = WorldBossInformationLayer
+							-- Nothing
 						else
 							slot7.mediator = WorldPreCombatMediator
 							slot7.viewComponent = WorldPreCombatLayer
 						end
 
-						uv1:OpOpenLayer(Context.New(slot7))
+						uv1:OpOpenLayer(Context.New({
+							mediator = WorldBossInformationMediator,
+							viewComponent = WorldBossInformationLayer
+						}))
 					end
 				else
 					slot0()
@@ -386,9 +381,7 @@ function slot0.OpReqDiscoverDone(slot0, slot1)
 end
 
 function slot0.OpAnim(slot0, slot1, slot2)
-	slot3 = uv0
-
-	slot3:DoAnim(slot1, function ()
+	uv0:DoAnim(slot1, function ()
 		uv0:OpDone()
 		uv1()
 	end)
@@ -454,7 +447,6 @@ function slot0.OpLongMoveFleet(slot0, slot1, slot2, slot3)
 	slot0:OpDone()
 
 	slot4 = nowWorld()
-	slot5 = slot4:GetActiveMap()
 
 	if slot4:CheckFleetMovable() then
 		slot6 = {
@@ -465,7 +457,7 @@ function slot0.OpLongMoveFleet(slot0, slot1, slot2, slot3)
 			row = slot2,
 			column = slot3
 		}
-		slot8, slot9 = slot5:GetLongMoveRange(slot1)
+		slot8, slot9 = slot4:GetActiveMap():GetLongMoveRange(slot1)
 
 		if not _.any(slot8, function (slot0)
 			return slot0.row == uv0.row and slot0.column == uv0.column
@@ -475,7 +467,7 @@ function slot0.OpLongMoveFleet(slot0, slot1, slot2, slot3)
 			slot12 = 0
 			slot13 = nil
 
-			(function (slot0, slot1)
+			function (slot0, slot1)
 				if slot0.last[slot1] then
 					uv0(slot0.last[slot1][1], slot0.last[slot1][2])
 
@@ -488,7 +480,7 @@ function slot0.OpLongMoveFleet(slot0, slot1, slot2, slot3)
 						stay = slot1 == 0
 					})
 				end
-			end)(slot9[slot7.row][slot7.column], 0)
+			end(slot9[slot7.row][slot7.column], 0)
 			uv0:SetMoveQueue({})
 			uv0:DoQueueMove(slot1)
 		end
@@ -500,10 +492,6 @@ function slot0.OpReqMoveFleet(slot0, slot1, slot2, slot3)
 	slot5 = slot4:GetActiveMap()
 
 	if slot4:CheckFleetMovable() then
-		slot6 = {
-			row = slot1.row,
-			column = slot1.column
-		}
 		slot7 = {
 			row = slot2,
 			column = slot3
@@ -511,7 +499,10 @@ function slot0.OpReqMoveFleet(slot0, slot1, slot2, slot3)
 		slot8 = nil
 
 		if slot5:IsSign(slot7.row, slot7.column) then
-			slot9, slot10 = slot5:FindPath(slot6, slot7)
+			slot9, slot10 = slot5:FindPath({
+				row = slot1.row,
+				column = slot1.column
+			}, slot7)
 
 			if slot9 < PathFinding.PrioObstacle then
 				slot8 = slot7
@@ -565,8 +556,7 @@ end
 
 function slot0.OpReqMoveFleetDone(slot0, slot1)
 	slot2 = {}
-	slot4 = uv0.wsMap.map
-	slot5 = slot4:GetFleet()
+	slot5 = uv0.wsMap.map:GetFleet()
 
 	table.insert(slot2, function (slot0)
 		uv0:UpdateRangeVisible(false)
@@ -638,11 +628,11 @@ function slot0.OpMoveFleet(slot0, slot1, slot2)
 		end)
 	end
 
-	(function (slot0)
+	function (slot0)
 		slot1 = uv0.path[slot0 + 1]
 
 		uv2.wsDragProxy:Focus(uv1:GetCell(slot1.row, slot1.column).transform.position, slot1.duration, LeanTweenType.linear)
-	end)(0)
+	end(0)
 
 	slot13 = nil
 
@@ -687,8 +677,7 @@ function slot0.OpMoveFleet(slot0, slot1, slot2)
 end
 
 function slot0.OpMoveAttachment(slot0, slot1, slot2)
-	slot3 = uv0
-	slot2 = slot3:DoTopBlock(slot2)
+	slot2 = uv0:DoTopBlock(slot2)
 	slot3 = uv0.wsMap
 	slot4 = slot3.map
 	slot5 = slot1.attachment
@@ -738,10 +727,8 @@ end
 function slot0.OpAction(slot0, slot1, slot2)
 	slot0:OpDone()
 
-	slot3 = {}
-
 	if slot1.childOps then
-		table.insert(slot3, function (slot0)
+		table.insert({}, function (slot0)
 			uv0:OpActions(uv1.childOps, slot0)
 		end)
 	end
@@ -753,36 +740,28 @@ function slot0.OpAction(slot0, slot1, slot2)
 		end)
 	elseif slot1.op == WorldConst.OpActionFleetMove then
 		table.insert(slot3, function (slot0)
-			slot1 = uv0
-
-			slot1:OpMoveFleet(uv1, function ()
+			uv0:OpMoveFleet(uv1, function ()
 				uv0:Apply()
 				uv1()
 			end)
 		end)
 	elseif slot1.op == WorldConst.OpActionAttachmentMove then
 		table.insert(slot3, function (slot0)
-			slot1 = uv0
-
-			slot1:OpMoveAttachment(uv1, function ()
+			uv0:OpMoveAttachment(uv1, function ()
 				uv0:Apply()
 				uv1()
 			end)
 		end)
 	elseif slot1.op == WorldConst.OpActionAttachmentAnim then
 		table.insert(slot3, function (slot0)
-			slot1 = uv0
-
-			slot1:OpAttachmentAnim(uv1, function ()
+			uv0:OpAttachmentAnim(uv1, function ()
 				uv0:Apply()
 				uv1()
 			end)
 		end)
 	elseif slot1.op == WorldConst.OpActionFleetAnim then
 		table.insert(slot3, function (slot0)
-			slot1 = uv0
-
-			slot1:OpFleetAnim(uv1, function ()
+			uv0:OpFleetAnim(uv1, function ()
 				uv0:Apply()
 				uv1()
 			end)
@@ -793,18 +772,14 @@ function slot0.OpAction(slot0, slot1, slot2)
 		end)
 	elseif slot1.op == WorldConst.OpActionCameraMove then
 		table.insert(slot3, function (slot0)
-			slot1 = uv0
-
-			slot1:OpMoveCameraTarget(uv1.attachment, 0.1, function ()
+			uv0:OpMoveCameraTarget(uv1.attachment, 0.1, function ()
 				uv0:Apply()
 				uv1()
 			end)
 		end)
 	elseif slot1.op == WorldConst.OpActionTrapGravityAnim then
 		table.insert(slot3, function (slot0)
-			slot1 = uv0
-
-			slot1:OpTrapGravityAnim(uv1.attachment, function ()
+			uv0:OpTrapGravityAnim(uv1.attachment, function ()
 				uv0:Apply()
 				uv1()
 			end)
@@ -822,13 +797,10 @@ function slot0.OpEvent(slot0, slot1, slot2)
 	slot3 = nowWorld()
 	slot4, slot5 = nil
 	slot6 = slot2:GetEventEffect()
-	slot8 = slot6.effect_paramater
 	slot9 = {}
 
 	if slot6.effect_type == WorldMapAttachment.EffectEventStoryOption then
-		slot10 = slot8[1]
-
-		if slot6.autoflag[1] and WorldConst.CheckWorldStorySkip(slot10) then
+		if slot6.autoflag[1] and WorldConst.CheckWorldStorySkip(slot6.effect_paramater[1]) then
 			table.insert(slot9, function (slot0)
 				slot0(uv0)
 			end)
@@ -880,14 +852,11 @@ function slot0.OpEvent(slot0, slot1, slot2)
 
 		table.insert(slot9, function (slot0)
 			if uv0:GetInventoryProxy():GetItemCount(uv1[1]) < uv1[2] then
-				slot1 = uv0
-
-				slot1:TriggerAutoFight(false)
+				uv0:TriggerAutoFight(false)
 
 				uv2.triggered = true
-				slot1 = uv3
 
-				slot1:OpStory(uv1[3], true, false, false, function ()
+				uv3:OpStory(uv1[3], true, false, false, function ()
 					uv0:OpInteractive()
 				end)
 			else
@@ -899,9 +868,7 @@ function slot0.OpEvent(slot0, slot1, slot2)
 			if uv0:IsAttachmentFinish() then
 				slot0()
 			else
-				slot1 = uv1
-
-				slot1:OpGuide(uv2[1], uv2[2], function ()
+				uv1:OpGuide(uv2[1], uv2[2], function ()
 					uv0.finishMark = uv0.data
 
 					if uv1 then
@@ -932,9 +899,7 @@ function slot0.OpEvent(slot0, slot1, slot2)
 		if slot1:GetDisplayCommander() and not slot1:IsCatSalvage() then
 			if not slot3.isAutoFight then
 				table.insert(slot9, function (slot0)
-					slot1 = uv0
-
-					slot1:OpStory(uv1[1], true, true, false, function (slot0)
+					uv0:OpStory(uv1[1], true, true, false, function (slot0)
 						if slot0 == uv0[2] then
 							uv1()
 						else
@@ -979,9 +944,7 @@ function slot0.OpEvent(slot0, slot1, slot2)
 			if uv0:IsAttachmentFinish() then
 				slot0()
 			else
-				slot1 = uv1
-
-				slot1:emit(WorldMediator.OnStartPerform, uv2[1], function ()
+				uv1:emit(WorldMediator.OnStartPerform, uv2[1], function ()
 					uv0.finishMark = uv0.data
 				end)
 			end
@@ -1018,10 +981,7 @@ end
 
 function slot0.OpEventOp(slot0, slot1)
 	slot0:OpDone()
-
-	slot2 = uv0
-
-	slot0:OpTriggerEvent(slot2:NewMapOp({
+	slot0:OpTriggerEvent(uv0:NewMapOp({
 		op = WorldConst.OpActionEventOp,
 		attachment = slot1,
 		effect = slot1:GetOpEffect()
@@ -1036,12 +996,11 @@ function slot0.OpTriggerEvent(slot0, slot1, slot2)
 	slot3 = nowWorld()
 	slot4 = {}
 	slot5 = slot1.effect
-	slot7 = slot5.effect_paramater
 
 	if slot5.effect_type == WorldMapAttachment.EffectEventStory then
 		slot8 = getProxy(WorldProxy)
 
-		if WorldConst.CheckWorldStorySkip(slot7[1]) then
+		if WorldConst.CheckWorldStorySkip(slot5.effect_paramater[1]) then
 			table.insert(slot4, function (slot0)
 				uv0:ReContinueMoveQueue()
 				slot0()
@@ -1099,40 +1058,29 @@ function slot0.OpTriggerEvent(slot0, slot1, slot2)
 		end)
 	elseif slot6 == WorldMapAttachment.EffectEventCameraMove then
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:OpMoveCamera(uv1[1], uv1[2], function ()
+			uv0:OpMoveCamera(uv1[1], uv1[2], function ()
 				uv0:Apply()
 				uv1()
 			end)
 		end)
 	elseif slot6 == WorldMapAttachment.EffectEventShakePlane then
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:OpShakePlane(uv1[1], uv1[2], uv1[3], uv1[4], function ()
+			uv0:OpShakePlane(uv1[1], uv1[2], uv1[3], uv1[4], function ()
 				uv0:Apply()
 				uv1()
 			end)
 		end)
 	elseif slot6 == WorldMapAttachment.EffectEventBlink1 or slot6 == WorldMapAttachment.EffectEventBlink2 then
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:TriggerAutoFight(false)
-
-			slot1 = uv1
-
-			slot1:OpActions(uv2.childOps, function ()
+			uv0:TriggerAutoFight(false)
+			uv1:OpActions(uv2.childOps, function ()
 				uv0:Apply()
 				uv1()
 			end)
 		end)
 	elseif slot6 == WorldMapAttachment.EffectEventFlash then
 		table.insert(slot4, function (slot0)
-			slot2 = uv1
-
-			slot2:OpFlash(uv0[1], uv0[2], uv0[3], Color.New(uv0[4][1] / 255, uv0[4][2] / 255, uv0[4][3] / 255, uv0[4][4] / 255), function ()
+			uv1:OpFlash(uv0[1], uv0[2], uv0[3], Color.New(uv0[4][1] / 255, uv0[4][2] / 255, uv0[4][3] / 255, uv0[4][4] / 255), function ()
 				uv0:Apply()
 				uv1()
 			end)
@@ -1163,22 +1111,15 @@ function slot0.OpTriggerEvent(slot0, slot1, slot2)
 		end)
 	elseif slot6 == WorldMapAttachment.EffectEventProgress then
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:OpActions(uv1.childOps, function ()
+			uv0:OpActions(uv1.childOps, function ()
 				uv0:Apply()
 				uv1()
 			end)
 		end)
 	elseif slot6 == WorldMapAttachment.EffectEventReturn2World then
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:TriggerAutoFight(false)
-
-			slot1 = uv1
-
-			slot1:OpSetInMap(false, function ()
+			uv0:TriggerAutoFight(false)
+			uv1:OpSetInMap(false, function ()
 				uv0:Apply()
 				uv1()
 			end)
@@ -1193,14 +1134,12 @@ function slot0.OpTriggerEvent(slot0, slot1, slot2)
 			slot0()
 		end)
 	elseif slot6 == WorldMapAttachment.EffectEventGlobalBuff then
-		slot8 = {
-			id = slot7[1],
-			floor = slot7[2],
-			before = slot3:GetGlobalBuff(slot7[1]):GetFloor()
-		}
-
 		if slot3.isAutoFight then
-			slot3:AddAutoInfo("buffs", slot8)
+			slot3:AddAutoInfo("buffs", {
+				id = slot7[1],
+				floor = slot7[2],
+				before = slot3:GetGlobalBuff(slot7[1]):GetFloor()
+			})
 		else
 			table.insert(slot4, function (slot0)
 				uv0:ShowSubView("GlobalBuff", {
@@ -1216,9 +1155,7 @@ function slot0.OpTriggerEvent(slot0, slot1, slot2)
 		end)
 	elseif slot6 == WorldMapAttachment.EffectEventSound then
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:OpPlaySound(uv1[1], function ()
+			uv0:OpPlaySound(uv1[1], function ()
 				uv0:Apply()
 				uv1()
 			end)
@@ -1337,19 +1274,13 @@ end
 
 function slot0.OpReqSubDone(slot0, slot1)
 	slot2 = nowWorld()
-	slot4 = slot2.staminaMgr
 
-	slot4:ConsumeStamina(slot2:CalcOrderCost(WorldConst.OpReqSub))
+	slot2.staminaMgr:ConsumeStamina(slot2:CalcOrderCost(WorldConst.OpReqSub))
+	slot2:SetReqCDTime(WorldConst.OpReqSub, pg.TimeMgr.GetInstance():GetServerTime())
 
-	slot7 = pg.TimeMgr.GetInstance()
+	slot4 = slot2:GetSubmarineFleet():GetFlagShipVO()
 
-	slot2:SetReqCDTime(WorldConst.OpReqSub, slot7:GetServerTime())
-
-	slot4 = slot2:GetSubmarineFleet()
-	slot4 = slot4:GetFlagShipVO()
-	slot5 = uv0
-
-	slot5:DoStrikeAnim(slot4:GetMapStrikeAnim(), slot4, function ()
+	uv0:DoStrikeAnim(slot4:GetMapStrikeAnim(), slot4, function ()
 		uv0:Apply()
 
 		if uv1.subCallback then
@@ -1417,9 +1348,7 @@ function slot0.OpReqSwitchFleetDone(slot0, slot1)
 end
 
 function slot0.OpStory(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot7 = pg.NewStoryMgr.GetInstance()
-
-	slot7:PlayForWorld(slot1, slot4, function (slot0, slot1)
+	pg.NewStoryMgr.GetInstance():PlayForWorld(slot1, slot4, function (slot0, slot1)
 		uv0:OpDone()
 		existCall(uv1, slot1)
 	end, slot2, false, tobool(slot4), slot3)
@@ -1446,12 +1375,8 @@ function slot0.OpTriggerSign(slot0, slot1, slot2, slot3)
 	end
 
 	_.each(slot2:GetEventEffects(), function (slot0)
-		slot2 = slot0.effect_paramater
-
 		if slot0.effect_type == WorldMapAttachment.EffectEventStoryOptionClient then
-			slot3 = slot2[1]
-
-			if slot0.autoflag[1] and WorldConst.CheckWorldStorySkip(slot3) then
+			if slot0.autoflag[1] and WorldConst.CheckWorldStorySkip(slot0.effect_paramater[1]) then
 				table.insert(uv0, function (slot0)
 					slot0(uv0)
 				end)
@@ -1560,8 +1485,7 @@ function slot0.OpMoveCamera(slot0, slot1, slot2, slot3)
 			})
 		end
 	else
-		slot5 = uv0.wsMap
-		slot5 = slot5:GetFleet()
+		slot5 = uv0.wsMap:GetFleet()
 
 		table.insert(slot4, {
 			focusPos = function ()
@@ -1625,9 +1549,7 @@ function slot0.OpMoveCameraTarget(slot0, slot1, slot2, slot3)
 end
 
 function slot0.OpShakePlane(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = uv0.wsDragProxy
-
-	slot6:ShakePlane(slot1, slot2, slot3, slot4, function ()
+	uv0.wsDragProxy:ShakePlane(slot1, slot2, slot3, slot4, function ()
 		uv0:OpDone()
 
 		if uv1 then
@@ -1638,8 +1560,7 @@ end
 
 function slot0.OpAttachmentAnim(slot0, slot1, slot2)
 	slot3 = slot1.attachment
-	slot4 = uv0.wsMap
-	slot4 = slot4:GetAttachment(slot3.row, slot3.column, slot3.type)
+	slot4 = uv0.wsMap:GetAttachment(slot3.row, slot3.column, slot3.type)
 
 	seriesAsync({
 		function (slot0)
@@ -1653,9 +1574,7 @@ function slot0.OpAttachmentAnim(slot0, slot1, slot2)
 end
 
 function slot0.OpFleetAnim(slot0, slot1, slot2)
-	slot3 = uv0.wsMap.map
-	slot4 = uv0.wsMap
-	slot4 = slot4:GetFleet(slot3:GetFleet(slot1.id))
+	slot4 = uv0.wsMap:GetFleet(uv0.wsMap.map:GetFleet(slot1.id))
 
 	seriesAsync({
 		function (slot0)
@@ -1669,22 +1588,13 @@ function slot0.OpFleetAnim(slot0, slot1, slot2)
 end
 
 function slot0.OpFlash(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = uv0.rtTop
-	slot6 = slot6:Find("flash")
+	slot6 = uv0.rtTop:Find("flash")
 
 	setActive(slot6, true)
 	setImageColor(slot6, slot4)
 	setImageAlpha(slot6, 0)
-
-	slot7 = uv0.wsTimer
-
-	slot7:AddInMapTween(LeanTween.alpha(slot6, slot4.a, slot1).uniqueId)
-
-	slot7 = uv0.wsTimer
-	slot9 = LeanTween.alpha(slot6, 0, slot3)
-	slot9 = slot9:setDelay(slot1 + slot2)
-
-	slot7:AddInMapTween(slot9:setOnComplete(System.Action(function ()
+	uv0.wsTimer:AddInMapTween(LeanTween.alpha(slot6, slot4.a, slot1).uniqueId)
+	uv0.wsTimer:AddInMapTween(LeanTween.alpha(slot6, 0, slot3):setDelay(slot1 + slot2):setOnComplete(System.Action(function ()
 		setActive(uv0, false)
 		uv1:OpDone()
 		uv2()
@@ -1794,8 +1704,7 @@ end
 function slot0.OpRedeploy(slot0)
 	slot0:OpDone()
 
-	slot1 = nowWorld()
-	slot2 = slot1:GetActiveMap()
+	slot2 = nowWorld():GetActiveMap()
 
 	if underscore.any(slot2:GetNormalFleets(), function (slot0)
 		return #slot0:GetCarries() > 0
@@ -1825,15 +1734,11 @@ function slot0.OpRedeploy(slot0)
 end
 
 function slot0.OpKillWorld(slot0)
-	slot1 = getProxy(ContextProxy)
-
-	slot1:getContextByMediator(WorldMediator).onRemoved = function ()
+	getProxy(ContextProxy):getContextByMediator(WorldMediator).onRemoved = function ()
 		pg.m02:sendNotification(GAME.WORLD_KILL)
 	end
 
-	slot2 = uv0
-
-	slot2:ExitWorld(function ()
+	uv0:ExitWorld(function ()
 		uv0:OpDone()
 	end, true)
 end
@@ -1859,18 +1764,9 @@ function slot0.OpReqMaintenanceDone(slot0, slot1)
 			slot5:Repair()
 		end
 	end)
-
-	slot5 = slot2.staminaMgr
-
-	slot5:ConsumeStamina(slot2:CalcOrderCost(WorldConst.OpReqMaintenance))
-
-	slot8 = pg.TimeMgr.GetInstance()
-
-	slot2:SetReqCDTime(WorldConst.OpReqMaintenance, slot8:GetServerTime())
-
-	slot5 = uv0.wsMap
-
-	slot5:UpdateRangeVisible(false)
+	slot2.staminaMgr:ConsumeStamina(slot2:CalcOrderCost(WorldConst.OpReqMaintenance))
+	slot2:SetReqCDTime(WorldConst.OpReqMaintenance, pg.TimeMgr.GetInstance():GetServerTime())
+	uv0.wsMap:UpdateRangeVisible(false)
 	slot0:OpShowAllFleetHealth(function ()
 		uv0:OpInteractive()
 	end)
@@ -1905,24 +1801,20 @@ function slot0.OpReqPressingMap(slot0)
 end
 
 function slot0.OpReqPressingMapDone(slot0, slot1, slot2)
-	slot3 = slot2
-
 	if nowWorld():GetMap(slot1.arg1):CheckMapPressingDisplay() then
-		table.insert(slot3, 1, function (slot0)
+		table.insert(slot2, 1, function (slot0)
 			uv0:BuildCutInAnim("WorldPressingWindow", slot0)
 		end)
 	end
 
 	if slot5:GetPressingAward(slot4) and slot6.flag then
 		if #pg.world_event_complete[slot6.id].event_reward_slgbuff > 1 then
-			slot9 = {
-				id = slot8[1],
-				floor = slot8[2],
-				before = slot5:GetGlobalBuff(slot8[1]):GetFloor()
-			}
-
 			if slot5.isAutoFight then
-				slot5:AddAutoInfo("buffs", slot9)
+				slot5:AddAutoInfo("buffs", {
+					id = slot8[1],
+					floor = slot8[2],
+					before = slot5:GetGlobalBuff(slot8[1]):GetFloor()
+				})
 			else
 				table.insert(slot3, function (slot0)
 					uv0:ShowSubView("GlobalBuff", {
@@ -2020,11 +1912,9 @@ function slot0.OpTaskGoto(slot0, slot1)
 	else
 		if slot2:GetActiveEntrance().id ~= slot3:GetFollowingEntrance() then
 			slot4 = slot3:GetFollowingEntrance()
-			slot5 = slot2:GetAtlas()
-			slot5 = slot5:GetTaskDic(slot3.id)
-			slot6 = uv0
+			slot5 = slot2:GetAtlas():GetTaskDic(slot3.id)
 
-			slot6:QueryTransport(function ()
+			uv0:QueryTransport(function ()
 				uv0:EnterTransportWorld({
 					entrance = uv1:GetEntrance(uv2),
 					mapTypes = uv3[uv2] and {
@@ -2119,14 +2009,8 @@ function slot0.OpAutoSubmitTaskDone(slot0, slot1)
 end
 
 function slot0.OpTrapGravityAnim(slot0, slot1, slot2)
-	slot3 = uv0
-
-	slot3:ClearMoveQueue()
-
-	slot3 = uv0.wsMap
-	slot3 = slot3:GetAttachment(slot1.row, slot1.column, slot1.type)
-
-	slot3:TrapAnimDisplay(function ()
+	uv0:ClearMoveQueue()
+	uv0.wsMap:GetAttachment(slot1.row, slot1.column, slot1.type):TrapAnimDisplay(function ()
 		uv0:OpDone()
 		existCall(uv1)
 	end)
@@ -2137,10 +2021,9 @@ function slot0.OpAutoFightSeach(slot0)
 
 	slot2 = nowWorld():GetActiveMap()
 	slot5 = nil
-	slot6 = 0
 
 	for slot10, slot11 in ipairs(slot2:GetLongMoveRange(slot2:GetFleet())) do
-		if slot2:GetCell(slot11.row, slot11.column):GetEventAttachment() and slot12:GetEventAutoPri() and slot6 < slot13 and slot2:CheckEventAutoTrigger(slot12) then
+		if slot2:GetCell(slot11.row, slot11.column):GetEventAttachment() and slot12:GetEventAutoPri() and 0 < slot13 and slot2:CheckEventAutoTrigger(slot12) then
 			slot5 = slot11
 			slot6 = slot13
 		end
@@ -2177,10 +2060,12 @@ function slot0.OpAutoFightSeach(slot0)
 				if slot0[1] and PlayerPrefs.GetInt(slot0[1], 0) == 0 then
 					return false
 				else
-					slot1 = {}
+					slot1 = {
+						[slot6] = true
+					}
 
 					for slot5, slot6 in ipairs(pg.gameset[slot0[2]].description) do
-						slot1[slot6] = true
+						-- Nothing
 					end
 
 					return underscore.any(uv0, function (slot0)
@@ -2237,7 +2122,6 @@ function slot0.OpAutoSwitchMap(slot0, slot1)
 	slot2 = nowWorld()
 	slot3 = slot2:GetAtlas()
 	slot4 = slot2:GetActiveEntrance()
-	slot5 = slot2:GetActiveMap()
 	slot7, slot8 = nil
 
 	switch(PlayerPrefs.GetInt("auto_switch_mode", 0), {
@@ -2255,10 +2139,8 @@ function slot0.OpAutoSwitchMap(slot0, slot1)
 				slot5
 			}))
 
-			slot1 = PlayerPrefs.GetString("auto_switch_difficult_base", "all")
-
 			for slot5, slot6 in ipairs(slot0) do
-				if uv0.transportDic[slot6.id] and slot6:GetBaseMap():GetPressingLevel() > 0 and not slot7.isPressing and slot7:IsMapOpen() and WorldSwitchPlanningLayer.checkDifficultValid(slot1, slot7:GetDanger()) and not uv1 then
+				if uv0.transportDic[slot6.id] and slot6:GetBaseMap():GetPressingLevel() > 0 and not slot7.isPressing and slot7:IsMapOpen() and WorldSwitchPlanningLayer.checkDifficultValid(PlayerPrefs.GetString("auto_switch_difficult_base", "all"), slot7:GetDanger()) and not uv1 then
 					uv2 = slot6
 					uv1 = slot7
 
@@ -2269,11 +2151,10 @@ function slot0.OpAutoSwitchMap(slot0, slot1)
 		[WorldSwitchPlanningLayer.MODE_SAFE] = function ()
 			switch(PlayerPrefs.GetString("auto_switch_difficult_safe", "only"), {
 				all = function ()
-					slot0 = uv0:GetActiveEntrance()
 					slot1 = {}
 
 					for slot5, slot6 in pairs(uv1.entranceDic) do
-						if slot6 ~= slot0 and uv1.transportDic[slot6.id] and slot6:GetBaseMap().isPressing and #slot6.config.complete_chapter > 0 and uv0:GetMap(slot6.config.complete_chapter[1]):IsMapOpen() then
+						if slot6 ~= uv0:GetActiveEntrance() and uv1.transportDic[slot6.id] and slot6:GetBaseMap().isPressing and #slot6.config.complete_chapter > 0 and uv0:GetMap(slot6.config.complete_chapter[1]):IsMapOpen() then
 							table.insert(slot1, {
 								slot6,
 								slot7
@@ -2307,9 +2188,7 @@ function slot0.OpAutoSwitchMap(slot0, slot1)
 				return
 			end
 
-			slot1 = uv3
-			slot1 = slot1:GetInventoryProxy()
-			slot1 = underscore.map(underscore.filter(underscore.map(slot1:GetItemsByType(WorldItem.UsageWorldMap), function (slot0)
+			slot1 = underscore.map(underscore.filter(underscore.map(uv3:GetInventoryProxy():GetItemsByType(WorldItem.UsageWorldMap), function (slot0)
 				return slot0.id
 			end), function (slot0)
 				return pg.world_item_data_template[slot0].usage_arg[1] ~= 1
@@ -2341,12 +2220,10 @@ function slot0.OpAutoSwitchMap(slot0, slot1)
 				slot6
 			}))
 
-			slot2 = PlayerPrefs.GetString("auto_switch_difficult_treasure", "all")
-
 			for slot6, slot7 in ipairs(slot1) do
 				slot8, slot9 = unpack(slot7)
 
-				if uv4.transportDic[slot9.id] and slot8:IsMapOpen() and WorldSwitchPlanningLayer.checkDifficultValid(slot2, slot8:GetDanger()) and not uv5 then
+				if uv4.transportDic[slot9.id] and slot8:IsMapOpen() and WorldSwitchPlanningLayer.checkDifficultValid(PlayerPrefs.GetString("auto_switch_difficult_treasure", "all"), slot8:GetDanger()) and not uv5 then
 					uv6 = slot9
 					uv5 = slot8
 
@@ -2357,7 +2234,7 @@ function slot0.OpAutoSwitchMap(slot0, slot1)
 	})
 
 	if false then
-		slot0:OpReqJumpOut(slot5.gid, true)
+		slot0:OpReqJumpOut(slot2:GetActiveMap().gid, true)
 	elseif not slot7 then
 		slot2:TriggerAutoSwitch(false)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_automode_start_tip1"))

@@ -50,10 +50,8 @@ function slot0.Fold(slot0, slot1, slot2)
 end
 
 function slot0.FoldHrz(slot0, slot1, slot2)
-	slot3 = slot1 > 0 and 1000 or -1000
-
 	if slot2 == 0 then
-		slot0._go.transform.localPosition = Vector3(slot0.lpos.x + slot3, slot0._go.transform.localPosition.y, 0)
+		slot0._go.transform.localPosition = Vector3(slot0.lpos.x + (slot1 > 0 and 1000 or -1000), slot0._go.transform.localPosition.y, 0)
 	else
 		LeanTween.moveLocalX(slot0._go, slot0.lpos.x + slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end
@@ -68,10 +66,8 @@ function slot0.UnFoldHrz(slot0, slot1)
 end
 
 function slot0.FoldVec(slot0, slot1, slot2)
-	slot3 = slot1 > 0 and 200 or -200
-
 	if slot2 == 0 then
-		slot0._go.transform.localPosition = Vector3(slot0._go.transform.localPosition.x, slot0.lpos.y + slot3, 0)
+		slot0._go.transform.localPosition = Vector3(slot0._go.transform.localPosition.x, slot0.lpos.y + (slot1 > 0 and 200 or -200), 0)
 	else
 		LeanTween.moveLocalY(slot0._go, slot0.lpos.y + slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end

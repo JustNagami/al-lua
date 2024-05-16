@@ -7,11 +7,11 @@ function slot0.execute(slot0, slot1)
 	slot7 = getProxy(PlayerProxy):getRawData()
 	slot10 = getProxy(ShopsProxy):getShamShop():getGoodsCfg(slot2.id)
 
-	if GetOwnedDropCount({
+	if Drop.New({
 		type = slot10.resource_category,
 		id = slot10.resource_type
-	}) < slot10.resource_num * slot2.count then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", getDropName(slot11)))
+	}):getOwnedCount() < slot10.resource_num * slot2.count then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot11:getName()))
 
 		return
 	end
@@ -30,9 +30,7 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	slot12 = pg.ConnectionMgr.GetInstance()
-
-	slot12:Send(16201, {
+	pg.ConnectionMgr.GetInstance():Send(16201, {
 		id = slot3,
 		type = uv0.SHAM_SHOP,
 		count = slot4

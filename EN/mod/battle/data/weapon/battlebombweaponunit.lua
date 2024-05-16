@@ -33,8 +33,7 @@ function slot2.HostOnEnemy(slot0)
 
 	if slot0._preCastInfo.alertTime ~= nil then
 		slot0._showPrecastAlert = true
-		slot2 = pg.TimeMgr.GetInstance()
-		slot0._alertTimer = slot2:AddBattleTimer("", -1, slot0._preCastInfo.alertTime or 3, function ()
+		slot0._alertTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, slot0._preCastInfo.alertTime or 3, function ()
 			uv0._alertTimer:Stop()
 			uv0:Fire()
 		end, true, true)

@@ -84,10 +84,9 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.GetIcon(slot0, slot1, slot2)
-	slot3 = slot1.buff_list
 	slot4 = slot2 and slot0.buff2Character or slot0.buff2Enemy
 
-	for slot8, slot9 in ipairs(slot3) do
+	for slot8, slot9 in ipairs(slot1.buff_list) do
 		if slot4[slot9] then
 			return slot4[slot9]
 		end
@@ -134,9 +133,7 @@ function slot0.UpdateKaijuBar(slot0, slot1)
 	slot8 = slot0.barGroup1.ratioText
 
 	if getProxy(ChapterProxy):GetExtendChapterData(slot1.id, "FleetMoveDistance") and slot3 <= slot4 then
-		slot9 = slot0.animations
-
-		slot9:Insert(function (slot0)
+		slot0.animations:Insert(function (slot0)
 			slot1 = uv0 - uv1
 			slot2 = slot1 / uv2
 
@@ -150,9 +147,8 @@ function slot0.UpdateKaijuBar(slot0, slot1)
 	end
 
 	slot9 = slot0:GetIcon(slot1, false)
-	slot10 = slot0.animations
 
-	slot10:Insert(function (slot0)
+	slot0.animations:Insert(function (slot0)
 		uv0.fillAmount = uv1
 
 		setText(uv2, string.format("%02d%%", math.floor(uv1 * 100)))
@@ -165,9 +161,7 @@ function slot0.UpdateKaijuBar(slot0, slot1)
 	end)
 
 	if slot2 and slot4 > slot3 - slot2 and slot4 <= slot3 then
-		slot10 = slot0.PanelAnimations
-
-		slot10:Insert(function (slot0)
+		slot0.PanelAnimations:Insert(function (slot0)
 			uv0:ShowPanel(uv1, "Kaiju", slot0, uv1 == "he" and "" or "2")
 		end)
 	end
@@ -179,9 +173,7 @@ function slot0.UpdateSyberSquadBar(slot0, slot1)
 	slot8 = slot0.barGroup2.ratioText
 
 	if getProxy(ChapterProxy):GetLastDefeatedEnemy(slot1.id) and slot3 <= slot4 then
-		slot9 = slot0.animations
-
-		slot9:Insert(function (slot0)
+		slot0.animations:Insert(function (slot0)
 			slot2 = math.max(uv0 - 1, 0) / uv1
 
 			LeanTween.value(go(uv2), 0, 1, 1):setOnUpdate(System.Action_float(function (slot0)
@@ -194,9 +186,8 @@ function slot0.UpdateSyberSquadBar(slot0, slot1)
 	end
 
 	slot9 = slot0:GetIcon(slot1, true)
-	slot10 = slot0.animations
 
-	slot10:Insert(function (slot0)
+	slot0.animations:Insert(function (slot0)
 		uv0.fillAmount = uv1
 
 		setText(uv2, string.format("%02d%%", math.floor(uv1 * 100)))
@@ -209,9 +200,7 @@ function slot0.UpdateSyberSquadBar(slot0, slot1)
 	end)
 
 	if slot2 and slot3 == slot4 then
-		slot10 = slot0.PanelAnimations
-
-		slot10:Insert(function (slot0)
+		slot0.PanelAnimations:Insert(function (slot0)
 			uv0:ShowPanel(uv1, "SyberSquad", slot0)
 		end)
 	end
@@ -239,7 +228,6 @@ function slot0.ShowPanel(slot0, slot1, slot2, slot3, slot4)
 		setActive(slot5:Find("Word" .. slot4), true)
 	end
 
-	slot8 = slot5:GetComponent(typeof(DftAniEvent))
 	slot9 = nil
 
 	function slot10()
@@ -247,7 +235,7 @@ function slot0.ShowPanel(slot0, slot1, slot2, slot3, slot4)
 		existCall(uv1)
 	end
 
-	slot8:SetEndEvent(slot10)
+	slot5:GetComponent(typeof(DftAniEvent)):SetEndEvent(slot10)
 	onButton(slot0, slot0.banner, slot10)
 	table.insert(slot0.cleanActions, function ()
 		table.removebyvalue(uv0.cleanActions, uv1)

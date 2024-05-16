@@ -76,26 +76,14 @@ function slot0.createFriendItem(slot0, slot1)
 	slot2 = {
 		tf = tf(slot1)
 	}
-	slot3 = slot2.tf
-	slot3 = slot3:Find("name")
-	slot2.nameTF = slot3:GetComponent(typeof(Text))
-	slot3 = slot2.tf
-	slot3 = slot3:Find("shipicon/icon")
-	slot2.iconTF = slot3:GetComponent(typeof(Image))
-	slot3 = slot2.tf
-	slot2.circle = slot3:Find("shipicon/frame")
-	slot3 = slot2.tf
-	slot2.toggle = slot3:GetComponent(typeof(Toggle))
-	slot3 = slot2.tf
-	slot2.tipTF = slot3:Find("tip")
-	slot3 = slot2.tf
-	slot3 = slot3:Find("lv_bg/date")
-	slot2.dateTF = slot3:GetComponent(typeof(Text))
-	slot3 = slot2.tf
-	slot2.onlineTF = slot3:Find("lv_bg/online")
-	slot3 = slot2.tf
-	slot3 = slot3:Find("lv_bg/Text")
-	slot2.levelTF = slot3:GetComponent(typeof(Text))
+	slot2.nameTF = slot2.tf:Find("name"):GetComponent(typeof(Text))
+	slot2.iconTF = slot2.tf:Find("shipicon/icon"):GetComponent(typeof(Image))
+	slot2.circle = slot2.tf:Find("shipicon/frame")
+	slot2.toggle = slot2.tf:GetComponent(typeof(Toggle))
+	slot2.tipTF = slot2.tf:Find("tip")
+	slot2.dateTF = slot2.tf:Find("lv_bg/date"):GetComponent(typeof(Text))
+	slot2.onlineTF = slot2.tf:Find("lv_bg/online")
+	slot2.levelTF = slot2.tf:Find("lv_bg/Text"):GetComponent(typeof(Text))
 	slot3 = slot0.friendVO
 
 	function slot2.update(slot0, slot1, slot2)
@@ -223,10 +211,7 @@ function slot0.openChatPanel(slot0, slot1)
 
 	removeAllChildren(slot0.chatsContainer)
 
-	slot3 = pairs
-	slot4 = slot0.cacheMsgsVOs[slot1.id] or {}
-
-	for slot6, slot7 in slot3(slot4) do
+	for slot6, slot7 in pairs(slot0.cacheMsgsVOs[slot1.id] or {}) do
 		slot0:appendMsg(slot7)
 	end
 
@@ -268,12 +253,11 @@ function slot0.appendMsg(slot0, slot1)
 	slot0:emit(ChatRoomMediator.CLEAR_UNREADCOUNT, slot0.friendVO.id)
 
 	slot2 = slot0.otherPopTpl
-	slot3 = slot0:getPlayer(slot1.playerId)
 
 	if slot1.playerId == slot0.playerVO.id then
 		slot2 = slot0.selfPopTpl
 		slot1.player = setmetatable(Clone(slot0.playerVO), {
-			__index = slot3
+			__index = slot0:getPlayer(slot1.playerId)
 		})
 		slot1.isSelf = true
 	end
@@ -287,10 +271,9 @@ function slot0.closeChatPanel(slot0)
 end
 
 function slot0.willExit(slot0)
-	slot1 = pg.UIMgr.GetInstance()
 	slot4 = slot0._tf
 
-	slot1:UnblurPanel(slot0.frame, slot4)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0.frame, slot4)
 	eachChild(slot0.chatsContainer, function (slot0)
 		if uv0:findTF("face", slot0).childCount > 0 then
 			slot2 = slot1:GetChild(0).gameObject

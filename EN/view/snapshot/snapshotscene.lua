@@ -361,7 +361,11 @@ function slot0.checkSkin(slot0, slot1)
 	slot0.skin = slot2
 	slot3 = false
 
-	if slot0.paintSkin ~= slot2.painting or slot2.spineSkin ~= slot2.prefab then
+	if slot0.contextData.tbId then
+		slot0.paintSkin = pg.secretary_special_ship[slot0.contextData.tbId].prefab or "tbniang"
+		slot3 = true
+		slot0.contextData.tbId = nil
+	elseif slot0.paintSkin ~= slot2.painting or slot2.spineSkin ~= slot2.prefab then
 		slot0:clearSkin()
 
 		slot0.paintSkin = slot2.painting
@@ -450,9 +454,8 @@ function slot0.updateSkin(slot0)
 	slot1 = slot0.paint:GetComponent(typeof(Zoom))
 	slot2 = 0
 	slot3 = 0
-	slot4, slot3 = uv1(slot0.showType)
+	slot1.minZoom, slot3 = uv1(slot0.showType)
 	slot1.maxZoom = slot3
-	slot1.minZoom = slot4
 
 	if slot3 < slot0.paint.localScale.x then
 		slot0.paint.localScale = Vector3(slot3, slot3, slot3)
@@ -461,12 +464,9 @@ function slot0.updateSkin(slot0)
 	end
 
 	if slot0.showType == uv0.SHOW_LIVE2D then
-		slot4 = pg.UIMgr.GetInstance()
+		pg.UIMgr.GetInstance():LoadingOn()
 
-		slot4:LoadingOn()
-
-		slot4 = pg.Live2DMgr.GetInstance()
-		slot0.live2dRequestId = slot4:GetLive2DModelAsync(slot0.paintSkin, function (slot0)
+		slot0.live2dRequestId = pg.Live2DMgr.GetInstance():GetLive2DModelAsync(slot0.paintSkin, function (slot0)
 			UIUtil.SetLayerRecursively(slot0, LayerMask.NameToLayer("UI"))
 
 			slot1 = slot0.transform
@@ -522,10 +522,7 @@ function slot0.updateSkin(slot0)
 	elseif slot0.showType == uv0.SHOW_SPINE then
 		SetActive(slot0.live2d, false)
 		SetActive(slot0.spine, true)
-
-		slot4 = PoolMgr.GetInstance()
-
-		slot4:GetSpineChar(slot0.spineSkin, true, function (slot0)
+		PoolMgr.GetInstance():GetSpineChar(slot0.spineSkin, true, function (slot0)
 			slot0.name = "model"
 			slot1 = slot0.transform
 
@@ -756,10 +753,8 @@ function slot0.SetDummyForIOS(slot0, slot1)
 		return
 	end
 
-	slot2 = pg.UIMgr.GetInstance():GetMainCamera():GetComponent(typeof(Camera))
-
 	if slot1 then
-		slot2.nearClipPlane = 0
+		pg.UIMgr.GetInstance():GetMainCamera():GetComponent(typeof(Camera)).nearClipPlane = 0
 
 		slot0.dummy:SetParent(pg.UIMgr.GetInstance():GetMainCamera().transform)
 

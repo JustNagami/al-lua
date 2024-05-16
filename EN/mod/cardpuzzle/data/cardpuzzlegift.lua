@@ -63,22 +63,17 @@ function slot0.GetEffects(slot0)
 end
 
 function slot0.GetAttributeBonus(slot0, slot1)
-	slot2 = {}
-
 	if slot0:GetType() ~= uv0.TYPE.GLOBAL then
-		return slot2
+		return {}
 	end
 
 	for slot6, slot7 in ipairs(slot0:GetEffects()) do
 		if slot7.type == uv0.EFFECT_TYPE.GLOBAL_ATTRIBUTE_BONUS then
 			for slot11, slot12 in ipairs(slot7.arg_list) do
-				slot14 = slot12[2]
-				slot15 = slot12[3]
-
 				if table.contains(slot12[1], slot1:getShipType()) then
 					table.insert(slot2, {
-						type = CardPuzzleShip.PROPERTIES[slot14],
-						value = slot15
+						type = CardPuzzleShip.PROPERTIES[slot12[2]],
+						value = slot12[3]
 					})
 				end
 			end

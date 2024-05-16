@@ -12,6 +12,7 @@ slot0.WITH_EFFECT = 3
 slot0.WITH_DYNAMIC_BG = 4
 slot0.WITH_BGM = 5
 slot0.WITH_SPINE = 6
+slot0.WITH_SPINE_PLUS = 7
 
 function slot0.Tag2Name(slot0)
 	if not uv0.Tag2NameTab then
@@ -21,7 +22,8 @@ function slot0.Tag2Name(slot0)
 			[uv0.WITH_DYNAMIC_BG] = "dtbg",
 			[uv0.WITH_EFFECT] = "effect",
 			[uv0.WITH_LIVE2D] = "live2d",
-			[uv0.WITH_SPINE] = "spine"
+			[uv0.WITH_SPINE] = "spine",
+			[uv0.WITH_SPINE_PLUS] = "spine_plus"
 		}
 	end
 
@@ -49,9 +51,7 @@ end
 slot1 = pg.ship_skin_template.get_id_list_by_ship_group
 
 function slot0.GetSkinByType(slot0, slot1)
-	slot2 = uv0[slot0] or {}
-
-	for slot6, slot7 in ipairs(slot2) do
+	for slot6, slot7 in ipairs(uv0[slot0] or {}) do
 		if pg.ship_skin_template[slot7].skin_type == slot1 then
 			return slot8
 		end
@@ -60,9 +60,8 @@ end
 
 function slot0.GetAllSkinByGroup(slot0)
 	slot1 = {}
-	slot2 = uv0[slot0] or {}
 
-	for slot6, slot7 in ipairs(slot2) do
+	for slot6, slot7 in ipairs(uv0[slot0] or {}) do
 		if pg.ship_skin_template[slot7].no_showing ~= "1" then
 			table.insert(slot1, slot8)
 		end
@@ -153,7 +152,7 @@ function slot0.IsMatchKey(slot0, slot1)
 		return true
 	end
 
-	return string.find(string.lower(slot0.shipName), string.lower(string.gsub(slot1, "%.", "%%."))) or string.find(string.lower(slot0.skinName), slot1)
+	return string.find(string.lower(slot0.shipName), string.lower(string.gsub(string.lower(string.gsub(slot1, "%.", "%%.")), "%-", "%%-"))) or string.find(string.lower(slot0.skinName), slot1)
 end
 
 function slot0.ToShip(slot0)
@@ -253,10 +252,8 @@ end
 
 function slot0.CanShare(slot0)
 	function slot3()
-		slot0 = uv0:getConfig("ship_group")
-
 		for slot5, slot6 in pairs(getProxy(BayProxy):getRawData()) do
-			if slot6.groupId == slot0 and slot6.propose then
+			if slot6.groupId == uv0:getConfig("ship_group") and slot6.propose then
 				return true
 			end
 		end
@@ -264,13 +261,13 @@ function slot0.CanShare(slot0)
 		return false
 	end
 
-	return not (slot0:getConfig("skin_type") == uv0.SKIN_TYPE_DEFAULT or slot4 == uv0.SKIN_TYPE_REMAKE or slot4 == uv0.SKIN_TYPE_OLD or slot4 == uv0.SKIN_TYPE_NOT_HAVE_HIDE and not getProxy(ShipSkinProxy):hasSkin(slot0.configId) or slot4 == uv0.SKIN_TYPE_SHOW_IN_TIME and not (function ()
+	return not (slot0:getConfig("skin_type") == uv0.SKIN_TYPE_DEFAULT or slot4 == uv0.SKIN_TYPE_REMAKE or slot4 == uv0.SKIN_TYPE_OLD or slot4 == uv0.SKIN_TYPE_NOT_HAVE_HIDE and not getProxy(ShipSkinProxy):hasSkin(slot0.configId) or slot4 == uv0.SKIN_TYPE_SHOW_IN_TIME and not function ()
 		if uv0 then
 			return true
 		end
 
 		return uv1:InShowTime()
-	end)())
+	end())
 end
 
 function slot0.IsShareSkin(slot0, slot1)
@@ -285,15 +282,50 @@ function slot0.CanUseShareSkinForShip(slot0, slot1)
 		id = slot1
 	})
 	slot4 = false
-	slot6 = slot3:IsProposeSkin()
 
-	if slot3:CanShare() and slot6 and slot0.propose then
+	if slot3:CanShare() and slot3:IsProposeSkin() and slot0.propose then
 		slot4 = true
 	elseif slot5 and not slot6 then
 		slot4 = slot0:GetNoProposeIntimacyMax() <= math.floor(slot0:getIntimacy() / 100)
 	end
 
 	return slot2 and slot4
+end
+
+function slot0.ExistReward(slot0)
+	return pg.ship_skin_reward[slot0.configId] ~= nil and #slot1.reward > 0
+end
+
+function slot0.GetRewardList(slot0)
+	if not slot0:ExistReward() then
+		return {}
+	end
+
+	slot2 = {}
+
+	for slot6, slot7 in pairs(pg.ship_skin_reward[slot0.configId].reward) do
+		table.insert(slot2, {
+			type = slot7[1],
+			id = slot7[2],
+			count = slot7[3]
+		})
+	end
+
+	return slot2
+end
+
+function slot0.GetRewardListDesc(slot0)
+	if #slot0:GetRewardList() <= 0 then
+		return ""
+	end
+
+	return getDropInfo(_.map(slot1, function (slot0)
+		return {
+			slot0.type,
+			slot0.id,
+			slot0.count
+		}
+	end))
 end
 
 return slot0

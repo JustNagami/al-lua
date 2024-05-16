@@ -171,9 +171,7 @@ function slot12.PlayMoveCard(slot0, slot1)
 end
 
 function slot12.CheckCardCastable(slot0, slot1)
-	slot3 = slot1:GetCastCondition() ~= false
-
-	if slot1:GetTotalCost() <= slot0._energy:GetCurrentEnergy() and slot3 then
+	if slot1:GetTotalCost() <= slot0._energy:GetCurrentEnergy() and slot1:GetCastCondition() ~= false then
 		return true
 	end
 end
@@ -210,10 +208,9 @@ function slot12.Start(slot0)
 			slot0._deck:Add(slot0:GenerateCard(slot7))
 		end
 
-		slot3 = slot1.init_move
 		slot4 = 0
 
-		while slot3 > slot4 do
+		while slot1.init_move > slot4 do
 			slot0._moveDeck:Add(slot0:GenerateCard(uv1.BASE_MOVE_ID))
 
 			slot4 = slot4 + 1

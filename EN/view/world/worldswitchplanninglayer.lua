@@ -119,8 +119,7 @@ function slot0.init(slot0)
 		"base",
 		"treasure"
 	}) do
-		slot6 = slot0.rtView
-		slot6 = slot6:Find("content/" .. slot5 .. "/toggles")
+		slot6 = slot0.rtView:Find("content/" .. slot5 .. "/toggles")
 		slot7 = slot6:Find("all")
 		slot8 = {}
 		slot9 = 0
@@ -235,10 +234,9 @@ function slot0.init(slot0)
 
 	for slot8, slot9 in pairs(slot0.togglesList) do
 		slot14 = "/toggles"
-		slot10 = slot0.rtView:Find("content/" .. slot8 .. slot14)
 
 		for slot14, slot15 in pairs(slot9.info) do
-			onToggle(slot0, slot10:Find(slot14), function (slot0)
+			onToggle(slot0, slot0.rtView:Find("content/" .. slot8 .. slot14):Find(slot14), function (slot0)
 				if slot0 then
 					uv0.setFlag(uv1)
 				end
@@ -329,10 +327,9 @@ end
 
 function slot0.initToggle(slot0, slot1)
 	slot2 = slot0.togglesList[slot1]
-	slot3 = slot2.getFlag()
 
 	for slot7, slot8 in pairs(slot2.info) do
-		if slot8 == slot3 then
+		if slot8 == slot2.getFlag() then
 			triggerToggle(slot0.rtView:Find("content/" .. slot1 .. "/toggles/" .. slot7), true)
 
 			break
@@ -360,40 +357,38 @@ function slot0.updateView(slot0, slot1)
 		end
 	end
 
-	slot5 = slot0.rtView
-
-	eachChild(slot5:Find("content"), function (slot0)
+	eachChild(slot0.rtView:Find("content"), function (slot0)
 		setActive(slot0, uv0.modeToggleDic[uv1][slot0.name])
 
 		if uv0.modeToggleDic[uv1] then
 			switch(slot0.name, {
 				base = function ()
-					slot0 = {}
+					slot0 = {
+						[slot5] = true
+					}
 					slot4 = "auto_switch_difficult_base"
 					slot5 = "all"
 
 					for slot4, slot5 in ipairs(uv0.paresingToggleString(PlayerPrefs.GetString(slot4, slot5))) do
-						slot0[slot5] = true
+						-- Nothing
 					end
 
-					slot2 = uv1.rtView
-
-					eachChild(slot2:Find("content/base/toggles"), function (slot0)
+					eachChild(uv1.rtView:Find("content/base/toggles"), function (slot0)
 						triggerToggle(slot0, uv0[slot0.name])
 					end)
 				end,
 				treasure = function ()
-					slot0 = {}
+					slot0 = {
+						[slot5] = true
+					}
 					slot4 = "auto_switch_difficult_treasure"
 					slot5 = "all"
 
 					for slot4, slot5 in ipairs(uv0.paresingToggleString(PlayerPrefs.GetString(slot4, slot5))) do
-						slot0[slot5] = true
+						-- Nothing
 					end
 
-					slot2 = uv1.rtView
-
-					eachChild(slot2:Find("content/treasure/toggles"), function (slot0)
+					eachChild(uv1.rtView:Find("content/treasure/toggles"), function (slot0)
 						triggerToggle(slot0, uv0[slot0.name])
 					end)
 				end
@@ -405,9 +400,7 @@ function slot0.updateView(slot0, slot1)
 end
 
 function slot0.saveConfig(slot0, slot1)
-	slot4 = slot0.rtView
-
-	eachChild(slot4:Find("content/" .. slot1 .. "/toggles"), function (slot0)
+	eachChild(slot0.rtView:Find("content/" .. slot1 .. "/toggles"), function (slot0)
 		if GetComponent(slot0, typeof(Toggle)).isOn then
 			table.insert(uv0, slot0.name)
 		end

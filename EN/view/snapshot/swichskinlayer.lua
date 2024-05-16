@@ -9,9 +9,7 @@ function slot0.setShipSkin(slot0, slot1)
 end
 
 function slot0.GetShareSkins(slot0)
-	slot1 = getProxy(ShipSkinProxy)
-
-	return _.map(slot1:GetShareSkinsForShip(slot0.shipVO), function (slot0)
+	return _.map(getProxy(ShipSkinProxy):GetShareSkinsForShip(slot0.shipVO), function (slot0)
 		return pg.ship_skin_template[slot0.id]
 	end)
 end
@@ -112,24 +110,15 @@ function slot0.Flush(slot0, slot1)
 			elseif uv4 then
 				if uv5 or uv6 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_skin_out_of_stock"))
+				elseif Goods.Create({
+					shop_id = uv4.id
+				}, Goods.TYPE_SKIN):isDisCount() and slot0:IsItemDiscountType() then
+					uv1:emit(SwichSkinMediator.BUY_ITEM_BY_ACT, uv4.id, 1)
 				else
-					slot0 = Goods.Create({
-						shop_id = uv4.id
-					}, Goods.TYPE_SKIN)
-					slot3 = i18n("text_buy_fashion_tip", slot0:GetPrice(), uv2.name)
-
-					if slot0:isDisCount() and slot0:IsItemDiscountType() then
-						slot3 = i18n("discount_coupon_tip", slot2, slot0:GetDiscountItem().name, uv2.name)
-					end
-
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = slot3,
+						content = i18n("text_buy_fashion_tip", slot0:GetPrice(), uv2.name),
 						onYes = function ()
-							if uv0 then
-								uv1:emit(SwichSkinMediator.BUY_ITEM_BY_ACT, uv2.id, 1)
-							else
-								uv1:emit(SwichSkinMediator.BUY_ITEM, uv2.id, 1)
-							end
+							uv0:emit(SwichSkinMediator.BUY_ITEM, uv1.id, 1)
 						end
 					})
 				end

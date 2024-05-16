@@ -60,9 +60,8 @@ function slot0.OnInit(slot0)
 	slot0:UpdateEmptyCard()
 
 	slot0.scrollRect = WorldBossItemList.New(slot0:findTF("list_panel/mask/bg/container"), slot0:findTF("list_panel/mask/tpl"))
-	slot1 = slot0.scrollRect
 
-	slot1:Make(function (slot0, slot1)
+	slot0.scrollRect:Make(function (slot0, slot1)
 		uv0:OnInitCard(slot0, slot1)
 	end, function (slot0, slot1)
 		uv0:OnPreviewCard(slot0, slot1)
@@ -70,24 +69,18 @@ function slot0.OnInit(slot0)
 		uv0:OnSelectCard(slot0, slot1)
 	end)
 
-	slot1 = slot0:findTF("main/hp/slider")
-	slot0.hpSlider = slot1:GetComponent(typeof(Slider))
-	slot1 = slot0:findTF("main/hp/level/Text")
-	slot0.levelTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0:findTF("main/hp/Text")
-	slot0.hpTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0:findTF("main/time/Text")
-	slot0.expiredTimeTxt = slot1:GetComponent(typeof(Text))
+	slot0.hpSlider = slot0:findTF("main/hp/slider"):GetComponent(typeof(Slider))
+	slot0.levelTxt = slot0:findTF("main/hp/level/Text"):GetComponent(typeof(Text))
+	slot0.hpTxt = slot0:findTF("main/hp/Text"):GetComponent(typeof(Text))
+	slot0.expiredTimeTxt = slot0:findTF("main/time/Text"):GetComponent(typeof(Text))
 	slot0.mainPanel = slot0:findTF("main")
 	slot0.painting = slot0:findTF("paint")
 
 	setActive(slot0.painting, false)
 	setActive(slot0.mainPanel, false)
 
-	slot1 = slot0.mainPanel
-	slot0.rankBtn = slot1:Find("rank_btn")
-	slot1 = slot0.mainPanel
-	slot0.startBtn = slot1:Find("start_btn")
+	slot0.rankBtn = slot0.mainPanel:Find("rank_btn")
+	slot0.startBtn = slot0.mainPanel:Find("start_btn")
 	slot0.refreshBtn = slot0:findTF("list_panel/frame/filter/refresh_btn")
 	slot0.refreshBtnGray = slot0:findTF("list_panel/frame/filter/refresh_btn_gray")
 	slot0.cdTime = 0
@@ -126,22 +119,10 @@ function slot0.OnInit(slot0)
 		uv0:CheckToggle()
 		uv0:UpdateNonProcessList()
 	end, SFX_PANEL)
-
-	slot1 = GetComponent(slot0:findTF("list_panel/frame/filter/toggles/friend/unsel"), typeof(Image))
-
-	slot1:SetNativeSize()
-
-	slot1 = GetComponent(slot0:findTF("list_panel/frame/filter/toggles/friend/sel"), typeof(Image))
-
-	slot1:SetNativeSize()
-
-	slot1 = GetComponent(slot0:findTF("list_panel/frame/filter/toggles/guild/sel"), typeof(Image))
-
-	slot1:SetNativeSize()
-
-	slot1 = GetComponent(slot0:findTF("list_panel/frame/filter/toggles/guild/unsel"), typeof(Image))
-
-	slot1:SetNativeSize()
+	GetComponent(slot0:findTF("list_panel/frame/filter/toggles/friend/unsel"), typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("list_panel/frame/filter/toggles/friend/sel"), typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("list_panel/frame/filter/toggles/guild/sel"), typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("list_panel/frame/filter/toggles/guild/unsel"), typeof(Image)):SetNativeSize()
 	onToggle(slot0, slot0:findTF("list_panel/frame/filter/toggles/guild"), function (slot0)
 		uv0.filterFlags[3] = slot0 and WorldBoss.BOSS_TYPE_GUILD or -1
 
@@ -191,9 +172,7 @@ function slot0.UpdatePainting(slot0, slot1)
 end
 
 function slot0.RotateRefreshBtn(slot0, slot1)
-	slot2 = LeanTween.rotate(rtf(slot0.refreshBtn), -360, 0.5)
-
-	slot2:setOnComplete(System.Action(function ()
+	LeanTween.rotate(rtf(slot0.refreshBtn), -360, 0.5):setOnComplete(System.Action(function ()
 		uv0.refreshBtn.localEulerAngles = Vector3(0, 0, 0)
 
 		setActive(uv0.refreshBtnGray, false)
@@ -242,20 +221,16 @@ function slot0.Update(slot0)
 end
 
 function slot0.UpdateNonProcessList(slot0)
-	slot1 = slot0.proxy
-
-	function slot3(slot0)
-		return _.any(_.select(uv0.filterFlags, function (slot0)
-			return slot0 >= 0
-		end), function (slot0)
-			return uv0:GetType() == slot0
-		end)
-	end
-
 	slot0.displays = {}
 
-	for slot7, slot8 in ipairs(slot1:GetCacheBossList()) do
-		if not slot8:isDeath() and not slot8:IsExpired() and slot3(slot8) and not slot8:IsFullPeople() and slot0:OnFilterBoss(slot8) then
+	for slot7, slot8 in ipairs(slot0.proxy:GetCacheBossList()) do
+		if not slot8:isDeath() and not slot8:IsExpired() and function (slot0)
+			return _.any(_.select(uv0.filterFlags, function (slot0)
+				return slot0 >= 0
+			end), function (slot0)
+				return uv0:GetType() == slot0
+			end)
+		end(slot8) and not slot8:IsFullPeople() and slot0:OnFilterBoss(slot8) then
 			table.insert(slot0.displays, slot8)
 		end
 	end

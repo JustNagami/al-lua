@@ -66,10 +66,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot2 = slot1:getBody()
-
 	if slot1:getName() == TechnologyProxy.TECHNOLOGY_UPDATED then
-		slot0.viewComponent:updateTechnology(slot2)
+		slot0.viewComponent:updateTechnology(slot1:getBody())
 	elseif slot3 == GAME.FINISH_TECHNOLOGY_DONE then
 		if #slot2.items > 0 then
 			slot0.viewComponent:emit(BaseUI.ON_AWARD, {

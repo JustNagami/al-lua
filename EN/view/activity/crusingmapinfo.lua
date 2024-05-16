@@ -49,19 +49,22 @@ slot0.MapInfo = {
 	}
 }
 slot0.VersionInfo = {
-	map_202308 = "CrusingMap_2",
+	map_202210 = "CrusingMap_1",
 	map_202212 = "CrusingMap_1",
 	map_202202 = "CrusingMap_2",
-	map_202210 = "CrusingMap_1",
+	map_202312 = "CrusingMap_1",
 	map_202302 = "CrusingMap_1",
 	map_202306 = "CrusingMap_2",
 	map_202208 = "CrusingMap_1",
 	map_202310 = "CrusingMap_2",
 	map_202112 = "CrusingMap_1",
 	map_202304 = "CrusingMap_1",
+	map_202308 = "CrusingMap_2",
 	map_202206 = "CrusingMap_1",
 	map_202110 = "CrusingMap_0",
-	map_202204 = "CrusingMap_1"
+	map_202404 = "CrusingMap_1",
+	map_202204 = "CrusingMap_1",
+	map_202402 = "CrusingMap_1"
 }
 
 function slot0.GetPhaseFrame(slot0)
@@ -69,11 +72,10 @@ function slot0.GetPhaseFrame(slot0)
 
 	return setmetatable(Clone(slot1.frame), {
 		__index = function (slot0, slot1)
-			slot2 = 0
 			slot3 = 100
 
 			for slot7, slot8 in pairs(slot0) do
-				if slot7 < slot1 and slot2 < slot7 then
+				if slot7 < slot1 and 0 < slot7 then
 					slot2 = slot7
 				end
 

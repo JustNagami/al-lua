@@ -198,10 +198,8 @@ function slot5.InstCharacter(slot0, slot1, slot2)
 end
 
 function slot5.LoadSpineAsset(slot0, slot1, slot2)
-	slot3 = slot0.GetCharacterPath(slot1)
-
 	if not PoolMgr.GetInstance():IsSpineSkelCached(slot1) then
-		ResourceMgr.Inst:getAssetAsync(slot3, slot1 .. "_SkeletonData", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync(slot0.GetCharacterPath(slot1), slot1 .. "_SkeletonData", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			uv0(slot0)
 		end), true, true)
 	else
@@ -444,40 +442,37 @@ end
 
 function slot5.StartPreload(slot0, slot1, slot2)
 	slot3 = 0
-	slot4 = 0
 
 	for slot8, slot9 in pairs(slot0._preloadList) do
-		slot4 = slot4 + 1
+		slot4 = 0 + 1
 	end
 
 	for slot8, slot9 in pairs(slot0._battleCVList) do
 		slot4 = slot4 + 1
 	end
 
-	function slot5()
-		if not uv0._poolRoot then
-			return
-		end
-
-		uv1 = uv1 + 1
-
-		if uv2 < uv1 then
-			return
-		end
-
-		if uv3 then
-			uv3(uv1)
-		end
-
-		if uv1 == uv2 then
-			uv0._preloadList = nil
-
-			uv4()
-		end
-	end
-
 	for slot9, slot10 in pairs(slot0._battleCVList) do
-		pg.CriMgr.GetInstance():LoadBattleCV(slot9, slot5)
+		pg.CriMgr.GetInstance():LoadBattleCV(slot9, function ()
+			if not uv0._poolRoot then
+				return
+			end
+
+			uv1 = uv1 + 1
+
+			if uv2 < uv1 then
+				return
+			end
+
+			if uv3 then
+				uv3(uv1)
+			end
+
+			if uv1 == uv2 then
+				uv0._preloadList = nil
+
+				uv4()
+			end
+		end)
 	end
 
 	for slot9, slot10 in pairs(slot0._preloadList) do
@@ -675,7 +670,11 @@ function slot5.InitPool(slot0, slot1, slot2)
 			slot4 = 3
 		end
 
-		slot0._allPool[slot1] = pg.Pool.New(slot3, slot2, slot4, 20, false, false):InitSize()
+		slot5 = pg.Pool.New(slot3, slot2, slot4, 20, false, false):InitSize()
+
+		slot5:SetRecycleFuncs(uv0.ResetSpineAction)
+
+		slot0._allPool[slot1] = slot5
 	elseif string.find(slot1, "chargo/") then
 		slot0._allPool[slot1] = pg.Pool.New(slot3, slot2, 3, 20, false, false):InitSize()
 	elseif string.find(slot1, "orbit/") then
@@ -813,24 +812,22 @@ function slot5.GetEnemyResource(slot0)
 		slot1[#slot1 + 1] = uv1.GetFXPath(slot6.bubble_fx[1])
 	end
 
-	function slot7(slot0)
-		for slot5, slot6 in pairs(uv0.Battle.BattleDataFunction.GetBuffTemplate(slot0, 1).effect_list) do
-			if slot6.arg_list.skill_id then
-				if uv0.Battle.BattleDataFunction.GetSkillTemplate(slot7).painting == 1 then
-					uv1[#uv1 + 1] = uv2.GetHrzIcon(uv3.icon)
-				elseif type(slot9) == "string" then
-					uv1[#uv1 + 1] = uv2.GetHrzIcon(slot9)
+	for slot11, slot12 in ipairs(slot4) do
+		function (slot0)
+			for slot5, slot6 in pairs(uv0.Battle.BattleDataFunction.GetBuffTemplate(slot0, 1).effect_list) do
+				if slot6.arg_list.skill_id then
+					if uv0.Battle.BattleDataFunction.GetSkillTemplate(slot7).painting == 1 then
+						uv1[#uv1 + 1] = uv2.GetHrzIcon(uv3.icon)
+					elseif type(slot9) == "string" then
+						uv1[#uv1 + 1] = uv2.GetHrzIcon(slot9)
+					end
+				end
+
+				if slot6.arg_list.buff_id then
+					uv4(slot8)
 				end
 			end
-
-			if slot6.arg_list.buff_id then
-				uv4(slot8)
-			end
-		end
-	end
-
-	for slot11, slot12 in ipairs(slot4) do
-		slot7(slot12)
+		end(slot12)
 	end
 
 	for slot11, slot12 in ipairs(slot5) do
@@ -849,10 +846,8 @@ function slot5.GetEnemyResource(slot0)
 end
 
 function slot5.GetWeaponResource(slot0, slot1)
-	slot2 = {}
-
 	if slot0 == -1 then
-		return slot2
+		return {}
 	end
 
 	if uv0.GetWeaponPropertyDataFromID(slot0).type == uv1.EquipmentType.MAIN_CANNON or slot3.type == uv1.EquipmentType.SUB_CANNON or slot3.type == uv1.EquipmentType.TORPEDO or slot3.type == uv1.EquipmentType.ANTI_AIR or slot3.type == uv1.EquipmentType.ANTI_SEA or slot3.type == uv1.EquipmentType.POINT_HIT_AND_LOCK or slot3.type == uv1.EquipmentType.MANUAL_METEOR or slot3.type == uv1.EquipmentType.BOMBER_PRE_CAST_ALERT or slot3.type == uv1.EquipmentType.DEPTH_CHARGE or slot3.type == uv1.EquipmentType.MANUAL_TORPEDO or slot3.type == uv1.EquipmentType.DISPOSABLE_TORPEDO or slot3.type == uv1.EquipmentType.MANUAL_AAMISSILE or slot3.type == uv1.EquipmentType.BEAM or slot3.type == uv1.EquipmentType.SPACE_LASER or slot3.type == uv1.EquipmentType.FLEET_RANGE_ANTI_AIR or slot3.type == uv1.EquipmentType.MANUAL_MISSILE or slot3.type == uv1.EquipmentType.AUTO_MISSILE or slot3.type == uv1.EquipmentType.MISSILE then
@@ -942,10 +937,8 @@ function slot5.GetBulletResource(slot0, slot1)
 	slot5 = nil
 
 	if slot3 then
-		slot5 = slot3.bullet_name
-
 		if slot3.mirror == 1 then
-			slot2[#slot2 + 1] = uv1.GetBulletPath(slot5 .. uv2.Battle.BattleBulletUnit.MIRROR_RES)
+			slot2[#slot2 + 1] = uv1.GetBulletPath(slot3.bullet_name .. uv2.Battle.BattleBulletUnit.MIRROR_RES)
 		end
 	else
 		slot5 = slot4.modle_ID
@@ -965,6 +958,10 @@ function slot5.GetBulletResource(slot0, slot1)
 	slot2[#slot2 + 1] = uv1.GetFXPath((not slot3 or slot3.hit_fx_name == "" or slot3.hit_fx_name) and slot4.hit_fx)
 	slot2[#slot2 + 1] = uv1.GetFXPath(slot4.miss_fx)
 	slot2[#slot2 + 1] = uv1.GetFXPath(slot4.alert_fx)
+
+	if slot4.extra_param.area_FX then
+		slot2[#slot2 + 1] = uv1.GetFXPath(slot4.extra_param.area_FX)
+	end
 
 	if slot4.extra_param.shrapnel then
 		for slot10, slot11 in ipairs(slot4.extra_param.shrapnel) do
@@ -1069,18 +1066,16 @@ function slot5.GetStageResource(slot0)
 				slot15 = slot13.triggerParams.main_unitList
 				slot16 = slot13.triggerParams.sub_unitList
 
-				function slot17(slot0)
-					for slot5, slot6 in ipairs(uv0.GetAidUnitsRes(slot0)) do
-						table.insert(uv1, slot6)
-					end
-
-					for slot5, slot6 in ipairs(slot0) do
-						uv2[#uv2 + 1] = slot6.skinId
-					end
-				end
-
 				if slot13.triggerParams.vanguard_unitList then
-					slot17(slot14)
+					function (slot0)
+						for slot5, slot6 in ipairs(uv0.GetAidUnitsRes(slot0)) do
+							table.insert(uv1, slot6)
+						end
+
+						for slot5, slot6 in ipairs(slot0) do
+							uv2[#uv2 + 1] = slot6.skinId
+						end
+					end(slot14)
 				end
 
 				if slot15 then

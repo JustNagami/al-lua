@@ -9,17 +9,14 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(62011, {
+	pg.ConnectionMgr.GetInstance():Send(62011, {
 		type = 0
 	}, 62012, function (slot0)
 		if slot0.result == 0 then
 			slot1 = uv0:getData()
-			slot2 = {}
 
 			for slot6, slot7 in ipairs(slot0.inclog) do
-				table.insert(slot2, GuildCapitalLog.New(slot7))
+				table.insert({}, GuildCapitalLog.New(slot7))
 			end
 
 			for slot6, slot7 in ipairs(slot0.declog) do

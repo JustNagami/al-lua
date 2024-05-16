@@ -262,13 +262,11 @@ slot8 = {
 
 function slot0.GetUI(slot0, slot1, slot2, slot3)
 	slot0:FromPlural("ui/" .. slot1, slot1, slot2, table.contains(uv0, slot1) and 3 or 1, function (slot0)
-		function slot1()
-			uv0(uv1)
-		end
-
 		if table.indexof(uv1, uv2) then
 			uv4.pools_plural[uv3 .. uv2].prefab:GetComponent(typeof(UIArchiver)):Clear()
-			slot0:GetComponent(typeof(UIArchiver)):Load(slot1)
+			slot0:GetComponent(typeof(UIArchiver)):Load(function ()
+				uv0(uv1)
+			end)
 		else
 			slot1()
 		end
@@ -354,6 +352,21 @@ end
 
 function slot0.DelTempCache(slot0, slot1)
 	slot0.ui_tempCache[slot1] = nil
+end
+
+function slot0.PreloadPainting(slot0, slot1, slot2)
+	slot3 = {}
+
+	if not slot0.pools_plural["painting/" .. slot1 .. slot1] then
+		table.insert(slot3, function (slot0)
+			uv0:GetPainting(uv1, true, function (slot0)
+				uv0.pools_plural[uv1]:Enqueue(slot0)
+				uv2()
+			end)
+		end)
+	end
+
+	seriesAsync(slot3, slot2)
 end
 
 function slot0.GetPainting(slot0, slot1, slot2, slot3)
@@ -471,9 +484,7 @@ function slot0.GetSprite(slot0, slot1, slot2, slot3, slot4)
 end
 
 function slot0.DecreasSprite(slot0, slot1, slot2)
-	slot4 = typeof(Sprite)
-
-	if slot0.pools_pack[slot1] and slot0.pools_pack[slot3].type == slot4 then
+	if slot0.pools_pack[slot1] and slot0.pools_pack[slot3].type == typeof(Sprite) then
 		if slot0.pools_pack[slot3]:Remove(slot2) then
 			uv0:ClearBundleRef(slot3, true, false)
 		end
@@ -487,9 +498,7 @@ function slot0.DecreasSprite(slot0, slot1, slot2)
 end
 
 function slot0.DestroySprite(slot0, slot1)
-	slot3 = typeof(Sprite)
-
-	if slot0.pools_pack[slot1] and slot0.pools_pack[slot2].type == slot3 then
+	if slot0.pools_pack[slot1] and slot0.pools_pack[slot2].type == typeof(Sprite) then
 		slot0.pools_pack[slot2]:Clear()
 
 		slot0.pools_pack[slot2] = nil
@@ -501,16 +510,15 @@ function slot0.DestroySprite(slot0, slot1)
 end
 
 function slot0.DestroyAllSprite(slot0)
-	slot1 = {}
-	slot2 = typeof(Sprite)
-
 	for slot6, slot7 in pairs(slot0.pools_pack) do
-		if slot7.type == slot2 and not slot0.preloads[slot6] then
-			slot1[slot6] = slot7
+		if slot7.type == typeof(Sprite) and not slot0.preloads[slot6] then
+			-- Nothing
 		end
 	end
 
-	for slot6, slot7 in pairs(slot1) do
+	for slot6, slot7 in pairs({
+		[slot6] = slot7
+	}) do
 		slot0.pools_pack[slot6]:Clear()
 
 		slot0.pools_pack[slot6] = nil
@@ -550,10 +558,9 @@ end
 function slot0.SpriteMemUsage(slot0)
 	slot1 = 0
 	slot2 = 9.5367431640625e-07
-	slot3 = typeof(Sprite)
 
 	for slot7, slot8 in pairs(slot0.pools_pack) do
-		if slot8.type == slot3 then
+		if slot8.type == typeof(Sprite) then
 			slot9 = {}
 
 			for slot13, slot14 in pairs(slot8.items) do
@@ -765,10 +772,8 @@ function slot0.LoadAsset(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 end
 
 function slot0.PrintPools(slot0)
-	slot1 = ""
-
 	for slot5, slot6 in pairs(slot0.pools_plural) do
-		slot1 = slot1 .. "\n" .. slot5
+		slot1 = "" .. "\n" .. slot5
 	end
 
 	warning(slot1)

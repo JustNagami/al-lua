@@ -10,8 +10,7 @@ function slot0.OnInit(slot0)
 	slot0.propsTr = slot0.detailTF:Find("info")
 	slot0.nameTxt = slot0.detailTF:Find("name_mask/name")
 	slot0.frame = slot0._tf:Find("front/frame")
-	slot2 = slot0._tf
-	slot0.UIlist = UIItemList.New(slot2:Find("front/stars"), slot0._tf:Find("front/stars/star_tpl"))
+	slot0.UIlist = UIItemList.New(slot0._tf:Find("front/stars"), slot0._tf:Find("front/stars/star_tpl"))
 	slot0.shipState = slot0._tf:Find("front/flag")
 	slot0.proposeMark = slot0._tf:Find("front/propose")
 	slot0.otherBg = slot0._tf:Find("front/bg_other")
@@ -254,11 +253,10 @@ end
 
 function slot0.UpdateBtns(slot0)
 	slot1 = slot0.displayShip
-	slot2 = 0
 
 	for slot6, slot7 in ipairs(slot0.btns) do
 		if slot7:IsActive(slot1) then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 
 		slot7:Update(slot8, slot2, slot1)
@@ -311,9 +309,9 @@ function slot0.UpdateRandomBtns(slot0)
 		uv1.randomFlagValue = uv2(uv3, uv0)
 	end)
 
-	slot0.randomFlagValue = (function (slot0, slot1)
+	slot0.randomFlagValue = function (slot0, slot1)
 		return (slot0 and 1 or 0) + (slot1 and 2 or 0)
-	end)(slot4, slot5)
+	end(slot4, slot5)
 
 	setActive(slot0.randomShipBtn, slot3:CanRandomFlagShipInPos(slot2))
 end

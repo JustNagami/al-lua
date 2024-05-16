@@ -22,10 +22,7 @@ function slot0.execute(slot0, slot1)
 	_.each(slot3.subShips, function (slot0)
 		uv0[#uv0 + 1] = slot0
 	end)
-
-	slot9 = pg.ConnectionMgr.GetInstance()
-
-	slot9:Send(12102, {
+	pg.ConnectionMgr.GetInstance():Send(12102, {
 		id = slot3.id,
 		ship_list = {}
 	}, 12103, function (slot0)

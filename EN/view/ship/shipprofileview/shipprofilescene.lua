@@ -63,18 +63,27 @@ function slot0.init(slot0)
 	slot0.btnLike = slot0:findTF("adapt/detail_left_panel/heart/btnLike", slot0.blurPanel)
 	slot0.btnLikeAct = slot0.btnLike:Find("like")
 	slot0.btnLikeDisact = slot0.btnLike:Find("unlike")
-	slot0.obtainBtn = slot0:findTF("bottom/obtain_btn")
-	slot0.evaBtn = slot0:findTF("bottom/eva_btn")
-	slot0.viewBtn = slot0:findTF("bottom/view_btn")
-	slot0.shareBtn = slot0:findTF("bottom/share_btn")
-	slot0.rotateBtn = slot0:findTF("bottom/rotate_btn")
-	slot0.cryptolaliaBtn = slot0:findTF("bottom/cryptolalia_btn")
+	slot0.obtainBtn = slot0:findTF("bottom/others/obtain_btn")
+	slot0.evaBtn = slot0:findTF("bottom/others/eva_btn")
+	slot0.viewBtn = slot0:findTF("bottom/others/view_btn")
+	slot0.shareBtn = slot0:findTF("bottom/others/share_btn")
+	slot0.rotateBtn = slot0:findTF("bottom/others/rotate_btn")
+	slot0.cryptolaliaBtn = slot0:findTF("bottom/others/cryptolalia_btn")
+	slot0.equipCodeBtn = slot0:findTF("bottom/others/equip_code_btn")
 	slot0.leftProfile = slot0:findTF("adapt/profile_left_panel", slot0.blurPanel)
 	slot0.modelContainer = slot0:findTF("model", slot0.leftProfile)
 	slot0.live2DBtn = ShipProfileLive2dBtn.New(slot0:findTF("L2D_btn", slot0.blurPanel))
+
+	GetComponent(slot0:findTF("L2D_btn", slot0.blurPanel), typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("L2D_btn/img", slot0.blurPanel), typeof(Image)):SetNativeSize()
+
 	slot0.spinePaintingBtn = slot0:findTF("SP_btn", slot0.blurPanel)
-	slot1 = slot0.spinePaintingBtn
-	slot0.spinePaintingToggle = slot1:Find("toggle")
+
+	GetComponent(slot0.spinePaintingBtn, typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("SP_btn/img", slot0.blurPanel), typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("adapt/top/title", slot0.blurPanel), typeof(Image)):SetNativeSize()
+
+	slot0.spinePaintingToggle = slot0.spinePaintingBtn:Find("toggle")
 	slot0.cvLoader = ShipProfileCVLoader.New()
 	slot0.pageTFs = slot0:findTF("pages")
 	slot0.paintingView = ShipProfilePaintingView.New(slot0._tf, slot0.painting)
@@ -100,6 +109,9 @@ function slot0.didEnter(slot0)
 	onButton(slot0, slot0.btnBack, function ()
 		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
+	onButton(slot0, slot0.equipCodeBtn, function ()
+		uv0:emit(ShipProfileMediator.OPEN_EQUIP_CODE_SHARE, uv0.shipGroup.id)
+	end, SFX_PANEL)
 	onButton(slot0, slot0.cryptolaliaBtn, function ()
 		uv0:emit(ShipProfileMediator.OPEN_CRYPTOLALIA, uv0.shipGroup.id)
 	end, SFX_PANEL)
@@ -141,10 +153,7 @@ function slot0.didEnter(slot0)
 	slot5 = SFX_PANEL
 
 	onButton(slot0, slot0.rotateBtn, slot4, slot5)
-
-	slot1 = slot0.live2DBtn
-
-	slot1:AddListener(function (slot0)
+	slot0.live2DBtn:AddListener(function (slot0)
 		if slot0 then
 			uv0:CreateLive2D()
 		end
@@ -280,10 +289,7 @@ function slot0.LoadSkinBg(slot0, slot1)
 		slot0.shipSkinBg = slot1
 
 		function slot3()
-			slot0 = PoolMgr.GetInstance()
-			slot3 = uv0.shipGroup
-
-			slot0:GetUI("raritydesign" .. slot3:getRarity(uv0.showTrans), true, function (slot0)
+			PoolMgr.GetInstance():GetUI("raritydesign" .. uv0.shipGroup:getRarity(uv0.showTrans), true, function (slot0)
 				uv0.designBg = slot0
 				uv0.designName = "raritydesign" .. uv0.shipGroup:getRarity(uv0.showTrans)
 
@@ -303,10 +309,7 @@ function slot0.LoadSkinBg(slot0, slot1)
 		end
 
 		function slot4()
-			slot0 = PoolMgr.GetInstance()
-			slot3 = uv0.shipGroup
-
-			slot0:GetUI("raritymeta" .. slot3:getRarity(uv0.showTrans), true, function (slot0)
+			PoolMgr.GetInstance():GetUI("raritymeta" .. uv0.shipGroup:getRarity(uv0.showTrans), true, function (slot0)
 				uv0.metaBg = slot0
 				uv0.metaName = "raritymeta" .. uv0.shipGroup:getRarity(uv0.showTrans)
 
@@ -320,9 +323,7 @@ function slot0.LoadSkinBg(slot0, slot1)
 			end)
 		end
 
-		slot6 = pg.DynamicBgMgr.GetInstance()
-
-		slot6:LoadBg(slot0, slot1, slot0.bg, slot0.staticBg, function (slot0)
+		pg.DynamicBgMgr.GetInstance():LoadBg(slot0, slot1, slot0.bg, slot0.staticBg, function (slot0)
 			rtf(slot0).localPosition = Vector3(0, 0, 200)
 		end, function (slot0)
 			if uv0.bluePintBg and uv1 == uv0.bluePintBg then
@@ -455,13 +456,23 @@ function slot0.ShiftSkin(slot0, slot1)
 	slot0.live2DBtn:Disable()
 	slot0.live2DBtn:Update(slot0.paintingName, false)
 
+	slot2 = nil
+
+	LoadSpriteAtlasAsync("ui/commonUI_atlas", slot1 and slot1.spine_use_live2d == 1 and "spine_painting_bg" or "live2d_bg", function (slot0)
+		GetComponent(uv0:findTF("L2D_btn", uv0.blurPanel), typeof(Image)).sprite = slot0
+		GetComponent(uv0:findTF("L2D_btn/img", uv0.blurPanel), typeof(Image)).sprite = slot0
+
+		GetComponent(uv0:findTF("L2D_btn", uv0.blurPanel), typeof(Image)):SetNativeSize()
+		GetComponent(uv0:findTF("L2D_btn/img", uv0.blurPanel), typeof(Image)):SetNativeSize()
+	end)
+
 	slot0.spinePaintingisOn = false
 
 	slot0:updateSpinePaintingState()
 	slot0:DestroySpinePainting()
 	slot0.pages[uv0.INDEX_PROFILE]:ExecuteAction("Flush", slot1, false)
 
-	slot3 = nil
+	slot4 = nil
 
 	slot0:LoadSkinBg((not slot0.skin.bg_sp or slot0.skin.bg_sp == "" or not (PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot0.skin.painting, 0) == 0) or slot0.skin.bg_sp) and (not slot0.skin.bg or slot0.skin.bg == "" or slot0.skin.bg) and slot0.shipGroup:rarity2bgPrintForGet(slot0.showTrans, slot0.skin.id))
 
@@ -482,9 +493,8 @@ function slot0.LoadModel(slot0, slot1)
 	slot0:ReturnModel()
 
 	slot0.inLoading = true
-	slot3 = PoolMgr.GetInstance()
 
-	slot3:GetSpineChar(slot1.prefab, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(slot1.prefab, true, function (slot0)
 		uv0.inLoading = false
 		slot0.name = uv1
 		slot0.transform.localPosition = Vector3.zero
@@ -551,61 +561,72 @@ function slot0.OnCVBtnClick(slot0, slot1)
 		return
 	end
 
-	function slot3()
-		uv0:UpdatePaintingFace(uv1)
-
-		if uv0.characterModel then
-			uv0.characterModel:GetComponent(typeof(SpineAnimUI)):SetAction(uv0:GetModelAction(uv2), 0)
-		end
-
-		slot0 = {
-			uv3.CHAT_SHOW_TIME
-		}
-
-		if uv0.live2DBtn.isOn and uv0.l2dChar then
-			if uv0.l2dChar:IsLoaded() then
-				uv0.l2dActioning = true
-
-				if not uv1:L2dHasEvent() then
-					parallelAsync({
-						function (slot0)
-							uv0:RemoveLive2DTimer()
-							uv0.l2dChar:TriggerAction(uv1.l2d_action, slot0)
-						end,
-						function (slot0)
-							uv0:PlayVoice(uv1, uv2)
-							uv0:ShowDailogue(uv1, uv2, slot0)
-						end
-					}, function ()
-						uv0.l2dActioning = false
-					end)
-				else
-					seriesAsync({
-						function (slot0)
-							slot1 = uv0
-
-							slot1:RemoveLive2DTimer()
-
-							slot1 = uv0.l2dChar
-
-							slot1:TriggerAction(uv1.l2d_action, slot0, nil, function (slot0)
-								uv0:PlayVoice(uv1, uv2)
-								uv0:ShowDailogue(uv1, uv2, uv3)
-							end)
-						end
-					}, function ()
-						uv0.l2dActioning = false
-					end)
-				end
-			end
-		else
-			uv0:PlayVoice(uv1, slot0)
-			uv0:ShowDailogue(uv1, slot0)
-		end
-	end
-
 	if slot1.voice.key == "unlock" and slot0.haveOp then
-		slot0:playOpening(slot3)
+		slot0:playOpening(function ()
+			slot0 = nil
+
+			if uv0:isEx() then
+				slot1 = uv1.l2d_action .. "_ex"
+
+				if uv2.l2dChar and uv2.l2dChar:checkActionExist(slot1) then
+					slot0 = slot1
+				else
+					slot0 = uv1.l2d_action
+				end
+			else
+				slot0 = uv1.l2d_action
+			end
+
+			if uv2.l2dChar and not uv2.l2dChar:enablePlayAction(slot0) then
+				return
+			end
+
+			uv2:UpdatePaintingFace(uv0)
+
+			if uv2.characterModel then
+				uv2.characterModel:GetComponent(typeof(SpineAnimUI)):SetAction(uv2:GetModelAction(uv1), 0)
+			end
+
+			slot1 = {
+				uv3.CHAT_SHOW_TIME
+			}
+
+			if uv2.live2DBtn.isOn and uv2.l2dChar then
+				if uv2.l2dChar:IsLoaded() then
+					uv2.l2dActioning = true
+
+					if not uv0:L2dHasEvent() then
+						parallelAsync({
+							function (slot0)
+								uv0:RemoveLive2DTimer()
+								uv0.l2dChar:TriggerAction(uv1, slot0)
+							end,
+							function (slot0)
+								uv0:PlayVoice(uv1, uv2)
+								uv0:ShowDailogue(uv1, uv2, slot0)
+							end
+						}, function ()
+							uv0.l2dActioning = false
+						end)
+					else
+						seriesAsync({
+							function (slot0)
+								uv0:RemoveLive2DTimer()
+								uv0.l2dChar:TriggerAction(uv1, slot0, nil, function (slot0)
+									uv0:PlayVoice(uv1, uv2)
+									uv0:ShowDailogue(uv1, uv2, uv3)
+								end)
+							end
+						}, function ()
+							uv0.l2dActioning = false
+						end)
+					end
+				end
+			else
+				uv2:PlayVoice(uv0, slot1)
+				uv2:ShowDailogue(uv0, slot1)
+			end
+		end)
 	else
 		slot3()
 	end
@@ -648,9 +669,7 @@ function slot0.PlayVoice(slot0, slot1, slot2)
 			slot6 = slot3.voiceCalibrate
 		end
 
-		slot7 = slot0.cvLoader
-
-		slot7:DelayPlaySound(slot3.cvPath, slot6, function (slot0)
+		slot0.cvLoader:DelayPlaySound(slot3.cvPath, slot6, function (slot0)
 			if slot0 then
 				uv0[1] = long2int(slot0.length) * 0.001
 			end
@@ -744,9 +763,7 @@ end
 
 function slot0.playOpening(slot0, slot1)
 	if PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/" .. ("star_level_unlock_anim_" .. slot0.skin.id))) then
-		slot4 = pg.CpkPlayMgr.GetInstance()
-
-		slot4:PlayCpkMovie(function ()
+		pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function ()
 		end, function ()
 			if uv0 then
 				uv0()
@@ -760,14 +777,8 @@ end
 function slot0.updateSpinePaintingState(slot0)
 	if PathMgr.FileExists(PathMgr.getAssetBundle(HXSet.autoHxShiftPath("spinepainting/" .. slot0.paintingName))) then
 		setActive(slot0.spinePaintingBtn, true)
-
-		slot4 = slot0.spinePaintingToggle
-
-		setActive(slot4:Find("on"), slot0.spinePaintingisOn)
-
-		slot4 = slot0.spinePaintingToggle
-
-		setActive(slot4:Find("off"), not slot0.spinePaintingisOn)
+		setActive(slot0.spinePaintingToggle:Find("on"), slot0.spinePaintingisOn)
+		setActive(slot0.spinePaintingToggle:Find("off"), not slot0.spinePaintingisOn)
 		removeOnButton(slot0.spinePaintingBtn)
 		onButton(slot0, slot0.spinePaintingBtn, function ()
 			uv0.spinePaintingisOn = not uv0.spinePaintingisOn
@@ -799,10 +810,9 @@ function slot0.CreateSpinePainting(slot0)
 	if slot0.skin.id ~= slot0.preSkinId then
 		slot0:DestroySpinePainting()
 
-		slot1 = slot0.shipGroup
 		slot0.spinePainting = SpinePainting.New(SpinePainting.GenerateData({
 			ship = Ship.New({
-				configId = slot1:getShipConfigId(),
+				configId = slot0.shipGroup:getShipConfigId(),
 				skin_id = slot0.skin.id
 			}),
 			position = Vector3(0, 0, 0),

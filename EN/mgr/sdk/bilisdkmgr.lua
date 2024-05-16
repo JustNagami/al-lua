@@ -30,17 +30,15 @@ function SDKLogined(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	slot4 = User.New({
-		type = 1,
-		arg1 = slot0,
-		arg2 = slot1,
-		arg3 = slot2,
-		arg4 = slot3
-	})
-
 	if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_UNION then
 		pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
-			user = slot4
+			user = User.New({
+				type = 1,
+				arg1 = slot0,
+				arg2 = slot1,
+				arg3 = slot2,
+				arg4 = slot3
+			})
 		})
 	else
 		pg.m02:sendNotification(GAME.SERVER_INTERCOMMECTION, {
@@ -244,7 +242,11 @@ return {
 	BindCPU = function ()
 	end,
 	DeleteAccount = function ()
-		uv0:DeleteAccount()
+		if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_UNION then
+			uv0:DeleteAccountForUO(getProxy(PlayerProxy):getRawData() and slot4:GetName() or "", getProxy(ServerProxy):getRawData()[getProxy(UserProxy):getRawData() and slot1.server or 0] and slot2.name or "", slot4 and tostring(slot4.level) or "0", pg.TimeMgr.GetInstance():STimeDescS(slot4 and slot4:GetRegisterTime() or 0, "%Y/%m/%d"))
+		else
+			uv0:DeleteAccount()
+		end
 	end,
 	OnAndoridBackPress = function ()
 		if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI or slot0 == PACKAGE_TYPE_SHAJOY then
@@ -314,5 +316,8 @@ return {
 	end,
 	Survey = function (slot0)
 		uv0:OpenWeb(slot0)
+	end,
+	IsHuaweiPackage = function ()
+		return uv0:isHuawei()
 	end
 }

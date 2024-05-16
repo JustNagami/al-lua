@@ -26,10 +26,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == uv0.SHOW_DESC then
-		slot0.viewComponent:OnShowDescWindow(slot3)
+		slot0.viewComponent:OnShowDescWindow(slot1:getBody())
 	elseif slot2 == GAME.EXCHANGECODE_USE_SUCCESS then
 		slot0.viewComponent:OnClearExchangeCode()
 	elseif slot2 == GAME.ON_GET_TRANSCODE then

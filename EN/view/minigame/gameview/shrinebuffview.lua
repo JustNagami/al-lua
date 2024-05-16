@@ -27,9 +27,7 @@ function slot0.initUI(slot0)
 	slot0.buffListTF = slot0:findTF("Main/BuffList")
 
 	for slot4 = 1, 3 do
-		slot5 = slot0.buffListTF
-
-		onButton(slot0, slot5:GetChild(slot4 - 1), function ()
+		onButton(slot0, slot0.buffListTF:GetChild(slot4 - 1), function ()
 			uv0.contextData.onSelect(uv1)
 			uv0:Destroy()
 		end, SFX_PANEL)

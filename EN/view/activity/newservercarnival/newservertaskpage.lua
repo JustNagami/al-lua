@@ -45,14 +45,9 @@ function slot0.addListener(slot0)
 	slot5 = SFX_PANEL
 
 	onButton(slot0, slot0.getAllBtn, slot4, slot5)
-
-	slot1 = slot0.taskGroupItemList
-
-	slot1:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.taskGroupItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			uv0:updateTaskGroup(slot2, slot1)
+			uv0:updateTaskGroup(slot2, slot1 + 1)
 		end
 	end)
 
@@ -104,10 +99,8 @@ function slot0.updateTaskGroup(slot0, slot1, slot2)
 			slot2 = UIItemList.New(uv0:Find("content"), uv1.extendTpl)
 
 			slot2:make(function (slot0, slot1, slot2)
-				slot1 = slot1 + 1
-
 				if slot0 == UIItemList.EventUpdate then
-					uv0:updateTaskDisplay(slot2, uv1[slot1])
+					uv0:updateTaskDisplay(slot2, uv1[slot1 + 1])
 				end
 			end)
 			slot2:align(#uv2)

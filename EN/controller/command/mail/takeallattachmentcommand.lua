@@ -4,15 +4,26 @@ function slot0.execute(slot0, slot1)
 	slot4, slot5 = CheckOverflow(getProxy(MailProxy):GetAttchmentDic())
 
 	if not slot4 then
-		pg.TipsMgr.GetInstance():ShowTips(slot5)
+		switch(slot5, {
+			gold = function ()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_mail"))
+			end,
+			oil = function ()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_mail"))
+			end,
+			equip = function ()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("mail_takeAttachment_error_magazine_full"))
+			end,
+			ship = function ()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("mail_takeAttachment_error_dockYrad_full"))
+			end
+		})
 
 		return
 	end
 
-	slot6 = {}
-
 	if not CheckShipExpOverflow(slot3) then
-		table.insert(slot6, function (slot0)
+		table.insert({}, function (slot0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("player_expResource_mail_fullBag"),
 				onYes = slot0
@@ -40,9 +51,7 @@ function slot0.execute(slot0, slot1)
 	end)
 
 	seriesAsync(slot6, function (slot0)
-		slot1 = pg.ConnectionMgr.GetInstance()
-
-		slot1:Send(30004, {
+		pg.ConnectionMgr.GetInstance():Send(30004, {
 			id = underscore.map(uv0, function (slot0)
 				return slot0.id
 			end)

@@ -19,14 +19,11 @@ end
 function slot0.OnFirstFlush(slot0)
 	slot0.progressUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0:findTF("Unlocked", slot2)
-			slot4 = uv0:findTF("Finished", slot2)
-
 			setActive(uv0:findTF("Current", slot2), slot1 + 1 == uv0.playedCount)
 
 			if slot1 <= uv0.curDay then
-				setActive(slot3, uv0.playedCount < slot1)
-				setActive(slot4, slot1 <= uv0.playedCount and slot1 ~= uv0.needCount)
+				setActive(uv0:findTF("Unlocked", slot2), uv0.playedCount < slot1)
+				setActive(uv0:findTF("Finished", slot2), slot1 <= uv0.playedCount and slot1 ~= uv0.needCount)
 			else
 				setActive(slot3, false)
 				setActive(slot4, false)
@@ -48,9 +45,8 @@ end
 
 function slot0.tryGetFinalAward(slot0)
 	slot2 = getProxy(MiniGameProxy):GetHubByHubId(slot0.activity:getConfig("config_id"))
-	slot5 = slot2.ultimate > 0
 
-	if slot2:getConfig("reward_need") <= slot2.usedtime and not slot5 then
+	if slot2:getConfig("reward_need") <= slot2.usedtime and not (slot2.ultimate > 0) then
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
 			hubid = slot2.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,

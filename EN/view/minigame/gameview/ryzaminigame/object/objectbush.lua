@@ -17,9 +17,7 @@ function slot0.InitUI(slot0, slot1)
 end
 
 function slot0.InitRegister(slot0, slot1)
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Image")
-	slot3 = slot2:GetComponent(typeof(Animator))
+	slot3 = slot0._tf:Find("Image"):GetComponent(typeof(Animator))
 
 	slot0:Register("burn", function ()
 		uv0:Play("New State")

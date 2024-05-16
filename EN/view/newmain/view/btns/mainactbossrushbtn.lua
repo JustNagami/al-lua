@@ -5,9 +5,7 @@ function slot0.GetEventName(slot0)
 end
 
 function slot0.GetActivity(slot0)
-	slot1 = getProxy(ActivityProxy)
-
-	return _.detect(slot1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH), function (slot0)
+	return _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH), function (slot0)
 		return not slot0:isEnd()
 	end)
 end

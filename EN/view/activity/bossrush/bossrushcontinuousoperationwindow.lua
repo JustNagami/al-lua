@@ -63,10 +63,9 @@ end
 
 function slot0.UpdateContent(slot0)
 	slot2 = slot0.contextData.oilCost * slot0.contextData.battleTimes
-	slot3 = i18n("multiple_sorties_cost1", slot2)
 
 	if getProxy(PlayerProxy):getRawData().oil < slot2 then
-		slot3 = string.gsub(slot3, "#92fc63", COLOR_RED)
+		slot3 = string.gsub(i18n("multiple_sorties_cost1", slot2), "#92fc63", COLOR_RED)
 	end
 
 	slot0.consumeText.text = slot3

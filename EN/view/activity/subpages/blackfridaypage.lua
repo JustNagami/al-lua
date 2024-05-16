@@ -43,10 +43,7 @@ function slot0.OnFirstFlush(slot0)
 			})
 		end
 	end, SFX_PANEL)
-
-	slot1 = slot0.uiList
-
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.uiList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:UpdateAward(slot1 + 1, slot2)
 		end

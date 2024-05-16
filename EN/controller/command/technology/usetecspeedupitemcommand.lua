@@ -2,9 +2,8 @@ slot0 = class("UseTecSpeedUpItemCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot7 = pg.ConnectionMgr.GetInstance()
 
-	slot7:Send(63210, {
+	pg.ConnectionMgr.GetInstance():Send(63210, {
 		blueprintid = slot2.blueprintid,
 		itemid = slot2.itemid,
 		number = slot2.number,

@@ -13,11 +13,10 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
 	slot4 = slot1:getType()
 
 	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED or slot2 == ActivityProxy.ACTIVITY_ADDED then
-		slot0:updateGameUI(slot3)
+		slot0:updateGameUI(slot1:getBody())
 	elseif slot2 == GAME.ACT_NEW_PT_DONE then
 		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
 	elseif slot2 == GAME.BEGIN_STAGE_DONE then

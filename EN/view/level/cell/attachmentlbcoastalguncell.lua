@@ -21,10 +21,7 @@ function slot0.Update(slot0)
 
 		slot0:ClearLoader()
 		assert(pg.land_based_template[slot1.attachmentId], "land_based_template not exist: " .. slot1.attachmentId)
-
-		slot4 = slot0:GetLoader()
-
-		slot4:GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function (slot0)
+		slot0:GetLoader():GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function (slot0)
 			setParent(slot0, uv0.tf)
 
 			tf(slot0).anchoredPosition = Vector2(0, 10)
@@ -39,7 +36,7 @@ function slot0.Update(slot0)
 
 			uv0:Update()
 		end)
-	elseif slot1.flag == ChapterConst.CellFlagActive and slot0.state ~= uv0.StateDead then
+	elseif slot1.flag == ChapterConst.CellFlagDisabled and slot0.state ~= uv0.StateDead then
 		slot0.state = uv0.StateDead
 
 		if not IsNil(slot0.enemy) then
@@ -55,10 +52,7 @@ function slot0.Update(slot0)
 
 		slot0:ClearLoader()
 		assert(pg.land_based_template[slot1.attachmentId], "land_based_template not exist: " .. slot1.attachmentId)
-
-		slot4 = slot0:GetLoader()
-
-		slot4:GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function (slot0)
+		slot0:GetLoader():GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function (slot0)
 			setParent(slot0, uv0.tf)
 
 			tf(slot0).anchoredPosition = Vector2(0, 10)

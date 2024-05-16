@@ -52,9 +52,7 @@ function slot0.updateStudent(slot0, slot1)
 			slot0:onTransEdge(slot2, slot2)
 		end
 
-		slot4 = PoolMgr.GetInstance()
-
-		slot4:GetSpineChar(slot0.prefab, true, function (slot0)
+		PoolMgr.GetInstance():GetSpineChar(slot0.prefab, true, function (slot0)
 			if uv0 ~= uv1.prefab then
 				PoolMgr.GetInstance():ReturnSpineChar(uv0, slot0)
 
@@ -107,14 +105,13 @@ function slot0.updateLogic(slot0)
 			uv1._tf.localScale = slot2
 		end)):setOnComplete(System.Action(function ()
 			uv0.currentPoint = uv0.targetPoint
-			slot0 = uv0.currentPoint.id
 			slot1 = uv0.currentPoint.nexts
 			slot2 = slot1[math.random(1, #slot1)]
 
 			if uv0.onTransEdge and slot2 then
 				uv0.targetPoint = uv0.pathFinder:getPoint(slot2)
 
-				uv0:onTransEdge(slot0, slot2)
+				uv0:onTransEdge(uv0.currentPoint.id, slot2)
 			end
 
 			uv0:updateState(uv1.ShipState.Idle)

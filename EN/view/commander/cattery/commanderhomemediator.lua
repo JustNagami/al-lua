@@ -21,10 +21,12 @@ function slot0.register(slot0)
 			op = 3
 		})
 	end)
-	slot0:bind(uv0.ON_SEL_COMMANDER, function (slot0, slot1, slot2)
+	slot0:bind(uv0.ON_SEL_COMMANDER, function (slot0, slot1, slot2, slot3, slot4)
 		uv0:sendNotification(GAME.PUT_COMMANDER_IN_CATTERY, {
 			id = slot1,
-			commanderId = slot2
+			commanderId = slot2,
+			tip = defaultValue(slot3, true),
+			callback = slot4
 		})
 	end)
 	slot0:bind(uv0.ON_CHANGE_STYLE, function (slot0, slot1, slot2)
@@ -47,10 +49,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.PUT_COMMANDER_IN_CATTERY_DONE then
-		slot0.viewComponent:OnCatteryUpdate(slot3.id)
+		slot0.viewComponent:OnCatteryUpdate(slot1:getBody().id)
 	elseif slot2 == GAME.COMMANDER_CHANGE_CATTERY_STYLE_DONE then
 		slot0.viewComponent:OnCatteryStyleUpdate(slot3.id)
 	elseif slot2 == GAME.COMMANDER_CATTERY_OP_DONE then

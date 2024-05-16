@@ -7,11 +7,9 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot6 = getProxy(PlayerProxy)
-	slot7 = slot6:getData()
-	slot8 = pg.ConnectionMgr.GetInstance()
+	slot7 = getProxy(PlayerProxy):getData()
 
-	slot8:Send(11005, {
+	pg.ConnectionMgr.GetInstance():Send(11005, {
 		id = slot3,
 		type = slot4
 	}, 11006, function (slot0)

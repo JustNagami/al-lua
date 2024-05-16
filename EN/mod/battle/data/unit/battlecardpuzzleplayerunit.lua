@@ -24,35 +24,30 @@ function slot9.UpdateHP(slot0, slot1, slot2)
 		return
 	end
 
-	slot5 = slot2.isMiss
-	slot6 = slot2.isCri
-	slot8 = slot2.isShare
-	slot9 = slot2.attr
 	slot10 = slot2.font
 	slot11 = slot2.cldPos
 	slot12 = slot1
-	slot13 = slot0:GetCurrentHP()
 
 	if not slot2.isHeal then
 		slot14 = {
 			damage = -slot1,
-			isShare = slot8,
-			miss = slot5,
-			cri = slot6,
+			isShare = slot2.isShare,
+			miss = slot2.isMiss,
+			cri = slot2.isCri,
 			damageSrc = slot2.srcID,
-			damageAttr = slot9
+			damageAttr = slot2.attr
 		}
 
 		slot0:TriggerBuff(uv0.BuffEffectType.ON_TAKE_DAMAGE, slot14)
 
-		if slot13 <= slot14.damage then
+		if slot0:GetCurrentHP() <= slot14.damage then
 			slot0:TriggerBuff(uv0.BuffEffectType.ON_BEFORE_FATAL_DAMAGE, {})
 		end
 
 		slot1 = -slot14.damage
 
 		if uv1.IsInvincible(slot0) then
-			return
+			return 0
 		end
 	else
 		slot14 = {
@@ -66,25 +61,23 @@ function slot9.UpdateHP(slot0, slot1, slot2)
 		slot1 = slot14.damage
 	end
 
-	slot16 = {
+	if slot11 and not slot11:EqualZero() then
+		slot17 = slot0:GetPosition()
+		slot18 = slot0:GetBoxSize().x
+		slot21 = slot11:Clone()
+		slot21.x = Mathf.Clamp(slot21.x, slot17.x - slot18, slot17.x + slot18)
+	end
+
+	slot0:UpdateHPAction({
 		preShieldHP = slot12,
 		dHP = slot1,
 		validDHP = math.min(slot0:GetMaxHP(), math.max(0, slot13 + slot1)) - slot13,
 		isMiss = slot5,
 		isCri = slot6,
 		isHeal = slot7,
-		font = slot10
-	}
-
-	if slot11 and not slot11:EqualZero() then
-		slot17 = slot0:GetPosition()
-		slot18 = slot0:GetBoxSize().x
-		slot21 = slot11:Clone()
-		slot21.x = Mathf.Clamp(slot21.x, slot17.x - slot18, slot17.x + slot18)
-		slot16.posOffset = slot17 - slot21
-	end
-
-	slot0:UpdateHPAction(slot16)
+		font = slot10,
+		posOffset = slot17 - slot21
+	})
 
 	if not slot0:IsAlive() and slot4 then
 		slot0:SetDeathReason(slot2.damageReason)
@@ -97,6 +90,8 @@ function slot9.UpdateHP(slot0, slot1, slot2)
 			unit = slot0
 		})
 	end
+
+	return slot1
 end
 
 function slot9.UpdateHPAction(slot0, slot1)

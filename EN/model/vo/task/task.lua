@@ -129,39 +129,7 @@ function slot0.getTaskStatus(slot0)
 end
 
 function slot0.onAdded(slot0)
-	function slot1()
-		if uv0:getConfig("sub_type") == 29 then
-			if _.any(getProxy(SkirmishProxy):getRawData(), function (slot0)
-				return slot0:getConfig("task_id") == uv0.id
-			end) then
-				return
-			end
-
-			pg.m02:sendNotification(GAME.TASK_GO, {
-				taskVO = uv0
-			})
-		elseif uv0:getConfig("added_tip") > 0 then
-			slot0 = nil
-
-			if getProxy(ContextProxy):getCurrentContext().mediator.__cname ~= TaskMediator.__cname then
-				function slot0()
-					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.TASK, {
-						page = uv0[uv1:GetRealType()]
-					})
-				end
-			end
-
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				noText = "text_iknow",
-				yesText = "text_forward",
-				content = i18n("tip_add_task", uv0:getConfig("name")),
-				onYes = slot0,
-				weight = LayerWeightConst.TOP_LAYER
-			})
-		end
-	end
-
-	function slot2()
+	if slot0:getConfig("story_id") and slot3 ~= "" and function ()
 		if not table.contains({
 			"LevelScene",
 			"BattleScene",
@@ -173,10 +141,38 @@ function slot0.onAdded(slot0)
 		end
 
 		return false
-	end
+	end() then
+		pg.NewStoryMgr.GetInstance():Play(slot3, function ()
+			if uv0:getConfig("sub_type") == 29 then
+				if _.any(getProxy(SkirmishProxy):getRawData(), function (slot0)
+					return slot0:getConfig("task_id") == uv0.id
+				end) then
+					return
+				end
 
-	if slot0:getConfig("story_id") and slot3 ~= "" and slot2() then
-		pg.NewStoryMgr.GetInstance():Play(slot3, slot1, true, true)
+				pg.m02:sendNotification(GAME.TASK_GO, {
+					taskVO = uv0
+				})
+			elseif uv0:getConfig("added_tip") > 0 then
+				slot0 = nil
+
+				if getProxy(ContextProxy):getCurrentContext().mediator.__cname ~= TaskMediator.__cname then
+					function slot0()
+						pg.m02:sendNotification(GAME.GO_SCENE, SCENE.TASK, {
+							page = uv0[uv1:GetRealType()]
+						})
+					end
+				end
+
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					noText = "text_iknow",
+					yesText = "text_forward",
+					content = i18n("tip_add_task", uv0:getConfig("name")),
+					onYes = slot0,
+					weight = LayerWeightConst.TOP_LAYER
+				})
+			end
+		end, true, true)
 	else
 		slot1()
 	end
@@ -197,10 +193,8 @@ end
 function slot0.StaticJudgeOverflow(slot0, slot1, slot2, slot3, slot4, slot5)
 	if slot3 and slot4 then
 		slot6 = getProxy(PlayerProxy):getData()
-		slot8 = slot0 or slot6.gold
 		slot9 = slot1 or slot6.oil
 		slot10 = slot2 or not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1]) or 0
-		slot11 = pg.gameset.max_gold.key_value
 		slot12 = pg.gameset.max_oil.key_value
 		slot13 = not LOCK_UR_SHIP and pg.gameset.urpt_chapter_max.description[2] or 0
 		slot14 = false
@@ -211,12 +205,11 @@ function slot0.StaticJudgeOverflow(slot0, slot1, slot2, slot3, slot4, slot5)
 		slot19 = {}
 
 		for slot24, slot25 in ipairs(slot5) do
-			slot27 = slot25[2]
-			slot28 = slot25[3]
+			slot26, slot27, slot28 = unpack(slot25)
 
-			if slot25[1] == DROP_TYPE_RESOURCE then
+			if slot26 == DROP_TYPE_RESOURCE then
 				if slot27 == PlayerConst.ResGold then
-					if slot8 + slot28 - slot11 > 0 then
+					if (slot0 or slot6.gold) + slot28 - pg.gameset.max_gold.key_value > 0 then
 						slot14 = true
 
 						table.insert(slot19, {
@@ -235,7 +228,7 @@ function slot0.StaticJudgeOverflow(slot0, slot1, slot2, slot3, slot4, slot5)
 					})
 				end
 			elseif not LOCK_UR_SHIP and slot26 == DROP_TYPE_VITEM then
-				if pg.item_data_statistics[slot27].virtual_type == 20 and slot10 + slot28 - slot13 > 0 then
+				if Item.getConfigData(slot27).virtual_type == 20 and slot10 + slot28 - slot13 > 0 then
 					slot16 = true
 
 					table.insert(slot19, {
@@ -244,7 +237,7 @@ function slot0.StaticJudgeOverflow(slot0, slot1, slot2, slot3, slot4, slot5)
 						count = setColorStr(slot30, COLOR_RED)
 					})
 				end
-			elseif slot26 == DROP_TYPE_ITEM and pg.item_data_statistics[slot27].type == Item.EXP_BOOK_TYPE and pg.item_data_statistics[slot27].max_num < getProxy(BagProxy):getItemCountById(slot27) + slot28 then
+			elseif slot26 == DROP_TYPE_ITEM and Item.getConfigData(slot27).type == Item.EXP_BOOK_TYPE and Item.getConfigData(slot27).max_num < getProxy(BagProxy):getItemCountById(slot27) + slot28 then
 				slot17 = true
 
 				table.insert(slot19, {
@@ -280,17 +273,12 @@ function slot0.GetRealType(slot0)
 end
 
 function slot0.IsOverflowShipExpItem(slot0)
-	function slot1(slot0, slot1)
-		return pg.item_data_statistics[slot0].max_num < getProxy(BagProxy):getItemCountById(slot0) + slot1
-	end
+	for slot6, slot7 in ipairs(slot0:getConfig("award_display")) do
+		slot9 = slot7[2]
 
-	slot3 = pg.item_data_statistics
-
-	for slot7, slot8 in ipairs(slot0:getConfig("award_display")) do
-		slot10 = slot8[2]
-		slot11 = slot8[3]
-
-		if slot8[1] == DROP_TYPE_ITEM and slot3[slot10].type == Item.EXP_BOOK_TYPE and slot1(slot10, slot11) then
+		if slot7[1] == DROP_TYPE_ITEM and Item.getConfigData(slot9).type == Item.EXP_BOOK_TYPE and function (slot0, slot1)
+			return Item.getConfigData(slot0).max_num < getProxy(BagProxy):getItemCountById(slot0) + slot1
+		end(slot9, slot7[3]) then
 			return true
 		end
 	end

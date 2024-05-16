@@ -12,8 +12,7 @@ function slot0.OnLoaded(slot0)
 	slot0.lessonNameTxt = slot0:findTF("introl/name"):GetComponent(typeof(Text))
 	slot0.lessonDescTxt = slot0:findTF("introl/desc"):GetComponent(typeof(Text))
 	slot0.lessonExpTxt = slot0:findTF("introl/exp_Text"):GetComponent(typeof(Text))
-	slot1 = slot0:findTF("introl/timer_Text")
-	slot0.lessonTimeTxt = slot1:GetComponent(typeof(Text))
+	slot0.lessonTimeTxt = slot0:findTF("introl/timer_Text"):GetComponent(typeof(Text))
 	slot0.skillCard = NewNavalTacticsAdditionSkillCard.New(slot0:findTF("skill/info"))
 	slot0.itemTpls = {
 		slot0:findTF("items/scorll/content/item")
@@ -96,8 +95,7 @@ function slot0.Flush(slot0)
 end
 
 function slot0.GetLessons(slot0)
-	slot1 = getProxy(BagProxy)
-	slot1 = slot1:getItemsByType(Item.LESSON_TYPE)
+	slot1 = getProxy(BagProxy):getItemsByType(Item.LESSON_TYPE)
 
 	table.sort(slot1, function (slot0, slot1)
 		if slot0:getConfig("rarity") == slot1:getConfig("rarity") then
@@ -132,19 +130,17 @@ function slot0.UpdateLessons(slot0, slot1, slot2)
 end
 
 function slot0.UpdateLesson(slot0, slot1, slot2, slot3, slot4)
-	updateItem(slot1, {
-		type = DROP_TYPE_ITEM,
+	updateItem(slot1, Item.New({
 		id = slot2.id,
 		count = slot2.count
-	})
+	}))
 	setText(slot1:Find("icon_bg/count"), slot2.count)
 
-	slot5 = pg.item_data_template[slot2.id]
+	slot5 = Item.getConfigData(slot2.id)
 	slot6 = slot5.usage_arg[1]
-	slot7 = 100
 
 	if pg.skill_data_template[slot3].type == slot5.usage_arg[3] then
-		slot7 = slot7 + slot5.usage_arg[4]
+		slot7 = 100 + slot5.usage_arg[4]
 	end
 
 	slot9 = slot5.usage_arg[2] * slot7 / 100
@@ -172,7 +168,7 @@ function slot0.UpdatePosition(slot0, slot1, slot2)
 end
 
 function slot0.UpdateLessonDesc(slot0, slot1, slot2, slot3)
-	slot4 = pg.item_data_statistics[slot1]
+	slot4 = Item.getConfigData(slot1)
 	slot0.lessonNameTxt.text = slot4.name .. "   -"
 	slot0.lessonDescTxt.text = slot4.display
 	slot0.lessonExpTxt.text = slot2

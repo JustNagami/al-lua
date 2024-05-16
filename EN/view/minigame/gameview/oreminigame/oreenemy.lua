@@ -26,9 +26,7 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 end
 
 function slot0.AddListener(slot0)
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_AKASHI_COLLISION, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_AKASHI_COLLISION, function (slot0, slot1)
 		if uv0.isDestroy then
 			return
 		end
@@ -41,10 +39,7 @@ function slot0.AddListener(slot0)
 			})
 		end
 	end)
-
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_ENEMY_COLLISION, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_ENEMY_COLLISION, function (slot0, slot1)
 		if uv0.isDestroy or uv0.clashTime then
 			return
 		end
@@ -54,12 +49,8 @@ function slot0.AddListener(slot0)
 end
 
 function slot0.AddDftAniEvent(slot0)
-	slot2 = slot0._tf
-
-	eachChild(slot2:Find("effect"), function (slot0)
-		slot1 = slot0:GetComponent(typeof(DftAniEvent))
-
-		slot1:SetEndEvent(function ()
+	eachChild(slot0._tf:Find("effect"), function (slot0)
+		slot0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 			setActive(uv0, false)
 
 			if uv0.name == "EF_Clash_Heavy" then
@@ -67,11 +58,7 @@ function slot0.AddDftAniEvent(slot0)
 			end
 		end)
 	end)
-
-	slot1 = slot0._tf
-	slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-	slot1:SetEndEvent(function ()
+	slot0._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:Destroy()
 	end)
 end

@@ -416,6 +416,32 @@ pg.emoji_template = {
 			1
 		}
 	},
+	{
+		achieve = 1,
+		item_desc = "Sticker: Woah! (Can be found in the Default section of chat stickers.)",
+		item_name = "Sticker: Woah!",
+		id = 33,
+		index = 73,
+		icon = "",
+		pic = "33",
+		desc = "<color=#92fc63>[Woah!]</color>",
+		type = {
+			1
+		}
+	},
+	{
+		achieve = 1,
+		item_desc = "Sticker: STAHP (Can be found in the Default section of chat stickers.)",
+		item_name = "Sticker: STAHP",
+		id = 34,
+		index = 74,
+		icon = "",
+		pic = "34",
+		desc = "<color=#92fc63>[STAHP]</color>",
+		type = {
+			1
+		}
+	},
 	[41] = {
 		achieve = 0,
 		item_desc = "",
@@ -1547,32 +1573,6 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[1001] = {
-		achieve = 1,
-		item_desc = "用于写道具描述的地方",
-		item_name = "测试用解锁表情1",
-		id = 1001,
-		index = 9000,
-		icon = "Props/emojiicon",
-		pic = "imsgSticke_akagi",
-		desc = "<color=#92fc63>[测试表情1]</color>",
-		type = {
-			3
-		}
-	},
-	[1002] = {
-		achieve = 1,
-		item_desc = "用于写道具描述的地方",
-		item_name = "测试用解锁表情2",
-		id = 1002,
-		index = 9001,
-		icon = "Props/emojiicon",
-		pic = "imsgSticke_hammann",
-		desc = "<color=#92fc63>[测试表情2]</color>",
-		type = {
-			3
-		}
-	},
 	all = {
 		1,
 		2,
@@ -1606,6 +1606,8 @@ pg.emoji_template = {
 		30,
 		31,
 		32,
+		33,
+		34,
 		41,
 		42,
 		43,
@@ -1692,8 +1694,6 @@ pg.emoji_template = {
 		372,
 		373,
 		374,
-		375,
-		1001,
-		1002
+		375
 	}
 }

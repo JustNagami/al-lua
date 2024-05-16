@@ -52,10 +52,12 @@ function slot0.updateMainUI(slot0)
 	slot5 = math.min(slot1.usedtime + 1, slot1.usedtime + slot1.count)
 
 	for slot11 = 1, slot0.itemList.container.childCount do
-		slot12 = {}
+		slot12 = {
+			finish = true
+		}
 
 		if slot11 <= slot3 then
-			slot12.finish = true
+			-- Nothing
 		elseif slot11 > slot4 then
 			slot12.lock = true
 		end
@@ -90,10 +92,8 @@ function slot0.checkGet(slot0)
 end
 
 function slot0.initPageUI(slot0)
-	slot1 = slot0._tf
-	slot0.rtTitlePage = slot1:Find("TitlePage")
-	slot1 = slot0.rtTitlePage
-	slot1 = slot1:Find("main")
+	slot0.rtTitlePage = slot0._tf:Find("TitlePage")
+	slot1 = slot0.rtTitlePage:Find("main")
 
 	onButton(slot0, slot1:Find("btn_back"), function ()
 		uv0:closeView()
@@ -109,8 +109,7 @@ function slot0.initPageUI(slot0)
 		uv0:UpdateOpreationPage(1)
 	end, SFX_PANEL)
 
-	slot2 = slot0:GetMGData()
-	slot2 = slot2:GetSimpleValue("story")
+	slot2 = slot0:GetMGData():GetSimpleValue("story")
 
 	onButton(slot0, slot1:Find("btn_start"), function ()
 		slot0 = {}
@@ -133,14 +132,11 @@ function slot0.initPageUI(slot0)
 	slot0.stageIndex = 0
 	slot4 = slot1:Find("side_panel/award/content")
 	slot0.itemList = UIItemList.New(slot4, slot4:GetChild(0))
-	slot5 = slot0.itemList
 
-	slot5:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.itemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = slot2:Find("IconTpl")
-			slot5, slot6, slot7 = unpack(uv0[slot1])
+			slot5, slot6, slot7 = unpack(uv0[slot1 + 1])
 
 			updateDrop(slot3, {
 				count = slot7,
@@ -157,31 +153,17 @@ function slot0.initPageUI(slot0)
 			end)
 		end
 	end)
-
-	slot5 = slot0.itemList
-
-	slot5:align(#pg.mini_game[slot0:GetMGData().id].simple_config_data.drop)
-
-	slot5 = slot0.rtTitlePage
-	slot5 = slot5:Find("countdown")
-	slot6 = slot5:Find("bg/Image")
-	slot6 = slot6:GetComponent(typeof(DftAniEvent))
-
-	slot6:SetEndEvent(function ()
+	slot0.itemList:align(#pg.mini_game[slot0:GetMGData().id].simple_config_data.drop)
+	slot0.rtTitlePage:Find("countdown"):Find("bg/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:openUI()
 		uv0.gameController:StartGame()
 	end)
-
-	slot6 = slot0.rtTitlePage
-	slot6 = slot6:Find("pause")
-
-	onButton(slot0, slot6:Find("window/btn_confirm"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("pause"):Find("window/btn_confirm"), function ()
 		uv0:openUI()
 		uv0.gameController:ResumeGame()
 	end, SFX_CONFIRM)
 
-	slot7 = slot0.rtTitlePage
-	slot7 = slot7:Find("exit")
+	slot7 = slot0.rtTitlePage:Find("exit")
 
 	onButton(slot0, slot7:Find("window/btn_cancel"), function ()
 		uv0:openUI()
@@ -191,22 +173,15 @@ function slot0.initPageUI(slot0)
 		uv0:openUI()
 		uv0.gameController:EndGame()
 	end, SFX_CONFIRM)
-
-	slot8 = slot0.rtTitlePage
-	slot8 = slot8:Find("result")
-
-	onButton(slot0, slot8:Find("window/btn_finish"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("result"):Find("window/btn_finish"), function ()
 		uv0:openUI("main")
 	end, SFX_CONFIRM)
 end
 
 function slot0.initLeveUI(slot0)
-	slot1 = slot0._tf
-	slot0.rtLevel = slot1:Find("LevelPage")
-	slot1 = slot0.rtLevel
-	slot1 = slot1:Find("Opreation")
+	slot0.rtLevel = slot0._tf:Find("LevelPage")
 
-	onButton(slot0, slot1:Find("btn_back"), function ()
+	onButton(slot0, slot0.rtLevel:Find("Opreation"):Find("btn_back"), function ()
 		setActive(uv0, false)
 	end, SFX_CANCEL)
 end
@@ -249,10 +224,8 @@ function slot0.UpdateOpreationPage(slot0, slot1)
 	slot6 = slot2:Find("main/view/content")
 
 	UIItemList.New(slot6, slot6:Find("tpl")):make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1]
+			slot3 = uv0[slot1 + 1]
 
 			setActive(slot2:Find("empty"), not slot3)
 			setActive(slot2:Find("info"), slot3)
@@ -375,18 +348,12 @@ function slot0.openReadyPage(slot0)
 		})
 	end
 
-	slot4 = slot0.rtLevel
-
-	setActive(slot4:Find("Ready"), true)
-
-	slot5 = slot0.rtLevel
-
-	onButton(slot0, slot5:Find("Ready/bg"), function ()
+	setActive(slot0.rtLevel:Find("Ready"), true)
+	onButton(slot0, slot0.rtLevel:Find("Ready/bg"), function ()
 		setActive(uv0.rtLevel:Find("Ready"), false)
 	end, SFX_CANCEL)
 
-	slot3 = slot0.rtLevel
-	slot3 = slot3:Find("Ready/main")
+	slot3 = slot0.rtLevel:Find("Ready/main")
 
 	eachChild(slot3:Find("title"), function (slot0)
 		setActive(slot0, slot0.name == tostring(uv0.stageIndex))
@@ -442,19 +409,13 @@ function slot0.openRatePage(slot0)
 		})
 	end
 
-	slot4 = slot0.rtLevel
-
-	setActive(slot4:Find("Rate"), true)
-
-	slot5 = slot0.rtLevel
-
-	onButton(slot0, slot5:Find("Rate/bg"), function ()
+	setActive(slot0.rtLevel:Find("Rate"), true)
+	onButton(slot0, slot0.rtLevel:Find("Rate/bg"), function ()
 		setActive(uv0.rtLevel:Find("Rate"), false)
 		uv0:openReadyPage()
 	end, SFX_CANCEL)
 
-	slot3 = slot0.rtLevel
-	slot3 = slot3:Find("Rate/main/panel")
+	slot3 = slot0.rtLevel:Find("Rate/main/panel")
 
 	setText(slot3:Find("info/rate/Text"), uv0(slot0.abilityCache[slot0.stageIndex], slot2.base_rate, slot2.ability_rate))
 
@@ -462,10 +423,8 @@ function slot0.openRatePage(slot0)
 	slot7 = UIItemList.New(slot6, slot6:Find("tpl"))
 
 	slot7:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1]
+			slot3 = uv0[slot1 + 1]
 
 			setActive(slot2:Find("empty"), not slot3)
 			setActive(slot2:Find("enable"), slot3)
@@ -496,8 +455,7 @@ function slot0.openRatePage(slot0)
 end
 
 function slot0.initControllerUI(slot0)
-	slot1 = slot0._tf
-	slot1 = slot1:Find("Controller/top")
+	slot1 = slot0._tf:Find("Controller/top")
 
 	onButton(slot0, slot1:Find("btn_back"), function ()
 		uv0:openUI("exit")

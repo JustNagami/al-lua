@@ -9,10 +9,8 @@ function slot0.FirePassability(slot0)
 end
 
 function slot1(slot0)
-	slot1 = math.random()
-
 	for slot5, slot6 in ipairs(slot0) do
-		if slot1 < slot6[2] then
+		if math.random() < slot6[2] then
 			return {
 				name = "Item",
 				type = slot6[1]

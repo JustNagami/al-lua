@@ -20,8 +20,7 @@ function slot0.init(slot0)
 		slot0["map_" .. go(slot5).name] = slot5
 	end
 
-	slot1 = slot0._map
-	slot0._shipTpl = slot1:Find("ship")
+	slot0._shipTpl = slot0._map:Find("ship")
 	slot0.containers = {
 		slot0.map_middle,
 		slot0.map_top
@@ -55,9 +54,7 @@ function slot0.RegisterDataResponse(slot0)
 		"xuanzhuanmuma",
 		"tiaolouji"
 	}) do
-		slot7 = slot0.Respones
-
-		slot7:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot6
 		}, function (slot0, slot1)
@@ -83,9 +80,7 @@ function slot0.RegisterDataResponse(slot0)
 		"dangaobaoweizhan",
 		"jiujiuduihuanwu"
 	}) do
-		slot8 = slot0.Respones
-
-		slot8:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot7 .. "Tip"
 		}, function (slot0, slot1)
@@ -98,9 +93,8 @@ function slot0.RegisterDataResponse(slot0)
 	end
 
 	slot0.Respones.hubData = {}
-	slot3 = slot0.Respones
 
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"hubData"
 	}, function (slot0, slot1)
@@ -108,10 +102,7 @@ function slot0.RegisterDataResponse(slot0)
 	end, {
 		strict = true
 	})
-
-	slot3 = slot0.Respones
-
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"materialCount"
 	}, function (slot0, slot1)
@@ -120,30 +111,19 @@ function slot0.RegisterDataResponse(slot0)
 end
 
 function slot0.didEnter(slot0)
-	slot3 = slot0.top
-
-	onButton(slot0, slot3:Find("Back"), function ()
+	onButton(slot0, slot0.top:Find("Back"), function ()
 		uv0:emit(uv1.ON_BACK)
 	end)
-
-	slot3 = slot0.top
-
-	onButton(slot0, slot3:Find("Home"), function ()
+	onButton(slot0, slot0.top:Find("Home"), function ()
 		uv0:emit(uv1.ON_HOME)
 	end)
-
-	slot3 = slot0.top
-
-	onButton(slot0, slot3:Find("Help"), function ()
+	onButton(slot0, slot0.top:Find("Help"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.amusementpark_help.tip
 		})
 	end)
-
-	slot3 = slot0.top
-
-	onButton(slot0, slot3:Find("Invitation"), function ()
+	onButton(slot0, slot0.top:Find("Invitation"), function ()
 		if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CLIENT_DISPLAY) and not slot0:isEnd() then
 			uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
 				id = slot0.id

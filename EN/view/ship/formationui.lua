@@ -235,18 +235,17 @@ function slot0.quickExitFunc(slot0)
 end
 
 function slot0.didEnter(slot0)
-	slot0.isOpenCommander = pg.SystemOpenMgr.GetInstance():isOpenSystem(slot0.player.level, "CommandRoomMediator") and not LOCK_COMMANDER
+	slot0.isOpenCommander = pg.SystemOpenMgr.GetInstance():isOpenSystem(slot0.player.level, "CommanderCatMediator") and not LOCK_COMMANDER
 	slot1 = getProxy(ActivityProxy):getBuffShipList()
 
 	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1)
 		slot2 = slot1:getConfigTable()
 		slot3 = pg.ship_data_template[slot1.configId]
 		slot4 = findTF(slot0, "info")
-		slot5 = findTF(slot4, "stars")
 		slot6 = findTF(slot4, "energy")
 
 		for slot11 = 1, slot1:getStar() do
-			cloneTplTo(uv0._starTpl, slot5)
+			cloneTplTo(uv0._starTpl, findTF(slot4, "stars"))
 		end
 
 		if not GetSpriteFromAtlas("shiptype", shipType2print(slot1:getShipType())) then
@@ -264,10 +263,8 @@ function slot0.didEnter(slot0)
 		setActive(slot4:Find("expbuff"), uv1[slot1:getGroupId()] ~= nil)
 
 		if slot9 then
-			slot13 = tostring(slot9 / 100)
-
 			if slot9 % 100 > 0 then
-				slot13 = slot13 .. "." .. tostring(slot12)
+				slot13 = tostring(slot9 / 100) .. "." .. tostring(slot12)
 			end
 
 			setText(slot10:Find("text"), string.format("EXP +%s%%", slot13))
@@ -455,7 +452,6 @@ function slot0.updateToggleList(slot0, slot1)
 		setActive(slot0.fleetToggles[slot7], slot9)
 
 		if slot9 then
-			slot10 = slot8:GetComponent(typeof(Toggle))
 			slot12, slot13 = slot9:isUnlock()
 
 			setToggleEnabled(slot8, slot12)
@@ -464,7 +460,7 @@ function slot0.updateToggleList(slot0, slot1)
 			setActive(slot8:Find("off"), slot12 and slot3 ~= slot9.id)
 
 			if slot12 then
-				slot10.isOn = slot9.id == slot3
+				slot8:GetComponent(typeof(Toggle)).isOn = slot9.id == slot3
 
 				onToggle(slot0, slot8, function (slot0)
 					if slot0 then
@@ -567,16 +563,14 @@ function slot0.displayFleetInfo(slot0)
 		setActive(slot0._vanguardGS:Find("SonarActive"), slot0._currentFleetVO:GetFleetSonarRange() > 0)
 		setActive(slot0._vanguardGS:Find("SonarInactive"), slot7 <= 0)
 
-		function slot8()
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				type = MSGBOX_TYPE_HELP,
-				helps = pg.gametip.fleet_antisub_range_tip.tip
-			})
-		end
-
 		if slot7 > 0 then
 			setText(slot0._vanguardGS:Find("SonarActive/Text"), math.floor(slot7))
-			onButton(slot0, slot0._vanguardGS:Find("SonarActive"), slot8, SFX_PANEL)
+			onButton(slot0, slot0._vanguardGS:Find("SonarActive"), function ()
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					type = MSGBOX_TYPE_HELP,
+					helps = pg.gametip.fleet_antisub_range_tip.tip
+				})
+			end, SFX_PANEL)
 		else
 			onButton(slot0, slot0._vanguardGS:Find("SonarInactive"), slot8, SFX_PANEL)
 		end
@@ -633,10 +627,8 @@ function slot0.initAttrFrame(slot0)
 		[TeamType.Submarine] = slot0._currentFleetVO.subShips
 	}) do
 		if #slot0._cards[slot6] == 0 then
-			slot9 = slot0:findTF(slot6 .. "/list", slot0._attrFrame)
-
 			for slot13 = 1, 3 do
-				table.insert(slot8, FormationDetailCard.New(cloneTplTo(slot0._cardTpl, slot9).gameObject))
+				table.insert(slot8, FormationDetailCard.New(cloneTplTo(slot0._cardTpl, slot0:findTF(slot6 .. "/list", slot0._attrFrame)).gameObject))
 			end
 
 			slot2 = true
@@ -738,10 +730,8 @@ function slot0.attachOnCardButton(slot0, slot1, slot2)
 
 	if slot1.shipVO then
 		slot4 = slot0._cards[slot2]
-		slot5 = slot1.tr.parent
-		slot5 = slot5:GetComponent("ContentSizeFitter")
-		slot6 = slot1.tr.parent
-		slot6 = slot6:GetComponent("HorizontalLayoutGroup")
+		slot5 = slot1.tr.parent:GetComponent("ContentSizeFitter")
+		slot6 = slot1.tr.parent:GetComponent("HorizontalLayoutGroup")
 		slot7 = slot1.tr.rect.width * 0.5
 		slot8 = {}
 
@@ -829,15 +819,11 @@ function slot0.attachOnCardButton(slot0, slot1, slot2)
 
 				uv1.paintingTr.localScale = Vector3(1, 1, 0)
 			else
-				slot4 = LeanTween.value(uv1.go, uv1.tr.anchoredPosition.x, uv3[uv0._shiftIndex].x, math.min(math.abs(uv1.tr.anchoredPosition.x - uv3[uv0._shiftIndex].x) / 200, 1) * 0.3)
-				slot4 = slot4:setEase(LeanTweenType.easeOutCubic)
-				slot4 = slot4:setOnUpdate(System.Action_float(function (slot0)
+				LeanTween.value(uv1.go, uv1.tr.anchoredPosition.x, uv3[uv0._shiftIndex].x, math.min(math.abs(uv1.tr.anchoredPosition.x - uv3[uv0._shiftIndex].x) / 200, 1) * 0.3):setEase(LeanTweenType.easeOutCubic):setOnUpdate(System.Action_float(function (slot0)
 					slot1 = uv0.tr.anchoredPosition
 					slot1.x = slot0
 					uv0.tr.anchoredPosition = slot1
-				end))
-
-				slot4:setOnComplete(System.Action(function ()
+				end)):setOnComplete(System.Action(function ()
 					resetCard()
 					LeanTween.scale(uv0.paintingTr, Vector3(1, 1, 0), 0.3)
 				end))
@@ -878,10 +864,8 @@ function slot0.defaultFleetName(slot0)
 end
 
 function slot0.GetFleetCount(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in pairs(slot0._fleetVOs) do
-		slot1 = slot1 + 1
+		slot1 = 0 + 1
 	end
 
 	return slot1

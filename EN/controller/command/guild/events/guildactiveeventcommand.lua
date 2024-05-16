@@ -21,9 +21,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot8 = pg.ConnectionMgr.GetInstance()
-
-	slot8:Send(61001, {
+	pg.ConnectionMgr.GetInstance():Send(61001, {
 		chapter_id = slot4
 	}, 61002, function (slot0)
 		if slot0.result == 0 then

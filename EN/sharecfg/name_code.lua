@@ -1575,6 +1575,20 @@ pg.name_code = {
 		code = "Sakawa",
 		nation = 0
 	},
+	[227] = {
+		name = "Noshiro μ",
+		type = 1,
+		id = 227,
+		code = "Noshiro μ",
+		nation = 0
+	},
+	[228] = {
+		name = "Kongou μ",
+		type = 1,
+		id = 228,
+		code = "Kongou μ",
+		nation = 0
+	},
 	[250] = {
 		name = "I-9",
 		type = 1,
@@ -2658,6 +2672,48 @@ pg.name_code = {
 		type = 1,
 		id = 528,
 		code = "San Diego Retrofit",
+		nation = 0
+	},
+	[529] = {
+		name = "Sovetsky Soyuz",
+		type = 1,
+		id = 529,
+		code = "Sovetsky Soyuz",
+		nation = 0
+	},
+	[530] = {
+		name = "Soyuz",
+		type = 1,
+		id = 530,
+		code = "Soyuz",
+		nation = 0
+	},
+	[531] = {
+		name = "Friedrich Carl",
+		type = 1,
+		id = 531,
+		code = "Friedrich Carl",
+		nation = 0
+	},
+	[532] = {
+		name = "Prinz Eugen μ",
+		type = 1,
+		id = 532,
+		code = "Prinz Eugen μ",
+		nation = 0
+	},
+	[533] = {
+		name = "Boise μ",
+		type = 1,
+		id = 533,
+		code = "Boise μ",
+		nation = 0
+	},
+	[534] = {
+		name = "Shinano-chan",
+		type = 1,
+		id = 534,
+		code = "Shinano-chan",
 		nation = 0
 	},
 	[10000] = {

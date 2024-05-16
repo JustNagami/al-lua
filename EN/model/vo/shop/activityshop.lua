@@ -2,10 +2,12 @@ slot0 = class("ActivityShop", import(".BaseShop"))
 
 function slot0.Ctor(slot0, slot1)
 	slot0.activityId = slot1.id
-	slot2 = {}
+	slot2 = {
+		[slot7] = slot1.data2_list[slot6]
+	}
 
 	for slot6, slot7 in ipairs(slot1.data1_list) do
-		slot2[slot7] = slot1.data2_list[slot6]
+		-- Nothing
 	end
 
 	slot0.goods = {}
@@ -49,7 +51,7 @@ function slot0.getSortGoods(slot0)
 			return (slot0:canPurchase() or slot2) and 0 or 1
 		end,
 		function (slot0)
-			slot1, slot2 = slot0:CheckTimeLimit()
+			slot1, slot2, slot3 = slot0:CheckTimeLimit()
 
 			return slot1 and slot2 and 0 or 1
 		end,
@@ -126,6 +128,22 @@ function slot0.getResId(slot0)
 	return slot1:getConfig("resource_type")
 end
 
+function slot0.GetResList(slot0)
+	for slot5, slot6 in pairs(slot0.goods) do
+		-- Nothing
+	end
+
+	slot2 = {}
+
+	for slot6, slot7 in pairs({
+		[slot6:getConfig("resource_type")] = true
+	}) do
+		table.insert(slot2, slot6)
+	end
+
+	return slot2
+end
+
 function slot0.GetEnterVoice(slot0)
 	if slot0.config.config_client.enter then
 		return slot1[1], slot1[2], slot1[3]
@@ -140,6 +158,12 @@ end
 
 function slot0.GetPurchaseAllVoice(slot0)
 	if slot0.config.config_client.purchase_all then
+		return slot1[1], slot1[2], slot1[3]
+	end
+end
+
+function slot0.GetTouchVoice(slot0)
+	if slot0.config.config_client.touch then
 		return slot1[1], slot1[2], slot1[3]
 	end
 end

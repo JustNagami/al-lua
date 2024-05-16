@@ -10,9 +10,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot8 = pg.ConnectionMgr.GetInstance()
-
-	slot8:Send(20108, {
+	pg.ConnectionMgr.GetInstance():Send(20108, {
 		id = slot3
 	}, 20109, function (slot0)
 		if slot0.result == 0 then
@@ -24,7 +22,7 @@ function slot0.execute(slot0, slot1)
 			}
 			slot8 = slot0.pt
 
-			table.insert({}, Item.New(slot7))
+			table.insert({}, Drop.New(slot7))
 			uv0:RemoveSubTasks(uv1)
 			uv0:AddProgress(slot0.pt)
 

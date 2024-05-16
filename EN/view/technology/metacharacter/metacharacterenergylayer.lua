@@ -316,7 +316,7 @@ function slot0.updateMaterialPanel(slot0, slot1)
 
 		onButton(slot0, slot0.activeBtnDisable, function ()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("switch_to_shop_tip_2", i18n("word_gold")) .. "\n" .. i18n("text_noRes_tip", i18n("text_noRes_info_tip", pg.item_data_statistics[59001].name, uv0 - uv1)),
+				content = i18n("switch_to_shop_tip_2", i18n("word_gold")) .. "\n" .. i18n("text_noRes_tip", i18n("text_noRes_info_tip", Item.getConfigData(59001).name, uv0 - uv1)),
 				weight = LayerWeightConst.SECOND_LAYER,
 				onYes = function ()
 					if getProxy(ContextProxy):getCurrentContext():getContextByMediator(MetaCharacterMediator) then
@@ -371,14 +371,13 @@ function slot0.updatePreviewAttrListPanel(slot0)
 
 	slot0.previewAttrUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot5 = uv0:findTF("AddValueText", slot2)
 			slot6 = uv1[slot1 + 1]
 
 			setImageSprite(uv0:findTF("AttrIcon", slot2), LoadSprite("attricon", slot6))
 			setText(uv0:findTF("NameText", slot2), AttributeType.Type2Name(slot6))
 
 			if slot6 == AttributeType.ArmorType then
-				setText(slot5, uv2:getShipArmorName())
+				setText(uv0:findTF("AddValueText", slot2), uv2:getShipArmorName())
 			else
 				setText(slot5, uv3[slot6] or 0)
 			end
@@ -405,13 +404,10 @@ function slot0.initPreviewPanel(slot0, slot1)
 
 		onToggle(slot0, slot0:findTF("Stage" .. slot7, slot0.stages), function (slot0)
 			if slot0 then
-				slot1 = uv0.breakout_view
-				slot2 = checkExist(pg.ship_data_template[uv0.breakout_id], {
+				for slot6, slot7 in ipairs(checkExist(pg.ship_data_template[uv0.breakout_id], {
 					"specific_type"
-				}) or {}
-
-				for slot6, slot7 in ipairs(slot2) do
-					slot1 = slot1 .. "/" .. i18n(ShipType.SpecificTableTips[slot7])
+				}) or {}) do
+					slot1 = uv0.breakout_view .. "/" .. i18n(ShipType.SpecificTableTips[slot7])
 				end
 
 				changeToScrollText(uv1.breakView, slot1)
@@ -499,21 +495,13 @@ function slot0.getAllWeaponIds(slot0)
 end
 
 function slot0.showBarrage(slot0)
-	slot1 = slot0.bayProxy
-	slot1 = slot1:getShipById(slot0.curMetaShipID)
+	slot1 = slot0.bayProxy:getShipById(slot0.curMetaShipID)
 	slot2 = slot1:getMetaCharacter()
 	slot0.previewer = WeaponPreviewer.New(slot0.rawImage)
-	slot3 = slot0.previewer
 
-	slot3:configUI(slot0.healTF)
-
-	slot3 = slot0.previewer
-
-	slot3:setDisplayWeapon(slot0:getWaponIdsById(slot0.breakOutId))
-
-	slot3 = slot0.previewer
-
-	slot3:load(40000, slot1, slot0:getAllWeaponIds(), function ()
+	slot0.previewer:configUI(slot0.healTF)
+	slot0.previewer:setDisplayWeapon(slot0:getWaponIdsById(slot0.breakOutId))
+	slot0.previewer:load(40000, slot1, slot0:getAllWeaponIds(), function ()
 		uv0:stopLoadingAni()
 	end)
 end

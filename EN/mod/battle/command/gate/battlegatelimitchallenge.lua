@@ -43,17 +43,13 @@ function slot0.Entrance(slot0, slot1)
 		end
 
 		if uv3.enter_energy_cost > 0 then
-			slot1 = pg.gameset.battle_consume_energy.key_value
-
 			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(slot1)
+				slot6:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
 				uv5:updateShip(slot6)
 			end
 		end
 
-		slot1 = uv6
-
-		slot1:updatePlayer(uv1)
+		uv6:updatePlayer(uv1)
 		uv10:sendNotification(GAME.BEGIN_STAGE_DONE, {
 			mainFleetId = mainFleetID,
 			prefabFleet = uv7,
@@ -81,18 +77,18 @@ function slot0.Exit(slot0, slot1)
 		slot11 = slot3:getFleetById(FleetProxy.CHALLENGE_SUB_FLEET_ID)
 	end
 
-	(function ()
-		(function (slot0)
+	function ()
+		function (slot0)
 			uv0 = uv0 + slot0:getEndCost().oil
 
 			table.insertto(uv1, _.values(slot0.commanderIds))
 			table.insertto(uv2, uv3:getSortShipsByFleet(slot0))
-		end)(uv4)
+		end(uv4)
 
 		if uv5.statistics.submarineAid then
 			slot0(uv6)
 		end
-	end)()
+	end()
 
 	slot13 = slot1.GeneralPackage(slot0, slot7)
 	slot13.commander_id_list = slot8

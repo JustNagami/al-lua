@@ -285,6 +285,10 @@ function slot1.parseTimeFromConfig(slot0, slot1)
 	})
 end
 
+function slot1.DescDateFromConfig(slot0, slot1, slot2)
+	return string.format(slot2 or "%d.%02d.%02d", slot1[1][1], slot1[1][2], slot1[1][3])
+end
+
 function slot1.DescCDTime(slot0, slot1)
 	slot1 = slot1 % 3600
 
@@ -350,21 +354,19 @@ function slot1.inTime(slot0, slot1, slot2)
 		}
 	end
 
-	function slot3(slot0)
-		return {
-			year = slot0[1][1],
-			month = slot0[1][2],
-			day = slot0[1][3],
-			hour = slot0[2][1],
-			min = slot0[2][2],
-			sec = slot0[2][3]
-		}
-	end
-
 	slot4 = nil
 
 	if #slot1 > 0 then
-		slot4 = slot3(slot1[1] or {
+		slot4 = function (slot0)
+			return {
+				year = slot0[1][1],
+				month = slot0[1][2],
+				day = slot0[1][3],
+				hour = slot0[2][1],
+				min = slot0[2][2],
+				sec = slot0[2][3]
+			}
+		end(slot1[1] or {
 			{
 				2000,
 				1,
@@ -419,7 +421,7 @@ function slot1.passTime(slot0, slot1)
 		return true
 	end
 
-	if (function (slot0)
+	if function (slot0)
 		slot2, slot3, slot4 = unpack(slot0[1])
 		slot2, slot3, slot4 = unpack(slot0[2])
 
@@ -431,7 +433,7 @@ function slot1.passTime(slot0, slot1)
 			min = slot3,
 			hour = slot2
 		}
-	end)(slot1 or {
+	end(slot1 or {
 		{
 			2000,
 			1,

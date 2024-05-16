@@ -50,12 +50,11 @@ function slot0.PickPriortyActAsyn(slot0, slot1)
 end
 
 function slot0.CollectActivity(slot0)
-	slot1 = 0
 	slot2 = nil
 
 	for slot8, slot9 in pairs(getProxy(ActivityProxy):getRawData()) do
 		if not slot9:isEnd() and slot9:isShow() and slot9:readyToAchieve() then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 
 			if not slot2 or slot2 and slot9.id < slot2.id then
 				slot2 = slot9

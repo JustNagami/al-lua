@@ -10,12 +10,10 @@ end
 
 function slot0.init(slot0)
 	slot0.cardListRect = slot0:findTF("Container")
-	slot1 = slot0.cardListRect
-	slot0.cardListComp = slot1:GetComponent("LScrollRect")
+	slot0.cardListComp = slot0.cardListRect:GetComponent("LScrollRect")
 
 	function slot0.cardListComp.onUpdateItem(slot0, slot1)
-		slot2 = tf(slot1)
-		slot3 = CardPuzzleCardView.New(slot2:GetChild(0))
+		slot3 = CardPuzzleCardView.New(tf(slot1):GetChild(0))
 
 		slot3:SetData(uv0.cards[slot0 + 1])
 		slot3:UpdateView()

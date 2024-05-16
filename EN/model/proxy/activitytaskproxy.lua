@@ -92,7 +92,9 @@ function slot0.removeActList(slot0, slot1, slot2)
 			if slot0.actTasks[slot11].actId == slot1 then
 				for slot16 = #slot0.actTasks[slot11].tasks, 1, -1 do
 					if slot12[slot16].id == slot7.id then
-						slot12[slot16]:updateProgress(0)
+						if not slot12[slot16]:isRepeated() then
+							slot12[slot16]:updateProgress(0)
+						end
 
 						if not slot12[slot16]:isCircle() then
 							table.remove(slot12, slot16)
@@ -131,11 +133,13 @@ function slot0.getFinishTasksByActId(slot0, slot1)
 end
 
 function slot0.checkTasksFinish(slot0, slot1, slot2)
-	slot3 = {}
+	slot3 = {
+		[slot8.id] = true
+	}
 	slot7 = slot1
 
 	for slot7, slot8 in ipairs(slot0:getFinishTasksByActId(slot7)) do
-		slot3[slot8.id] = true
+		-- Nothing
 	end
 
 	return underscore.all(slot2, function (slot0)
@@ -160,11 +164,9 @@ function slot0.getActTaskTip(slot0, slot1)
 		end
 	end
 
-	slot3 = 0
-
 	for slot7, slot8 in ipairs(slot2) do
 		if not slot8:isCircle() and not slot8:isOver() and slot8:isFinish() and not slot8.autoCommit then
-			slot3 = slot3 + 1
+			slot3 = 0 + 1
 		end
 	end
 
@@ -176,9 +178,7 @@ function slot0.createTask(slot0, slot1, slot2)
 end
 
 function slot0.getFinishTasks(slot0)
-	slot1 = getProxy(ActivityProxy)
-
-	_.each(_.map(slot1:GetTaskActivities(), function (slot0)
+	_.each(_.map(getProxy(ActivityProxy):GetTaskActivities(), function (slot0)
 		return uv0:getFinishTasksByActId(slot0.id)
 	end), function (slot0)
 		table.insertto(uv0, slot0)

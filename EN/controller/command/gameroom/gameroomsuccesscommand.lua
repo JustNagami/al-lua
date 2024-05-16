@@ -5,15 +5,12 @@ function slot0.execute(slot0, slot1)
 	slot3 = slot2.roomId
 	slot4 = slot2.times
 	slot5 = slot2.score
-	slot6 = getProxy(GameRoomProxy):lastMonthlyTicket()
 
-	if getProxy(GameRoomProxy):lastTicketMax() == 0 or slot6 == 0 then
+	if getProxy(GameRoomProxy):lastTicketMax() == 0 or getProxy(GameRoomProxy):lastMonthlyTicket() == 0 then
 		return
 	end
 
-	slot8 = pg.ConnectionMgr.GetInstance()
-
-	slot8:Send(26126, {
+	pg.ConnectionMgr.GetInstance():Send(26126, {
 		roomid = slot3,
 		times = slot4,
 		score = slot5

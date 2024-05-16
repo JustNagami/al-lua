@@ -9,12 +9,9 @@ function slot0.OnDataSetting(slot0)
 end
 
 function slot0.OnFirstFlush(slot0)
-	slot1 = slot0._tf
-	slot0.rtMarks = slot1:Find("AD/progress")
-	slot1 = slot0._tf
-	slot0.rtFinish = slot1:Find("AD/award")
-	slot1 = slot0._tf
-	slot1 = slot1:Find("AD/btn_list")
+	slot0.rtMarks = slot0._tf:Find("AD/progress")
+	slot0.rtFinish = slot0._tf:Find("AD/award")
+	slot1 = slot0._tf:Find("AD/btn_list")
 
 	onButton(slot0, slot1:Find("go"), function ()
 		slot1 = getProxy(ActivityProxy)

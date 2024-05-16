@@ -9,8 +9,6 @@ function slot0.Entrance(slot0, slot1)
 
 	slot5 = pg.activity_event_worldboss[getProxy(ActivityProxy):getActivityById(slot0.actId):getConfig("config_id")]
 	slot6 = getProxy(PlayerProxy)
-	slot7 = getProxy(BayProxy)
-	slot8 = getProxy(FleetProxy)
 	slot10 = pg.battle_cost_template[SYSTEM_HP_SHARE_ACT_BOSS].oil_cost > 0
 	slot11 = {}
 	slot12 = 0
@@ -19,16 +17,15 @@ function slot0.Entrance(slot0, slot1)
 	slot15 = 0
 	slot16 = slot0.stageId
 
-	for slot23, slot24 in ipairs(slot7:getSortShipsByFleet(slot8:getActivityFleets()[slot2][slot0.mainFleetId])) do
+	for slot23, slot24 in ipairs(getProxy(BayProxy):getSortShipsByFleet(getProxy(FleetProxy):getActivityFleets()[slot2][slot0.mainFleetId])) do
 		slot11[#slot11 + 1] = slot24.id
 	end
 
 	slot13 = slot18:getStartCost().oil
-	slot15 = slot18:GetCostSum().oil
 	slot22 = slot5.use_oil_limit[slot17]
 
 	if slot3:IsOilLimit(slot16) and slot22[1] > 0 then
-		slot15 = math.min(slot15, slot22[1])
+		slot15 = math.min(slot18:GetCostSum().oil, slot22[1])
 	end
 
 	slot24 = slot6:getData()
@@ -63,17 +60,13 @@ function slot0.Entrance(slot0, slot1)
 		})
 
 		if uv4.enter_energy_cost > 0 then
-			slot2 = pg.gameset.battle_consume_energy.key_value
-
 			for slot6, slot7 in ipairs(uv5) do
-				slot7:cosumeEnergy(slot2)
+				slot7:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
 				uv6:updateShip(slot7)
 			end
 		end
 
-		slot2 = uv7
-
-		slot2:updatePlayer(uv1)
+		uv7:updatePlayer(uv1)
 		uv12:sendNotification(GAME.BEGIN_STAGE_DONE, {
 			mainFleetId = uv8,
 			actId = uv9,
@@ -97,12 +90,10 @@ function slot0.Exit(slot0, slot1)
 	slot17 = {}
 	slot18 = pg.battle_cost_template[SYSTEM_HP_SHARE_ACT_BOSS].oil_cost > 0
 
-	(function (slot0, slot1)
+	function (slot0, slot1)
 		if uv0 then
-			slot2 = slot0:getEndCost().oil
-
 			if slot1 > 0 then
-				slot2 = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot2)
+				slot2 = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot0:getEndCost().oil)
 			end
 
 			uv1 = uv1 + slot2
@@ -110,7 +101,7 @@ function slot0.Exit(slot0, slot1)
 
 		table.insertto(uv2, uv3:getSortShipsByFleet(slot0))
 		table.insertto(uv4, slot0.commanderIds)
-	end)(getProxy(FleetProxy):getActivityFleets()[slot0.actId][slot0.mainFleetId], slot6:IsOilLimit(slot0.stageId) and pg.activity_event_worldboss[slot6:getConfig("config_id")].use_oil_limit[slot0.mainFleetId][1] or 0)
+	end(getProxy(FleetProxy):getActivityFleets()[slot0.actId][slot0.mainFleetId], slot6:IsOilLimit(slot0.stageId) and pg.activity_event_worldboss[slot6:getConfig("config_id")].use_oil_limit[slot0.mainFleetId][1] or 0)
 
 	if slot0.statistics.submarineAid then
 		if slot12[slot0.mainFleetId + 10] then

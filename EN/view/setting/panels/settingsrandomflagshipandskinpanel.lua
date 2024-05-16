@@ -17,8 +17,7 @@ function slot0.GetTitleEn(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = slot0._tf:Find("title")
-	slot0.subTitleTxt = slot1:GetComponent(typeof(Text))
+	slot0.subTitleTxt = slot0._tf:Find("title"):GetComponent(typeof(Text))
 	slot0.shipToggles = {
 		[uv0.SHIP_FREQUENTLYUSED] = slot0._tf:Find("1"),
 		[uv0.SHIP_LOCKED] = slot0._tf:Find("2"),

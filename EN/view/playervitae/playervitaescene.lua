@@ -9,9 +9,7 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.GetBGM(slot0)
-	slot2 = getProxy(SettingsProxy):IsBGMEnable()
-
-	if slot0:GetFlagShip():IsBgmSkin() and slot2 then
+	if slot0:GetFlagShip():IsBgmSkin() and getProxy(SettingsProxy):IsBGMEnable() then
 		return slot1:GetSkinBgm()
 	else
 		return "main"
@@ -55,29 +53,46 @@ end
 function slot0.init(slot0)
 	slot0.bg = slot0:findTF("bg")
 	slot0.backBtn = slot0:findTF("top/frame/back")
-	slot1 = slot0:findTF("adapt")
-	slot0.mainViewCg = slot1:GetComponent(typeof(CanvasGroup))
+	slot0.mainViewCg = slot0:findTF("adapt"):GetComponent(typeof(CanvasGroup))
 	slot0.mainTr = slot0.mainViewCg.gameObject.transform
 	slot0.painting = slot0:findTF("adapt/paint")
 	slot0.btnContainer = slot0:findTF("adapt/btns")
 	slot0.switchSkinBtn = slot0:findTF("adapt/btns/swichSkin_btn")
 	slot0.replaceBtn = slot0:findTF("adapt/btns/replace_btn")
+	slot0.replaceBtnTip = slot0.replaceBtn:Find("tip")
 	slot0.cryptolaliaBtn = slot0:findTF("adapt/btns/cryptolalia_btn")
 	slot0.switchSkinBtnTag = slot0:findTF("Tag", slot0.switchSkinBtn)
 	slot0.titlt = slot0:findTF("top/frame/title")
 	slot0.titltNative = slot0:findTF("top/frame/title_native")
 	slot0.titltRandom = slot0:findTF("top/frame/title_random")
-	slot1 = slot0:findTF("detail")
-	slot0.detailCg = GetOrAddComponent(slot1, typeof(CanvasGroup))
+	slot0.detailCg = GetOrAddComponent(slot0:findTF("detail"), typeof(CanvasGroup))
 	slot2 = slot0:findTF("adapt/tpl")
+
+	setActive(slot2, false)
+
+	slot6 = PlayerVitaeBaseBtn.HRZ_TYPE
 	slot0.btns = {
-		PlayerVitaeSpineBtn.New(slot2),
-		PlayerVitaeBGBtn.New(slot2),
-		PlayerVitaeBMGBtn.New(slot2),
-		PlayerVitaeLive2dBtn.New(slot2)
+		PlayerVitaeSpineBtn.New(slot2, PlayerVitaeBaseBtn.HRZ_TYPE),
+		PlayerVitaeBGBtn.New(slot2, PlayerVitaeBaseBtn.HRZ_TYPE),
+		PlayerVitaeBMGBtn.New(slot2, PlayerVitaeBaseBtn.HRZ_TYPE),
+		PlayerVitaeLive2dBtn.New(slot2, slot6)
 	}
+
+	for slot6 = 1, #slot0.btns do
+		slot0.btns[slot6]:setParent(slot0:findTF("adapt/toggleBtns"), #slot0.btns - slot6)
+	end
+
+	slot0.btnLive2dReset = slot0:findTF("adapt/btnLive2dReset")
+
+	GetComponent(findTF(slot0.btnLive2dReset, "img"), typeof(Image)):SetNativeSize()
+	GetComponent(slot0.btnLive2dReset, typeof(Image)):SetNativeSize()
+	SetParent(slot0.btnLive2dReset, slot0:findTF("adapt/toggleBtns"))
+
 	slot0.shipsPage = PlayerVitaeShipsPage.New(slot0._tf, slot0.event, slot0.contextData)
 	slot0.detailPage = PlayerVitaeDetailPage.New(slot1, slot0.event, slot0.contextData)
+
+	setParent(slot0:findTF("adapt/toggleBtns"), slot0:findTF("detail"), true)
+
 	slot0.contextData.renamePage = PlayerVitaeRenamePage.New(slot0._tf, slot0.event)
 	slot0.topFrame = slot0:findTF("top/frame")
 	slot0.detailPosx = slot0._tf.rect.width * 0.5 - 937 * PlayerVitaeDetailPage.PreCalcAspect(slot1, 1080)
@@ -131,33 +146,37 @@ function slot0.didEnter(slot0)
 	end
 
 	slot0:UpdatePainting()
+	slot0:UpdateReplaceTip()
 	slot0.detailPage:ExecuteAction("Show", slot0:GetPlayer(), slot1)
 	slot0:emit(uv0.ON_PAGE_SWTICH, uv0.PAGE_DEFAULT)
+	slot0:checkShowResetL2dBtn()
+end
+
+function slot0.UpdateReplaceTip(slot0)
+	setActive(slot0.replaceBtnTip, getProxy(SettingsProxy):ShouldEducateCharTip())
 end
 
 function slot0.DoEnterAnimation(slot0)
-	function slot1(slot0)
-		slot1 = slot0.anchoredPosition3D
-		slot0.anchoredPosition3D = Vector3(slot1.x - 1200, slot1.y, 0)
-
-		LeanTween.value(slot0.gameObject, slot1.x - 1200, slot1.x, 0.2):setOnUpdate(System.Action_float(function (slot0)
-			uv0.anchoredPosition3D = Vector3(slot0, uv1.y, 0)
-		end)):setDelay(0.1):setEase(LeanTweenType.easeInOutSine)
-	end
-
 	for slot6, slot7 in ipairs({
 		slot0.btnContainer,
 		slot0.painting
 	}) do
-		slot1(slot7)
+		function (slot0)
+			slot1 = slot0.anchoredPosition3D
+			slot0.anchoredPosition3D = Vector3(slot1.x - 1200, slot1.y, 0)
+
+			LeanTween.value(slot0.gameObject, slot1.x - 1200, slot1.x, 0.2):setOnUpdate(System.Action_float(function (slot0)
+				uv0.anchoredPosition3D = Vector3(slot0, uv1.y, 0)
+			end)):setDelay(0.1):setEase(LeanTweenType.easeInOutSine)
+		end(slot7)
 	end
 
-	(function (slot0)
+	function (slot0)
 		slot1 = slot0.localPosition
 		slot0.localPosition = Vector3(slot1.x, slot1.y + 150, 0)
 
 		LeanTween.moveLocalY(slot0.gameObject, slot1.y, 0.2):setDelay(0.1):setEase(LeanTweenType.easeInOutSine)
-	end)(slot0.topFrame)
+	end(slot0.topFrame)
 end
 
 function slot0.ShowOrHideMainView(slot0, slot1)
@@ -168,41 +187,43 @@ function slot0.ShowOrHideMainView(slot0, slot1)
 
 	if slot1 then
 		slot0:UpdatePainting()
+		slot0:UpdateReplaceTip()
 	end
 end
 
-function slot0.UpdatePainting(slot0)
-	slot1 = slot0:GetFlagShip()
-	slot2 = false
-	slot3 = {}
+function slot0.UpdatePainting(slot0, slot1)
+	slot2 = slot0:GetFlagShip()
+	slot3 = false
+	slot4 = {}
 
-	for slot7, slot8 in ipairs(slot0.btns) do
-		if slot8:IsActive(slot1) then
-			table.insert(slot3, slot8)
+	for slot8, slot9 in ipairs(slot0.btns) do
+		if slot9:IsActive(slot2) then
+			table.insert(slot4, slot9)
 		end
 
-		slot8:Update(slot9, #slot3, slot1)
+		slot9:Update(slot10, #slot4, slot2)
 
-		if slot9 and not slot2 and slot8:IsOverlap(slot0.detailPosx) then
-			slot2 = true
-		end
-	end
-
-	if slot2 then
-		for slot7, slot8 in ipairs(slot3) do
-			slot8:SwitchToVecLayout()
+		if slot10 and not slot3 and slot9:IsOverlap(slot0.detailPosx) then
+			slot3 = true
 		end
 	end
 
-	if not slot0.displaySkinID or slot0.displaySkinID ~= slot1.skinId then
-		setPaintingPrefabAsync(slot0.painting, slot1:getPainting(), "kanban")
-		setActive(slot0.switchSkinBtn, not HXSet.isHxSkin() and getProxy(ShipSkinProxy):HasFashion(slot1))
-
-		slot0.displaySkinID = slot1.skinId
+	if slot3 then
+		for slot8, slot9 in ipairs(slot4) do
+			slot9:SwitchToVecLayout()
+		end
 	end
 
-	setActive(slot0.cryptolaliaBtn, getProxy(PlayerProxy):getRawData():ExistCryptolalia(slot1:getGroupId()))
+	if not slot0.displaySkinID or slot0.displaySkinID ~= slot2.skinId or slot1 then
+		setPaintingPrefabAsync(slot0.painting, slot2:getPainting(), "kanban")
+		setActive(slot0.switchSkinBtn, not HXSet.isHxSkin() and getProxy(ShipSkinProxy):HasFashion(slot2) and not isa(slot2, VirtualEducateCharShip))
+
+		slot0.displaySkinID = slot2.skinId
+	end
+
+	setActive(slot0.cryptolaliaBtn, getProxy(PlayerProxy):getRawData():ExistCryptolalia(slot2:getGroupId()))
 	slot0:updateSwitchSkinBtnTag()
+	slot0:checkShowResetL2dBtn()
 end
 
 function slot0.updateSwitchSkinBtnTag(slot0)
@@ -223,6 +244,29 @@ function slot0.onBackPressed(slot0)
 	end
 
 	uv0.super.onBackPressed(slot0)
+end
+
+function slot0.checkShowResetL2dBtn(slot0)
+	if slot0:GetFlagShip() and slot1:GetSkinConfig().spine_use_live2d == 1 then
+		setActive(slot0.btnLive2dReset, false)
+
+		return
+	end
+
+	if not PathMgr.FileExists(PathMgr.getAssetBundle(HXSet.autoHxShiftPath("live2d/" .. string.lower(slot1:getPainting()), nil, true))) then
+		setActive(slot0.btnLive2dReset, false)
+
+		return
+	end
+
+	setActive(slot0.btnLive2dReset, true)
+	onButton(slot0, slot0.btnLive2dReset, function ()
+		if uv0:GetFlagShip() then
+			slot0 = uv0:GetFlagShip()
+
+			Live2dConst.ClearLive2dSave(slot0.skinId, slot0.id)
+		end
+	end, SFX_CONFIRM)
 end
 
 function slot0.willExit(slot0)

@@ -248,11 +248,13 @@ function slot0.UpdateProgress(slot0, slot1, slot2)
 
 	slot0:DispatchEvent(uv0.EventUpdateProgress, slot3)
 
-	slot3 = {}
+	slot3 = {
+		[slot7] = 1
+	}
 	slot7 = slot2
 
 	for slot7 in pairs(slot0:GetStepDic(slot7)) do
-		slot3[slot7] = 1
+		-- Nothing
 	end
 
 	slot7 = slot1
@@ -305,10 +307,8 @@ function slot0.UpdateTreasure(slot0, slot1)
 	slot0.treasureMarkDic[slot1] = slot4 > 0
 
 	if (nowWorld():GetInventoryProxy():GetItemCount(slot1) > 0 and 1 or 0) - (slot0.treasureMarkDic[slot1] and 1 or 0) ~= 0 then
-		slot6 = slot2:FindTreasureEntrance(slot1)
-
 		if pg.world_item_data_template[slot1].usage_arg[1] == 1 then
-			slot6:UpdateDisplayMarks("treasure_sairen", slot5 > 0)
+			slot2:FindTreasureEntrance(slot1):UpdateDisplayMarks("treasure_sairen", slot5 > 0)
 		else
 			slot6:UpdateDisplayMarks("treasure", slot5 > 0)
 		end
@@ -377,19 +377,18 @@ function slot0.AddPressingMap(slot0, slot1)
 		table.insert(slot0.pressingMapList, slot1)
 
 		if slot0.mapEntrance[slot1] then
-			slot3 = {
-				[slot2.id] = true
-			}
 			slot0.transportDic[slot2.id] = true
 
 			for slot7 in pairs(slot2.transportDic) do
 				if not slot0.transportDic[slot7] then
 					slot0.transportDic[slot7] = true
-					slot3[slot7] = true
 				end
 			end
 
-			slot0:DispatchEvent(uv0.EventAddPressingEntrance, slot3)
+			slot0:DispatchEvent(uv0.EventAddPressingEntrance, {
+				[slot2.id] = true,
+				[slot7] = true
+			})
 
 			if not slot2:HasPort() then
 				slot0.pressingUnlcokCount = slot0.pressingUnlcokCount + 1
@@ -480,23 +479,19 @@ function slot0.UpdatePortMark(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	slot4 = nil
-
 	if slot2 ~= nil and tobool(slot0.markPortDic.goods[slot1]) ~= slot2 then
 		slot0.markPortDic.goods[slot1] = slot2
-		slot4 = slot4 or {}
 
 		for slot8, slot9 in ipairs(slot0.portEntranceList[slot1]) do
-			slot4[slot9] = true
+			(nil or {})[slot9] = true
 		end
 	end
 
 	if slot3 ~= nil and tobool(slot0.markPortDic.new[slot1]) ~= slot3 then
 		slot0.markPortDic.new[slot1] = slot3
-		slot4 = slot4 or {}
 
 		for slot8, slot9 in ipairs(slot0.portEntranceList[slot1]) do
-			slot4[slot9] = true
+			(slot4 or {})[slot9] = true
 		end
 	end
 
@@ -506,7 +501,6 @@ function slot0.UpdatePortMark(slot0, slot1, slot2, slot3)
 end
 
 function slot0.InitPortMarkNShopList(slot0)
-	slot1 = slot0:GetPressingUnlockCount()
 	slot0.markPortDic.newGoods = {}
 
 	for slot5, slot6 in pairs(slot0.nShopGoodsDic) do
@@ -515,9 +509,8 @@ function slot0.InitPortMarkNShopList(slot0)
 			count = slot6
 		}, Goods.TYPE_WORLD_NSHOP)
 		slot9 = slot7:getConfig("unlock_num")
-		slot10 = slot0:GetPressingUnlockRecordCount(slot7:getConfig("port_id"))
 
-		if slot7:canPurchase() and slot10 < slot9 and slot9 <= slot1 then
+		if slot7:canPurchase() and slot0:GetPressingUnlockRecordCount(slot7:getConfig("port_id")) < slot9 and slot9 <= slot0:GetPressingUnlockCount() then
 			slot0.markPortDic.newGoods[slot8] = true
 		end
 	end
@@ -528,16 +521,16 @@ function slot0.UpdateUnlockCountPortMark(slot0)
 		return
 	end
 
-	slot1 = slot0.markPortDic.newGoods
-
 	slot0:InitPortMarkNShopList()
 
 	for slot5, slot6 in ipairs(underscore.keys(slot0.portEntranceList)) do
-		if tobool(slot1[slot6]) ~= tobool(slot0.markPortDic.newGoods[slot6]) then
-			slot7 = {}
+		if tobool(slot0.markPortDic.newGoods[slot6]) ~= tobool(slot0.markPortDic.newGoods[slot6]) then
+			slot7 = {
+				[slot12] = true
+			}
 
 			for slot11, slot12 in ipairs(slot0.portEntranceList[slot6]) do
-				slot7[slot12] = true
+				-- Nothing
 			end
 		end
 	end
@@ -556,13 +549,13 @@ function slot0.UpdatePortMarkNShop(slot0, slot1, slot2)
 		slot0.markPortDic.newGoods[slot1] = slot2
 
 		if nowWorld():UsePortNShop() then
-			slot3 = {}
-
 			for slot7, slot8 in ipairs(slot0.portEntranceList[slot1]) do
-				slot3[slot8] = true
+				-- Nothing
 			end
 
-			slot0:DispatchEvent(uv0.EventUpdatePortMark, slot3)
+			slot0:DispatchEvent(uv0.EventUpdatePortMark, {
+				[slot8] = true
+			})
 		end
 	end
 end

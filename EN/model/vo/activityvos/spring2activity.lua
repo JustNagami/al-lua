@@ -52,9 +52,7 @@ end
 function slot0.readyToAchieve(slot0)
 	assert(isa(slot0, Spring2Activity))
 
-	slot2 = getProxy(ActivityTaskProxy)
-
-	return _.any(slot2:getTaskVOsByActId(slot0:GetConfigID()), function (slot0)
+	return _.any(getProxy(ActivityTaskProxy):getTaskVOsByActId(slot0:GetConfigID()), function (slot0)
 		return slot0:isFinish() and not slot0:isOver()
 	end)
 end

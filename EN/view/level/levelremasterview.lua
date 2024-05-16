@@ -6,8 +6,7 @@ end
 
 function slot0.OnInit(slot0)
 	slot0.content = slot0:findTF("list/content")
-	slot1 = slot0.content
-	slot0.item = slot1:Find("item")
+	slot0.item = slot0.content:Find("item")
 	slot0.numsTxt = slot0:findTF("nums/text")
 	slot0.helpBtn = slot0:findTF("help")
 
@@ -36,9 +35,8 @@ function slot0.OnInit(slot0)
 	slot1 = getProxy(ChapterProxy)
 	slot2 = pg.TimeMgr.GetInstance()
 	slot0.itemList = UIItemList.New(slot0.content, slot0.item)
-	slot3 = slot0.itemList
 
-	slot3:make(function (slot0, slot1, slot2)
+	slot0.itemList:make(function (slot0, slot1, slot2)
 		slot1 = slot1 + 1
 
 		if slot0 == UIItemList.EventUpdate then
@@ -63,11 +61,9 @@ function slot0.OnInit(slot0)
 				GetImageSpriteFromAtlasAsync("activitybanner/" .. slot3.bg, "", slot4)
 				setText(slot4:Find("info"):Find("dec1/index"), slot1 < 10 and "0" .. slot1 or slot1)
 
-				slot9 = 0
-
 				for slot13, slot14 in ipairs(slot3.config_data) do
 					if uv2:getChapterById(slot14):isClear() then
-						slot9 = math.max(slot9, slot3.chapter_progress[slot13])
+						slot9 = math.max(0, slot3.chapter_progress[slot13])
 					end
 				end
 
@@ -76,7 +72,7 @@ function slot0.OnInit(slot0)
 				slot14 = SFX_PANEL
 
 				onButton(uv0, slot4, function ()
-					if (function ()
+					if function ()
 						slot0 = pg.chapter_template[uv0.config_data[1]].map
 						slot4 = "remaster_lastmap_" .. uv0.id
 						slot5 = slot0
@@ -89,7 +85,7 @@ function slot0.OnInit(slot0)
 								return slot5
 							end
 						end
-					end)() then
+					end() then
 						uv2.onSelectMap(slot0)
 						uv2:Hide()
 					end
@@ -108,10 +104,8 @@ function slot0.OnInit(slot0)
 					end
 				end
 
-				slot11 = underscore.rest(slot3.drop_display, 1)
-
 				if slot10 then
-					table.insert(slot11, 1, slot10)
+					table.insert(underscore.rest(slot3.drop_display, 1), 1, slot10)
 				elseif #slot3.drop_display_sp > 0 then
 					slot11 = table.mergeArray(slot3.drop_display_sp, slot11)
 				end

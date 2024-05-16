@@ -18,8 +18,6 @@ function slot0.doDropUpdate(slot0)
 end
 
 function slot0.doMapUpdate(slot0)
-	slot2 = slot0.flag
-	slot3 = slot0.extraFlag
 	slot4 = slot0.chapter
 
 	if #slot0.data.map_update > 0 then
@@ -42,8 +40,8 @@ function slot0.doMapUpdate(slot0)
 			end
 		end)
 
-		slot2 = bit.bor(slot2, ChapterConst.DirtyAttachment)
-		slot3 = bit.bor(slot3, ChapterConst.DirtyAutoAction)
+		slot2 = bit.bor(slot0.flag, ChapterConst.DirtyAttachment)
+		slot3 = bit.bor(slot0.extraFlag, ChapterConst.DirtyAutoAction)
 	end
 
 	slot0.flag = slot2
@@ -51,7 +49,6 @@ function slot0.doMapUpdate(slot0)
 end
 
 function slot0.doCellFlagUpdate(slot0)
-	slot2 = slot0.flag
 	slot3 = slot0.chapter
 
 	if #slot0.data.cell_flag_list > 0 then
@@ -65,15 +62,13 @@ function slot0.doCellFlagUpdate(slot0)
 			uv1.chapter:updateChapterCell(slot1)
 		end)
 
-		slot2 = bit.bor(slot2, ChapterConst.DirtyCellFlag)
+		slot2 = bit.bor(slot0.flag, ChapterConst.DirtyCellFlag)
 	end
 
 	slot0.flag = slot2
 end
 
 function slot0.doAIUpdate(slot0)
-	slot2 = slot0.flag
-	slot3 = slot0.extraFlag
 	slot4 = slot0.chapter
 
 	if #slot0.data.ai_list > 0 then
@@ -81,8 +76,8 @@ function slot0.doAIUpdate(slot0)
 			uv0:mergeChampion(ChapterChampionPackage.New(slot0))
 		end)
 
-		slot2 = bit.bor(slot2, ChapterConst.DirtyChampion)
-		slot3 = bit.bor(slot3, ChapterConst.DirtyAutoAction)
+		slot2 = bit.bor(slot0.flag, ChapterConst.DirtyChampion)
+		slot3 = bit.bor(slot0.extraFlag, ChapterConst.DirtyAutoAction)
 	end
 
 	slot0.flag = slot2
@@ -90,19 +85,16 @@ function slot0.doAIUpdate(slot0)
 end
 
 function slot0.doShipUpdate(slot0)
-	slot2 = slot0.flag
 	slot3 = slot0.chapter
 
 	if #slot0.data.ship_update > 0 then
 		_.each(slot1.ship_update, function (slot0)
-			if uv0:getShip(slot0.id) and slot1.hpRant * slot0.hp_rant == 0 and slot1:getShipType() == ShipType.WeiXiu then
-				uv1 = bit.bor(uv1, ChapterConst.DirtyStrategy)
-			end
+			uv0:updateFleetShipHp(slot0.id, slot0.hp_rant)
 
-			uv0:updateShipHp(slot0.id, slot0.hp_rant)
+			uv1 = bit.bor(uv1, ChapterConst.DirtyStrategy)
 		end)
 
-		slot2 = bit.bor(slot2, ChapterConst.DirtyFleet)
+		slot2 = bit.bor(slot0.flag, ChapterConst.DirtyFleet)
 	end
 
 	slot0.flag = slot2
@@ -113,11 +105,8 @@ function slot0.doBuffUpdate(slot0)
 end
 
 function slot0.doExtraFlagUpdate(slot0)
-	slot2 = slot0.chapter
-	slot3 = getProxy(ChapterProxy)
-
 	if #slot0.data.add_flag_list > 0 or #slot1.del_flag_list > 0 then
-		slot3:updateExtraFlag(slot2, slot1.add_flag_list, slot1.del_flag_list)
+		getProxy(ChapterProxy):updateExtraFlag(slot0.chapter, slot1.add_flag_list, slot1.del_flag_list)
 
 		slot0.flag = bit.bor(slot0.flag, ChapterConst.DirtyFleet, ChapterConst.DirtyStrategy, ChapterConst.DirtyCellFlag, ChapterConst.DirtyFloatItems, ChapterConst.DirtyAttachment)
 	end
@@ -141,15 +130,12 @@ function slot0.doRetreat(slot0)
 		end
 	else
 		slot3:retreat(slot1.win)
-
-		slot2 = ChapterConst.DirtyMapItems
 	end
 
 	slot0.flag = slot2
 end
 
 function slot0.doMove(slot0)
-	slot1 = slot0.extraFlag
 	slot3 = slot0.chapter
 	slot4 = nil
 
@@ -161,7 +147,7 @@ function slot0.doMove(slot0)
 			}
 		end)
 		slot3.moveStep = slot3.moveStep + #slot2.move_path
-		slot1 = bit.bor(slot1, ChapterConst.DirtyAutoAction)
+		slot1 = bit.bor(slot0.extraFlag, ChapterConst.DirtyAutoAction)
 	end
 
 	slot0.fullpath = slot4
@@ -172,12 +158,10 @@ function slot0.doMove(slot0)
 end
 
 function slot0.doOpenBox(slot0)
-	slot1 = slot0.items
 	slot3 = slot0.chapter
 	slot5 = slot3.fleet.line
 	slot6 = slot3:getChapterCell(slot5.row, slot5.column)
 	slot6.flag = ChapterConst.CellFlagDisabled
-	slot2 = bit.bor(slot0.flag, ChapterConst.DirtyAttachment)
 	slot7 = pg.box_data_template[slot6.attachmentId]
 
 	assert(slot7, "box_data_template not exist: " .. slot6.attachmentId)
@@ -187,13 +171,13 @@ function slot0.doOpenBox(slot0)
 		slot9 = slot7.effect_arg
 
 		slot4:achievedStrategy(slot8, slot9)
-		table.insert(slot1, Item.New({
+		table.insert(slot0.items, Drop.New({
 			type = DROP_TYPE_STRATEGY,
 			id = slot8,
 			count = slot9
 		}))
 
-		slot2 = bit.bor(slot2, ChapterConst.DirtyStrategy)
+		slot2 = bit.bor(bit.bor(slot0.flag, ChapterConst.DirtyAttachment), ChapterConst.DirtyStrategy)
 	elseif slot7.type == ChapterConst.BoxSupply then
 		slot8, slot9 = slot3:getFleetAmmo(slot4)
 		slot4.restAmmo = slot4.restAmmo + math.min(slot8 - slot9, slot7.effect_id)
@@ -220,10 +204,8 @@ function slot0.doPlayStory(slot0)
 end
 
 function slot0.doAmbush(slot0)
-	slot3 = slot0.chapter.fleet
-
 	if slot0.op.arg1 == 1 then
-		slot4 = slot3.line
+		slot4 = slot0.chapter.fleet.line
 
 		if slot2:getChapterCell(slot4.row, slot4.column).flag == ChapterConst.CellFlagAmbush then
 			slot2:clearChapterCell(slot4.row, slot4.column)
@@ -331,17 +313,20 @@ function slot0.doCollectAI(slot0)
 		slot1 = nil
 
 		if slot0.act_type == ChapterConst.ActType_TargetDown then
-			if uv0.op.arg1 == ChapterConst.StrategyMissileStrike then
-				slot1 = ChapterMissileExplodeAction.New(slot0)
-			elseif uv0.op.arg1 == ChapterConst.StrategyAirSupport then
-				slot1 = ChapterAirSupportAIAction.New(slot0)
-			end
+			if uv0.op.type == ChapterConst.OpStrategy then
+				if uv0.op.arg1 == ChapterConst.StrategyMissileStrike then
+					slot1 = ChapterMissileExplodeAction.New(slot0)
+				elseif uv0.op.arg1 == ChapterConst.StrategyAirSupport then
+					slot1 = ChapterAirSupportAIAction.New(slot0)
+				end
 
-			assert(uv0.op.type == ChapterConst.OpStrategy and slot1)
-			slot1:SetTargetLine({
-				row = uv0.op.arg2,
-				column = uv0.op.arg3
-			})
+				slot1:SetTargetLine({
+					row = uv0.op.arg2,
+					column = uv0.op.arg3
+				})
+			else
+				slot1 = ChapterMissileExplodeAction.New(slot0)
+			end
 		elseif slot0.act_type == ChapterConst.ActType_Expel then
 			ChapterExpelAIAction.New(slot0):SetTargetLine({
 				row = uv0.op.arg2,
@@ -389,11 +374,10 @@ end
 
 function slot0.doRequest(slot0)
 	slot2 = -1
-	slot4 = slot0.chapter.fleet
 
 	if #slot0.data.move_path > 0 then
 		slot5 = slot1.move_path[#slot1.move_path]
-		slot4.line = {
+		slot0.chapter.fleet.line = {
 			row = slot5.row,
 			column = slot5.column
 		}
@@ -437,11 +421,10 @@ function slot0.doTeleportByPortal(slot0)
 		return
 	end
 
-	slot2 = slot0.chapter
 	slot3 = nil
 
 	if slot0.op.type == ChapterConst.OpMove then
-		slot3 = slot2:GetCellEventByKey("jump", slot1.row, slot1.column)
+		slot3 = slot0.chapter:GetCellEventByKey("jump", slot1.row, slot1.column)
 	elseif slot0.op.type == ChapterConst.OpSubTeleport then
 		slot3 = slot2:GetCellEventByKey("jumpsub", slot1.row, slot1.column)
 	end
@@ -483,7 +466,7 @@ function slot0.AddBoxAction(slot0)
 	assert(slot5, "box_data_template not exist: " .. slot4.attachmentId)
 
 	if slot5.type == ChapterConst.BoxStrategy then
-		table.insert(slot0.items, Item.New({
+		table.insert(slot0.items, Drop.New({
 			type = DROP_TYPE_STRATEGY,
 			id = slot5.effect_id,
 			count = slot5.effect_arg

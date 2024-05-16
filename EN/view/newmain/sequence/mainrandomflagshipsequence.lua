@@ -110,15 +110,15 @@ function slot3(slot0, slot1)
 end
 
 function slot4(slot0)
-	slot1 = {}
-
 	for slot5, slot6 in ipairs(slot0) do
 		if getProxy(BayProxy):RawGetShipById(slot6) then
-			slot1[slot7.groupId] = true
+			-- Nothing
 		end
 	end
 
-	return slot1
+	return {
+		[slot7.groupId] = true
+	}
 end
 
 function slot0.Random(slot0)

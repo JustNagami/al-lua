@@ -73,9 +73,7 @@ function slot0.execute(slot0, slot1)
 	end
 
 	seriesAsync(slot9, function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(20005, {
+		pg.ConnectionMgr.GetInstance():Send(20005, {
 			id = uv0.id,
 			choice_award = uv1
 		}, 20006, function (slot0)
@@ -118,7 +116,7 @@ function slot0.execute(slot0, slot1)
 
 				if not uv4 then
 					for slot5 = #slot1, 1, -1 do
-						if slot1[slot5].dropType == DROP_TYPE_VITEM then
+						if slot1[slot5].type == DROP_TYPE_VITEM then
 							table.remove(slot1, slot5)
 						end
 					end

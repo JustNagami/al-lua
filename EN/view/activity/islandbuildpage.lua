@@ -20,7 +20,6 @@ function slot0.Ctor(slot0, slot1, slot2)
 	slot0.pointAdd = findTF(slot0.buildPanel, "add")
 	slot0.pointLevelStar = findTF(slot0.buildPanel, "levelStar")
 	slot0.pointStarTfs = {}
-	slot4 = slot0.pointLevelStar.sizeDelta.x
 
 	for slot8 = 1, #slot0.buffs do
 		slot9 = tf(Instantiate(slot0.pointStarTpl))
@@ -30,7 +29,7 @@ function slot0.Ctor(slot0, slot1, slot2)
 		setText(findTF(slot9, "bg/text"), slot8)
 		setImageSprite(findTF(slot9, "img"), LoadSprite(IslandTaskScene.ui_atlas, "img_level_" .. slot8))
 
-		slot9.anchoredPosition = Vector3(slot0.buffs[slot8].pt[1] / slot0.maxNum * slot4, 0, 0)
+		slot9.anchoredPosition = Vector3(slot0.buffs[slot8].pt[1] / slot0.maxNum * slot0.pointLevelStar.sizeDelta.x, 0, 0)
 
 		table.insert(slot0.pointStarTfs, slot9)
 
@@ -72,13 +71,12 @@ function slot0.updatePoint(slot0)
 	end
 
 	for slot7 = 1, #slot0.buffs[slot2].benefit do
-		slot9 = pg.benefit_buff_template[slot3[slot7]].desc
 		slot10 = findTF(slot0.buildPanel, "add/" .. slot7)
 
 		if PLATFORM_CODE == PLATFORM_JP then
 			findTF(slot10, "img").sizeDelta = Vector2(450, 70)
 
-			setText(findTF(slot10, "text_jp"), slot9)
+			setText(findTF(slot10, "text_jp"), pg.benefit_buff_template[slot3[slot7]].desc)
 		else
 			setText(findTF(slot10, "text"), slot9)
 		end

@@ -61,21 +61,18 @@ function slot0.canBuildShipByBuildId(slot0, slot1, slot2)
 
 	if slot2 then
 		slot6 = getProxy(ActivityProxy):getBuildFreeActivityByBuildId(slot0)
-		slot8 = getDropName({
-			type = DROP_TYPE_VITEM,
-			id = slot6:getConfig("config_client")[1]
-		})
 
 		if not slot6 or slot6:isEnd() then
-			return false, i18n("tip_build_ticket_expired", slot8)
+			return false, i18n("tip_build_ticket_expired", Drop.New({
+				type = DROP_TYPE_VITEM,
+				id = slot6:getConfig("config_client")[1]
+			}):getName())
 		elseif slot6.data1 < slot1 then
 			return false, i18n("tip_build_ticket_not_enough", slot8)
 		end
 	else
-		slot6 = {}
-
 		if getProxy(PlayerProxy):getData().gold < slot3.use_gold * slot1 then
-			table.insert(slot6, {
+			table.insert({}, {
 				59001,
 				slot3.use_gold * slot1 - slot8.gold,
 				slot3.use_gold * slot1

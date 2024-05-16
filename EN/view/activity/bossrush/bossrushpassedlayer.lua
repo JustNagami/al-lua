@@ -7,19 +7,14 @@ end
 
 function slot0.didEnter(slot0)
 	slot0.tweenObjs = {}
-	slot1 = pg.UIMgr.GetInstance()
 
-	slot1:OverlayPanel(slot0._tf)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
 	slot0:updateSlider(slot0.curIndex)
 	slot0:moveSlider(slot0.curIndex)
 	onButton(slot0, slot0._tf, function ()
 		uv0:emit(uv1.ON_CLOSE)
 	end)
-
-	slot1 = slot0._tf
-	slot1 = slot1:GetComponent("DftAniEvent")
-
-	slot1:SetEndEvent(function (slot0)
+	slot0._tf:GetComponent("DftAniEvent"):SetEndEvent(function (slot0)
 		uv0:emit(uv1.ON_CLOSE)
 	end)
 end
@@ -58,13 +53,6 @@ function slot0.updateSlider(slot0, slot1)
 		slot3 = uv0:findTF("UnFinished", slot2)
 		slot4 = uv0:findTF("Finished", slot2)
 		slot5 = uv0:findTF("Challengeing", slot2)
-		slot6 = uv0:findTF("Arrow", slot2)
-
-		function slot7()
-			setActive(uv0, true)
-			setActive(uv1, false)
-			setActive(uv2, false)
-		end
 
 		function slot8()
 			setActive(uv0, false)
@@ -80,8 +68,12 @@ function slot0.updateSlider(slot0, slot1)
 
 		if slot0 == UIItemList.EventUpdate then
 			if slot1 + 1 < uv1 then
-				setActive(slot6, false)
-				slot7()
+				setActive(uv0:findTF("Arrow", slot2), false)
+				function ()
+					setActive(uv0, true)
+					setActive(uv1, false)
+					setActive(uv2, false)
+				end()
 			elseif slot1 + 1 == uv1 then
 				setActive(slot6, true)
 				slot9()
@@ -105,13 +97,10 @@ function slot0.moveSlider(slot0, slot1)
 	end
 
 	slot4 = 1 / (slot3 - 1)
-	slot7 = LeanTween.value(go(slot0.slider), (slot2 - 1) * slot4, slot2 * slot4, uv0.GROW_TIME)
-	slot7 = slot7:setDelay(1.4)
-	slot7 = slot7:setOnUpdate(System.Action_float(function (slot0)
-		uv0.sliderSC.value = slot0
-	end))
 
-	slot7:setOnComplete(System.Action(function ()
+	LeanTween.value(go(slot0.slider), (slot2 - 1) * slot4, slot2 * slot4, uv0.GROW_TIME):setDelay(1.4):setOnUpdate(System.Action_float(function (slot0)
+		uv0.sliderSC.value = slot0
+	end)):setOnComplete(System.Action(function ()
 		uv0:updateSlider(uv1 + 1)
 	end))
 end

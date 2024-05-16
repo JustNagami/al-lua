@@ -16,9 +16,7 @@ function slot0.getLayerWeight(slot0)
 end
 
 function slot0.preload(slot0, slot1)
-	slot2 = slot0.contextData.ship
-
-	LoadSpriteAsync("newshipbg/bg_" .. slot2:rarity2bgPrintForGet(), function (slot0)
+	LoadSpriteAsync("newshipbg/bg_" .. slot0.contextData.ship:rarity2bgPrintForGet(), function (slot0)
 		uv0.bgSprite = slot0
 		uv0.isLoadBg = true
 
@@ -125,9 +123,7 @@ function slot0.setShip(slot0, slot1)
 		end
 
 		if not slot0.designBg then
-			slot4 = PoolMgr.GetInstance()
-
-			slot4:GetUI("raritydesign" .. slot1:getRarity(), true, function (slot0)
+			PoolMgr.GetInstance():GetUI("raritydesign" .. slot1:getRarity(), true, function (slot0)
 				uv0.designBg = slot0
 				uv0.designName = "raritydesign" .. uv1:getRarity()
 
@@ -154,9 +150,7 @@ function slot0.setShip(slot0, slot1)
 		end
 
 		if not slot0.metaBg then
-			slot4 = PoolMgr.GetInstance()
-
-			slot4:GetUI("raritymeta" .. slot1:getRarity(), true, function (slot0)
+			PoolMgr.GetInstance():GetUI("raritymeta" .. slot1:getRarity(), true, function (slot0)
 				uv0.metaBg = slot0
 				uv0.metaName = "raritymeta" .. uv1:getRarity()
 
@@ -241,21 +235,16 @@ function slot0.setShip(slot0, slot1)
 		end
 	end
 
-	slot11 = slot0._shake:Find("rarity/nation")
-
 	if not LoadSprite("prints/" .. nation2print(slot4.nationality) .. "_0") then
 		warning("找不到印花, shipConfigId: " .. slot1.configId)
-		setActive(slot11, false)
+		setActive(slot0._shake:Find("rarity/nation"), false)
 	else
 		setImageSprite(slot11, slot12, false)
 	end
 
-	slot13 = slot0._shake:Find("rarity/type")
-	slot14 = slot0._shake:Find("rarity/type/rarLogo")
-
 	if slot1:isMetaShip() then
-		LoadImageSpriteAsync("shiprarity/1" .. slot5 .. "m", slot13, true)
-		LoadImageSpriteAsync("shiprarity/1" .. slot5 .. "s", slot14, true)
+		LoadImageSpriteAsync("shiprarity/1" .. slot5 .. "m", slot0._shake:Find("rarity/type"), true)
+		LoadImageSpriteAsync("shiprarity/1" .. slot5 .. "s", slot0._shake:Find("rarity/type/rarLogo"), true)
 	else
 		LoadImageSpriteAsync("shiprarity/" .. (slot2 and "0" or "") .. slot5 .. "m", slot13, true)
 		LoadImageSpriteAsync("shiprarity/" .. (slot2 and "0" or "") .. slot5 .. "s", slot14, true)
@@ -276,14 +265,13 @@ function slot0.setShip(slot0, slot1)
 	end)
 
 	slot15 = slot0._shake:Find("ship_type")
-	slot17 = slot15:Find("stars/startpl")
 
 	setText(slot15:Find("english_name"), slot0._shipVO:getConfig("english_name"))
 
 	slot20 = slot0._shipVO:getStar()
 
 	for slot25 = slot15:Find("stars").childCount, slot0._shipVO:getMaxStar() - 1 do
-		cloneTplTo(slot17, slot16)
+		cloneTplTo(slot15:Find("stars/startpl"), slot16)
 	end
 
 	for slot25 = 0, slot16.childCount - 1 do
@@ -304,9 +292,7 @@ function slot0.setShip(slot0, slot1)
 	end
 
 	if not slot0.rarityEffect[slot5] then
-		slot24 = PoolMgr.GetInstance()
-
-		slot24:GetUI("getrole_" .. slot5, true, function (slot0)
+		PoolMgr.GetInstance():GetUI("getrole_" .. slot5, true, function (slot0)
 			if IsNil(uv0._tf) then
 				return
 			end
@@ -321,11 +307,7 @@ function slot0.setShip(slot0, slot1)
 			slot0.transform:SetSiblingIndex(1)
 
 			if uv2:isMetaShip() then
-				slot1 = uv0
-				slot1 = slot1:findTF("fire_ruchang", tf(slot0))
-				slot2 = slot1:GetComponent(typeof(DftAniEvent))
-
-				slot2:SetEndEvent(function (slot0)
+				uv0:findTF("fire_ruchang", tf(slot0)):GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
 					setActive(uv0, true)
 					setActive(uv1, false)
 				end)
@@ -415,9 +397,7 @@ function slot0.switch2Property(slot0)
 end
 
 function slot0.showExitTip(slot0, slot1)
-	slot2 = slot0._shipVO:GetLockState()
-
-	if slot0._shipVO.virgin and slot2 == Ship.LOCK_STATE_UNLOCK then
+	if slot0._shipVO.virgin and slot0._shipVO:GetLockState() == Ship.LOCK_STATE_UNLOCK then
 		if slot0.effectObj then
 			setActive(slot0.effectObj, false)
 		end
@@ -546,10 +526,9 @@ end
 
 function slot0.paintView(slot0)
 	slot1 = {}
-	slot2 = slot0._shake.childCount
 	slot3 = 0
 
-	while slot2 > slot3 do
+	while slot0._shake.childCount > slot3 do
 		if slot0._shake:GetChild(slot3).gameObject.activeSelf and slot4 ~= slot0._paintingTF and slot4 ~= slot0._bg and slot4 ~= slot0._drag then
 			slot1[#slot1 + 1] = slot4
 
@@ -650,6 +629,8 @@ function slot0.recyclePainting(slot0)
 	if slot0._shipVO then
 		retPaintingPrefab(slot0._paintingTF, slot0._shipVO:getPainting())
 		retPaintingPrefab(slot0._paintingShadowTF, slot0._shipVO:getPainting())
+
+		slot0._shipVO = nil
 	end
 end
 
@@ -662,56 +643,40 @@ function slot0.starsAnimation(slot0)
 
 	setActive(slot0.starsCont, false)
 
-	slot2 = slot0._tf
-	slot2 = slot2:GetComponent(typeof(DftAniEvent))
+	slot2 = slot0._tf:GetComponent(typeof(DftAniEvent))
 
 	slot2:SetTriggerEvent(function (slot0)
-		slot1 = uv0
-
-		slot1:AddLeanTween(function ()
-			slot0 = LeanTween.scale(rtf(uv0.starsCont), Vector3.one, 0)
-
-			return slot0:setOnComplete(System.Action(function ()
+		uv0:AddLeanTween(function ()
+			return LeanTween.scale(rtf(uv0.starsCont), Vector3.one, 0):setOnComplete(System.Action(function ()
 				setActive(uv0.starsCont, true)
 			end))
 		end)
 
-		slot1 = uv0.STAR_ANIMATION_DUR1
-
 		for slot5 = 0, uv0.starsCont.childCount - 1 do
-			slot6 = uv0.starsCont
-			slot6 = slot6:GetChild(slot5)
+			slot6 = uv0.starsCont:GetChild(slot5)
 
 			setActive(slot6:Find("star_empty"), false)
 			setActive(slot6:Find("star"), false)
 
-			slot9 = slot5 * slot1
-			slot10 = uv0
+			slot9 = slot5 * uv0.STAR_ANIMATION_DUR1
 
-			slot10:AddLeanTween(function ()
-				slot0 = LeanTween.scale(rtf(uv0), Vector3(1.8, 1.8, 1.8), 0)
-				slot0 = slot0:setDelay(uv1)
-
-				return slot0:setOnComplete(System.Action(function ()
+			uv0:AddLeanTween(function ()
+				return LeanTween.scale(rtf(uv0), Vector3(1.8, 1.8, 1.8), 0):setDelay(uv1):setOnComplete(System.Action(function ()
 					setActive(uv0, true)
-
-					slot0 = uv1
-
-					slot0:AddLeanTween(function ()
+					uv1:AddLeanTween(function ()
 						return LeanTween.scale(rtf(uv0), Vector3(1, 1, 1), uv1)
 					end)
 				end))
 			end)
 		end
 
-		slot3 = uv0.STAR_ANIMATION_DUR2
 		slot4 = uv0.STAR_ANIMATION_DUR3
 
 		for slot8 = 0, uv0._shipVO:getStar() - 1 do
 			slot9 = uv0.starsCont:GetChild(slot8)
 			slot10 = slot9:Find("star_empty")
 			slot11 = slot9:Find("star")
-			slot12 = slot1 * uv0.starsCont.childCount + slot8 * slot3
+			slot12 = slot1 * uv0.starsCont.childCount + slot8 * uv0.STAR_ANIMATION_DUR2
 
 			uv0:AddLeanTween(function ()
 				return LeanTween.scale(rtf(uv0), Vector3(1.8, 1.8, 1.8), 0):setDelay(uv1):setOnStart(System.Action(function ()
@@ -726,9 +691,7 @@ function slot0.starsAnimation(slot0)
 			end)
 
 			if slot9:Find("light") then
-				slot14 = uv0
-
-				slot14:AddLeanTween(function ()
+				uv0:AddLeanTween(function ()
 					return LeanTween.delayedCall(uv0, System.Action(function ()
 						if uv0.exited then
 							return
@@ -737,23 +700,16 @@ function slot0.starsAnimation(slot0)
 						setActive(uv1, true)
 					end))
 				end)
-
-				slot14 = uv0
-
-				slot14:AddLeanTween(function ()
-					slot0 = LeanTween.alpha(rtf(uv0), 0, uv1)
-					slot0 = slot0:setDelay(uv2)
-
-					return slot0:setOnComplete(System.Action(function ()
+				uv0:AddLeanTween(function ()
+					return LeanTween.alpha(rtf(uv0), 0, uv1):setDelay(uv2):setOnComplete(System.Action(function ()
 						SetActive(uv0, false)
 						LeanTween.alpha(rtf(uv0), 1, 0)
 					end))
 				end)
 
 				slot13.transform.localScale = Vector3(1, 1, 1)
-				slot14 = uv0
 
-				slot14:AddLeanTween(function ()
+				uv0:AddLeanTween(function ()
 					return LeanTween.scale(rtf(uv0), Vector3(0.5, 1, 1), uv1.STAR_ANIMATION_DUR4):setDelay(uv2 + uv3 * 1 / 3)
 				end)
 			end
@@ -762,8 +718,8 @@ function slot0.starsAnimation(slot0)
 	slot2:SetEndEvent(function (slot0)
 		if uv0._shipVO:getReMetaSpecialItemVO() then
 			GetComponent(uv0.metaRepeatTF, "CanvasGroup").alpha = 1
-			slot3 = uv0
-			slot3 = slot3:managedTween(LeanTween.value, function ()
+
+			uv0:managedTween(LeanTween.value, function ()
 				setAnchoredPosition(uv0.metaRepeatTF, {
 					x = 0
 				})
@@ -772,9 +728,7 @@ function slot0.starsAnimation(slot0)
 
 				setActive(uv0.npc, uv0._shipVO:isActivityNpc())
 				setActive(uv0._shade, false)
-			end, go(uv0.metaRepeatTF), uv0.metaRepeatTF.rect.width, 0, 1)
-
-			slot3:setOnUpdate(System.Action_float(function (slot0)
+			end, go(uv0.metaRepeatTF), uv0.metaRepeatTF.rect.width, 0, 1):setOnUpdate(System.Action_float(function (slot0)
 				setAnchoredPosition(uv0.metaRepeatTF, {
 					x = slot0
 				})
@@ -804,9 +758,7 @@ function slot0.playOpening(slot0, slot1)
 	slot2 = nil
 
 	if PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/" .. ("star_level_unlock_anim_" .. ((not slot0._shipVO:isRemoulded() or ShipGroup.GetGroupConfig(slot0._shipVO:getGroupId()).trans_skin) and ShipGroup.getDefaultSkin(slot0._shipVO:getGroupId()).id)))) then
-		slot5 = pg.CpkPlayMgr.GetInstance()
-
-		slot5:PlayCpkMovie(function ()
+		pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function ()
 		end, function ()
 			if uv0 then
 				uv0()

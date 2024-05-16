@@ -43,13 +43,11 @@ end
 
 function slot3.UpdateWeapon(slot0)
 	for slot4, slot5 in ipairs(slot0:GetWeapon()) do
-		slot8 = slot5:GetCurrentState()
-
 		slot5:Update()
 
 		slot9 = slot5:GetCurrentState()
 
-		if table.contains(slot0._backwardWeaponID, slot5:GetWeaponId()) and slot8 == slot5.STATE_READY and (slot9 == slot5.STATE_ATTACK or slot9 == slot5.STATE_OVER_HEAT) then
+		if table.contains(slot0._backwardWeaponID, slot5:GetWeaponId()) and slot5:GetCurrentState() == slot5.STATE_READY and (slot9 == slot5.STATE_ATTACK or slot9 == slot5.STATE_OVER_HEAT) then
 			slot0:changeState(uv0.STRIKE_STATE_BACKWARD)
 		end
 	end

@@ -9,9 +9,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(63202, {
+	pg.ConnectionMgr.GetInstance():Send(63202, {
 		blueprint_id = slot3
 	}, 63203, function (slot0)
 		if slot0.result == 0 then
@@ -24,12 +22,10 @@ function slot0.execute(slot0, slot1)
 				ship = slot1
 			})
 
-			slot3 = {
+			if PLATFORM_CODE == PLATFORM_JP and ({
 				[6.0] = true,
 				[5.0] = true
-			}
-
-			if PLATFORM_CODE == PLATFORM_JP and slot3[uv0:getConfig("blueprint_version")] then
+			})[uv0:getConfig("blueprint_version")] then
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIPWORKS_COMPLETE, slot1.configId)
 			end
 		else

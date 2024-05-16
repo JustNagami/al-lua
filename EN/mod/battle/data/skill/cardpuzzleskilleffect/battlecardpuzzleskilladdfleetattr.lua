@@ -14,10 +14,8 @@ function slot2.Ctor(slot0, slot1, slot2)
 end
 
 function slot2.SkillEffectHandler(slot0, slot1)
-	slot2 = slot0._number
-
 	if slot0._enhance then
-		slot2 = slot2 + uv0.parseFormula(slot0._enhance, slot0:GetCardPuzzleComponent():GetAttrManager())
+		slot2 = slot0._number + uv0.parseFormula(slot0._enhance, slot0:GetCardPuzzleComponent():GetAttrManager())
 	end
 
 	slot0:GetCardPuzzleComponent():AddAttrBySkill(slot0._attr, slot2)

@@ -7,6 +7,8 @@ slot0.TYPE_TECPOINT = "Tecpoint"
 slot0.TYPE_TROPHY = "Trophy"
 slot0.TYPE_META = "Meta"
 slot0.TYPE_CRUSING = "Crusing"
+slot0.TYPE_VOTE = "Vote"
+slot0.TYPE_EMOJI = "Emoji"
 slot0.ToastInfo = {
 	[slot0.TYPE_ATTIRE] = {
 		Attire = "attire_tpl"
@@ -24,6 +26,12 @@ slot0.ToastInfo = {
 	},
 	[slot0.TYPE_CRUSING] = {
 		Crusing = "crusing_pt_tpl"
+	},
+	[slot0.TYPE_VOTE] = {
+		Vote = "vote_tpl"
+	},
+	[slot0.TYPE_EMOJI] = {
+		Emoji = "emoji_tpl"
 	}
 }
 
@@ -75,8 +83,6 @@ function slot0.ResetUIDandHistory(slot0)
 end
 
 function slot0.ShowToast(slot0, slot1, slot2)
-	slot3 = #slot0.buffer
-
 	table.insert(slot0.buffer, {
 		state = 0,
 		type = slot1,
@@ -84,7 +90,7 @@ function slot0.ShowToast(slot0, slot1, slot2)
 	})
 	setActive(slot0._tf, true)
 
-	if #slot0.buffer == 1 or slot0.buffer[slot3].state >= 2 then
+	if #slot0.buffer == 1 or slot0.buffer[#slot0.buffer].state >= 2 then
 		slot0:Toast()
 	end
 end
@@ -166,7 +172,32 @@ function slot0.UpdateAttire(slot0, slot1, slot2, slot3)
 	assert(isa(slot6, AttireFrame))
 	setActive(slot4.transform:Find("bg/icon_frame"), slot6:getType() == AttireConst.TYPE_ICON_FRAME)
 	setActive(slot4.transform:Find("bg/chat_frame"), slot7 == AttireConst.TYPE_CHAT_FRAME)
-	setText(slot4.transform:Find("bg/Text"), slot6:getConfig("name"))
+	setText(slot4.transform:Find("bg/Text"), HXSet.hxLan(slot6:getConfig("name")))
+end
+
+function slot0.UpdateEmoji(slot0, slot1, slot2, slot3)
+	slot4 = slot0:GetAndSet(slot1.type, slot0.container)
+	slot5 = slot4:GetComponent(typeof(DftAniEvent))
+
+	slot5:SetTriggerEvent(function (slot0)
+		if uv0 then
+			uv0()
+		end
+
+		uv1:SetTriggerEvent(nil)
+	end)
+	slot5:SetEndEvent(function (slot0)
+		setActive(uv0, false)
+		uv1.pools[uv2.type .. "Tpl"]:Enqueue(uv0)
+		uv3:SetEndEvent(nil)
+
+		if uv4 then
+			uv4()
+		end
+	end)
+	slot4:GetComponent(typeof(Animation)):Play("attire")
+	setText(slot4.transform:Find("bg/label"), i18n("word_emoji_unlock"))
+	setText(slot4.transform:Find("bg/Text"), i18n("word_get_emoji", slot1.info.item_name))
 end
 
 slot0.FADE_TIME = 0.4
@@ -260,9 +291,7 @@ function slot0.UpdateTecpoint(slot0, slot1, slot2, slot3)
 end
 
 function slot0.UpdateTrophy(slot0, slot1, slot2, slot3)
-	slot4 = pg.CriMgr.GetInstance()
-
-	slot4:PlaySoundEffect_V3(slot1.info.sound or SFX_UI_TIP)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot1.info.sound or SFX_UI_TIP)
 
 	slot4 = slot0:GetAndSet(slot1.type, slot0.container)
 	slot5 = pg.medal_template[slot1.info.id]
@@ -303,12 +332,10 @@ function slot0.UpdateMeta(slot0, slot1, slot2, slot3)
 
 	slot17 = slot4.curSkillID
 	slot20 = slot4.oldSkillLevel < slot4.newSkillLevel
-	slot21 = slot7.transform:Find("ExpFull")
-	slot22 = slot7.transform:Find("ExpAdd")
 
 	if pg.gameset.meta_skill_exp_max.key_value <= slot4.newDayExp then
-		setActive(slot21, true)
-		setActive(slot22, false)
+		setActive(slot7.transform:Find("ExpFull"), true)
+		setActive(slot7.transform:Find("ExpAdd"), false)
 	else
 		setText(slot7.transform:Find("ExpAdd/Value"), string.format("+%d", slot15))
 		setActive(slot21, false)
@@ -318,12 +345,9 @@ function slot0.UpdateMeta(slot0, slot1, slot2, slot3)
 	if slot20 then
 		setImageSprite(slot8.transform:Find("Skill/Icon"), LoadSprite("skillicon/" .. getSkillConfig(slot17).icon))
 
-		slot25 = slot8.transform:Find("LevelUp")
-		slot26 = slot8.transform:Find("LevelMax")
-
 		if pg.skill_data_template[slot17].max_level <= slot19 then
-			setActive(slot25, false)
-			setActive(slot26, true)
+			setActive(slot8.transform:Find("LevelUp"), false)
+			setActive(slot8.transform:Find("LevelMax"), true)
 		else
 			setText(slot8.transform:Find("LevelUp/Value"), string.format("+%d", slot19 - slot18))
 			setActive(slot25, true)
@@ -389,23 +413,52 @@ end
 
 function slot0.UpdateCrusing(slot0, slot1, slot2, slot3)
 	slot4 = slot1.info
-	slot5 = slot4.ptId
-	slot7 = pg.CriMgr.GetInstance()
 
-	slot7:PlaySoundEffect_V3(slot1.info.sound or SFX_UI_TIP)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot1.info.sound or SFX_UI_TIP)
 
 	slot7 = tf(slot0:GetAndSet(slot1.type, slot0.container))
-
-	LoadImageSpriteAtlasAsync(getDropIcon({
+	slot8 = Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = slot5
-	}), "", slot7:Find("PointIcon"), true)
-	setText(slot7:Find("info/name"), pg.item_data_statistics[id2ItemId(slot5)].name)
+		id = slot4.ptId
+	})
+
+	LoadImageSpriteAtlasAsync(slot8:getIcon(), "", slot7:Find("PointIcon"), true)
+	setText(slot7:Find("info/name"), slot8:getName())
 	setText(slot7:Find("info/pt"), "+" .. slot4.ptCount)
 	setAnchoredPosition(slot7, {
 		x = slot7.rect.width
 	})
 	LeanTween.alphaCanvas(GetComponent(slot7, typeof(CanvasGroup)), 1, 0.5):setFrom(0):setOnComplete(System.Action(function ()
+		LeanTween.alphaCanvas(uv0, 0, 0.5):setDelay(5):setOnComplete(System.Action(function ()
+			setActive(uv0, false)
+			uv1.pools[uv2.type .. "Tpl"]:Enqueue(go(uv0))
+
+			if uv3 then
+				uv3()
+			end
+		end))
+
+		if uv5 then
+			uv5()
+		end
+	end))
+end
+
+function slot0.UpdateVote(slot0, slot1, slot2, slot3)
+	slot4 = slot1.info
+	slot7 = Drop.New({
+		type = DROP_TYPE_ITEM,
+		id = slot4.ptId
+	})
+	slot8 = tf(slot0:GetAndSet(slot1.type, slot0.container))
+
+	LoadImageSpriteAtlasAsync(slot7:getIcon(), "", slot8:Find("PointIcon"), true)
+	setText(slot8:Find("info/name"), slot7:getName())
+	setText(slot8:Find("info/pt"), "+" .. slot4.ptCount)
+	setAnchoredPosition(slot8, {
+		x = slot8.rect.width
+	})
+	LeanTween.alphaCanvas(GetComponent(slot8, typeof(CanvasGroup)), 1, 0.5):setFrom(0):setOnComplete(System.Action(function ()
 		LeanTween.alphaCanvas(uv0, 0, 0.5):setDelay(5):setOnComplete(System.Action(function ()
 			setActive(uv0, false)
 			uv1.pools[uv2.type .. "Tpl"]:Enqueue(go(uv0))

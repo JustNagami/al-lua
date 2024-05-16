@@ -20,10 +20,9 @@ end
 
 function slot1.CreateBullet(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot7 = slot2:GetTemplate().hit_type
-	slot8 = slot0:GetDataProxy()
 
 	if not slot2:GetDirectHitUnit() then
-		slot8:RemoveBulletUnit(slot2:GetUniqueID())
+		slot0:GetDataProxy():RemoveBulletUnit(slot2:GetUniqueID())
 
 		return
 	end
@@ -87,11 +86,11 @@ function slot1.CreateBullet(slot0, slot1, slot2, slot3, slot4, slot5)
 	end, true)
 	slot0._tmpTimerList[slot17] = slot17
 
-	(function ()
+	function ()
 		if uv0 == nil then
 			uv1()
 		else
 			uv2:PlayFireFX(uv3, uv4, uv5, uv0, uv6, uv7)
 		end
-	end)()
+	end()
 end

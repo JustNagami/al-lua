@@ -35,10 +35,9 @@ function slot3.SetReferenceCard(slot0, slot1)
 
 	setText(slot0._desc, slot3.discript)
 
-	slot4 = #slot3.label
 	slot5 = 0
 
-	while slot4 > slot5 do
+	while #slot3.label > slot5 do
 		if slot0._affixViewList[slot5 + 1] == nil then
 			table.insert(slot0._affixViewList, uv1.Battle.CardPuzzleCardDetailAffix.New(cloneTplTo(slot0._affixTpl, slot0._affixContainer)))
 		end

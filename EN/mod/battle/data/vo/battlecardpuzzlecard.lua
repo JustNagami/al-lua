@@ -157,10 +157,9 @@ end
 
 function slot11.GetCastRemainRate(slot0)
 	slot1 = 0
-	slot2 = 0
 
 	for slot6, slot7 in pairs(slot0._timeStampList) do
-		if slot2 < slot7.timeStamp then
+		if 0 < slot7.timeStamp then
 			slot1 = slot7.duration
 			slot2 = slot7.timeStamp
 		end
@@ -214,18 +213,18 @@ end
 
 function slot11.QueueFinish(slot0, slot1)
 	if slot1:GetBranch() then
-		slot3 = {}
-
 		for slot7, slot8 in pairs(slot2) do
 			if uv0.parseCompare(slot8, slot0._client:GetAttrManager()) then
-				slot3[slot7] = true
+				-- Nothing
 			end
 		end
 
 		slot4 = nil
 		slot4 = (slot1:GetQueueType() ~= uv1.Battle.BattleCardPuzzleCardEffectQueue.QUEUE_TYPE_RETURN or slot0._returnBranchQueueList) and slot0._branchQueueList
 
-		for slot8, slot9 in pairs(slot3) do
+		for slot8, slot9 in pairs({
+			[slot7] = true
+		}) do
 			slot0._branchQueueList[slot8]:Start()
 		end
 	end
@@ -282,18 +281,18 @@ function slot11.initCardEffectList(slot0)
 end
 
 function slot11.checkAndStartQueue(slot0, slot1)
-	slot2 = {}
-
 	for slot6, slot7 in ipairs(slot1) do
 		if slot7:GetCondition() and not uv0.parseCompare(slot8, slot0._client:GetAttrManager()) then
-			slot2[slot6] = false
+			-- Nothing
 		else
 			slot0._moveAfterCaster = slot7:GetMoveAfterCast()
 			slot2[slot6] = true
 		end
 	end
 
-	for slot6, slot7 in pairs(slot2) do
+	for slot6, slot7 in pairs({
+		[slot6] = false
+	}) do
 		if slot7 == true then
 			slot1[slot6]:Start()
 		end

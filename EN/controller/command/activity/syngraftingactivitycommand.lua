@@ -11,16 +11,14 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	function slot7(slot0, slot1)
-		if not slot0 or slot0:isEnd() then
-			return false
-		end
-
-		return slot1 == slot0:getConfig("config_id")
-	end
-
 	for slot11, slot12 in ipairs(slot5) do
-		if slot7(slot12, slot3) then
+		if function (slot0, slot1)
+			if not slot0 or slot0:isEnd() then
+				return false
+			end
+
+			return slot1 == slot0:getConfig("config_id")
+		end(slot12, slot3) then
 			slot0:HandleLinkAct(slot12, slot6)
 		end
 	end

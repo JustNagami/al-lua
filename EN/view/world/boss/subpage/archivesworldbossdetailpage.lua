@@ -141,10 +141,8 @@ end
 
 function slot0.OnPaintingLoad(slot0)
 	if slot0.painting:Find("fitter").childCount > 0 then
-		slot4 = WorldBossConst.GetAutoBattleState(slot0.boss) == WorldBossConst.AUTO_BATTLE_STATE_STARTING
-
 		if GetOrAddComponent(slot1:GetChild(0), typeof(Gradient)) then
-			slot5.enabled = slot4
+			slot5.enabled = WorldBossConst.GetAutoBattleState(slot0.boss) == WorldBossConst.AUTO_BATTLE_STATE_STARTING
 		end
 	end
 end

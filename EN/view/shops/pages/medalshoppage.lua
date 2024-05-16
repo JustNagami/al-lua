@@ -68,9 +68,7 @@ function slot0.OnCardClick(slot0, slot1)
 			num = slot1.goods:getConfig("num")
 		})
 	elseif slot1.goods:getConfig("goods_type") == 1 and slot1.goods:GetLimit() > 1 then
-		slot2 = slot0.multiWindow
-
-		slot2:ExecuteAction("Show", slot1.goods, function (slot0)
+		slot0.multiWindow:ExecuteAction("Show", slot1.goods, function (slot0)
 			if not uv0.goods:CanPurchaseCnt(slot0) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
@@ -78,10 +76,9 @@ function slot0.OnCardClick(slot0, slot1)
 			end
 
 			slot1 = {}
-			slot2 = uv0.goods:getConfig("goods")[1]
 
 			for slot6 = 1, slot0 do
-				table.insert(slot1, slot2)
+				table.insert(slot1, uv0.goods:getConfig("goods")[1])
 			end
 
 			uv1:emit(NewShopsMediator.ON_MEDAL_SHOPPING, uv0.goods.id, slot1)

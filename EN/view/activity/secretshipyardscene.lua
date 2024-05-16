@@ -131,10 +131,8 @@ function slot0.updateTaskLayers(slot0)
 end
 
 function slot0.CheckBgId(slot0)
-	slot1 = slot0.activity.data3
-
 	if slot0.taskProxy:getFinishTaskById(slot0.taskGroup[slot0.count][1]) ~= nil and slot0.taskProxy:getFinishTaskById(slot0.taskGroup[slot0.count][2]) ~= nil then
-		slot1 = slot1 + 1
+		slot1 = slot0.activity.data3 + 1
 	end
 
 	return slot1
@@ -154,7 +152,7 @@ function slot0.OnUpdateFlush(slot0)
 	end
 
 	setActive(slot0.gameButtonLock, not slot0:checkTaskFinish() or not slot0:checkMinigame())
-	setActive(slot0.gameButton, slot0:checkTaskFinish())
+	setActive(slot0.gameButton, slot0:checkTaskFinish() or slot0:checkMinigame())
 	slot0.uilist:align(#slot0.taskGroup[slot0.count])
 end
 

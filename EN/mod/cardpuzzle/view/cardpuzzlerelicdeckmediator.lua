@@ -3,9 +3,7 @@ slot0.SHOW_GIFT = "SHOW_GIFT"
 slot0.CLOSE_LAYER = "CLOSE_LAYER"
 
 function slot0.register(slot0)
-	slot2 = slot0.viewComponent
-
-	slot2:SetGifts(slot0.contextData.relicList)
+	slot0.viewComponent:SetGifts(slot0.contextData.relicList)
 	slot0:bind(uv0.SHOW_GIFT, function (slot0, slot1)
 		uv0:addSubLayers(Context.New({
 			mediator = CardPuzzleRelicDetailMediator,

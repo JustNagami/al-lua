@@ -10,27 +10,13 @@ slot1 = {
 
 function slot0.InitUI(slot0, slot1)
 	slot0.type = slot1.type
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Image")
-	slot2 = slot2:GetComponent(typeof(Animator))
 
-	slot2:Play(uv0[slot0.type])
-
-	slot3 = slot0._tf
-
-	setActive(slot3:Find("Burn"), false)
-
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Burn")
-	slot2 = slot2:GetComponent(typeof(DftAniEvent))
-
-	slot2:SetEndEvent(function ()
+	slot0._tf:Find("Image"):GetComponent(typeof(Animator)):Play(uv0[slot0.type])
+	setActive(slot0._tf:Find("Burn"), false)
+	slot0._tf:Find("Burn"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:Destroy(false)
 	end)
-
-	slot3 = slot0._tf
-
-	eachChild(slot3:Find("front"), function (slot0)
+	eachChild(slot0._tf:Find("front"), function (slot0)
 		slot0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 			setActive(uv0, false)
 		end)

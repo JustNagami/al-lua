@@ -35,13 +35,8 @@ function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
 
 				return
 			elseif uv0.type == ChapterConst.BoxLavaDamage then
-				slot1 = pg.CriMgr.GetInstance()
-
-				slot1:PlaySE_V3("ui-magma")
-
-				slot1 = uv1.viewComponent
-
-				slot1:doPlayAnim("AirStrikeLava", function (slot0)
+				pg.CriMgr.GetInstance():PlaySE_V3("ui-magma")
+				uv1.viewComponent:doPlayAnim("AirStrikeLava", function (slot0)
 					setActive(slot0, false)
 					uv0()
 				end)

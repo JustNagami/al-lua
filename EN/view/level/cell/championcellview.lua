@@ -50,9 +50,7 @@ end
 
 function slot2.LoadExtraEffects(slot0, slot1)
 	if slot1 and #slot1 > 0 then
-		slot3 = slot0.autoLoader
-
-		slot3:LoadPrefab("effect/" .. slot1, slot1, function (slot0)
+		slot0.autoLoader:LoadPrefab("effect/" .. slot1, slot1, function (slot0)
 			uv0._extraEffectList[uv1] = slot0
 
 			setParent(slot0, uv0.tf, false)

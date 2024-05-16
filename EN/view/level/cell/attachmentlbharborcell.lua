@@ -9,10 +9,7 @@ function slot0.Update(slot0)
 
 	if IsNil(slot0.go) then
 		slot0:PrepareBase("box_gangkou")
-
-		slot2 = slot0:GetLoader()
-
-		slot2:GetPrefab("leveluiview/Tpl_Box", "Tpl_Box", function (slot0)
+		slot0:GetLoader():GetPrefab("leveluiview/Tpl_Box", "Tpl_Box", function (slot0)
 			setParent(slot0, uv0.tf)
 
 			tf(slot0).anchoredPosition3D = Vector3(0, 30, 0)

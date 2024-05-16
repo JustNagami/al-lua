@@ -13,9 +13,7 @@ function slot0.execute(slot0, slot1)
 		print_r(slot3)
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(64009, slot5, 64010, function (slot0)
+	pg.ConnectionMgr.GetInstance():Send(64009, slot5, 64010, function (slot0)
 		if slot0.result == 0 then
 			getProxy(TechnologyNationProxy):initSetableAttrAddition(uv0)
 			uv1:sendNotification(TechnologyConst.SET_TEC_ATTR_ADDITION_FINISH, {

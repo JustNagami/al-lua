@@ -12,14 +12,13 @@ function slot0.onInit(slot0)
 	slot0._overrideAble = false
 	slot0._lastActive = false
 	slot0._scriptTime = 10
+	slot0._name = "FuShunPowerSpeedScript"
 end
 
 function slot0.onStep(slot0)
 	if slot0._active then
-		slot1 = slot0._collisionInfo:getVelocity()
-
 		if uv0[2] <= slot0._collisionInfo:getPos().y then
-			slot1.y = -10
+			slot0._collisionInfo:getVelocity().y = -10
 		elseif slot2.y <= uv0[1] then
 			slot1.y = 10
 		else
@@ -27,7 +26,7 @@ function slot0.onStep(slot0)
 			slot1.x = uv1
 
 			if not slot0.powerFlag then
-				slot0._event:emit(Fushun3GameView.POWER_EVENT)
+				slot0._event:emit(Fushun3GameEvent.script_power_event)
 
 				slot0.powerFlag = true
 			end

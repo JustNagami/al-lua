@@ -32,9 +32,8 @@ end
 function slot0.UpdateView(slot0)
 	slot1 = pg.activity_workbench_item[slot0.id]
 	slot0.icon.sprite = LoadSprite("props/" .. slot1.icon)
-	slot2 = slot0.icon
 
-	slot2:SetNativeSize()
+	slot0.icon:SetNativeSize()
 
 	slot0.name.text = slot1.name
 	slot0.desc.text = slot1.display

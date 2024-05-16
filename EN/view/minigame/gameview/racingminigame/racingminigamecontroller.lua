@@ -75,8 +75,7 @@ function slot0.InitGameUI(slot0, slot1)
 		"down",
 		"boost"
 	}) do
-		slot8 = slot0.rtController
-		slot7 = GetOrAddComponent(slot8:Find("bottom/btn_" .. slot6), typeof(EventTriggerListener))
+		slot7 = GetOrAddComponent(slot0.rtController:Find("bottom/btn_" .. slot6), typeof(EventTriggerListener))
 
 		slot7:AddPointDownFunc(function ()
 			uv0[uv1] = true
@@ -87,13 +86,8 @@ function slot0.InitGameUI(slot0, slot1)
 	end
 
 	if RacingMiniGameConfig.BOOST_BUTTON_TYPE_CHANGE then
-		slot3 = slot0.rtController
-
-		RemoveComponent(slot3:Find("bottom/btn_boost"), typeof(EventTriggerListener))
-
-		slot4 = slot0.rtController
-
-		onButton(slot0.binder, slot4:Find("bottom/btn_boost"), function ()
+		RemoveComponent(slot0.rtController:Find("bottom/btn_boost"), typeof(EventTriggerListener))
+		onButton(slot0.binder, slot0.rtController:Find("bottom/btn_boost"), function ()
 			if not uv0.target.isBlock then
 				slot0 = RacingMiniGameConfig.M_LIST
 				slot1 = RacingMiniGameConfig.S_LIST
@@ -141,8 +135,7 @@ function slot0.ResetGame(slot0)
 end
 
 function slot0.ReadyGame(slot0, slot1)
-	slot2 = getProxy(PlayerProxy)
-	slot2 = slot2:getRawData()
+	slot2 = getProxy(PlayerProxy):getRawData()
 	slot0.rankData = underscore.filter(slot1, function (slot0)
 		return slot0.player_id ~= uv0.id
 	end)
@@ -153,13 +146,9 @@ function slot0.ReadyGame(slot0, slot1)
 		end
 	}))
 
-	slot5 = slot0.rtRes
-	slot6 = slot0.rtMainContent
-	slot0.target = RacingMiniNameSpace.Motorcycle.New(cloneTplTo(slot5:Find("qiye_minigame"), slot6:Find(-2)), NewPos(0, 0), slot0)
-	slot7 = slot0.rtRes
-	slot8 = slot0.rtMainContent
+	slot0.target = RacingMiniNameSpace.Motorcycle.New(cloneTplTo(slot0.rtRes:Find("qiye_minigame"), slot0.rtMainContent:Find(-2)), NewPos(0, 0), slot0)
 
-	table.insert(slot0.queue, RacingMiniNameSpace.StartMark.New(cloneTplTo(slot7:Find("start_mark"), slot8:Find(-2)), NewPos(550, 0), slot0))
+	table.insert(slot0.queue, RacingMiniNameSpace.StartMark.New(cloneTplTo(slot0.rtRes:Find("start_mark"), slot0.rtMainContent:Find(-2)), NewPos(550, 0), slot0))
 	slot0:UpdateDisplay()
 	onNextTick(function ()
 		uv0:PauseGame()
@@ -202,13 +191,13 @@ end
 
 function slot3(slot0, slot1)
 	slot2 = slot1.pos - slot0.pos
-	slot3 = {}
+	slot3 = {
+		[slot7] = {}
+	}
 
 	for slot7 = 1, 2 do
-		slot3[slot7] = {
-			slot0.colliderSize[slot7][1] - slot1.colliderSize[slot7][2],
-			slot0.colliderSize[slot7][2] - slot1.colliderSize[slot7][1]
-		}
+		slot3[slot7][1] = slot0.colliderSize[slot7][1] - slot1.colliderSize[slot7][2]
+		slot3[slot7][2] = slot0.colliderSize[slot7][2] - slot1.colliderSize[slot7][1]
 	end
 
 	return slot3[1][1] < slot2.x and slot2.x < slot3[1][2] and slot3[2][1] < slot2.y and slot2.y < slot3[2][2]
@@ -383,16 +372,16 @@ function slot0.CreateNewObject(slot0)
 		end
 	end
 
-	slot2 = {}
-	slot3 = 0
+	slot2 = {
+		[slot7] = true
+	}
 
 	for slot7 = -1, 1 do
 		slot0.rateDic[slot7] = defaultValue(slot0.rateDic[slot7], 0)
 		slot9 = nil
 
 		if math.random() / (2 - slot7) < slot0.rateDic[slot7] then
-			slot3 = slot3 + 1
-			slot2[slot7] = true
+			slot3 = 0 + 1
 		else
 			slot2[slot7] = false
 		end
@@ -411,10 +400,9 @@ function slot0.CreateNewObject(slot0)
 
 		rate = math.random()
 		slot8 = 0
-		slot9 = 0
 
 		for slot13, slot14 in ipairs(classCfg) do
-			slot9 = slot9 + slot14[2]
+			slot9 = 0 + slot14[2]
 		end
 
 		slot10 = nil

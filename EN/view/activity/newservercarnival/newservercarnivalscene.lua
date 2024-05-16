@@ -83,22 +83,20 @@ function slot0.didEnter(slot0)
 		})
 	end, SFX_PANEL)
 	onButton(slot0, slot0:findTF("gem/add_btn", slot0.resPanel), function ()
-		function slot0()
-			if not pg.m02:hasMediator(ChargeMediator.__cname) then
-				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
-					wrap = ChargeScene.TYPE_DIAMOND
-				})
-			else
-				pg.m02:sendNotification(uv0.GO_MALL)
-			end
-		end
-
 		if PLATFORM_CODE == PLATFORM_JP then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				fontSize = 23,
 				yesText = "text_buy",
 				content = i18n("word_diamond_tip", uv1.player:getFreeGem(), uv1.player:getChargeGem(), uv1.player:getTotalGem()),
-				onYes = slot0,
+				onYes = function ()
+					if not pg.m02:hasMediator(ChargeMediator.__cname) then
+						pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
+							wrap = ChargeScene.TYPE_DIAMOND
+						})
+					else
+						pg.m02:sendNotification(uv0.GO_MALL)
+					end
+				end,
 				alignment = TextAnchor.UpperLeft,
 				weight = LayerWeightConst.TOP_LAYER
 			})

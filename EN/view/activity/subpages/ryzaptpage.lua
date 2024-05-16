@@ -56,9 +56,7 @@ end
 function slot0.OnUpdateFlush(slot0)
 	uv0.super.OnUpdateFlush(slot0)
 
-	slot1 = slot0.ptData:GetLevelProgress()
-
-	if isActive(slot0.getBtn) and slot0.specialPhase[slot1] then
+	if isActive(slot0.getBtn) and slot0.specialPhase[slot0.ptData:GetLevelProgress()] then
 		setActive(slot0.getBtn, false)
 		setActive(slot0.feedBtn, true)
 	else
@@ -92,10 +90,7 @@ end
 
 function slot0.PlayFeedAnim(slot0, slot1)
 	setActive(slot0.clickMask, true)
-
-	slot2 = pg.UIMgr.GetInstance()
-
-	slot2:OverlayPanel(slot0.clickMask)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.clickMask)
 	slot0:PlayKalaAnim()
 	slot0:PlayPuniChangeAnim(function ()
 		setActive(uv0.clickMask, false)

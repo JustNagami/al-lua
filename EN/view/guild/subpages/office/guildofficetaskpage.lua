@@ -38,9 +38,7 @@ function slot0.OnLoaded(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:OverlayPanelPB(slot0.taskTF, {
+	pg.UIMgr.GetInstance():OverlayPanelPB(slot0.taskTF, {
 		pbList = {
 			slot0.taskTF
 		},
@@ -182,13 +180,12 @@ function slot0.UpdateContributionPanel(slot0)
 			onButton(uv1, slot4.commitBtn, function ()
 				slot0 = uv0:getCommitItem()
 
-				updateDropCfg({
-					type = slot0[1],
-					id = slot0[2],
-					count = slot0[3]
-				})
 				pg.MsgboxMgr:GetInstance():ShowMsgBox({
-					content = i18n("guild_donate_tip", slot1.cfg.name, slot0[3], slot2, uv1:GetResCntByAward(slot0) < slot0[3] and "#FF5C5CFF" or "#92FC63FF"),
+					content = i18n("guild_donate_tip", Drop.New({
+						type = slot0[1],
+						id = slot0[2],
+						count = slot0[3]
+					}):getConfig("name"), slot0[3], slot2, uv1:GetResCntByAward(slot0) < slot0[3] and "#FF5C5CFF" or "#92FC63FF"),
 					onYes = function ()
 						uv0:emit(GuildOfficeMediator.ON_COMMIT, uv1.id)
 					end

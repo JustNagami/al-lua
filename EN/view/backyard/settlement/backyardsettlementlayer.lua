@@ -78,7 +78,6 @@ end
 
 function slot0.UpdateShips(slot0)
 	slot1 = {}
-	slot2 = 0
 
 	for slot6, slot7 in pairs(slot0.newShipVOs) do
 		table.insert(slot1, slot6)
@@ -86,7 +85,7 @@ function slot0.UpdateShips(slot0)
 		slot8 = slot0.oldShipVOs[slot6]
 
 		if slot8.level ~= slot8:getMaxLevel() then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 	end
 
@@ -97,9 +96,13 @@ function slot0.UpdateShips(slot0)
 
 	for slot8, slot9 in pairs(slot0.cards) do
 		table.insert(slot4, function (slot0)
-			slot1 = uv0[uv1 + 1]
+			if uv0.exited then
+				return
+			end
 
-			uv2:Update(uv3, uv4.oldShipVOs[slot1], uv4.newShipVOs[slot1])
+			slot1 = uv1[uv2 + 1]
+
+			uv3:Update(uv4, uv0.oldShipVOs[slot1], uv0.newShipVOs[slot1])
 			onNextTick(slot0)
 		end)
 	end

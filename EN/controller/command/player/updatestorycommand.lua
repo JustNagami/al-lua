@@ -28,10 +28,9 @@ function slot0.execute(slot0, slot1)
 
 	function slot7(slot0, slot1)
 		slot2, slot3 = uv0:StoryName2StoryId(slot0)
-		slot4 = {}
 
 		if slot2 and slot2 > 0 and not uv0:GetPlayedFlag(slot2) then
-			table.insert(slot4, function (slot0)
+			table.insert({}, function (slot0)
 				uv0(uv1, slot0)
 			end)
 		end

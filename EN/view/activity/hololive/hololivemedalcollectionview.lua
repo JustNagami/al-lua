@@ -134,8 +134,6 @@ function slot0.UpdateView(slot0)
 
 	for slot7 = 1, #slot0.taskGroup do
 		slot8 = slot0.taskListItems[slot7]
-		slot11 = slot0:findTF("btn_go", slot8)
-		slot12 = slot0:findTF("btn_get", slot8)
 		slot13 = slot0:findTF("btn_got", slot8)
 		slot14 = table.contains(slot0.activeIDList, slot0.allIDList[slot7])
 		slot15 = nil
@@ -146,10 +144,10 @@ function slot0.UpdateView(slot0)
 
 			slot15 = slot10:getTaskStatus() == 2 and slot0.materialGray or nil
 
-			onButton(slot0, slot11, function ()
+			onButton(slot0, slot0:findTF("btn_go", slot8), function ()
 				uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
 			end, SFX_PANEL)
-			onButton(slot0, slot12, function ()
+			onButton(slot0, slot0:findTF("btn_get", slot8), function ()
 				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
 			end, SFX_PANEL)
 		else

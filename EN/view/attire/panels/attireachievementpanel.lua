@@ -23,7 +23,7 @@ function slot1(slot0)
 		end
 	}
 
-	(function (slot0)
+	function (slot0)
 		slot0._go = uv0
 		slot0.info = findTF(slot0._go, "info")
 		slot0.empty = findTF(slot0._go, "empty")
@@ -36,7 +36,7 @@ function slot1(slot0)
 		}
 		slot0.print5 = findTF(slot0._go, "prints/line5")
 		slot0.print6 = findTF(slot0._go, "prints/line6")
-	end)(slot1)
+	end(slot1)
 
 	return slot1
 end
@@ -57,10 +57,10 @@ function slot2(slot0)
 		end
 	}
 
-	(function (slot0)
+	function (slot0)
 		slot0._tf = uv0
 		slot0.uiList = UIItemList.New(slot0._tf:Find("list"), slot0._tf:Find("list/tpl"))
-	end)(slot1)
+	end(slot1)
 
 	return slot1
 end
@@ -71,15 +71,10 @@ end
 
 function slot0.OnInit(slot0)
 	slot0.listPanel = slot0:findTF("list_panel")
-	slot1 = slot0:findTF("scrollrect", slot0.listPanel)
-	slot0.scolrect = slot1:GetComponent("LScrollRect")
-	slot1 = slot0:findTF("total_count/Text")
-	slot0.totalCount = slot1:GetComponent(typeof(Text))
-	slot1 = slot0.listPanel
-	slot1 = slot1:Find("selected_bg/Text")
-	slot0.selectedTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0.listPanel
-	slot0.toggle = slot1:Find("toggle")
+	slot0.scolrect = slot0:findTF("scrollrect", slot0.listPanel):GetComponent("LScrollRect")
+	slot0.totalCount = slot0:findTF("total_count/Text"):GetComponent(typeof(Text))
+	slot0.selectedTxt = slot0.listPanel:Find("selected_bg/Text"):GetComponent(typeof(Text))
+	slot0.toggle = slot0.listPanel:Find("toggle")
 
 	function slot0.scolrect.onInitItem(slot0)
 		uv0:OnInitItem(slot0)
@@ -159,10 +154,8 @@ function slot0.OnUpdateItem(slot0, slot1, slot2)
 		slot3 = slot0.cards[slot2]
 	end
 
-	slot6 = slot1 < slot0.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount
-
 	if slot0.displayVOs[slot1 + 1] then
-		slot3:Update(slot4, table.contains(slot0.contextData.selectedMedalList, slot4.id), slot6)
+		slot3:Update(slot4, table.contains(slot0.contextData.selectedMedalList, slot4.id), slot1 < slot0.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount)
 	else
 		slot3:Update(slot4, false, slot6)
 	end
@@ -194,11 +187,9 @@ function slot0.Update(slot0, slot1, slot2)
 end
 
 function slot0.getTotalCnt(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in pairs(slot0.trophys) do
 		if slot6:isClaimed() and not slot6:isHide() then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 
@@ -208,12 +199,10 @@ end
 function slot0.Filter(slot0)
 	slot0.displayVOs = {}
 
-	function slot1(slot0)
-		return uv0.trophys[slot0:getConfig("next")] and slot1:isClaimed() and not slot1:isHide()
-	end
-
 	for slot5, slot6 in pairs(slot0.trophys) do
-		if slot6:isClaimed() and not slot6:isHide() and (not slot0.selectMaxLevel or slot0.selectMaxLevel and not slot1(slot6)) then
+		if slot6:isClaimed() and not slot6:isHide() and (not slot0.selectMaxLevel or slot0.selectMaxLevel and not function (slot0)
+			return uv0.trophys[slot0:getConfig("next")] and slot1:isClaimed() and not slot1:isHide()
+		end(slot6)) then
 			table.insert(slot0.displayVOs, slot6)
 		end
 	end

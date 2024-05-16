@@ -2,9 +2,7 @@ slot0 = class("MapBuilderSSSS", import(".MapBuilderNormal"))
 slot1 = "ssss_buttons"
 
 function slot0.preload(slot0, slot1)
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetUI(uv0, true, function (slot0)
+	PoolMgr.GetInstance():GetUI(uv0, true, function (slot0)
 		uv0.buttons = slot0
 
 		uv1()
@@ -18,16 +16,11 @@ end
 function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
-	slot1 = slot0._parentTf
-	slot0.mainLayer = slot1:Find("main")
-	slot1 = slot0._parentTf
-	slot0.rightChapter = slot1:Find("main/right_chapter/event_btns/BottomList")
-	slot1 = slot0._parentTf
-	slot0.leftChapter = slot1:Find("main/left_chapter/buttons")
-	slot1 = tf(slot0.buttons)
-	slot0.challengeBtn = slot1:Find("btn_challenge")
-	slot1 = tf(slot0.buttons)
-	slot0.missionBtn = slot1:Find("btn_mission")
+	slot0.mainLayer = slot0._parentTf:Find("main")
+	slot0.rightChapter = slot0._parentTf:Find("main/right_chapter/event_btns/BottomList")
+	slot0.leftChapter = slot0._parentTf:Find("main/left_chapter/buttons")
+	slot0.challengeBtn = tf(slot0.buttons):Find("btn_challenge")
+	slot0.missionBtn = tf(slot0.buttons):Find("btn_mission")
 
 	onButton(slot0, slot0.challengeBtn, function ()
 		if uv0:isfrozen() then
@@ -48,20 +41,20 @@ function slot0.OnInit(slot0)
 	setParent(slot0.buttons, slot0.mainLayer)
 end
 
-function slot0.Show(slot0)
-	uv0.super.Show(slot0)
+function slot0.ShowButtons(slot0)
+	uv0.super.ShowButtons(slot0)
 	setActive(slot0.buttons, true)
 	setParent(slot0.challengeBtn, slot0.leftChapter)
-	slot0.challengeBtn:SetSiblingIndex(6)
+	slot0.challengeBtn:SetSiblingIndex(5)
 	setParent(slot0.missionBtn, slot0.rightChapter)
 	slot0.missionBtn:SetSiblingIndex(0)
 end
 
-function slot0.Hide(slot0)
+function slot0.HideButtons(slot0)
 	setParent(slot0.challengeBtn, slot0.buttons)
 	setParent(slot0.missionBtn, slot0.buttons)
 	setActive(slot0.buttons, false)
-	uv0.super.Hide(slot0)
+	uv0.super.HideButtons(slot0)
 end
 
 slot2 = {
@@ -86,9 +79,7 @@ function slot0.UpdateButtons(slot0)
 		setActive(slot0.missionBtn, slot2)
 
 		if slot2 then
-			slot4 = slot0.missionBtn
-
-			setActive(slot4:Find("Tip"), _.any(uv1, function (slot0)
+			setActive(slot0.missionBtn:Find("Tip"), _.any(uv1, function (slot0)
 				return getProxy(TaskProxy):getTaskById(slot0) and slot1:isFinish()
 			end))
 		end

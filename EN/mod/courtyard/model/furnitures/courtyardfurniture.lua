@@ -7,11 +7,12 @@ slot0.STATE_TOUCH = 5
 slot0.STATE_PLAY_MUSIC = 6
 slot0.STATE_STOP_MUSIC = 7
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot1.configId or slot0.id
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.id = slot2.id
+	slot0.configId = slot2.configId or slot0.id
 	slot0.config = pg.furniture_data_template[slot0.configId]
-	slot0.date = slot1.date or 0
+	slot0.date = slot2.date or 0
+	slot0.selectedFlag = false
 	slot0.slots = {}
 
 	slot0:InitSlots()
@@ -23,7 +24,7 @@ function slot0.Ctor(slot0, slot1)
 
 	slot0.state = uv0.STATE_IDLE
 
-	uv0.super.Ctor(slot0, slot0.id, slot0.config.size[1], slot0.config.size[2])
+	uv0.super.Ctor(slot0, slot1, slot0.id, slot0.config.size[1], slot0.config.size[2])
 end
 
 function slot0.InitSlots(slot0)
@@ -75,18 +76,15 @@ function slot0.GetLevel(slot0)
 end
 
 function slot0._InitMusicData(slot0, slot1, slot2, slot3, slot4)
-	slot5 = type(slot2) == "table" and slot2 or {
+	for slot10, slot11 in ipairs(type(slot2) == "table" and slot2 or {
 		slot2
-	}
-	slot6 = type(slot3) == "table" and slot3 or {
-		slot3
-	}
-
-	for slot10, slot11 in ipairs(slot5) do
+	}) do
 		table.insert(slot0.musicDatas, {
 			voice = slot11,
 			voiceType = slot1,
-			action = slot6[slot10],
+			action = (type(slot3) == "table" and slot3 or {
+				slot3
+			})[slot10],
 			effect = slot4
 		})
 	end
@@ -118,6 +116,10 @@ function slot0.IsMusicalInstruments(slot0)
 	return slot0:IsType(Furniture.TYPE_LUTE)
 end
 
+function slot0.IsRandomSlotType(slot0)
+	return slot0:IsType(Furniture.TYPE_RANDOM_SLOT)
+end
+
 function slot0.RawGetOffset(slot0)
 	slot1 = slot0.config.offset
 
@@ -135,7 +137,7 @@ function slot0.UpdateOpFlag(slot0, slot1)
 end
 
 function slot0.InActivityRange(slot0, slot1)
-	return slot1.x < _courtyard:GetController():GetStorey():GetRange().x and slot1.y < slot2.y and slot1.x >= 0 and slot1.y >= 0
+	return slot1.x < slot0:GetHost():GetStorey():GetRange().x and slot1.y < slot2.y and slot1.x >= 0 and slot1.y >= 0
 end
 
 function slot0.GetObjType(slot0)
@@ -237,10 +239,7 @@ function slot0.GetTouchAction(slot0)
 
 		table.insert({}, slot1[1][3][1])
 
-		slot3 = ipairs
-		slot4 = slot1[1][3][3] or {}
-
-		for slot6, slot7 in slot3(slot4) do
+		for slot6, slot7 in ipairs(slot1[1][3][3] or {}) do
 			table.insert(slot2, slot7)
 		end
 
@@ -300,16 +299,26 @@ function slot0.GetFirstSlot(slot0)
 	return slot0.slots[1]
 end
 
-function slot0.GetMaskNames(slot0)
-	slot1 = {}
-
-	for slot5, slot6 in ipairs(slot0.slots) do
-		if slot6:GetMask() then
-			slot1[slot6.id] = slot7
+function slot0.AnySlotIsLoop(slot0)
+	for slot4, slot5 in pairs(slot0.slots) do
+		if slot5.loop then
+			return true
 		end
 	end
 
-	return slot1
+	return false
+end
+
+function slot0.GetMaskNames(slot0)
+	for slot5, slot6 in ipairs(slot0.slots) do
+		if slot6:GetMask() then
+			-- Nothing
+		end
+	end
+
+	return {
+		[slot6.id] = slot7
+	}
 end
 
 function slot0.IsMultiMask(slot0)
@@ -317,15 +326,15 @@ function slot0.IsMultiMask(slot0)
 end
 
 function slot0.GetBodyMasks(slot0)
-	slot1 = {}
-
 	for slot5, slot6 in ipairs(slot0.slots) do
 		if slot6:GetBodyMask() then
-			slot1[slot6.id] = slot7
+			-- Nothing
 		end
 	end
 
-	return slot1
+	return {
+		[slot6.id] = slot7
+	}
 end
 
 function slot0.GetAnimators(slot0)
@@ -366,9 +375,21 @@ function slot0.IsPlayMusicState(slot0)
 end
 
 function slot0.GetInteractionSlot(slot0)
-	return _.detect(slot0.slots, function (slot0)
-		return slot0:IsEmpty()
-	end)
+	if slot0:IsRandomSlotType() then
+		slot1 = {}
+
+		for slot5, slot6 in ipairs(slot0.slots) do
+			if slot6:IsEmpty() then
+				table.insert(slot1, slot6)
+			end
+		end
+
+		return slot1[math.random(1, #slot1)]
+	else
+		return _.detect(slot0.slots, function (slot0)
+			return slot0:IsEmpty()
+		end)
+	end
 end
 
 function slot0._ChangeState(slot0, slot1)

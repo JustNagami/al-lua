@@ -44,18 +44,9 @@ function slot0.register(slot0)
 		end
 	end
 
-	slot2 = slot0.viewComponent
-
-	slot2:setShips(slot0.shipsById)
-
-	slot2 = slot0.viewComponent
-
-	slot2:setShipsCount(slot1:getShipCount())
-
-	slot2 = getProxy(PlayerProxy)
-	slot4 = slot0.viewComponent
-
-	slot4:setPlayer(slot2:getData())
+	slot0.viewComponent:setShips(slot0.shipsById)
+	slot0.viewComponent:setShipsCount(slot1:getShipCount())
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 	slot0:bind(uv0.ON_DESTROY_SHIPS, function (slot0, slot1, slot2)
 		uv0:sendNotification(GAME.DESTROY_SHIPS, {
 			destroyEquipment = slot2,
@@ -139,10 +130,12 @@ function slot0.handleNotification(slot0, slot1)
 		slot0.viewComponent:closeDestroyPanel()
 	elseif slot2 == FleetProxy.FLEET_UPDATED then
 		slot0.fleetShipIds = slot0.fleetProxy:getAllShipIds()
-		slot5 = {}
+		slot5 = {
+			[slot10] = 1
+		}
 
 		for slot9, slot10 in ipairs(slot0.fleetShipIds) do
-			slot5[slot10] = 1
+			-- Nothing
 		end
 
 		for slot9, slot10 in ipairs(slot0.fleetShipIds) do

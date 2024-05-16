@@ -25,13 +25,11 @@ function slot0.execute(slot0, slot1)
 
 			function slot5(slot0)
 				for slot4, slot5 in ipairs(slot0) do
-					slot6 = slot5[1]
-
 					if not underscore.detect(uv0, function (slot0)
 						return slot0.id == uv0
 					end) then
 						slot7 = Item.New({
-							id = slot6
+							id = slot5[1]
 						})
 						slot7.count = 0
 
@@ -53,11 +51,10 @@ function slot0.execute(slot0, slot1)
 
 				uv7 = uv8
 				uv8 = uv8 + slot6:GetUpgradeConfig().upgrade_use_pt
-				slot9 = SpWeapon.New({
-					id = slot7
-				})
 
-				if slot4 > 0 and slot6:GetRarity() < slot9:GetRarity() then
+				if slot4 > 0 and slot6:GetRarity() < SpWeapon.New({
+					id = slot7
+				}):GetRarity() then
 					break
 				end
 

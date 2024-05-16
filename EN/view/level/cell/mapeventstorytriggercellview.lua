@@ -32,9 +32,7 @@ function slot0.Update(slot0)
 
 			slot0.assetName = slot4
 		else
-			slot5 = slot0:GetLoader()
-
-			slot5:GetPrefab("ui/" .. slot4, slot4, function (slot0)
+			slot0:GetLoader():GetPrefab("ui/" .. slot4, slot4, function (slot0)
 				setParent(slot0, uv0.tf)
 				uv0:ResetCanvasOrder()
 

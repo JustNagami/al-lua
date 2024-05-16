@@ -17,27 +17,22 @@ function slot0.execute(slot0, slot1)
 
 	seriesAsync({
 		function (slot0)
-			slot1 = uv0
-			slot1 = slot1:getRawData()
-			slot2 = uv1
-			slot2 = slot2:getData()
+			slot1 = uv0:getRawData()
+			slot2 = uv1:getData()
 			uv2 = SpWeapon.CalculateHistoryPt(uv3, uv4)
 			slot3 = 0
-			slot5 = SpWeapon.New({
+			slot6 = SpWeapon.New({
 				id = uv6
-			})
-			slot6 = slot5:GetUpgradeConfig()
+			}):GetUpgradeConfig()
 			uv7 = uv7 + slot6.create_use_pt
 
-			(function (slot0)
+			function (slot0)
 				for slot4, slot5 in ipairs(slot0) do
-					slot6 = slot5[1]
-
 					if not underscore.detect(uv0, function (slot0)
 						return slot0.id == uv0
 					end) then
 						slot7 = Item.New({
-							id = slot6
+							id = slot5[1]
 						})
 						slot7.count = 0
 
@@ -46,7 +41,7 @@ function slot0.execute(slot0, slot1)
 
 					slot7.count = slot7.count + slot5[2]
 				end
-			end)(slot6.create_use_item)
+			end(slot6.create_use_item)
 
 			uv8 = uv8 + slot6.create_use_gold
 
@@ -60,11 +55,10 @@ function slot0.execute(slot0, slot1)
 
 					uv9 = uv7
 					uv7 = uv7 + slot7:GetUpgradeConfig().upgrade_use_pt
-					slot10 = SpWeapon.New({
-						id = slot8
-					})
 
-					if slot3 > 0 and slot7:GetRarity() < slot10:GetRarity() then
+					if slot3 > 0 and slot7:GetRarity() < SpWeapon.New({
+						id = slot8
+					}):GetRarity() then
 						break
 					end
 
@@ -149,9 +143,7 @@ function slot0.execute(slot0, slot1)
 			end
 		end,
 		function (slot0)
-			slot3 = pg.ConnectionMgr.GetInstance()
-
-			slot3:Send(14209, {
+			pg.ConnectionMgr.GetInstance():Send(14209, {
 				template_id = uv2,
 				item_id_list = _.reduce(uv0, {}, function (slot0, slot1)
 					for slot5 = 1, slot1.count do

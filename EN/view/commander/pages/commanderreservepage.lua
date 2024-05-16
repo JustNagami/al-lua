@@ -68,12 +68,10 @@ function slot0.OnInit(slot0)
 		uv0:endAnim()
 	end, SFX_PANEL)
 	onButton(slot0, slot0.maxBtn, function ()
-		slot1 = getProxy(PlayerProxy):getRawData():getResById(1)
 		slot2 = 0
-		slot3 = 0
 
 		for slot8 = uv0.count, uv0.count + CommanderConst.MAX_GETBOX_CNT - uv0.count - 1 do
-			if slot1 < slot3 + CommanderConst.getBoxComsume(slot8) then
+			if getProxy(PlayerProxy):getRawData():getResById(1) < 0 + CommanderConst.getBoxComsume(slot8) then
 				break
 			else
 				slot2 = slot2 + 1
@@ -88,16 +86,82 @@ function slot0.OnInit(slot0)
 		if uv0.currCnt > 0 then
 			uv0.skip = false
 
-			if uv0.confirm then
-				uv0.confirm(uv0.total, uv0.currCnt)
-			end
+			uv0:OnConfirm(uv0.total, uv0.currCnt)
 		end
 	end, SFX_PANEL)
 	setText(slot0._tf:Find("frame/bg1/tip"), i18n("commander_build_rate_tip"))
+	setText(slot0._tf:Find("frame/bg1/label"), i18n("commander_get_box_tip"))
+	setText(slot0._tf:Find("frame/bg1/label1"), i18n("commander_total_gold"))
+	setText(slot0._tf:Find("frame/bg1/Text"), i18n("commander_get_box_tip_1"))
 end
 
-function slot0.setBlock(slot0, slot1)
-	slot0.block = slot1
+function slot0.OnConfirm(slot0, slot1, slot2)
+	if getProxy(PlayerProxy):getRawData().gold < slot1 then
+		slot0:GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
+			{
+				59001,
+				slot1 - slot3.gold,
+				slot1
+			}
+		})
+
+		return
+	end
+
+	slot0.contextData.msgBox:ExecuteAction("Show", {
+		content = i18n(slot1 <= 0 and "commander_get_1" or "commander_get", slot1, slot2),
+		onYes = function ()
+			uv0:emit(CommanderCatMediator.RESERVE_BOX, uv1)
+		end
+	})
+end
+
+function slot0.GoShoppingMsgBox(slot0, slot1, slot2, slot3)
+	if slot3 then
+		for slot8, slot9 in ipairs(slot3) do
+			if slot8 < #slot3 then
+				slot4 = "" .. i18n(slot9[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", Item.getConfigData(slot9[1]).name, slot9[2]) .. i18n("text_noRes_info_tip_link")
+			end
+		end
+
+		if slot4 ~= "" then
+			slot1 = slot1 .. "\n" .. i18n("text_noRes_tip", slot4)
+		end
+	end
+
+	pg.MsgboxMgr.GetInstance():ShowMsgBox({
+		parent = rtf(pg.UIMgr.GetInstance().OverlayToast),
+		content = slot1,
+		weight = LayerWeightConst.TOP_LAYER,
+		onYes = function ()
+			gotoChargeScene(uv0, uv1)
+		end
+	})
+end
+
+function slot0.OnLoaded(slot0)
+	slot0:bind(CommanderCatScene.MSG_RESERVE_BOX, function (slot0, slot1)
+		uv0:OnReserveDone(slot1)
+	end)
+end
+
+function slot0.OnReserveDone(slot0, slot1)
+	slot0.block = true
+
+	seriesAsync({
+		function (slot0)
+			uv0:PlayAnim(uv1, slot0)
+		end,
+		function (slot0)
+			uv0:Update()
+			uv0:emit(BaseUI.ON_AWARD, {
+				items = uv1
+			})
+			slot0()
+		end
+	}, function ()
+		uv0.block = false
+	end)
 end
 
 function slot0.updateValue(slot0)
@@ -110,17 +174,16 @@ function slot0.updateValue(slot0)
 		slot0.total = slot0.total + CommanderConst.getBoxComsume(slot6)
 	end
 
-	slot0.totalTxt.text = slot0.player.gold < slot0.total and "<color=" .. COLOR_RED .. ">" .. slot0.total .. "</color>" or slot0.total
+	slot0.totalTxt.text = getProxy(PlayerProxy):getRawData().gold < slot0.total and "<color=" .. COLOR_RED .. ">" .. slot0.total .. "</color>" or slot0.total
 end
 
-function slot0.Update(slot0, slot1, slot2)
-	slot0.count = slot1
+function slot0.Update(slot0)
+	slot0.count = getProxy(CommanderProxy):getBoxUseCnt()
 	slot0.currCnt = 1
 	slot0.total = 0
-	slot0.player = slot2
 
 	slot0:updateValue()
-	setActive(slot0.firstTip, slot1 <= 0)
+	setActive(slot0.firstTip, slot0.count <= 0)
 	slot0:Show()
 end
 
@@ -148,7 +211,7 @@ function slot0.endAnim(slot0)
 	end
 end
 
-function slot0.playAnim(slot0, slot1, slot2)
+function slot0.PlayAnim(slot0, slot1, slot2)
 	assert(slot2)
 
 	slot0.callback = slot2
@@ -160,15 +223,12 @@ function slot0.playAnim(slot0, slot1, slot2)
 	if slot0.skip then
 		slot0:endAnim()
 	else
-		slot3 = slot0.animtion
-
-		slot3:Play("reserve")
+		slot0.animtion:Play("reserve")
 
 		slot3 = 0
 		slot4 = 0
-		slot5 = slot0.aniEvt
 
-		slot5:SetTriggerEvent(function (slot0)
+		slot0.aniEvt:SetTriggerEvent(function (slot0)
 			for slot4, slot5 in ipairs(uv0) do
 				uv1 = uv1 + slot4
 			end
@@ -211,19 +271,15 @@ function slot0.Hide(slot0)
 end
 
 function slot0.playBoxMove(slot0, slot1)
-	slot2 = cloneTplTo(slot0.boxTF, slot0.boxMove)
-
 	if slot1.id == 20011 then
-		slot2:GetComponent(typeof(Image)).sprite = slot0.box1.sprite
+		cloneTplTo(slot0.boxTF, slot0.boxMove):GetComponent(typeof(Image)).sprite = slot0.box1.sprite
 	elseif slot1.id == 20012 then
 		slot2:GetComponent(typeof(Image)).sprite = slot0.box2.sprite
 	elseif slot1.id == 20013 then
 		slot2:GetComponent(typeof(Image)).sprite = slot0.box3.sprite
 	end
 
-	slot3 = slot2:GetComponent(typeof(DftAniEvent))
-
-	slot3:SetEndEvent(function ()
+	slot2:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		Destroy(go(uv0))
 	end)
 end

@@ -131,13 +131,11 @@ function slot0.checkOutland(slot0, slot1, slot2)
 	if slot0.outlandPoint then
 		slot5 = slot0.outlandPoint.rt
 		slot6 = slot0.outlandPoint.rb
-		slot7 = slot0.outlandPoint.exlb
-		slot8 = slot0.outlandPoint.exlt
 		slot9 = slot0.outlandPoint.exrt
 		slot10 = slot0.outlandPoint.exrb
 
 		if CastleGameVo.PointLeftLine(slot1, slot0.outlandPoint.lb, slot0.outlandPoint.lt) then
-			slot11, slot12 = CastleGameVo.PointFootLine(slot1, slot7, slot8)
+			slot11, slot12 = CastleGameVo.PointFootLine(slot1, slot0.outlandPoint.exlb, slot0.outlandPoint.exlt)
 
 			if slot12 then
 				return slot0:checkOutland(slot11, slot12)

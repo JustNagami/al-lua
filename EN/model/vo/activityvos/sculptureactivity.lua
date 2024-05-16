@@ -52,11 +52,10 @@ end
 function slot0.GetAwardProgress(slot0)
 	slot1 = slot0:getConfig("config_data")
 	slot2 = #slot1
-	slot3 = 0
 
 	for slot7, slot8 in ipairs(slot1) do
 		if slot0:GetSculptureState(slot8) == uv0.STATE_FINSIH then
-			slot3 = slot3 + 1
+			slot3 = 0 + 1
 		end
 	end
 

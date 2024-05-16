@@ -53,9 +53,7 @@ function slot0.getMissAwardChallengeIDLIst(slot0)
 	slot1 = {}
 
 	for slot7, slot8 in ipairs(LimitChallengeConst.GetCurMonthConfig().stage) do
-		slot11 = slot0:isAwardedByChallengeID(slot8)
-
-		if slot0:getPassTimeByChallengeID(slot8) and slot9 > 0 and not slot11 then
+		if slot0:getPassTimeByChallengeID(slot8) and slot9 > 0 and not slot0:isAwardedByChallengeID(slot8) then
 			table.insert(slot1, slot8)
 		end
 	end

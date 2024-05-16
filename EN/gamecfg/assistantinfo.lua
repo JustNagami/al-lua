@@ -99,6 +99,8 @@ slot1.assistantTouchEvents = {
 		"idleRandom4",
 		"idleRandom5",
 		"idleRandom6",
+		"idleRandom7",
+		"idleRandom8",
 		"idleRandom9"
 	}
 }
@@ -125,57 +127,85 @@ slot1.useNewTouchEventShip = {
 	}
 }
 slot1.action2Id = {
-	touch_drag6 = 107,
-	touch_drag5 = 106,
+	touch_drag19 = 120,
+	unlock = 20,
 	idle = 1,
-	touch_idle14 = 215,
-	touch_idle = 201,
-	touch_body = 13,
-	home = 7,
+	touch_drag4 = 105,
+	touch_idle15 = 216,
+	win_mvp = 29,
+	touch_drag6 = 107,
 	mission = 9,
 	touch_drag3 = 104,
-	touch_idle20 = 221,
-	touch_idle11 = 212,
-	oil = 16,
-	mail = 8,
+	battle = 28,
+	skill = 31,
+	touch_drag12 = 113,
+	touch_drag5 = 106,
 	touch_idle19 = 220,
+	touch_special_ex = 311,
+	home_ex = 312,
+	touch_idle4 = 205,
+	touch_idle2 = 203,
+	feeling5 = 26,
+	mail = 8,
+	lose = 30,
+	touch_drag13 = 114,
 	main_1 = 2,
+	touch_drag16 = 117,
+	main_3 = 4,
+	touch_idle9 = 210,
+	main_4 = 18,
+	hp_warning = 32,
+	touch_idle8 = 209,
+	login = 6,
+	touch_drag2 = 103,
+	touch_head = 12,
+	touch_idle10 = 211,
+	touch_drag15 = 116,
+	touch_idle7 = 208,
 	touch_idle1 = 202,
 	touch_drag1 = 102,
-	touch_idle2 = 203,
 	touch_special = 14,
-	main_3 = 4,
+	touch_idle17 = 218,
+	touch_idle3 = 204,
+	main_2_ex = 302,
+	touch_drag8 = 109,
+	touch_drag18 = 119,
+	touch_drag = 101,
+	upgrade = 27,
+	main_3_ex = 303,
+	main_5 = 19,
+	touch_idle20 = 221,
+	detail = 21,
+	feeling3 = 24,
+	touch_idle = 201,
+	home = 7,
+	touch_idle14 = 215,
+	touch_drag11 = 112,
+	touch_idle11 = 212,
+	oil = 16,
+	feeling4 = 25,
+	feeling1 = 22,
 	touch_idle12 = 213,
 	touch_drag9 = 110,
 	mission_complete = 10,
-	touch_drag7 = 108,
-	touch_idle9 = 210,
+	touch_drag14 = 115,
 	diamond = 17,
-	login = 6,
-	touch_head = 12,
-	touch_idle8 = 209,
-	touch_drag10 = 111,
-	touch_drag2 = 103,
-	touch_idle10 = 211,
-	touch_drag4 = 105,
+	touch_body = 13,
 	touch_idle18 = 219,
 	gold = 15,
-	touch_idle4 = 205,
-	touch_idle17 = 218,
-	touch_idle3 = 204,
 	touch_idle6 = 207,
-	touch_drag8 = 109,
 	main_2 = 3,
+	touch_drag17 = 118,
 	wedding = 11,
-	touch_drag = 101,
-	touch_idle15 = 216,
+	touch_drag7 = 108,
+	main_1_ex = 301,
+	touch_drag20 = 121,
 	complete = 5,
-	main_4 = 18,
-	main_5 = 19,
+	feeling2 = 23,
 	touch_idle5 = 206,
 	touch_idle16 = 217,
 	touch_idle13 = 214,
-	touch_idle7 = 208
+	touch_drag10 = 111
 }
 slot1.action2Words = {
 	"main1",
@@ -215,6 +245,8 @@ slot1.IdleEvents = {
 	"idleRandom4",
 	"idleRandom5",
 	"idleRandom6",
+	"idleRandom7",
+	"idleRandom8",
 	"idleRandom9"
 }
 slot1.PaintingTouchEvents = {
@@ -267,11 +299,10 @@ end
 
 function slot1.filterAssistantEvents(slot0, slot1, slot2)
 	slot3 = {}
-	slot4 = ShipWordHelper.GetMainSceneWordCnt(slot1, slot2 or 0)
 
 	for slot8, slot9 in ipairs(slot0) do
 		if string.split(uv0.assistantEvents[slot9].dialog, "_")[1] == "main" then
-			if tonumber(slot12[2]) <= slot4 then
+			if tonumber(slot12[2]) <= ShipWordHelper.GetMainSceneWordCnt(slot1, slot2 or 0) then
 				table.insert(slot3, slot9)
 			end
 		else
@@ -2133,14 +2164,20 @@ function slot1.GetCvList()
 	return slot0
 end
 
-function slot1.GetCVListForProfile()
-	slot0 = {}
+function slot1.GetCVListForProfile(slot0)
+	slot1 = {}
 
-	for slot4, slot5 in pairs(uv0.character_voice) do
-		if not uv0.AssistantInfo.isDisableSpecialClick(slot4) and slot5.unlock_condition[1] >= 0 and slot5.l2d_action ~= "" then
-			table.insert(slot0, slot5)
+	for slot5, slot6 in pairs(uv0.character_voice) do
+		if not uv0.AssistantInfo.isDisableSpecialClick(slot5) and slot6.unlock_condition[1] >= 0 and slot6.l2d_action ~= "" then
+			if slot6.sp_trans_l2d == 1 then
+				if slot0 then
+					table.insert(slot1, slot6)
+				end
+			elseif slot6.sp_trans_l2d == 0 or not slot6.sp_trans_l2d then
+				table.insert(slot1, slot6)
+			end
 		end
 	end
 
-	return slot0
+	return slot1
 end

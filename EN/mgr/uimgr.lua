@@ -73,32 +73,26 @@ function slot0.Init(slot0, slot1)
 		slot0.blurIteration = 4
 	end
 
-	function slot4(slot0)
-		if slot0 == nil then
-			return
-		end
-
-		slot0.downsample = 2
-		slot0.blurSize = 4
-		slot0.blurIterations = 1
-	end
-
-	function slot5(slot0)
-		if slot0 == nil then
-			return
-		end
-
-		slot0.downsample = 2
-		slot0.blurSize = 1.5
-		slot0.blurIteration = 1
-	end
-
-	slot6 = DevicePerformanceUtil.GetDeviceLevel()
-
 	for slot10, slot11 in ipairs(slot0.cameraBlurs) do
-		if slot6 == DevicePerformanceLevel.Low then
-			slot4(slot11[uv0.OptimizedBlur])
-			slot5(slot11[uv0.PartialBlur])
+		if DevicePerformanceUtil.GetDeviceLevel() == DevicePerformanceLevel.Low then
+			function (slot0)
+				if slot0 == nil then
+					return
+				end
+
+				slot0.downsample = 2
+				slot0.blurSize = 4
+				slot0.blurIterations = 1
+			end(slot11[uv0.OptimizedBlur])
+			function (slot0)
+				if slot0 == nil then
+					return
+				end
+
+				slot0.downsample = 2
+				slot0.blurSize = 1.5
+				slot0.blurIteration = 1
+			end(slot11[uv0.PartialBlur])
 		else
 			slot2(slot11[uv0.OptimizedBlur])
 			slot3(slot11[uv0.PartialBlur])
@@ -375,12 +369,11 @@ end
 function slot0.BlurCamera(slot0, slot1, slot2, slot3)
 	if not slot0.camLockStatus[slot1] or slot3 then
 		slot4 = slot0.cameraBlurs[slot1][uv0.OptimizedBlur]
-		slot5 = slot0.cameraBlurs[slot1][uv0.StaticBlur]
 
 		if slot2 then
 			slot4.enabled = true
 			slot4.staticBlur = true
-			slot5.enabled = false
+			slot0.cameraBlurs[slot1][uv0.StaticBlur].enabled = false
 		else
 			slot4.enabled = true
 			slot4.staticBlur = false

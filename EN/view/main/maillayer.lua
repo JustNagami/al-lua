@@ -13,8 +13,7 @@ function slot0.init(slot0)
 	slot0.pullToRefreshNewer = slot0:findTF("pull_to_refresh_newer", slot0.mailPanel)
 	slot0.pullToRefreshOlder = slot0:findTF("pull_to_refresh_older", slot0.mailPanel)
 	slot0.mailList = slot0:findTF("mails", slot0.mailPanel)
-	slot1 = slot0.mailList
-	slot0.mailTpl = slot1:Find("mail_tpl")
+	slot0.mailTpl = slot0.mailList:Find("mail_tpl")
 	slot0.nullTpl = slot0:findTF("null_tpl", slot0.mailPanel)
 	slot0.scrollBar = slot0:findTF("Scrollbar", slot0.mailPanel)
 	slot0.mailCount = slot0:findTF("main/count_bg/Text")
@@ -34,9 +33,8 @@ function slot0.init(slot0)
 		"openMail"
 	}
 	slot0.panelState = slot0.panelStateList[1]
-	slot1 = pg.UIMgr.GetInstance()
 
-	slot1:BlurPanel(slot0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
@@ -48,16 +46,12 @@ function slot0.init(slot0)
 	slot0.msgCancelBtn = slot0:findTF("window/actions/cancel_button", slot0.msgBoxTF)
 	slot0.msgItemContainerTF = slot0:findTF("window/items/content/list/", slot0.msgBoxTF)
 	slot0.msgItemTF = slot0:getTpl("item", slot0.msgItemContainerTF)
-	slot1 = slot0:findTF("window/items/content/Text", slot0.msgBoxTF)
-	slot0.msgContentTF = slot1:GetComponent(typeof(Text))
+	slot0.msgContentTF = slot0:findTF("window/items/content/Text", slot0.msgBoxTF):GetComponent(typeof(Text))
 	slot0.mailItemList = UIItemList.New(slot0.mailList, slot0.mailTpl)
-	slot1 = slot0.mailItemList
 
-	slot1:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.mailItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			uv0:updateMail(uv0.filterMailVOs[slot1])
+			uv0:updateMail(uv0.filterMailVOs[slot1 + 1])
 		end
 	end)
 end
@@ -98,10 +92,7 @@ function slot0.setOrMovePanelState(slot0, slot1, slot2)
 		LeanTween.moveX(rtf(slot0.letterPanel), 402, 0.2)
 	elseif slot1 == slot0.panelStateList[1] then
 		LeanTween.moveX(rtf(slot0.mainPanel), 0, 0.2)
-
-		slot3 = LeanTween.moveX(rtf(slot0.letterPanel), 0, 0.2)
-
-		slot3:setOnComplete(System.Action(function ()
+		LeanTween.moveX(rtf(slot0.letterPanel), 0, 0.2):setOnComplete(System.Action(function ()
 			SetActive(uv0.letterPanel, false)
 		end))
 	end
@@ -147,18 +138,12 @@ function slot0.didEnter(slot0)
 		uv0:updateMailList()
 	end, SFX_PANEL)
 
-	slot1 = slot0.mailList
-	slot1 = slot1:GetComponent("UIPullToRefreshTrigger")
-	slot2 = slot0.pullToRefreshNewer
-	slot2:GetComponent("CanvasGroup").alpha = 0
-	slot3 = slot0.pullToRefreshOlder
-	slot3:GetComponent("CanvasGroup").alpha = 0
+	slot1 = slot0.mailList:GetComponent("UIPullToRefreshTrigger")
+	slot0.pullToRefreshNewer:GetComponent("CanvasGroup").alpha = 0
+	slot0.pullToRefreshOlder:GetComponent("CanvasGroup").alpha = 0
 
 	pg.DelegateInfo.Add(slot0, slot1.onValueChanged)
-
-	slot4 = slot1.onValueChanged
-
-	slot4:AddListener(function (slot0)
+	slot1.onValueChanged:AddListener(function (slot0)
 		if slot0 > 0 then
 			uv0.alpha = slot0 * slot0
 		else
@@ -172,10 +157,7 @@ function slot0.didEnter(slot0)
 		end
 	end)
 	pg.DelegateInfo.Add(slot0, slot1.onRefreshTop)
-
-	slot4 = slot1.onRefreshTop
-
-	slot4:AddListener(function ()
+	slot1.onRefreshTop:AddListener(function ()
 		if #uv0.mailVOs < uv0.totalCount and uv0.unreadCount > 0 then
 			uv0:emit(MailMediator.ON_MORE_NEWER)
 		else
@@ -183,14 +165,10 @@ function slot0.didEnter(slot0)
 		end
 	end)
 
-	slot4 = slot0.mailList
-	slot4 = slot4:GetComponent("ScrollRect")
+	slot4 = slot0.mailList:GetComponent("ScrollRect")
 
 	pg.DelegateInfo.Add(slot0, slot1.onDragEnd)
-
-	slot5 = slot1.onDragEnd
-
-	slot5:AddListener(function ()
+	slot1.onDragEnd:AddListener(function ()
 		if uv0.verticalNormalizedPosition <= 0.1 and #uv1.mailVOs < uv1.totalCount then
 			uv1:emit(MailMediator.ON_MORE_OLDER)
 		end
@@ -206,9 +184,7 @@ function slot0.updateMailList(slot0)
 		return
 	end
 
-	slot2 = getToggleState(slot0.toggleMatter)
-
-	if not getToggleState(slot0.toggleNormal) and not slot2 then
+	if not getToggleState(slot0.toggleNormal) and not getToggleState(slot0.toggleMatter) then
 		slot0.frozenUpdateMailList = true
 
 		triggerToggle(slot0.toggleNormal, true)
@@ -349,7 +325,7 @@ end
 function slot0.setAttachment(slot0, slot1, slot2, slot3)
 	setActive(slot1:Find("mask"), slot3)
 	updateDrop(slot1, {
-		type = slot2.dropType,
+		type = slot2.type,
 		id = slot2.id,
 		count = slot2.count
 	})
@@ -387,9 +363,6 @@ function slot0.updateMail(slot0, slot1)
 			uv0:emit(MailMediator.ON_OPEN, uv1.id)
 		end
 	end, SFX_PANEL)
-
-	slot4 = slot0:findTF("mask", slot3)
-
 	setActive(findTF(slot3, "tip_bg"), slot1.attachFlag ~= slot1.ATTACHMENT_NONE)
 
 	slot5 = slot1.attachFlag ~= slot1.ATTACHMENT_NONE
@@ -400,7 +373,7 @@ function slot0.updateMail(slot0, slot1)
 	if slot5 then
 		setText(findTF(slot3, "tip_bg/Text"), #slot1.attachments)
 		slot0:setAttachment(slot7, slot1.attachments[1], slot1.attachFlag == 2)
-		setActive(slot4, slot1.readFlag == 2 and slot1.attachFlag == slot1.ATTACHMENT_TAKEN)
+		setActive(slot0:findTF("mask", slot3), slot1.readFlag == 2 and slot1.attachFlag == slot1.ATTACHMENT_TAKEN)
 	else
 		if slot1.readFlag == 2 then
 			slot0:setSpriteTo("resources/mail_read", slot6, true)
@@ -463,9 +436,7 @@ function slot0.showMsgBox(slot0, slot1)
 	end, SFX_PANEL)
 	removeAllChildren(slot0.msgItemContainerTF)
 
-	slot2 = slot1.items or {}
-
-	for slot6, slot7 in pairs(slot2) do
+	for slot6, slot7 in pairs(slot1.items or {}) do
 		updateDrop(cloneTplTo(slot0.msgItemTF, slot0.msgItemContainerTF), slot7)
 	end
 

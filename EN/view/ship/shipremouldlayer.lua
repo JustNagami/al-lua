@@ -175,10 +175,7 @@ function slot0.updateLines(slot0)
 		slot0:updateGridTF(slot4)
 
 		if slot0:canRemould(slot4) or slot0:isFinished(slot4) then
-			slot6 = ipairs
-			slot7 = slot0.lineTFs[slot4] or {}
-
-			for slot9, slot10 in slot6(slot7) do
+			for slot9, slot10 in ipairs(slot0.lineTFs[slot4] or {}) do
 				slot10.hrz:GetComponent("UIGrayScale").enabled = false
 				slot10.vec:GetComponent("UIGrayScale").enabled = false
 			end
@@ -232,11 +229,8 @@ function slot0.updateGridTF(slot0, slot1)
 	setActive(slot2:Find("tags/ongoing"), slot5 == uv0.STATE_ACTIVE)
 	setActive(slot2:Find("tags/lock"), slot5 == uv0.STATE_LOCK)
 
-	slot6 = slot0:getTransformLevel(slot1)
-	slot7 = slot2:Find("icon/progress")
-
 	if slot5 == uv0.STATE_FINISHED then
-		setText(slot7, slot6 .. "/" .. slot3.max_level)
+		setText(slot2:Find("icon/progress"), slot0:getTransformLevel(slot1) .. "/" .. slot3.max_level)
 	elseif slot5 == uv0.STATE_ACTIVE then
 		setText(slot7, slot6 .. "/" .. slot3.max_level)
 	elseif slot5 == uv0.STATE_LOCK then
@@ -300,9 +294,7 @@ function slot0.initShipModel(slot0)
 		end
 	end
 
-	slot3 = PoolMgr.GetInstance()
-
-	slot3:GetSpineChar(slot1, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(slot1, true, function (slot0)
 		uv0(slot0)
 	end)
 end
@@ -336,7 +328,7 @@ function slot0.updateFinished(slot0, slot1)
 		end)
 	end
 
-	slot9 = 1
+	slot9 = PlayerConst.ResGold
 
 	table.insert(slot4, {
 		type = DROP_TYPE_ITEM,
@@ -445,10 +437,9 @@ function slot0.updateProgress(slot0, slot1)
 	setText(slot0.skillDesc, "")
 
 	slot7 = nil
-	slot7 = (not slot3.use_item[slot2] or Clone(slot3.use_item[slot2])) and {}
 
 	if slot3.use_gold > 0 then
-		table.insert(slot7, {
+		table.insert((not slot3.use_item[slot2] or Clone(slot3.use_item[slot2])) and {}, {
 			id2ItemId(PlayerConst.ResGold),
 			slot3.use_gold
 		})
@@ -496,7 +487,7 @@ function slot0.updateProgress(slot0, slot1)
 		if slot12 <= #slot7 then
 			slot15 = ""
 
-			if slot7[slot12][1] == id2ItemId(1) then
+			if slot7[slot12][1] == id2ItemId(PlayerConst.ResGold) then
 				slot16 = slot14[2] <= slot0.playerVO.gold
 				slot15 = setColorStr(slot14[2], slot16 and COLOR_WHITE or COLOR_RED)
 
@@ -551,10 +542,8 @@ function slot0.updateProgress(slot0, slot1)
 		setText(slot11:Find("value"), ShipType.Type2Name(slot10))
 		setActive(slot11:Find("addtion"), false)
 
-		slot12 = slot11:Find("quest")
-
 		if slot9 then
-			setActive(slot12, true)
+			setActive(slot11:Find("quest"), true)
 			onButton(slot0, slot11, function ()
 				uv0:showToolTip(uv1)
 			end)
@@ -700,9 +689,7 @@ end
 
 function slot0.isUnLockPrev(slot0, slot1)
 	for slot6, slot7 in pairs(pg.transform_data_template[slot1].condition_id) do
-		slot8 = pg.transform_data_template[slot7]
-
-		if not slot0.shipVO.transforms[slot7] or slot0.shipVO.transforms[slot7].level ~= slot8.max_level then
+		if not slot0.shipVO.transforms[slot7] or slot0.shipVO.transforms[slot7].level ~= pg.transform_data_template[slot7].max_level then
 			return false
 		end
 	end
@@ -711,10 +698,7 @@ function slot0.isUnLockPrev(slot0, slot1)
 end
 
 function slot0.isEnoughResource(slot0, slot1)
-	slot4 = ipairs
-	slot5 = pg.transform_data_template[slot1].use_item[slot0:getTransformLevel(slot1) + 1] or {}
-
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(pg.transform_data_template[slot1].use_item[slot0:getTransformLevel(slot1) + 1] or {}) do
 		if not slot0.itemsVO[slot8[1]] or slot0.itemsVO[slot8[1]].count < slot8[2] then
 			return false, i18n("ship_remould_no_item")
 		end
@@ -795,12 +779,14 @@ function slot0.showToolTip(slot0, slot1)
 			AttributeType.Dodge,
 			AttributeType.AntiSub
 		}) do
-			slot14 = {}
+			slot14 = {
+				name = AttributeType.Type2Name(slot13),
+				from = slot0.shipVO:getBattleTotalExpend(),
+				to = slot4:getBattleTotalExpend()
+			}
 
 			if slot13 == AttributeType.Expend then
-				slot14.name = AttributeType.Type2Name(slot13)
-				slot14.from = slot0.shipVO:getBattleTotalExpend()
-				slot14.to = slot4:getBattleTotalExpend()
+				-- Nothing
 			else
 				slot14.name = AttributeType.Type2Name(slot13)
 				slot14.from = math.floor(slot7[slot13])

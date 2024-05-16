@@ -155,17 +155,14 @@ function slot0.register(slot0)
 			return
 		end
 
-		slot2 = GuildDonateTask.New({
-			id = slot0.id
-		})
 		slot4 = slot0.has_tech_point == 1
-		slot5 = slot0.user_id
-		slot6 = getProxy(PlayerProxy):getRawData().id
 
 		if slot0.has_capital == 1 then
-			slot1:updateCapital(slot1:getCapital() + slot2:getCapital())
+			slot1:updateCapital(slot1:getCapital() + GuildDonateTask.New({
+				id = slot0.id
+			}):getCapital())
 
-			if slot6 == slot5 then
+			if getProxy(PlayerProxy):getRawData().id == slot0.user_id then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_donate_addition_capital_tip", slot7))
 			end
 		end
@@ -207,10 +204,8 @@ function slot0.register(slot0)
 			return
 		end
 
-		slot2 = {}
-
 		for slot6, slot7 in ipairs(slot0.donate_tasks) do
-			table.insert(slot2, GuildDonateTask.New({
+			table.insert({}, GuildDonateTask.New({
 				id = slot7
 			}))
 		end
@@ -440,10 +435,8 @@ function slot0.AddReport(slot0, slot1)
 end
 
 function slot0.GetMaxReportId(slot0)
-	slot2 = 0
-
 	for slot6, slot7 in pairs(slot0:GetReports()) do
-		if slot2 < slot7.id then
+		if 0 < slot7.id then
 			slot2 = slot7.id
 		end
 	end
@@ -472,17 +465,15 @@ function slot0.ShouldRequestReport(slot0)
 		slot0.requestReportTime = 0
 	end
 
-	function slot1()
+	slot2 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	if not slot0.reports and function ()
 		if uv0:getRawData():GetActiveEvent() and slot1:GetMissionFinishCnt() > 0 then
 			return true
 		end
 
 		return false
-	end
-
-	slot2 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	if not slot0.reports and slot1() or slot0.requestReportTime < slot2 then
+	end() or slot0.requestReportTime < slot2 then
 		slot0.requestReportTime = slot2 + GuildConst.REQUEST_REPORT_CD
 
 		return true
@@ -598,30 +589,29 @@ function slot0.GetRecommendShipsForEliteMission(slot0, slot1)
 	end
 
 	slot9 = slot1:GetEffectAttr()
-	slot10 = CompareFuncs({
-		function (slot0)
-			return uv0:MatchAttr(slot0) and 0 or 1
-		end,
-		function (slot0)
-			return uv0:MatchNation(slot0) and 0 or 1
-		end,
-		function (slot0)
-			return uv0:MatchShipType(slot0) and 0 or 1
-		end,
-		function (slot0)
-			return -(slot0.attrs[uv0] or 0)
-		end,
-		function (slot0)
-			return -slot0.level
-		end,
-		function (slot0)
-			return -slot0.power
-		end
-	})
 	slot11 = slot1:GetSquadronTargetCnt()
 
 	if #slot6 > 0 and slot11 > 0 then
-		table.sort(slot6, slot10)
+		table.sort(slot6, CompareFuncs({
+			function (slot0)
+				return uv0:MatchAttr(slot0) and 0 or 1
+			end,
+			function (slot0)
+				return uv0:MatchNation(slot0) and 0 or 1
+			end,
+			function (slot0)
+				return uv0:MatchShipType(slot0) and 0 or 1
+			end,
+			function (slot0)
+				return -(slot0.attrs[uv0] or 0)
+			end,
+			function (slot0)
+				return -slot0.level
+			end,
+			function (slot0)
+				return -slot0.power
+			end
+		}))
 
 		for slot15 = 1, slot11 do
 			slot8(slot6[slot15])
@@ -668,30 +658,25 @@ end
 function slot0.ShouldShowBattleTip(slot0)
 	slot2 = false
 
-	function slot3(slot0)
-		if slot0 and slot0:IsParticipant() then
-			return slot0:GetBossMission() and slot1:IsActive() and slot1:CanEnterBattle()
-		end
-
-		return false
-	end
-
-	function slot4()
-		for slot3, slot4 in ipairs(pg.guild_operation_template.all) do
-			if pg.guild_operation_template[slot4].unlock_guild_level <= uv0.level and slot5.consume <= uv0:getCapital() then
-				return true
-			end
-		end
-
-		return false
-	end
-
 	if slot0:getData() then
 		slot5 = slot1:GetActiveEvent()
-		slot2 = slot0:ShouldShowMainTip() or not slot5 and (GuildMember.IsAdministrator(slot1:getSelfDuty()) and slot1:ShouldTipActiveEvent()) and slot4() or slot5 and not slot0:GetBattleBtnRecord()
 
 		if slot5 then
-			slot2 = slot2 or slot5:IsParticipant() and slot5:AnyMissionCanFormation() or slot3(slot5) or not slot7 and not slot5:IsLimitedJoin()
+			slot2 = slot0:ShouldShowMainTip() or not slot5 and (GuildMember.IsAdministrator(slot1:getSelfDuty()) and slot1:ShouldTipActiveEvent()) and function ()
+				for slot3, slot4 in ipairs(pg.guild_operation_template.all) do
+					if pg.guild_operation_template[slot4].unlock_guild_level <= uv0.level and slot5.consume <= uv0:getCapital() then
+						return true
+					end
+				end
+
+				return false
+			end() or slot5 and not slot0:GetBattleBtnRecord() or slot5:IsParticipant() and slot5:AnyMissionCanFormation() or function (slot0)
+				if slot0 and slot0:IsParticipant() then
+					return slot0:GetBossMission() and slot1:IsActive() and slot1:CanEnterBattle()
+				end
+
+				return false
+			end(slot5) or not slot7 and not slot5:IsLimitedJoin()
 		end
 	end
 
@@ -713,9 +698,9 @@ end
 function slot0.ShouldShowMainTip(slot0)
 	return _.any(slot0.reports or {}, function (slot0)
 		return slot0:CanSubmit()
-	end) and not (function ()
+	end) and not function ()
 		return uv0.data:getMemberById(getProxy(PlayerProxy):getRawData().id):IsRecruit()
-	end)()
+	end()
 end
 
 function slot0.ShouldShowTip(slot0)

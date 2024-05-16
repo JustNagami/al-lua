@@ -47,15 +47,10 @@ function slot0.OnLoaded(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("frame/window/top/btnBack"), function ()
+	onButton(slot0, slot0._tf:Find("frame/window/top/btnBack"), function ()
 		uv0:Close()
 	end, SFX_PANEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("frame"), function ()
+	onButton(slot0, slot0._tf:Find("frame"), function ()
 		uv0:Close()
 	end, SFX_PANEL)
 
@@ -136,10 +131,9 @@ end
 
 function slot0.Filter(slot0)
 	slot0.displays = {}
-	slot3 = slot0:Flag2Filter(slot0.flags)
 
 	for slot7, slot8 in ipairs(slot0.guild:getCapitalLogs()) do
-		if slot8:IsSameType(slot3) then
+		if slot8:IsSameType(slot0:Flag2Filter(slot0.flags)) then
 			table.insert(slot0.displays, slot8)
 		end
 	end

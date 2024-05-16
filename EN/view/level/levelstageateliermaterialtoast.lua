@@ -20,10 +20,9 @@ function slot0.Play(slot0, slot1)
 	setText(slot0._tf:Find("Title"), slot2.title)
 
 	slot3 = slot0._tf:Find("Desc")
-	slot5 = WorldMediaCollectionFileDetailLayer.getTextPreferredHeight(GetComponent(slot3, typeof(Text)), slot3.rect.width, slot2.desc)
 	slot6 = 2
 
-	while slot5 > uv0 + uv1 * (slot6 - 1) do
+	while WorldMediaCollectionFileDetailLayer.getTextPreferredHeight(GetComponent(slot3, typeof(Text)), slot3.rect.width, slot2.desc) > uv0 + uv1 * (slot6 - 1) do
 		slot6 = slot6 + 1
 	end
 
@@ -48,13 +47,8 @@ function slot0.Play(slot0, slot1)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot2.voice)
 	end
 
-	slot7 = slot0._go.transform
-
-	slot7:SetParent(pg.UIMgr.GetInstance().OverlayToast, false)
-
-	slot7 = GetComponent(slot0._tf, typeof(DftAniEvent))
-
-	slot7:SetEndEvent(function ()
+	slot0._go.transform:SetParent(pg.UIMgr.GetInstance().OverlayToast, false)
+	GetComponent(slot0._tf, typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:Destroy()
 		existCall(uv1)
 	end)

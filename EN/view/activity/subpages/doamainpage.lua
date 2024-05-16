@@ -14,10 +14,8 @@ function slot0.OnFirstFlush(slot0)
 end
 
 function slot0.OnUpdateFlush(slot0)
-	slot1 = math.random(1, 9)
-
 	for slot5 = 1, 9 do
-		setActive(findTF(slot0.charactorTf, "charactor" .. slot5), slot1 == slot5)
+		setActive(findTF(slot0.charactorTf, "charactor" .. slot5), math.random(1, 9) == slot5)
 	end
 end
 

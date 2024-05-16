@@ -11,10 +11,8 @@ function slot0.execute(slot0, slot1)
 		if slot0.result == 0 then
 			uv0:sendNotification(GAME.GET_MEDALSHOP_DONE)
 
-			slot1 = MedalShop.New(slot0)
-
 			if getProxy(ShopsProxy).medalShop then
-				slot2:UpdateMedalShop(slot1)
+				slot2:UpdateMedalShop(MedalShop.New(slot0))
 			else
 				slot2:SetMedalShop(slot1)
 			end

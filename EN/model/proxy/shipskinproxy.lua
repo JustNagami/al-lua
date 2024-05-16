@@ -76,21 +76,19 @@ function slot0.addExpireTimer(slot0, slot1)
 		return
 	end
 
-	function slot2()
-		table.insert(uv0.cacheSkins, uv1)
-		uv0:removeSkinById(uv1.id)
-		_.each(getProxy(BayProxy):getShips(), function (slot0)
-			if slot0.skinId == uv0.id then
-				slot0.skinId = slot0:getConfig("skin_id")
-
-				uv1:updateShip(slot0)
-			end
-		end)
-		uv0:sendNotification(GAME.SHIP_SKIN_EXPIRED)
-	end
-
 	if slot1:getExpireTime() - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-		slot2()
+		function ()
+			table.insert(uv0.cacheSkins, uv1)
+			uv0:removeSkinById(uv1.id)
+			_.each(getProxy(BayProxy):getShips(), function (slot0)
+				if slot0.skinId == uv0.id then
+					slot0.skinId = slot0:getConfig("skin_id")
+
+					uv1:updateShip(slot0)
+				end
+			end)
+			uv0:sendNotification(GAME.SHIP_SKIN_EXPIRED)
+		end()
 	else
 		slot0.timers[slot1.id] = Timer.New(slot2, slot3, 1)
 
@@ -162,31 +160,27 @@ function slot0.GetAllSkins(slot0)
 		slot0:updateBuyCount(getProxy(ShipSkinProxy):getSkinById(slot0:getSkinId()) and not slot2:isExpireType() and 1 or 0)
 	end
 
-	function slot3(slot0)
-		uv0(Goods.Create({
-			shop_id = slot0
-		}, Goods.TYPE_SKIN))
-
-		slot2, slot3 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[slot0].time)
-
-		if slot2 then
-			table.insert(uv1, slot1)
-		end
-	end
-
 	for slot7, slot8 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
-		slot3(slot8)
+		function (slot0)
+			uv0(Goods.Create({
+				shop_id = slot0
+			}, Goods.TYPE_SKIN))
+
+			slot2, slot3 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[slot0].time)
+
+			if slot2 then
+				table.insert(uv1, slot1)
+			end
+		end(slot8)
 	end
 
 	for slot7, slot8 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShopTimeLimit]) do
 		slot3(slot8)
 	end
 
-	slot4 = getProxy(ActivityProxy)
-
 	for slot9, slot10 in ipairs(pg.activity_shop_extra.get_id_list_by_commodity_type[DROP_TYPE_SKIN]) do
 		slot11 = pg.activity_shop_extra[slot10]
-		slot12 = slot4:getActivityById(slot11.activity)
+		slot12 = getProxy(ActivityProxy):getActivityById(slot11.activity)
 
 		if slot11.activity == 0 and pg.TimeMgr.GetInstance():inTime(slot11.time) or slot12 and not slot12:isEnd() then
 			slot13 = Goods.Create({
@@ -228,17 +222,15 @@ function slot0.GetShopShowingSkins(slot0)
 		slot0:updateBuyCount(getProxy(ShipSkinProxy):getSkinById(slot0:getSkinId()) and not slot2:isExpireType() and 1 or 0)
 	end
 
-	function slot3(slot0)
-		slot1 = Goods.Create({
-			shop_id = slot0
-		}, Goods.TYPE_SKIN)
-
-		uv0(slot1)
-		table.insert(uv1, slot1)
-	end
-
 	for slot7, slot8 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
-		slot3(slot8)
+		function (slot0)
+			slot1 = Goods.Create({
+				shop_id = slot0
+			}, Goods.TYPE_SKIN)
+
+			uv0(slot1)
+			table.insert(uv1, slot1)
+		end(slot8)
 	end
 
 	for slot7, slot8 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShopTimeLimit]) do
@@ -283,10 +275,8 @@ function slot0.GetAllSkinForShip(slot0, slot1)
 	end
 
 	if pg.ship_data_trans[slot2] and not slot1:isRemoulded() then
-		slot4 = ShipGroup.GetGroupConfig(slot2).trans_skin
-
 		for slot8 = #slot3, 1, -1 do
-			if slot3[slot8].id == slot4 then
+			if slot3[slot8].id == ShipGroup.GetGroupConfig(slot2).trans_skin then
 				table.remove(slot3, slot8)
 
 				break
@@ -307,10 +297,8 @@ function slot0.GetAllSkinForShip(slot0, slot1)
 	end
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		slot4 = pg.gameset.big_seven_old_skin_timestamp.key_value
-
 		for slot8 = #slot3, 1, -1 do
-			if slot3[slot8].skin_type == ShipSkin.SKIN_TYPE_OLD and slot4 < slot1.createTime then
+			if slot3[slot8].skin_type == ShipSkin.SKIN_TYPE_OLD and pg.gameset.big_seven_old_skin_timestamp.key_value < slot1.createTime then
 				table.remove(slot3, slot8)
 			end
 		end
@@ -426,18 +414,14 @@ function slot0.HasFashion(slot0, slot1)
 end
 
 function slot0.GetEncoreSkins(slot0)
-	slot1 = getProxy(ActivityProxy)
-
-	function slot2(slot0)
-		if slot0:getConfig("config_client") and slot1[1] and type(slot1[1]) == "table" then
-			return pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1[1]) <= pg.TimeMgr.GetInstance():GetServerTime()
-		else
-			return slot0:isEnd()
-		end
-	end
-
-	for slot6, slot7 in ipairs(slot1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)) do
-		if slot7:getDataConfig("type") == 5 and not slot2(slot7) then
+	for slot6, slot7 in ipairs(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)) do
+		if slot7:getDataConfig("type") == 5 and not function (slot0)
+			if slot0:getConfig("config_client") and slot1[1] and type(slot1[1]) == "table" then
+				return pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1[1]) <= pg.TimeMgr.GetInstance():GetServerTime()
+			else
+				return slot0:isEnd()
+			end
+		end(slot7) then
 			return slot7:getConfig("config_data")
 		end
 	end
@@ -446,10 +430,8 @@ function slot0.GetEncoreSkins(slot0)
 end
 
 function slot0.GetOwnSkins(slot0)
-	slot1 = {}
-
 	for slot6, slot7 in pairs(slot0:getRawData()) do
-		table.insert(slot1, slot7)
+		table.insert({}, slot7)
 	end
 
 	for slot7, slot8 in pairs(getProxy(CollectionProxy).shipGroups) do
@@ -470,10 +452,12 @@ function slot0.GetOwnSkins(slot0)
 end
 
 function slot0.GetOwnAndShareSkins(slot0)
-	slot2 = {}
+	slot2 = {
+		[slot7.id] = slot7
+	}
 
 	for slot6, slot7 in ipairs(slot0:GetOwnSkins()) do
-		slot2[slot7.id] = slot7
+		-- Nothing
 	end
 
 	for slot7, slot8 in pairs(getProxy(CollectionProxy).shipGroups) do
@@ -508,11 +492,13 @@ function slot0.GetProbabilitySkins(slot0, slot1)
 		end
 	end
 
-	slot6 = {}
+	slot6 = {
+		[slot11:getSkinId()] = slot11.id
+	}
 
 	for slot10, slot11 in ipairs(getProxy(ShipSkinProxy):GetAllSkins()) do
 		if slot11:getConfig("genre") ~= ShopArgs.SkinShopTimeLimit then
-			slot6[slot11:getSkinId()] = slot11.id
+			-- Nothing
 		end
 	end
 
@@ -526,13 +512,13 @@ function slot0.GetProbabilitySkins(slot0, slot1)
 end
 
 function slot0.GetSkinProbabilitys(slot0, slot1)
-	slot2 = {}
-
 	for slot6, slot7 in ipairs(slot1) do
-		slot2[slot7[1]] = slot7[2]
+		-- Nothing
 	end
 
-	return slot2
+	return {
+		[slot7[1]] = slot7[2]
+	}
 end
 
 return slot0

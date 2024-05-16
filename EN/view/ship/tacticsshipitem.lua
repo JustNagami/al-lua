@@ -21,9 +21,7 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
 			end
 		end
 
-		slot6 = ResourceMgr.Inst
-
-		slot6:getAssetAsync("template/shipcardtpl", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("template/shipcardtpl", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			uv0(Instantiate(slot0))
 		end), true, true)
 

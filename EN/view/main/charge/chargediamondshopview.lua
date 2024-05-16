@@ -71,11 +71,7 @@ function slot0.confirm(slot0, slot1)
 
 		if slot1:isMonthCard() or slot1:isGiftBox() or slot1:isItemBox() or slot1:isPassItem() then
 			slot5 = underscore.map(slot1:getConfig("extra_service_item"), function (slot0)
-				return {
-					type = slot0[1],
-					id = slot0[2],
-					count = slot0[3]
-				}
+				return Drop.Create(slot0)
 			end)
 			slot6 = nil
 
@@ -83,35 +79,30 @@ function slot0.confirm(slot0, slot1)
 				slot7 = slot1:getConfig("sub_display")
 				slot8 = slot7[1]
 				slot9 = pg.battlepass_event_pt[slot8].pt
-				slot6 = {
+				slot6 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = pg.battlepass_event_pt[slot8].pt,
 					count = slot7[2]
-				}
+				})
 				slot5 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot8].drop_client_pay, function (slot0)
-					return {
-						type = slot0[1],
-						id = slot0[2],
-						count = slot0[3]
-					}
+					return Drop.Create(slot0)
 				end))
 			end
 
-			slot7 = slot1:getConfig("gem") + slot1:getConfig("extra_gem")
 			slot8 = nil
 
 			if slot1:isMonthCard() then
-				slot8 = {
-					id = 4,
-					type = 1,
-					count = slot7
-				}
-			elseif slot7 > 0 then
-				table.insert(slot5, {
-					id = 4,
-					type = 1,
-					count = slot7
+				slot8 = Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
+					count = slot1:getConfig("gem") + slot1:getConfig("extra_gem")
 				})
+			elseif slot7 > 0 then
+				table.insert(slot5, Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
+					count = slot7
+				}))
 			end
 
 			slot9, slot10 = nil
@@ -170,7 +161,7 @@ function slot0.confirm(slot0, slot1)
 	else
 		slot2 = {}
 
-		if type(pg.item_data_statistics[slot1:getConfig("effect_args")[1]].display_icon) == "table" then
+		if type(Item.getConfigData(slot1:getConfig("effect_args")[1]).display_icon) == "table" then
 			for slot9, slot10 in ipairs(slot5) do
 				table.insert(slot2, {
 					type = slot10[1],
@@ -255,15 +246,10 @@ function slot0.sortDiamondGoodsVOList(slot0)
 			return slot6 < slot7
 		end
 
-		slot8 = slot0:getConfig("tag") == 2 and 1 or 0
-		slot9 = slot1:getConfig("tag") == 2 and 1 or 0
-
-		if slot3 == slot5 and slot8 == slot9 then
+		if slot3 == slot5 and (slot0:getConfig("tag") == 2 and 1 or 0) == (slot1:getConfig("tag") == 2 and 1 or 0) then
 			return slot0.id < slot1.id
 		else
-			slot10 = slot5 < slot3 or slot3 == slot5 and slot9 < slot8
-
-			return slot10
+			return slot5 < slot3 or slot3 == slot5 and slot9 < slot8
 		end
 	end)
 end

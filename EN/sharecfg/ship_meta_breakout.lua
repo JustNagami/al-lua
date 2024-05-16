@@ -14,6 +14,14 @@ pg.ship_meta_breakout = setmetatable({
 		9701032,
 		9701033,
 		9701034,
+		9701041,
+		9701042,
+		9701043,
+		9701044,
+		9701051,
+		9701052,
+		9701053,
+		9701054,
 		9702011,
 		9702012,
 		9702013,
@@ -38,6 +46,10 @@ pg.ship_meta_breakout = setmetatable({
 		9702062,
 		9702063,
 		9702064,
+		9702071,
+		9702072,
+		9702073,
+		9702074,
 		9703011,
 		9703012,
 		9703013,
@@ -74,6 +86,10 @@ pg.ship_meta_breakout = setmetatable({
 		9705042,
 		9705043,
 		9705044,
+		9705051,
+		9705052,
+		9705053,
+		9705054,
 		9706011,
 		9706012,
 		9706013,
@@ -168,7 +184,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9701014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -231,7 +247,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9701024] = {
-		breakout_view = "无",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -294,7 +310,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9701034] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -305,6 +321,132 @@ pg.base.ship_meta_breakout = {
 		id = 9701034,
 		item1 = 21024,
 		pre_id = 9701033,
+		weapon_ids = {}
+	},
+	[9701041] = {
+		breakout_view = "Unlock Ashen Might – Kimberly/All weapons' efficiency +2%",
+		gold = 500,
+		breakout_id = 9701042,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701041,
+		item1 = 21029,
+		pre_id = 0,
+		weapon_ids = {
+			80101
+		}
+	},
+	[9701042] = {
+		breakout_view = "Torpedo base +1/Torpedo preload +1/All weapons' efficiency +3%",
+		gold = 1500,
+		breakout_id = 9701043,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701042,
+		item1 = 21029,
+		pre_id = 9701041,
+		weapon_ids = {
+			105,
+			105
+		}
+	},
+	[9701043] = {
+		breakout_view = "Improve Ashen Might – Kimberly/All weapons' efficiency +5%",
+		gold = 2500,
+		breakout_id = 9701044,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701043,
+		item1 = 21029,
+		pre_id = 9701042,
+		weapon_ids = {
+			80102
+		}
+	},
+	[9701044] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701044,
+		item1 = 21029,
+		pre_id = 9701043,
+		weapon_ids = {}
+	},
+	[9701051] = {
+		breakout_view = "Unlock Ashen Might - Vampire/Torpedo efficiency +5%",
+		gold = 500,
+		breakout_id = 9701052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701051,
+		item1 = 21032,
+		pre_id = 0,
+		weapon_ids = {
+			80221
+		}
+	},
+	[9701052] = {
+		breakout_view = "Torpedo base +1/Torpedo preload +1/Main gun efficiency +10%",
+		gold = 1500,
+		breakout_id = 9701053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701052,
+		item1 = 21032,
+		pre_id = 9701051,
+		weapon_ids = {
+			105,
+			105
+		}
+	},
+	[9701053] = {
+		breakout_view = "Improve Ashen Might - Vampire/All weapons' efficiency +5%",
+		gold = 2500,
+		breakout_id = 9701054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701053,
+		item1 = 21032,
+		pre_id = 9701052,
+		weapon_ids = {
+			80222
+		}
+	},
+	[9701054] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701054,
+		item1 = 21032,
+		pre_id = 9701053,
 		weapon_ids = {}
 	},
 	[9702011] = {
@@ -357,7 +499,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9702014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -420,7 +562,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9702024] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -483,7 +625,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9702034] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -546,7 +688,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9702044] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -609,7 +751,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9702054] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -685,6 +827,69 @@ pg.base.ship_meta_breakout = {
 		pre_id = 9702063,
 		weapon_ids = {}
 	},
+	[9702071] = {
+		breakout_view = "Unlock Flickering Light - Pamiat' Merkuria/Main gun efficiency +5%",
+		gold = 1000,
+		breakout_id = 9702072,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9702071,
+		item1 = 21030,
+		pre_id = 0,
+		weapon_ids = {
+			170411
+		}
+	},
+	[9702072] = {
+		breakout_view = "Main gun base +1/Main gun efficiency +10%",
+		gold = 3000,
+		breakout_id = 9702073,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9702072,
+		item1 = 21030,
+		pre_id = 9702071,
+		weapon_ids = {
+			7200,
+			7200
+		}
+	},
+	[9702073] = {
+		breakout_view = "Improve Flickering Light - Pamiat' Merkuria/Main gun efficiency +15%",
+		gold = 10000,
+		breakout_id = 9702074,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9702073,
+		item1 = 21030,
+		pre_id = 9702072,
+		weapon_ids = {
+			170412
+		}
+	},
+	[9702074] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9702074,
+		item1 = 21030,
+		pre_id = 9702073,
+		weapon_ids = {}
+	},
 	[9703011] = {
 		breakout_view = "Unlock Flickering Light – Trento/Main gun efficiency +5%",
 		gold = 500,
@@ -735,7 +940,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9703014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -800,7 +1005,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9704014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -865,7 +1070,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9704024] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -932,7 +1137,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9704034] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -999,7 +1204,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9704044] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1066,7 +1271,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9705014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1132,7 +1337,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9705024] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1199,7 +1404,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9705034] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1266,7 +1471,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9705044] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1277,6 +1482,73 @@ pg.base.ship_meta_breakout = {
 		id = 9705044,
 		item1 = 21019,
 		pre_id = 9705043,
+		weapon_ids = {}
+	},
+	[9705051] = {
+		breakout_view = "Unlock Framework of Logic - Rodney/Main gun base +1/Main gun efficiency +5%",
+		gold = 1000,
+		breakout_id = 9705052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9705051,
+		item1 = 21031,
+		pre_id = 0,
+		weapon_ids = {
+			24200,
+			24200
+		}
+	},
+	[9705052] = {
+		breakout_view = "Secondary Gun base +2/Main gun efficiency +10%",
+		gold = 3000,
+		breakout_id = 9705053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9705052,
+		item1 = 21031,
+		pre_id = 9705051,
+		weapon_ids = {
+			22100,
+			22100,
+			22100
+		}
+	},
+	[9705053] = {
+		breakout_view = "Improve Framework of Logic - Rodney/Main gun base +1/Main gun efficiency +15%",
+		gold = 10000,
+		breakout_id = 9705054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9705053,
+		item1 = 21031,
+		pre_id = 9705052,
+		weapon_ids = {
+			24200,
+			24200,
+			24200
+		}
+	},
+	[9705054] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9705054,
+		item1 = 21031,
+		pre_id = 9705053,
 		weapon_ids = {}
 	},
 	[9706011] = {
@@ -1335,7 +1607,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9706014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1404,7 +1676,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9706024] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1473,7 +1745,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9706034] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1542,7 +1814,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9707014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1611,7 +1883,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9707024] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1680,7 +1952,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9707034] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1745,7 +2017,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9708014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1801,7 +2073,7 @@ pg.base.ship_meta_breakout = {
 		weapon_ids = {}
 	},
 	[9712014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1864,7 +2136,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9703024] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,
@@ -1930,7 +2202,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9713014] = {
-		breakout_view = "N/A",
+		breakout_view = "None",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,

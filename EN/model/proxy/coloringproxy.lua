@@ -134,11 +134,10 @@ function slot0.CheckTodayTip(slot0)
 	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA) and not slot2:isEnd() and slot0.startTime then
 		slot3 = pg.TimeMgr.GetInstance()
 		slot9 = slot3
-		slot4 = math.min(slot3:DiffDay(slot0.startTime, slot3.GetServerTime(slot9)) + 1, #slot0.colorGroups)
 		slot5 = slot0:GetViewedPage()
 
 		for slot9, slot10 in ipairs(slot0.colorGroups) do
-			if slot4 < slot9 then
+			if math.min(slot3:DiffDay(slot0.startTime, slot3.GetServerTime(slot9)) + 1, #slot0.colorGroups) < slot9 then
 				break
 			end
 

@@ -17,9 +17,8 @@ function slot0.Init(slot0, slot1)
 
 	if not slot0._tf then
 		slot0.isloading = true
-		slot2 = ResourceMgr.Inst
 
-		slot2:getAssetAsync("ui/" .. slot0:GetUIName(), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("ui/" .. slot0:GetUIName(), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			uv0.isloading = false
 
 			if uv0.exited then
@@ -27,13 +26,9 @@ function slot0.Init(slot0, slot1)
 			end
 
 			uv0._tf = Object.Instantiate(slot0, uv0.parentTf).transform
-			slot1 = uv0
 
-			slot1:OnRegister()
-
-			slot1 = uv0
-
-			slot1:OnInit()
+			uv0:OnRegister()
+			uv0:OnInit()
 			onButton(uv0, uv0._tf, function ()
 				uv0:OnClick()
 			end, SFX_MAIN)

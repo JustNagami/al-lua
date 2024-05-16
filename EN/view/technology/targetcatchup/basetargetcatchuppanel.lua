@@ -3,10 +3,7 @@ slot0.SELECT_CHAR_LIGHT_FADE_TIME = 0.3
 
 function slot0.Ctor(slot0, slot1, slot2)
 	uv0.super.Ctor(slot0)
-
-	slot3 = PoolMgr.GetInstance()
-
-	slot3:GetUI(slot0:getUIName(), true, function (slot0)
+	PoolMgr.GetInstance():GetUI(slot0:getUIName(), true, function (slot0)
 		slot0.transform:SetParent(uv0, false)
 		uv1:onUILoaded(slot0)
 
@@ -139,7 +136,7 @@ function slot0.updateCharTpl(slot0, slot1, slot2)
 	slot8 = slot0.charIDList[slot1]
 	slot11 = pg.ship_data_blueprint[slot8].strengthen_item
 
-	setText(slot0:findTF("PrintNum/NumText", slot2), math.max(slot0.configCatchup[slot0.tecID].blueprint_max[slot1] - (slot0.bayProxy:findShipByGroup(slot8) and math.floor(slot0:getShipBluePrintCurExp(slot0.technologyProxy:getBluePrintVOByGroupID(slot8)) / pg.item_data_template[slot11].usage_arg[1]) or 0) - slot0.bagProxy:getItemCountById(slot11), 0))
+	setText(slot0:findTF("PrintNum/NumText", slot2), math.max(slot0.configCatchup[slot0.tecID].blueprint_max[slot1] - (slot0.bayProxy:findShipByGroup(slot8) and math.floor(slot0:getShipBluePrintCurExp(slot0.technologyProxy:getBluePrintVOByGroupID(slot8)) / Item.getConfigData(slot11).usage_arg[1]) or 0) - slot0.bagProxy:getItemCountById(slot11), 0))
 	setText(slot0:findTF("NameText", slot2), ShipGroup.getDefaultShipNameByGroupID(slot8))
 	setActive(slot0:findTF("LevelText", slot2), slot9)
 	setActive(slot0:findTF("NotGetTag", slot2), not slot9)
@@ -199,13 +196,10 @@ end
 function slot0.updateProgress(slot0, slot1)
 	setActive(slot0:findTF("ProgressTitle", slot0.choosePanel), true)
 
-	slot3 = slot0.technologyProxy:getCatchupData(slot0.tecID):getTargetNum(slot1)
-	slot4 = slot0:getMaxNum(slot1)
-
 	if slot0:isUR(slot1) then
 		setActive(slot0.urProgress, true)
 		setActive(slot0.ssrProgress, false)
-		setText(slot0:findTF("Text", slot0.urProgress), slot3 .. "/" .. slot4)
+		setText(slot0:findTF("Text", slot0.urProgress), slot0.technologyProxy:getCatchupData(slot0.tecID):getTargetNum(slot1) .. "/" .. slot0:getMaxNum(slot1))
 	else
 		setActive(slot0.urProgress, false)
 		setActive(slot0.ssrProgress, true)
@@ -233,12 +227,10 @@ end
 
 function slot0.getShipBluePrintCurExp(slot0, slot1)
 	slot3 = slot1.fateLevel
-	slot5 = slot1:getConfig("strengthen_effect")
 	slot6 = slot1:getConfig("fate_strengthen")
-	slot7 = 0 + slot1.exp
 
 	for slot11 = 1, slot1.level do
-		slot7 = slot7 + pg.ship_strengthen_blueprint[slot5[slot11]].need_exp
+		slot7 = 0 + slot1.exp + pg.ship_strengthen_blueprint[slot1:getConfig("strengthen_effect")[slot11]].need_exp
 	end
 
 	for slot11 = 1, slot3 do

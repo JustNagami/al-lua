@@ -27,18 +27,16 @@ function slot0.initData(slot0)
 end
 
 function slot0.initUI(slot0)
-	slot1 = slot0:findTF("DayImg")
 	slot0.daySpriteList = {}
 
 	for slot5 = 0, slot0.totalDayCount - 1 do
-		table.insert(slot0.daySpriteList, getImageSprite(slot1:GetChild(slot5)))
+		table.insert(slot0.daySpriteList, getImageSprite(slot0:findTF("DayImg"):GetChild(slot5)))
 	end
 
 	slot0.itemTpl = slot0:findTF("ItemTpl")
 	slot0.taskUIList = UIItemList.New(slot0:findTF("ScrollRect/Container"), slot0:findTF("TaskTpl"))
-	slot4 = slot0.taskUIList
 
-	slot4:make(function (slot0, slot1, slot2)
+	slot0.taskUIList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:updateTask(slot2, uv0.taskVOListForShow[slot1 + 1])
 		end
@@ -55,14 +53,13 @@ function slot0.initUI(slot0)
 			return
 		else
 			slot1 = {}
-			slot2 = {}
 
 			for slot7, slot8 in ipairs(uv0:getTaskVOList()) do
 				slot10, slot11 = uv0:isTaskOverflow(slot8)
 
 				if slot8:getTaskStatus() == 1 and uv0:isTaskUnlocked(slot8) and not slot10 then
 					table.insert(slot1, slot8)
-					table.insert(slot2, slot8.id)
+					table.insert({}, slot8.id)
 				end
 			end
 
@@ -92,12 +89,10 @@ function slot0.updateOutline(slot0)
 end
 
 function slot0.updateItem(slot0, slot1, slot2)
-	slot3 = slot0:findTF("Icon", slot1)
-
 	setText(slot0:findTF("Count", slot1), slot2.count)
 
 	if slot2.type ~= DROP_TYPE_SHIP then
-		setImageSprite(slot3, LoadSprite(getDropIcon(slot2)))
+		setImageSprite(slot0:findTF("Icon", slot1), LoadSprite(slot2:getIcon()))
 	else
 		setImageSprite(slot3, LoadSprite("QIcon/" .. Ship.New({
 			configId = slot2.id
@@ -142,13 +137,6 @@ function slot0.updateTask(slot0, slot1, slot2)
 		})
 	end, SFX_PANEL)
 	onButton(slot0, slot0:findTF("Btn", slot7), function ()
-		function slot0()
-			pg.m02:sendNotification(GAME.SUBMIT_TASK, uv0.id)
-			uv1:setLastSubmitTask({
-				uv0.id
-			})
-		end
-
 		slot1, slot2 = uv1:isTaskOverflow(uv0)
 
 		if slot1 then
@@ -156,7 +144,12 @@ function slot0.updateTask(slot0, slot1, slot2)
 				type = MSGBOX_TYPE_ITEM_BOX,
 				content = i18n("award_max_warning"),
 				items = slot2,
-				onYes = slot0
+				onYes = function ()
+					pg.m02:sendNotification(GAME.SUBMIT_TASK, uv0.id)
+					uv1:setLastSubmitTask({
+						uv0.id
+					})
+				end
 			})
 		else
 			slot0()
@@ -166,12 +159,11 @@ end
 
 function slot0.updateTaskProgress(slot0)
 	slot1 = slot0:getTaskVOList()
-	slot2 = 0
 	slot3 = #slot1
 
 	for slot7, slot8 in ipairs(slot1) do
 		if slot0:isTaskUnlocked(slot8) then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 	end
 
@@ -179,11 +171,9 @@ function slot0.updateTaskProgress(slot0)
 end
 
 function slot0.updateOneStepBtn(slot0)
-	slot1 = 0
-
 	for slot6, slot7 in ipairs(slot0:getTaskVOList()) do
 		if slot7:getTaskStatus() == 1 and slot0:isTaskUnlocked(slot7) then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 
@@ -233,10 +223,8 @@ function slot0.getTaskVOListForShow(slot0)
 		return slot0.id < slot1.id
 	end)
 
-	slot5 = {}
-
 	for slot9, slot10 in ipairs(slot1) do
-		table.insert(slot5, slot10)
+		table.insert({}, slot10)
 	end
 
 	for slot9, slot10 in ipairs(slot2) do
@@ -275,14 +263,12 @@ function slot0.isTaskListOverflow(slot0)
 	for slot6, slot7 in ipairs(slot0:getTaskVOList()) do
 		if slot7:getTaskStatus() == 1 and slot0:isTaskUnlocked(slot7) then
 			slot9 = slot0:getTaskAwardForShow(slot7)
-			slot10 = slot9[1].type
-			slot12 = slot9[1].count
 
 			if not slot1[slot9[1].id] then
 				slot13 = {
-					slot10,
+					slot9[1].type,
 					slot11,
-					slot12
+					slot9[1].count
 				}
 			else
 				slot13[3] = slot13[3] + slot12
@@ -312,12 +298,11 @@ function slot0.clearLastSubmitTask(slot0)
 end
 
 function slot0.calcLastSubmitTaskPT(slot0)
-	slot1 = 0
 	slot2 = 0
 
 	for slot6, slot7 in ipairs(slot0.lastSubmitTaskIDList) do
 		slot8 = pg.return_task_template[slot7]
-		slot1 = slot1 + slot8.pt_award
+		slot1 = 0 + slot8.pt_award
 		slot2 = slot8.pt_item
 	end
 
@@ -335,9 +320,7 @@ function slot0.getTaskAwardForShow(slot0, slot1)
 	slot6 = nil
 
 	for slot10, slot11 in ipairs(pg.return_task_template[slot1.id].level) do
-		slot13 = slot11[2]
-
-		if slot11[1] <= slot5 and slot5 <= slot13 then
+		if slot11[1] <= slot5 and slot5 <= slot11[2] then
 			slot6 = slot10
 		end
 	end
@@ -345,39 +328,36 @@ function slot0.getTaskAwardForShow(slot0, slot1)
 	slot7 = {}
 	slot9 = slot3.award_display[slot6]
 
-	table.insert(slot7, {
+	table.insert(slot7, Drop.New({
 		type = slot9[1],
 		id = slot9[2],
 		count = slot9[3]
-	})
-	table.insert(slot7, {
+	}))
+	table.insert(slot7, Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = slot3.pt_item,
 		count = slot3.pt_award
-	})
+	}))
 
 	return slot7
 end
 
 function slot0.isAnyTaskCanGetAward()
-	slot0 = getProxy(TaskProxy)
 	slot1 = getProxy(RefluxProxy)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(pg.return_task_template.all) do
-		table.insert(slot2, slot0:getTaskVO(slot7))
+		table.insert(slot2, getProxy(TaskProxy):getTaskVO(slot7))
 	end
 
 	function slot3(slot0)
 		return pg.return_task_template[slot0.id].reward_date
 	end
 
-	function slot4(slot0)
-		return uv0(slot0) <= uv1.signCount
-	end
-
 	for slot8, slot9 in ipairs(slot2) do
-		if slot9:getTaskStatus() == 1 and slot4(slot9) then
+		if slot9:getTaskStatus() == 1 and function (slot0)
+			return uv0(slot0) <= uv1.signCount
+		end(slot9) then
 			return true
 		end
 	end

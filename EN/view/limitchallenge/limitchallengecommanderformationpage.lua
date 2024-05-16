@@ -42,11 +42,10 @@ end
 function slot0.Update(slot0, slot1, slot2)
 	slot0.fleet = slot1
 	slot0.prefabFleets = slot2
-	slot3 = slot0.fleet:getCommanders()
 
 	for slot7 = 1, CommanderConst.MAX_FORMATION_POS do
 		assert(slot0["pos" .. slot7], "pos tf can not nil")
-		slot0:updateCommander(slot0["pos" .. slot7], slot7, slot3[slot7])
+		slot0:updateCommander(slot0["pos" .. slot7], slot7, slot0.fleet:getCommanders()[slot7])
 	end
 
 	slot0:updateDesc()
@@ -88,10 +87,7 @@ function slot0.closeDescPanel(slot0, slot1)
 	setAnchoredPosition(slot0.descFrameTF, {
 		x = 0
 	})
-
-	slot3 = LeanTween.moveX(slot0.descFrameTF, 800, slot2)
-
-	slot3:setOnComplete(System.Action(function ()
+	LeanTween.moveX(slot0.descFrameTF, 800, slot2):setOnComplete(System.Action(function ()
 		setActive(uv0.descPanel, false)
 		pg.UIMgr.GetInstance():UnOverlayPanel(uv0._tf, uv0._parentTf)
 		setAnchoredPosition(uv0.samllTF, {
@@ -104,10 +100,8 @@ function slot0.closeDescPanel(slot0, slot1)
 end
 
 function slot0.updateDesc(slot0)
-	slot1 = slot0.fleet:getCommanders()
-
 	for slot5 = 1, CommanderConst.MAX_FORMATION_POS do
-		slot6 = slot1[slot5]
+		slot6 = slot0.fleet:getCommanders()[slot5]
 
 		assert(slot0["pos" .. slot5], "pos tf can not nil")
 		slot0:updateCommander(slot0["descPos" .. slot5], slot5, slot6, true)

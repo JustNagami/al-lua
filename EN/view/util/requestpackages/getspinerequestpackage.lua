@@ -5,9 +5,7 @@ function slot0.__call(slot0)
 		return
 	end
 
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetSpineChar(slot0.name, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(slot0.name, true, function (slot0)
 		if uv0.stopped then
 			PoolMgr.GetInstance():ReturnSpineChar(uv1, slot0)
 

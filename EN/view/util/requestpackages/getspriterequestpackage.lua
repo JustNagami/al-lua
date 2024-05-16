@@ -5,9 +5,7 @@ function slot0.__call(slot0)
 		return
 	end
 
-	slot3 = PoolMgr.GetInstance()
-
-	slot3:GetSprite(slot0.path, slot0.name, true, function (slot0)
+	PoolMgr.GetInstance():GetSprite(slot0.path, slot0.name, true, function (slot0)
 		if uv0.stopped then
 			PoolMgr.GetInstance():DecreasSprite(uv1, uv2)
 

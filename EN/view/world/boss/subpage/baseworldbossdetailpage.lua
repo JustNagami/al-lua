@@ -217,7 +217,7 @@ function slot0.UpdateAward(slot0)
 			}
 
 			updateDrop(slot2:Find("equipment/bg"), slot4)
-			slot2:Find("mask/name"):GetComponent("ScrollText"):SetText(slot4.cfg.name)
+			slot2:Find("mask/name"):GetComponent("ScrollText"):SetText(slot4:getConfig("name"))
 			onButton(uv1, slot2, function ()
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
@@ -247,18 +247,14 @@ function slot0.AddChanllengTimer(slot0)
 		return
 	end
 
-	slot2 = pg.TimeMgr.GetInstance()
+	if slot1:GetExpiredTime() < pg.TimeMgr.GetInstance():GetServerTime() then
+		function ()
+			uv0.leftTime.text = i18n("world_word_expired")
 
-	function slot4()
-		uv0.leftTime.text = i18n("world_word_expired")
-
-		onNextTick(function ()
-			uv0:OnBossExpired()
-		end)
-	end
-
-	if slot1:GetExpiredTime() < slot2:GetServerTime() then
-		slot4()
+			onNextTick(function ()
+				uv0:OnBossExpired()
+			end)
+		end()
 	else
 		slot0.bossTimer = Timer.New(function ()
 			if uv0 - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
@@ -287,18 +283,14 @@ function slot0.AddGetAwaradTimer(slot0)
 		return
 	end
 
-	slot2 = pg.TimeMgr.GetInstance()
+	if slot1:GetExpiredTime() < pg.TimeMgr.GetInstance():GetServerTime() then
+		function ()
+			uv0.leftTime.text = i18n("world_word_expired")
 
-	function slot4()
-		uv0.leftTime.text = i18n("world_word_expired")
-
-		onNextTick(function ()
-			uv0:OnBossExpired()
-		end)
-	end
-
-	if slot1:GetExpiredTime() < slot2:GetServerTime() then
-		slot4()
+			onNextTick(function ()
+				uv0:OnBossExpired()
+			end)
+		end()
 	else
 		slot0.awardTimer = Timer.New(function ()
 			if uv0 - pg.TimeMgr.GetInstance():GetServerTime() > 0 then

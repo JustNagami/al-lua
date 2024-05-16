@@ -5,19 +5,15 @@ slot3 = true
 
 function slot0.Ctor(slot0, slot1)
 	slot0.member = {}
-	slot2 = ipairs
-	slot3 = slot1.member or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1.member or {}) do
 		slot7 = GuildMember.New(slot6)
 		slot0.member[slot7.id] = slot7
 	end
 
 	slot0.logInfo = {}
-	slot2 = ipairs
-	slot3 = slot1.log or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1.log or {}) do
 		table.insert(slot0.logInfo, GuildLogInfo.New(slot6))
 	end
 
@@ -68,10 +64,7 @@ function slot0.updateExtraInfo(slot0, slot1)
 		slot0.technologyGroups[slot9.id] = slot9
 	end
 
-	slot4 = ipairs
-	slot5 = slot2.technologys or {}
-
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot2.technologys or {}) do
 		slot0.technologyGroups[uv0[slot8.id].group]:update(slot8)
 	end
 
@@ -98,10 +91,8 @@ function slot0.updateUserInfo(slot0, slot1)
 
 	slot0.refreshCaptialTime = 0
 	slot0.donateTasks = {}
-	slot3 = ipairs
-	slot4 = slot2.donate_tasks or {}
 
-	for slot6, slot7 in slot3(slot4) do
+	for slot6, slot7 in ipairs(slot2.donate_tasks or {}) do
 		table.insert(slot0.donateTasks, GuildDonateTask.New({
 			id = slot7
 		}))
@@ -113,10 +104,7 @@ function slot0.updateUserInfo(slot0, slot1)
 		slot0.technologys[slot6] = GuildTechnology.New(slot0.technologyGroups[slot6])
 	end
 
-	slot3 = ipairs
-	slot4 = slot2.tech_id or {}
-
-	for slot6, slot7 in slot3(slot4) do
+	for slot6, slot7 in ipairs(slot2.tech_id or {}) do
 		slot8 = uv0[slot7].group
 
 		slot0.technologys[slot8]:Update(slot7, slot0.technologyGroups[slot8])
@@ -277,18 +265,16 @@ end
 
 function slot0.getSupplyCnt(slot0)
 	slot1 = 0
-	slot2 = pg.TimeMgr.GetInstance():GetServerTime()
 
 	if slot0.benefitFinishTime > 0 then
-		slot2 = math.min(slot0.benefitFinishTime, slot2)
+		slot2 = math.min(slot0.benefitFinishTime, pg.TimeMgr.GetInstance():GetServerTime())
 	end
 
 	slot3 = slot0:getSupplyStartTime()
-	slot1 = (slot0.benefitTime ~= 0 and slot0.benefitTime >= slot3 or math.ceil((slot2 - slot3) / 86400)) and math.floor(math.max(0, slot2 - slot0.benefitTime) / 86400)
 	slot5 = slot0:getMemberById(getProxy(PlayerProxy):getRawData().id):GetJoinZeroTime()
 
 	if slot0.lastBenefitFinishTime > 0 and slot0.benefitTime < slot0.lastBenefitFinishTime and slot5 <= slot0.lastBenefitFinishTime then
-		slot1 = math.ceil((slot0.lastBenefitFinishTime - (slot0.benefitTime <= 0 and slot5 or slot0.benefitTime)) / 86400) + slot1
+		slot1 = math.ceil((slot0.lastBenefitFinishTime - (slot0.benefitTime <= 0 and slot5 or slot0.benefitTime)) / 86400) + ((slot0.benefitTime ~= 0 and slot0.benefitTime >= slot3 or math.ceil((slot2 - slot3) / 86400)) and math.floor(math.max(0, slot2 - slot0.benefitTime) / 86400))
 	end
 
 	return math.min(slot1, GuildConst.MAX_SUPPLY_CNT)
@@ -441,11 +427,9 @@ function slot0.getAssistantMaxCount(slot0)
 end
 
 function slot0.getAssistantCount(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in pairs(slot0.member) do
 		if slot6.duty == GuildConst.DUTY_DEPUTY_COMMANDER then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 
@@ -557,9 +541,7 @@ end
 slot4 = 86400
 
 function slot0.inChangefactionTime(slot0)
-	slot1 = slot0.changeFactionTime - pg.TimeMgr.GetInstance():GetServerTime()
-
-	if slot0.changeFactionTime ~= 0 and slot1 >= 0 then
+	if slot0.changeFactionTime ~= 0 and slot0.changeFactionTime - pg.TimeMgr.GetInstance():GetServerTime() >= 0 then
 		return true
 	end
 end
@@ -731,9 +713,9 @@ function slot0.IsFinishAllTechnologyGroup(slot0)
 end
 
 function slot0.ShouldShowSupplyTip(slot0)
-	return slot0:isOpenedSupply() and slot0:getSupplyCnt() > 0 and (function ()
+	return slot0:isOpenedSupply() and slot0:getSupplyCnt() > 0 and function ()
 		return not uv0:getMemberById(getProxy(PlayerProxy):getRawData().id):IsRecruit() and not slot1:isNewMember()
-	end)()
+	end()
 end
 
 function slot0.GetMembers(slot0)
@@ -770,20 +752,16 @@ end
 
 function slot0.GetMemberShips(slot0, slot1)
 	slot2 = {}
-	slot3 = {}
-	slot4 = getProxy(PlayerProxy)
-	slot4 = slot4:getRawData().id
-
-	function slot5(slot0)
-		return uv0 == slot0.id
-	end
+	slot4 = getProxy(PlayerProxy):getRawData().id
 
 	for slot9, slot10 in pairs(slot0.member) do
 		slot12 = slot10:IsCommander()
 		slot10:GetShip().isCommander = slot12
 
-		if slot12 or slot5(slot10) then
-			table.insert(slot3, slot11)
+		if slot12 or function (slot0)
+			return uv0 == slot0.id
+		end(slot10) then
+			table.insert({}, slot11)
 		else
 			table.insert(slot2, slot11)
 		end

@@ -128,9 +128,8 @@ function slot1.Reconnect(slot0, slot1)
 
 				if uv3 ~= DISCONNECT_TIME_OUT and uv4:getPacketIdx() > 0 then
 					uv5.needStartSend = false
-					slot1 = uv4
 
-					slot1:Send(11001, {
+					uv4:Send(11001, {
 						timestamp = 1
 					}, 11002, function (slot0)
 						uv0.TimeMgr.GetInstance():SetServerTime(slot0.timestamp, slot0.monday_0oclock_timestamp)
@@ -194,10 +193,9 @@ end
 function slot1.onData(slot0)
 	if uv0[slot0.cmd] then
 		slot5 = slot0
-		slot1 = uv1.Packer.GetInstance():Unpack(slot0.cmd, slot0.getLuaStringBuffer(slot5))
 
 		for slot5, slot6 in ipairs(uv0[slot0.cmd]) do
-			slot6(slot1)
+			slot6(uv1.Packer.GetInstance():Unpack(slot0.cmd, slot0.getLuaStringBuffer(slot5)))
 		end
 	end
 end
@@ -355,10 +353,8 @@ function slot1.resetHBTimer(slot0)
 		uv0:Send(10100, {
 			need_request = 1
 		}, 10101, function (slot0)
-			slot1 = TimeUtil.GetSystemTime() - heartTime
-
 			if pingDelay == -1 then
-				pingDelay = slot1
+				pingDelay = TimeUtil.GetSystemTime() - heartTime
 			else
 				pingDelay = (slot1 + pingDelay) / 2
 			end

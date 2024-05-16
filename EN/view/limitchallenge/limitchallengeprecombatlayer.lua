@@ -32,8 +32,7 @@ function slot0.CommonInit(slot0)
 	slot0._autoSubToggle = slot0:findTF("sub_toggle_container/sub_toggle")
 	slot0._fleetInfo = slot0._tf:Find("right/fleet_info")
 	slot0._fleetNameText = slot0._fleetInfo:Find("fleet_name/Text")
-	slot2 = slot0._fleetInfo
-	slot0._fleetNumText = slot2:Find("fleet_number")
+	slot0._fleetNumText = slot0._fleetInfo:Find("fleet_number")
 
 	setActive(slot0._fleetInfo, true)
 
@@ -100,14 +99,9 @@ function slot0.CommonInit(slot0)
 end
 
 function slot0.Register(slot0)
-	slot1 = slot0._formationLogic
-
-	slot1:AddLoadComplete(function ()
+	slot0._formationLogic:AddLoadComplete(function ()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddHeroInfoModify(function (slot0, slot1)
+	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1)
 		setAnchoredPosition(slot0, {
 			x = 0,
 			y = 0
@@ -142,47 +136,26 @@ function slot0.Register(slot0)
 		setText(findTF(slot2, "frame/lv_contain/lv"), slot1.level)
 		setActive(slot2:Find("expbuff"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddLongPress(function (slot0, slot1, slot2, slot3)
+	slot0._formationLogic:AddLongPress(function (slot0, slot1, slot2, slot3)
 		uv0:emit(LimitChallengePreCombatMediator.OPEN_SHIP_INFO, slot1.id, slot2)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddBeginDrag(function (slot0)
+	slot0._formationLogic:AddBeginDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddEndDrag(function (slot0)
+	slot0._formationLogic:AddEndDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddClick(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddClick(function (slot0, slot1, slot2)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_CLICK)
 		uv0:emit(LimitChallengePreCombatMediator.CHANGE_FLEET_SHIP, slot0, slot2, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddShiftOnly(function (slot0)
+	slot0._formationLogic:AddShiftOnly(function (slot0)
 		uv0:emit(LimitChallengePreCombatMediator.CHANGE_FLEET_SHIPS_ORDER, slot0)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddRemoveShip(function (slot0, slot1)
+	slot0._formationLogic:AddRemoveShip(function (slot0, slot1)
 		uv0:emit(LimitChallengePreCombatMediator.REMOVE_SHIP, slot0, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
+	slot0._formationLogic:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
 		if not slot3:canRemove(slot2) then
 			slot5, slot6 = slot3:getShipPos(slot2)
 
@@ -198,27 +171,15 @@ function slot0.Register(slot0)
 			})
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToDisplayMode(function ()
+	slot0._formationLogic:AddSwitchToDisplayMode(function ()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToShiftMode(function ()
+	slot0._formationLogic:AddSwitchToShiftMode(function ()
 		uv0:SetFleetStepper()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToPreviewMode(function ()
+	slot0._formationLogic:AddSwitchToPreviewMode(function ()
 		uv0:SetFleetStepper()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddGridTipClick(function (slot0, slot1)
+	slot0._formationLogic:AddGridTipClick(function (slot0, slot1)
 		uv0:emit(LimitChallengePreCombatMediator.CHANGE_FLEET_SHIP, nil, uv0._currentFleetVO, slot0)
 	end)
 end
@@ -247,10 +208,8 @@ function slot0.SetStageID(slot0, slot1)
 	if checkExist(pg.expedition_activity_template[slot1], {
 		"pt_drop_display"
 	}) and type(slot4) == "table" then
-		slot5 = getProxy(ActivityProxy)
-
 		for slot9 = #slot4, 1, -1 do
-			if slot5:getActivityById(slot4[slot9][1]) and not slot10:isEnd() then
+			if getProxy(ActivityProxy):getActivityById(slot4[slot9][1]) and not slot10:isEnd() then
 				table.insert(slot3, 1, {
 					2,
 					id2ItemId(slot4[slot9][2])
@@ -267,7 +226,7 @@ function slot0.SetStageID(slot0, slot1)
 			type = slot9[1]
 		})
 		onButton(slot0, slot10, function ()
-			if pg.item_data_statistics[uv0[2]] and uv1[slot0.type] then
+			if Item.getConfigData(uv0[2]) and uv1[slot0.type] then
 				slot2 = {}
 
 				for slot6, slot7 in ipairs(slot0.display_icon) do
@@ -289,15 +248,6 @@ function slot0.SetStageID(slot0, slot1)
 		end, SFX_PANEL)
 	end
 
-	function slot5(slot0, slot1)
-		if type(slot0) == "table" then
-			setActive(slot1, true)
-			setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
-		else
-			setActive(slot1, false)
-		end
-	end
-
 	slot6 = {
 		findTF(slot0._goals, "goal_tpl"),
 		findTF(slot0._goals, "goal_sink"),
@@ -311,7 +261,14 @@ function slot0.SetStageID(slot0, slot1)
 		slot2.objective_3
 	}) do
 		if type(slot13) ~= "string" then
-			slot5(slot13, slot6[slot8])
+			function (slot0, slot1)
+				if type(slot0) == "table" then
+					setActive(slot1, true)
+					setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
+				else
+					setActive(slot1, false)
+				end
+			end(slot13, slot6[slot8])
 
 			slot8 = slot8 + 1
 		end
@@ -403,22 +360,16 @@ end
 
 function slot0.didEnter(slot0)
 	onButton(slot0, slot0._backBtn, function ()
-		slot0 = uv0
-
-		slot0:emit(LimitChallengePreCombatMediator.ON_UPDATE_CUSTOM_FLEET)
+		uv0:emit(LimitChallengePreCombatMediator.ON_UPDATE_CUSTOM_FLEET)
 
 		GetOrAddComponent(uv0._tf, typeof(CanvasGroup)).interactable = false
-		slot1 = uv0
 
-		slot1:uiExitAnimating()
+		uv0:uiExitAnimating()
 		LeanTween.delayedCall(0.3, System.Action(function ()
 			uv0:closeView()
 		end))
 	end, SFX_CANCEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("blur_panel/top/option"), function ()
+	onButton(slot0, slot0._tf:Find("blur_panel/top/option"), function ()
 		uv0:emit(LimitChallengePreCombatMediator.ON_UPDATE_CUSTOM_FLEET)
 		uv0:quickExitFunc()
 	end, SFX_PANEL)
@@ -449,16 +400,10 @@ function slot0.didEnter(slot0)
 			toggle = uv0._autoSubToggle
 		})
 	end, SFX_PANEL, SFX_PANEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bottom/fleet_select/regular"), function ()
+	onButton(slot0, slot0._tf:Find("bottom/fleet_select/regular"), function ()
 		uv0:emit(LimitChallengePreCombatMediator.ON_CHANGE_FLEET, FleetProxy.CHALLENGE_FLEET_ID)
 	end, SFX_PANEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bottom/fleet_select/sub"), function ()
+	onButton(slot0, slot0._tf:Find("bottom/fleet_select/sub"), function ()
 		uv0:emit(LimitChallengePreCombatMediator.ON_CHANGE_FLEET, FleetProxy.CHALLENGE_SUB_FLEET_ID)
 	end, SFX_PANEL)
 
@@ -500,17 +445,15 @@ function slot0.displayFleetInfo(slot0)
 	slot7 = slot6[#slot6]
 	slot8 = _.slice(slot6, 1, #slot6 - 1)
 
-	uv0.tweenNumText(slot0._costText, (function ()
+	uv0.tweenNumText(slot0._costText, function ()
 		slot2 = pg.battle_cost_template[uv0].oil_cost > 0
 
 		function slot3(slot0, slot1)
 			slot2 = 0
 
 			if uv0 then
-				slot2 = slot0:GetCostSum().oil
-
 				if slot1 > 0 then
-					slot2 = math.min(slot1, slot2)
+					slot2 = math.min(slot1, slot0:GetCostSum().oil)
 				end
 			end
 
@@ -518,7 +461,7 @@ function slot0.displayFleetInfo(slot0)
 		end
 
 		return 0 + slot3(uv1[1], 0) + slot3(uv2, 0)
-	end)())
+	end())
 end
 
 function slot0.SetFleetStepper(slot0)

@@ -70,10 +70,7 @@ function slot0.getTendency(slot0, slot1)
 end
 
 function slot0.updateBlueprintStates(slot0)
-	slot1 = pairs
-	slot2 = slot0.bluePrintData or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.bluePrintData or {}) do
 		slot5:updateState()
 	end
 end
@@ -154,10 +151,7 @@ function slot0.removeFirstQueueTechnology(slot0)
 end
 
 function slot0.getActivateTechnology(slot0)
-	slot1 = pairs
-	slot2 = slot0.data or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.data or {}) do
 		if slot5:isActivate() then
 			return Clone(slot5)
 		end
@@ -341,22 +335,19 @@ function slot0.calcMaxPursuingCount(slot0, slot1)
 	slot2 = pg.gameset[slot1:isRarityUR() and "blueprint_pursue_discount_ur" or "blueprint_pursue_discount_ssr"].description
 	slot3 = getProxy(PlayerProxy):getRawData():getResource(PlayerConst.ResGold)
 	slot4 = 0
-
-	function slot5(slot0)
-		slot1 = #uv0
-
-		while slot0 < uv0[slot1][1] do
-			slot1 = slot1 - 1
-		end
-
-		return uv0[slot1][2]
-	end
-
 	slot6 = nil
 	slot10 = slot1
 
 	for slot10 = slot0:getPursuingTimes(slot1.isRarityUR(slot10)) + 1, slot2[#slot2][1] - 1 do
-		if slot3 < slot1:getPursuingPrice(slot5(slot10)) then
+		if slot3 < slot1:getPursuingPrice(function (slot0)
+			slot1 = #uv0
+
+			while slot0 < uv0[slot1][1] do
+				slot1 = slot1 - 1
+			end
+
+			return uv0[slot1][2]
+		end(slot10)) then
 			return slot4
 		else
 			slot3 = slot3 - slot6
@@ -370,22 +361,19 @@ end
 function slot0.calcPursuingCost(slot0, slot1, slot2)
 	slot3 = pg.gameset[slot1:isRarityUR() and "blueprint_pursue_discount_ur" or "blueprint_pursue_discount_ssr"].description
 	slot4 = 0
-
-	function slot5(slot0)
-		slot1 = #uv0
-
-		while slot0 < uv0[slot1][1] do
-			slot1 = slot1 - 1
-		end
-
-		return uv0[slot1][2]
-	end
-
 	slot6 = nil
 	slot10 = slot1
 
 	for slot10 = slot0:getPursuingTimes(slot1.isRarityUR(slot10)) + 1, slot3[#slot3][1] - 1 do
-		slot6 = slot1:getPursuingPrice(slot5(slot10))
+		slot6 = slot1:getPursuingPrice(function (slot0)
+			slot1 = #uv0
+
+			while slot0 < uv0[slot1][1] do
+				slot1 = slot1 - 1
+			end
+
+			return uv0[slot1][2]
+		end(slot10))
 
 		if slot2 == 0 then
 			return slot4

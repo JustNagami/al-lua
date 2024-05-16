@@ -9,16 +9,14 @@ function slot0.setShips(slot0, slot1)
 end
 
 function slot0.init(slot0)
-	slot1 = slot0._tf
-	slot1 = slot1:Find("window")
+	slot1 = slot0._tf:Find("window")
 
 	setText(slot1:Find("top/bg/infomation/title"), i18n("title_info"))
 
 	slot0.btnBack = slot1:Find("top/btnBack")
 	slot0.btnConfirm = slot1:Find("button_container/confirm")
-	slot3 = slot0.btnConfirm
 
-	setText(slot3:Find("pic"), i18n("text_confirm"))
+	setText(slot0.btnConfirm:Find("pic"), i18n("text_confirm"))
 
 	slot2 = slot1:Find("item_panel")
 
@@ -27,13 +25,10 @@ function slot0.init(slot0)
 	slot0.toggleLock = slot2:Find("lock_toggle")
 	slot3 = slot2:Find("scrollview")
 	slot0.shipItemList = UIItemList.New(slot3, slot3:Find("item_tpl"))
-	slot4 = slot0.shipItemList
 
-	slot4:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.shipItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.ships[slot1]
+			slot3 = uv0.ships[slot1 + 1]
 
 			updateDrop(slot2:Find("IconTpl"), {
 				count = 1,

@@ -8,10 +8,7 @@ slot0.Listeners = {
 
 function slot0.Ctor(slot0)
 	uv0.super.Ctor(slot0)
-
-	slot1 = PoolMgr.GetInstance()
-
-	slot1:GetUI("WorldResPanel", false, function (slot0)
+	PoolMgr.GetInstance():GetUI("WorldResPanel", false, function (slot0)
 		slot0.transform:SetParent(pg.UIMgr.GetInstance().UIMain.transform, false)
 		uv0:onUILoaded(slot0)
 	end)
@@ -82,10 +79,10 @@ function slot0.init(slot0)
 	onButton(slot0, slot0.Whuobi, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_SINGLE_ITEM,
-			drop = {
+			drop = Drop.New({
 				type = DROP_TYPE_WORLD_ITEM,
 				id = WorldItem.MoneyId
-			}
+			})
 		})
 	end, SFX_PANEL)
 

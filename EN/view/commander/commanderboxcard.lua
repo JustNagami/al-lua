@@ -44,12 +44,11 @@ function slot0.Update(slot0, slot1)
 				setFillAmount(uv1.slider, 1 - slot1 / uv3)
 			end
 		end, 1, -1)
-		slot5 = slot0.timer
 
-		slot5:Start()
+		slot0.timer:Start()
 		slot0.timer.func()
 		onButton(slot0._parent, slot0.quicklyTool, function ()
-			uv0._parent:emit(CommandRoomScene.ON_QUICKLY_TOOL_WINDOW, uv1.id)
+			uv0._parent:emit(CommanderCatScene.EVENT_QUICKLY_TOOL, uv1.id)
 		end, SFX_PANEL)
 	elseif slot2 == CommanderBox.STATE_FINISHED then
 		slot0.timerTxt.text = "COMPLETE"
@@ -62,7 +61,7 @@ function slot0.Update(slot0, slot1)
 				return
 			end
 
-			uv0._parent:emit(CommandRoomMediator.ON_GET, uv1.id)
+			uv0._parent:emit(CommanderCatMediator.GET, uv1.id)
 		end, SFX_PANEL)
 	end
 
@@ -78,9 +77,7 @@ end
 slot1 = true
 
 function slot0.playAnim(slot0, slot1)
-	slot4 = slot0.boxVO
-
-	slot0:loadBox(slot4:getFetchPrefab(), slot0.boxParent, function (slot0)
+	slot0:loadBox(slot0.boxVO:getFetchPrefab(), slot0.boxParent, function (slot0)
 		uv0.spineAnimUI = slot0
 
 		slot0:SetActionCallBack(function (slot0)
@@ -103,9 +100,8 @@ function slot0.loadBox(slot0, slot1, slot2, slot3)
 		slot0:returnChar()
 
 		slot0.prefabName = slot1
-		slot5 = PoolMgr.GetInstance()
 
-		slot5:GetSpineChar(slot1, true, function (slot0)
+		PoolMgr.GetInstance():GetSpineChar(slot1, true, function (slot0)
 			if uv0.exited or uv1 ~= uv0.prefabName then
 				PoolMgr.GetInstance():ReturnSpineChar(uv1, slot0)
 

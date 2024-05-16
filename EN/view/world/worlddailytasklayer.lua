@@ -19,38 +19,24 @@ function slot0.init(slot0)
 
 	slot0.rtBg = slot0:findTF("bg")
 	slot0.rtBlurPanel = slot0:findTF("blur_panel")
-	slot1 = slot0.rtBlurPanel
-	slot0.rtTasks = slot1:Find("adapt/tasks")
-	slot2 = slot0.rtTasks
+	slot0.rtTasks = slot0.rtBlurPanel:Find("adapt/tasks")
 
-	setText(slot2:Find("frame/empty/Text"), i18n("world_daily_task_none"))
+	setText(slot0.rtTasks:Find("frame/empty/Text"), i18n("world_daily_task_none"))
+	setText(slot0.rtTasks:Find("frame/empty/Text_en"), i18n("world_daily_task_none_2"))
 
-	slot2 = slot0.rtTasks
-
-	setText(slot2:Find("frame/empty/Text_en"), i18n("world_daily_task_none_2"))
-
-	slot1 = slot0.rtBlurPanel
-	slot0.rtTop = slot1:Find("adapt/top")
-	slot1 = slot0.rtTop
-	slot0.btnBack = slot1:Find("title/back_button")
-	slot1 = slot0.rtTop
-	slot0.btnAllAccept = slot1:Find("title/btn_accept_all")
-	slot1 = slot0.rtTop
-	slot0.rtTopTitle = slot1:Find("title")
-	slot1 = slot0.rtTopTitle
-	slot0.rtImageTitle = slot1:Find("print/title")
-	slot1 = slot0.rtTopTitle
-	slot0.rtImageTitleTask = slot1:Find("print/title_task")
-	slot1 = slot0.rtTopTitle
-	slot0.rtImageTitleShop = slot1:Find("print/title_shop")
+	slot0.rtTop = slot0.rtBlurPanel:Find("adapt/top")
+	slot0.btnBack = slot0.rtTop:Find("title/back_button")
+	slot0.btnAllAccept = slot0.rtTop:Find("title/btn_accept_all")
+	slot0.rtTopTitle = slot0.rtTop:Find("title")
+	slot0.rtImageTitle = slot0.rtTopTitle:Find("print/title")
+	slot0.rtImageTitleTask = slot0.rtTopTitle:Find("print/title_task")
+	slot0.rtImageTitleShop = slot0.rtTopTitle:Find("print/title_shop")
 	slot0.rtTaskWindow = slot0:findTF("task_window")
 	slot0.wsTasks = {}
-	slot1 = slot0.rtTasks
-	slot1 = slot1:Find("frame/viewport/content")
+	slot1 = slot0.rtTasks:Find("frame/viewport/content")
 	slot0.taskItemList = UIItemList.New(slot1, slot1:GetChild(0))
-	slot3 = slot0.taskItemList
 
-	slot3:make(function (slot0, slot1, slot2)
+	slot0.taskItemList:make(function (slot0, slot1, slot2)
 		slot1 = slot1 + 1
 
 		if slot0 == UIItemList.EventUpdate then

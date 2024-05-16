@@ -95,7 +95,7 @@ function slot0.IsInvincible(slot0)
 	return slot0._attr.isInvincible and slot1 > 0
 end
 
-function slot0.Whosyourdaddy(slot0)
+function slot0.AppendInvincible(slot0)
 	slot0._attr.isInvincible = (slot0._attr.isInvincible or 0) + 1
 end
 
@@ -265,6 +265,7 @@ function slot0.SetPlayerAttrFromOutBattle(slot0, slot1, slot2)
 	slot3.oxyMax = slot1.oxy_max
 	slot3.oxyCost = slot1.oxy_cost
 	slot3.oxyRecovery = slot1.oxy_recovery
+	slot3.oxyRecoverySurface = slot1.oxy_recovery_surface
 	slot3.oxyRecoveryBench = slot1.oxy_recovery_bench
 	slot3.oxyAtkDuration = slot1.attack_duration
 	slot3.raidDist = slot1.raid_distance
@@ -565,10 +566,8 @@ function slot0.SetFusionAttrFromElement(slot0, slot1, slot2, slot3)
 		end
 	end
 
-	slot7 = slot1:GetHP()
-
 	for slot11, slot12 in ipairs(slot2) do
-		slot7 = slot7 + slot12:GetHP()
+		slot7 = slot1:GetHP() + slot12:GetHP()
 	end
 
 	slot6.maxHP = slot7
@@ -680,15 +679,15 @@ function slot0.RatioIncrease(slot0, slot1, slot2)
 end
 
 function slot0.GetTagAttr(slot0, slot1, slot2)
-	slot4 = {}
-
 	for slot8, slot9 in ipairs(slot1:GetLabelTag()) do
-		slot4[uv0.TAG_EHC_KEY .. slot9] = true
+		-- Nothing
 	end
 
 	slot5 = 1
 
-	for slot9, slot10 in pairs(slot4) do
+	for slot9, slot10 in pairs({
+		[uv0.TAG_EHC_KEY .. slot9] = true
+	}) do
 		if uv0.GetCurrent(slot0, slot9) ~= 0 then
 			if slot2 then
 				slot11 = ys.Battle.BattleDataFunction.GetLimitAttributeRange(slot9, slot11)
@@ -699,10 +698,8 @@ function slot0.GetTagAttr(slot0, slot1, slot2)
 	end
 
 	if uv0.GetCurrent(slot1, uv0.FROM_TAG_EHC_KEY) > 0 then
-		slot8 = uv0.FROM_TAG_EHC_KEY .. slot0:GetWeaponTempData().attack_attribute .. "_"
-
 		for slot13, slot14 in pairs(uv0.GetCurrentTags(slot0)) do
-			if slot14 > 0 and uv0.GetCurrent(slot1, slot8 .. slot13) ~= 0 then
+			if slot14 > 0 and uv0.GetCurrent(slot1, uv0.FROM_TAG_EHC_KEY .. slot0:GetWeaponTempData().attack_attribute .. "_" .. slot13) ~= 0 then
 				slot5 = slot5 * (1 + slot16)
 			end
 		end
@@ -712,17 +709,15 @@ function slot0.GetTagAttr(slot0, slot1, slot2)
 end
 
 function slot0.GetTagAttrCri(slot0, slot1)
-	slot3 = {}
-
 	for slot7, slot8 in ipairs(slot1:GetLabelTag()) do
-		slot3[uv0.TAG_CRI_EHC_KEY .. slot8] = true
+		-- Nothing
 	end
 
-	slot4 = 0
-
-	for slot8, slot9 in pairs(slot3) do
+	for slot8, slot9 in pairs({
+		[uv0.TAG_CRI_EHC_KEY .. slot8] = true
+	}) do
 		if uv0.GetCurrent(slot0, slot8) ~= 0 then
-			slot4 = slot4 + slot10
+			slot4 = 0 + slot10
 		end
 	end
 
@@ -730,17 +725,15 @@ function slot0.GetTagAttrCri(slot0, slot1)
 end
 
 function slot0.GetTagAttrCriDmg(slot0, slot1)
-	slot3 = {}
-
 	for slot7, slot8 in ipairs(slot1:GetLabelTag()) do
-		slot3[uv0.TAG_CRIDMG_EHC_KEY .. slot8] = true
+		-- Nothing
 	end
 
-	slot4 = 0
-
-	for slot8, slot9 in pairs(slot3) do
+	for slot8, slot9 in pairs({
+		[uv0.TAG_CRIDMG_EHC_KEY .. slot8] = true
+	}) do
 		if uv0.GetCurrent(slot0, slot8) ~= 0 then
-			slot4 = slot4 + slot10
+			slot4 = 0 + slot10
 		end
 	end
 

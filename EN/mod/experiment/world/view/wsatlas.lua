@@ -197,9 +197,7 @@ function slot0.DestroyActiveMark(slot0)
 end
 
 function slot0.LoadExtraMarkPrefab(slot0, slot1, slot2, slot3)
-	slot4 = PoolMgr.GetInstance()
-
-	slot4:GetPrefab("world/mark/" .. slot2, slot2, true, function (slot0)
+	PoolMgr.GetInstance():GetPrefab("world/mark/" .. slot2, slot2, true, function (slot0)
 		if IsNil(uv0) then
 			uv1:ReturnPrefab("world/mark/" .. uv2, uv2, slot0, true)
 		else
@@ -242,10 +240,7 @@ function slot0.UpdateStaticMark(slot0, slot1)
 		slot0:ActiveStatic(slot0.atlas:GetEntrance(slot5), false)
 	end
 
-	slot2 = pairs
-	slot3 = slot1 or {}
-
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in pairs(slot1 or {}) do
 		if slot6 then
 			slot0:ActiveStatic(slot0.atlas:GetEntrance(slot5), true)
 		end
@@ -253,9 +248,7 @@ function slot0.UpdateStaticMark(slot0, slot1)
 end
 
 function slot0.OnUpdatePressingAward(slot0, slot1, slot2, slot3)
-	slot3 = slot3 or slot0.atlas.transportDic
-
-	for slot7, slot8 in pairs(slot3) do
+	for slot7, slot8 in pairs(slot3 or slot0.atlas.transportDic) do
 		if slot8 then
 			slot0:UpdateEntranceMask(slot0.atlas:GetEntrance(slot7))
 		end

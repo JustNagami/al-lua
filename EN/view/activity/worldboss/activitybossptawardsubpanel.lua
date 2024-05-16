@@ -5,28 +5,16 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-	slot0.scrollPanel = slot1:Find("window/panel")
-	slot2 = slot0._tf
-	slot3 = slot0._tf
-	slot0.UIlist = UIItemList.New(slot2:Find("window/panel/list"), slot3:Find("window/panel/list/item"))
-	slot1 = slot0._tf
-	slot1 = slot1:Find("window/pt/Text")
-	slot0.totalTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0._tf
-	slot1 = slot1:Find("window/pt/title")
-	slot0.totalTitleTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0._tf
-	slot0.closeBtn = slot1:Find("window/top/btnBack")
-	slot1 = slot0._tf
-	slot0.btn_banned = slot1:Find("window/btn_banned")
-	slot1 = slot0._tf
-	slot0.btn_get = slot1:Find("window/btn_get")
-	slot1 = slot0._tf
-	slot0.btn_got = slot1:Find("window/btn_got")
-	slot3 = slot0._tf
+	slot0.scrollPanel = slot0._tf:Find("window/panel")
+	slot0.UIlist = UIItemList.New(slot0._tf:Find("window/panel/list"), slot0._tf:Find("window/panel/list/item"))
+	slot0.totalTxt = slot0._tf:Find("window/pt/Text"):GetComponent(typeof(Text))
+	slot0.totalTitleTxt = slot0._tf:Find("window/pt/title"):GetComponent(typeof(Text))
+	slot0.closeBtn = slot0._tf:Find("window/top/btnBack")
+	slot0.btn_banned = slot0._tf:Find("window/btn_banned")
+	slot0.btn_get = slot0._tf:Find("window/btn_get")
+	slot0.btn_got = slot0._tf:Find("window/btn_got")
 
-	onButton(slot0, slot3:Find("bg_dark"), function ()
+	onButton(slot0, slot0._tf:Find("bg_dark"), function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 	onButton(slot0, slot0.closeBtn, function ()
@@ -49,7 +37,10 @@ function slot0.UpdateView(slot0, slot1)
 	slot3 = slot1.targets
 	slot4 = slot1.level
 	slot5 = slot1.count
-	slot7 = pg.item_data_statistics[id2ItemId(slot1.resId)].name
+	slot7 = Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = slot1.resId
+	}):getName()
 
 	if slot1.type == 2 then
 		slot0.cntTitle = i18n("pt_total_count", i18n("pt_cosume", slot7))

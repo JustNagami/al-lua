@@ -5,10 +5,8 @@ function slot0.Ctor(slot0, slot1)
 	slot0.configId = slot0.id
 	slot0.count = slot1.count or slot0:getConfig("goods_purchase_limit")
 	slot0.boughtRecord = {}
-	slot2 = ipairs
-	slot3 = slot1.bought_record or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1.bought_record or {}) do
 		slot0.boughtRecord[slot6] = true
 	end
 end
@@ -50,11 +48,11 @@ function slot0.Selectable(slot0)
 end
 
 function slot0.GetConsume(slot0)
-	return {
+	return Drop.New({
 		type = slot0:getConfig("resource_category"),
 		id = slot0:getConfig("resource_type"),
 		count = slot0:getConfig("resource_num")
-	}
+	})
 end
 
 function slot0.GetDesc(slot0)
@@ -66,10 +64,12 @@ function slot0.GetDesc(slot0)
 end
 
 function slot0.IsOpening(slot0, slot1)
-	slot2 = {}
+	slot2 = {
+		day = pg.TimeMgr.GetInstance():parseTimeFrom(slot4 - slot5)
+	}
 
 	if not (slot1 + slot0:getConfig("unlock_time") <= pg.TimeMgr.GetInstance():GetServerTime()) then
-		slot2.day, slot2.hour, slot9, slot10 = pg.TimeMgr.GetInstance():parseTimeFrom(slot4 - slot5)
+		-- Nothing
 	end
 
 	return slot6, slot2
@@ -98,17 +98,19 @@ end
 function slot0.CheckTimeLimit(slot0)
 	slot1 = false
 	slot2 = false
-	slot4 = slot0:getConfig("goods")[1]
+	slot3 = nil
+	slot6 = Item.getConfigData(slot0:getConfig("goods")[1])
 
-	if slot0:getConfig("type") == DROP_TYPE_VITEM and pg.item_data_statistics[slot4].virtual_type == 22 then
+	if slot0:getConfig("type") == DROP_TYPE_VITEM and slot6.virtual_type == 22 then
 		slot1 = true
+		slot3 = true
 
-		if getProxy(ActivityProxy):getActivityById(pg.item_data_statistics[slot4].link_id) and not slot6:isEnd() then
+		if getProxy(ActivityProxy):getActivityById(slot6.link_id) and not slot8:isEnd() then
 			slot2 = true
 		end
 	end
 
-	return slot1, slot2
+	return slot1, slot2, slot3
 end
 
 function slot0.GetPurchasableCnt(slot0)

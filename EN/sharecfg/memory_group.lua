@@ -169,6 +169,20 @@ pg.memory_group = setmetatable({
 		269,
 		270,
 		271,
+		272,
+		273,
+		274,
+		275,
+		276,
+		277,
+		278,
+		279,
+		280,
+		281,
+		282,
+		283,
+		284,
+		285,
 		501,
 		502,
 		503,
@@ -259,7 +273,15 @@ pg.memory_group = setmetatable({
 		590,
 		591,
 		592,
-		593
+		593,
+		594,
+		595,
+		596,
+		597,
+		598,
+		1000,
+		1001,
+		1002
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -362,7 +384,8 @@ pg.base.memory_group = {
 			2289,
 			2931,
 			2932,
-			2933
+			2933,
+			3321
 		}
 	},
 	[99] = {
@@ -4052,6 +4075,276 @@ pg.base.memory_group = {
 			3275
 		}
 	},
+	[272] = {
+		id = 272,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5150,
+		title = "Port Fashion Collection: Resplendent Night II",
+		memories = {
+			3281,
+			3282,
+			3283
+		}
+	},
+	[273] = {
+		id = 273,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5178,
+		title = "Spring Festive Fiasco",
+		memories = {
+			3301,
+			3302,
+			3303,
+			3304,
+			3305
+		}
+	},
+	[274] = {
+		id = 274,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5178,
+		title = "The Queen of Adventure",
+		memories = {
+			3311,
+			3312,
+			3313
+		}
+	},
+	[275] = {
+		id = 275,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5184,
+		title = "Port Fashion Collection: Spring Festival I",
+		memories = {
+			3331,
+			3332,
+			3333
+		}
+	},
+	[276] = {
+		id = 276,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5184,
+		title = "Port Fashion Collection: Spring Festival II",
+		memories = {
+			3341,
+			3342,
+			3343
+		}
+	},
+	[277] = {
+		id = 277,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5212,
+		title = "Mist Upon Silver Summits",
+		memories = {
+			3361,
+			3362,
+			3363,
+			3364,
+			3365,
+			3366,
+			3367,
+			3368
+		}
+	},
+	[278] = {
+		id = 278,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5221,
+		title = "Snowrealm Peregrination",
+		memories = {
+			3370,
+			3371,
+			3372,
+			3373,
+			3374,
+			3375,
+			3376,
+			3377,
+			3378,
+			3379,
+			3380,
+			3381,
+			3382,
+			3383,
+			3384,
+			3385,
+			3386,
+			3387,
+			3388,
+			3389,
+			3390,
+			3391,
+			3392,
+			3393,
+			3394,
+			3395,
+			3396,
+			3397,
+			3398,
+			3399,
+			3400,
+			3401,
+			3402,
+			3403
+		}
+	},
+	[279] = {
+		id = 279,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5224,
+		title = "Endless Drama in the Sleepless City",
+		memories = {
+			3411,
+			3412,
+			3413,
+			3414,
+			3415,
+			3416,
+			3417,
+			3418
+		}
+	},
+	[280] = {
+		id = 280,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5243,
+		title = "The Bard's Poem",
+		memories = {
+			3431,
+			3432,
+			3433,
+			3434,
+			3435
+		}
+	},
+	[281] = {
+		id = 281,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5265,
+		title = "From Zero to Hero",
+		memories = {
+			3441,
+			3442,
+			3443,
+			3444,
+			3445,
+			3446,
+			3447,
+			3448,
+			3449,
+			3450,
+			3451,
+			3452,
+			3453,
+			3454,
+			3455,
+			3456,
+			3457,
+			3458,
+			3459,
+			3460,
+			3461,
+			3462,
+			3463,
+			3464,
+			3465,
+			3466,
+			3467,
+			3468
+		}
+	},
+	[282] = {
+		id = 282,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5267,
+		title = "Rebirth of Gold",
+		memories = {
+			3471,
+			3472,
+			3473
+		}
+	},
+	[283] = {
+		id = 283,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5305,
+		title = "Spider Lily's Redolence",
+		memories = {
+			3491,
+			3492,
+			3493,
+			3494,
+			3495,
+			3496,
+			3497
+		}
+	},
+	[284] = {
+		id = 284,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5301,
+		title = "Heart-Linking Harmony",
+		memories = {
+			3500,
+			3501,
+			3502,
+			3503,
+			3504,
+			3505,
+			3506,
+			3507,
+			3508,
+			3509,
+			3510,
+			3511,
+			3512,
+			3513,
+			3514,
+			3515,
+			3516
+		}
+	},
+	[285] = {
+		id = 285,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5311,
+		title = "Port Fashion Collection! A Glimpse Into Another Life",
+		memories = {
+			3520,
+			3521,
+			3522
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -5610,6 +5903,203 @@ pg.base.memory_group = {
 			3269,
 			3270,
 			3271
+		}
+	},
+	[594] = {
+		id = 594,
+		subtype = 0,
+		icon = "title_chara_fushun",
+		type = 3,
+		link_event = 0,
+		title = "Mysteries and Danger!",
+		memories = {
+			3291,
+			3292,
+			3293,
+			3294,
+			3295,
+			3296,
+			3297
+		}
+	},
+	[595] = {
+		id = 595,
+		subtype = 0,
+		icon = "title_chara_zhenhai",
+		type = 3,
+		link_event = 0,
+		title = "The Go Master and Her Disciple",
+		memories = {
+			3351,
+			3352,
+			3353,
+			3354,
+			3355,
+			3356,
+			3357
+		}
+	},
+	[596] = {
+		id = 596,
+		subtype = 0,
+		icon = "title_chara_shenghaxintuo",
+		type = 3,
+		link_event = 0,
+		title = "The Secret to Curing Exhaustion?!",
+		memories = {
+			3421,
+			3422,
+			3423,
+			3424,
+			3425,
+			3426,
+			3427
+		}
+	},
+	[597] = {
+		id = 597,
+		subtype = 0,
+		icon = "title_chara_xiafei",
+		type = 3,
+		link_event = 0,
+		title = "Date with an Angel",
+		memories = {
+			3481,
+			3482,
+			3483,
+			3484,
+			3485,
+			3486,
+			3487
+		}
+	},
+	[598] = {
+		id = 598,
+		subtype = 0,
+		icon = "title_chara_haitian",
+		type = 3,
+		link_event = 0,
+		title = "Set Sail! An Inspiration-Seeking Journey",
+		memories = {
+			3531,
+			3532,
+			3533,
+			3534,
+			3535,
+			3536,
+			3537
+		}
+	},
+	[1000] = {
+		id = 1000,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 0,
+		title = "Project Identity: TB",
+		memories = {
+			20000,
+			20001,
+			20002,
+			20003,
+			20004,
+			20005,
+			20006,
+			20007,
+			20008,
+			20009,
+			20010,
+			20011,
+			20012,
+			20013,
+			20014,
+			20015,
+			20016,
+			20017,
+			20018,
+			20019,
+			20020,
+			20021,
+			20022,
+			20023,
+			20024,
+			20025,
+			20026,
+			20027,
+			20028,
+			20029,
+			20030,
+			20031,
+			20032,
+			20033,
+			20034,
+			20035,
+			20036,
+			20037,
+			20038,
+			20039,
+			20040,
+			20041,
+			20042,
+			20043
+		}
+	},
+	[1001] = {
+		id = 1001,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 0,
+		title = "Convergence of Hearts",
+		memories = {
+			20044,
+			20045,
+			20046,
+			20047,
+			20048,
+			20049,
+			20050,
+			20051
+		}
+	},
+	[1002] = {
+		id = 1002,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 0,
+		title = "Heartfelt Conversations",
+		memories = {
+			20052,
+			20053,
+			20054,
+			20055,
+			20056,
+			20057,
+			20058,
+			20059,
+			20060,
+			20061,
+			20062,
+			20063,
+			20064,
+			20065,
+			20066,
+			20067,
+			20068,
+			20069,
+			20070,
+			20071,
+			20072,
+			20073,
+			20074,
+			20075,
+			20076,
+			20077,
+			20078,
+			20079,
+			20080,
+			20081
 		}
 	}
 }

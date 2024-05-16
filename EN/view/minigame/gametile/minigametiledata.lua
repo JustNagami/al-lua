@@ -8,10 +8,8 @@ function slot1(slot0)
 	slot5 = "{\n"
 
 	while true do
-		slot6 = 0
-
 		for slot10, slot11 in pairs(slot0) do
-			slot6 = slot6 + 1
+			slot6 = 0 + 1
 		end
 
 		slot7 = 1
@@ -26,12 +24,10 @@ function slot1(slot0)
 
 				table.insert(slot3, slot5)
 
-				slot5 = ""
 				slot13 = nil
-				slot13 = (type(slot11) == "number" or type(slot11) == "boolean") and "[" .. tostring(slot11) .. "]" or "['" .. tostring(slot11) .. "']"
 
 				if type(slot12) == "number" or type(slot12) == "boolean" then
-					slot5 = slot5 .. string.rep("\t", slot4) .. slot13 .. " = " .. tostring(slot12)
+					slot5 = "" .. string.rep("\t", slot4) .. ((type(slot11) == "number" or type(slot11) == "boolean") and "[" .. tostring(slot11) .. "]" or "['" .. tostring(slot11) .. "']") .. " = " .. tostring(slot12)
 				elseif type(slot12) == "table" then
 					slot5 = slot5 .. string.rep("\t", slot4) .. slot13 .. " = {\n"
 
@@ -86,13 +82,12 @@ function slot0.Ctor(slot0, slot1)
 end
 
 function slot0.loadTile(slot0, slot1, slot2)
-	slot3 = "GameCfg.MiniGameTile." .. slot1 .. "." .. slot2
 	slot4, slot5 = pcall(function ()
 		return require(uv0)
 	end)
 
 	if not slot4 then
-		errorMsg("不存在地图数据:" .. slot3)
+		errorMsg("不存在地图数据:" .. ("GameCfg.MiniGameTile." .. slot1 .. "." .. slot2))
 	end
 
 	return slot4 and slot5
@@ -168,16 +163,14 @@ function slot0.createMapData(slot0, slot1, slot2)
 	end
 
 	slot3 = slot1.tilesets
-	slot5 = slot1.width
-	slot6 = slot1.height
 	slot7 = {}
 
 	for slot11, slot12 in ipairs(slot1.layers) do
 		table.insert(slot7, {
 			name = slot12.name,
 			layer = slot0:createLayerData(slot12.data, slot3, slot2),
-			width = slot5,
-			height = slot6
+			width = slot1.width,
+			height = slot1.height
 		})
 	end
 
@@ -214,12 +207,11 @@ function slot0.relationTile(slot0, slot1, slot2, slot3, slot4)
 
 	for slot9 = 1, #slot2 do
 		slot10 = slot2[slot9]
-		slot11 = slot10.firstgid
 
 		if slot0.tileMapDic[slot10.name] then
 			slot14 = slot13.maps
 
-			if slot11 <= slot1 then
+			if slot10.firstgid <= slot1 then
 				for slot18, slot19 in ipairs(slot14) do
 					if slot19.id + slot11 == slot1 then
 						slot21 = slot1
@@ -240,14 +232,13 @@ function slot0.relationTile(slot0, slot1, slot2, slot3, slot4)
 end
 
 function slot0.createGridPropData(slot0, slot1, slot2, slot3)
-	slot4 = {}
 	slot5 = nil
 
 	if slot0._name == MiniGameTile.BOOM_GAME then
 		slot7 = nil
 
 		if slot1.drop_id and slot6 > 0 then
-			slot4.drop = MiniGameTile.drops[slot6]
+			-- Nothing
 		else
 			slot4.drop = nil
 		end
@@ -261,7 +252,9 @@ function slot0.createGridPropData(slot0, slot1, slot2, slot3)
 		slot4 = nil
 	end
 
-	return slot4
+	return {
+		drop = MiniGameTile.drops[slot6]
+	}
 end
 
 function slot0.getName(slot0)

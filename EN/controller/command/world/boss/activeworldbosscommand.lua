@@ -3,9 +3,8 @@ slot0 = class("ActiveWorldBossCommand", pm.SimpleCommand)
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.type
-	slot5 = pg.ConnectionMgr.GetInstance()
 
-	slot5:Send(34521, {
+	pg.ConnectionMgr.GetInstance():Send(34521, {
 		template_id = slot2.id
 	}, 34522, function (slot0)
 		if slot0.result == 0 then

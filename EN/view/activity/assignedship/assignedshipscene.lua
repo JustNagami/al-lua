@@ -19,11 +19,10 @@ function slot0.didEnter(slot0)
 	slot0.isOne = false
 
 	onScroll(slot0, slot0.scrollrect, function (slot0)
-		slot3 = uv0.isOne
 		uv0.isZero = Mathf.Clamp01(slot0.x) - 0.0001 <= 0
 		uv0.isOne = slot1 + 0.0001 >= 1
 
-		if uv0.isZero ~= uv0.isZero or slot3 ~= uv0.isOne then
+		if uv0.isZero ~= uv0.isZero or uv0.isOne ~= uv0.isOne then
 			uv0:UpdateArr()
 		end
 	end)

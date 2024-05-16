@@ -7,9 +7,7 @@ function slot0.Ctor(slot0, slot1)
 			uv0:preload(slot0)
 		end
 	}, function ()
-		slot0 = PoolMgr.GetInstance()
-
-		slot0:GetUI("Loading", true, function (slot0)
+		PoolMgr.GetInstance():GetUI("Loading", true, function (slot0)
 			slot0.transform:SetParent(GameObject.Find("Overlay/UIOverlay").transform, false)
 			slot0:SetActive(false)
 			uv0:onUILoaded(slot0)
@@ -73,12 +71,9 @@ function slot0.on(slot0, slot1)
 	setImageAlpha(slot0._tf, defaultValue(slot1, true) and 0.01 or 0)
 
 	if slot1 then
-		slot2 = pg.TimeMgr.GetInstance()
+		pg.TimeMgr.GetInstance():RemoveTimer(slot0.delayTimer)
 
-		slot2:RemoveTimer(slot0.delayTimer)
-
-		slot2 = pg.TimeMgr.GetInstance()
-		slot0.delayTimer = slot2:AddTimer("loading", 1, 0, function ()
+		slot0.delayTimer = pg.TimeMgr.GetInstance():AddTimer("loading", 1, 0, function ()
 			setImageAlpha(uv0._tf, 0.2)
 			setActive(uv0.indicator, true)
 

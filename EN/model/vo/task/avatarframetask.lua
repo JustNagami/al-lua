@@ -140,18 +140,17 @@ function slot0.createData(slot0, slot1, slot2)
 		end
 
 		slot12 = pg.ship_data_statistics[slot5 * 10 + 1].name
-		slot13, slot14 = nil
 
 		for slot18, slot19 in ipairs(slot7) do
 			assert(pg.chapter_template[slot19] ~= nil, "找不到chapterid = " .. slot19)
 
-			slot14 = slot14 or {
+			slot14 = nil or {
 				"ACTIVITY_MAP",
 				{
 					pg.chapter_template[slot19].act_id
 				}
 			}
-			slot13 = (slot13 or pg.chapter_template[slot19].chapter_name) and pg.chapter_template[slot19].chapter_name .. "," .. pg.chapter_template[slot19].chapter_name
+			slot13 = (nil or pg.chapter_template[slot19].chapter_name) and pg.chapter_template[slot19].chapter_name .. "," .. pg.chapter_template[slot19].chapter_name
 		end
 
 		slot3 = {
@@ -162,12 +161,11 @@ function slot0.createData(slot0, slot1, slot2)
 		}
 	elseif slot1 == uv0.type_task_ship then
 		slot4, slot5, slot6, slot7 = unpack(slot2)
-		slot9 = pg.ship_data_statistics[slot5 * 10 + 1].name
 
 		if slot6 == 1 then
 			slot3 = {
 				award_num = slot7,
-				desc = i18n(uv2, slot9)
+				desc = i18n(uv2, pg.ship_data_statistics[slot5 * 10 + 1].name)
 			}
 		elseif slot6 == 2 then
 			slot3 = {

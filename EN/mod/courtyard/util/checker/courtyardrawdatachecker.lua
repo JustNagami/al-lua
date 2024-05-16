@@ -2,10 +2,9 @@ slot0 = class("CourtYardRawDataChecker")
 
 function slot0.Check(slot0, slot1)
 	slot2 = {}
-	slot3 = {}
 
 	for slot7, slot8 in pairs(slot0) do
-		if not uv0.FillMap(slot3, RawFurnitureData.New(slot8)) then
+		if not uv0.FillMap({}, RawFurnitureData.New(slot8)) then
 			return false, i18n1("Incorrect position")
 		end
 
@@ -47,10 +46,9 @@ end
 
 function slot0.CheckFurnitrue(slot0, slot1, slot2)
 	slot3 = {}
-	slot4 = {}
 
 	for slot8, slot9 in pairs(slot1) do
-		if not uv0.FillMap(slot4, RawFurnitureData.New(slot9)) then
+		if not uv0.FillMap({}, RawFurnitureData.New(slot9)) then
 			return false, i18n1("Incorrect position")
 		end
 
@@ -74,10 +72,7 @@ function slot0._CheckFurnitrue(slot0, slot1, slot2)
 		return false, "Incorrect [parent -> child] relation"
 	end
 
-	slot8 = pairs
-	slot9 = slot0.child or {}
-
-	for slot11, slot12 in slot8(slot9) do
+	for slot11, slot12 in pairs(slot0.child or {}) do
 		if not slot0:LegalChild(slot1[slot11]) then
 			return false, "Incorrect [child -> parent] relation"
 		end

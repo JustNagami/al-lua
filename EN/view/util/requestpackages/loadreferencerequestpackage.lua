@@ -5,9 +5,7 @@ function slot0.__call(slot0)
 		return
 	end
 
-	slot1 = ResourceMgr.Inst
-
-	slot1:getAssetAsync(slot0.path, slot0.name, slot0.type, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync(slot0.path, slot0.name, slot0.type, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.stopped then
 			return
 		end

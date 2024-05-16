@@ -11,21 +11,16 @@ end
 
 function slot0.initPageUI(slot0)
 	uv0.super.initPageUI(slot0)
-
-	slot3 = slot0.rtTitlePage
-
-	onButton(slot0, slot3:Find("main/btn_help"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("main/btn_help"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.doa_minigame_help.tip
 		})
 	end, SFX_PANEL)
 
-	slot1 = slot0:GetMGData()
-	slot1 = slot1:GetSimpleValue("story")
-	slot4 = slot0.rtTitlePage
+	slot1 = slot0:GetMGData():GetSimpleValue("story")
 
-	onButton(slot0, slot4:Find("main/btn_start"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("main/btn_start"), function ()
 		slot0 = {}
 
 		if checkExist(uv0, {
@@ -43,8 +38,7 @@ function slot0.initPageUI(slot0)
 		end)
 	end, SFX_PANEL)
 
-	slot2 = slot0.rtTitlePage
-	slot2 = slot2:Find("select")
+	slot2 = slot0.rtTitlePage:Find("select")
 
 	onButton(slot0, slot2:Find("btn_back"), function ()
 		uv0:openUI("main")

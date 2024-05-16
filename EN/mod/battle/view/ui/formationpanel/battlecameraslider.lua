@@ -39,12 +39,10 @@ function slot2.updateStick(slot0, slot1, slot2)
 		slot0._isPress = false
 	else
 		slot0._isPress = true
-		slot3 = slot1.x
-		slot4 = slot1.y
 
 		if slot0._startX == nil then
-			slot0._startX = slot3
-			slot0._startY = slot4
+			slot0._startX = slot1.x
+			slot0._startY = slot1.y
 			slot0._initX = true
 			slot0._initY = true
 		else

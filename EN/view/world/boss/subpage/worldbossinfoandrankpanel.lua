@@ -24,9 +24,7 @@ function slot0.SetCallback(slot0, slot1, slot2)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-
-	slot1:SetSiblingIndex(2)
+	slot0._tf:SetSiblingIndex(2)
 	onToggle(slot0, slot0.toggleInfo, function (slot0)
 		if slot0 then
 			uv0:ResetInfoLayout()
@@ -72,16 +70,13 @@ function slot0.ResetInfoLayout(slot0)
 			return
 		end
 
-		slot0 = uv0.infoSkillList
-
-		slot0:each(function (slot0, slot1)
+		uv0.infoSkillList:each(function (slot0, slot1)
 			slot3 = uv0[slot0 + 1][3]
-			slot5 = "　"
 			slot6, slot7 = math.modf(slot1:Find("color/Text").sizeDelta.x / uv1)
 			slot8 = math.ceil(uv1 * slot7)
 
 			for slot12 = 1, slot6 do
-				slot5 = slot5 .. "　"
+				slot5 = "　" .. "　"
 			end
 
 			if slot7 > 0 then

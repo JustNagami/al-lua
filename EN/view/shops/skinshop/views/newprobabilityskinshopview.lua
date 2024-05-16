@@ -56,18 +56,16 @@ end
 
 function slot0.UpdateCommodity(slot0, slot1)
 	slot0.icon.sprite = LoadSprite("ChargeIcon/" .. slot1:getConfig("picture"))
-	slot3 = slot0.icon
 
-	slot3:SetNativeSize()
+	slot0.icon:SetNativeSize()
 
 	slot0.nameTxt.text = slot1:getConfig("name_display")
 	slot0.priceTxt.text = "$" .. slot1:getConfig("money")
 	slot0.limitTxt.text = slot1:GetLimitDesc()
 	slot0.descTxt.text = slot1:getConfig("descrip")
 	slot0.tag.sprite = LoadSprite("chargeTag", uv0(slot1:getConfig("tag")))
-	slot4 = slot0.tag
 
-	slot4:SetNativeSize()
+	slot0.tag:SetNativeSize()
 	uv1(slot0, slot1)
 	onButton(slot0, slot0.purchaseBtn, function ()
 		if uv0:canPurchase() then

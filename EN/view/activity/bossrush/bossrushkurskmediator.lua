@@ -50,19 +50,14 @@ function slot0.register(slot0)
 		end
 	end
 
-	slot3 = slot0.viewComponent
-
-	slot3:addbubbleMsgBox(function (slot0)
+	slot0.viewComponent:addbubbleMsgBox(function (slot0)
 		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushTotalRewardPanelMediator) then
 			return
 		end
 
 		slot0()
 	end)
-
-	slot3 = slot0.viewComponent
-
-	slot3:addbubbleMsgBox(function (slot0)
+	slot0.viewComponent:addbubbleMsgBox(function (slot0)
 		pg.GuildMsgBoxMgr.GetInstance():NotificationForBattle(slot0)
 	end)
 end
@@ -97,9 +92,7 @@ function slot0.handleNotification(slot0, slot1)
 			end
 		end
 	elseif slot2 == GAME.SUBMIT_TASK_DONE then
-		slot5 = slot0.viewComponent
-
-		slot5:emit(BaseUI.ON_ACHIEVE, slot3, function ()
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3, function ()
 			uv0.viewComponent:UpdateTasks(uv1)
 		end)
 	elseif slot2 == BossRushTotalRewardPanelMediator.ON_WILL_EXIT then

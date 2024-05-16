@@ -36,7 +36,10 @@ function slot0.execute(slot0, slot1)
 	end
 
 	if slot11[id2res(slot5.resource_type)] < slot9 then
-		slot12 = pg.item_data_statistics[id2ItemId(slot5.resource_type)].name
+		slot12 = Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot5.resource_type
+		}):getName()
 
 		if slot5.resource_type == 1 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
@@ -56,9 +59,7 @@ function slot0.execute(slot0, slot1)
 	end
 
 	seriesAsync({}, function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(16001, {
+		pg.ConnectionMgr.GetInstance():Send(16001, {
 			id = uv0,
 			number = uv1
 		}, 16002, function (slot0)
@@ -74,8 +75,10 @@ function slot0.execute(slot0, slot1)
 
 				switch(uv1.genre, {
 					[ShopArgs.SkinShop] = function ()
+						uv0 = PlayerConst.addTranDrop(uv1.drop_list)
+
 						getProxy(ShipSkinProxy):addSkin(ShipSkin.New({
-							id = uv0.effect_args[1]
+							id = uv2.effect_args[1]
 						}))
 					end,
 					[ShopArgs.SkinShopTimeLimit] = function ()
@@ -105,14 +108,16 @@ function slot0.execute(slot0, slot1)
 					normalGroupList = uv4:GetNormalGroupList(),
 					awards = slot1
 				})
-			else
-				originalPrint(slot0.result)
 
-				if slot0.result == 4400 then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("shopping_error_time_limit"))
-				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
-				end
+				return
+			end
+
+			originalPrint(slot0.result)
+
+			if slot0.result == 4400 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("shopping_error_time_limit"))
+			else
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 			end
 		end)
 	end)

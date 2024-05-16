@@ -8,11 +8,10 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot7 = slot2.callback
 	slot8 = slot2.onConfirm
 
 	if not slot5:getStudentById(slot3) then
-		existCall(slot7)
+		existCall(slot2.callback)
 
 		return
 	end
@@ -25,9 +24,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot12 = pg.ConnectionMgr.GetInstance()
-
-	slot12:Send(22203, {
+	pg.ConnectionMgr.GetInstance():Send(22203, {
 		room_id = slot3,
 		type = slot4
 	}, 22204, function (slot0)

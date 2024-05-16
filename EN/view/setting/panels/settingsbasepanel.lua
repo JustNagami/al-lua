@@ -25,9 +25,8 @@ end
 
 function slot0.Load(slot0, slot1)
 	slot0.state = uv0
-	slot2 = PoolMgr.GetInstance()
 
-	slot2:GetUI(slot0:GetUIName(), true, function (slot0)
+	PoolMgr.GetInstance():GetUI(slot0:GetUIName(), true, function (slot0)
 		uv0.state = uv1
 		uv0._go = slot0
 		uv0._tf = slot0.transform

@@ -13,8 +13,7 @@ end
 
 function slot0.OnInit(slot0)
 	slot0.confirmBtn = slot0._tf:Find("frame/btns/confirm_btn")
-	slot1 = slot0._tf
-	slot0.cancelBtn = slot1:Find("frame/btns/cancel_btn")
+	slot0.cancelBtn = slot0._tf:Find("frame/btns/cancel_btn")
 	slot0.texts = {
 		[uv0.EXIT_TXT] = slot0._tf:Find("frame/exit"),
 		[uv0.PAUSE_TXT] = slot0._tf:Find("frame/puase")

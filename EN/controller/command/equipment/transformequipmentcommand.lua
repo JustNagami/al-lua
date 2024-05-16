@@ -42,7 +42,7 @@ function slot0.execute(slot0, slot1)
 			end
 
 			slot3 = getProxy(BagProxy)
-			slot7 = pg.equip_data_statistics[pg.compose_data_template[uv0.composeCfg.id].equip_id]
+			slot6 = pg.compose_data_template[uv0.composeCfg.id]
 
 			if getProxy(PlayerProxy):getData():getMaxEquipmentBag() < getProxy(EquipmentProxy):getCapacity() + 1 then
 				NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), openDestroyEquip, gotoChargeScene)
@@ -62,15 +62,13 @@ function slot0.execute(slot0, slot1)
 				return
 			end
 
-			if not slot3:getItemById(slot6.material_id) or slot10.count < slot6.material_num * slot2 then
+			if not slot3:getItemById(slot6.material_id) or slot9.count < slot6.material_num * slot2 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_materal_no_enough"))
 
 				return
 			end
 
-			slot11 = pg.ConnectionMgr.GetInstance()
-
-			slot11:Send(14006, {
+			pg.ConnectionMgr.GetInstance():Send(14006, {
 				id = slot1,
 				num = slot2
 			}, 14007, function (slot0)
@@ -106,13 +104,12 @@ end
 function slot0.ExecuteEquipTransform(slot0, slot1)
 	slot2 = slot1.shipId
 	slot3 = slot2
-	slot4 = slot1.pos
 	slot5 = slot1.equipmentId
 	slot6 = slot1.formulaIds
 	slot7 = nil
 
 	if slot2 then
-		slot7 = getProxy(BayProxy):getShipById(slot2):getEquip(slot4)
+		slot7 = getProxy(BayProxy):getShipById(slot2):getEquip(slot1.pos)
 
 		assert(slot7, "can not find equipment at ship.")
 
@@ -143,12 +140,11 @@ function slot0.ExecuteEquipTransform(slot0, slot1)
 		for slot5, slot6 in pairs(uv0) do
 			if slot5 == "gold" then
 				slot7 = slot1:getData()
-				slot8 = {
-					gold = math.abs(slot6)
-				}
 
 				if slot6 > 0 then
-					slot7:consume(slot8)
+					slot7:consume({
+						gold = math.abs(slot6)
+					})
 					slot1:updatePlayer(slot7)
 				elseif slot6 < 0 then
 					slot7:addResources(slot8)
@@ -225,12 +221,12 @@ function slot0.ExecuteEquipTransform(slot0, slot1)
 						end
 					end
 
-					assert(pg.equip_data_template[uv2], "Missing equip_data_template ID: " .. (uv2 or "NIL"))
+					assert(Equipment.CanInBag(uv2), "Missing equip_data_template ID: " .. (uv2 or "NIL"))
 
-					if slot5 then
-						slot6 = slot5.destory_gold or 0
-						uv1.gold = (uv1.gold or 0) - slot6
-						uv3.gold = (uv3.gold or 0) + slot6
+					if Equipment.CanInBag(uv2) then
+						slot5 = Equipment.getConfigData(uv2).destory_gold or 0
+						uv1.gold = (uv1.gold or 0) - slot5
+						uv3.gold = (uv3.gold or 0) + slot5
 					end
 
 					uv4 = uv2
@@ -246,12 +242,10 @@ function slot0.ExecuteEquipTransform(slot0, slot1)
 		})
 	end, function ()
 		if not uv0 and uv1 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_equipped_unavailable", getProxy(BayProxy):getShipById(uv1):getName(), uv2.config.name))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_equipped_unavailable", getProxy(BayProxy):getShipById(uv1):getName(), uv2:getConfig("name")))
 		end
 
-		slot1 = uv5
-
-		slot1:sendNotification(GAME.TRANSFORM_EQUIPMENT_DONE, {
+		uv5:sendNotification(GAME.TRANSFORM_EQUIPMENT_DONE, {
 			ship = uv3,
 			equip = uv4,
 			newEquip = uv2
@@ -267,9 +261,7 @@ function slot0.ExecuteEquipTransform(slot0, slot1)
 					pg.m02:retrieveMediator(slot2.mediator.__cname):getViewComponent():closeView()
 				end
 
-				slot3 = pg.m02
-				slot3 = slot3:retrieveMediator(slot1.mediator.__cname)
-				slot4 = slot3:getViewComponent()
+				slot4 = pg.m02:retrieveMediator(slot1.mediator.__cname):getViewComponent()
 
 				seriesAsync({
 					function (slot0)

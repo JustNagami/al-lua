@@ -47,9 +47,7 @@ function slot0.register(slot0)
 		uv0:sendNotification(GAME.FETCH_EVALUATION, slot1)
 	end)
 
-	slot3 = getProxy(PlayerProxy):getData()
-
-	if slot1:getRarity() >= 4 and not slot3:GetCommonFlag(GAME_RESTOREVIEW_ALREADY) then
+	if slot1:getRarity() >= 4 and not getProxy(PlayerProxy):getData():GetCommonFlag(GAME_RESTOREVIEW_ALREADY) then
 		pg.SdkMgr.GetInstance():StoreReview()
 		slot0:sendNotification(GAME.COMMON_FLAG, {
 			flagID = GAME_RESTOREVIEW_ALREADY

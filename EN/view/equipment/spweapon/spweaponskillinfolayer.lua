@@ -54,10 +54,8 @@ function slot0.flushTypeBtn(slot0)
 end
 
 function slot0.showBase(slot0)
-	slot3 = getSkillName(slot0.contextData.skillId)
-
 	if not slot0.contextData.unlock then
-		slot3 = setColorStr(slot3, "#a2a2a2")
+		slot3 = setColorStr(getSkillName(slot0.contextData.skillId), "#a2a2a2")
 	end
 
 	setText(slot0.skillInfoName, slot3)
@@ -76,10 +74,8 @@ function slot0.showInfo(slot0, slot1)
 
 	setText(slot0.skillInfoLv, "Lv." .. slot5)
 
-	slot6 = getSkillDesc(slot0.contextData.skillId, slot5, slot1)
-
 	if not slot0.contextData.unlock then
-		slot6 = setColorStr(i18n("spweapon_tip_skill_locked") .. slot6, "#a2a2a2")
+		slot6 = setColorStr(i18n("spweapon_tip_skill_locked") .. getSkillDesc(slot0.contextData.skillId, slot5, slot1), "#a2a2a2")
 	end
 
 	setText(slot0.skillInfoIntro, slot6)

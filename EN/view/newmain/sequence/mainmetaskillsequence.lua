@@ -1,11 +1,9 @@
 slot0 = class("MainMetaSkillSequence")
 
 function slot0.Execute(slot0, slot1)
-	slot1 = slot1 or function ()
-	end
-
 	if not getProxy(MetaCharacterProxy) then
-		slot1()
+		slot1 or function ()
+		end()
 
 		return
 	end

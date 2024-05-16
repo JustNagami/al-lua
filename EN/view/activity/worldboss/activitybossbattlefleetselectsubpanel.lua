@@ -148,7 +148,7 @@ function slot0.UpdateView(slot0)
 	slot0:clearFleets()
 	slot0:UpdateFleets()
 
-	slot1 = not LOCK_COMMANDER and pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommandRoomMediator")
+	slot1 = not LOCK_COMMANDER and pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator")
 
 	triggerToggle(slot0.viewParent.contextData.showCommander and slot1 and slot0.commanderToggle or slot0.formationToggle, true)
 	setActive(slot0.commanderToggle, slot1)
@@ -178,7 +178,6 @@ end
 function slot0.updateFleet(slot0, slot1, slot2)
 	slot0:updateCommanderBtn(slot1, slot2)
 
-	slot4 = slot2 <= slot0:getLimitNums(slot1) and slot0.fleets[slot1][slot2]
 	slot5 = slot0.tfFleets[slot1][slot2]
 	slot8 = slot0:findTF(TeamType.Vanguard, slot5)
 	slot9 = slot0:findTF(TeamType.Submarine, slot5)
@@ -190,7 +189,7 @@ function slot0.updateFleet(slot0, slot1, slot2)
 	setText(findTF(slot5, "bg/name"), "")
 
 	if slot0:findTF(TeamType.Main, slot5) then
-		setActive(slot7, slot3 and slot4)
+		setActive(slot7, slot3 and (slot2 <= slot0:getLimitNums(slot1) and slot0.fleets[slot1][slot2]))
 	end
 
 	if slot8 then
@@ -224,10 +223,8 @@ end
 function slot0.updateShips(slot0, slot1, slot2, slot3, slot4)
 	removeAllChildren(slot1)
 
-	slot5 = getProxy(BayProxy)
-
 	for slot9 = 1, 3 do
-		setActive(cloneTplTo(slot5:getShipById(slot2[slot9]) and slot0.tfShipTpl or slot0.tfEmptyTpl, slot1), true)
+		setActive(cloneTplTo(getProxy(BayProxy):getShipById(slot2[slot9]) and slot0.tfShipTpl or slot0.tfEmptyTpl, slot1), true)
 
 		if slot10 then
 			updateShip(slot12, slot10)
@@ -237,9 +234,8 @@ function slot0.updateShips(slot0, slot1, slot2, slot3, slot4)
 		setActive(slot0:findTF("ship_type", slot12), false)
 
 		slot13 = GetOrAddComponent(slot12, typeof(UILongPressTrigger))
-		slot14 = slot13.onLongPressed
 
-		slot14:RemoveAllListeners()
+		slot13.onLongPressed:RemoveAllListeners()
 		onButton(slot0, slot12, function ()
 			uv0:emit(uv0.viewParent.contextData.mediatorClass.ON_OPEN_DOCK, {
 				fleet = uv1,
@@ -248,10 +244,7 @@ function slot0.updateShips(slot0, slot1, slot2, slot3, slot4)
 				teamType = uv4
 			})
 		end)
-
-		slot15 = slot13.onLongPressed
-
-		slot15:AddListener(function ()
+		slot13.onLongPressed:AddListener(function ()
 			if uv0 then
 				uv1:OnLongPressShip(uv2[uv3], uv4)
 			else

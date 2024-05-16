@@ -5,10 +5,12 @@ slot0.type = ShopArgs.ShopShamBattle
 function slot0.update(slot0, slot1, slot2)
 	slot0.id = slot1
 	slot0.configId = slot1
-	slot3 = {}
+	slot3 = {
+		[slot8.shop_id] = slot8.pay_count
+	}
 
 	for slot7, slot8 in ipairs(slot2) do
-		slot3[slot8.shop_id] = slot8.pay_count
+		-- Nothing
 	end
 
 	table.clear(slot0.goods)

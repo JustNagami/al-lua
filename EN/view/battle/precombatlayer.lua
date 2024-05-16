@@ -115,17 +115,12 @@ function slot0.CommonInit(slot0)
 end
 
 function slot0.Register(slot0)
-	slot1 = slot0._formationLogic
-
-	slot1:AddLoadComplete(function ()
+	slot0._formationLogic:AddLoadComplete(function ()
 		if uv0._currentForm ~= uv1.FORM_EDIT then
 			uv0._formationLogic:SwitchToPreviewMode()
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddHeroInfoModify(function (slot0, slot1)
+	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1)
 		setAnchoredPosition(slot0, {
 			x = 0,
 			y = 0
@@ -163,10 +158,8 @@ function slot0.Register(slot0)
 			setActive(slot2:Find("expbuff"), getProxy(ActivityProxy):getBuffShipList()[slot1:getGroupId()] ~= nil)
 
 			if slot12 then
-				slot16 = tostring(slot12 / 100)
-
 				if slot12 % 100 > 0 then
-					slot16 = slot16 .. "." .. tostring(slot15)
+					slot16 = tostring(slot12 / 100) .. "." .. tostring(slot15)
 				end
 
 				setText(slot13:Find("text"), string.format("EXP +%s%%", slot16))
@@ -175,47 +168,26 @@ function slot0.Register(slot0)
 			setActive(slot2:Find("expbuff"), false)
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddLongPress(function (slot0, slot1, slot2, slot3)
+	slot0._formationLogic:AddLongPress(function (slot0, slot1, slot2, slot3)
 		uv0:emit(PreCombatMediator.OPEN_SHIP_INFO, slot1.id, slot2)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddBeginDrag(function (slot0)
+	slot0._formationLogic:AddBeginDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddEndDrag(function (slot0)
+	slot0._formationLogic:AddEndDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddClick(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddClick(function (slot0, slot1, slot2)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_CLICK)
 		uv0:emit(PreCombatMediator.CHANGE_FLEET_SHIP, slot0, slot2, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddShiftOnly(function (slot0)
+	slot0._formationLogic:AddShiftOnly(function (slot0)
 		uv0:emit(PreCombatMediator.CHANGE_FLEET_SHIPS_ORDER, slot0)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddRemoveShip(function (slot0, slot1)
+	slot0._formationLogic:AddRemoveShip(function (slot0, slot1)
 		uv0:emit(PreCombatMediator.REMOVE_SHIP, slot0, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
+	slot0._formationLogic:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
 		if not slot3:canRemove(slot2) then
 			slot5, slot6 = slot3:getShipPos(slot2)
 
@@ -231,10 +203,7 @@ function slot0.Register(slot0)
 			})
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToDisplayMode(function ()
+	slot0._formationLogic:AddSwitchToDisplayMode(function ()
 		uv0._currentForm = uv1.FORM_EDIT
 		uv0._checkBtn:GetComponent("Button").interactable = true
 
@@ -242,18 +211,12 @@ function slot0.Register(slot0)
 		setActive(uv0._checkBtn:Find("save"), true)
 		setActive(uv0._checkBtn:Find("edit"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToShiftMode(function ()
+	slot0._formationLogic:AddSwitchToShiftMode(function ()
 		uv0:SetFleetStepper()
 
 		uv0._checkBtn:GetComponent("Button").interactable = false
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToPreviewMode(function ()
+	slot0._formationLogic:AddSwitchToPreviewMode(function ()
 		uv0._currentForm = uv1.FORM_PREVIEW
 		uv0._checkBtn:GetComponent("Button").interactable = true
 
@@ -261,10 +224,7 @@ function slot0.Register(slot0)
 		setActive(uv0._checkBtn:Find("save"), false)
 		setActive(uv0._checkBtn:Find("edit"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddGridTipClick(function (slot0, slot1)
+	slot0._formationLogic:AddGridTipClick(function (slot0, slot1)
 		uv0:emit(PreCombatMediator.CHANGE_FLEET_SHIP, nil, uv0._currentFleetVO, slot0)
 	end)
 end
@@ -291,10 +251,8 @@ function slot0.SetStageID(slot0, slot1)
 	if checkExist(pg.expedition_activity_template[slot1], {
 		"pt_drop_display"
 	}) and type(slot4) == "table" then
-		slot5 = getProxy(ActivityProxy)
-
 		for slot9 = #slot4, 1, -1 do
-			if slot5:getActivityById(slot4[slot9][1]) and not slot10:isEnd() then
+			if getProxy(ActivityProxy):getActivityById(slot4[slot9][1]) and not slot10:isEnd() then
 				table.insert(slot3, 1, {
 					2,
 					id2ItemId(slot4[slot9][2])
@@ -312,7 +270,7 @@ function slot0.SetStageID(slot0, slot1)
 				type = slot9[1]
 			})
 			onButton(slot0, slot10, function ()
-				if pg.item_data_statistics[uv0[2]] and uv1[slot0.type] then
+				if Item.getConfigData(uv0[2]) and uv1[slot0.type] then
 					slot2 = {}
 
 					for slot6, slot7 in ipairs(slot0.display_icon) do
@@ -334,15 +292,6 @@ function slot0.SetStageID(slot0, slot1)
 		end
 	end
 
-	function slot5(slot0, slot1)
-		if type(slot0) == "table" then
-			setActive(slot1, true)
-			setWidgetText(slot1, i18n(uv0.ObjectiveList[slot0[1]], slot0[2]))
-		else
-			setActive(slot1, false)
-		end
-	end
-
 	slot6 = {
 		findTF(slot0._goals, "goal_tpl"),
 		findTF(slot0._goals, "goal_sink"),
@@ -356,7 +305,14 @@ function slot0.SetStageID(slot0, slot1)
 		slot2.objective_3
 	}) do
 		if type(slot13) ~= "string" then
-			slot5(slot13, slot6[slot8])
+			function (slot0, slot1)
+				if type(slot0) == "table" then
+					setActive(slot1, true)
+					setWidgetText(slot1, i18n(uv0.ObjectiveList[slot0[1]], slot0[2]))
+				else
+					setActive(slot1, false)
+				end
+			end(slot13, slot6[slot8])
 
 			slot8 = slot8 + 1
 		end
@@ -547,9 +503,7 @@ function slot0.didEnter(slot0)
 		slot0._formationLogic:SwitchToPreviewMode()
 	end
 
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	setActive(slot0._autoToggle, true)
 	onToggle(slot0, slot0._autoToggle, function (slot0)
 		uv0:emit(PreCombatMediator.ON_AUTO, {

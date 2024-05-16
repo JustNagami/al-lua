@@ -48,12 +48,9 @@ end
 function slot0.OnFirstFlush(slot0)
 	uv0.super.OnFirstFlush(slot0)
 	onButton(slot0, slot0.btnBattle, function ()
-		slot0 = uv0.activity
-		slot1 = uv0
-
-		slot1:emit(ActivityMediator.ON_SIMULATION_COMBAT, {
+		uv0:emit(ActivityMediator.ON_SIMULATION_COMBAT, {
 			warnMsg = "bulin_tip_other3",
-			stageId = slot0:getConfig("config_client").stageid
+			stageId = uv0.activity:getConfig("config_client").stageid
 		}, function ()
 			if not pg.NewStoryMgr.GetInstance():IsPlayed(tostring(uv0), true) then
 				pg.m02:sendNotification(GAME.STORY_UPDATE, {

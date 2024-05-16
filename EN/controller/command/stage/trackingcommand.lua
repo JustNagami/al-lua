@@ -5,16 +5,13 @@ function slot0.execute(slot0, slot1)
 	slot3 = slot2.chapterId
 	slot4 = slot2.fleetIds
 	slot5 = slot2.operationItem or 0
-	slot6 = slot2.loopFlag or 0
 
-	if not slot2.duties or slot6 == 0 then
+	if not slot2.duties or (slot2.loopFlag or 0) == 0 then
 		slot7 = {}
 	end
 
-	slot8 = {}
-
 	for slot12, slot13 in ipairs(slot7) do
-		table.insert(slot8, {
+		table.insert({}, {
 			key = slot12,
 			value = slot13
 		})
@@ -22,6 +19,7 @@ function slot0.execute(slot0, slot1)
 
 	slot9 = getProxy(ChapterProxy)
 	slot10 = slot9:getChapterById(slot3)
+	slot10.loopFlag = slot6
 	slot11 = slot9:getMapById(slot10:getConfig("map"))
 	slot12 = slot9:GetContinuousData(SYSTEM_SCENARIO)
 
@@ -59,9 +57,7 @@ function slot0.execute(slot0, slot1)
 				return
 			end
 
-			slot1 = getProxy(DailyLevelProxy)
-
-			if uv0:getMapType() == Map.ELITE and not slot1:IsEliteEnabled() then
+			if uv0:getMapType() == Map.ELITE and not getProxy(DailyLevelProxy):IsEliteEnabled() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_elite_no_quota"))
 				uv2:sendNotification(GAME.TRACKING_ERROR, {
 					chapter = uv3
@@ -186,9 +182,7 @@ function slot0.execute(slot0, slot1)
 			slot0()
 		end,
 		function (slot0)
-			slot2 = uv0:getConfig("enter_story_limit")
-
-			if uv0:getConfig("enter_story") and slot1 ~= "" and uv1:isCrossStoryLimit(slot2) and not uv2:isRemaster() and not pg.NewStoryMgr.GetInstance():IsPlayed(slot1) then
+			if uv0:getConfig("enter_story") and slot1 ~= "" and uv1:isCrossStoryLimit(uv0:getConfig("enter_story_limit")) and not uv2:isRemaster() and not pg.NewStoryMgr.GetInstance():IsPlayed(slot1) then
 				if tonumber(slot1) and slot4 > 0 then
 					uv1:sendNotification(GAME.BEGIN_STAGE, {
 						system = SYSTEM_PERFORM,
@@ -198,12 +192,7 @@ function slot0.execute(slot0, slot1)
 
 					return
 				else
-					slot5 = ChapterOpCommand.PlayChapterStory
-					slot6 = slot1
-					slot7 = slot0
-					slot8 = uv0:isLoop() and PlayerPrefs.GetInt("chapter_autofight_flag_" .. uv0.id, 1) == 1
-
-					slot5(slot6, slot7, slot8)
+					ChapterOpCommand.PlayChapterStory(slot1, slot0, uv0:isLoop() and PlayerPrefs.GetInt("chapter_autofight_flag_" .. uv0.id, 1) == 1)
 
 					return
 				end
@@ -296,9 +285,8 @@ end
 
 function slot0.sendProto(slot0)
 	slot7 = slot0.autoFightFlag
-	slot8 = pg.ConnectionMgr.GetInstance()
 
-	slot8:Send(13101, {
+	pg.ConnectionMgr.GetInstance():Send(13101, {
 		id = slot0.chapterId,
 		group_id_list = slot0.fleetIds,
 		elite_fleet_list = slot0.fleetDatas,
@@ -391,20 +379,18 @@ function slot0.isCrossStoryLimit(slot0, slot1)
 end
 
 function slot0.CalculateSpItemMoreCostRate(slot0)
-	slot1 = 1
-
 	if not slot0 or slot0 == 0 then
-		return slot1
+		return 1
 	end
 
-	slot8 = 2
-	slot9 = -2
+	slot7 = 2
+	slot8 = -2
 
-	for slot8, slot9 in ipairs(_.map(string.split(string.sub(pg.item_data_template[slot0].usage_arg, slot8, slot9), ","), function (slot0)
+	for slot7, slot8 in ipairs(_.map(string.split(string.sub(Item.getConfigData(slot0).usage_arg, slot7, slot8), ","), function (slot0)
 		return tonumber(slot0)
 	end)) do
-		if pg.benefit_buff_template[slot8] and slot10.benefit_type == Chapter.OPERATION_BUFF_TYPE_COST then
-			slot1 = slot1 + tonumber(slot10.benefit_effect) * 0.01
+		if pg.benefit_buff_template[slot7] and slot9.benefit_type == Chapter.OPERATION_BUFF_TYPE_COST then
+			slot1 = slot1 + tonumber(slot9.benefit_effect) * 0.01
 		end
 	end
 

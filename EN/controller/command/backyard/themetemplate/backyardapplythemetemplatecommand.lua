@@ -12,20 +12,20 @@ function slot0.execute(slot0, slot1)
 			return
 		end
 
-		slot2 = {}
-
 		for slot6, slot7 in ipairs(slot0) do
-			slot2[slot7.id] = slot7
+			-- Nothing
 		end
 
-		slot3 = {}
-
-		for slot7, slot8 in pairs(slot2) do
-			slot3[slot8.id] = slot8:ToSaveData()
+		for slot7, slot8 in pairs({
+			[slot7.id] = slot7
+		}) do
+			-- Nothing
 		end
 
 		pg.m02:sendNotification(GAME.PUT_FURNITURE, {
-			furnsPos = slot3,
+			furnsPos = {
+				[slot8.id] = slot8:ToSaveData()
+			},
 			floor = slot1,
 			callback = function (slot0, slot1)
 				if slot0 then
@@ -38,11 +38,10 @@ function slot0.execute(slot0, slot1)
 		})
 	end
 
-	slot7 = 1
 	slot10 = {}
 
 	if slot2.template:IsOccupyed(uv0.GetAllFloorFurnitures(), 1) then
-		slot10 = slot3:GetUsableFurnituresForFloor(slot8, slot7)
+		slot10 = slot3:GetUsableFurnituresForFloor(slot8, 1)
 	else
 		for slot15, slot16 in pairs(slot3:GetAllFurniture()) do
 			table.insert(slot10, slot16)
@@ -85,18 +84,14 @@ function slot0.WarpList(slot0)
 	slot4 = slot2.y
 	slot5 = slot2.z
 	slot6 = slot2.w
-
-	function slot7(slot0)
-		assert(slot0.position, slot0.id)
-
-		return not slot0:isPaper() and (slot0.position.x < uv0 or slot0.position.y < uv1)
-	end
-
 	slot8 = slot1.level
-	slot9 = slot1:GetPurchasedFurnitures()
 
 	for slot13 = #slot0, 1, -1 do
-		if not slot0[slot13].position or not slot9[slot14.configId] or slot7(slot14) then
+		if not slot0[slot13].position or not slot1:GetPurchasedFurnitures()[slot14.configId] or function (slot0)
+			assert(slot0.position, slot0.id)
+
+			return not slot0:isPaper() and (slot0.position.x < uv0 or slot0.position.y < uv1)
+		end(slot14) then
 			table.remove(slot0, slot13)
 		end
 	end
@@ -109,24 +104,22 @@ function slot0.WarpList(slot0)
 		end
 	end)
 
-	slot10 = {}
+	slot10 = {
+		[slot15.id] = slot15
+	}
 
 	for slot14, slot15 in ipairs(slot0) do
-		slot10[slot15.id] = slot15
+		-- Nothing
 	end
 
 	slot11 = {}
 	slot12 = {}
-	slot13 = slot1:GetMapSize()
 
 	for slot17, slot18 in ipairs(slot0) do
-		slot19, slot20 = CourtYardRawDataChecker.CheckFurnitrue(slot18, slot10, slot13)
+		slot19, slot20 = CourtYardRawDataChecker.CheckFurnitrue(slot18, slot10, slot1:GetMapSize())
 
 		if not slot19 and not table.contains(slot11, slot18.id) then
-			slot21 = pairs
-			slot22 = slot18.child or {}
-
-			for slot24, slot25 in slot21(slot22) do
+			for slot24, slot25 in pairs(slot18.child or {}) do
 				table.insert(slot11, slot24)
 			end
 
@@ -146,10 +139,7 @@ function slot0.WarpList(slot0)
 		if table.contains(slot11, slot0[slot17].id) then
 			table.remove(slot0, slot17)
 		elseif slot12[slot18.id] then
-			slot20 = pairs
-			slot21 = slot18.child or {}
-
-			for slot23, slot24 in slot20(slot21) do
+			for slot23, slot24 in pairs(slot18.child or {}) do
 				if table.contains(slot19, slot23) then
 					slot18.child[slot23] = nil
 				end

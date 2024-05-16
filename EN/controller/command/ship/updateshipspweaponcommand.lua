@@ -4,11 +4,10 @@ function slot0.execute(slot0, slot1)
 	slot4 = slot2.shipId
 	slot5 = slot2.callback
 	slot6 = getProxy(BayProxy)
-	slot7 = getProxy(EquipmentProxy)
 	slot8 = nil
 
 	if (slot1:getBody().spWeaponUid or 0) and slot3 ~= 0 then
-		slot8 = slot7:GetSpWeaponByUid(slot3)
+		slot8 = getProxy(EquipmentProxy):GetSpWeaponByUid(slot3)
 
 		assert(slot8, "不存在该特殊兵装" .. slot3)
 
@@ -55,9 +54,7 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	slot12 = pg.ConnectionMgr.GetInstance()
-
-	slot12:Send(14201, {
+	pg.ConnectionMgr.GetInstance():Send(14201, {
 		spweapon_id = slot3,
 		ship_id = slot4
 	}, 14202, function (slot0)

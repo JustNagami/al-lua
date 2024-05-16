@@ -33,11 +33,10 @@ end
 
 function slot0.GetShrinkPosition(slot0, slot1, slot2)
 	slot3 = slot0:GetExpandPosition(slot1, slot2)
-	slot4 = slot2 % 2 ~= 0
 	slot5 = Vector2(-125, -936)
 
 	if slot1 > 6 and slot1 % 2 == 0 or slot1 <= 6 then
-		return slot4 and slot3 - slot5 or slot3 + slot5
+		return slot2 % 2 ~= 0 and slot3 - slot5 or slot3 + slot5
 	else
 		return slot4 and slot3 + slot5 or slot3 - slot5
 	end
@@ -74,11 +73,10 @@ end
 
 function slot0.ReSortFleetShips(slot0)
 	slot4, slot5, slot6, slot7 = NewBattleResultUtil.SeparateMvpShip(slot0.contextData.oldMainShips, slot0.contextData.statistics.mvpShipID, slot0.contextData.statistics._flagShipID)
-	slot8 = {}
 
 	if slot7 ~= nil then
 		if TeamType.GetTeamFromShipType(ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(slot7.configId).type) == TeamType.Vanguard then
-			NewBattleResultUtil.SpecialInsertItem(slot8, slot6, slot5, slot4, slot7)
+			NewBattleResultUtil.SpecialInsertItem({}, slot6, slot5, slot4, slot7)
 		elseif slot10 == TeamType.Main then
 			NewBattleResultUtil.SpecialInsertItem(slot8, slot6, slot4, slot5, slot7)
 		elseif slot10 == TeamType.Submarine then
@@ -143,24 +141,20 @@ function slot0.DisplaySubFleet(slot0, slot1)
 	end
 
 	slot3 = {}
-	slot4 = #slot2 - uv0
 	slot8 = #slot2
 
 	for slot8 = uv0 + 1, math.max(uv0, slot8) do
 		slot9 = slot0.slots[slot8]
-		slot11 = slot0:GetExpandPosition(#slot2, slot8).x - slot4 * uv1
+		slot11 = slot0:GetExpandPosition(#slot2, slot8).x - (#slot2 - uv0) * uv1
 
 		table.insert(slot3, function (slot0)
 			if uv0.exited then
 				return
 			end
 
-			slot1 = LeanTween.value(uv1.gameObject, uv2, uv3, 0.3)
-			slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
+			LeanTween.value(uv1.gameObject, uv2, uv3, 0.3):setOnUpdate(System.Action_float(function (slot0)
 				uv0.localPosition = Vector3(slot0, uv0.localPosition.y, 0)
-			end))
-
-			slot1:setEase(LeanTweenType.easeOutQuad)
+			end)):setEase(LeanTweenType.easeOutQuad)
 			onDelayTick(function ()
 				if uv0.exited then
 					return
@@ -250,11 +244,8 @@ function slot0.DisplayMainFleet(slot0, slot1)
 			end
 
 			slot1 = uv1 + uv2
-			slot2 = uv0
-			slot3 = uv0
-			slot4 = LeanTween.value(uv4.gameObject, slot3:GetShrinkPosition(uv3, slot1), slot2:GetExpandPosition(uv3, slot1), 0.29)
 
-			slot4:setOnUpdate(System.Action_UnityEngine_Vector2(function (slot0)
+			LeanTween.value(uv4.gameObject, uv0:GetShrinkPosition(uv3, slot1), uv0:GetExpandPosition(uv3, slot1), 0.29):setOnUpdate(System.Action_UnityEngine_Vector2(function (slot0)
 				uv0.localPosition = slot0
 			end))
 			onNextTick(slot0)
@@ -262,7 +253,8 @@ function slot0.DisplayMainFleet(slot0, slot1)
 	end
 
 	slot5 = 0
-	slot6 = Timer.New(function ()
+
+	Timer.New(function ()
 		if uv0.exited then
 			return
 		end
@@ -272,11 +264,8 @@ function slot0.DisplayMainFleet(slot0, slot1)
 		end
 
 		uv1 = uv1 + 1
-	end, 0.059, 5)
-
-	slot6:Start()
-
-	slot6 = Timer.New(function ()
+	end, 0.059, 5):Start()
+	Timer.New(function ()
 		if uv0.exited then
 			return
 		end
@@ -284,9 +273,7 @@ function slot0.DisplayMainFleet(slot0, slot1)
 		for slot3, slot4 in ipairs(uv0.slots) do
 			setActive(slot4:Find("mask/blink"), false)
 		end
-	end, 0.3, 1)
-
-	slot6:Start()
+	end, 0.3, 1):Start()
 	seriesAsync(slot2, function ()
 		uv0:EffectSlots(true)
 		onDelayTick(uv1, 0.5)
@@ -299,11 +286,10 @@ function slot0.InitMainFleetShips(slot0, slot1)
 	end
 
 	slot4 = {}
-	slot5 = uv0 - slot3
 
 	for slot9 = 1, slot3 do
 		slot10 = slot2[slot9]
-		slot0.slots[slot9].localPosition = slot0:GetShrinkPosition(#slot2, slot5 + slot9)
+		slot0.slots[slot9].localPosition = slot0:GetShrinkPosition(#slot2, uv0 - slot3 + slot9)
 
 		table.insert(slot4, function (slot0)
 			if uv0.exited then
@@ -325,10 +311,8 @@ function slot0.OnDestroy(slot0)
 	end
 
 	slot1 = slot0.displayShips or {}
-	slot2 = ipairs
-	slot3 = slot0.slots or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot0.slots or {}) do
 		if slot6 and slot6:Find("mask/painting") and slot1[slot5] and slot7:Find("fitter").childCount > 0 then
 			retPaintingPrefab(slot7, slot1[slot5]:getPainting())
 		end

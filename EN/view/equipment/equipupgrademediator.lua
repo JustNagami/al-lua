@@ -5,15 +5,9 @@ slot0.ON_ITEM = "EquipUpgradeMediator:ON_ITEM"
 
 function slot0.register(slot0)
 	slot0.bagProxy = getProxy(BagProxy)
-	slot1 = slot0.bagProxy
-	slot2 = slot0.viewComponent
 
-	slot2:setItems(slot1:getData())
-
-	slot2 = getProxy(PlayerProxy)
-	slot3 = slot0.viewComponent
-
-	slot3:updateRes(slot2:getData())
+	slot0.viewComponent:setItems(slot0.bagProxy:getData())
+	slot0.viewComponent:updateRes(getProxy(PlayerProxy):getData())
 	slot0:bind(uv0.EQUIPMENT_UPGRDE, function (slot0)
 		uv0:sendNotification(GAME.UPGRADE_EQUIPMENTS, {
 			shipId = uv0.contextData.shipId,
@@ -30,7 +24,7 @@ function slot0.register(slot0)
 			drop = {
 				type = DROP_TYPE_ITEM,
 				id = slot1,
-				cfg = pg.item_data_statistics[slot1]
+				cfg = Item.getConfigData(slot1)
 			},
 			weight = LayerWeightConst.TOP_LAYER
 		})

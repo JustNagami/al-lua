@@ -85,10 +85,8 @@ function slot0.Focus(slot0, slot1, slot2, slot3, slot4)
 		slot0.wsTimer:RemoveInMapTween(slot0.twFocusId)
 	end
 
-	slot8 = {}
-
 	if slot3 then
-		table.insert(slot8, function (slot0)
+		table.insert({}, function (slot0)
 			if uv0.isDraging then
 				uv0.isDraging = false
 			end
@@ -135,13 +133,9 @@ function slot0.UpdateDrag(slot0)
 	slot1 = slot1 * math.clamp((slot5 - Vector3.Dot(Vector3(0, -math.sin(slot6), -math.cos(slot6)), Vector3(slot4.offsetx, slot4.offsety, slot4.offsetz) + WorldConst.DefaultMapOffset)) / slot5, 0, 1)
 	slot0.leftExtend, slot0.rightExtend, slot0.topExtend, slot0.bottomExtend = slot0:GetDragExtend(slot2, slot3)
 	slot0.transform.sizeDelta = Vector2(slot2 + math.max(slot0.leftExtend, slot0.rightExtend) * 2, slot3 + math.max(slot0.topExtend, slot0.bottomExtend) * 2)
-	slot10 = slot0.dragTrigger
 
-	slot10:RemoveDragFunc()
-
-	slot10 = slot0.dragTrigger
-
-	slot10:AddDragFunc(function (slot0, slot1)
+	slot0.dragTrigger:RemoveDragFunc()
+	slot0.dragTrigger:AddDragFunc(function (slot0, slot1)
 		if uv0.onDragFunction then
 			uv0.onDragFunction()
 		end
@@ -161,12 +155,11 @@ function slot0.GetDragExtend(slot0, slot1, slot2)
 
 	slot6 = slot5.localPosition.x
 	slot7 = slot5.localPosition.y - slot5.localPosition.z * math.tan(math.pi / 180 * slot3.theme.angle)
-	slot8 = 99999999
 	slot9 = 0
 	slot10 = 0
 
 	for slot14, slot15 in pairs(slot3.cells) do
-		if slot15.row < slot8 then
+		if slot15.row < 99999999 then
 			slot8 = slot15.row
 		end
 
@@ -195,21 +188,10 @@ function slot0.ShakePlane(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot13 = slot11 * slot3
 	slot0.dragTrigger.enabled = false
 	slot0.longPressTrigger.enabled = false
-	slot16 = LeanTween.moveLocal(slot0.transform.gameObject, slot8 - slot7, slot13)
-	slot16 = slot16:setDelay(slot12)
-	slot17 = LeanTween.moveLocal(slot0.transform.gameObject, slot8, slot11 * slot3 * 0.5)
-	slot17 = slot17:setDelay(slot12 + slot13 * slot4 * 2)
-	slot18 = slot0.wsTimer
 
-	slot18:AddInMapTween(LeanTween.moveLocal(slot0.transform.gameObject, slot8 + slot7, slot12).uniqueId)
-
-	slot18 = slot0.wsTimer
-
-	slot18:AddInMapTween(slot16:setLoopPingPong(slot4).uniqueId)
-
-	slot18 = slot0.wsTimer
-
-	slot18:AddInMapTween(slot17:setOnComplete(System.Action(function ()
+	slot0.wsTimer:AddInMapTween(LeanTween.moveLocal(slot0.transform.gameObject, slot8 + slot7, slot12).uniqueId)
+	slot0.wsTimer:AddInMapTween(LeanTween.moveLocal(slot0.transform.gameObject, slot8 - slot7, slot13):setDelay(slot12):setLoopPingPong(slot4).uniqueId)
+	slot0.wsTimer:AddInMapTween(LeanTween.moveLocal(slot0.transform.gameObject, slot8, slot11 * slot3 * 0.5):setDelay(slot12 + slot13 * slot4 * 2):setOnComplete(System.Action(function ()
 		uv0.dragTrigger.enabled = true
 		uv0.longPressTrigger.enabled = true
 

@@ -1,17 +1,12 @@
 slot0 = class("MetaCharacterTacticsInfoRequestCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot4 = ""
-
 	for slot8, slot9 in ipairs(slot1:getBody().idList) do
-		slot4 = slot4 .. slot9 .. ", "
+		slot4 = "" .. slot9 .. ", "
 	end
 
 	print("63317 request tactics exp detail info:", slot4)
-
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(63317, {
+	pg.ConnectionMgr.GetInstance():Send(63317, {
 		ship_id_list = slot3
 	}, 63318, function (slot0)
 		print("63318 requset success")

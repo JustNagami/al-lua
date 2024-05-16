@@ -282,10 +282,9 @@ function slot0.appearStone(slot0, slot1)
 	end
 
 	slot6 = findTF(slot2.tf, "zPos/anim/img").childCount
-	slot7 = math.random(1, slot6) - 1
 
 	for slot11 = 0, slot6 - 1 do
-		setActive(slot5:GetChild(slot11), slot11 == slot7)
+		setActive(slot5:GetChild(slot11), slot11 == math.random(1, slot6) - 1)
 	end
 
 	slot2.ready = CastleGameVo.item_ready_time
@@ -380,10 +379,7 @@ function slot0.appearBoom(slot0)
 
 	for slot6 = 1, #slot0:getItemActiveIndex() do
 		if slot2[slot6] % CastleGameVo.w_count ~= CastleGameVo.w_count - 1 then
-			slot9 = slot7 + CastleGameVo.w_count
-			slot10 = slot7 + 1 + CastleGameVo.w_count
-
-			if table.contains(slot2, slot7 + 1) and table.contains(slot2, slot9) and table.contains(slot2, slot10) then
+			if table.contains(slot2, slot7 + 1) and table.contains(slot2, slot7 + CastleGameVo.w_count) and table.contains(slot2, slot7 + 1 + CastleGameVo.w_count) then
 				table.insert(slot1, slot7)
 			end
 		end
@@ -547,12 +543,8 @@ function slot0.getCarriageRoadlist(slot0)
 	slot1 = {}
 
 	for slot5 = 0, CastleGameVo.w_count - 1 do
-		slot6 = true
-
 		for slot10 = 0, CastleGameVo.h_count - 1 do
-			slot11 = slot5 + slot10 * CastleGameVo.w_count
-
-			if slot6 and not table.contains(slot0.floorIndexs, slot11) then
+			if true and not table.contains(slot0.floorIndexs, slot5 + slot10 * CastleGameVo.w_count) then
 				slot6 = false
 			end
 		end
@@ -569,12 +561,8 @@ function slot0.getCarriageRoadlist(slot0)
 	end
 
 	for slot5 = 0, CastleGameVo.h_count - 1 do
-		slot6 = true
-
 		for slot10 = 0, CastleGameVo.w_count - 1 do
-			slot11 = slot10 + slot5 * CastleGameVo.w_count
-
-			if slot6 and not table.contains(slot0.floorIndexs, slot11) then
+			if true and not table.contains(slot0.floorIndexs, slot10 + slot5 * CastleGameVo.w_count) then
 				slot6 = false
 			end
 		end
@@ -606,8 +594,6 @@ function slot0.countSpeed(slot0, slot1, slot2)
 end
 
 function slot0.changeAnimAction(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = 0
-
 	for slot10 = 1, #slot1 do
 		slot11 = slot1[slot10]
 
@@ -628,7 +614,7 @@ function slot0.changeAnimAction(slot0, slot1, slot2, slot3, slot4, slot5)
 			end
 		end)
 
-		if slot3 ~= 1 and slot5 and slot6 == 0 then
+		if slot3 ~= 1 and slot5 and 0 == 0 then
 			slot6 = 1
 
 			slot5()

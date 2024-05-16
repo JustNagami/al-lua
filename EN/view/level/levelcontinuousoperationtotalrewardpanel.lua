@@ -50,10 +50,8 @@ function slot0.UpdateView(slot0)
 		uv0:closeView()
 	end, SFX_CONFIRM)
 
-	slot6 = {}
-
 	if slot1:IsActive() then
-		table.insert(slot6, i18n("multiple_sorties_finish"))
+		table.insert({}, i18n("multiple_sorties_finish"))
 	else
 		table.insert(slot6, i18n("multiple_sorties_stop"))
 	end

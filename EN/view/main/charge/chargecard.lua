@@ -176,6 +176,9 @@ function slot0.updateCharge(slot0, slot1, slot2, slot3)
 	if slot1:getConfig("limit_type") == 2 then
 		setText(slot0.limitText, i18n("charge_limit_all", slot12 - slot11, slot12))
 		setActive(slot0.mask, slot12 - slot11 <= 0)
+	elseif slot10 == 4 then
+		setText(slot0.limitText, i18n("charge_limit_daily", slot12 - slot11, slot12))
+		setActive(slot0.mask, slot12 - slot11 <= 0)
 	else
 		setText(slot0.limitText, "")
 	end
@@ -244,6 +247,8 @@ function slot0.updateGemItem(slot0, slot1, slot2)
 			setText(slot0.limitText, i18n("charge_limit_daily", slot5 - slot1.groupCount, slot5))
 		elseif slot6 == 2 then
 			setText(slot0.limitText, i18n("charge_limit_weekly", slot5 - slot1.groupCount, slot5))
+		elseif slot6 == 3 then
+			setText(slot0.limitText, i18n("charge_limit_monthly", slot5 - slot1.groupCount, slot5))
 		end
 	end
 
@@ -324,7 +329,7 @@ function slot0.updateGemItem(slot0, slot1, slot2)
 	setActive(slot0.name, true)
 
 	if #slot1:getConfig("effect_args") > 0 then
-		if pg.item_data_statistics[slot9[1]] then
+		if Item.getConfigData(slot9[1]) then
 			setScrollText(slot0.name, slot10.name)
 			slot0:updateImport(slot10.display_icon, slot10.display)
 		end
@@ -346,14 +351,8 @@ end
 function slot0.updateImport(slot0, slot1, slot2)
 	setActive(slot0.important, true)
 
-	slot3 = {}
-
 	for slot7, slot8 in ipairs(slot1) do
-		table.insert(slot3, {
-			type = slot8[1],
-			id = slot8[2],
-			count = slot8[3]
-		})
+		table.insert({}, Drop.Create(slot8))
 	end
 
 	for slot7 = 1, slot0.grid.childCount do
@@ -379,13 +378,13 @@ function slot0.updateCountdown(slot0, slot1)
 	end
 
 	setActive(slot0.countDown, slot2)
-	(function ()
+	function ()
 		if uv0.updateTimer then
 			uv0.updateTimer:Stop()
 
 			uv0.updateTimer = nil
 		end
-	end)()
+	end()
 
 	slot5 = pg.TimeMgr.GetInstance():Table2ServerTime(slot1)
 	slot0.updateTimer = Timer.New(function ()

@@ -5,6 +5,8 @@ function slot0.Execute(slot0, slot1)
 	slot0:RequestActivityTask()
 	slot0:RequestColoring()
 	slot0:RequestMetaData()
+	slot0:RequestManualSignAct()
+	slot0:RequestRandomDailyTask()
 	slot1()
 end
 
@@ -61,6 +63,32 @@ end
 
 function slot0.RequestMetaData(slot0)
 	getProxy(MetaCharacterProxy):requestMetaTacticsInfo()
+end
+
+function slot0.RequestManualSignAct(slot0)
+	for slot5, slot6 in pairs(getProxy(ActivityProxy):getRawData()) do
+		if slot6:getConfig("type") == ActivityConst.ACTIVITY_TYPE_MANUAL_SIGN and not slot6:TodayIsSigned() then
+			pg.m02:sendNotification(GAME.ACT_MANUAL_SIGN, {
+				activity_id = slot6.id,
+				cmd = ManualSignActivity.OP_SIGN
+			})
+		end
+	end
+end
+
+function slot0.RequestRandomDailyTask(slot0)
+	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_RANDOM_DAILY_TASK) or slot1:isEnd() then
+		return
+	end
+
+	if pg.TimeMgr.GetInstance():IsSameDay(slot1.data1, pg.TimeMgr.GetInstance():GetServerTime()) then
+		return
+	end
+
+	pg.m02:sendNotification(GAME.ACT_RANDOM_DAILY_TASK, {
+		activity_id = slot1.id,
+		cmd = ActivityConst.RANDOM_DAILY_TASK_OP_RANDOM
+	})
 end
 
 return slot0

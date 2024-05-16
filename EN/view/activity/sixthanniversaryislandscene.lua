@@ -30,25 +30,19 @@ function slot0.setResDrop(slot0, slot1, slot2)
 end
 
 function slot0.init(slot0)
-	slot1 = slot0._tf
-	slot0.rtTop = slot1:Find("top")
-	slot1 = pg.UIMgr.GetInstance()
+	slot0.rtTop = slot0._tf:Find("top")
 
-	slot1:OverlayPanel(slot0.rtTop)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.rtTop)
 
 	slot0.effectObjs = {}
 	slot0.proxy = getProxy(IslandProxy)
 	slot1 = pg.TimeMgr.GetInstance()
-	slot2 = slot0._tf
-	slot2 = slot2:Find("map/content")
+	slot2 = slot0._tf:Find("map/content")
 	slot0.nodeItemList = UIItemList.New(slot2, slot2:Find("node"))
-	slot3 = slot0.nodeItemList
 
-	slot3:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.nodeItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot4 = uv0.proxy:GetNode(uv0.ids[slot1])
+			slot4 = uv0.proxy:GetNode(uv0.ids[slot1 + 1])
 			slot2.name = slot4.id
 			slot5, slot6 = unpack(slot4:getConfig("address"))
 
@@ -110,17 +104,12 @@ function slot0.init(slot0)
 		end
 	end)
 
-	slot3 = slot0.rtTop
-	slot3 = slot3:Find("panel/content/mask/scroll_rect")
+	slot3 = slot0.rtTop:Find("panel/content/mask/scroll_rect")
 	slot0.panelItemList = UIItemList.New(slot3, slot3:Find("tpl"))
-	slot4 = slot0.panelItemList
 
-	slot4:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.panelItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.proxy
-			slot3 = slot3:GetNode(uv0.dailyIds[slot1])
+			slot3 = uv0.proxy:GetNode(uv0.dailyIds[slot1 + 1])
 			slot2.name = slot3.id
 
 			GetImageSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", slot3:getConfig("icon"), slot2:Find("Image"))
@@ -130,21 +119,14 @@ function slot0.init(slot0)
 			end, SFX_PANEL)
 		end
 	end)
+	triggerToggle(slot0.rtTop:Find("panel/toggle"), false)
 
-	slot5 = slot0.rtTop
-
-	triggerToggle(slot5:Find("panel/toggle"), false)
-
-	slot4 = slot0._tf
-	slot4 = slot4:Find("top/focus")
+	slot4 = slot0._tf:Find("top/focus")
 	slot0.floatItemList = UIItemList.New(slot4, slot4:Find("main_mark"))
-	slot5 = slot0.floatItemList
 
-	slot5:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.floatItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot2.name = uv0.mainIds[slot1]
+			slot2.name = uv0.mainIds[slot1 + 1]
 
 			onButton(uv0, slot2, function ()
 				uv0:focus(uv0.mainIds[uv1], LeanTweenType.easeInOutSine)
@@ -152,14 +134,10 @@ function slot0.init(slot0)
 		end
 	end)
 
-	slot5 = slot0.rtTop
-	slot0.rtResPanel = slot5:Find("res")
-	slot5 = slot0._tf
-	slot0.rtMap = slot5:Find("map")
-	slot5 = slot0.rtMap
-	slot5 = slot5:GetComponent(typeof(ScrollRect)).onValueChanged
+	slot0.rtResPanel = slot0.rtTop:Find("res")
+	slot0.rtMap = slot0._tf:Find("map")
 
-	slot5:AddListener(function ()
+	slot0.rtMap:GetComponent(typeof(ScrollRect)).onValueChanged:AddListener(function ()
 		uv0:onDragFunction()
 	end)
 
@@ -167,49 +145,30 @@ function slot0.init(slot0)
 	slot0.delta = Vector2(slot6 - 100, slot7 - 100) / 2
 	slot0.extendLimit = Vector2(slot0.rtMap.rect.width - slot0._tf.rect.width, slot0.rtMap.rect.height - slot0._tf.rect.height) / 2
 	slot0.displayDic = {}
-	slot10 = slot0.rtTop
 
-	onButton(slot0, slot10:Find("btn_back"), function ()
+	onButton(slot0, slot0.rtTop:Find("btn_back"), function ()
 		uv0:closeView()
 	end, SFX_CANCEL)
-
-	slot9 = slot0.rtTop
-
-	setActive(slot9:Find("btn_now"), false)
-
-	slot10 = slot0.rtTop
-
-	onButton(slot0, slot10:Find("btns/btn_shop"), function ()
+	setActive(slot0.rtTop:Find("btn_now"), false)
+	onButton(slot0, slot0.rtTop:Find("btns/btn_shop"), function ()
 		uv0:emit(SixthAnniversaryIslandMediator.GO_SHOP)
 	end, SFX_PANEL)
-
-	slot10 = slot0.rtTop
-
-	onButton(slot0, slot10:Find("btns/btn_note"), function ()
+	onButton(slot0, slot0.rtTop:Find("btns/btn_note"), function ()
 		uv0:emit(SixthAnniversaryIslandMediator.OPEN_NOTE)
 	end, SFX_PANEL)
-
-	slot10 = slot0.rtTop
-
-	onButton(slot0, slot10:Find("btns/btn_help"), function ()
+	onButton(slot0, slot0.rtTop:Find("btns/btn_help"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("island_help")
 		})
 	end, SFX_PANEL)
-
-	slot10 = slot0.rtResPanel
-
-	onButton(slot0, slot10:Find("tpl"), function ()
+	onButton(slot0, slot0.rtResPanel:Find("tpl"), function ()
 		uv0:emit(SixthAnniversaryIslandMediator.OPEN_RES, {
 			id = 350,
 			type = 1
 		}, "")
 	end, SFX_PANEL)
-
-	slot10 = slot0.rtResPanel
-
-	onButton(slot0, slot10:Find("tpl_2"), function ()
+	onButton(slot0, slot0.rtResPanel:Find("tpl_2"), function ()
 		uv0:emit(SixthAnniversaryIslandMediator.OPEN_RES, Clone(uv0.resDrop), i18n("island_game_limit_help", uv0.resDailyNumber))
 	end, SFX_PANEL)
 end
@@ -409,9 +368,7 @@ function slot0.refreshNode(slot0, slot1)
 		end
 
 		if slot3:GetEffectName() ~= "" then
-			slot8 = pg.PoolMgr.GetInstance()
-
-			slot8:GetUI(slot7, true, function (slot0)
+			pg.PoolMgr.GetInstance():GetUI(slot7, true, function (slot0)
 				table.insert(uv0.effectObjs, {
 					name = uv1,
 					go = slot0
@@ -466,10 +423,8 @@ function slot0.didEnter(slot0)
 	slot0:refreshDailyPanel()
 	slot0:updateTaskTip()
 
-	slot1 = {}
-
 	if slot0.contextData.nodeIds and #slot0.contextData.nodeIds > 0 then
-		table.insert(slot1, function (slot0)
+		table.insert({}, function (slot0)
 			if not uv0:focusList(uv0.contextData.nodeIds) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("islandnode_tips8"))
 				slot0()
@@ -480,9 +435,7 @@ function slot0.didEnter(slot0)
 	elseif slot0.contextData.checkMain then
 		table.insert(slot1, function (slot0)
 			slot1 = getProxy(IslandProxy)
-			slot3 = getProxy(ActivityProxy)
-			slot3 = slot3:getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
-			slot3 = slot3:GetTotalBuildingLevel()
+			slot3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2):GetTotalBuildingLevel()
 
 			if #underscore.filter(underscore.map(uv0.ids, function (slot0)
 				return uv0:GetNode(slot0)
@@ -499,16 +452,15 @@ function slot0.didEnter(slot0)
 	end
 
 	slot0.contextData.checkMain = nil
-	slot2 = {
-		1001,
-		1002,
-		1003,
-		1004,
-		1005
-	}
 
 	if slot0.contextData.lastNodeId then
-		table.insert(slot2, 1, slot0.contextData.lastNodeId)
+		table.insert({
+			1001,
+			1002,
+			1003,
+			1004,
+			1005
+		}, 1, slot0.contextData.lastNodeId)
 	end
 
 	table.insert(slot1, function (slot0)
@@ -524,10 +476,7 @@ function slot0.didEnter(slot0)
 			1053
 		}, nil, true)
 	end)
-
-	slot4 = pg.NewStoryMgr.GetInstance()
-
-	slot4:Play("HAIDAORICHANG2", function ()
+	pg.NewStoryMgr.GetInstance():Play("HAIDAORICHANG2", function ()
 		if uv0.contextData.wraps then
 			switch(uv0.contextData.wraps, {
 				[uv1.SHOP] = function ()
@@ -548,10 +497,8 @@ function slot0.willExit(slot0)
 	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.rtTop, slot0._tf)
 	slot0.rtMap:GetComponent(typeof(ScrollRect)).onValueChanged:RemoveAllListeners()
 
-	slot1 = pg.PoolMgr.GetInstance()
-
 	for slot5, slot6 in ipairs(slot0.effectObjs) do
-		slot1:ReturnUI(slot6.name, slot6.go)
+		pg.PoolMgr.GetInstance():ReturnUI(slot6.name, slot6.go)
 	end
 end
 

@@ -4,33 +4,21 @@ slot0.OPEN_EQUIPMENTDESIGN_INDEX = "EquipmentDesignMediator:OPEN_EQUIPMENTDESIGN
 
 function slot0.register(slot0)
 	slot0.bagProxy = getProxy(BagProxy)
-	slot1 = slot0.viewComponent
-	slot3 = slot0.bagProxy
 
-	slot1:setItems(slot3:getData())
+	slot0.viewComponent:setItems(slot0.bagProxy:getData())
 
 	slot0.equipmentProxy = getProxy(EquipmentProxy)
-	slot1 = slot0.equipmentProxy
-	slot2 = slot0.viewComponent
 
-	slot2:setCapacity(slot1:getCapacity())
+	slot0.viewComponent:setCapacity(slot0.equipmentProxy:getCapacity())
 
 	slot0.playerProxy = getProxy(PlayerProxy)
-	slot2 = slot0.playerProxy
-	slot3 = slot0.viewComponent
 
-	slot3:setPlayer(slot2:getData())
+	slot0.viewComponent:setPlayer(slot0.playerProxy:getData())
 
-	slot3 = slot0:getFacade()
-	slot3 = slot3:retrieveMediator(EquipmentMediator.__cname)
-	slot4 = slot3:getViewComponent()
-	slot5 = slot0.viewComponent
+	slot4 = slot0:getFacade():retrieveMediator(EquipmentMediator.__cname):getViewComponent()
 
-	slot5:SetParentTF(slot4._tf)
-
-	slot5 = slot0.viewComponent
-
-	slot5:SetTopContainer(slot4.topPanel)
+	slot0.viewComponent:SetParentTF(slot4._tf)
+	slot0.viewComponent:SetTopContainer(slot4.topPanel)
 	slot0:bind(uv0.MAKE_EQUIPMENT, function (slot0, slot1, slot2)
 		uv0:sendNotification(GAME.COMPOSITE_EQUIPMENT, {
 			id = slot1,
@@ -60,7 +48,7 @@ function slot0.handleNotification(slot0, slot1)
 
 	if slot1:getName() == GAME.COMPOSITE_EQUIPMENT_DONE then
 		slot0.viewComponent:filter(slot0.contextData.index or 1, true)
-		pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_newEquipLayer_getNewEquip", slot3.equipment.config.name .. " X" .. slot3.count))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_newEquipLayer_getNewEquip", slot3.equipment:getConfig("name") .. " X" .. slot3.count))
 	elseif slot2 == BagProxy.ITEM_UPDATED then
 		slot0.viewComponent:setItems(slot0.bagProxy:getData())
 	elseif slot2 == PlayerProxy.UPDATED then

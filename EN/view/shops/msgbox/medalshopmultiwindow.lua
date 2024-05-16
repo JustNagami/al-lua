@@ -29,10 +29,7 @@ function slot0.OnInit(slot0)
 	onButton(slot0, slot0.cancelBtn, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bg"), function ()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 end
@@ -50,24 +47,23 @@ end
 
 function slot0.InitWindow(slot0, slot1, slot2)
 	slot3 = slot1:GetDropInfo()
-	slot5 = math.max(math.floor(getProxy(BagProxy):getItemCountById(ITEM_ID_SILVER_HOOK) / slot1:getConfig("price")), 1)
 
 	if slot1:GetLimit() ~= 0 then
-		slot5 = math.min(slot5, slot1:GetMaxCnt())
+		slot5 = math.min(math.max(math.floor(getProxy(BagProxy):getItemCountById(ITEM_ID_SILVER_HOOK) / slot1:getConfig("price")), 1), slot1:GetMaxCnt())
 	end
 
-	(function (slot0)
+	function (slot0)
 		slot0 = math.min(math.max(slot0, 1), uv0)
 		uv1.countTF.text = slot0
 		uv1.curCount = slot0
 		uv1.itemCountTF.text = slot0 * uv2:getConfig("num")
-	end)(1)
+	end(1)
 	updateDrop(slot0.topItem:Find("left/IconTpl"), slot3)
 	UpdateOwnDisplay(slot0.ownerTF, slot3)
 	RegisterDetailButton(slot0, slot0.detailTF, slot3)
 
-	slot0.nameTF.text = slot3.cfg.name
-	slot0.descTF.text = slot3.desc or slot3.cfg.desc
+	slot0.nameTF.text = slot3:getConfig("name")
+	slot0.descTF.text = slot3.desc or slot3:getConfig("desc")
 
 	updateDrop(slot0.bottomItem, slot3)
 	onButton(slot0, slot0.confirmBtn, function ()

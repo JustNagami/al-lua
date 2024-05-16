@@ -1,9 +1,7 @@
 slot0 = class("NewDodgemResultGradePage", import("..NewBattleResultGradePage"))
 
 function slot0.LoadBG(slot0, slot1)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("BattleResultItems/" .. "CommonBg", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. "CommonBg", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited or IsNil(slot0) then
 			if uv1 then
 				uv1()
@@ -40,17 +38,13 @@ function slot0.RegisterEvent(slot0, slot1)
 end
 
 function slot0.MovePainting(slot0, slot1)
-	slot3 = LeanTween.value(slot0.paintingTr.parent.gameObject, 2500, 587, 0.3)
-	slot3 = slot3:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(slot0.paintingTr.parent.gameObject, 2500, 587, 0.3):setOnUpdate(System.Action_float(function (slot0)
 		uv0.localPosition = Vector3(slot0, 0, 0)
-	end))
-
-	slot3:setOnComplete(System.Action(slot1))
+	end)):setOnComplete(System.Action(slot1))
 
 	slot4 = slot0.gradePanel.anchoredPosition
-	slot5 = LeanTween.value(slot0.gradePanel.gameObject, slot4, slot4 + Vector2(-247, 213), 0.29)
 
-	slot5:setOnUpdate(System.Action_UnityEngine_Vector2(function (slot0)
+	LeanTween.value(slot0.gradePanel.gameObject, slot4, slot4 + Vector2(-247, 213), 0.29):setOnUpdate(System.Action_UnityEngine_Vector2(function (slot0)
 		uv0.gradePanel.anchoredPosition3D = Vector3(slot0.x, slot0.y, 0)
 	end))
 end
@@ -72,9 +66,7 @@ function slot0.GetGetObjectives(slot0)
 end
 
 function slot0.LoadPainitingContainer(slot0, slot1)
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("BattleResultItems/Painting", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Painting", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited then
 			return
 		end

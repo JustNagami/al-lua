@@ -45,10 +45,8 @@ function slot0.UpdateDesc(slot0, slot1)
 end
 
 function slot0.UpdateDescPreSce(slot0, slot1)
-	slot2 = slot1:getConfig("desc")
-
 	if slot1.timestamp - pg.TimeMgr:GetInstance():GetServerTime() > 0 then
-		slot0.descTxt.text = string.gsub(slot2, "$1", pg.TimeMgr.GetInstance():DescCDTime(slot4))
+		slot0.descTxt.text = string.gsub(slot1:getConfig("desc"), "$1", pg.TimeMgr.GetInstance():DescCDTime(slot4))
 	else
 		slot0:Hide()
 	end

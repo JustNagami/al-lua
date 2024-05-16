@@ -16,8 +16,6 @@ function slot0.Entrance(slot0, slot1)
 	end
 
 	slot5 = getProxy(PlayerProxy)
-	slot6 = getProxy(BayProxy)
-	slot7 = getProxy(FleetProxy)
 	slot8, slot9 = nil
 	slot11 = getProxy(MilitaryExerciseProxy):getRivalById(slot0.rivalId)
 	slot13 = pg.battle_cost_template[SYSTEM_DUEL].oil_cost > 0
@@ -27,22 +25,18 @@ function slot0.Entrance(slot0, slot1)
 	slot17 = 0
 	slot18 = 0
 
-	for slot24, slot25 in ipairs(slot6:getSortShipsByFleet(slot7:getFleetById(slot2))) do
+	for slot24, slot25 in ipairs(getProxy(BayProxy):getSortShipsByFleet(getProxy(FleetProxy):getFleetById(slot2))) do
 		slot14[#slot14 + 1] = slot25.id
 	end
 
-	slot21 = slot5:getData()
-
-	if slot13 and slot21.oil < slot18 then
+	if slot13 and slot5:getData().oil < slot18 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	slot22 = 0
-
 	for slot26, slot27 in ipairs(slot11.mainShips) do
-		slot22 = slot22 + slot27.level
+		slot22 = 0 + slot27.level
 	end
 
 	for slot26, slot27 in ipairs(slot11.vanguardShips) do
@@ -63,18 +57,15 @@ function slot0.Entrance(slot0, slot1)
 		end
 
 		if uv3.enter_energy_cost > 0 then
-			slot1 = pg.gameset.battle_consume_energy.key_value
-
 			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(slot1)
+				slot6:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
 				uv5:updateShip(slot6)
 			end
 		end
 
 		slot1 = ys.Battle.BattleConfig.ARENA_LIST
-		slot3 = uv6
 
-		slot3:updatePlayer(uv1)
+		uv6:updatePlayer(uv1)
 		uv9:sendNotification(GAME.BEGIN_STAGE_DONE, {
 			mainFleetId = uv7,
 			prefabFleet = {},
@@ -91,15 +82,13 @@ end
 
 function slot0.Exit(slot0, slot1)
 	slot2 = pg.battle_cost_template[SYSTEM_DUEL]
-	slot3 = getProxy(FleetProxy)
-	slot4 = getProxy(BayProxy)
 	slot5 = slot0.statistics._battleScore
 	slot6 = 0
 	slot7 = {}
-	slot8 = slot3:getFleetById(slot0.mainFleetId)
+	slot8 = getProxy(FleetProxy):getFleetById(slot0.mainFleetId)
 	slot6 = slot8:getEndCost().oil
 
-	slot1:SendRequest(slot1.GeneralPackage(slot0, slot4:getSortShipsByFleet(slot8)), function (slot0)
+	slot1:SendRequest(slot1.GeneralPackage(slot0, getProxy(BayProxy):getSortShipsByFleet(slot8)), function (slot0)
 		uv0.addShipsExp(slot0.ship_exp_list, uv1.statistics, false)
 
 		uv1.statistics.mvpShipID = slot0.mvp

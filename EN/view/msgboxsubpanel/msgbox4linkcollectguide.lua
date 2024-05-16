@@ -30,10 +30,10 @@ function slot0.OnRefresh(slot0, slot1)
 	slot0:SetWindowSize(Vector2(930, 540))
 	setActive(slot0.viewParent._btnContainer, false)
 
-	slot2 = {
+	slot2 = Drop.New({
 		type = slot1.drop_type,
 		id = slot1.drop_id
-	}
+	})
 
 	updateDrop(slot0.iconTF, slot2)
 	UpdateOwnDisplay(slot0.ownTF, slot2)
@@ -56,13 +56,9 @@ function slot0.OnRefresh(slot0, slot1)
 			slot3 = uv0.skipable_list[slot1 + 1]
 			slot4 = slot3[1]
 			slot5 = slot3[2]
-			slot8 = uv1
 
-			changeToScrollText(slot8:findTF("mask/title", slot2), slot3[3])
-
-			slot7 = uv1
-
-			onButton(uv1, slot7:findTF("skip_btn", slot2), function ()
+			changeToScrollText(uv1:findTF("mask/title", slot2), slot3[3])
+			onButton(uv1, uv1:findTF("skip_btn", slot2), function ()
 				if uv0 == uv1.SKIP_TYPE_SCENE then
 					pg.m02:sendNotification(GAME.GO_SCENE, uv2[1], uv2[2] or {})
 				elseif uv0 == uv1.SKIP_TYPE_ACTIVITY then

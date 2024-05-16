@@ -8,9 +8,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(61025, {
+	pg.ConnectionMgr.GetInstance():Send(61025, {
 		perf = {
 			{
 				event_id = slot3,

@@ -41,13 +41,8 @@ function slot0.GetCurrFloorHouse(slot0)
 end
 
 function slot0.StoreyFurniture2ThemeFurniture(slot0)
-	slot1 = {}
-
 	for slot5, slot6 in pairs(slot0.child) do
-		slot1[tonumber(slot5)] = {
-			x = slot6.x,
-			y = slot6.y
-		}
+		-- Nothing
 	end
 
 	return BackyardThemeFurniture.New({
@@ -55,7 +50,12 @@ function slot0.StoreyFurniture2ThemeFurniture(slot0)
 		configId = slot0.configId or tonumber(slot0.id),
 		position = slot0.position,
 		dir = slot0.dir,
-		child = slot1,
+		child = {
+			[tonumber(slot5)] = {
+				x = slot6.x,
+				y = slot6.y
+			}
+		},
 		parent = tonumber(slot0.parent) or 0,
 		floor = slot0.floor
 	})

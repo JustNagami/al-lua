@@ -65,13 +65,8 @@ end
 function slot0.onJudgeClick(slot0, slot1)
 	for slot5 = 1, #slot0.judges do
 		if slot5 == slot1 then
-			slot6 = slot0.judges[slot5]
-
-			slot6:select(true)
-
-			slot6 = slot0._event
-
-			slot6:emit(CookGameView.CLICK_JUDGE_EVENT, slot0.judges[slot1], function (slot0)
+			slot0.judges[slot5]:select(true)
+			slot0._event:emit(CookGameView.CLICK_JUDGE_EVENT, slot0.judges[slot1], function (slot0)
 				if not slot0 then
 					uv0.judges[uv1]:select(false)
 				end

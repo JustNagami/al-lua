@@ -27,11 +27,8 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot14 = slot8.use_item[slot13 + 1] or {}
-	slot15 = getProxy(BagProxy)
-
-	for slot19, slot20 in ipairs(slot14) do
-		if slot15:getItemCountById(slot20[1]) < slot20[2] then
+	for slot19, slot20 in ipairs(slot8.use_item[slot13 + 1] or {}) do
+		if getProxy(BagProxy):getItemCountById(slot20[1]) < slot20[2] then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 			return
@@ -101,7 +98,7 @@ function slot0.execute(slot0, slot1)
 		table.insert(slot19, function (slot0)
 			slot1 = nil
 
-			(function ()
+			function ()
 				slot0, slot1 = ShipStatus.ShipStatusCheck("onTeamChange", uv0, uv1)
 
 				if slot0 then
@@ -109,7 +106,7 @@ function slot0.execute(slot0, slot1)
 				elseif slot1 then
 					pg.TipsMgr.GetInstance():ShowTips(slot1)
 				end
-			end)()
+			end()
 		end)
 
 		if slot11:getFlag("inWorld") then
@@ -150,9 +147,7 @@ function slot0.execute(slot0, slot1)
 		})
 	end)
 	seriesAsync(slot19, function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(12011, {
+		pg.ConnectionMgr.GetInstance():Send(12011, {
 			ship_id = uv0,
 			remould_id = uv1,
 			material_id = uv2
@@ -224,10 +219,7 @@ function slot0.execute(slot0, slot1)
 					end
 				end)
 
-				slot4 = pairs
-				slot5 = uv4.use_item[uv8] or {}
-
-				for slot7, slot8 in slot4(slot5) do
+				for slot7, slot8 in pairs(uv4.use_item[uv8] or {}) do
 					uv9:removeItemById(slot8[1], slot8[2])
 				end
 
@@ -239,11 +231,9 @@ function slot0.execute(slot0, slot1)
 				})
 				slot4:updatePlayer(slot5)
 
-				slot6 = {}
-
 				if uv4.skin_id ~= 0 then
 					uv0:updateSkinId(uv4.skin_id)
-					table.insert(slot6, {
+					table.insert({}, {
 						count = 1,
 						type = DROP_TYPE_SKIN,
 						id = uv4.skin_id
@@ -277,10 +267,8 @@ function slot0.execute(slot0, slot1)
 				uv10:updateShip(uv0)
 
 				slot8 = getProxy(EquipmentProxy)
-				slot9 = ipairs
-				slot10 = uv11 or {}
 
-				for slot12, slot13 in slot9(slot10) do
+				for slot12, slot13 in ipairs(uv11 or {}) do
 					for slot18, slot19 in ipairs(uv10:getShipById(slot13).equipments) do
 						if slot19 then
 							slot8:addEquipment(slot19)

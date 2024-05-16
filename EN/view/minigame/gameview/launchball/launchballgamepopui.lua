@@ -14,14 +14,10 @@ function slot0.initCountUI(slot0)
 	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
 	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
 	slot0.countDft = GetOrAddComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
-	slot1 = slot0.countDft
 
-	slot1:SetTriggerEvent(function ()
+	slot0.countDft:SetTriggerEvent(function ()
 	end)
-
-	slot1 = slot0.countDft
-
-	slot1:SetEndEvent(function ()
+	slot0.countDft:SetEndEvent(function ()
 		uv0._event:emit(LaunchBallGameView.COUNT_DOWN)
 	end)
 end

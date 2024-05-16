@@ -12,9 +12,7 @@ function slot0.Execute(slot0, slot1)
 
 	for slot9, slot10 in ipairs(slot3:getTaskIds()) do
 		if slot3:getTaskOpenTimeStamp(slot10) <= pg.TimeMgr.GetInstance():GetServerTime() then
-			slot13 = getProxy(TaskProxy):isFinishPrevTasks(slot10)
-
-			if not (getProxy(TaskProxy):getTaskById(slot10) or getProxy(TaskProxy):getFinishTaskById(slot10)) and slot13 then
+			if not (getProxy(TaskProxy):getTaskById(slot10) or getProxy(TaskProxy):getFinishTaskById(slot10)) and getProxy(TaskProxy):isFinishPrevTasks(slot10) then
 				slot5 = true
 
 				slot0:TriggerTask(slot10)

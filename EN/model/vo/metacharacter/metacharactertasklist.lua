@@ -5,7 +5,6 @@ function slot0.Ctor(slot0, slot1)
 	slot0.configId = slot0.id
 	slot0.skillId = slot0:getConfig("skill_ID")
 	slot0.taskList = {}
-	slot3 = nil
 
 	for slot7, slot8 in ipairs(slot0:getConfig("skill_levelup_task")) do
 		slot9 = MetaCharacterTask.New({
@@ -13,7 +12,7 @@ function slot0.Ctor(slot0, slot1)
 			star = slot8[2],
 			level = slot8[3],
 			skillId = slot0.skillId,
-			prev = slot3,
+			prev = nil,
 			indexofList = slot7
 		})
 

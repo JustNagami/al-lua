@@ -30,10 +30,8 @@ end
 function slot0.UpdateItem(slot0, slot1, slot2)
 	slot3 = slot0.list[slot1]
 	slot4 = slot3.key
-	slot5 = findTF(slot2, "mask/Text")
-	slot5 = slot5:GetComponent("ScrollText")
 
-	slot5:SetText(slot3.title)
+	findTF(slot2, "mask/Text"):GetComponent("ScrollText"):SetText(slot3.title)
 
 	slot6 = pg.SecondaryPWDMgr.GetInstance()
 
@@ -55,9 +53,7 @@ function slot0.UpdateItem(slot0, slot1, slot2)
 			end
 		end
 
-		slot2 = uv2
-
-		slot2:ChangeSetting(slot1, function ()
+		uv2:ChangeSetting(slot1, function ()
 			uv0:UpdateBtnsState()
 		end)
 	end, SFX_UI_TAG)
@@ -76,9 +72,7 @@ function slot0.UpdateBtnsState(slot0)
 		triggerToggle(slot1:Find("off"), not slot3)
 	end
 
-	slot2 = slot0.uiList
-
-	slot2:eachActive(function (slot0, slot1)
+	slot0.uiList:eachActive(function (slot0, slot1)
 		uv1(uv0.list[slot0 + 1], slot1)
 	end)
 end

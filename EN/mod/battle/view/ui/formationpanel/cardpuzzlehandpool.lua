@@ -27,10 +27,8 @@ function slot3.SetCardPuzzleComponent(slot0, slot1)
 end
 
 function slot3.onUpdateCards(slot0, slot1)
-	slot2 = slot0._hand:GetCardList()
-
 	for slot6 = 1, slot0._hand.MAX_HAND do
-		slot0._cardList[slot6]:SetCardInfo(slot2[slot6])
+		slot0._cardList[slot6]:SetCardInfo(slot0._hand:GetCardList()[slot6])
 	end
 end
 

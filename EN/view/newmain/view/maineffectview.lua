@@ -61,9 +61,7 @@ function slot0.LoadEffect(slot0, slot1, slot2)
 		setActive(slot3, true)
 		slot2(slot3)
 	else
-		slot3 = ResourceMgr.Inst
-
-		slot3:getAssetAsync("Effect/" .. slot1, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("Effect/" .. slot1, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0.exited then
 				return
 			end

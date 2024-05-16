@@ -15,10 +15,8 @@ function slot0.OnInit(slot0)
 	slot0.toggles = {}
 
 	for slot4, slot5 in ipairs(uv0) do
-		slot7 = slot0._tf
-		slot0[slot5 .. "Panel"] = slot7:Find(slot5)
-		slot6 = slot0._tf
-		slot6 = slot6:Find("toggle_controll/" .. slot5)
+		slot0[slot5 .. "Panel"] = slot0._tf:Find(slot5)
+		slot6 = slot0._tf:Find("toggle_controll/" .. slot5)
 		slot0.toggles[slot5] = slot6
 
 		onToggle(slot0, slot6, function (slot0)
@@ -29,17 +27,13 @@ function slot0.OnInit(slot0)
 	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Back()
 	end, SFX_PANEL)
-
-	slot1 = slot0.controlPanel:Find("got/empty/Text")
-
 	setText(slot0.controlPanel:Find("allMax/txt"), i18n("onebutton_max_tip"))
 
-	slot2 = slot0._tf:Find("control/condition/text")
 	slot3 = slot0.resolvePanel:Find("cancel_button/label")
 
 	if PLATFORM_CODE == PLATFORM_US then
-		setTextEN(slot2, i18n("fenjie_lantu_tip"))
-		setTextEN(slot1, i18n("fragresolve_empty_tip"))
+		setTextEN(slot0._tf:Find("control/condition/text"), i18n("fenjie_lantu_tip"))
+		setTextEN(slot0.controlPanel:Find("got/empty/Text"), i18n("fragresolve_empty_tip"))
 	else
 		setText(slot2, i18n("fenjie_lantu_tip"))
 		setText(slot1, i18n("fragresolve_empty_tip"))
@@ -90,12 +84,12 @@ function slot0.Resetcontrol(slot0)
 		return
 	end
 
-	slot5 = {}
-	slot6 = ipairs
-	slot7 = slot0.resolveItems or {}
+	slot5 = {
+		[slot10.id] = slot10
+	}
 
-	for slot9, slot10 in slot6(slot7) do
-		slot5[slot10.id] = slot10
+	for slot9, slot10 in ipairs(slot0.resolveItems or {}) do
+		-- Nothing
 	end
 
 	UIItemList.StaticAlign(slot4, slot4:Find("item"), #slot1, function (slot0, slot1, slot2)
@@ -208,7 +202,7 @@ function slot0.Resetresolve(slot0)
 			onButton(uv1, slot2:Find("icon/icon_bg"), function ()
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-			setText(slot2:Find("name_panel/name"), slot3.cfg.name)
+			setText(slot2:Find("name_panel/name"), slot3:getConfig("name"))
 			setText(slot2:Find("name_panel/number"), "x " .. slot3.curCount)
 		end
 	end)
@@ -218,7 +212,7 @@ function slot0.Resetresolve(slot0)
 
 	for slot10, slot11 in pairs(slot4) do
 		slot12 = slot11
-		slot13 = pg.item_data_statistics[slot12.id]
+		slot13 = Item.getConfigData(slot12.id)
 
 		assert(slot13, "Can't find the price " .. slot12.id)
 
@@ -241,7 +235,7 @@ function slot0.Resetresolve(slot0)
 			onButton(uv1, slot2:Find("icon/icon_bg"), function ()
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-			setText(slot2:Find("name_panel/name"), slot3.cfg.name)
+			setText(slot2:Find("name_panel/name"), slot3:getConfig("name"))
 			setText(slot2:Find("name_panel/number"), "x " .. slot3.count)
 		end
 	end)
@@ -256,25 +250,21 @@ end
 function slot0.GetAllBluePrintStrengthenItems()
 	slot0 = {}
 	slot1 = getProxy(TechnologyProxy)
-	slot2 = getProxy(BagProxy)
 
 	for slot7, slot8 in ipairs(pg.ship_data_blueprint.all) do
-		slot9 = slot3[slot8]
-
-		if slot1:getBluePrintById(slot8):isMaxLevel() and slot2:getItemById(slot9.strengthen_item) then
-			slot13 = slot1:getBluePrintById(slot1:GetBlueprint4Item(slot11))
+		if slot1:getBluePrintById(slot8):isMaxLevel() and getProxy(BagProxy):getItemById(slot3[slot8].strengthen_item) then
 			slot14 = slot12.count
 
-			if slot12 and slot12.count > 0 and uv0.keepFateState and slot12.count - slot13:getFateMaxLeftOver() < 0 then
+			if slot12 and slot12.count > 0 and uv0.keepFateState and slot12.count - slot1:getBluePrintById(slot1:GetBlueprint4Item(slot11)):getFateMaxLeftOver() < 0 then
 				slot14 = 0
 			end
 
-			table.insert(slot0, {
+			table.insert(slot0, Drop.New({
 				id = slot12.id,
 				type = DROP_TYPE_ITEM,
 				count = slot12.count,
 				maxCount = slot14
-			})
+			}))
 		end
 	end
 

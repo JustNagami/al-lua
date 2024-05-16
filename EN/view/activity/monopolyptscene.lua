@@ -144,10 +144,7 @@ function slot0.initMap(slot0)
 		setActive(slot0.btnBack, false)
 		setActive(slot0.btnMain, false)
 		setActive(slot0.labelDropShip, false)
-
-		slot2 = pg.NewStoryMgr.GetInstance()
-
-		slot2:Play(slot0:getStoryData(0), function ()
+		pg.NewStoryMgr.GetInstance():Play(slot0:getStoryData(0), function ()
 			MonopolyPtScene.story = true
 
 			setActive(uv0.btnStart, true)
@@ -234,13 +231,10 @@ function slot0.createMap(slot0, slot1)
 	end
 
 	if slot1 == "ground_2" then
-		slot8 = Ship.New({
+		PoolMgr.GetInstance():GetSpineChar(Ship.New({
 			configId = uv1,
 			skin_id = uv2
-		})
-		slot10 = PoolMgr.GetInstance()
-
-		slot10:GetSpineChar(slot8:getPrefab(), true, function (slot0)
+		}):getPrefab(), true, function (slot0)
 			uv0.mingShimodel = slot0
 			uv0.mingShimodel.transform.localScale = Vector3(0.4, 0.4, 0.4)
 			uv0.mingShimodel.transform.localPosition = Vector3.zero
@@ -250,9 +244,7 @@ function slot0.createMap(slot0, slot1)
 		end)
 	elseif slot1 == "ground_5" then
 		if slot0.useCount <= 19 and not MonopolyPtScene.battle then
-			slot8 = PoolMgr.GetInstance()
-
-			slot8:GetSpineChar(uv4, true, function (slot0)
+			PoolMgr.GetInstance():GetSpineChar(uv4, true, function (slot0)
 				uv0.enemyModel = slot0
 				uv0.enemyModel.transform.localScale = Vector3(0.4, 0.4, 0.4)
 				uv0.enemyModel.transform.localPosition = Vector3.zero
@@ -261,9 +253,7 @@ function slot0.createMap(slot0, slot1)
 				uv0:setModelAnim(uv0.enemyModel:GetComponent(typeof(SpineAnimUI)), "normal", 0, nil)
 			end)
 		else
-			slot8 = PoolMgr.GetInstance()
-
-			slot8:GetSpineChar(uv5, true, function (slot0)
+			PoolMgr.GetInstance():GetSpineChar(uv5, true, function (slot0)
 				uv0.baoxiangModel = slot0
 				uv0.baoxiangModel.transform.localScale = Vector3(0.3, 0.3, 0.3)
 				uv0.baoxiangModel.transform.localPosition = Vector3.zero
@@ -357,13 +347,11 @@ function slot0.initUI(slot0)
 
 	for slot4 = 1, #uv0 do
 		slot5 = slot4
-		slot9 = Ship.New({
+
+		PoolMgr.GetInstance():GetSpineChar(Ship.New({
 			configId = uv0[slot4],
 			skin_id = uv1[slot4]
-		})
-		slot11 = PoolMgr.GetInstance()
-
-		slot11:GetSpineChar(slot9:getPrefab(), true, function (slot0)
+		}):getPrefab(), true, function (slot0)
 			slot0.transform.localScale = Vector3.one
 			slot0.transform.localPosition = Vector3(0, 0, 0)
 			slot0.transform.anchorMin = Vector2(0.5, 0)
@@ -400,9 +388,7 @@ function slot0.initUI(slot0)
 					return
 				end
 
-				slot0 = uv2
-
-				slot0:setModelAnim(uv0, uv4, 1, function ()
+				uv2:setModelAnim(uv0, uv4, 1, function ()
 					uv0:setModelAnim(uv1, uv2, 0, nil)
 				end)
 			end, SFX_PANEL)
@@ -600,27 +586,21 @@ function slot0.move(slot0, slot1, slot2)
 			LeanTween.cancel(go(uv0.cellPos))
 		end
 
-		slot6 = LeanTween.value(go(uv0.cellPos), 0, slot1, slot2)
-		slot6 = slot6:setEase(LeanTweenType.linear)
-		slot6 = slot6:setOnUpdate(System.Action_float(function (slot0)
+		LeanTween.value(go(uv0.cellPos), 0, slot1, slot2):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function (slot0)
 			uv0:updateMap(slot0 - uv1)
 
 			uv1 = slot0
-		end))
-
-		slot6:setOnComplete(System.Action(function ()
+		end)):setOnComplete(System.Action(function ()
 			slot0 = nil
 
 			if uv0.useCount > 1 then
 				slot0 = uv0:getStoryData(uv0.useCount + 1)
 			end
 
-			slot1 = uv0
-			slot1 = slot1:getBattle(uv0.useCount + 1)
+			slot1 = uv0:getBattle(uv0.useCount + 1)
 			slot2 = uv0.useCount + 1
-			slot3 = uv0
 
-			slot3:changeCharAction(uv1, 0, nil)
+			uv0:changeCharAction(uv1, 0, nil)
 
 			function slot3()
 				slot0 = uv0:getPtAwardData(uv1)
@@ -628,45 +608,32 @@ function slot0.move(slot0, slot1, slot2)
 				assert(slot0)
 
 				if slot0[1] == 1 and slot0[2] == 1 then
-					slot1 = uv0
-
-					slot1:setModelAnim(uv0.anims[1], uv2, 1, function ()
+					uv0:setModelAnim(uv0.anims[1], uv2, 1, function ()
 						uv0:setModelAnim(uv0.anims[1], uv1, 0)
 					end)
 				elseif slot0[1] == 1 and slot0[2] == 2 then
-					slot1 = uv0
-
-					slot1:setModelAnim(uv0.anims[1], uv4, 1, function ()
+					uv0:setModelAnim(uv0.anims[1], uv4, 1, function ()
 						uv0:setModelAnim(uv0.anims[1], uv1, 0)
 					end)
 				elseif slot0[1] == 2 and slot0[2] == 54016 then
-					slot1 = uv0
-
-					slot1:setModelAnim(uv0.anims[1], uv5, 1, function ()
+					uv0:setModelAnim(uv0.anims[1], uv5, 1, function ()
 						uv0:setModelAnim(uv0.anims[1], uv1, 0)
 					end)
 				else
-					slot1 = uv0
-
-					slot1:setModelAnim(uv0.anims[1], uv6, 1, function ()
+					uv0:setModelAnim(uv0.anims[1], uv6, 1, function ()
 						uv0:setModelAnim(uv0.anims[1], uv1, 0)
 					end)
 				end
 
 				for slot4 = 2, #uv0.anims do
-					slot5 = uv0
-
-					slot5:setModelAnim(uv0.anims[slot4], uv6, 1, function ()
+					uv0:setModelAnim(uv0.anims[slot4], uv6, 1, function ()
 						uv0:setModelAnim(uv0.anims[uv1], uv2, 0)
 					end)
 				end
 			end
 
 			if uv0.putongModel then
-				slot4 = uv0.putongModel
-				slot6 = uv0
-
-				slot6:setModelAnim(slot4:GetComponent(typeof(SpineAnimUI)), "putong_kaiqi", 1, function ()
+				uv0:setModelAnim(uv0.putongModel:GetComponent(typeof(SpineAnimUI)), "putong_kaiqi", 1, function ()
 					if uv0 then
 						uv1:setModelAnim(uv0, "putong_kai", 0, nil)
 					end
@@ -676,9 +643,7 @@ function slot0.move(slot0, slot1, slot2)
 			end
 
 			if slot0 and tonumber(slot0) ~= 0 then
-				slot4 = pg.NewStoryMgr.GetInstance()
-
-				slot4:Play(slot0, function ()
+				pg.NewStoryMgr.GetInstance():Play(slot0, function ()
 					if uv0 then
 						uv0()
 					end
@@ -758,9 +723,7 @@ function slot0.createCell(slot0, slot1, slot2)
 		elseif slot5[1] == 2 and slot5[2] == 54016 then
 			setActive(findTF(slot3, "bg_item"), true)
 		else
-			slot6 = PoolMgr.GetInstance()
-
-			slot6:GetSpineChar(uv0, true, function (slot0)
+			PoolMgr.GetInstance():GetSpineChar(uv0, true, function (slot0)
 				if uv0 then
 					slot0.transform.localScale = Vector3(0.5, 0.5, 0.5)
 					slot0.transform.localPosition = Vector3.zero

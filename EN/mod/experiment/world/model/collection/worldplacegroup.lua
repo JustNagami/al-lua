@@ -50,11 +50,9 @@ function slot0.getTitle(slot0)
 end
 
 function slot0.getProgress(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in pairs(slot0.pacles) do
 		if slot6:isUnlock() then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 

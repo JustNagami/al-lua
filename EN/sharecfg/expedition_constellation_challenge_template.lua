@@ -609,6 +609,441 @@ pg.expedition_constellation_challenge_template = {
 			}
 		}
 	},
+	[10022] = {
+		painting = "gecheng",
+		button_style = 7,
+		information_icon = "gecheng_constellation",
+		id = 10022,
+		dungeon_id = 5124,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Ever-Changing Light",
+				"When the battle starts, this ships gains the Morning Star's Light status. While in the Morning Star's Light status, this ship's DMG taken is decreased by <color=#92fc63>40.0%</color> and, when this ship gains this status: deploys 5 rotating shields capable of blocking <color=#92fc63>30</color> non-volley shells; when any shield is destroyed, this ship gains the Darkness of Dawn status. While in the Darkness of Dawn status, increases this ship's DMG dealt (up to <color=#92fc63>20.0%</color>) the lower her HP is; while in this status, if this ship takes more than 30.0% of her HP in DMG: this ship regains the Light of Dawn status."
+			},
+			{
+				"Domain of the Stars",
+				"Actives one of the following effects based on this ship's active status condition: 1) While in the Morning Star's Light status, recovers <color=#92fc63>0.5%</color> of this ship's max HP every second; 2) While in the Light of Dawn status, your fleet loses <color=#92fc63>0.5%</color> of its max HP every 20s."
+			}
+		},
+		award_display = {
+			{
+				14,
+				208,
+				1
+			}
+		}
+	},
+	[10023] = {
+		painting = "gecheng",
+		button_style = 7,
+		information_icon = "gecheng_constellation",
+		id = 10023,
+		dungeon_id = 5123,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Ever-Changing Light",
+				"When the battle starts, this ships gains the Morning Star's Light status. While in the Morning Star's Light status, this ship's DMG taken is decreased by <color=#92fc63>60.0%</color> and, when this ship gains this status: deploys 5 rotating shields capable of blocking <color=#92fc63>50</color> non-volley shells; when any shield is destroyed, this ship gains the Darkness of Dawn status. While in the Darkness of Dawn status, increases this ship's DMG dealt (up to <color=#92fc63>40.0%</color>) the lower her HP is; while in this status, if this ship takes more than 30.0% of her HP in DMG: this ship regains the Light of Dawn status."
+			},
+			{
+				"Domain of the Stars",
+				"Actives one of the following effects based on this ship's active status condition: 1) While in the Morning Star's Light status, recovers <color=#92fc63>0.75%</color> of this ship's max HP every second; 2) While in the Light of Dawn status, your fleet loses <color=#92fc63>0.75%</color> of its max HP every 20s."
+			}
+		},
+		award_display = {
+			{
+				15,
+				10008,
+				1
+			}
+		}
+	},
+	[10024] = {
+		painting = "gecheng",
+		button_style = 7,
+		information_icon = "gecheng_constellation",
+		id = 10024,
+		dungeon_id = 5122,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Ever-Changing Light",
+				"When the battle starts, this ships gains the Morning Star's Light status. While in the Morning Star's Light status, this ship's DMG taken is decreased by <color=#92fc63>80.0%</color> and, when this ship gains this status: deploys 5 rotating shields capable of blocking <color=#92fc63>70</color> non-volley shells; when any shield is destroyed, this ship gains the Darkness of Dawn status. While in the Darkness of Dawn status, increases this ship's DMG dealt (up to <color=#92fc63>60.0%</color>) the lower her HP is; while in this status, if this ship takes more than 30.0% of her HP in DMG: this ship regains the Light of Dawn status."
+			},
+			{
+				"Domain of the Stars",
+				"Actives one of the following effects based on this ship's active status condition: 1) While in the Morning Star's Light status, recovers <color=#92fc63>1.0%</color> of this ship's max HP every second; 2) While in the Light of Dawn status, your fleet loses <color=#92fc63>1.0%</color> of its max HP every 20s."
+			}
+		},
+		award_display = {
+			{
+				14,
+				10008,
+				1
+			}
+		}
+	},
+	[10025] = {
+		painting = "niukasier",
+		button_style = 7,
+		information_icon = "niukasier_constellation",
+		id = 10025,
+		dungeon_id = 5127,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Jug of Sweet Wine ",
+				"When the battle starts: summons a Jug of Sweet Wine. While this summon is on the battlefield, it recovers <color=#92fc63>2.0%</color> of its max HP every second. When the Jug of Sweet Wine's HP is maxed out, the enemy Newcastle recovers 1.0% of her max HP. 6s after the Jug of Sweet Wine is destroyed, it is resummoned."
+			},
+			{
+				"Fountain of Youth",
+				"While the Jug of Sweet Wine is on the battlefield, the enemy Newcastle's DMG taken is decreased by <color=#92fc63>80.0%</color>. When the Jug of Sweet Wine is destroyed: increases the enemy Newcastle's DMG dealt by <color=#92fc63>2.0%</color>."
+			}
+		},
+		award_display = {
+			{
+				14,
+				209,
+				1
+			}
+		}
+	},
+	[10026] = {
+		painting = "niukasier",
+		button_style = 7,
+		information_icon = "niukasier_constellation",
+		id = 10026,
+		dungeon_id = 5126,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Jug of Sweet Wine ",
+				"When the battle starts: summons a Jug of Sweet Wine. While this summon is on the battlefield, it recovers <color=#92fc63>1.0%</color> of its max HP every second. When the Jug of Sweet Wine's HP is maxed out, the enemy Newcastle recovers 1.0% of her max HP. 6s after the Jug of Sweet Wine is destroyed, it is resummoned."
+			},
+			{
+				"Fountain of Youth",
+				"While the Jug of Sweet Wine is on the battlefield, the enemy Newcastle's DMG taken is decreased by <color=#92fc63>60.0%</color>. When the Jug of Sweet Wine is destroyed: increases the enemy Newcastle's DMG dealt by <color=#92fc63>1.0%</color>."
+			}
+		},
+		award_display = {
+			{
+				15,
+				10009,
+				1
+			}
+		}
+	},
+	[10027] = {
+		painting = "niukasier",
+		button_style = 7,
+		information_icon = "niukasier_constellation",
+		id = 10027,
+		dungeon_id = 5125,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Jug of Sweet Wine ",
+				"When the battle starts: summons a Jug of Sweet Wine. While this summon is on the battlefield, it recovers <color=#92fc63>2.0%</color> of its max HP every second. When the Jug of Sweet Wine's HP is maxed out, the enemy Newcastle recovers 1.0% of her max HP. 6s after the Jug of Sweet Wine is destroyed, it is resummoned."
+			},
+			{
+				"Fountain of Youth",
+				"While the Jug of Sweet Wine is on the battlefield, the enemy Newcastle's DMG taken is decreased by <color=#92fc63>80.0%</color>. When the Jug of Sweet Wine is destroyed: increases the enemy Newcastle's DMG dealt by <color=#92fc63>2.0%</color>."
+			}
+		},
+		award_display = {
+			{
+				14,
+				10009,
+				1
+			}
+		}
+	},
+	[10028] = {
+		painting = "yuekegongjue",
+		button_style = 7,
+		information_icon = "yuekegongjue_constellation",
+		id = 10028,
+		dungeon_id = 5130,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Sentinels of Gardiane",
+				"Every 20s, Duke of York fires a barrage, decreasing the SPD of targets hit by 40.0% for 6s. Every 20s, King George V restores <color=#92fc63>1.0%</color> of Duke of York's max HP."
+			},
+			{
+				"The Bond of Ichthys",
+				"If Duke of York and King George V are present on the battlefield at the same time, their DMG taken is decreased by <color=#92fc63>10.0%</color>. If Duke of York is sunk, King George V immediately recovers <color=#92fc63>2.0%</color> of her max HP; every 20s after that, she recovers <color=#92fc63>2.0%</color> of her max HP, and her DMG taken is decreased by <color=#92fc63>10.0%</color> until the battle ends. If King George V is sunk, Duke of York's DMG dealt increases by <color=#92fc63>10.0%</color> and her barrage gains the following buff: barrages are fired at the targets closest to and furthest from Duke of York, and targets hit by the barrages take <color=#92fc63>4.0%</color> more DMG until the battle ends."
+			}
+		},
+		award_display = {
+			{
+				14,
+				210,
+				1
+			}
+		}
+	},
+	[10029] = {
+		painting = "yuekegongjue",
+		button_style = 7,
+		information_icon = "yuekegongjue_constellation",
+		id = 10029,
+		dungeon_id = 5129,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Sentinels of Gardiane",
+				"Every 20s, Duke of York fires a barrage, decreasing the SPD of targets hit by 40.0% for 6s. Every 20s, King George V restores <color=#92fc63>2.0%</color> of Duke of York's max HP."
+			},
+			{
+				"The Bond of Ichthys",
+				"If Duke of York and King George V are present on the battlefield at the same time, their DMG taken is decreased by <color=#92fc63>20.0%</color>. If Duke of York is sunk, King George V immediately recovers <color=#92fc63>4.0%</color> of her max HP; every 20s after that, she recovers <color=#92fc63>4.0%</color> of her max HP, and her DMG taken is decreased by <color=#92fc63>20.0%</color> until the battle ends. If King George V is sunk, Duke of York's DMG dealt increases by <color=#92fc63>20.0%</color> and her barrage gains the following buff: barrages are fired at the targets closest to and furthest from Duke of York, and targets hit by the barrages take <color=#92fc63>6.0%</color> more DMG until the battle ends."
+			}
+		},
+		award_display = {
+			{
+				15,
+				10010,
+				1
+			}
+		}
+	},
+	[10030] = {
+		painting = "yuekegongjue",
+		button_style = 7,
+		information_icon = "yuekegongjue_constellation",
+		id = 10030,
+		dungeon_id = 5128,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Sentinels of Gardiane",
+				"Every 20s, Duke of York fires a barrage, decreasing the SPD of targets hit by 40.0% for 6s. Every 20s, King George V restores <color=#92fc63>3.0%</color> of Duke of York's max HP."
+			},
+			{
+				"The Bond of Ichthys",
+				"If Duke of York and King George V are present on the battlefield at the same time, their DMG taken is decreased by <color=#92fc63>30.0%</color>. If Duke of York is sunk, King George V immediately recovers <color=#92fc63>6.0%</color> of her max HP; every 20s after that, she recovers <color=#92fc63>6.0%</color> of her max HP, and her DMG taken is decreased by <color=#92fc63>30.0%</color> until the battle ends. If King George V is sunk, Duke of York's DMG dealt increases by <color=#92fc63>30.0%</color> and her barrage gains the following buff: barrages are fired at the targets closest to and furthest from Duke of York, and targets hit by the barrages take <color=#92fc63>8.0%</color> more DMG until the battle ends."
+			}
+		},
+		award_display = {
+			{
+				14,
+				10010,
+				1
+			}
+		}
+	},
+	[10031] = {
+		painting = "xuefeng",
+		button_style = 7,
+		information_icon = "xuefeng_constellation",
+		id = 10031,
+		dungeon_id = 5133,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"I Am Unsinkable",
+				"Every 20s: Yukikaze fires a special barrage at the nearest enemy. 15s after the battle starts, and every 20s after that: the next <color=#92fc63>40</color> hits on Yukikaze have their DMG dealt set to 1."
+			},
+			{
+				"Multiple Lifelines",
+				"20s after the battle starts, and every 40s after that: summons 3 lifebuoys that last for 20s. Every 0.3s, the lifebuoys heal Yukikaze and themselves for 100.0% of their max HP. When a lifebuoy is destroyed or vanishes, Yukikaze's DMG dealt increases by <color=#92fc63>1.0%</color> until the battle ends."
+			}
+		},
+		award_display = {
+			{
+				14,
+				211,
+				1
+			}
+		}
+	},
+	[10032] = {
+		painting = "xuefeng",
+		button_style = 7,
+		information_icon = "xuefeng_constellation",
+		id = 10032,
+		dungeon_id = 5132,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"I Am Unsinkable",
+				"Every 20s: Yukikaze fires a special barrage at the nearest enemy. 15s after the battle starts, and every 20s after that: the next <color=#92fc63>70</color> hits on Yukikaze have their DMG dealt set to 1."
+			},
+			{
+				"Multiple Lifelines",
+				"20s after the battle starts, and every 40s after that: summons 3 lifebuoys that last for 20s. Every 0.3s, the lifebuoys heal Yukikaze and themselves for 100.0% of their max HP. When a lifebuoy is destroyed or vanishes, Yukikaze's DMG dealt increases by <color=#92fc63>2.0%</color> until the battle ends."
+			}
+		},
+		award_display = {
+			{
+				15,
+				10011,
+				1
+			}
+		}
+	},
+	[10033] = {
+		painting = "xuefeng",
+		button_style = 7,
+		information_icon = "xuefeng_constellation",
+		id = 10033,
+		dungeon_id = 5131,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"I Am Unsinkable",
+				"Every 20s: Yukikaze fires a special barrage at the nearest enemy. 15s after the battle starts, and every 20s after that: the next <color=#92fc63>100</color> hits on Yukikaze have their DMG dealt set to 1."
+			},
+			{
+				"Multiple Lifelines",
+				"20s after the battle starts, and every 40s after that: summons 3 lifebuoys that last for 20s. Every 0.3s, the lifebuoys heal Yukikaze and themselves for 100.0% of their max HP. When a lifebuoy is destroyed or vanishes, Yukikaze's DMG dealt increases by <color=#92fc63>3.0%</color> until the battle ends."
+			}
+		},
+		award_display = {
+			{
+				14,
+				10011,
+				1
+			}
+		}
+	},
+	[10034] = {
+		painting = "gaoxiong",
+		button_style = 7,
+		information_icon = "gaoxiong_constellation",
+		id = 10034,
+		dungeon_id = 5136,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Steel Blade Stance",
+				"When the battle starts, Takao gains the Steel Blade Stance status; while in this status, her DMG taken from cannons, torpedoes, and aircraft is reduced by <color=#92fc63>30.0%</color>. Dealing enough DMG to Takao removes this status, but she will regain it after 10s."
+			},
+			{
+				"Silver Reflection",
+				"When the Steel Blade Stance status is removed, Takao performs a special slashing attack on the closest enemy. Ships hit by this attack have their DMG taken increased by <color=#92fc63>2.0%</color> until the battle ends. This debuff can stack."
+			}
+		},
+		award_display = {
+			{
+				14,
+				212,
+				1
+			}
+		}
+	},
+	[10035] = {
+		painting = "gaoxiong",
+		button_style = 7,
+		information_icon = "gaoxiong_constellation",
+		id = 10035,
+		dungeon_id = 5135,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Steel Blade Stance",
+				"When the battle starts, Takao gains the Steel Blade Stance status; while in this status, her DMG taken from cannons, torpedoes, and aircraft is reduced by <color=#92fc63>60.0%</color>. Dealing enough DMG to Takao removes this status, but she will regain it after 10s."
+			},
+			{
+				"Silver Reflection",
+				"When the Steel Blade Stance status is removed, Takao performs a special slashing attack on the closest enemy. Ships hit by this attack have their DMG taken increased by <color=#92fc63>4.0%</color> until the battle ends. This debuff can stack."
+			}
+		},
+		award_display = {
+			{
+				15,
+				10012,
+				1
+			}
+		}
+	},
+	[10036] = {
+		painting = "gaoxiong",
+		button_style = 7,
+		information_icon = "gaoxiong_constellation",
+		id = 10036,
+		dungeon_id = 5134,
+		objective = {
+			5,
+			180
+		},
+		buff_id = {},
+		description = {
+			{
+				"Steel Blade Stance",
+				"When the battle starts, Takao gains the Steel Blade Stance status; while in this status, her DMG taken from cannons, torpedoes, and aircraft is reduced by <color=#92fc63>90.0%</color>. Dealing enough DMG to Takao removes this status, but she will regain it after 10s."
+			},
+			{
+				"Silver Reflection",
+				"When the Steel Blade Stance status is removed, Takao performs a special slashing attack on the closest enemy. Ships hit by this attack have their DMG taken increased by <color=#92fc63>6.0%</color> until the battle ends. This debuff can stack."
+			}
+		},
+		award_display = {
+			{
+				14,
+				10012,
+				1
+			}
+		}
+	},
 	all = {
 		10001,
 		10002,
@@ -630,6 +1065,21 @@ pg.expedition_constellation_challenge_template = {
 		10018,
 		10019,
 		10020,
-		10021
+		10021,
+		10022,
+		10023,
+		10024,
+		10025,
+		10026,
+		10027,
+		10028,
+		10029,
+		10030,
+		10031,
+		10032,
+		10033,
+		10034,
+		10035,
+		10036
 	}
 }

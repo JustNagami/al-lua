@@ -63,12 +63,10 @@ function slot4(slot0)
 end
 
 function slot0.TryFetchUrShips(slot0, slot1, slot2)
-	function slot3()
-		uv0:TryFetchUrShips(uv1, uv2)
-	end
-
 	if uv0(slot1.id) then
-		slot0:ShowFetchShipMsgbox(slot1.id, slot3)
+		slot0:ShowFetchShipMsgbox(slot1.id, function ()
+			uv0:TryFetchUrShips(uv1, uv2)
+		end)
 	else
 		slot2()
 	end

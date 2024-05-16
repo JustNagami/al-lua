@@ -32,10 +32,7 @@ function slot0.register(slot0)
 		uv0.dailyList = _.reverse(Clone(slot6))
 
 		for slot6 = #uv0.dailyList, 1, -1 do
-			slot8 = slot2[uv0.dailyList[slot6]].id
-			slot9 = slot2[uv0.dailyList[slot6]].limit_time
-
-			if slot2[uv0.dailyList[slot6]].limit_period and type(slot7) == "table" and pg.TimeMgr:GetInstance():inTime(slot7) and slot9 > (uv0.data[slot8] or 0) then
+			if slot2[uv0.dailyList[slot6]].limit_period and type(slot7) == "table" and pg.TimeMgr:GetInstance():inTime(slot7) and slot2[uv0.dailyList[slot6]].limit_time > (uv0.data[slot2[uv0.dailyList[slot6]].id] or 0) then
 				uv0.dailyTip = true
 			end
 		end
@@ -69,12 +66,10 @@ function slot0.getChapterDefeatCount(slot0, slot1)
 end
 
 function slot0.updateChapterDefeatCount(slot0, slot1)
-	slot2 = slot0:getChapterDefeatCount(slot1) + 1
-
 	if _.detect(slot0.chapterCountList, function (slot0)
 		return slot0.id == uv0
 	end) then
-		slot3.count = slot2
+		slot3.count = slot0:getChapterDefeatCount(slot1) + 1
 	else
 		table.insert(slot0.chapterCountList, {
 			id = slot1,
@@ -85,10 +80,9 @@ end
 
 function slot0.resetDailyCount(slot0)
 	slot1 = pg.expedition_daily_template
-	slot2 = pg.TimeMgr.GetInstance():GetServerWeek() == 1
 
 	for slot6, slot7 in pairs(slot0.data) do
-		if slot1[slot6].limit_type == 1 or slot1[slot6].limit_type == 2 and slot2 then
+		if slot1[slot6].limit_type == 1 or slot1[slot6].limit_type == 2 and pg.TimeMgr.GetInstance():GetServerWeek() == 1 then
 			slot0.data[slot6] = 0
 		end
 	end

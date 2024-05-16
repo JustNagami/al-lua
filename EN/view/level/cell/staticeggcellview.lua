@@ -31,9 +31,7 @@ function slot2.Update(slot0)
 	end
 
 	if IsNil(slot0.go) then
-		slot4 = slot0:GetLoader()
-
-		slot4:GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function (slot0)
+		slot0:GetLoader():GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function (slot0)
 			slot0.name = "enemy_" .. uv0.attachmentId
 			uv1.go = slot0
 			uv1.tf = tf(slot0)
@@ -68,11 +66,7 @@ function slot2.TweenBlink(slot0)
 
 	slot1 = findTF(slot0.go, "icon")
 	slot2 = slot1:GetComponent("Image")
-	slot3 = LeanTween.color(tf(slot1), Color.New(1, 0.6, 0.6), 1)
-	slot3 = slot3:setFromColor(Color.white)
-	slot3 = slot3:setEase(LeanTweenType.easeInOutSine)
-	slot3 = slot3:setLoopPingPong()
-	slot0.tweenId = slot3:setOnComplete(System.Action(function ()
+	slot0.tweenId = LeanTween.color(tf(slot1), Color.New(1, 0.6, 0.6), 1):setFromColor(Color.white):setEase(LeanTweenType.easeInOutSine):setLoopPingPong():setOnComplete(System.Action(function ()
 		if IsNil(uv0) then
 			return
 		end
@@ -85,15 +79,10 @@ function slot2.TweenShining(slot0, slot1)
 	slot0:StopTween()
 
 	slot2 = findTF(slot0.go, "icon")
-	slot4 = pg.ShaderMgr.GetInstance()
-	slot2:GetComponent("Image").material = Material.New(slot4:GetShader("Spine/SkeletonGraphic (Additive)"))
-	slot6 = LeanTween.value(go(slot2), 0, 1, 0.5)
-	slot6 = slot6:setEase(LeanTweenType.easeInOutSine)
-	slot6 = slot6:setLoopPingPong(slot1)
-	slot6 = slot6:setOnUpdate(System.Action_float(function (slot0)
+	slot2:GetComponent("Image").material = Material.New(pg.ShaderMgr.GetInstance():GetShader("Spine/SkeletonGraphic (Additive)"))
+	slot0.tweenId = LeanTween.value(go(slot2), 0, 1, 0.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(slot1):setOnUpdate(System.Action_float(function (slot0)
 		uv0:SetColor("_Color", Color.Lerp(Color.black, Color.gray, slot0))
-	end))
-	slot0.tweenId = slot6:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		if IsNil(uv0) then
 			return
 		end

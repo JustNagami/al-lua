@@ -10,16 +10,12 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.preload(slot0, slot1)
-	slot2 = getProxy(ActivityProxy)
-	slot2 = slot2:getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+	slot2 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
 	slot3 = PoolMgr.GetInstance()
 	slot4 = {}
 
 	table.insert(slot4, function (slot0)
-		slot2 = uv0
-		slot2 = uv1
-
-		slot2:GetPrefab("crusingmap/" .. CrusingMapInfo.VersionInfo[slot2:getConfig("config_client").map_name], "", true, function (slot0)
+		uv1:GetPrefab("crusingmap/" .. CrusingMapInfo.VersionInfo[uv0:getConfig("config_client").map_name], "", true, function (slot0)
 			uv0.rtMap = tf(slot0)
 			uv0.PhaseFrame, uv0.AllFrameCount = CrusingMapInfo.GetPhaseFrame(uv1)
 
@@ -27,10 +23,7 @@ function slot0.preload(slot0, slot1)
 		end)
 	end)
 	table.insert(slot4, function (slot0)
-		slot1 = uv0
-		slot3 = uv1
-
-		slot1:GetSpineChar(slot3:getConfig("config_client").spine_name, true, function (slot0)
+		uv0:GetSpineChar(uv1:getConfig("config_client").spine_name, true, function (slot0)
 			uv0.rtModel = tf(slot0)
 
 			uv1()
@@ -130,7 +123,7 @@ function slot0.didEnter(slot0)
 	end, SFX_PANEL)
 
 	slot0.maps = {
-		(function (slot0)
+		function (slot0)
 			slot1 = {
 				_tf = slot0,
 				rtLine = slot0:Find("line"),
@@ -146,7 +139,7 @@ function slot0.didEnter(slot0)
 			SetAction(slot1.rtIcon:Find("model"):GetChild(0), "normal")
 
 			return slot1
-		end)(slot0.rtMap)
+		end(slot0.rtMap)
 	}
 
 	while #slot0.maps < 3 do
@@ -159,10 +152,10 @@ function slot0.didEnter(slot0)
 		setParent(slot6.rtLine, slot0.scrollMap:Find("bg"), true)
 	end
 
-	GetComponent(slot0.textTip, "RichText"):AddSprite("pt", GetSpriteFromAtlas(getDropIcon({
+	GetComponent(slot0.textTip, "RichText"):AddSprite("pt", GetSpriteFromAtlas(Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = slot0.ptId
-	}), ""))
+	}):getIcon(), ""))
 	setText(slot0.textTip, i18n(slot0.activity:getConfig("config_client").tips[1]))
 
 	slot2 = slot0.activity.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
@@ -201,10 +194,10 @@ function slot0.didEnter(slot0)
 	end
 
 	slot0:updateMapStatus()
-	LoadImageSpriteAtlasAsync(getDropIcon({
+	LoadImageSpriteAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = slot0.ptId
-	}), "", slot0.sliderPt:Find("Text/icon"), true)
+	}):getIcon(), "", slot0.sliderPt:Find("Text/icon"), true)
 	slot0:updateMapWay()
 end
 
@@ -216,13 +209,11 @@ function slot0.willExit(slot0)
 	end
 
 	slot1 = PoolMgr.GetInstance()
-	slot2 = CrusingMapInfo.VersionInfo[slot0.activity:getConfig("config_client").map_name]
-	slot3 = slot0.activity:getConfig("config_client").spine_name
 
 	for slot7, slot8 in ipairs(slot0.maps) do
 		setParent(slot8.rtLine, slot8._tf, true)
-		slot1:ReturnSpineChar(slot3, go(slot8.rtIcon:Find("model"):GetChild(0)))
-		slot1:ReturnPrefab("crusingmap/" .. slot2, "", go(slot8._tf))
+		slot1:ReturnSpineChar(slot0.activity:getConfig("config_client").spine_name, go(slot8.rtIcon:Find("model"):GetChild(0)))
+		slot1:ReturnPrefab("crusingmap/" .. CrusingMapInfo.VersionInfo[slot0.activity:getConfig("config_client").map_name], "", go(slot8._tf))
 	end
 
 	if slot0.chargeTipWindow then
@@ -252,22 +243,14 @@ function slot0.updateAwardInfo(slot0, slot1, slot2)
 	end
 
 	setText(slot1:Find("Text"), slot2.id)
-	updateDrop(slot1:Find("award"), {
-		type = slot2.award[1],
-		id = slot2.award[2],
-		count = slot2.award[3]
-	})
+	updateDrop(slot1:Find("award"), Drop.Create(slot2.award))
 	setActive(slot1:Find("award/get"), slot3 and not slot0.awardDic[slot2.pt])
 	setActive(slot1:Find("award/got"), slot0.awardDic[slot2.pt])
 	setActive(slot1:Find("award/mask"), slot0.awardDic[slot2.pt])
 	onButton(slot0, slot1:Find("award"), function ()
 		uv0:emit(uv1.ON_DROP, uv2)
 	end, SFX_CONFIRM)
-	updateDrop(slot1:Find("award_pay"), {
-		type = slot2.award_pay[1],
-		id = slot2.award_pay[2],
-		count = slot2.award_pay[3]
-	})
+	updateDrop(slot1:Find("award_pay"), Drop.Create(slot2.award_pay))
 	setActive(slot1:Find("award_pay/lock"), not slot0.isPay)
 	setActive(slot1:Find("award_pay/get"), slot0.isPay and slot3 and not slot0.awardPayDic[slot2.pt])
 	setActive(slot1:Find("award_pay/got"), slot0.awardPayDic[slot2.pt])
@@ -356,8 +339,7 @@ function slot0.updateMapStatus(slot0)
 					end)
 				end
 
-				slot4 = uv3.rtSimple
-				slot4 = slot4:Find(slot2 and "active" or "gray")
+				slot4 = uv3.rtSimple:Find(slot2 and "active" or "gray")
 
 				eachChild(slot0, function (slot0)
 					uv0(uv1:Find(slot0.name), slot0)
@@ -435,12 +417,8 @@ function slot0.updateNextAward(slot0, slot1)
 		return
 	end
 
-	slot2 = slot0.phasePos[#slot0.phasePos] - 1
-
 	for slot7 = #slot0.awardList - 1, 1, -1 do
-		slot8 = slot0.awardList[slot7]
-
-		if slot0.phasePos[slot7] < slot1 + slot2 or slot8.pt <= slot0.pt then
+		if slot0.phasePos[slot7] < slot1 + slot0.phasePos[#slot0.phasePos] - 1 or slot0.awardList[slot7].pt <= slot0.pt then
 			break
 		elseif slot8.isImportent then
 			slot3 = slot7
@@ -455,12 +433,10 @@ function slot0.updateNextAward(slot0, slot1)
 end
 
 function slot0.checkLimitMax(slot0, slot1)
-	slot2 = slot0.player
-
 	for slot6, slot7 in ipairs(slot1) do
 		if slot7.type == DROP_TYPE_RESOURCE then
 			if slot7.id == 1 then
-				if slot2:GoldMax(slot7.count) then
+				if slot0.player:GoldMax(slot7.count) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title"))
 
 					return true
@@ -470,7 +446,7 @@ function slot0.checkLimitMax(slot0, slot1)
 
 				return true
 			end
-		elseif slot7.type == DROP_TYPE_ITEM and pg.item_data_statistics[slot7.id].type == Item.EXP_BOOK_TYPE and slot8.max_num < getProxy(BagProxy):getItemCountById(slot7.id) + slot7.count then
+		elseif slot7.type == DROP_TYPE_ITEM and Item.getConfigData(slot7.id).type == Item.EXP_BOOK_TYPE and slot8.max_num < getProxy(BagProxy):getItemCountById(slot7.id) + slot7.count then
 			return true
 		end
 	end
@@ -484,36 +460,28 @@ function slot0.openBuyPanel(slot0)
 	}, Goods.TYPE_CHARGE)
 	slot3 = slot2:getConfig("tag")
 	slot4 = underscore.map(slot2:getConfig("extra_service_item"), function (slot0)
-		return {
-			type = slot0[1],
-			id = slot0[2],
-			count = slot0[3]
-		}
+		return Drop.Create(slot0)
 	end)
 	slot5 = nil
 	slot6 = slot2:getConfig("sub_display")
 	slot7 = slot6[1]
 	slot8 = pg.battlepass_event_pt[slot7].pt
-	slot5 = {
+	slot5 = Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = pg.battlepass_event_pt[slot7].pt,
 		count = slot6[2]
-	}
+	})
 	slot4 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot7].drop_client_pay, function (slot0)
-		return {
-			type = slot0[1],
-			id = slot0[2],
-			count = slot0[3]
-		}
+		return Drop.Create(slot0)
 	end))
 	slot10 = nil
 
 	if slot2:getConfig("gem") + slot2:getConfig("extra_gem") > 0 then
-		table.insert(slot4, {
-			id = 4,
-			type = 1,
+		table.insert(slot4, Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = PlayerConst.ResDiamond,
 			count = slot9
-		})
+		}))
 	end
 
 	slot0:emit(CrusingMediator.EVENT_GO_CHARGE, {

@@ -18,14 +18,15 @@ function slot0.SetData(slot0, slot1, slot2)
 	slot0.attachmentData = slot2
 end
 
-function slot0.Load(slot0, slot1, slot2)
+slot0.ORBIT_KEY_UI = "orbit_ui"
+slot0.ORBIT_KEY_SLG = "orbit_slg"
+
+function slot0.Load(slot0, slot1, slot2, slot3)
 	if slot2 == nil then
 		slot2 = true
 	end
 
-	slot3 = PoolMgr.GetInstance()
-
-	slot3:GetSpineChar(slot0.prefabName, slot2, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(slot0.prefabName, slot2, function (slot0)
 		assert(slot0, "没有这个角色的模型  " .. uv0.prefabName)
 
 		if uv0.state == uv1.STATE_DISPOSE then
@@ -48,7 +49,7 @@ function slot0.Load(slot0, slot1, slot2)
 				uv2()
 			end
 
-			uv0:AttachOrbit()
+			uv0:AttachOrbit(uv3)
 		end
 	end)
 end
@@ -61,30 +62,36 @@ function slot0.Init(slot0)
 	slot0._visible = true
 end
 
-function slot0.AttachOrbit(slot0)
-	for slot5, slot6 in pairs(slot0:GetAttachmentList()) do
-		if slot6.orbit_ui ~= "" then
-			slot9 = ResourceMgr.Inst
+function slot0.AttachOrbit(slot0, slot1)
+	slot2 = slot1 or uv0.ORBIT_KEY_UI
 
-			slot9:getAssetAsync(ys.Battle.BattleResourceManager.GetOrbitPath(slot7), slot7, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	for slot7, slot8 in pairs(slot0:GetAttachmentList()) do
+		if slot2 ~= uv0.ORBIT_KEY_UI and slot8[slot2] == "" then
+			slot9 = slot8.orbit_ui
+			slot2 = uv0.ORBIT_KEY_UI
+		end
+
+		if slot9 ~= "" then
+			ResourceMgr.Inst:getAssetAsync(ys.Battle.BattleResourceManager.GetOrbitPath(slot9), slot9, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 				if uv0.state ~= uv1.STATE_DISPOSE then
-					slot2 = uv2.orbit_ui_bound[2]
-					slot3 = Object.Instantiate(slot0)
-					slot3.transform.localPosition = Vector2(slot2[1], slot2[2])
-					slot4 = SpineAnimUI.AddFollower(uv2.orbit_ui_bound[1], uv0.model.transform, slot3.transform)
-					slot3.transform.localScale = Vector3.one
-					uv0._attachmentList[slot4] = uv2.orbit_hidden_action
-					slot4:GetComponent("Spine.Unity.BoneFollowerGraphic").followBoneRotation = false
+					slot1 = uv2 .. "_bound"
+					slot3 = uv3[slot1][2]
+					slot4 = Object.Instantiate(slot0)
+					slot4.transform.localPosition = Vector2(slot3[1], slot3[2])
+					slot5 = SpineAnimUI.AddFollower(uv3[slot1][1], uv0.model.transform, slot4.transform)
+					slot4.transform.localScale = Vector3.one
+					uv0._attachmentList[slot5] = uv3.orbit_hidden_action
+					slot5:GetComponent("Spine.Unity.BoneFollowerGraphic").followBoneRotation = false
 
-					if uv2.orbit_ui_back == 1 then
-						slot4:SetParent(uv0.modelRoot.transform, false)
-						slot4:SetAsFirstSibling()
+					if uv3.orbit_ui_back == 1 then
+						slot5:SetParent(uv0.modelRoot.transform, false)
+						slot5:SetAsFirstSibling()
 					else
-						slot4:SetParent(uv0.modelRoot.transform, false)
-						slot4:SetAsLastSibling()
+						slot5:SetParent(uv0.modelRoot.transform, false)
+						slot5:SetAsLastSibling()
 					end
 
-					SetActive(slot3, uv0._visible)
+					SetActive(slot4, uv0._visible)
 				end
 			end), true, true)
 		end
@@ -197,9 +204,7 @@ function slot0.TweenShining(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slo
 		slot0:StopTweenShining()
 
 		slot11 = slot0._modleGraphic.material
-		slot12 = LeanTween.value(slot0.modelRoot, slot3, slot4, slot1)
-		slot12 = slot12:setEase(LeanTweenType.easeInOutSine)
-		slot12 = slot12:setOnUpdate(System.Action_float(function (slot0)
+		slot12 = LeanTween.value(slot0.modelRoot, slot3, slot4, slot1):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function (slot0)
 			if uv0 then
 				uv1:SetColor("_Color", Color.Lerp(uv2, uv3, slot0))
 			else
@@ -207,8 +212,7 @@ function slot0.TweenShining(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slo
 			end
 
 			existCall(uv5, slot0)
-		end))
-		slot12 = slot12:setOnComplete(System.Action(function ()
+		end)):setOnComplete(System.Action(function ()
 			uv0._tweenShiningId = nil
 
 			if uv1 then
@@ -281,6 +285,12 @@ function slot0.CreateInterface(slot0)
 	slot1.sizeDelta = Vector2(3, 3)
 
 	return slot0._modelClick, slot0._modelPress, slot0._dragDelegate
+end
+
+function slot0.resumeRole(slot0)
+	if slot0._modleAnim and slot0._modleAnim:GetAnimationState() then
+		slot0._modleAnim:Resume()
+	end
 end
 
 function slot0.GetInterface(slot0)

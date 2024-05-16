@@ -55,20 +55,20 @@ return {
 		slot1 = uv0.GetPaintingMgr()
 
 		if getProxy(ShipSkinProxy) then
-			for slot7, slot8 in pairs(slot2.GetOwnAndShareSkins(slot2)) do
+			for slot7, slot8 in pairs(slot2:GetOwnAndShareSkins()) do
 				uv0.AddPaintingNameBySkinID(slot0, slot8.id)
 			end
 		end
 
 		if getProxy(CollectionProxy) then
-			for slot8, slot9 in pairs(slot3.getGroups(slot3)) do
+			for slot8, slot9 in pairs(slot3:getGroups()) do
 				uv0.AddPaintingNameByShipGroupID(slot0, slot9.id)
 			end
 		end
 
 		if getProxy(BayProxy) then
 			for slot9, slot10 in ipairs(slot4.activityNpcShipIds) do
-				uv0.AddPaintingNameByShipGroupID(slot0, slot4.getShipById(slot4, slot10).groupId)
+				uv0.AddPaintingNameByShipGroupID(slot0, slot4:getShipById(slot10).groupId)
 			end
 		end
 
@@ -89,8 +89,8 @@ return {
 		for slot5 = 1, #slot0 do
 			if slot0[slot5].type == DROP_TYPE_SHIP then
 				uv0.AddPaintingNameByShipConfigID(slot1, slot6.id)
-			elseif slot7 == DROP_TYPE_NPC_SHIP then
-				uv0.AddPaintingNameByShipConfigID(slot1, getProxy(BayProxy):getShipById(slot6.id).configId)
+			elseif slot7 == DROP_TYPE_OPERATION then
+				uv0.AddPaintingNameByShipConfigID(slot1, getProxy(BayProxy):getShipById(slot6.count).configId)
 			elseif slot7 == DROP_TYPE_SKIN then
 				uv0.AddPaintingNameBySkinID(slot1, slot6.id)
 			end
@@ -99,10 +99,8 @@ return {
 		return slot1
 	end,
 	GetPaintingNameListByShipVO = function (slot0)
-		slot1 = {}
-
 		for slot7, slot8 in ipairs(getProxy(ShipSkinProxy):GetAllSkinForShip(slot0)) do
-			uv0.AddPaintingNameBySkinID(slot1, slot8.id)
+			uv0.AddPaintingNameBySkinID({}, slot8.id)
 		end
 
 		for slot8, slot9 in ipairs(slot2:GetShareSkinsForShip(slot0)) do
@@ -138,11 +136,8 @@ return {
 		slot1 = {}
 
 		if uv0.IsPaintingNeedCheck() then
-			slot4 = uv0.IsWifi()
-			slot5 = slot0.isShowBox and pg.FileDownloadMgr.GetInstance():IsNeedRemind()
-
 			if #slot0.paintingNameList > 0 then
-				if not slot4 and slot5 then
+				if not uv0.IsWifi() and (slot0.isShowBox and pg.FileDownloadMgr.GetInstance():IsNeedRemind()) then
 					slot7, slot8 = uv0.CalcPaintingListSize(slot6)
 
 					if slot7 > 0 then

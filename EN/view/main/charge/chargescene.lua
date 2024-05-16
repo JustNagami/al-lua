@@ -12,33 +12,31 @@ function slot0.onBackPressed(slot0)
 end
 
 function slot0.preload(slot0, slot1)
-	function slot3()
-		slot1 = uv0:getChargedList()
-		slot2 = uv0:GetNormalList()
-		slot3 = uv0:GetNormalGroupList()
-
-		if uv0:getFirstChargeList() then
-			uv1:setFirstChargeIds(slot0)
-		end
-
-		if slot1 then
-			uv1:setChargedList(slot1)
-		end
-
-		if slot2 then
-			uv1:setNormalList(slot2)
-		end
-
-		if slot3 then
-			uv1:setNormalGroupList(slot3)
-		end
-
-		uv2()
-	end
-
 	if getProxy(ShopsProxy):ShouldRefreshChargeList() then
 		pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
-			callback = slot3
+			callback = function ()
+				slot1 = uv0:getChargedList()
+				slot2 = uv0:GetNormalList()
+				slot3 = uv0:GetNormalGroupList()
+
+				if uv0:getFirstChargeList() then
+					uv1:setFirstChargeIds(slot0)
+				end
+
+				if slot1 then
+					uv1:setChargedList(slot1)
+				end
+
+				if slot2 then
+					uv1:setNormalList(slot2)
+				end
+
+				if slot3 then
+					uv1:setNormalGroupList(slot3)
+				end
+
+				uv2()
+			end
 		})
 	else
 		slot3()
@@ -282,10 +280,8 @@ function slot0.updateNoRes(slot0, slot1)
 	end
 
 	for slot8, slot9 in ipairs(slot0.contextData.noRes) do
-		slot4 = slot4 .. i18n(slot9[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", pg.item_data_statistics[slot9[1]].name, slot9[2])
-
 		if slot8 < #slot0.contextData.noRes then
-			slot4 = slot4 .. i18n("text_noRes_info_tip_link")
+			slot4 = slot4 .. i18n(slot9[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", Item.getConfigData(slot9[1]).name, slot9[2]) .. i18n("text_noRes_info_tip_link")
 		end
 	end
 
@@ -330,19 +326,12 @@ function slot0.displayShipWord(slot0, slot1, slot2, slot3)
 			slot7.alignment = TextAnchor.MiddleCenter
 		end
 
-		(function ()
+		function ()
 			slot0 = 3
-			slot2 = LeanTween.scale(rtf(uv0.chat.gameObject), Vector3.New(1, 1, 1), 0.3)
-			slot2 = slot2:setFrom(Vector3.New(0, 0, 0))
-			slot2 = slot2:setEase(LeanTweenType.easeOutBack)
 
-			slot2:setOnComplete(System.Action(function ()
+			LeanTween.scale(rtf(uv0.chat.gameObject), Vector3.New(1, 1, 1), 0.3):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function ()
 				if not uv0 then
-					slot0 = LeanTween.scale(rtf(uv1.chat.gameObject), Vector3.New(0, 0, 1), uv2)
-					slot0 = slot0:setEase(LeanTweenType.easeInBack)
-					slot0 = slot0:setDelay(uv2 + uv3)
-
-					slot0:setOnComplete(System.Action(function ()
+					LeanTween.scale(rtf(uv1.chat.gameObject), Vector3.New(0, 0, 1), uv2):setEase(LeanTweenType.easeInBack):setDelay(uv2 + uv3):setOnComplete(System.Action(function ()
 						uv0.chatFlag = nil
 
 						setActive(uv0.chat, false)
@@ -355,7 +344,7 @@ function slot0.displayShipWord(slot0, slot1, slot2, slot3)
 					uv1.chatFlag = nil
 				end
 			end))
-		end)()
+		end()
 	end
 end
 
@@ -487,13 +476,13 @@ function slot0.jpUIEnter(slot0)
 end
 
 function slot0.addRefreshTimer(slot0, slot1)
-	(function ()
+	function ()
 		if uv0.refreshTimer then
 			uv0.refreshTimer:Stop()
 
 			uv0.refreshTimer = nil
 		end
-	end)()
+	end()
 
 	slot0.refreshTimer = Timer.New(function ()
 		if uv0 + 1 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then

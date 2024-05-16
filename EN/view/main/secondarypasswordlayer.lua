@@ -71,26 +71,17 @@ function slot0.InitInteractable(slot0)
 
 			if uv1.inputPos + 1 > 0 and slot1 <= #uv1.digitGroup then
 				uv1.inputs = uv1.inputs .. tostring(slot0)
-				slot2 = uv1.digitGroup[slot1]
 
-				setText(slot2:Find("text"), slot0)
-
-				slot4 = uv1.digitGroup[slot1]
-
-				setActive(slot4:Find("filled"), false)
-
-				slot4 = uv1.digitGroup[slot1]
-
-				setActive(slot4:Find("space"), false)
-
-				function slot3()
-					setText(uv0, "")
-					setActive(uv1.digitGroup[uv2]:Find("filled"), true)
-				end
+				setText(uv1.digitGroup[slot1]:Find("text"), slot0)
+				setActive(uv1.digitGroup[slot1]:Find("filled"), false)
+				setActive(uv1.digitGroup[slot1]:Find("space"), false)
 
 				if not uv1.inputMode then
 					if uv1.timers["input" .. slot1] then
-						uv1.timers["input" .. slot1]:Reset(slot3, 1, 1)
+						uv1.timers["input" .. slot1]:Reset(function ()
+							setText(uv0, "")
+							setActive(uv1.digitGroup[uv2]:Find("filled"), true)
+						end, 1, 1)
 					else
 						uv1.timers["input" .. slot1] = Timer.New(slot3, 1, 1)
 					end
@@ -101,16 +92,12 @@ function slot0.InitInteractable(slot0)
 				uv1:SetInputPos(slot1)
 			end
 
-			slot3 = uv0
-
-			setActive(slot3:Find("highlight"), true)
-
-			function slot2()
-				setActive(uv0:Find("highlight"), false)
-			end
+			setActive(uv0:Find("highlight"), true)
 
 			if uv1.timers["btn" .. slot0] then
-				uv1.timers["btn" .. slot0]:Reset(slot2, 0.2, 1)
+				uv1.timers["btn" .. slot0]:Reset(function ()
+					setActive(uv0:Find("highlight"), false)
+				end, 0.2, 1)
 			else
 				uv1.timers["btn" .. slot0] = Timer.New(slot2, 0.2, 1)
 			end
@@ -133,16 +120,12 @@ function slot0.InitInteractable(slot0)
 			uv0:SetInputPos(slot0 - 1)
 		end
 
-		slot2 = uv0.btndelete
-
-		setActive(slot2:Find("highlight"), true)
-
-		function slot1()
-			setActive(uv0.btndelete:Find("highlight"), false)
-		end
+		setActive(uv0.btndelete:Find("highlight"), true)
 
 		if uv0.timers.btndel then
-			uv0.timers.btndel:Reset(slot1, 0.3, 1)
+			uv0.timers.btndel:Reset(function ()
+				setActive(uv0.btndelete:Find("highlight"), false)
+			end, 0.3, 1)
 		else
 			uv0.timers.btndel = Timer.New(slot1, 0.3, 1)
 		end
@@ -346,10 +329,8 @@ function slot3(slot0)
 		end,
 		[slot1.RESOLVE_EQUIPMENT] = function (slot0)
 			if getProxy(EquipmentProxy):getEquipmentById(slot0.contextData.info) then
-				slot4 = slot3.config.name
-
-				if slot3.config.id % 20 > 0 then
-					slot4 = slot4 .. "+" .. tostring(slot3.config.id % 20)
+				if slot3:getConfig("id") % 20 > 0 then
+					slot4 = slot3:getConfig("name") .. "+" .. tostring(slot3:getConfig("id") % 20)
 				end
 
 				return string.format(i18n("words_desc_resolve_equip"), slot4)

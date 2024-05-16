@@ -12,8 +12,7 @@ function slot0.OnLoaded(slot0)
 	slot0.weddingReview = slot0:findTF("bg/wedding")
 	slot0.voiceBtn = slot0:findTF("bg/language_change")
 	slot0.voiceBtnSel = slot0.voiceBtn:Find("sel")
-	slot1 = slot0.voiceBtn
-	slot0.voiceBtnUnsel = slot1:Find("unsel")
+	slot0.voiceBtnUnsel = slot0.voiceBtn:Find("unsel")
 	slot0.voiceBtnPositions = {
 		slot0.voiceBtnSel.localPosition,
 		slot0.voiceBtnUnsel.localPosition
@@ -84,10 +83,7 @@ function slot0.EnterAnim(slot0, slot1, slot2)
 end
 
 function slot0.ExistAnim(slot0, slot1, slot2)
-	slot3 = LeanTween.moveX(rtf(slot0._tf), 1000, slot1)
-	slot3 = slot3:setEase(LeanTweenType.easeInOutSine)
-
-	slot3:setOnComplete(System.Action(function ()
+	LeanTween.moveX(rtf(slot0._tf), 1000, slot1):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function ()
 		if uv0 then
 			uv0()
 		end
@@ -182,17 +178,23 @@ function slot0.UpdateLanguage(slot0)
 end
 
 function slot0.SetAuthorInfo(slot0)
-	slot0.voiceActor:SetText(ShipWordHelper.GetCVAuthor(slot0.skin.id))
+	slot2 = ShipWordHelper.GetCVAuthor(slot0.skin.id)
+
+	print(slot2 .. "  ----")
+	slot0.voiceActor:SetText(slot2)
 end
 
 function slot0.SetIllustrator(slot0)
-	slot0.illustrator:SetText(slot0.shipGroup:GetNationTxt())
+	slot2 = slot0.shipGroup:GetNationTxt()
+
+	print(slot2)
+	slot0.illustrator:SetText(slot2)
 end
 
 function slot0.GetCvList(slot0, slot1)
 	slot2 = {}
 
-	return (not slot1 or pg.AssistantInfo.GetCVListForProfile()) and ShipWordHelper.GetCVList()
+	return (not slot1 or (pg.ship_skin_template[slot0.skin.id].spine_use_live2d ~= 1 or pg.AssistantInfo.GetCVListForProfile(true)) and pg.AssistantInfo.GetCVListForProfile()) and ShipWordHelper.GetCVList()
 end
 
 function slot0.UpdateCvList(slot0, slot1)

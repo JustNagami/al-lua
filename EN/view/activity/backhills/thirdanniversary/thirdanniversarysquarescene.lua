@@ -33,8 +33,7 @@ function slot0.init(slot0)
 
 	slot0._front = slot0._map:Find("top")
 	slot0._middle = slot0._map:Find("middle")
-	slot1 = slot0._map
-	slot0._bottom = slot1:Find("bottom")
+	slot0._bottom = slot0._map:Find("bottom")
 	slot0.containers = {
 		slot0._front,
 		slot0._middle,
@@ -59,9 +58,7 @@ function slot0.RegisterDataResponse(slot0)
 		"nvpukafeiting",
 		"zhajihanbaodian"
 	}) do
-		slot7 = slot0.Respones
-
-		slot7:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot6
 		}, function (slot0, slot1)
@@ -89,9 +86,7 @@ function slot0.RegisterDataResponse(slot0)
 		"shujvhuigu",
 		"xianshijianzao"
 	}) do
-		slot8 = slot0.Respones
-
-		slot8:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot7 .. "Tip"
 		}, function (slot0, slot1)
@@ -104,9 +99,8 @@ function slot0.RegisterDataResponse(slot0)
 	end
 
 	slot0.Respones.hubData = {}
-	slot3 = slot0.Respones
 
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"hubData"
 	}, function (slot0, slot1)
@@ -114,10 +108,7 @@ function slot0.RegisterDataResponse(slot0)
 	end, {
 		strict = true
 	})
-
-	slot3 = slot0.Respones
-
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"materialCount"
 	}, function (slot0, slot1)
@@ -129,10 +120,7 @@ function slot0.didEnter(slot0)
 	onButton(slot0, slot0:findTF("top/return_btn"), function ()
 		uv0:emit(uv1.ON_BACK)
 	end)
-
-	slot3 = slot0.top
-
-	onButton(slot0, slot3:Find("daka_count"), function ()
+	onButton(slot0, slot0.top:Find("daka_count"), function ()
 		uv0:emit(ThirdAnniversarySquareMediator.ON_OPEN_TOWERCLIMBING_SIGNED)
 	end)
 	onButton(slot0, slot0:findTF("top/return_main_btn"), function ()

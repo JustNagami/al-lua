@@ -171,9 +171,7 @@ function slot0.checkDailyTask(slot0, slot1)
 
 	if not slot0.dailyTimeStemp or slot0.dailyTimeStemp < pg.TimeMgr.GetInstance():GetServerTime() then
 		table.insert(slot2, function (slot0)
-			slot1 = pg.ConnectionMgr.GetInstance()
-
-			slot1:Send(33413, {
+			pg.ConnectionMgr.GetInstance():Send(33413, {
 				type = 0
 			}, 33414, function (slot0)
 				if slot0.result == 0 then

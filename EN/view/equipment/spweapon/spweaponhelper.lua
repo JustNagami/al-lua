@@ -1,7 +1,7 @@
 slot1, slot2, slot3, slot4, slot5 = nil
 
 function slot1(slot0, slot1)
-	if IsNil(slot0.Find(slot0, "base")) then
+	if IsNil(slot0:Find("base")) then
 		return
 	end
 
@@ -14,16 +14,16 @@ function slot1(slot0, slot1)
 		return
 	end
 
-	setText(slot2.Find(slot2, "name"), slot3)
+	setText(slot2:Find("name"), slot3)
 	Canvas.ForceUpdateCanvases()
 
-	if not IsNil(slot2.Find(slot2, "value")) then
+	if not IsNil(slot2:Find("value")) then
 		setActive(slot2:Find("value"), slot4)
 		changeToScrollText(slot2:Find("value/Text"), slot4)
 	end
 
-	if not IsNil(slot2.Find(slot2, "effect")) then
-		setActive(slot2.Find(slot2, "effect"), false)
+	if not IsNil(slot2:Find("effect")) then
+		setActive(slot2:Find("effect"), false)
 	end
 
 	setActive(slot2:Find("value/up"), slot1.compare and slot1.compare > 0)
@@ -33,15 +33,15 @@ function slot1(slot0, slot1)
 	if not slot1.lock_open and slot1.sub and #slot1.sub > 0 then
 		GetComponent(slot2, typeof(Toggle)).enabled = true
 	else
-		setActive(slot2.Find(slot2, "name/close"), false)
-		setActive(slot2.Find(slot2, "name/open"), false)
+		setActive(slot2:Find("name/close"), false)
+		setActive(slot2:Find("name/open"), false)
 
 		GetComponent(slot2, typeof(Toggle)).enabled = false
 	end
 end
 
 function slot3(slot0, slot1)
-	if IsNil(slot0.Find(slot0, "desc")) then
+	if IsNil(slot0:Find("desc")) then
 		return
 	end
 
@@ -51,7 +51,7 @@ function slot3(slot0, slot1)
 		return
 	end
 
-	setText(slot2.Find(slot2, "Text"), slot1.desc)
+	setText(slot2:Find("Text"), slot1.desc)
 end
 
 function slot2(slot0, slot1)
@@ -71,15 +71,13 @@ function slot5(slot0, slot1, slot2)
 end
 
 function updateSpWeaponInfo(slot0, slot1, slot2)
-	uv0(slot0.Find(slot0, "attrs"), slot0.Find(slot0, "attr_tpl"), slot1.attrs)
+	uv0(slot0:Find("attrs"), slot0:Find("attr_tpl"), slot1.attrs)
 
 	slot4 = {}
 
 	if slot2[1].skillId > 0 then
-		slot5 = getSkillDesc(slot2[1].skillId, slot2[1].lv)
-
 		if not slot2[1].unlock then
-			slot5 = setColorStr(i18n("spweapon_tip_skill_locked") .. slot5, "#a2a2a2")
+			slot5 = setColorStr(i18n("spweapon_tip_skill_locked") .. getSkillDesc(slot2[1].skillId, slot2[1].lv), "#a2a2a2")
 		end
 
 		table.insert(slot4, {
@@ -90,10 +88,8 @@ function updateSpWeaponInfo(slot0, slot1, slot2)
 	end
 
 	if slot2[2].skillId > 0 then
-		slot5 = getSkillDesc(slot2[2].skillId, slot2[2].lv)
-
 		if not slot2[2].unlock then
-			slot5 = setColorStr(i18n("spweapon_tip_skill_locked") .. slot5, "#a2a2a2")
+			slot5 = setColorStr(i18n("spweapon_tip_skill_locked") .. getSkillDesc(slot2[2].skillId, slot2[2].lv), "#a2a2a2")
 		end
 
 		table.insert(slot4, {
@@ -114,16 +110,14 @@ function updateSpWeaponInfo(slot0, slot1, slot2)
 	})
 
 	slot7 = slot0:Find("part/value"):Find("label")
-	slot8 = {}
-	slot9 = {}
 
 	if #slot1.part[1] == 0 and #slot1.part[2] == 0 then
-		setmetatable(slot8, {
+		setmetatable({}, {
 			__index = function (slot0, slot1)
 				return true
 			end
 		})
-		setmetatable(slot9, {
+		setmetatable({}, {
 			__index = function (slot0, slot1)
 				return true
 			end
@@ -138,15 +132,16 @@ function updateSpWeaponInfo(slot0, slot1, slot2)
 		end
 	end
 
-	for slot13, slot14 in ipairs(ShipType.FilterOverQuZhuType(ShipType.AllShipType)) do
-		slot15 = slot13 <= slot6.childCount and slot6:GetChild(slot13 - 1) or cloneTplTo(slot7, slot6)
+	UIItemList.StaticAlign(slot6, slot7, #ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), slot8, slot9), function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-		GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(slot14), slot15)
-		setActive(slot15:Find("main"), slot8[slot14] and not slot9[slot14])
-		setActive(slot15:Find("sub"), slot9[slot14] and not slot8[slot14])
-		setImageAlpha(slot15, not slot8[slot14] and not slot9[slot14] and 0.3 or 1)
-	end
-
+			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(slot3), slot2)
+			setActive(slot2:Find("main"), uv1[slot3] and not uv2[slot3])
+			setActive(slot2:Find("sub"), uv2[slot3] and not uv1[slot3])
+			setImageAlpha(slot2, not uv1[slot3] and not uv2[slot3] and 0.3 or 1)
+		end
+	end)
 	setActive(slot3, false)
 end
 
@@ -179,10 +174,8 @@ function slot7(slot0, slot1)
 		slot9 = nil
 
 		if not slot7.empty then
-			slot9 = slot7.configAttr .. " + " .. slot7.baseAttr
-
 			if not slot1:IsReal() then
-				slot9 = slot9 .. "~" .. slot1.GetAttributesRange(slot1)[slot6]
+				slot9 = slot7.configAttr .. " + " .. slot7.baseAttr .. "~" .. slot1:GetAttributesRange()[slot6]
 			end
 		else
 			slot9 = 0
@@ -261,17 +254,14 @@ return {
 	end,
 	TransformCompositeInfo = function (slot0)
 		slot1 = {}
-		slot2 = {
-			slot0.getConfig(slot0, "attribute_1"),
-			slot0.getConfig(slot0, "attribute_2")
-		}
-		slot3 = slot0.GetConfigAttributes(slot0)
-		slot4 = slot0.GetAttributesRange(slot0)
 
 		for slot8 = 1, 2 do
 			table.insert(slot1, {
-				name = AttributeType.Type2Name(slot2[slot8]),
-				value = slot3[slot8] .. " + 0~" .. slot4[slot8]
+				name = AttributeType.Type2Name(({
+					slot0:getConfig("attribute_1"),
+					slot0:getConfig("attribute_2")
+				})[slot8]),
+				value = slot0:GetConfigAttributes()[slot8] .. " + 0~" .. slot0:GetAttributesRange()[slot8]
 			})
 		end
 
@@ -279,20 +269,17 @@ return {
 	end,
 	TransformUpgradeInfo = function (slot0, slot1)
 		slot2 = {}
-		slot3 = {
-			slot0.getConfig(slot0, "attribute_1"),
-			slot0.getConfig(slot0, "attribute_2")
-		}
-		slot4 = slot0.GetConfigAttributes(slot0)
-		slot5 = slot1.GetConfigAttributes(slot1)
-		slot6 = slot0.GetBaseAttributes(slot0)
+		slot4 = slot0:GetConfigAttributes()
+		slot5 = slot1:GetConfigAttributes()
 
 		for slot10 = 1, 2 do
-			slot11 = AttributeType.Type2Name(slot3[slot10])
-			slot12 = slot5[slot10] .. " + " .. slot6[slot10]
+			slot11 = AttributeType.Type2Name(({
+				slot0:getConfig("attribute_1"),
+				slot0:getConfig("attribute_2")
+			})[slot10])
 
 			if slot4[slot10] ~= slot5[slot10] then
-				slot12 = slot4[slot10] .. "   >   " .. slot12
+				slot12 = slot4[slot10] .. "   >   " .. (slot5[slot10] .. " + " .. slot0:GetBaseAttributes()[slot10])
 			end
 
 			table.insert(slot2, {

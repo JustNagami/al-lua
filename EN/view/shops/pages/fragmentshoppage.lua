@@ -91,9 +91,7 @@ function slot0.OnInitItem(slot0, slot1)
 			return
 		end
 
-		slot0 = uv1
-
-		slot0:OnClickCommodity(uv0.goodsVO, function (slot0, slot1)
+		uv1:OnClickCommodity(uv0.goodsVO, function (slot0, slot1)
 			uv0:OnPurchase(slot0, slot1)
 		end)
 	end, SFX_PANEL)

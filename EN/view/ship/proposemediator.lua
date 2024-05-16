@@ -6,23 +6,15 @@ slot0.EXCHANGE_TIARA = "ProposeMediator.EXCHANGE_TIARA"
 slot0.REGISTER_SHIP = "ProposeMediator.REGISTER_SHIP"
 
 function slot0.register(slot0)
-	slot1 = getProxy(BayProxy)
-
 	if slot0.contextData.shipId then
-		slot0.viewComponent:setShip(slot1:getShipById(slot0.contextData.shipId))
+		slot0.viewComponent:setShip(getProxy(BayProxy):getShipById(slot0.contextData.shipId))
 	elseif slot0.contextData.review then
 		slot0.viewComponent:setShipGroupID(slot0.contextData.group.id)
 		slot0.viewComponent:setWeddingReviewSkinID(slot0.contextData.skinID)
 	end
 
-	slot3 = slot0.viewComponent
-
-	slot3:setBagProxy(getProxy(BagProxy))
-
-	slot3 = getProxy(PlayerProxy)
-	slot4 = slot0.viewComponent
-
-	slot4:setPlayer(slot3:getData())
+	slot0.viewComponent:setBagProxy(getProxy(BagProxy))
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 	slot0:bind(uv0.ON_PROPOSE, function (slot0, slot1)
 		uv0:sendNotification(GAME.PROPOSE_SHIP, {
 			shipId = slot1
@@ -73,9 +65,7 @@ function slot0.handleNotification(slot0, slot1)
 	elseif slot2 == GAME.RENAME_SHIP_DONE then
 		slot0.viewComponent:closeView()
 	elseif slot2 == GAME.PROPOSE_EXCHANGE_RING_DONE then
-		slot4 = slot0.viewComponent
-
-		slot4:emit(BaseUI.ON_ACHIEVE, slot3.items, function ()
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.items, function ()
 			uv0.viewComponent:onUpdateItemCount()
 		end)
 	elseif slot2 == GAME.PROPOSE_REGISTER_SHIP_DONE and slot0.viewComponent.afterRegisterCall then

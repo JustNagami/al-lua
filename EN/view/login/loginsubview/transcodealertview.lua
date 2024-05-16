@@ -24,9 +24,7 @@ end
 
 function slot0.InitEvent(slot0)
 	onButton(slot0, slot0.tcSureBtn, function ()
-		slot1 = uv0.transcodeTxt.text
-
-		if uv0.uidTxt.text == "" or slot1 == "" then
+		if uv0.uidTxt.text == "" or uv0.transcodeTxt.text == "" then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
 				content = i18n("transcode_empty_tip")

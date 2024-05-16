@@ -74,10 +74,8 @@ function slot0.UpdateMulti(slot0, slot1, slot2, slot3)
 		[FleetType.Normal] = {},
 		[FleetType.Submarine] = {}
 	}
-	slot4 = ipairs
-	slot5 = slot3 or {}
 
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot3 or {}) do
 		if slot0:getFleetById(slot8) then
 			slot10 = slot9:getFleetType()
 
@@ -152,15 +150,10 @@ function slot0.updateFleets(slot0)
 end
 
 function slot0.updateLimit(slot0)
-	slot5 = slot0.rtLimit
-
-	setText(slot5:Find("number"), string.format("%d/%d", #_.filter(slot0.selectIds[FleetType.Normal], function (slot0)
+	setText(slot0.rtLimit:Find("number"), string.format("%d/%d", #_.filter(slot0.selectIds[FleetType.Normal], function (slot0)
 		return slot0 > 0
 	end), slot0:getLimitNums(FleetType.Normal)))
-
-	slot6 = slot0.rtLimit
-
-	setText(slot6:Find("number_sub"), string.format("%d/%d", #_.filter(slot0.selectIds[FleetType.Submarine], function (slot0)
+	setText(slot0.rtLimit:Find("number_sub"), string.format("%d/%d", #_.filter(slot0.selectIds[FleetType.Submarine], function (slot0)
 		return slot0 > 0
 	end), slot0:getLimitNums(FleetType.Submarine)))
 end
@@ -201,7 +194,6 @@ function slot0.selectFleet(slot0, slot1, slot2, slot3)
 end
 
 function slot0.updateFleet(slot0, slot1, slot2)
-	slot5 = slot0:getFleetById(slot0.selectIds[slot1][slot2])
 	slot6 = slot2 <= slot0:getLimitNums(slot1)
 	slot7 = slot0.rtFleets[slot1][slot2]
 	slot10 = slot7:Find("vanguard")
@@ -215,7 +207,7 @@ function slot0.updateFleet(slot0, slot1, slot2)
 	setActive(slot7:Find("blank"), not slot6)
 
 	if slot7:Find("main") then
-		setActive(slot9, slot6 and slot5)
+		setActive(slot9, slot6 and slot0:getFleetById(slot0.selectIds[slot1][slot2]))
 	end
 
 	if slot10 then
@@ -241,9 +233,8 @@ function slot0.updateFleet(slot0, slot1, slot2)
 		onButton(slot0, slot12, function ()
 			uv0.toggleList.position = (uv1.position + uv2.position) / 2
 			uv0.toggleList.anchoredPosition = uv0.toggleList.anchoredPosition + Vector2(-uv0.toggleList.rect.width / 2, -uv1.rect.height / 2)
-			slot0 = uv0
 
-			slot0:showToggleMask(uv3, function (slot0)
+			uv0:showToggleMask(uv3, function (slot0)
 				uv0:hideToggleMask()
 				uv0:selectFleet(uv1, uv2, slot0)
 			end)
@@ -279,12 +270,10 @@ end
 function slot0.showToggleMask(slot0, slot1, slot2)
 	setActive(slot0.toggleMask, true)
 
-	slot3 = _.filter(slot0.fleets, function (slot0)
-		return slot0:getFleetType() == uv0
-	end)
-
 	for slot7, slot8 in ipairs(slot0.toggles) do
-		slot9 = slot3[slot7]
+		slot9 = _.filter(slot0.fleets, function (slot0)
+			return slot0:getFleetType() == uv0
+		end)[slot7]
 
 		setActive(slot8, slot9)
 

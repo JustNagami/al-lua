@@ -10,8 +10,7 @@ end
 
 function slot0.init(slot0)
 	slot0.giftListRect = slot0:findTF("Container")
-	slot1 = slot0.giftListRect
-	slot0.giftListComp = slot1:GetComponent("LScrollRect")
+	slot0.giftListComp = slot0.giftListRect:GetComponent("LScrollRect")
 
 	function slot0.giftListComp.onUpdateItem(slot0, slot1)
 		slot3 = CardPuzzleRelicView.New(tf(slot1))

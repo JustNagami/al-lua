@@ -15,19 +15,14 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 end
 
 function slot0.AddListener(slot0)
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_UPDATE_ORE_TARGET, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_UPDATE_ORE_TARGET, function (slot0, slot1)
 		if not uv0.isDestroy then
 			setActive(findTF(uv0.effectTF, "Frame"), uv0.index == slot1.index)
 		end
 
 		uv0.isTarget = uv0.index == slot1.index
 	end)
-
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_CHECK_CARRY, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_CHECK_CARRY, function (slot0, slot1)
 		if not uv0.isDestroy and uv0.isTarget then
 			if OreGameConfig.MAX_WEIGHT < slot1.weight + uv0.config.weight then
 				setActive(findTF(uv0.effectTF, "Limit"), true)
@@ -46,31 +41,16 @@ function slot0.AddListener(slot0)
 end
 
 function slot0.AddDftAniEvent(slot0)
-	slot1 = findTF(slot0._tf, "main")
-	slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-	slot1:SetEndEvent(function ()
+	findTF(slot0._tf, "main"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:Destroy()
 	end)
-
-	slot1 = findTF(slot0._tf, "main/Image")
-	slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-	slot1:SetEndEvent(function ()
+	findTF(slot0._tf, "main/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:Destroy()
 	end)
-
-	slot1 = findTF(slot0.effectTF, "Limit")
-	slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-	slot1:SetEndEvent(function ()
+	findTF(slot0.effectTF, "Limit"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		setActive(findTF(uv0.effectTF, "Limit"), false)
 	end)
-
-	slot1 = findTF(slot0.effectTF, "Full")
-	slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-	slot1:SetEndEvent(function ()
+	findTF(slot0.effectTF, "Full"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		setActive(findTF(uv0.effectTF, "Full"), false)
 	end)
 end

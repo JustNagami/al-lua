@@ -34,27 +34,17 @@ function slot0.didEnter(slot0)
 
 		scrollTo(uv0.scrollrect, 0, slot0)
 	end, SFX_PANEL)
-
-	slot1 = slot0.levelUIlist
-
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.levelUIlist:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:UpdateLevelTr(slot1 + 1, slot2)
 		end
 	end)
-
-	slot1 = slot0.levelUIlist
-
-	slot1:align(uv1)
+	slot0.levelUIlist:align(uv1)
 
 	slot0.controller = PileGameController.New()
-	slot1 = slot0.controller.view
 
-	slot1:SetUI(slot0._go)
-
-	slot2 = slot0.controller
-
-	slot2:SetUp(slot0:PackData(), function (slot0, slot1)
+	slot0.controller.view:SetUI(slot0._go)
+	slot0.controller:SetUp(slot0:PackData(), function (slot0, slot1)
 		if slot1 < slot0 then
 			uv0:StoreDataToServer({
 				slot0
@@ -88,7 +78,7 @@ function slot0.UpdateLevelTr(slot0, slot1, slot2)
 		end, SFX_PANEL)
 	end
 
-	slot2:Find("Text"):GetComponent(typeof(Image)).sprite = LoadSprite("ui/pile_atlas", "level" .. slot1)
+	slot2:Find("Text"):GetComponent(typeof(Image)).sprite = LoadSprite("ui/minigameui/pile_atlas", "level" .. slot1)
 end
 
 function slot0.PackData(slot0)

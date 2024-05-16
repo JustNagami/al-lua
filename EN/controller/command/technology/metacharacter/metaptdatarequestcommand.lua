@@ -13,10 +13,7 @@ function slot0.execute(slot0, slot1)
 	end
 
 	print("34001 meta pt request:", table.concat(slot4, ","))
-
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(34001, {
+	pg.ConnectionMgr.GetInstance():Send(34001, {
 		group_id = slot4
 	}, 34002, function (slot0)
 		print("34002 meta pt request done:", #uv0)

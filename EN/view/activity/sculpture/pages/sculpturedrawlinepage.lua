@@ -45,10 +45,7 @@ function slot0.Show(slot0, slot1, slot2)
 end
 
 function slot0.InitLine(slot0, slot1)
-	slot2 = slot0.activity
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("ui/" .. slot2:GetResorceName(slot0.id) .. "_line", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. slot0.activity:GetResorceName(slot0.id) .. "_line", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		uv0.tracker = Object.Instantiate(slot0, uv0.frame).transform
 		uv0.trackerCollider = uv0.tracker:GetComponent("EdgeCollider2D")
 
@@ -57,10 +54,7 @@ function slot0.InitLine(slot0, slot1)
 end
 
 function slot0.InitOneKey(slot0, slot1)
-	slot2 = slot0.activity
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("ui/" .. slot2:GetResorceName(slot0.id) .. "_onekey", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. slot0.activity:GetResorceName(slot0.id) .. "_onekey", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		uv0.onekeyTrack = Object.Instantiate(slot0, uv0.frame).transform:GetComponent("EdgeCollider2D")
 
 		uv1()
@@ -68,21 +62,13 @@ function slot0.InitOneKey(slot0, slot1)
 end
 
 function slot0.InitLineRendering(slot0)
-	slot1 = slot0.eventTrigger
-
-	slot1:AddPointDownFunc(function (slot0, slot1)
+	slot0.eventTrigger:AddPointDownFunc(function (slot0, slot1)
 		uv0:OnPointDown(slot1)
 	end)
-
-	slot1 = slot0.eventTrigger
-
-	slot1:AddPointUpFunc(function (slot0, slot1)
+	slot0.eventTrigger:AddPointUpFunc(function (slot0, slot1)
 		uv0:OnPointUp()
 	end)
-
-	slot1 = slot0.eventTrigger
-
-	slot1:AddDragFunc(function (slot0, slot1)
+	slot0.eventTrigger:AddDragFunc(function (slot0, slot1)
 		uv0.index = uv0.index + 1
 
 		if uv0.index % 5 ~= 0 then

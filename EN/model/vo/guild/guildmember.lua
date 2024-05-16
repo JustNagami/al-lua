@@ -83,9 +83,7 @@ function slot0.UpdateExternalAssaultFleetShips(slot0, slot1, slot2)
 end
 
 function slot0.isNewMember(slot0)
-	slot2 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	if slot0.joinTime ~= 0 and slot1:IsSameDay(slot2, slot0.joinTime) then
+	if slot0.joinTime ~= 0 and slot1:IsSameDay(pg.TimeMgr.GetInstance():GetServerTime(), slot0.joinTime) then
 		return true
 	end
 

@@ -5,17 +5,9 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.init(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf)
-
-	slot2 = slot0._tf
-
-	setText(slot2:Find("content/bottom/Text"), slot0.contextData.text)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bg"), function ()
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	setText(slot0._tf:Find("content/bottom/Text"), slot0.contextData.text)
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:closeView()
 	end, SFX_CANCEL)
 end
@@ -25,7 +17,7 @@ function slot0.didEnter(slot0)
 		slot1.count,
 		true
 	} or {
-		GetOwnedDropCount(slot1)
+		slot1:getOwnedCount()
 	})
 
 	setActive(slot0._tf:Find("content/main"):Find("owner"), slot5)
@@ -37,8 +29,8 @@ function slot0.didEnter(slot0)
 	slot1.count = nil
 
 	updateDrop(slot2:Find("icon/IconTpl"), slot1)
-	setText(slot2:Find("line/name"), slot1.cfg.name)
-	setText(slot2:Find("line/content/Text"), slot1.desc or slot1.cfg.desc)
+	setText(slot2:Find("line/name"), slot1:getConfig("name"))
+	setText(slot2:Find("line/content/Text"), slot1.desc or slot1:getConfig("desc"))
 end
 
 function slot0.willExit(slot0)

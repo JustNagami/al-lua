@@ -8,10 +8,6 @@ function slot0.getUIName(slot0)
 	return "ActivityBossPrecombatUI"
 end
 
-function slot0.ResUISettings(slot0)
-	return true
-end
-
 function slot0.init(slot0)
 	slot0:CommonInit()
 
@@ -108,17 +104,12 @@ function slot0.CommonInit(slot0)
 end
 
 function slot0.Register(slot0)
-	slot1 = slot0._formationLogic
-
-	slot1:AddLoadComplete(function ()
+	slot0._formationLogic:AddLoadComplete(function ()
 		if uv0._currentForm ~= PreCombatLayer.FORM_EDIT then
 			uv0._formationLogic:SwitchToPreviewMode()
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddHeroInfoModify(function (slot0, slot1)
+	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1)
 		setAnchoredPosition(slot0, {
 			x = 0,
 			y = 0
@@ -156,10 +147,8 @@ function slot0.Register(slot0)
 			setActive(slot2:Find("expbuff"), getProxy(ActivityProxy):getBuffShipList()[slot1:getGroupId()] ~= nil)
 
 			if slot12 then
-				slot16 = tostring(slot12 / 100)
-
 				if slot12 % 100 > 0 then
-					slot16 = slot16 .. "." .. tostring(slot15)
+					slot16 = tostring(slot12 / 100) .. "." .. tostring(slot15)
 				end
 
 				setText(slot13:Find("text"), string.format("EXP +%s%%", slot16))
@@ -168,50 +157,26 @@ function slot0.Register(slot0)
 			setActive(slot2:Find("expbuff"), false)
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddLongPress(function (slot0, slot1, slot2, slot3)
+	slot0._formationLogic:AddLongPress(function (slot0, slot1, slot2, slot3)
 		uv0:emit(ActivityBossPreCombatMediator.OPEN_SHIP_INFO, slot1.id, slot2)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddBeginDrag(function (slot0)
+	slot0._formationLogic:AddBeginDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddEndDrag(function (slot0)
+	slot0._formationLogic:AddEndDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddClick(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddClick(function (slot0, slot1, slot2)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddShiftOnly(function (slot0)
+	slot0._formationLogic:AddShiftOnly(function (slot0)
 		uv0:emit(ActivityBossPreCombatMediator.CHANGE_FLEET_SHIPS_ORDER, slot0)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddRemoveShip(function (slot0, slot1)
+	slot0._formationLogic:AddRemoveShip(function (slot0, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
+	slot0._formationLogic:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
 		slot0()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToDisplayMode(function ()
+	slot0._formationLogic:AddSwitchToDisplayMode(function ()
 		uv0._currentForm = PreCombatLayer.FORM_EDIT
 		uv0._checkBtn:GetComponent("Button").interactable = true
 
@@ -219,18 +184,12 @@ function slot0.Register(slot0)
 		setActive(uv0._checkBtn:Find("save"), true)
 		setActive(uv0._checkBtn:Find("edit"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToShiftMode(function ()
+	slot0._formationLogic:AddSwitchToShiftMode(function ()
 		uv0:SetFleetStepper()
 
 		uv0._checkBtn:GetComponent("Button").interactable = false
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToPreviewMode(function ()
+	slot0._formationLogic:AddSwitchToPreviewMode(function ()
 		uv0._currentForm = PreCombatLayer.FORM_PREVIEW
 		uv0._checkBtn:GetComponent("Button").interactable = true
 
@@ -238,10 +197,7 @@ function slot0.Register(slot0)
 		setActive(uv0._checkBtn:Find("save"), false)
 		setActive(uv0._checkBtn:Find("edit"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddGridTipClick(function (slot0, slot1)
+	slot0._formationLogic:AddGridTipClick(function (slot0, slot1)
 	end)
 
 	if slot0.contextData.system == SYSTEM_ACT_BOSS then
@@ -271,10 +227,8 @@ function slot0.SetStageID(slot0, slot1)
 	if checkExist(pg.expedition_activity_template[slot1], {
 		"pt_drop_display"
 	}) and type(slot4) == "table" then
-		slot5 = getProxy(ActivityProxy)
-
 		for slot9 = #slot4, 1, -1 do
-			if slot5:getActivityById(slot4[slot9][1]) and not slot10:isEnd() then
+			if getProxy(ActivityProxy):getActivityById(slot4[slot9][1]) and not slot10:isEnd() then
 				table.insert(slot3, 1, {
 					2,
 					id2ItemId(slot4[slot9][2])
@@ -292,7 +246,7 @@ function slot0.SetStageID(slot0, slot1)
 				type = slot9[1]
 			})
 			onButton(slot0, slot10, function ()
-				if pg.item_data_statistics[uv0[2]] and uv1[slot0.type] then
+				if Item.getConfigData(uv0[2]) and uv1[slot0.type] then
 					slot2 = {}
 
 					for slot6, slot7 in ipairs(slot0.display_icon) do
@@ -315,15 +269,6 @@ function slot0.SetStageID(slot0, slot1)
 		end
 	end
 
-	function slot5(slot0, slot1)
-		if type(slot0) == "table" then
-			setActive(slot1, true)
-			setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
-		else
-			setActive(slot1, false)
-		end
-	end
-
 	slot6 = {
 		findTF(slot0._goals, "goal_tpl"),
 		findTF(slot0._goals, "goal_sink"),
@@ -337,7 +282,14 @@ function slot0.SetStageID(slot0, slot1)
 		slot2.objective_3
 	}) do
 		if type(slot13) ~= "string" then
-			slot5(slot13, slot6[slot8])
+			function (slot0, slot1)
+				if type(slot0) == "table" then
+					setActive(slot1, true)
+					setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
+				else
+					setActive(slot1, false)
+				end
+			end(slot13, slot6[slot8])
 
 			slot8 = slot8 + 1
 		end
@@ -590,42 +542,42 @@ function slot0.displayFleetInfo(slot0)
 	setText(slot0._bonus:Find("Text"), slot11)
 
 	if slot11 <= 0 then
-		setImageSprite(slot0._ticket:Find("icon"), LoadSprite(itemId2icon(pg.player_resource[slot0._ticketItemID].itemid), ""))
+		setImageSprite(slot0._ticket:Find("icon"), LoadSprite(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot0._ticketItemID
+		}):getIcon(), ""))
 
-		slot15 = getProxy(PlayerProxy):getRawData():getResource(slot0._ticketItemID)
-		slot16 = 1
-		slot17 = slot0._ticket:Find("checkbox")
+		slot14 = getProxy(PlayerProxy):getRawData():getResource(slot0._ticketItemID)
+		slot15 = 1
+		slot16 = slot0._ticket:Find("checkbox")
 
 		if slot6 == SYSTEM_BOSS_EXPERIMENT then
-			slot16 = 0
+			slot15 = 0
 
-			triggerToggle(slot17, false)
-			setToggleEnabled(slot17, false)
+			triggerToggle(slot16, false)
+			setToggleEnabled(slot16, false)
 		elseif slot6 == SYSTEM_HP_SHARE_ACT_BOSS then
-			triggerToggle(slot17, true)
-			setToggleEnabled(slot17, false)
+			triggerToggle(slot16, true)
+			setToggleEnabled(slot16, false)
 		elseif slot6 == SYSTEM_ACT_BOSS_SP then
 			setActive(slot0._ticket, false)
 		elseif slot6 == SYSTEM_ACT_BOSS then
-			slot18 = slot15 > 0
+			slot17 = slot14 > 0
 
-			setToggleEnabled(slot17, slot18)
-			triggerToggle(slot17, slot18 and getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1)
+			setToggleEnabled(slot16, slot17)
+			triggerToggle(slot16, slot17 and getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1)
 		end
 
-		if slot15 < slot16 then
-			slot15 = setColorStr(slot15, COLOR_RED) or slot15
+		if slot14 < slot15 then
+			slot14 = setColorStr(slot14, COLOR_RED) or slot14
 		end
 
-		slot19 = slot0._ticket
-
-		setText(slot19:Find("Text"), slot16 .. "/" .. slot15)
-		onToggle(slot0, slot17, function (slot0)
+		setText(slot0._ticket:Find("Text"), slot15 .. "/" .. slot14)
+		onToggle(slot0, slot16, function (slot0)
 			getProxy(SettingsProxy):setActBossExchangeTicketTip(slot0 and 1 or 0)
 		end, SFX_PANEL, SFX_CANCEL)
 	end
 
-	slot13 = pg.battle_cost_template[slot6].oil_cost > 0
 	slot14 = 0
 	slot15 = 0
 	slot16 = false
@@ -635,7 +587,7 @@ function slot0.displayFleetInfo(slot0)
 	}) do
 		slot22 = slot21:GetCostSum().oil
 
-		if not slot13 then
+		if not (pg.battle_cost_template[slot6].oil_cost > 0) then
 			slot22 = 0
 		end
 

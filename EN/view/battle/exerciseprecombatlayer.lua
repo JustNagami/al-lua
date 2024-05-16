@@ -20,17 +20,12 @@ function slot0.CommonInit(slot0)
 end
 
 function slot0.Register(slot0)
-	slot1 = slot0._formationLogic
-
-	slot1:AddLoadComplete(function ()
+	slot0._formationLogic:AddLoadComplete(function ()
 		if uv0._currentForm ~= uv1.FORM_EDIT then
 			uv0._formationLogic:SwitchToPreviewMode()
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddHeroInfoModify(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1, slot2)
 		slot2:SetLocalScale(Vector3(0.65, 0.65, 1))
 		SetActive(slot0, true)
 
@@ -61,47 +56,26 @@ function slot0.Register(slot0)
 		setText(findTF(slot3, "frame/lv_contain/lv"), slot1.level)
 		setActive(slot3:Find("expbuff"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddLongPress(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddLongPress(function (slot0, slot1, slot2)
 		uv0:emit(ExercisePreCombatMediator.OPEN_SHIP_INFO, slot1.id, slot2)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddClick(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddClick(function (slot0, slot1, slot2)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_CLICK)
 		uv0:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIP, slot0, slot2, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddBeginDrag(function (slot0)
+	slot0._formationLogic:AddBeginDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddEndDrag(function (slot0)
+	slot0._formationLogic:AddEndDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddShiftOnly(function (slot0)
+	slot0._formationLogic:AddShiftOnly(function (slot0)
 		uv0:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIPS_ORDER, slot0)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddRemoveShip(function (slot0, slot1)
+	slot0._formationLogic:AddRemoveShip(function (slot0, slot1)
 		uv0:emit(ExercisePreCombatMediator.REMOVE_SHIP, slot0, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
+	slot0._formationLogic:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			zIndex = -100,
 			hideNo = false,
@@ -110,36 +84,24 @@ function slot0.Register(slot0)
 			onNo = slot0
 		})
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToDisplayMode(function ()
+	slot0._formationLogic:AddSwitchToDisplayMode(function ()
 		uv0._currentForm = uv1.FORM_EDIT
 		uv0._checkBtn:GetComponent("Button").interactable = true
 
 		setActive(uv0._checkBtn:Find("save"), true)
 		setActive(uv0._checkBtn:Find("edit"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToShiftMode(function ()
+	slot0._formationLogic:AddSwitchToShiftMode(function ()
 		uv0._checkBtn:GetComponent("Button").interactable = false
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToPreviewMode(function ()
+	slot0._formationLogic:AddSwitchToPreviewMode(function ()
 		uv0._currentForm = uv1.FORM_PREVIEW
 		uv0._checkBtn:GetComponent("Button").interactable = true
 
 		setActive(uv0._checkBtn:Find("save"), false)
 		setActive(uv0._checkBtn:Find("edit"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddGridTipClick(function (slot0, slot1)
+	slot0._formationLogic:AddGridTipClick(function (slot0, slot1)
 		uv0:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIP, nil, slot1, slot0)
 	end)
 end

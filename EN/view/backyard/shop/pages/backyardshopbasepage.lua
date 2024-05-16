@@ -13,17 +13,15 @@ function slot0.DormUpdated(slot0, slot1)
 end
 
 function slot0.FurnituresUpdated(slot0, slot1)
-	slot2 = slot0.dorm:GetPurchasedFurnitures()
-
 	for slot6, slot7 in ipairs(slot1) do
-		slot8 = slot2[slot7]
+		slot8 = slot0.dorm:GetPurchasedFurnitures()[slot7]
 
 		slot0:OnDisplayUpdated(slot8)
 		slot0:OnCardUpdated(slot8)
 	end
 end
 
-function slot0.SetUp(slot0, slot1, slot2, slot3)
+function slot0.SetUp(slot0, slot1, slot2, slot3, slot4)
 	slot0:Show()
 
 	slot0.pageType = slot1
@@ -31,6 +29,10 @@ function slot0.SetUp(slot0, slot1, slot2, slot3)
 	slot0.player = slot3
 
 	slot0:OnSetUp()
+
+	if slot4 then
+		slot4()
+	end
 end
 
 function slot0.Show(slot0)

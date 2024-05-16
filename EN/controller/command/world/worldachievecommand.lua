@@ -1,9 +1,7 @@
 slot0 = class("WorldAchieveCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Send(33602, slot1:getBody(), 33603, function (slot0)
+	pg.ConnectionMgr.GetInstance():Send(33602, slot1:getBody(), 33603, function (slot0)
 		if slot0.result == 0 then
 			slot1 = PlayerConst.addTranDrop(slot0.drops)
 			slot2 = nowWorld()

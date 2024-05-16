@@ -41,10 +41,8 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	slot16 = {}
-
 	for slot20, slot21 in pairs(slot15) do
-		table.insert(slot16, {
+		table.insert({}, {
 			itemid = slot21.itemid,
 			count = slot21.count
 		})
@@ -67,17 +65,15 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	slot20 = pg.item_data_statistics
+	slot20 = Item.getConfigData(slot18)
 
-	if DROP_TYPE_ITEM == slot17 and slot20[slot18].type == Item.EXP_BOOK_TYPE and pg.item_data_statistics[slot18].max_num < getProxy(BagProxy):getItemCountById(slot18) + slot19 * slot8 then
+	if DROP_TYPE_ITEM == slot17 and slot20.type == Item.EXP_BOOK_TYPE and slot20.max_num < getProxy(BagProxy):getItemCountById(slot18) + slot19 * slot8 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("expbook_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 		return
 	end
 
-	slot21 = pg.ConnectionMgr.GetInstance()
-
-	slot21:Send(26043, {
+	pg.ConnectionMgr.GetInstance():Send(26043, {
 		act_id = slot6.id,
 		goodsid = slot3,
 		selected = slot16

@@ -17,9 +17,7 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.OnUpdate(slot0)
-	slot1 = getProxy(SettingsProxy)
-
-	setSlider(slot0.notchSlider, ADAPT_MIN, Screen.width / Screen.height - 0.001, slot1:GetScreenRatio())
+	setSlider(slot0.notchSlider, ADAPT_MIN, Screen.width / Screen.height - 0.001, getProxy(SettingsProxy):GetScreenRatio())
 	OnSliderWithButton(slot0, slot0.notchSlider, function (slot0)
 		uv0:SetScreenRatio(slot0)
 

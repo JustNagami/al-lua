@@ -114,10 +114,8 @@ function slot0.UpdateBuffs(slot0, slot1)
 	end
 
 	for slot5, slot6 in ipairs(slot1) do
-		slot7 = slot0:GetTpl(slot5)
-
 		if slot6.IsVirtualIcon then
-			slot0:UpdateVirtualBuff(slot7, slot6)
+			slot0:UpdateVirtualBuff(slot0:GetTpl(slot5), slot6)
 		else
 			slot0:UpdateBuff(slot7, slot6)
 			slot0:AddEndTimer(slot7, slot6)
@@ -161,10 +159,9 @@ end
 
 function slot0.Fold(slot0, slot1, slot2)
 	slot0.lpos = slot0.lpos or slot0._tf.localPosition
-	slot3 = slot1 and slot0.lpos.y + 200 or slot0.lpos.y
 
 	if slot2 == 0 then
-		slot0._go.transform.localPosition = Vector3(slot0._go.transform.localPosition.x, slot3, 0)
+		slot0._go.transform.localPosition = Vector3(slot0._go.transform.localPosition.x, slot1 and slot0.lpos.y + 200 or slot0.lpos.y, 0)
 	else
 		LeanTween.moveLocalY(slot0._go, slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end

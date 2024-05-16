@@ -31,11 +31,10 @@ function slot4.onTakeDamage(slot0, slot1, slot2, slot3)
 end
 
 function slot4.onRemove(slot0, slot1, slot2)
-	slot3 = 0
 	slot4 = nil
 
 	for slot8, slot9 in pairs(slot0._attrTable) do
-		if slot3 <= slot9 then
+		if 0 <= slot9 then
 			slot3 = slot9
 			slot4 = slot8
 		end

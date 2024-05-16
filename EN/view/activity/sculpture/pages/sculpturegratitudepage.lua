@@ -132,20 +132,15 @@ function slot0.LoadChar(slot0, slot1)
 end
 
 function slot0.State2CharNameAndActionName(slot0, slot1)
-	slot2 = slot0.activity:GetResorceName(slot0.id)
-
 	if slot1 == SculptureActivity.STATE_FINSIH then
-		return slot2, "gift_get_", "take_wait_"
+		return slot0.activity:GetResorceName(slot0.id), "gift_get_", "take_wait_"
 	else
 		return slot2, "gift_wait_"
 	end
 end
 
 function slot0.LoadSculpture(slot0, slot1)
-	slot2 = slot0.activity
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("ui/" .. slot2:GetResorceName(slot0.id) .. "_puzzle_whole", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. slot0.activity:GetResorceName(slot0.id) .. "_puzzle_whole", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		slot1 = Object.Instantiate(slot0, uv0.container)
 		slot1.transform.localScale = uv0.activity:GetScale(uv0.id)
 
@@ -186,10 +181,7 @@ function slot0.UpdateRole(slot0, slot1, slot2, slot3, slot4)
 	end
 
 	slot0:ClearChar()
-
-	slot5 = PoolMgr.GetInstance()
-
-	slot5:GetSpineChar("takegift_" .. slot1, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar("takegift_" .. slot1, true, function (slot0)
 		slot0.transform:SetParent(uv0.roleImg.gameObject.transform.parent)
 
 		slot0.transform.localScale = Vector3(1, 1, 0)

@@ -15,11 +15,10 @@ function slot0.Ctor(slot0, slot1)
 
 	for slot6, slot7 in ipairs(slot2.signList) do
 		slot8 = slot7.signType
-		slot10 = slot7.cachedIndex
 
 		if type(slot7.pos) == "string" then
 			if slot9 == "useCachePos" then
-				slot9 = WorldGuider.GetInstance():GetTempGridPos(slot10)
+				slot9 = WorldGuider.GetInstance():GetTempGridPos(slot7.cachedIndex)
 			end
 		elseif type(slot9) == "table" then
 			slot9 = Vector3.New(slot9[1], slot9[2], slot9[3])

@@ -44,6 +44,10 @@ function slot0.register(slot0)
 					table.insert(uv0.buffActs, slot6.id)
 				elseif slot7 == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
 					uv0:InitActtivityFleet(slot6, slot5)
+				elseif slot7 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
+					uv0:InitActtivityFleet(slot6, slot5)
+				elseif slot7 == ActivityConst.ACTIVITY_TYPE_EVENT_SINGLE then
+					uv0:CheckDailyEventRequest(slot6)
 				end
 
 				uv0.data[slot5.id] = slot6
@@ -75,16 +79,14 @@ function slot0.register(slot0)
 			uv0:InitActivityBossData(uv0.data[slot3.id])
 		end
 
-		slot4 = pg.ShipFlagMgr.GetInstance()
-
-		slot4:UpdateFlagShips("inElite")
-		(function ()
+		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inElite")
+		function ()
 			if not uv0:getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK) then
 				return
 			end
 
 			uv0:sendNotification(GAME.REQUEST_ATELIER, slot0.id)
-		end)()
+		end()
 	end)
 	slot0:on(11201, function (slot0)
 		slot1 = Activity.Create(slot0.activity_info)
@@ -119,19 +121,19 @@ function slot0.register(slot0)
 
 		slot3 = BossRushSettlementCommand.ConcludeEXP(slot0, slot1, slot2 and slot2:GetBattleStatistics())
 
-		(function ()
+		function ()
 			getProxy(ActivityProxy):GetBossRushRuntime(uv0.id).settlementData = uv1
-		end)()
+		end()
 	end)
 	slot0:on(24100, function (slot0)
-		(function ()
+		function ()
 			if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_EXTRA_BOSSRUSH_RANK) then
 				return
 			end
 
 			slot0:Record(uv0.score)
 			uv1:updateActivity(slot0)
-		end)()
+		end()
 
 		if not uv0:getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH) then
 			return
@@ -240,24 +242,20 @@ function slot0.getMilitaryExerciseActivity(slot0)
 end
 
 function slot0.getPanelActivities(slot0)
-	function slot1(slot0)
-		slot1 = slot0:getConfig("type")
-
-		if slot0:isShow() and not slot0:isAfterShow() then
-			if slot1 == ActivityConst.ACTIVITY_TYPE_CHARGEAWARD then
-				slot2 = slot0.data2 == 0
-			elseif slot1 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
-				slot2 = slot0.data1 < 7 or not slot0.achieved
-			end
-		end
-
-		return slot2 and not slot0:isEnd()
-	end
-
 	slot2 = {}
 
 	for slot6, slot7 in pairs(slot0.data) do
-		if slot1(slot7) then
+		if function (slot0)
+			if slot0:isShow() and not slot0:isAfterShow() then
+				if slot0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_CHARGEAWARD then
+					slot2 = slot0.data2 == 0
+				elseif slot1 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
+					slot2 = slot0.data1 < 7 or not slot0.achieved
+				end
+			end
+
+			return slot2 and not slot0:isEnd()
+		end(slot7) then
 			table.insert(slot2, slot7)
 		end
 	end
@@ -326,9 +324,7 @@ function slot0.findNextAutoActivity(slot0)
 					break
 				end
 			elseif slot9 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
-				slot10 = getProxy(ChapterProxy)
-
-				if slot8.data1 < 7 and not slot2:IsSameDay(slot3, slot8.data2) or slot8.data1 == 7 and not slot8.achieved and slot10:isClear(204) then
+				if slot8.data1 < 7 and not slot2:IsSameDay(slot3, slot8.data2) or slot8.data1 == 7 and not slot8.achieved and getProxy(ChapterProxy):isClear(204) then
 					slot1 = slot8
 
 					break
@@ -398,20 +394,14 @@ function slot0.existRefluxAwards(slot0)
 		end
 
 		slot3 = getProxy(TaskProxy)
-		slot4 = _(slot1:getConfig("config_data")[7])
-		slot4 = slot4:chain()
-		slot4 = slot4:map(function (slot0)
-			return slot0[2]
-		end)
-		slot4 = slot4:flatten()
-		slot4 = slot4:map(function (slot0)
-			return uv0:getTaskById(slot0) or uv0:getFinishTaskById(slot0) or false
-		end)
-		slot4 = slot4:filter(function (slot0)
-			return not not slot0
-		end)
 
-		if _.any(slot4:value(), function (slot0)
+		if _.any(_(slot1:getConfig("config_data")[7]):chain():map(function (slot0)
+			return slot0[2]
+		end):flatten():map(function (slot0)
+			return uv0:getTaskById(slot0) or uv0:getFinishTaskById(slot0) or false
+		end):filter(function (slot0)
+			return not not slot0
+		end):value(), function (slot0)
 			return slot0:getTaskStatus() == 1
 		end) then
 			return true
@@ -566,8 +556,8 @@ function slot0.addVitemById(slot0, slot1, slot2)
 
 	slot0:updateActivity(slot3)
 
-	if pg.item_data_statistics[slot1].link_id ~= 0 and slot0:getActivityById(slot5) and not slot6:isEnd() then
-		PlayerResChangeCommand.UpdateActivity(slot6, slot2)
+	if Item.getConfigData(slot1).link_id ~= 0 and slot0:getActivityById(slot4) and not slot5:isEnd() then
+		PlayerResChangeCommand.UpdateActivity(slot5, slot2)
 	end
 end
 
@@ -590,10 +580,8 @@ function slot0.InitActivityBossData(slot0, slot1)
 	end
 
 	slot3 = slot1.data1KeyValueList
-	slot4 = pairs
-	slot5 = slot2.normal_expedition_drop_num or {}
 
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in pairs(slot2.normal_expedition_drop_num or {}) do
 		for slot12, slot13 in pairs(slot8[1]) do
 			slot3[1][slot13] = math.max(slot8[2] - (slot3[1][slot13] or 0), 0)
 			slot3[2][slot13] = slot3[2][slot13] or 0
@@ -607,19 +595,15 @@ function slot0.AddInstagramTimer(slot0, slot1)
 	slot3, slot4 = slot0.data[slot1]:GetNextPushTime()
 
 	if slot3 then
-		slot5 = pg.TimeMgr.GetInstance()
-
-		function slot7()
-			uv0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
-				arg2 = 0,
-				activity_id = uv1,
-				cmd = ActivityConst.INSTAGRAM_OP_ACTIVE,
-				arg1 = uv2
-			})
-		end
-
-		if slot3 - slot5:GetServerTime() <= 0 then
-			slot7()
+		if slot3 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
+			function ()
+				uv0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
+					arg2 = 0,
+					activity_id = uv1,
+					cmd = ActivityConst.INSTAGRAM_OP_ACTIVE,
+					arg1 = uv2
+				})
+			end()
 		else
 			slot0.instagramTimer = Timer.New(function ()
 				uv0()
@@ -651,37 +635,11 @@ function slot0.remove(slot0)
 	slot0:RemoveInstagramTimer()
 end
 
-function slot0.ExistSkinCouponActivityAndItemId(slot0, slot1)
-	return slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) and not slot2:isEnd() and table.contains(slot2.data1_list, slot1) and slot2.data1 == 1
-end
-
-function slot0.ExistSkinCoupon(slot0, slot1)
-	return slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) and not slot2:isEnd() and table.contains(slot2.data1_list, slot1)
-end
-
-function slot0.ExistSkinCouponActivity(slot0)
-	return slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) and not slot1:isEnd()
-end
-
-function slot0.MarkSkinCoupon(slot0, slot1)
-	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) and not slot2:isEnd() then
-		slot2.data1 = 1
-
-		if not table.contains(slot2.data1_list, slot1) then
-			table.insert(slot2.data1_list, slot1)
-		end
-
-		slot0:updateActivity(slot2)
-	end
-end
-
 function slot0.addActivityParameter(slot0, slot1)
-	slot3 = slot1.stopTime
-
 	for slot7, slot8 in ipairs(slot1:getConfig("config_data")) do
 		slot0.params[slot8[1]] = {
 			slot8[2],
-			slot3
+			slot1.stopTime
 		}
 	end
 end
@@ -727,16 +685,19 @@ function slot0.getBuildPoolActivity(slot0, slot1)
 end
 
 function slot0.getEnterReadyActivity(slot0)
-	slot3 = {}
+	slot3 = {
+		[slot8] = 0
+	}
 
 	for slot7, slot8 in ipairs(_.keys({
 		[ActivityConst.ACTIVITY_TYPE_ZPROJECT] = false,
 		[ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2] = function (slot0)
 			return not slot0:checkBattleTimeInBossAct()
 		end,
-		[ActivityConst.ACTIVITY_TYPE_BOSSRUSH] = false
+		[ActivityConst.ACTIVITY_TYPE_BOSSRUSH] = false,
+		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE] = false
 	})) do
-		slot3[slot8] = 0
+		-- Nothing
 	end
 
 	for slot7, slot8 in pairs(slot0.data) do
@@ -744,6 +705,8 @@ function slot0.getEnterReadyActivity(slot0)
 			slot3[slot9] = math.max(slot3[slot9], slot7)
 		end
 	end
+
+	table.sort(slot2)
 
 	for slot7, slot8 in ipairs(slot2) do
 		if slot3[slot8] > 0 then
@@ -902,10 +865,9 @@ end
 function slot0.isSurveyOpen(slot0)
 	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SURVEY) and not slot1:isEnd() then
 		slot2 = slot1:getConfig("config_data")
-		slot4 = slot2[2]
 
 		if slot2[1] == 1 then
-			return slot4 <= getProxy(PlayerProxy):getData().level, slot1:getConfig("config_id")
+			return slot2[2] <= getProxy(PlayerProxy):getData().level, slot1:getConfig("config_id")
 		end
 	end
 end
@@ -918,6 +880,14 @@ function slot0.GetActBossLinkPTActID(slot0, slot1)
 
 		return slot1:getDataConfig("link_id") == uv0
 	end) and slot2.id
+end
+
+function slot0.CheckDailyEventRequest(slot0, slot1)
+	if slot1:CheckDailyEventRequest() then
+		slot0:sendNotification(GAME.SINGLE_EVENT_REFRESH, {
+			actId = slot1.id
+		})
+	end
 end
 
 return slot0

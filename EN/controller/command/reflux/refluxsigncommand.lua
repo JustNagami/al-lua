@@ -1,9 +1,7 @@
 slot0 = class("RefluxSignCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0)
-	slot1 = pg.ConnectionMgr.GetInstance()
-
-	slot1:Send(11753, {
+	pg.ConnectionMgr.GetInstance():Send(11753, {
 		type = 0
 	}, 11754, function (slot0)
 		if slot0.result == 0 then

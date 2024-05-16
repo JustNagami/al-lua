@@ -6,17 +6,21 @@ function slot0.Ctor(slot0, slot1)
 	slot0.goods = {}
 	slot0.phases = {}
 	slot0.activityId = slot1.id
-	slot2 = {}
+	slot2 = {
+		[slot7.id] = NewServerCommodity.New(slot7)
+	}
 
 	for slot6, slot7 in ipairs(slot1.goods) do
-		slot2[slot7.id] = NewServerCommodity.New(slot7)
+		-- Nothing
 	end
 
-	slot4 = {}
+	slot4 = {
+		[slot9] = true
+	}
 	slot8 = "config_data"
 
 	for slot8, slot9 in ipairs(getProxy(ActivityProxy):getActivityById(slot0.activityId):getConfig(slot8)) do
-		slot4[slot9] = true
+		-- Nothing
 	end
 
 	for slot9, slot10 in pairs(pg.newserver_shop_template.get_id_list_by_unlock_time) do
@@ -31,18 +35,17 @@ function slot0.GetPtId(slot0)
 end
 
 function slot0.WrapPhaseGoods(slot0, slot1, slot2, slot3)
-	slot4 = {}
-
 	for slot8, slot9 in ipairs(slot1) do
 		if slot3[slot9] then
 			slot11 = slot2[slot9] or NewServerCommodity.New({
 				id = slot9
 			})
-			slot4[slot11.id] = slot11
 		end
 	end
 
-	return slot4
+	return {
+		[slot11.id] = slot11
+	}
 end
 
 function slot0.GetStartTime(slot0)

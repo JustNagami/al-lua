@@ -152,10 +152,8 @@ end
 
 function slot0.Filter(slot0)
 	slot1 = {}
-	slot2 = ipairs
-	slot3 = slot0.cryptolaliaList or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot0.cryptolaliaList or {}) do
 		if slot6:InTime() or not slot6:IsLock() then
 			table.insert(slot1, slot6)
 		end
@@ -183,10 +181,8 @@ function slot0.FillEmptyDisplayIfNeed(slot0, slot1)
 	slot6 = #slot1
 
 	for slot6 = 1, math.max(5, slot6) do
-		slot7 = defaultValue(slot1[slot6], false)
-
 		if slot6 % 2 == 0 then
-			table.insert(slot2, slot7)
+			table.insert(slot2, defaultValue(slot1[slot6], false))
 		else
 			table.insert(slot2, 1, slot7)
 		end
@@ -329,17 +325,11 @@ end
 
 function slot0.PlayAudition(slot0, slot1)
 	slot0:ClearAuditionTimer()
+	slot0.auditionEffect:Play("anim_line_loop")
 
-	slot2 = slot0.auditionEffect
+	slot2 = getProxy(PlayerProxy):getRawData():GetFlagShip()
 
-	slot2:Play("anim_line_loop")
-
-	slot2 = getProxy(PlayerProxy)
-	slot2 = slot2:getRawData()
-	slot2 = slot2:GetFlagShip()
-	slot5 = slot0.soundPlayer
-
-	slot5:Load(slot1:GetAudition(slot0.langType), slot1:GetAuditionVoice(slot0.langType), 0, function (slot0)
+	slot0.soundPlayer:Load(slot1:GetAudition(slot0.langType), slot1:GetAuditionVoice(slot0.langType), 0, function (slot0)
 		uv0.timer = Timer.New(function ()
 			if uv0.auditionFlag then
 				triggerButton(uv0.auditionBtn)
@@ -358,7 +348,31 @@ function slot0.ClearAuditionTimer(slot0)
 	end
 end
 
+function slot0.IsDownloading(slot0, slot1)
+	if not slot1 then
+		return false
+	end
+
+	if slot1:ExistLang(Cryptolalia.LANG_TYPE_CH) and slot0.downloadMgr:IsDownloadState(Cryptolalia.BuildCpkPath(slot1:GetCpkName(Cryptolalia.LANG_TYPE_CH))) then
+		return true
+	end
+
+	if slot1:ExistLang(Cryptolalia.LANG_TYPE_JP) and slot0.downloadMgr:IsDownloadState(Cryptolalia.BuildCpkPath(slot1:GetCpkName(Cryptolalia.LANG_TYPE_JP))) then
+		return true
+	end
+
+	return false
+end
+
 function slot0.DownloadRes(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0.displays or {}) do
+		if slot0:IsDownloading(slot6) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("cryptolalia_download_task_already_exists", slot6:GetName()))
+
+			return
+		end
+	end
+
 	if IsUnityEditor then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_open"))
 
@@ -412,9 +426,7 @@ end
 
 function slot0.PlayVedio(slot0, slot1)
 	if slot0.displays[slot1] and slot2:IsPlayableState(slot0.langType) then
-		slot3 = pg.BgmMgr.GetInstance()
-
-		slot3:StopPlay()
+		pg.BgmMgr.GetInstance():StopPlay()
 
 		slot4 = CryptolaliaVedioPlayer.New(slot0._tf)
 

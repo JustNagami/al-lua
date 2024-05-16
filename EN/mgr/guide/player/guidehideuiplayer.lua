@@ -5,9 +5,7 @@ function slot0.OnExecution(slot0, slot1, slot2)
 
 	for slot8, slot9 in ipairs(slot1:GetHideNodes()) do
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:SearchWithoutDelay(uv1, function (slot0)
+			uv0:SearchWithoutDelay(uv1, function (slot0)
 				if not slot0 then
 					pg.NewGuideMgr.GetInstance():Stop()
 

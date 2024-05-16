@@ -37,8 +37,7 @@ function slot0.Ctor(slot0, slot1, slot2)
 
 	setActive(slot0.seeBtn, false)
 
-	slot3 = slot0.batchUseBtn
-	slot0.batchText = slot3:Find("text")
+	slot0.batchText = slot0.batchUseBtn:Find("text")
 
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:Close()
@@ -67,31 +66,24 @@ function slot0.Close(slot0)
 end
 
 function slot0.Update(slot0, slot1)
-	slot2 = {
+	slot2 = Drop.New({
 		type = DROP_TYPE_WORLD_ITEM,
 		id = slot1.id,
 		count = slot1.count
-	}
-	slot4 = slot0.itemTF
+	})
 
-	updateDrop(slot4:Find("left/IconTpl"), slot2)
-
-	slot4 = slot0.itemTF
-
-	UpdateOwnDisplay(slot4:Find("left/own"), slot2)
-
-	slot5 = slot0.itemTF
-
-	RegisterDetailButton(slot0, slot5:Find("left/detail"), slot2)
+	updateDrop(slot0.itemTF:Find("left/IconTpl"), slot2)
+	UpdateOwnDisplay(slot0.itemTF:Find("left/own"), slot2)
+	RegisterDetailButton(slot0, slot0.itemTF:Find("left/detail"), slot2)
 	setText(slot0.itemIntro, slot1:getConfig("display"))
 	setText(slot0.itemName, slot1:getConfig("name"))
 	onButton(slot0, slot0.resetBtn, function ()
 		assert(uv0.settings.onResetInfo, "without reset info callback")
-		uv0.settings.onResetInfo({
+		uv0.settings.onResetInfo(Drop.New({
 			count = 1,
 			type = DROP_TYPE_WORLD_ITEM,
 			id = uv1.id
-		})
+		}))
 	end, SFX_PANEL)
 end
 

@@ -32,7 +32,7 @@ function slot0.GetLockDesc(slot0)
 end
 
 function slot0.BuildFromActivity(slot0)
-	slot0.unlock = (function ()
+	slot0.unlock = function ()
 		if uv0:GetLockLimit() and slot0[1] == 1 then
 			slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
 
@@ -42,7 +42,7 @@ function slot0.BuildFromActivity(slot0)
 		end
 
 		return true
-	end)()
+	end()
 	slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH)
 
 	assert(slot2)

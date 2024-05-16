@@ -84,6 +84,9 @@ end
 function slot0.GetNotifyType(slot0)
 	if not slot0.listener or #slot0.listener == 0 then
 		slot0.listener = {
+			[pg.RedDotMgr.TYPES.ATTIRE] = {
+				GAME.EDUCATE_GET_ENDINGS_DONE
+			},
 			[pg.RedDotMgr.TYPES.TASK] = {
 				TaskProxy.TASK_UPDATED,
 				AvatarFrameProxy.FRAME_TASK_UPDATED
@@ -132,10 +135,6 @@ function slot0.GetNotifyType(slot0)
 			},
 			[pg.RedDotMgr.TYPES.ACT_RETURN] = {
 				GAME.REMOVE_LAYERS
-			},
-			[pg.RedDotMgr.TYPES.VOTE_OREDER] = {
-				VoteProxy.VOTE_ORDER_BOOK_DELETE,
-				VoteProxy.VOTE_ORDER_BOOK_UPDATE
 			}
 		}
 	end

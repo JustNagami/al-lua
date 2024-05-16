@@ -17,9 +17,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot9 = slot7:getTalents()
-
-	if slot5 ~= 0 and not _.any(slot9, function (slot0)
+	if slot5 ~= 0 and not _.any(slot7:getTalents(), function (slot0)
 		return slot0.id == uv0
 	end) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_replace_talent_not_exist"))
@@ -35,9 +33,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot14 = pg.ConnectionMgr.GetInstance()
-
-	slot14:Send(25012, {
+	pg.ConnectionMgr.GetInstance():Send(25012, {
 		commanderid = slot3,
 		targetid = slot4,
 		replaceid = slot5

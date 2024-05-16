@@ -32,11 +32,11 @@ end
 
 function slot2.Settle(slot0)
 	slot1 = {}
-	slot2 = {}
+	slot2 = {
+		[slot7.UID] = true
+	}
 
 	for slot6, slot7 in ipairs(slot0._cldObjList) do
-		slot2[slot7.UID] = true
-
 		if not slot0._handledList[slot7] then
 			slot1[#slot1 + 1] = slot7
 			slot0._handledList[slot7] = true
@@ -56,11 +56,11 @@ function slot2.Settle(slot0)
 end
 
 function slot2.frequentlySettle(slot0)
-	slot1 = {}
+	slot1 = {
+		[slot6.UID] = true
+	}
 
 	for slot5, slot6 in ipairs(slot0._cldObjList) do
-		slot1[slot6.UID] = true
-
 		if not slot0._handledList[slot6] then
 			slot0._handledList[slot6] = true
 		end
@@ -81,11 +81,7 @@ end
 function slot2.ForceExit(slot0, slot1)
 	slot2 = nil
 
-	print(slot1)
-
 	for slot6, slot7 in pairs(slot0._handledList) do
-		print(slot6.UID)
-
 		if slot6.UID == slot1 then
 			slot2 = slot6
 
@@ -93,12 +89,7 @@ function slot2.ForceExit(slot0, slot1)
 		end
 	end
 
-	if slot0.fff then
-		print("ooooooo")
-	end
-
 	if slot2 then
-		print("eeeeeee")
 		slot0._exitCldFunc(slot2)
 
 		slot0._handledList[slot2] = nil

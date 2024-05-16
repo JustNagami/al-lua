@@ -111,9 +111,7 @@ function slot0.initData(slot0)
 end
 
 function slot0.switchNextPaint(slot0)
-	slot1 = slot0.frameTimer
-
-	slot1:Stop()
+	slot0.frameTimer:Stop()
 
 	slot2 = slot0.curPaintIndex % slot0.paintCount + 1
 	slot3 = uv0[slot2].name
@@ -125,13 +123,11 @@ function slot0.switchNextPaint(slot0)
 
 	slot6 = GetComponent(slot0.paintFrontTF, typeof(CanvasGroup))
 	slot7 = GetComponent(slot0.paintBackTF, typeof(CanvasGroup))
-	slot8 = LeanTween.value(go(slot0.paintFrontTF), 1, 0, slot0.paintSwitchTime)
-	slot8 = slot8:setOnUpdate(System.Action_float(function (slot0)
+
+	LeanTween.value(go(slot0.paintFrontTF), 1, 0, slot0.paintSwitchTime):setOnUpdate(System.Action_float(function (slot0)
 		uv0.alpha = slot0
 		uv1.alpha = 1 - slot0
-	end))
-
-	slot8:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		setImageFromImage(uv0.paintFrontTF, uv0.paintBackTF)
 
 		uv1.alpha = 1

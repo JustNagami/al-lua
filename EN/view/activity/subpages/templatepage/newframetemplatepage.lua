@@ -92,31 +92,21 @@ function slot0.Switch(slot0, slot1)
 
 	slot3:SetAsLastSibling()
 	setActive(slot2:Find("Image"), false)
-
-	slot7 = LeanTween.moveLocal(go(slot2), slot3.localPosition, 0.4)
-
-	slot7:setOnComplete(System.Action(function ()
+	LeanTween.moveLocal(go(slot2), slot3.localPosition, 0.4):setOnComplete(System.Action(function ()
 		setActive(uv0:Find("label"), true)
 	end))
-
-	slot7 = LeanTween.value(go(slot2), 0, 1, 0.4)
-
-	slot7:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot2), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
 		uv0.alpha = slot0
 	end))
 	setActive(slot3:Find("Image"), true)
 
 	slot7 = GetOrAddComponent(slot3, typeof(CanvasGroup))
-	slot8 = LeanTween.value(go(slot3), 0, 1, 0.4)
 
-	slot8:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot3), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
 		uv0.alpha = slot0
 	end))
 	setActive(slot3:Find("label"), false)
-
-	slot8 = LeanTween.moveLocal(go(slot3), slot2.localPosition, 0.4)
-
-	slot8:setOnComplete(System.Action(function ()
+	LeanTween.moveLocal(go(slot3), slot2.localPosition, 0.4):setOnComplete(System.Action(function ()
 		uv0.isSwitching = nil
 
 		setToggleEnabled(uv0.switchBtn, true)

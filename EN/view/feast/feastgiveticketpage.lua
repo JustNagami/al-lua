@@ -51,12 +51,10 @@ function slot0.UpdateGiftState(slot0, slot1, slot2)
 			uv0:UpdateContent(uv1:GetDialogueForTicket(), 3, slot0)
 		end,
 		function (slot0)
-			slot1 = uv0.loadedChar.spineAnimUI
-
 			if not uv1:GotTicket() then
 				setActive(uv0.giftTr, true)
 				uv0:AddGiftEvent()
-				slot1:SetAction("activity_wait", 0)
+				uv0.loadedChar.spineAnimUI:SetAction("activity_wait", 0)
 			else
 				setActive(uv0.giftTr, false)
 				slot1:SetActionCallBack(function (slot0)

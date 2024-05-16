@@ -34,6 +34,8 @@ slot0.ON_ADD_SHIP_EXP = "ShipMainMediator:ON_ADD_SHIP_EXP"
 slot0.OPEN_EQUIPMENT_INDEX = "ShipMainMediator:OPEN_EQUIPMENT_INDEX"
 slot0.EQUIP_CHANGE_NOTICE = "ShipMainMediator:EQUIP_CHANGE_NOTICE"
 slot0.ON_SELECT_SPWEAPON = "ShipMainMediator:ON_SELECT_SPWEAPON"
+slot0.OPEN_EQUIP_CODE = "ShipMainMediator:OPEN_EQUIP_CODE"
+slot0.OPEN_EQUIP_CODE_SHARE = "ShipMainMediator:OPEN_EQUIP_CODE_SHARE"
 
 function slot0.register(slot0)
 	slot0.bayProxy = getProxy(BayProxy)
@@ -51,10 +53,8 @@ function slot0.register(slot0)
 	end
 
 	slot0.showTrans = slot2:isRemoulded()
-	slot3 = getProxy(PlayerProxy)
-	slot5 = slot0.viewComponent
 
-	slot5:setPlayer(slot3:getData())
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 
 	slot5 = getProxy(ContextProxy)
 
@@ -125,10 +125,12 @@ function slot0.register(slot0)
 	end)
 	slot0:bind(uv0.ON_SELECT_EQUIPMENT, function (slot0, slot1)
 		slot4 = getProxy(BayProxy)
-		slot6 = slot4:getEquipsInShips(slot4:getShipById(uv0.contextData.shipId), slot1)
+		slot6 = slot4:getEquipsInShips(function (slot0, slot1)
+			return uv0.id ~= slot1 and not uv0:isForbiddenAtPos(slot0, uv1)
+		end)
 
 		for slot10, slot11 in ipairs(getProxy(EquipmentProxy):getEquipments(true)) do
-			if not slot5:isForbiddenAtPos(slot11, slot1) then
+			if not slot4:getShipById(uv0.contextData.shipId):isForbiddenAtPos(slot11, slot1) then
 				table.insert(slot6, slot11)
 			end
 		end
@@ -246,7 +248,7 @@ function slot0.register(slot0)
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDPOST, {
 			selectedMin = 1,
 			selectedMax = 1,
-			mode = CommandRoomScene.MODE_SELECT,
+			mode = CommanderCatScene.MODE_SELECT,
 			onShip = function (slot0)
 				if slot0.shipId == uv0.contextData.shipId then
 					return false, i18n("commander_ship_already_equip")
@@ -283,10 +285,26 @@ function slot0.register(slot0)
 			}
 		}))
 	end)
-	slot0:bind(uv0.ON_META, function ()
+	slot0:bind(uv0.ON_META, function (slot0, slot1)
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER, {
-			autoOpenShipConfigID = uv1.configId
+			autoOpenShipConfigID = slot1.configId
 		})
+	end)
+	slot0:bind(uv0.OPEN_EQUIP_CODE, function (slot0, slot1)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.EQUIP_CODE, {
+			shipId = uv0.contextData.shipId,
+			code = slot1.code
+		})
+	end)
+	slot0:bind(uv0.OPEN_EQUIP_CODE_SHARE, function (slot0, slot1, slot2)
+		uv0:addSubLayers(Context.New({
+			mediator = EquipCodeShareMediator,
+			viewComponent = EquipCodeShareLayer,
+			data = {
+				shipId = slot1,
+				shipGroupId = slot2
+			}
+		}))
 	end)
 
 	if slot0.contextData.selectedId then
@@ -323,8 +341,8 @@ function slot0.getEquipmentSkins(slot0, slot1, slot2)
 			count = slot0.count
 		}
 	end)
-	slot9 = ipairs
-	slot10 = _.map(getProxy(BayProxy):getEquipmentSkinInShips(slot1, slot4), function (slot0)
+
+	for slot12, slot13 in ipairs(_.map(getProxy(BayProxy):getEquipmentSkinInShips(slot1, slot4), function (slot0)
 		return {
 			isSkin = true,
 			count = 1,
@@ -332,9 +350,7 @@ function slot0.getEquipmentSkins(slot0, slot1, slot2)
 			shipId = slot0.shipId,
 			shipPos = slot0.shipPos
 		}
-	end) or {}
-
-	for slot12, slot13 in slot9(slot10) do
+	end) or {}) do
 		table.insert(slot8, slot13)
 	end
 
@@ -567,12 +583,6 @@ function slot0.handleNotification(slot0, slot1)
 			slot0.viewComponent:updateRecordEquipments(slot3.index)
 		end
 	elseif slot2 == GAME.SKIN_SHOPPIGN_DONE or slot2 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		if slot3.awards and #slot3.awards > 0 then
-			slot0.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = slot3.awards
-			})
-		end
-
 		if pg.shop_template[slot3.id] and slot4.genre == ShopArgs.SkinShop then
 			slot0.viewComponent:StopPreVoice()
 			slot0:addSubLayers(Context.New({
@@ -587,9 +597,8 @@ function slot0.handleNotification(slot0, slot1)
 		slot0:sendNotification(PlayerResUI.CHANGE_TOUCH_ABLE, false)
 
 		slot0.maxLevelCallback = slot3.callback
-		slot4 = slot0.viewComponent
 
-		slot4:doUpgradeMaxLeveAnim(slot3.oldShip, slot3.newShip, function ()
+		slot0.viewComponent:doUpgradeMaxLeveAnim(slot3.oldShip, slot3.newShip, function ()
 			if uv0.maxLevelCallback then
 				uv0.maxLevelCallback()
 

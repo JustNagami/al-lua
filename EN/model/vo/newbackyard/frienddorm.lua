@@ -9,8 +9,6 @@ function slot0.GetName(slot0)
 end
 
 function slot0.GetShips(slot0)
-	slot1 = {}
-
 	for slot5, slot6 in ipairs(slot0.shipIds) do
 		slot7 = Ship.New({
 			energy = 100,
@@ -21,11 +19,11 @@ function slot0.GetShips(slot0)
 		slot7.state = slot6.state
 
 		slot7:updateStateInfo34(0, 0)
-
-		slot1[slot7.id] = slot7
 	end
 
-	return slot1
+	return {
+		[slot7.id] = slot7
+	}
 end
 
 return slot0

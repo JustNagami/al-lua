@@ -40,26 +40,18 @@ end
 function slot0.InitGameUI(slot0, slot1)
 	slot0.uiMgr = pg.UIMgr.GetInstance()
 	slot0.rtViewport = slot1:Find("Viewport")
-	slot2 = slot0.rtViewport
-	slot0.rtCharacter = slot2:Find("MainContent/character")
-	slot2 = slot0.rtViewport
-	slot0.bgManjuu = slot2:Find("MainContent/bg_back/Manjuu_SW")
+	slot0.rtCharacter = slot0.rtViewport:Find("MainContent/character")
+	slot0.bgManjuu = slot0.rtViewport:Find("MainContent/bg_back/Manjuu_SW")
 	slot0.rtController = slot1:Find("Controller")
 	slot0.rtTop = slot1:Find("Controller/top")
-	slot2 = slot0.rtTop
-	slot0.TimeTextM = slot2:Find("title/TIME/Text_M")
-	slot2 = slot0.rtTop
-	slot0.TimeTextS = slot2:Find("title/TIME/Text_S")
-	slot2 = slot0.rtTop
-	slot0.pointText = slot2:Find("title/SCORE/Text")
+	slot0.TimeTextM = slot0.rtTop:Find("title/TIME/Text_M")
+	slot0.TimeTextS = slot0.rtTop:Find("title/TIME/Text_S")
+	slot0.pointText = slot0.rtTop:Find("title/SCORE/Text")
 	slot0.rtBottom = slot1:Find("Controller/bottom")
-	slot2 = slot0.rtBottom
-	slot0.rtPointer = slot2:Find("capacity/pointer")
-	slot2 = slot0.rtBottom
-	slot0.rtJoyStick = slot2:Find("handle_stick")
-	slot4 = slot0.rtBottom
+	slot0.rtPointer = slot0.rtBottom:Find("capacity/pointer")
+	slot0.rtJoyStick = slot0.rtBottom:Find("handle_stick")
 
-	onButton(slot0.binder, slot4:Find("btn_carry"), function ()
+	onButton(slot0.binder, slot0.rtBottom:Find("btn_carry"), function ()
 		uv0:OnCarryBtnClick()
 	end)
 end
@@ -74,17 +66,12 @@ function slot0.InitControl(slot0)
 end
 
 function slot0.AddListener(slot0)
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_DO_CARRY, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_DO_CARRY, function (slot0, slot1)
 		uv0.weight = uv0.weight + slot1.weight
 
 		uv0:UpdateWeightUI()
 	end)
-
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_DELIVER, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_DELIVER, function (slot0, slot1)
 		uv0.point = uv0.point + slot1.point
 		uv0.weight = 0
 
@@ -92,10 +79,7 @@ function slot0.AddListener(slot0)
 		uv0:UpdateWeightUI()
 		uv0.bgManjuu:GetComponent(typeof(Animator)):Play("Happy")
 	end)
-
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_AKASHI_HIT, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_AKASHI_HIT, function (slot0, slot1)
 		uv0.weight = 0
 
 		uv0:UpdateWeightUI()

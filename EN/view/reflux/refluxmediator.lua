@@ -56,12 +56,10 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.REFLUX_SIGN_DONE then
 		if slot0:isCanUpdateView(slot0.viewComponent.signView) then
 			slot0.viewComponent.signView:updateUI()
-			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1:getBody().awards)
 		end
 
 		slot0.viewComponent:updateRedPotList()

@@ -13,14 +13,8 @@ slot0.VIEW_SKIN_PROBABILITY = "ChargeMediator:VIEW_SKIN_PROBABILITY"
 slot0.OPEN_TEC_SHIP_GIFT_SELL_LAYER = "ChargeMediator:OPEN_TEC_SHIP_GIFT_SELL_LAYER"
 
 function slot0.register(slot0)
-	slot1 = getProxy(PlayerProxy)
-	slot3 = slot0.viewComponent
-
-	slot3:setPlayer(slot1:getData())
-
-	slot3 = slot0.viewComponent
-
-	slot3:checkFreeGiftTag()
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
+	slot0.viewComponent:checkFreeGiftTag()
 	slot0:bind(uv0.VIEW_SKIN_PROBABILITY, function (slot0, slot1)
 		uv0.contextData.wrap = ChargeScene.TYPE_GIFT
 
@@ -114,10 +108,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayer(slot3)
+		slot0.viewComponent:setPlayer(slot1:getBody())
 		slot0.viewComponent:updateNoRes()
 	elseif slot2 == ShopsProxy.FIRST_CHARGE_IDS_UPDATED then
 		slot0.viewComponent:setFirstChargeIds(slot3)

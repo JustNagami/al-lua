@@ -79,8 +79,7 @@ function slot0.PostUpdateMap(slot0, slot1)
 		setActive(slot0.sceneParent.btnPrev, false)
 		setActive(slot0.sceneParent.btnNext, false)
 
-		slot4 = getProxy(ChapterProxy)
-		slot4 = slot4:getMapsByActivities()
+		slot4 = getProxy(ChapterProxy):getMapsByActivities()
 
 		setActive(slot0.buttonDown, _.detect(slot4, function (slot0)
 			return slot0.id == uv0.id + 1

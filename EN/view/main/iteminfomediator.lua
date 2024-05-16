@@ -17,7 +17,7 @@ function slot0.register(slot0)
 			return
 		end
 
-		uv0.viewComponent:PlayOpenBox(slot3:getTempConfig("display_effect"), function ()
+		uv0.viewComponent:PlayOpenBox(slot3:getConfig("display_effect"), function ()
 			uv0:sendNotification(GAME.USE_ITEM, {
 				id = uv1,
 				count = uv2
@@ -54,11 +54,11 @@ function slot0.handleNotification(slot0, slot1)
 			if slot3.count <= 0 then
 				slot0.viewComponent:closeView()
 			else
-				slot0.viewComponent:setItem({
+				slot0.viewComponent:setItem(Drop.New({
 					type = DROP_TYPE_ITEM,
 					id = slot3.id,
 					count = slot3.count
-				})
+				}))
 			end
 		end
 	elseif slot2 == GAME.USE_ITEM_DONE then

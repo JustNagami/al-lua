@@ -1,17 +1,16 @@
 slot0 = class("NewBattleResultUtil")
 
 function slot0.Score2Grade(slot0, slot1)
-	slot2 = {
-		"d",
-		"c",
-		"b",
-		"a",
-		"s"
-	}
 	slot3, slot4, slot5 = nil
 
 	if slot0 > 0 then
-		slot5 = slot2[slot0 + 1]
+		slot5 = ({
+			"d",
+			"c",
+			"b",
+			"a",
+			"s"
+		})[slot0 + 1]
 		slot3 = "battlescore/battle_score_" .. slot5 .. "/letter_" .. slot5
 		slot4 = "battlescore/battle_score_" .. slot5 .. "/label_" .. slot5
 	else
@@ -87,23 +86,20 @@ end
 
 function slot0.GetObjectives(slot0)
 	slot1 = {}
-	slot2 = pg.expedition_data_template[slot0.stageId]
-
-	function slot3(slot0)
-		if not slot0 or type(slot0) ~= "table" then
-			return
-		end
-
-		slot3, slot4 = uv3.ColorObjective(uv1(slot0[1], uv2))
-
-		table.insert(uv4, {
-			text = setColorStr(i18n(uv0(slot0[1]), slot0[2]), slot4),
-			icon = slot3
-		})
-	end
 
 	for slot7 = 1, 3 do
-		slot3(slot2["objective_" .. slot7])
+		function (slot0)
+			if not slot0 or type(slot0) ~= "table" then
+				return
+			end
+
+			slot3, slot4 = uv3.ColorObjective(uv1(slot0[1], uv2))
+
+			table.insert(uv4, {
+				text = setColorStr(i18n(uv0(slot0[1]), slot0[2]), slot4),
+				icon = slot3
+			})
+		end(pg.expedition_data_template[slot0.stageId]["objective_" .. slot7])
 	end
 
 	return slot1
@@ -122,10 +118,9 @@ end
 function slot0.GetPlayerExpOffset(slot0, slot1)
 	slot2 = slot0
 	slot3 = slot2.level
-	slot4 = slot1.level
 	slot5 = slot1.exp - slot2.exp
 
-	while slot3 < slot4 do
+	while slot3 < slot1.level do
 		slot5 = slot5 + pg.user_level[slot3].exp
 		slot3 = slot3 + 1
 	end
@@ -219,11 +214,8 @@ function slot0.GetShipExpOffset(slot0, slot1)
 	assert(slot1, slot0:getConfig("name"))
 
 	if slot0.level < slot1.level then
-		slot2 = slot0:getConfig("rarity")
-		slot3 = 0
-
 		for slot7 = slot0.level, slot1.level - 1 do
-			slot3 = slot3 + getExpByRarityFromLv1(slot2, slot7)
+			slot3 = 0 + getExpByRarityFromLv1(slot0:getConfig("rarity"), slot7)
 		end
 
 		return slot3 + slot1:getExp() - slot0:getExp()

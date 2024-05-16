@@ -1,7 +1,7 @@
 pg = pg or {}
 pg.activity_link_button = {
 	{
-		param = "0",
+		param = "5301",
 		name = "event_all",
 		type = 3,
 		text_pic = "text_event_all",
@@ -11,7 +11,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			5131
+			5301
 		}
 	},
 	{
@@ -50,7 +50,7 @@ pg.activity_link_button = {
 		}
 	},
 	[20] = {
-		type = 0,
+		type = 2,
 		name = "event_minigame",
 		text_pic = "text_event_minigame",
 		id = 20,
@@ -59,10 +59,10 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			5141
+			5309
 		},
 		param = {
-			"NEWYEAR_BACKHILL_2024"
+			"IDOL_MEDAL_COLLECTION_SCENE3"
 		}
 	},
 	[30] = {
@@ -94,13 +94,16 @@ pg.activity_link_button = {
 	[60] = {
 		param = "0",
 		name = "event_LanternFestival",
-		time = "stop",
-		text_pic = "",
 		type = 0,
-		pic = "event_LanternFestival",
+		text_pic = "text_event_LanternFestival",
 		id = 60,
 		group_id = 7,
-		order = 1
+		pic = "event_LanternFestival",
+		order = 1,
+		time = {
+			"default",
+			5202
+		}
 	},
 	[70] = {
 		param = "0",
@@ -113,7 +116,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			4733
+			5267
 		}
 	},
 	[80] = {
@@ -177,6 +180,17 @@ pg.activity_link_button = {
 			"SENRANKAGURA_TRAIN"
 		}
 	},
+	[102] = {
+		param = "0",
+		name = "event_boss_single",
+		time = "stop",
+		text_pic = "text_event_anotherWorld",
+		type = 0,
+		pic = "event_map",
+		id = 102,
+		group_id = 4,
+		order = 1
+	},
 	get_id_list_by_name = {
 		event_all = {
 			1,
@@ -212,6 +226,9 @@ pg.activity_link_button = {
 		},
 		event_senran = {
 			101
+		},
+		event_boss_single = {
+			102
 		}
 	},
 	all = {
@@ -227,6 +244,7 @@ pg.activity_link_button = {
 		80,
 		90,
 		100,
-		101
+		101,
+		102
 	}
 }

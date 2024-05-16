@@ -37,20 +37,18 @@ end
 
 function slot0.Show(slot0, slot1)
 	if uv0 then
-		function slot2()
-			if uv0:IsEnable(uv1:GetType()) then
-				table.insert(uv0.list, uv1)
-
-				if #uv0.list == 1 then
-					uv0:Start()
-				end
-			else
-				print("Message intercepted")
-			end
-		end
-
 		if not slot0.isInit then
-			slot0:Init(slot2)
+			slot0:Init(function ()
+				if uv0:IsEnable(uv1:GetType()) then
+					table.insert(uv0.list, uv1)
+
+					if #uv0.list == 1 then
+						uv0:Start()
+					end
+				else
+					print("Message intercepted")
+				end
+			end)
 		else
 			slot2()
 		end
@@ -74,26 +72,23 @@ function slot0.Show(slot0, slot1)
 		assert(slot4)
 		print(slot4, slot5)
 
-		slot8 = {
-			id = 4,
-			timestamp = slot9:GetServerTime(),
-			args = {
-				isDeath = false,
-				supportType = slot5,
-				playerName = slot2,
-				bossName = slot1.config.name,
-				level = slot1.level,
-				wordBossId = slot1.id,
-				lastTime = slot1.lastTime,
-				wordBossConfigId = slot1.configId
-			},
-			player = slot1:GetPlayer() or getProxy(PlayerProxy):getData(),
-			uniqueId = slot1.id .. "_" .. slot1.lastTime
-		}
-		slot9 = pg.TimeMgr.GetInstance()
-
 		if slot4 == ChatConst.ChannelGuild then
-			slot0:AddGuildMsg(slot4, slot8)
+			slot0:AddGuildMsg(slot4, {
+				id = 4,
+				timestamp = pg.TimeMgr.GetInstance():GetServerTime(),
+				args = {
+					isDeath = false,
+					supportType = slot5,
+					playerName = slot2,
+					bossName = slot1.config.name,
+					level = slot1.level,
+					wordBossId = slot1.id,
+					lastTime = slot1.lastTime,
+					wordBossConfigId = slot1.configId
+				},
+				player = slot1:GetPlayer() or getProxy(PlayerProxy):getData(),
+				uniqueId = slot1.id .. "_" .. slot1.lastTime
+			})
 		else
 			getProxy(ChatProxy):addNewMsg(ChatMsg.New(slot4, slot8))
 		end
@@ -119,13 +114,13 @@ function slot0.IsEnableNotify(slot0, slot1)
 end
 
 function slot0.IsEnable(slot0, slot1)
-	return slot0:IsEnableNotify(slot1) and (function ()
+	return slot0:IsEnableNotify(slot1) and function ()
 		slot1 = getProxy(ContextProxy):getCurrentContext()
 
 		return _.any(uv0, function (slot0)
 			return uv0.mediator.__cname == slot0
 		end)
-	end)()
+	end()
 end
 
 function slot0.Start(slot0)

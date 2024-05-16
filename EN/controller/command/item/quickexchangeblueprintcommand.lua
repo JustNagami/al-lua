@@ -3,9 +3,8 @@ slot0 = class("QuickExchangeBlueprintCommand", pm.SimpleCommand)
 function slot0.execute(slot0, slot1)
 	slot3 = getProxy(BagProxy)
 	slot4 = {}
-	slot5 = pg.ConnectionMgr.GetInstance()
 
-	slot5:Send(15012, {
+	pg.ConnectionMgr.GetInstance():Send(15012, {
 		use_list = slot1:getBody()
 	}, 15013, function (slot0)
 		for slot4, slot5 in ipairs(slot0.ret_list) do

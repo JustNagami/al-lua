@@ -13,15 +13,10 @@ function slot0.Ctor(slot0, slot1, slot2, slot3)
 end
 
 function slot0.AddListener(slot0)
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_ORE_NEW, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_ORE_NEW, function (slot0, slot1)
 		uv0:NewOre(slot1.index, slot1.pos)
 	end)
-
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_ORE_DESTROY, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_ORE_DESTROY, function (slot0, slot1)
 		uv0.oreList[slot1.index] = nil
 
 		uv0:ReturnOre(findTF(uv0.oresTF, slot1.index), slot1.id)

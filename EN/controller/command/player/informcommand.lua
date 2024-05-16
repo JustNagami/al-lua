@@ -2,10 +2,8 @@ slot0 = class("InformCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot4 = slot2.info
-	slot5 = slot2.content
 
-	if not slot2.playerId or not slot4 or not slot5 then
+	if not slot2.playerId or not slot2.info or not slot2.content then
 		return
 	end
 
@@ -15,9 +13,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot7 = pg.ConnectionMgr.GetInstance()
-
-	slot7:Send(50111, {
+	pg.ConnectionMgr.GetInstance():Send(50111, {
 		id = slot3,
 		info = slot4,
 		content = slot5

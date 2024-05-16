@@ -11,9 +11,7 @@ end
 function slot0.didEnter(slot0)
 	assert(slot0.contextData.equipVO, "Not Pass EquipVO")
 
-	slot1 = slot0._tf
-	slot1 = slot1:Find("Main")
-	slot2 = slot1:Find("item")
+	slot2 = slot0._tf:Find("Main"):Find("item")
 
 	updateDrop(slot2, {
 		type = DROP_TYPE_EQUIP,
@@ -24,13 +22,9 @@ function slot0.didEnter(slot0)
 	end, SFX_PANEL)
 
 	slot4 = nil
-	slot5 = pg.UIMgr.GetInstance()
 
-	slot5:BlurPanel(slot0._tf)
-
-	slot5 = slot0.loader
-
-	slot5:GetPrefab("ui/equipupgradeAni", "", function (slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	slot0.loader:GetPrefab("ui/equipupgradeAni", "", function (slot0)
 		setParent(slot0, uv0._tf)
 		setActive(slot0, true)
 

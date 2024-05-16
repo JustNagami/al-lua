@@ -217,10 +217,9 @@ end
 function slot0.GetRandomFlagShips(slot0)
 	if not slot0.randomFlagShips then
 		slot0.randomFlagShips = {}
-		slot2 = getProxy(BayProxy)
 
 		for slot6, slot7 in ipairs(getProxy(PlayerProxy):getRawData():GetCustomRandomShipList()) do
-			if slot2:RawGetShipById(slot7) then
+			if getProxy(BayProxy):RawGetShipById(slot7) then
 				table.insert(slot0.randomFlagShips, slot8)
 			end
 		end
@@ -231,10 +230,12 @@ end
 
 function slot0.GetDockYardShipAndNotInRandom(slot0)
 	if not slot0.dockyardShips then
-		slot2 = {}
+		slot2 = {
+			[slot7.id] = true
+		}
 
 		for slot6, slot7 in ipairs(slot0:GetRandomFlagShips()) do
-			slot2[slot7.id] = true
+			-- Nothing
 		end
 
 		slot0.dockyardShips = {}
@@ -312,9 +313,7 @@ function slot0.OnConfirm(slot0)
 		table.insert(slot1, slot5)
 	end
 
-	slot5 = slot0.msgbox
-
-	slot5:ExecuteAction("Flush", slot0.msgBoxTitle[slot0.mode], slot0.msgBoxSubTitle[slot0.mode], slot1, function ()
+	slot0.msgbox:ExecuteAction("Flush", slot0.msgBoxTitle[slot0.mode], slot0.msgBoxSubTitle[slot0.mode], slot1, function ()
 		if uv0.mode == uv1.MODE_ADD then
 			uv0:emit(RandomDockYardMediator.ON_ADD_SHIPS, uv2)
 		elseif uv0.mode == uv1.MODE_REMOVE then
@@ -333,10 +332,8 @@ function slot0.OnAll(slot0)
 end
 
 function slot0.UpdateSelectedCnt(slot0, slot1)
-	slot2 = 0
-
 	for slot6, slot7 in pairs(slot1) do
-		slot2 = slot2 + 1
+		slot2 = 0 + 1
 	end
 
 	slot0.selectedCntTxt.text = slot2
@@ -411,12 +408,10 @@ function slot0.FilterShips(slot0, slot1, slot2)
 	slot4 = slot0.frequentlyUseFlags[slot0.mode]
 	slot5 = slot0.indexDatas[slot0.mode]
 
-	function slot6(slot0)
-		return (not uv0 or not not slot0:IsLocked()) and (not uv1 or not not slot0:IsPreferenceTag()) and ShipIndexConst.filterByType(slot0, uv2.typeIndex) and ShipIndexConst.filterByCamp(slot0, uv2.campIndex) and ShipIndexConst.filterByRarity(slot0, uv2.rarityIndex) and ShipIndexConst.filterByExtra(slot0, uv2.extraIndex)
-	end
-
 	for slot10, slot11 in ipairs(slot1) do
-		if slot6(slot11) then
+		if function (slot0)
+			return (not uv0 or not not slot0:IsLocked()) and (not uv1 or not not slot0:IsPreferenceTag()) and ShipIndexConst.filterByType(slot0, uv2.typeIndex) and ShipIndexConst.filterByCamp(slot0, uv2.campIndex) and ShipIndexConst.filterByRarity(slot0, uv2.rarityIndex) and ShipIndexConst.filterByExtra(slot0, uv2.extraIndex)
+		end(slot11) then
 			table.insert(slot2, slot11)
 		end
 	end

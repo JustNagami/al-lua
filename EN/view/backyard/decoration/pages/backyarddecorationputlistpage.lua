@@ -1,15 +1,22 @@
 slot0 = class("BackYardDecorationPutlistPage", import(".BackYardDecorationBasePage"))
+slot0.SELECTED_FURNITRUE = "BackYardDecorationPutlistPage:SELECTED_FURNITRUE"
 
 function slot0.getUIName(slot0)
 	return "BackYardPutListPage"
 end
 
 function slot0.OnLoaded(slot0)
-	slot0._bg = slot0:findTF("bg")
-	slot0.scrollRect = slot0:findTF("bg/frame0/frame/scrollrect"):GetComponent("LScrollRect")
-	slot0.scrollRectTF = slot0:findTF("bg/frame0/frame/scrollrect")
-	slot0.emptyTF = slot0:findTF("bg/frame0/frame/empty")
-	slot0.arr = slot0:findTF("bg/frame0/frame/arr")
+	slot0:bind(BackYardDecrationLayer.INNER_SELECTED_FURNITRUE, function (slot0, slot1)
+		uv0:Selected(slot1)
+	end)
+
+	slot0._bg = slot0:findTF("frame")
+	slot0.scrollRect = slot0:findTF("frame/frame/scrollrect"):GetComponent("LScrollRect")
+	slot0.scrollRectTF = slot0:findTF("frame/frame/scrollrect")
+	slot0.emptyTF = slot0:findTF("frame/frame/empty")
+	slot0.arr = slot0:findTF("frame/frame/arr")
+
+	setText(slot0:findTF("frame/title/Text"), i18n("courtyard_label_putlist_title"))
 end
 
 function slot0.OnInit(slot0)
@@ -43,10 +50,9 @@ function slot0.OnInit(slot0)
 			slot8 = slot7._tf
 			slot9 = slot8.localPosition.x
 			slot10 = slot8.localPosition.y
-			slot11 = Vector2(slot9 + slot8.rect.width / 2, slot10 + slot8.rect.height / 2)
 			slot12 = Vector2(slot9 + slot8.rect.width / 2, slot10 - slot8.rect.height / 2)
 
-			if Vector2(slot9 - slot8.rect.width / 2, slot10 - slot8.rect.height / 2).x < slot1.x and slot1.x < slot12.x and slot12.y < slot1.y and slot1.y < slot11.y then
+			if Vector2(slot9 - slot8.rect.width / 2, slot10 - slot8.rect.height / 2).x < slot1.x and slot1.x < slot12.x and slot12.y < slot1.y and slot1.y < Vector2(slot9 + slot8.rect.width / 2, slot10 + slot8.rect.height / 2).y then
 				slot2 = slot7
 
 				break
@@ -74,9 +80,7 @@ function slot0.OnInit(slot0)
 		uv0()
 
 		if uv1.lock then
-			slot2 = uv1.contextData.furnitureDescMsgBox
-
-			slot2:ExecuteAction("Hide")
+			uv1.contextData.furnitureDescMsgBox:ExecuteAction("Hide")
 			onNextTick(function ()
 				uv0.lock = false
 			end)
@@ -87,9 +91,36 @@ function slot0.OnInit(slot0)
 
 			if uv2(slot1) then
 				uv1:emit(BackYardDecorationMediator.ON_SELECTED_FURNITRUE, slot3.furniture.id)
+				slot3:MarkOrUnMark(uv1.card.furniture.id)
+
+				uv1.selectedId = uv1.card.furniture.id
+
+				uv1:emit(uv3.SELECTED_FURNITRUE)
 			end
 		end
 	end)
+end
+
+function slot0.ClearMark(slot0)
+	slot0.selectedId = nil
+
+	for slot4, slot5 in pairs(slot0.cards) do
+		slot5:MarkOrUnMark(slot0.selectedId)
+	end
+end
+
+function slot0.Selected(slot0, slot1)
+	slot0:ClearMark()
+
+	for slot5, slot6 in pairs(slot0.cards) do
+		if slot6.furniture and slot6.furniture.id == slot1 then
+			slot6:MarkOrUnMark(slot1)
+
+			break
+		end
+	end
+
+	slot0.selectedId = slot1
 end
 
 function slot0.change2ScrPos(slot0, slot1)
@@ -107,7 +138,7 @@ function slot0.OnUpdateItem(slot0, slot1, slot2)
 		slot3 = slot0.cards[slot2]
 	end
 
-	slot3:Update(slot0.displays[slot1 + 1])
+	slot3:Update(slot0.displays[slot1 + 1], slot0.selectedId)
 end
 
 function slot0.OnDisplayList(slot0)
@@ -134,15 +165,11 @@ end
 
 function slot0.Show(slot0)
 	uv0.super.Show(slot0)
-
-	slot2 = LeanTween.value(slot0._bg.gameObject, slot0._bg.anchoredPosition.x, 0, 0.4)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(slot0._bg.gameObject, slot0._bg.anchoredPosition.x, 0, 0.4):setOnUpdate(System.Action_float(function (slot0)
 		setAnchoredPosition(uv0._bg, {
 			x = slot0
 		})
-	end))
-
-	slot2:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		if uv0.OnShow then
 			uv0.OnShow(true)
 		end
@@ -154,20 +181,25 @@ function slot0.Show(slot0)
 end
 
 function slot0.Hide(slot0)
-	slot2 = LeanTween.value(slot0._bg.gameObject, 0, -slot0._bg.rect.width, 0.4)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0._bg, {
-			x = slot0
-		})
-	end))
+	slot6 = 0.4
 
-	slot2:setOnComplete(System.Action(function ()
+	function slot5()
 		uv0.super.Hide(uv1)
 
 		if uv1.OnShow then
 			uv1.OnShow(false)
 		end
-	end))
+	end
+
+	LeanTween.value(slot0._bg.gameObject, 0, -slot0._bg.rect.width, slot6):setOnUpdate(System.Action_float(function (slot0)
+		setAnchoredPosition(uv0._bg, {
+			x = slot0
+		})
+	end)):setOnComplete(System.Action(slot5))
+
+	for slot5, slot6 in pairs(slot0.cards) do
+		slot6:Clear()
+	end
 end
 
 function slot0.OnDormUpdated(slot0)

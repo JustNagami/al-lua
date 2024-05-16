@@ -52,20 +52,19 @@ function slot0.init(slot0)
 
 	slot0.rtNShop = slot0.rtBlurPanel:Find("adapt/new_shop")
 	slot0.containerPort = slot0.rtNShop:Find("frame/content/left")
-	slot1 = slot0.containerPort
-	slot0.tplPort = slot1:Find("port_tpl")
+	slot0.tplPort = slot0.containerPort:Find("port_tpl")
 	slot0.poolTplPort = {
 		slot0.tplPort
 	}
 	slot0.rtNGoodsContainer = slot0.rtNShop:Find("frame/content/right/page/view/content")
 	slot0.rtNShopRes = slot0.rtNShop:Find("frame/content/right/page/title/res")
-	slot1 = {
+	slot1 = Drop.New({
 		type = DROP_TYPE_WORLD_ITEM,
 		id = WorldItem.PortMoneyId
-	}
+	})
 
-	GetImageSpriteFromAtlasAsync(getDropIcon(slot1), "", slot0.rtNShopRes:Find("icon/Image"), false)
-	setText(slot0.rtNShopRes:Find("icon/name"), getDropName(slot1))
+	GetImageSpriteFromAtlasAsync(slot1:getIcon(), "", slot0.rtNShopRes:Find("icon/Image"), false)
+	setText(slot0.rtNShopRes:Find("icon/name"), slot1:getName())
 
 	slot0.rtTop = slot0.rtBlurPanel:Find("adapt/top")
 	slot0.btnBack = slot0.rtTop:Find("title/back_button")
@@ -232,12 +231,11 @@ function slot0.RecyclePainting(slot0, slot1)
 	if slot1:Find("fitter").childCount > 0 then
 		for slot6 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
 			slot7 = slot2[slot6]
-			slot8 = Color.white
 
 			if slot7.material ~= slot7.defaultGraphicMaterial then
 				slot7.material = slot7.defaultGraphicMaterial
 
-				slot7.material:SetColor("_Color", slot8)
+				slot7.material:SetColor("_Color", Color.white)
 			end
 		end
 
@@ -293,17 +291,13 @@ end
 
 function slot0.EaseInUI(slot0, slot1)
 	slot0.isTweening = true
-	slot2 = {}
 
 	slot0:CancelUITween()
 
 	if #slot0.enterIcon > 0 and not slot0.contextData.isEnter then
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			setActive(uv0.rtTop, false)
-
-			slot1 = uv0
-
-			slot1:EnterPortAnim(function ()
+			uv0:EnterPortAnim(function ()
 				setActive(uv0.rtTop, true)
 
 				return uv1()
@@ -326,23 +320,10 @@ function slot0.EaseInUI(slot0, slot1)
 		setAnchoredPosition(uv0.rtTopBottom, {
 			y = -uv0.rtTopRight.rect.height
 		})
-
-		slot0 = LeanTween.moveX(uv0.rtTopLeft, 0, WorldConst.UIEaseDuration)
-
-		slot0:setEase(LeanTweenType.easeOutSine)
-
-		slot0 = LeanTween.moveX(uv0.rtTopRight, 0, WorldConst.UIEaseDuration)
-
-		slot0:setEase(LeanTweenType.easeOutSine)
-
-		slot0 = LeanTween.moveY(uv0.rtTopTitle, 0, WorldConst.UIEaseDuration)
-
-		slot0:setEase(LeanTweenType.easeOutSine)
-
-		slot0 = LeanTween.moveY(uv0.rtTopBottom, 0, WorldConst.UIEaseDuration)
-		slot0 = slot0:setEase(LeanTweenType.easeOutSine)
-
-		slot0:setOnComplete(System.Action(function ()
+		LeanTween.moveX(uv0.rtTopLeft, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveX(uv0.rtTopRight, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveY(uv0.rtTopTitle, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveY(uv0.rtTopBottom, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function ()
 			uv0.isTweening = false
 
 			return existCall(uv1)
@@ -352,23 +333,10 @@ end
 
 function slot0.EaseOutUI(slot0, slot1)
 	slot0:CancelUITween()
-
-	slot2 = LeanTween.moveX(slot0.rtTopLeft, -slot0.rtTopLeft.rect.width, WorldConst.UIEaseDuration)
-
-	slot2:setEase(LeanTweenType.easeOutSine)
-
-	slot2 = LeanTween.moveX(slot0.rtTopRight, slot0.rtTopRight.rect.width, WorldConst.UIEaseDuration)
-
-	slot2:setEase(LeanTweenType.easeOutSine)
-
-	slot2 = LeanTween.moveY(slot0.rtTopTitle, slot0.rtTopTitle.rect.height, WorldConst.UIEaseDuration)
-
-	slot2:setEase(LeanTweenType.easeOutSine)
-
-	slot2 = LeanTween.moveY(slot0.rtTopBottom, -slot0.rtTopRight.rect.height, WorldConst.UIEaseDuration)
-	slot2 = slot2:setEase(LeanTweenType.easeOutSine)
-
-	slot2:setOnComplete(System.Action(function ()
+	LeanTween.moveX(slot0.rtTopLeft, -slot0.rtTopLeft.rect.width, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveX(slot0.rtTopRight, slot0.rtTopRight.rect.width, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveY(slot0.rtTopTitle, slot0.rtTopTitle.rect.height, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveY(slot0.rtTopBottom, -slot0.rtTopRight.rect.height, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function ()
 		uv0.isTweening = false
 
 		return existCall(uv1)
@@ -603,8 +571,7 @@ end
 
 function slot0.UpdateGoods(slot0)
 	slot0.dirtyFlags[uv0.PageShop] = false
-	slot1 = slot0.rtShop
-	slot1 = slot1:Find("frame/scrollview/view")
+	slot1 = slot0.rtShop:Find("frame/scrollview/view")
 	slot3 = underscore.rest(slot0.port.goods, 1)
 
 	table.sort(slot3, CompareFuncs({
@@ -707,19 +674,17 @@ function slot0.UpdateNShopGoods(slot0, slot1)
 			slot4 = slot2:Find("container")
 
 			UIItemList.StaticAlign(slot4, slot4:Find("item_tpl"), #uv2[slot3], function (slot0, slot1, slot2)
-				slot1 = slot1 + 1
-
 				if slot0 == UIItemList.EventUpdate then
-					slot3 = uv0[uv1][slot1]
+					slot3 = uv0[uv1][slot1 + 1]
 					uv2.rtNGoodsDic[slot3.id] = slot2
 					slot4 = slot3:GetDropInfo()
 
 					updateDrop(slot2:Find("IconTpl"), slot4)
-					setText(slot2:Find("name_mask/name"), shortenString(slot4.cfg.name, 6))
+					setText(slot2:Find("name_mask/name"), shortenString(slot4:getConfig("name"), 6))
 
 					slot5 = slot3:GetPriceInfo()
 
-					GetImageSpriteFromAtlasAsync(updateDropCfg(slot5).icon, "", slot2:Find("consume/contain/icon"), false)
+					GetImageSpriteFromAtlasAsync(slot5:getIcon(), "", slot2:Find("consume/contain/icon"), false)
 					setText(slot2:Find("consume/contain/Text"), slot5.count)
 					setText(slot2:Find("count_contain/count"), slot3:GetPurchasableCnt() .. "/" .. slot3:GetLimitGoodCount())
 					setText(slot2:Find("count_contain/label"), i18n("activity_shop_exchange_count"))

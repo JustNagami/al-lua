@@ -27,22 +27,13 @@ function slot0.InitUI(slot0, slot1)
 		"front",
 		"back"
 	}) do
-		slot8 = slot0.rtScale
-
-		eachChild(slot8:Find(slot6), function (slot0)
-			slot1 = slot0:Find("Image")
-			slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-			slot1:SetEndEvent(function ()
+		eachChild(slot0.rtScale:Find(slot6), function (slot0)
+			slot0:Find("Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 				setActive(uv0:Find("Image"), false)
 				setActive(uv0, false)
 				setImageAlpha(uv0, 1)
 			end)
-
-			slot1 = slot0:Find("Protect")
-			slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-			slot1:SetEndEvent(function ()
+			slot0:Find("Protect"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 				setActive(uv0:Find("Protect"), false)
 
 				if uv2.shieldCount[(table.indexof(uv1, string.split(uv0.name, "_")[2]) - table.indexof(uv1, uv2.statusMark) + 4) % 4 + 1] <= 0 then
@@ -109,10 +100,8 @@ function slot0.PlayAnim(slot0, slot1)
 end
 
 function slot0.UpdateShieldDisplay(slot0)
-	slot1 = table.indexof(uv0, slot0.statusMark)
-
 	for slot5 = 0, 3 do
-		slot6 = slot0.rtShieldDic[uv0[(slot1 - 1 + slot5) % 4 + 1]]
+		slot6 = slot0.rtShieldDic[uv0[(table.indexof(uv0, slot0.statusMark) - 1 + slot5) % 4 + 1]]
 
 		eachChild(slot6, function (slot0)
 			setActive(slot0, false)

@@ -4,7 +4,7 @@ function slot0.SerialAsyncUnitl(slot0, slot1, slot2)
 	slot3 = 0
 	slot4 = nil
 
-	(function ()
+	function ()
 		uv0 = uv0 + 1
 
 		if uv0 <= uv1 then
@@ -12,19 +12,15 @@ function slot0.SerialAsyncUnitl(slot0, slot1, slot2)
 		else
 			existCall(uv4)
 		end
-	end)()
+	end()
 end
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1.body
-	slot6 = getProxy(ActivityProxy)
-	slot6 = slot6:getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+	slot6 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
 	assert(slot6)
-
-	slot7 = pg.ConnectionMgr.GetInstance()
-
-	slot7:Send(26053, {
+	pg.ConnectionMgr.GetInstance():Send(26053, {
 		act_id = slot6.id,
 		recipe_id = slot2.formulaId,
 		items = slot2.items,

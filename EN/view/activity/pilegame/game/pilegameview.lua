@@ -16,8 +16,7 @@ function slot0.SetUI(slot0, slot1)
 	slot0.groundTpl = slot0._tf:Find("AD/ground")
 	slot0.gameContainer = slot0._tf:Find("AD/game")
 	slot0.itemsContainer = slot0._tf:Find("AD/game/items")
-	slot2 = slot0._tf:Find("AD/score_panel/Text")
-	slot0.scoreTxt = slot2:GetComponent(typeof(Text))
+	slot0.scoreTxt = slot0._tf:Find("AD/score_panel/Text"):GetComponent(typeof(Text))
 	slot0.heats = {
 		slot0._tf:Find("AD/score_panel/heart1"),
 		slot0._tf:Find("AD/score_panel/heart2"),
@@ -66,9 +65,7 @@ function slot0.OnEnterGame(slot0, slot1)
 end
 
 function slot0.ShowExitMsg(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0.exitPanel)
+	pg.UIMgr.GetInstance():BlurPanel(slot0.exitPanel)
 	setActive(slot0.exitPanel, true)
 	onButton(slot0, slot0.exitPanelCancelBtn, function ()
 		setActive(uv0.exitPanel, false)
@@ -152,9 +149,7 @@ function slot0.UpdateFailedCnt(slot0, slot1, slot2, slot3, slot4)
 end
 
 function slot0.AddPile(slot0, slot1, slot2, slot3)
-	slot5 = PoolMgr.GetInstance()
-
-	slot5:GetPrefab("Stacks/" .. slot1.gname, slot1.gname, true, function (slot0)
+	PoolMgr.GetInstance():GetPrefab("Stacks/" .. slot1.gname, slot1.gname, true, function (slot0)
 		slot1 = tf(slot0)
 
 		SetParent(slot1, uv0.itemsContainer)
@@ -286,10 +281,8 @@ function slot0.OnGameExited(slot0)
 end
 
 function slot0.OnGameEnd(slot0, slot1, slot2)
-	(function ()
-		slot0 = pg.UIMgr.GetInstance()
-
-		slot0:BlurPanel(uv0.resultPanel)
+	function ()
+		pg.UIMgr.GetInstance():BlurPanel(uv0.resultPanel)
 		setActive(uv0.resultPanel, true)
 		onButton(uv0, uv0.endGameBtn, function ()
 			setActive(uv0.resultPanel, false)
@@ -299,7 +292,7 @@ function slot0.OnGameEnd(slot0, slot1, slot2)
 
 		uv0.finalScoreTxt.text = uv1
 		uv0.highestScoreText.text = uv2
-	end)()
+	end()
 end
 
 function slot0.OnShake(slot0, slot1)

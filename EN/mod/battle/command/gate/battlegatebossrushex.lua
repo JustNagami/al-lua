@@ -30,9 +30,7 @@ function slot0.Entrance(slot0, slot1)
 		slot23[#slot23 + 1] = slot29.id
 	end
 
-	slot25 = slot3:getRawData()
-
-	if slot7 and slot25.oil < slot11 then
+	if slot7 and slot3:getRawData().oil < slot11 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
@@ -50,17 +48,13 @@ function slot0.Entrance(slot0, slot1)
 		end
 
 		if uv3.enter_energy_cost > 0 then
-			slot1 = pg.gameset.battle_consume_energy.key_value
-
 			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(slot1)
+				slot6:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
 				uv5:updateShip(slot6)
 			end
 		end
 
-		slot1 = uv6
-
-		slot1:updatePlayer(uv1)
+		uv6:updatePlayer(uv1)
 		uv9:sendNotification(GAME.BEGIN_STAGE_DONE, {
 			prefabFleet = {},
 			stageId = uv7,
@@ -80,7 +74,7 @@ function slot0.Exit(slot0, slot1)
 	slot6 = ys.Battle.BattleConst.BattleScore.C < slot0.statistics._battleScore
 	slot7 = 0
 
-	(function ()
+	function ()
 		slot2 = getProxy(ActivityProxy):getActivityById(uv0.actId):GetSeriesData()
 		slot4 = slot2:GetFleetIds()
 		slot5 = slot4[slot2:GetStaegLevel() + 1]
@@ -91,17 +85,16 @@ function slot0.Exit(slot0, slot1)
 		end
 
 		slot8 = uv1:getActivityFleets()[slot0]
-		slot10 = slot8[slot6]
 
-		(function (slot0)
+		function (slot0)
 			table.insertto(uv0, _.values(slot0.commanderIds))
 			table.insertto(uv1, uv2:getSortShipsByFleet(slot0))
-		end)(slot8[slot5])
+		end(slot8[slot5])
 
 		if uv0.statistics.submarineAid then
-			slot11(slot10)
+			slot11(slot8[slot6])
 		end
-	end)()
+	end()
 
 	slot1.GeneralPackage(slot0, {}).commander_id_list = {}
 

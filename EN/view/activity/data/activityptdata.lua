@@ -70,10 +70,9 @@ end
 function slot0.GetUnlockedMaxResRequire(slot0)
 	slot1 = pg.TimeMgr.GetInstance()
 	slot6 = slot1
-	slot2 = slot1:DiffDay(slot0.startTime, slot1.GetServerTime(slot6)) + 1
 
 	for slot6 = #slot0.targets, 1, -1 do
-		if slot0.unlockDay[slot6] <= slot2 then
+		if slot0.unlockDay[slot6] <= slot1:DiffDay(slot0.startTime, slot1.GetServerTime(slot6)) + 1 then
 			return slot0.targets[slot6]
 		end
 	end
@@ -99,11 +98,11 @@ end
 function slot0.GetAward(slot0)
 	slot1 = slot0.dropList[slot0:getTargetLevel()]
 
-	return {
+	return Drop.New({
 		type = slot1[1],
 		id = slot1[2],
 		count = slot1[3]
-	}
+	})
 end
 
 function slot0.GetResItemId(slot0)
@@ -123,11 +122,11 @@ function slot0.GetLevel(slot0)
 end
 
 function slot0.CanGetAward(slot0)
-	return slot0:CanGetNextAward() and (function ()
+	return slot0:CanGetNextAward() and function ()
 		slot0, slot1, slot2 = uv0:GetResProgress()
 
 		return slot2 >= 1
-	end)()
+	end()
 end
 
 function slot0.CanGetNextAward(slot0)
@@ -139,20 +138,22 @@ function slot0.CanGetMorePt(slot0)
 end
 
 function slot0.CanTrain(slot0)
-	function slot1(slot0)
-		for slot4, slot5 in ipairs(uv0.curHasBuffs) do
-			if slot0 == slot5 then
-				return false
-			end
-		end
-
-		return true
+	if not slot0:isInBuffTime() then
+		return false
 	end
 
 	slot5 = "target_buff"
 
 	for slot5, slot6 in ipairs(slot0.activity:getDataConfig(slot5)) do
-		if slot1(slot6) and slot6 <= slot0.level + 1 then
+		if function (slot0)
+			for slot4, slot5 in ipairs(uv0.curHasBuffs) do
+				if slot0 == slot5 then
+					return false
+				end
+			end
+
+			return true
+		end(slot6) and slot6 <= slot0.level + 1 then
 			return slot6
 		end
 	end
@@ -173,7 +174,7 @@ function slot0.GetCurBuffInfos(slot0)
 					table.insert(slot1, {
 						id = slot17,
 						lv = slot16,
-						group = slot2 - slot11 + 1,
+						group = slot11,
 						next = slot12[slot16 + 1],
 						award = slot0:GetBuffAwardInfo(slot12[#slot12])
 					})
@@ -206,7 +207,7 @@ function slot0.GetBuffAwardInfo(slot0, slot1)
 end
 
 function slot0.GetBuffLevelProgress(slot0)
-	slot3, slot4 = (function ()
+	slot3, slot4 = function ()
 		slot3 = "target_buff"
 
 		for slot3, slot4 in ipairs(uv0.activity:getDataConfig(slot3)) do
@@ -218,7 +219,7 @@ function slot0.GetBuffLevelProgress(slot0)
 		uv1 = true
 
 		return #uv0.activity:getDataConfig("target_buff") + 1, 1
-	end)()
+	end()
 	slot6 = (slot3 == 1 and true or false) and 0 or slot0.activity:getDataConfig("target_buff")[slot3 - 1]
 
 	return slot3, false and 1 or (slot0.level - slot6) / (slot4 - slot6)
@@ -296,10 +297,8 @@ function slot0.GetNextLevelTarget(slot0)
 end
 
 function slot0.IsGotLevelAward(slot0, slot1)
-	slot2 = slot0:GetPtTarget(slot1)
-
 	for slot6, slot7 in ipairs(slot0.activity.data1_list) do
-		if slot7 == slot2 then
+		if slot7 == slot0:GetPtTarget(slot1) then
 			return true
 		end
 	end

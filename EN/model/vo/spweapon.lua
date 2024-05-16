@@ -1,5 +1,5 @@
 slot0 = class("SpWeapon", import(".BaseVO"))
-slot0.dropType = DROP_TYPE_SPWEAPON
+slot0.type = DROP_TYPE_SPWEAPON
 slot0.CONFIRM_OP_DISCARD = 0
 slot0.CONFIRM_OP_EXCHANGE = 1
 
@@ -147,7 +147,6 @@ end
 
 function slot0.GetUpgradableSkillInfo(slot0)
 	slot1 = 0
-	slot2 = 1
 	slot3 = false
 
 	if slot0:GetShipId() then
@@ -157,7 +156,7 @@ function slot0.GetUpgradableSkillInfo(slot0)
 			slot1 = slot6
 
 			if slot5 and slot5.skills[slot7] then
-				slot2 = slot8.level or slot2
+				slot2 = slot8.level or 1
 			end
 
 			slot3 = true
@@ -304,7 +303,7 @@ end
 
 function slot0.CalculateHistoryPt(slot0, slot1)
 	return _.reduce(slot1, _.reduce(slot0, 0, function (slot0, slot1)
-		return slot0 + pg.item_data_template[slot1.id].usage_arg[1] * slot1.count
+		return slot0 + Item.getConfigData(slot1.id).usage_arg[1] * slot1.count
 	end), function (slot0, slot1)
 		return slot0 + 0 + slot1:GetUpgradeConfig().upgrade_supply_pt
 	end)

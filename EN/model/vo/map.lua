@@ -124,11 +124,10 @@ function slot0.getChapterTimeLimit(slot0)
 	end
 
 	slot1 = pg.TimeMgr.GetInstance()
-	slot2 = 0
 
 	for slot6, slot7 in ipairs(slot0:getChapters()) do
 		if pg.activity_template[slot7:GetBindActID()] and slot8.time and #slot8.time == 3 and slot1:parseTimeFromConfig(slot8.time[2]) - slot1:GetServerTime() > 0 then
-			slot2 = slot2 == 0 and slot9 or math.min(slot9, slot9)
+			slot2 = 0 == 0 and slot9 or math.min(slot9, slot9)
 		end
 	end
 

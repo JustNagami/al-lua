@@ -2,11 +2,12 @@ slot0 = class("PlayerVitaeDockyardScene", import("view.ship.DockyardScene"))
 
 function slot0.SortShips(slot0, slot1)
 	slot3 = getProxy(PlayerProxy):getRawData().characters
-	slot4 = {}
-	slot5 = #slot3 + 1
+	slot4 = {
+		[slot10] = #slot3 + 1 - slot9
+	}
 
 	for slot9, slot10 in ipairs(slot3) do
-		slot4[slot10] = slot5 - slot9
+		-- Nothing
 	end
 
 	table.insert(slot1, function (slot0)

@@ -1,9 +1,7 @@
 slot0 = class("ChangeRandomFlagShipModeCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(12206, {
+	pg.ConnectionMgr.GetInstance():Send(12206, {
 		flag = slot1:getBody().mode
 	}, 12207, function (slot0)
 		if slot0.result == 0 then

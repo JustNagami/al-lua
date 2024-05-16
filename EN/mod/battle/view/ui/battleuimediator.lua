@@ -396,11 +396,9 @@ end
 function slot7.onSkillFloat(slot0, slot1)
 	slot2 = slot1.Data
 	slot4 = slot2.commander
-	slot5 = slot2.skillName
-	slot6 = slot1.Dispatcher
 
 	if slot2.coverHrzIcon then
-		slot0:ShowSkillFloatCover(slot6, slot5, slot3)
+		slot0:ShowSkillFloatCover(slot1.Dispatcher, slot2.skillName, slot3)
 	else
 		slot0:ShowSkillFloat(slot6, slot5, slot4)
 	end
@@ -452,10 +450,8 @@ function slot7.onCommonInit(slot0, slot1)
 end
 
 function slot7.onAddFleet(slot0, slot1)
-	slot2 = slot1.Data.fleetVO
-
 	if PlayerPrefs.GetInt(BATTLE_EXPOSE_LINE, 1) == 1 then
-		slot0:SetFleetCloakLine(slot2)
+		slot0:SetFleetCloakLine(slot1.Data.fleetVO)
 	end
 end
 
@@ -536,10 +532,8 @@ function slot7.onRemoveAirStrike(slot0, slot1)
 end
 
 function slot7.onUpdateAirSupportLabel(slot0, slot1)
-	slot3 = 0
-
 	for slot7, slot8 in ipairs(slot0._dataProxy:GetAirFighterList()) do
-		slot3 = slot3 + slot8.totalNumber
+		slot3 = 0 + slot8.totalNumber
 	end
 
 	if slot3 == 0 or slot0._warningView:GetCount() > 0 then
@@ -584,10 +578,9 @@ end
 
 function slot7.onBulletTime(slot0, slot1)
 	slot2 = slot1.Data
-	slot3 = slot2.key
 
 	if slot2.rate then
-		uv0.AppendMapFactor(slot3, slot4)
+		uv0.AppendMapFactor(slot2.key, slot4)
 	else
 		uv0.RemoveMapFactor(slot3)
 	end
@@ -617,10 +610,9 @@ end
 
 function slot7.onFleetBlind(slot0, slot1)
 	slot2 = slot1.Data.isBlind
-	slot3 = slot1.Dispatcher
 
 	if not slot0._inkView then
-		slot0:InitInkView(slot3)
+		slot0:InitInkView(slot1.Dispatcher)
 	end
 
 	if slot2 then
@@ -647,10 +639,9 @@ end
 function slot7.onFleetAttrUpdate(slot0, slot1)
 	if slot0._alchemistAP then
 		slot2 = slot1.Dispatcher
-		slot4 = slot1.Data.value
 
 		if slot1.Data.attr == slot0._alchemistAP:GetAttrName() then
-			slot0._alchemistAP:UpdateAP(slot4)
+			slot0._alchemistAP:UpdateAP(slot1.Data.value)
 		end
 	end
 end
@@ -718,10 +709,9 @@ function slot7.onGridmanSkillFloat(slot0, slot1)
 	end
 
 	slot2 = slot1.Data
-	slot4 = slot2.IFF
 
 	if slot2.type == 5 then
-		slot0._gridmanSkillFloat:DoFusionFloat(slot4)
+		slot0._gridmanSkillFloat:DoFusionFloat(slot2.IFF)
 	else
 		slot0._gridmanSkillFloat:DoSkillFloat(slot3, slot4)
 	end

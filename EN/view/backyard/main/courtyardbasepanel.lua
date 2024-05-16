@@ -91,14 +91,11 @@ function slot0.GetMoveY(slot0)
 end
 
 function slot0.Tween(slot0, slot1, slot2, slot3, slot4)
-	slot5 = LeanTween[slot1](slot3, slot4, uv0)
-	slot5 = slot5:setOnComplete(System.Action(function ()
+	LeanTween[slot1](slot3, slot4, uv0):setOnComplete(System.Action(function ()
 		if uv0 then
 			setActive(uv1, false)
 		end
-	end))
-
-	slot5:setOnStart(System.Action(function ()
+	end)):setOnStart(System.Action(function ()
 		if not uv0 then
 			setActive(uv1, true)
 		end

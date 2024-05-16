@@ -1,7 +1,13 @@
 slot0 = class("CourtYardPoolMgr")
 
-function slot0.Init(slot0, slot1)
+function slot0.Init(slot0, slot1, slot2)
 	slot0.pools = {}
+	slot0.root = slot1
+
+	parallelAsync(slot0:GenPool(slot1), slot2)
+end
+
+function slot0.GenPool(slot0, slot1)
 	slot3 = {
 		{
 			10,
@@ -23,7 +29,6 @@ function slot0.Init(slot0, slot1)
 	slot4 = {
 		"Heart"
 	}
-	slot5 = {}
 
 	for slot9, slot10 in ipairs({
 		"CourtYardFurniture",
@@ -31,65 +36,36 @@ function slot0.Init(slot0, slot1)
 		"CourtYardShip",
 		"CourtYardWallGrid"
 	}) do
-		table.insert(slot5, function (slot0)
-			slot1 = ResourceMgr.Inst
-
-			slot1:getAssetAsync("ui/" .. uv0, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		table.insert({}, function (slot0)
+			ResourceMgr.Inst:getAssetAsync("ui/" .. uv0, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 				if uv0.exited then
 					return
 				end
 
-				uv0.pools[uv3] = CourtYardPool.New(slot0, unpack(uv1[uv2]))
+				uv0.pools[uv3] = CourtYardPool.New(uv4, slot0, unpack(uv1[uv2]))
 
-				uv4()
+				uv5()
 			end), true, true)
 		end)
 	end
 
 	for slot9, slot10 in ipairs(slot4) do
 		table.insert(slot5, function (slot0)
-			slot1 = ResourceMgr.Inst
-
-			slot1:getAssetAsync("Effect/" .. uv0, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			ResourceMgr.Inst:getAssetAsync("Effect/" .. uv0, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 				if uv0.exited then
 					return
 				end
 
 				if slot0 then
-					uv0.pools[uv1] = CourtYardEffectPool.New(slot0, 0, 3)
+					uv0.pools[uv1] = CourtYardEffectPool.New(uv2, slot0, 0, 3)
 				end
 
-				uv2()
+				uv3()
 			end), true, true)
 		end)
 	end
 
-	if _courtyard:GetController().system == CourtYardConst.SYSTEM_FEAST then
-		for slot10, slot11 in ipairs({
-			"chengbao_aixin",
-			"chengbao_xinxin",
-			"chengbao_yinfu",
-			"chengbao_ZZZ"
-		}) do
-			table.insert(slot5, function (slot0)
-				slot1 = ResourceMgr.Inst
-
-				slot1:getAssetAsync("Effect/" .. uv0, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-					if uv0.exited then
-						return
-					end
-
-					if slot0 then
-						uv0.pools[uv1] = CourtYardEffectPool.New(slot0, 0, 3, CourtYardConst.FEAST_EFFECT_TIME)
-					end
-
-					uv2()
-				end), true, true)
-			end)
-		end
-	end
-
-	parallelAsync(slot5, slot1)
+	return slot5
 end
 
 function slot0.LoadAsset(slot0, slot1, slot2)
@@ -132,10 +108,7 @@ function slot0.GetZzzPool(slot0)
 end
 
 function slot0.Dispose(slot0)
-	slot1 = pairs
-	slot2 = slot0.pools or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.pools or {}) do
 		slot5:Dispose()
 	end
 

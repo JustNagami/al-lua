@@ -106,30 +106,19 @@ function slot0.ShowShipWord(slot0, slot1)
 	end
 
 	slot2 = 0.3
-	slot3 = 3
 
-	if slot0._cueInfo and slot3 < long2int(slot0._cueInfo.length) / 1000 then
+	if slot0._cueInfo and 3 < long2int(slot0._cueInfo.length) / 1000 then
 		slot3 = slot4
 	end
 
 	setActive(slot0.chat, true)
 	setText(slot0.chatText, slot1)
-
-	slot4 = LeanTween.scale(slot0.chat.gameObject, Vector3.New(1, 1, 1), slot2)
-	slot4 = slot4:setFrom(Vector3.New(0, 0, 0))
-	slot4 = slot4:setEase(LeanTweenType.easeOutBack)
-
-	slot4:setOnComplete(System.Action(function ()
+	LeanTween.scale(slot0.chat.gameObject, Vector3.New(1, 1, 1), slot2):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function ()
 		if IsNil(uv0.chat) then
 			return
 		end
 
-		slot0 = LeanTween.scale(uv0.chat.gameObject, Vector3.New(0, 0, 1), uv1)
-		slot0 = slot0:setFrom(Vector3.New(1, 1, 1))
-		slot0 = slot0:setEase(LeanTweenType.easeInBack)
-		slot0 = slot0:setDelay(uv2)
-
-		slot0:setOnComplete(System.Action(function ()
+		LeanTween.scale(uv0.chat.gameObject, Vector3.New(0, 0, 1), uv1):setFrom(Vector3.New(1, 1, 1)):setEase(LeanTweenType.easeInBack):setDelay(uv2):setOnComplete(System.Action(function ()
 			if IsNil(uv0.chat) then
 				return
 			end
@@ -150,19 +139,29 @@ function slot0.StopChat(slot0)
 	slot0:StopCV()
 end
 
-function slot0.PlayCV(slot0, slot1, slot2)
-	slot3, slot4 = nil
+function slot1(slot0, slot1)
+	slot2, slot3 = nil
 
-	if slot0.name == "mingshi_live2d" then
-		slot3 = "cv-chargeShop"
-		slot4 = slot1
+	if string.find(slot1, "/") then
+		slot4 = string.split(slot1, "/")
+		slot2 = slot4[1]
+		slot3 = slot4[2]
+	elseif slot0.name == "mingshi_live2d" then
+		slot2 = "cv-chargeShop"
+		slot3 = slot1
 	elseif string.find(slot1, "ryza_shop") then
-		slot3 = "cv-1090002"
-		slot4 = slot1
+		slot2 = "cv-1090002"
+		slot3 = slot1
 	else
-		slot3 = "cv-shop"
-		slot4 = slot1
+		slot2 = "cv-shop"
+		slot3 = slot1
 	end
+
+	return slot2, slot3
+end
+
+function slot0.PlayCV(slot0, slot1, slot2)
+	slot3, slot4 = uv0(slot0, slot1)
 
 	slot0:StopCV()
 	pg.CriMgr.GetInstance():PlayCV_V3(slot3, slot4, slot2)

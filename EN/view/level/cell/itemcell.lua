@@ -35,9 +35,8 @@ end
 
 function slot0.Update(slot0)
 	slot1 = slot0.info
-	slot2 = slot0.loader
 
-	slot2:GetPrefabBYStopLoading("chapter/" .. slot1.item, slot1.item, function (slot0)
+	slot0.loader:GetPrefabBYStopLoading("chapter/" .. slot1.item, slot1.item, function (slot0)
 		slot1 = slot0.transform
 		slot1.name = uv0.item
 
@@ -78,13 +77,13 @@ function slot0.TransformItemAsset(slot0, slot1)
 	end
 
 	_.each(slot0:getExtraFlags(), function (slot0)
-		if uv0[slot0] and (function ()
+		if uv0[slot0] and function ()
 			if not uv0[uv1][3] then
 				return true
 			end
 
 			return math.random() <= slot0
-		end)() then
+		end() then
 			uv1 = string.gsub(uv1, uv0[slot0][1], uv0[slot0][2])
 		end
 	end)

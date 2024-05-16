@@ -25,11 +25,9 @@ function slot0.Ctor(slot0, slot1)
 end
 
 function slot0.GetSameFurnitureCnt(slot0, slot1)
-	slot2 = 0
-
 	for slot7, slot8 in pairs(slot0:GetAllFurniture()) do
 		if slot8.configId == slot1 then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 	end
 
@@ -45,17 +43,9 @@ function slot0.GetMapSize(slot0)
 end
 
 function slot0.WarpPutInfo2BackYardFurnitrue(slot0, slot1, slot2)
-	slot3 = ipairs
-	slot4 = slot2 or {}
-
-	for slot6, slot7 in slot3(slot4) do
-		slot8 = {}
-
+	for slot6, slot7 in ipairs(slot2 or {}) do
 		for slot12, slot13 in ipairs(slot7.child) do
-			slot8[tonumber(slot13.id)] = {
-				x = slot13.x,
-				y = slot13.y
-			}
+			-- Nothing
 		end
 
 		table.insert(slot0, BackyardThemeFurniture.New({
@@ -66,7 +56,12 @@ function slot0.WarpPutInfo2BackYardFurnitrue(slot0, slot1, slot2)
 				y = slot7.y
 			},
 			dir = slot7.dir,
-			child = slot8,
+			child = {
+				[tonumber(slot13.id)] = {
+					x = slot13.x,
+					y = slot13.y
+				}
+			},
 			parent = tonumber(slot7.parent),
 			floor = slot1
 		}))
@@ -155,11 +150,11 @@ function slot0.AddLike(slot0)
 end
 
 function slot0.ExistLocalImage(slot0)
-	return BackYardThemeTempalteUtil.FileExists(slot0.id) and (function ()
+	return BackYardThemeTempalteUtil.FileExists(slot0.id) and function ()
 		slot0 = BackYardBaseThemeTemplate.BuildId(uv0.pos)
 
 		return BackYardThemeTempalteUtil.GetMd5(slot0) == uv0.imageMd5 and BackYardThemeTempalteUtil.GetIconMd5(slot0) == uv0.iconImageMd5
-	end)()
+	end()
 end
 
 function slot0.GetRawPutList(slot0)
@@ -240,20 +235,21 @@ end
 
 function slot0.GetUsableFurnituresForFloor(slot0, slot1, slot2)
 	slot3 = {}
-	slot4 = {}
+	slot4 = {
+		[slot9.id] = slot9
+	}
 
 	for slot8, slot9 in pairs(slot1) do
 		if slot9.floor ~= slot2 then
-			slot4[slot9.id] = slot9
+			-- Nothing
 		end
 	end
 
-	slot6 = {}
 	slot7 = {}
 
 	for slot11, slot12 in pairs(slot0:GetAllFurniture()) do
 		if slot4[slot12.id] then
-			table.insert(slot6, slot12.id)
+			table.insert({}, slot12.id)
 
 			for slot17, slot18 in pairs(slot12.child) do
 				table.insert(slot6, slot17)
@@ -283,12 +279,10 @@ end
 function slot0.OwnThemeTemplateFurniture(slot0)
 	slot2 = getProxy(DormProxy):getRawData():GetPurchasedFurnitures()
 
-	function slot3(slot0, slot1)
-		return uv0[slot0] and slot1 <= slot2.count
-	end
-
 	for slot7, slot8 in pairs(slot0:GetFurnitureCnt()) do
-		if not slot3(slot7, slot8) then
+		if not function (slot0, slot1)
+			return uv0[slot0] and slot1 <= slot2.count
+		end(slot7, slot8) then
 			return false
 		end
 	end
@@ -300,11 +294,11 @@ function slot0.MatchSearchKey(slot0, slot1)
 	if not slot1 or slot1 == "" then
 		return true
 	else
-		return (function (slot0)
+		return function (slot0)
 			return string.find(string.lower(uv0:GetName()), slot0)
-		end)(string.lower(slot1)) or (function (slot0)
+		end(string.lower(slot1)) or function (slot0)
 			return string.find(string.lower(uv0:GetDesc()), slot0)
-		end)(slot1)
+		end(slot1)
 	end
 end
 

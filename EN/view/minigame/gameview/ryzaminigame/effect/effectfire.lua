@@ -29,10 +29,8 @@ function slot0.InitUI(slot0, slot1)
 
 				for slot6, slot7 in ipairs(slot0) do
 					for slot12 = uv0._tf:Find(uv1[slot6]).childCount + 1, slot7 do
-						slot13 = cloneTplTo(slot8:Find("7"), slot8, slot12)
-
 						if slot6 < 3 then
-							slot13:SetAsLastSibling()
+							cloneTplTo(slot8:Find("7"), slot8, slot12):SetAsLastSibling()
 						end
 					end
 

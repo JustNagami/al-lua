@@ -7,16 +7,12 @@ function slot0.__call(slot0)
 
 	seriesAsync({
 		function (slot0)
-			slot1 = pg.UIMgr.GetInstance()
-
-			slot1:LoadingOn()
+			pg.UIMgr.GetInstance():LoadingOn()
 
 			slot1 = uv0.path
 
 			xpcall(function ()
-				slot0 = ResourceMgr.Inst
-
-				slot0:loadAssetBundleAsync(uv0, function (slot0)
+				ResourceMgr.Inst:loadAssetBundleAsync(uv0, function (slot0)
 					pg.UIMgr.GetInstance():LoadingOff()
 
 					if uv0.stopped then

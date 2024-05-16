@@ -194,8 +194,7 @@ function slot0.Show(slot0, slot1, slot2)
 		setText(slot0:findTF("timer_container/Text", slot0.factionMask), slot0.guildVO:changeFactionLeftTime())
 	end
 
-	slot5 = slot0.guildVO
-	slot0.faction = slot5:getFaction()
+	slot0.faction = slot0.guildVO:getFaction()
 
 	onToggle(slot0, slot0.factionBLHXToggle, function (slot0)
 		if slot0 then
@@ -208,8 +207,7 @@ function slot0.Show(slot0, slot1, slot2)
 		end
 	end, SFX_PANEL)
 
-	slot5 = slot0.guildVO
-	slot0.policy = slot5:getPolicy()
+	slot0.policy = slot0.guildVO:getPolicy()
 
 	onToggle(slot0, slot0.policyRELAXToggle, function (slot0)
 		if slot0 then

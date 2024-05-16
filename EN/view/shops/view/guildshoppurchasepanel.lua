@@ -83,21 +83,12 @@ function slot0.UpdateItem(slot0, slot1, slot2, slot3)
 		id = slot2,
 		count = slot1.num
 	})
-
-	slot5 = {
+	slot3:Find("name_bg/Text"):GetComponent("ScrollText"):SetText(Drop.New({
 		type = slot4,
 		id = slot2
-	}
+	}):getConfig("name"))
 
-	updateDropCfg(slot5)
-
-	slot6 = slot3:Find("name_bg/Text")
-	slot6 = slot6:GetComponent("ScrollText")
-
-	slot6:SetText(slot5.cfg.name)
-
-	slot8 = slot3:Find("cnt/Text")
-	slot8 = slot8:GetComponent(typeof(Text))
+	slot8 = slot3:Find("cnt/Text"):GetComponent(typeof(Text))
 
 	onButton(slot0, slot3, function ()
 		uv0:ClickItem(uv1, uv2)
@@ -111,26 +102,20 @@ function slot0.UpdateItem(slot0, slot1, slot2, slot3)
 		uv3()
 	end, nil, true, true, 0.1, SFX_PANEL)
 	setActive(slot3:Find("mask"), false)
-	(function ()
-		slot0 = 0
-
+	function ()
 		for slot4, slot5 in ipairs(uv0.selectedList) do
 			if slot5 == uv1 then
-				slot0 = slot0 + 1
+				slot0 = 0 + 1
 			end
 		end
 
 		uv2.text = slot0
-	end)()
+	end()
 end
 
 function slot0.ClearZeroItem(slot0, slot1)
-	slot2 = slot0.list
-
-	slot2:each(function (slot0, slot1)
-		slot2 = uv0.displays[slot0 + 1]
-
-		if uv1 ~= slot1 and not table.contains(uv0.selectedList, slot2) then
+	slot0.list:each(function (slot0, slot1)
+		if uv1 ~= slot1 and not table.contains(uv0.selectedList, uv0.displays[slot0 + 1]) then
 			setActive(slot1:Find("cnt"), false)
 			setActive(slot1:Find("selected"), false)
 		end
@@ -173,9 +158,7 @@ function slot0.Hide(slot0)
 		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 	end
 
-	slot1 = slot0.list
-
-	slot1:each(function (slot0, slot1)
+	slot0.list:each(function (slot0, slot1)
 		setActive(slot1:Find("cnt"), false)
 		setActive(slot1:Find("selected"), false)
 	end)

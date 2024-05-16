@@ -53,13 +53,9 @@ function slot0.updateIconList(slot0)
 	slot0.gridLayoutGroupSC.constraintCount = #slot0:sortDataList(slot0.lastMetaExpInfoList or slot0.metaProxy:getLastMetaSkillExpInfoList()) > 4 and 2 or 1
 
 	slot0.iconUIItemList:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			slot6 = uv0:findTF("LevelMaxText", slot2)
-			slot7 = uv0:findTF("ExpMaxText", slot2)
 			slot8 = uv0:findTF("Slider", slot2)
-			slot9 = uv1[slot1]
+			slot9 = uv1[slot1 + 1]
 			slot14 = slot9.isExpMax
 			slot15 = slot9.progress
 			slot17 = getProxy(BayProxy):getShipById(slot9.shipID):getPainting()
@@ -70,8 +66,8 @@ function slot0.updateIconList(slot0)
 
 			if slot12 and slot13 then
 				setActive(slot5, false)
-				setActive(slot6, true)
-				setActive(slot7, false)
+				setActive(uv0:findTF("LevelMaxText", slot2), true)
+				setActive(uv0:findTF("ExpMaxText", slot2), false)
 			elseif slot14 then
 				setActive(slot5, false)
 				setActive(slot6, false)
@@ -109,13 +105,12 @@ function slot0.openPanel(slot0)
 
 	slot1 = 400
 	slot2 = slot0.panelTF.sizeDelta.x
-	slot5 = slot0:managedTween(LeanTween.value, nil, go(slot0.panelTF), System.Action_float(function (slot0)
+
+	slot0:managedTween(LeanTween.value, nil, go(slot0.panelTF), System.Action_float(function (slot0)
 		setAnchoredPosition(uv0.panelTF, {
 			x = slot0
 		})
-	end), 400, 0, uv0)
-
-	slot5:setOnComplete(System.Action(function ()
+	end), 400, 0, uv0):setOnComplete(System.Action(function ()
 		setAnchoredPosition(uv0.panelTF, {
 			x = 0
 		})
@@ -127,13 +122,12 @@ function slot0.closePanel(slot0)
 
 	slot1 = 400
 	slot2 = slot0.panelTF.sizeDelta.x
-	slot5 = slot0:managedTween(LeanTween.value, nil, go(slot0.panelTF), System.Action_float(function (slot0)
+
+	slot0:managedTween(LeanTween.value, nil, go(slot0.panelTF), System.Action_float(function (slot0)
 		setAnchoredPosition(uv0.panelTF, {
 			x = slot0
 		})
-	end), 0, 400, uv0)
-
-	slot5:setOnComplete(System.Action(function ()
+	end), 0, 400, uv0):setOnComplete(System.Action(function ()
 		setAnchoredPosition(uv0.panelTF, {
 			x = 0
 		})

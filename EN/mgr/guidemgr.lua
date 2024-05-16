@@ -149,10 +149,8 @@ function slot0.play(slot0, slot1, slot2, slot3, slot4)
 
 		slot0:addDelegateInfo()
 
-		slot7 = Clone(slot0.currentGuide.events)
-
 		if slot2 then
-			slot0.curEvents = _.select(slot7, function (slot0)
+			slot0.curEvents = _.select(Clone(slot0.currentGuide.events), function (slot0)
 				if not slot0.code then
 					return true
 				elseif type(slot0.code) == "table" then
@@ -170,10 +168,8 @@ function slot0.play(slot0, slot1, slot2, slot3, slot4)
 		slot0:prepareGuider(slot3)
 
 		slot8 = {}
-		slot9 = ipairs
-		slot10 = slot0.curEvents or {}
 
-		for slot12, slot13 in slot9(slot10) do
+		for slot12, slot13 in ipairs(slot0.curEvents or {}) do
 			table.insert(slot8, function (slot0)
 				uv0:doCurrEvent(uv2, function ()
 					if uv0.managerState ~= uv1.MANAGER_STATE.IDLE then
@@ -262,7 +258,7 @@ end
 function slot0.showSign(slot0, slot1, slot2)
 	slot3 = slot1.showSign
 
-	(function ()
+	function ()
 		slot0 = uv0.type
 		slot1 = uv0.duration
 		slot2 = uv0.simultaneously
@@ -273,7 +269,6 @@ function slot0.showSign(slot0, slot1, slot2)
 
 		for slot11, slot12 in ipairs(uv0.signList) do
 			slot13 = slot12.signType
-			slot15 = slot12.cachedIndex
 			uv1.curSignList[#uv1.curSignList + 1] = {
 				signType = slot13,
 				sign = uv1:getSign(slot13, slot12)
@@ -281,7 +276,7 @@ function slot0.showSign(slot0, slot1, slot2)
 
 			if type(slot12.pos) == "string" then
 				if slot14 == "useCachePos" then
-					slot14 = WorldGuider.GetInstance():GetTempGridPos(slot15)
+					slot14 = WorldGuider.GetInstance():GetTempGridPos(slot12.cachedIndex)
 				end
 			elseif type(slot14) == "table" then
 				slot14 = Vector3.New(slot14[1], slot14[2], slot14[3])
@@ -380,7 +375,7 @@ function slot0.showSign(slot0, slot1, slot2)
 				uv1.curSignList[slot8].signTimer:Start()
 			end
 		end
-	end)()
+	end()
 end
 
 function slot0.getSign(slot0, slot1, slot2)
@@ -641,39 +636,6 @@ function slot0.updateUIStyle(slot0, slot1, slot2, slot3)
 
 	slot0.highLightLines = {}
 
-	function slot4(slot0)
-		if uv0.style.ui.lineMode then
-			table.insert(uv1.highLightLines, uv1:SetHighLightLine(slot0))
-		else
-			uv1.cloneTarget = uv1:cloneGO(go(slot0), uv1._tf, uv0.style.ui)
-		end
-	end
-
-	function slot5()
-		onButton(uv0, uv0._go, function ()
-			if uv0.style and uv0.style.scene then
-				uv1:finishCurrEvent(uv0, uv2)
-				pg.m02:sendNotification(GAME.GO_SCENE, SCENE[uv0.style.scene])
-			elseif uv0.style.trigger then
-				uv1.finder:Search({
-					path = uv0.style.trigger.path,
-					delay = uv0.style.trigger.delay,
-					pathIndex = uv0.style.trigger.pathIndex,
-					found = function (slot0)
-						triggerButton(slot0)
-						uv0:finishCurrEvent(uv1, uv2)
-					end,
-					notFound = function ()
-						uv0:endGuider()
-					end
-				})
-			else
-				uv1:finishCurrEvent(uv0, uv2)
-			end
-		end, SFX_PANEL)
-		setButtonEnabled(uv0._go, uv3)
-	end
-
 	if slot1.style then
 		slot0:updateContent(slot1)
 
@@ -682,12 +644,41 @@ function slot0.updateUIStyle(slot0, slot1, slot2, slot3)
 				path = slot1.style.ui.path,
 				delay = slot1.style.ui.delay,
 				pathIndex = slot1.style.ui.pathIndex,
-				found = slot4,
+				found = function (slot0)
+					if uv0.style.ui.lineMode then
+						table.insert(uv1.highLightLines, uv1:SetHighLightLine(slot0))
+					else
+						uv1.cloneTarget = uv1:cloneGO(go(slot0), uv1._tf, uv0.style.ui)
+					end
+				end,
 				notFound = function ()
 					uv0:endGuider()
 				end
 			})
-			slot5()
+			function ()
+				onButton(uv0, uv0._go, function ()
+					if uv0.style and uv0.style.scene then
+						uv1:finishCurrEvent(uv0, uv2)
+						pg.m02:sendNotification(GAME.GO_SCENE, SCENE[uv0.style.scene])
+					elseif uv0.style.trigger then
+						uv1.finder:Search({
+							path = uv0.style.trigger.path,
+							delay = uv0.style.trigger.delay,
+							pathIndex = uv0.style.trigger.pathIndex,
+							found = function (slot0)
+								triggerButton(slot0)
+								uv0:finishCurrEvent(uv1, uv2)
+							end,
+							notFound = function ()
+								uv0:endGuider()
+							end
+						})
+					else
+						uv1:finishCurrEvent(uv0, uv2)
+					end
+				end, SFX_PANEL)
+				setButtonEnabled(uv0._go, uv3)
+			end()
 		elseif slot1.style.uiset then
 			slot6 = {}
 

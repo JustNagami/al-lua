@@ -40,8 +40,7 @@ function slot0.init(slot0)
 	slot0.exp2ProficiencyRatioTxt = slot0:findTF("blur_panel/adapt/top/proficiency/Text"):GetComponent(typeof(Text))
 	slot0.exp2ProficiencyRatio = slot0:findTF("blur_panel/adapt/top/proficiency")
 	slot0.chatProficiency = slot0:findTF("blur_panel/adapt/top/proficiency/chat")
-	slot1 = slot0.chatProficiency:Find("Text")
-	slot0.chatProficiencyTxt = slot1:GetComponent(typeof(Text))
+	slot0.chatProficiencyTxt = slot0.chatProficiency:Find("Text"):GetComponent(typeof(Text))
 	slot0.helpBtn = slot0:findTF("blur_panel/adapt/top/btn_help")
 	slot0.upgradeBtn = slot0:findTF("blur_panel/adapt/bottom/upgarde")
 	slot0.teacherSeat = slot0:findTF("scene/desk0")
@@ -89,15 +88,8 @@ end
 function slot0.DisplayChatContent(slot0)
 	setActive(slot0.chatProficiency, true)
 	setButtonEnabled(slot0.exp2ProficiencyRatio, false)
-
-	slot1 = LeanTween.scale(rtf(slot0.chatProficiency), Vector3(1.5, 1.5, 1), 0.3)
-	slot1 = slot1:setFrom(Vector3.zero)
-
-	slot1:setOnComplete(System.Action(function ()
-		slot0 = LeanTween.scale(rtf(uv0.chatProficiency), Vector3(0, 0, 0), 0.2)
-		slot0 = slot0:setDelay(2)
-
-		slot0:setOnComplete(System.Action(function ()
+	LeanTween.scale(rtf(slot0.chatProficiency), Vector3(1.5, 1.5, 1), 0.3):setFrom(Vector3.zero):setOnComplete(System.Action(function ()
+		LeanTween.scale(rtf(uv0.chatProficiency), Vector3(0, 0, 0), 0.2):setDelay(2):setOnComplete(System.Action(function ()
 			if not IsNil(uv0.exp2ProficiencyRatio) then
 				setButtonEnabled(uv0.exp2ProficiencyRatio, true)
 				setActive(uv0.chatProficiency, false)
@@ -108,10 +100,9 @@ end
 
 function slot0.FilterStudents(slot0)
 	slot1 = {}
-	slot2 = slot0.course:getConfig("type")
 
 	for slot6, slot7 in pairs(slot0.shipGroups) do
-		if table.contains(slot2, slot7.shipConfig.type) then
+		if table.contains(slot0.course:getConfig("type"), slot7.shipConfig.type) then
 			table.insert(slot1, slot7)
 		end
 	end
@@ -151,10 +142,7 @@ function slot0.LoadClassRoom(slot0)
 
 	for slot5 = 1, math.min(#slot0.students, slot5) do
 		table.insert(slot1, function (slot0)
-			slot1 = uv0.students[uv1]
-			slot2 = uv0
-
-			slot2:LoadChar(slot1:GetSkin().prefab, function (slot0)
+			uv0:LoadChar(uv0.students[uv1]:GetSkin().prefab, function (slot0)
 				uv0:AddStudent(slot0, uv0.studentSeats[uv1])
 				uv2()
 			end)
@@ -162,21 +150,14 @@ function slot0.LoadClassRoom(slot0)
 	end
 
 	table.insert(slot1, function (slot0)
-		slot3 = uv0.course
-		slot1 = Ship.New({
-			configId = slot3:getConfig("id")
-		})
-		slot2 = uv0
-
-		slot2:LoadChar(slot1:getPrefab(), function (slot0)
+		uv0:LoadChar(Ship.New({
+			configId = uv0.course:getConfig("id")
+		}):getPrefab(), function (slot0)
 			uv0:AddTeacher(slot0, uv0.teacherSeat)
 			uv1()
 		end)
 	end)
-
-	slot2 = pg.UIMgr.GetInstance()
-
-	slot2:LoadingOn()
+	pg.UIMgr.GetInstance():LoadingOn()
 	seriesAsync(slot1, function ()
 		pg.UIMgr.GetInstance():LoadingOff()
 	end)
@@ -210,9 +191,7 @@ function slot0.willExit(slot0)
 end
 
 function slot0.LoadChar(slot0, slot1, slot2)
-	slot3 = PoolMgr.GetInstance()
-
-	slot3:GetSpineChar(slot1, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(slot1, true, function (slot0)
 		if uv0.exited then
 			PoolMgr.GetInstance():ReturnSpineChar(uv1, slot0)
 

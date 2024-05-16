@@ -112,10 +112,9 @@ function slot0.DelFile(slot0, slot1)
 				warning("find del hash:" .. slot12)
 
 				slot14 = System.Array.CreateInstance(typeof(System.String), 3)
-				slot15 = string.split(slot12, ",")
 
 				for slot19 = 0, 2 do
-					slot20 = slot15[slot19 + 1]
+					slot20 = string.split(slot12, ",")[slot19 + 1]
 
 					warning("add info:" .. slot20)
 
@@ -218,7 +217,7 @@ function slot0.updateWithIndex(slot0, slot1)
 		return
 	end
 
-	slot0.group:UpdateBigF(slot0:GetCurFilePath())
+	slot0.group:UpdateF(slot0:GetCurFilePath())
 end
 
 function slot0.onUpdateD(slot0)

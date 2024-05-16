@@ -76,9 +76,8 @@ function slot0.update(slot0, slot1)
 	end)
 
 	slot11 = AttireFrame.attireFrameRes(slot3, slot2, AttireConst.TYPE_ICON_FRAME, slot5)
-	slot12 = PoolMgr.GetInstance()
 
-	slot12:GetPrefab("IconFrame/" .. slot11, slot11, true, function (slot0)
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot11, slot11, true, function (slot0)
 		if IsNil(uv0.tf) then
 			return
 		end
@@ -95,9 +94,8 @@ function slot0.update(slot0, slot1)
 
 	if slot1.emojiId then
 		slot12 = pg.emoji_template[slot1.emojiId]
-		slot13 = PoolMgr.GetInstance()
 
-		slot13:GetPrefab("emoji/" .. slot12.pic, slot12.pic, true, function (slot0)
+		PoolMgr.GetInstance():GetPrefab("emoji/" .. slot12.pic, slot12.pic, true, function (slot0)
 			if IsNil(uv0.tf) then
 				return
 			end
@@ -119,20 +117,17 @@ function slot0.update(slot0, slot1)
 		end)
 	else
 		slot12 = AttireFrame.attireFrameRes(slot3, slot2, AttireConst.TYPE_CHAT_FRAME, slot5)
-		slot13 = PoolMgr.GetInstance()
 
-		slot13:GetPrefab("ChatFrame/" .. slot12, slot12, true, function (slot0)
+		PoolMgr.GetInstance():GetPrefab("ChatFrame/" .. slot12, slot12, true, function (slot0)
 			if IsNil(uv0.tf) then
 				return
 			end
 
 			if uv0.tf and uv0.data then
-				slot1 = tf(slot0)
-				slot1 = slot1:Find("Text")
+				slot1 = tf(slot0):Find("Text")
 				slot1:GetComponent("RichText").supportRichText = false
-				slot3 = tf(slot0)
 
-				eachChild(slot3:Find("Text"), function (slot0)
+				eachChild(tf(slot0):Find("Text"), function (slot0)
 					Destroy(slot0)
 				end)
 

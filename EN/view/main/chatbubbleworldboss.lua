@@ -69,9 +69,8 @@ function slot0.update(slot0, slot1)
 	end
 
 	slot11 = AttireFrame.attireFrameRes(slot3, slot2, AttireConst.TYPE_ICON_FRAME, slot4)
-	slot12 = PoolMgr.GetInstance()
 
-	slot12:GetPrefab("IconFrame/" .. slot11, slot11, true, function (slot0)
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot11, slot11, true, function (slot0)
 		if IsNil(uv0.tf) then
 			return
 		end
@@ -102,9 +101,7 @@ function slot0.update(slot0, slot1)
 			return
 		end
 
-		slot0 = pg.WorldBossTipMgr.GetInstance()
-
-		slot0:OnClick("", uv2, uv1.args.lastTime, function ()
+		pg.WorldBossTipMgr.GetInstance():OnClick("", uv2, uv1.args.lastTime, function ()
 			uv0:SetGray()
 		end)
 	end, SFX_PANEL)

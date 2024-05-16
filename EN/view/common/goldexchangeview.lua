@@ -13,10 +13,7 @@ slot0.gemNum = {
 
 function slot0.Ctor(slot0)
 	pg.DelegateInfo.New(slot0)
-
-	slot1 = PoolMgr.GetInstance()
-
-	slot1:GetUI("GoldExchangeWindow", false, function (slot0)
+	PoolMgr.GetInstance():GetUI("GoldExchangeWindow", false, function (slot0)
 		slot0.transform:SetParent(pg.UIMgr.GetInstance().UIMain.transform, false)
 
 		uv0._go = slot0

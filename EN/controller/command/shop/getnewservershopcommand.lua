@@ -1,17 +1,13 @@
 slot0 = class("GetNewServerShopCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().callback
-
 	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP) or slot4:isEnd() then
-		slot3()
+		slot1:getBody().callback()
 
 		return
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(26041, {
+	pg.ConnectionMgr.GetInstance():Send(26041, {
 		act_id = slot4.id
 	}, 26042, function (slot0)
 		if slot0.result == 0 then

@@ -70,6 +70,14 @@ function slot0.IsBossCell(slot0)
 	return slot1.type == uv0.ExpeditionTypeBoss or slot1.type == uv0.ExpeditionTypeMulBoss
 end
 
+function slot0.GetDestroyFX(slot0)
+	if not pg.expedition_data_template[slot0.attachmentId] or slot1.SLG_destroy_FX == "" then
+		return "huoqiubaozha"
+	else
+		return slot1.SLG_destroy_FX
+	end
+end
+
 slot0.Story = 1
 slot0.StoryObstacle = 2
 slot0.StoryTrigger = 3
@@ -141,6 +149,8 @@ slot0.StrategyExpel = 1001
 slot0.StrategyAirSupportFoe = 94
 slot0.StrategyAirSupportFriendly = 95
 slot0.StrategyIntelligenceRecorded = 96
+slot0.StrategyBuffTypeNormal = 0
+slot0.StrategyBuffTypeOnlyBoss = 1
 slot0.StrategyForms = {
 	slot0.StrategyFormSignleLine,
 	slot0.StrategyFormDoubleLine,
@@ -361,16 +371,14 @@ slot0.Status2Stg = setmetatable({}, {
 })
 slot0.Buff2Stg = {}
 
-function slot1(slot0, slot1)
-	if slot1.buff_id == 0 then
-		return
-	end
-
-	uv0.Buff2Stg[slot1.buff_id] = slot0
-end
-
 for slot5, slot6 in ipairs(pg.strategy_data_template.all) do
-	slot1(slot6, pg.strategy_data_template[slot6])
+	function (slot0, slot1)
+		if slot1.buff_id == 0 then
+			return
+		end
+
+		uv0.Buff2Stg[slot1.buff_id] = slot0
+	end(slot6, pg.strategy_data_template[slot6])
 end
 
 slot0.HpGreen = 3000

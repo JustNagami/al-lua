@@ -17,8 +17,7 @@ function slot0.init(slot0)
 		slot0["map_" .. go(slot5).name] = slot5
 	end
 
-	slot1 = slot0._map
-	slot0._shipTpl = slot1:Find("ship")
+	slot0._shipTpl = slot0._map:Find("ship")
 	slot0.containers = {
 		slot0.map_middle
 	}

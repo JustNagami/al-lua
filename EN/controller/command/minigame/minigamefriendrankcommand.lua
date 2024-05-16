@@ -5,9 +5,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(26111, {
+	pg.ConnectionMgr.GetInstance():Send(26111, {
 		gameid = slot2.id
 	}, 26112, function (slot0)
 		getProxy(MiniGameProxy):SetRank(uv0, underscore(slot0.ranks):chain():sort(function (slot0, slot1)

@@ -5,8 +5,16 @@ slot0.VEC_TYPE = 2
 function slot0.Ctor(slot0, slot1, slot2)
 	slot0.type = slot2 or uv0.HRZ_TYPE
 	slot0.tpl = slot1
+
+	if isActive(slot1) then
+		setActive(slot1, false)
+	end
+
 	slot0.isLoaded = false
 	slot0.startPos = slot0.tpl.anchoredPosition
+	slot0.tf = Object.Instantiate(slot0.tpl, slot0.tpl.parent).transform
+
+	slot0:Hide()
 end
 
 function slot0.IsHrzType(slot0)
@@ -14,21 +22,17 @@ function slot0.IsHrzType(slot0)
 end
 
 function slot0.NewGo(slot0)
-	slot2, slot3 = slot0:GetBgName()
+	slot1, slot2 = slot0:GetBgName()
+	slot3 = slot0.tf:GetComponent(typeof(Image))
+	slot3.sprite = LoadSprite("ui/" .. slot1, slot2)
 
-	LoadSpriteAtlasAsync("ui/" .. slot2, slot3, function (slot0)
-		slot1 = uv0:GetComponent(typeof(Image))
-		slot1.sprite = slot0
+	slot3:SetNativeSize()
+	slot0:Show()
 
-		slot1:SetNativeSize()
-	end)
-
-	return Object.Instantiate(slot0.tpl, slot0.tpl.parent).transform
+	return slot0.tf
 end
 
 function slot0.Load(slot0, slot1)
-	slot0.tf = slot1
-
 	pg.DelegateInfo.New(slot0)
 
 	slot0.on = findTF(slot0.tf, "on")
@@ -59,12 +63,15 @@ function slot0.Update(slot0, slot1, slot2, slot3)
 
 	if not slot0.isLoaded then
 		slot0:Load(slot0:NewGo())
-	elseif slot0.flag ~= slot0:GetDefaultValue() then
-		slot0:InitBtn()
+	else
+		if slot0.flag ~= slot0:GetDefaultValue() then
+			slot0:InitBtn()
+		end
+
+		slot0:Show()
 	end
 
 	slot0:UpdatePosition()
-	slot0:Show()
 end
 
 function slot0.UpdatePosition(slot0)
@@ -86,10 +93,20 @@ end
 
 function slot0.UpdatePositionForHrz(slot0)
 	slot1 = slot0.startPos
+	slot2 = slot0.index
 	slot3 = 0
+	slot4 = 20
+
+	if PLATFORM_CODE == PLATFORM_US then
+		slot3 = 310
+		slot4 = 10
+	else
+		slot3 = slot0.tf.sizeDelta.x
+	end
+
 	slot0.tf.anchorMax = Vector2(0, 0)
 	slot0.tf.anchorMin = Vector2(0, 0)
-	slot0.tf.anchoredPosition = Vector2((slot0.index - 1) * ((PLATFORM_CODE == PLATFORM_US and 340 or slot0.tf.sizeDelta.x) + 20) + slot1.x, slot1.y)
+	slot0.tf.anchoredPosition = Vector2((slot2 - 1) * (slot3 + slot4) + slot1.x, slot1.y)
 end
 
 function slot0.UpdatePositionForVec(slot0)
@@ -145,9 +162,7 @@ function slot0.Show(slot0)
 end
 
 function slot0.Hide(slot0)
-	if slot0.isLoaded then
-		setActive(slot0.tf, false)
-	end
+	setActive(slot0.tf, false)
 end
 
 function slot0.ShowOrHide(slot0, slot1)
@@ -183,6 +198,11 @@ function slot0.OnSwitchDone(slot0)
 end
 
 function slot0.OnDispose(slot0)
+end
+
+function slot0.setParent(slot0, slot1, slot2)
+	SetParent(slot0.tf, slot1)
+	slot0.tf:SetSiblingIndex(slot2)
 end
 
 return slot0

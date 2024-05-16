@@ -253,9 +253,7 @@ end
 
 function slot0.updateSkillTF(slot0, slot1, slot2)
 	slot4 = slot0.curMetaCharacterVO
-	slot6 = slot0:findTF("Skill/Level", slot1)
 	slot8 = slot0:findTF("Skill/Arrow", slot1)
-	slot9 = slot0:findTF("Lock", slot1)
 	slot10 = slot0:findTF("Learning", slot1)
 	slot11 = getSkillConfig(slot2)
 
@@ -263,8 +261,8 @@ function slot0.updateSkillTF(slot0, slot1, slot2)
 	setScrollText(slot0:findTF("Skill/Mask/Name", slot1), getSkillName(slot11.id))
 
 	if slot0.curShipVO:getMetaSkillLevelBySkillID(slot2) > 0 then
-		setText(slot6, "LEVEL: " .. slot12)
-		setActive(slot9, false)
+		setText(slot0:findTF("Skill/Level", slot1), "LEVEL: " .. slot12)
+		setActive(slot0:findTF("Lock", slot1), false)
 		onButton(slot0, slot1, function ()
 			if not isActive(uv0) then
 				eachChild(uv1.skillContainer, function (slot0)
@@ -284,10 +282,8 @@ function slot0.updateSkillTF(slot0, slot1, slot2)
 end
 
 function slot0.updateSkillTFLearning(slot0)
-	slot1 = slot0.curShipVO
-
 	for slot5, slot6 in pairs(slot0.skillBtnList) do
-		setActive(slot0:findTF("Learning", slot6), slot5 == slot0.curSkillID and not slot1:isSkillLevelMax(slot5))
+		setActive(slot0:findTF("Learning", slot6), slot5 == slot0.curSkillID and not slot0.curShipVO:isSkillLevelMax(slot5))
 	end
 end
 
@@ -296,9 +292,7 @@ function slot0.TryPlayGuide(slot0)
 end
 
 function slot0.updateExpPanel(slot0)
-	slot2 = slot0:isAllSkillMaxLevel()
-
-	if slot0:isAllSkillLock() or slot2 then
+	if slot0:isAllSkillLock() or slot0:isAllSkillMaxLevel() then
 		setActive(slot0.expPanel, false)
 	elseif slot0.curSkillID > 0 then
 		setActive(slot0.expPanel, true)
@@ -346,13 +340,11 @@ function slot0.updateTaskListPanel(slot0, slot1)
 	slot0.taskUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = uv0:findTF("Desc", slot2)
-			slot5 = uv0:findTF("Text", slot2)
-			slot9 = uv0:getTaskInfoBySkillAndTaskID(uv2, uv1[slot1 + 1][1]) and slot8.finishCount or 0
 
 			setText(uv0:findTF("AddExp", slot2), "+" .. slot6[3])
 
 			if slot6[2] == 0 then
-				setText(slot5, slot9 .. "/∞")
+				setText(uv0:findTF("Text", slot2), (uv0:getTaskInfoBySkillAndTaskID(uv2, uv1[slot1 + 1][1]) and slot8.finishCount or 0) .. "/∞")
 			else
 				setText(slot5, slot9 .. "/" .. slot11)
 			end
@@ -528,9 +520,7 @@ function slot0.getMetaSkillTacticsConfigBySkillID(slot0, slot1, slot2)
 end
 
 function slot0.getTaskInfoBySkillAndTaskID(slot0, slot1, slot2)
-	slot3 = slot0.taskInfoTable[slot1] or {}
-
-	for slot7, slot8 in ipairs(slot3) do
+	for slot7, slot8 in ipairs(slot0.taskInfoTable[slot1] or {}) do
 		if slot8.taskID == slot2 then
 			return slot8
 		end
@@ -569,9 +559,7 @@ function slot0.updateTacticsRedTag(slot0)
 	slot4 = false
 
 	for slot8, slot9 in ipairs(slot0:getSkillIDListForShow(slot1.configId)) do
-		slot11 = slot1:isSkillLevelMax(slot9)
-
-		if slot1:getMetaSkillLevelBySkillID(slot9) > 0 and not slot11 and slot0:getMetaSkillTacticsConfigBySkillID(slot9, slot10).need_exp <= (slot0.skillExpTable and slot0.skillExpTable[slot9] or 0) then
+		if slot1:getMetaSkillLevelBySkillID(slot9) > 0 and not slot1:isSkillLevelMax(slot9) and slot0:getMetaSkillTacticsConfigBySkillID(slot9, slot10).need_exp <= (slot0.skillExpTable and slot0.skillExpTable[slot9] or 0) then
 			slot4 = true
 
 			break

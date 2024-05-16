@@ -24,8 +24,7 @@ function slot0.OnLoaded(slot0)
 	slot0.statisticTpl = slot0:findTF("statistics/tpl")
 	slot0.shareBtn = slot0:findTF("btn_share")
 	slot0.attireBtn = slot0:findTF("btn_attire")
-	slot1 = slot0.attireBtn
-	slot0.attireBtnTip = slot1:Find("tip")
+	slot0.attireBtnTip = slot0.attireBtn:Find("tip")
 	slot0.inputField = slot0:findTF("greet/InputField")
 	slot0.writeBtn = slot0:findTF("greet/write_btn")
 	slot0.animPanels = {
@@ -48,12 +47,7 @@ function slot0.PreCalcAspect(slot0, slot1)
 end
 
 function slot0.MatchResolution(slot0)
-	print(slot0._parentTf.rect.height, slot0._tf.rect.height)
-
 	slot1 = uv0.PreCalcAspect(slot0._parentTf, slot0._tf.rect.height)
-
-	print(slot1)
-
 	slot0._tf.localScale = Vector3(slot1, slot1, 1)
 end
 
@@ -78,10 +72,7 @@ function slot0.OnInit(slot0)
 	onButton(slot0, slot0.attireBtn, function ()
 		uv0:emit(PlayerVitaeMediator.ON_ATTIRE)
 	end, SFX_PANEL)
-
-	slot4 = getProxy(AttireProxy)
-
-	setActive(slot0.attireBtnTip, _.any(slot4:needTip(), function (slot0)
+	setActive(slot0.attireBtnTip, _.any(getProxy(AttireProxy):needTip(), function (slot0)
 		return slot0 == true
 	end))
 	onInputEndEdit(slot0, slot0.inputField, function (slot0)
@@ -100,6 +91,7 @@ function slot0.OnInit(slot0)
 
 		uv0:emit(PlayerVitaeMediator.CHANGE_MANIFESTO, slot0)
 	end)
+	slot0._tf:SetAsFirstSibling()
 end
 
 function slot0.Show(slot0, slot1, slot2)
@@ -127,9 +119,6 @@ function slot0.DoEnterAnimation(slot0)
 end
 
 function slot0.UpdateMedals(slot0)
-	slot3 = 353
-	slot4 = 30
-
 	for slot8 = 1, math.min(5, #slot0.player.displayTrophyList) do
 		slot9 = slot8 == 1 and slot0.medalTpl or cloneTplTo(slot0.medalTpl, slot0.medalTpl.parent)
 
@@ -144,7 +133,7 @@ function slot0.UpdateMedals(slot0)
 			slot1:SetNativeSize()
 		end)
 
-		slot9.anchoredPosition = Vector2(slot3 - (slot8 - 1) * (slot4 + slot9.sizeDelta.x), slot9.anchoredPosition.y)
+		slot9.anchoredPosition = Vector2(353 - (slot8 - 1) * (30 + slot9.sizeDelta.x), slot9.anchoredPosition.y)
 	end
 
 	setActive(slot0.medalTpl, slot2 ~= 0)
@@ -192,13 +181,9 @@ function slot0.UpdateInfo(slot0)
 end
 
 function slot0.UpdateStatistics(slot0)
-	slot3 = Vector2(355, 25)
-	slot4 = slot0.statisticTpl.anchoredPosition
 	slot5 = slot0.statisticTpl.sizeDelta.x
 
 	for slot9 = 1, #slot0:GetDisplayStatisticsData(), 2 do
-		slot10 = slot4.y - (slot9 - 1) * slot3.y
-
 		for slot14 = 1, slot2 do
 			slot15 = slot14 == 1 and slot9 == 1 and slot0.statisticTpl or cloneTplTo(slot0.statisticTpl, slot0.statisticTpl.parent)
 			slot16 = slot1[slot9 + slot14 - 1]
@@ -206,7 +191,7 @@ function slot0.UpdateStatistics(slot0)
 			setText(slot15, i18n(slot16[1]))
 			setText(slot15:Find("value"), slot16[2])
 
-			slot15.anchoredPosition = Vector2(slot4.x + (slot14 - 1) * slot3.x, slot10)
+			slot15.anchoredPosition = Vector2(slot4.x + (slot14 - 1) * slot3.x, slot0.statisticTpl.anchoredPosition.y - (slot9 - 1) * Vector2(355, 25).y)
 		end
 	end
 end

@@ -102,9 +102,7 @@ function slot0.OnClickCommodity(slot0, slot1)
 		})
 	elseif slot2:getConfig("goods_type") == 1 then
 		if slot2:GetLimit() > 1 then
-			slot4 = slot0.multiWindow
-
-			slot4:ExecuteAction("Show", slot2, function (slot0)
+			slot0.multiWindow:ExecuteAction("Show", slot2, function (slot0)
 				if not uv0:CanPurchaseCnt(slot0) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 

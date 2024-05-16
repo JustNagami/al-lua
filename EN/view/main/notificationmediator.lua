@@ -7,10 +7,7 @@ slot0.BATTLE_CHAT_CLOSE = "NotificationMediator:BATTLE_CHAT_CLOSE"
 
 function slot0.register(slot0)
 	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getRawData())
-
-	slot4 = slot0.viewComponent
-
-	slot4:setInGuild(getProxy(GuildProxy):getRawData() ~= nil)
+	slot0.viewComponent:setInGuild(getProxy(GuildProxy):getRawData() ~= nil)
 	slot0.viewComponent:setMessages(slot0:getAllMessages())
 	slot0:bind(uv0.ON_SEND_PUBLIC, function (slot0, slot1, slot2)
 		if slot2 == "$ rndsec refresh" and Application.isEditor then
@@ -61,6 +58,8 @@ function slot0.register(slot0)
 					hideNo = true,
 					content = i18n("chat_msg_ban", os.date("%Y/%m/%d %H:%M:%S", slot4.chatMsgBanTime))
 				})
+			elseif PLATFORM_CODE == PLATFORM_CH and LuaHelper.GetCHPackageType() ~= PACKAGE_TYPE_BILI and slot4.level < 70 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("chat_level_not_enough", 70))
 			elseif slot4.level < 10 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("chat_level_not_enough", 10))
 			elseif slot8 - slot7 < 10 then
@@ -146,9 +145,7 @@ function slot0.handleNotification(slot0, slot1)
 			table.insert(slot0.viewComponent.filteredMessages, slot3)
 			slot0.viewComponent:append(slot3, -1, true)
 		elseif slot3.player and slot3.player.id == slot6.id then
-			slot8 = slot0.viewComponent.recvTypes
-
-			slot8:each(function (slot0, slot1)
+			slot0.viewComponent.recvTypes:each(function (slot0, slot1)
 				if ChatConst.RecvChannels[slot0 + 1] == uv0.type then
 					triggerButton(slot1)
 				end

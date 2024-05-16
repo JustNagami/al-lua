@@ -37,7 +37,6 @@ end
 function slot0.EnableDragAndZoom(slot0)
 	slot0.isEnableDrag = true
 	slot1 = slot0.parentTF.gameObject
-	slot2 = slot0.zoom
 	slot3 = slot0.event
 	slot4 = Vector3(0, 0, 0)
 
@@ -79,7 +78,7 @@ function slot0.EnableDragAndZoom(slot0)
 	end)
 
 	if not slot0:IslimitYPos() then
-		slot2.enabled = true
+		slot0.zoom.enabled = true
 	end
 
 	slot3.enabled = true

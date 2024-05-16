@@ -19,16 +19,12 @@ function slot0.execute(slot0, slot1)
 			return
 		end
 
-		slot1 = pg.ConnectionMgr.GetInstance()
-
-		slot1:Send(61013, {
+		pg.ConnectionMgr.GetInstance():Send(61013, {
 			fleet = slot0
 		}, 61014, function (slot0)
 			if slot0.result == 0 then
-				slot4 = getProxy(GuildProxy):getData():GetActiveEvent():GetBossMission()
-
 				for slot8, slot9 in pairs(uv0) do
-					slot4:UpdateFleet(slot9)
+					getProxy(GuildProxy):getData():GetActiveEvent():GetBossMission():UpdateFleet(slot9)
 				end
 
 				slot1:updateGuild(slot2)
@@ -66,11 +62,9 @@ function slot0.execute(slot0, slot1)
 end
 
 function slot0.WarpData(slot0, slot1)
-	slot2 = {}
-
 	for slot7, slot8 in ipairs(slot1:GetShipIds()) do
 		if slot1:ExistMember(slot8.uid) then
-			table.insert(slot2, {
+			table.insert({}, {
 				user_id = slot8.uid,
 				ship_id = slot8.id
 			})

@@ -76,10 +76,7 @@ function slot0.LoadChar(slot0, slot1)
 	end
 
 	slot0:ClearChar()
-
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetSpineChar("takegift_" .. slot1, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar("takegift_" .. slot1, true, function (slot0)
 		slot0.transform:SetParent(uv0.role.gameObject.transform.parent)
 
 		slot0.transform.localScale = Vector3(0.8, 0.8, 0)

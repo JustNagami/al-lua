@@ -39,10 +39,7 @@ function slot0.Show(slot0, slot1, slot2, slot3)
 end
 
 function slot0.LoadSculpture(slot0, slot1)
-	slot2 = slot0.activity
-	slot4 = PoolMgr.GetInstance()
-
-	slot4:GetSpineChar("gift_" .. slot2:GetResorceName(slot0.id), true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar("gift_" .. slot0.activity:GetResorceName(slot0.id), true, function (slot0)
 		slot0.transform:SetParent(uv0.container)
 
 		slot0.transform.localScale = Vector3.one

@@ -357,13 +357,8 @@ function slot0.endRound(slot0, slot1)
 end
 
 function slot0.playManjuuAni(slot0, slot1)
-	slot5 = slot0.manjuuAnimator
-
-	slot5:Play(uv0[(slot0:findTF("cup_" .. slot0.selectIndex, slot0.cupContainer).anchoredPosition.x + 480) / 480 + 1])
-
-	slot5 = slot0.manjuuDft
-
-	slot5:SetEndEvent(function ()
+	slot0.manjuuAnimator:Play(uv0[(slot0:findTF("cup_" .. slot0.selectIndex, slot0.cupContainer).anchoredPosition.x + 480) / 480 + 1])
+	slot0.manjuuDft:SetEndEvent(function ()
 		uv0.manjuuDft:SetEndEvent(nil)
 		setActive(uv0:findTF("select", uv5), false)
 		uv0.manjuuAnimator:Play(uv1 and uv2[uv3] or uv4[uv3])
@@ -378,32 +373,16 @@ function slot0.playResultAni(slot0, slot1)
 	setActive(slot0.result, true)
 
 	if slot1 then
-		slot3 = pg.CriMgr.GetInstance()
-
-		slot3:PlaySoundEffect_V3(uv0)
-
-		slot3 = slot0.resultAnimator
-
-		slot3:Play(uv1)
-
-		slot3 = slot0.resultDft
-
-		slot3:SetEndEvent(function ()
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+		slot0.resultAnimator:Play(uv1)
+		slot0.resultDft:SetEndEvent(function ()
 			uv0.resultDft:SetEndEvent(nil)
 			uv0:showCorrectBar()
 		end)
 	else
-		slot3 = pg.CriMgr.GetInstance()
-
-		slot3:PlaySoundEffect_V3(uv2)
-
-		slot4 = slot0.resultAnimator
-
-		slot4:Play(uv3[math.random(#uv3)])
-
-		slot4 = slot0.resultDft
-
-		slot4:SetEndEvent(function ()
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv2)
+		slot0.resultAnimator:Play(uv3[math.random(#uv3)])
+		slot0.resultDft:SetEndEvent(function ()
 			uv0.resultDft:SetEndEvent(nil)
 			uv0:endGame()
 		end)
@@ -458,14 +437,8 @@ function slot0.playTimeOutAni(slot0)
 	setLocalScale(slot0.result, Vector3.one)
 	setLocalPosition(slot0.result, Vector3.zero)
 	setActive(slot0.result, true)
-
-	slot2 = slot0.resultAnimator
-
-	slot2:Play(uv0)
-
-	slot2 = slot0.resultDft
-
-	slot2:SetEndEvent(function ()
+	slot0.resultAnimator:Play(uv0)
+	slot0.resultDft:SetEndEvent(function ()
 		uv0.resultDft:SetEndEvent(nil)
 	end)
 end

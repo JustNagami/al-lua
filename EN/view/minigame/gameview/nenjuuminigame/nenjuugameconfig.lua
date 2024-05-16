@@ -780,14 +780,13 @@ return {
 		slot1 = {
 			high = slot0[1] or 0,
 			count = slot0[2] or 0,
-			item = slot0[3] and uv0.ITEM_LIST[slot0[3]] or nil
+			item = slot0[3] and uv0.ITEM_LIST[slot0[3]] or nil,
+			["stage_" .. slot5] = slot0[slot5 + 3] or 0,
+			level = {}
 		}
 
 		for slot5 = 1, 7 do
-			slot1["stage_" .. slot5] = slot0[slot5 + 3] or 0
 		end
-
-		slot1.level = {}
 
 		for slot5, slot6 in ipairs({
 			"bomb",

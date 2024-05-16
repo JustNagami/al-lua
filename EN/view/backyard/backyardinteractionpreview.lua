@@ -27,10 +27,7 @@ end
 
 function slot0.StartLoad(slot0, slot1, slot2)
 	slot0:UnloadSpines()
-
-	slot3 = pg.UIMgr.GetInstance()
-
-	slot3:LoadingOn()
+	pg.UIMgr.GetInstance():LoadingOn()
 	seriesAsync({
 		function (slot0)
 			uv0:LoadFurniture(uv1, slot0)
@@ -47,9 +44,7 @@ function slot0.StartLoad(slot0, slot1, slot2)
 end
 
 function slot0.LoadShip(slot0, slot1, slot2)
-	slot4 = pg.PoolMgr.GetInstance()
-
-	slot4:GetSpineChar(pg.ship_skin_template[slot1].prefab, true, function (slot0)
+	pg.PoolMgr.GetInstance():GetSpineChar(pg.ship_skin_template[slot1].prefab, true, function (slot0)
 		if uv0.loadedAnimator then
 			setParent(slot0, uv0.loadedAnimator)
 		else
@@ -82,9 +77,7 @@ function slot0.LoadFurniture(slot0, slot1, slot2)
 
 	seriesAsync({
 		function (slot0)
-			slot1 = uv0
-
-			slot1:LoadRes("sfurniture/" .. uv1, function (slot0)
+			uv0:LoadRes("sfurniture/" .. uv1, function (slot0)
 				setParent(slot0, uv0.container)
 
 				uv0.loadedFurniture = slot0
@@ -100,9 +93,7 @@ function slot0.LoadFurniture(slot0, slot1, slot2)
 				return
 			end
 
-			slot1 = uv1
-
-			slot1:LoadRes("sfurniture/" .. uv0, function (slot0)
+			uv1:LoadRes("sfurniture/" .. uv0, function (slot0)
 				setActive(slot0, false)
 				setParent(slot0, uv0.loadedFurniture)
 
@@ -118,9 +109,7 @@ function slot0.LoadFurniture(slot0, slot1, slot2)
 				return
 			end
 
-			slot1 = uv1
-
-			slot1:LoadRes("sfurniture/" .. uv0, function (slot0)
+			uv1:LoadRes("sfurniture/" .. uv0, function (slot0)
 				setParent(slot0, uv0.container)
 
 				uv0.loadedFurnitureMask = slot0
@@ -200,7 +189,7 @@ function slot0.StartActions(slot0, slot1, slot2, slot3)
 		end
 	end
 
-	(function (slot0)
+	function (slot0)
 		if slot0 > #uv0 then
 			if uv1.loadedAnimator then
 				setActive(uv1.loadedAnimator, false)
@@ -220,7 +209,7 @@ function slot0.StartActions(slot0, slot1, slot2, slot3)
 		end
 
 		uv1:PlayAction(uv1.loadedShip, slot2, uv3)
-	end)(1)
+	end(1)
 
 	if slot0.loadedAnimator then
 		setActive(slot0.loadedAnimator, true)
@@ -277,9 +266,7 @@ function slot0.Dispose(slot0)
 end
 
 function slot0.LoadRes(slot0, slot1, slot2)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync(slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync(slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		uv0(Instantiate(slot0))
 	end), true, true)
 end

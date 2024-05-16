@@ -60,11 +60,7 @@ function slot0.GetDropList(slot0)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(slot1) do
-		table.insert(slot2, {
-			type = slot7[1],
-			id = slot7[2],
-			count = slot7[3]
-		})
+		table.insert(slot2, Drop.Create(slot7))
 	end
 
 	return slot2
@@ -73,26 +69,18 @@ end
 function slot0.GetExtraServiceItem(slot0)
 	slot1 = {}
 	slot1 = (not slot0:isPassItem() or PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot0:getConfig("sub_display")[1]].drop_client_pay, function (slot0)
-		return {
-			type = slot0[1],
-			id = slot0[2],
-			count = slot0[3]
-		}
+		return Drop.Create(slot0)
 	end))) and underscore.map(slot0:getConfig("extra_service_item"), function (slot0)
-		return {
-			type = slot0[1],
-			id = slot0[2],
-			count = slot0[3]
-		}
+		return Drop.Create(slot0)
 	end)
 	slot2 = slot0:GetGemCnt()
 
 	if not slot0:isMonthCard() and slot2 > 0 then
-		table.insert(slot1, {
-			id = 4,
-			type = 1,
+		table.insert(slot1, Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = PlayerConst.ResDiamond,
 			count = slot2
-		})
+		}))
 	end
 
 	return slot1
@@ -134,11 +122,11 @@ function slot0.GetExtraDrop(slot0)
 		slot2 = slot0:getConfig("sub_display")
 		slot3 = slot2[1]
 		slot4 = pg.battlepass_event_pt[slot3].pt
-		slot1 = {
+		slot1 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = pg.battlepass_event_pt[slot3].pt,
 			count = slot2[2]
-		}
+		})
 	end
 
 	return slot1
@@ -210,10 +198,9 @@ end
 
 function slot0.getSameGroupTecShipGift(slot0)
 	slot1 = {}
-	slot2 = slot0:getConfig("limit_group")
 
 	for slot7, slot8 in ipairs(slot0:bindConfigTable().all) do
-		if slot3[slot8].limit_type == Goods.Tec_Ship_Gift_Type and slot9.limit_group == slot2 then
+		if slot3[slot8].limit_type == Goods.Tec_Ship_Gift_Type and slot9.limit_group == slot0:getConfig("limit_group") then
 			table.insert(slot1, Goods.Create({
 				shop_id = slot8
 			}, Goods.TYPE_CHARGE))
@@ -239,7 +226,7 @@ function slot0.GetSkinProbability(slot0)
 	slot1 = {}
 
 	if slot0:CanViewSkinProbability() then
-		slot1 = pg.item_data_statistics[slot0:getConfig("skin_inquire_relation")].combination_display
+		slot1 = Item.getConfigData(slot0:getConfig("skin_inquire_relation")).combination_display
 	end
 
 	return slot1
@@ -259,17 +246,15 @@ end
 
 function slot0.GetDropItem(slot0)
 	if #slot0:getConfig("drop_item") > 0 then
-		return slot1[1]
+		return slot1
 	else
 		assert(false, "should exist drop item")
 	end
 end
 
 function slot0.GetLimitDesc(slot0)
-	slot2 = slot0.buyCount or 0
-
 	if slot0:getLimitCount() > 0 then
-		return i18n("charge_limit_all", slot1 - slot2, slot1)
+		return i18n("charge_limit_all", slot1 - (slot0.buyCount or 0), slot1)
 	end
 
 	if slot0:getConfig("group_limit") > 0 then
@@ -277,6 +262,8 @@ function slot0.GetLimitDesc(slot0)
 			return i18n("charge_limit_daily", slot3 - slot0.groupCount, slot3)
 		elseif slot4 == 2 then
 			return i18n("charge_limit_weekly", slot3 - slot0.groupCount, slot3)
+		elseif slot4 == 3 then
+			return i18n("charge_limit_monthly", slot3 - slot0.groupCount, slot3)
 		end
 	end
 

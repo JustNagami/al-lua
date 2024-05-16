@@ -77,17 +77,14 @@ function slot1.Send(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 		return
 	end
 
-	slot5 = defaultValue(slot5, true)
 	slot6 = defaultValue(slot6, true)
-	slot7 = defaultValue(slot7, SEND_TIMEOUT)
-	slot9 = slot0:getPacketIdx()
 
 	if slot3 ~= nil then
 		uv0.UIMgr.GetInstance():LoadingOn()
 
 		slot10 = nil
 
-		uv1[slot5 and slot3 .. "_" .. slot9 or slot3] = function (slot0)
+		uv1[defaultValue(slot5, true) and slot3 .. "_" .. slot0:getPacketIdx() or slot3] = function (slot0)
 			uv0.isSending = false
 
 			uv1.UIMgr.GetInstance():LoadingOff()
@@ -128,7 +125,7 @@ function slot1.Send(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 			uv3.retryCount = uv3.retryCount + 1
 
 			uv3:StartSend()
-		end, slot7, 1)
+		end, defaultValue(slot7, SEND_TIMEOUT), 1)
 
 		slot0.timer:Start()
 	else
@@ -137,7 +134,7 @@ function slot1.Send(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 
 	slot10 = uv0.Packer.GetInstance():GetProtocolWithName("cs_" .. slot1)
 
-	(function (slot0, slot1)
+	function (slot0, slot1)
 		for slot5, slot6 in pairs(slot1) do
 			assert(slot0[slot5] ~= nil, "key does not exist: " .. slot5)
 
@@ -153,7 +150,7 @@ function slot1.Send(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 				slot0[slot5] = slot6
 			end
 		end
-	end)(slot10:GetMessage(), slot2)
+	end(slot10:GetMessage(), slot2)
 
 	if slot5 then
 		slot8:Send(uv0.Packer.GetInstance():Pack(slot9, slot10:GetId(), slot12))
@@ -186,12 +183,10 @@ end
 function slot1.onData(slot0)
 	originalPrint("Network Receive idx: " .. slot0.idx .. " cmd: " .. slot0.cmd)
 
-	slot1 = uv0.Packer.GetInstance():Unpack(slot0.cmd, slot0:getLuaStringBuffer())
-
 	if uv1[slot0.cmd .. "_" .. slot0.idx] then
 		uv1[slot2] = nil
 
-		uv1[slot2](slot1)
+		uv1[slot2](uv0.Packer.GetInstance():Unpack(slot0.cmd, slot0:getLuaStringBuffer()))
 	elseif uv1[slot0.cmd] then
 		uv1[slot0.cmd] = nil
 

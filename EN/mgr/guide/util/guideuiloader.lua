@@ -10,7 +10,7 @@ function slot0.Load(slot0, slot1, slot2)
 end
 
 function slot0.LoadHighLightArea(slot0, slot1)
-	slot0:Load("wShowArea", function (slot0)
+	slot0:Load(slot1.isWorld and "wShowArea" or "wShowArea1", function (slot0)
 		if not uv0 then
 			return
 		end
@@ -22,9 +22,7 @@ function slot0.LoadHighLightArea(slot0, slot1)
 end
 
 function slot0.LoadRes(slot0, slot1, slot2)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("guideitem/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("guideitem/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if IsNil(slot0) then
 			return
 		end

@@ -9,9 +9,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		activity_id = slot3.id,
 		cmd = slot2.cmd,
 		arg1 = slot2.cmd == ActivityConst.WORLDINPICTURE_OP_DRAW and slot2.index or slot2.arg1,

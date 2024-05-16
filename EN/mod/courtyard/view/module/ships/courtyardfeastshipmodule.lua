@@ -3,8 +3,7 @@ slot0 = class("CourtYardFeastShipModule", import(".CourtYardShipModule"))
 function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
-	slot1 = slot0._tf
-	slot0.feastAttachments = slot1:Find("feastAttachments")
+	slot0.feastAttachments = slot0._tf:Find("feastAttachments")
 	slot0.bubbles = {
 		slot0._tf:Find("feastAttachments/greet"),
 		slot0._tf:Find("feastAttachments/drink"),
@@ -34,13 +33,10 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.InitMark(slot0)
-	slot3 = slot0.data
-
-	setActive(slot0.specialMark, slot3:IsSpecial())
+	setActive(slot0.specialMark, slot0.data:IsSpecial())
 	slot0:OnFeastBubbleChange(slot0.data.bubble)
 
-	slot1 = slot0.bubbles[1]
-	slot1:GetComponent(typeof(Image)).raycastTarget = true
+	slot0.bubbles[1]:GetComponent(typeof(Image)).raycastTarget = true
 
 	onButton(slot0, slot0.bubbles[1], function ()
 		triggerButton(uv0.clickTF)
@@ -71,11 +67,7 @@ function slot0.OnFeastShipShowExpress(slot0, slot1)
 end
 
 function slot0.PlayExpressAnim(slot0, slot1, slot2, slot3)
-	slot4 = LeanTween.scale(go(slot1), defaultValue(slot2, Vector3(1, 1, 1)), 0.5)
-	slot4 = slot4:setEase(LeanTweenType.easeOutBack)
-	slot4 = slot4:setDelay(defaultValue(slot3, 0))
-
-	slot4:setOnComplete(System.Action(function ()
+	LeanTween.scale(go(slot1), defaultValue(slot2, Vector3(1, 1, 1)), 0.5):setEase(LeanTweenType.easeOutBack):setDelay(defaultValue(slot3, 0)):setOnComplete(System.Action(function ()
 		uv0:PlayExpressAnim(uv1, Vector3(0, 0, 0), 2)
 	end))
 end
@@ -83,10 +75,7 @@ end
 function slot0.ClearChatAnimation(slot0)
 	uv0.super.ClearChatAnimation(slot0)
 
-	slot1 = ipairs
-	slot2 = slot0.expressList or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in ipairs(slot0.expressList or {}) do
 		if LeanTween.isTweening(slot5.gameObject) then
 			LeanTween.cancel(slot5.gameObject)
 		end
@@ -124,7 +113,7 @@ slot1 = {
 }
 
 function slot0.OnFeastShipBubbleInterAction(slot0, slot1)
-	slot2 = _courtyard:GetView().poolMgr
+	slot2 = slot0:GetView().poolMgr
 	slot5 = slot2["Get" .. (uv0[slot1] or uv0[1]) .. "Pool"](slot2):Dequeue()
 
 	slot5.transform:SetParent(slot0._tf, false)
@@ -178,10 +167,8 @@ end
 
 function slot0.OnDestroy(slot0)
 	slot0.cg.blocksRaycasts = true
-	slot1 = ipairs
-	slot2 = slot0.timers or {}
 
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in ipairs(slot0.timers or {}) do
 		slot5:Stop()
 	end
 

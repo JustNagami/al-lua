@@ -21,15 +21,15 @@ function slot0.execute(slot0, slot1)
 	slot7 = getProxy(PlayerProxy):getData()
 
 	if slot5.type == DROP_TYPE_ITEM then
-		for slot14, slot15 in pairs(pg.item_data_statistics[slot5.effect_args[1]].display_icon) do
-			if slot15[1] == 1 then
-				if slot15[2] == 1 and slot7:GoldMax(slot15[3]) then
+		for slot13, slot14 in pairs(Item.getConfigData(slot5.effect_args[1]).display_icon) do
+			if slot14[1] == 1 then
+				if slot14[2] == 1 and slot7:GoldMax(slot14[3]) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 					return
 				end
 
-				if slot15[2] == 2 and slot7:OilMax(slot15[3]) then
+				if slot14[2] == 2 and slot7:OilMax(slot14[3]) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 					return
@@ -62,13 +62,12 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot9 = getProxy(ShopsProxy):getShopStreet()
 	slot10 = false
 	slot12 = getProxy(NavalAcademyProxy)
 
 	if slot5.resource_num == -1 then
 		if slot5.effect_args == ShopArgs.EffectShopStreetLevel then
-			slot11 = pg.navalacademy_shoppingstreet_template[slot9.level].lv_up_cost[2] * slot4
+			slot11 = pg.navalacademy_shoppingstreet_template[getProxy(ShopsProxy):getShopStreet().level].lv_up_cost[2] * slot4
 		elseif switch(slot5.effect_args, {
 			[ShopArgs.EffectTradingPortLevel] = function ()
 				return uv0._goldVO
@@ -82,13 +81,9 @@ function slot0.execute(slot0, slot1)
 		}) then
 			slot11 = slot13:bindConfigTable()[slot13:GetLevel()].use[2] * slot4
 		end
-	else
-		slot11 = slot5.resource_num * slot4
-
-		if slot9 and slot5.genre == ShopArgs.ShoppingStreetLimit then
-			slot10 = true
-			slot11 = math.ceil(slot9:getGoodsById(slot3).discount / 100 * slot11)
-		end
+	elseif slot9 and slot5.genre == ShopArgs.ShoppingStreetLimit then
+		slot10 = true
+		slot11 = math.ceil(slot9:getGoodsById(slot3).discount / 100 * slot5.resource_num * slot4)
 	end
 
 	if slot5.limit_args then
@@ -106,7 +101,10 @@ function slot0.execute(slot0, slot1)
 	end
 
 	if slot7[id2res(slot5.resource_type)] < slot11 then
-		slot13 = pg.item_data_statistics[id2ItemId(slot5.resource_type)].name
+		slot13 = Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot5.resource_type
+		}):getName()
 
 		if slot5.resource_type == 1 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
@@ -130,7 +128,7 @@ function slot0.execute(slot0, slot1)
 	table.insert(slot13, function (slot0)
 		if uv0.genre == ShopArgs.GiftPackage or uv0.genre == ShopArgs.NewServerShop then
 			slot3, slot4 = CheckOverflow(GetItemsOverflowDic({
-				Item.New({
+				Drop.New({
 					count = 1,
 					type = DROP_TYPE_ITEM,
 					id = uv0.effect_args[1]
@@ -138,7 +136,20 @@ function slot0.execute(slot0, slot1)
 			}))
 
 			if not slot3 then
-				pg.TipsMgr.GetInstance():ShowTips(slot4)
+				switch(slot4, {
+					gold = function ()
+						pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
+					end,
+					oil = function ()
+						pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
+					end,
+					equip = function ()
+						NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), openDestroyEquip, gotoChargeScene)
+					end,
+					ship = function ()
+						NoPosMsgBox(i18n("switch_to_shop_tip_noDockyard"), openDockyardClear, gotoChargeScene, openDockyardIntensify)
+					end
+				})
 
 				return
 			end
@@ -156,9 +167,7 @@ function slot0.execute(slot0, slot1)
 		slot0()
 	end)
 	seriesAsync(slot13, function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(16001, {
+		pg.ConnectionMgr.GetInstance():Send(16001, {
 			id = uv0,
 			number = uv1
 		}, 16002, function (slot0)

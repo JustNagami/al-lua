@@ -152,9 +152,8 @@ function slot0.init(slot0)
 	slot0.contextData.multiWindow = ShopMultiWindow.New(slot0._tf, slot0.event)
 	slot0.contextData.singleWindowForESkin = EquipmentSkinInfoUIForShopWindow.New(slot0._tf, slot0.event)
 	slot0.contextData.paintingView = ShopPaintingView.New(slot0:findTF("paint/paint"), slot0:findTF("frame/chat"))
-	slot2 = slot0.contextData.paintingView
 
-	slot2:setSecretaryPos(slot0:findTF("paint/secretaryPos"))
+	slot0.contextData.paintingView:setSecretaryPos(slot0:findTF("paint/secretaryPos"))
 
 	slot0.contextData.bgView = ShopBgView.New(slot0:findTF("bg"))
 	slot0.recorder = {
@@ -195,7 +194,7 @@ function slot0.didEnter(slot0)
 	slot0:InitEntrances()
 	slot0:BlurView()
 
-	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, 5, slot0.pageContainer, Vector2.New(-35, -90))
+	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, slot0.pageContainer, Vector2.New(-35, -90))
 end
 
 function slot0.InitEntrances(slot0)
@@ -269,11 +268,11 @@ function slot0.UpdateCategory(slot0, slot1, slot2, slot3)
 
 		uv2:ActiveDefaultShop()
 	end, SFX_PANEL)
-	(function (slot0, slot1)
+	function (slot0, slot1)
 		setActive(slot0:Find("lock"), uv0)
 		setActive(slot0:Find("label"), not uv0 and not slot1)
 		setActive(slot0:Find("selected"), not uv0 and slot1)
-	end)(slot1, false)
+	end(slot1, false)
 	setToggleEnabled(slot1, not slot3)
 end
 
@@ -287,10 +286,7 @@ function slot0.InitShops(slot0, slot1)
 	slot0.prevBtn = nil
 
 	for slot7, slot8 in pairs(uv0[slot1]) do
-		slot9 = ipairs
-		slot10 = slot0.shops[slot8] or {}
-
-		for slot12, slot13 in slot9(slot10) do
+		for slot12, slot13 in ipairs(slot0.shops[slot8] or {}) do
 			table.insert(slot3, {
 				type = slot8,
 				index = slot12
@@ -385,10 +381,7 @@ function slot0.ActiveDefaultCategory(slot0)
 	slot2 = slot0.contextData.index or 1
 
 	if slot1 == uv0.TYPE_ACTIVITY and slot0.contextData.actId then
-		slot3 = ipairs
-		slot4 = slot0.shops[slot1] or {}
-
-		for slot6, slot7 in slot3(slot4) do
+		for slot6, slot7 in ipairs(slot0.shops[slot1] or {}) do
 			if slot7.activityId == slot0.contextData.actId then
 				slot2 = slot6
 
@@ -430,24 +423,20 @@ function slot0.ActiveDefaultShop(slot0)
 		slot1 = slot0.shopType
 	end
 
-	function slot3()
-		slot0 = nil
-
-		for slot4, slot5 in pairs(uv0.displayShops) do
-			for slot9, slot10 in pairs(slot5) do
-				if uv0.pages[slot4]:CanOpen(nil, uv0.player) then
-					slot0 = slot0 or slot10
+	if not slot1 then
+		function ()
+			for slot4, slot5 in pairs(uv0.displayShops) do
+				for slot9, slot10 in pairs(slot5) do
+					if uv0.pages[slot4]:CanOpen(nil, uv0.player) then
+						slot0 = nil or slot10
+					end
 				end
 			end
-		end
 
-		if slot0 then
-			triggerButton(slot0)
-		end
-	end
-
-	if not slot1 then
-		slot3()
+			if slot0 then
+				triggerButton(slot0)
+			end
+		end()
 
 		return
 	end

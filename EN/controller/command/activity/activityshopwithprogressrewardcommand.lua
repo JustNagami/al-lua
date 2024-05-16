@@ -34,9 +34,7 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		activity_id = slot2.activity_id,
 		cmd = slot2.cmd,
 		arg1 = slot2.arg1,
@@ -88,7 +86,7 @@ function slot0.getAwards(slot0, slot1, slot2)
 		slot6 = nil
 
 		for slot10, slot11 in ipairs(slot4) do
-			if (function ()
+			if function ()
 				for slot3, slot4 in ipairs(uv0) do
 					if uv1.id == slot4.id then
 						uv0[slot3].count = uv0[slot3].count + uv1.count
@@ -98,7 +96,7 @@ function slot0.getAwards(slot0, slot1, slot2)
 				end
 
 				return true
-			end)() then
+			end() then
 				table.insert(slot5, slot11)
 			end
 		end

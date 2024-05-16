@@ -105,17 +105,12 @@ function slot0.GetBeziersPoints(slot0, slot1, slot2, slot3)
 end
 
 function slot0.GetOreIDWithWeight(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0) do
-		slot1 = slot1 + slot6[2]
+		slot1 = 0 + slot6[2]
 	end
 
-	slot2 = math.random() * slot1
-	slot3 = 0
-
 	for slot7, slot8 in ipairs(slot0) do
-		if slot2 <= slot3 + slot8[2] then
+		if math.random() * slot1 <= 0 + slot8[2] then
 			return slot8[1]
 		end
 	end

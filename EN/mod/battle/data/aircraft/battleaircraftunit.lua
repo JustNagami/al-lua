@@ -89,13 +89,13 @@ function slot6.EnterGCD(slot0)
 end
 
 function slot6.CreateWeapon(slot0)
-	slot1 = {}
-
 	for slot5, slot6 in ipairs(slot0._tmpData.weapon_ID) do
-		slot1[slot5] = uv0.Battle.BattleDataFunction.CreateAirFighterWeaponUnit(slot6, slot0, slot5, slot0._weaponPotential)
+		-- Nothing
 	end
 
-	return slot1
+	return {
+		[slot5] = uv0.Battle.BattleDataFunction.CreateAirFighterWeaponUnit(slot6, slot0, slot5, slot0._weaponPotential)
+	}
 end
 
 function slot6.ShutdownWeapon(slot0)
@@ -176,6 +176,8 @@ function slot6.UpdateHP(slot0, slot1, slot2)
 	if slot0._currentHP <= 0 and slot0:IsAlive() then
 		slot0:onDead()
 	end
+
+	return slot1
 end
 
 function slot6.onDead(slot0)
@@ -488,10 +490,9 @@ end
 
 function slot6.InitCldComponent(slot0)
 	slot1 = slot0:GetTemplate().cld_box
-	slot3 = slot0:GetTemplate().cld_offset[1]
 
 	if slot0:GetDirection() == uv0.Battle.BattleConst.UnitDir.LEFT then
-		slot3 = slot3 * -1
+		slot3 = slot0:GetTemplate().cld_offset[1] * -1
 	end
 
 	slot0._cldComponent = uv0.Battle.BattleCubeCldComponent.New(slot1[1], slot1[2], slot1[3], slot3, slot2[3])

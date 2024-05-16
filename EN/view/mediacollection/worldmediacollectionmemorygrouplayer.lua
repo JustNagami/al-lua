@@ -222,10 +222,9 @@ end
 
 function slot0.SwitchReddotMemory(slot0)
 	slot1 = 0
-	slot2 = getProxy(PlayerProxy):getRawData().id
 
 	for slot6, slot7 in ipairs(slot0.memoryGroups) do
-		if PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. slot2 .. " " .. slot7.id, 0) == 1 then
+		if PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. getProxy(PlayerProxy):getRawData().id .. " " .. slot7.id, 0) == 1 then
 			slot1 = slot6
 
 			break

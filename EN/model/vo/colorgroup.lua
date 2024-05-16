@@ -53,10 +53,8 @@ function slot0.getFill(slot0, slot1, slot2)
 end
 
 function slot0.setFill(slot0, slot1, slot2, slot3)
-	slot4 = slot1 .. "_" .. slot2
-
 	if slot3 == 0 then
-		slot0.fills[slot4] = nil
+		slot0.fills[slot1 .. "_" .. slot2] = nil
 	else
 		slot0.fills[slot4] = ColorCell.New(slot1, slot2, slot3)
 	end
@@ -101,18 +99,13 @@ function slot0.canBeCustomised(slot0)
 end
 
 function slot0.GetAABB(slot0)
-	slot1 = 1000
-	slot2 = 1000
-	slot3 = 0
-	slot4 = 0
-
 	assert(next(slot0.cells), "Get AABB from empty List")
 
 	for slot8, slot9 in pairs(slot0.cells) do
-		slot1 = math.min(slot1, slot9.column)
-		slot2 = math.min(slot2, slot9.row)
-		slot3 = math.max(slot3, slot9.column)
-		slot4 = math.max(slot4, slot9.row)
+		slot1 = math.min(1000, slot9.column)
+		slot2 = math.min(1000, slot9.row)
+		slot3 = math.max(0, slot9.column)
+		slot4 = math.max(0, slot9.row)
 	end
 
 	return Vector2(slot1, slot2), Vector2(slot3, slot4)
@@ -137,10 +130,6 @@ function slot0.HasItem2Fill(slot0, slot1)
 end
 
 function slot0.HasEnoughItem2FillAll(slot0, slot1)
-	slot2 = _.map(slot0:getConfig("color_id_list"), function (slot0)
-		return uv0[slot0] or 0
-	end)
-
 	_.each(slot0:getConfig("cells"), function (slot0)
 		slot3 = slot0[3]
 
@@ -152,7 +141,9 @@ function slot0.HasEnoughItem2FillAll(slot0, slot1)
 	slot4 = true
 
 	for slot8, slot9 in pairs({}) do
-		if slot9 > (slot2[slot8] or 0) then
+		if slot9 > (_.map(slot0:getConfig("color_id_list"), function (slot0)
+			return uv0[slot0] or 0
+		end)[slot8] or 0) then
 			slot4 = false
 
 			break

@@ -5,13 +5,12 @@ function slot0.execute(slot0, slot1)
 	slot8 = {}
 
 	for slot12 = 1, math.ceil(math.max(#slot2.deleteList, #slot2.addList) / 300) do
-		slot13 = {}
 		slot14 = {}
 		slot15 = (slot12 - 1) * slot5 + 1
 
 		for slot19 = slot15, slot15 + slot5 - 1 do
 			if slot19 <= #slot3 then
-				table.insert(slot13, slot3[slot19])
+				table.insert({}, slot3[slot19])
 			end
 
 			if slot19 <= #slot4 then
@@ -38,18 +37,18 @@ function slot0.execute(slot0, slot1)
 end
 
 function slot0.Send(slot0, slot1, slot2, slot3)
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(12208, {
+	pg.ConnectionMgr.GetInstance():Send(12208, {
 		add_list = slot1,
 		del_list = slot2
 	}, 12209, function (slot0)
 		if slot0.result == 0 then
 			slot2 = getProxy(PlayerProxy):getRawData():GetCustomRandomShipList()
-			slot3 = {}
+			slot3 = {
+				[slot8] = true
+			}
 
 			for slot7, slot8 in ipairs(uv0) do
-				slot3[slot8] = true
+				-- Nothing
 			end
 
 			for slot7 = #slot2, 1, -1 do

@@ -4,10 +4,7 @@ slot0.CREATE = "NewGuildMediator:CREATE"
 slot0.OPEN_PUBLIC_GUILD = "NewGuildMediator:OPEN_PUBLIC_GUILD"
 
 function slot0.register(slot0)
-	slot1 = getProxy(PlayerProxy)
-	slot3 = slot0.viewComponent
-
-	slot3:setPlayer(slot1:getData())
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 	slot0:bind(uv0.OPEN_PUBLIC_GUILD, function (slot0)
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.PUBLIC_GUILD)
 	end)

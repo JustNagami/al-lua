@@ -17,11 +17,10 @@ function slot0.IsTip(slot0)
 		return false
 	end
 
-	slot2 = pg.TimeMgr.GetInstance():GetServerTime()
 	slot3 = nil
 
 	for slot7, slot8 in pairs(slot1) do
-		slot9 = slot8:getFinishTime() - slot2
+		slot9 = slot8:getFinishTime() - pg.TimeMgr.GetInstance():GetServerTime()
 
 		if not slot3 or slot9 < slot3 then
 			slot3 = slot9

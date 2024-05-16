@@ -1,8 +1,9 @@
 slot0 = class("CourtYardDragAgent", import(".CourtYardAgent"))
 
-function slot0.Ctor(slot0, slot1)
+function slot0.Ctor(slot0, slot1, slot2)
 	uv0.super.Ctor(slot0, slot1)
 
+	slot0.rect = slot2
 	slot0.trigger = GetOrAddComponent(slot0._tf, "EventTriggerListener")
 	slot0.dragging = false
 
@@ -14,9 +15,7 @@ function slot0.Enable(slot0, slot1)
 end
 
 function slot0.RegisterEvent(slot0)
-	slot1 = slot0.trigger
-
-	slot1:AddBeginDragFunc(function (slot0, slot1)
+	slot0.trigger:AddBeginDragFunc(function (slot0, slot1)
 		if not uv0:CanDrag(slot0) then
 			return
 		end
@@ -25,22 +24,16 @@ function slot0.RegisterEvent(slot0)
 
 		uv0:OnBeginDrag()
 	end)
-
-	slot1 = slot0.trigger
-
-	slot1:AddDragFunc(function (slot0, slot1)
+	slot0.trigger:AddDragFunc(function (slot0, slot1)
 		if uv0.dragging and uv0._go == slot0 then
-			uv0:OnDragging(CourtYardCalcUtil.Local2Map(CourtYardCalcUtil.Screen2Local(_courtyard:GetView():GetRect(), slot1.position)))
+			uv0:OnDragging(CourtYardCalcUtil.Local2Map(CourtYardCalcUtil.Screen2Local(uv0.rect, slot1.position)))
 		end
 	end)
-
-	slot1 = slot0.trigger
-
-	slot1:AddDragEndFunc(function (slot0, slot1)
+	slot0.trigger:AddDragEndFunc(function (slot0, slot1)
 		if uv0.dragging and slot0 == uv0._go then
 			uv0.dragging = false
 
-			uv0:OnDragEnd(CourtYardCalcUtil.Local2Map(CourtYardCalcUtil.Screen2Local(_courtyard:GetView():GetRect(), slot1.position)))
+			uv0:OnDragEnd(CourtYardCalcUtil.Local2Map(CourtYardCalcUtil.Screen2Local(uv0.rect, slot1.position)))
 		end
 	end)
 end

@@ -40,10 +40,8 @@ function slot1.shiftWeapon(slot0, slot1)
 	end
 
 	for slot12 = 1, slot7 do
-		slot13 = slot1:AddWeapon(slot0._attachID, slot3, slot4, slot5, slot6)
-
 		if slot8[slot12] then
-			slot13:SetModifyInitialCD()
+			slot1:AddWeapon(slot0._attachID, slot3, slot4, slot5, slot6):SetModifyInitialCD()
 		end
 	end
 end

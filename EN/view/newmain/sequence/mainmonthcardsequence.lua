@@ -7,9 +7,7 @@ function slot0.Execute(slot0, slot1)
 		return
 	end
 
-	slot4 = MonthCardOutDateTipPanel.GetMonthCardTipDate()
-
-	if pg.TimeMgr.GetInstance():GetServerTime() >= slot2 - 259200 and slot4 < slot2 - 259200 then
+	if pg.TimeMgr.GetInstance():GetServerTime() >= slot2 - 259200 and MonthCardOutDateTipPanel.GetMonthCardTipDate() < slot2 - 259200 then
 		slot0:ShowMsg(slot2, slot3, slot1)
 	else
 		slot1()

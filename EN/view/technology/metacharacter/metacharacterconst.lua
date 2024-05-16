@@ -216,10 +216,8 @@ function slot0.isMetaMainEntRedPoint()
 end
 
 function slot0.isMetaBannerRedPoint(slot0)
-	slot1 = uv0.isMetaTacticsRedTag(slot0) or uv0.isMetaSynRedTag(slot0)
-
 	if getProxy(BayProxy):getMetaShipByGroupId(slot0) then
-		slot1 = slot1 or getProxy(MetaCharacterProxy):getMetaTacticsInfoByShipID(slot2.id):getTacticsStateForShow() == MetaTacticsInfo.States.LearnAble
+		slot1 = uv0.isMetaTacticsRedTag(slot0) or uv0.isMetaSynRedTag(slot0) or getProxy(MetaCharacterProxy):getMetaTacticsInfoByShipID(slot2.id):getTacticsStateForShow() == MetaTacticsInfo.States.LearnAble
 	elseif getProxy(MetaCharacterProxy):getMetaProgressVOByID(slot0):isPtType() then
 		slot1 = slot1 or slot3.metaPtData:CanGetAward()
 	end
@@ -273,7 +271,7 @@ function slot0.addReMetaTransItem(slot0, slot1)
 
 		if not slot1 then
 			for slot6, slot7 in ipairs(slot2) do
-				pg.m02:sendNotification(GAME.ADD_ITEM, Item.New({
+				pg.m02:sendNotification(GAME.ADD_ITEM, Drop.New({
 					type = slot7.type,
 					id = slot7.id,
 					count = slot7.count
@@ -281,7 +279,7 @@ function slot0.addReMetaTransItem(slot0, slot1)
 			end
 		end
 
-		return Item.New({
+		return Drop.New({
 			type = slot2[1].type,
 			id = slot2[1].id,
 			count = slot2[1].count
@@ -348,29 +346,25 @@ function slot0.filteMetaByType(slot0, slot1)
 		return true
 	end
 
-	function slot2(slot0)
-		slot1 = nil
-
-		for slot5 = 1, 4 do
-			if pg.ship_data_template[slot0 * 10 + slot5] then
-				slot1 = slot6
-			end
-
-			break
-		end
-
-		return pg.ship_data_statistics[slot1].type
-	end
-
-	function slot3(slot0)
-		return TeamType.GetTeamFromShipType(slot0)
-	end
-
 	for slot7 = 2, #ShipIndexCfg.type do
 		if bit.band(bit.lshift(1, slot7 - 2), slot1) > 0 then
 			if slot7 < 4 then
-				slot9 = slot2(slot0.id)
-				slot10 = slot3(slot9)
+				slot9 = function (slot0)
+					slot1 = nil
+
+					for slot5 = 1, 4 do
+						if pg.ship_data_template[slot0 * 10 + slot5] then
+							slot1 = slot6
+						end
+
+						break
+					end
+
+					return pg.ship_data_statistics[slot1].type
+				end(slot0.id)
+				slot10 = function (slot0)
+					return TeamType.GetTeamFromShipType(slot0)
+				end(slot9)
 				slot12 = ShipIndexCfg.type[slot7].types
 
 				if table.contains(ShipIndexCfg.type[slot7].shipTypes, slot9) then
@@ -394,22 +388,20 @@ function slot0.filteMetaByRarity(slot0, slot1)
 		return true
 	end
 
-	function slot2(slot0)
-		slot1 = nil
+	for slot6 = 2, #ShipIndexCfg.rarity do
+		if bit.band(bit.lshift(1, slot6 - 2), slot1) > 0 and table.contains(ShipIndexCfg.rarity[slot6].types, function (slot0)
+			slot1 = nil
 
-		for slot5 = 1, 4 do
-			if pg.ship_data_template[slot0 * 10 + slot5] then
-				slot1 = slot6
+			for slot5 = 1, 4 do
+				if pg.ship_data_template[slot0 * 10 + slot5] then
+					slot1 = slot6
+				end
+
+				break
 			end
 
-			break
-		end
-
-		return pg.ship_data_statistics[slot1].rarity
-	end
-
-	for slot6 = 2, #ShipIndexCfg.rarity do
-		if bit.band(bit.lshift(1, slot6 - 2), slot1) > 0 and table.contains(ShipIndexCfg.rarity[slot6].types, slot2(slot0.id)) then
+			return pg.ship_data_statistics[slot1].rarity
+		end(slot0.id)) then
 			return true
 		end
 	end

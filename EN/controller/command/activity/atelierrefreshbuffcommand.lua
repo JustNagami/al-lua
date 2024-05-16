@@ -1,8 +1,7 @@
 slot0 = class("AtelierRefreshBuffCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = getProxy(ActivityProxy)
-	slot3 = slot3:getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+	slot3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
 	assert(slot3)
 	table.Foreach(slot1.body, function (slot0, slot1)
@@ -16,10 +15,7 @@ function slot0.execute(slot0, slot1)
 			itemnum = slot1[2]
 		})
 	end)
-
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(26055, {
+	pg.ConnectionMgr.GetInstance():Send(26055, {
 		act_id = slot3.id,
 		slots = {}
 	}, 26056, function (slot0)

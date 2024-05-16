@@ -76,10 +76,8 @@ function slot0.Ctor(slot0, slot1, slot2)
 		uv0._event:emit(BeachGuardGameView.READY_START)
 	end, slot7)
 
-	slot3 = findTF(slot0.menuUI, "tplBattleItem")
-
 	for slot7 = 1, 7 do
-		slot8 = tf(instantiate(slot3))
+		slot8 = tf(instantiate(findTF(slot0.menuUI, "tplBattleItem")))
 		slot8.name = "battleItem_" .. slot7
 
 		setParent(slot8, findTF(slot0.menuUI, "battList/Viewport/Content"))
@@ -173,13 +171,12 @@ function slot0.selectPlayer(slot0, slot1)
 end
 
 function slot0.showSkillPanel(slot0, slot1)
-	slot3 = i18n(slot1.skill_1_desc)
 	slot4 = i18n(slot1.skill_2)
 	slot5 = i18n(slot1.skill_2_desc)
 
 	if i18n(slot1.skill_1) then
 		setText(findTF(slot0.skillDetailPanel, "ad/skill1Bg/skill1Name"), slot2)
-		setText(findTF(slot0.skillDetailPanel, "ad/skill1Desc"), slot3)
+		setText(findTF(slot0.skillDetailPanel, "ad/skill1Desc"), i18n(slot1.skill_1_desc))
 		setActive(findTF(slot0.skillDetailPanel, "ad/skill1Desc"), true)
 		setActive(findTF(slot0.skillDetailPanel, "ad/skill1Bg"), true)
 	else

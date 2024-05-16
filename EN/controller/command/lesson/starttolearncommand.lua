@@ -1,9 +1,7 @@
 slot0 = class("StartToLearnCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(22002, {
+	pg.ConnectionMgr.GetInstance():Send(22002, {
 		students = slot1:getBody().students
 	}, 22003, function (slot0)
 		if slot0.result == 0 then

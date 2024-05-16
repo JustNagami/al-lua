@@ -32,9 +32,7 @@ end
 
 function slot0.initActivityPools(slot0)
 	slot0.activityPools = {}
-	slot1 = slot0.activityVO
-	slot1 = slot1:getConfig("config_data")
-	slot3 = nil
+	slot1 = slot0.activityVO:getConfig("config_data")
 
 	for slot7, slot8 in ipairs(_.select(uv0.all, function (slot0)
 		return table.contains(uv0, slot0)
@@ -42,7 +40,7 @@ function slot0.initActivityPools(slot0)
 		slot9 = ActivityItemPool.New({
 			id = slot8,
 			awards = slot0.awardInfos[slot8],
-			prevId = slot3,
+			prevId = nil,
 			index = slot7
 		})
 		slot3 = slot8
@@ -90,7 +88,10 @@ function slot0.didEnter(slot0)
 		slot0.launchTenBtn,
 		slot0.launchMaxBtn
 	}) do
-		GetImageSpriteFromAtlasAsync(pg.item_data_statistics[id2ItemId(slot0.resId)].icon, "", slot7:Find("res/icon"), true)
+		GetImageSpriteFromAtlasAsync(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot0.resId
+		}):getIcon(), "", slot7:Find("res/icon"), true)
 		onButton(slot0, slot7, function ()
 			if not uv0.activityPool then
 				return
@@ -183,8 +184,7 @@ function slot0.initPoolTFs(slot0)
 	slot0.activityPoolTFs = {}
 
 	for slot4, slot5 in pairs(slot0.activityPools) do
-		slot6 = slot0.lotteryPoolContainer
-		slot6 = slot6:GetChild(slot5.index - 1)
+		slot6 = slot0.lotteryPoolContainer:GetChild(slot5.index - 1)
 		slot0.activityPoolTFs[slot5.id] = slot6
 
 		onToggle(slot0, slot6, function (slot0)
@@ -302,7 +302,7 @@ function slot0.updateDrop(slot0, slot1, slot2, slot3, slot4)
 		updateDrop(slot3, slot5)
 		setText(slot3:Find("count"), slot5.surplus .. "/" .. slot5.total)
 		setActive(slot3:Find("mask"), slot5.surplus <= 0)
-		setScrollText(findTF(slot3, "name_mask/name"), slot5.name or slot5.cfg.name)
+		setScrollText(findTF(slot3, "name_mask/name"), slot5.name or slot5:getConfig("name"))
 	end
 end
 

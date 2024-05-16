@@ -103,23 +103,19 @@ function slot0.OnPrepare(slot0, slot1)
 			slot0()
 		end,
 		function (slot0)
-			slot2 = uv0.model
-			uv0.item = slot2:AddHeadPile()
+			uv0.item = uv0.model:AddHeadPile()
 			uv0.item.position = Vector3(0, -uv0.model.screen.y / 2, 0)
-			slot1 = uv0.view
 
-			slot1:AddPile(uv0.item, true, function ()
+			uv0.view:AddPile(uv0.item, true, function ()
 				uv0.view:OnItemPositionChange(uv0.item)
 				uv1()
 			end)
 		end,
 		function (slot0)
-			slot3 = uv0.model
-			uv0.item = slot3:AddPileByRandom()
+			uv0.item = uv0.model:AddPileByRandom()
 			uv0.item.position = Vector3(0, -uv0.model.screen.y / 2 + uv0.item.sizeDelta.y, 0)
-			slot2 = uv0.view
 
-			slot2:AddPile(uv0.item, false, function ()
+			uv0.view:AddPile(uv0.item, false, function ()
 				uv0.view:OnItemPositionChange(uv0.item)
 				uv1()
 			end)
@@ -128,19 +124,17 @@ function slot0.OnPrepare(slot0, slot1)
 end
 
 function slot0.OnStartGame(slot0, slot1)
-	function slot2()
-		uv0.state = uv1.STATE_SINK_DONE
-		uv0.item = uv0.model:AddPileByRandom()
-
-		uv0.view:AddPile(uv0.item, false, function ()
-			uv0.state = uv1.STATE_START
-		end)
-	end
-
 	if slot0.model:ShouldSink() then
 		slot0.state = uv0.STATE_SINK
 
-		slot0:DoSink(slot2)
+		slot0:DoSink(function ()
+			uv0.state = uv1.STATE_SINK_DONE
+			uv0.item = uv0.model:AddPileByRandom()
+
+			uv0.view:AddPile(uv0.item, false, function ()
+				uv0.state = uv1.STATE_START
+			end)
+		end)
 	else
 		slot2()
 	end
@@ -241,16 +235,14 @@ function slot0.CheckRock(slot0)
 end
 
 function slot0.DoShake(slot0)
-	slot1 = Time.deltaTime * PileGameConst.SHAKE_SPEED
 	slot2 = slot0.shakePositions[1][1].position
 
 	for slot6, slot7 in ipairs(slot0.shakePositions) do
 		slot8 = slot7[1]
-		slot11 = Vector3(slot7[2], slot8.position.y, 0)
 		slot12 = Vector3(slot7[3], slot8.position.y, 0)
 
 		if slot8.onTheMove == true then
-			slot8.position = Vector3.MoveTowards(slot8.position, slot11, slot1)
+			slot8.position = Vector3.MoveTowards(slot8.position, Vector3(slot7[2], slot8.position.y, 0), Time.deltaTime * PileGameConst.SHAKE_SPEED)
 		else
 			slot8.position = Vector3.MoveTowards(slot8.position, slot12, slot1)
 		end
@@ -270,10 +262,8 @@ function slot0.DoShake(slot0)
 end
 
 function slot0.DoSink(slot0, slot1)
-	slot2 = {}
-
 	for slot6 = 1, #slot0.model.items do
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			slot2 = uv0.model.items[uv1]
 			slot2.position = uv0.model:GetNextPos(uv1)
 
@@ -295,12 +285,10 @@ function slot0.DoSink(slot0, slot1)
 end
 
 function slot0.Shuffling(slot0)
-	slot1 = Time.deltaTime * slot0.item.speed
 	slot2 = slot0.item.leftMaxPosition
-	slot3 = slot0.item.rightMaxPosition
 
 	if slot0.item.onTheMove == false then
-		slot0.item.position = Vector3.MoveTowards(slot0.item.position, slot3, slot1)
+		slot0.item.position = Vector3.MoveTowards(slot0.item.position, slot0.item.rightMaxPosition, Time.deltaTime * slot0.item.speed)
 	else
 		slot0.item.position = Vector3.MoveTowards(slot0.item.position, slot2, slot1)
 	end
@@ -337,10 +325,9 @@ function slot0.Droping(slot0)
 end
 
 function slot0.CheckCollide(slot0)
-	slot1 = slot0.model:IsOnGround(slot0.item)
 	slot3 = slot0.model:IsOverDeathLine(slot0.item)
 
-	if slot0.model:GetIndex() == 1 and slot1 then
+	if slot0.model:GetIndex() == 1 and slot0.model:IsOnGround(slot0.item) then
 		slot0:OnStartGame(true)
 	elseif not slot2 and slot1 then
 		slot0.model:AddFailedCnt()

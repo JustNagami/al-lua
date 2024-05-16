@@ -4,10 +4,9 @@ function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.shipId
 	slot4 = slot2.pos
-	slot6 = getProxy(EquipmentProxy)
 
 	if slot2.equipmentSkinId and slot5 ~= 0 then
-		slot7 = slot6:getEquipmnentSkinById(slot5)
+		slot7 = getProxy(EquipmentProxy):getEquipmnentSkinById(slot5)
 
 		assert(slot7, "不存在该外观" .. slot5)
 
@@ -24,9 +23,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
-
-	slot9:Send(12036, {
+	pg.ConnectionMgr.GetInstance():Send(12036, {
 		ship_id = slot3,
 		equip_skin_id = slot5,
 		pos = slot4

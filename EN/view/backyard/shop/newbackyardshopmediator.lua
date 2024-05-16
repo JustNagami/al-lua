@@ -23,9 +23,7 @@ function slot0.register(slot0)
 				wrap = ChargeScene.TYPE_DIAMOND
 			})
 		elseif slot1 == PlayerConst.ResDormMoney then
-			uv0:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
-				wrap = ChargeScene.TYPE_GIFT
-			})
+			uv0:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
 		end
 	end)
 	slot0.viewComponent:SetDorm(getProxy(DormProxy):getRawData())
@@ -47,11 +45,10 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
 	slot4 = slot1:getType()
 
 	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:PlayerUpdated(slot3)
+		slot0.viewComponent:PlayerUpdated(slot1:getBody())
 	elseif slot2 == GAME.BUY_FURNITURE_DONE then
 		slot0.viewComponent:FurnituresUpdated(slot4)
 	elseif slot2 == DormProxy.DORM_UPDATEED then

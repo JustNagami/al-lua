@@ -191,8 +191,7 @@ function slot0.initTags(slot0)
 end
 
 function slot0.initDesigns(slot0)
-	slot1 = slot0.designScrollView
-	slot0.scollRect = slot1:GetComponent("LScrollRect")
+	slot0.scollRect = slot0.designScrollView:GetComponent("LScrollRect")
 	slot0.scollRect.decelerationRate = 0.07
 
 	function slot0.scollRect.onInitItem(slot0)

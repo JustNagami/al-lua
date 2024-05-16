@@ -126,13 +126,12 @@ function slot0.GetGameAward(slot0, slot1, slot2, slot3)
 	end
 
 	slot5 = LaunchBallActivityMgr.GetRoundCount(slot0)
-	slot6 = LaunchBallActivityMgr.GetActivityDay(slot0)
 	slot7 = LaunchBallActivityMgr.GetRoundCountMax(slot0)
 	slot8 = slot4.data2
 	slot9 = LaunchBallActivityMgr.GetGameScores(slot0)
 
 	if slot1 == LaunchBallGameConst.round_type_juqing then
-		if slot6 <= slot5 then
+		if LaunchBallActivityMgr.GetActivityDay(slot0) <= slot5 then
 			print("活动天数不足")
 
 			return
@@ -170,10 +169,8 @@ function slot0.GetGameAward(slot0, slot1, slot2, slot3)
 			return
 		end
 
-		slot10 = false
-
 		for slot14 = 1, #slot9 do
-			if not slot10 and slot9[slot14][1] <= slot3 and slot8 < slot9[slot14][1] then
+			if not false and slot9[slot14][1] <= slot3 and slot8 < slot9[slot14][1] then
 				slot10 = true
 			end
 		end

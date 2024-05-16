@@ -25,7 +25,7 @@ function slot0.execute(slot0, slot1)
 		end
 
 		table.insert(slot7, {
-			shipId = 0,
+			shipId = 1,
 			id = tostring(slot12.configId),
 			x = slot12.x,
 			y = slot12.y,
@@ -35,9 +35,7 @@ function slot0.execute(slot0, slot1)
 		})
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
-
-	slot9:Send(19109, {
+	pg.ConnectionMgr.GetInstance():Send(19109, {
 		pos = slot2.id,
 		name = slot2.name,
 		furniture_put_list = slot7,

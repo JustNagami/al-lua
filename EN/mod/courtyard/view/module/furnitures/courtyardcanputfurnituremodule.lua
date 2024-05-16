@@ -92,9 +92,7 @@ function slot0.RefreshDepth(slot0)
 end
 
 function slot0.BlocksRaycasts(slot0, slot1)
-	slot3 = #slot0.data:GetUsingSlots() > 0 or table.getCount(slot0.childModules) > 0
-
-	if (slot0.data:CanClickWhenExitEditMode() or slot3) and slot1 == false then
+	if (slot0.data:CanClickWhenExitEditMode() or (#slot0.data:GetUsingSlots() > 0 or table.getCount(slot0.childModules) > 0)) and slot1 == false then
 		return
 	end
 

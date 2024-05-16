@@ -90,10 +90,7 @@ end
 
 function slot0.updateValue(slot0)
 	setText(slot0.valueText, slot0.count)
-
-	slot1 = slot0.ulist
-
-	slot1:each(function (slot0, slot1)
+	slot0.ulist:each(function (slot0, slot1)
 		setText(slot1:Find("item/bg/icon_bg/count"), uv0.count)
 	end)
 end
@@ -122,14 +119,14 @@ function slot0.update(slot0, slot1)
 
 			onToggle(uv1, slot2, function (slot0)
 				if slot0 then
-					uv0.selectedVO = uv1:getTempCfgTable().usage_arg[uv2 + 1]
+					uv0.selectedVO = uv1:getConfig("usage_arg")[uv2 + 1]
 
 					setText(uv3, uv0.count * uv4[3])
 
 					uv0.selectedItem = uv5
 				end
 			end, SFX_PANEL)
-			setScrollText(slot2:Find("name_bg/Text"), slot4.cfg.name)
+			setScrollText(slot2:Find("name_bg/Text"), slot4:getConfig("name"))
 		end
 	end)
 	slot0.ulist:align(#slot1:getConfig("display_icon"))

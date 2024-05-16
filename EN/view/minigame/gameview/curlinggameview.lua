@@ -381,15 +381,13 @@ function slot49(slot0, slot1, slot2)
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv1)
 
 			slot3 = 0
-			slot4 = Vector2(1, 0)
-			slot5 = Vector2(slot0.rigbody.velocity.x, slot0.rigbody.velocity.y)
 
 			if slot1.collider.gameObject.name == "wall" then
-				slot5:Mul(uv2.wall)
+				Vector2(slot0.rigbody.velocity.x, slot0.rigbody.velocity.y):Mul(uv2.wall)
 
 				slot3 = uv3.wall
 
-				slot4:Mul(uv4.wall)
+				Vector2(1, 0):Mul(uv4.wall)
 			elseif slot2 == "oil" then
 				slot5:Mul(uv2.oil)
 
@@ -813,9 +811,7 @@ function slot0.initEvent(slot0)
 			uv1:addScore(uv2[slot1.result])
 		end
 
-		slot3 = uv1
-
-		slot3:obsFadeOut()
+		uv1:obsFadeOut()
 		onDelayTick(function ()
 			uv0:nextRoundGame()
 		end, uv3)
@@ -886,11 +882,10 @@ function slot0.initUI(slot0)
 		scrollTo(uv0.listScrollRect, 0, slot0)
 	end, SFX_PANEL)
 
-	slot2 = slot0:findTF("item_tpl", slot0.mainUI)
 	slot0.itemList = {}
 
 	for slot7 = 1, #pg.mini_game[slot0:GetMGData().id].simple_config_data.drop do
-		slot8 = tf(instantiate(slot2))
+		slot8 = tf(instantiate(slot0:findTF("item_tpl", slot0.mainUI)))
 		slot8.name = "item_" .. slot7
 
 		setParent(slot8, slot0:findTF("item_list/Viewport/Content", slot0.mainUI))
@@ -915,14 +910,10 @@ function slot0.initUI(slot0)
 	slot0.countUI = slot0:findTF("ui/count_ui")
 	slot0.countAnimator = GetComponent(slot0:findTF("count", slot0.countUI), typeof(Animator))
 	slot0.countDft = GetOrAddComponent(slot0:findTF("count", slot0.countUI), typeof(DftAniEvent))
-	slot4 = slot0.countDft
 
-	slot4:SetTriggerEvent(function ()
+	slot0.countDft:SetTriggerEvent(function ()
 	end)
-
-	slot4 = slot0.countDft
-
-	slot4:SetEndEvent(function ()
+	slot0.countDft:SetEndEvent(function ()
 		setActive(uv0.countUI, false)
 		uv0:startGame()
 	end)
@@ -999,14 +990,13 @@ function slot0.initController(slot0)
 end
 
 function slot0.updateMainUI(slot0)
-	slot1 = slot0:getGameUsedTimes()
 	slot2 = slot0:getGameTimes()
 
 	for slot6 = 1, #slot0.itemList do
 		setActive(slot0:findTF("lock", slot0.itemList[slot6]), false)
 		setActive(slot0:findTF("finish", slot0.itemList[slot6]), false)
 
-		if slot6 <= slot1 then
+		if slot6 <= slot0:getGameUsedTimes() then
 			setActive(slot0:findTF("finish", slot0.itemList[slot6]), true)
 		elseif slot6 == slot1 + 1 and slot2 >= 1 then
 			-- Nothing
@@ -1124,20 +1114,18 @@ function slot0.staticObsStart(slot0)
 			}
 		end
 
-		function slot5(slot0)
-			for slot4, slot5 in ipairs(uv0) do
-				if slot0 == slot5 then
-					return true
-				end
-			end
-
-			return false
-		end
-
 		slot6 = {}
 
 		for slot10, slot11 in ipairs(slot0.grids) do
-			if not slot5(slot10) then
+			if not function (slot0)
+				for slot4, slot5 in ipairs(uv0) do
+					if slot0 == slot5 then
+						return true
+					end
+				end
+
+				return false
+			end(slot10) then
 				table.insert(slot6, slot11)
 			end
 		end
@@ -1206,11 +1194,9 @@ function slot0.staticObsStart(slot0)
 end
 
 function slot0.obsFadeOut(slot0)
-	slot1 = slot0:managedTween(LeanTween.value, function ()
+	slot0:managedTween(LeanTween.value, function ()
 		setActive(uv0.obsTF, false)
-	end, go(slot0.obsTF), 1, 0, 0.5)
-
-	slot1:setOnUpdate(System.Action_float(function (slot0)
+	end, go(slot0.obsTF), 1, 0, 0.5):setOnUpdate(System.Action_float(function (slot0)
 		uv0.obsCanvas.alpha = slot0
 	end))
 end
@@ -1256,10 +1242,8 @@ function slot0.updateGameUI(slot0)
 end
 
 function slot0.addScore(slot0, slot1, slot2)
-	slot3 = cloneTplTo(slot0:findTF("score_tf", slot0.gameUI), slot0.scoreGroup)
-
 	if slot2 then
-		setLocalPosition(slot3, slot2)
+		setLocalPosition(cloneTplTo(slot0:findTF("score_tf", slot0.gameUI), slot0.scoreGroup), slot2)
 	else
 		setLocalPosition(slot3, Vector2(432, 144))
 	end

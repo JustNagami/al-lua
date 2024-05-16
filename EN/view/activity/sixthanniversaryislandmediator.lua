@@ -10,33 +10,16 @@ slot0.DISPLAY_NODES = "SixthAnniversaryIslandMediator.DISPLAY_NODES"
 slot0.DISPLAY_SHOP = "SixthAnniversaryIslandMediator.DISPLAY_SHOP"
 
 function slot0.register(slot0)
-	slot1 = getProxy(ActivityProxy)
-	slot2 = slot0.viewComponent
+	slot0.viewComponent:setActivity(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND))
+	slot0.viewComponent:setNodeIds(getProxy(IslandProxy):GetNodeIds())
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 
-	slot2:setActivity(slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND))
+	slot2 = getProxy(ActivityProxy):getActivityById(ActivityConst.ISLAND_GAME_ID):getConfig("config_id")
 
-	slot2 = slot0.viewComponent
-	slot4 = getProxy(IslandProxy)
-
-	slot2:setNodeIds(slot4:GetNodeIds())
-
-	slot2 = slot0.viewComponent
-	slot4 = getProxy(PlayerProxy)
-
-	slot2:setPlayer(slot4:getData())
-
-	slot2 = getProxy(ActivityProxy)
-	slot2 = slot2:getActivityById(ActivityConst.ISLAND_GAME_ID)
-	slot2 = slot2:getConfig("config_id")
-	slot3 = slot0.viewComponent
-	slot6 = getProxy(ActivityProxy)
-	slot6 = slot6:getActivityById(ActivityConst.ISLAND_GAME_ID)
-	slot6 = getProxy(MiniGameProxy)
-
-	slot3:setResDrop({
+	slot0.viewComponent:setResDrop({
 		type = 2,
-		id = slot6:getConfig("config_client").item_id,
-		count = slot6:GetHubByHubId(slot2).count
+		id = getProxy(ActivityProxy):getActivityById(ActivityConst.ISLAND_GAME_ID):getConfig("config_client").item_id,
+		count = getProxy(MiniGameProxy):GetHubByHubId(slot2).count
 	}, pg.mini_game_hub[slot2].reborn_times)
 	slot0:bind(uv0.TRIGGER_NODE_EVENT, function (slot0, slot1, slot2)
 		uv0:sendNotification(GAME.ISLAND_EVENT_TRIGGER, {
@@ -134,9 +117,7 @@ function slot0.initNotificationHandleDic(slot0)
 			slot0.viewComponent:refreshNode(slot1:getBody().node_id)
 		end,
 		[GAME.ZERO_HOUR_OP_DONE] = function (slot0, slot1)
-			slot2 = getProxy(IslandProxy)
-
-			slot2:CheckAndRequest(function ()
+			getProxy(IslandProxy):CheckAndRequest(function ()
 				uv0.viewComponent.nodeItemList:align(#uv0.viewComponent.ids)
 				uv0.viewComponent:refreshDailyPanel()
 			end)

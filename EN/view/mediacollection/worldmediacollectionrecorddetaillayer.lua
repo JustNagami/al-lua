@@ -103,10 +103,7 @@ function slot0.PlayMemory(slot0, slot1)
 		end
 
 		setActive(slot0.memoryMask, true)
-
-		slot3 = pg.NewStoryMgr.GetInstance()
-
-		slot3:Play(slot1.story, function ()
+		pg.NewStoryMgr.GetInstance():Play(slot1.story, function ()
 			setActive(uv0.memoryMask, false)
 		end, true)
 	end

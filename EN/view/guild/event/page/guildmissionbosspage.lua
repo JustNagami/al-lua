@@ -184,16 +184,12 @@ function slot0.InitRanks(slot0)
 end
 
 function slot0.UpdateRank(slot0)
-	slot1 = getProxy(GuildProxy)
-	slot1 = slot1:GetBossRank()
+	slot1 = getProxy(GuildProxy):GetBossRank()
 
 	table.sort(slot1, function (slot0, slot1)
 		return slot1.damage < slot0.damage
 	end)
-
-	slot2 = slot0.rankList
-
-	slot2:make(function (slot0, slot1, slot2)
+	slot0.rankList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = uv0[slot1 + 1]
 
@@ -202,10 +198,7 @@ function slot0.UpdateRank(slot0)
 			setText(slot2:Find("Text"), slot3.damage)
 		end
 	end)
-
-	slot2 = slot0.rankList
-
-	slot2:align(math.min(3, #slot1))
+	slot0.rankList:align(math.min(3, #slot1))
 	onButton(slot0, slot0.viewAllBtn, function ()
 		uv0.allRankPage:ExecuteAction("Show", uv1)
 	end, SFX_PANEL)

@@ -5,8 +5,7 @@ slot0.OPEN_CHUANWU = "NewYearHotSpringMediator:Open chuanwu"
 
 function slot0.register(slot0)
 	slot0:bind(uv0.UNLOCK_SLOT, function (slot0, slot1)
-		slot2 = uv0.activity
-		slot2, slot3 = slot2:GetUpgradeCost()
+		slot2, slot3 = uv0.activity:GetUpgradeCost()
 
 		MsgboxMediator.ShowMsgBox({
 			type = MSGBOX_TYPE_NORMAL,
@@ -35,12 +34,10 @@ function slot0.register(slot0)
 		uv0:OnSelShips(slot1, slot2)
 	end)
 
-	slot1 = getProxy(ActivityProxy)
-	slot1 = slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING)
+	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING)
 	slot0.activity = slot1
-	slot2 = slot0.viewComponent
 
-	slot2:SetActivity(slot1)
+	slot0.viewComponent:SetActivity(slot1)
 	slot0:bind(uv0.OPEN_INFO, function ()
 		uv0:addSubLayers(Context.New({
 			mediator = NewYearHotSpringShipSelectMediator,
@@ -84,11 +81,10 @@ function slot0.OnSelShips(slot0, slot1, slot2)
 end
 
 function slot0.GetSelectedShipIds(slot0, slot1)
-	slot2 = slot1 and slot1.id or -1
 	slot3 = {}
 
 	for slot7, slot8 in ipairs(slot0.activity:GetShipIds()) do
-		if slot8 > 0 and getProxy(BayProxy):RawGetShipById(slot8) and slot9.id ~= slot2 then
+		if slot8 > 0 and getProxy(BayProxy):RawGetShipById(slot8) and slot9.id ~= (slot1 and slot1.id or -1) then
 			table.insert(slot3, slot9.id)
 		end
 	end
@@ -105,11 +101,9 @@ function slot0.OnShip(slot0, slot1, slot2, slot3)
 end
 
 function slot0.OnSelected(slot0, slot1, slot2, slot3)
-	slot5 = slot0.activity
-	slot4 = Clone(slot5:GetShipIds())
-	slot7 = slot0.activity
+	slot4 = Clone(slot0.activity:GetShipIds())
 
-	_.each(_.range(slot7:GetSlotCount()), function (slot0)
+	_.each(_.range(slot0.activity:GetSlotCount()), function (slot0)
 		uv0[slot0] = uv0[slot0] or 0
 	end)
 
@@ -160,8 +154,7 @@ function slot0.OnSelected(slot0, slot1, slot2, slot3)
 		end)
 	end
 
-	slot7 = slot0.activity
-	slot7 = slot7:GetShipIds()
+	slot7 = slot0.activity:GetShipIds()
 
 	table.Foreach(slot4, function (slot0, slot1)
 		if (uv0[slot0] or 0) ~= slot1 then

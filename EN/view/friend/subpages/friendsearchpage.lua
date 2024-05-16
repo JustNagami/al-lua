@@ -75,9 +75,7 @@ function slot0.initAddPage(slot0)
 
 	setText(slot0:findTF("self_id_bg/Text", slot0.searchPanel), slot0.playerVO.id)
 
-	slot1 = slot0.addPanel
-	slot1 = slot1:Find("mask/view")
-	slot0.addRect = slot1:GetComponent("LScrollRect")
+	slot0.addRect = slot0.addPanel:Find("mask/view"):GetComponent("LScrollRect")
 
 	function slot0.addRect.onInitItem(slot0)
 		uv0:onInitItem(slot0)
@@ -121,10 +119,7 @@ function slot0.onUpdateItem(slot0, slot1, slot2)
 end
 
 function slot0.OnDestroy(slot0)
-	slot1 = pairs
-	slot2 = slot0.searchItems or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.searchItems or {}) do
 		slot5:dispose()
 	end
 end

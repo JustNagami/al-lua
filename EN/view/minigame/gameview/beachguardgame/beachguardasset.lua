@@ -25,9 +25,7 @@ end
 slot0.clearName = {}
 
 function slot0.getChar(slot0)
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetPrefab(BeachGuardAsset.char_asset_path, slot0, false, function (slot0)
+	PoolMgr.GetInstance():GetPrefab(BeachGuardAsset.char_asset_path, slot0, false, function (slot0)
 		uv0 = slot0
 
 		if not table.contains(uv1.clearName, uv2) then
@@ -39,9 +37,7 @@ function slot0.getChar(slot0)
 end
 
 function slot0.getBullet(slot0)
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetPrefab(BeachGuardAsset.bullet_asset_path, slot0, false, function (slot0)
+	PoolMgr.GetInstance():GetPrefab(BeachGuardAsset.bullet_asset_path, slot0, false, function (slot0)
 		uv0 = slot0
 
 		if not table.contains(uv1.clearName, uv2) then
@@ -55,9 +51,7 @@ function slot0.getBullet(slot0)
 end
 
 function slot0.getEffect(slot0)
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetPrefab(BeachGuardAsset.effect_asset_path, slot0, false, function (slot0)
+	PoolMgr.GetInstance():GetPrefab(BeachGuardAsset.effect_asset_path, slot0, false, function (slot0)
 		uv0 = slot0
 
 		if not table.contains(uv1.clearName, uv2) then

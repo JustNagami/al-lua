@@ -99,10 +99,8 @@ function slot11.FillToCooldown(slot0, slot1)
 	if slot1 <= slot0._currentEnergy then
 		return 0
 	else
-		slot3 = (1 - slot0._energyGenerating) / slot0:getCurrentSpeed()
-
 		if slot1 - slot0._currentEnergy >= 2 then
-			slot3 = 1 / slot2 * (slot1 - slot0._currentEnergy - 1) + slot3
+			slot3 = 1 / slot2 * (slot1 - slot0._currentEnergy - 1) + (1 - slot0._energyGenerating) / slot0:getCurrentSpeed()
 		end
 
 		return slot3

@@ -25,8 +25,7 @@ function slot0.init(slot0)
 		uv0.slotShipPos[slot0] = slot1
 	end)
 
-	slot5 = slot0.scrollRect
-	slot0.poolItems = _.map(_.range(slot5:Find("Pool").childCount), function (slot0)
+	slot0.poolItems = _.map(_.range(slot0.scrollRect:Find("Pool").childCount), function (slot0)
 		return uv0.scrollRect:Find("Pool"):GetChild(slot0 - 1)
 	end)
 

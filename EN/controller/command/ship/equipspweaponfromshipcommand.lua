@@ -9,7 +9,7 @@ function slot0.execute(slot0, slot1)
 	slot7 = getProxy(EquipmentProxy)
 	slot8, slot9, slot10 = nil
 
-	if not (function ()
+	if not function ()
 		uv0 = uv1:getShipById(uv2)
 
 		if uv0 == nil then
@@ -71,7 +71,7 @@ function slot0.execute(slot0, slot1)
 		end
 
 		return true
-	end)() then
+	end() then
 		return
 	end
 
@@ -83,9 +83,7 @@ function slot0.execute(slot0, slot1)
 			})
 		end,
 		function (slot0)
-			slot1 = pg.ConnectionMgr.GetInstance()
-
-			slot1:Send(14201, {
+			pg.ConnectionMgr.GetInstance():Send(14201, {
 				spweapon_id = 0,
 				ship_id = uv0
 			}, 14202, function (slot0)
@@ -103,9 +101,7 @@ function slot0.execute(slot0, slot1)
 			end)
 		end,
 		function (slot0, slot1)
-			slot2 = pg.ConnectionMgr.GetInstance()
-
-			slot2:Send(14201, {
+			pg.ConnectionMgr.GetInstance():Send(14201, {
 				spweapon_id = slot1,
 				ship_id = uv0
 			}, 14202, function (slot0)

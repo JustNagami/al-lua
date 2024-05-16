@@ -30,10 +30,8 @@ function slot0.register(slot0)
 		uv0:addSubLayers(slot1, false, slot2)
 	end)
 	slot0:bind(uv0.OnOpenScene, function (slot0, slot1, ...)
-		slot2 = {}
-
 		if uv0.viewComponent:GetInMap() then
-			table.insert(slot2, function (slot0)
+			table.insert({}, function (slot0)
 				uv0.viewComponent:EaseOutMapUI(slot0)
 			end)
 		else
@@ -42,10 +40,7 @@ function slot0.register(slot0)
 			end)
 		end
 
-		slot3 = {
-			len = select("#", ...),
-			...
-		}
+		slot3 = packEx(...)
 
 		pg.UIMgr.GetInstance():LoadingOn()
 		seriesAsync(slot2, function ()
@@ -54,10 +49,8 @@ function slot0.register(slot0)
 		end)
 	end)
 	slot0:bind(uv0.OnChangeScene, function (slot0, slot1, ...)
-		slot2 = {}
-
 		if uv0.viewComponent:GetInMap() then
-			table.insert(slot2, function (slot0)
+			table.insert({}, function (slot0)
 				uv0.viewComponent:EaseOutMapUI(slot0)
 			end)
 		else
@@ -66,10 +59,7 @@ function slot0.register(slot0)
 			end)
 		end
 
-		slot3 = {
-			len = select("#", ...),
-			...
-		}
+		slot3 = packEx(...)
 
 		pg.UIMgr.GetInstance():LoadingOn()
 		seriesAsync(slot2, function ()
@@ -107,9 +97,7 @@ function slot0.register(slot0)
 end
 
 function slot0.listNotificationInterests(slot0)
-	slot2 = WorldGuider.GetInstance()
-
-	_.each(slot2:GetWorldGuiderNotifies(), function (slot0)
+	_.each(WorldGuider.GetInstance():GetWorldGuiderNotifies(), function (slot0)
 		uv0[#uv0 + 1] = slot0
 	end)
 
@@ -138,18 +126,15 @@ end
 
 function slot0.handleNotification(slot0, slot1)
 	slot2 = slot1:getName()
-	slot4 = WorldGuider.GetInstance()
 
-	slot4:WorldGuiderNotifyHandler(slot2, slot1:getBody(), slot0.viewComponent)
+	WorldGuider.GetInstance():WorldGuiderNotifyHandler(slot2, slot1:getBody(), slot0.viewComponent)
 
 	slot4 = nowWorld()
 
 	switch(slot2, {
 		[GAME.WORLD_MAP_OP_DONE] = function ()
-			slot1 = uv1.viewComponent:GetCommand(uv0.mapOp.depth)
-
 			if uv0.result ~= 0 then
-				slot1:OpDone()
+				uv1.viewComponent:GetCommand(uv0.mapOp.depth):OpDone()
 
 				if uv0.result == 130 then
 					uv2.staminaMgr:Show()
@@ -165,12 +150,10 @@ function slot0.handleNotification(slot0, slot1)
 
 			if #slot0.drops > 0 then
 				if slot0.op == WorldConst.OpReqCatSalvage then
-					slot4 = uv2:GetFleet(slot0.id):GetSalvageScoreRarity()
-
 					if uv2.isAutoFight then
 						uv2:AddAutoInfo("salvage", {
 							drops = slot0.drops,
-							rarity = slot4
+							rarity = uv2:GetFleet(slot0.id):GetSalvageScoreRarity()
 						})
 					else
 						table.insert(slot2, function (slot0)
@@ -241,10 +224,8 @@ function slot0.handleNotification(slot0, slot1)
 			pg.WorldToastMgr.GetInstance():ShowToast(uv0.task, false)
 		end,
 		[GAME.WORLD_SUMBMIT_TASK_DONE] = function ()
-			slot0 = {}
-
 			if #uv0.task.config.task_ed > 0 then
-				table.insert(slot0, function (slot0)
+				table.insert({}, function (slot0)
 					pg.NewStoryMgr.GetInstance():Play(uv0.config.task_ed, slot0, true)
 				end)
 			end
@@ -274,10 +255,8 @@ function slot0.handleNotification(slot0, slot1)
 			end)
 		end,
 		[GAME.WORLD_AUTO_SUMBMIT_TASK_DONE] = function ()
-			slot0 = {}
-
 			if #uv0.task.config.task_ed > 0 then
-				table.insert(slot0, function (slot0)
+				table.insert({}, function (slot0)
 					pg.NewStoryMgr.GetInstance():Play(uv0.config.task_ed, slot0, true)
 				end)
 			end
@@ -308,10 +287,9 @@ function slot0.handleNotification(slot0, slot1)
 			end)
 		end,
 		[GAME.WORLD_ITEM_USE_DONE] = function ()
-			slot0 = uv0.item
 			slot2 = {}
 
-			switch(slot0:getWorldItemType(), {
+			switch(uv0.item:getWorldItemType(), {
 				[WorldItem.UsageWorldClean] = function ()
 					table.insert(uv0, function (slot0)
 						pg.NewStoryMgr.GetInstance():Play(pg.gameset.world_story_recycle_item.description[1], slot0, true)
@@ -326,8 +304,7 @@ function slot0.handleNotification(slot0, slot1)
 					end)
 				end,
 				[WorldItem.UsageWorldBuff] = function ()
-					slot0 = uv0
-					slot0, slot1 = slot0:getItemWorldBuff()
+					slot0, slot1 = uv0:getItemWorldBuff()
 					slot1 = slot1 * uv0.count
 
 					table.insert(uv1, function (slot0)
@@ -346,9 +323,7 @@ function slot0.handleNotification(slot0, slot1)
 					end)
 				end,
 				[WorldItem.UsageWorldFlag] = function ()
-					slot1 = uv0
-
-					switch(slot1:getItemFlagKey(), {
+					switch(uv0:getItemFlagKey(), {
 						function ()
 							table.insert(uv0, function (slot0)
 								if not uv0:GetActiveMap().visionFlag and uv0:IsMapVisioned(slot1.id) then

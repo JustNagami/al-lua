@@ -48,10 +48,8 @@ function slot2.SetActive(slot0, slot1, slot2)
 
 		setActive(slot0._go, true)
 	else
-		slot3 = true
-
 		for slot7, slot8 in pairs(slot0._unitHollowList) do
-			slot0.doHollowScaleAnima(slot8.hollow, 125, 0.3, slot3 and function ()
+			slot0.doHollowScaleAnima(slot8.hollow, 125, 0.3, true and function ()
 				uv0:RemoveHollow(uv1)
 				setActive(uv0._go, false)
 
@@ -112,10 +110,8 @@ end
 function slot2.doHollowScaleAnima(slot0, slot1, slot2, slot3)
 	LeanTween.cancel(go(slot0))
 
-	slot5 = LeanTween.scale(slot0, Vector3(slot1, slot1, 0), slot2 or 0.5)
-
 	if slot3 then
-		slot5:setOnComplete(System.Action(function ()
+		LeanTween.scale(slot0, Vector3(slot1, slot1, 0), slot2 or 0.5):setOnComplete(System.Action(function ()
 			uv0()
 		end))
 	end

@@ -23,15 +23,15 @@ function slot0.execute(slot0, slot1)
 	slot9 = {}
 
 	table.insert(slot9, function (slot0)
-		slot1 = pg.ConnectionMgr.GetInstance()
-
-		slot1:Send(12043, {
+		pg.ConnectionMgr.GetInstance():Send(12043, {
 			type = 0
 		}, 12044, function (slot0)
-			slot1 = {}
+			slot1 = {
+				[slot6.pos] = slot6.tid
+			}
 
 			for slot5, slot6 in ipairs(slot0.infoList) do
-				slot1[slot6.pos] = slot6.tid
+				-- Nothing
 			end
 
 			uv0(underscore.map(uv1, function (slot0)
@@ -53,11 +53,9 @@ function slot0.execute(slot0, slot1)
 		})
 	end)
 	seriesAsync(slot9, function ()
-		slot0 = uv0
-		slot0 = slot0:getBuildShip(uv1[1]).type
-		slot1 = pg.ConnectionMgr.GetInstance()
+		slot0 = uv0:getBuildShip(uv1[1]).type
 
-		slot1:Send(12025, {
+		pg.ConnectionMgr.GetInstance():Send(12025, {
 			type = uv2,
 			pos_list = uv1
 		}, 12026, function (slot0)

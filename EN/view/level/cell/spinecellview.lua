@@ -41,13 +41,9 @@ function slot0.LoadSpine(slot0, slot1, slot2, slot3, slot4)
 
 	slot0.lastPrefab = slot1
 	slot0.spineRole = SpineRole.New()
-	slot5 = slot0.spineRole
 
-	slot5:SetData(slot1, slot3)
-
-	slot5 = slot0.spineRole
-
-	slot5:Load(function ()
+	slot0.spineRole:SetData(slot1, slot3)
+	slot0.spineRole:Load(function ()
 		uv0.spineRole:SetParent(uv0.tfShip)
 		uv0.spineRole:SetRaycastTarget(false)
 		uv0.spineRole:SetLocalPos(Vector3.zero)
@@ -57,7 +53,7 @@ function slot0.LoadSpine(slot0, slot1, slot2, slot3, slot4)
 		uv0.spineRole:SetLocalScale(Vector3(0.4 * uv1, 0.4 * uv1, 1))
 		uv0:SetAction(uv0:GetAction())
 		existCall(uv2)
-	end)
+	end, nil, slot0.spineRole.ORBIT_KEY_SLG)
 end
 
 function slot0.UnloadSpine(slot0)

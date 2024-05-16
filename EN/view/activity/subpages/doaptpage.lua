@@ -63,9 +63,8 @@ function slot0.OnFirstFlush(slot0)
 	removeOnButton(slot0.getBtn)
 	onButton(slot0, slot0.getBtn, function ()
 		slot0 = {}
-		slot3 = getProxy(PlayerProxy):getData()
 
-		if uv0.ptData:GetAward().type == DROP_TYPE_RESOURCE and slot1.id == PlayerConst.ResGold and slot3:GoldMax(slot1.count) then
+		if uv0.ptData:GetAward().type == DROP_TYPE_RESOURCE and slot1.id == PlayerConst.ResGold and getProxy(PlayerProxy):getData():GoldMax(slot1.count) then
 			table.insert(slot0, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("gold_max_tip_title") .. i18n("award_max_warning"),
@@ -124,35 +123,18 @@ function slot0.OnFirstFlush(slot0)
 		slot0:showSingleBuffBox()
 	end
 
-	slot1 = slot0.starEffect
-	slot1 = slot1:GetComponent("DftAniEvent")
-
-	slot1:SetEndEvent(function ()
-		slot0 = uv0
-
-		slot0:updateLevelPanel()
-
-		slot0 = uv0
-
-		slot0:managedTween(LeanTween.delayedCall, function ()
+	slot0.starEffect:GetComponent("DftAniEvent"):SetEndEvent(function ()
+		uv0:updateLevelPanel()
+		uv0:managedTween(LeanTween.delayedCall, function ()
 			uv0:showTrianPanel()
 			setActive(uv0.starEffect, false)
 			setActive(uv0.mask, false)
 			pg.UIMgr.GetInstance():UnOverlayPanel(uv0.mask, uv0.bg)
 		end, 0.2, nil)
 	end)
-
-	slot1 = slot0.shieldEffect
-	slot1 = slot1:GetComponent("DftAniEvent")
-
-	slot1:SetEndEvent(function ()
-		slot0 = uv0
-
-		slot0:updateLevelPanel()
-
-		slot0 = uv0
-
-		slot0:managedTween(LeanTween.delayedCall, function ()
+	slot0.shieldEffect:GetComponent("DftAniEvent"):SetEndEvent(function ()
+		uv0:updateLevelPanel()
+		uv0:managedTween(LeanTween.delayedCall, function ()
 			uv0:showTrianPanel()
 			setActive(uv0.starEffect, false)
 			setActive(uv0.mask, false)
@@ -274,7 +256,7 @@ function slot0.showTrianPanel(slot0)
 	onButton(slot0, slot0.trainBtn, function ()
 		uv0:showMsgBox()
 	end, SFX_PANEL)
-	(function ()
+	function ()
 		for slot3, slot4 in ipairs(uv0) do
 			if slot4.next then
 				uv1.selectIndex = slot4.group
@@ -285,7 +267,7 @@ function slot0.showTrianPanel(slot0)
 				return
 			end
 		end
-	end)()
+	end()
 	slot0:flushTrainPanel()
 end
 

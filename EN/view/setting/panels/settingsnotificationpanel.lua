@@ -13,12 +13,9 @@ function slot0.GetTitleEn(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot2 = slot0._tf
-	slot3 = slot0._tf
-	slot0.uilist = UIItemList.New(slot2:Find("options"), slot3:Find("options/notify_tpl"))
-	slot1 = slot0.uilist
+	slot0.uilist = UIItemList.New(slot0._tf:Find("options"), slot0._tf:Find("options/notify_tpl"))
 
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.uilist:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:UpdateItem(slot1 + 1, slot2)
 		end
@@ -44,9 +41,13 @@ function slot0.UpdateItem(slot0, slot1, slot2)
 		uv0:OnItemSwitch(uv1, slot0)
 	end, SFX_UI_TAG, SFX_UI_CANCEL)
 	slot0:OnUpdateItem(slot3)
+	slot0:OnUpdateItemWithTr(slot3, slot2)
 end
 
 function slot0.OnUpdateItem(slot0, slot1)
+end
+
+function slot0.OnUpdateItemWithTr(slot0, slot1, slot2)
 end
 
 function slot0.OnItemSwitch(slot0, slot1, slot2)

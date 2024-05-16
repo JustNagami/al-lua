@@ -25,12 +25,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.SUBMIT_TASK_DONE then
-		slot4 = slot0.viewComponent
-
-		slot4:emit(BaseUI.ON_ACHIEVE, slot3, function ()
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1:getBody(), function ()
 			uv0.viewComponent:updateTaskLayers()
 		end)
 	elseif slot2 == ActivityProxy.ACTIVITY_OPERATION_DONE then

@@ -28,9 +28,7 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	slot13 = pg.ConnectionMgr.GetInstance()
-
-	slot13:Send(16108, {
+	pg.ConnectionMgr.GetInstance():Send(16108, {
 		flash_time = slot9.nextTime,
 		shopid = slot10.configId,
 		selected = _.values(slot12)

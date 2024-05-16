@@ -44,11 +44,10 @@ function slot0.OnShow(slot0)
 	slot8 = nil
 
 	for slot12, slot13 in ipairs(uv0) do
-		slot15 = slot0.dutyContainer:Find(slot13):Find("Text")
 		slot16 = false
 
 		if slot2.duty == slot12 then
-			setText(slot15, i18n("guild_duty_tip_1"))
+			setText(slot0.dutyContainer:Find(slot13):Find("Text"), i18n("guild_duty_tip_1"))
 
 			slot16 = true
 		elseif not table.contains(slot5, slot12) then
@@ -82,10 +81,8 @@ function slot0.OnShow(slot0)
 		end, SFX_PANEL)
 	end
 
-	slot9 = slot0.dutyContainer:Find("commander/Image2")
-
 	if slot4 == GuildConst.DUTY_COMMANDER and GuildConst.DUTY_DEPUTY_COMMANDER < slot2.duty then
-		onButton(slot0, slot9, function ()
+		onButton(slot0, slot0.dutyContainer:Find("commander/Image2"), function ()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_duty_shoule_be_deputy_commander"))
 		end, SFX_PANEL)
 	elseif not IsNil(slot9:GetComponent(typeof(Button))) then
@@ -135,15 +132,13 @@ function slot0.OnShow(slot0)
 	slot0.levelTF.text = "Lv." .. slot2.level
 
 	onButton(slot0, slot0.confirmBtn, function ()
-		function slot0()
-			uv0:emit(GuildMemberMediator.SET_DUTY, uv1.id, uv2)
-			uv0:Hide()
-		end
-
 		if uv3 == GuildConst.DUTY_COMMANDER and uv2 == GuildConst.DUTY_COMMANDER then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("guild_transfer_president_confirm", uv1.name),
-				onYes = slot0
+				onYes = function ()
+					uv0:emit(GuildMemberMediator.SET_DUTY, uv1.id, uv2)
+					uv0:Hide()
+				end
 			})
 		else
 			slot0()

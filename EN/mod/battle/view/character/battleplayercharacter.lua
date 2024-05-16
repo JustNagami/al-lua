@@ -224,11 +224,9 @@ function slot5.onTorpedoCancel(slot0, slot1)
 end
 
 function slot5.onTorepedoReady(slot0, slot1)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot0._torpedoWeaponList) do
 		if slot7:GetCurrentState() == slot7.STATE_READY then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 	end
 

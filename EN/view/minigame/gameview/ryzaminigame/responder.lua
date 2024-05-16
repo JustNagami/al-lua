@@ -31,10 +31,9 @@ end
 
 function slot0.AddListener(slot0, slot1, slot2, slot3)
 	slot0.eventRange[slot1] = slot0.eventRange[slot1] or setmetatable({}, uv0)
-	slot4 = slot0.eventRange[slot1]
 
 	for slot8, slot9 in ipairs(slot3) do
-		table.insert(slot4[tostring(slot2.pos + slot9)], slot2)
+		table.insert(slot0.eventRange[slot1][tostring(slot2.pos + slot9)], slot2)
 	end
 end
 
@@ -43,10 +42,8 @@ function slot0.RemoveListener(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	slot4 = slot0.eventRange[slot1]
-
 	for slot8, slot9 in ipairs(slot3) do
-		table.removebyvalue(slot4[tostring(slot2.pos + slot9)], slot2)
+		table.removebyvalue(slot0.eventRange[slot1][tostring(slot2.pos + slot9)], slot2)
 	end
 end
 
@@ -99,11 +96,9 @@ function slot0.GetCrossFire(slot0, slot1, slot2)
 		end
 	end
 
-	slot4 = {}
-
 	for slot8, slot9 in ipairs(slot0.timeRiver) do
 		if isa(slot9, EnemyConductor) then
-			slot9:CheckBlock(slot1, slot3, slot4)
+			slot9:CheckBlock(slot1, slot3, {})
 		end
 	end
 
@@ -307,9 +302,6 @@ function slot0.Wayfinding(slot0, slot1)
 		end
 	end
 
-	slot2 = {
-		slot1.pos
-	}
 	slot3 = {
 		[tostring(slot1.pos)] = 0
 	}
@@ -335,7 +327,9 @@ function slot0.Wayfinding(slot0, slot1)
 	slot5 = 0
 	slot6 = nil
 
-	while slot5 < #slot2 do
+	while slot5 < #{
+		slot1.pos
+	} do
 		slot5 = slot5 + 1
 
 		for slot10, slot11 in ipairs(uv0) do
@@ -345,11 +339,9 @@ function slot0.Wayfinding(slot0, slot1)
 
 					table.insert(slot2, slot6)
 
-					slot14 = slot0.reactorRyza
-
 					if uv1({
 						pos = slot0.reactorRyza.realPos,
-						range = slot14:GetCollideRange()
+						range = slot0.reactorRyza:GetCollideRange()
 					}, {
 						pos = slot6,
 						range = slot1:GetCollideRange()
@@ -371,11 +363,9 @@ function slot0.Wayfinding(slot0, slot1)
 
 				table.insert(slot2, slot6)
 
-				slot16 = slot0.reactorRyza
-
 				if uv1({
 					pos = slot0.reactorRyza.realPos,
-					range = slot16:GetCollideRange()
+					range = slot0.reactorRyza:GetCollideRange()
 				}, {
 					pos = slot6,
 					range = slot1:GetCollideRange()
@@ -396,11 +386,9 @@ function slot0.SearchRyza(slot0, slot1, slot2)
 end
 
 function slot0.CollideRyza(slot0, slot1)
-	slot4 = slot0.reactorRyza
-
 	return uv0({
 		pos = slot0.reactorRyza.realPos,
-		range = slot4:GetCollideRange()
+		range = slot0.reactorRyza:GetCollideRange()
 	}, {
 		pos = slot1.realPos,
 		range = slot1:GetCollideRange()

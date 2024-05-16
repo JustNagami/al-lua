@@ -19,11 +19,10 @@ function slot3.Update(slot0)
 	slot2 = nil
 
 	for slot6, slot7 in ipairs(slot0._currentPhaseSwitchParam) do
-		slot9 = slot7.param
 		slot10 = slot7.to
 
 		if slot7.type == uv0.DURATION then
-			if slot9 < pg.TimeMgr.GetInstance():GetCombatTime() - slot0._phaseStartTime then
+			if slot7.param < pg.TimeMgr.GetInstance():GetCombatTime() - slot0._phaseStartTime then
 				slot2 = slot7.to
 				slot7.andFlag = false
 			end
@@ -55,11 +54,8 @@ function slot3.UpdateHP(slot0, slot1)
 	slot3 = nil
 
 	for slot7, slot8 in ipairs(slot0._currentPhaseSwitchParam) do
-		slot10 = slot8.param
-		slot11 = slot8.to
-
-		if slot8.type == uv0.HP and slot1 < slot10 then
-			slot3 = slot11
+		if slot8.type == uv0.HP and slot1 < slot8.param then
+			slot3 = slot8.to
 			slot8.andFlag = false
 		end
 
@@ -173,38 +169,34 @@ function slot3.packagePhaseSwitchParam(slot0, slot1)
 		slot4 = slot1.switchParam
 		slot6 = type(slot1.switchTo) == "number"
 		slot7 = 1
-		slot8 = #slot1.switchType
 
-		while slot7 <= slot8 do
-			slot9 = {
-				type = slot3[slot7],
-				param = slot4[slot7]
-			}
-
+		while slot7 <= #slot1.switchType do
 			if slot6 then
-				slot9.to = slot5
-				slot9.andFlag = true
+				-- Nothing
 			else
 				slot9.to = slot5[slot7]
 			end
 
-			table.insert(slot0._currentPhaseSwitchParam, slot9)
+			table.insert(slot0._currentPhaseSwitchParam, {
+				type = slot3[slot7],
+				param = slot4[slot7],
+				to = slot5,
+				andFlag = true
+			})
 
 			slot7 = slot7 + 1
 		end
 	elseif slot2 == "number" then
-		slot3 = {
-			type = slot1.switchType
-		}
-
 		if slot1.switchParamFunc then
-			slot3.param = slot1.switchParamFunc()
+			-- Nothing
 		else
 			slot3.param = slot1.switchParam
 		end
 
-		slot3.to = slot1.switchTo
-
-		table.insert(slot0._currentPhaseSwitchParam, slot3)
+		table.insert(slot0._currentPhaseSwitchParam, {
+			type = slot1.switchType,
+			param = slot1.switchParamFunc(),
+			to = slot1.switchTo
+		})
 	end
 end

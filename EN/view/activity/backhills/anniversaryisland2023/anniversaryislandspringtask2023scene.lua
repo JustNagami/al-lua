@@ -16,12 +16,10 @@ function slot0.init(slot0)
 end
 
 function slot0.BuildTaskVOs(slot0)
-	slot1 = getProxy(ActivityProxy)
-	slot1 = slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
 	slot3 = slot1:GetConfigID()
 	slot0.activityId = slot3
-	slot4 = getProxy(ActivityTaskProxy)
-	slot4 = slot4:getTaskVOsByActId(slot3)
+	slot4 = getProxy(ActivityTaskProxy):getTaskVOsByActId(slot3)
 	slot0.lockTasks = {}
 	slot0.taskVOs = _.map(slot1:GetUnlockTaskIds(), function (slot0)
 		if not _.detect(uv0, function (slot0)

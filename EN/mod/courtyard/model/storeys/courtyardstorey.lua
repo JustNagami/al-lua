@@ -1,10 +1,10 @@
 slot0 = class("CourtYardStorey", import("..map.CourtYardPlaceableArea"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	uv0.super.Ctor(slot0, slot3)
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
+	uv0.super.Ctor(slot0, slot1, slot4)
 
-	slot0.id = slot1
-	slot0.style = slot2
+	slot0.id = slot2
+	slot0.style = slot3
 	slot0.level = 1
 	slot0.furnitures = {}
 	slot0.ships = {}
@@ -58,10 +58,12 @@ function slot0.GetFurnitures(slot0)
 end
 
 function slot0.GetAllFurniture(slot0)
-	slot1 = {}
+	slot1 = {
+		[slot6.id] = slot6
+	}
 
 	for slot5, slot6 in pairs(slot0.furnitures) do
-		slot1[slot6.id] = slot6
+		-- Nothing
 	end
 
 	if slot0.floorPaper then
@@ -187,23 +189,19 @@ end
 function slot0.ShipAddFollower(slot0, slot1)
 	slot2 = slot0:GetFurnituresByType(Furniture.TYPE_FOLLOWER)
 
-	function slot3(slot0)
-		return _.detect(uv0, function (slot0)
-			return _.any(slot0:GetArea(), function (slot0)
-				return slot0 == uv0
-			end)
-		end)
-	end
-
-	function slot4()
-		if uv0:GetInterActionData() ~= nil then
-			slot0:Stop()
-		end
-	end
-
 	for slot8, slot9 in ipairs(slot1:GetAroundPositions()) do
-		if slot3(slot9) and slot10:CanFollower(slot1) then
-			slot4()
+		if function (slot0)
+			return _.detect(uv0, function (slot0)
+				return _.any(slot0:GetArea(), function (slot0)
+					return slot0 == uv0
+				end)
+			end)
+		end(slot9) and slot10:CanFollower(slot1) then
+			function ()
+				if uv0:GetInterActionData() ~= nil then
+					slot0:Stop()
+				end
+			end()
 			slot0:RemoveItemAndRefresh(slot10)
 			slot10:GetInteractionSlot():Occupy(slot10, slot1, slot0)
 
@@ -232,17 +230,15 @@ function slot0.ShipExitArch(slot0, slot1)
 end
 
 function slot0.ShipEnterArch(slot0, slot1)
-	function slot2(slot0, slot1)
-		uv0:RemoveItem(uv1)
-		uv0:DispatchEvent(CourtYardEvent.CHILD_ITEM, uv1, slot0)
-		uv0:DispatchEvent(CourtYardEvent.ENTER_ARCH, uv1, slot0)
-		slot0:AddChild(uv1)
-		uv1:Move(slot1)
-	end
-
 	for slot6, slot7 in ipairs(slot1:GetAroundPositions()) do
 		if slot0:GetParentForItem(slot1, slot7) and slot8:IsType(Furniture.TYPE_ARCH) then
-			slot2(slot8, slot7)
+			function (slot0, slot1)
+				uv0:RemoveItem(uv1)
+				uv0:DispatchEvent(CourtYardEvent.CHILD_ITEM, uv1, slot0)
+				uv0:DispatchEvent(CourtYardEvent.ENTER_ARCH, uv1, slot0)
+				slot0:AddChild(uv1)
+				uv1:Move(slot1)
+			end(slot8, slot7)
 
 			return true
 		end
@@ -417,29 +413,25 @@ function slot0.AddShipExp(slot0, slot1, slot2)
 end
 
 function slot0.ShipAnimtionFinish(slot0, slot1, slot2)
-	slot3 = slot0.ships[slot1]
-
 	if slot2 == CourtYardShip.STATE_TOUCH or slot2 == CourtYardShip.STATE_GETAWARD then
-		slot3:ChangeState(CourtYardShip.STATE_IDLE)
+		slot0.ships[slot1]:ChangeState(CourtYardShip.STATE_IDLE)
 	elseif slot2 == CourtYardShip.STATE_INTERACT and slot3:GetInterActionData() then
 		slot4:Continue(slot3)
 	end
 end
 
 function slot0.ResetShip(slot0, slot1, slot2)
-	function slot3(slot0, slot1)
-		slot0:SetPosition(slot1)
-		slot0:ChangeState(CourtYardShip.STATE_IDLE)
-		uv0:AddItem(slot0)
-	end
-
 	if slot0:LegalPosition(slot2, slot1) then
-		slot3(slot1, slot2)
+		function (slot0, slot1)
+			slot0:SetPosition(slot1)
+			slot0:ChangeState(CourtYardShip.STATE_IDLE)
+			uv0:AddItem(slot0)
+		end(slot1, slot2)
 	elseif slot0:GetRandomPosition(slot1) then
 		slot3(slot1, slot4)
 	else
 		slot0:RemoveShip(slot1)
-		_courtyard:SendNotification(CourtYardEvent._NO_POS_TO_ADD_SHIP, slot1.id)
+		slot0:GetHost():SendNotification(CourtYardEvent._NO_POS_TO_ADD_SHIP, slot1.id)
 	end
 end
 
@@ -555,10 +547,8 @@ function slot0.StopPrevFurnitureVoice(slot0)
 end
 
 function slot0.FurnitureAnimtionFinish(slot0, slot1, slot2)
-	slot3 = slot0.furnitures[slot1]
-
 	if slot2 == CourtYardFurniture.STATE_TOUCH then
-		slot3:ChangeState(CourtYardFurniture.STATE_IDLE)
+		slot0.furnitures[slot1]:ChangeState(CourtYardFurniture.STATE_IDLE)
 	elseif slot2 == CourtYardFurniture.STATE_INTERACT then
 		_.each(slot3:GetUsingSlots(), function (slot0)
 			slot0:Continue(uv0)
@@ -890,14 +880,6 @@ function slot0.InEidtMode(slot0)
 end
 
 function slot0.StopAllDragState(slot0)
-	function slot1()
-		for slot3, slot4 in pairs(uv0.ships) do
-			if slot4:GetState() == CourtYardShip.STATE_DRAG then
-				uv0:DragShipEnd(slot4.id, Vector2(-1, -1))
-			end
-		end
-	end
-
 	function slot2()
 		for slot3, slot4 in pairs(uv0.furnitures) do
 			if slot4:IsDragingState() then
@@ -908,7 +890,13 @@ function slot0.StopAllDragState(slot0)
 	end
 
 	if not slot0:InEidtMode() then
-		slot1()
+		function ()
+			for slot3, slot4 in pairs(uv0.ships) do
+				if slot4:GetState() == CourtYardShip.STATE_DRAG then
+					uv0:DragShipEnd(slot4.id, Vector2(-1, -1))
+				end
+			end
+		end()
 	else
 		slot2()
 	end
@@ -933,10 +921,8 @@ function slot0.WillClearInteraction(slot0, slot1, slot2)
 end
 
 function slot0.ClearInteraction(slot0, slot1, slot2)
-	slot4 = slot1:GetOwner()
-
 	if isa(slot1:GetUser(), CourtYardFollowerFurniture) then
-		slot0:ClearInteractionForFollower(slot3, slot4, slot1, slot2)
+		slot0:ClearInteractionForFollower(slot3, slot1:GetOwner(), slot1, slot2)
 	elseif not slot2 then
 		if isa(slot4, CourtYardTransportFurniture) then
 			slot0:ClearInteractionForTransPort(slot3, slot4, slot1)
@@ -1011,13 +997,11 @@ end
 function slot0.ToTable(slot0)
 	slot1 = {}
 
-	function slot2(slot0)
-		slot0.floor = uv0.id
-		uv1[slot0.id] = slot0
-	end
-
 	for slot6, slot7 in pairs(slot0.furnitures) do
-		slot2(slot7:ToTable())
+		function (slot0)
+			slot0.floor = uv0.id
+			uv1[slot0.id] = slot0
+		end(slot7:ToTable())
 	end
 
 	if slot0.wallPaper then

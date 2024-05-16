@@ -4,7 +4,6 @@ function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.id
 	slot4 = {}
-	slot5 = 0
 
 	for slot9, slot10 in pairs(slot2.items) do
 		if slot10 > 0 then
@@ -13,13 +12,11 @@ function slot0.execute(slot0, slot1)
 				num = slot10
 			})
 
-			slot5 = slot5 + tonumber(pg.item_data_template[slot9].usage_arg) * slot10
+			slot5 = 0 + tonumber(Item.getConfigData(slot9).usage_arg) * slot10
 		end
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(22011, {
+	pg.ConnectionMgr.GetInstance():Send(22011, {
 		ship_id = slot3,
 		books = slot4
 	}, 22012, function (slot0)
@@ -30,11 +27,9 @@ function slot0.execute(slot0, slot1)
 			slot2:addExp(uv1)
 			slot1:updateShip(slot2)
 
-			slot3 = getProxy(BagProxy)
-
 			for slot7, slot8 in pairs(uv2.items) do
 				if slot8 > 0 then
-					slot3:removeItemById(slot7, slot8)
+					getProxy(BagProxy):removeItemById(slot7, slot8)
 				end
 			end
 

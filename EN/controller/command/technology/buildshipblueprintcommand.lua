@@ -23,10 +23,8 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot11 = {}
-
 	if slot5:getBuildingBluePrint() then
-		table.insert(slot11, function (slot0)
+		table.insert({}, function (slot0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("cannot_build_multiple_printblue", uv0:getShipVO():getConfig("name"), uv1:getShipVO():getConfig("name")),
 				onYes = function ()
@@ -47,9 +45,7 @@ function slot0.execute(slot0, slot1)
 	end
 
 	seriesAsync(slot11, function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(63200, {
+		pg.ConnectionMgr.GetInstance():Send(63200, {
 			blueprint_id = uv0
 		}, 63201, function (slot0)
 			if slot0.result == 0 then

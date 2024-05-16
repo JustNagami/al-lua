@@ -13,8 +13,7 @@ function slot0.InitFashion(slot0)
 	slot0.stylePanel = slot0._tf
 	slot0.styleScroll = slot0:findTF("style_scroll", slot0.stylePanel)
 	slot0.styleContainer = slot0:findTF("view_port", slot0.styleScroll)
-	slot1 = slot0._tf
-	slot0.styleCard = slot1:GetComponent(typeof(ItemList)).prefabItem[0]
+	slot0.styleCard = slot0._tf:GetComponent(typeof(ItemList)).prefabItem[0]
 	slot0.hideObjToggleTF = findTF(slot0._tf, "btns/hideObjToggle")
 
 	setActive(slot0.hideObjToggleTF, false)
@@ -65,10 +64,8 @@ function slot0.UpdateUI(slot0)
 end
 
 function slot0.OnSelected(slot0, slot1)
-	slot2 = pg.UIMgr.GetInstance()
-
 	if slot1 then
-		slot2:OverlayPanelPB(slot0._parentTf, {
+		pg.UIMgr.GetInstance():OverlayPanelPB(slot0._parentTf, {
 			pbList = {
 				slot0.stylePanel:Find("style_desc"),
 				slot0.stylePanel:Find("frame")
@@ -84,9 +81,7 @@ function slot0.OnSelected(slot0, slot1)
 end
 
 function slot0.GetShareSkins(slot0, slot1)
-	slot2 = getProxy(ShipSkinProxy)
-
-	return _.map(slot2:GetShareSkinsForShip(slot1), function (slot0)
+	return _.map(getProxy(ShipSkinProxy):GetShareSkinsForShip(slot1), function (slot0)
 		return pg.ship_skin_template[slot0.id]
 	end)
 end
@@ -227,9 +222,8 @@ function slot0.UpdateFashionDetail(slot0, slot1)
 		end
 
 		slot2.prefab = slot1.prefab
-		slot6 = PoolMgr.GetInstance()
 
-		slot6:GetSpineChar(slot2.prefab, true, function (slot0)
+		PoolMgr.GetInstance():GetSpineChar(slot2.prefab, true, function (slot0)
 			if uv0.prefab ~= uv1 then
 				PoolMgr.GetInstance():ReturnSpineChar(uv1, slot0)
 			else
@@ -282,24 +276,15 @@ function slot0.UpdateFashionDetail(slot0, slot1)
 		elseif uv4 then
 			if uv5 or uv6 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_skin_out_of_stock"))
+			elseif Goods.Create({
+				shop_id = uv4.id
+			}, Goods.TYPE_SKIN):isDisCount() and slot0:IsItemDiscountType() then
+				uv2:emit(ShipMainMediator.BUY_ITEM_BY_ACT, uv4.id, 1)
 			else
-				slot0 = Goods.Create({
-					shop_id = uv4.id
-				}, Goods.TYPE_SKIN)
-				slot3 = i18n("text_buy_fashion_tip", slot0:GetPrice(), uv3.name)
-
-				if slot0:isDisCount() and slot0:IsItemDiscountType() then
-					slot3 = i18n("discount_coupon_tip", slot2, slot0:GetDiscountItem().name, uv3.name)
-				end
-
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = slot3,
+					content = i18n("text_buy_fashion_tip", slot0:GetPrice(), uv3.name),
 					onYes = function ()
-						if uv0 then
-							uv1:emit(ShipMainMediator.BUY_ITEM_BY_ACT, uv2.id, 1)
-						else
-							uv1:emit(ShipMainMediator.BUY_ITEM, uv2.id, 1)
-						end
+						uv0:emit(ShipMainMediator.BUY_ITEM, uv1.id, 1)
 					end
 				})
 			end

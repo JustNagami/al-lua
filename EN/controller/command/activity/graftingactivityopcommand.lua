@@ -14,9 +14,8 @@ function slot0.execute(slot0, slot1)
 	end
 
 	slot8 = pg.activity_template[slot6].type
-	slot9 = pg.ConnectionMgr.GetInstance()
 
-	slot9:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		activity_id = slot3,
 		cmd = slot2.cmd or 0,
 		arg1 = slot2.arg1 or 0,

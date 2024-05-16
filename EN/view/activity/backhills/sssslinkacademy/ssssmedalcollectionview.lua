@@ -90,9 +90,7 @@ function slot0.AddListener(slot0)
 	onButton(slot0, slot0.infoArea2, slot4, SFX_PANEL)
 
 	for slot4 = 1, 6 do
-		slot7 = slot0._tf
-
-		onButton(slot0, slot7:Find("Desk/Slot" .. slot4 .. "/Click"), function ()
+		onButton(slot0, slot0._tf:Find("Desk/Slot" .. slot4 .. "/Click"), function ()
 			uv0.contextData.GKIndex = uv1
 
 			uv0:UpdateView()
@@ -161,7 +159,7 @@ end
 function slot0.UpdateInfo(slot0)
 	slot1 = uv0.INDEX_CONVERT[slot0.contextData.GKIndex]
 
-	(function ()
+	function ()
 		slot2 = not table.contains(uv0.activeIDList, uv0.allIDList[2 * uv1 - 1]) and table.contains(uv0.activatableIDList, slot0)
 		slot4 = uv0.infoArea1
 
@@ -176,8 +174,8 @@ function slot0.UpdateInfo(slot0)
 		elseif slot3 then
 			setText(slot4:Find("Lock/BG/TextTip"), uv0.activityData:getConfig("config_client").unlock_desc[2 * uv1 - 1])
 		end
-	end)()
-	(function ()
+	end()
+	function ()
 		slot2 = not table.contains(uv0.activeIDList, uv0.allIDList[2 * uv1]) and table.contains(uv0.activatableIDList, slot0)
 		slot4 = uv0.infoArea2
 
@@ -190,7 +188,7 @@ function slot0.UpdateInfo(slot0)
 		elseif slot3 then
 			setText(slot4:Find("Lock"), uv0.activityData:getConfig("config_client").unlock_desc[2 * uv1])
 		end
-	end)()
+	end()
 end
 
 function slot0.willExit(slot0)

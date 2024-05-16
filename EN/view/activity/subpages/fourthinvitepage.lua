@@ -44,10 +44,9 @@ end
 
 function slot0.UpdateSigned(slot0)
 	slot1 = slot0.maxtime
-	slot2 = slot0.usedtime
 
 	for slot6, slot7 in ipairs(slot0.icons) do
-		setActive(slot7, slot6 <= slot2)
+		setActive(slot7, slot6 <= slot0.usedtime)
 	end
 end
 

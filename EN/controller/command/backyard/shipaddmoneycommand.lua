@@ -1,9 +1,7 @@
 slot0 = class("ShipAddMoneyCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Send(19013, {
+	pg.ConnectionMgr.GetInstance():Send(19013, {
 		id = slot1:getBody()
 	}, 19014, function (slot0)
 		if slot0.result == 0 then

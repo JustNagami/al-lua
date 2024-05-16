@@ -2,9 +2,8 @@ slot0 = class("GetMailListCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot5 = pg.ConnectionMgr.GetInstance()
 
-	slot5:Send(30002, {
+	pg.ConnectionMgr.GetInstance():Send(30002, {
 		type = slot2.type,
 		split_id = slot2.splitId
 	}, 30003, function (slot0)

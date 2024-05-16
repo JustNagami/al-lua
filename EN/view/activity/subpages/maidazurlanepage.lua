@@ -2,19 +2,13 @@ slot0 = class("MaidAzurlanePage", import(".TemplatePage.SkinTemplatePage"))
 
 function slot0.OnFirstFlush(slot0)
 	uv0.super.OnFirstFlush(slot0)
-
-	slot3 = slot0.bg
-
-	onButton(slot0, slot3:Find("help"), function ()
+	onButton(slot0, slot0.bg:Find("help"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.maid_task_tips1.tip
 		})
 	end, SFX_PANEL)
-
-	slot3 = slot0.bg
-
-	onButton(slot0, slot3:Find("ClickIron"), function ()
+	onButton(slot0, slot0.bg:Find("ClickIron"), function ()
 		slot0 = Context.New()
 
 		SCENE.SetSceneInfo(slot0, SCENE.NEWYEAR_BACKHILL_2022)
@@ -30,10 +24,7 @@ function slot0.OnFirstFlush(slot0)
 			context = slot0
 		})
 	end, SFX_PANEL)
-
-	slot3 = slot0.bg
-
-	onButton(slot0, slot3:Find("ClickRoyal"), function ()
+	onButton(slot0, slot0.bg:Find("ClickRoyal"), function ()
 		slot0 = Context.New()
 
 		SCENE.SetSceneInfo(slot0, SCENE.NEWYEAR_BACKHILL_2022)

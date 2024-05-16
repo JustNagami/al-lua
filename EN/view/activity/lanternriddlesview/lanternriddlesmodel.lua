@@ -78,8 +78,7 @@ function slot0.GetLockTime(slot0)
 end
 
 function slot0.GetAnswerFlag(slot0, slot1, slot2)
-	slot3 = getProxy(PlayerProxy)
-	slot3 = slot3:getRawData().id
+	slot3 = getProxy(PlayerProxy):getRawData().id
 
 	function slot4(slot0, slot1)
 		return PlayerPrefs.GetInt(slot0 .. "_" .. slot1 .. "_" .. uv0, 0) > 0

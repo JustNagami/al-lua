@@ -63,11 +63,8 @@ function slot0.GetChatTxt(slot0, slot1)
 	slot2 = nil
 
 	for slot6, slot7 in ipairs(ValentineQteGameConst.CHAT_CONTENT) do
-		slot9 = slot7[2]
-		slot10 = slot7[3]
-
-		if slot7[1] <= slot1 and slot1 <= slot9 then
-			slot2 = slot10
+		if slot7[1] <= slot1 and slot1 <= slot7[2] then
+			slot2 = slot7[3]
 
 			break
 		end

@@ -119,11 +119,8 @@ function slot3.checkModCount(slot0, slot1)
 end
 
 function slot3.getCount(slot0, slot1)
-	slot2 = slot0._countTarget
-	slot3 = uv0.GetCurrent(slot1, "barrageCounterMod")
-
 	if slot0._gunnerBonus then
-		slot2 = math.ceil(slot2 / slot3)
+		slot2 = math.ceil(slot0._countTarget / uv0.GetCurrent(slot1, "barrageCounterMod"))
 	end
 
 	return slot2

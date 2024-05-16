@@ -39,11 +39,10 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
 	slot4 = slot1:getType()
 
 	if slot1:getName() == GAME.ADD_FOOD_DONE then
-		slot0.viewComponent:OnUsageItem(slot3.id)
+		slot0.viewComponent:OnUsageItem(slot1:getBody().id)
 	elseif slot2 == DormProxy.DORM_UPDATEED and slot4 == BackYardConst.DORM_UPDATE_TYPE_USEFOOD then
 		slot0.viewComponent:OnDormUpdated()
 	elseif slot2 == GAME.SHOPPING_DONE then

@@ -18,10 +18,7 @@ function slot0.update(slot0, slot1)
 	slot0.richText.supportRichText = true
 
 	ChatProxy.InjectPublic(slot0.richText, slot1)
-
-	slot2 = slot0.richText
-
-	slot2:AddListener(function (slot0, slot1)
+	slot0.richText:AddListener(function (slot0, slot1)
 		uv0:clickItem(slot0, slot1)
 	end)
 

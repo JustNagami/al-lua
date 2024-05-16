@@ -2,13 +2,9 @@ slot0 = class("SetSecondaryPasswordCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot3 = pg.UIMgr.GetInstance()
 
-	slot3:LoadingOn()
-
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Send(11605, {
+	pg.UIMgr.GetInstance():LoadingOn()
+	pg.ConnectionMgr.GetInstance():Send(11605, {
 		password = slot2.pwd,
 		notice = slot2.tip,
 		system_list = slot2.settings

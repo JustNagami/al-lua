@@ -20,9 +20,8 @@ end
 function slot2.showPoisonDamage(slot0, slot1)
 	slot2 = "dexiv4_SLG_poison"
 	slot3 = slot0.tfShip.localPosition
-	slot4 = slot0:GetLoader()
 
-	slot4:GetPrefab("ui/" .. slot2, slot2, function (slot0)
+	slot0:GetLoader():GetPrefab("ui/" .. slot2, slot2, function (slot0)
 		setParent(slot0.transform, uv0.tf, false)
 		LeanTween.moveY(uv0.tfShip, uv1.y - 10, 0.1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 
@@ -42,11 +41,9 @@ function slot2.showPoisonDamage(slot0, slot1)
 end
 
 function slot2.SetActiveNoPassIcon(slot0, slot1)
-	slot2 = "NoPassIcon"
-
 	if not slot1 then
 		if slot0.loader then
-			slot0.loader:ClearRequest(slot2)
+			slot0.loader:ClearRequest("NoPassIcon")
 		end
 	else
 		if slot0:GetLoader():GetRequestPackage(slot2) then
@@ -54,9 +51,8 @@ function slot2.SetActiveNoPassIcon(slot0, slot1)
 		end
 
 		slot4 = "event_task_small"
-		slot5 = slot0:GetLoader()
 
-		slot5:GetPrefabBYStopLoading("boxprefab/" .. slot4, slot4, function (slot0)
+		slot0:GetLoader():GetPrefabBYStopLoading("boxprefab/" .. slot4, slot4, function (slot0)
 			setParent(slot0.transform, uv0.tf, false)
 
 			slot1 = 150
@@ -80,9 +76,7 @@ function slot2.UpdateIconRecorded(slot0)
 		end
 	else
 		if IsNil(slot0.tfIconRecorded) then
-			slot2 = pg.PoolMgr.GetInstance()
-
-			slot2:GetPrefab("effect/fleet_status_recorded", "", false, function (slot0)
+			pg.PoolMgr.GetInstance():GetPrefab("effect/fleet_status_recorded", "", false, function (slot0)
 				uv0.tfIconRecorded = tf(slot0)
 
 				setParent(slot0, uv0.tf, false)

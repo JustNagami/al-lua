@@ -67,13 +67,9 @@ function slot0.Action(slot0, slot1)
 end
 
 function slot0.DoUpgradeAnim(slot0, slot1)
-	slot2 = slot0.commander
-	slot2 = slot2:getLevel()
-	slot3 = slot0.oldCommander
-	slot3 = slot3:getLevel()
+	slot3 = slot0.oldCommander:getLevel()
 	slot4 = slot3
-	slot5 = slot0.commander
-	slot6 = slot0.commander.exp / slot5:getNextLevelExp()
+	slot6 = slot0.commander.exp / slot0.commander:getNextLevelExp()
 
 	function slot7()
 		uv0 = uv0 + 1
@@ -83,25 +79,21 @@ function slot0.DoUpgradeAnim(slot0, slot1)
 	slot3 = slot3 + 1
 
 	table.insert({}, function (slot0)
-		slot1 = uv0.oldCommander
-		slot1 = slot1:getNextLevelExp()
-		slot3 = uv0
+		slot1 = uv0.oldCommander:getNextLevelExp()
 
-		slot3:AddExpAnim(uv0.slider.value, 1, uv0.oldCommander.exp, slot1, slot1, function ()
+		uv0:AddExpAnim(uv0.slider.value, 1, uv0.oldCommander.exp, slot1, slot1, function ()
 			uv0()
 			uv1()
 		end)
 	end)
 
-	while slot3 ~= slot2 do
+	while slot3 ~= slot0.commander:getLevel() do
 		slot3 = slot3 + 1
 
 		table.insert(slot8, function (slot0)
-			slot1 = uv0.oldCommander
-			slot1 = slot1:getConfigExp(uv1)
-			slot2 = uv0
+			slot1 = uv0.oldCommander:getConfigExp(uv1)
 
-			slot2:AddExpAnim(0, 1, 0, slot1, slot1, function ()
+			uv0:AddExpAnim(0, 1, 0, slot1, slot1, function ()
 				uv0()
 				uv1()
 			end)

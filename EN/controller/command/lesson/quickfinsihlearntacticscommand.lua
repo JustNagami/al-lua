@@ -3,15 +3,12 @@ slot0 = class("QuickFinsihLearnTacticsCommand", pm.SimpleCommand)
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = slot2.shipId
-	slot4 = getProxy(NavalAcademyProxy)
 	slot5 = slot2.callback
 	slot6 = slot2.onConfirm
-	slot7 = slot4:getStudentById(slot3)
-	slot8 = getProxy(BayProxy)
-	slot10 = slot7:getSkillId(slot8:getShipById(slot7.shipId))
-	slot11 = pg.ConnectionMgr.GetInstance()
+	slot7 = getProxy(NavalAcademyProxy):getStudentById(slot3)
+	slot10 = slot7:getSkillId(getProxy(BayProxy):getShipById(slot7.shipId))
 
-	slot11:Send(22014, {
+	pg.ConnectionMgr.GetInstance():Send(22014, {
 		roomid = slot3
 	}, 22015, function (slot0)
 		if slot0.result == 0 then

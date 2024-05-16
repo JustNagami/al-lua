@@ -40,6 +40,10 @@ function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 end
 
+function slot0.setChargedList(slot0, slot1)
+	slot0.chargedList = slot1
+end
+
 function slot0.initDamonds(slot0)
 	slot0.diamondUIItemList = slot0:initDiamondList(slot0.diamondPanel)
 end
@@ -128,15 +132,10 @@ function slot0.sortDamondItems(slot0)
 			return slot6 < slot7
 		end
 
-		slot9 = slot0:getConfig("tag") == 2 and 1 or 0
-		slot10 = slot1:getConfig("tag") == 2 and 1 or 0
-
-		if slot3 == slot5 and slot9 == slot10 then
+		if slot3 == slot5 and (slot0:getConfig("tag") == 2 and 1 or 0) == (slot1:getConfig("tag") == 2 and 1 or 0) then
 			return slot0.id < slot1.id
 		else
-			slot11 = slot5 < slot3 or slot3 == slot5 and slot10 < slot9
-
-			return slot11
+			return slot5 < slot3 or slot3 == slot5 and slot10 < slot9
 		end
 	end)
 
@@ -222,7 +221,7 @@ function slot0.showItemDetail(slot0, slot1)
 				uv0:emit(uv1.ON_DROP, uv2)
 			end, SFX_PANEL)
 
-			slot13, slot14 = contentWrap(slot5.cfg.name, 10, 2)
+			slot13, slot14 = contentWrap(slot5:getConfig("name"), 10, 2)
 
 			if slot13 then
 				slot14 = slot14 .. "..."
@@ -245,7 +244,7 @@ function slot0.showItemDetail(slot0, slot1)
 		for slot16 = 1, #slot7 do
 			updateDrop(slot0.detailItemList:GetChild(slot16 - 1), slot7[slot16])
 
-			slot18, slot19 = contentWrap(slot7[slot16].cfg.name, 8, 2)
+			slot18, slot19 = contentWrap(slot7[slot16]:getConfig("name"), 8, 2)
 
 			if slot18 then
 				slot19 = slot19 .. "..."

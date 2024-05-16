@@ -69,24 +69,22 @@ function slot0.didEnter(slot0)
 				return
 			end
 
-			function slot3(slot0, slot1)
-				if uv0.count < slot1 then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_control_buff_not_obtain_tip"))
-
-					return
-				end
-
-				slot2 = Clone(uv1)
-				slot3 = slot2[uv2.contextData.selectIndex]
-				slot3[1] = slot0
-				slot3[2] = slot1
-
-				uv2:emit(GAME.UPDATE_ATELIER_BUFF, slot2)
-			end
-
 			if uv0.activity:GetSlots()[uv0.contextData.selectIndex][1] == slot0:GetConfigID() then
 				if slot2[2] < #slot0:GetBuffs() then
-					slot3(slot2[1], slot2[2] + 1)
+					function (slot0, slot1)
+						if uv0.count < slot1 then
+							pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_control_buff_not_obtain_tip"))
+
+							return
+						end
+
+						slot2 = Clone(uv1)
+						slot3 = slot2[uv2.contextData.selectIndex]
+						slot3[1] = slot0
+						slot3[2] = slot1
+
+						uv2:emit(GAME.UPDATE_ATELIER_BUFF, slot2)
+					end(slot2[1], slot2[2] + 1)
 				end
 
 				return
@@ -158,10 +156,8 @@ function slot0.UpdateView(slot0)
 		setActive(slot2:Find("Max"), slot6)
 		setScrollText(slot2:Find("Name/Text"), slot1:GetName())
 
-		slot13 = slot1.count
-
 		if slot4 then
-			slot13 = slot13 - slot4[2]
+			slot13 = slot1.count - slot4[2]
 		end
 
 		updateDrop(slot2:Find("Icon"), {
@@ -254,16 +250,14 @@ function slot0.PlayLevelUpAnim(slot0)
 
 	setImageAlpha(slot2, 0)
 
-	slot4 = LeanTween.value(go(slot1), 0, 2, 2)
-	slot4 = slot4:setOnUpdate(System.Action_float(function (slot0)
+	slot0.tweenId = LeanTween.value(go(slot1), 0, 2, 2):setOnUpdate(System.Action_float(function (slot0)
 		slot0 = math.clamp(slot0, 0, 1)
 
 		setImageAlpha(uv0, slot0)
 		setAnchoredPosition(uv0, {
 			y = uv1 + 20 * (slot0 - 1)
 		})
-	end))
-	slot0.tweenId = slot4:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		setAnchoredPosition(uv0, {
 			y = uv1
 		})

@@ -13,10 +13,8 @@ function slot0.OnRefresh(slot0, slot1)
 	slot3 = UIItemList.New(slot2, slot2:GetChild(0))
 
 	slot3:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			updateDrop(slot2, uv0.items[slot1])
+			updateDrop(slot2, uv0.items[slot1 + 1])
 			setActive(slot2:Find("name"), false)
 			setActive(slot2:Find("name_mask"), false)
 			setScrollText(slot2:Find("name_mask/name"), getText(slot2:Find("name")))

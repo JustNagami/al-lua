@@ -49,7 +49,7 @@ return {
 
 			slot1 = false
 
-			if slot0.checkBattleTimeInBossAct(slot0) then
+			if slot0:checkBattleTimeInBossAct() then
 				slot1 = slot0.data2 ~= 1
 			elseif getProxy(ActivityProxy):getActivityById(slot0:GetBindPtActID()) then
 				slot1 = ActivityBossPtData.New(slot4):CanGetAward()
@@ -194,19 +194,6 @@ return {
 		end
 	},
 	{
-		banner = "vote_frame_hall",
-		event = ActivityMediator.GO_FISRT_VOTE,
-		data = {},
-		isShow = function ()
-			slot0 = getProxy(ActivityProxy)
-
-			return getProxy(VoteProxy):GetVoteBookActivty() and not slot1:isEnd()
-		end,
-		isTip = function ()
-			return getProxy(VoteProxy):ExistPastVoteAward()
-		end
-	},
-	{
 		banner = "event_square",
 		event = ActivityMediator.EVENT_GO_SCENE,
 		data = {
@@ -237,7 +224,7 @@ return {
 			return getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL) and not slot0:isEnd()
 		end,
 		isTip = function ()
-			if getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL) and not slot0.isEnd(slot0) then
+			if getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL) and not slot0:isEnd() then
 				return getProxy(MiniGameProxy):GetHubByHubId(slot0:getConfig("config_id")).count > 0 and slot2.usedtime < 7
 			end
 		end
@@ -254,11 +241,9 @@ return {
 			end) and not slot1:isEnd()
 		end,
 		isTip = function ()
-			slot0 = getProxy(ActivityProxy)
-
-			if _.detect(slot0:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_MINIGAME), function (slot0)
+			if _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_MINIGAME), function (slot0)
 				return slot0:getConfig("config_id") == 7
-			end) and not slot1.isEnd(slot1) then
+			end) and not slot1:isEnd() then
 				return getProxy(MiniGameProxy):GetHubByHubId(slot1:getConfig("config_id")) and slot3.id == 7 and slot3.count > 0
 			end
 		end
@@ -273,11 +258,9 @@ return {
 			return getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE) and not slot0:isEnd()
 		end,
 		isTip = function ()
-			if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE) and not slot0.isEnd(slot0) then
-				slot1 = 0
-
-				for slot6 = 1, slot0.getConfig(slot0, "config_client")[1] do
-					slot1 = slot1 + (slot0:getKVPList(1, slot6) or 0)
+			if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE) and not slot0:isEnd() then
+				for slot6 = 1, slot0:getConfig("config_client")[1] do
+					slot1 = 0 + (slot0:getKVPList(1, slot6) or 0)
 				end
 
 				slot3 = pg.TimeMgr.GetInstance()
@@ -296,23 +279,23 @@ return {
 			return getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_MEDAL_ACT_ID) and not slot0:isEnd()
 		end,
 		isTip = function ()
-			return Activity.isHaveActivableMedal()
+			return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_MEDAL_ACT_ID))
 		end
 	},
 	{
-		banner = "meta_entrance_970205",
+		banner = "meta_entrance_970505",
 		event = ActivityMediator.EVENT_GO_SCENE,
 		data = {
 			SCENE.METACHARACTER,
 			{
-				autoOpenShipConfigID = 9702051
+				autoOpenShipConfigID = 9705051
 			}
 		},
 		isShow = function ()
-			return getProxy(MetaCharacterProxy):getMetaProgressVOByID(970205) and slot1:isInAct()
+			return getProxy(MetaCharacterProxy):getMetaProgressVOByID(970505) and slot1:isInAct()
 		end,
 		isTip = function ()
-			if getProxy(MetaCharacterProxy):getMetaProgressVOByID(970205):isPassType() then
+			if getProxy(MetaCharacterProxy):getMetaProgressVOByID(970505):isPassType() then
 				return false
 			end
 

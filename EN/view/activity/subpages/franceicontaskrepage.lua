@@ -62,44 +62,24 @@ end
 function slot0.Switch(slot0, slot1)
 	slot0.isSwitching = true
 	slot2 = GetOrAddComponent(slot0.phases[1], typeof(CanvasGroup))
-	slot5 = slot0.phases[2]
 
-	slot5:SetAsLastSibling()
-
-	slot6 = slot0.phases[1]
-
-	setActive(slot6:Find("Image"), false)
-
-	slot5 = LeanTween.moveLocal(go(slot0.phases[1]), slot0.phases[2].localPosition, 0.4)
-
-	slot5:setOnComplete(System.Action(function ()
+	slot0.phases[2]:SetAsLastSibling()
+	setActive(slot0.phases[1]:Find("Image"), false)
+	LeanTween.moveLocal(go(slot0.phases[1]), slot0.phases[2].localPosition, 0.4):setOnComplete(System.Action(function ()
 		setActive(uv0.phases[1]:Find("label"), true)
 	end))
-
-	slot5 = LeanTween.value(go(slot0.phases[1]), 0, 1, 0.4)
-
-	slot5:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot0.phases[1]), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
 		uv0.alpha = slot0
 	end))
-
-	slot6 = slot0.phases[2]
-
-	setActive(slot6:Find("Image"), true)
+	setActive(slot0.phases[2]:Find("Image"), true)
 
 	slot5 = GetOrAddComponent(slot0.phases[2], typeof(CanvasGroup))
-	slot6 = LeanTween.value(go(slot0.phases[2]), 0, 1, 0.4)
 
-	slot6:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot0.phases[2]), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
 		uv0.alpha = slot0
 	end))
-
-	slot7 = slot0.phases[2]
-
-	setActive(slot7:Find("label"), false)
-
-	slot6 = LeanTween.moveLocal(go(slot0.phases[2]), slot0.phases[1].localPosition, 0.4)
-
-	slot6:setOnComplete(System.Action(function ()
+	setActive(slot0.phases[2]:Find("label"), false)
+	LeanTween.moveLocal(go(slot0.phases[2]), slot0.phases[1].localPosition, 0.4):setOnComplete(System.Action(function ()
 		uv0.isSwitching = nil
 		uv0.phases[2] = uv0.phases[1]
 		uv0.phases[1] = uv0.phases[2]

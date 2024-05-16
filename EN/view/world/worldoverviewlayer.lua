@@ -89,10 +89,7 @@ function slot0.didEnter(slot0)
 		slot0.entranceIds = slot1.ids
 	end
 
-	slot2 = slot0._tf
-	slot2 = slot2:GetComponent("DftAniEvent")
-
-	slot2:SetEndEvent(function (slot0)
+	slot0._tf:GetComponent("DftAniEvent"):SetEndEvent(function (slot0)
 		slot1 = {}
 
 		_.each(uv0.entranceIds, function (slot0)
@@ -202,10 +199,9 @@ function slot0.UpdateAchievementPanel(slot0)
 	setText(slot0.rtAchievementPanel:Find("achievement_info/name/info/number"), slot2 + slot3 .. "/" .. slot4)
 
 	slot5, slot6 = slot1:GetFinishAchievements()
-	slot7 = 0
 
 	for slot11, slot12 in ipairs(slot5) do
-		slot7 = slot7 + #slot12.star_list
+		slot7 = 0 + #slot12.star_list
 	end
 
 	slot8 = slot0.rtAchievementPanel:Find("word_list/target_tpl")
@@ -237,13 +233,9 @@ function slot0.LoadAtlasOverall(slot0, slot1)
 	if not slot0.wsAtlasOverall then
 		table.insert(slot2, function (slot0)
 			uv0.wsAtlasOverall = WSAtlasOverall.New()
-			slot1 = uv0.wsAtlasOverall
 
-			slot1:Setup()
-
-			slot1 = uv0.wsAtlasOverall
-
-			slot1:LoadScene(function ()
+			uv0.wsAtlasOverall:Setup()
+			uv0.wsAtlasOverall:LoadScene(function ()
 				uv0.wsAtlasOverall:UpdateAtlas(nowWorld():GetAtlas())
 
 				return uv1()

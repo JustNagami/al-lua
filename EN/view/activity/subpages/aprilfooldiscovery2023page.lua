@@ -24,7 +24,7 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.OnDataSetting(slot0)
-	return uv0.super.OnDataSetting(slot0) or (function ()
+	return uv0.super.OnDataSetting(slot0) or function ()
 		if uv0.activity.data1 == 1 and uv0.activity.data3 == 1 then
 			uv0.activity.data3 = 0
 
@@ -35,7 +35,7 @@ function slot0.OnDataSetting(slot0)
 
 			return true
 		end
-	end)()
+	end()
 end
 
 function slot0.OnFirstFlush(slot0)
@@ -89,11 +89,9 @@ end
 function slot0.OnUpdateFlush(slot0)
 	slot1 = slot0.activity.data1 >= 1
 	slot2 = #slot0.activity.data2_list == #slot0.keyList
-	slot3 = slot0.activity.data2_list
-	slot4 = slot0.activity.data3_list
 
 	for slot8, slot9 in ipairs(slot0.items) do
-		slot11 = table.contains(slot3, slot0.keyList[slot8]) and 3 or table.contains(slot4, slot10) and 2 or 1
+		slot11 = table.contains(slot0.activity.data2_list, slot0.keyList[slot8]) and 3 or table.contains(slot0.activity.data3_list, slot10) and 2 or 1
 
 		onButton(slot0, slot9, function ()
 			if uv0 >= 3 then
@@ -138,8 +136,7 @@ function slot0.OnUpdateFlush(slot0)
 	slot5 = pg.activity_event_picturepuzzle[slot0.activity.id]
 
 	if #table.mergeArray(slot0.activity.data1_list, slot0.activity.data2_list, true) >= #slot5.pickup_picturepuzzle + #slot5.drop_picturepuzzle then
-		slot7 = slot0.activity
-		slot7 = slot7:getConfig("config_client").comStory
+		slot7 = slot0.activity:getConfig("config_client").comStory
 
 		slot0:AddFunc(function (slot0)
 			pg.NewStoryMgr.GetInstance():Play(uv0, slot0)

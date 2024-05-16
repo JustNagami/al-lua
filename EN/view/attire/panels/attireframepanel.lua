@@ -21,9 +21,8 @@ function slot0.Card(slot0)
 		end,
 		LoadPrefab = function (slot0, slot1, slot2)
 			slot3 = slot1:getType()
-			slot6 = PoolMgr.GetInstance()
 
-			slot6:GetPrefab(slot1:getIcon(), slot1:getPrefabName(), true, function (slot0)
+			PoolMgr.GetInstance():GetPrefab(slot1:getIcon(), slot1:getPrefabName(), true, function (slot0)
 				if not uv0.icon then
 					slot1 = nil
 
@@ -47,11 +46,10 @@ function slot0.Card(slot0)
 		end,
 		ReturnIconFrame = function (slot0, slot1)
 			eachChild(slot0.icon, function (slot0)
-				slot1 = slot0.gameObject.name
 				slot2 = nil
 
 				if uv0 == AttireConst.TYPE_ICON_FRAME then
-					slot2 = IconFrame.GetIcon(slot1)
+					slot2 = IconFrame.GetIcon(slot0.gameObject.name)
 				elseif uv0 == AttireConst.TYPE_CHAT_FRAME then
 					slot2 = ChatFrame.GetIcon(slot1)
 				end
@@ -78,22 +76,21 @@ function slot0.Card(slot0)
 		setActive(slot0.tags[2], slot0.state == AttireFrame.STATE_UNLOCK and slot1:isNew())
 	end
 
-	(function (slot0)
+	function (slot0)
 		slot0._go = uv0
 		slot0._tf = tf(uv0)
 		slot0.mark = slot0._tf:Find("info/mark")
 		slot0.print5 = slot0._tf:Find("prints/line5")
 		slot0.print6 = slot0._tf:Find("prints/line6")
 		slot0.emptyTF = slot0._tf:Find("empty")
-		slot1 = slot0._tf
-		slot0.infoTF = slot1:Find("info")
+		slot0.infoTF = slot0._tf:Find("info")
 		slot0.tags = {
 			slot0._tf:Find("info/tags/e"),
 			slot0._tf:Find("info/tags/new")
 		}
 		slot0.icon = slot0._tf:Find("info/icon")
 		slot0.mask = slot0._tf:Find("info/mask")
-	end)(slot1)
+	end(slot1)
 
 	return slot1
 end
@@ -140,22 +137,19 @@ end
 function slot0.Update(slot0, slot1, slot2)
 	slot0.playerVO = slot2
 	slot0.rawAttireVOs = slot1
-	slot0.displayVOs, ownedCnt = slot0:GetDisplayVOs()
+	slot0.displayVOs, slot0.totalCount.text = slot0:GetDisplayVOs()
 
 	slot0:Filter()
-
-	slot0.totalCount.text = ownedCnt
 end
 
 function slot0.GetDisplayVOs(slot0)
 	slot1 = {}
-	slot2 = 0
 
 	for slot6, slot7 in pairs(slot0:GetData()) do
 		table.insert(slot1, slot7)
 
 		if slot7:getState() == AttireFrame.STATE_UNLOCK and slot7.id > 0 then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 	end
 
@@ -201,7 +195,7 @@ function slot0.Filter(slot0)
 		})
 	end
 
-	slot0.scolrect:SetTotalCount(#slot0.displayVOs, -1)
+	slot0.scolrect:SetTotalCount(#slot0.displayVOs, 0)
 end
 
 function slot0.UpdateDesc(slot0, slot1)
@@ -213,9 +207,7 @@ function slot0.UpdateDesc(slot0, slot1)
 		slot0.descPanel = AttireDescPanel.New(slot0.descPanelTF)
 	end
 
-	slot2 = slot0.descPanel
-
-	slot2:Update(slot1.attireFrame, slot0.playerVO)
+	slot0.descPanel:Update(slot1.attireFrame, slot0.playerVO)
 	onButton(slot0, slot0.descPanel.applyBtn, function ()
 		uv1:emit(AttireMediator.ON_APPLY, uv0.attireFrame:getType(), uv0.attireFrame.id)
 	end, SFX_PANEL)

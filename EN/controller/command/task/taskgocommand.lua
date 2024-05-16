@@ -41,10 +41,8 @@ function slot0.execute(slot0, slot1)
 				mapIdx = slot4:getUseableMaxEliteMap() and slot6.id
 			})
 		elseif SCENE[slot5[1]] == SCENE.LEVEL and slot5[2] then
-			slot6 = {}
-
 			if slot5[2].mapIdx then
-				table.insert(slot6, function (slot0)
+				table.insert({}, function (slot0)
 					slot2, slot3 = uv0:getMapById(uv1[2].mapIdx):isUnlock()
 
 					if slot2 then
@@ -80,14 +78,13 @@ function slot0.execute(slot0, slot1)
 	end
 
 	slot6 = slot3:getConfig("sub_type")
-	slot8 = {
-		chapterId = slot4:getActiveChapter() and slot7.id,
-		mapIdx = slot7 and slot7:getConfig("map")
-	}
 	slot10 = math.fmod(slot6, 10)
 
 	if math.modf(slot6 / 10) == 0 then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+			chapterId = slot4:getActiveChapter() and slot7.id,
+			mapIdx = slot7 and slot7:getConfig("map")
+		})
 	elseif slot9 == 1 then
 		if slot10 == 9 then
 			slot0:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
@@ -220,8 +217,8 @@ function slot0.execute(slot0, slot1)
 		end
 	elseif slot9 == 17 then
 		if slot10 == 0 then
-			slot0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
-				fleetType = CommandRoomScene.FLEET_TYPE_COMMON
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
+				fleetType = CommanderCatScene.FLEET_TYPE_COMMON
 			})
 		end
 	elseif slot9 == 18 then

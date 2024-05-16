@@ -41,9 +41,8 @@ function slot0.execute(slot0, slot1)
 	slot14.main_id = slot15
 	slot14.commanders = {}
 	slot11[#slot11 + 1] = slot14
-	slot16 = pg.ConnectionMgr.GetInstance()
 
-	slot16:Send(13107, {
+	pg.ConnectionMgr.GetInstance():Send(13107, {
 		id = slot8,
 		elite_fleet_list = slot11
 	}, 13108, function (slot0)

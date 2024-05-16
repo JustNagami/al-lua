@@ -14,6 +14,7 @@ slot0.TYPE_TRANSPORT = 12
 slot0.TYPE_RANDOM_CONTROLLER = 13
 slot0.TYPE_FOLLOWER = 14
 slot0.TYPE_LUTE = 15
+slot0.TYPE_RANDOM_SLOT = 16
 slot0.INDEX_TO_COMFORTABLE_TYPE = {
 	slot0.TYPE_WALLPAPER,
 	slot0.TYPE_FURNITURE,
@@ -25,6 +26,7 @@ slot0.INDEX_TO_COMFORTABLE_TYPE = {
 	slot0.TYPE_FURNITURE,
 	slot0.TYPE_FURNITURE,
 	slot0.TYPE_WALL,
+	slot0.TYPE_FURNITURE,
 	slot0.TYPE_FURNITURE,
 	slot0.TYPE_FURNITURE,
 	slot0.TYPE_FURNITURE,
@@ -48,7 +50,8 @@ slot0.INDEX_TO_SHOP_TYPE = {
 		slot0.TYPE_TRANSPORT,
 		slot0.TYPE_RANDOM_CONTROLLER,
 		slot0.TYPE_FOLLOWER,
-		slot0.TYPE_LUTE
+		slot0.TYPE_LUTE,
+		slot0.TYPE_RANDOM_SLOT
 	},
 	{},
 	{
@@ -65,6 +68,15 @@ function slot0.Ctor(slot0, slot1)
 	slot0.configId = slot1.configId or tonumber(slot1.id)
 	slot0.count = slot1.count or 0
 	slot0.date = slot1.get_time or slot1.date or 0
+	slot0.newFlag = false
+end
+
+function slot0.MarkNew(slot0)
+	slot0.newFlag = true
+end
+
+function slot0.ClearNewFlag(slot0)
+	slot0.newFlag = false
 end
 
 function slot0.getDate(slot0)
@@ -158,6 +170,14 @@ function slot0.isPaper(slot0)
 	return slot0:getConfig("type") == 4 or slot1 == 1
 end
 
+function slot0.GetThemeName(slot0)
+	if pg.backyard_theme_template[slot0:getConfig("themeId")] then
+		return slot2.name
+	end
+
+	return ""
+end
+
 function slot0.inTime(slot0)
 	return pg.TimeMgr.GetInstance():inTime(slot0:getConfig("time"))
 end
@@ -179,10 +199,8 @@ function slot0.sortSizeFunc(slot0)
 end
 
 function slot0.getPrice(slot0, slot1)
-	slot3 = (100 - (slot0:isDisCount() and slot0:getConfig("discount") or 0)) / 100
-
 	if slot1 == 4 and slot0:getConfig("gem_price") or slot1 == 6 and slot0:getConfig("dorm_icon_price") then
-		slot5 = math.floor(slot4 * slot3)
+		slot5 = math.floor(slot4 * (100 - (slot0:isDisCount() and slot0:getConfig("discount") or 0)) / 100)
 
 		return slot4 > 0 and slot5 == 0 and 1 or slot5
 	end
@@ -197,10 +215,8 @@ function slot0.canPurchaseByDormMoeny(slot0)
 end
 
 function slot0.getSortCurrency(slot0)
-	slot1 = 0
-
 	if slot0:canPurchaseByGem() then
-		slot1 = slot1 + 2
+		slot1 = 0 + 2
 	elseif slot0:canPurchaseByDormMoeny() then
 		slot1 = slot1 + 1
 	end

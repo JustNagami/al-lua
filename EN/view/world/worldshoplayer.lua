@@ -45,10 +45,8 @@ function slot0.didEnter(slot0)
 		})
 	end, SFX_PANEL)
 	slot0.goodsItemList:make(function (slot0, slot1, slot2)
-		slot3 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			slot4 = Goods.Create(uv0.goodsList[slot3], Goods.TYPE_WORLD)
+			slot4 = Goods.Create(uv0.goodsList[slot1 + 1], Goods.TYPE_WORLD)
 
 			GoodsCard.New(slot2):update(slot4)
 
@@ -59,9 +57,7 @@ function slot0.didEnter(slot0)
 			setTextColor(slot2:Find("item/count_contain/count"), Color.New(unpack(ActivityGoodsCard.DefaultColor)))
 			setTextColor(slot2:Find("item/count_contain/label"), Color.New(unpack(ActivityGoodsCard.DefaultColor)))
 			onButton(uv0, slot2, function ()
-				slot0 = nowWorld()
-
-				if uv0:getConfig("genre") == ShopArgs.WorldCollection and slot0:GetTaskProxy():hasDoingCollectionTask() then
+				if uv0:getConfig("genre") == ShopArgs.WorldCollection and nowWorld():GetTaskProxy():hasDoingCollectionTask() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("world_collection_task_tip_1"))
 
 					return
@@ -130,7 +126,10 @@ end
 function slot0.setPlayer(slot0, slot1)
 	slot0.player = slot1
 
-	GetImageSpriteFromAtlasAsync(pg.item_data_statistics[id2ItemId(WorldConst.ResourceID)].icon, "", slot0.rtRes:Find("icon"), true)
+	GetImageSpriteFromAtlasAsync(Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = WorldConst.ResourceID
+	}):getIcon(), "", slot0.rtRes:Find("icon"), true)
 	setText(slot0.rtRes:Find("number"), slot0.player:getResource(WorldConst.ResourceID))
 end
 
@@ -145,13 +144,12 @@ end
 function slot0.updateGoods(slot0, slot1, slot2, slot3)
 	slot4 = pg.TimeMgr.GetInstance()
 	slot5 = nowWorld()
-	slot6 = slot5.expiredTime
 	slot7 = slot5:GetTaskProxy()
 	slot8 = {}
 
 	for slot12, slot13 in pairs(slot3) do
 		if slot4:inTime(pg.shop_template[slot12].time) then
-			if not slot4:inTime(pg.shop_template[slot12].time, slot6 - 1) then
+			if not slot4:inTime(pg.shop_template[slot12].time, slot5.expiredTime - 1) then
 				-- Nothing
 			elseif slot12 == 100000 and not nowWorld():IsReseted() then
 				-- Nothing

@@ -47,9 +47,8 @@ end
 
 function slot0.UpdateView(slot0)
 	slot1 = slot0.contextData
-	slot4 = slot0._tf
 
-	onButton(slot0, slot4:Find("BG"), function ()
+	onButton(slot0, slot0._tf:Find("BG"), function ()
 		if uv0.isRewardAnimating then
 			uv0:SkipAnim()
 
@@ -59,14 +58,8 @@ function slot0.UpdateView(slot0)
 		existCall(uv1.onClose)
 		uv0:closeView()
 	end)
-
-	slot3 = slot0.window
-
-	setText(slot3:Find("Fixed/ButtonExit/pic"), i18n("autofight_leave"))
-
-	slot4 = slot0.window
-
-	onButton(slot0, slot4:Find("Fixed/ButtonExit"), function ()
+	setText(slot0.window:Find("Fixed/ButtonExit/pic"), i18n("autofight_leave"))
+	onButton(slot0, slot0.window:Find("Fixed/ButtonExit"), function ()
 		existCall(uv0.onClose)
 		uv1:closeView()
 	end, SFX_CANCEL)
@@ -99,7 +92,6 @@ function slot0.UpdateView(slot0)
 	end
 
 	slot5 = true
-	slot6 = {}
 
 	setActive(slot0.boxView:Find("Content/Title"), false)
 	setActive(slot0.itemList, false)
@@ -109,16 +101,14 @@ function slot0.UpdateView(slot0)
 	if slot0.hasRewards then
 		slot5 = false
 
-		table.insert(slot6, function (slot0)
+		table.insert({}, function (slot0)
 			setActive(uv0.boxView:Find("Content/Title"), true)
 			setActive(uv0.itemList, true)
 			slot0()
 		end)
 
-		slot7 = CustomIndexLayer.Clone2Full(slot0.itemList, #slot4)
-
 		for slot11, slot12 in ipairs(slot4) do
-			slot14 = slot7[slot11]
+			slot14 = CustomIndexLayer.Clone2Full(slot0.itemList, #slot4)[slot11]
 
 			updateDrop(slot14:Find("Shell/Icon"), slot12.drop)
 			onButton(slot0, slot14:Find("Shell/Icon"), function ()
@@ -179,9 +169,8 @@ function slot0.UpdateView(slot0)
 
 	if slot0.hasEventMsg then
 		slot5 = false
-		slot11 = slot0.boxView
 
-		setText(slot11:Find("Content/TextArea/Text"), table.concat(slot3.message, "\n"))
+		setText(slot0.boxView:Find("Content/TextArea/Text"), table.concat(slot3.message, "\n"))
 		table.insert(slot6, function (slot0)
 			setActive(uv0.boxView:Find("Content/TextArea"), true)
 			slot0()

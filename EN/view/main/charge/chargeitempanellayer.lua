@@ -83,10 +83,7 @@ function slot0.addListener(slot0)
 		end
 
 		if uv0.panelConfig.limitArgs and type(slot1) == "table" and slot1[1] and type(slot2) == "table" and #slot2 >= 2 then
-			slot4 = slot2[2]
-			slot5 = getProxy(PlayerProxy):getRawData()
-
-			if slot2[1] == "lv_70" and slot4 <= slot5.level then
+			if slot2[1] == "lv_70" and slot2[2] <= getProxy(PlayerProxy):getRawData().level then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("lv70_package_tip"),
 					onYes = function ()
@@ -114,12 +111,11 @@ function slot0.updatePanel(slot0)
 	slot9 = slot0.panelConfig.isLocalPrice
 	slot10 = slot0.panelConfig.isMonthCard
 	slot11 = slot0.panelConfig.tagType
-	slot12 = slot0.panelConfig.normalTip
 	slot13 = slot0.panelConfig.extraDrop
 	slot14 = slot0.panelConfig.isForceGold
 
 	if slot0.detailNormalTip then
-		setActive(slot0.detailNormalTip, slot12)
+		setActive(slot0.detailNormalTip, slot0.panelConfig.normalTip)
 	end
 
 	if slot0.detailContain then
@@ -183,7 +179,7 @@ function slot0.updatePanel(slot0)
 			onButton(slot0, slot0.detailItem, function ()
 			end, SFX_PANEL)
 
-			slot15, slot16 = contentWrap(slot4.cfg.name, 10, 2)
+			slot15, slot16 = contentWrap(slot4:getConfig("name"), 10, 2)
 
 			if slot15 then
 				slot16 = slot16 .. "..."
@@ -206,7 +202,7 @@ function slot0.updatePanel(slot0)
 		for slot18 = 1, #slot6 do
 			updateDrop(slot0.detailItemList:GetChild(slot18 - 1), slot6[slot18])
 
-			slot20, slot21 = contentWrap(slot6[slot18].cfg.name, 8, 2)
+			slot20, slot21 = contentWrap(slot6[slot18]:getConfig("name"), 8, 2)
 
 			if slot20 then
 				slot21 = slot21 .. "..."

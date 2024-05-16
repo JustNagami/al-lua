@@ -37,8 +37,7 @@ function slot0.OnStart(slot0, slot1)
 	slot0.nameTr = slot0:findTF("content/name", slot0.dialogueWin)
 	slot0.nameTxt = slot0:findTF("Text", slot0.nameTr):GetComponent(typeof(Text))
 	slot0.portraitTr = slot0:findTF("portrait", slot0.dialogueWin)
-	slot2 = slot0.portraitTr
-	slot0.portraitImg = slot2:GetComponent(typeof(Image))
+	slot0.portraitImg = slot0.portraitTr:GetComponent(typeof(Image))
 	slot0.tags = {
 		slot0.nameTr:Find("tags/1"),
 		slot0.nameTr:Find("tags/2")
@@ -261,9 +260,7 @@ function slot0.OnEnter(slot0, slot1, slot2, slot3)
 end
 
 function slot4(slot0, slot1)
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("Story/" .. slot0, slot0, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("Story/" .. slot0, slot0, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		uv0(slot0)
 	end), true, true)
 end
@@ -287,8 +284,6 @@ function slot0.UpdateCanMarkNode(slot0, slot1, slot2)
 		return
 	end
 
-	slot4 = slot1:GetCanMarkNodeData()
-
 	function slot5(slot0)
 		eachChild(slot0, function (slot0)
 			if table.contains(uv0.marks, slot0.gameObject.name) ~= isActive(slot0) then
@@ -298,7 +293,7 @@ function slot0.UpdateCanMarkNode(slot0, slot1, slot2)
 	end
 
 	if not slot0.canMarkNode then
-		uv1(slot4.name, function (slot0)
+		uv1(slot1:GetCanMarkNodeData().name, function (slot0)
 			if uv0.stop or not slot0 then
 				uv1()
 
@@ -549,16 +544,20 @@ function slot0.UpdateLive2dPainting(slot0, slot1, slot2, slot3, slot4)
 		end)
 	end
 
-	function slot6(slot0)
-		if slot0 and uv0:GetLive2dAction() and slot1 ~= "" then
-			slot0:TriggerAction(slot1)
-		end
-
-		uv1()
-	end
-
 	if not slot3 and slot0.live2dChars[slot2] then
-		slot6(slot0.live2dChars[slot2])
+		function (slot0)
+			if slot0 then
+				if uv0:GetLive2dAction() and slot1 ~= "" then
+					slot0:TriggerAction(slot1)
+				end
+
+				if uv0:GetL2dIdleIndex() and slot2 ~= "" and slot2 > 0 then
+					slot0:changeIdleIndex(slot2)
+				end
+			end
+
+			uv1()
+		end(slot0.live2dChars[slot2])
 	else
 		slot5(slot6)
 	end
@@ -583,13 +582,12 @@ function slot6(slot0, slot1, slot2)
 		end
 	end
 
-	slot8 = {}
+	slot8 = {
+		[slot12] = slot14
+	}
 
 	for slot12 = 1, slot1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")).Length do
-		slot14 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot7[slot12 - 1])
-		slot8[slot12] = slot14
-
-		if slot5 > slot14 - slot4 then
+		if slot5 > ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot7[slot12 - 1]) - slot4 then
 			slot5 = slot15
 		end
 	end
@@ -627,18 +625,14 @@ end
 
 function slot0.UpdateSpinePainting(slot0, slot1, slot2, slot3, slot4)
 	function slot5(slot0)
-		slot1 = uv0
-		slot2 = uv0
-		slot2 = slot2:Find("spinebg")
-		slot3 = uv1
-		slot7 = uv1
+		slot2 = uv0:Find("spinebg")
 
-		setActive(slot2, not slot7:IsHideSpineBg())
+		setActive(slot2, not uv1:IsHideSpineBg())
 
 		uv3.spinePainings[uv0] = SpinePainting.New(SpinePainting.GenerateData({
-			ship = slot3:GetVirtualShip(),
+			ship = uv1:GetVirtualShip(),
 			position = Vector3(0, 0, 0),
-			parent = slot1:Find("spine"),
+			parent = uv0:Find("spine"),
 			effectParent = slot2
 		}), function (slot0)
 			slot0._go.name = uv0:GetPainting()
@@ -676,23 +670,19 @@ end
 function slot0.UpdateMeshPainting(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot7 = false
 
-	function slot8()
-		if uv0:IsShowNPainting() and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. uv1 .. "_n")) then
-			uv1 = uv1 .. "_n"
-		end
-
-		if uv0:IsShowWJZPainting() and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. uv1 .. "_wjz")) then
-			uv1 = uv1 .. "_wjz"
-		end
-
-		setPaintingPrefab(uv2, uv1, "duihua")
-	end
-
 	if slot1:GetPainting() then
-		slot9 = findTF(slot2, "fitter").childCount
+		if slot4 or findTF(slot2, "fitter").childCount <= 0 then
+			function ()
+				if uv0:IsShowNPainting() and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. uv1 .. "_n")) then
+					uv1 = uv1 .. "_n"
+				end
 
-		if slot4 or slot9 <= 0 then
-			slot8()
+				if uv0:IsShowWJZPainting() and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. uv1 .. "_wjz")) then
+					uv1 = uv1 .. "_wjz"
+				end
+
+				setPaintingPrefab(uv2, uv1, "duihua")
+			end()
 		end
 
 		slot10 = slot1:GetPaintingDir()
@@ -772,10 +762,9 @@ function slot0.DisappearSubPainting(slot0, slot1, slot2, slot3)
 	slot5, slot6 = slot2:GetDisappearTime()
 	slot7 = slot2:GetDisappearSeq()
 	slot8 = {}
-	slot9 = {}
 
 	for slot13, slot14 in ipairs(slot2:GetSubPaintings()) do
-		table.insert(slot9, slot14)
+		table.insert({}, slot14)
 	end
 
 	for slot13, slot14 in ipairs(slot7) do
@@ -795,9 +784,7 @@ function slot0.DisappearSubPainting(slot0, slot1, slot2, slot3)
 		end)
 	end
 
-	slot10 = slot1.container
-
-	slot10:SetAsFirstSibling()
+	slot1.container:SetAsFirstSibling()
 	slot0:DelayCall(slot5, function ()
 		seriesAsync(uv0, function ()
 			uv0.container:SetAsLastSibling()
@@ -1021,10 +1008,9 @@ end
 
 function slot9(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot1:GetComponentsInChildren(typeof(Image))
-	slot6 = {}
 
 	if slot2:GetComponent(typeof(Image)) then
-		table.insert(slot6, slot7.gameObject)
+		table.insert({}, slot7.gameObject)
 	end
 
 	for slot11 = 1, slot3 - 1 do
@@ -1045,9 +1031,7 @@ function slot9(slot0, slot1, slot2, slot3, slot4)
 end
 
 function slot0.AddGlitchArtEffectForPating(slot0, slot1, slot2, slot3)
-	slot5 = slot3:IsNoHeadPainting()
-
-	if slot3:ShouldAddGlitchArtEffect() and slot3:GetExPression() ~= nil and not slot5 then
+	if slot3:ShouldAddGlitchArtEffect() and slot3:GetExPression() ~= nil and not slot3:IsNoHeadPainting() then
 		slot6 = slot2:Find("face")
 
 		cloneTplTo(slot6, slot6.parent, "temp_mask"):SetAsFirstSibling()
@@ -1205,12 +1189,11 @@ function slot0.ResetMeshPainting(slot0, slot1)
 
 		for slot8 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
 			slot9 = slot4[slot8]
-			slot10 = Color.white
 
 			if slot9.material ~= slot9.defaultGraphicMaterial then
 				slot9.material = slot9.defaultGraphicMaterial
 
-				slot9.material:SetColor("_Color", slot10)
+				slot9.material:SetColor("_Color", Color.white)
 			else
 				slot9.material = nil
 			end
@@ -1235,9 +1218,7 @@ function slot11(slot0, slot1)
 		slot3 = true
 	end
 
-	slot4 = table.getCount(slot0.live2dChars) <= 0
-
-	if slot3 and slot4 then
+	if slot3 and table.getCount(slot0.live2dChars) <= 0 then
 		if slot0.front:GetComponent(typeof(GraphicRaycaster)) then
 			Object.Destroy(slot5)
 		end
@@ -1258,9 +1239,7 @@ function slot12(slot0, slot1)
 		slot3 = true
 	end
 
-	slot4 = table.getCount(slot0.spinePainings) <= 0
-
-	if slot3 and slot4 then
+	if slot3 and table.getCount(slot0.spinePainings) <= 0 then
 		if slot0.front:GetComponent(typeof(GraphicRaycaster)) then
 			Object.Destroy(slot5)
 		end
@@ -1317,7 +1296,12 @@ end
 
 function slot0.FadeOutPainting(slot0, slot1, slot2, slot3)
 	slot4 = slot2:GetComponent(typeof(CanvasGroup))
-	slot5 = slot1:GetFadeOutPaintingTime()
+
+	if slot1:GetFadeOutPaintingTime() <= 0 then
+		slot3()
+
+		return
+	end
 
 	if slot1:ShouldAddHeadMaskWhenFade() then
 		slot0:AddHeadMask(slot2)
@@ -1360,6 +1344,8 @@ function slot0.OnWillExit(slot0, slot1, slot2, slot3)
 end
 
 function slot0.OnEnd(slot0)
+	slot0.conentTxt.fontSize = slot0.defualtFontSize
+
 	slot0:ClearGlitchArtForPortrait()
 	slot0:ClearCanMarkNode()
 	slot0:RecyclePainting({

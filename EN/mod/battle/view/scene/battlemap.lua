@@ -32,16 +32,13 @@ function slot1.Ctor(slot0, slot1)
 			table.insert(slot0.mapLayerCtrls, slot9)
 		end
 
-		slot10 = string.split(slot2[slot7 .. "_pos"], ";")
-		slot11 = string.split(slot2[slot7 .. "_scale"], ";")
-
 		for slot15, slot16 in ipairs(slot0.GetMapResNames(slot1, slot7)) do
 			slot17 = uv1.Battle.BattleResourceManager.GetInstance():InstMap(slot16)
-			tf(slot17).localScale = string2vector3(slot11[slot15])
+			tf(slot17).localScale = string2vector3(string.split(slot2[slot7 .. "_scale"], ";")[slot15])
 
 			setParent(slot17, slot8, false)
 
-			tf(slot17).localPosition = string2vector3(slot10[slot15])
+			tf(slot17).localPosition = string2vector3(string.split(slot2[slot7 .. "_pos"], ";")[slot15])
 
 			if slot17:GetComponent(typeof(SeaAnim)) then
 				table.insert(slot0.seaAnimList, slot18)
@@ -140,10 +137,8 @@ function slot1.setSpeedScaler(slot0, slot1)
 end
 
 function slot1.updateSeaSpeed(slot0)
-	slot1 = uv0.Battle.BattleVariable.MapSpeedRatio
-
 	for slot5, slot6 in ipairs(slot0.seaAnimList) do
-		slot6:AdjustAnimSpeed(slot1)
+		slot6:AdjustAnimSpeed(uv0.Battle.BattleVariable.MapSpeedRatio)
 	end
 end
 

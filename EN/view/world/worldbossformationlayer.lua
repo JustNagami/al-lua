@@ -89,17 +89,12 @@ function slot0.init(slot0)
 end
 
 function slot0.Register(slot0)
-	slot1 = slot0._formationLogic
-
-	slot1:AddLoadComplete(function ()
+	slot0._formationLogic:AddLoadComplete(function ()
 		if uv0._currentForm ~= uv1.FORM_EDIT then
 			uv0._formationLogic:SwitchToPreviewMode()
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddHeroInfoModify(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1, slot2)
 		slot2:SetLocalScale(Vector3(0.65, 0.65, 1))
 		SetActive(slot0, true)
 
@@ -130,47 +125,26 @@ function slot0.Register(slot0)
 		setImageSprite(findTF(slot3, "type"), slot8, true)
 		setText(findTF(slot3, "frame/lv_contain/lv"), slot1.level)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddLongPress(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddLongPress(function (slot0, slot1, slot2)
 		uv0:emit(WorldBossFormationMediator.OPEN_SHIP_INFO, slot1.id, slot2)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddClick(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddClick(function (slot0, slot1, slot2)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_CLICK)
 		uv0:emit(WorldBossFormationMediator.CHANGE_FLEET_SHIP, slot0, slot2, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddBeginDrag(function (slot0)
+	slot0._formationLogic:AddBeginDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddEndDrag(function (slot0)
+	slot0._formationLogic:AddEndDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddShiftOnly(function (slot0)
+	slot0._formationLogic:AddShiftOnly(function (slot0)
 		uv0:emit(WorldBossFormationMediator.CHANGE_FLEET_SHIPS_ORDER)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddRemoveShip(function (slot0, slot1)
+	slot0._formationLogic:AddRemoveShip(function (slot0, slot1)
 		uv0:emit(WorldBossFormationMediator.REMOVE_SHIP, slot0, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
+	slot0._formationLogic:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
 		if not slot3:canRemove(slot2) then
 			slot5, slot6 = slot3:getShipPos(slot2)
 
@@ -186,38 +160,26 @@ function slot0.Register(slot0)
 			})
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToDisplayMode(function ()
+	slot0._formationLogic:AddSwitchToDisplayMode(function ()
 		uv0._currentForm = uv1.FORM_EDIT
 		uv0._checkBtn:GetComponent("Button").interactable = true
 
 		setActive(uv0._checkBtn:Find("save"), true)
 		setActive(uv0._checkBtn:Find("edit"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToShiftMode(function ()
+	slot0._formationLogic:AddSwitchToShiftMode(function ()
 		uv0:disableAllStepper()
 
 		uv0._checkBtn:GetComponent("Button").interactable = false
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToPreviewMode(function ()
+	slot0._formationLogic:AddSwitchToPreviewMode(function ()
 		uv0._currentForm = uv1.FORM_PREVIEW
 		uv0._checkBtn:GetComponent("Button").interactable = true
 
 		setActive(uv0._checkBtn:Find("save"), false)
 		setActive(uv0._checkBtn:Find("edit"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddGridTipClick(function (slot0, slot1)
+	slot0._formationLogic:AddGridTipClick(function (slot0, slot1)
 		uv0:emit(WorldBossFormationMediator.CHANGE_FLEET_SHIP, nil, slot1, slot0)
 	end)
 end
@@ -247,16 +209,12 @@ function slot0.SetStageID(slot0, slot1)
 		})
 	end
 
-	slot7 = findTF(slot0._goals, "goal_tpl")
-	slot8 = findTF(slot0._goals, "goal_sink")
-	slot9 = findTF(slot0._goals, "goal_time")
-
 	if slot3 == 1 then
 		slot10 = nil
 
-		setWidgetText(slot7, i18n("battle_preCombatLayer_victory"))
-		setWidgetText(slot8, (slot5 >= 2 or i18n("battle_preCombatLayer_undefeated")) and i18n("battle_preCombatLayer_sink_limit", slot5))
-		setWidgetText(slot9, i18n("battle_preCombatLayer_time_limit", slot4))
+		setWidgetText(findTF(slot0._goals, "goal_tpl"), i18n("battle_preCombatLayer_victory"))
+		setWidgetText(findTF(slot0._goals, "goal_sink"), (slot5 >= 2 or i18n("battle_preCombatLayer_undefeated")) and i18n("battle_preCombatLayer_sink_limit", slot5))
+		setWidgetText(findTF(slot0._goals, "goal_time"), i18n("battle_preCombatLayer_time_limit", slot4))
 	elseif slot3 == 2 then
 		setActive(slot8, false)
 		setActive(slot9, false)
@@ -278,9 +236,8 @@ end
 
 function slot0.SetCurrentFleet(slot0, slot1)
 	slot0._currentFleetVO = slot1
-	slot2 = slot0._formationLogic
 
-	slot2:SetFleetVO(slot0._currentFleetVO)
+	slot0._formationLogic:SetFleetVO(slot0._currentFleetVO)
 
 	slot0._legalFleetIdList = {
 		slot1
@@ -474,9 +431,7 @@ function slot0.UpdateBuffContainer(slot0)
 		return
 	end
 
-	slot5 = slot0._buffContainer
-
-	UIItemList.StaticAlign(slot0._buffContainer, slot5:GetChild(0), #slot1, function (slot0, slot1, slot2)
+	UIItemList.StaticAlign(slot0._buffContainer, slot0._buffContainer:GetChild(0), #slot1, function (slot0, slot1, slot2)
 		if slot0 ~= UIItemList.EventUpdate then
 			return
 		end

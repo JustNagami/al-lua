@@ -13,19 +13,16 @@ end
 
 function slot2.spell(slot0, slot1, slot2)
 	if slot0._tempData.arg_list.skill_id_list then
-		slot4 = {}
-		slot5 = slot3.range
-
 		for slot9, slot10 in ipairs(slot3.skill_id_list) do
-			slot4[slot10] = slot5[slot9]
+			-- Nothing
 		end
 
 		slot6 = math.random()
 
-		for slot10, slot11 in pairs(slot4) do
-			slot13 = slot11[2]
-
-			if slot11[1] <= slot6 and slot6 < slot13 then
+		for slot10, slot11 in pairs({
+			[slot10] = slot3.range[slot9]
+		}) do
+			if slot11[1] <= slot6 and slot6 < slot11[2] then
 				slot0._skillList[slot10] = slot0._skillList[slot10] or uv0.Battle.BattleSkillUnit.GenerateSpell(slot10, slot0._level, slot1, attData)
 				slot14 = slot0._skillList[slot10]
 
@@ -39,11 +36,10 @@ function slot2.spell(slot0, slot1, slot2)
 			end
 		end
 	elseif slot3.random_skill_tag then
-		slot4 = slot3.random_skill_tag
 		slot6 = {}
 
 		for slot10, slot11 in ipairs(slot1:GetLabelTag()) do
-			slot12, slot13 = string.find(slot11, slot4)
+			slot12, slot13 = string.find(slot11, slot3.random_skill_tag)
 
 			if slot12 and not table.contains(slot6, tonumber(string.sub(slot11, slot13 + 1, #slot11))) then
 				table.insert(slot6, slot14)

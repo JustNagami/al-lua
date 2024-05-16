@@ -23,23 +23,19 @@ end
 function slot0.Flush(slot0)
 	slot0:UpdateMedal()
 
-	slot1 = getProxy(BuildShipProxy)
 	slot2 = pg.gametip.honor_medal_support_tips_display.tip
 
 	setText(slot0:findTF("gallery/prints/intro/text"), slot2.support_tip_consume)
 	setImageSprite(slot0.bg, GetSpriteFromAtlas(slot2.bg, ""))
-
-	slot4 = slot0.tipSTxt
-
-	slot4:SetText(slot2.support_tip_ship)
+	slot0.tipSTxt:SetText(slot2.support_tip_ship)
 
 	slot4 = slot0:findTF("gallery/item_bg/medal")
 
-	setText(slot4:Find("name"), getDropName({
+	setText(slot4:Find("name"), Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = ITEM_ID_SILVER_HOOK
-	}))
-	setText(slot4:Find("count/Text"), slot1:getSupportShipCost())
+	}):getName())
+	setText(slot4:Find("count/Text"), getProxy(BuildShipProxy):getSupportShipCost())
 	slot0:UpdateBuildPoolPaiting()
 	onButton(slot0, slot0.helpBtn, function ()
 		uv0.contextData.helpWindow:ExecuteAction("Show", uv1, "support")
@@ -69,10 +65,7 @@ end
 
 function slot0.UpdateBuildPoolPaiting(slot0)
 	if slot0.painting ~= slot0.contextData.falgShip:getPainting() then
-		slot2 = pg.UIMgr
-		slot2 = slot2:GetInstance()
-
-		slot2:LoadingOn()
+		pg.UIMgr:GetInstance():LoadingOn()
 		setPaintingPrefabAsync(slot0.patingTF, slot1, "build", function ()
 			uv0.painting = uv1
 

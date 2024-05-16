@@ -7,9 +7,8 @@ function slot0.execute(slot0, slot1)
 
 	slot3 = slot2.cmd
 	slot4 = slot2.arg1
-	slot5 = pg.ConnectionMgr.GetInstance()
 
-	slot5:Send(11100, {
+	pg.ConnectionMgr.GetInstance():Send(11100, {
 		cmd = slot2.cmd,
 		arg1 = slot2.arg1,
 		arg2 = slot2.arg2,

@@ -4,14 +4,10 @@ function slot0.Ctor(slot0, slot1, slot2)
 	pg.DelegateInfo.New(slot0)
 
 	slot0._tf = slot1
-	slot3 = slot0._tf
-	slot0.img = slot3:GetComponent(typeof(Image))
+	slot0.img = slot0._tf:GetComponent(typeof(Image))
 	slot0.event = slot2
-	slot3 = slot0._tf
-	slot3 = slot3:Find("Text")
-	slot0.iconText = slot3:GetComponent(typeof(Text))
-	slot3 = slot0._tf
-	slot0.tip = slot3:Find("tip")
+	slot0.iconText = slot0._tf:Find("Text"):GetComponent(typeof(Text))
+	slot0.tip = slot0._tf:Find("tip")
 
 	onButton(slot0, slot0._tf, function ()
 		uv0.event:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_LIST)

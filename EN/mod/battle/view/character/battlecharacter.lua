@@ -315,6 +315,7 @@ function slot6.AddUnitEvent(slot0)
 	slot0._unitData:RegisterEventListener(slot0, uv0.HIDE_WAVE_FX, slot0.RemoveWaveFX)
 	slot0._unitData:RegisterEventListener(slot0, uv0.ADD_BUFF_CLOCK, slot0.onAddBuffClock)
 	slot0._unitData:RegisterEventListener(slot0, uv0.SWITCH_SPINE, slot0.onSwitchSpine)
+	slot0._unitData:RegisterEventListener(slot0, uv0.SWITCH_SHADER, slot0.onSwitchShader)
 
 	slot5 = slot0.onUpdateScore
 
@@ -353,6 +354,8 @@ function slot6.RemoveUnitEvent(slot0)
 	slot0._unitData:UnregisterEventListener(slot0, uv0.INIT_AIMBIAS)
 	slot0._unitData:UnregisterEventListener(slot0, uv0.REMOVE_AIMBIAS)
 	slot0._unitData:UnregisterEventListener(slot0, uv0.ADD_BUFF_CLOCK)
+	slot0._unitData:UnregisterEventListener(slot0, uv0.SWITCH_SPINE)
+	slot0._unitData:UnregisterEventListener(slot0, uv0.SWITCH_SHADER)
 	slot0._unitData:UnregisterEventListener(slot0, uv1.Battle.BattleBuffEvent.BUFF_EFFECT_CHNAGE_SIZE)
 
 	slot4 = uv1.Battle.BattleBuffEvent.BUFF_EFFECT_NEW_WEAPON
@@ -470,10 +473,8 @@ function slot6.onVoice(slot0, slot1)
 end
 
 function slot6.onPlayFX(slot0, slot1)
-	slot2 = slot1.Data.fxName
-
 	if slot1.Data.notAttach then
-		slot0:PlayFX(slot2)
+		slot0:PlayFX(slot1.Data.fxName)
 	else
 		slot0:AddFX(slot2)
 	end
@@ -506,6 +507,10 @@ function slot6.onUpdateDiveInvisible(slot0, slot1)
 end
 
 function slot6.UpdateDiveInvisible(slot0, slot1)
+	if not slot0._go then
+		return
+	end
+
 	slot3 = slot0._unitData:GetIFF() == uv0.FOE_CODE
 
 	if slot0._unitData:GetDiveInvisible() then
@@ -552,6 +557,14 @@ function slot6.updateInvisible(slot0, slot1, slot2, slot3)
 end
 
 function slot6.onDetected(slot0, slot1)
+	if not slot0._go then
+		return
+	end
+
+	if slot0._unitData:GetForceExpose() then
+		return
+	end
+
 	if slot0._unitData:GetDiveDetected() and slot0._unitData:GetIFF() == uv0.FOE_CODE then
 		slot0._shockFX = slot0:AddFX("shock", true, true)
 	else
@@ -573,6 +586,13 @@ function slot6.UpdateCharacterDetected(slot0)
 	end
 end
 
+function slot6.UpdateCharacterForceDetected(slot0)
+	if slot0._unitData:GetIFF() == uv0.FOE_CODE and slot0._unitData:GetForceExpose() then
+		slot0:spineSemiTransparentFade(0, 0.7, uv0.SUB_FADE_IN_DURATION)
+		slot0:updateComponentVisible()
+	end
+end
+
 function slot6.onBlindExposed(slot0, slot1)
 	slot0:GetTf():GetComponent(typeof(Renderer)).enabled = slot0._unitData:GetExposed()
 
@@ -585,9 +605,7 @@ function slot6.updateComponentVisible(slot0)
 	if slot0._unitData:GetIFF() ~= uv0.FOE_CODE then
 		slot1 = uv0.FUSION_ELEMENT_UNIT_TYPE < slot0._unitData:GetAttrByName(uv1.Battle.BattleBuffSetBattleUnitType.ATTR_KEY)
 	else
-		slot3 = slot0._unitData:GetDiveDetected()
-		slot4 = slot0._unitData:GetDiveInvisible()
-		slot1 = slot0._unitData:GetExposed() and (not slot4 or not not slot3)
+		slot1 = slot0._unitData:GetForceExpose() or slot0._unitData:GetExposed() and (not slot0._unitData:GetDiveInvisible() or not not slot0._unitData:GetDiveDetected())
 	end
 
 	SetActive(slot0._arrowBarTf, slot1)
@@ -940,9 +958,6 @@ function slot6.AddModel(slot0, slot1)
 	end
 
 	slot0:SetBoneList()
-
-	slot0._tf.position = slot0._unitData:GetPosition()
-
 	slot0:UpdateMatrix()
 	slot0._unitData:ActiveCldBox()
 
@@ -998,16 +1013,17 @@ function slot6.SwitchModel(slot0, slot1, slot2)
 	end)
 	slot0:SwitchShader(slot0._shaderType, slot0._color)
 
-	slot5 = {}
-	slot6 = {}
+	slot6 = {
+		[slot10] = slot12
+	}
 
 	for slot10, slot11 in pairs(slot0._blinkDict) do
 		slot12 = SpineAnim.CharBlink(slot0._go, slot11.r, slot11.g, slot11.b, slot11.a, slot11.peroid, slot11.duration, false)
-		slot5[slot12] = slot11
-		slot6[slot10] = slot12
 	end
 
-	slot0._blinkDict = slot5
+	slot0._blinkDict = {
+		[slot12] = slot11
+	}
 
 	slot0:PlayAction(slot0._actionIndex)
 
@@ -1076,10 +1092,9 @@ function slot6.UpdateOrbit(slot0)
 
 	for slot5, slot6 in pairs(slot0._orbitSpeedUpdateList) do
 		slot7 = slot6.orbit
-		slot10 = true
 
 		for slot14, slot15 in ipairs(slot6.change.condition.param) do
-			slot10 = uv0.simpleCompare(slot15, slot1) and slot10
+			slot10 = uv0.simpleCompare(slot15, slot1) and true
 		end
 
 		if slot10 then
@@ -1320,10 +1335,8 @@ function slot6.onChangeSize(slot0, slot1)
 end
 
 function slot6.updateSomkeFX(slot0)
-	slot1 = slot0._unitData:GetHPRate()
-
 	for slot5, slot6 in ipairs(slot0._smokeList) do
-		if slot1 < slot6.rate then
+		if slot0._unitData:GetHPRate() < slot6.rate then
 			if slot6.active == false then
 				slot6.active = true
 
@@ -1366,11 +1379,9 @@ function slot6.UpdateAniEffect(slot0, slot1)
 end
 
 function slot6.UpdateTagEffect(slot0, slot1)
-	slot2 = slot0._unitData:GetBoxSize().y * 0.5
-
 	for slot6, slot7 in pairs(slot0._tagFXList) do
 		slot7:Update(slot1)
-		slot7:SetPosition(slot0._referenceVector + Vector3(0, slot2, 0))
+		slot7:SetPosition(slot0._referenceVector + Vector3(0, slot0._unitData:GetBoxSize().y * 0.5, 0))
 	end
 end
 
@@ -1441,13 +1452,17 @@ end
 function slot6.SonarAcitve(slot0, slot1)
 end
 
-function slot6.SwitchShader(slot0, slot1, slot2)
+function slot6.SwitchShader(slot0, slot1, slot2, slot3)
 	LeanTween.cancel(slot0._go)
 
 	slot2 = slot2 or Color.New(0, 0, 0, 0)
 
 	if slot1 then
 		slot0._animator:ShiftShader(uv0.GetInstance():GetShader(slot1), slot2)
+
+		if slot3 then
+			slot0:spineSemiTransparentFade(0, slot3.invisible, 0)
+		end
 	end
 
 	slot0._shaderType = slot1
@@ -1479,4 +1494,10 @@ function slot6.SwitchSpine(slot0, slot1)
 	end
 
 	slot0._factory:SwitchCharacterSpine(slot0, slot1)
+end
+
+function slot6.onSwitchShader(slot0, slot1)
+	slot2 = slot1.Data
+
+	slot0:SwitchShader(slot2.shader, slot2.color, slot2.args)
 end

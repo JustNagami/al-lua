@@ -25,8 +25,7 @@ function slot0.init(slot0)
 	setActive(slot0.equipmentTypeToggleGroup:GetChild(0), false)
 	slot0.equipmentTypeToggleGroup:GetChild(0):Find("selectedframe").gameObject:SetActive(false)
 
-	slot3 = slot0.rightPanel
-	slot0.TreeCanvas = slot3:Find("ViewPort/Content")
+	slot0.TreeCanvas = slot0.rightPanel:Find("ViewPort/Content")
 
 	setActive(slot0.rightPanel:Find("EquipNode"), false)
 	setActive(slot0.rightPanel:Find("Link"), false)
@@ -53,13 +52,8 @@ function slot0.SetEnv(slot0, slot1)
 end
 
 function slot0.didEnter(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:OverlayPanel(slot0.top)
-
-	slot3 = slot0.top
-
-	onButton(slot0, slot3:Find("adapt/top/back"), function ()
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.top)
+	onButton(slot0, slot0.top:Find("adapt/top/back"), function ()
 		uv0:closeView()
 	end, SFX_CANCEL)
 
@@ -162,9 +156,8 @@ function slot0.UpdateNations(slot0)
 
 	for slot5 = 1, #slot0.nationToggles do
 		slot6 = slot0.nationToggles[slot5]
-		slot8 = slot0.loader
 
-		slot8:GetSprite(uv1, "nation" .. slot1[slot5] .. "_disable", slot6:Find("selectedIcon"))
+		slot0.loader:GetSprite(uv1, "nation" .. slot1[slot5] .. "_disable", slot6:Find("selectedIcon"))
 		setActive(slot6:Find("selectedCursor"), false)
 		onButton(slot0, slot6, function ()
 			if uv0.contextData.nation ~= uv1 then
@@ -207,9 +200,8 @@ function slot0.UpdateEquipmentTypes(slot0)
 	for slot5 = 1, #slot0.equipmentTypeToggles do
 		slot6 = slot0.equipmentTypeToggles[slot5]
 		slot6:GetComponent(typeof(Toggle)).isOn = false
-		slot8 = slot0.loader
 
-		slot8:GetSprite(uv1, "equipmentType" .. slot1[slot5], slot6:Find("itemName"), true)
+		slot0.loader:GetSprite(uv1, "equipmentType" .. slot1[slot5], slot6:Find("itemName"), true)
 		setActive(slot6:Find("selectedframe"), false)
 		onToggle(slot0, slot6, function (slot0)
 			if slot0 and uv0.contextData.equipmentTypeIndex ~= uv1 then
@@ -379,7 +371,7 @@ function slot0.UpdateItemNode(slot0, slot1, slot2)
 			}
 		}))
 	end, SFX_PANEL)
-	slot1:Find("Mask/NameText"):GetComponent("ScrollText"):SetText(pg.equip_data_statistics[slot2[3]].name)
+	slot1:Find("Mask/NameText"):GetComponent("ScrollText"):SetText(Equipment.getConfigData(slot2[3]).name)
 	setActive(slot1:Find("cratfable"), _.any(slot0.env.tracebackHelper:GetSortedEquipTraceBack(slot2[3]), function (slot0)
 		return slot0.candicates and #slot1 > 0 and EquipmentTransformUtil.CheckTransformFormulasSucceed(slot0.formulas, slot1[#slot1])
 	end))

@@ -178,10 +178,9 @@ end
 
 function slot0.Fold(slot0, slot1, slot2)
 	slot0.lposX = slot0.lposX or slot0._tf.localPosition.x
-	slot3 = slot1 and slot0.lposX + 1200 or slot0.lposX
 
 	if slot2 == 0 then
-		slot0._go.transform.localPosition = Vector3(slot3, slot0._go.transform.localPosition.y, 0)
+		slot0._go.transform.localPosition = Vector3(slot1 and slot0.lposX + 1200 or slot0.lposX, slot0._go.transform.localPosition.y, 0)
 	else
 		LeanTween.moveLocalX(slot0._go, slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end

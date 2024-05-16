@@ -186,13 +186,12 @@ end
 function slot0.checkPlayerBoom(slot0)
 	if slot0.gameChar:getActionAble() then
 		slot2 = slot0.gameChar:getChar().tf.anchoredPosition
-		slot4 = false
 
 		for slot8 = 1, #slot0.gameItem:getBooms() do
 			if slot3[slot8].ready and slot9.ready == 0 and not slot9.broken and slot9.brokenTime < 1 then
 				slot10 = slot9.boundPoints
 
-				if not slot4 then
+				if not false then
 					slot12 = CastleGameVo.PointInTriangle(slot2, slot10[3], slot10[4], slot10[1])
 
 					if CastleGameVo.PointInTriangle(slot2, slot10[1], slot10[2], slot10[3]) then
@@ -261,12 +260,11 @@ end
 function slot0.checkPlayerInFloor(slot0)
 	if slot0.gameChar:getActionAble() then
 		slot2 = slot0.gameChar:getChar().tf.anchoredPosition
-		slot4 = false
 
 		for slot8 = 1, #slot0.gameFloor:getFloors() do
 			slot10 = slot3[slot8].bound
 
-			if not slot4 then
+			if not false then
 				slot12 = CastleGameVo.PointInTriangle(slot2, slot10[3], slot10[4], slot10[1])
 
 				if CastleGameVo.PointInTriangle(slot2, slot10[1], slot10[2], slot10[3]) then

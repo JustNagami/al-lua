@@ -7,26 +7,14 @@ function slot0.Ctor(slot0, slot1, slot2)
 
 	pg.DelegateInfo.New(slot0)
 
-	slot3 = slot0._tf
-	slot0.bg = slot3:GetComponent(typeof(Image))
-	slot3 = slot0._tf
-	slot3 = slot3:Find("label")
-	slot0.label = slot3:GetComponent(typeof(Image))
-	slot3 = slot0._tf
-	slot3 = slot3:Find("title/name")
-	slot0.titleTxt = slot3:GetComponent(typeof(Text))
-	slot3 = slot0._tf
-	slot3 = slot3:Find("desc")
-	slot0.descTxt = slot3:GetComponent(typeof(Text))
-	slot4 = slot0._tf
-	slot5 = slot0._tf
-	slot0.awardList = UIItemList.New(slot4:Find("awards/content"), slot5:Find("awards/content/item"))
-	slot3 = slot0._tf
-	slot0.getBtn = slot3:Find("get")
-	slot3 = slot0._tf
-	slot0.gotBtn = slot3:Find("got")
-	slot3 = slot0._tf
-	slot0.rankBtn = slot3:Find("rank")
+	slot0.bg = slot0._tf:GetComponent(typeof(Image))
+	slot0.label = slot0._tf:Find("label"):GetComponent(typeof(Image))
+	slot0.titleTxt = slot0._tf:Find("title/name"):GetComponent(typeof(Text))
+	slot0.descTxt = slot0._tf:Find("desc"):GetComponent(typeof(Text))
+	slot0.awardList = UIItemList.New(slot0._tf:Find("awards/content"), slot0._tf:Find("awards/content/item"))
+	slot0.getBtn = slot0._tf:Find("get")
+	slot0.gotBtn = slot0._tf:Find("got")
+	slot0.rankBtn = slot0._tf:Find("rank")
 
 	onButton(slot0, slot0.rankBtn, function ()
 		uv0.viewComponent:ShowReportRank(uv0.report.id)

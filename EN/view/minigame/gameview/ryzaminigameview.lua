@@ -74,10 +74,12 @@ function slot0.updateMainUI(slot0)
 	slot5 = slot3 == slot1:getConfig("reward_need") and 8 or math.min(slot1.usedtime + 1, slot3 + slot1.count)
 
 	for slot11 = 1, slot0.itemList.container.childCount do
-		slot12 = {}
+		slot12 = {
+			finish = true
+		}
 
 		if slot11 <= slot3 then
-			slot12.finish = true
+			-- Nothing
 		elseif slot11 <= slot4 then
 			-- Nothing
 		elseif slot3 == slot2 then
@@ -125,10 +127,8 @@ function slot0.checkGet(slot0)
 end
 
 function slot0.initUI(slot0)
-	slot1 = slot0._tf
-	slot0.rtTitlePage = slot1:Find("TitlePage")
-	slot1 = slot0.rtTitlePage
-	slot1 = slot1:Find("main")
+	slot0.rtTitlePage = slot0._tf:Find("TitlePage")
+	slot1 = slot0.rtTitlePage:Find("main")
 
 	onButton(slot0, slot1:Find("btn_back"), function ()
 		uv0:closeView()
@@ -141,8 +141,7 @@ function slot0.initUI(slot0)
 		})
 	end, SFX_PANEL)
 
-	slot2 = slot0:GetMGData()
-	slot2 = slot2:GetSimpleValue("story")
+	slot2 = slot0:GetMGData():GetSimpleValue("story")
 
 	onButton(slot0, slot1:Find("btn_start"), function ()
 		slot0 = {}
@@ -165,14 +164,11 @@ function slot0.initUI(slot0)
 	slot0.stageIndex = 0
 	slot4 = slot1:Find("side_panel/award/content")
 	slot0.itemList = UIItemList.New(slot4, slot4:GetChild(0))
-	slot5 = slot0.itemList
 
-	slot5:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.itemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = slot2:Find("IconTpl")
-			slot5, slot6, slot7 = unpack(uv0[slot1])
+			slot5, slot6, slot7 = unpack(uv0[slot1 + 1])
 
 			updateDrop(slot3, {
 				count = slot7,
@@ -189,13 +185,9 @@ function slot0.initUI(slot0)
 			end)
 		end
 	end)
+	slot0.itemList:align(#pg.mini_game[slot0:GetMGData().id].simple_config_data.drop_ids)
 
-	slot5 = slot0.itemList
-
-	slot5:align(#pg.mini_game[slot0:GetMGData().id].simple_config_data.drop_ids)
-
-	slot5 = slot0:GetMGHubData()
-	slot6 = slot5:getConfig("reward_need")
+	slot6 = slot0:GetMGHubData():getConfig("reward_need")
 
 	setActive(slot4:GetChild(slot6), true)
 	onToggle(slot0, slot4:GetChild(slot6), function (slot0)
@@ -203,27 +195,16 @@ function slot0.initUI(slot0)
 			uv0.stageIndex = 0
 		end
 	end)
-
-	slot7 = slot0.rtTitlePage
-	slot7 = slot7:Find("countdown")
-	slot8 = slot7:Find("bg/Image")
-	slot8 = slot8:GetComponent(typeof(DftAniEvent))
-
-	slot8:SetEndEvent(function ()
+	slot0.rtTitlePage:Find("countdown"):Find("bg/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:openUI()
 		uv0:startGame()
 	end)
-
-	slot8 = slot0.rtTitlePage
-	slot8 = slot8:Find("pause")
-
-	onButton(slot0, slot8:Find("window/btn_confirm"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("pause"):Find("window/btn_confirm"), function ()
 		uv0:openUI()
 		uv0:resumeGame()
 	end, SFX_CONFIRM)
 
-	slot9 = slot0.rtTitlePage
-	slot9 = slot9:Find("exit")
+	slot9 = slot0.rtTitlePage:Find("exit")
 
 	onButton(slot0, slot9:Find("window/btn_cancel"), function ()
 		uv0:openUI()
@@ -234,11 +215,7 @@ function slot0.initUI(slot0)
 		uv0:resumeGame()
 		uv0:endGame()
 	end, SFX_CONFIRM)
-
-	slot10 = slot0.rtTitlePage
-	slot10 = slot10:Find("result")
-
-	onButton(slot0, slot10:Find("window/btn_finish"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("result"):Find("window/btn_finish"), function ()
 		setActive(uv0._tf:Find("Viewport"), false)
 		uv0:openUI("main")
 		pg.BgmMgr.GetInstance():Push(uv0.__cname, "ryza-5")
@@ -247,50 +224,35 @@ end
 
 function slot0.initGameUI(slot0)
 	slot0.uiMgr = pg.UIMgr.GetInstance()
-	slot1 = slot0._tf
-	slot0.rtResource = slot1:Find("Resource")
-	slot1 = slot0._tf
-	slot0.rtMain = slot1:Find("Viewport/MainContent")
-	slot1 = slot0.rtMain
-	slot0.rtPlane = slot1:Find("plane")
+	slot0.rtResource = slot0._tf:Find("Resource")
+	slot0.rtMain = slot0._tf:Find("Viewport/MainContent")
+	slot0.rtPlane = slot0.rtMain:Find("plane")
 	slot0.sprites = {}
 
 	eachChild(slot0.rtPlane, function (slot0)
 		uv0.sprites[slot0.name] = getImageSprite(slot0)
 	end)
 
-	slot1 = slot0._tf
-	slot0.rtController = slot1:Find("Controller")
-	slot1 = slot0.rtController
-	slot0.rtJoyStick = slot1:Find("bottom/handle_stick")
-	slot3 = slot0.rtController
+	slot0.rtController = slot0._tf:Find("Controller")
+	slot0.rtJoyStick = slot0.rtController:Find("bottom/handle_stick")
 
-	onButton(slot0, slot3:Find("bottom/btn_bomb"), function ()
+	onButton(slot0, slot0.rtController:Find("bottom/btn_bomb"), function ()
 		uv0.responder:RyzaBomb()
 	end)
 
-	slot1 = slot0.rtController
-	slot0.rtScore = slot1:Find("top/title/SCORE/Text")
-	slot1 = slot0.rtController
-	slot0.rtTime = slot1:Find("top/title/TIME/Text")
-	slot3 = slot0.rtController
+	slot0.rtScore = slot0.rtController:Find("top/title/SCORE/Text")
+	slot0.rtTime = slot0.rtController:Find("top/title/TIME/Text")
 
-	onButton(slot0, slot3:Find("top/btn_back"), function ()
+	onButton(slot0, slot0.rtController:Find("top/btn_back"), function ()
 		uv0:openUI("exit")
 	end, SFX_PANEL)
-
-	slot3 = slot0.rtController
-
-	onButton(slot0, slot3:Find("top/btn_pause"), function ()
+	onButton(slot0, slot0.rtController:Find("top/btn_pause"), function ()
 		uv0:openUI("pause")
 	end, SFX_PANEL)
 
-	slot1 = slot0.rtController
-	slot0.rtStatus = slot1:Find("bottom/status")
-	slot1 = slot0.rtController
-	slot0.rtRyzaHP = slot1:Find("top/title/HP/heart")
-	slot1 = slot0.rtController
-	slot0.rtControllerUI = slot1:Find("UI")
+	slot0.rtStatus = slot0.rtController:Find("bottom/status")
+	slot0.rtRyzaHP = slot0.rtController:Find("top/title/HP/heart")
+	slot0.rtControllerUI = slot0.rtController:Find("UI")
 
 	eachChild(slot0.rtControllerUI, function (slot0)
 		uv0["tplUI" .. slot0.name] = slot0
@@ -518,9 +480,7 @@ function slot0.updateControllerStatus(slot0, slot1, slot2, slot3)
 				setActive(slot0:Find("active"), tonumber(slot0.name) <= uv0.num)
 			end)
 		else
-			slot6 = slot0.rtStatus
-
-			eachChild(slot6:Find(string.upper(slot2) .. "/bit"), function (slot0)
+			eachChild(slot0.rtStatus:Find(string.upper(slot2) .. "/bit"), function (slot0)
 				setActive(slot0, tonumber(slot0.name) <= uv0.num)
 			end)
 		end
@@ -531,10 +491,8 @@ end
 
 function slot0.popRyzaUI(slot0, slot1, slot2, slot3)
 	if isa(slot1, MoveRyza) then
-		slot4 = slot0.reactorUIs[slot1]
-
 		if slot2 == "hp" then
-			slot5 = slot4:Find("pop/hp_" .. (slot3.delta > 0 and "up" or "down"))
+			slot5 = slot0.reactorUIs[slot1]:Find("pop/hp_" .. (slot3.delta > 0 and "up" or "down"))
 
 			for slot9 = 1, 2 do
 				setActive(slot5:Find(slot9), slot9 * slot9 == slot3.delta * slot3.delta)
@@ -562,12 +520,9 @@ function slot0.CreateReactor(slot0, slot1)
 
 	if isa(slot2.New(slot1, cloneTplTo(slot0.rtResource:Find(slot3), slot0.rtMain:Find(slot4)), slot0.responder), MoveRyza) then
 		slot0.reactorUIs[slot5] = cloneTplTo(slot0.tplUIRyza, slot0.rtControllerUI)
-		slot7 = slot0.reactorUIs[slot5]
 
-		eachChild(slot7:Find("pop"), function (slot0)
-			slot1 = slot0:GetComponent(typeof(DftAniEvent))
-
-			slot1:SetEndEvent(function ()
+		eachChild(slot0.reactorUIs[slot5]:Find("pop"), function (slot0)
+			slot0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 				setActive(uv0, false)
 			end)
 		end)
@@ -688,12 +643,11 @@ function slot0.dealSoilMap(slot0, slot1, slot2)
 	slot5 = {}
 
 	function slot6(slot0)
-		slot1 = 0
 		slot2 = 1
 
 		for slot6, slot7 in ipairs(uv0) do
 			if uv1(slot0 + NewPos(unpack(slot7))) and defaultValue(uv2[slot8.x .. "_" .. slot8.y], true) then
-				slot1 = slot1 + slot2
+				slot1 = 0 + slot2
 			end
 
 			slot2 = slot2 + slot2
@@ -784,10 +738,8 @@ function slot0.onTimer(slot0)
 	end
 
 	if slot0.responder:GetJoyStick().x ~= 0 or slot1.y ~= 0 then
-		slot2 = slot0.reactorUIs[slot0.responder.reactorRyza]:Find("dir")
-
 		if slot1.x == 0 then
-			setLocalEulerAngles(slot2, {
+			setLocalEulerAngles(slot0.reactorUIs[slot0.responder.reactorRyza]:Find("dir"), {
 				z = slot1.y > 0 and 270 or 90
 			})
 		else

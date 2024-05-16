@@ -2,9 +2,8 @@ slot0 = class("GuildFetchCapitalCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot3 = pg.ConnectionMgr.GetInstance()
 
-	slot3:Send(62024, {
+	pg.ConnectionMgr.GetInstance():Send(62024, {
 		type = 0
 	}, 62025, function (slot0)
 		if slot0.result == 0 then

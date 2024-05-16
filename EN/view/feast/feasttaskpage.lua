@@ -13,8 +13,7 @@ function slot0.OnLoaded(slot0)
 	slot0.progressTxt = slot0:findTF("main/level/value/Text"):GetComponent(typeof(Text))
 	slot0.progress = slot0:findTF("main/level/progress/bar")
 	slot0.lastAwardItem = slot0:findTF("main/level/item")
-	slot1 = slot0.lastAwardItem:Find("lock/Text")
-	slot0.lastAwardLvTxt = slot1:GetComponent(typeof(Text))
+	slot0.lastAwardLvTxt = slot0.lastAwardItem:Find("lock/Text"):GetComponent(typeof(Text))
 
 	setText(slot0.lastAwardItem:Find("get"), i18n("feast_task_pt_get"))
 	setText(slot0.lastAwardItem:Find("got"), i18n("feast_task_pt_got"))
@@ -101,11 +100,10 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.UpdateGetAllTip(slot0, slot1)
-	slot2 = getProxy(FeastProxy)
 	slot3 = false
 
 	if slot1 == uv0.PAGE_PT then
-		slot3 = slot2:ShouldTipPt()
+		slot3 = getProxy(FeastProxy):ShouldTipPt()
 	elseif slot1 == uv0.PAGE_TASK then
 		slot3 = slot2:ShouldTipFeastTask()
 	end
@@ -116,10 +114,9 @@ end
 
 function slot0.GetAllForTask(slot0)
 	slot1 = {}
-	slot2 = getProxy(TaskProxy)
 
 	for slot6, slot7 in ipairs(slot0.taskList) do
-		if slot2:getTaskById(slot7) and slot8:isFinish() and not slot8:isReceive() then
+		if getProxy(TaskProxy):getTaskById(slot7) and slot8:isFinish() and not slot8:isReceive() then
 			table.insert(slot1, slot8)
 		end
 	end
@@ -218,8 +215,7 @@ function slot0.GenPtData(slot0)
 end
 
 function slot0.GenTaskData(slot0)
-	slot1 = getProxy(FeastProxy)
-	slot0.taskList = slot1:GetTaskList()
+	slot0.taskList = getProxy(FeastProxy):GetTaskList()
 	slot1 = getProxy(TaskProxy)
 
 	table.sort(slot0.taskList, function (slot0, slot1)

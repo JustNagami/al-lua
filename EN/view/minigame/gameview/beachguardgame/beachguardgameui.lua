@@ -6,20 +6,19 @@ function slot0.Ctor(slot0, slot1, slot2, slot3)
 	slot0._gameData = slot2
 	slot0.gameUI = findTF(slot0._tf, "ui/gameUI")
 	slot0.asset = slot0._gameData.asset
-	slot4 = GameObject.Find("UICamera")
-	slot0._uiCamera = slot4:GetComponent(typeof(Camera))
+	slot0._uiCamera = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
 
-	onButton(slot0._event, findTF(slot0.gameUI, "topRight/btnStop"), function ()
+	onButton(slot0._event, findTF(slot0.gameUI, "ad/topRight/btnStop"), function ()
 		uv0._event:emit(BeachGuardGameView.OPEN_PAUSE_UI)
 		uv0._event:emit(BeachGuardGameView.PAUSE_GAME, true)
 	end)
-	onButton(slot0._event, findTF(slot0.gameUI, "btnLeave"), function ()
+	onButton(slot0._event, findTF(slot0.gameUI, "ad/btnLeave"), function ()
 		uv0._event:emit(BeachGuardGameView.OPEN_LEVEL_UI)
 		uv0._event:emit(BeachGuardGameView.PAUSE_GAME, true)
 	end)
 
-	slot0.gameTimeS = findTF(slot0.gameUI, "top/time/s")
-	slot0.scoreTf = findTF(slot0.gameUI, "top/score")
+	slot0.gameTimeS = findTF(slot0.gameUI, "ad/top/time/s")
+	slot0.scoreTf = findTF(slot0.gameUI, "ad/top/score")
 	slot0.bottom = findTF(slot0.gameUI, "bottom")
 	slot0.goods = findTF(slot0.gameUI, "bottom/goods")
 	slot0.goodsNum = findTF(slot0.gameUI, "bottom/goods/num")
@@ -51,8 +50,8 @@ function slot0.Ctor(slot0, slot1, slot2, slot3)
 		uv0:cancelRecycle()
 	end)
 
-	slot0.enemyProgress = findTF(slot0.gameUI, "top/enemyProgress")
-	slot0.bossRate = findTF(slot0.gameUI, "top/bossRate")
+	slot0.enemyProgress = findTF(slot0.gameUI, "ad/enemyProgress")
+	slot0.bossRate = findTF(slot0.gameUI, "ad/bossRate")
 end
 
 function slot0.cancelRecycle(slot0)
@@ -108,7 +107,6 @@ function slot0.firstUpdate(slot0, slot1)
 end
 
 function slot0.update(slot0)
-	slot1 = slot0.runningData.goodsNum
 	slot2 = slot0.runningData.sceneChars
 
 	for slot6 = 1, #slot0.cards do
@@ -117,7 +115,7 @@ function slot0.update(slot0)
 		slot11 = slot7.char_id
 		slot12 = GetComponent(slot0.cards[slot6].tf, typeof(CanvasGroup))
 
-		if slot1 < slot7.cost then
+		if slot0.runningData.goodsNum < slot7.cost then
 			slot12.blocksRaycasts = false
 			slot12.interactable = false
 

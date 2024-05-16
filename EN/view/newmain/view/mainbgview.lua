@@ -105,9 +105,8 @@ end
 
 function slot0.SetSpecailBg(slot0, slot1)
 	slot0.isloading = true
-	slot2 = pg.DynamicBgMgr.GetInstance()
 
-	slot2:LoadBg(slot0, slot1, slot0._tf.parent, slot0._tf, function (slot0)
+	pg.DynamicBgMgr.GetInstance():LoadBg(slot0, slot1, slot0._tf.parent, slot0._tf, function (slot0)
 		uv0.isloading = false
 		slot0.transform.localPosition = Vector3(0, 0, 200)
 	end, function ()
@@ -121,9 +120,7 @@ function slot0.SetMapBg(slot0, slot1, slot2)
 
 	parallelAsync({
 		function (slot0)
-			slot1 = PoolMgr.GetInstance()
-
-			slot1:GetSprite("levelmap/" .. uv0, "", true, function (slot0)
+			PoolMgr.GetInstance():GetSprite("levelmap/" .. uv0, "", true, function (slot0)
 				setImageSprite(uv0._tf, slot0)
 				uv1()
 			end)
@@ -135,9 +132,7 @@ function slot0.SetMapBg(slot0, slot1, slot2)
 				return
 			end
 
-			slot1 = PoolMgr.GetInstance()
-
-			slot1:GetPrefab("ui/" .. uv0, "", true, function (slot0)
+			PoolMgr.GetInstance():GetPrefab("ui/" .. uv0, "", true, function (slot0)
 				setParent(slot0, uv0._tf)
 				uv0:AdjustMapEffect(slot0)
 
@@ -167,10 +162,8 @@ function slot0.ClearMapBg(slot0)
 end
 
 function slot0.AdjustMapEffect(slot0, slot1)
-	slot2 = -math.huge
-
 	for slot7 = 1, slot1:GetComponentsInChildren(typeof(Canvas)).Length do
-		if slot2 < slot3[slot7 - 1].sortingOrder then
+		if -math.huge < slot3[slot7 - 1].sortingOrder then
 			slot2 = slot8.sortingOrder
 		end
 	end
@@ -191,9 +184,8 @@ function slot0.SetCommonBg(slot0, slot1)
 	setActive(slot0._tf, true)
 
 	slot0.isloading = true
-	slot2 = PoolMgr.GetInstance()
 
-	slot2:GetSprite("commonbg/" .. slot1, "", true, function (slot0)
+	PoolMgr.GetInstance():GetSprite("commonbg/" .. slot1, "", true, function (slot0)
 		uv0.isloading = false
 
 		setImageSprite(uv0._tf, slot0)
@@ -210,6 +202,10 @@ end
 
 function slot0.IsLoading(slot0)
 	return slot0.isloading
+end
+
+function slot0.Disable(slot0)
+	slot0:ClearSpecailBg()
 end
 
 function slot0.Dispose(slot0)

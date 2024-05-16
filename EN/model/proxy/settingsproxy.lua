@@ -124,24 +124,28 @@ function slot0.SetBgmFlag(slot0, slot1)
 end
 
 function slot0.getSkinPosSetting(slot0, slot1)
-	if PlayerPrefs.HasKey(tostring(slot1) .. "_scale") then
-		return PlayerPrefs.GetFloat(tostring(slot1) .. "_x", 0), PlayerPrefs.GetFloat(tostring(slot1) .. "_y", 0), PlayerPrefs.GetFloat(tostring(slot1) .. "_scale", 1)
+	if PlayerPrefs.HasKey(tostring(slot1:GetRecordPosKey()) .. "_scale") then
+		return PlayerPrefs.GetFloat(tostring(slot2) .. "_x", 0), PlayerPrefs.GetFloat(tostring(slot2) .. "_y", 0), PlayerPrefs.GetFloat(tostring(slot2) .. "_scale", 1)
 	else
 		return nil
 	end
 end
 
 function slot0.setSkinPosSetting(slot0, slot1, slot2, slot3, slot4)
-	PlayerPrefs.SetFloat(tostring(slot1) .. "_x", slot2)
-	PlayerPrefs.SetFloat(tostring(slot1) .. "_y", slot3)
-	PlayerPrefs.SetFloat(tostring(slot1) .. "_scale", slot4)
+	slot5 = slot1:GetRecordPosKey()
+
+	PlayerPrefs.SetFloat(tostring(slot5) .. "_x", slot2)
+	PlayerPrefs.SetFloat(tostring(slot5) .. "_y", slot3)
+	PlayerPrefs.SetFloat(tostring(slot5) .. "_scale", slot4)
 	PlayerPrefs.Save()
 end
 
 function slot0.resetSkinPosSetting(slot0, slot1)
-	PlayerPrefs.DeleteKey(tostring(slot1) .. "_x")
-	PlayerPrefs.DeleteKey(tostring(slot1) .. "_y")
-	PlayerPrefs.DeleteKey(tostring(slot1) .. "_scale")
+	slot2 = slot1:GetRecordPosKey()
+
+	PlayerPrefs.DeleteKey(tostring(slot2) .. "_x")
+	PlayerPrefs.DeleteKey(tostring(slot2) .. "_y")
+	PlayerPrefs.DeleteKey(tostring(slot2) .. "_scale")
 	PlayerPrefs.Save()
 end
 
@@ -155,27 +159,23 @@ function slot0.setCharacterSetting(slot0, slot1, slot2, slot3)
 end
 
 function slot0.getCurrentSecretaryIndex(slot0)
-	slot2, slot3 = PlayerVitaeShipsPage.GetSlotMaxCnt()
-
-	if slot3 < PlayerPrefs.GetInt("currentSecretaryIndex", 1) then
+	if PlayerVitaeShipsPage.GetAllUnlockSlotCnt() < PlayerPrefs.GetInt("currentSecretaryIndex", 1) then
 		slot0:setCurrentSecretaryIndex(1)
 
 		return 1
 	else
-		return slot1
+		return PlayerVitaeShipsPage.GetSlotIndexList()[slot1]
 	end
 end
 
 function slot0.rotateCurrentSecretaryIndex(slot0)
-	slot2, slot3 = PlayerVitaeShipsPage.GetSlotMaxCnt()
-
-	if slot3 < PlayerPrefs.GetInt("currentSecretaryIndex", 1) + 1 then
-		slot1 = 1
+	if PlayerVitaeShipsPage.GetAllUnlockSlotCnt() < PlayerPrefs.GetInt("currentSecretaryIndex", 1) + 1 or slot2 == PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID and not function ()
+		return getProxy(PlayerProxy):getRawData():ExistEducateChar() and getProxy(SettingsProxy):GetFlagShipDisplayMode() ~= FlAG_SHIP_DISPLAY_ONLY_SHIP
+	end() then
+		slot2 = 1
 	end
 
-	slot0:setCurrentSecretaryIndex(slot1)
-
-	return slot1
+	slot0:setCurrentSecretaryIndex(slot2)
 end
 
 function slot0.setCurrentSecretaryIndex(slot0, slot1)
@@ -579,28 +579,6 @@ function slot0.SetChatFlag(slot0, slot1)
 	end
 end
 
-function slot0.SetCommanderPlaySortData(slot0, slot1)
-	slot3 = slot1.asc and 1 or 0
-
-	if slot0.commanderPlaySortDataValue1 ~= slot1.sortData or slot0.commanderPlaySortDataValue2 ~= slot3 then
-		PlayerPrefs.SetString("commander_play_sortdata", slot2 .. "#" .. slot3)
-		PlayerPrefs.Save()
-
-		slot0.commanderPlaySortDataValue1 = slot2
-		slot0.commanderPlaySortDataValue2 = slot3
-	end
-end
-
-function slot0.GetCommanderPlaySortData(slot0)
-	if not slot0.commanderPlaySortDataValue1 or not slot0.commanderPlaySortDataValue2 then
-		slot3 = string.split(PlayerPrefs.GetString("commander_play_sortdata", "Rarity#0"), "#")
-		slot0.commanderPlaySortDataValue1 = slot3[1]
-		slot0.commanderPlaySortDataValue2 = tonumber(slot3[2])
-	end
-
-	return slot0.commanderPlaySortDataValue1, slot0.commanderPlaySortDataValue2
-end
-
 function slot0.IsShowActivityMapSPTip()
 	return PlayerPrefs.GetInt("ActivityMapSPTip" .. getProxy(PlayerProxy):getRawData().id, 0) < pg.TimeMgr.GetInstance():GetServerTime()
 end
@@ -647,9 +625,8 @@ end
 
 function slot0.IsTipNewGemFurniture(slot0)
 	slot1 = slot0:GetNewGemFurnitureLocalCache()
-	slot2 = getProxy(DormProxy)
 
-	if _.any(slot2:GetTag7Furnitures(), function (slot0)
+	if _.any(getProxy(DormProxy):GetTag7Furnitures(), function (slot0)
 		return pg.furniture_shop_template[slot0].new == 1 and not uv0[slot0]
 	end) then
 		slot0.newGemFurniture = slot2
@@ -676,8 +653,7 @@ function slot0.GetRandomFlagShipList(slot0)
 		return slot0.randomFlagShipList
 	end
 
-	slot1 = getProxy(PlayerProxy)
-	slot0.randomFlagShipList = _.map(string.split(PlayerPrefs.GetString("RandomFlagShipList" .. slot1:getRawData().id, ""), "#"), function (slot0)
+	slot0.randomFlagShipList = _.map(string.split(PlayerPrefs.GetString("RandomFlagShipList" .. getProxy(PlayerProxy):getRawData().id, ""), "#"), function (slot0)
 		return tonumber(slot0)
 	end)
 
@@ -733,6 +709,23 @@ function slot0.SetPrevRandomFlagShipTime(slot0, slot1)
 	PlayerPrefs.Save()
 end
 
+function slot0.GetFlagShipDisplayMode(slot0)
+	if not slot0.flagShipDisplayMode then
+		slot0.flagShipDisplayMode = PlayerPrefs.GetInt("flag-ship-display-mode" .. getProxy(PlayerProxy):getRawData().id, FlAG_SHIP_DISPLAY_ALL)
+	end
+
+	return slot0.flagShipDisplayMode
+end
+
+function slot0.SetFlagShipDisplayMode(slot0, slot1)
+	if slot0.flagShipDisplayMode ~= slot1 then
+		slot0.flagShipDisplayMode = slot1
+
+		PlayerPrefs.SetInt("flag-ship-display-mode" .. getProxy(PlayerProxy):getRawData().id, slot1)
+		PlayerPrefs.Save()
+	end
+end
+
 function slot0.RecordContinuousOperationAutoSubStatus(slot0, slot1)
 	if slot1 then
 		return
@@ -778,6 +771,227 @@ function slot0.IsDisplayResultPainting(slot0)
 	return slot2
 end
 
+function slot0.IsDisplayCommanderCatCustomName(slot0)
+	if not slot0.customFlag then
+		slot0.customFlag = PlayerPrefs.GetInt("DisplayCommanderCatCustomName" .. getProxy(PlayerProxy):getRawData().id, 0) == 0
+	end
+
+	return slot0.customFlag
+end
+
+function slot0.SetDisplayCommanderCatCustomName(slot0, slot1)
+	if slot1 == slot0.customFlag then
+		return
+	end
+
+	slot0.customFlag = slot1
+
+	PlayerPrefs.SetInt("DisplayCommanderCatCustomName" .. getProxy(PlayerProxy):getRawData().id, slot0.customFlag and 0 or 1)
+	PlayerPrefs.Save()
+end
+
+function slot0.GetCommanderQuicklyToolRarityConfig(slot0)
+	if not slot0.quicklyToolRarityConfig then
+		slot0.quicklyToolRarityConfig = _.map(string.split(PlayerPrefs.GetString("CommanderQuicklyToolRarityConfig" .. getProxy(PlayerProxy):getRawData().id, "1#1#1"), "#"), function (slot0)
+			return tonumber(slot0) == 1
+		end)
+	end
+
+	return slot0.quicklyToolRarityConfig
+end
+
+function slot0.SaveCommanderQuicklyToolRarityConfig(slot0, slot1)
+	slot2 = false
+
+	for slot6, slot7 in ipairs(slot0.quicklyToolRarityConfig) do
+		if slot1[slot6] ~= slot7 then
+			slot2 = true
+
+			break
+		end
+	end
+
+	if slot2 then
+		slot0.quicklyToolRarityConfig = slot1
+
+		PlayerPrefs.SetString("CommanderQuicklyToolRarityConfig" .. getProxy(PlayerProxy):getRawData().id, table.concat(_.map(slot0.quicklyToolRarityConfig, function (slot0)
+			return slot0 and "1" or "0"
+		end), "#"))
+		PlayerPrefs.Save()
+	end
+end
+
+function slot0.GetCommanderLockFlagRarityConfig(slot0)
+	if not slot0.lockFlagRarityConfig then
+		slot0.lockFlagRarityConfig = _.map(string.split(PlayerPrefs.GetString("CommanderLockFlagRarityConfig_" .. getProxy(PlayerProxy):getRawData().id, "1#0#0"), "#"), function (slot0)
+			return tonumber(slot0) == 1
+		end)
+	end
+
+	return slot0.lockFlagRarityConfig
+end
+
+function slot0.SaveCommanderLockFlagRarityConfig(slot0, slot1)
+	slot2 = false
+
+	for slot6, slot7 in ipairs(slot0.lockFlagRarityConfig) do
+		if slot1[slot6] ~= slot7 then
+			slot2 = true
+
+			break
+		end
+	end
+
+	if slot2 then
+		slot0.lockFlagRarityConfig = slot1
+
+		PlayerPrefs.SetString("CommanderLockFlagRarityConfig_" .. getProxy(PlayerProxy):getRawData().id, table.concat(_.map(slot0.lockFlagRarityConfig, function (slot0)
+			return slot0 and "1" or "0"
+		end), "#"))
+		PlayerPrefs.Save()
+	end
+end
+
+function slot0.GetCommanderLockFlagTalentConfig(slot0)
+	if not slot0.lockFlagTalentConfig then
+		slot3 = {}
+
+		if PlayerPrefs.GetString("CommanderLockFlagTalentConfig" .. getProxy(PlayerProxy):getRawData().id, "") == "" then
+			for slot7, slot8 in ipairs(CommanderCatUtil.GetAllTalentNames()) do
+				slot3[slot8.id] = true
+			end
+		else
+			slot7 = "#"
+
+			for slot7, slot8 in ipairs(string.split(slot2, slot7)) do
+				if #string.split(slot8, "*") == 2 then
+					slot3[tonumber(slot9[1])] = tonumber(slot9[2]) == 1
+				end
+			end
+		end
+
+		slot0.lockFlagTalentConfig = slot3
+	end
+
+	return slot0.lockFlagTalentConfig
+end
+
+function slot0.SaveCommanderLockFlagTalentConfig(slot0, slot1)
+	slot0.lockFlagTalentConfig = slot1
+	slot2 = {}
+
+	for slot6, slot7 in pairs(slot1) do
+		table.insert(slot2, slot6 .. "*" .. (slot7 and "1" or "0"))
+	end
+
+	PlayerPrefs.SetString("CommanderLockFlagTalentConfig" .. getProxy(PlayerProxy):getRawData().id, table.concat(slot2, "#"))
+	PlayerPrefs.Save()
+end
+
+function slot0.GetMainPaintingVariantFlag(slot0, slot1)
+	if not slot0.mainPaintingVariantFlag then
+		slot0.mainPaintingVariantFlag = {}
+	end
+
+	if not slot0.mainPaintingVariantFlag[slot1] then
+		slot0.mainPaintingVariantFlag[slot1] = PlayerPrefs.GetInt(slot1 .. "_mainMeshImagePainting_ex_" .. getProxy(PlayerProxy):getRawData().id, 0)
+	end
+
+	return slot0.mainPaintingVariantFlag[slot1]
+end
+
+function slot0.SwitchMainPaintingVariantFlag(slot0, slot1)
+	slot3 = 1 - slot0:GetMainPaintingVariantFlag(slot1)
+	slot0.mainPaintingVariantFlag[slot1] = slot3
+
+	PlayerPrefs.SetInt(slot1 .. "_mainMeshImagePainting_ex_" .. getProxy(PlayerProxy):getRawData().id, slot3)
+	PlayerPrefs.Save()
+end
+
+function slot0.IsTipDay(slot0, slot1, slot2, slot3)
+	return PlayerPrefs.GetInt(getProxy(PlayerProxy):getRawData().id .. "educate_char_" .. slot1 .. slot2 .. slot3, 0) == 1
+end
+
+function slot0.RecordTipDay(slot0, slot1, slot2, slot3)
+	PlayerPrefs.SetInt(getProxy(PlayerProxy):getRawData().id .. "educate_char_" .. slot1 .. slot2 .. slot3, 1)
+	PlayerPrefs.Save()
+end
+
+function slot0.UpdateEducateCharTip(slot0, slot1)
+	slot2 = getProxy(PlayerProxy):getRawData().id
+	slot3 = getProxy(EducateProxy):GetSecretaryIDs()
+	slot4 = {
+		[slot9] = true
+	}
+
+	for slot8, slot9 in ipairs(slot1) do
+		-- Nothing
+	end
+
+	for slot8, slot9 in ipairs(slot3) do
+		if slot4[slot9] ~= true then
+			PlayerPrefs.SetInt(slot2 .. "educate_char_tip" .. slot9, 1)
+			PlayerPrefs.Save()
+		end
+	end
+
+	slot0:RefillEducateCharTipList()
+end
+
+function slot0.RefillEducateCharTipList(slot0)
+	slot1 = getProxy(PlayerProxy):getRawData().id
+	slot0.educateCharTipList = {}
+
+	if LOCK_EDUCATE_SYSTEM then
+		return
+	end
+
+	for slot6, slot7 in ipairs(getProxy(EducateProxy):GetSecretaryIDs() or {}) do
+		if PlayerPrefs.GetInt(slot1 .. "educate_char_tip" .. slot7, 0) == 1 then
+			table.insert(slot0.educateCharTipList, slot7)
+		end
+	end
+end
+
+function slot0.ShouldEducateCharTip(slot0)
+	if not slot0.educateCharTipList or #slot0.educateCharTipList == 0 then
+		slot0:RefillEducateCharTipList()
+	end
+
+	return #slot0.educateCharTipList > 0
+end
+
+function slot0._ShouldEducateCharTip(slot0, slot1)
+	if not slot0.educateCharTipList or #slot0.educateCharTipList == 0 then
+		slot0:RefillEducateCharTipList()
+	end
+
+	if table.contains(slot0.educateCharTipList, slot1) then
+		return true
+	end
+
+	return false
+end
+
+function slot0.ClearEducateCharTip(slot0, slot1)
+	if not slot0:_ShouldEducateCharTip(slot1) then
+		return false
+	end
+
+	table.removebyvalue(slot0.educateCharTipList, slot1)
+
+	if PlayerPrefs.HasKey(getProxy(PlayerProxy):getRawData().id .. "educate_char_tip" .. slot1) then
+		PlayerPrefs.DeleteKey(slot3)
+		PlayerPrefs.Save()
+	end
+
+	pg.m02:sendNotification(GAME.CLEAR_EDUCATE_TIP, {
+		id = slot1
+	})
+
+	return true
+end
+
 function slot0.Reset(slot0)
 	slot0:resetEquipSceneIndex()
 	slot0:resetActivityLayerIndex()
@@ -789,6 +1003,7 @@ function slot0.Reset(slot0)
 	slot0.randomFlagShipList = nil
 	slot0.prevRandomFlagShipTime = nil
 	slot0.randomFlagShipMap = nil
+	slot0.educateCharTipList = {}
 end
 
 return slot0

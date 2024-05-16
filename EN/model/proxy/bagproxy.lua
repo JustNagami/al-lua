@@ -68,8 +68,6 @@ function slot0.getItemsByExclude(slot0)
 	for slot5, slot6 in pairs(slot0.data) do
 		if not Item.INVISIBLE_TYPE[slot6:getConfig("type")] and slot6.count > 0 then
 			if slot0.extraItemData[slot5] then
-				slot8 = slot6.count
-
 				for slot12, slot13 in ipairs(slot0.extraItemData[slot5]) do
 					table.insert(slot1, Item.New({
 						count = 1,
@@ -77,7 +75,7 @@ function slot0.getItemsByExclude(slot0)
 						extra = slot13
 					}))
 
-					slot8 = slot8 - 1
+					slot8 = slot6.count - 1
 				end
 
 				if slot8 > 0 then
@@ -141,24 +139,6 @@ function slot0.GetItemsByCondition(slot0, slot1)
 	return slot2
 end
 
-function slot0.getTempItemByType(slot0, slot1)
-	slot2 = {}
-
-	for slot6, slot7 in ipairs(pg.item_data_statistics.all) do
-		if pg.item_data_statistics[slot7].type == slot1 then
-			slot2[slot7] = true
-		end
-	end
-
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot2[slot7.configId] then
-			slot2[slot8] = Clone(slot7)
-		end
-	end
-
-	return slot2
-end
-
 function slot0.getItemById(slot0, slot1)
 	if slot0.data[slot1] ~= nil then
 		return slot0.data[slot1]:clone()
@@ -176,7 +156,11 @@ function slot0.RawGetItemById(slot0, slot1)
 end
 
 function slot0.getItemCountById(slot0, slot1)
-	return slot0.data[slot1] and slot2.count or 0
+	if slot0.extraItemData[slot1] and #slot0.extraItemData[slot1] > 0 then
+		slot2 = math.max(slot0.data[slot1] and slot0.data[slot1].count or 0, 1)
+	end
+
+	return slot2
 end
 
 function slot0.getBoxCount(slot0)
@@ -184,13 +168,9 @@ function slot0.getBoxCount(slot0)
 end
 
 function slot0.getCanComposeCount(slot0)
-	slot1 = 0
-
 	for slot6, slot7 in pairs(pg.compose_data_template.all) do
-		slot9 = slot2[slot7].material_num
-
-		if slot0:getItemById(slot2[slot7].material_id) and slot9 <= slot10.count then
-			slot1 = slot1 + 1
+		if slot0:getItemById(slot2[slot7].material_id) and slot2[slot7].material_num <= slot10.count then
+			slot1 = 0 + 1
 		end
 	end
 
@@ -226,8 +206,10 @@ end
 
 function slot0.canUpgradeFlagShipEquip(slot0)
 	if getProxy(BayProxy):getEquipment2ByflagShip() then
-		for slot7, slot8 in pairs(pg.equip_data_template[slot2.id].trans_use_item) do
-			if not slot0:getItemById(slot8[1]) or slot9.count < slot8[2] then
+		slot6 = "trans_use_item"
+
+		for slot6, slot7 in pairs(slot2:getConfig(slot6)) do
+			if not slot0:getItemById(slot7[1]) or slot8.count < slot7[2] then
 				return false
 			end
 		end
@@ -246,6 +228,18 @@ end
 
 function slot0.ClearLimitCnt(slot0, slot1)
 	slot0.limitList[slot1] = 0
+end
+
+function slot0.GetSkinShopDiscountItemList(slot0)
+	slot1 = {}
+
+	for slot5, slot6 in pairs(slot0.data) do
+		if slot6.count > 0 and slot6:IsSkinShopDiscountType() then
+			table.insert(slot1, slot6)
+		end
+	end
+
+	return slot1
 end
 
 return slot0

@@ -138,10 +138,10 @@ function slot6(slot0)
 		end
 	}
 
-	(function (slot0)
+	function (slot0)
 		slot0.root = uv0
 		slot0.list = {}
-	end)(slot1)
+	end(slot1)
 
 	return slot1
 end
@@ -267,36 +267,26 @@ function slot0.updateMemoryBook(slot0, slot1, slot2)
 		end
 	else
 		if slot1 == uv0.PAGE_TWO then
-			slot7 = slot0.page2
-
-			setActive(slot7:Find("switch"), false)
+			setActive(slot0.page2:Find("switch"), false)
 
 			slot0.page2.localPosition = Vector3.New(1280, 0)
 			slot0.page1.localPosition = Vector3.New(0, 0)
 
 			LeanTween.moveX(slot0.page2, 0, 0.5)
-
-			slot8 = LeanTween.moveX(slot0.page1, -1280, 0.5)
-
-			slot8:setOnComplete(System.Action(function ()
+			LeanTween.moveX(slot0.page1, -1280, 0.5):setOnComplete(System.Action(function ()
 				setActive(uv0, true)
 			end))
 
 			return
 		end
 
-		slot7 = slot0.page1
-
-		setActive(slot7:Find("switch"), false)
+		setActive(slot0.page1:Find("switch"), false)
 
 		slot0.page2.localPosition = Vector3.New(0, 0)
 		slot0.page1.localPosition = Vector3.New(-1280, 0)
 
 		LeanTween.moveX(slot0.page2, 1280, 0.5)
-
-		slot8 = LeanTween.moveX(slot0.page1, 0, 0.5)
-
-		slot8:setOnComplete(System.Action(function ()
+		LeanTween.moveX(slot0.page1, 0, 0.5):setOnComplete(System.Action(function ()
 			setActive(uv0, true)
 		end))
 	end
@@ -393,14 +383,11 @@ end
 function slot0.updateAward(slot0, slot1)
 	if not slot0.isInitAward then
 		slot0.isInitAward = true
-		slot3 = slot0.awardVO[2]
 
 		if slot0.awardVO[1] == DROP_TYPE_FURNITURE then
-			slot4 = Furniture.New({
-				id = slot3
-			})
-
-			GetSpriteFromAtlasAsync("furniture/" .. slot4:getConfig("picture"), "", function (slot0)
+			GetSpriteFromAtlasAsync("furniture/" .. Furniture.New({
+				id = slot0.awardVO[2]
+			}):getConfig("picture"), "", function (slot0)
 				if uv0.exited then
 					return
 				end

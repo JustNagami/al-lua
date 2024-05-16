@@ -10,10 +10,7 @@ function slot0.init(slot0)
 end
 
 function slot0.UpdateDropItems(slot0)
-	slot1 = ipairs
-	slot2 = slot0.contextData.DisplayItems or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in ipairs(slot0.contextData.DisplayItems or {}) do
 		slot6 = slot0:findTF("milestone/item/IconTpl", slot0.barList[slot4])
 
 		updateDrop(slot6, {

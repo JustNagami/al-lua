@@ -49,19 +49,14 @@ function slot0.OnFirstFlush(slot0)
 		end, SFX_PANEL)
 	end
 
-	slot1 = slot0.taskProxy
-	slot1 = slot1:getTaskVO(slot0.taskList[slot0.index])
-	slot3, slot4, slot5 = unpack(slot1:getConfig("award_display")[1])
+	slot3, slot4, slot5 = unpack(slot0.taskProxy:getTaskVO(slot0.taskList[slot0.index]):getConfig("award_display")[1])
 
 	updateDrop(slot0.rtAward, {
 		count = slot5,
 		id = slot4,
 		type = slot3
 	})
-
-	slot5 = slot0.rtAward
-
-	onButton(slot0, slot5:Find("get"), function ()
+	onButton(slot0, slot0.rtAward:Find("get"), function ()
 		uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv0.taskProxy:getTaskVO(uv0.taskList[uv0.index]))
 	end, SFX_CONFIRM)
 	onButton(slot0, slot0.rtAward, function ()
@@ -70,14 +65,13 @@ function slot0.OnFirstFlush(slot0)
 end
 
 function slot0.OnUpdateFlush(slot0)
-	slot1 = 0
-	slot2 = {}
+	slot2 = {
+		[slot7] = tobool(slot0.taskProxy:getFinishTaskById(slot7))
+	}
 
 	for slot6, slot7 in ipairs(slot0.taskList) do
-		slot2[slot7] = tobool(slot0.taskProxy:getFinishTaskById(slot7))
-
 		if slot2[slot7] then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 
 		setActive(slot0.items:GetChild(slot6 - 1):Find("window/got"), slot2[slot7])
@@ -115,10 +109,8 @@ function slot0.SelectPage(slot0, slot1)
 	end
 
 	slot0.index = slot1
-	slot2 = ipairs
-	slot3 = slot0.LTList or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot0.LTList or {}) do
 		LeanTween.cancel(slot6)
 	end
 
@@ -152,10 +144,7 @@ function slot0.SelectPage(slot0, slot1)
 end
 
 function slot0.OnDestroy(slot0)
-	slot1 = ipairs
-	slot2 = slot0.LTList or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in ipairs(slot0.LTList or {}) do
 		LeanTween.cancel(slot5)
 	end
 end

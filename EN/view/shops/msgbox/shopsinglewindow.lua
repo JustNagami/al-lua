@@ -22,10 +22,7 @@ function slot0.OnInit(slot0)
 	onButton(slot0, slot0:findTF("window/actions/cancel_btn"), function ()
 		uv0:Close()
 	end, SFX_CANCEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bg"), function ()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Close()
 	end, SFX_CANCEL)
 	onButton(slot0, slot0:findTF("window/top/btnBack"), function ()
@@ -50,7 +47,7 @@ function slot0.InitWindow(slot0, slot1, slot2)
 
 	onButton(slot0, slot0.confirmBtn, function ()
 		if uv0 then
-			uv0(uv1, 1, uv2.cfg.name)
+			uv0(uv1, 1, uv2:getConfig("name"))
 		end
 
 		uv3:Close()
@@ -70,8 +67,8 @@ function slot0.InitWindow(slot0, slot1, slot2)
 		SetActive(slot5:Find("locked"), not slot6)
 	end
 
-	slot0.descTF.text = slot3.desc or slot3.cfg.desc
-	slot0.nameTF.text = slot3.cfg.name
+	slot0.descTF.text = slot3.desc or slot3:getConfig("desc")
+	slot0.nameTF.text = slot3:getConfig("name")
 end
 
 function slot0.Close(slot0)

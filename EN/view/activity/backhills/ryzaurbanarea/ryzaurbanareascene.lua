@@ -93,12 +93,9 @@ function slot0.UpdatePuniAnim(slot0, slot1)
 	if not slot1 then
 		slot0.puniAnim:SetAction("normal_" .. math.random(9), 0)
 	else
-		slot4 = ActivityPtData.New(slot1):GetLevelProgress()
-		slot5 = 1
-
 		for slot9, slot10 in ipairs(slot1:getConfig("config_client").puni_phase) do
-			if slot10 < slot4 then
-				slot5 = slot5 + 1
+			if slot10 < ActivityPtData.New(slot1):GetLevelProgress() then
+				slot5 = 1 + 1
 			end
 		end
 
@@ -111,13 +108,13 @@ function slot0.UpdatePuniAnim(slot0, slot1)
 end
 
 function slot0.IsShowMainTip(slot0)
-	return (function ()
+	return function ()
 		return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_RYZA)
-	end)() or (function ()
+	end() or function ()
 		return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityById(ActivityConst.RYZA_PT))
-	end)() or (function ()
+	end() or function ()
 		return getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.RYZA_TASK)
-	end)()
+	end()
 end
 
 function slot0.willExit(slot0)

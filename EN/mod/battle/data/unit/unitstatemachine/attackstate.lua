@@ -86,10 +86,8 @@ function slot2.FreshActionKeyOffset(slot0)
 end
 
 function slot2.GetActionName(slot0, slot1, slot2)
-	slot3 = slot2
-
 	if slot1:ActionKeyOffset() then
-		slot3 = slot3 .. slot4
+		slot3 = slot2 .. slot4
 	end
 
 	return slot3

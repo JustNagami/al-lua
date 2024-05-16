@@ -1,9 +1,7 @@
 slot0 = class("IslandFlowerFieldGetAwardCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
 		activity_id = slot1:getBody().act_id
 	}, 11203, function (slot0)

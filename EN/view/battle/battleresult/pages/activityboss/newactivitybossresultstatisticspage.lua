@@ -15,10 +15,9 @@ function slot1(slot0, slot1, slot2)
 	slot3 = getProxy(ActivityProxy):RawGetActivityById(slot0)
 	slot7 = 0
 	slot8 = pg.activity_event_worldboss[slot3:getConfig("config_id")].use_oil_limit[slot2]
-	slot12 = getProxy(FleetProxy):getActivityFleets()[slot0][slot2]:GetCostSum().oil
 
 	if slot3:IsOilLimit(slot1) and slot8[1] > 0 then
-		slot12 = math.min(slot12, slot8[1])
+		slot12 = math.min(getProxy(FleetProxy):getActivityFleets()[slot0][slot2]:GetCostSum().oil, slot8[1])
 	end
 
 	return slot7 + slot12
@@ -67,23 +66,24 @@ end
 function slot0.UpdateTicket(slot0, slot1)
 	slot2 = slot0:GetTicketItemID(slot0.contextData.actId)
 
-	setImageSprite(slot1:Find("playAgain/ticket/icon"), GetSpriteFromAtlas(itemId2icon(pg.player_resource[slot2].itemid), ""))
+	setImageSprite(slot1:Find("playAgain/ticket/icon"), GetSpriteFromAtlas(Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = slot2
+	}):getIcon(), ""))
 
-	slot7 = getProxy(PlayerProxy):getRawData():getResource(slot2) > 0
+	slot6 = getProxy(PlayerProxy):getRawData():getResource(slot2) > 0
 
-	if slot5 < slot0:GetTicketUseCount() then
-		slot5 = setColorStr(slot5, COLOR_RED) or slot5
+	if slot4 < slot0:GetTicketUseCount() then
+		slot4 = setColorStr(slot4, COLOR_RED) or slot4
 	end
 
-	setText(slot1:Find("playAgain/ticket/Text"), slot6 .. "/" .. slot5)
-	setToggleEnabled(slot0.toggle, slot7)
-	triggerToggle(slot0.toggle, slot7 and getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1)
+	setText(slot1:Find("playAgain/ticket/Text"), slot5 .. "/" .. slot4)
+	setToggleEnabled(slot0.toggle, slot6)
+	triggerToggle(slot0.toggle, slot6 and getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1)
 end
 
 function slot0.LoadActivityBossRes(slot0, slot1)
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("BattleResultItems/Activityboss", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Activityboss", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited then
 			return
 		end
@@ -124,9 +124,7 @@ function slot0.NotEnoughShipBag(slot0)
 end
 
 function slot0.NotEnoughEnergy(slot0)
-	slot1 = getProxy(FleetProxy)
-
-	if _.any(_.values(slot1:getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId].ships), function (slot0)
+	if _.any(_.values(getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId].ships), function (slot0)
 		return getProxy(BayProxy):getShipById(slot0) and slot1.energy == Ship.ENERGY_LOW
 	end) then
 		return true, slot3
@@ -140,9 +138,7 @@ function slot0.NotEnoughTicket(slot0)
 		return false
 	end
 
-	slot4 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
-
-	if getProxy(PlayerProxy):getRawData():getResource(slot0:GetTicketItemID(slot0.contextData.actId)) > 0 and slot4 then
+	if getProxy(PlayerProxy):getRawData():getResource(slot0:GetTicketItemID(slot0.contextData.actId)) > 0 and getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1 then
 		return true
 	end
 

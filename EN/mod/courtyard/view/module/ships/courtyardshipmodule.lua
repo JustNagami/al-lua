@@ -25,8 +25,7 @@ function slot0.OnInit(slot0)
 	slot0.clickTF = slot0._tf:Find("click")
 	slot0.chatTF = slot0._tf:Find("chat")
 	slot0.chatTF.localScale = Vector3.zero
-	slot1 = slot0._tf
-	slot0.additionTF = slot1:Find("addition")
+	slot0.additionTF = slot0._tf:Find("addition")
 	slot0.additionTFs = {
 		findTF(slot0.additionTF, "money"),
 		findTF(slot0.additionTF, "intimacy"),
@@ -98,7 +97,7 @@ function slot0.InitAttachment(slot0)
 end
 
 function slot0.OnBeginDrag(slot0)
-	if not _courtyard:GetView():GetCurrStorey():AllModulesAreCompletion() then
+	if not slot0:GetView():GetCurrStorey():AllModulesAreCompletion() then
 		return
 	end
 
@@ -192,8 +191,8 @@ function slot0.OnAddAward(slot0, slot1, slot2)
 
 	setText(slot3:Find("Text"), slot1 or "")
 
-	if slot2 == 2 and _courtyard:GetView().poolMgr:GetHeartPool() then
-		slot4 = _courtyard:GetView().poolMgr:GetHeartPool():Dequeue()
+	if slot2 == 2 and slot0:GetView().poolMgr:GetHeartPool() then
+		slot4 = slot0:GetView().poolMgr:GetHeartPool():Dequeue()
 
 		slot4.transform:SetParent(slot0._tf, false)
 
@@ -203,16 +202,15 @@ function slot0.OnAddAward(slot0, slot1, slot2)
 
 	slot4 = 1 / uv0
 
-	if CourtYardCalcUtil.GetSign(slot0._tf.localScale.x) ~= CourtYardCalcUtil.GetSign(slot0._tf.parent.localScale.x) then
+	if CourtYardCalcUtil.GetTransformSign(slot0._tf, slot0.rect) < 0 then
 		slot0.additionTF.localScale = Vector3(-slot4, slot4, slot4)
 	end
 
 	LeanTween.cancel(slot0.additionTF.gameObject)
 
 	slot0.additionTF.transform.localPosition = slot0.additionTFPos
-	slot5 = LeanTween.moveY(rtf(slot0.additionTF), slot0.additionTFPos.y + 110, 1.2)
 
-	slot5:setOnComplete(System.Action(function ()
+	LeanTween.moveY(rtf(slot0.additionTF), slot0.additionTFPos.y + 110, 1.2):setOnComplete(System.Action(function ()
 		uv0.additionTF.localScale = Vector3(uv1, uv1, uv1)
 
 		setActive(uv2, false)
@@ -304,7 +302,7 @@ function slot0.OnDispose(slot0)
 end
 
 function slot0.OnDestroy(slot0)
-	_courtyard:GetView().poolMgr:GetShipPool():Enqueue(slot0._go)
+	slot0:GetView().poolMgr:GetShipPool():Enqueue(slot0._go)
 end
 
 return slot0

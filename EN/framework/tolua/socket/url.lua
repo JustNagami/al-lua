@@ -12,15 +12,15 @@ function slot4.escape(slot0)
 	end)
 end
 
-slot6 = (function (slot0)
-	slot1 = {}
-
+slot6 = function (slot0)
 	for slot5, slot6 in uv0.ipairs(slot0) do
-		slot1[slot0[slot5]] = 1
+		-- Nothing
 	end
 
-	return slot1
-end)({
+	return {
+		[slot0[slot5]] = 1
+	}
+end({
 	"-",
 	"_",
 	".",
@@ -89,10 +89,7 @@ function slot8(slot0, slot1)
 end
 
 function slot4.parse(slot0, slot1)
-	slot3 = uv0.pairs
-	slot4 = slot1 or {}
-
-	for slot6, slot7 in slot3(slot4) do
+	for slot6, slot7 in uv0.pairs(slot1 or {}) do
 		slot2[slot6] = slot7
 	end
 
@@ -154,10 +151,8 @@ function slot4.parse(slot0, slot1)
 end
 
 function slot4.build(slot0)
-	slot2 = uv0.build_path(uv0.parse_path(slot0.path or ""))
-
 	if slot0.params then
-		slot2 = slot2 .. ";" .. slot0.params
+		slot2 = uv0.build_path(uv0.parse_path(slot0.path or "")) .. ";" .. slot0.params
 	end
 
 	if slot0.query then
@@ -178,10 +173,8 @@ function slot4.build(slot0)
 		slot4 = slot0.userinfo
 
 		if slot0.user then
-			slot4 = slot0.user
-
 			if slot0.password then
-				slot4 = slot4 .. ":" .. slot0.password
+				slot4 = slot0.user .. ":" .. slot0.password
 			end
 		end
 
@@ -279,10 +272,8 @@ function slot4.build_path(slot0, slot1)
 		end
 
 		if slot3 > 0 then
-			slot2 = slot2 .. slot0[slot3]
-
 			if slot0.is_directory then
-				slot2 = slot2 .. "/"
+				slot2 = slot2 .. slot0[slot3] .. "/"
 			end
 		end
 	else
@@ -291,10 +282,8 @@ function slot4.build_path(slot0, slot1)
 		end
 
 		if slot3 > 0 then
-			slot2 = slot2 .. uv0(slot0[slot3])
-
 			if slot0.is_directory then
-				slot2 = slot2 .. "/"
+				slot2 = slot2 .. uv0(slot0[slot3]) .. "/"
 			end
 		end
 	end

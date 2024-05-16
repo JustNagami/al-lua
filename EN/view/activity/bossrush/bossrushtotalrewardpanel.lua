@@ -40,7 +40,6 @@ function slot0.UpdateView(slot0)
 		uv1:closeView()
 	end, SFX_CANCEL)
 
-	slot3 = {}
 	slot0.itemList = slot0.boxView:Find("Content/ItemGrid")
 
 	setActive(slot0.boxView:Find("Content/TextArea2"), false)
@@ -51,7 +50,7 @@ function slot0.UpdateView(slot0)
 	if slot0.contextData.rewards and #slot2 > 0 then
 		slot0.hasRewards = true
 
-		table.insert(slot3, function (slot0)
+		table.insert({}, function (slot0)
 			setActive(uv0.boxView:Find("Content/Title"), true)
 			setActive(uv0.itemList, true)
 			slot0()
@@ -86,11 +85,9 @@ function slot0.UpdateView(slot0)
 		end
 	end
 
-	slot5 = {}
-
 	if not slot0.contextData.stopReason then
 		if slot0.contextData.isAutoFight then
-			table.insert(slot5, i18n("multiple_sorties_finish"))
+			table.insert({}, i18n("multiple_sorties_finish"))
 		else
 			table.insert(slot5, i18n("multiple_sorties_stop"))
 		end

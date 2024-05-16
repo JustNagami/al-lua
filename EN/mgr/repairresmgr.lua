@@ -89,11 +89,10 @@ function slot0.InitCipherBtn(slot0)
 end
 
 function slot0.Repair(slot0, slot1)
-	slot2 = slot1 or bit.bor(uv0.TYPE_DEFAULT_RES, uv0.TYPE_L2D, uv0.TYPE_PAINTING, uv0.TYPE_CIPHER)
 	slot3 = {}
 
 	for slot7, slot8 in ipairs(slot0.btns) do
-		if bit.band(slot8.type, slot2) > 0 then
+		if bit.band(slot8.type, slot1 or bit.bor(uv0.TYPE_DEFAULT_RES, uv0.TYPE_L2D, uv0.TYPE_PAINTING, uv0.TYPE_CIPHER)) > 0 then
 			table.insert(slot3, slot8)
 		end
 	end

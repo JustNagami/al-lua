@@ -146,10 +146,10 @@ function slot0.onSelectCommander(slot0, slot1)
 		end
 	end
 
-	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 		maxCount = 1,
-		mode = CommandRoomScene.MODE_SELECT,
-		fleetType = CommandRoomScene.FLEET_TYPE_COMMON,
+		mode = CommanderCatScene.MODE_SELECT,
+		fleetType = CommanderCatScene.FLEET_TYPE_COMMON,
 		activeCommander = slot4,
 		ignoredIds = slot5,
 		onCommander = function (slot0)
@@ -203,12 +203,11 @@ function slot0.commitEdit(slot0)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("ship_formationMediaror_trash_warning", slot2.defaultName),
 			onYes = function ()
-				slot1 = getProxy(BayProxy):getRawData()
 				slot2 = uv0.ships
 				slot3 = #slot2
 
 				for slot7 = #slot2, 1, -1 do
-					uv0:removeShip(slot1[slot2[slot7]])
+					uv0:removeShip(getProxy(BayProxy):getRawData()[slot2[slot7]])
 				end
 
 				uv1:commitEdittingFleet(uv2)
@@ -357,95 +356,93 @@ function slot0.getDockCallbackFuncs(slot0, slot1, slot2, slot3)
 			return
 		end
 
-		function slot2()
-			slot1 = uv2:getShipPos(uv3)
-
-			if uv0:GetRegularFleetByShip(uv1) == nil then
-				if uv3 == nil then
-					uv2:insertShip(uv1, nil, uv4)
-				else
-					uv2:removeShip(uv3)
-					uv2:insertShip(uv1, slot1, uv4)
-				end
-
-				uv0.EdittingFleet = uv2
-
-				return
-			end
-
-			slot2 = slot0:getShipPos(uv1)
-
-			if slot0.id == uv2.id then
-				if uv3 == nil then
-					uv2:removeShip(uv1)
-					uv2:insertShip(uv1, nil, uv4)
-
-					uv0.EdittingFleet = uv2
-
-					return
-				end
-
-				if uv3.id == uv1.id then
-					return
-				end
-
-				uv2:removeShip(uv3)
-				uv2:removeShip(uv1)
-
-				if slot2 < slot1 then
-					uv2:insertShip(uv3, slot2, uv4)
-					uv2:insertShip(uv1, slot1, uv4)
-				else
-					uv2:insertShip(uv1, slot1, uv4)
-					uv2:insertShip(uv3, slot2, uv4)
-				end
-
-				uv0.EdittingFleet = uv2
-
-				return
-			end
-
-			if not slot0:canRemove(uv1) and uv3 == nil then
-				slot3, slot4 = slot0:getShipPos(uv1)
-
-				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationMediator_replaceError_onlyShip", slot0.defaultName, Fleet.C_TEAM_NAME[slot4]))
-			else
-				slot0:removeShip(uv1)
-
-				if uv3 then
-					slot0:insertShip(uv3, slot2, uv4)
-					uv5:sendNotification(GAME.UPDATE_FLEET, {
-						fleet = slot0
-					})
-					uv2:removeShip(uv3)
-					uv2:insertShip(uv1, slot1, uv4)
-
-					uv0.EdittingFleet = uv2
-
-					uv6.saveEdit()
-					uv5:sendNotification(GAME.UPDATE_FLEET, {
-						fleet = uv2
-					})
-				else
-					uv5:sendNotification(GAME.UPDATE_FLEET, {
-						fleet = slot0
-					})
-					uv2:insertShip(uv1, nil, uv4)
-
-					uv0.EdittingFleet = uv2
-
-					uv6.saveEdit()
-					uv5:sendNotification(GAME.UPDATE_FLEET, {
-						fleet = uv2
-					})
-				end
-			end
-		end
-
 		if uv7:CheckUnitInSupportFleet(slot1) then
 			uv6:sendNotification(GAME.REMOVE_ELITE_TARGET_SHIP, {
 				shipId = slot1.id,
-				callback = slot2
+				callback = function ()
+					slot1 = uv2:getShipPos(uv3)
+
+					if uv0:GetRegularFleetByShip(uv1) == nil then
+						if uv3 == nil then
+							uv2:insertShip(uv1, nil, uv4)
+						else
+							uv2:removeShip(uv3)
+							uv2:insertShip(uv1, slot1, uv4)
+						end
+
+						uv0.EdittingFleet = uv2
+
+						return
+					end
+
+					slot2 = slot0:getShipPos(uv1)
+
+					if slot0.id == uv2.id then
+						if uv3 == nil then
+							uv2:removeShip(uv1)
+							uv2:insertShip(uv1, nil, uv4)
+
+							uv0.EdittingFleet = uv2
+
+							return
+						end
+
+						if uv3.id == uv1.id then
+							return
+						end
+
+						uv2:removeShip(uv3)
+						uv2:removeShip(uv1)
+
+						if slot2 < slot1 then
+							uv2:insertShip(uv3, slot2, uv4)
+							uv2:insertShip(uv1, slot1, uv4)
+						else
+							uv2:insertShip(uv1, slot1, uv4)
+							uv2:insertShip(uv3, slot2, uv4)
+						end
+
+						uv0.EdittingFleet = uv2
+
+						return
+					end
+
+					if not slot0:canRemove(uv1) and uv3 == nil then
+						slot3, slot4 = slot0:getShipPos(uv1)
+
+						pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationMediator_replaceError_onlyShip", slot0.defaultName, Fleet.C_TEAM_NAME[slot4]))
+					else
+						slot0:removeShip(uv1)
+
+						if uv3 then
+							slot0:insertShip(uv3, slot2, uv4)
+							uv5:sendNotification(GAME.UPDATE_FLEET, {
+								fleet = slot0
+							})
+							uv2:removeShip(uv3)
+							uv2:insertShip(uv1, slot1, uv4)
+
+							uv0.EdittingFleet = uv2
+
+							uv6.saveEdit()
+							uv5:sendNotification(GAME.UPDATE_FLEET, {
+								fleet = uv2
+							})
+						else
+							uv5:sendNotification(GAME.UPDATE_FLEET, {
+								fleet = slot0
+							})
+							uv2:insertShip(uv1, nil, uv4)
+
+							uv0.EdittingFleet = uv2
+
+							uv6.saveEdit()
+							uv5:sendNotification(GAME.UPDATE_FLEET, {
+								fleet = uv2
+							})
+						end
+					end
+				end
 			})
 		else
 			slot2()

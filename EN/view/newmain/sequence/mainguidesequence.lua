@@ -31,7 +31,7 @@ slot1 = {
 	{
 		id = "NG005",
 		condition = function ()
-			return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommandRoomMediator")
+			return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator")
 		end,
 		args = function ()
 			return {}
@@ -133,6 +133,15 @@ slot1 = {
 		args = function ()
 			return {}
 		end
+	},
+	{
+		id = "tb_20",
+		condition = function ()
+			return not LOCK_EDUCATE_SYSTEM and getProxy(EducateProxy):IsUnlockSecretary()
+		end,
+		args = function ()
+			return {}
+		end
 	}
 }
 
@@ -168,15 +177,10 @@ function slot0.Execute(slot0, slot1)
 		return
 	end
 
-	slot6 = pg.m02
-
-	slot6:sendNotification(GAME.STORY_UPDATE, {
+	pg.m02:sendNotification(GAME.STORY_UPDATE, {
 		storyId = slot3
 	})
-
-	slot6 = pg.NewGuideMgr.GetInstance()
-
-	slot6:Play(slot3, slot5, function ()
+	pg.NewGuideMgr.GetInstance():Play(slot3, slot5, function ()
 		if uv0.nextOne then
 			slot0, slot1 = uv0.nextOne()
 

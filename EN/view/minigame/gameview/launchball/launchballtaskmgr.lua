@@ -31,7 +31,6 @@ function slot0.CheckTaskUpdate(slot0)
 	slot7 = {}
 
 	for slot11 = 1, #slot6 do
-		slot12 = slot6[slot11][1]
 		slot14 = slot6[slot11][3]
 		slot15 = slot6[slot11][4]
 
@@ -40,7 +39,7 @@ function slot0.CheckTaskUpdate(slot0)
 			slot18 = slot16:getTargetNumber()
 			slot19 = slot16:getProgress()
 
-			if slot12 == uv0.type_split and slot0.split_count ~= 0 then
+			if slot6[slot11][1] == uv0.type_split and slot0.split_count ~= 0 then
 				slot17 = slot18 < slot0.split_count + slot19 and slot18 or slot0.split_count + slot19
 			elseif slot12 == uv0.type_player_target_round then
 				if slot15 == slot0.round then

@@ -119,10 +119,8 @@ function slot3.callbackCount(slot0, slot1)
 end
 
 function slot3.GetDamageSum(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0._effectList) do
-		slot1 = slot6:GetDamageSum() + slot1
+		slot1 = slot6:GetDamageSum() + 0
 	end
 
 	return slot1

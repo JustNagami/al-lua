@@ -63,12 +63,8 @@ function slot0.Hide(slot0)
 end
 
 function slot0.LoadEffect(slot0)
-	slot1 = "liwucaijian_caidai"
-
 	if not slot0.effectGo then
-		slot2 = ResourceMgr.Inst
-
-		slot2:getAssetAsync("ui/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("ui/" .. "liwucaijian_caidai", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0.exited then
 				return
 			end

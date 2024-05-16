@@ -33,10 +33,8 @@ end
 function slot0.setBlackList(slot0, slot1)
 	if slot1 then
 		slot0.blackVOs = {}
-		slot2 = pairs
-		slot3 = slot1 or {}
 
-		for slot5, slot6 in slot2(slot3) do
+		for slot5, slot6 in pairs(slot1 or {}) do
 			table.insert(slot0.blackVOs, slot6)
 		end
 	end
@@ -55,8 +53,7 @@ function slot0.init(slot0)
 	slot0.toggles = {}
 
 	for slot4 = 1, slot0.togglesTF.childCount do
-		slot6 = slot0.togglesTF
-		slot0.toggles[slot4] = slot6:GetChild(slot4 - 1)
+		slot0.toggles[slot4] = slot0.togglesTF:GetChild(slot4 - 1)
 
 		onToggle(slot0, slot0.toggles[slot4], function (slot0)
 			if slot0 then
@@ -131,9 +128,7 @@ function slot0.switchPage(slot0, slot1)
 end
 
 function slot0.updatePage(slot0, slot1)
-	slot2 = slot0.pages[slot1]
-
-	if slot0.page and slot2 == slot0.page then
+	if slot0.page and slot0.pages[slot1] == slot0.page then
 		slot3 = slot0:wrapData()
 
 		slot0.page:ExecuteAction("UpdateData", slot3)

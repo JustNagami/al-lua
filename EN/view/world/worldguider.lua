@@ -37,15 +37,12 @@ function slot0.CheckIntruduce(slot0)
 end
 
 function slot0.CheckUseStaminaItem(slot0)
-	slot2 = nowWorld():GetInventoryProxy()
-	slot3 = 0
-
 	for slot7, slot8 in ipairs({
 		251,
 		252,
 		253
 	}) do
-		slot3 = slot3 + slot2:GetItemCount(slot8)
+		slot3 = 0 + nowWorld():GetInventoryProxy():GetItemCount(slot8)
 	end
 
 	if slot3 > 0 then
@@ -75,9 +72,7 @@ slot0.interruptReplayList = {
 }
 
 function slot0.PlayGuide(slot0, slot1, slot2, slot3)
-	slot4 = pg.NewGuideMgr.GetInstance()
-
-	if not GUIDE_WROLD or not slot2 and pg.NewStoryMgr.GetInstance():IsPlayed(slot1) or not slot4:CanPlay() then
+	if not GUIDE_WROLD or not slot2 and pg.NewStoryMgr.GetInstance():IsPlayed(slot1) or not pg.NewGuideMgr.GetInstance():CanPlay() then
 		existCall(slot3)
 
 		return false

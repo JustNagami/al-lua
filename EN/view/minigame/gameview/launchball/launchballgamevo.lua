@@ -53,10 +53,8 @@ function slot0.GetGameUseTimes()
 end
 
 function slot0.GetGameRound()
-	slot0 = uv0.GetGameUseTimes()
-
 	if uv0.GetGameTimes() and slot1 > 0 then
-		return slot0 + 1
+		return uv0.GetGameUseTimes() + 1
 	else
 		return slot0
 	end
@@ -158,10 +156,9 @@ end
 
 function slot0.GetScore(slot0, slot1, slot2, slot3)
 	slot4 = 0
-	slot4 = slot0 * uv0.base_score
 
 	if slot3 and slot3 > 0 then
-		slot4 = slot4 + slot3 * uv0.base_score
+		slot4 = slot0 * uv0.base_score + slot3 * uv0.base_score
 	end
 
 	if slot2 then

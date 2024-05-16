@@ -12,11 +12,9 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot5 = getProxy(PlayerProxy)
-	slot5 = slot5:getRawData().id
-	slot6 = pg.ConnectionMgr.GetInstance()
+	slot5 = getProxy(PlayerProxy):getRawData().id
 
-	slot6:Send(34505, {
+	pg.ConnectionMgr.GetInstance():Send(34505, {
 		boss_id = slot3
 	}, 34506, function (slot0)
 		slot1 = {}

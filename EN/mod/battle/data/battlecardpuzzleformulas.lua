@@ -69,10 +69,9 @@ function slot0.CreateContextCalculateDamage(slot0, slot1, slot2, slot3)
 	end
 
 	slot30 = uv0.NUM1
-	slot25 = math.max(slot30, math.floor(slot25 * slot19 * (slot30 - slot2) * ((slot10:GetFixAmmo() or slot16[slot20] or slot30) + uv2.GetCurrent(slot0, uv3.DAMAGE_AMMO_TO_ARMOR_RATE_ENHANCE[slot20])) * (slot30 + uv2.GetCurrent(slot0, uv3.DAMAGE_TO_ARMOR_RATE_ENHANCE[slot20])) * slot22 * (slot30 + uv2.GetCurrent(slot0, "damageRatioBullet")) * uv2.GetTagAttr(slot0, slot1) * (slot30 + uv2.GetCurrent(slot1, "injureRatio")) * (slot30 + uv2.GetCurrent(slot0, uv4[slot15.ammo_type]) - uv2.GetCurrent(slot1, uv5[slot15.ammo_type])) * (slot30 + uv2.GetCurrent(slot1, uv2.GetCurrent(slot0, "comboTag"))) * (slot30 + math.min(slot7[1], math.max(-slot7[1], slot21)) * slot7[2])))
 
 	if slot1:GetCurrentOxyState() == uv1.OXY_STATE.DIVE then
-		slot25 = math.floor(slot25 * slot15.antisub_enhancement)
+		slot25 = math.floor(math.max(slot30, math.floor(slot25 * slot19 * (slot30 - slot2) * ((slot10:GetFixAmmo() or slot16[slot20] or slot30) + uv2.GetCurrent(slot0, uv3.DAMAGE_AMMO_TO_ARMOR_RATE_ENHANCE[slot20])) * (slot30 + uv2.GetCurrent(slot0, uv3.DAMAGE_TO_ARMOR_RATE_ENHANCE[slot20])) * slot22 * (slot30 + uv2.GetCurrent(slot0, "damageRatioBullet")) * uv2.GetTagAttr(slot0, slot1) * (slot30 + uv2.GetCurrent(slot1, "injureRatio")) * (slot30 + uv2.GetCurrent(slot0, uv4[slot15.ammo_type]) - uv2.GetCurrent(slot1, uv5[slot15.ammo_type])) * (slot30 + uv2.GetCurrent(slot1, uv2.GetCurrent(slot0, "comboTag"))) * (slot30 + math.min(slot7[1], math.max(-slot7[1], slot21)) * slot7[2]))) * slot15.antisub_enhancement)
 	end
 
 	slot40 = {
@@ -85,10 +84,8 @@ function slot0.CreateContextCalculateDamage(slot0, slot1, slot2, slot3)
 		slot25 = math.floor(slot25 * slot41)
 	end
 
-	slot25 = slot25 * slot18.repressReduce
-
 	if slot17 ~= 0 then
-		slot25 = slot25 * (Mathf.RandomFloat(slot17) + 1)
+		slot25 = slot25 * slot18.repressReduce * (Mathf.RandomFloat(slot17) + 1)
 	end
 
 	slot42 = uv2.GetCurrent(slot0, "damageEnhanceProjectile")
@@ -110,31 +107,26 @@ function slot0.parseCompare(slot0, slot1)
 end
 
 function slot0.parseFormula(slot0, slot1)
-	slot2 = {}
 	slot3 = {}
 
 	for slot7 in string.gmatch(slot0, "%w+%.?%w*") do
-		table.insert(slot2, slot7)
+		table.insert({}, slot7)
 	end
 
 	for slot7 in string.gmatch(slot0, "[^%w%.]") do
 		table.insert(slot3, slot7)
 	end
 
-	slot4 = {}
 	slot5 = {}
 	slot6 = 1
-	slot7 = tonumber(slot2[1]) or slot1:GetCurrent(slot7)
 
 	for slot11, slot12 in ipairs(slot3) do
-		slot13 = tonumber(slot2[slot6 + 1]) or slot1:GetCurrent(slot2[slot6])
-
 		if slot12 == "+" or slot12 == "-" then
-			table.insert(slot5, slot7)
+			table.insert(slot5, tonumber(slot2[1]) or slot1:GetCurrent(slot7))
 
-			slot7 = slot13
+			slot7 = tonumber(slot2[slot6 + 1]) or slot1:GetCurrent(slot2[slot6])
 
-			table.insert(slot4, slot12)
+			table.insert({}, slot12)
 		elseif slot12 == "*" or slot12 == "/" then
 			slot7 = getArithmeticFuncByOperator(slot12)(slot7, slot13)
 		end

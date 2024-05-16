@@ -215,32 +215,21 @@ end
 function slot0.initGame(slot0)
 	slot0.curShowBlock = nil
 	slot0.randomBlockList = nil
-	slot1 = slot0:GetMGData()
-	slot0.scorePerHit = slot1:GetSimpleValue("scorePerHit")
-	slot1 = slot0:GetMGData()
-	slot0.comboRange = slot1:GetSimpleValue("comboRange")
-	slot1 = slot0:GetMGData()
-	slot0.comboAddScore = slot1:GetSimpleValue("comboAddScore")
-	slot1 = slot0:GetMGData()
-	slot0.targetCombo = slot1:GetSimpleValue("targetCombo")
-	slot1 = slot0:GetMGData()
-	slot0.targetComboScore = slot1:GetSimpleValue("targetComboScore")
+	slot0.scorePerHit = slot0:GetMGData():GetSimpleValue("scorePerHit")
+	slot0.comboRange = slot0:GetMGData():GetSimpleValue("comboRange")
+	slot0.comboAddScore = slot0:GetMGData():GetSimpleValue("comboAddScore")
+	slot0.targetCombo = slot0:GetMGData():GetSimpleValue("targetCombo")
+	slot0.targetComboScore = slot0:GetMGData():GetSimpleValue("targetComboScore")
 	slot0.usingBlockList = {}
 	slot0.blockUniId = 0
 
 	slot0:resetGame()
-
-	slot1 = slot0.bucketASpine
-
-	slot1:SetActionCallBack(function (slot0)
+	slot0.bucketASpine:SetActionCallBack(function (slot0)
 		if slot0 == "FINISH" then
 			uv0:setBucketAAction("idle")
 		end
 	end)
-
-	slot1 = slot0.bucketBSpine
-
-	slot1:SetActionCallBack(function (slot0)
+	slot0.bucketBSpine:SetActionCallBack(function (slot0)
 		if slot0 == "FINISH" then
 			uv0:setBucketBAction("idle")
 		end
@@ -279,28 +268,26 @@ function slot0.setGameState(slot0, slot1)
 
 	slot0.gameState = slot1
 
-	function slot2(slot0)
-		for slot5, slot6 in pairs({
-			uv0.startUI,
-			uv0.content,
-			uv0.endUI,
-			uv0.countUI,
-			uv0.keyUI,
-			uv0.keyBar
-		}) do
-			setActive(slot6, table.indexof(slot0, slot6) and true)
-		end
-
-		if isActive(uv0.endUI) then
-			pg.UIMgr.GetInstance():BlurPanel(uv0.endUI)
-		else
-			pg.UIMgr.GetInstance():UnblurPanel(uv0.endUI, uv0._tf)
-		end
-	end
-
 	if slot0.gameState == slot0.STATE_BEGIN then
 		setButtonEnabled(slot0.startBtn, true)
-		slot2({
+		function (slot0)
+			for slot5, slot6 in pairs({
+				uv0.startUI,
+				uv0.content,
+				uv0.endUI,
+				uv0.countUI,
+				uv0.keyUI,
+				uv0.keyBar
+			}) do
+				setActive(slot6, table.indexof(slot0, slot6) and true)
+			end
+
+			if isActive(uv0.endUI) then
+				pg.UIMgr.GetInstance():BlurPanel(uv0.endUI)
+			else
+				pg.UIMgr.GetInstance():UnblurPanel(uv0.endUI, uv0._tf)
+			end
+		end({
 			slot0.startUI
 		})
 		slot0:resetGame()
@@ -312,12 +299,11 @@ function slot0.setGameState(slot0, slot1)
 			})
 
 			slot3 = Time.realtimeSinceStartup
-			slot4 = slot0:managedTween(LeanTween.delayedCall, function ()
+
+			slot0:managedTween(LeanTween.delayedCall, function ()
 				uv0:startGameTimer()
 				uv0:setGameState(uv0.STATE_CLICK)
-			end, 3, nil)
-
-			slot4:setOnUpdate(System.Action_float(function (slot0)
+			end, 3, nil):setOnUpdate(System.Action_float(function (slot0)
 				setText(uv0.countNumTxt, math.ceil(3 - (Time.realtimeSinceStartup - uv1)))
 			end))
 
@@ -405,9 +391,7 @@ function slot0.fireBlocks(slot0)
 
 				uv1:setBucketAAction("attack")
 			elseif uv3 == uv1.TYPE_B then
-				slot2 = uv1
-
-				slot2:managedTween(LeanTween.delayedCall, function ()
+				uv1:managedTween(LeanTween.delayedCall, function ()
 					uv0:setBucketBAction("attack")
 				end, 0.2, nil)
 			elseif uv3 == uv1.TYPE_C then
@@ -436,9 +420,7 @@ function slot0.fireBlocks(slot0)
 				uv1:checkEnd(uv4)
 			end)
 		else
-			slot0 = uv1
-
-			slot0:hitFly(uv0, 0.6, uv4, function ()
+			uv1:hitFly(uv0, 0.6, uv4, function ()
 				uv0:removeUsingBlock(uv1)
 				uv0:checkEnd(uv2)
 			end)
@@ -476,10 +458,8 @@ function slot0.getRandomList(slot0)
 	slot3, slot4, slot5 = nil
 
 	for slot9, slot10 in ipairs(slot2) do
-		slot11 = slot0:getShowBlock(slot10.type, slot10.id)
-
 		if slot3 then
-			slot3.nextBlock = slot11
+			slot3.nextBlock = slot0:getShowBlock(slot10.type, slot10.id)
 		end
 
 		if slot0.limitNum <= slot9 then
@@ -608,9 +588,7 @@ function slot0.loadXGM(slot0, slot1)
 	if slot0.xgm then
 		slot1()
 	else
-		slot2 = slot0.autoLoader
-
-		slot2:LoadPrefab("ui/minigameui/qtegameuiasync/xiongguimao", nil, function (slot0)
+		slot0.autoLoader:LoadPrefab("ui/minigameui/qtegameuiasync/xiongguimao", nil, function (slot0)
 			uv0.xgm = tf(slot0)
 			uv0.xgmSpine = uv0.xgm:GetComponent("SpineAnimUI")
 			uv0.xgmSklGraphic = uv0.xgm:GetComponent("SkeletonGraphic")
@@ -623,9 +601,7 @@ function slot0.loadXGM(slot0, slot1)
 end
 
 function slot0.initXGM(slot0)
-	slot1 = slot0.xgmSpine
-
-	slot1:SetActionCallBack(function (slot0)
+	slot0.xgmSpine:SetActionCallBack(function (slot0)
 		if slot0 == "FIRE" then
 			uv0:fireBlocks()
 		elseif slot0 == "FINISH" then
@@ -645,9 +621,7 @@ function slot0.loadGuinu(slot0, slot1)
 	if slot0.guinu then
 		slot1()
 	else
-		slot2 = slot0.autoLoader
-
-		slot2:GetSpine("guinu_2", function (slot0)
+		slot0.autoLoader:GetSpine("guinu_2", function (slot0)
 			uv0.guinu = tf(slot0)
 			uv0.guinuSpine = uv0.guinu:GetComponent("SpineAnimUI")
 			uv0.guinuSklGraphic = uv0.guinu:GetComponent("SkeletonGraphic")
@@ -663,10 +637,7 @@ function slot0.initGuinu(slot0)
 	slot0.guinu.localScale = Vector3.one
 
 	slot0:setGuinuAction("normal")
-
-	slot1 = slot0.guinuSpine
-
-	slot1:SetActionCallBack(function (slot0)
+	slot0.guinuSpine:SetActionCallBack(function (slot0)
 		if slot0 == "finish" then
 			uv0:setGuinuAction("normal")
 		end
@@ -724,9 +695,7 @@ function slot0.showBucketAEffect(slot0)
 	end
 
 	if #slot0.aEffectList == 0 then
-		slot2 = slot0.autoLoader
-
-		slot2:LoadPrefab("effect/xinnianyouxi_baozha", nil, function (slot0)
+		slot0.autoLoader:LoadPrefab("effect/xinnianyouxi_baozha", nil, function (slot0)
 			uv0.aEffectList[#uv0.aEffectList + 1] = tf(slot0)
 
 			uv1()
@@ -876,23 +845,20 @@ function slot0.getShowBlock(slot0, slot1, slot2)
 end
 
 function slot0.startGameTimer(slot0)
-	slot1 = slot0:GetMGData()
-	slot0.remainTime = slot1:GetSimpleValue("gameTime")
+	slot0.remainTime = slot0:GetMGData():GetSimpleValue("gameTime")
 
 	setText(slot0.remainTxt, slot0.remainTime .. "S")
 
-	function slot1()
-		uv0.remainTime = uv0.remainTime - 1
-
-		setText(uv0.remainTxt, uv0.remainTime .. "S")
-
-		if uv0.remainTime <= 0 then
-			uv0.remainTimer:Stop()
-		end
-	end
-
 	if slot0.remainTimer then
-		slot0.remainTimer:Reset(slot1, 1, -1)
+		slot0.remainTimer:Reset(function ()
+			uv0.remainTime = uv0.remainTime - 1
+
+			setText(uv0.remainTxt, uv0.remainTime .. "S")
+
+			if uv0.remainTime <= 0 then
+				uv0.remainTimer:Stop()
+			end
+		end, 1, -1)
 	else
 		slot0.remainTimer = Timer.New(slot1, 1, -1)
 	end
@@ -901,27 +867,24 @@ function slot0.startGameTimer(slot0)
 end
 
 function slot0.startRoundTimer(slot0)
-	slot1 = slot0:GetMGData()
-	slot0.roundTime = slot1:GetSimpleValue("roundTime")
+	slot0.roundTime = slot0:GetMGData():GetSimpleValue("roundTime")
 
 	setText(slot0.roundTxt, slot0.roundTime)
 
-	function slot1()
-		uv0.roundTime = uv0.roundTime - 1
-
-		setText(uv0.roundTxt, uv0.roundTime)
-
-		if uv0.roundTime <= 0 then
-			uv0.roundTimer:Stop()
-
-			if not QTEGAME_DEBUG then
-				uv0:setGameState(uv0.STATE_SHOW)
-			end
-		end
-	end
-
 	if slot0.roundTimer then
-		slot0.roundTimer:Reset(slot1, 1, -1)
+		slot0.roundTimer:Reset(function ()
+			uv0.roundTime = uv0.roundTime - 1
+
+			setText(uv0.roundTxt, uv0.roundTime)
+
+			if uv0.roundTime <= 0 then
+				uv0.roundTimer:Stop()
+
+				if not QTEGAME_DEBUG then
+					uv0:setGameState(uv0.STATE_SHOW)
+				end
+			end
+		end, 1, -1)
 	else
 		slot0.roundTimer = Timer.New(slot1, 1, -1)
 	end
@@ -944,9 +907,7 @@ function slot0.clearTimer(slot0)
 end
 
 function slot0.OnSendMiniGameOPDone(slot0, slot1)
-	slot2 = slot1.argList
-
-	if slot1.cmd == MiniGameOPCommand.CMD_COMPLETE and slot2[1] == 0 then
+	if slot1.cmd == MiniGameOPCommand.CMD_COMPLETE and slot1.argList[1] == 0 then
 		slot0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 			slot0:GetMGData():GetSimpleValue("shrineGameId"),
 			1

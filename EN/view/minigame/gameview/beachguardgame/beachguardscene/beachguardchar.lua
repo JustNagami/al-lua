@@ -383,38 +383,34 @@ function slot0.getAnimPos(slot0)
 end
 
 function slot0.createUseData(slot0, slot1)
-	slot2 = {
-		skill = slot1
-	}
-
 	if slot1.type == BeachGuardConst.skill_bullet then
-		slot2.position = slot0.bulletPos.position
+		-- Nothing
 	elseif slot1.type == BeachGuardConst.skill_melee then
 		slot2.position = slot0.animTf.position
 	else
 		slot2.position = slot0._tf.position
 	end
 
-	slot2.distanceVec = Vector2(slot0:getSkillDistance() * BeachGuardConst.part_width, 0)
-	slot2.direct = slot0._config.point or 1
-	slot2.rid = slot0._rid
-	slot2.target = slot0.targetChar
-	slot2.damage = slot1.damage
-	slot2.camp = slot0.camp
-	slot2.line = slot0._lineIndex
-	slot2.useChar = slot0
-	slot2.atkRate = slot0:getAtkRate()
-	slot2.speedRate = slot0:getSpeedRate()
-
-	return slot2
+	return {
+		skill = slot1,
+		position = slot0.bulletPos.position,
+		distanceVec = Vector2(slot0:getSkillDistance() * BeachGuardConst.part_width, 0),
+		direct = slot0._config.point or 1,
+		rid = slot0._rid,
+		target = slot0.targetChar,
+		damage = slot1.damage,
+		camp = slot0.camp,
+		line = slot0._lineIndex,
+		useChar = slot0,
+		atkRate = slot0:getAtkRate(),
+		speedRate = slot0:getSpeedRate()
+	}
 end
 
 function slot0.getAtkRate(slot0)
-	slot1 = 1
-
 	for slot5 = 1, #slot0.buffs do
 		if slot0.buffs[slot5].config.type == BeachGuardConst.buff_type_speed_down then
-			slot1 = slot1 - slot6.config.rate * slot6.times
+			slot1 = 1 - slot6.config.rate * slot6.times
 		end
 	end
 
@@ -426,11 +422,9 @@ function slot0.getAtkRate(slot0)
 end
 
 function slot0.getSpeedRate(slot0)
-	slot1 = 1
-
 	for slot5 = 1, #slot0.buffs do
 		if slot0.buffs[slot5].config.type == BeachGuardConst.buff_type_speed_down then
-			slot1 = slot1 - slot6.config.rate * slot6.times
+			slot1 = 1 - slot6.config.rate * slot6.times
 		end
 	end
 
@@ -579,10 +573,9 @@ function slot0.getOrCreateBuff(slot0, slot1)
 	if BeachGuardConst.buff[slot1].effect and #slot3.effect > 0 then
 		for slot7, slot8 in ipairs(slot3.effect) do
 			slot9 = BeachGuardConst.effect[slot8]
-			slot10 = BeachGuardAsset.getEffect(slot9.name)
 
 			if slot9.front then
-				setParent(slot10, slot0.effectFrontPos)
+				setParent(BeachGuardAsset.getEffect(slot9.name), slot0.effectFrontPos)
 			else
 				setParent(slot10, slot0.effectBackPos)
 			end
@@ -600,10 +593,9 @@ function slot0.getOrCreateBuff(slot0, slot1)
 	if slot3.trigger_effect and #slot3.trigger_effect > 0 then
 		for slot7, slot8 in ipairs(slot3.trigger_effect) do
 			slot9 = BeachGuardConst.effect[slot8]
-			slot10 = BeachGuardAsset.getEffect(slot9.name)
 
 			if slot9.front then
-				setParent(slot10, slot0.effectFrontPos)
+				setParent(BeachGuardAsset.getEffect(slot9.name), slot0.effectFrontPos)
 			else
 				setParent(slot10, slot0.effectBackPos)
 			end

@@ -2,10 +2,17 @@ slot0 = class("PlayerVitaeLive2dBtn", import(".PlayerVitaeBaseBtn"))
 
 function slot0.Ctor(slot0, slot1, slot2)
 	uv0.super.Ctor(slot0, slot1, slot2)
-	slot0:Load(slot1)
+	slot0:Load(slot0.tf)
+	setActive(slot0.tf, true)
 end
 
 function slot0.InitBtn(slot0)
+end
+
+function slot0.GetBgName(slot0)
+	slot1, slot2 = nil
+
+	return slot0:IsHrzType() and "commonUI_atlas" or "admiralui_atlas", slot0.ship and slot0.ship:GetSkinConfig().spine_use_live2d == 1 and (slot0:IsHrzType() and "spine_painting_bg" or "sp") or slot0:IsHrzType() and "live2d_bg" or "l2d"
 end
 
 function slot0.IsActive(slot0)
@@ -14,6 +21,7 @@ end
 
 function slot0.Update(slot0, slot1, slot2, slot3)
 	uv0.super.Update(slot0, slot1, slot2, slot3)
+	slot0:NewGo()
 	slot0:RequesetLive2dRes()
 end
 
@@ -86,6 +94,8 @@ function slot0.Load(slot0, slot1)
 	if slot0:IsHrzType() then
 		slot1.gameObject.name = "live2d"
 	end
+
+	slot0.tf:GetComponent(typeof(Image)):SetNativeSize()
 end
 
 return slot0

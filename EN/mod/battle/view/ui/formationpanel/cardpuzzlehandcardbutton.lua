@@ -62,11 +62,10 @@ function slot2.updateCardView(slot0)
 		setText(slot0._cardName, slot0._cardInfo:GetCardTemplate().name)
 		setText(slot0._tag, "词缀功能TODO")
 
-		slot1 = slot0._cardInfo:GetRarity()
 		slot2 = slot0._cardInfo:GetCardType()
 
 		for slot6, slot7 in ipairs(slot0._cardRarityList) do
-			setActive(slot7, slot6 == slot1 + 1)
+			setActive(slot7, slot6 == slot0._cardInfo:GetRarity() + 1)
 		end
 
 		for slot6, slot7 in ipairs(slot0._cardTypeList) do

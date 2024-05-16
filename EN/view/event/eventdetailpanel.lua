@@ -41,9 +41,8 @@ function slot0.Ctor(slot0, slot1, slot2)
 	end, SFX_PANEL)
 	onButton(slot0, slot0.recommentBtn, function ()
 		slot0 = getProxy(BayProxy)
-		slot2 = slot0:getDelegationRecommendShipsLV1(uv0.event)
 
-		if #slot0:getDelegationRecommendShips(uv0.event) == 0 and #slot2 > 0 then
+		if #slot0:getDelegationRecommendShips(uv0.event) == 0 and #slot0:getDelegationRecommendShipsLV1(uv0.event) > 0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("event_recommend_level1"),
 				onYes = function ()

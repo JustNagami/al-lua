@@ -89,10 +89,7 @@ end
 function slot0.OnDestroy(slot0)
 	uv0.super.OnDestroy(slot0)
 
-	slot1 = pairs
-	slot2 = slot0.animations or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.animations or {}) do
 		if LeanTween.isTweening(slot4.gameObject) then
 			LeanTween.cancel(slot4.gameObject)
 		end

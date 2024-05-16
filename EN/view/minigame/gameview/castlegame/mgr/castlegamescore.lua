@@ -184,10 +184,8 @@ function slot0.hitScore(slot0, slot1)
 end
 
 function slot0.returnScore(slot0, slot1)
-	slot2 = slot1.index
-
 	for slot6 = #slot0.scoreIndexs, 1, -1 do
-		if slot0.scoreIndexs[slot6] == slot2 then
+		if slot0.scoreIndexs[slot6] == slot1.index then
 			table.remove(slot0.scoreIndexs, slot6)
 		end
 	end

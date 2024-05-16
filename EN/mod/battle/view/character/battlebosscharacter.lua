@@ -20,6 +20,13 @@ function slot2.Dispose(slot0)
 		slot0._castClock = nil
 	end
 
+	if slot0._aimBiarBar then
+		slot0._factory:GetHPBarPool():DestroyObj(slot0._aimBiarBar:GetGO())
+		slot0._aimBiarBar:Dispose()
+
+		slot0._aimBiarBar = nil
+	end
+
 	LeanTween.cancel(slot0._HPBar)
 	uv0.super.Dispose(slot0)
 end
@@ -378,15 +385,13 @@ function slot2.initBarrierBar(slot0)
 end
 
 function slot2.onBarrierStateChange(slot0, slot1)
-	slot3 = slot1.Data.barrierDuration
-
 	SetActive(slot0._barrierBar, slot1.Data.barrierDurability > 0)
 
 	if slot2 > 0 then
 		slot0._totalBarrier = slot2
 		slot0._barrier = slot2
 
-		slot0:initBarrierClock(slot3)
+		slot0:initBarrierClock(slot1.Data.barrierDuration)
 		slot0:updateBarrierBar()
 		slot0:updateBarrierClock()
 	else
@@ -416,4 +421,10 @@ function slot2.AddAimBiasBar(slot0, slot1)
 
 	slot0._aimBiarBar:ConfigAimBias(slot0._unitData:GetAimBias())
 	slot0._aimBiarBar:UpdateAimBiasProgress()
+end
+
+function slot2.AddModel(slot0, slot1)
+	uv0.super.AddModel(slot0, slot1)
+
+	slot0._tf.position = slot0._unitData:GetPosition()
 end

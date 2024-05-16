@@ -1,11 +1,9 @@
 slot0 = class("IslandRequestCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = pg.TimeMgr.GetInstance()
-	slot3 = slot3:GetServerTime()
-	slot4 = pg.ConnectionMgr.GetInstance()
+	slot3 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	slot4:Send(26108, {
+	pg.ConnectionMgr.GetInstance():Send(26108, {
 		act_id = slot1:getBody().act_id
 	}, 26109, function (slot0)
 		if slot0.ret == 0 then

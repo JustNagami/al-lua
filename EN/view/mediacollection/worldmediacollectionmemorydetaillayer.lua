@@ -86,10 +86,7 @@ function slot0.PlayMemory(slot0, slot1)
 		end
 
 		setActive(slot0.memoryMask, true)
-
-		slot3 = pg.NewStoryMgr.GetInstance()
-
-		slot3:Play(slot1.story, function ()
+		pg.NewStoryMgr.GetInstance():Play(slot1.story, function ()
 			setActive(uv0.memoryMask, false)
 		end, true)
 	elseif slot1.type == 2 then
@@ -128,9 +125,7 @@ function slot0.ShowSubMemories(slot0, slot1)
 	setActive(slot0._tf:Find("ItemRect/UnlockTip"), slot5)
 
 	if slot5 then
-		slot8 = slot0._tf
-
-		setText(slot8:Find("ItemRect/UnlockTip"), i18n("levelScene_remaster_unlock_tip", slot1.title, table.concat(_.map(_.sort(Map.GetRearChaptersOfRemaster(slot4[1])), function (slot0)
+		setText(slot0._tf:Find("ItemRect/UnlockTip"), i18n("levelScene_remaster_unlock_tip", slot1.title, table.concat(_.map(_.sort(Map.GetRearChaptersOfRemaster(slot4[1])), function (slot0)
 			return getProxy(ChapterProxy):getChapterById(slot0, true):getConfig("chapter_name")
 		end), "/")))
 	end

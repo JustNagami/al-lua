@@ -24,9 +24,8 @@ function slot0.OnInit(slot0)
 	end, SFX_PANEL)
 
 	slot0.cards = {}
-	slot1 = slot0.uilist
 
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.uilist:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:UpdateCommander(slot2, uv0.displays[slot1 + 1])
 		end
@@ -92,13 +91,10 @@ function slot0.UpdateCommander(slot0, slot1, slot2)
 end
 
 function slot0.UpdateDialogue(slot0)
-	slot3 = 0
-	slot4 = 0
-
 	for slot8, slot9 in pairs(slot0.home:GetCatteries()) do
-		slot3 = slot3 + slot9:GetCacheExp()
+		slot3 = 0 + slot9:GetCacheExp()
 
-		if slot4 < slot9:GetCacheExpTime() then
+		if 0 < slot9:GetCacheExpTime() then
 			slot4 = slot10
 		end
 	end

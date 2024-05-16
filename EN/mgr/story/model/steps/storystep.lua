@@ -38,6 +38,48 @@ function slot0.Ctor(slot0, slot1)
 	slot0.autoShowOption = defaultValue(slot1.autoShowOption, false)
 	slot0.selectedBranchCode = 0
 	slot0.id = 0
+	slot0.placeholderType = 0
+	slot0.defaultTb = slot1.defaultTb
+end
+
+function slot0.SetDefaultTb(slot0, slot1)
+	if not slot0.defaultTb or slot0.defaultTb <= 0 then
+		slot0.defaultTb = slot1
+	end
+end
+
+function slot0.SetPlaceholderType(slot0, slot1)
+	slot0.placeholderType = slot1
+end
+
+function slot0.ShouldReplacePlayer(slot0)
+	return bit.band(slot0.placeholderType, Story.PLAYER) > 0
+end
+
+function slot0.ShouldReplaceTb(slot0)
+	return bit.band(slot0.placeholderType, Story.TB) > 0
+end
+
+function slot0.ReplacePlayerName(slot0, slot1)
+	if not getProxy(PlayerProxy) or not getProxy(PlayerProxy):getRawData() then
+		return slot1
+	end
+
+	return string.gsub(slot1, "{playername}", getProxy(PlayerProxy):getRawData():GetName())
+end
+
+function slot0.ReplaceTbName(slot0, slot1)
+	if pg.NewStoryMgr.GetInstance():IsReView() then
+		return string.gsub(slot1, "{tb}", i18n("child_story_name"))
+	end
+
+	if not getProxy(EducateProxy) then
+		return slot1
+	end
+
+	slot2, slot3 = getProxy(EducateProxy):GetStoryInfo()
+
+	return string.gsub(slot1, "{tb}", slot3)
 end
 
 function slot0.ExistIcon(slot0)
@@ -92,23 +134,20 @@ function slot0.GetLocation(slot0)
 end
 
 function slot0.ExistMovableNode(slot0)
-	return slot0.movableNode ~= nil
+	return slot0.movableNode ~= nil and type(slot0.movableNode) == "table" and #slot0.movableNode > 0
 end
 
 function slot0.GetPathByString(slot0, slot1, slot2)
 	slot3 = {}
 	slot4 = pg.NewStoryMgr.GetInstance():GetRectSize()
-	slot5 = Vector3(-slot4.x * 0.5, slot4.y * 0.5, 0)
 	slot6 = Vector3(slot4.x * 0.5, slot4.y * 0.5, 0)
-	slot7 = Vector3(-slot4.x * 0.5, -slot4.y * 0.5, 0)
 	slot8 = Vector3(slot4.x * 0.5, -slot4.y * 0.5, 0)
-	slot9 = slot2 or 200
 
 	if slot1 == "LTLB" then
-		slot10 = Vector3(slot9, 0, 0)
+		slot10 = Vector3(slot2 or 200, 0, 0)
 		slot3 = {
-			slot5 + slot10,
-			slot7 + slot10
+			Vector3(-slot4.x * 0.5, slot4.y * 0.5, 0) + slot10,
+			Vector3(-slot4.x * 0.5, -slot4.y * 0.5, 0) + slot10
 		}
 	elseif slot1 == "LBLT" then
 		slot10 = Vector3(slot9, 0, 0)
@@ -157,44 +196,55 @@ function slot0.GetPathByString(slot0, slot1, slot2)
 	return slot3
 end
 
-function slot0.GetMovableNode(slot0)
-	if not slot0:ExistMovableNode() then
-		return nil
-	end
+function slot0.GenMoveNode(slot0, slot1)
+	slot2 = {}
 
-	slot1 = {}
-
-	if type(slot0.movableNode.path) == "table" then
-		for slot5, slot6 in ipairs(slot0.movableNode.path) do
-			table.insert(slot1, Vector3(slot6[1], slot6[2], 0))
+	if type(slot1.path) == "table" then
+		for slot6, slot7 in ipairs(slot1.path) do
+			table.insert(slot2, Vector3(slot7[1], slot7[2], 0))
 		end
 	else
-		slot1 = (type(slot0.movableNode.path) ~= "string" or slot0:GetPathByString(slot0.movableNode.path, slot0.movableNode.offset)) and slot0:GetPathByString("LTRT")
+		slot2 = (type(slot1.path) ~= "string" or slot0:GetPathByString(slot1.path, slot1.offset)) and slot0:GetPathByString("LTRT")
 	end
 
-	slot2 = type(slot0.movableNode.spine) == "table" or slot0.movableNode.spine == true
-	slot3 = nil
+	slot3 = type(slot1.spine) == "table" or slot1.spine == true
+	slot4 = nil
 
-	if slot0.movableNode.spine == true then
-		slot3 = {
+	if slot1.spine == true then
+		slot4 = {
 			action = "walk",
 			scale = 0.5
 		}
-	elseif slot2 then
-		slot3 = {
-			action = slot0.movableNode.spine.action or "walk",
-			scale = slot0.movableNode.spine.scale or 0.5
+	elseif slot3 then
+		slot4 = {
+			action = slot1.spine.action or "walk",
+			scale = slot1.spine.scale or 0.5
 		}
 	end
 
 	return {
-		name = slot0.movableNode.name,
-		isSpine = slot2,
-		spineData = slot3,
-		path = slot1,
-		time = slot0.movableNode.time,
-		easeType = slot0.movableNode.easeType or LeanTweenType.linear
+		name = slot1.name,
+		isSpine = slot3,
+		spineData = slot4,
+		path = slot2,
+		time = slot1.time,
+		delay = slot1.delay or 0,
+		easeType = slot1.easeType or LeanTweenType.linear
 	}
+end
+
+function slot0.GetMovableNode(slot0)
+	if not slot0:ExistMovableNode() then
+		return {}
+	end
+
+	slot1 = {}
+
+	for slot5, slot6 in pairs(slot0.movableNode or {}) do
+		table.insert(slot1, slot0:GenMoveNode(slot6))
+	end
+
+	return slot1
 end
 
 function slot0.OldPhotoEffect(slot0)
@@ -350,8 +400,16 @@ end
 
 function slot0.GetOptions(slot0)
 	return _.map(slot0.options or {}, function (slot0)
+		if uv0:ShouldReplacePlayer() then
+			slot1 = uv0:ReplacePlayerName(slot0.content)
+		end
+
+		if uv0:ShouldReplaceTb() then
+			slot1 = uv0:ReplaceTbName(slot1)
+		end
+
 		return {
-			HXSet.hxLan(slot0.content),
+			HXSet.hxLan(slot1),
 			slot0.flag
 		}
 	end)

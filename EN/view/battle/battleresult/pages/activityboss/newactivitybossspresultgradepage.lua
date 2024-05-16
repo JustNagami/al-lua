@@ -15,9 +15,7 @@ function slot0.LoadBGAndGrade(slot0, slot1)
 end
 
 function slot0.LoadActivityBossSPRes(slot0, slot1)
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("BattleResultItems/ActivitybossSP", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/ActivitybossSP", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited then
 			return
 		end
@@ -50,8 +48,7 @@ function slot0.InitActivityPanel(slot0, slot1)
 end
 
 function slot0.UpdateActiveBuffs(slot0, slot1, slot2)
-	slot4 = slot1:Find("ScrollView")
-	slot4 = slot4:GetComponent("LScrollRect")
+	slot4 = slot1:Find("ScrollView"):GetComponent("LScrollRect")
 
 	function slot4.onUpdateItem(slot0, slot1)
 		slot3 = uv0[slot0 + 1]

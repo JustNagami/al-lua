@@ -6,43 +6,30 @@ function slot0.Ctor(slot0, slot1)
 end
 
 function slot0.Init(slot0)
-	slot1 = slot0._tf
-	slot0.animation = slot1:GetComponent(typeof(Animation))
-	slot1 = slot0._tf
-	slot0.dftAniEvent = slot1:GetComponent(typeof(DftAniEvent))
-	slot1 = slot0.dftAniEvent
+	slot0.animation = slot0._tf:GetComponent(typeof(Animation))
+	slot0.dftAniEvent = slot0._tf:GetComponent(typeof(DftAniEvent))
 
-	slot1:SetTriggerEvent(function ()
+	slot0.dftAniEvent:SetTriggerEvent(function ()
 		if uv0.onTrigger then
 			uv0.onTrigger()
 		end
 
 		uv0.onTrigger = nil
 	end)
-
-	slot1 = slot0.dftAniEvent
-
-	slot1:SetEndEvent(function ()
+	slot0.dftAniEvent:SetEndEvent(function ()
 		if uv0.callback then
 			uv0.callback()
 		end
 	end)
 
-	slot1 = slot0._tf
-	slot0.subAnim = slot1:Find("Main/anim")
-	slot1 = slot0.subAnim
-	slot0.subAnimation = slot1:GetComponent(typeof(Animation))
-	slot1 = slot0.subAnim
-	slot0.subDftAniEvent = slot1:GetComponent(typeof(DftAniEvent))
-	slot1 = slot0.subDftAniEvent
+	slot0.subAnim = slot0._tf:Find("Main/anim")
+	slot0.subAnimation = slot0.subAnim:GetComponent(typeof(Animation))
+	slot0.subDftAniEvent = slot0.subAnim:GetComponent(typeof(DftAniEvent))
 
-	slot1:SetStartEvent(function ()
+	slot0.subDftAniEvent:SetStartEvent(function ()
 		uv0.playing = true
 	end)
-
-	slot1 = slot0.subDftAniEvent
-
-	slot1:SetEndEvent(function ()
+	slot0.subDftAniEvent:SetEndEvent(function ()
 		uv0.playing = false
 
 		if uv0.onLastUpdate then

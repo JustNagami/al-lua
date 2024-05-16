@@ -4,10 +4,7 @@ slot0.START_BATTLE = "RivalInfoMediator:START_BATTLE"
 function slot0.register(slot0)
 	assert(slot0.contextData.rival, "rival should exist")
 	assert(slot0.contextData.type, "type should exist")
-
-	slot1 = slot0.viewComponent
-
-	slot1:setRival(slot0.contextData.rival)
+	slot0.viewComponent:setRival(slot0.contextData.rival)
 	slot0:bind(uv0.START_BATTLE, function (slot0)
 		slot1 = nil
 

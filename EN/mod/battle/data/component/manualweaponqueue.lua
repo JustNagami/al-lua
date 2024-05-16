@@ -69,9 +69,7 @@ function slot3.CheckWeaponInitalCD(slot0)
 		end
 	end
 
-	slot1 = #slot0._cooldownList
-
-	while slot1 < slot0._maxCount and #slot0._overheatQueue > 0 do
+	while #slot0._cooldownList < slot0._maxCount and #slot0._overheatQueue > 0 do
 		slot2 = table.remove(slot0._overheatQueue, 1)
 
 		slot2:InitialCD()
@@ -130,11 +128,10 @@ function slot3.onManualWeaponReady(slot0, slot1)
 end
 
 function slot3.onManualInstantReady(slot0, slot1)
-	slot2 = slot1.Dispatcher
 	slot3 = nil
 
 	for slot7, slot8 in ipairs(slot0._overheatQueue) do
-		if slot2 == slot8 then
+		if slot1.Dispatcher == slot8 then
 			table.remove(slot0._overheatQueue, slot7)
 
 			slot3 = true
@@ -161,9 +158,7 @@ function slot3.removeFromCDList(slot0, slot1)
 end
 
 function slot3.fillCooldownList(slot0)
-	slot1 = #slot0._cooldownList
-
-	while slot1 < slot0._maxCount and #slot0._overheatQueue > 0 do
+	while #slot0._cooldownList < slot0._maxCount and #slot0._overheatQueue > 0 do
 		slot2 = table.remove(slot0._overheatQueue, 1)
 
 		slot2:EnterCoolDown()

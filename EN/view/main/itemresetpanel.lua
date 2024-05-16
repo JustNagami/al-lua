@@ -10,34 +10,25 @@ function slot0.Ctor(slot0, slot1, slot2)
 	slot0._parent = slot2
 	slot0._go = slot1
 	slot0._tf = tf(slot1)
-	slot5 = slot0._tf
 
-	onButton(slot0, slot5:Find("bg"), function ()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Close()
 	end, SFX_PANEL)
 	setActive(slot0._go, false)
 
-	slot3 = slot0._tf
-	slot0.backBtn = slot3:Find("window/top/btnBack")
+	slot0.backBtn = slot0._tf:Find("window/top/btnBack")
 
 	onButton(slot0, slot0.backBtn, function ()
 		uv0:Close()
 	end, SFX_PANEL)
 
-	slot3 = slot0._tf
-	slot0.infoPanel = slot3:Find("window/panel/info")
-	slot3 = slot0._tf
-	slot0.fromListPanel = slot3:Find("window/panel/list")
-	slot4 = slot0.fromListPanel
-	slot5 = slot0.fromListPanel
-	slot0.fromItemList = UIItemList.New(slot4:Find("view/content"), slot5:Find("view/content/item"))
-	slot3 = slot0.fromItemList
+	slot0.infoPanel = slot0._tf:Find("window/panel/info")
+	slot0.fromListPanel = slot0._tf:Find("window/panel/list")
+	slot0.fromItemList = UIItemList.New(slot0.fromListPanel:Find("view/content"), slot0.fromListPanel:Find("view/content/item"))
 
-	slot3:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
+	slot0.fromItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.infoList[slot1]
+			slot3 = uv0.infoList[slot1 + 1]
 
 			setActive(slot2:Find("from"), slot3)
 			setActive(slot2:Find("nothing"), not slot3)
@@ -65,20 +56,20 @@ function slot0.Close(slot0)
 end
 
 function slot0.Update(slot0, slot1)
-	slot2 = slot1
+	slot2 = Drop.New({
+		type = slot1.type,
+		id = slot1.id,
+		count = slot1.count
+	})
 	slot3 = nil
 
 	if slot1:getConfig("item_transform_item_type") > 0 then
-		slot2 = {
-			type = slot1.type,
-			id = slot1.id,
-			count = slot1:getConfig("item_transform_num")
-		}
-		slot3 = {
+		slot2.count = slot1:getConfig("item_transform_num")
+		slot3 = Drop.New({
 			type = slot1:getConfig("item_transform_item_type"),
 			id = slot1:getConfig("item_transform_item_id"),
 			count = slot1:getConfig("item_transform_item_number")
-		}
+		})
 	end
 
 	setText(slot0.infoPanel:Find("top_text"), i18n("world_item_recycle_" .. (slot3 and 1 or 2)))

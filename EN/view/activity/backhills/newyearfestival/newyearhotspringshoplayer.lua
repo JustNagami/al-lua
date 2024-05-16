@@ -113,10 +113,7 @@ function slot0.UpdateGoods(slot0)
 	table.sort(slot1, function (slot0, slot1)
 		return slot0.id < slot1.id
 	end)
-
-	slot4 = slot0.goodsContainer
-
-	UIItemList.StaticAlign(slot0.goodsContainer, slot4:GetChild(0), #slot1, function (slot0, slot1, slot2)
+	UIItemList.StaticAlign(slot0.goodsContainer, slot0.goodsContainer:GetChild(0), #slot1, function (slot0, slot1, slot2)
 		if slot0 ~= UIItemList.EventUpdate then
 			return
 		end
@@ -130,9 +127,7 @@ function slot0.UpdateGoods(slot0)
 			count = slot3:getConfig("num")
 		})
 		onButton(uv1, slot2, function ()
-			slot0 = uv0
-
-			slot0:OnClickCommodity(uv1, function (slot0, slot1)
+			uv0:OnClickCommodity(uv1, function (slot0, slot1)
 				uv0:OnPurchase(uv1, slot1)
 			end)
 		end, SFX_PANEL)
@@ -148,10 +143,10 @@ function slot0.CheckRes(slot0, slot1, slot2)
 		return false
 	end
 
-	if GetOwnedDropCount({
+	if Drop.New({
 		type = slot1:getConfig("resource_category"),
 		id = slot1:getConfig("resource_type")
-	}) < slot1:getConfig("resource_num") * slot2 then
+	}):getOwnedCount() < slot1:getConfig("resource_num") * slot2 then
 		slot0:DisplayChat({
 			"hotspring_shop_insufficient"
 		})
@@ -178,13 +173,10 @@ function slot0.OnClickCommodity(slot0, slot1, slot2)
 		return
 	end
 
-	slot3 = {
+	slot0:Purchase(slot1, 1, Drop.New({
 		id = slot1:getConfig("commodity_id"),
 		type = slot1:getConfig("commodity_type")
-	}
-
-	updateDropCfg(slot3)
-	slot0:Purchase(slot1, 1, slot3.cfg.name, slot2)
+	}):getConfig("name"), slot2)
 end
 
 function slot0.OnPurchase(slot0, slot1, slot2)
@@ -202,9 +194,8 @@ function slot0.ShowMsgbox(slot0, slot1)
 	setActive(slot0.msgbox, true)
 
 	slot0.contentText.text = slot1.content
-	slot2 = slot0.msgbox
 
-	onButton(slot0, slot2:Find("window/button_container/Button2"), function ()
+	onButton(slot0, slot0.msgbox:Find("window/button_container/Button2"), function ()
 		setActive(uv0.msgbox, false)
 		existCall(uv1.onYes)
 	end, SFX_CONFIRM)
@@ -217,17 +208,10 @@ function slot0.DisplayChat(slot0, slot1)
 			uv0:HideChat()
 		end)).uniqueId
 		slot2 = i18n(uv1[math.random(#uv1)])
-		slot3 = uv0.chatAnimator
 
-		slot3:ResetTrigger("Shrink")
-
-		slot3 = uv0.chatAnimator
-
-		slot3:SetTrigger("Pop")
-
-		slot3 = uv0.chatAnimEvent
-
-		slot3:SetTriggerEvent(function ()
+		uv0.chatAnimator:ResetTrigger("Shrink")
+		uv0.chatAnimator:SetTrigger("Pop")
+		uv0.chatAnimEvent:SetTriggerEvent(function ()
 			setText(uv0.chatText, uv1)
 		end)
 	end)

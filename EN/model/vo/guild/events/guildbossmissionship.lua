@@ -19,14 +19,13 @@ function slot0.GetUniqueId(slot0)
 end
 
 function slot0.getProperties(slot0, slot1, slot2)
-	slot3 = getProxy(GuildProxy):getRawData()
-	slot4 = {}
-
 	for slot9, slot10 in pairs(slot0.super:getProperties(slot1, slot2)) do
-		slot4[slot9] = (slot5[slot9] or 0) + slot3:getShipAddition(slot9, slot0:getShipType())
+		-- Nothing
 	end
 
-	return slot4
+	return {
+		[slot9] = (slot5[slot9] or 0) + getProxy(GuildProxy):getRawData():getShipAddition(slot9, slot0:getShipType())
+	}
 end
 
 return slot0

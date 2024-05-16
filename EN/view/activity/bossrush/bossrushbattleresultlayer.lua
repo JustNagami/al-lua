@@ -215,10 +215,8 @@ function slot0.didEnter(slot0)
 			slot13 = slot4:getConfig("rarity")
 
 			if slot4.level < slot3.level then
-				slot14 = 0
-
 				for slot18 = slot4.level, slot3.level - 1 do
-					slot14 = slot14 + getExpByRarityFromLv1(slot13, slot18)
+					slot14 = 0 + getExpByRarityFromLv1(slot13, slot18)
 				end
 
 				setText(slot12, "+" .. slot14 + slot3:getExp() - slot4:getExp())
@@ -236,10 +234,8 @@ function slot0.didEnter(slot0)
 		if not (slot4 and slot4.statistics) then
 			slot5 = 10000
 		elseif slot3 == 0 then
-			slot5 = 0
-
 			for slot9, slot10 in pairs(slot2) do
-				slot5 = math.max(slot4[slot10.id].output, slot5)
+				slot5 = math.max(slot4[slot10.id].output, 0)
 			end
 		elseif slot3 > 0 then
 			slot5 = slot4[slot3].output
@@ -290,17 +286,16 @@ function slot0.didEnter(slot0)
 	function slot17(slot0, slot1, slot2, slot3)
 		slot4 = slot0:Find("Title/Label")
 		slot5 = slot0:Find("Title/Letter")
-		slot6 = {
-			"d",
-			"c",
-			"b",
-			"a",
-			"s"
-		}
 		slot7, slot8, slot9, slot10, slot11 = nil
 
 		if slot2 and slot2.statistics then
-			slot7 = slot6[slot2._battleScore + 1]
+			slot7 = ({
+				"d",
+				"c",
+				"b",
+				"a",
+				"s"
+			})[slot2._battleScore + 1]
 			slot10 = "letter_" .. slot7
 			slot8 = "battlescore/battle_score_" .. slot7 .. "/letter_" .. slot7
 			slot11 = "label_" .. slot7
@@ -369,7 +364,7 @@ function slot0.didEnter(slot0)
 	end
 
 	setActive(slot0.rightBottomPanel:Find("submarine"), #slot10 > 0)
-	(function ()
+	function ()
 		setActive(uv0, uv1 == 1)
 		setActive(uv2, uv1 == 0 and #uv3 > 0)
 
@@ -378,8 +373,8 @@ function slot0.didEnter(slot0)
 		elseif uv4 == 1 then
 			uv6()
 		end
-	end)()
-	(function ()
+	end()
+	function ()
 		slot0 = getProxy(PlayerProxy):getRawData()
 
 		setText(uv1._tf:Find("main/Series/playerExp/name_text"), slot0.name)
@@ -389,7 +384,7 @@ function slot0.didEnter(slot0)
 		end))
 
 		uv1._tf:Find("main/Series/playerExp/exp_progress"):GetComponent(typeof(Image)).fillAmount = slot0.exp / getConfigFromLevel1(pg.user_level, slot0.level).exp_interval
-	end)()
+	end()
 	onButton(slot0, slot0.rightBottomPanel:Find("statisticsBtn"), function ()
 		uv0 = 1 - uv0
 
@@ -408,15 +403,11 @@ function slot0.didEnter(slot0)
 	onButton(slot0, slot0.rightBottomPanel:Find("confirmBtn"), function ()
 		uv0:emit(BossRushBattleResultMediator.ON_SETTLE)
 	end, SFX_PANEL)
-
-	slot24 = slot0._tf:Find("main/Series/ArrowLeft")
-	slot25 = slot0._tf:Find("main/Series/ArrowRight")
-
 	Canvas.ForceUpdateCanvases()
 
 	if slot0.resultList.rect.width <= slot0.resultScroll.rect.width then
-		setActive(slot24, false)
-		setActive(slot25, false)
+		setActive(slot0._tf:Find("main/Series/ArrowLeft"), false)
+		setActive(slot0._tf:Find("main/Series/ArrowRight"), false)
 	else
 		setActive(slot24, false)
 		setActive(slot25, true)

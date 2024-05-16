@@ -70,14 +70,13 @@ end
 
 function slot0.UpdateContinuousOperation(slot0)
 	if getProxy(ChapterProxy):GetContinuousData(SYSTEM_SCENARIO) and slot1:IsActive() then
-		slot3 = "$1/$2"
 		slot7 = slot1
 
 		for slot7, slot8 in ipairs({
 			slot1:GetTotalBattleTime() - slot1:GetRestBattleTime() + 1,
 			slot1.GetTotalBattleTime(slot7)
 		}) do
-			slot3 = string.gsub(slot3, "$" .. slot7, slot8)
+			slot3 = string.gsub("$1/$2", "$" .. slot7, slot8)
 		end
 
 		setText(slot0.restTime:Find("Count"), slot3)

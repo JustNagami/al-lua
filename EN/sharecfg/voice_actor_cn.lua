@@ -1543,5 +1543,45 @@ pg.voice_actor_CN = {
 	[393] = {
 		code = 393,
 		actor_name = "Kaori Sadohara"
+	},
+	[394] = {
+		code = 394,
+		actor_name = "Ai Matayoshi"
+	},
+	[395] = {
+		code = 395,
+		actor_name = "Mikoi Sasaki"
+	},
+	[396] = {
+		code = 396,
+		actor_name = "Amane Makino"
+	},
+	[397] = {
+		code = 397,
+		actor_name = "Rie Hazuki"
+	},
+	[398] = {
+		code = 398,
+		actor_name = "Haruka Tomatsu"
+	},
+	[399] = {
+		code = 399,
+		actor_name = "Narumi Kaho"
+	},
+	[400] = {
+		code = 400,
+		actor_name = "Marika"
+	},
+	[402] = {
+		code = 402,
+		actor_name = "Emiri Iwai"
+	},
+	[403] = {
+		code = 403,
+		actor_name = "Mizuki Mano"
+	},
+	[404] = {
+		code = 404,
+		actor_name = "Kaoru Sakura"
 	}
 }

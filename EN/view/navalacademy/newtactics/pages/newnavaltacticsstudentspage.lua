@@ -55,10 +55,9 @@ function slot0.Flush(slot0)
 		0,
 		0
 	}
-	slot2 = getProxy(NavalAcademyProxy):getSkillClassNum()
 
 	for slot6 = 1, NavalAcademyProxy.MAX_SKILL_CLASS_NUM do
-		slot7 = slot0:GetCardType(slot6, slot2)
+		slot7 = slot0:GetCardType(slot6, getProxy(NavalAcademyProxy):getSkillClassNum())
 		slot1[slot7] = slot1[slot7] + 1
 
 		slot0:UpdateTypeCard(slot7, slot1[slot7], slot6)

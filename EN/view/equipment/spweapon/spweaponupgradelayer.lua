@@ -297,44 +297,35 @@ function slot0.UpdateSelectPt(slot0)
 	slot0.upgradeType = nil
 	slot0.upgradeMaxLevel = false
 	slot0.ptMax = false
-	slot1 = slot0.spWeaponVO
-	slot1 = slot1:GetPt() + SpWeapon.CalculateHistoryPt(slot0.consumeItems, slot0.consumeSpweapons)
-	slot2 = slot0.spWeaponVO
-	slot2 = slot2:GetConfigID()
+	slot1 = slot0.spWeaponVO:GetPt() + SpWeapon.CalculateHistoryPt(slot0.consumeItems, slot0.consumeSpweapons)
 	slot3 = 0
-	slot4 = 0
 	slot5 = 0
-	slot6 = 0
 	slot7 = {}
-
-	function slot8(slot0)
-		for slot4, slot5 in ipairs(slot0) do
-			slot6 = slot5[1]
-
-			if not underscore.detect(uv0, function (slot0)
-				return slot0.id == uv0
-			end) then
-				slot7 = Item.New({
-					id = slot6
-				})
-				slot7.count = 0
-
-				table.insert(uv0, slot7)
-			end
-
-			slot7.count = slot7.count + slot5[2]
-		end
-	end
 
 	if slot0.craftMode == uv0 then
 		slot10 = SpWeapon.New({
-			id = slot2
+			id = slot0.spWeaponVO:GetConfigID()
 		}):GetUpgradeConfig()
-		slot4 = slot4 + slot10.create_use_pt
+		slot4 = 0 + slot10.create_use_pt
 
-		slot8(slot10.create_use_item)
+		function (slot0)
+			for slot4, slot5 in ipairs(slot0) do
+				if not underscore.detect(uv0, function (slot0)
+					return slot0.id == uv0
+				end) then
+					slot7 = Item.New({
+						id = slot5[1]
+					})
+					slot7.count = 0
 
-		slot6 = slot6 + slot10.create_use_gold
+					table.insert(uv0, slot7)
+				end
+
+				slot7.count = slot7.count + slot5[2]
+			end
+		end(slot10.create_use_item)
+
+		slot6 = 0 + slot10.create_use_gold
 		slot0.upgradeType = uv1
 	end
 
@@ -394,12 +385,11 @@ end
 
 function slot0.AutoSelectMaterials(slot0)
 	slot1 = slot0.spWeaponVO:GetPt() + SpWeapon.CalculateHistoryPt(slot0.consumeItems, slot0.consumeSpweapons)
-	slot2 = slot0.spWeaponVO:GetConfigID()
 	slot3 = 0
 
 	if slot0.craftMode == uv0 then
 		slot3 = SpWeapon.New({
-			id = slot2
+			id = slot0.spWeaponVO:GetConfigID()
 		}):GetUpgradeConfig().create_use_pt
 	end
 
@@ -426,7 +416,7 @@ function slot0.AutoSelectMaterials(slot0)
 	end
 
 	function slot5(slot0)
-		return pg.item_data_template[slot0.id].usage_arg[1]
+		return Item.getConfigData(slot0.id).usage_arg[1]
 	end
 
 	table.sort(_.values(_.map(slot0.candicateMaterials, function (slot0)
@@ -439,7 +429,7 @@ function slot0.AutoSelectMaterials(slot0)
 	end)
 
 	slot7 = nil
-	slot8, slot9 = (function (slot0, slot1, slot2)
+	slot8, slot9 = function (slot0, slot1, slot2)
 		if not uv0[slot0] then
 			return false
 		end
@@ -488,7 +478,7 @@ function slot0.AutoSelectMaterials(slot0)
 				return true, slot2
 			end
 		end
-	end)(1, slot3 - slot1, {})
+	end(1, slot3 - slot1, {})
 
 	_.each(slot8 and slot9 or slot4, function (slot0)
 		uv0:UpdateSelectMaterial(slot0.id, slot0.count)
@@ -568,9 +558,7 @@ function slot0.UpdateCraftTargetCount(slot0)
 		return
 	end
 
-	slot3 = slot0.craftTargetCount
-
-	setText(slot3:Find("Text"), _.reduce(slot0.spWeaponList, 0, function (slot0, slot1)
+	setText(slot0.craftTargetCount:Find("Text"), _.reduce(slot0.spWeaponList, 0, function (slot0, slot1)
 		if uv0.nextSpWeaponVO:GetOriginID() == slot1:GetOriginID() then
 			slot0 = slot0 + 1
 		end
@@ -619,16 +607,14 @@ function slot0.UpdateSpWeaponUpgradeInfo(slot0, slot1, slot2, slot3, slot4)
 		end
 	end
 
-	(function (slot0, slot1, slot2)
+	function (slot0, slot1, slot2)
 		for slot6, slot7 in ipairs(slot2) do
 			uv0(cloneTplTo(slot1, slot0), slot7)
 		end
-	end)(slot1:Find("attrs"), slot1:Find("attr_tpl"), slot2)
-
-	slot8 = {}
+	end(slot1:Find("attrs"), slot1:Find("attr_tpl"), slot2)
 
 	if slot3[1].skillId > 0 then
-		table.insert(slot8, {
+		table.insert({}, {
 			name = i18n("spweapon_attr_effect"),
 			effect = slot3[1]
 		})
@@ -650,10 +636,8 @@ function slot0.UpdateSpWeaponUpgradeInfo(slot0, slot1, slot2, slot3, slot4)
 		setActive(slot2:Find("value"), false)
 		setActive(slot2:Find("effect"), true)
 
-		slot5 = getSkillName(slot4.skillId)
-
 		if not slot4.unlock then
-			slot5 = setColorStr(slot5, "#a2a2a2")
+			slot5 = setColorStr(getSkillName(slot4.skillId), "#a2a2a2")
 
 			setTextColor(slot2:Find("effect"), SummerFeastScene.TransformColor("a2a2a2"))
 		else
@@ -662,10 +646,8 @@ function slot0.UpdateSpWeaponUpgradeInfo(slot0, slot1, slot2, slot3, slot4)
 
 		slot2:Find("effect"):GetComponent("RichText"):AddListener(function (slot0, slot1)
 			if slot0 == "displaySkill" then
-				slot2 = getSkillDesc(uv0.skillId, uv0.lv)
-
 				if not uv0.unlock then
-					slot2 = setColorStr(i18n("spweapon_tip_skill_locked") .. slot2, "#a2a2a2")
+					slot2 = setColorStr(i18n("spweapon_tip_skill_locked") .. getSkillDesc(uv0.skillId, uv0.lv), "#a2a2a2")
 				end
 
 				if not uv1.isSkill then
@@ -693,11 +675,11 @@ function slot0.UpdateSpWeaponUpgradeInfo(slot0, slot1, slot2, slot3, slot4)
 		GetComponent(slot2, typeof(Toggle)).enabled = false
 	end
 
-	(function (slot0, slot1, slot2)
+	function (slot0, slot1, slot2)
 		for slot6, slot7 in ipairs(slot2) do
 			uv0(cloneTplTo(slot1, slot0), slot7)
 		end
-	end)(slot1:Find("attrs"), slot5, slot8)
+	end(slot1:Find("attrs"), slot5, slot8)
 end
 
 function slot0.UpdateExpBar(slot0)

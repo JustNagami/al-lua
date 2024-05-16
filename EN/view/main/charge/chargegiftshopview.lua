@@ -11,10 +11,7 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.OnDestroy(slot0)
-	slot1 = pairs
-	slot2 = slot0.chargeCardTable or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.chargeCardTable or {}) do
 		slot5:destoryTimer()
 	end
 
@@ -58,9 +55,8 @@ function slot0.initScrollRect(slot0, slot1, slot2, slot3)
 			end
 
 			slot0 = uv0.goods:GetSkinProbability()
-			slot1 = getProxy(ShipSkinProxy):GetProbabilitySkins(slot0)
 
-			if #slot0 <= 0 or #slot0 ~= #slot1 then
+			if #slot0 <= 0 or #slot0 ~= #getProxy(ShipSkinProxy):GetProbabilitySkins(slot0) then
 				uv1:emit(BaseUI.ON_DROP, uv0.goods:GetSkinProbabilityItem())
 			else
 				uv1:emit(ChargeMediator.VIEW_SKIN_PROBABILITY, uv0.goods.id)
@@ -97,11 +93,7 @@ function slot0.confirm(slot0, slot1)
 
 		if slot1:isMonthCard() or slot1:isGiftBox() or slot1:isItemBox() or slot1:isPassItem() then
 			slot5 = underscore.map(slot1:getConfig("extra_service_item"), function (slot0)
-				return {
-					type = slot0[1],
-					id = slot0[2],
-					count = slot0[3]
-				}
+				return Drop.Create(slot0)
 			end)
 			slot6 = nil
 
@@ -109,35 +101,30 @@ function slot0.confirm(slot0, slot1)
 				slot7 = slot1:getConfig("sub_display")
 				slot8 = slot7[1]
 				slot9 = pg.battlepass_event_pt[slot8].pt
-				slot6 = {
+				slot6 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = pg.battlepass_event_pt[slot8].pt,
 					count = slot7[2]
-				}
+				})
 				slot5 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot8].drop_client_pay, function (slot0)
-					return {
-						type = slot0[1],
-						id = slot0[2],
-						count = slot0[3]
-					}
+					return Drop.Create(slot0)
 				end))
 			end
 
-			slot7 = slot1:getConfig("gem") + slot1:getConfig("extra_gem")
 			slot8 = nil
 
 			if slot1:isMonthCard() then
-				slot8 = {
-					id = 4,
-					type = 1,
-					count = slot7
-				}
-			elseif slot7 > 0 then
-				table.insert(slot5, {
-					id = 4,
-					type = 1,
-					count = slot7
+				slot8 = Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
+					count = slot1:getConfig("gem") + slot1:getConfig("extra_gem")
 				})
+			elseif slot7 > 0 then
+				table.insert(slot5, Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
+					count = slot7
+				}))
 			end
 
 			slot9, slot10 = nil
@@ -197,7 +184,7 @@ function slot0.confirm(slot0, slot1)
 	else
 		slot2 = {}
 
-		if type(pg.item_data_statistics[slot1:getConfig("effect_args")[1]].display_icon) == "table" then
+		if type(Item.getConfigData(slot1:getConfig("effect_args")[1]).display_icon) == "table" then
 			for slot9, slot10 in ipairs(slot5) do
 				table.insert(slot2, {
 					type = slot10[1],
@@ -231,10 +218,9 @@ end
 
 function slot0.updateGiftGoodsVOList(slot0)
 	slot0.giftGoodsVOList = {}
-	slot1 = RefluxShopView.getAllRefluxPackID()
 
 	for slot6, slot7 in pairs(pg.pay_data_display.all) do
-		if not table.contains(slot1, slot7) and (slot2[slot7].extra_service == Goods.ITEM_BOX or slot9 == Goods.PASS_ITEM) then
+		if not table.contains(RefluxShopView.getAllRefluxPackID(), slot7) and (slot2[slot7].extra_service == Goods.ITEM_BOX or slot9 == Goods.PASS_ITEM) then
 			if Goods.Create({
 				shop_id = slot7
 			}, Goods.TYPE_CHARGE):isTecShipGift() then
@@ -247,10 +233,10 @@ function slot0.updateGiftGoodsVOList(slot0)
 		end
 	end
 
-	for slot7, slot8 in pairs(pg.shop_template.all) do
-		if not table.contains(slot1, slot8) and slot3[slot8].genre == "gift_package" then
+	for slot6, slot7 in pairs(pg.shop_template.get_id_list_by_genre.gift_package) do
+		if not table.contains(slot1, slot7) then
 			table.insert(slot0.giftGoodsVOList, Goods.Create({
-				shop_id = slot8
+				shop_id = slot7
 			}, Goods.TYPE_GIFT_PACKAGE))
 		end
 	end
@@ -266,7 +252,7 @@ function slot0.sortGiftGoodsVOList(slot0)
 			if slot5:canPurchase() and slot5:inTime() then
 				table.insert(slot0.giftGoodsVOListForShow, slot5)
 			end
-		elseif not slot5:isChargeType() and not slot5:isLevelLimit(slot0.player.level, true) then
+		elseif not slot5:isLevelLimit(slot0.player.level, true) then
 			slot5:updateBuyCount(ChargeConst.getBuyCount(slot0.normalList, slot5.id))
 
 			slot8 = false
@@ -295,34 +281,37 @@ function slot0.sortGiftGoodsVOList(slot0)
 		return type(slot0:getConfig("time")) == "string" and slot2 + 999999999999.0 or type(slot1) == "table" and (pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1[2]) - pg.TimeMgr.GetInstance():GetServerTime() > 0 and slot2 or 999999999999.0) or slot2 + 999999999999.0
 	end
 
-	table.sort(slot0.giftGoodsVOListForShow, function (slot0, slot1)
-		slot4 = uv0(slot0)
-		slot5 = uv0(slot1)
-		slot6 = slot0:getConfig("tag") == 0 and -1 or slot0:getConfig("tag")
-		slot7 = slot1:getConfig("tag") == 0 and -1 or slot1:getConfig("tag")
-		slot8 = slot0:getConfig("order") and slot0:getConfig("order") or 999
-		slot9 = slot1:getConfig("order") and slot1:getConfig("order") or 999
-		slot10 = slot0.id
-		slot11 = slot1.id
+	slot2 = {}
+	slot7 = ActivityConst.ACTIVITY_TYPE_GIFT_UP
 
-		if (slot0:getConfig("type_order") == 0 and 999 or slot0:getConfig("type_order")) == (slot1:getConfig("type_order") == 0 and 999 or slot1:getConfig("type_order")) then
-			if slot4 == slot5 then
-				if slot6 == slot7 then
-					if slot8 == slot9 then
-						return slot10 < slot11
-					else
-						return slot8 < slot9
-					end
-				else
-					return slot7 < slot6
-				end
-			else
-				return slot4 < slot5
-			end
-		else
-			return slot2 < slot3
+	for slot7, slot8 in ipairs(getProxy(ActivityProxy):getActivitiesByType(slot7)) do
+		if slot3:IsActivityNotEnd(slot8.id) then
+			underscore(slot8:getConfig("config_client").gifts):chain():flatten():map(function (slot0)
+				uv0[slot0] = true
+			end)
 		end
-	end)
+	end
+
+	table.sort(slot0.giftGoodsVOListForShow, CompareFuncs({
+		function (slot0)
+			return uv0[slot0.id] and 0 or 1
+		end,
+		function (slot0)
+			return (slot0:getConfig("type_order") - 1) % 1000
+		end,
+		function (slot0)
+			return uv0(slot0)
+		end,
+		function (slot0)
+			return -slot0:getConfig("tag")
+		end,
+		function (slot0)
+			return slot0:getConfig("order") or 999
+		end,
+		function (slot0)
+			return slot0.id
+		end
+	}))
 end
 
 function slot0.updateGoodsData(slot0)
@@ -347,9 +336,7 @@ function slot0.updateData(slot0)
 end
 
 function slot0.addUpdateTimer(slot0, slot1)
-	slot3 = pg.TimeMgr.GetInstance():Table2ServerTime(slot1)
-
-	if slot0.updateTime and slot2:Table2ServerTime(slot0.updateTime) < slot3 then
+	if slot0.updateTime and slot2:Table2ServerTime(slot0.updateTime) < pg.TimeMgr.GetInstance():Table2ServerTime(slot1) then
 		return
 	end
 

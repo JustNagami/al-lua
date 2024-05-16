@@ -93,12 +93,10 @@ function slot0.UpdateObjectives(slot0, slot1)
 		return
 	end
 
-	slot3 = {
-		slot0.objectiveTpl
-	}
-
 	for slot7 = 2, #slot2 do
-		table.insert(slot3, Object.Instantiate(slot0.objectiveTpl, slot0.objectiveContainer))
+		table.insert({
+			slot0.objectiveTpl
+		}, Object.Instantiate(slot0.objectiveTpl, slot0.objectiveContainer))
 	end
 
 	slot4 = {}
@@ -115,10 +113,7 @@ function slot0.UpdateObjectives(slot0, slot1)
 	end
 
 	seriesAsync(slot4, slot1)
-
-	slot5 = LeanTween.value(slot0.objectiveContainer.gameObject, 2000, 237, 0.3)
-
-	slot5:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(slot0.objectiveContainer.gameObject, 2000, 237, 0.3):setOnUpdate(System.Action_float(function (slot0)
 		uv0.objectiveContainer.localPosition = Vector3(slot0, uv0.objectiveContainer.localPosition.y, 0)
 	end))
 end
@@ -128,9 +123,7 @@ function slot0.UpdateChapterName(slot0)
 end
 
 function slot0.LoadEffects(slot0, slot1)
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("BattleResultItems/ResultEffect", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/ResultEffect", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited or IsNil(slot0) then
 			if uv1 then
 				uv1()
@@ -191,9 +184,7 @@ function slot0.LoadBGAndGrade(slot0, slot1)
 end
 
 function slot0.LoadBG(slot0, slot1)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("BattleResultItems/" .. NewBattleResultUtil.Score2Bg(slot0.contextData.score), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. NewBattleResultUtil.Score2Bg(slot0.contextData.score), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited or IsNil(slot0) then
 			if uv1 then
 				uv1()

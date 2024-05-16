@@ -2,28 +2,24 @@ slot0 = class("FeastOpCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot3 = slot2.activityId
 	slot5 = slot2.arg1 or 0
 	slot6 = slot2.arg2 or 0
-	slot7 = slot2.argList or {}
 	slot8 = slot2.kvpArgs or {}
 	slot9 = slot2.callback
 
 	if (slot2.cmd or 0) == FeastDorm.OP_RANDOM_SHIPS then
-		slot10 = pg.ConnectionMgr.GetInstance()
-
-		slot10:Send(26158, {
-			act_id = slot3,
-			ship_group_id = slot7
+		pg.ConnectionMgr.GetInstance():Send(26158, {
+			act_id = slot2.activityId,
+			ship_group_id = slot2.argList or {}
 		}, 26159, function (slot0)
 			if slot0.ret == 0 then
 				getProxy(FeastProxy):getData():SetRefreshTime(slot0.refresh_time)
 
-				slot3 = {}
+				slot3 = {
+					[slot8.tid] = true
+				}
 
 				for slot7, slot8 in ipairs(slot0.party_roles) do
-					slot3[slot8.tid] = true
-
 					if not slot2:GetFeastShip(slot8.tid) then
 						slot10 = FeastShip.New(slot8)
 
@@ -66,9 +62,7 @@ function slot0.execute(slot0, slot1)
 			return
 		end
 
-		slot10 = pg.ConnectionMgr.GetInstance()
-
-		slot10:Send(11202, {
+		pg.ConnectionMgr.GetInstance():Send(11202, {
 			activity_id = slot3,
 			cmd = slot4,
 			arg1 = slot5,
@@ -77,21 +71,8 @@ function slot0.execute(slot0, slot1)
 			kvargs1 = slot8
 		}, 11203, function (slot0)
 			if slot0.result == 0 then
-				slot1 = {}
-
-				for slot5, slot6 in ipairs(slot0.award_list) do
-					slot7 = Item.New({
-						id = slot6.id,
-						type = slot6.type,
-						number = slot6.number
-					})
-
-					table.insert(slot1, slot7)
-					pg.m02:sendNotification(GAME.ADD_ITEM, slot7)
-				end
-
 				if uv0 == FeastDorm.OP_INTERACTION then
-					uv1:HandleInteraction(uv2, uv3, slot0.number[1] or 0, slot1)
+					uv1:HandleInteraction(uv2, uv3, slot0.number[1] or 0, PlayerConst.addTranDrop(slot0.award_list))
 				elseif uv0 == FeastDorm.OP_MAKE_TICKET then
 					uv1:HandleMakeTicket(uv2)
 				elseif uv0 == FeastDorm.OP_GIVE_TICKET then
@@ -113,15 +94,13 @@ function slot0.execute(slot0, slot1)
 end
 
 function slot0.CheckRes(slot0, slot1, slot2)
-	slot4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 	slot5 = 0
 	slot6 = 1
-	slot8 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(slot2)
 
 	if slot1 == FeastDorm.OP_MAKE_TICKET then
-		slot9 = slot8:GetTicketConsume()
+		slot9 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(slot2):GetTicketConsume()
 
-		return slot9.count <= slot4:getVitemNumber(slot9.id)
+		return slot9.count <= getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG):getVitemNumber(slot9.id)
 	elseif slot1 == FeastDorm.OP_GIVE_GIFT then
 		slot9 = slot8:GetGiftConsume()
 

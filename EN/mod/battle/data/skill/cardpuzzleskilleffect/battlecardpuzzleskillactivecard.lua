@@ -15,14 +15,11 @@ function slot2.Ctor(slot0, slot1)
 end
 
 function slot2.SkillEffectHandler(slot0)
-	slot2 = slot0._card:GetClient():GetCardPileByIndex(slot0._activeFrom)
-	slot3 = {
+	for slot8, slot9 in ipairs(slot0._card:GetClient():GetCardPileByIndex(slot0._activeFrom):Search({
 		value = slot0._activeID or slot0._activeLabel,
 		total = slot0._activeAll,
 		type = slot0._activeID and uv0.SEARCH_BY_ID or uv0.SEARCH_BY_LABEL
-	}
-
-	for slot8, slot9 in ipairs(slot2:Search(slot3)) do
+	})) do
 		slot9:Active()
 	end
 

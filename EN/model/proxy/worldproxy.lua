@@ -43,10 +43,8 @@ function slot0.register(slot0)
 		end
 	end)
 	slot0:on(33204, function (slot0)
-		slot1 = uv0.world:GetTaskProxy()
-
 		for slot5, slot6 in ipairs(slot0.delete_list) do
-			slot1:deleteTask(slot6)
+			uv0.world:GetTaskProxy():deleteTask(slot6)
 		end
 	end)
 	slot0:on(33601, function (slot0)
@@ -117,9 +115,7 @@ function slot0.BuildTestFunc(slot0)
 			end
 		end
 
-		slot1 = pg.UIMgr.GetInstance()
-
-		slot1:AddWorldTestButton("WorldDebug", function ()
+		pg.UIMgr.GetInstance():AddWorldTestButton("WorldDebug", function ()
 			WorldConst.Debug = true
 		end)
 	end
@@ -195,9 +191,7 @@ function slot0.NetUpdateWorld(slot0, slot1, slot2, slot3)
 		slot11:UpdateActive(true)
 	end
 
-	slot7 = slot4:GetInventoryProxy()
-
-	slot7:Setup(slot1.item_list)
+	slot4:GetInventoryProxy():Setup(slot1.item_list)
 
 	slot8 = slot4:GetTaskProxy()
 
@@ -504,9 +498,7 @@ function slot0.NetBuildFleetAttachUpdate(slot0, slot1)
 end
 
 function slot0.ApplyFleetAttachUpdate(slot0, slot1, slot2)
-	slot3 = slot0.world
-
-	assert(slot3:GetMap(slot1), "map not exist: " .. slot1)
+	assert(slot0.world:GetMap(slot1), "map not exist: " .. slot1)
 	_.each(slot2, function (slot0)
 		uv0:UpdateFleetLocation(slot0.id, slot0.row, slot0.column)
 	end)
@@ -523,16 +515,12 @@ function slot0.NetBulidTerrainUpdate(slot0, slot1)
 end
 
 function slot0.ApplyTerrainUpdate(slot0, slot1, slot2)
-	slot3 = slot0.world
-
-	assert(slot3:GetMap(slot1), "map not exist: " .. slot1)
+	assert(slot0.world:GetMap(slot1), "map not exist: " .. slot1)
 	_.each(slot2, function (slot0)
 		slot1 = uv0:GetCell(slot0.row, slot0.column)
 
 		if uv0:FindFleet(slot1.row, slot1.column) then
-			slot3 = uv0
-
-			slot3:CheckFleetUpdateFOV(slot2, function ()
+			uv0:CheckFleetUpdateFOV(slot2, function ()
 				uv0:UpdateTerrain(uv1:GetTerrain(), uv1.terrainDir, uv1.terrainStrong)
 			end)
 		else
@@ -552,18 +540,12 @@ function slot0.NetBuildFleetUpdate(slot0, slot1)
 end
 
 function slot0.ApplyFleetUpdate(slot0, slot1, slot2)
-	slot3 = slot0.world
-
-	assert(slot3:GetMap(slot1), "map not exist: " .. slot1)
+	assert(slot0.world:GetMap(slot1), "map not exist: " .. slot1)
 	_.each(slot2, function (slot0)
-		slot1 = uv0
-		slot1 = slot1:GetFleet(slot0.id)
+		slot1 = uv0:GetFleet(slot0.id)
 
 		assert(slot1, "fleet not exist: " .. slot0.id)
-
-		slot2 = uv0
-
-		slot2:CheckFleetUpdateFOV(slot1, function ()
+		uv0:CheckFleetUpdateFOV(slot1, function ()
 			uv0:UpdateBuffs(uv1.buffs)
 		end)
 	end)
@@ -603,8 +585,7 @@ function slot0.NetUpdateWorldShopGoods(slot0, slot1)
 end
 
 function slot0.NetUpdateWorldPressingAward(slot0, slot1)
-	slot2 = slot0.world
-	slot2 = slot2:GetAtlas()
+	slot2 = slot0.world:GetAtlas()
 
 	_.each(slot1, function (slot0)
 		slot2 = {

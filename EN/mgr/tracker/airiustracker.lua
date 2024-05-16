@@ -92,18 +92,10 @@ end
 function slot0.YS_S2S(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 	slot8 = pg.SdkMgr.GetInstance():GetChannelUID() == "0"
 	slot9 = "https://www.googleadservices.com/pagead/conversion/app/1.0?"
-	slot10 = {
-		dev_token = slot1,
-		link_id = slot2,
-		app_event_type = "custom",
-		app_event_name = slot3
-	}
 
 	if slot4 then
-		slot10.app_event_data = slot4
+		-- Nothing
 	end
-
-	slot10.rdid = slot6
 
 	if slot8 then
 		slot10.id_type = "advertisingid"
@@ -111,23 +103,26 @@ function slot0.YS_S2S(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
 		slot10.id_type = "idfa"
 	end
 
-	slot10.lat = "0"
-	slot10.app_version = Application.version
-	slot10.os_version = SystemInfo.operatingSystem
-	slot10.sdk_version = "1.9.5r6"
-	slot10.timestamp = slot7 .. ".000001"
-	slot10.value = slot5
-	slot10.currency_code = "USD"
-
-	for slot14, slot15 in pairs(slot10) do
+	for slot14, slot15 in pairs({
+		dev_token = slot1,
+		link_id = slot2,
+		app_event_type = "custom",
+		app_event_name = slot3,
+		app_event_data = slot4,
+		rdid = slot6,
+		lat = "0",
+		app_version = Application.version,
+		os_version = SystemInfo.operatingSystem,
+		sdk_version = "1.9.5r6",
+		timestamp = slot7 .. ".000001",
+		value = slot5,
+		currency_code = "USD"
+	}) do
 		slot9 = slot9 .. slot14 .. "=" .. slot15 .. "&"
 	end
 
 	originalPrint(slot9)
-
-	slot12 = VersionMgr.Inst
-
-	slot12:WebRequest(string.sub(slot9, 1, -2), function (slot0, slot1)
+	VersionMgr.Inst:WebRequest(string.sub(slot9, 1, -2), function (slot0, slot1)
 		originalPrint("code:" .. slot0 .. " content:" .. slot1)
 	end)
 end

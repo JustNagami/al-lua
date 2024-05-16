@@ -31,23 +31,21 @@ end
 function slot2(slot0, slot1)
 	slot3 = {}
 
-	(function (slot0, slot1)
+	function (slot0, slot1)
 		if slot0 < uv0 then
 			table.insert(slot1, slot0)
 		else
 			uv1(math.floor(slot0 / uv0), slot1)
 			table.insert(slot1, slot0 % uv0)
 		end
-	end)(slot0, slot3)
+	end(slot0, slot3)
 
 	return slot3
 end
 
 function ConvertDec2X(slot0, slot1)
-	slot3 = ""
-
 	for slot7, slot8 in ipairs(uv0(slot0, slot1)) do
-		slot3 = slot3 .. uv1[slot8]
+		slot3 = "" .. uv1[slot8]
 	end
 
 	return slot3
@@ -62,10 +60,8 @@ function ConvertStr2Dec(slot0, slot1)
 		slot4 = slot4 - 1
 	end
 
-	slot5 = 0
-
 	for slot9, slot10 in ipairs(slot2) do
-		slot5 = slot5 + slot10 * math.pow(slot1, slot9 - 1)
+		slot5 = 0 + slot10 * math.pow(slot1, slot9 - 1)
 	end
 
 	return slot5

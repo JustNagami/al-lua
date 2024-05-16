@@ -7,13 +7,10 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(63015, {
+	pg.ConnectionMgr.GetInstance():Send(63015, {
 		id = 0
 	}, 63016, function (slot0)
 		if slot0.result == 0 then
-			slot1 = getProxy(ActivityProxy)
 			slot2 = {}
 
 			for slot6, slot7 in ipairs(slot0.drops) do
@@ -26,7 +23,7 @@ function slot0.execute(slot0, slot1)
 					uv0:addCatupPrintsNum(slot0.count)
 				end)
 
-				if slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP) and not slot9:isEnd() then
+				if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP) and not slot9:isEnd() then
 					underscore.each(slot8.catchupActItems, function (slot0)
 						uv0.data1 = uv0.data1 + slot0.count
 					end)

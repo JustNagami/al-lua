@@ -15,6 +15,14 @@ function slot0.Ctor(slot0, slot1)
 	slot0.state = uv0
 end
 
+function slot0.GetRect(slot0)
+	return slot0.parent:GetView():GetRect()
+end
+
+function slot0.IsEditModeOrIsVisit(slot0)
+	return slot0.parent:GetController():IsEditModeOrIsVisit()
+end
+
 function slot0.IsEmpty(slot0)
 	return slot0.state == uv0
 end
@@ -57,9 +65,8 @@ end
 
 function slot0.Load(slot0, slot1)
 	slot0.state = uv0
-	slot2 = ResourceMgr.Inst
 
-	slot2:getAssetAsync(slot0:GetAssetPath(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync(slot0:GetAssetPath(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0:IsExit() or IsNil(slot0) then
 			return
 		end

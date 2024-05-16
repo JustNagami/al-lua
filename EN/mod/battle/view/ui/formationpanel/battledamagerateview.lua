@@ -18,7 +18,6 @@ function slot0.Battle.BattleDamageRateView.UpdateScore(slot0, slot1, slot2)
 end
 
 function slot0.Battle.BattleDamageRateView.CalScore(slot0, slot1, slot2)
-	slot3 = pg.expedition_data_template[slot2]
 	slot5 = {
 		0,
 		0.445,
@@ -35,7 +34,7 @@ function slot0.Battle.BattleDamageRateView.CalScore(slot0, slot1, slot2)
 		"s_score_point",
 		"score_max"
 	}) do
-		if slot1 < slot3[slot11] then
+		if slot1 < pg.expedition_data_template[slot2][slot11] then
 			break
 		end
 

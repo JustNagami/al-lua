@@ -134,11 +134,9 @@ function slot0.GetCanSubmitSubTaskCnt(slot0)
 		return 0
 	end
 
-	slot1 = 0
-
 	for slot5, slot6 in pairs(slot0.subTasks) do
 		if slot6:isFinish() then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 

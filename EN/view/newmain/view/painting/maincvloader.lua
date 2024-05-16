@@ -4,14 +4,11 @@ function slot0.Ctor(slot0, slot1)
 end
 
 function slot0.Load(slot0, slot1, slot2, slot3, slot4)
-	if slot0.preCvCueSheetName == pg.CriMgr.GetCVBankName(ShipWordHelper.RawGetCVKey(slot1.skinId)) then
+	if slot0.preCvCueSheetName == slot1 then
 		slot0:Play(slot2, slot3, slot4)
 	else
 		slot0:Unload()
-
-		slot7 = pg.CriMgr.GetInstance()
-
-		slot7:LoadCueSheet(slot6, function (slot0)
+		pg.CriMgr.GetInstance():LoadCueSheet(slot1, function (slot0)
 			uv0.preCvCueSheetName = uv1
 
 			if slot0 then
@@ -26,20 +23,18 @@ end
 function slot0.Play(slot0, slot1, slot2, slot3)
 	slot0:Stop()
 
-	function slot4()
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0, function (slot0)
-			if slot0 then
-				uv0._currentVoice = slot0.playback
-
-				uv1(slot0:GetLength() * 0.001)
-			else
-				uv1(-1)
-			end
-		end)
-	end
-
 	if (slot2 or 0) <= 0 then
-		slot4()
+		function ()
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0, function (slot0)
+				if slot0 then
+					uv0._currentVoice = slot0.playback
+
+					uv1(slot0:GetLength() * 0.001)
+				else
+					uv1(-1)
+				end
+			end)
+		end()
 	else
 		slot0.timer = Timer.New(slot4, slot2, 1)
 

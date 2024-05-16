@@ -214,9 +214,8 @@ end
 
 function slot0.CheckStory(slot0)
 	slot1 = pg.NewStoryMgr.GetInstance()
-	slot2 = slot0.contextData.activity
 
-	table.SerialIpairsAsync(slot2:getConfig("config_client").story, function (slot0, slot1, slot2)
+	table.SerialIpairsAsync(slot0.contextData.activity:getConfig("config_client").story, function (slot0, slot1, slot2)
 		if uv0.contextData.bossHP < slot1[1] + ((slot0 == 1 or slot1[1] == 0) and 1 or 0) and not pg.NewStoryMgr:GetInstance():IsPlayed(slot1[2]) then
 			uv1:Play(slot1[2], slot2)
 
@@ -236,8 +235,6 @@ function slot0.UpdatePage(slot0)
 
 	setText(slot0.digitsmall, string.format("%02d", slot6) .. "%")
 
-	slot2 = pg.TimeMgr.GetInstance()
-
 	for slot6 = 1, 4 do
 		slot7 = slot0.barList[slot6]
 
@@ -249,7 +246,7 @@ function slot0.UpdatePage(slot0)
 		setActive(slot0:findTF("milestone/time", slot7), slot8)
 
 		if slot8 then
-			setText(slot0:findTF("milestone/time/Text", slot7), slot2:STimeDescC(slot0.contextData.mileStones[5 - slot6], "%m/%d/%H:%M"))
+			setText(slot0:findTF("milestone/time/Text", slot7), pg.TimeMgr.GetInstance():STimeDescC(slot0.contextData.mileStones[5 - slot6], "%m/%d/%H:%M"))
 		end
 	end
 
@@ -292,9 +289,7 @@ function slot0.ShowNormalFleet(slot0, slot1, slot2)
 		slot0.contextData.actFleets[slot1 + 10] = slot0:CreateNewFleet(slot1 + 10)
 	end
 
-	slot3 = slot0.contextData.actFleets[slot1]
-
-	if slot2 and #slot3.ships <= 0 then
+	if slot2 and #slot0.contextData.actFleets[slot1].ships <= 0 then
 		for slot7 = #slot0.contextData.normalStageIDs, 1, -1 do
 			slot8 = slot0.contextData.actFleets[slot7]
 
@@ -430,12 +425,9 @@ end
 
 function slot0.openShipInfo(slot0, slot1, slot2)
 	slot4 = {}
-	slot5 = getProxy(BayProxy)
-	slot6 = ipairs
-	slot7 = slot0.contextData.actFleets[slot2] and slot3.ships or {}
 
-	for slot9, slot10 in slot6(slot7) do
-		table.insert(slot4, slot5:getShipById(slot10))
+	for slot9, slot10 in ipairs(slot0.contextData.actFleets[slot2] and slot3.ships or {}) do
+		table.insert(slot4, getProxy(BayProxy):getShipById(slot10))
 	end
 
 	slot0:emit(slot0.contextData.mediatorClass.ON_FLEET_SHIPINFO, {
@@ -533,15 +525,13 @@ function slot0.UpdateRank(slot0, slot1)
 end
 
 function slot0.UpdateDropItems(slot0)
-	slot1 = ipairs
-	slot2 = slot0.contextData.DisplayItems or {}
-
-	for slot4, slot5 in slot1(slot2) do
-		updateDropCfg({
+	for slot4, slot5 in ipairs(slot0.contextData.DisplayItems or {}) do
+		slot7 = Drop.New({
 			type = slot0.contextData.DisplayItems[5 - slot4][1],
 			id = slot0.contextData.DisplayItems[5 - slot4][2],
 			count = slot0.contextData.DisplayItems[5 - slot4][3]
 		})
+
 		onButton(slot0, slot0:findTF("milestone/item", slot0.barList[slot4]), function ()
 			uv0:emit(uv1.ON_DROP, uv2)
 		end, SFX_PANEL)

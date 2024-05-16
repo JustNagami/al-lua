@@ -18,8 +18,7 @@ function slot0.Flush(slot0)
 end
 
 function slot0.RegistSwicher(slot0)
-	slot1 = getProxy(UserProxy)
-	slot2 = slot1:getLastLoginUser()
+	slot2 = getProxy(UserProxy):getLastLoginUser()
 
 	onButton(nil, slot0._go, function ()
 		pg.m02:sendNotification(GAME.SERVER_INTERCOMMECTION, {

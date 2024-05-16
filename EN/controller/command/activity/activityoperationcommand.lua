@@ -44,15 +44,12 @@ function slot0.execute(slot0, slot1)
 	end
 
 	print(slot2.activity_id, slot2.cmd, slot2.arg1, slot2.arg2)
-
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		activity_id = slot2.activity_id,
 		cmd = slot2.cmd,
 		arg1 = slot2.arg1,
 		arg2 = slot2.arg2,
-		arg_list = {},
+		arg_list = slot2.arg_list or {},
 		kvargs1 = slot2.kvargs1
 	}, 11203, function (slot0)
 		if slot0.result == 0 then
@@ -132,15 +129,15 @@ function slot0.updateActivityData(slot0, slot1, slot2, slot3, slot4)
 	elseif slot5 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or slot5 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_PRAY or slot5 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD then
 		pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_SHIP, slot1.arg1)
 
+		slot8 = pg.ship_data_create_material[slot1.buildId]
+
 		if slot1.arg2 == 1 then
-			slot8 = getProxy(ActivityProxy)
-			slot9 = slot8:getBuildFreeActivityByBuildId(slot1.buildId)
-			slot9.data1 = slot9.data1 - slot1.arg1
+			slot9 = getProxy(ActivityProxy)
+			slot10 = slot9:getBuildFreeActivityByBuildId(slot1.buildId)
+			slot10.data1 = slot10.data1 - slot1.arg1
 
-			slot8:updateActivity(slot9)
+			slot9:updateActivity(slot10)
 		else
-			slot8 = pg.ship_data_create_material[slot1.buildId]
-
 			getProxy(BagProxy):removeItemById(slot8.use_item, slot8.number_1 * slot1.arg1)
 
 			slot9 = slot6:getData()
@@ -151,10 +148,12 @@ function slot0.updateActivityData(slot0, slot1, slot2, slot3, slot4)
 			slot6:updatePlayer(slot9)
 		end
 
-		slot8 = getProxy(BuildShipProxy)
+		if slot8.exchange_count > 0 then
+			getProxy(BuildShipProxy):changeRegularExchangeCount(slot1.arg1 * slot8.exchange_count)
+		end
 
-		for slot12, slot13 in ipairs(slot2.build) do
-			slot8:addBuildShip(BuildShip.New(slot13))
+		for slot13, slot14 in ipairs(slot2.build) do
+			slot9:addBuildShip(BuildShip.New(slot14))
 		end
 
 		slot3.data1 = slot3.data1 + slot1.arg1
@@ -228,22 +227,6 @@ function slot0.updateActivityData(slot0, slot1, slot2, slot3, slot4)
 		end
 
 		getProxy(ActivityProxy):updateActivity(slot3)
-	elseif slot5 == ActivityConst.ACTIVITY_TYPE_VOTE then
-		slot9 = getProxy(VoteProxy):getVoteGroup()
-
-		if slot1.cmd == 1 then
-			slot9:voteShip(slot1.arg2)
-
-			slot8.votes = slot8.votes - 1
-		elseif slot1.cmd == 2 then
-			slot9:loveShip(slot1.arg2)
-
-			slot8.loves = slot8.loves - 1
-		end
-
-		slot9:sortList()
-		slot8:setVoteGroup(slot9)
-		pg.TipsMgr.GetInstance():ShowTips(i18n("vote_success"))
 	elseif slot5 == ActivityConst.ACTIVITY_TYPE_BB then
 		slot3.data1 = slot3.data1 + 1
 		slot3.data2 = slot3.data2 - 1
@@ -253,13 +236,12 @@ function slot0.updateActivityData(slot0, slot1, slot2, slot3, slot4)
 			slot9 = ActivityItemPool.New({
 				id = slot1.arg2
 			}):getComsume()
-			slot10 = slot1.arg1 * slot9.count
 
 			if slot9.type == DROP_TYPE_RESOURCE then
 				slot11 = slot6:getData()
 
 				slot11:consume({
-					[id2res(slot9.id)] = slot10
+					[id2res(slot9.id)] = slot1.arg1 * slot9.count
 				})
 				slot6:updatePlayer(slot11)
 			elseif slot9.type == DROP_TYPE_ITEM then
@@ -269,15 +251,17 @@ function slot0.updateActivityData(slot0, slot1, slot2, slot3, slot4)
 			slot3:updateData(slot8.id, slot2.number)
 		elseif slot1.cmd == 2 then
 			slot3.data1 = slot1.arg1
+		elseif slot1.cmd == 3 then
+			slot3.data2_list = _.map(slot1.arg_list, function (slot0)
+				return slot0
+			end)
 		end
 	elseif slot5 == ActivityConst.ACTIVITY_TYPE_CARD_PAIRS or slot5 == ActivityConst.ACTIVITY_TYPE_LINK_LINK then
 		if slot1.cmd == 1 then
-			slot8 = slot3:getConfig("config_data")[4]
-
 			if #slot4 > 0 then
 				slot3.data2 = slot3.data2 + 1
 
-				if slot8 <= slot3.data2 then
+				if slot3:getConfig("config_data")[4] <= slot3.data2 then
 					slot3.data1 = 1
 				end
 			end
@@ -350,6 +334,7 @@ function slot0.updateActivityData(slot0, slot1, slot2, slot3, slot4)
 			else
 				slot3.data3 = slot3.data3 + 1
 				slot3.data4 = slot2.number[1]
+				slot3.data1_list[slot1.arg1] = slot3.data4
 			end
 		end
 	elseif slot5 == ActivityConst.ACTIVITY_TYPE_SHRINE then
@@ -386,12 +371,11 @@ function slot0.updateActivityData(slot0, slot1, slot2, slot3, slot4)
 
 			if slot9 < #pg.activity_event_building[slot1.arg1].buff then
 				_.each(slot8.material[slot9], function (slot0)
-					slot2 = slot0[2]
 					slot3 = slot0[3]
 					slot4 = nil
 
 					if slot0[1] == DROP_TYPE_VITEM then
-						assert(AcessWithinNull(pg.item_data_statistics[slot2], "link_id") == uv0.id)
+						assert(AcessWithinNull(Item.getConfigData(slot0[2]), "link_id") == uv0.id)
 
 						slot4 = uv0
 					elseif DROP_TYPE_USE_ACTIVITY_DROP < slot1 then
@@ -497,7 +481,7 @@ function slot0.updateActivityData(slot0, slot1, slot2, slot3, slot4)
 				table.insert(slot3.data1_list, slot1.arg1)
 			end
 
-			if pg.item_data_statistics[slot1.arg1].link_id > 0 and getProxy(ActivityProxy):getActivityById(slot8) and not slot10:isEnd() then
+			if Item.getConfigData(slot1.arg1).link_id > 0 and getProxy(ActivityProxy):getActivityById(slot8) and not slot10:isEnd() then
 				slot10.data1 = slot10.data1 + 1
 
 				slot9:updateActivity(slot10)
@@ -655,13 +639,13 @@ function slot0.performance(slot0, slot1, slot2, slot3, slot4)
 		uv3:sendNotification(ActivityProxy.ACTIVITY_OPERATION_DONE, uv6.activity_id)
 	end)
 
-	(function ()
+	function ()
 		if uv0 and coroutine.status(uv0) == "suspended" then
 			slot0, slot1 = coroutine.resume(uv0)
 
 			assert(slot0, slot1)
 		end
-	end)()
+	end()
 end
 
 return slot0

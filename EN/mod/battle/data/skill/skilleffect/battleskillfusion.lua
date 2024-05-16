@@ -56,10 +56,12 @@ function slot3.doFusion(slot0, slot1)
 	slot3 = uv0.TargetShipTag(slot1, {
 		ship_tag_list = slot0._elementTagList
 	}, uv0.TargetAllHelp(slot1))
-	slot4 = {}
+	slot4 = {
+		[slot9] = 1
+	}
 
 	for slot8, slot9 in ipairs(Ship.PROPERTIES) do
-		slot4[slot9] = 1
+		-- Nothing
 	end
 
 	slot8 = uv1.Battle.BattleDataProxy.GetInstance():SpawnFusionUnit(slot1, {
@@ -91,11 +93,13 @@ function slot3.doFusion(slot0, slot1)
 			0
 		}
 	}, slot3, slot0._attrInheritList):GetHP()
-	slot9 = {}
+	slot9 = {
+		[slot14] = Clone(slot14:GetPosition())
+	}
 
 	for slot13, slot14 in ipairs(slot3) do
 		if slot14:IsMainFleetUnit() then
-			slot9[slot14] = Clone(slot14:GetPosition())
+			-- Nothing
 		end
 
 		slot5:FreezeUnit(slot14)

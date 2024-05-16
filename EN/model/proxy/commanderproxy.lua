@@ -48,18 +48,19 @@ function slot0.register(slot0)
 
 		for slot4, slot5 in ipairs(slot0.presets) do
 			slot6 = slot5.id
-			slot8 = {}
 
 			for slot12, slot13 in ipairs(slot5.commandersid) do
 				if uv0:getCommanderById(slot13.id) then
-					slot8[slot13.pos] = slot14
+					-- Nothing
 				end
 			end
 
 			uv0.prefabFleet[slot6]:Update({
 				id = slot6,
 				name = slot0.name,
-				commanders = slot8
+				commanders = {
+					[slot13.pos] = slot14
+				}
 			})
 		end
 
@@ -69,6 +70,37 @@ function slot0.register(slot0)
 			uv0:sendNotification(GAME.GET_COMMANDER_HOME)
 		end
 	end)
+
+	slot0.newCommanderList = {}
+
+	slot0:on(25039, function (slot0)
+		for slot4, slot5 in ipairs(slot0.commander_list) do
+			slot6 = Commander.New(slot5)
+
+			uv0:addCommander(slot6)
+			table.insert(uv0.newCommanderList, slot6)
+		end
+	end)
+end
+
+function slot0.GetNewestCommander(slot0, slot1, slot2)
+	slot3 = defaultValue(slot2, true)
+
+	if slot1 >= #slot0.newCommanderList then
+		return slot0.newCommanderList
+	else
+		slot4 = {}
+
+		for slot9 = #slot0.newCommanderList - slot1 + 1, #slot0.newCommanderList do
+			table.insert(slot4, slot0.newCommanderList[slot9])
+		end
+
+		return slot4
+	end
+
+	if slot3 then
+		slot0.newCommanderList = {}
+	end
 end
 
 function slot0.getPrefabFleetById(slot0, slot1)
@@ -150,6 +182,22 @@ function slot0.getCommanderById(slot0, slot1)
 	end
 end
 
+function slot0.RawGetCommanderById(slot0, slot1)
+	if slot0.data[slot1] then
+		return slot2
+	end
+end
+
+function slot0.GetSameConfigIdCommanderCount(slot0, slot1)
+	for slot6, slot7 in pairs(slot0.data) do
+		if slot7.configId == slot1 then
+			slot2 = 0 + 1
+		end
+	end
+
+	return slot2
+end
+
 function slot0.addCommander(slot0, slot1)
 	slot0.data[slot1.id] = slot1
 
@@ -195,13 +243,12 @@ function slot0.haveFinishedBox(slot0)
 end
 
 function slot0.IsFinishAllBox(slot0)
-	slot1 = 0
 	slot2 = 0
 	slot3 = 0
 
 	for slot7, slot8 in pairs(slot0.boxes) do
 		if slot8:getState() == CommanderBox.STATE_FINISHED then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		elseif slot9 == CommanderBox.STATE_EMPTY then
 			slot2 = slot2 + 1
 		end
@@ -300,26 +347,22 @@ function slot0.AnyPoolIsWaiting(slot0)
 end
 
 function slot0.ShouldTipBox(slot0)
-	function slot2()
-		for slot3, slot4 in pairs(uv0.boxes) do
-			if slot4:getState() == CommanderBox.STATE_EMPTY then
-				return true
-			end
-		end
-
-		return false
-	end
-
-	if (function ()
-		slot0 = 0
-
+	if function ()
 		for slot4, slot5 in pairs(uv0.pools) do
-			slot0 = slot0 + slot5:getItemCount()
+			slot0 = 0 + slot5:getItemCount()
 		end
 
 		return slot0 > 0
-	end)() then
-		if slot2() then
+	end() then
+		if function ()
+			for slot3, slot4 in pairs(uv0.boxes) do
+				if slot4:getState() == CommanderBox.STATE_EMPTY then
+					return true
+				end
+			end
+
+			return false
+		end() then
 			return true
 		else
 			return slot0:IsFinishAllBox()
@@ -331,7 +374,7 @@ end
 
 function slot0.CalcQuickItemUsageCnt(slot0)
 	slot1 = Item.COMMANDER_QUICKLY_TOOL_ID
-	slot2 = pg.item_data_template[slot1].usage_arg[1]
+	slot2 = Item.getConfigData(slot1).usage_arg[1]
 
 	function slot3(slot0, slot1)
 		return math.ceil((slot1 - slot0) / uv0)

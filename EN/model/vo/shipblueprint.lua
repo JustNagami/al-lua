@@ -283,10 +283,8 @@ end
 
 function slot0.getBluePrintAddition(slot0, slot1)
 	if slot0:getConfig("attr_exp")[table.indexof(ShipModAttr.BLUEPRINT_ATTRS, slot1)] then
-		slot4 = 0
-
 		for slot8 = 1, slot0.level do
-			slot4 = slot4 + slot0.strengthenConfig[slot8].effect[slot2]
+			slot4 = 0 + slot0.strengthenConfig[slot8].effect[slot2]
 		end
 
 		slot5 = 0
@@ -439,30 +437,22 @@ function slot0.getTopLimitAttrValue(slot0, slot1)
 end
 
 function slot0.getItemExp(slot0)
-	slot1 = slot0:getConfig("strengthen_item")
-	slot2 = pg.item_data_template[slot1].usage_arg[1]
-
-	assert(slot2, "item_data_template >>> usage_arg " .. slot1)
-
-	return slot2
+	return Item.getConfigData(slot0:getConfig("strengthen_item")).usage_arg[1]
 end
 
 function slot0.getShipProperties(slot0, slot1, slot2)
 	assert(slot1, "shipVO can not be nil" .. slot0.shipId)
 
 	slot2 = defaultValue(slot2, true)
-	slot4 = slot0:getTotalAdditions()
 
 	for slot8, slot9 in pairs(slot1:getBaseProperties()) do
-		slot3[slot8] = slot3[slot8] + (slot4[slot8] or 0)
+		slot3[slot8] = slot3[slot8] + (slot0:getTotalAdditions()[slot8] or 0)
 	end
 
 	if slot1:getIntimacyLevel() > 0 and slot2 then
-		slot5 = pg.intimacy_template[slot1:getIntimacyLevel()].attr_bonus * 0.0001
-
 		for slot9, slot10 in pairs(slot3) do
 			if slot9 == AttributeType.Durability or slot9 == AttributeType.Cannon or slot9 == AttributeType.Torpedo or slot9 == AttributeType.AntiAircraft or slot9 == AttributeType.Air or slot9 == AttributeType.Reload or slot9 == AttributeType.Hit or slot9 == AttributeType.AntiSub or slot9 == AttributeType.Dodge then
-				slot3[slot9] = slot3[slot9] * (slot5 + 1)
+				slot3[slot9] = slot3[slot9] * (pg.intimacy_template[slot1:getIntimacyLevel()].attr_bonus * 0.0001 + 1)
 			end
 		end
 	end
@@ -471,15 +461,13 @@ function slot0.getShipProperties(slot0, slot1, slot2)
 end
 
 function slot0.getTotalAdditions(slot0)
-	slot1 = {}
-	slot2 = slot0:attrSpecialAddition()
-
 	for slot6, slot7 in ipairs(Ship.PROPERTIES) do
 		slot8, slot9 = slot0:getBluePrintAddition(slot7)
-		slot1[slot7] = slot8 + (slot2[slot7] or 0)
 	end
 
-	return slot1
+	return {
+		[slot7] = slot8 + (slot0:attrSpecialAddition()[slot7] or 0)
+	}
 end
 
 function slot0.attrSpecialAddition(slot0)
@@ -511,24 +499,20 @@ function slot0.attrSpecialAddition(slot0)
 end
 
 function slot0.getUseageMaxItem(slot0)
-	slot1 = 0
-
 	for slot5 = slot0.level + 1, slot0:getMaxLevel() do
 		assert(slot0.strengthenConfig[slot5], "strengthen config >> " .. slot5)
 
-		slot1 = slot1 + slot0.strengthenConfig[slot5].need_exp
+		slot1 = 0 + slot0.strengthenConfig[slot5].need_exp
 	end
 
 	return math.max(math.ceil((slot1 - slot0.exp) / slot0:getItemExp()), 0)
 end
 
 function slot0.getFateUseageMaxItem(slot0)
-	slot1 = 0
-
 	for slot5 = slot0.fateLevel + 1, slot0:getMaxFateLevel() do
 		assert(slot0.fateStrengthenConfig[slot5], "strengthen config >> " .. slot5)
 
-		slot1 = slot1 + slot0.fateStrengthenConfig[slot5].need_exp
+		slot1 = 0 + slot0.fateStrengthenConfig[slot5].need_exp
 	end
 
 	return math.max(math.ceil((slot1 - slot0.exp) / slot0:getItemExp()), 0)
@@ -707,11 +691,9 @@ function slot0.getFateUseNum(slot0)
 	slot1 = 0
 
 	if slot0:isMaxLevel() then
-		slot2 = 0
-
 		for slot6, slot7 in ipairs(slot0.fateStrengthenConfig) do
 			if slot7.lv <= 30 + slot0.fateLevel then
-				slot2 = slot2 + slot7.need_exp
+				slot2 = 0 + slot7.need_exp
 			end
 		end
 
@@ -730,11 +712,10 @@ function slot0.getPursuingPrice(slot0, slot1)
 end
 
 function slot0.getUnlockItem(slot0)
-	slot1 = getProxy(BagProxy)
 	slot5 = "gain_item_id"
 
 	for slot5, slot6 in ipairs(slot0:getConfig(slot5)) do
-		if slot1:getItemCountById(slot6) > 0 then
+		if getProxy(BagProxy):getItemCountById(slot6) > 0 then
 			return slot6
 		end
 	end

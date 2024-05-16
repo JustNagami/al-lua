@@ -1,9 +1,7 @@
 slot0 = class("GetRemasterCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot2 = pg.ConnectionMgr.GetInstance()
-
-	slot2:Send(13503, {
+	pg.ConnectionMgr.GetInstance():Send(13503, {
 		type = 0
 	}, 13504, function (slot0)
 		if slot0.result == 0 then
@@ -11,7 +9,7 @@ function slot0.execute(slot0, slot1)
 
 			slot1:updateDailyCount()
 
-			slot2 = Item.New({
+			slot2 = Drop.New({
 				type = DROP_TYPE_VITEM,
 				id = ITEM_ID_REACT_CHAPTER_TICKET,
 				count = math.min(pg.gameset.reactivity_ticket_daily.key_value, pg.gameset.reactivity_ticket_max.key_value - slot1.remasterTickets)

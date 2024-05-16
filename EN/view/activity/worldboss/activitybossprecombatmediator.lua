@@ -108,10 +108,8 @@ function slot0.bindEvent(slot0)
 		slot0 = 0
 
 		for slot4, slot5 in ipairs(uv0.contextData.fleets) do
-			slot6 = slot5:GetCostSum().oil
-
 			if uv0.contextData.costLimit[slot4 == 1 and 1 or 2] > 0 then
-				slot6 = math.min(slot6, slot8)
+				slot6 = math.min(slot5:GetCostSum().oil, slot8)
 			end
 
 			slot0 = slot0 + slot6
@@ -192,10 +190,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot1:getBody())
 	elseif slot2 == PlayerProxy.UPDATED then
 		slot0.viewComponent:SetPlayerInfo(getProxy(PlayerProxy):getData())
 	elseif slot2 == GAME.BEGIN_STAGE_ERRO then

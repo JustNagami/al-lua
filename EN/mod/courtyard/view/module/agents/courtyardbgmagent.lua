@@ -8,12 +8,7 @@ function slot0.Ctor(slot0, slot1)
 	slot0.recoders = {}
 	slot0.playName = nil
 	slot0.waitForStop = false
-
-	if _courtyard:GetController():IsFeast() then
-		slot0.defaultBgm = pg.voice_bgm.FeastScene.default_bgm
-	else
-		slot0.defaultBgm = pg.voice_bgm.CourtYardScene.default_bgm
-	end
+	slot0.defaultBgm = slot0:GetDefaultBgm()
 
 	slot0:PlayVoice(slot0.defaultBgm)
 end
@@ -88,9 +83,7 @@ function slot0.PlayVoice(slot0, slot1, slot2)
 		return
 	end
 
-	slot4 = CriWareMgr.Inst
-
-	slot4:PlayBGM("bgm-" .. slot1, CriWareMgr.CRI_FADE_TYPE.FADE_INOUT, function (slot0)
+	CriWareMgr.Inst:PlayBGM("bgm-" .. slot1, CriWareMgr.CRI_FADE_TYPE.FADE_INOUT, function (slot0)
 		if slot0 == nil then
 			warning("Missing BGM :" .. (uv0 or "NIL"))
 		elseif uv1 then

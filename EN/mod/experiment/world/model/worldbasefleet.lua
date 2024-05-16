@@ -25,10 +25,8 @@ function slot0.Setup(slot0, slot1)
 	end))
 
 	slot0.commanderIds = {}
-	slot3 = ipairs
-	slot4 = slot1.commanders or {}
 
-	for slot6, slot7 in slot3(slot4) do
+	for slot6, slot7 in ipairs(slot1.commanders or {}) do
 		slot0.commanderIds[slot7.pos] = slot7.id
 	end
 end
@@ -63,9 +61,7 @@ function slot0.IsValid(slot0)
 	if slot0:GetFleetType() == FleetType.Submarine then
 		return #slot0:GetTeamShips(TeamType.Submarine, true) > 0
 	else
-		slot1 = #slot0:GetTeamShips(TeamType.Vanguard, true) > 0 and #slot0:GetTeamShips(TeamType.Main, true) > 0
-
-		return slot1
+		return #slot0:GetTeamShips(TeamType.Vanguard, true) > 0 and #slot0:GetTeamShips(TeamType.Main, true) > 0
 	end
 end
 
@@ -185,13 +181,13 @@ function slot0.getFleetType(slot0)
 end
 
 function slot0.getShipVOsDic(slot0)
-	slot1 = {}
-
 	for slot6, slot7 in ipairs(slot0:GetShipVOs()) do
-		slot1[slot7.id] = slot7
+		-- Nothing
 	end
 
-	return slot1
+	return {
+		[slot7.id] = slot7
+	}
 end
 
 return slot0

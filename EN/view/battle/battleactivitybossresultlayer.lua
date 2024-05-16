@@ -24,15 +24,13 @@ function slot0.showRightBottomPanel(slot0)
 	slot12 = slot11.ticket
 	slot13 = slot8:GetStageBonus(slot9)
 
-	(function (slot0, slot1)
-		slot2 = slot0:GetCostSum().oil
-
+	function (slot0, slot1)
 		if slot1 > 0 then
-			slot2 = math.min(slot2, uv0[1])
+			slot2 = math.min(slot0:GetCostSum().oil, uv0[1])
 		end
 
 		uv1 = uv1 + slot2
-	end)(getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId], slot8:IsOilLimit(slot9) and slot11.use_oil_limit[slot0.contextData.mainFleetId][1] or 0)
+	end(getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId], slot8:IsOilLimit(slot9) and slot11.use_oil_limit[slot0.contextData.mainFleetId][1] or 0)
 	setText(slot1:Find("playAgain/Text"), 0)
 
 	slot18, slot19 = nil
@@ -42,32 +40,35 @@ function slot0.showRightBottomPanel(slot0)
 	setText(slot6:Find("Text"), slot13)
 
 	if slot13 <= 0 then
-		setImageSprite(slot7:Find("icon"), GetSpriteFromAtlas(itemId2icon(pg.player_resource[slot12].itemid), ""))
+		setImageSprite(slot7:Find("icon"), GetSpriteFromAtlas(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot12
+		}):getIcon(), ""))
 
 		slot19 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
 		slot18 = getProxy(PlayerProxy):getRawData():getResource(slot12) > 0
-		slot24 = 1
-		slot25 = slot7:Find("checkbox")
+		slot23 = 1
+		slot24 = slot7:Find("checkbox")
 
 		if slot2 == SYSTEM_BOSS_EXPERIMENT then
-			slot24 = 0
+			slot23 = 0
 
-			triggerToggle(slot25, false)
-			setToggleEnabled(slot25, false)
+			triggerToggle(slot24, false)
+			setToggleEnabled(slot24, false)
 		elseif slot2 == SYSTEM_HP_SHARE_ACT_BOSS then
-			triggerToggle(slot25, true)
-			setToggleEnabled(slot25, false)
+			triggerToggle(slot24, true)
+			setToggleEnabled(slot24, false)
 		elseif slot2 == SYSTEM_ACT_BOSS then
-			setToggleEnabled(slot25, slot18)
-			triggerToggle(slot25, slot18 and slot19)
+			setToggleEnabled(slot24, slot18)
+			triggerToggle(slot24, slot18 and slot19)
 		end
 
-		if slot23 < slot24 then
-			slot23 = setColorStr(slot23, COLOR_RED) or slot23
+		if slot22 < slot23 then
+			slot22 = setColorStr(slot22, COLOR_RED) or slot22
 		end
 
-		setText(slot7:Find("Text"), slot24 .. "/" .. slot23)
-		onToggle(slot0, slot25, function (slot0)
+		setText(slot7:Find("Text"), slot23 .. "/" .. slot22)
+		onToggle(slot0, slot24, function (slot0)
 			uv0 = slot0
 
 			getProxy(SettingsProxy):setActBossExchangeTicketTip(slot0 and 1 or 0)
@@ -90,9 +91,7 @@ function slot0.showRightBottomPanel(slot0)
 			return
 		end
 
-		slot2 = getProxy(PlayerProxy):getRawData().oil
-
-		if pg.battle_cost_template[uv0.contextData.system].oil_cost > 0 and slot2 < uv3 then
+		if pg.battle_cost_template[uv0.contextData.system].oil_cost > 0 and getProxy(PlayerProxy):getRawData().oil < uv3 then
 			uv0:PassMsgbox("oil", uv3)
 
 			return

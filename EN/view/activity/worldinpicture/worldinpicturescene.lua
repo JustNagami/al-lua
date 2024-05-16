@@ -92,12 +92,10 @@ end
 function slot0.RpAnim(slot0, slot1, slot2)
 	slot3 = slot0:GetRedPacket()
 	slot3.anchoredPosition = slot0.cells[slot1][slot2].gameObject.transform.anchoredPosition + Vector2(48, 48)
-	slot5 = LeanTween.value(slot3.gameObject, slot3.anchoredPosition.y, slot3.anchoredPosition.y + 35, 0.75)
-	slot5 = slot5:setOnUpdate(System.Action_float(function (slot0)
-		uv0.anchoredPosition = Vector2(uv0.anchoredPosition.x, slot0)
-	end))
 
-	slot5:setOnComplete(System.Action(function ()
+	LeanTween.value(slot3.gameObject, slot3.anchoredPosition.y, slot3.anchoredPosition.y + 35, 0.75):setOnUpdate(System.Action_float(function (slot0)
+		uv0.anchoredPosition = Vector2(uv0.anchoredPosition.x, slot0)
+	end)):setOnComplete(System.Action(function ()
 		if uv0.exited then
 			return
 		end
@@ -133,11 +131,9 @@ function slot0.OnDrawArea(slot0, slot1, slot2, slot3)
 	slot0.inAniming = true
 
 	slot0:CreateAnimal(slot1, slot2, false, function (slot0)
-		slot1 = uv0.data
-		slot1 = slot1:GetDrawAnimData(uv1, uv2)
-		slot5 = uv0
+		slot1 = uv0.data:GetDrawAnimData(uv1, uv2)
 
-		slot5:DoAnimtion("picture_bichu", Vector2(slot1[2] + slot0.sizeDelta.x * slot0.localScale.x * 0.5 + 90, slot1[3] - slot0.sizeDelta.y * slot0.localScale.y * 0.5), function ()
+		uv0:DoAnimtion("picture_bichu", Vector2(slot1[2] + slot0.sizeDelta.x * slot0.localScale.x * 0.5 + 90, slot1[3] - slot0.sizeDelta.y * slot0.localScale.y * 0.5), function ()
 			LeanTween.value(uv0.gameObject, 0, 1, 0.5):setOnUpdate(System.Action_float(function (slot0)
 				if uv0.exited then
 					return
@@ -210,8 +206,7 @@ function slot0.init(slot0)
 	setActive(slot0.char, false)
 
 	slot0.selectorContainer = slot0:findTF("selectors"):GetComponent(typeof(CanvasGroup))
-	slot1 = slot0:findTF("drawablearea")
-	slot0.drawableAreaContainer = slot1:GetComponent(typeof(CanvasGroup))
+	slot0.drawableAreaContainer = slot0:findTF("drawablearea"):GetComponent(typeof(CanvasGroup))
 	slot0.startPos = slot0.tpl.anchoredPosition
 	slot0.offset = Vector2(0.5, 0.5)
 	slot0.width = slot0.tpl.sizeDelta.x
@@ -409,16 +404,10 @@ function slot0.showChar(slot0, slot1, slot2, slot3)
 	slot0.char.transform.localPosition = Vector3(slot1, slot2 + 50)
 
 	setActive(slot0.char, true)
-
-	slot4 = LeanTween.value(go(slot0.char), 0, 1, 0.2)
-
-	slot4:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot0.char), 0, 1, 0.2):setOnUpdate(System.Action_float(function (slot0)
 		GetOrAddComponent(uv0.char, typeof(CanvasGroup)).alpha = slot0
 	end))
-
-	slot4 = LeanTween.moveLocal(go(slot0.char), Vector3(slot1, slot2, 0), 0.2)
-
-	slot4:setOnComplete(System.Action(function ()
+	LeanTween.moveLocal(go(slot0.char), Vector3(slot1, slot2, 0), 0.2):setOnComplete(System.Action(function ()
 		if uv0 then
 			uv0()
 		end
@@ -426,16 +415,13 @@ function slot0.showChar(slot0, slot1, slot2, slot3)
 end
 
 function slot0.hideChar(slot0, slot1)
-	slot2 = LeanTween.value(go(slot0.char), 1, 0, 0.2)
-
-	slot2:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot0.char), 1, 0, 0.2):setOnUpdate(System.Action_float(function (slot0)
 		GetOrAddComponent(uv0.char, typeof(CanvasGroup)).alpha = slot0
 	end))
 
 	slot2 = slot0.char.transform.localPosition
-	slot3 = LeanTween.moveLocal(go(slot0.char), Vector3(slot2.x, slot2.y + 50, 0), 0.2)
 
-	slot3:setOnComplete(System.Action(function ()
+	LeanTween.moveLocal(go(slot0.char), Vector3(slot2.x, slot2.y + 50, 0), 0.2):setOnComplete(System.Action(function ()
 		setActive(uv0.char, false)
 
 		if uv1 then
@@ -514,20 +500,17 @@ end
 
 function slot0.InitLines(slot0)
 	slot1, slot2 = slot0.data:GetMapRowAndColumn()
-	slot3 = slot0.tpl.sizeDelta.y * slot1 + 10
 
 	for slot7 = 1, slot2 - 1 do
 		slot8 = slot7 == 1 and slot0.lineVecTpl or Object.Instantiate(slot0.lineVecTpl, slot0.lineVecTpl.parent)
-		slot8.sizeDelta = Vector2(slot8.sizeDelta.x, slot3)
+		slot8.sizeDelta = Vector2(slot8.sizeDelta.x, slot0.tpl.sizeDelta.y * slot1 + 10)
 		slot9 = slot0.cells[1][slot7]
 		slot8.anchoredPosition = Vector2(slot9.gameObject.transform.anchoredPosition.x + slot9.gameObject.transform.sizeDelta.x * 0.5 + slot0.offset.x, slot8.anchoredPosition.y)
 	end
 
-	slot4 = slot0.tpl.sizeDelta.x * slot2 + 20
-
 	for slot8 = 1, slot1 - 1 do
 		slot9 = slot8 == 1 and slot0.lineHrzTpl or Object.Instantiate(slot0.lineHrzTpl, slot0.lineHrzTpl.parent)
-		slot9.sizeDelta = Vector2(slot9.sizeDelta.x, slot4)
+		slot9.sizeDelta = Vector2(slot9.sizeDelta.x, slot0.tpl.sizeDelta.x * slot2 + 20)
 		slot10 = slot0.cells[slot8][1]
 		slot9.anchoredPosition = Vector2(slot9.anchoredPosition.x, slot10.gameObject.transform.anchoredPosition.y - slot10.gameObject.transform.sizeDelta.y * 0.5 + slot0.offset.y)
 	end
@@ -732,26 +715,24 @@ function slot0.DoAnimtion(slot0, slot1, slot2, slot3)
 		slot0.timer = nil
 	end
 
-	function slot4(slot0)
-		uv0[uv1] = slot0
-		slot0.anchoredPosition = uv2
-
-		setActive(slot0, true)
-
-		uv0.timer = Timer.New(function ()
-			setActive(uv0, false)
-			uv1.timer:Stop()
-
-			uv1.timer = nil
-
-			uv2()
-		end, 0.6, 1)
-
-		uv0.timer:Start()
-	end
-
 	if not slot0[slot1] then
-		slot0:LoadEffect(slot1, slot4)
+		slot0:LoadEffect(slot1, function (slot0)
+			uv0[uv1] = slot0
+			slot0.anchoredPosition = uv2
+
+			setActive(slot0, true)
+
+			uv0.timer = Timer.New(function ()
+				setActive(uv0, false)
+				uv1.timer:Stop()
+
+				uv1.timer = nil
+
+				uv2()
+			end, 0.6, 1)
+
+			uv0.timer:Start()
+		end)
 	else
 		slot4(slot5)
 	end
@@ -770,9 +751,7 @@ function slot0.GetRedPacket(slot0)
 end
 
 function slot0.LoadEffect(slot0, slot1, slot2)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("UI/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("UI/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited then
 			return
 		end

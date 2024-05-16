@@ -100,9 +100,8 @@ end
 function slot0.didEnter(slot0)
 	onButton(slot0, slot0._backBtn, function ()
 		GetOrAddComponent(uv0._tf, typeof(CanvasGroup)).interactable = false
-		slot1 = uv0
 
-		slot1:uiExitAnimating()
+		uv0:uiExitAnimating()
 		LeanTween.delayedCall(0.3, System.Action(function ()
 			uv0:emit(uv1.ON_CLOSE)
 		end))
@@ -141,10 +140,7 @@ function slot0.didEnter(slot0)
 			setActive(uv0._autoSubToggle, false)
 		end
 	end, SFX_PANEL, SFX_PANEL)
-
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	setParent(slot0.strategyInfo, slot0._tf.parent)
 	triggerToggle(slot0._autoToggle, ys.Battle.BattleState.IsAutoBotActive())
 	setAnchoredPosition(slot0.topPanel, {
@@ -156,9 +152,7 @@ function slot0.didEnter(slot0)
 end
 
 function slot0.Register(slot0)
-	slot1 = slot0._formationLogic
-
-	slot1:AddHeroInfoModify(function (slot0, slot1)
+	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1)
 		setAnchoredPosition(slot0, {
 			x = 0,
 			y = 0
@@ -202,16 +196,10 @@ function slot0.Register(slot0)
 
 		setActive(slot2:Find("expbuff"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddShiftOnly(function (slot0)
+	slot0._formationLogic:AddShiftOnly(function (slot0)
 		uv0:updateView(false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddCheckRemove(function (slot0, slot1)
+	slot0._formationLogic:AddCheckRemove(function (slot0, slot1)
 		slot0()
 	end)
 end
@@ -258,20 +246,6 @@ function slot0.updateView(slot0, slot1)
 end
 
 function slot0.updateStageView(slot0)
-	function slot1(slot0, slot1)
-		if type(slot0) == "table" then
-			setActive(slot1, true)
-			setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
-		else
-			setActive(slot1, false)
-		end
-	end
-
-	slot2 = {
-		findTF(slot0._goals, "goal_tpl"),
-		findTF(slot0._goals, "goal_sink"),
-		findTF(slot0._goals, "goal_time")
-	}
 	slot4 = 1
 
 	for slot8, slot9 in ipairs({
@@ -282,7 +256,18 @@ function slot0.updateStageView(slot0)
 		false
 	}) do
 		if type(slot9) ~= "string" then
-			slot1(slot9, slot2[slot4])
+			function (slot0, slot1)
+				if type(slot0) == "table" then
+					setActive(slot1, true)
+					setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
+				else
+					setActive(slot1, false)
+				end
+			end(slot9, ({
+				findTF(slot0._goals, "goal_tpl"),
+				findTF(slot0._goals, "goal_sink"),
+				findTF(slot0._goals, "goal_time")
+			})[slot4])
 
 			slot4 = slot4 + 1
 		end
@@ -317,8 +302,7 @@ function slot0.updateBattleFleetView(slot0)
 end
 
 function slot0.displayFleetInfo(slot0)
-	slot1 = slot0.challenge
-	slot1 = slot1:getRegularFleet()
+	slot1 = slot0.challenge:getRegularFleet()
 	slot2 = slot1:getCommanders()
 
 	FormationUI.tweenNumText(slot0._vanguardGS, _.reduce(slot1:getShipsByTeam(TeamType.Vanguard, false), 0, function (slot0, slot1)

@@ -29,9 +29,7 @@ end
 function slot0.didEnter(slot0)
 	uv0.super.didEnter(slot0)
 
-	slot2 = PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0
-
-	if slot0.contextData.isAutoFight and slot2 then
+	if slot0.contextData.isAutoFight and PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0 then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_AUTO_BATTLE)
 		LuaHelper.Vibrate()
 	end
@@ -110,7 +108,6 @@ function slot0.UpdateView(slot0)
 	slot10 = slot5 and table.getCount(slot5) > 0
 	slot11 = slot6 and table.getCount(slot6) > 0
 	slot12 = true
-	slot13 = {}
 
 	setActive(slot0.boxView:Find("Content/Title"), false)
 	setActive(slot0.itemList, false)
@@ -119,7 +116,7 @@ function slot0.UpdateView(slot0)
 		slot12 = false
 		slot0.hasRewards = true
 
-		table.insert(slot13, function (slot0)
+		table.insert({}, function (slot0)
 			setActive(uv0.boxView:Find("Content/Title"), true)
 			setActive(uv0.itemList, true)
 			slot0()
@@ -220,9 +217,8 @@ function slot0.UpdateView(slot0)
 	if #slot14 > 0 then
 		slot12 = false
 		slot0.hasEventMsg = true
-		slot16 = slot0.boxView
 
-		setText(slot16:Find("Content/TextArea/Text"), table.concat(slot14, "\n"))
+		setText(slot0.boxView:Find("Content/TextArea/Text"), table.concat(slot14, "\n"))
 		table.insert(slot13, function (slot0)
 			setActive(uv0.boxView:Find("Content/TextArea"), true)
 			slot0()
@@ -259,26 +255,19 @@ function slot0.UpdateSPItem(slot0)
 		return
 	end
 
-	slot8 = slot0.spList
-
-	UIItemList.StaticAlign(slot0.spList, slot8:GetChild(0), slot5, function (slot0, slot1, slot2)
+	UIItemList.StaticAlign(slot0.spList, slot0.spList:GetChild(0), slot5, function (slot0, slot1, slot2)
 		if slot0 ~= UIItemList.EventUpdate then
 			return
 		end
 
 		slot3 = uv0[slot1 + 1]
+		slot4 = tonumber(slot3.benefit_condition)
 
 		setText(slot2:Find("Active/Desc"), slot3.desc)
 
-		slot5 = _.detect(uv1, function (slot0)
+		slot6 = _.detect(uv1, function (slot0)
 			return slot0.configId == uv0
-		end) or {
-			count = 0,
-			id = tonumber(slot3.benefit_condition),
-			type = DROP_TYPE_ITEM
-		}
-		slot5.type = DROP_TYPE_ITEM
-		slot6 = slot5.count > 0
+		end) and slot5.count > 0
 
 		setActive(slot2:Find("Active"), slot6)
 		setActive(slot2:Find("Block"), not slot6)
@@ -290,7 +279,11 @@ function slot0.UpdateSPItem(slot0)
 		end
 
 		setActive(slot2:Find("Active/Item"), true)
-		updateDrop(slot2:Find("Active/Item/Icon"), slot5)
+		updateDrop(slot2:Find("Active/Item/Icon"), Drop.New({
+			id = slot4,
+			type = DROP_TYPE_ITEM,
+			count = slot5 and slot5.count or 0
+		}))
 		onButton(uv2, slot2, function ()
 			uv0.contextData.spItemID = not uv0.contextData.spItemID and uv1 or nil
 

@@ -2,7 +2,6 @@ slot0 = class("BackYardCollectThemeTemplateCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot3 = slot2.templateId
 	slot4 = slot2.uploadTime
 
 	function slot6(slot0)
@@ -28,10 +27,8 @@ function slot0.execute(slot0, slot1)
 	end
 
 	if slot2.isCancel then
-		slot7 = pg.ConnectionMgr.GetInstance()
-
-		slot7:Send(19127, {
-			theme_id = slot3
+		pg.ConnectionMgr.GetInstance():Send(19127, {
+			theme_id = slot2.templateId
 		}, 19128, function (slot0)
 			if slot0.result == 0 then
 				uv0(slot0)
@@ -46,9 +43,7 @@ function slot0.execute(slot0, slot1)
 			return
 		end
 
-		slot7 = pg.ConnectionMgr.GetInstance()
-
-		slot7:Send(19119, {
+		pg.ConnectionMgr.GetInstance():Send(19119, {
 			theme_id = slot3,
 			upload_time = slot4
 		}, 19120, function (slot0)

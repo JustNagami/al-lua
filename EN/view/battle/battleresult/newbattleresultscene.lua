@@ -15,9 +15,7 @@ function slot0.didEnter(slot0)
 		slot0:Vibrate()
 	end
 
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf, true, {
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, true, {
 		lockGlobalBlur = true,
 		groupName = LayerWeightConst.GROUP_COMBAT
 	})
@@ -32,8 +30,7 @@ function slot0.Adjustion(slot0)
 	slot1 = GetComponent(slot0._tf, typeof(AspectRatioFitter))
 	slot1.enabled = true
 	slot1.aspectRatio = pg.CameraFixMgr.GetInstance().targetRatio
-	slot2 = pg.CameraFixMgr.GetInstance()
-	slot0.camEventId = slot2:bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function (slot0, slot1)
+	slot0.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function (slot0, slot1)
 		uv0.aspectRatio = slot1
 	end)
 end
@@ -112,14 +109,12 @@ function slot0.DestroyHistory(slot0)
 end
 
 function slot0.GoBack(slot0)
-	function slot1()
-		uv0.backSceneHandler = NewBattleResultBackSceneHandler.New(uv0.contextData)
-
-		uv0.backSceneHandler:Execute()
-	end
-
 	if slot0.contextData.needHelpMessage then
-		slot0:emit(NewBattleResultMediator.OPEN_FIALED_HELP, slot1)
+		slot0:emit(NewBattleResultMediator.OPEN_FIALED_HELP, function ()
+			uv0.backSceneHandler = NewBattleResultBackSceneHandler.New(uv0.contextData)
+
+			uv0.backSceneHandler:Execute()
+		end)
 	else
 		slot1()
 	end

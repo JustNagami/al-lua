@@ -1,9 +1,7 @@
 slot0 = class("ReSelectTecTargetCatchupCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(63013, {
+	pg.ConnectionMgr.GetInstance():Send(63013, {
 		target = slot1:getBody().charID
 	}, 63014, function (slot0)
 		if slot0.result == 0 then

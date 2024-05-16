@@ -180,6 +180,9 @@ pg.skill_data_display = setmetatable({
 		60270,
 		60334,
 		60335,
+		60541,
+		60543,
+		60545,
 		7000,
 		7500,
 		8521,
@@ -1576,6 +1579,68 @@ pg.skill_data_display = setmetatable({
 		17401,
 		17411,
 		17421,
+		17445,
+		17463,
+		17470,
+		17471,
+		17472,
+		17473,
+		17474,
+		17480,
+		17481,
+		17482,
+		17501,
+		17511,
+		17531,
+		17570,
+		17571,
+		17572,
+		17573,
+		17574,
+		17575,
+		17581,
+		17582,
+		17583,
+		17601,
+		17602,
+		17623,
+		17631,
+		17640,
+		17641,
+		17661,
+		17670,
+		17680,
+		17681,
+		17690,
+		17691,
+		17694,
+		17700,
+		17730,
+		17740,
+		17741,
+		17769,
+		17770,
+		17772,
+		17773,
+		17780,
+		17781,
+		17782,
+		17783,
+		17790,
+		17791,
+		17792,
+		17800,
+		17801,
+		17812,
+		17842,
+		17851,
+		17852,
+		17880,
+		17881,
+		17882,
+		17890,
+		17891,
+		17911,
 		18010,
 		18040,
 		18041,
@@ -1615,6 +1680,10 @@ pg.skill_data_display = setmetatable({
 		18350,
 		18351,
 		18352,
+		18380,
+		18400,
+		18401,
+		18402,
 		18440,
 		18441,
 		18442,
@@ -1962,18 +2031,28 @@ pg.skill_data_display = setmetatable({
 		23512,
 		24011,
 		24012,
+		24061,
+		24062,
 		24021,
 		24022,
 		24031,
 		24032,
+		24033,
+		24034,
 		24041,
 		24042,
+		24043,
+		24044,
 		24051,
 		24052,
 		24111,
 		24112,
+		24113,
+		24114,
 		24121,
 		24122,
+		24151,
+		24152,
 		25011,
 		25012,
 		25021,
@@ -2093,6 +2172,7 @@ pg.skill_data_display = setmetatable({
 		29482,
 		29491,
 		29492,
+		29493,
 		29501,
 		29502,
 		29511,
@@ -2150,6 +2230,17 @@ pg.skill_data_display = setmetatable({
 		30112,
 		30131,
 		30132,
+		30190,
+		30191,
+		30192,
+		30193,
+		30201,
+		30202,
+		30203,
+		30221,
+		30222,
+		30223,
+		30224,
 		39000,
 		39001,
 		39002,
@@ -2499,6 +2590,34 @@ pg.skill_data_display = setmetatable({
 		600090,
 		600091,
 		600092,
+		600100,
+		600102,
+		600140,
+		600141,
+		600142,
+		600143,
+		600144,
+		600145,
+		600146,
+		600147,
+		600148,
+		600149,
+		600150,
+		600151,
+		600152,
+		600153,
+		600163,
+		600164,
+		600165,
+		600170,
+		600171,
+		600172,
+		600180,
+		600181,
+		600182,
+		600183,
+		600184,
+		600185,
 		800010,
 		800020,
 		800021,
@@ -2676,6 +2795,15 @@ pg.skill_data_display = setmetatable({
 		801032,
 		801040,
 		801041,
+		801121,
+		801122,
+		801123,
+		801124,
+		801136,
+		801137,
+		801152,
+		801191,
+		801192,
 		902201,
 		1010140,
 		1010143,
@@ -2779,6 +2907,50 @@ pg.skill_data_display = setmetatable({
 		200623,
 		200632,
 		200635,
+		200774,
+		200775,
+		200776,
+		200777,
+		200778,
+		200779,
+		200782,
+		200785,
+		200791,
+		200792,
+		200830,
+		200831,
+		200832,
+		200833,
+		200835,
+		200836,
+		200837,
+		200838,
+		200839,
+		200840,
+		200841,
+		200843,
+		200845,
+		200847,
+		200848,
+		200849,
+		200854,
+		200856,
+		200858,
+		200866,
+		200868,
+		200876,
+		200880,
+		200888,
+		200892,
+		295002,
+		295003,
+		295004,
+		295005,
+		295006,
+		295007,
+		295008,
+		295009,
+		200897,
 		1011540,
 		1011541,
 		1090010,
@@ -2835,6 +3007,20 @@ pg.skill_data_display = setmetatable({
 		1011940,
 		1011941,
 		1011942,
+		1012160,
+		1011370,
+		1011371,
+		1005080,
+		1005081,
+		1005082,
+		1005083,
+		1012940,
+		1013000,
+		1013001,
+		1010980,
+		1010981,
+		1010660,
+		1010661,
 		1090020,
 		1090042,
 		1090043,
@@ -2859,7 +3045,12 @@ pg.skill_data_display = setmetatable({
 		1090210,
 		1090211,
 		1090220,
-		1090221
+		1090221,
+		1090230,
+		1090231,
+		1090240,
+		1090242,
+		1090243
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3575,6 +3766,18 @@ pg.base.skill_data_display = {
 	[60335] = {
 		id = 60335,
 		name = "Work Mode"
+	},
+	[60541] = {
+		id = 60541,
+		name = "Blessing of Light and Justice?"
+	},
+	[60543] = {
+		id = 60543,
+		name = "Blessing of Unity and Toughness?"
+	},
+	[60545] = {
+		id = 60545,
+		name = "Blessing of Desserts and Tea Parties?"
 	},
 	[7000] = {
 		id = 7000,
@@ -9160,6 +9363,254 @@ pg.base.skill_data_display = {
 		id = 17421,
 		name = "Fish Are Friends"
 	},
+	[17445] = {
+		id = 17445,
+		name = "Bunbun Strikers"
+	},
+	[17463] = {
+		id = 17463,
+		name = "For Safe Returns, Schemes Shaped"
+	},
+	[17470] = {
+		id = 17470,
+		name = "Lady Yuen's Grand \"Adventure\""
+	},
+	[17471] = {
+		id = 17471,
+		name = "Adventure Time!"
+	},
+	[17472] = {
+		id = 17472,
+		name = "Adventure Failed..."
+	},
+	[17473] = {
+		id = 17473,
+		name = "Adventure... Succeeded?"
+	},
+	[17474] = {
+		id = 17474,
+		name = "Adventure Succeeded!"
+	},
+	[17480] = {
+		id = 17480,
+		name = "Inkscape of Dancing Clouds"
+	},
+	[17481] = {
+		id = 17481,
+		name = "Inkscape of Dancing Clouds"
+	},
+	[17482] = {
+		id = 17482,
+		name = "Inkscape of Dancing Clouds"
+	},
+	[17501] = {
+		id = 17501,
+		name = "Unfettered Freedom"
+	},
+	[17511] = {
+		id = 17511,
+		name = "Dragon's Dance"
+	},
+	[17531] = {
+		id = 17531,
+		name = "Tiger Thrasher!"
+	},
+	[17570] = {
+		id = 17570,
+		name = "Into Insight - Vanguard"
+	},
+	[17571] = {
+		id = 17571,
+		name = "Into Insight - Main Fleet"
+	},
+	[17572] = {
+		id = 17572,
+		name = "Into Insight - Offense"
+	},
+	[17573] = {
+		id = 17573,
+		name = "Into Insight - Defense"
+	},
+	[17574] = {
+		id = 17574,
+		name = "Into Insight - Offense"
+	},
+	[17575] = {
+		id = 17575,
+		name = "Into Insight - Defense"
+	},
+	[17581] = {
+		id = 17581,
+		name = "Always Prepared, Always Vigiliant"
+	},
+	[17582] = {
+		id = 17582,
+		name = "Always Prepared, Always Vigiliant"
+	},
+	[17583] = {
+		id = 17583,
+		name = "Always Prepared, Always Vigiliant"
+	},
+	[17601] = {
+		id = 17601,
+		name = "Irradiance, to Extol Solidarity's Glory"
+	},
+	[17602] = {
+		id = 17602,
+		name = "Irradiance, to Extol Solidarity's Glory"
+	},
+	[17623] = {
+		id = 17623,
+		name = "The Strength of Gentle Sunlight"
+	},
+	[17631] = {
+		id = 17631,
+		name = "Max Firepower! Max Cuteness!"
+	},
+	[17640] = {
+		id = 17640,
+		name = "Adamantine, the Walls of Forts Impregnable"
+	},
+	[17641] = {
+		id = 17641,
+		name = "Adamantine, the Walls of Forts Impregnable"
+	},
+	[17661] = {
+		id = 17661,
+		name = "Protecting Links"
+	},
+	[17670] = {
+		id = 17670,
+		name = "Creative Burst"
+	},
+	[17680] = {
+		id = 17680,
+		name = "Undeniable Rip-Roaring Spirit"
+	},
+	[17681] = {
+		id = 17681,
+		name = "Undeniable Rip-Roaring Spirit"
+	},
+	[17690] = {
+		id = 17690,
+		name = "Service Mode"
+	},
+	[17691] = {
+		id = 17691,
+		name = "Service Mode"
+	},
+	[17694] = {
+		id = 17694,
+		name = "Service Mode"
+	},
+	[17700] = {
+		id = 17700,
+		name = "Slayer Mode"
+	},
+	[17730] = {
+		id = 17730,
+		name = "It's Cleaning Time!"
+	},
+	[17740] = {
+		id = 17740,
+		name = "Every Last Speck!"
+	},
+	[17741] = {
+		id = 17741,
+		name = "Every Last Speck!"
+	},
+	[17769] = {
+		id = 17769,
+		name = "Harmony"
+	},
+	[17770] = {
+		id = 17770,
+		name = "The Performance Begins!"
+	},
+	[17772] = {
+		id = 17772,
+		name = "Aufführung beginnt!"
+	},
+	[17773] = {
+		id = 17773,
+		name = "Aufführung beginnt!"
+	},
+	[17780] = {
+		id = 17780,
+		name = "Crimson Song"
+	},
+	[17781] = {
+		id = 17781,
+		name = "Crimson Song"
+	},
+	[17782] = {
+		id = 17782,
+		name = "Crimson Song"
+	},
+	[17783] = {
+		id = 17783,
+		name = "Crimson Song"
+	},
+	[17790] = {
+		id = 17790,
+		name = "Suppressive Fire Order"
+	},
+	[17791] = {
+		id = 17791,
+		name = "Suppressive Fire Order"
+	},
+	[17792] = {
+		id = 17792,
+		name = "Suppressive Fire Order"
+	},
+	[17800] = {
+		id = 17800,
+		name = "Fit to Serve!"
+	},
+	[17801] = {
+		id = 17801,
+		name = "Fit to Serve!"
+	},
+	[17812] = {
+		id = 17812,
+		name = "Royal Lady of Rock 'n' Roll"
+	},
+	[17842] = {
+		id = 17842,
+		name = "Alizarin Melody"
+	},
+	[17851] = {
+		id = 17851,
+		name = "Resonant Fortissimo"
+	},
+	[17852] = {
+		id = 17852,
+		name = "Resonant Fortissimo"
+	},
+	[17880] = {
+		id = 17880,
+		name = "Upon an Elegant Stage"
+	},
+	[17881] = {
+		id = 17881,
+		name = "Upon an Elegant Stage"
+	},
+	[17882] = {
+		id = 17882,
+		name = "Upon an Elegant Stage"
+	},
+	[17890] = {
+		id = 17890,
+		name = "Rising Passion!"
+	},
+	[17891] = {
+		id = 17891,
+		name = "Rising Passion!"
+	},
+	[17911] = {
+		id = 17911,
+		name = "Perfect Dazzling Stage"
+	},
 	[18010] = {
 		id = 18010,
 		name = "MKV-Class AP Shells 194/160+"
@@ -9315,6 +9766,22 @@ pg.base.skill_data_display = {
 	[18352] = {
 		id = 18352,
 		name = "Augmenting Mechanism: Setzer Principle+"
+	},
+	[18380] = {
+		id = 18380,
+		name = "Sky-Rending Retribution+"
+	},
+	[18400] = {
+		id = 18400,
+		name = "The Great One's Shadow+"
+	},
+	[18401] = {
+		id = 18401,
+		name = "The Great One's Shadow+"
+	},
+	[18402] = {
+		id = 18402,
+		name = "The Great One's Shadow+"
 	},
 	[18440] = {
 		id = 18440,
@@ -10704,6 +11171,14 @@ pg.base.skill_data_display = {
 		id = 24012,
 		name = "All Out Assault Ⅱ"
 	},
+	[24061] = {
+		id = 24061,
+		name = "All Out Assault I"
+	},
+	[24062] = {
+		id = 24062,
+		name = "All Out Assault II"
+	},
 	[24021] = {
 		id = 24021,
 		name = "Special Barrage - Qinglong Ⅰ"
@@ -10720,6 +11195,14 @@ pg.base.skill_data_display = {
 		id = 24032,
 		name = "Special Barrage - Zhuque Ⅱ"
 	},
+	[24033] = {
+		id = 24033,
+		name = "All Out Assault I"
+	},
+	[24034] = {
+		id = 24034,
+		name = "All Out Assault II"
+	},
 	[24041] = {
 		id = 24041,
 		name = "Special Barrage - Baihu I"
@@ -10727,6 +11210,14 @@ pg.base.skill_data_display = {
 	[24042] = {
 		id = 24042,
 		name = "Special Barrage - Baihu II"
+	},
+	[24043] = {
+		id = 24043,
+		name = "All Out Assault I"
+	},
+	[24044] = {
+		id = 24044,
+		name = "All Out Assault II"
 	},
 	[24051] = {
 		id = 24051,
@@ -10744,6 +11235,14 @@ pg.base.skill_data_display = {
 		id = 24112,
 		name = "All Out Assault Ⅱ"
 	},
+	[24113] = {
+		id = 24113,
+		name = "All Out Assault III"
+	},
+	[24114] = {
+		id = 24114,
+		name = "All Out Assault IV"
+	},
 	[24121] = {
 		id = 24121,
 		name = "All Out Assault Ⅰ"
@@ -10751,6 +11250,14 @@ pg.base.skill_data_display = {
 	[24122] = {
 		id = 24122,
 		name = "All Out Assault Ⅱ"
+	},
+	[24151] = {
+		id = 24151,
+		name = "All Out Assault I"
+	},
+	[24152] = {
+		id = 24152,
+		name = "All Out Assault II"
 	},
 	[25011] = {
 		id = 25011,
@@ -11228,6 +11735,10 @@ pg.base.skill_data_display = {
 		id = 29492,
 		name = "All Out Assault Ⅱ"
 	},
+	[29493] = {
+		id = 29493,
+		name = "All Out Assault Ⅱ"
+	},
 	[29501] = {
 		id = 29501,
 		name = "All Out Assault Ⅰ"
@@ -11455,6 +11966,50 @@ pg.base.skill_data_display = {
 	[30132] = {
 		id = 30132,
 		name = "All Out Assault II"
+	},
+	[30190] = {
+		id = 30190,
+		name = "All Out Assault III"
+	},
+	[30191] = {
+		id = 30191,
+		name = "All Out Assault - Xuanwu III"
+	},
+	[30192] = {
+		id = 30192,
+		name = "All Out Assault III"
+	},
+	[30193] = {
+		id = 30193,
+		name = "All Out Assault - Xuanwu III"
+	},
+	[30201] = {
+		id = 30201,
+		name = "All Out Assault I"
+	},
+	[30202] = {
+		id = 30202,
+		name = "All Out Assault II"
+	},
+	[30203] = {
+		id = 30203,
+		name = "Cute Firepower Boost!"
+	},
+	[30221] = {
+		id = 30221,
+		name = "All Out Assault - Prinz Eugen μ"
+	},
+	[30222] = {
+		id = 30222,
+		name = "All Out Assault II"
+	},
+	[30223] = {
+		id = 30223,
+		name = "All Out Assault - Prinz Eugen μ"
+	},
+	[30224] = {
+		id = 30224,
+		name = "All Out Assault - Prinz Eugen μ"
 	},
 	[39000] = {
 		id = 39000,
@@ -12852,6 +13407,118 @@ pg.base.skill_data_display = {
 		id = 600092,
 		name = "Charging Fury"
 	},
+	[600100] = {
+		id = 600100,
+		name = "Morning Star's Light"
+	},
+	[600102] = {
+		id = 600102,
+		name = "Darkness of Dawn"
+	},
+	[600140] = {
+		id = 600140,
+		name = "Sentinels of Gardiane - DoY"
+	},
+	[600141] = {
+		id = 600141,
+		name = "Sentinels of Gardiane - DoY"
+	},
+	[600142] = {
+		id = 600142,
+		name = "Sentinels of Gardiane - DoY"
+	},
+	[600143] = {
+		id = 600143,
+		name = "Sentinels of Gardiane - KGV"
+	},
+	[600144] = {
+		id = 600144,
+		name = "Sentinels of Gardiane - KGV"
+	},
+	[600145] = {
+		id = 600145,
+		name = "Sentinels of Gardiane - KGV"
+	},
+	[600146] = {
+		id = 600146,
+		name = "The Bond of Ichthys"
+	},
+	[600147] = {
+		id = 600147,
+		name = "Sentinels of Gardiane - KGV"
+	},
+	[600148] = {
+		id = 600148,
+		name = "Sentinels of Gardiane - KGV"
+	},
+	[600149] = {
+		id = 600149,
+		name = "Sentinels of Gardiane - KGV"
+	},
+	[600150] = {
+		id = 600150,
+		name = "The Bond of Ichthys"
+	},
+	[600151] = {
+		id = 600151,
+		name = "Sentinels of Gardiane - DoY"
+	},
+	[600152] = {
+		id = 600152,
+		name = "Sentinels of Gardiane - DoY"
+	},
+	[600153] = {
+		id = 600153,
+		name = "Sentinels of Gardiane - DoY"
+	},
+	[600163] = {
+		id = 600163,
+		name = "I Am Unsinkable"
+	},
+	[600164] = {
+		id = 600164,
+		name = "I Am Unsinkable"
+	},
+	[600165] = {
+		id = 600165,
+		name = "I Am Unsinkable"
+	},
+	[600170] = {
+		id = 600170,
+		name = "Multiple Lifelines"
+	},
+	[600171] = {
+		id = 600171,
+		name = "Multiple Lifelines"
+	},
+	[600172] = {
+		id = 600172,
+		name = "Multiple Lifelines"
+	},
+	[600180] = {
+		id = 600180,
+		name = "Steel Blade Stance"
+	},
+	[600181] = {
+		id = 600181,
+		name = "Steel Blade Stance"
+	},
+	[600182] = {
+		id = 600182,
+		name = "Steel Blade Stance"
+	},
+	[600183] = {
+		id = 600183,
+		name = "Silver Reflection"
+	},
+	[600184] = {
+		id = 600184,
+		name = "Silver Reflection"
+	},
+	[600185] = {
+		id = 600185,
+		name = "Silver Reflection"
+	},
 	[800010] = {
 		id = 800010,
 		name = "Shadowflame Torch"
@@ -13560,6 +14227,42 @@ pg.base.skill_data_display = {
 		id = 801041,
 		name = "Coordinated Dance"
 	},
+	[801121] = {
+		id = 801121,
+		name = "Flickering Light - Pamiat' Merkuria"
+	},
+	[801122] = {
+		id = 801122,
+		name = "Flickering Light - Pamiat' Merkuria II"
+	},
+	[801123] = {
+		id = 801123,
+		name = "Flickering Light - Pamiat' Merkuria I +"
+	},
+	[801124] = {
+		id = 801124,
+		name = "Flickering Light - Pamiat' Merkuria II +"
+	},
+	[801136] = {
+		id = 801136,
+		name = "My Phantoms"
+	},
+	[801137] = {
+		id = 801137,
+		name = "My Phantoms"
+	},
+	[801152] = {
+		id = 801152,
+		name = "Demise's Arrival"
+	},
+	[801191] = {
+		id = 801191,
+		name = "Ashen Might - Vampire"
+	},
+	[801192] = {
+		id = 801192,
+		name = "Ashen Might - Vampire"
+	},
 	[902201] = {
 		id = 902201,
 		name = "Fantastic Loop"
@@ -13972,6 +14675,182 @@ pg.base.skill_data_display = {
 		id = 200635,
 		name = "Meteor Missiles"
 	},
+	[200774] = {
+		id = 200774,
+		name = "Courageous Shelling"
+	},
+	[200775] = {
+		id = 200775,
+		name = "Urd's Fate-Piercer"
+	},
+	[200776] = {
+		id = 200776,
+		name = "You Can't Escape♪"
+	},
+	[200777] = {
+		id = 200777,
+		name = "Courageous Shelling"
+	},
+	[200778] = {
+		id = 200778,
+		name = "Urd's Fate-Piercer"
+	},
+	[200779] = {
+		id = 200779,
+		name = "You Can't Escape♪"
+	},
+	[200782] = {
+		id = 200782,
+		name = "Experimental Bomber Support"
+	},
+	[200785] = {
+		id = 200785,
+		name = "Experimental Bomber Support"
+	},
+	[200791] = {
+		id = 200791,
+		name = "Rodney's Demise"
+	},
+	[200792] = {
+		id = 200792,
+		name = "Dimensional Transcendence"
+	},
+	[200830] = {
+		id = 200830,
+		name = "Hero's Cross Slash"
+	},
+	[200831] = {
+		id = 200831,
+		name = "Holy Light"
+	},
+	[200832] = {
+		id = 200832,
+		name = "Yuni's Aid"
+	},
+	[200833] = {
+		id = 200833,
+		name = "Eat This!"
+	},
+	[200835] = {
+		id = 200835,
+		name = "Meteor Fall"
+	},
+	[200836] = {
+		id = 200836,
+		name = "Ice Breath"
+	},
+	[200837] = {
+		id = 200837,
+		name = "Explosion"
+	},
+	[200838] = {
+		id = 200838,
+		name = "Blazing Slash"
+	},
+	[200839] = {
+		id = 200839,
+		name = "Spear of Judgment"
+	},
+	[200840] = {
+		id = 200840,
+		name = "Royal Saber"
+	},
+	[200841] = {
+		id = 200841,
+		name = "Saint's Prayer"
+	},
+	[200843] = {
+		id = 200843,
+		name = "Blessed Light"
+	},
+	[200845] = {
+		id = 200845,
+		name = "Fire of Judgment"
+	},
+	[200847] = {
+		id = 200847,
+		name = "Another's Blade - Hero's Sword"
+	},
+	[200848] = {
+		id = 200848,
+		name = "Another's Blade - Holy Sword"
+	},
+	[200849] = {
+		id = 200849,
+		name = "Explosion"
+	},
+	[200854] = {
+		id = 200854,
+		name = "Blessing of Light and Justice"
+	},
+	[200856] = {
+		id = 200856,
+		name = "Blessing of Steel and Dragons"
+	},
+	[200858] = {
+		id = 200858,
+		name = "Blessing of Fire and Purity"
+	},
+	[200866] = {
+		id = 200866,
+		name = "Blessing of Unity and Toughness"
+	},
+	[200868] = {
+		id = 200868,
+		name = "Blessing of Peace and Protection"
+	},
+	[200876] = {
+		id = 200876,
+		name = "The Might of Revivals and Baths"
+	},
+	[200880] = {
+		id = 200880,
+		name = "Blessing of War"
+	},
+	[200888] = {
+		id = 200888,
+		name = "Blessing of Joy"
+	},
+	[200892] = {
+		id = 200892,
+		name = "Brave Charge"
+	},
+	[295002] = {
+		id = 295002,
+		name = "Blessing of Pioneering and Adventure"
+	},
+	[295003] = {
+		id = 295003,
+		name = "Blessing of Beginnings and Ends"
+	},
+	[295004] = {
+		id = 295004,
+		name = "Blessing of Darkness and Conspiracy"
+	},
+	[295005] = {
+		id = 295005,
+		name = "Blessing of Order and Rules"
+	},
+	[295006] = {
+		id = 295006,
+		name = "Blessing of Luck and Riches"
+	},
+	[295007] = {
+		id = 295007,
+		name = "Blessing of Desserts and Tea Parties"
+	},
+	[295008] = {
+		id = 295008,
+		name = "Blessing of Revivals and Baths"
+	},
+	[295009] = {
+		id = 295009,
+		name = "Blessing of Wisdom"
+	},
+	[200897] = {
+		id = 200897,
+		name = "Iron Claw Sweep"
+	},
 	[1011540] = {
 		id = 1011540,
 		name = "Final Shot+"
@@ -14196,6 +15075,62 @@ pg.base.skill_data_display = {
 		id = 1011942,
 		name = "Observer of the Sky and Sea+"
 	},
+	[1012160] = {
+		id = 1012160,
+		name = "The Glory of the Never-Setting Sun+"
+	},
+	[1011370] = {
+		id = 1011370,
+		name = "Fatal Perforation+"
+	},
+	[1011371] = {
+		id = 1011371,
+		name = "Fatal Perforation+"
+	},
+	[1005080] = {
+		id = 1005080,
+		name = "Chevalier's Sabre+"
+	},
+	[1005081] = {
+		id = 1005081,
+		name = "Chevalier's Sabre+"
+	},
+	[1005082] = {
+		id = 1005082,
+		name = "Chevalier's Sabre+"
+	},
+	[1005083] = {
+		id = 1005083,
+		name = "Chevalier's Sabre+"
+	},
+	[1012940] = {
+		id = 1012940,
+		name = "For The Queen +"
+	},
+	[1013000] = {
+		id = 1013000,
+		name = "Cavalier of the Ether+"
+	},
+	[1013001] = {
+		id = 1013001,
+		name = "Cavalier of the Ether+"
+	},
+	[1010980] = {
+		id = 1010980,
+		name = "AA Protection+"
+	},
+	[1010981] = {
+		id = 1010981,
+		name = "AA Protection+"
+	},
+	[1010660] = {
+		id = 1010660,
+		name = "Sniper+"
+	},
+	[1010661] = {
+		id = 1010661,
+		name = "Sniper+"
+	},
 	[1090020] = {
 		id = 1090020,
 		name = "Full Firepower - Karlsruhe"
@@ -14295,5 +15230,25 @@ pg.base.skill_data_display = {
 	[1090221] = {
 		id = 1090221,
 		name = "Reload Command - Königsberg"
+	},
+	[1090230] = {
+		id = 1090230,
+		name = "Piercing Shells - Z18"
+	},
+	[1090231] = {
+		id = 1090231,
+		name = "Piercing Shells - Z18"
+	},
+	[1090240] = {
+		id = 1090240,
+		name = "Torpedo Squadron - Sendai"
+	},
+	[1090242] = {
+		id = 1090242,
+		name = "Torpedo Squadron - Sendai"
+	},
+	[1090243] = {
+		id = 1090243,
+		name = "Torpedo Squadron - Sendai"
 	}
 }

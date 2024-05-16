@@ -9,9 +9,8 @@ end
 
 function slot0.init(slot0)
 	slot0.UIMgr = pg.UIMgr.GetInstance()
-	slot1 = slot0.UIMgr
 
-	slot1:BlurPanel(slot0._tf, false, slot0.contextData.weight and {
+	slot0.UIMgr:BlurPanel(slot0._tf, false, slot0.contextData.weight and {
 		weight = slot0.contextData.weight
 	} or {})
 
@@ -59,17 +58,10 @@ end
 
 function slot0.showBarrage(slot0)
 	slot0.previewer = WeaponPreviewer.New(slot0.rawImage)
-	slot1 = slot0.previewer
 
-	slot1:configUI(slot0.healTF)
-
-	slot1 = slot0.previewer
-
-	slot1:setDisplayWeapon(slot0.weaponIds, slot0.equipSkinId, true)
-
-	slot1 = slot0.previewer
-
-	slot1:load(40000, slot0.shipVO, slot0.weaponIds, function ()
+	slot0.previewer:configUI(slot0.healTF)
+	slot0.previewer:setDisplayWeapon(slot0.weaponIds, slot0.equipSkinId, true)
+	slot0.previewer:load(40000, slot0.shipVO, slot0.weaponIds, function ()
 		uv0:stopLoadingAni()
 	end)
 end

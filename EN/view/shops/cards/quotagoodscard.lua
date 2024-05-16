@@ -32,32 +32,26 @@ function slot0.update(slot0, slot1, slot2, slot3, slot4)
 
 	slot6 = slot1:getConfig("commodity_type")
 
-	updateDrop(slot0.itemTF, {
+	updateDrop(slot0.itemTF, Drop.New({
 		type = slot6,
 		id = slot1:getConfig("commodity_id"),
 		count = slot1:getConfig("num")
-	})
+	}))
 
-	slot9 = ""
 	slot0.countTF.text = slot1:getConfig("resource_num")
 
-	if string.match(slot6 == DROP_TYPE_SKIN and (pg.ship_skin_template[slot7].name or "??") or slot8.cfg.name or "??", "(%d+)") then
-		setText(slot0.nameTxt, shortenString(slot9, 5))
+	if string.match(slot6 == DROP_TYPE_SKIN and (pg.ship_skin_template[slot7].name or "??") or slot8:getConfig("name") or "??", "(%d+)") then
+		setText(slot0.nameTxt, shortenString("", 5))
 	else
 		setText(slot0.nameTxt, shortenString(slot9, 6))
 	end
 
-	slot10 = nil
-
-	if slot1:getConfig("resource_category") == DROP_TYPE_RESOURCE then
-		slot10 = GetSpriteFromAtlas(pg.item_data_statistics[id2ItemId(slot1:getConfig("resource_type"))].icon, "")
-	elseif slot11 == DROP_TYPE_ITEM then
-		slot10 = GetSpriteFromAtlas(pg.item_data_statistics[slot1:getConfig("resource_type")].icon, "")
-	end
-
-	slot0.resIconTF.sprite = slot10
-	slot12 = slot1:GetLimitGoodCount()
-	slot0.limitCountTF.text = slot12 - slot1:GetPurchasableCnt() .. "/" .. slot12
+	slot0.resIconTF.sprite = GetSpriteFromAtlas(Drop.New({
+		type = slot1:getConfig("resource_category"),
+		id = slot1:getConfig("resource_type")
+	}):getIcon(), "")
+	slot11 = slot1:GetLimitGoodCount()
+	slot0.limitCountTF.text = slot11 - slot1:GetPurchasableCnt() .. "/" .. slot11
 end
 
 function slot0.setAsLastSibling(slot0)

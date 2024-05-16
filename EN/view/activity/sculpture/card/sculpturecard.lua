@@ -47,13 +47,11 @@ function slot0.UpdateName(slot0)
 end
 
 function slot0.UpdateRole(slot0, slot1)
-	slot2 = slot0.activity:GetResorceName(slot0.id)
-
 	if slot1 == SculptureActivity.STATE_FINSIH then
 		slot0.roleImg.sprite = nil
 
 		setActive(slot0.roleImg.gameObject, false)
-		slot0:LoadChar(slot2)
+		slot0:LoadChar(slot0.activity:GetResorceName(slot0.id))
 	else
 		if SculptureActivity.STATE_UNLOCK <= slot1 then
 			slot2 = slot2 .. "_gray"
@@ -77,10 +75,7 @@ function slot0.LoadChar(slot0, slot1)
 	end
 
 	slot0:ClearChar()
-
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetSpineChar("takegift_" .. slot1, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar("takegift_" .. slot1, true, function (slot0)
 		slot0.transform:SetParent(uv0.roleImg.gameObject.transform.parent)
 
 		slot0.transform.localScale = Vector3(0.8, 0.8, 0)

@@ -33,11 +33,10 @@ function slot0.Ctor(slot0, slot1, slot2)
 		uv0._event:emit(BeachGuardGameView.READY_START)
 	end, SFX_CANCEL)
 
-	slot3 = findTF(slot0.menuUI, "tplBattleItem")
 	slot4 = CastleGameVo.drop
 
 	for slot8 = 1, 7 do
-		slot9 = tf(instantiate(slot3))
+		slot9 = tf(instantiate(findTF(slot0.menuUI, "tplBattleItem")))
 		slot9.name = "battleItem_" .. slot8
 
 		setParent(slot9, findTF(slot0.menuUI, "battList/Viewport/Content"))

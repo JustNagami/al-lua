@@ -39,16 +39,14 @@ function slot0.getProgress(slot0)
 	slot1 = nil
 
 	if slot0:isActivitySubmit() then
-		slot3 = tonumber(slot0:getConfig("target_id_2"))
-
 		if getProxy(ActivityProxy):getActivityById(pg.activity_drop_type[tonumber(slot0:getConfig("target_id"))].activity_id) then
-			slot1 = slot5:getVitemNumber(slot3)
+			slot1 = slot5:getVitemNumber(tonumber(slot0:getConfig("target_id_2")))
 		else
 			warning("找不到活动数据中物品得的数量")
 
 			slot1 = 0
 		end
-	elseif slot0.type == 6 and slot0.subType == 1001 then
+	elseif slot0.type == 6 and slot0.subType == TASK_SUB_TYPE_PT then
 		if getProxy(ActivityProxy):getActivityById(tonumber(slot0:getConfig("target_id_2"))) then
 			slot1 = slot3.data1 or 0
 		else
@@ -133,7 +131,19 @@ function slot0.changeNew(slot0)
 end
 
 function slot0.isCircle(slot0)
-	if slot0.actType == ActivityConst.ACTIVITY_TYPE_TASK_RYZA and slot0.type == 16 and slot0.subType == 1006 then
+	if slot0.actType == ActivityConst.ACTIVITY_TYPE_TASK_RYZA then
+		if slot0.type == 16 and slot0.subType == 1006 then
+			return true
+		elseif slot0:isRepeated() then
+			return true
+		end
+	end
+
+	return false
+end
+
+function slot0.isRepeated(slot0)
+	if slot0.type == 16 and slot0.subType == 20 then
 		return true
 	end
 

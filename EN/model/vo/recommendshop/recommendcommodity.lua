@@ -75,7 +75,7 @@ function slot0.GetDesc(slot0)
 			return slot0.commodity:getConfig("descrip")
 		end
 	else
-		return updateDropCfg(slot0.commodity:getDropInfo()).display
+		return slot0.commodity:getDropInfo():getConfig("display")
 	end
 end
 
@@ -109,7 +109,7 @@ function slot0.GetIcon(slot0)
 	elseif slot0.commodity:isChargeType() then
 		return "ChargeIcon/" .. slot0.commodity:getConfig("picture")
 	else
-		return updateDropCfg(slot0.commodity:getDropInfo()).icon or ""
+		return slot0.commodity:getDropInfo():getIcon() or ""
 	end
 end
 
@@ -122,13 +122,13 @@ function slot0.GetOrder(slot0)
 end
 
 function slot0.CanPurchase(slot0)
-	return slot0:InTime() and slot0.commodity:canPurchase() and slot0.commodity:inTime() and not (function (slot0)
+	return slot0:InTime() and slot0.commodity:canPurchase() and slot0.commodity:inTime() and not function (slot0)
 		if slot0:isChargeType() then
 			return false
 		end
 
 		return uv0.commodity:IsGroupLimit()
-	end)(slot0.commodity)
+	end(slot0.commodity)
 end
 
 function slot0.CanShow(slot0)

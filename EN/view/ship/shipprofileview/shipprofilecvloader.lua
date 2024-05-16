@@ -25,12 +25,9 @@ function slot0.SetUp(slot0, slot1)
 			pg.CriMgr.GetInstance():LoadBattleCV(uv0, slot0)
 		end
 	}, function ()
-		slot0 = pg.CriMgr.GetCVBankName(uv0)
-		slot1 = pg.CriMgr.GetBattleCVBankName(uv0)
-
 		if uv1.exited then
-			pg.CriMgr.UnloadCVBank(slot0)
-			pg.CriMgr.UnloadCVBank(slot1)
+			pg.CriMgr.UnloadCVBank(pg.CriMgr.GetCVBankName(uv0))
+			pg.CriMgr.UnloadCVBank(pg.CriMgr.GetBattleCVBankName(uv0))
 		else
 			uv1.loadedCVBankName = slot0
 			uv1.loadedCVBattleBankName = slot1
@@ -41,10 +38,7 @@ end
 function slot0.PlaySound(slot0, slot1, slot2)
 	if not slot0.playbackInfo or slot1 ~= slot0.prevCvPath or slot0.playbackInfo.channelPlayer == nil then
 		slot0:StopSound()
-
-		slot3 = pg.CriMgr.GetInstance()
-
-		slot3:PlaySoundEffect_V3(slot1, function (slot0)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot1, function (slot0)
 			if slot0 then
 				uv0.playbackInfo = slot0
 

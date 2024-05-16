@@ -33,10 +33,7 @@ end
 
 function slot0.Dispose(slot0)
 	slot0:OnDispose()
-
-	slot2 = slot0.tf
-
-	eachChild(slot2:Find("item/icon_bg/frame"), function (slot0)
+	eachChild(slot0.tf:Find("item/icon_bg/frame"), function (slot0)
 		setActive(slot0, false)
 	end)
 	pg.DelegateInfo.Dispose(slot0)

@@ -102,13 +102,12 @@ function slot0.updateTaskList(slot0, slot1)
 
 	for slot6 = 1, #slot1 do
 		slot7 = slot1[slot6][2]
-		slot8 = slot1[slot6][1]
 		slot10 = getProxy(TaskProxy):getFinishTaskById(slot7)
 
 		if getProxy(TaskProxy):getTaskById(slot7) then
 			table.insert(slot2, {
 				data = slot9,
-				type = slot8
+				type = slot1[slot6][1]
 			})
 		elseif slot10 then
 			table.insert(slot2, {
@@ -119,9 +118,7 @@ function slot0.updateTaskList(slot0, slot1)
 	end
 
 	table.sort(slot2, function (slot0, slot1)
-		slot3 = slot1.data
-
-		if slot0.data:getTaskStatus() == 1 and slot3:getTaskStatus() ~= 1 then
+		if slot0.data:getTaskStatus() == 1 and slot1.data:getTaskStatus() ~= 1 then
 			return true
 		elseif slot2:getTaskStatus() ~= 1 and slot3:getTaskStatus() == 1 then
 			return false

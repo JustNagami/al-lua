@@ -10,10 +10,9 @@ function slot0.execute(slot0, slot1)
 	end
 
 	slot7 = getProxy(PlayerProxy):getData()
-	slot8 = 0
 
 	for slot12 = slot5, slot5 + slot3 - 1 do
-		slot8 = slot8 + CommanderConst.getBoxComsume(slot12)
+		slot8 = 0 + CommanderConst.getBoxComsume(slot12)
 	end
 
 	if slot7.gold < slot8 then
@@ -22,9 +21,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
-
-	slot9:Send(25018, {
+	pg.ConnectionMgr.GetInstance():Send(25018, {
 		type = slot3
 	}, 25019, function (slot0)
 		if slot0.result == 0 then

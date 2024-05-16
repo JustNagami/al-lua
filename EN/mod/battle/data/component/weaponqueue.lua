@@ -42,9 +42,8 @@ end
 
 function slot2.RemoveWeapon(slot0, slot1)
 	slot4 = 1
-	slot5 = #slot0:GetQueueByIndex(slot1:GetTemplateData().queue)
 
-	while slot4 <= slot5 do
+	while slot4 <= #slot0:GetQueueByIndex(slot1:GetTemplateData().queue) do
 		if slot3[slot4] == slot1 then
 			table.remove(slot3, slot4)
 
@@ -55,9 +54,8 @@ function slot2.RemoveWeapon(slot0, slot1)
 	end
 
 	slot4 = 1
-	slot5 = #slot0._totalWeapon
 
-	while slot4 <= slot5 do
+	while slot4 <= #slot0._totalWeapon do
 		if slot0._totalWeapon[slot4] == slot1 then
 			table.remove(slot0._totalWeapon, slot4)
 

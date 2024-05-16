@@ -171,6 +171,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>Clear Challenge Mode for the first time to obtain.</color>\n（22.01.27-22.04.23）",
 		scene = {}
 	},
+	[212] = {
+		time_limit_type = 0,
+		name = "Extreme Challenge - Taurus",
+		gain_by = "",
+		id = 212,
+		time_second = 0,
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Taurus. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 5/1/24 - 5/31/24 Season.</color>",
+		scene = {}
+	},
 	[300] = {
 		time_limit_type = 1,
 		name = "Leader ",
@@ -432,6 +441,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>\"The heaven that covers all, the causality that replicates the world. Cross the line in the sand and let the eternal truth be impressed upon all.\"</color>\nObtained from the \"Light-Chasing Sea of Stars\" event.",
 		scene = {}
 	},
+	[329] = {
+		time_limit_type = 0,
+		name = "Star of the Snowrealm",
+		gain_by = "Snowrealm Peregrination",
+		id = 329,
+		time_second = 0,
+		desc = "<color=#ffffff>\"Through the snow, across the icebergs, look at yourself and witness the future.\"</color>\nGiven to Commanders who excelled during the \"Snowrealm Peregrination\" event.",
+		scene = {}
+	},
 	[406] = {
 		time_limit_type = 0,
 		name = "Hall of Fame: Laffey ",
@@ -594,6 +612,51 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Sagittarius. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 12/1/23 - 12/31/23 Season.</color>",
 		scene = {}
 	},
+	[10008] = {
+		time_limit_type = 0,
+		name = "Extreme Challenge - Capricorn",
+		gain_by = "",
+		id = 10008,
+		time_second = 0,
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Capricorn. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 1/1/24 - 1/31/24 Season.</color>",
+		scene = {}
+	},
+	[10009] = {
+		time_limit_type = 0,
+		name = "Extreme Challenge - Aquarius",
+		gain_by = "",
+		id = 10009,
+		time_second = 0,
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Aquarius. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 2/1/24 - 2/29/24 Season.</color>",
+		scene = {}
+	},
+	[10010] = {
+		time_limit_type = 0,
+		name = "Extreme Challenge - Pisces",
+		gain_by = "",
+		id = 10010,
+		time_second = 0,
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Pisces. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 3/1/24 - 3/31/24 Season.</color>",
+		scene = {}
+	},
+	[10011] = {
+		time_limit_type = 0,
+		name = "Extreme Challenge - Aries",
+		gain_by = "",
+		id = 10011,
+		time_second = 0,
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Aries. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 4/1/24 - 4/30/24 Season.</color>",
+		scene = {}
+	},
+	[10012] = {
+		time_limit_type = 0,
+		name = "Extreme Challenge - Taurus",
+		gain_by = "",
+		id = 10012,
+		time_second = 0,
+		desc = "<color=#ffffff>Commemorates your triumph over the Incarnation of Taurus. Presented to Commanders who demonstrated the courage to challenge their limits.</color> \n<color=#A7A7AAFF>Obtained from [Extreme Challenge] during the 5/1/24 - 5/31/24 Season.</color>",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
@@ -614,6 +677,7 @@ pg.item_data_frame = {
 		209,
 		210,
 		211,
+		212,
 		300,
 		301,
 		302,
@@ -643,6 +707,7 @@ pg.item_data_frame = {
 		326,
 		327,
 		328,
+		329,
 		406,
 		411,
 		412,
@@ -660,6 +725,11 @@ pg.item_data_frame = {
 		10004,
 		10005,
 		10006,
-		10007
+		10007,
+		10008,
+		10009,
+		10010,
+		10011,
+		10012
 	}
 }

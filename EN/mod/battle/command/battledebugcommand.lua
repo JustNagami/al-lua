@@ -21,7 +21,7 @@ function slot3.Initialize(slot0)
 end
 
 function slot3.DoPrologue(slot0)
-	(function ()
+	function ()
 		uv0._uiMediator:OpeningEffect(function ()
 			uv0._uiMediator:ShowAutoBtn()
 			uv0._uiMediator:ShowTimer()
@@ -29,7 +29,7 @@ function slot3.DoPrologue(slot0)
 		end, SYSTEM_DEBUG)
 		uv0._dataProxy:InitAllFleetUnitsWeaponCD()
 		uv0._dataProxy:TirggerBattleStartBuffs()
-	end)()
+	end()
 end
 
 function slot3.Init(slot0)
@@ -150,9 +150,7 @@ function slot3.onWillDie(slot0, slot1)
 
 	slot0._dataProxy:CalcBattleScoreWhenDead(slot2)
 
-	slot3 = slot0._dataProxy:IsThereBoss()
-
-	if slot2:IsBoss() and not slot3 then
+	if slot2:IsBoss() and not slot0._dataProxy:IsThereBoss() then
 		slot0._dataProxy:KillAllEnemy()
 	end
 end

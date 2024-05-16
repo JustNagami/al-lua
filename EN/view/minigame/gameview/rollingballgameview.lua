@@ -31,9 +31,8 @@ function slot0.init(slot0)
 	slot0.fillGridDic = {}
 	slot0.startFlag = false
 	slot0.dragAlphaGrid = RollingBallGrid.New(findTF(slot0.rollingUI, "dragAlphaGrid"))
-	slot5 = slot0.dragAlphaGrid
 
-	setActive(slot5:getTf(), false)
+	setActive(slot0.dragAlphaGrid:getTf(), false)
 
 	slot7 = -1
 	slot0.timer = Timer.New(function ()
@@ -84,8 +83,7 @@ function slot0.init(slot0)
 	setActive(slot0.scoreUI, false)
 
 	slot0.downProgress = findTF(slot0._tf, "downProgress")
-	slot4 = findTF(slot0.downProgress, "Slider")
-	slot0.downTimeSlider = slot4:GetComponent(typeof(Slider))
+	slot0.downTimeSlider = findTF(slot0.downProgress, "Slider"):GetComponent(typeof(Slider))
 	slot0.labelGameTime = findTF(slot0._tf, "labelGameTime")
 	slot0.labelGameScore = findTF(slot0._tf, "labelGameScore")
 	slot0.endLess = findTF(slot0._tf, "endLess")
@@ -146,47 +144,37 @@ function slot0.showCountStart(slot0, slot1)
 
 	slot0.countIndex = 3
 	slot0.countStart = true
-	slot3 = pg.CriMgr.GetInstance()
 
-	slot3:PlaySoundEffect_V3(uv0)
-
-	function slot3(slot0)
-		slot1 = uv0.countIndex
-		uv0.countIndex = uv0.countIndex - 1
-		slot3 = GetComponent(findTF(uv1, "show"), typeof(CanvasGroup))
-
-		seriesAsync({
-			function (slot0)
-				GetSpriteFromAtlasAsync("ui/rollingBallGame_atlas", "count_" .. uv0, function (slot0)
-					setImageSprite(uv0, slot0, true)
-				end)
-
-				slot1 = LeanTween.value(go(uv1), 0, 1, 0.5)
-				slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-					uv0.alpha = slot0
-				end))
-
-				slot1:setOnComplete(System.Action(function ()
-					uv0()
-				end))
-			end,
-			function (slot0)
-				slot1 = LeanTween.value(go(uv0), 1, 0, 0.5)
-				slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-					uv0.alpha = slot0
-				end))
-
-				slot1:setOnComplete(System.Action(function ()
-					uv0()
-				end))
-			end
-		}, slot0)
-	end
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
 
 	slot4 = {}
 
 	for slot8 = 1, 3 do
-		table.insert(slot4, slot3)
+		table.insert(slot4, function (slot0)
+			slot1 = uv0.countIndex
+			uv0.countIndex = uv0.countIndex - 1
+			slot3 = GetComponent(findTF(uv1, "show"), typeof(CanvasGroup))
+
+			seriesAsync({
+				function (slot0)
+					GetSpriteFromAtlasAsync("ui/rollingBallGame_atlas", "count_" .. uv0, function (slot0)
+						setImageSprite(uv0, slot0, true)
+					end)
+					LeanTween.value(go(uv1), 0, 1, 0.5):setOnUpdate(System.Action_float(function (slot0)
+						uv0.alpha = slot0
+					end)):setOnComplete(System.Action(function ()
+						uv0()
+					end))
+				end,
+				function (slot0)
+					LeanTween.value(go(uv0), 1, 0, 0.5):setOnUpdate(System.Action_float(function (slot0)
+						uv0.alpha = slot0
+					end)):setOnComplete(System.Action(function ()
+						uv0()
+					end))
+				end
+			}, slot0)
+		end)
 	end
 
 	seriesAsync(slot4, function ()
@@ -297,10 +285,8 @@ function slot0.firstInitGrid(slot0)
 
 		for slot8 = 1, RollingBallConst.vertical do
 			if not slot0.gridDic[slot4][slot8] then
-				slot9 = {}
-
 				if slot4 > 2 and slot0.gridDic[slot4 - 2][slot8]:getType() == slot0.gridDic[slot4 - 1][slot8]:getType() then
-					table.insert(slot9, slot0.gridDic[slot4 - 2][slot8]:getType())
+					table.insert({}, slot0.gridDic[slot4 - 2][slot8]:getType())
 				end
 
 				if slot8 > 2 and slot0.gridDic[slot4][slot8 - 2]:getType() == slot0.gridDic[slot4][slot8 - 1]:getType() then
@@ -341,10 +327,8 @@ function slot0.onTimer(slot0)
 	for slot4 = #slot0.moveDatas, 1, -1 do
 		slot5 = slot0.moveDatas[slot4]
 		slot6 = slot5.grid
-		slot8 = slot6:getPosition().y
-		slot10 = slot5.endY
 
-		if slot6:getPosition().x == slot5.endX and slot8 == slot10 then
+		if slot6:getPosition().x == slot5.endX and slot6:getPosition().y == slot5.endY then
 			slot6:setEventActive(true)
 			table.remove(slot0.moveDatas, slot4)
 		else
@@ -543,9 +527,7 @@ function slot0.sortGridDic(slot0)
 
 	for slot6 = 1, #slot0.gridDic do
 		for slot10 = 1, #slot0.gridDic[slot6] do
-			slot12 = nil
-
-			if slot0.gridDic[slot6][slot10] ~= slot6 or slot12 ~= slot10 then
+			if slot0.gridDic[slot6][slot10] ~= slot6 or nil ~= slot10 then
 				table.insert(slot1, slot0.gridDic[slot6][slot10])
 
 				slot0.gridDic[slot6][slot10] = false
@@ -675,16 +657,14 @@ function slot0.updateScore(slot0, slot1)
 	end
 
 	slot2 = 10 * slot0.comboAmount
-	slot3 = 0
 
 	for slot7, slot8 in pairs(slot1) do
 		slot9 = nil
 		slot9 = slot8.amount == 3 and 1 or slot8.amount == 4 and 1.5 or 2
-		slot3 = slot3 + slot2 * slot9 * slot8.amount
-		slot10 = slot2 * slot9
+		slot3 = 0 + slot2 * slot9 * slot8.amount
 
 		for slot14 = 1, #slot8.posList do
-			slot0:addGridScoreTip(slot8.posList[slot14], slot10)
+			slot0:addGridScoreTip(slot8.posList[slot14], slot2 * slot9)
 			slot0:addRemoveEffect(slot8.posList[slot14])
 		end
 	end
@@ -718,16 +698,13 @@ end
 
 function slot0.checkGridRemove(slot0, slot1, slot2, slot3)
 	if not slot1:getRemoveFlagH() and slot2 < RollingBallConst.horizontal - 1 then
-		slot4 = 0
-		slot5 = true
 		slot6 = nil
-		slot7 = {}
 
 		for slot11 = slot2, RollingBallConst.horizontal do
-			if slot1:getType() == slot0.gridDic[slot11][slot3]:getType() and slot5 then
-				slot4 = slot4 + 1
+			if slot1:getType() == slot0.gridDic[slot11][slot3]:getType() and true then
+				slot4 = 0 + 1
 
-				table.insert(slot7, slot0.gridDic[slot11][slot3])
+				table.insert({}, slot0.gridDic[slot11][slot3])
 
 				if slot0.gridDic[slot11][slot3]:getRemoveId() then
 					slot6 = slot0.gridDic[slot11][slot3]:getRemoveId()
@@ -738,25 +715,20 @@ function slot0.checkGridRemove(slot0, slot1, slot2, slot3)
 		end
 
 		if slot4 and slot4 >= 3 then
-			slot6 = slot6 or slot0:getGridRemoveId()
-
 			for slot11 = 1, #slot7 do
-				slot7[slot11]:setRemoveFlagH(true, slot6)
+				slot7[slot11]:setRemoveFlagH(true, slot6 or slot0:getGridRemoveId())
 			end
 		end
 	end
 
 	if not slot1:getRemoveFlagV() and slot3 < RollingBallConst.vertical - 1 then
-		slot4 = 0
-		slot5 = true
 		slot6 = nil
-		slot7 = {}
 
 		for slot11 = slot3, RollingBallConst.vertical do
-			if slot1:getType() == slot0.gridDic[slot2][slot11]:getType() and slot5 then
-				slot4 = slot4 + 1
+			if slot1:getType() == slot0.gridDic[slot2][slot11]:getType() and true then
+				slot4 = 0 + 1
 
-				table.insert(slot7, slot0.gridDic[slot2][slot11])
+				table.insert({}, slot0.gridDic[slot2][slot11])
 
 				if slot0.gridDic[slot2][slot11]:getRemoveId() then
 					slot6 = slot0.gridDic[slot2][slot11]:getRemoveId()
@@ -767,10 +739,8 @@ function slot0.checkGridRemove(slot0, slot1, slot2, slot3)
 		end
 
 		if slot4 and slot4 >= 3 then
-			slot6 = slot6 or slot0:getGridRemoveId()
-
 			for slot11 = 1, #slot7 do
-				slot7[slot11]:setRemoveFlagV(true, slot6)
+				slot7[slot11]:setRemoveFlagV(true, slot6 or slot0:getGridRemoveId())
 			end
 		end
 	end
@@ -1108,10 +1078,7 @@ function slot0.addGridScoreTip(slot0, slot1, slot2)
 	slot5.localPosition = Vector3((slot1.x - 1) * RollingBallConst.grid_width, slot7, 0)
 
 	setText(findTF(slot5, "text"), "+" .. slot2)
-
-	slot8 = LeanTween.moveLocalY(go(slot5), slot7 + 30, 0.5)
-
-	slot8:setOnComplete(System.Action(function ()
+	LeanTween.moveLocalY(go(slot5), slot7 + 30, 0.5):setOnComplete(System.Action(function ()
 		uv0:returnScoreTip(uv1)
 	end))
 end

@@ -4,6 +4,7 @@ slot0.TEC_PAGE_CATCHUP_TARGET1 = 2
 slot0.TEC_PAGE_CATCHUP_TARGET2 = 3
 slot0.TEC_PAGE_CATCHUP_TARGET3 = 4
 slot0.TEC_PAGE_CATCHUP_TARGET4 = 5
+slot0.TEC_PAGE_CATCHUP_TARGET5 = 6
 slot0.TEC_PAGE_CATCHUP_ACT = 99
 slot0.PANEL_INTO_TIME = 0.15
 slot0.SELECT_TENDENCY_FADE_TIME = 0.3
@@ -12,9 +13,10 @@ slot0.CATCHUP_CLASSES = {
 	import("view.technology.TargetCatchup.TargetCatchupPanel1"),
 	import("view.technology.TargetCatchup.TargetCatchupPanel2"),
 	import("view.technology.TargetCatchup.TargetCatchupPanel3"),
-	import("view.technology.TargetCatchup.TargetCatchupPanel4")
+	import("view.technology.TargetCatchup.TargetCatchupPanel4"),
+	import("view.technology.TargetCatchup.TargetCatchupPanel5")
 }
-slot0.CATCHUP_VERSION = 4
+slot0.CATCHUP_VERSION = 5
 
 function slot0.getUIName(slot0)
 	return "TechnologySettingsUI"
@@ -162,8 +164,7 @@ function slot0.switchRightPage(slot0, slot1)
 		function (slot0)
 			if not uv0.rightPageTFList[uv1] then
 				slot1 = uv1 - 1
-				slot2 = uv0
-				slot2 = slot2:findTF("Panel/RightPanelContainer")
+				slot2 = uv0:findTF("Panel/RightPanelContainer")
 				uv0.catchupPanels[slot1] = uv2.CATCHUP_CLASSES[slot1].New(nil, function ()
 					uv0.rightPageTFList[uv1] = uv0.catchupPanels[uv2]._go
 
@@ -262,12 +263,8 @@ function slot0.updateTargetCatchupBtns(slot0)
 	for slot4, slot5 in pairs(slot0.catchupBtns) do
 		if slot4 <= uv0.CATCHUP_VERSION then
 			slot7 = slot0.technologyProxy:getCatchupState(slot4) == TechnologyCatchup.STATE_CATCHUPING
-			slot8 = slot0:findTF("UnSelect/Text", slot5)
-			slot9 = slot0:findTF("Selected/Text", slot5)
 			slot10 = slot0:findTF("UnSelect/CharImg", slot5)
 			slot11 = slot0:findTF("Selected/CharImg", slot5)
-			slot12 = slot0:findTF("ProgressText", slot10)
-			slot13 = slot0:findTF("ProgressText", slot11)
 
 			setActive(slot10, slot7)
 			setActive(slot11, slot7)
@@ -275,8 +272,8 @@ function slot0.updateTargetCatchupBtns(slot0)
 			if slot7 then
 				slot14 = slot4 > 0 and i18n("tec_target_catchup_selected_x", i18n("number_" .. slot4)) or i18n("tec_target_catchup_selected_0")
 
-				setText(slot8, slot14)
-				setText(slot9, slot14)
+				setText(slot0:findTF("UnSelect/Text", slot5), slot14)
+				setText(slot0:findTF("Selected/Text", slot5), slot14)
 
 				slot15 = slot0.technologyProxy:getCurCatchupTecInfo()
 				slot18 = slot15.printNum
@@ -284,8 +281,8 @@ function slot0.updateTargetCatchupBtns(slot0)
 
 				setImageSprite(slot10, LoadSprite("TecCatchup/QChar" .. slot17, tostring(slot17)))
 				setImageSprite(slot11, LoadSprite("TecCatchup/QChar" .. slot17, tostring(slot17)))
-				setText(slot12, slot18 .. "/" .. slot21)
-				setText(slot13, slot18 .. "/" .. slot21)
+				setText(slot0:findTF("ProgressText", slot10), slot18 .. "/" .. slot21)
+				setText(slot0:findTF("ProgressText", slot11), slot18 .. "/" .. slot21)
 			elseif slot6 == TechnologyCatchup.STATE_UNSELECT then
 				slot14 = slot4 > 0 and i18n("tec_target_catchup_none_x", i18n("number_" .. slot4)) or i18n("tec_target_catchup_none_0")
 
@@ -303,10 +300,7 @@ end
 
 function slot0.initActCatchupPage(slot0)
 	if slot0.isShowActCatchup then
-		slot1 = slot0.actCatchup
-		slot2 = slot0.loader
-
-		slot2:GetPrefab("ui/" .. slot1:getConfig("page_info").ui_name, "", function (slot0)
+		slot0.loader:GetPrefab("ui/" .. slot0.actCatchup:getConfig("page_info").ui_name, "", function (slot0)
 			setParent(slot0, uv0.actCatchupPanel)
 			setLocalScale(slot0, {
 				x = 0.925,
@@ -328,13 +322,11 @@ function slot0.initActCatchupPage(slot0)
 			end
 
 			slot3 = uv0.actCatchup.data1
-			slot4 = uv0.actCatchup
-			slot5 = pg.activity_event_blueprint_catchup[slot4:getConfig("config_id")].obtain_max
-			slot6 = uv0.actCatchup
+			slot5 = pg.activity_event_blueprint_catchup[uv0.actCatchup:getConfig("config_id")].obtain_max
 
 			updateDrop(uv0.actCatchupItemTF, {
 				type = DROP_TYPE_ITEM,
-				id = slot6:getConfig("config_client").itemid
+				id = uv0.actCatchup:getConfig("config_client").itemid
 			})
 			onButton(uv0, uv0.actCatchupItemTF, function ()
 				uv0:emit(BaseUI.ON_DROP, uv1)
@@ -353,8 +345,6 @@ function slot0.updateActCatchupBtn(slot0)
 	setText(slot0:findTF("UnSelect/Text", slot0.actCatchupBtn), i18n("tec_act_catchup_btn_word"))
 	setText(slot0:findTF("Selected/Text", slot0.actCatchupBtn), i18n("tec_act_catchup_btn_word"))
 
-	slot5 = slot0:findTF("ProgressText", slot0:findTF("UnSelect/CharImg", slot0.actCatchupBtn))
-	slot6 = slot0:findTF("ProgressText", slot0:findTF("Selected/CharImg", slot0.actCatchupBtn))
 	slot7 = false
 
 	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP) and not slot8:isEnd() then
@@ -365,8 +355,8 @@ function slot0.updateActCatchupBtn(slot0)
 
 		setImageSprite(slot3, LoadSprite("TecCatchup/QChar" .. slot11, tostring(slot11)))
 		setImageSprite(slot4, LoadSprite("TecCatchup/QChar" .. slot11, tostring(slot11)))
-		setText(slot5, slot9 .. "/" .. slot12)
-		setText(slot6, slot9 .. "/" .. slot12)
+		setText(slot0:findTF("ProgressText", slot0:findTF("UnSelect/CharImg", slot0.actCatchupBtn)), slot9 .. "/" .. slot12)
+		setText(slot0:findTF("ProgressText", slot0:findTF("Selected/CharImg", slot0.actCatchupBtn)), slot9 .. "/" .. slot12)
 
 		slot13 = slot8.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 

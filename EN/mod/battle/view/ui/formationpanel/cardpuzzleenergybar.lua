@@ -48,10 +48,8 @@ function slot2.updateEnergyProgress(slot0)
 		slot2 = slot0._max
 
 		for slot7, slot8 in ipairs(slot0._blockTFList) do
-			slot9 = slot0._blockTFList[slot7]
-
 			if slot1 > slot7 - 1 then
-				slot0:updateSingleBlock(slot9, true)
+				slot0:updateSingleBlock(slot0._blockTFList[slot7], true)
 			elseif slot10 == slot1 then
 				slot0:activeRecoverBlock(slot9)
 				slot0:updateRecoverBlock(slot9)

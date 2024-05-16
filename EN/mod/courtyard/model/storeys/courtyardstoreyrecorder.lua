@@ -18,12 +18,11 @@ function slot0.TakeSample(slot0)
 	end
 
 	slot1 = {}
-	slot2 = {}
 	slot3 = slot0.storey:GetAllFurniture()
 
 	for slot7, slot8 in pairs(slot0.furnitures) do
 		if not slot3[slot8.id] then
-			table.insert(slot2, slot8.id)
+			table.insert({}, slot8.id)
 		end
 	end
 
@@ -63,16 +62,14 @@ function slot0.HasChange(slot0)
 		return true
 	end
 
-	function slot3(slot0, slot1)
-		if not slot1 then
-			return false
-		end
-
-		return slot0.id == slot1.id and slot0.dir == slot1.dir and slot0.parent == slot1.parent and slot0.position == slot1.position
-	end
-
 	for slot7, slot8 in pairs(slot1) do
-		if not slot3(slot8, slot2[slot8.id]) then
+		if not function (slot0, slot1)
+			if not slot1 then
+				return false
+			end
+
+			return slot0.id == slot1.id and slot0.dir == slot1.dir and slot0.parent == slot1.parent and slot0.position == slot1.position
+		end(slot8, slot2[slot8.id]) then
 			return true
 		end
 	end

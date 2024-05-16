@@ -245,9 +245,8 @@ function slot0.init(slot0)
 	end
 
 	slot0.destroyPage = ShipDestroyPage.New(slot0._tf, slot0.event)
-	slot4 = slot0.destroyPage
 
-	slot4:SetCardClickCallBack(function (slot0)
+	slot0.destroyPage:SetCardClickCallBack(function (slot0)
 		uv0.blacklist[slot0.shipVO:getGroupId()] = true
 
 		if table.indexof(uv0.selectedIds, slot0.shipVO.id) and slot1 > 0 then
@@ -257,10 +256,7 @@ function slot0.init(slot0)
 		uv0:updateDestroyRes()
 		uv0:updateSelected()
 	end)
-
-	slot4 = slot0.destroyPage
-
-	slot4:SetConfirmCallBack(function ()
+	slot0.destroyPage:SetConfirmCallBack(function ()
 		slot0 = {}
 		slot1, slot2 = uv0:checkDestroyGold()
 
@@ -373,12 +369,7 @@ function slot0.showEnergyDesc(slot0, slot1, slot2)
 	slot0.energyDescTF.position = slot1
 
 	setActive(slot0.energyDescTF, true)
-
-	slot3 = LeanTween.scale(slot0.energyDescTF, Vector3.zero, 0.2)
-	slot3 = slot3:setDelay(1)
-	slot3 = slot3:setFrom(Vector3.one)
-
-	slot3:setOnComplete(System.Action(function ()
+	LeanTween.scale(slot0.energyDescTF, Vector3.zero, 0.2):setDelay(1):setFrom(Vector3.one):setOnComplete(System.Action(function ()
 		uv0.energyDescTF.localScale = Vector3.one
 
 		setActive(uv0.energyDescTF, false)
@@ -386,11 +377,8 @@ function slot0.showEnergyDesc(slot0, slot1, slot2)
 end
 
 function slot0.onUpdateItem(slot0, slot1, slot2)
-	slot3 = slot0.scrollItems[slot2] or slot0:onInitItem(slot2)
-	slot4 = slot0.shipVOs[slot1 + 1]
-
 	if slot0.contextData.selectFriend then
-		slot3:update(slot4, slot0.friends)
+		(slot0.scrollItems[slot2] or slot0:onInitItem(slot2)):update(slot0.shipVOs[slot1 + 1], slot0.friends)
 	else
 		slot3:update(slot4)
 	end
@@ -585,25 +573,19 @@ function slot0.updateBarInfo(slot0)
 end
 
 function slot0.initWorldPanel(slot0)
-	slot3 = slot0.worldPanel
-
-	onButton(slot0, slot3:Find("btn_repair"), function ()
+	onButton(slot0, slot0.worldPanel:Find("btn_repair"), function ()
 		if #uv0.selectedIds > 0 then
 			uv0:repairWorldShip(uv0.shipVOsById[uv0.selectedIds[1]])
 		end
 	end, SFX_PANEL)
-
-	slot3 = slot0.worldPanel
-
-	onButton(slot0, slot3:Find("btn_repair_all"), function ()
+	onButton(slot0, slot0.worldPanel:Find("btn_repair_all"), function ()
 		slot0 = {}
-		slot1 = 0
 
 		for slot5, slot6 in pairs(uv0.shipVOsById) do
 			if WorldConst.FetchWorldShip(slot6.id):IsBroken() or not slot7:IsHpFull() then
 				table.insert(slot0, slot7.id)
 
-				slot1 = slot1 + nowWorld():CalcRepairCost(slot7)
+				slot1 = 0 + nowWorld():CalcRepairCost(slot7)
 			end
 		end
 
@@ -622,11 +604,10 @@ end
 
 function slot0.repairWorldShip(slot0, slot1)
 	slot2 = WorldConst.FetchWorldShip(slot1.id)
-	slot3 = nowWorld():CalcRepairCost(slot2)
 
 	if slot2:IsBroken() then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("world_ship_repair_2", slot1:getName(), slot3),
+			content = i18n("world_ship_repair_2", slot1:getName(), nowWorld():CalcRepairCost(slot2)),
 			onYes = function ()
 				uv0:emit(DockyardMediator.ON_SHIP_REPAIR, {
 					uv1.id
@@ -658,17 +639,17 @@ function slot0.filter(slot0)
 		slot0:filterCommon()
 	end
 
-	slot2 = 0
-
 	if slot0.contextData.quitTeam then
-		table.insert(slot0.shipVOs, slot2 + 1, false)
+		table.insert(slot0.shipVOs, 0 + 1, false)
 	end
 
 	if slot0.contextData.priorEquipUpShipIDList then
-		slot3 = {}
+		slot3 = {
+			[slot8] = true
+		}
 
 		for slot7, slot8 in ipairs(slot0.contextData.priorEquipUpShipIDList) do
-			slot3[slot8] = true
+			-- Nothing
 		end
 
 		for slot7 = #slot0.shipVOs, 1, -1 do
@@ -698,22 +679,20 @@ function slot0.filterForRemouldAndUpgrade(slot0)
 	slot1 = slot0.isFilterLockForMod
 	slot2 = slot0.isFilterLevelForMod
 
-	function slot3(slot0)
-		slot1 = true
-
-		if not uv0 and slot0.lockState == Ship.LOCK_STATE_LOCK then
-			slot1 = false
-		end
-
-		if not uv1 and slot0.level > 1 then
-			slot1 = false
-		end
-
-		return slot1
-	end
-
 	for slot7, slot8 in pairs(slot0.shipVOsById) do
-		if slot3(slot8) then
+		if function (slot0)
+			slot1 = true
+
+			if not uv0 and slot0.lockState == Ship.LOCK_STATE_LOCK then
+				slot1 = false
+			end
+
+			if not uv1 and slot0.level > 1 then
+				slot1 = false
+			end
+
+			return slot1
+		end(slot8) then
 			table.insert(slot0.shipVOs, slot8)
 		end
 	end
@@ -850,9 +829,8 @@ function slot0.didEnter(slot0)
 		triggerToggle(slot0.assultBtn, true)
 
 		slot0.guildShipEquipmentsPage = GuildShipEquipmentsPage.New(slot0._tf, slot0.event)
-		slot1 = slot0.guildShipEquipmentsPage
 
-		slot1:SetCallBack(function ()
+		slot0.guildShipEquipmentsPage:SetCallBack(function ()
 			uv0:TriggerCard(-1)
 		end, function ()
 			uv0:TriggerCard(1)
@@ -873,12 +851,10 @@ function slot0.didEnter(slot0)
 	end)
 
 	slot0.isFormTactics = slot0.contextData.prevPage == "NewNavalTacticsMediator"
-	slot2 = slot0:findTF("off", slot1):GetComponent("Image")
-	slot3 = slot0:findTF("on", slot1):GetComponent("Image")
 
 	if slot0.isFormTactics then
-		GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "skill_off", slot2)
-		GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "skill_on", slot3)
+		GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "skill_off", slot0:findTF("off", slot1):GetComponent("Image"))
+		GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "skill_on", slot0:findTF("on", slot1):GetComponent("Image"))
 	else
 		GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "attr_off", slot2)
 		GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "attr_on", slot3)
@@ -918,10 +894,7 @@ function slot0.didEnter(slot0)
 		uv0:updateItemDetailType()
 	end, SFX_PANEL)
 	triggerButton(slot1)
-
-	slot6 = slot0.selectPanel
-
-	onButton(slot0, slot6:Find("cancel_button"), function ()
+	onButton(slot0, slot0.selectPanel:Find("cancel_button"), function ()
 		if uv0.animating then
 			return
 		end
@@ -939,10 +912,7 @@ function slot0.didEnter(slot0)
 			return
 		end
 	end, SFX_CANCEL)
-
-	slot6 = slot0.selectPanel
-
-	onButton(slot0, slot6:Find("confirm_button"), function ()
+	onButton(slot0, slot0.selectPanel:Find("confirm_button"), function ()
 		if uv0.animating then
 			return
 		end
@@ -1005,10 +975,7 @@ function slot0.didEnter(slot0)
 			end)
 		end
 	end, SFX_CONFIRM)
-
-	slot6 = slot0.selectPanel
-
-	onButton(slot0, slot6:Find("quick_select"), function ()
+	onButton(slot0, slot0.selectPanel:Find("quick_select"), function ()
 		if uv0.animating then
 			return
 		end
@@ -1027,17 +994,17 @@ function slot0.didEnter(slot0)
 			end
 		end
 
-		slot4 = {}
+		slot4 = {
+			[slot10:getGroupId()] = true
+		}
 		slot5 = {}
 
 		for slot9, slot10 in pairs(getProxy(BayProxy):getShips()) do
 			if slot10:isMaxStar() then
-				slot4[slot10:getGroupId()] = true
+				-- Nothing
 			else
-				slot11 = slot10:getMaxStar() - slot10:getStar() + 1
-
 				if slot10:GetLockState() == Ship.LOCK_STATE_UNLOCK then
-					slot11 = slot11 + 1
+					slot11 = slot10:getMaxStar() - slot10:getStar() + 1 + 1
 				end
 
 				slot5[slot10:getGroupId()] = slot5[slot10:getGroupId()] and slot12 < slot11 and slot12 or slot11
@@ -1117,13 +1084,11 @@ function slot0.didEnter(slot0)
 		slot10 = 0
 		slot11 = false
 		slot12 = false
-		slot13 = 0
-		slot14 = 0
 
 		for slot18, slot19 in ipairs(uv0.selectedIds) do
 			slot21, slot22 = uv0.shipVOsById[slot19]:calReturnRes()
-			slot13 = slot13 + slot21
-			slot14 = slot14 + slot22
+			slot13 = 0 + slot21
+			slot14 = 0 + slot22
 		end
 
 		for slot18, slot19 in ipairs(slot6) do
@@ -1201,7 +1166,7 @@ function slot0.didEnter(slot0)
 		slot0:updateSelected()
 	end
 
-	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, 2)
+	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0)
 
 	onButton(slot0, slot0.settingBtn, function ()
 		uv0.settingPanel:Load()
@@ -1232,7 +1197,7 @@ function slot0.TriggerCard(slot0, slot1)
 	slot4 = slot3
 	slot5 = nil
 
-	if not (function ()
+	if not function ()
 		uv0 = uv0 + uv1
 
 		if not uv2.shipVOs[uv0] or uv2.checkShip(slot0) then
@@ -1240,11 +1205,11 @@ function slot0.TriggerCard(slot0, slot1)
 		else
 			return uv3()
 		end
-	end)() then
+	end() then
 		return
 	end
 
-	if (function ()
+	if function ()
 		slot0 = nil
 
 		for slot4, slot5 in pairs(uv0.scrollItems) do
@@ -1256,7 +1221,7 @@ function slot0.TriggerCard(slot0, slot1)
 		end
 
 		return slot0
-	end)() and not getBounds(slot0:findTF("main/ship_container")):Intersects(getBounds(slot8.tr)) then
+	end() and not getBounds(slot0:findTF("main/ship_container")):Intersects(getBounds(slot8.tr)) then
 		slot0.shipContainer:SetNormalizedPosition(slot0.shipContainer.value + slot1 * (slot0.shipContainer:HeadIndexToValue(7) - slot0.shipContainer:HeadIndexToValue(1)), 1)
 	end
 
@@ -1285,10 +1250,10 @@ function slot0.OnSwitch(slot0, slot1, slot2, slot3)
 
 		uv2()
 	end, SFX_PANEL)
-	(function ()
+	function ()
 		setActive(uv0:Find("off"), not uv1)
 		setActive(uv0:Find("on"), uv1)
-	end)()
+	end()
 end
 
 function slot0.onBackPressed(slot0)
@@ -1327,13 +1292,10 @@ function slot0.updateShipStatusById(slot0, slot1)
 end
 
 function slot0.checkDestroyGold(slot0, slot1)
-	slot2 = 0
-	slot3 = 0
-
 	for slot7, slot8 in ipairs(slot0.selectedIds) do
 		slot10, slot11 = slot0.shipVOsById[slot8]:calReturnRes()
-		slot2 = slot2 + slot10
-		slot3 = slot3 + slot11
+		slot2 = 0 + slot10
+		slot3 = 0 + slot11
 	end
 
 	if slot1 then
@@ -1518,7 +1480,6 @@ function slot0.updateDestroyRes(slot0)
 	slot2, slot3, slot4 = ShipCalcHelper.CalcDestoryRes(_.map(slot0.selectedIds, function (slot0)
 		return uv0.shipVOsById[slot0]
 	end))
-	slot5 = slot3 == 0
 
 	if slot0.destroyResList then
 		slot0.destroyResList:make(function (slot0, slot1, slot2)
@@ -1536,19 +1497,19 @@ function slot0.updateDestroyRes(slot0)
 					else
 						slot5 = uv3[1]
 						slot4 = slot5.count
-						slot3 = pg.item_data_statistics[slot5.id].icon
+						slot3 = Item.getConfigData(slot5.id).icon
 					end
 				elseif slot1 > 1 then
 					slot5 = uv1 and uv3[slot1] or uv3[slot1 - 1]
 					slot4 = slot5.count
-					slot3 = pg.item_data_statistics[slot5.id].icon
+					slot3 = Item.getConfigData(slot5.id).icon
 				end
 
 				GetImageSpriteFromAtlasAsync(slot3, "", slot2:Find("icon"))
 				setText(slot2:Find("Text"), "X" .. slot4)
 			end
 		end)
-		slot0.destroyResList:align((slot5 and 1 or 2) + #slot4)
+		slot0.destroyResList:align((slot3 == 0 and 1 or 2) + #slot4)
 	end
 
 	if slot0.destroyPage and slot0.destroyPage:GetLoaded() and slot0.destroyPage:isShowing() then
@@ -1575,13 +1536,11 @@ function slot0.updateModAttr(slot0)
 		table.insert(slot2, slot0.shipVOsById[slot7])
 	end
 
-	slot3 = ShipModLayer.getModExpAdditions(slot0.modShip, slot2)
-
 	for slot7, slot8 in pairs(ShipModAttr.ID_TO_ATTR) do
 		if slot7 ~= ShipModLayer.IGNORE_ID then
 			slot9 = slot0.modAttrContainer:Find("attr_" .. slot7)
 
-			setText(slot9:Find("value"), slot3[slot8])
+			setText(slot9:Find("value"), ShipModLayer.getModExpAdditions(slot0.modShip, slot2)[slot8])
 			setText(slot9:Find("name"), ShipModAttr.id2Name(slot7))
 		end
 	end
@@ -1702,11 +1661,9 @@ end
 
 function slot0.uiStartAnimating(slot0)
 	slot1 = slot0:findTF("back", slot0.topPanel)
-	slot2 = 0
-	slot3 = 0.3
 
 	if isActive(slot0.selectPanel) then
-		shiftPanel(slot0.selectPanel, nil, 0, slot3, slot2, true, true)
+		shiftPanel(slot0.selectPanel, nil, 0, 0.3, 0, true, true)
 	end
 end
 
@@ -1765,11 +1722,10 @@ function slot0.closeDestroyPanel(slot0)
 end
 
 function slot0.checkDestroyShips(slot0, slot1, slot2)
-	slot3 = {}
 	slot4, slot5 = ShipCalcHelper.GetEliteAndHightLevelShips(slot1)
 
 	if #slot4 > 0 or #slot5 > 0 then
-		table.insert(slot3, function (slot0)
+		table.insert({}, function (slot0)
 			slot1 = false
 
 			if uv0.contextData.mode == uv1.MODE_DESTROY then

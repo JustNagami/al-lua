@@ -53,14 +53,12 @@ function slot0.applyToFleet(slot0, slot1, slot2, slot3)
 	if slot0.hp and not slot3 then
 		slot2:setRestHp(slot0.hp)
 
-		slot5 = bit.bor(slot5, ChapterConst.DirtyFleet)
-
 		if slot1:getChapterCell(slot2.line.row, slot2.line.column) and slot6.attachment == ChapterConst.AttachBox and slot6.flag ~= ChapterConst.CellFlagDisabled and pg.box_data_template[slot6.attachmentId].type == ChapterConst.BoxTorpedo then
 			slot6.flag = ChapterConst.CellFlagDisabled
 
 			slot1:clearChapterCell(slot6.row, slot6.column)
 
-			slot5 = bit.bor(slot5, ChapterConst.DirtyAttachment)
+			slot5 = bit.bor(bit.bor(slot5, ChapterConst.DirtyFleet), ChapterConst.DirtyAttachment)
 		end
 	end
 

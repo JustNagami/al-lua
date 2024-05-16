@@ -73,10 +73,7 @@ function slot0.update(slot0, slot1)
 
 	if slot0.proposeModel then
 		LeanTween.cancel(slot0.proposeModel)
-
-		slot2 = LeanTween.value(go(slot0.proposeModel), 0, 1, 0.4)
-
-		slot2:setOnUpdate(System.Action_float(function (slot0)
+		LeanTween.value(go(slot0.proposeModel), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
 			uv0.sg.color = Color.New(1, 1, 1, slot0)
 		end))
 	end
@@ -181,9 +178,8 @@ function slot0.flush(slot0)
 				slot0.sg.enabled = slot0:CheckHeartState()
 			elseif slot0:CheckHeartState() and not slot0.heartLoading then
 				slot0.heartLoading = true
-				slot7 = pg.PoolMgr.GetInstance()
 
-				slot7:GetUI("heartShipCard", false, function (slot0)
+				pg.PoolMgr.GetInstance():GetUI("heartShipCard", false, function (slot0)
 					if uv0.proposeModel then
 						pg.PoolMgr.GetInstance():ReturnUI("heartShipCard", slot0)
 					else
@@ -235,10 +231,8 @@ slot2 = {
 
 function slot0.updateNpcTfPosY(slot0)
 	if isActive(slot0.npc) then
-		slot1 = 1
-
 		if isActive(findTF(slot0.tr, "content/energy")) then
-			slot1 = slot1 + 1
+			slot1 = 1 + 1
 		end
 
 		if isActive(slot0.intimacyTF) then
@@ -265,18 +259,15 @@ function slot0.UpdateUser(slot0, slot1)
 	setActive(slot0.userNameTF.gameObject.transform.parent, slot3)
 
 	if slot3 and slot2 ~= slot0.user then
-		slot4 = Ship.New({
+		LoadSpriteAsync("qicon/" .. Ship.New({
 			configId = slot2.icon
-		})
-
-		LoadSpriteAsync("qicon/" .. slot4:getPrefab(), function (slot0)
+		}):getPrefab(), function (slot0)
 			uv0.userIconTF.sprite = slot0
 		end)
 
 		slot5 = AttireFrame.attireFrameRes(slot2, false, AttireConst.TYPE_ICON_FRAME, slot2.propose)
-		slot6 = PoolMgr.GetInstance()
 
-		slot6:GetPrefab("IconFrame/" .. slot5, slot5, true, function (slot0)
+		PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot5, slot5, true, function (slot0)
 			if IsNil(uv0.tr) then
 				return
 			end
@@ -339,12 +330,11 @@ function slot0.flushDetail(slot0)
 			slot13 = true
 			slot12:GetChild(0):GetComponent("Text").alignment = TextAnchor.MiddleLeft
 			slot12:GetChild(1):GetComponent("Text").alignment = TextAnchor.MiddleRight
-			slot16 = slot4[slot0.detailType][slot11]
 
 			if slot0.detailType == uv0.DetailType1 then
 				if slot11 == 6 then
 					slot17, slot18 = slot0.shipVO:getIntimacyDetail()
-					slot14.text = AttributeType.Type2Name(slot16)
+					slot14.text = AttributeType.Type2Name(slot4[slot0.detailType][slot11])
 					slot15.text = setColorStr(slot18, slot17 <= slot18 and COLOR_GREEN or COLOR_WHITE)
 				else
 					slot14.text = AttributeType.Type2Name(slot16)
@@ -405,9 +395,7 @@ function slot0.canModAttr(slot0, slot1, slot2, slot3)
 	elseif slot1:getModAttrTopLimit(slot2) == 0 then
 		return true
 	else
-		slot4 = slot1.level >= 100 or slot1.level == slot1:getMaxLevel()
-
-		return slot4 and slot1:getModAttrBaseMax(slot2) <= slot3[slot2]
+		return (slot1.level >= 100 or slot1.level == slot1:getMaxLevel()) and slot1:getModAttrBaseMax(slot2) <= slot3[slot2]
 	end
 end
 
@@ -424,10 +412,8 @@ function slot0.updateBlackBlock(slot0, slot1)
 		end
 
 		if not slot2 and slot1 then
-			slot3 = getProxy(BayProxy)
-
 			for slot7, slot8 in ipairs(slot1) do
-				if slot3:getShipById(slot8) and slot0.shipVO:isSameKind(slot9) then
+				if getProxy(BayProxy):getShipById(slot8) and slot0.shipVO:isSameKind(slot9) then
 					slot2 = slot9.id ~= slot0.shipVO.id
 
 					break
@@ -465,10 +451,8 @@ function slot0.UpdateExpBuff(slot0)
 	setActive(slot0.expBuff, slot0.activityProxy:getBuffShipList()[slot0.shipVO:getGroupId()] ~= nil)
 
 	if slot3 then
-		slot6 = tostring(slot3 / 100)
-
 		if slot3 % 100 > 0 then
-			slot6 = slot6 .. "." .. tostring(slot5)
+			slot6 = tostring(slot3 / 100) .. "." .. tostring(slot5)
 		end
 
 		setText(slot0.expBuff:Find("text"), string.format("EXP +%s%%", slot6))

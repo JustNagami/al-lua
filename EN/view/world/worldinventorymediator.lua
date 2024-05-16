@@ -53,7 +53,7 @@ function slot0.register(slot0)
 
 	slot4 = getProxy(EquipmentProxy):getEquipments(true)
 
-	for slot8, slot9 in pairs(getProxy(BayProxy):getEquipsInShips()) do
+	for slot8, slot9 in ipairs(getProxy(BayProxy):getEquipsInShips()) do
 		table.insert(slot4, slot9)
 	end
 
@@ -70,7 +70,6 @@ function slot0.listNotificationInterests(slot0)
 		GAME.DESTROY_EQUIPMENTS_DONE,
 		BagProxy.ITEM_UPDATED,
 		uv0.BATCHDESTROY_MODE,
-		GAME.EQUIP_TO_SHIP_DONE,
 		GAME.REVERT_EQUIPMENT_DONE,
 		GAME.FRAG_SELL_DONE,
 		GAME.TRANSFORM_EQUIPMENT_AWARD_FINISHED
@@ -78,10 +77,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == EquipmentProxy.EQUIPMENT_UPDATED then
-		slot0.viewComponent:setEquipment(slot3)
+		slot0.viewComponent:setEquipment(slot1:getBody())
 	elseif slot2 == GAME.USE_ITEM_DONE then
 		if table.getCount(slot3) ~= 0 then
 			slot0.viewComponent:emit(BaseUI.ON_AWARD, {

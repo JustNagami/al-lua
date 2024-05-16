@@ -260,12 +260,251 @@ pg.soundstory_template = {
 			}
 		}
 	},
+	{
+		CV_JP = "Yoko Hikasa",
+		audition_resource_CN = "",
+		audition_text = "In return... you could take a bite out of me. Whatever part you like.",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "A tipsy moment with St. Louis. \nFrom her luscious lips, temptation flows forth...",
+		name = "Your Desire is All Mine",
+		ship_id = 10213,
+		audition_resource_JP = "ss-10213-1",
+		CV_CN = "",
+		id = 7,
+		story_resource_JP = "soundStory7_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "Tomoyo Chuujou",
+		audition_resource_CN = "",
+		time = "always",
+		audition_text = "Just a little while longer. I want to stay immersed... in the harmony of our beating hearts...",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "An earbud cord brings you and Helena closer and closer. Is that static noise you hear? No, it's a steady throb; the most precious thing...",
+		ship_id = 10205,
+		audition_resource_JP = "ss-10205-1",
+		name = "Symphonious Heartbeats",
+		CV_CN = "",
+		id = 8,
+		story_resource_JP = "soundStory8_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		}
+	},
+	{
+		CV_JP = "Chiemi Tanaka",
+		audition_resource_CN = "ss-51901-1",
+		audition_text = "My, I can't tell what you're thinking at all, Commander. Shall we take a short break first? After all... the real deal is still ahead of us.",
+		story_resource_CN = "soundStory9_CN",
+		story_pic = "",
+		overview = "Ting An, while showing off her cooking skills, also wants to offer some tips for making dim sum. In this hot and humid kitchen, the temperature between the two of you is also rising...",
+		name = "Slightly Feverish Kitchen",
+		ship_id = 51901,
+		audition_resource_JP = "ss-51901-2",
+		CV_CN = "秦紫翼",
+		id = 9,
+		story_resource_JP = "soundStory9_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					4,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "Natsu Yorita",
+		audition_resource_CN = "",
+		audition_text = "Heehee... That's right. I might get sooo exhausted that I won't be able to move a muscle~",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "San Jacinto invites you to give her swimming lessons. The girl's laughter, the splashing water... The two of you soon end up with time all to yourselves. Will her heart-throbbing plan come to fruition?",
+		name = "A Girl's Secret Plans",
+		ship_id = 10730,
+		audition_resource_JP = "ss-10730-1",
+		CV_CN = "",
+		id = 10,
+		story_resource_JP = "soundStory10_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					4,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "Suzuko Mimori",
+		audition_resource_CN = "",
+		audition_text = "Hm? You say you're... intoxicated by my voice? It's \"as sweet as nectar\"?",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "You happen to run into Unzen while she is reading in the library.As the two of you read together, the atmosphere gradually becomes hazy to the sound of Unzen's voice–",
+		name = "Intoxicated by Lingering Sounds",
+		ship_id = 30319,
+		audition_resource_JP = "ss-30319-1",
+		CV_CN = "",
+		id = 11,
+		story_resource_JP = "soundStory11_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					4,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	all = {
 		1,
 		2,
 		3,
 		4,
 		5,
-		6
+		6,
+		7,
+		8,
+		9,
+		10,
+		11
 	}
 }

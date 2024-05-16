@@ -342,7 +342,12 @@ function temp()
 									g = {
 										e = {
 											n = {
-												this = true
+												this = true,
+												[" "] = {
+													["μ"] = {
+														this = true
+													}
+												}
 											}
 										}
 									}
@@ -540,6 +545,15 @@ function temp()
 			l = {
 				a = {
 					this = true
+				},
+				t = {
+					a = {
+						v = {
+							a = {
+								this = true
+							}
+						}
+					}
 				}
 			}
 		},
@@ -592,6 +606,15 @@ function temp()
 																								}
 																							}
 																						}
+																					}
+																				}
+																			}
+																		},
+																		M = {
+																			E = {
+																				T = {
+																					A = {
+																						this = true
 																					}
 																				}
 																			}
@@ -1081,6 +1104,21 @@ function temp()
 					t = {
 						s = {
 							k = {
+								y = {
+									[" "] = {
+										S = {
+											o = {
+												y = {
+													u = {
+														z = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
+								},
 								a = {
 									y = {
 										a = {
@@ -1295,7 +1333,18 @@ function temp()
 					a = {
 						n = {
 							o = {
-								this = true
+								this = true,
+								["-"] = {
+									c = {
+										h = {
+											a = {
+												n = {
+													this = true
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -1546,6 +1595,19 @@ function temp()
 				}
 			}
 		},
+		v = {
+			i = {
+				r = {
+					e = {
+						p = {
+							y = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
 		["ã"] = {
 			o = {
 				[" "] = {
@@ -1589,6 +1651,23 @@ function temp()
 					e = {
 						r = {
 							this = true
+						}
+					}
+				}
+			},
+			v = {
+				o = {
+					n = {
+						s = {
+							h = {
+								i = {
+									r = {
+										e = {
+											this = true
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -1984,6 +2063,13 @@ function temp()
 						}
 					}
 				},
+				[" "] = {
+					A = {
+						n = {
+							this = true
+						}
+					}
+				},
 				h = {
 					a = {
 						y = {
@@ -2054,7 +2140,30 @@ function temp()
 						H = {
 							a = {
 								i = {
-									this = true
+									this = true,
+									[" "] = {
+										["("] = {
+											R = {
+												e = {
+													t = {
+														r = {
+															o = {
+																f = {
+																	i = {
+																		t = {
+																			[")"] = {
+																				this = true
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -3286,7 +3395,12 @@ function temp()
 								b = {
 									l = {
 										e = {
-											this = true
+											this = true,
+											[" "] = {
+												["μ"] = {
+													this = true
+												}
+											}
 										}
 									}
 								}
@@ -3381,31 +3495,6 @@ function temp()
 				}
 			}
 		},
-		e = {
-			l = {
-				i = {
-					x = {
-						[" "] = {
-							S = {
-								c = {
-									h = {
-										u = {
-											l = {
-												t = {
-													z = {
-														this = true
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
 		r = {
 			i = {
 				e = {
@@ -3415,6 +3504,15 @@ function temp()
 								c = {
 									h = {
 										[" "] = {
+											C = {
+												a = {
+													r = {
+														l = {
+															this = true
+														}
+													}
+												}
+											},
 											d = {
 												e = {
 													r = {
@@ -3431,6 +3529,44 @@ function temp()
 																}
 															}
 														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		e = {
+			i = {
+				[" "] = {
+					Y = {
+						u = {
+							e = {
+								n = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			},
+			l = {
+				i = {
+					x = {
+						[" "] = {
+							S = {
+								c = {
+									h = {
+										u = {
+											l = {
+												t = {
+													z = {
+														this = true
 													}
 												}
 											}
@@ -3614,7 +3750,30 @@ function temp()
 						u = {
 							a = {
 								n = {
-									this = true
+									this = true,
+									[" "] = {
+										["("] = {
+											R = {
+												e = {
+													t = {
+														r = {
+															o = {
+																f = {
+																	i = {
+																		t = {
+																			[")"] = {
+																				this = true
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -4839,7 +4998,12 @@ function temp()
 			i = {
 				s = {
 					e = {
-						this = true
+						this = true,
+						[" "] = {
+							["μ"] = {
+								this = true
+							}
+						}
 					}
 				}
 			},
@@ -5120,7 +5284,12 @@ function temp()
 										i = {
 											r = {
 												e = {
-													this = true
+													this = true,
+													[" "] = {
+														["μ"] = {
+															this = true
+														}
+													}
 												}
 											}
 										}
@@ -5339,6 +5508,21 @@ function temp()
 					}
 				}
 			},
+			v = {
+				e = {
+					r = {
+						p = {
+							o = {
+								o = {
+									l = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			},
 			b = {
 				e = {
 					c = {
@@ -5449,6 +5633,22 @@ function temp()
 				}
 			}
 		},
+		u = {
+			n = {
+				g = {
+					[" "] = {
+						W = {
+							u = {
+								this = true
+							}
+						}
+					}
+				},
+				a = {
+					this = true
+				}
+			}
+		},
 		["'"] = {
 			O = {
 				p = {
@@ -5496,13 +5696,6 @@ function temp()
 		y = {
 			o = {
 				n = {
-					this = true
-				}
-			}
-		},
-		u = {
-			n = {
-				a = {
 					this = true
 				}
 			}
@@ -5894,6 +6087,34 @@ function temp()
 									E = {
 										T = {
 											A = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			[" "] = {
+				P = {
+					e = {
+						n = {
+							this = true
+						}
+					}
+				}
+			},
+			a = {
+				n = {
+					[" "] = {
+						C = {
+							h = {
+								["'"] = {
+									a = {
+										n = {
+											g = {
 												this = true
 											}
 										}
@@ -6431,7 +6652,18 @@ function temp()
 				n = {
 					e = {
 						y = {
-							this = true
+							this = true,
+							[" "] = {
+								M = {
+									E = {
+										T = {
+											A = {
+												this = true
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -6847,7 +7079,12 @@ function temp()
 					i = {
 						r = {
 							o = {
-								this = true
+								this = true,
+								[" "] = {
+									["μ"] = {
+										this = true
+									}
+								}
 							}
 						}
 					}
@@ -7083,6 +7320,17 @@ function temp()
 				}
 			}
 		},
+		u = {
+			b = {
+				i = {
+					a = {
+						n = {
+							this = true
+						}
+					}
+				}
+			}
+		},
 		["ü"] = {
 			r = {
 				n = {
@@ -7233,7 +7481,18 @@ function temp()
 						r = {
 							l = {
 								y = {
-									this = true
+									this = true,
+									[" "] = {
+										M = {
+											E = {
+												T = {
+													A = {
+														this = true
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -7441,7 +7700,12 @@ function temp()
 				g = {
 					o = {
 						u = {
-							this = true
+							this = true,
+							[" "] = {
+								["μ"] = {
+									this = true
+								}
+							}
 						}
 					}
 				}
@@ -7941,6 +8205,19 @@ function temp()
 				}
 			}
 		},
+		g = {
+			n = {
+				e = {
+					v = {
+						o = {
+							y = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
 		d = {
 			i = {
 				n = {
@@ -8128,7 +8405,18 @@ function temp()
 					i = {
 						r = {
 							e = {
-								this = true
+								this = true,
+								[" "] = {
+									M = {
+										E = {
+											T = {
+												A = {
+													this = true
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -8594,6 +8882,16 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	uv0["安"] = {
+		["森"] = {
+			this = true
 		}
 	}
 end

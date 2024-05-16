@@ -31,8 +31,7 @@ function slot0.OnLoaded(slot0)
 	slot0.statisticsBtn = slot0:findTF("bottom/statisticsBtn")
 	slot0.mainFleetBtn = slot0:findTF("bottom/mainFleetBtn")
 	slot0.subFleetBtn = slot0:findTF("bottom/subFleetBtn")
-	slot1 = slot0:findTF("chat/Text")
-	slot0.chatText = slot1:GetComponent(typeof(Text))
+	slot0.chatText = slot0:findTF("chat/Text"):GetComponent(typeof(Text))
 
 	setText(slot0.confrimBtn:Find("Text"), i18n("msgbox_text_confirm"))
 
@@ -143,9 +142,7 @@ function slot0.PlayEnterAnimation(slot0, slot1)
 	slot0.mask.localPosition = slot0:GetPaintingPosition()
 
 	if slot0.animation then
-		slot5 = slot0.animation
-
-		slot5:Play(slot0.resultPaintingData, function ()
+		slot0.animation:Play(slot0.resultPaintingData, function ()
 			uv0.rawImage.texture = nil
 
 			Object.Destroy(uv0.rawImage.gameObject)
@@ -163,9 +160,7 @@ function slot0.LoadBG(slot0, slot1)
 
 		slot1()
 	else
-		slot4 = ResourceMgr.Inst
-
-		slot4:getAssetAsync("BattleResultItems/" .. NewBattleResultUtil.Score2Bg(slot0.contextData.score), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. NewBattleResultUtil.Score2Bg(slot0.contextData.score), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0.exited or IsNil(slot0) then
 				if uv1 then
 					uv1()
@@ -214,7 +209,9 @@ function slot0.RegisterEvent(slot0, slot1)
 	end, SFX_PANEL)
 
 	if slot0.contextData.autoSkipFlag then
-		triggerButton(slot0.confrimBtn)
+		onNextTick(function ()
+			triggerButton(uv0.confrimBtn)
+		end)
 	end
 end
 
@@ -244,9 +241,7 @@ end
 
 function slot0.UpdateMetaBtn(slot0)
 	if getProxy(MetaCharacterProxy):getLastMetaSkillExpInfoList() and #slot1 > 0 then
-		slot3 = ResourceMgr.Inst
-
-		slot3:getAssetAsync("BattleResultItems/MetaBtn", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("BattleResultItems/MetaBtn", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0.exited or IsNil(slot0) then
 				return
 			end
@@ -301,32 +296,22 @@ end
 
 function slot0.UpdateShipDetail(slot0)
 	slot1 = slot0.teamType == uv0
-	slot2 = slot1 and slot0.surfaceShipTpls or slot0.subShipTpls
 	slot3, slot4 = NewBattleResultUtil.SeparateSurfaceAndSubShips(slot0.contextData.oldMainShips)
-	slot5 = slot1 and slot3 or slot4
 	slot6 = slot0.displayMode == uv1
 	slot7 = slot0.contextData.expBuff
 	slot8 = slot0.contextData.buffShips
-	slot9 = NewBattleResultUtil.GetMaxOutput(slot0.contextData.oldMainShips, slot0.contextData.statistics)
 	slot0.numeberAnimations = {}
-	slot10 = slot0:GetAnimationFlag()
 
-	for slot14, slot15 in ipairs(slot5) do
-		slot16 = slot0.contextData.statistics[slot15.id] or {}
-		slot17 = slot2[slot14]
-		slot18 = slot0.contextData.newMainShips[slot15.id]
+	for slot14, slot15 in ipairs(slot1 and slot3 or slot4) do
+		if slot0:GetAnimationFlag() then
+			slot20 = NewBattleResultShipCardAnimation.New((slot1 and slot0.surfaceShipTpls or slot0.subShipTpls)[slot14], slot6, slot15, slot0.contextData.newMainShips[slot15.id], slot0.contextData.statistics[slot15.id] or {}, NewBattleResultUtil.GetMaxOutput(slot0.contextData.oldMainShips, slot0.contextData.statistics))
 
-		function slot19()
-			setText(uv0:Find("atk"), not uv1 and (uv2.output or 0) or "EXP" .. "<color=#FFDE38>+" .. NewBattleResultUtil.GetShipExpOffset(uv3, uv4) .. "</color>")
-			setText(uv0:Find("killCount"), not uv1 and (uv2.kill_count or 0) or "Lv." .. uv4.level)
+			slot20:SetUp(function ()
+				setText(uv0:Find("atk"), not uv1 and (uv2.output or 0) or "EXP" .. "<color=#FFDE38>+" .. NewBattleResultUtil.GetShipExpOffset(uv3, uv4) .. "</color>")
+				setText(uv0:Find("killCount"), not uv1 and (uv2.kill_count or 0) or "Lv." .. uv4.level)
 
-			uv0:Find("dmg/bar"):GetComponent(typeof(Image)).fillAmount = not uv1 and (uv2.output or 0) / uv5 or uv4:getExp() / getExpByRarityFromLv1(uv4:getConfig("rarity"), uv4.level)
-		end
-
-		if slot10 then
-			slot20 = NewBattleResultShipCardAnimation.New(slot17, slot6, slot15, slot18, slot16, slot9)
-
-			slot20:SetUp(slot19)
+				uv0:Find("dmg/bar"):GetComponent(typeof(Image)).fillAmount = not uv1 and (uv2.output or 0) / uv5 or uv4:getExp() / getExpByRarityFromLv1(uv4:getConfig("rarity"), uv4.level)
+			end)
 			table.insert(slot0.numeberAnimations, slot20)
 		else
 			slot19()
@@ -339,9 +324,7 @@ end
 
 function slot7(slot0, slot1)
 	if IsNil(slot1:Find("MVP")) then
-		slot3 = ResourceMgr.Inst
-
-		slot3:getAssetAsync("BattleResultItems/MVP", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("BattleResultItems/MVP", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0.exited or IsNil(slot0) then
 				return
 			end
@@ -351,9 +334,7 @@ function slot7(slot0, slot1)
 	end
 
 	if IsNil(slot1:Find("MVPBG")) then
-		slot4 = ResourceMgr.Inst
-
-		slot4:getAssetAsync("BattleResultItems/MVPBG", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("BattleResultItems/MVPBG", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0.exited or IsNil(slot0) then
 				return
 			end
@@ -368,9 +349,7 @@ end
 
 function slot8(slot0, slot1)
 	if IsNil(slot1:Find("LevelUp")) then
-		slot3 = ResourceMgr.Inst
-
-		slot3:getAssetAsync("BattleResultItems/LevelUp", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("BattleResultItems/LevelUp", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0.exited or IsNil(slot0) then
 				return
 			end
@@ -382,9 +361,7 @@ end
 
 function slot9(slot0, slot1)
 	if IsNil(slot1:Find("Intmacy")) then
-		slot3 = ResourceMgr.Inst
-
-		slot3:getAssetAsync("ui/zhandoujiesuan_xingxing", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("ui/zhandoujiesuan_xingxing", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0.exited or IsNil(slot0) then
 				return
 			end
@@ -439,7 +416,6 @@ function slot0.InitShips(slot0, slot1)
 end
 
 function slot0.UpdateShips(slot0, slot1, slot2)
-	slot4 = slot0.teamType == uv0 and slot0.subShipTpls or slot0.surfaceShipTpls
 	slot5, slot6 = NewBattleResultUtil.SeparateSurfaceAndSubShips(slot0.contextData.oldMainShips)
 
 	slot0:LoadShipTpls(slot0.teamType == uv0 and slot0.surfaceShipTpls or slot0.subShipTpls, slot0.teamType == uv0 and slot5 or slot6, function ()
@@ -456,7 +432,7 @@ function slot0.UpdateShips(slot0, slot1, slot2)
 		uv2:StartShipsEnterAnimation(uv1, uv4 and 0.6 or 0, uv5)
 	end)
 
-	for slot12, slot13 in ipairs(slot4) do
+	for slot12, slot13 in ipairs(slot0.teamType == uv0 and slot0.subShipTpls or slot0.surfaceShipTpls) do
 		slot13:GetComponent(typeof(CanvasGroup)).alpha = 0
 	end
 end
@@ -509,9 +485,8 @@ function slot0.StartShipsEnterAnimation(slot0, slot1, slot2, slot3)
 			end
 
 			uv1.alpha = 1
-			slot1 = LeanTween.value(uv2.gameObject, uv3.x, uv4.x, uv5 - (uv6 - 1) * 0.1)
 
-			slot1:setOnUpdate(System.Action_float(function (slot0)
+			LeanTween.value(uv2.gameObject, uv3.x, uv4.x, uv5 - (uv6 - 1) * 0.1):setOnUpdate(System.Action_float(function (slot0)
 				uv0.anchoredPosition = Vector3(slot0, uv0.anchoredPosition.y, 0)
 			end))
 			onDelayTick(slot0, 0.1)
@@ -600,7 +575,7 @@ function slot0.DisplayShipDialogue(slot0, slot1)
 	if slot0.contextData.score > 1 then
 		slot2, slot4, slot3 = ShipWordHelper.GetWordAndCV(slot1.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, , slot1:getCVIntimacy())
 	else
-		slot2, slot4, slot3 = ShipWordHelper.GetWordAndCV(slot1.skinId, ShipWordHelper.WORD_TYPE_LOSE)
+		slot2, slot4, slot3 = ShipWordHelper.GetWordAndCV(slot1.skinId, ShipWordHelper.WORD_TYPE_LOSE, nil, , slot1:getCVIntimacy())
 	end
 
 	slot0.chatText.text = slot3
@@ -628,10 +603,7 @@ function slot0.PlayMvpShipVoice(slot0)
 
 	if slot4 then
 		slot0:StopVoice()
-
-		slot5 = pg.CriMgr.GetInstance()
-
-		slot5:PlaySoundEffect_V3(slot4, function (slot0)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot4, function (slot0)
 			uv0._currentVoice = slot0
 		end)
 	end
@@ -659,22 +631,18 @@ function slot0.UpdateChapterName(slot0)
 end
 
 function slot0.UpdatePlayer(slot0)
-	slot1 = slot0.contextData.oldPlayer
-	slot2 = getProxy(PlayerProxy)
-	slot2 = slot2:getRawData()
+	slot2 = getProxy(PlayerProxy):getRawData()
 	slot0.playerName.text = slot2:GetName()
 
-	function slot3()
-		uv0.playerLv.text = "Lv." .. uv1.level
-		uv0.playerExp.text = "+" .. NewBattleResultUtil.GetPlayerExpOffset(uv2, uv1)
-		uv0.playerExpLabel.text = "EXP"
-		uv0.playerExpBar.fillAmount = uv1.level == uv1:getMaxLevel() and 1 or uv1.exp / getConfigFromLevel1(pg.user_level, uv1.level).exp_interval
-	end
-
 	if not slot0.contextData.autoSkipFlag then
-		slot4 = NewBattleResultPlayerAniamtion.New(slot0.playerLv, slot0.playerExp, slot0.playerExpBar, slot2, slot1)
+		slot4 = NewBattleResultPlayerAniamtion.New(slot0.playerLv, slot0.playerExp, slot0.playerExpBar, slot2, slot0.contextData.oldPlayer)
 
-		slot4:SetUp(slot3)
+		slot4:SetUp(function ()
+			uv0.playerLv.text = "Lv." .. uv1.level
+			uv0.playerExp.text = "+" .. NewBattleResultUtil.GetPlayerExpOffset(uv2, uv1)
+			uv0.playerExpLabel.text = "EXP"
+			uv0.playerExpBar.fillAmount = uv1.level == uv1:getMaxLevel() and 1 or uv1.exp / getConfigFromLevel1(pg.user_level, uv1.level).exp_interval
+		end)
 
 		slot0.playerAniamtion = slot4
 	else

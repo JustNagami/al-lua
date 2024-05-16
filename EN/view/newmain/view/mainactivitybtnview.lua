@@ -9,8 +9,7 @@ function slot0.Ctor(slot0, slot1, slot2)
 	slot0.isInit = nil
 	slot3 = slot1:Find("actBtn")
 	slot0.linkBtnTop = slot0._tf.parent:Find("link_top")
-	slot4 = slot0._tf.parent
-	slot0.eventPanel = slot4:Find("eventPanel")
+	slot0.eventPanel = slot0._tf.parent:Find("eventPanel")
 	slot0.checkNotchRatio = NotchAdapt.CheckNotchRatio
 	slot0.activityBtns = {
 		MainActSummaryBtn.New(slot3, slot2),
@@ -22,7 +21,9 @@ function slot0.Ctor(slot0, slot1, slot2)
 		MainLanternFestivalBtn.New(slot3, slot2),
 		MainActBossRushBtn.New(slot3, slot2),
 		MainActAprilFoolBtn.New(slot3, slot2),
-		MainActMedalCollectionBtn.New(slot3, slot2)
+		MainActMedalCollectionBtn.New(slot3, slot2),
+		MainActSenranBtn.New(slot3, slot2),
+		MainActBossSingleBtn.New(slot3, slot2)
 	}
 	slot0.specailBtns = {
 		MainActInsBtn.New(slot3.parent, slot2),
@@ -30,7 +31,8 @@ function slot0.Ctor(slot0, slot1, slot2)
 		MainActRefluxBtn.New(slot0.linkBtnTop:Find("layout"), slot2),
 		MainActNewServerBtn.New(slot0.linkBtnTop:Find("layout"), slot2),
 		MainActDelegationBtn.New(slot0.eventPanel, slot2),
-		MainIslandActDelegationBtn.New(slot0.eventPanel, slot2)
+		MainIslandActDelegationBtn.New(slot0.eventPanel, slot2),
+		MainVoteEntranceBtn.New(slot0.eventPanel, slot2)
 	}
 
 	if pg.SdkMgr.GetInstance():CheckAudit() then
@@ -162,19 +164,17 @@ end
 
 function slot0.Fold(slot0, slot1, slot2)
 	slot0.lposX = slot0.lposX or slot0._tf.localPosition.x
-	slot3 = slot1 and slot0.lposX + 1200 or slot0.lposX
 
 	if slot2 == 0 then
-		slot0._go.transform.localPosition = Vector3(slot3, slot0._go.transform.localPosition.y, 0)
+		slot0._go.transform.localPosition = Vector3(slot1 and slot0.lposX + 1200 or slot0.lposX, slot0._go.transform.localPosition.y, 0)
 	else
 		LeanTween.moveLocalX(slot0._go, slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end
 
 	slot0.lposY = slot0.lposY or slot0.linkBtnTop.localPosition.y
-	slot4 = slot1 and slot0.lposY + 200 or slot0.lposY
 
 	if slot2 == 0 then
-		slot0.linkBtnTop.localPosition = Vector3(0, slot4, 0)
+		slot0.linkBtnTop.localPosition = Vector3(0, slot1 and slot0.lposY + 200 or slot0.lposY, 0)
 	else
 		LeanTween.moveLocalY(slot0.linkBtnTop.gameObject, slot4, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end

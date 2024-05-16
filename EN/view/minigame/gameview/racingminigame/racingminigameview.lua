@@ -14,29 +14,19 @@ function slot0.getShowSide(slot0)
 end
 
 function slot0.initPageUI(slot0)
-	slot1 = slot0._tf
-	slot0.rtTitlePage = slot1:Find("TitlePage")
-	slot1 = slot0.rtTitlePage
-	slot1 = slot1:Find("countdown")
-	slot2 = slot1:Find("bg")
-	slot2 = slot2:GetComponent(typeof(DftAniEvent))
+	slot0.rtTitlePage = slot0._tf:Find("TitlePage")
 
-	slot2:SetEndEvent(function ()
+	slot0.rtTitlePage:Find("countdown"):Find("bg"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:openUI()
 		uv0.gameController:StartGame()
 		pg.BgmMgr.GetInstance():ContinuePlay()
 	end)
-
-	slot2 = slot0.rtTitlePage
-	slot2 = slot2:Find("pause")
-
-	onButton(slot0, slot2:Find("window/btn_confirm"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("pause"):Find("window/btn_confirm"), function ()
 		uv0:openUI()
 		uv0.gameController:ResumeGame()
 	end, SFX_CONFIRM)
 
-	slot3 = slot0.rtTitlePage
-	slot3 = slot3:Find("exit")
+	slot3 = slot0.rtTitlePage:Find("exit")
 
 	onButton(slot0, slot3:Find("window/btn_cancel"), function ()
 		uv0:openUI()
@@ -46,11 +36,7 @@ function slot0.initPageUI(slot0)
 		uv0:openUI()
 		uv0.gameController:EndGame()
 	end, SFX_CONFIRM)
-
-	slot4 = slot0.rtTitlePage
-	slot4 = slot4:Find("result")
-
-	onButton(slot0, slot4:Find("window/btn_finish"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("result"):Find("window/btn_finish"), function ()
 		uv0:closeView()
 	end, SFX_CONFIRM)
 end

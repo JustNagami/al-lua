@@ -36,10 +36,7 @@ function slot0.execute(slot0, slot1)
 	end
 
 	print("63303 meta energy", slot5.id)
-
-	slot15 = pg.ConnectionMgr.GetInstance()
-
-	slot15:Send(63303, {
+	pg.ConnectionMgr.GetInstance():Send(63303, {
 		ship_id = slot5.id
 	}, 63304, function (slot0)
 		if slot0.result == 0 then
@@ -64,10 +61,10 @@ function slot0.execute(slot0, slot1)
 			getProxy(PlayerProxy):updatePlayer(uv4)
 
 			for slot7, slot8 in pairs(uv6) do
-				uv1:sendNotification(GAME.CONSUME_ITEM, Item.New({
-					count = slot8.count,
+				uv1:sendNotification(GAME.CONSUME_ITEM, Drop.New({
+					type = DROP_TYPE_ITEM,
 					id = slot8.itemId,
-					type = DROP_TYPE_ITEM
+					count = slot8.count
 				}))
 			end
 

@@ -65,9 +65,8 @@ function slot0.init(slot0)
 		slot0:findTF("frame/scroll_rect/tagRoot/bossrush", slot0.leftPanel)
 	}
 	slot0.ptToggles = {}
-	slot2 = getProxy(ActivityProxy)
 
-	if #_.filter(slot2:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function (slot0)
+	if #_.filter(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function (slot0)
 		return not slot0:isEnd() and tonumber(slot0:getConfig("config_data")) > 0
 	end) > 1 then
 		slot2 = slot0.toggles[3]
@@ -263,11 +262,8 @@ function slot0.switchPage(slot0, slot1, slot2)
 end
 
 function slot0.updateScoreTitle(slot0, slot1, slot2)
-	slot3 = slot0:findTF("main/frame/title")
-	slot4 = PowerRank:getTitleWord(slot1, slot2)
-
 	for slot8 = 1, 4 do
-		setText(slot3:GetChild(slot8 - 1), slot4[slot8])
+		setText(slot0:findTF("main/frame/title"):GetChild(slot8 - 1), PowerRank:getTitleWord(slot1, slot2)[slot8])
 	end
 end
 

@@ -64,11 +64,6 @@ function slot0.Move(slot0, slot1)
 end
 
 function slot0.SetPostion(slot0, slot1)
-	function slot2()
-		setActive(uv0.moveBtn, not uv1)
-		setActive(uv0.backBtn, not uv1)
-	end
-
 	slot0.bgImage.enabled = slot1
 
 	LeanTween.moveLocalX(slot0.setBtn.gameObject, slot1 and slot0.moveBtn.localPosition.x or slot0.setBtnX, 0.2)
@@ -79,7 +74,10 @@ function slot0.SetPostion(slot0, slot1)
 	end))
 
 	if slot1 then
-		slot2()
+		function ()
+			setActive(uv0.moveBtn, not uv1)
+			setActive(uv0.backBtn, not uv1)
+		end()
 	else
 		slot6:setOnComplete(System.Action(slot2))
 	end
@@ -95,16 +93,16 @@ function slot0.SavePostion(slot0)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		content = i18n("secretary_pos_save"),
 		onYes = function ()
-			getProxy(SettingsProxy):setSkinPosSetting(uv0, uv1.x, uv1.y, uv2)
+			getProxy(SettingsProxy):setSkinPosSetting(uv0.flagShip, uv1.x, uv1.y, uv2)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("secretary_pos_save_success"))
-			triggerToggle(uv3.setBtn, false)
-			uv3:emit(NewMainScene.FOLD, false)
+			triggerToggle(uv0.setBtn, false)
+			uv0:emit(NewMainScene.FOLD, false)
 		end
 	})
 end
 
 function slot0.ResetPostion(slot0)
-	getProxy(SettingsProxy):resetSkinPosSetting(slot0.flagShip.skinId)
+	getProxy(SettingsProxy):resetSkinPosSetting(slot0.flagShip)
 
 	slot0.paintingTF.anchoredPosition = Vector2(MainPaintingView.PAINT_DEFAULT_POS_X, MainPaintingView.DEFAULT_HEIGHT)
 	slot0.paintingTF.localScale = Vector3.one
@@ -136,9 +134,7 @@ function slot0.DoLeftAnimation(slot0, slot1, slot2, slot3)
 end
 
 function slot0.DoBottomAnimation(slot0, slot1, slot2)
-	slot3 = LeanTween.value(slot0.moveBtn.gameObject, slot1, slot2, 0.3)
-
-	slot3:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(slot0.moveBtn.gameObject, slot1, slot2, 0.3):setOnUpdate(System.Action_float(function (slot0)
 		uv0.moveBtn.anchoredPosition = Vector2(uv0.moveBtn.anchoredPosition.x, slot0)
 		uv0.setBtn.anchoredPosition = Vector2(uv0.setBtn.anchoredPosition.x, slot0)
 	end))

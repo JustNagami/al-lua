@@ -32,20 +32,19 @@ end
 
 function slot4.doSpawnAOE(slot0, slot1)
 	slot5 = slot1:GetPosition()
-	slot7 = uv0.Battle.BattleDataProxy.GetInstance():SpawnLastingCubeArea(uv1.AOEField.SURFACE, slot1:GetIFF(), Vector3(slot5.x + slot0._posX, 0, slot5.z + slot0._posZ), slot0._width, slot0._height, slot0._lifeTime, function (slot0)
-		for slot4, slot5 in ipairs(slot0) do
-			if slot5.Active then
-				uv0:GetUnitList()[slot5.UID]:AddBuff(uv1.Battle.BattleBuffUnit.New(uv2._buffID), true)
-			end
-		end
-	end, function (slot0)
-		if slot0.Active then
-			uv0:GetUnitList()[slot0.UID]:RemoveBuff(uv1._buffID, true)
-		end
-	end, true, slot0._fx, nil)
 
 	if slot0._expendDuration > 0 then
-		slot8 = uv0.Battle.BattleAOEScaleableComponent.New(slot7)
+		slot8 = uv0.Battle.BattleAOEScaleableComponent.New(uv0.Battle.BattleDataProxy.GetInstance():SpawnLastingCubeArea(uv1.AOEField.SURFACE, slot1:GetIFF(), Vector3(slot5.x + slot0._posX, 0, slot5.z + slot0._posZ), slot0._width, slot0._height, slot0._lifeTime, function (slot0)
+			for slot4, slot5 in ipairs(slot0) do
+				if slot5.Active then
+					uv0:GetUnitList()[slot5.UID]:AddBuff(uv1.Battle.BattleBuffUnit.New(uv2._buffID), true)
+				end
+			end
+		end, function (slot0)
+			if slot0.Active then
+				uv0:GetUnitList()[slot0.UID]:RemoveBuff(uv1._buffID, true)
+			end
+		end, true, slot0._fx, nil))
 
 		slot8:SetReferenceUnit(slot1)
 		slot8:ConfigData(slot8.EXPEND, {

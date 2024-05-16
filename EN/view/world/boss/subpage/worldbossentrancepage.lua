@@ -86,7 +86,7 @@ function slot0.UpdateCurrent(slot0)
 
 	slot1 = nil
 
-	(function ()
+	function ()
 		slot0, slot1 = WorldBossConst.GetCurrBossLeftDay()
 		uv0.currTimeTxt.text = i18n("world_boss_lefttime", slot0)
 
@@ -97,7 +97,7 @@ function slot0.UpdateCurrent(slot0)
 
 			uv0.timer:Start()
 		end
-	end)()
+	end()
 
 	slot0.currConsumeTxt.text, slot3, slot4 = WorldBossConst.GetCurrBossConsume()
 	slot0.currAccTxt.text = "<color=#ffdf5d>" .. WorldBossConst.GetCurrBossItemAcc() .. "</color>/" .. slot3
@@ -105,16 +105,14 @@ function slot0.UpdateCurrent(slot0)
 end
 
 function slot0.UpdatePast(slot0)
-	slot1, slot2, slot3 = WorldBossConst.GetAchieveBossConsume()
+	slot0.pastConsumeTxt.text, slot2, slot3 = WorldBossConst.GetAchieveBossConsume()
 	slot0.pastProgressTxt.text = WorldBossConst.GetAchieveBossItemProgress() .. "/" .. slot3
-	slot5 = WorldBossConst.GetSummonPtOldAcc()
 	slot7 = slot0.pastTr:GetComponent(typeof(Image))
 	slot8 = nil
 	slot9 = ""
 
 	if WorldBossConst.ACHIEVE_STATE_STARTING == WorldBossConst.GetAchieveState() then
-		slot0.pastAccTxt.text = "<color=#ffdf5d>" .. slot5 .. "</color>/" .. slot2
-		slot0.pastConsumeTxt.text = slot1
+		slot0.pastAccTxt.text = "<color=#ffdf5d>" .. WorldBossConst.GetSummonPtOldAcc() .. "</color>/" .. slot2
 		slot7.sprite = GetSpriteFromAtlas("MetaWorldboss" .. ("/" .. WorldBossConst.BossId2MetaId(WorldBossConst.GetArchivesId())), "useitem_archives")
 
 		slot7:SetNativeSize()

@@ -3096,6 +3096,244 @@ pg.activity_shop_extra = {
 			}
 		}
 	},
+	[112] = {
+		commodity_type = 7,
+		activity = 7015,
+		commodity_id = 301042,
+		order = 201,
+		id = 112,
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 0,
+		scene = {
+			"crusing",
+			{}
+		},
+		time = {
+			{
+				{
+					2024,
+					2,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					3,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[113] = {
+		commodity_type = 7,
+		activity = 5188,
+		commodity_id = 501021,
+		order = 201,
+		id = 113,
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 0,
+		scene = {
+			"SPRING_FESTIVAL_BACKHILL_2024",
+			{
+				isOpenRedPacket = true
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					22
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[114] = {
+		commodity_type = 7,
+		activity = 5188,
+		commodity_id = 301882,
+		order = 201,
+		id = 114,
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 0,
+		scene = {
+			"SPRING_FESTIVAL_BACKHILL_2024",
+			{
+				isOpenRedPacket = true
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					1,
+					30
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					2,
+					22
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[115] = {
+		commodity_id = 401466,
+		activity = 5243,
+		scene = "",
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 1,
+		commodity_type = 7,
+		id = 115,
+		order = 201,
+		time = {
+			{
+				{
+					2024,
+					3,
+					18
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					3,
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[116] = {
+		commodity_type = 7,
+		activity = 7016,
+		commodity_id = 301124,
+		order = 201,
+		id = 116,
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 0,
+		scene = {
+			"crusing",
+			{}
+		},
+		time = {
+			{
+				{
+					2024,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[117] = {
+		commodity_id = 100011,
+		activity = 5267,
+		scene = "",
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 0,
+		commodity_type = 7,
+		id = 117,
+		order = 10,
+		time = {
+			{
+				{
+					2024,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					4,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	get_id_list_by_commodity_type = {
 		[7] = {
 			5,
@@ -3179,7 +3417,13 @@ pg.activity_shop_extra = {
 			108,
 			109,
 			110,
-			111
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117
 		}
 	},
 	all = {
@@ -3264,6 +3508,12 @@ pg.activity_shop_extra = {
 		108,
 		109,
 		110,
-		111
+		111,
+		112,
+		113,
+		114,
+		115,
+		116,
+		117
 	}
 }

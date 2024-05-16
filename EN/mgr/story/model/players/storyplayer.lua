@@ -3,9 +3,13 @@ slot1 = 0
 slot2 = 1
 slot3 = 2
 slot4 = 3
-slot5 = 0
-slot6 = 1
-slot7 = 2
+slot5 = 4
+slot6 = 5
+slot7 = 6
+slot8 = 7
+slot9 = 0
+slot10 = 1
+slot11 = 2
 
 function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0)
@@ -25,6 +29,7 @@ function slot0.Ctor(slot0, slot1)
 	slot0.bgPanelCg = slot0.bgPanel:GetComponent(typeof(CanvasGroup))
 	slot0.bgImage = slot0:findTF("image", slot0.bgPanel):GetComponent(typeof(Image))
 	slot0.mainImg = slot0._tf:GetComponent(typeof(Image))
+	slot0.castPanel = slot0:findTF("front/cast_panel")
 	slot0.centerPanel = slot0._tf:Find("center")
 	slot0.actorPanel = slot0:findTF("actor")
 	slot0.dialoguePanel = slot0:findTF("front/dialogue")
@@ -161,6 +166,10 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 
 	seriesAsync({
 		function (slot0)
+			if not uv0:NextStage(uv1) then
+				return
+			end
+
 			parallelAsync({
 				function (slot0)
 					uv0:Reset(uv1, uv2, slot0)
@@ -185,6 +194,10 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 			slot0()
 		end,
 		function (slot0)
+			if not uv0:NextStage(uv1) then
+				return
+			end
+
 			parallelAsync({
 				function (slot0)
 					uv0:OnInit(uv1, uv2, slot0)
@@ -208,16 +221,22 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 			}, slot0)
 		end,
 		function (slot0)
-			if not uv0:ShouldDelayEvent() then
+			if not uv0:NextStage(uv1) then
+				return
+			end
+
+			if not uv2:ShouldDelayEvent() then
 				slot0()
 
 				return
 			end
 
-			uv1:DelayCall(uv0:GetEventDelayTime(), slot0)
+			uv0:DelayCall(uv2:GetEventDelayTime(), slot0)
 		end,
 		function (slot0)
-			uv0.stage = uv1
+			if not uv0:NextStage(uv1) then
+				return
+			end
 
 			if uv2:SkipEventForOption() then
 				slot0()
@@ -235,7 +254,9 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 			uv0:TriggerEventIfAuto(uv3)
 		end,
 		function (slot0)
-			uv0.stage = uv1
+			if not uv0:NextStage(uv1) then
+				return
+			end
 
 			if not uv2:ExistOption() then
 				slot0()
@@ -243,19 +264,19 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 				return
 			end
 
-			slot1 = uv0
-
-			slot1:InitBranches(uv3, uv2, function (slot0)
+			uv0:InitBranches(uv3, uv2, function (slot0)
 				uv0()
 			end, function ()
 				uv0:TriggerOptionIfAuto(uv1, uv2)
 			end)
 		end,
 		function (slot0)
-			uv0.stage = uv1
+			if not uv0:NextStage(uv1) then
+				return
+			end
+
 			uv0.autoNext = nil
-			slot1 = uv2
-			slot1 = slot1:GetNextStep(uv3)
+			slot1 = uv2:GetNextStep(uv3)
 
 			seriesAsync({
 				function (slot0)
@@ -287,10 +308,24 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 			}, slot0)
 		end,
 		function (slot0)
-			uv0:OnWillClear(uv1)
+			if not uv0:NextStage(uv1) then
+				return
+			end
+
+			uv0:OnWillClear(uv2)
 			uv0:Clear(slot0)
 		end
 	}, slot3)
+end
+
+function slot0.NextStage(slot0, slot1)
+	if slot0.stage == slot1 - 1 then
+		slot0.stage = slot1
+
+		return true
+	end
+
+	return false
 end
 
 function slot0.TriggerEventIfAuto(slot0, slot1)
@@ -415,10 +450,8 @@ function slot0.UpdateIcon(slot0, slot1, slot2)
 
 	slot0.iconImage:SetNativeSize()
 
-	slot4 = slot0.iconImage.gameObject.transform
-
 	if slot3.pos then
-		slot4.localPosition = Vector3(slot3.pos[1], slot3.pos[2], 0)
+		slot0.iconImage.gameObject.transform.localPosition = Vector3(slot3.pos[1], slot3.pos[2], 0)
 	else
 		slot4.localPosition = Vector3.one
 	end
@@ -517,36 +550,45 @@ function slot0.StartMoveNode(slot0, slot1, slot2)
 		return
 	end
 
-	slot3 = slot1:GetMovableNode()
-	slot4 = nil
+	slot4 = {}
+	slot5 = {}
 
-	seriesAsync({
-		function (slot0)
-			slot1 = uv0
+	for slot9, slot10 in pairs(slot1:GetMovableNode()) do
+		table.insert(slot4, function (slot0)
+			uv0:LoadMovableNode(uv1, function (slot0)
+				uv0[uv1] = slot0
 
-			slot1:LoadMovableNode(uv1, function (slot0)
-				uv0 = slot0
-
-				uv1()
+				uv2()
 			end)
-		end,
-		function (slot0)
-			uv0:MoveNode(uv1, uv2, uv3)
-			slot0()
-		end
-	}, slot2)
-end
+		end)
+	end
 
-function slot0.MoveNode(slot0, slot1, slot2, slot3)
-	slot0:moveLocalPath(slot2, slot3.path, slot3.time, 0, slot3.easeType, function ()
-		uv0:ClearMoveNode(uv1)
+	parallelAsync(slot4, function ()
+		uv0:MoveAllNode(uv1, uv2, uv3)
+		uv4()
 	end)
 end
 
-function slot8(slot0, slot1, slot2, slot3, slot4)
-	slot5 = PoolMgr.GetInstance()
+function slot0.MoveAllNode(slot0, slot1, slot2, slot3)
+	slot4 = {}
 
-	slot5:GetSpineChar(slot1, true, function (slot0)
+	for slot8, slot9 in pairs(slot2) do
+		table.insert(slot4, function (slot0)
+			slot1 = uv0[uv1]
+
+			uv2:moveLocalPath(uv3, slot1.path, slot1.time, slot1.delay, slot1.easeType, slot0)
+		end)
+	end
+
+	slot0.moveTargets = slot2
+
+	parallelAsync(slot4, function ()
+		uv0:ClearMoveNodes(uv1)
+	end)
+end
+
+function slot12(slot0, slot1, slot2, slot3, slot4)
+	PoolMgr.GetInstance():GetSpineChar(slot1, true, function (slot0)
 		slot0.transform:SetParent(uv0.movePanel)
 
 		slot1 = uv1.scale
@@ -555,45 +597,44 @@ function slot8(slot0, slot1, slot2, slot3, slot4)
 
 		slot0:GetComponent(typeof(SpineAnimUI)):SetAction(uv1.action, 0)
 
-		if uv3 then
-			uv3(slot0)
+		slot0.name = uv3
+
+		if uv4 then
+			uv4(slot0)
 		end
 	end)
 end
 
-function slot9(slot0, slot1, slot2, slot3)
+function slot13(slot0, slot1, slot2, slot3)
 	slot4 = GameObject.New("movable")
-	slot5 = slot4.transform
 
-	slot5:SetParent(slot0.movePanel)
+	slot4.transform:SetParent(slot0.movePanel)
 
 	slot4.transform.localScale = Vector3.zero
-	slot5 = GetOrAddComponent(slot4, typeof(Image))
+	slot5 = GetOrAddComponent(slot4, typeof(RectTransform))
+	slot6 = GetOrAddComponent(slot4, typeof(Image))
 
 	LoadSpriteAsync(slot1, function (slot0)
 		uv0.sprite = slot0
 
 		uv0:SetNativeSize()
 
-		slot1 = uv1.movePanel:GetChild(0)
-		slot1.localScale = Vector3.one
-		slot1.localPosition = uv2
+		uv1.localScale = Vector3.one
+		uv1.localPosition = uv2
 
-		uv3(slot1.gameObject)
+		uv3(uv1.gameObject)
 	end)
 end
 
 function slot0.LoadMovableNode(slot0, slot1, slot2)
-	slot3 = slot1.path[1] or Vector3.zero
-
 	if slot1.isSpine then
-		uv0(slot0, slot1.name, slot1.spineData, slot3, slot2)
+		uv0(slot0, slot1.name, slot1.spineData, slot1.path[1] or Vector3.zero, slot2)
 	else
 		uv1(slot0, slot1.name, slot3, slot2)
 	end
 end
 
-function slot0.ClearMoveNode(slot0, slot1)
+function slot0.ClearMoveNodes(slot0, slot1)
 	if not slot1:ExistMovableNode() then
 		return
 	end
@@ -602,15 +643,15 @@ function slot0.ClearMoveNode(slot0, slot1)
 		return
 	end
 
-	if slot1:GetMovableNode().isSpine then
-		if slot0.movePanel:GetChild(0):GetComponent(typeof(SpineAnimUI)) ~= nil then
-			PoolMgr.GetInstance():ReturnSpineChar(slot2.name, slot4.gameObject)
+	for slot5, slot6 in ipairs(slot0.moveTargets or {}) do
+		if slot6:GetComponent(typeof(SpineAnimUI)) ~= nil then
+			PoolMgr.GetInstance():ReturnSpineChar(slot6.name, slot6.gameObject)
 		else
-			removeAllChildren(slot0.movePanel)
+			Object.Destroy(slot6.gameObject)
 		end
-	else
-		removeAllChildren(slot0.movePanel)
 	end
+
+	slot0.moveTargets = {}
 end
 
 function slot0.FadeOutStory(slot0, slot1, slot2)
@@ -620,10 +661,8 @@ function slot0.FadeOutStory(slot0, slot1, slot2)
 		return
 	end
 
-	slot3 = slot1:GetFadeoutTime()
-
 	if not slot1:ShouldWaitFadeout() then
-		slot0:fadeTransform(slot0._go, 1, 0.3, slot3, true)
+		slot0:fadeTransform(slot0._go, 1, 0.3, slot1:GetFadeoutTime(), true)
 		slot2()
 	else
 		slot0:fadeTransform(slot0._go, 1, 0.3, slot3, true, slot2)
@@ -698,12 +737,10 @@ function slot0.fadeTransform(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	end
 
 	slot7, slot8 = slot0:GetFadeColor(slot1)
-	slot9 = LeanTween.value(go(slot1), slot2, slot3, slot4)
-	slot9 = slot9:setOnUpdate(System.Action_float(function (slot0)
-		uv0:_SetFadeColor(uv1, uv2, slot0)
-	end))
 
-	slot9:setOnComplete(System.Action(function ()
+	LeanTween.value(go(slot1), slot2, slot3, slot4):setOnUpdate(System.Action_float(function (slot0)
+		uv0:_SetFadeColor(uv1, uv2, slot0)
+	end)):setOnComplete(System.Action(function ()
 		if uv0 then
 			uv1:_RevertFadeColor(uv2, uv3)
 		end
@@ -821,10 +858,10 @@ function slot0.UpdateBg(slot0, slot1)
 			slot0.curtainCg.alpha = 1
 		end
 
-		slot4, slot5 = slot1:IsBlackFrontGround()
+		slot4, slot0.curtainFCg.alpha = slot1:IsBlackFrontGround()
 
 		if slot4 then
-			slot0.curtainFCg.alpha = slot5
+			-- Nothing
 		end
 
 		setActive(slot0.curtainF, slot4)
@@ -874,15 +911,13 @@ function slot0.LoadEffects(slot0, slot1, slot2)
 
 	for slot8, slot9 in ipairs(slot3) do
 		slot11 = slot9.active
-		slot12 = slot9.interlayer
-		slot13 = slot9.center
 		slot14 = slot9.adapt
 
 		if slot0.effectPanel:Find(slot9.name) or slot0.centerPanel:Find(slot10) then
 			setActive(slot15, slot11)
-			setParent(slot15, slot13 and slot0.centerPanel or slot0.effectPanel.transform)
+			setParent(slot15, slot9.center and slot0.centerPanel or slot0.effectPanel.transform)
 
-			if slot12 then
+			if slot9.interlayer then
 				slot0:UpdateEffectInterLayer(slot10, slot15)
 			end
 
@@ -906,6 +941,9 @@ function slot0.LoadEffects(slot0, slot1, slot2)
 				table.insert(slot4, function (slot0)
 					LoadAndInstantiateAsync(uv0, uv1, function (slot0)
 						setParent(slot0, uv0 and uv1.centerPanel or uv1.effectPanel.transform)
+
+						slot0.transform.localScale = Vector3.one
+
 						setActive(slot0, uv2)
 
 						slot0.name = uv3
@@ -942,10 +980,8 @@ function slot0.AdaptEffect(slot0, slot1)
 end
 
 function slot0.UpdateEffectInterLayer(slot0, slot1, slot2)
-	slot3 = slot0._go:GetComponent(typeof(Canvas)).sortingOrder
-
 	for slot8 = 1, slot2:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")).Length - 1 do
-		if slot3 < ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot4[slot8 - 1]) then
+		if slot0._go:GetComponent(typeof(Canvas)).sortingOrder < ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot4[slot8 - 1]) then
 			slot3 = slot10
 		end
 	end
@@ -1036,9 +1072,7 @@ function slot0.PlayVoice(slot0, slot1)
 			uv1.voiceDelayTimer = nil
 		end
 
-		slot0 = pg.CriMgr.GetInstance()
-
-		slot0:PlaySoundEffect_V3(uv2, function (slot0)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv2, function (slot0)
 			if slot0 then
 				uv0.currentVoice = slot0.playback
 			end
@@ -1047,6 +1081,7 @@ function slot0.PlayVoice(slot0, slot1)
 end
 
 function slot0.Reset(slot0, slot1, slot2, slot3)
+	setActive(slot0.castPanel, false)
 	setActive(slot0.bgPanel, false)
 	setActive(slot0.dialoguePanel, false)
 	setActive(slot0.asidePanel, false)
@@ -1066,7 +1101,7 @@ end
 
 function slot0.Clear(slot0, slot1)
 	if slot0.step then
-		slot0:ClearMoveNode(slot0.step)
+		slot0:ClearMoveNodes(slot0.step)
 	end
 
 	slot0.bgs = {}
@@ -1162,7 +1197,6 @@ end
 function slot0.StartBlinkAnimation(slot0, slot1, slot2)
 	if slot1:ShouldBlink() then
 		slot3 = slot1:GetBlinkData()
-		slot5 = slot3.number
 		slot6 = slot3.dur
 		slot7 = slot3.delay
 		slot8 = slot3.alpha[1]
@@ -1174,11 +1208,9 @@ function slot0.StartBlinkAnimation(slot0, slot1, slot2)
 
 		slot11 = {}
 
-		for slot15 = 1, slot5 do
+		for slot15 = 1, slot3.number do
 			table.insert(slot11, function (slot0)
-				slot1 = uv0
-
-				slot1:TweenAlpha(uv0.flash, uv1, uv2, uv3 / 2, 0, function ()
+				uv0:TweenAlpha(uv0.flash, uv1, uv2, uv3 / 2, 0, function ()
 					uv0:TweenAlpha(uv0.flash, uv1, uv2, uv3 / 2, uv4, uv5)
 				end)
 			end)
@@ -1211,9 +1243,7 @@ function slot0.StartBlinkWithColorAnimation(slot0, slot1, slot2)
 			slot15 = slot11[4]
 
 			table.insert(slot6, function (slot0)
-				slot1 = uv0
-
-				slot1:TweenValue(uv0.flash, uv1, uv2, uv3, uv4, function (slot0)
+				uv0:TweenValue(uv0.flash, uv1, uv2, uv3, uv4, function (slot0)
 					uv0.flashCg.alpha = slot0
 				end, slot0)
 			end)

@@ -152,10 +152,8 @@ function slot0.GetAudition(slot0, slot1)
 end
 
 function slot0.GetAuditionVoice(slot0, slot1)
-	slot2 = slot0:GetAudition(slot1)
-
 	if slot1 == uv0.LANG_TYPE_CH then
-		return slot2 .. "-CN"
+		return slot0:GetAudition(slot1) .. "-CN"
 	elseif slot1 == uv0.LANG_TYPE_JP then
 		return slot2 .. "-JP"
 	end

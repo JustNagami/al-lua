@@ -12,34 +12,27 @@ function slot0.OnLoaded(slot0)
 end
 
 function slot0.LoadList(slot0)
+	slot0._parentTF = slot0._tf.parent
 	slot0.adpter = slot0:findTF("adpter")
-	slot0.themeContainer = slot0:findTF("adpter/list")
-	slot0.scrollRect = slot0:findTF("adpter/list/mask"):GetComponent("LScrollRect")
-	slot0.scrollRectWidth = slot0:findTF("adpter/list/mask").rect.width
+	slot0.themeContainer = slot0:findTF("list/frame")
+	slot0.scrollRect = slot0:findTF("list/frame/mask"):GetComponent("LScrollRect")
+	slot0.scrollRectWidth = slot0:findTF("list/frame/mask").rect.width
+	slot0.searchInput = slot0:findTF("adpter/search")
+	slot0.searchClear = slot0.searchInput:Find("clear")
 
-	setActive(slot0:findTF("sort_bg"), true)
-
-	slot0.searchInput = slot0:findTF("search")
-	slot0.searchBtn = slot0:findTF("search/btn")
+	setText(slot0.searchInput:Find("Placeholder"), i18n("courtyard_label_search_holder"))
 end
 
 function slot0.LoadDetail(slot0)
 	slot0.purchaseBtn = slot0:findTF("adpter/descript/btn_goumai")
-	slot1 = slot0:findTF("adpter/descript/title")
-	slot0.title = slot1:GetComponent(typeof(Text))
-	slot1 = slot0:findTF("adpter/descript/desc")
-	slot0.desc = slot1:GetComponent(typeof(Text))
+	slot0.title = slot0:findTF("adpter/descript/title"):GetComponent(typeof(Text))
+	slot0.desc = slot0:findTF("adpter/descript/desc"):GetComponent(typeof(Text))
 	slot0.actualPrice = slot0:findTF("adpter/descript/price/actual_price")
-	slot1 = slot0:findTF("adpter/descript/price/actual_price/Text")
-	slot0.actualPriceTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0:findTF("adpter/descript/price/price/Text")
-	slot0.goldTxt = slot1:GetComponent(typeof(Text))
-	slot1 = slot0:findTF("preview")
-	slot0.preview = slot1:GetComponent(typeof(Image))
+	slot0.actualPriceTxt = slot0:findTF("adpter/descript/price/actual_price/Text"):GetComponent(typeof(Text))
+	slot0.goldTxt = slot0:findTF("adpter/descript/price/price/Text"):GetComponent(typeof(Text))
+	slot0.preview = slot0:findTF("preview"):GetComponent(typeof(Image))
 	slot0.descript = slot0:findTF("adpter/descript")
-	slot0.arrLeftBtn = slot0:findTF("adpter/list/zuobian")
-	slot0.arrRightBtn = slot0:findTF("adpter/list/youbian")
-	slot0.infoPage = BackYardThemeInfoPage.New(slot0._tf, slot0.event, slot0.contextData)
+	slot0.infoPage = BackYardThemeInfoPage.New(slot0._tf.parent, slot0.event, slot0.contextData)
 
 	function slot0.infoPage.OnEnter()
 		uv0:UnBlurView()
@@ -60,19 +53,7 @@ function slot0.LoadDetail(slot0)
 	onButton(slot0, slot0.purchaseBtn, function ()
 		uv0.infoPage:ExecuteAction("SetUp", uv0:GetSelectedIndex(), uv0.selected, uv0.dorm, uv0.player)
 	end, SFX_PANEL)
-
-	slot1 = slot0.scrollRect.onValueChanged
-
-	slot1:AddListener(function (slot0)
-		setActive(uv0.arrLeftBtn, slot0.x >= 0)
-		setActive(uv0.arrRightBtn, slot0.x <= 1)
-	end)
-	onButton(slot0, slot0.arrLeftBtn, function ()
-		uv0:OnSwitchToPrevTheme()
-	end, SFX_PANEL)
-	onButton(slot0, slot0.arrRightBtn, function ()
-		uv0:OnSwitchToNextTheme()
-	end, SFX_PANEL)
+	setText(slot0.purchaseBtn:Find("Text"), i18n("word_buy"))
 end
 
 function slot0.OnInit(slot0)
@@ -86,25 +67,28 @@ function slot0.OnInit(slot0)
 		uv0:OnUpdateCard(slot0, slot1)
 	end
 
-	onButton(slot0, slot0.searchBtn, function ()
+	slot0:InitInput()
+	onButton(slot0, slot0.searchClear, function ()
+		setInputText(uv0.searchInput, "")
+	end, SFX_PANEL)
+end
+
+function slot0.InitInput(slot0)
+	onInputChanged(slot0, slot0.searchInput, function ()
+		setActive(uv0.searchClear, getInputText(uv0.searchInput) ~= "")
 		uv0:OnSearchKeyChange()
-	end)
-	onInputEndEdit(slot0, slot0.searchInput, function ()
-		uv0:OnSearchKeyEditEnd()
 	end)
 end
 
 function slot0.GetData(slot0)
 	slot1 = {}
-	slot3 = getInputText(slot0.searchInput)
-	slot4 = slot0.dorm:GetPurchasedFurnitures()
-	slot5 = {}
+	slot5 = {
+		[slot10.id] = slot10:IsPurchased(slot0.dorm:GetPurchasedFurnitures()) and 1 or 0
+	}
 
 	for slot9, slot10 in ipairs(getProxy(DormProxy):GetSystemThemes()) do
-		if not slot10:IsOverTime() and slot10:MatchSearchKey(slot3) then
+		if not slot10:IsOverTime() and slot10:MatchSearchKey(getInputText(slot0.searchInput)) then
 			table.insert(slot1, slot10)
-
-			slot5[slot10.id] = slot10:IsPurchased(slot4) and 1 or 0
 		end
 	end
 
@@ -138,6 +122,10 @@ function slot0.FurnituresUpdated(slot0, slot1)
 		slot0.infoPage:ExecuteAction("FurnituresUpdated", slot1)
 	end
 
+	if slot0.card then
+		slot0:UpdatePrice(slot0.card)
+	end
+
 	slot0:InitThemeList()
 end
 
@@ -168,12 +156,6 @@ end
 
 function slot0.OnSearchKeyChange(slot0)
 	slot0:InitThemeList()
-end
-
-function slot0.OnSearchKeyEditEnd(slot0)
-	if not getInputText(slot0.searchInput) or slot1 == "" then
-		slot0:InitThemeList()
-	end
 end
 
 function slot0.CreateCard(slot0, slot1)
@@ -239,16 +221,13 @@ function slot0.UpdateMainPage(slot0, slot1)
 		return
 	end
 
-	slot0.title.text = slot1:getConfig("name")
+	slot0.title.text = string.gsub(string.gsub(slot1:getConfig("name"), "<size=%d+>", ""), "</size>", "")
 	slot0.desc.text = slot1:getConfig("desc")
-	slot2 = slot1:getConfig("discount")
+	slot4 = slot1:getConfig("discount")
 
 	setActive(slot0.actualPrice, slot1:HasDiscount())
-
-	slot0.goldTxt.text, slot0.actualPriceTxt.text = slot0:CalcThemePrice(slot1)
-	slot6 = slot0.largeSpLoader
-
-	slot6:LoadSpriteAsync("BackYardTheme/theme_" .. slot1.id, function (slot0)
+	slot0:UpdatePrice(slot1)
+	slot0.largeSpLoader:LoadSpriteAsync("BackYardTheme/theme_" .. slot1.id, function (slot0)
 		if IsNil(uv0.preview) then
 			return
 		end
@@ -260,16 +239,28 @@ function slot0.UpdateMainPage(slot0, slot1)
 	slot0.card = slot1
 end
 
-function slot0.CalcThemePrice(slot0, slot1)
-	slot3 = 0
-	slot4 = 0
+function slot0.UpdatePrice(slot0, slot1)
+	slot0.goldTxt.text, slot0.actualPriceTxt.text = slot0:CalcThemePrice(slot1)
+end
+
+function slot0.GetAddList(slot0, slot1)
+	slot2 = {}
 
 	for slot8, slot9 in ipairs(slot1:GetFurnitures()) do
-		slot10 = Furniture.New({
-			id = slot9
-		})
-		slot4 = slot4 + slot10:getConfig("dorm_icon_price")
-		slot3 = slot3 + slot10:getPrice(PlayerConst.ResDormMoney)
+		if not slot0.dorm:GetPurchasedFurnitures()[slot9] then
+			table.insert(slot2, Furniture.New({
+				id = slot9
+			}))
+		end
+	end
+
+	return slot2
+end
+
+function slot0.CalcThemePrice(slot0, slot1)
+	for slot8, slot9 in ipairs(slot0:GetAddList(slot1)) do
+		slot4 = 0 + slot9:getConfig("dorm_icon_price")
+		slot3 = 0 + slot9:getPrice(PlayerConst.ResDormMoney)
 	end
 
 	return slot3, slot4
@@ -312,11 +303,9 @@ function slot0.OnSwitchToNextTheme(slot0)
 		return false
 	end
 
-	function slot4(slot0)
+	if not uv0(slot0.cards, slot0.disPlays[slot1 + 1]) or slot3 and function (slot0)
 		return go(uv0.scrollRect).transform.localPosition.x + uv0.scrollRectWidth / 2 < go(uv0.scrollRect).transform.parent:InverseTransformPoint(slot0._tf.position).x
-	end
-
-	if not uv0(slot0.cards, slot0.disPlays[slot1 + 1]) or slot3 and slot4(slot3) then
+	end(slot3) then
 		slot0.scrollRect:ScrollTo(slot0.scrollRect.value + uv1(slot0.scrollRect, 1, 2), true)
 
 		slot3 = uv0(slot0.cards, slot2)
@@ -334,11 +323,9 @@ function slot0.OnSwitchToPrevTheme(slot0)
 		return false
 	end
 
-	function slot4(slot0)
+	if not uv0(slot0.cards, slot0.disPlays[slot1 - 1]) or slot3 and function (slot0)
 		return go(uv0.scrollRect).transform.parent:InverseTransformPoint(slot0._tf.position).x < go(uv0.scrollRect).transform.localPosition.x - uv0.scrollRectWidth / 2
-	end
-
-	if not uv0(slot0.cards, slot0.disPlays[slot1 - 1]) or slot3 and slot4(slot3) then
+	end(slot3) then
 		slot0.scrollRect:ScrollTo(slot0.scrollRect.value - uv1(slot0.scrollRect, 1, 2), true)
 
 		slot3 = uv0(slot0.cards, slot2)
@@ -369,17 +356,16 @@ function slot0.Hide(slot0)
 end
 
 function slot0.BlurView(slot0)
-	pg.UIMgr.GetInstance():OverlayPanelPB(slot0.descript, {
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.adpter, {
 		pbList = {
-			slot0.descript
-		}
+			slot0:findTF("adpter/descript")
+		},
+		weight = LayerWeightConst.SECOND_LAYER
 	})
-	SetParent(slot0.adpter, pg.UIMgr.GetInstance().OverlayMain)
 end
 
 function slot0.UnBlurView(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.descript, slot0._tf)
-	SetParent(slot0.adpter, slot0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.adpter, slot0._tf)
 end
 
 function slot0.OnDestroy(slot0)
@@ -398,10 +384,7 @@ function slot0.OnDestroy(slot0)
 		slot0.infoPage:Destroy()
 	end
 
-	slot1 = pairs
-	slot2 = slot0.cards or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.cards or {}) do
 		slot5:Dispose()
 	end
 

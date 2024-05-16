@@ -17,14 +17,10 @@ function slot0.initCountUI(slot0)
 	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
 	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
 	slot0.countDft = GetOrAddComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
-	slot1 = slot0.countDft
 
-	slot1:SetTriggerEvent(function ()
+	slot0.countDft:SetTriggerEvent(function ()
 	end)
-
-	slot1 = slot0.countDft
-
-	slot1:SetEndEvent(function ()
+	slot0.countDft:SetEndEvent(function ()
 		uv0._event:emit(BeachGuardGameView.COUNT_DOWN)
 	end)
 end
@@ -32,6 +28,7 @@ end
 function slot0.initLeavelUI(slot0)
 	slot0.leaveUI = findTF(slot0._tf, "pop/LeaveUI")
 
+	GetComponent(findTF(slot0.leaveUI, "ad/desc"), typeof(Image)):SetNativeSize()
 	setActive(slot0.leaveUI, false)
 	onButton(slot0._event, findTF(slot0.leaveUI, "ad/btnOk"), function ()
 		uv0:resumeGame()
@@ -46,6 +43,7 @@ end
 function slot0.initPauseUI(slot0)
 	slot0.pauseUI = findTF(slot0._tf, "pop/pauseUI")
 
+	GetComponent(findTF(slot0.pauseUI, "ad/desc"), typeof(Image)):SetNativeSize()
 	setActive(slot0.pauseUI, false)
 	onButton(slot0._event, findTF(slot0.pauseUI, "ad/btnOk"), function ()
 		uv0:resumeGame()

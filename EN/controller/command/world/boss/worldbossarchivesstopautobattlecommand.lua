@@ -11,9 +11,8 @@ function slot0.execute(slot0, slot1)
 
 	slot7 = slot6.hp
 	slot8 = slot5:GetHighestDamage()
-	slot9 = pg.ConnectionMgr.GetInstance()
 
-	slot9:Send(34525, {
+	pg.ConnectionMgr.GetInstance():Send(34525, {
 		boss_id = slot3
 	}, 34526, function (slot0)
 		if slot0.result == 0 then

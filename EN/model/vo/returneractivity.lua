@@ -72,9 +72,9 @@ function slot0.ShouldAcceptTasksIfReturner(slot0)
 		return uv0:getTaskById(slot0) == nil and uv0:getFinishTaskById(slot0) == nil
 	end) or _.all(slot3[slot1], function (slot0)
 		return uv0:getFinishTaskById(slot0) ~= nil
-	end) and not (slot1 == #slot3) and (function ()
+	end) and not (slot1 == #slot3) and function ()
 		return uv1 < pg.TimeMgr.GetInstance():DiffDay(uv0:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1
-	end)()
+	end()
 end
 
 function slot0.getDataConfigTable(slot0, slot1)

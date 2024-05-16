@@ -2,9 +2,8 @@ slot0 = class("LimitChallengeReqCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot4 = pg.ConnectionMgr.GetInstance()
 
-	slot4:Send(24020, {
+	pg.ConnectionMgr.GetInstance():Send(24020, {
 		type = 1
 	}, 24021, function (slot0)
 		if slot0.result == 0 then

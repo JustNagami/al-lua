@@ -4,6 +4,7 @@ slot0.MODE_DIALOGUE = 2
 slot0.MODE_BG = 3
 slot0.MODE_CAROUSE = 4
 slot0.MODE_VEDIO = 5
+slot0.MODE_CAST = 6
 slot0.STORY_AUTO_SPEED = {
 	-9,
 	0,
@@ -23,9 +24,17 @@ function slot0.GetStoryStepCls(slot0)
 		DialogueStep,
 		BgStep,
 		CarouselStep,
-		VedioStep
+		VedioStep,
+		CastStep
 	})[slot0]
 end
+
+slot0.PLAYER = 2
+slot0.TB = 4
+slot0.PlaceholderMap = {
+	playername = slot0.PLAYER,
+	tb = slot0.TB
+}
 
 function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.name = slot1.id
@@ -36,6 +45,16 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.skipTip = defaultValue(slot1.skipTip, true)
 	slot0.noWaitFade = defaultValue(slot1.noWaitFade, false)
 	slot0.dialogueBox = slot1.dialogbox or 1
+	slot0.defaultTb = slot1.defaultTb
+	slot0.placeholder = 0
+
+	for slot9, slot10 in ipairs(slot1.placeholder or {}) do
+		slot11 = uv0.PlaceholderMap[slot10] or 0
+
+		assert(slot11 > 0, slot10)
+
+		slot0.placeholder = bit.bor(slot0.placeholder, slot11)
+	end
 
 	if UnGamePlayState then
 		slot0.speedData = slot1.speed or 0
@@ -44,17 +63,18 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 	end
 
 	slot0.steps = {}
-	slot6 = 0
 	slot7 = slot3 or {}
 	slot8 = {}
 
-	for slot12, slot13 in ipairs(slot1.scripts) do
+	for slot12, slot13 in ipairs(slot1.scripts or {}) do
 		slot16 = uv0.GetStoryStepCls(slot13.mode or slot0.mode).New(slot13)
 
 		slot16:SetId(slot12)
+		slot16:SetPlaceholderType(slot0:GetPlaceholder())
+		slot16:SetDefaultTb(slot0.defaultTb)
 
 		if slot16:ExistOption() then
-			if slot7[slot6 + 1] then
+			if slot7[0 + 1] then
 				slot16:SetOptionSelCodes(slot7[slot6])
 			end
 
@@ -72,7 +92,10 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 		table.insert(slot0.steps, slot16)
 	end
 
-	table.insert(slot8, #slot0.steps)
+	if #slot0.steps > 0 then
+		table.insert(slot8, #slot0.steps)
+	end
+
 	slot0:HandleRecallOptions(slot8)
 
 	slot0.branchCode = nil
@@ -91,32 +114,6 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 end
 
 function slot0.HandleRecallOptions(slot0, slot1)
-	function slot2(slot0, slot1)
-		slot2 = uv0.steps[slot0]
-		slot3 = {}
-
-		for slot7 = slot0, slot1 do
-			table.insert(slot3, uv0.steps[slot7])
-		end
-
-		return {
-			slot3,
-			slot2:GetOptionCnt(),
-			slot1,
-			slot0
-		}
-	end
-
-	function slot3(slot0)
-		for slot4 = slot0, 1, -1 do
-			if uv0.steps[slot4] and slot5.branchCode ~= nil then
-				return slot4
-			end
-		end
-
-		assert(false)
-	end
-
 	slot4 = {}
 
 	for slot8, slot9 in ipairs(slot1) do
@@ -124,7 +121,29 @@ function slot0.HandleRecallOptions(slot0, slot1)
 			slot12 = slot1[slot8 + 1]
 
 			if slot9 and slot12 then
-				table.insert(slot4, slot2(slot11, slot3(slot12)))
+				table.insert(slot4, function (slot0, slot1)
+					slot2 = uv0.steps[slot0]
+					slot3 = {}
+
+					for slot7 = slot0, slot1 do
+						table.insert(slot3, uv0.steps[slot7])
+					end
+
+					return {
+						slot3,
+						slot2:GetOptionCnt(),
+						slot1,
+						slot0
+					}
+				end(slot11, function (slot0)
+					for slot4 = slot0, 1, -1 do
+						if uv0.steps[slot4] and slot5.branchCode ~= nil then
+							return slot4
+						end
+					end
+
+					assert(false)
+				end(slot12)))
 			end
 		end
 	end
@@ -133,22 +152,27 @@ function slot0.HandleRecallOptions(slot0, slot1)
 
 	for slot9, slot10 in ipairs(slot4) do
 		slot11 = slot10[1]
-		slot13 = slot10[3]
 		slot14 = slot10[4]
 
 		for slot18 = 1, slot10[2] - 1 do
-			slot19 = slot13 + slot5
-
 			for slot23, slot24 in ipairs(slot11) do
 				slot25 = Clone(slot24)
 
 				slot25:SetId(slot14)
-				table.insert(slot0.steps, slot19 + slot23, slot25)
+				table.insert(slot0.steps, slot10[3] + slot5 + slot23, slot25)
 			end
 		end
 
 		slot5 = slot5 + (slot12 - 1) * #slot11
 	end
+end
+
+function slot0.GetPlaceholder(slot0)
+	return slot0.placeholder
+end
+
+function slot0.ShouldReplaceContent(slot0)
+	return slot0.placeholder > 0
 end
 
 function slot0.GetDialogueStyleName(slot0)

@@ -2,9 +2,8 @@ slot0 = class("GetBackYardVisitorCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody().callback
-	slot4 = pg.ConnectionMgr.GetInstance()
 
-	slot4:Send(19024, {
+	pg.ConnectionMgr.GetInstance():Send(19024, {
 		type = 0
 	}, 19025, function (slot0)
 		if slot0.visitor and slot0.visitor.ship_template ~= 0 then

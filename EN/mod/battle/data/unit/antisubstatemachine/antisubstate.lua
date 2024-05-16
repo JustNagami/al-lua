@@ -28,18 +28,14 @@ function slot3.Update(slot0, slot1, slot2)
 		slot0:resetVigilantDecay()
 	end
 
-	slot3 = pg.TimeMgr.GetInstance():GetCombatTime()
-
 	if slot0._vigilantDecayTimeStamp then
-		slot0:updateVigilantDecay(slot3)
+		slot0:updateVigilantDecay(pg.TimeMgr.GetInstance():GetCombatTime())
 	elseif slot0._currentState:CanDecay() and slot1 + slot2 == 0 then
 		slot0._vigilantDecayTimeStamp = slot3
 	end
 
-	slot4 = slot0._currentState:GetMeterSpeed()
-
 	if slot0._decayFlag then
-		slot4 = math.min(0, slot4)
+		slot4 = math.min(0, slot0._currentState:GetMeterSpeed())
 	end
 
 	slot0._vigilantValue = math.clamp(slot0._vigilantValue + slot4, 0, 100)
@@ -109,9 +105,7 @@ end
 function slot3.SonarDetect(slot0, slot1)
 	slot0:DispatchSonarCheck()
 
-	slot2 = slot1 > 0
-
-	if slot0._lastSonarDected and slot2 then
+	if slot0._lastSonarDected and slot1 > 0 then
 		slot0:OnEngageState()
 	elseif slot2 then
 		slot0:OnVigilantState()

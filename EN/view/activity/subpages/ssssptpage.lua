@@ -117,11 +117,10 @@ function slot0.OnUpdateFlush(slot0)
 end
 
 function slot0.IsSpecialPhase(slot0)
-	slot1 = slot0.ptData:GetLevelProgress()
 	slot2 = false
 
 	for slot6, slot7 in ipairs(uv0) do
-		if slot1 == slot7[1] then
+		if slot0.ptData:GetLevelProgress() == slot7[1] then
 			slot2 = true
 		end
 	end

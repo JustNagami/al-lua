@@ -46,10 +46,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.WORKBENCH_COMPOSITE_DONE then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3)
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1:getBody())
 	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
 		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_WORKBENCH or slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG or slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
 			slot0.viewComponent:BuildActivityEnv()

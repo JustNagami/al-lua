@@ -20,9 +20,7 @@ function slot0.Update(slot0, slot1)
 			slot0.weatherPrefabs[slot6] = true
 
 			if pg.weather_data_template[slot6].icon and #slot8 > 0 then
-				slot9 = slot0:GetLoader()
-
-				slot9:GetPrefab("ui/" .. slot8, slot8, function (slot0)
+				slot0:GetLoader():GetPrefab("ui/" .. slot8, slot8, function (slot0)
 					setParent(slot0, uv0.tf)
 					setActive(slot0, true)
 					uv0:OnLoadedPrefab(slot0, uv1)
@@ -49,10 +47,9 @@ end
 function slot0.OnLoadedPrefab(slot0, slot1, slot2)
 	if slot2 == ChapterConst.FlagWeatherFog then
 		slot3 = tf(slot1).childCount
-		slot4 = math.random(1, slot3)
 
 		for slot8 = 1, slot3 do
-			setActive(tf(slot1):GetChild(slot8 - 1), slot8 == slot4)
+			setActive(tf(slot1):GetChild(slot8 - 1), slot8 == math.random(1, slot3))
 		end
 	end
 end

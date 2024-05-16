@@ -1,11 +1,9 @@
 slot0 = class("WorldTriggerDailyTaskCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot4 = nowWorld()
-	slot4 = slot4:GetTaskProxy()
-	slot5 = pg.ConnectionMgr.GetInstance()
+	slot4 = nowWorld():GetTaskProxy()
 
-	slot5:Send(33415, {
+	pg.ConnectionMgr.GetInstance():Send(33415, {
 		task_list = slot1:getBody().taskIds
 	}, 33416, function (slot0)
 		if slot0.result == 0 then

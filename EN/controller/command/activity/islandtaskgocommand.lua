@@ -3,10 +3,8 @@ slot0 = class("IslandTaskGoCommand", pm.SimpleCommand)
 function slot0.execute(slot0, slot1)
 	if slot1.body.taskVO:getConfig("scene") and #slot4 > 0 then
 		if slot4[1] == "ANNIVERSARY_ISLAND_SEA" then
-			slot7 = slot4[2].nodeIds
-
 			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(SixthAnniversaryIslandMediator) then
-				slot0:sendNotification(SixthAnniversaryIslandMediator.DISPLAY_NODES, slot7)
+				slot0:sendNotification(SixthAnniversaryIslandMediator.DISPLAY_NODES, slot4[2].nodeIds)
 			else
 				slot0:sendNotification(GAME.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA, {
 					nodeIds = slot7
@@ -47,19 +45,17 @@ function slot0.execute(slot0, slot1)
 				})
 			end
 		elseif slot4[1] == "ISLAND_BUILDING" then
-			slot8 = Context.New({
-				mediator = AnniversaryIslandBuildingUpgrade2023WindowMediator,
-				viewComponent = AnniversaryIslandBuildingUpgrade2023Window,
-				data = {
-					isLayer = true,
-					buildingID = slot4[2].build
-				}
-			})
-
 			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(AnniversaryIsland2023Mediator) then
 				slot0:sendNotification(GAME.LOAD_LAYERS, {
 					parentContext = slot6,
-					context = slot8
+					context = Context.New({
+						mediator = AnniversaryIslandBuildingUpgrade2023WindowMediator,
+						viewComponent = AnniversaryIslandBuildingUpgrade2023Window,
+						data = {
+							isLayer = true,
+							buildingID = slot4[2].build
+						}
+					})
 				})
 			else
 				slot6 = Context.New()

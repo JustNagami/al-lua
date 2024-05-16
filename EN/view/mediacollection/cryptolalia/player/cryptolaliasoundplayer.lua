@@ -8,10 +8,7 @@ function slot0.Load(slot0, slot1, slot2, slot3, slot4)
 		slot0:Play(slot1, slot2, slot3, slot4)
 	else
 		slot0:Unload()
-
-		slot5 = pg.CriMgr.GetInstance()
-
-		slot5:LoadCueSheet(slot1, function (slot0)
+		pg.CriMgr.GetInstance():LoadCueSheet(slot1, function (slot0)
 			uv0.preCvCueSheetName = uv1
 
 			if slot0 then
@@ -26,20 +23,18 @@ end
 function slot0.Play(slot0, slot1, slot2, slot3, slot4)
 	slot0:Stop()
 
-	function slot5()
-		pg.CriMgr.GetInstance():PlayCV_V3(uv0, uv1, function (slot0)
-			if slot0 then
-				uv0._currentVoice = slot0.playback
-
-				uv1(slot0:GetLength() * 0.001)
-			else
-				uv1(-1)
-			end
-		end)
-	end
-
 	if (slot3 or 0) <= 0 then
-		slot5()
+		function ()
+			pg.CriMgr.GetInstance():PlayCV_V3(uv0, uv1, function (slot0)
+				if slot0 then
+					uv0._currentVoice = slot0.playback
+
+					uv1(slot0:GetLength() * 0.001)
+				else
+					uv1(-1)
+				end
+			end)
+		end()
 	else
 		slot0.timer = Timer.New(slot5, slot3, 1)
 

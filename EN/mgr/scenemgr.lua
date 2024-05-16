@@ -28,18 +28,16 @@ function slot1.prepare(slot0, slot1, slot2, slot3)
 
 		slot8 = nil
 
-		function slot8()
-			uv0.event:disconnect(BaseUI.LOADED, uv1)
-
-			uv2 = uv3.New(uv0)
-
-			uv2:setContextData(uv4.data)
-			uv5:registerMediator(uv2)
-			uv6(uv2)
-		end
-
 		if slot7:isLoaded() then
-			slot8()
+			function ()
+				uv0.event:disconnect(BaseUI.LOADED, uv1)
+
+				uv2 = uv3.New(uv0)
+
+				uv2:setContextData(uv4.data)
+				uv5:registerMediator(uv2)
+				uv6(uv2)
+			end()
 		else
 			slot7.event:connect(BaseUI.LOADED, slot8)
 			slot7:load()
@@ -49,12 +47,11 @@ end
 
 function slot1.prepareLayer(slot0, slot1, slot2, slot3, slot4)
 	slot5 = {}
-	slot6 = {}
 
 	if slot2 ~= nil then
 		if slot2:getContextByMediator(slot3.mediator) then
 			originalPrint("mediator already exist: " .. slot3.mediator.__cname)
-			slot4(slot6)
+			slot4({})
 
 			return
 		end
@@ -69,7 +66,7 @@ function slot1.prepareLayer(slot0, slot1, slot2, slot3, slot4)
 
 	slot7 = nil
 
-	(function ()
+	function ()
 		if #uv0 > 0 then
 			for slot4, slot5 in ipairs(table.remove(uv0, 1).children) do
 				table.insert(uv0, slot5)
@@ -87,7 +84,7 @@ function slot1.prepareLayer(slot0, slot1, slot2, slot3, slot4)
 		end
 
 		uv5(uv3)
-	end)()
+	end()
 end
 
 function slot1.enter(slot0, slot1, slot2)
@@ -230,8 +227,6 @@ function slot1.remove(slot0, slot1, slot2, slot3)
 end
 
 function slot1.gc(slot0, slot1)
-	slot2 = slot1:forceGC()
-
 	table.clear(slot1)
 
 	slot1.exited = true
@@ -239,7 +234,7 @@ function slot1.gc(slot0, slot1)
 	if not GCThread.GetInstance().running then
 		slot0._gcCounter = slot0._gcCounter + 1
 
-		if slot0._gcLimit <= slot0._gcCounter or slot2 then
+		if slot0._gcLimit <= slot0._gcCounter or slot1:forceGC() then
 			slot0._gcCounter = 0
 
 			gcAll(false)

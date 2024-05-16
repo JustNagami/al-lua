@@ -52,35 +52,16 @@ function slot0.GetCardCost(slot0)
 end
 
 function slot0.UpdateView(slot0)
-	slot4 = slot0.data
+	setImageSprite(slot0.iconTF, LoadSprite(slot0.data:GetIconPath(), ""), true)
+	setImageSprite(slot0.iconBG, LoadSprite("ui/CardTowerCardView_atlas", slot0:GetSkillIconBG(slot0.data:GetType())))
+	setImageSprite(slot0.bgTF, LoadSprite("ui/CardTowerCardView_atlas", slot0:GetRarityBG(slot0.data:GetRarity())))
+	setText(slot0.nameTF, slot0.data:GetName())
+	setText(slot0.descTF, slot0.data:GetDesc())
+	setText(slot0.costTF, slot0.data:GetCost())
 
-	setImageSprite(slot0.iconTF, LoadSprite(slot4:GetIconPath(), ""), true)
+	slot1 = slot0.data:GetKeywords()
 
-	slot7 = slot0.data
-
-	setImageSprite(slot0.iconBG, LoadSprite("ui/CardTowerCardView_atlas", slot0:GetSkillIconBG(slot7:GetType())))
-
-	slot7 = slot0.data
-
-	setImageSprite(slot0.bgTF, LoadSprite("ui/CardTowerCardView_atlas", slot0:GetRarityBG(slot7:GetRarity())))
-
-	slot3 = slot0.data
-
-	setText(slot0.nameTF, slot3:GetName())
-
-	slot3 = slot0.data
-
-	setText(slot0.descTF, slot3:GetDesc())
-
-	slot3 = slot0.data
-
-	setText(slot0.costTF, slot3:GetCost())
-
-	slot1 = slot0.data
-	slot1 = slot1:GetKeywords()
-	slot5 = slot0.keywordListContainer
-
-	UIItemList.StaticAlign(slot0.keywordListContainer, slot5:GetChild(0), #_.filter(slot1, function (slot0)
+	UIItemList.StaticAlign(slot0.keywordListContainer, slot0.keywordListContainer:GetChild(0), #_.filter(slot1, function (slot0)
 		return slot0.affix_type == uv0.AFFIX_TYPE.AFFIX and slot0.show == 0
 	end), function (slot0, slot1, slot2)
 		if slot0 ~= UIItemList.EventUpdate then

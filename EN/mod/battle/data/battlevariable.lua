@@ -60,9 +60,7 @@ slot7 = 0
 slot8 = 0
 
 function slot1.UpdateCameraPositionArgs()
-	slot1 = uv0._camera.orthographicSize
-
-	if uv0._lastCameraPos == uv0._cameraTF.position and uv0._lastCameraSize == slot1 then
+	if uv0._lastCameraPos == uv0._cameraTF.position and uv0._lastCameraSize == uv0._camera.orthographicSize then
 		return
 	else
 		uv0._lastCameraPos = slot0

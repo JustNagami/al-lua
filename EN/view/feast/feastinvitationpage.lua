@@ -72,10 +72,8 @@ function slot0.Show(slot0)
 end
 
 function slot0.UpdateRes(slot0)
-	slot1 = getProxy(FeastProxy)
-	slot1, slot2 = slot1:GetConsumeList()
-	slot3 = getProxy(ActivityProxy)
-	slot3 = slot3:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+	slot1, slot2 = getProxy(FeastProxy):GetConsumeList()
+	slot3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 	slot0.ticketCnt = slot3:getVitemNumber(slot1)
 	slot0.giftCnt = slot3:getVitemNumber(slot2)
 	slot0.resTicket.text = slot0.ticketCnt

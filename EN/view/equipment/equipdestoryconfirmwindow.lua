@@ -36,10 +36,7 @@ function slot0.OnInit(slot0)
 	onButton(slot0, slot0.confirmBtn, function ()
 		uv0:Confirm()
 	end, SFX_PANEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bg"), function ()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 	onButton(slot0, slot0.closeBtn, function ()
@@ -80,16 +77,14 @@ function slot0.Show(slot0, slot1, slot2)
 end
 
 function slot0.Updatelayout(slot0)
-	slot1 = {}
-
 	if underscore.any(slot0.equips, function (slot0)
-		return slot0.config.rarity >= 4
+		return slot0:getConfig("rarity") >= 4
 	end) then
-		table.insert(slot1, i18n("destroy_high_rarity_tip"))
+		table.insert({}, i18n("destroy_high_rarity_tip"))
 	end
 
 	if underscore.any(slot0.equips, function (slot0)
-		return slot0.config.level > 1
+		return slot0:getConfig("level") > 1
 	end) then
 		table.insert(slot1, i18n("destroy_high_intensify_tip", ""))
 	end
@@ -114,26 +109,18 @@ end
 function slot0.UpdateEquips(slot0)
 	mergeSort(slot0.equips, CompareFuncs({
 		function (slot0)
-			return -slot0.config.rarity
+			return -slot0:getConfig("rarity")
 		end,
 		function (slot0)
-			return -slot0.config.level
+			return -slot0:getConfig("level")
 		end
 	}, true))
 
 	if #slot0.equips > 5 then
-		slot2 = slot0._tf
+		setActive(slot0._tf:Find("window/content/ships"), true)
+		setActive(slot0._tf:Find("window/content/ships_single"), false)
 
-		setActive(slot2:Find("window/content/ships"), true)
-
-		slot2 = slot0._tf
-
-		setActive(slot2:Find("window/content/ships_single"), false)
-
-		slot1 = slot0._tf
-		slot1 = slot1:Find("window/content/ships/content")
-
-		slot1:GetComponent("LScrollRect").onUpdateItem = function (slot0, slot1)
+		slot0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect").onUpdateItem = function (slot0, slot1)
 			updateEquipment(tf(slot1), uv0.equips[slot0 + 1])
 		end
 

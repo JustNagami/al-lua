@@ -17,10 +17,8 @@ function slot1.DoDataEffect(slot0, slot1, slot2)
 		slot4 = slot3:GetCoolDownList()
 
 		if slot0._boostValue then
-			slot5 = slot0._boostValue * -1
-
 			for slot9, slot10 in ipairs(slot4) do
-				slot10:AppendReloadBoost(slot5)
+				slot10:AppendReloadBoost(slot0._boostValue * -1)
 			end
 		elseif slot0._boostRate then
 			for slot8, slot9 in ipairs(slot4) do

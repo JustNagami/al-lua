@@ -149,9 +149,7 @@ function slot0.updateMedalContainerView(slot0, slot1, slot2)
 				LeanTween.cancel(go(uv0.picture), false)
 			end
 
-			slot1 = LeanTween.value(go(uv0.picture), 0, 1, 0.3)
-
-			slot1:setOnUpdate(System.Action_float(function (slot0)
+			LeanTween.value(go(uv0.picture), 0, 1, 0.3):setOnUpdate(System.Action_float(function (slot0)
 				GetComponent(uv0.picture, typeof(CanvasGroup)).alpha = slot0
 			end))
 			setActive(uv0.picture, true)
@@ -170,9 +168,7 @@ function slot0.updateMedalContainerView(slot0, slot1, slot2)
 	LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "pictureName" .. slot1, slot7)
 
 	for slot7 = 1, #slot0.medalTfList do
-		slot9 = (slot1 - 1) * uv0.MEDAL_NUM_PER_PAGE + uv0.MEDAL_NUM_PER_PAGE
-
-		if (slot1 - 1) * uv0.MEDAL_NUM_PER_PAGE < slot7 and slot7 <= slot9 then
+		if (slot1 - 1) * uv0.MEDAL_NUM_PER_PAGE < slot7 and slot7 <= (slot1 - 1) * uv0.MEDAL_NUM_PER_PAGE + uv0.MEDAL_NUM_PER_PAGE then
 			setActive(slot0.medalTfList[slot7], true)
 		else
 			setActive(slot0.medalTfList[slot7], false)
@@ -220,10 +216,8 @@ function slot0.updateSwitchBtnTF(slot0)
 	setText(slot0.rightPage, (slot0.curPage - 1) * slot4 + 2)
 
 	for slot4, slot5 in ipairs(slot0.switchBtnList) do
-		slot6 = slot0:findTF("Tip", slot5)
-
 		if slot0:caculateActivatable(slot4) == 0 or slot4 == slot0.curPage then
-			setActive(slot6, false)
+			setActive(slot0:findTF("Tip", slot5), false)
 		end
 
 		if slot7 > 0 and slot4 ~= slot0.curPage then
@@ -245,13 +239,9 @@ function slot0.updateAfterSubmit(slot0, slot1)
 end
 
 function slot0.caculateActivatable(slot0, slot1)
-	slot3 = 0
-
 	for slot7, slot8 in ipairs(slot0.pageIDList[slot1]) do
-		slot10 = table.contains(slot0.activatableIDList, slot8)
-
-		if not table.contains(slot0.activeIDList, slot8) and slot10 then
-			slot3 = slot3 + 1
+		if not table.contains(slot0.activeIDList, slot8) and table.contains(slot0.activatableIDList, slot8) then
+			slot3 = 0 + 1
 		end
 	end
 

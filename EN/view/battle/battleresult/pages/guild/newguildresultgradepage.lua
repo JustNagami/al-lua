@@ -1,9 +1,7 @@
 slot0 = class("NewGuildResultGradePage", import("..NewBattleResultGradePage"))
 
 function slot0.LoadBG(slot0, slot1)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("BattleResultItems/" .. "Victory", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. "Victory", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited or IsNil(slot0) then
 			if uv1 then
 				uv1()
@@ -30,10 +28,9 @@ end
 
 function slot0.GetContributionPoint(slot0)
 	slot1 = 0
-	slot2 = pg.guildset.guild_damage_resource.key_value
 
 	for slot6, slot7 in ipairs(slot0.contextData.drops) do
-		if slot7.configId == slot2 then
+		if slot7.configId == pg.guildset.guild_damage_resource.key_value then
 			slot1 = slot7.count
 		end
 	end

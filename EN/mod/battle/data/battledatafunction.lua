@@ -33,13 +33,14 @@ function slot3.ConvertSkillTemplate()
 
 			if pg.skillCfg[slot1] then
 				slot4 = {}
-				slot5 = {}
 
 				for slot9, slot10 in pairs(slot3) do
-					slot5[slot9] = Clone(slot10)
+					-- Nothing
 				end
 
-				slot4[0] = slot5
+				slot4[0] = {
+					[slot9] = Clone(slot10)
+				}
 
 				for slot9, slot10 in ipairs(slot3) do
 					slot11 = Clone(slot5)
@@ -72,13 +73,14 @@ function slot3.ConvertBuffTemplate()
 
 			if pg.buffCfg[slot1] then
 				slot4 = {}
-				slot5 = {}
 
 				for slot9, slot10 in pairs(slot3) do
-					slot5[slot9] = Clone(slot10)
+					-- Nothing
 				end
 
-				slot4[0] = slot5
+				slot4[0] = {
+					[slot9] = Clone(slot10)
+				}
 
 				for slot9, slot10 in ipairs(slot3) do
 					slot11 = Clone(slot5)
@@ -134,10 +136,9 @@ function slot3.GetBuffBulletRes(slot0, slot1, slot2, slot3, slot4)
 
 	if uv0.GetShipTransformDataTemplate(slot0) and slot10.skill_id ~= 0 and pg.transform_data_template[slot10.skill_id].skill_id ~= 0 then
 		slot12 = nil
-		slot12 = (not slot1[pg.transform_data_template[slot10.skill_id].skill_id] or slot1[slot11].level) and 1
 		slot17 = slot3
 
-		for slot17, slot18 in ipairs(uv0.GetResFromBuff(slot11, slot12, slot6, slot17)) do
+		for slot17, slot18 in ipairs(uv0.GetResFromBuff(slot11, (not slot1[pg.transform_data_template[slot10.skill_id].skill_id] or slot1[slot11].level) and 1, slot6, slot17)) do
 			slot5[#slot5 + 1] = slot18
 		end
 	end
@@ -156,30 +157,24 @@ function slot3.getWeaponResource(slot0, slot1)
 end
 
 function slot3.GetResFromBuff(slot0, slot1, slot2, slot3)
-	slot4 = {}
-
 	if slot2[slot0 .. "_" .. slot1] then
-		return slot4
+		return {}
 	else
 		slot2[slot5] = true
 	end
 
 	if uv0.GetBuffTemplate(slot0, slot1).init_effect and slot6.init_effect ~= "" then
-		slot7 = slot6.init_effect
-
 		if slot6.skin_adapt then
-			slot7 = uv0.SkinAdaptFXID(slot7, slot3)
+			slot7 = uv0.SkinAdaptFXID(slot6.init_effect, slot3)
 		end
 
 		slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetFXPath(slot7)
 	end
 
 	if slot6.last_effect and slot6.last_effect ~= "" then
-		slot7 = type(slot6.last_effect) == "table" and slot6.last_effect or {
+		for slot11, slot12 in ipairs(type(slot6.last_effect) == "table" and slot6.last_effect or {
 			slot6.last_effect
-		}
-
-		for slot11, slot12 in ipairs(slot7) do
+		}) do
 			slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetFXPath(slot12)
 		end
 	end
@@ -271,11 +266,10 @@ end
 
 function slot3.GetBuffListRes(slot0, slot1, slot2)
 	slot3 = {}
-	slot4 = {}
 
 	for slot8, slot9 in ipairs(slot0) do
 		slot15 = slot9.level
-		slot16 = slot4
+		slot16 = {}
 
 		for slot15, slot16 in ipairs(uv0.GetResFromBuff(slot9.id, slot15, slot16, slot2)) do
 			slot3[#slot3 + 1] = slot16
@@ -323,9 +317,7 @@ function slot3.GetResFromSkill(slot0, slot1, slot2, slot3)
 			end
 
 			if slot5.arg_list.damage_buff_id then
-				slot9 = slot5.arg_list.damage_buff_lv or 1
-
-				for slot14, slot15 in ipairs(uv2.GetResFromBuff(slot8, slot9, uv4)) do
+				for slot14, slot15 in ipairs(uv2.GetResFromBuff(slot8, slot5.arg_list.damage_buff_lv or 1, uv4)) do
 					uv1[#uv1 + 1] = slot15
 				end
 			end
@@ -372,7 +364,7 @@ function slot3.GetResFromSkill(slot0, slot1, slot2, slot3)
 end
 
 function slot3.GetShipSkillTriggerCount(slot0, slot1)
-	slot3 = 0 + (function (slot0)
+	slot3 = 0 + function (slot0)
 		slot1 = 0
 
 		for slot5, slot6 in pairs(slot0) do
@@ -386,7 +378,7 @@ function slot3.GetShipSkillTriggerCount(slot0, slot1)
 		end
 
 		return slot1
-	end)(slot0.skills or {})
+	end(slot0.skills or {})
 	slot6 = {}
 
 	for slot10, slot11 in ipairs(uv0.GetEquipSkill(slot0.equipment)) do

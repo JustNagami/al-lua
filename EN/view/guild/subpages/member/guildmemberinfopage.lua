@@ -132,10 +132,8 @@ function slot0.Flush(slot0, slot1)
 
 		setText(slot14:Find("tag"), slot13.tag)
 
-		slot15 = slot14:Find("tag (1)")
-
 		if slot13.type == 1 then
-			setText(slot15, slot1[slot13.value])
+			setText(slot14:Find("tag (1)"), slot1[slot13.value])
 		elseif slot13.type == 2 then
 			setText(slot15, string.format("%0.2f", math.max(slot1[slot13.value[2]], 0) / math.max(slot1[slot13.value[1]], 1) * 100) .. "%")
 		elseif slot13.type == 3 then

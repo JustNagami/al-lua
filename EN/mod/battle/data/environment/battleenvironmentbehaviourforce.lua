@@ -39,9 +39,7 @@ function slot3.SetTemplate(slot0, slot1)
 end
 
 function slot3.doBehaviour(slot0)
-	slot1 = pg.TimeMgr.GetInstance():GetCombatTime()
-
-	if slot0._moveEndTime and slot0._moveEndTime <= slot1 then
+	if slot0._moveEndTime and slot0._moveEndTime <= pg.TimeMgr.GetInstance():GetCombatTime() then
 		slot0._targetIndex = slot0._targetIndex + 1
 		slot0._moveEndTime = nil
 

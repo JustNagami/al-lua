@@ -1,9 +1,7 @@
 slot0 = class("WorldPortReqCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Send(33401, {
+	pg.ConnectionMgr.GetInstance():Send(33401, {
 		map_id = slot1:getBody().mapId
 	}, 33402, function (slot0)
 		if (slot0.port.port_id > 0 and 0 or 1) == 0 then

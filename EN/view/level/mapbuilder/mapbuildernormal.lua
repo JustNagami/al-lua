@@ -22,9 +22,8 @@ function slot1.Load(slot0)
 	end
 
 	slot0._state = uv0.STATES.LOADING
-	slot1 = pg.UIMgr.GetInstance()
 
-	slot1:LoadingOn()
+	pg.UIMgr.GetInstance():LoadingOn()
 	seriesAsync({
 		function (slot0)
 			uv0:preload(slot0)
@@ -152,11 +151,10 @@ function slot1.UpdateMapItems(slot0)
 	setActive(slot0.itemHolder, true)
 	setActive(slot0.storyHolder, false)
 
-	slot3 = getProxy(ChapterProxy)
 	slot4 = {}
 
 	for slot8, slot9 in pairs(slot1:getChapters()) do
-		if (slot9:isUnlock() or slot9:activeAlways()) and (not slot9:ifNeedHide() or slot3:GetJustClearChapters(slot9.id)) then
+		if (slot9:isUnlock() or slot9:activeAlways()) and (not slot9:ifNeedHide() or getProxy(ChapterProxy):GetJustClearChapters(slot9.id)) then
 			table.insert(slot4, slot9)
 		end
 	end
@@ -192,18 +190,13 @@ function slot1.UpdateMapItems(slot0)
 
 			seriesAsync({
 				function (slot0)
-					slot1 = 0
-
 					for slot5, slot6 in pairs(uv0) do
 						if slot6:ifNeedHide() and uv1:GetJustClearChapters(slot6.id) and uv2.chapterTFsById[slot6.id] then
-							slot1 = slot1 + 1
+							slot1 = 0 + 1
 							slot7 = uv2.chapterTFsById[slot6.id]
 
 							setActive(slot7, true)
-
-							slot8 = uv2
-
-							slot8:PlayChapterItemAnimationBackward(slot7, slot6, function ()
+							uv2:PlayChapterItemAnimationBackward(slot7, slot6, function ()
 								uv0 = uv0 - 1
 
 								setActive(uv1, false)
@@ -225,17 +218,12 @@ function slot1.UpdateMapItems(slot0)
 					end
 				end,
 				function (slot0)
-					slot1 = 0
-
 					for slot5, slot6 in pairs(uv0) do
 						if not uv1[slot6.id] then
-							slot1 = slot1 + 1
+							slot1 = 0 + 1
 
 							setActive(uv2.chapterTFsById[slot6.id], true)
-
-							slot7 = uv2
-
-							slot7:PlayChapterItemAnimation(uv2.chapterTFsById[slot6.id], slot6, function ()
+							uv2:PlayChapterItemAnimation(uv2.chapterTFsById[slot6.id], slot6, function ()
 								uv0 = uv0 - 1
 
 								if uv0 <= 0 then
@@ -408,9 +396,8 @@ function slot1.PlayChapterItemAnimation(slot0, slot1, slot2, slot3)
 	LeanTween.cancel(go(slot6))
 
 	slot6.localScale = Vector3.zero
-	slot8 = LeanTween.scale(slot6, Vector3.one, 0.3)
 
-	slot0:RecordTween(slot8:setDelay(0.3).uniqueId)
+	slot0:RecordTween(LeanTween.scale(slot6, Vector3.one, 0.3):setDelay(0.3).uniqueId)
 	LeanTween.cancel(go(slot7))
 	setAnchoredPosition(slot7, {
 		x = -1 * slot4:Find("info").rect.width
@@ -495,10 +482,7 @@ function slot1.TryOpenChapter(slot0, slot1)
 end
 
 function slot1.UpdateStoryGroup(slot0)
-	slot1 = slot0.data
-	slot1 = slot1:GetChapterInProgress()
-
-	UIItemList.StaticAlign(slot0.storyHolder, slot0.storyTpl, #slot1:GetChapterStories(), function (slot0, slot1, slot2)
+	UIItemList.StaticAlign(slot0.storyHolder, slot0.storyTpl, #slot0.data:GetChapterInProgress():GetChapterStories(), function (slot0, slot1, slot2)
 		if slot0 ~= UIItemList.EventUpdate then
 			return
 		end

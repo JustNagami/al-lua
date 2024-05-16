@@ -69,13 +69,11 @@ function slot10.doTrack(slot0)
 	end
 
 	slot7 = slot0:GetSpeedRatio()
-	slot9 = math.sin(slot0._sinAngularSpeed * slot7)
 	slot10 = slot5
-	slot11 = slot6
 
 	if slot5 < math.cos(slot0._cosAngularSpeed * slot7) then
 		slot10 = slot8
-		slot11 = slot9 * (slot11 >= 0 and 1 or -1)
+		slot11 = math.sin(slot0._sinAngularSpeed * slot7) * (slot6 >= 0 and 1 or -1)
 	end
 
 	slot0._speed:Set(slot0._speed.x * slot10 + slot0._speed.z * slot11, 0, slot0._speed.z * slot10 - slot0._speed.x * slot11)
@@ -185,11 +183,10 @@ function slot10.Reflected(slot0)
 end
 
 function slot10.ResetVelocity(slot0, slot1)
-	slot2 = slot0._tempData
 	slot3 = slot0:GetTemplate().extra_param
 
 	if not slot1 then
-		slot1 = slot2.velocity
+		slot1 = slot0._tempData.velocity
 
 		if slot3.velocity_offset then
 			slot1 = math.random(slot1 - slot3.velocity_offset, slot1 + slot3.velocity_offset)
@@ -575,10 +572,9 @@ end
 
 function slot10.GetCurrentYAngle(slot0)
 	slot1 = Vector3.Normalize(slot0._speed)
-	slot2 = math.acos(slot1.x) / math.deg2Rad
 
 	if slot1.z < 0 then
-		slot2 = 360 - slot2
+		slot2 = 360 - math.acos(slot1.x) / math.deg2Rad
 	end
 
 	return slot2
@@ -597,13 +593,30 @@ function slot10.GetPierceCount(slot0)
 end
 
 function slot10.AppendAttachBuff(slot0, slot1)
-	slot2 = Clone(slot0:GetTemplate().attach_buff)
-	slot2[#slot2 + 1] = slot1
-	slot0._attachBuffList = slot2
+	slot0._attachBuffList = slot0._attachBuffList or slot0:generateAttachBuffList()
+
+	table.insert(slot0._attachBuffList, slot1)
 end
 
 function slot10.GetAttachBuff(slot0)
-	return slot0._attachBuffList or slot0:GetTemplate().attach_buff or {}
+	slot0._attachBuffList = slot0._attachBuffList or slot0:generateAttachBuffList()
+
+	return slot0._attachBuffList
+end
+
+function slot10.generateAttachBuffList(slot0)
+	slot1 = {}
+	slot2 = slot0:GetTemplate().attach_buff or {}
+
+	for slot6, slot7 in ipairs(slot0:GetTemplate().attach_buff) do
+		table.insert(slot1, {
+			buff_id = slot7.buff_id,
+			level = slot7.buff_level,
+			rant = slot7.rant
+		})
+	end
+
+	return slot1
 end
 
 function slot10.GetEffectField(slot0)
@@ -668,10 +681,9 @@ end
 
 function slot10.InitCldComponent(slot0)
 	slot1 = slot0:GetTemplate().cld_box
-	slot3 = slot0:GetTemplate().cld_offset[1]
 
 	if slot0:GetIFF() == uv0.FOE_CODE then
-		slot3 = slot3 * -1
+		slot3 = slot0:GetTemplate().cld_offset[1] * -1
 	end
 
 	slot0._cldComponent = uv1.Battle.BattleCubeCldComponent.New(slot1[1], slot1[2], slot1[3], slot3, slot2[3])
@@ -784,11 +796,10 @@ function slot10.OutRange(slot0)
 end
 
 function slot10.FixRange(slot0, slot1, slot2)
-	slot1 = slot1 or slot0._tempData.range
 	slot2 = slot2 or 0
 
 	if slot0._tempData.range_offset == 0 then
-		slot0._range = slot1
+		slot0._range = slot1 or slot0._tempData.range
 	else
 		slot0._range = slot1 + slot3 * (math.random() - 0.5)
 	end

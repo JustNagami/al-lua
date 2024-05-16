@@ -101,9 +101,7 @@ function slot0.RegisterDataResponse(slot0)
 	slot0.Respones:SetRawData("view", slot0)
 
 	for slot5, slot6 in ipairs(_.values(slot0.Buildings)) do
-		slot7 = slot0.Respones
-
-		slot7:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot6
 		}, function (slot0, slot1)
@@ -130,9 +128,7 @@ function slot0.RegisterDataResponse(slot0)
 	table.insertto(slot2, slot1)
 
 	for slot6, slot7 in ipairs(slot2) do
-		slot8 = slot0.Respones
-
-		slot8:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot7 .. "Tip"
 		}, function (slot0, slot1)
@@ -144,18 +140,13 @@ function slot0.RegisterDataResponse(slot0)
 		end)
 	end
 
-	slot3 = slot0.Respones
-
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"shrineCount"
 	}, function (slot0, slot1)
 		slot0.usableTxt.text = slot1
 	end)
-
-	slot3 = slot0.Respones
-
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"materialCount"
 	}, function (slot0, slot1)
@@ -171,13 +162,13 @@ function slot0.UpdateView(slot0)
 		slot0.Respones[slot6 .. "Tip"] = slot0:UpdateBuildingTip(slot1, slot5)
 	end
 
-	(function ()
+	function ()
 		slot0 = uv0.data1KeyValueList[2][17] or 1
 		slot1 = uv0.data1KeyValueList[2][18] or 1
 		slot4 = uv0.data1KeyValueList[1][pg.activity_event_building[17].material[1][1][2]] or 0
 		uv1.Respones.royalmaidTip = slot0 < #slot2.buff and slot2.material[slot0][1][3] <= slot4 and slot0 <= slot1
 		uv1.Respones.ironbloodmaidTip = slot1 < slot5 and slot2.material[slot1][1][3] <= slot4 and slot1 <= slot0
-	end)()
+	end()
 
 	slot0.Respones.materialCount = slot1.data1KeyValueList[1][next(slot1.data1KeyValueList[1])] or 0
 	slot0.Respones.shrineCount = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5) and slot4:GetRuntimeData("count") or 0
@@ -196,10 +187,9 @@ function slot0.TryPlayStory(slot0)
 
 	table.Foreach(slot1:getConfig("config_client").story, function (slot0, slot1)
 		slot2 = false
-		slot3 = math.floor((slot0 - 1) / 3) + 2
 
 		if slot0 % 3 == 1 then
-			slot2 = slot3 - 1 <= uv0 and slot3 <= uv1
+			slot2 = math.floor((slot0 - 1) / 3) + 2 - 1 <= uv0 and slot3 <= uv1
 		elseif slot0 % 3 == 2 then
 			slot2 = slot3 <= uv1
 		elseif slot0 % 3 == 0 then

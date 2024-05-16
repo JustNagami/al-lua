@@ -2,9 +2,8 @@ slot0 = class("WorldItemUseCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot6 = pg.ConnectionMgr.GetInstance()
 
-	slot6:Send(33301, {
+	pg.ConnectionMgr.GetInstance():Send(33301, {
 		id = slot2.itemID,
 		count = slot2.count,
 		arg = slot2.args
@@ -19,24 +18,18 @@ function slot0.execute(slot0, slot1)
 
 			switch(slot4:getWorldItemType(), {
 				[WorldItem.UsageBuff] = function ()
-					slot0 = uv0:getItemBuffID()
-
 					for slot4, slot5 in ipairs(uv1) do
-						uv2:GetShip(slot5):AddBuff(slot0, uv0.count)
+						uv2:GetShip(slot5):AddBuff(uv0:getItemBuffID(), uv0.count)
 					end
 				end,
 				[WorldItem.UsageHPRegenerate] = function ()
-					slot0 = uv0:getItemRegenerate() * uv0.count
-
 					for slot4, slot5 in ipairs(uv1) do
-						uv2:GetShip(slot5):Regenerate(slot0)
+						uv2:GetShip(slot5):Regenerate(uv0:getItemRegenerate() * uv0.count)
 					end
 				end,
 				[WorldItem.UsageHPRegenerateValue] = function ()
-					slot0 = uv0:getItemRegenerate() * uv0.count
-
 					for slot4, slot5 in ipairs(uv1) do
-						uv2:GetShip(slot5):RegenerateValue(slot0)
+						uv2:GetShip(slot5):RegenerateValue(uv0:getItemRegenerate() * uv0.count)
 					end
 				end,
 				[WorldItem.UsageRecoverAp] = function ()

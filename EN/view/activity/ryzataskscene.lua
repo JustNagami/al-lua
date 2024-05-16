@@ -107,7 +107,6 @@ function slot0.init(slot0)
 	setText(findTF(slot0.pointPanel, "levelBuff/text"), i18n(uv14))
 
 	slot0.pointStarTfs = {}
-	slot4 = slot0.pointLevelStar.sizeDelta.x
 
 	for slot8 = 1, #slot0.ptBuffs do
 		slot9 = tf(Instantiate(slot0.pointStarTpl))
@@ -117,7 +116,7 @@ function slot0.init(slot0)
 		setText(findTF(slot9, "bg/text"), slot8)
 		setText(findTF(slot9, "img/text"), slot8)
 
-		slot9.anchoredPosition = Vector3(slot0.ptBuffs[slot8].pt[1] / slot0.maxNum * slot4, -18, 0)
+		slot9.anchoredPosition = Vector3(slot0.ptBuffs[slot8].pt[1] / slot0.maxNum * slot0.pointLevelStar.sizeDelta.x, -18, 0)
 
 		table.insert(slot0.pointStarTfs, slot9)
 
@@ -239,23 +238,20 @@ function slot0.updateTask(slot0, slot1)
 	end
 
 	for slot11 = 1, #slot0.pointStarTfs do
-		slot12 = slot0.pointStarTfs[slot11]
-
 		if slot11 <= slot7 then
-			setActive(findTF(slot12, "img"), true)
+			setActive(findTF(slot0.pointStarTfs[slot11], "img"), true)
 		else
 			setActive(findTF(slot12, "img"), false)
 		end
 	end
 
 	for slot12 = 1, #slot0.ptBuffs[slot7].benefit do
-		slot14 = pg.benefit_buff_template[slot8[slot12]].desc
 		slot15 = findTF(slot0.pointPanel, "add/" .. slot12)
 
 		if PLATFORM_CODE == PLATFORM_JP then
 			findTF(slot15, "img").sizeDelta = Vector2(450, 70)
 
-			setText(findTF(slot15, "text_jp"), slot14)
+			setText(findTF(slot15, "text_jp"), pg.benefit_buff_template[slot8[slot12]].desc)
 		else
 			setText(findTF(slot15, "text"), slot14)
 		end
@@ -396,9 +392,7 @@ function slot0.didEnter(slot0)
 	end
 
 	if slot1 then
-		slot5 = getProxy(PlayerProxy)
-
-		PlayerPrefs.SetInt("ryza_task_help_" .. slot5:getRawData().id, 1)
+		PlayerPrefs.SetInt("ryza_task_help_" .. getProxy(PlayerProxy):getRawData().id, 1)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("ryza_task_help_tip")

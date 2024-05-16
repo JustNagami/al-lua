@@ -30,9 +30,8 @@ end
 
 function slot1.Dequeue(slot0)
 	slot0.balance = slot0.balance + 1
-	slot1 = nil
 
-	while IsNil(slot1) and #slot0.items > 0 do
+	while IsNil(nil) and #slot0.items > 0 do
 		slot1 = table.remove(slot0.items)
 	end
 

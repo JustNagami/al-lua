@@ -39,9 +39,7 @@ function slot1(slot0, slot1)
 		end
 	elseif slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF then
 		if slot1 then
-			slot2 = ActivityPtData.New(slot1)
-
-			if not slot1:isEnd() and slot2:isInBuffTime() then
+			if not slot1:isEnd() and ActivityPtData.New(slot1):isInBuffTime() then
 				for slot7, slot8 in pairs(slot1.data3_list) do
 					table.insert(slot0, ActivityBuff.New(slot1.id, slot8))
 				end
@@ -65,20 +63,18 @@ function slot1(slot0, slot1)
 end
 
 function slot0.GetAllBuff(slot0)
-	slot1 = {}
-
 	for slot6, slot7 in ipairs(getProxy(PlayerProxy):getRawData():GetBuffs()) do
-		table.insert(slot1, CommonBuff.New(slot7))
+		table.insert({}, CommonBuff.New(slot7))
 	end
 
 	for slot7, slot8 in pairs(getProxy(ActivityProxy):getRawData()) do
-		if (function ()
+		if function ()
 			if uv0 and uv0.system and uv0.system == SYSTEM_SCENARIO and uv1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK and (getProxy(ChapterProxy):getActiveChapter(true) and getProxy(ChapterProxy):getMapById(slot0:getConfig("map")) or nil) and not AtelierActivity.IsActivityBuffMap(slot1) then
 				return false
 			end
 
 			return true
-		end)() then
+		end() then
 			uv0(slot1, slot8)
 		end
 	end
@@ -129,9 +125,7 @@ function slot0.GetBattleBuffs(slot0)
 end
 
 function slot0.GetBuffsByActivityType(slot0)
-	slot2 = getProxy(ActivityProxy)
-
-	_.each(slot2:getActivitiesByType(slot0), function (slot0)
+	_.each(getProxy(ActivityProxy):getActivitiesByType(slot0), function (slot0)
 		uv0(uv1, slot0)
 	end)
 
@@ -148,21 +142,18 @@ function slot0.GetBuffsForMainUI()
 	end
 
 	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME) and not slot2:isEnd() then
-		slot3 = slot2:getConfig("config_client").bufflist
-
 		for slot8, slot9 in pairs(getProxy(PlayerProxy):getRawData().buff_list) do
-			if pg.TimeMgr:GetInstance():GetServerTime() < slot9.timestamp and table.contains(slot3, slot9.id) and ActivityBuff.New(slot2.id, slot9.id, slot9.timestamp):checkShow() then
+			if pg.TimeMgr:GetInstance():GetServerTime() < slot9.timestamp and table.contains(slot2:getConfig("config_client").bufflist, slot9.id) and ActivityBuff.New(slot2.id, slot9.id, slot9.timestamp):checkShow() then
 				table.insert(slot1, slot12)
 			end
 		end
 	end
 
 	if getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_3) then
-		slot5 = slot3:getConfig("config_data")[2]
 		slot6 = nil
 
 		for slot10, slot11 in ipairs(getProxy(PlayerProxy):getRawData().buff_list) do
-			if table.indexof(slot5, slot11.id, 1) then
+			if table.indexof(slot3:getConfig("config_data")[2], slot11.id, 1) then
 				if pg.TimeMgr.GetInstance():GetServerTime() < slot11.timestamp and ActivityBuff.New(slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME).id, slot11.id, slot11.timestamp):checkShow() then
 					table.insert(slot1, slot15)
 				end
@@ -173,11 +164,10 @@ function slot0.GetBuffsForMainUI()
 	end
 
 	if getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5) then
-		slot6 = slot4:getConfig("config_data")[2]
 		slot7 = nil
 
 		for slot11, slot12 in ipairs(getProxy(PlayerProxy):getRawData().buff_list) do
-			if table.indexof(slot6, slot12.id, 1) then
+			if table.indexof(slot4:getConfig("config_data")[2], slot12.id, 1) then
 				if pg.TimeMgr.GetInstance():GetServerTime() < slot12.timestamp and ActivityBuff.New(slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME).id, slot12.id, slot12.timestamp):checkShow() then
 					table.insert(slot1, slot16)
 				end

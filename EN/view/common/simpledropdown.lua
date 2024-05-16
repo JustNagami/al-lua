@@ -87,11 +87,6 @@ function slot0.UpdateData(slot0, slot1)
 end
 
 function slot0.UpdateBtnState(slot0)
-	function slot1(slot0)
-		setText(uv0.mainTitle, i18n(uv0.names[slot0]))
-		setText(uv0.virtualBtnTitle, i18n(uv0.names[slot0]))
-	end
-
 	slot2 = false
 
 	for slot6, slot7 in ipairs(slot0.btnList) do
@@ -102,7 +97,10 @@ function slot0.UpdateBtnState(slot0)
 		if slot8 then
 			slot2 = true
 
-			slot1(slot6 + 1)
+			function (slot0)
+				setText(uv0.mainTitle, i18n(uv0.names[slot0]))
+				setText(uv0.virtualBtnTitle, i18n(uv0.names[slot0]))
+			end(slot6 + 1)
 		end
 	end
 

@@ -145,8 +145,7 @@ function slot0.InitKeys(slot0, slot1)
 end
 
 function slot0.InitKey(slot0, slot1, slot2, slot3)
-	slot4 = slot1:Find("Text")
-	slot4 = slot4:GetComponent(typeof(Image))
+	slot4 = slot1:Find("Text"):GetComponent(typeof(Image))
 	slot4.sprite = GetSpriteFromAtlas("ui/CourtyardLute_atlas", slot2)
 
 	slot4:SetNativeSize()
@@ -159,11 +158,7 @@ function slot0.InitKey(slot0, slot1, slot2, slot3)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. uv3)
 		uv1:OnStartPlay(uv4)
 	end)
-
-	slot6 = slot1:Find("animation")
-	slot6 = slot6:GetComponent(typeof(DftAniEvent))
-
-	slot6:SetEndEvent(function ()
+	slot1:Find("animation"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		setActive(uv0, false)
 		uv1:OnEndPlay(uv2)
 	end)

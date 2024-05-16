@@ -110,12 +110,10 @@ function slot16(slot0, slot1)
 			slot0.buffType = slot1
 
 			if slot0.buffType then
-				slot2 = LaunchBallGameConst.enemy_buff_data[slot0.buffType].tpl
-
 				for slot6 = 0, slot0.buffIcon.childCount - 1 do
 					slot7 = slot0.buffIcon:GetChild(slot6)
 
-					setActive(slot7, slot7.name == slot2)
+					setActive(slot7, slot7.name == LaunchBallGameConst.enemy_buff_data[slot0.buffType].tpl)
 				end
 			else
 				for slot5 = 0, slot0.buffIcon.childCount - 1 do
@@ -242,10 +240,9 @@ function slot16(slot0, slot1)
 		end,
 		checkWorldInRect = function (slot0, slot1)
 			slot2 = slot0.angleTf:InverseTransformPoint(slot1)
-			slot3 = 0
 
 			if uv0 < math.sqrt(math.pow(slot2.x - slot0.circlePos.x, 2) + math.pow(slot2.y - slot0.circlePos.y, 2)) then
-				return slot3, nil
+				return 0, nil
 			end
 
 			if LaunchBallGameVo.PointInRect(slot2, slot0.leftBoundPoints[1], slot0.leftBoundPoints[2], slot0.leftBoundPoints[3], slot0.leftBoundPoints[4]) then
@@ -509,11 +506,9 @@ function slot0.checkCreateEnemy(slot0)
 	slot1 = 1
 
 	for slot5 = 1, #slot0.enemysList do
-		slot7 = slot0.pointsList[slot5]
-
 		if #slot0.enemysList[slot5] > 0 then
 			if uv0 < slot6[1]:getDistance() then
-				slot0:createRandomEnemy(slot5, slot7, slot6, 1, 0, true)
+				slot0:createRandomEnemy(slot5, slot0.pointsList[slot5], slot6, 1, 0, true)
 
 				break
 			end
@@ -572,10 +567,8 @@ function slot0.checkRemoveEnemy(slot0)
 end
 
 function slot0.appearEnemyBuff(slot0, slot1, slot2, slot3, slot4)
-	slot5 = LaunchBallGameConst.enemy_buff_data[slot1]
-
 	if slot1 == LaunchBallGameConst.enemy_buff_slow then
-		slot0.slowTime = slot5.time
+		slot0.slowTime = LaunchBallGameConst.enemy_buff_data[slot1].time
 
 		if LaunchBallGameVo.GetBuff(LaunchBallPlayerControl.buff_time_max) then
 			slot0.slowTime = slot0.slowTime * 1.5
@@ -597,11 +590,8 @@ function slot0.appearEnemyBuff(slot0, slot1, slot2, slot3, slot4)
 			LaunchBallGameVo.AddGameResultData(LaunchBallGameVo.result_use_pass_skill, 1)
 		end
 	elseif slot1 == LaunchBallGameConst.enemy_buff_boom then
-		slot6 = slot3:getDistance()
-		slot7 = slot5.distance
-
 		for slot11 = 1, #slot4 do
-			if not slot4[slot11]:getRemoveFlag() and math.abs(slot4[slot11]:getDistance() - slot6) <= slot7 then
+			if not slot4[slot11]:getRemoveFlag() and math.abs(slot4[slot11]:getDistance() - slot3:getDistance()) <= slot5.distance then
 				slot4[slot11]:setTimeRemove()
 				slot0._eventCall(LaunchBallGameScene.SPILT_ENEMY_SCORE, {
 					num = LaunchBallGameVo.GetScore(1, 1)
@@ -715,9 +705,7 @@ function slot0.checkEnemyQuick(slot0)
 		slot6 = 0
 
 		for slot10 = 1, #slot5 do
-			slot11 = slot5[slot10]
-
-			if slot10 <= #slot5 - 1 and uv0 < slot5[slot10 + 1]:getDistance() and slot12:getDistance() - slot11:getDistance() < uv0 - uv1 then
+			if slot10 <= #slot5 - 1 and uv0 < slot5[slot10 + 1]:getDistance() and slot12:getDistance() - slot5[slot10]:getDistance() < uv0 - uv1 then
 				slot6 = slot10 + 1
 				slot0.quickFlag = true
 
@@ -744,10 +732,8 @@ function slot0.checkEnemyBack(slot0)
 
 	if not slot0.quickFlag then
 		for slot4, slot5 in ipairs(slot0.enemysList) do
-			slot6 = 0
-
 			for slot10 = 1, #slot5 do
-				if slot10 > 1 and slot6 == 0 and slot5[slot10]:getDistance() - slot5[slot10 - 1]:getDistance() > uv0 + uv1 and slot5[slot10]:getSplitFlag() and slot5[slot10]:getColor() == slot5[slot10 - 1]:getColor() then
+				if slot10 > 1 and 0 == 0 and slot5[slot10]:getDistance() - slot5[slot10 - 1]:getDistance() > uv0 + uv1 and slot5[slot10]:getSplitFlag() and slot5[slot10]:getColor() == slot5[slot10 - 1]:getColor() then
 					slot6 = slot10
 
 					if not slot0.backEnemyFlag then
@@ -847,10 +833,8 @@ end
 
 function slot0.checkEnemyFinal(slot0)
 	if slot0:checkTargetScore() then
-		slot1 = 0
-
 		for slot5, slot6 in ipairs(slot0.enemysList) do
-			slot1 = slot1 + #slot6
+			slot1 = 0 + #slot6
 		end
 
 		if slot1 == 0 then
@@ -983,7 +967,6 @@ end
 
 function slot0.createPoints(slot0, slot1)
 	slot2 = {}
-	slot3 = 0
 
 	for slot8 = 0, GetComponent(slot1, "EdgeCollider2D").points.Length - 1 do
 		slot9 = slot4.points[slot8]
@@ -995,7 +978,7 @@ function slot0.createPoints(slot0, slot1)
 		if slot8 >= 1 then
 			slot14 = slot4.points[slot8 - 1]
 			slot15 = slot4.points[slot8]
-			slot3 = slot3 + math.sqrt(math.pow(slot15.x - slot14.x, 2) + math.pow(slot15.y - slot14.y, 2))
+			slot3 = 0 + math.sqrt(math.pow(slot15.x - slot14.x, 2) + math.pow(slot15.y - slot14.y, 2))
 		end
 
 		if slot8 < slot4.points.Length - 1 then
@@ -1093,11 +1076,9 @@ function slot0.getEnemyBuff(slot0)
 		end
 
 		if slot7 then
-			slot9 = slot6.rate[1]
-
 			if LaunchBallGameVo.GetBuff(LaunchBallPlayerControl.buff_time_max) then
 				if slot6.type == LaunchBallGameConst.enemy_buff_slow then
-					slot9 = slot9 + 2
+					slot9 = slot6.rate[1] + 2
 				elseif slot6.type == LaunchBallGameConst.enemy_buff_back then
 					slot9 = slot9 + 2
 				end
@@ -1231,11 +1212,9 @@ end
 
 function slot0.getEnemyRule(slot0)
 	slot1 = nil
-	slot2 = math.random(0, slot0.maxWeight)
-	slot3 = nil
 
 	for slot7 = 1, #slot0.rounds do
-		if not slot3 and slot2 <= slot0.rounds[slot7].maxWeight then
+		if not nil and math.random(0, slot0.maxWeight) <= slot0.rounds[slot7].maxWeight then
 			slot3 = slot0.rounds[slot7].createId
 		end
 	end
@@ -1275,14 +1254,13 @@ function slot0.createRoundData(slot0)
 	for slot6 = 1, #slot0.roundDatas do
 		slot7 = slot0.roundDatas[slot6]
 		slot8 = slot7.weight
-		slot10 = slot7.create_id
 
 		if slot7.time[1] <= slot2 and slot2 <= slot9[2] then
 			table.insert(slot0.rounds, {
 				time = slot9,
 				weight = slot8,
 				maxWeight = slot1 + slot8,
-				createId = slot10
+				createId = slot7.create_id
 			})
 		end
 	end
@@ -1338,9 +1316,7 @@ function slot0.checkAmulet(slot0, slot1)
 					slot19:setSplitFlag(true)
 					slot19:playAnimation("Spawn")
 
-					slot21 = slot1[LaunchBallGameConst.amulet_buff_back]
-
-					if slot0:getBackBuff() or slot21 then
+					if slot0:getBackBuff() or slot1[LaunchBallGameConst.amulet_buff_back] then
 						slot0:setBackTime(LaunchBallPlayerControl.buff_amulet_back_time, #slot9, uv2)
 					end
 
@@ -1358,10 +1334,8 @@ function slot0.checkPositionIn(slot0, slot1)
 		slot6 = slot0.pointsList[slot5]
 
 		for slot11 = #slot0.enemysList[slot5], 1, -1 do
-			slot12 = slot7[slot11]
-
 			if slot7[slot11]:checkWorldInRect(slot1) ~= 0 then
-				return slot12
+				return slot7[slot11]
 			end
 		end
 	end

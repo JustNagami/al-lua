@@ -443,11 +443,10 @@ function slot47(slot0, slot1)
 
 			if slot0.timeAppear <= 0 then
 				slot1 = true
-				slot2 = uv0 - slot0.timeStep
 				slot0.timeAppear = nil
 
 				for slot6 = 1, #uv1 do
-					if not slot0.timeAppear and slot2 < uv1[slot6][1] or slot6 == #uv1 then
+					if not slot0.timeAppear and uv0 - slot0.timeStep < uv1[slot6][1] or slot6 == #uv1 then
 						slot7 = uv1[slot6][2]
 						slot0.timeAppear = math.random() * (uv1[slot6][3] - slot7) + slot7
 
@@ -1048,10 +1047,9 @@ function slot52(slot0, slot1)
 
 				slot0._currentTargetData = slot0._roleShowData[slot3[math.random(1, #slot3)]]
 				slot5 = findTF(slot0._tf, slot0._currentData.name)
-				slot6 = findTF(slot0._tf, slot0._currentTargetData.name)
 
 				if slot0._currentTargetData and slot0._currentTargetData.switch_parent then
-					setParent(slot0._roleTf, slot6)
+					setParent(slot0._roleTf, findTF(slot0._tf, slot0._currentTargetData.name))
 				else
 					setParent(slot0._roleTf, slot5)
 				end
@@ -1308,10 +1306,7 @@ function slot0.showScore(slot0, slot1)
 		slot2 = tf(Instantiate(slot0.showScoreTpl))
 
 		setParent(slot2, slot0.sceneFrontContainer)
-
-		slot3 = GetComponent(findTF(slot2, "anim"), typeof(DftAniEvent))
-
-		slot3:SetEndEvent(function ()
+		GetComponent(findTF(slot2, "anim"), typeof(DftAniEvent)):SetEndEvent(function ()
 			for slot3 = #uv0.showScores, 1, -1 do
 				if uv1 == uv0.showScores[slot3] then
 					table.insert(uv0.showScoresPool, table.remove(uv0.showScores, slot3))
@@ -1418,11 +1413,10 @@ function slot0.initUI(slot0)
 		uv0:readyStart()
 	end, SFX_CANCEL)
 
-	slot2 = findTF(slot0.menuUI, "tplBattleItem")
 	slot0.battleItems = {}
 
 	for slot6 = 1, 7 do
-		slot7 = tf(instantiate(slot2))
+		slot7 = tf(instantiate(findTF(slot0.menuUI, "tplBattleItem")))
 		slot7.name = "battleItem_" .. slot6
 
 		setParent(slot7, findTF(slot0.menuUI, "battList/Viewport/Content"))
@@ -1504,7 +1498,6 @@ function slot0.AddDebugInput(slot0)
 end
 
 function slot0.updateMenuUI(slot0)
-	slot1 = slot0:getGameUsedTimes()
 	slot2 = slot0:getGameTimes()
 
 	for slot6 = 1, #slot0.battleItems do
@@ -1513,7 +1506,7 @@ function slot0.updateMenuUI(slot0)
 		setActive(findTF(slot0.battleItems[slot6], "state_clear"), false)
 		setActive(findTF(slot0.battleItems[slot6], "state_current"), false)
 
-		if slot6 <= slot1 then
+		if slot6 <= slot0:getGameUsedTimes() then
 			setActive(findTF(slot0.battleItems[slot6], "state_clear"), true)
 		elseif slot6 == slot1 + 1 and slot2 >= 1 then
 			setActive(findTF(slot0.battleItems[slot6], "state_current"), true)

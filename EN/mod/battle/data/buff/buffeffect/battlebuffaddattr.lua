@@ -157,12 +157,11 @@ function slot1.UpdateAttrHybrid(slot0, slot1)
 		for slot13, slot14 in ipairs(slot9._effectList) do
 			if slot14:GetEffectType() == uv0.FX_TYPE and slot14:IsSameAttr(slot0._attr) then
 				slot16 = slot14._group
-				slot17 = slot14._attrID or 0
 
 				if slot14._number > 0 then
 					slot18 = slot3[slot16] or {
 						value = 0,
-						attrGroup = slot17
+						attrGroup = slot14._attrID or 0
 					}
 					slot18.value = math.max(slot18.value, slot15)
 					slot3[slot16] = slot18
@@ -178,7 +177,7 @@ function slot1.UpdateAttrHybrid(slot0, slot1)
 		end
 	end
 
-	uv1.Battle.BattleAttr.FlashByBuff(slot1, slot0._attr, ((function (slot0)
+	uv1.Battle.BattleAttr.FlashByBuff(slot1, slot0._attr, (function (slot0)
 		slot1 = {}
 		slot2 = nil
 
@@ -191,5 +190,5 @@ function slot1.UpdateAttrHybrid(slot0, slot1)
 		end
 
 		return slot2
-	end)(slot3) or 0) + (slot5(slot4) or 0))
+	end(slot3) or 0) + (slot5(slot4) or 0))
 end

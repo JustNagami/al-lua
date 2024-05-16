@@ -202,7 +202,7 @@ function slot0.AddListener(slot0)
 			return pg.expedition_data_template[slot0.attachmentId].dungeon_id > 0
 		end
 
-		if slot0:existChampion(slot2.row, slot2.column) then
+		if slot0:existVisibleChampion(slot2.row, slot2.column) then
 			slot4 = true
 			slot6 = slot0:getChampion(slot2.row, slot2.column)
 
@@ -281,24 +281,16 @@ function slot0.AddListener(slot0)
 				return
 			end
 
-			slot8 = pg.NewStoryMgr.GetInstance()
-			slot9 = pg.ConnectionMgr.GetInstance()
-
-			slot9:Send(11017, {
+			pg.ConnectionMgr.GetInstance():Send(11017, {
 				story_id = slot6
 			}, 11018, function (slot0)
 			end)
-
-			slot9 = pg.NewStoryMgr.GetInstance()
-
-			slot9:Play(slot8:StoryId2StoryName(slot6), function (slot0, slot1)
-				slot3 = slot1 or 1
-
+			pg.NewStoryMgr.GetInstance():Play(pg.NewStoryMgr.GetInstance():StoryId2StoryName(slot6), function (slot0, slot1)
 				if uv0.flag == ChapterConst.CellFlagActive then
 					uv1:emit(LevelMediator2.ON_OP, {
 						type = ChapterConst.OpStory,
 						id = uv2.id,
-						arg1 = slot3
+						arg1 = slot1 or 1
 					})
 				end
 
@@ -426,14 +418,12 @@ function slot0.SwitchToChapter(slot0, slot1)
 
 	setText(slot4:Find("Label"), i18n("map_event_skip"))
 
-	slot6 = "skip_events_on_" .. slot1.id
-
 	if slot1:getConfig("event_skip") == 1 then
 		if slot1.progress > 0 or slot1.defeatCount > 0 or slot1.passCount > 0 then
 			setActive(slot4, true)
 
 			slot3.anchoredPosition = Vector2.New(slot3.anchoredPosition.x, slot0.achieveOriginalY - 40)
-			GetComponent(slot4, typeof(Toggle)).isOn = PlayerPrefs.GetInt(slot6, 1) == 1
+			GetComponent(slot4, typeof(Toggle)).isOn = PlayerPrefs.GetInt("skip_events_on_" .. slot1.id, 1) == 1
 
 			onToggle(slot0, slot4, function (slot0)
 				PlayerPrefs.SetInt(uv0, slot0 and 1 or 0)
@@ -510,10 +500,7 @@ function slot0.updateAmbushRate(slot0, slot1, slot2)
 		setText(slot9, i18n("ambush_display_none"))
 		setTextColor(slot9, Color.New(0.4, 0.4, 0.4))
 	else
-		slot10 = slot3:getAmbushRate(slot4, slot1)
-		slot11 = ChapterConst.GetAmbushDisplay
-		slot12 = (not slot2 or not slot3:existEnemy(ChapterConst.SubjectPlayer, slot1.row, slot1.column)) and slot10
-		slot11, slot12 = slot11(slot12)
+		slot11, slot12 = ChapterConst.GetAmbushDisplay((not slot2 or not slot3:existEnemy(ChapterConst.SubjectPlayer, slot1.row, slot1.column)) and slot3:getAmbushRate(slot4, slot1))
 
 		setText(slot9, slot11)
 		setTextColor(slot9, slot12)
@@ -577,8 +564,7 @@ function slot0.updateStageBarrier(slot0)
 		return
 	end
 
-	slot2 = slot0.panelBarrier
-	slot2 = slot2:Find("btn_barrier")
+	slot2 = slot0.panelBarrier:Find("btn_barrier")
 
 	setText(slot2:Find("nums"), slot1.modelCount)
 	onButton(slot0, slot2, function ()
@@ -628,10 +614,9 @@ end
 function slot0.updateFleetBuff(slot0)
 	slot1 = slot0.contextData.chapterVO
 	slot2 = slot1.fleet
-	slot3 = slot1:GetShowingStrategies()
 
 	if slot1:getChapterSupportFleet() then
-		table.insert(slot3, ChapterConst.StrategyAirSupportFriendly)
+		table.insert(slot1:GetShowingStrategies(), ChapterConst.StrategyAirSupportFriendly)
 	end
 
 	slot5 = {}
@@ -789,7 +774,7 @@ end
 
 function slot0.updateEnemyCount(slot0)
 	slot3 = tobool(underscore.detect(slot0.contextData.chapterVO.achieves, function (slot0)
-		return slot0.type == ChapterConst.AchieveType3 and not ChapterConst.IsAchieved(slot0)
+		return (slot0.type == ChapterConst.AchieveType3 or slot0.type == ChapterConst.AchieveType6) and not ChapterConst.IsAchieved(slot0)
 	end))
 
 	setActive(findTF(slot0.topStage, "icon_list/enemy_count"), slot3)
@@ -849,12 +834,10 @@ function slot0.updateChapterBuff(slot0)
 				return
 			end
 
-			slot3 = uv0
-
 			uv1:HandleShowMsgBox({
 				hideNo = true,
 				type = MSGBOX_TYPE_DROP_ITEM,
-				name = slot3:getChapterState(),
+				name = uv0:getChapterState(),
 				iconPath = {
 					"passstate",
 					uv2 .. "_icon"
@@ -1174,19 +1157,17 @@ function slot0.updateStageFleet(slot0)
 				setActive(findTF(slot7, "heal"), false)
 				setActive(findTF(slot7, "normal"), false)
 
-				function slot8(slot0, slot1)
-					setActive(slot0, true)
-					setText(findTF(slot0, "text"), slot1)
-					setTextAlpha(findTF(slot0, "text"), 0)
-					LeanTween.moveY(slot0, 60, 1)
-					LeanTween.textAlpha(findTF(slot0, "text"), 1, 0.3)
-					LeanTween.textAlpha(findTF(slot0, "text"), 0, 0.5):setDelay(0.7):setOnComplete(System.Action(function ()
-						uv0.localPosition = Vector3(0, 0, 0)
-					end))
-				end
-
 				if math.floor(slot7 / 10000 * slot3:getShipProperties()[AttributeType.Durability]) > 0 then
-					slot8(findTF(slot7, "heal"), slot6)
+					function (slot0, slot1)
+						setActive(slot0, true)
+						setText(findTF(slot0, "text"), slot1)
+						setTextAlpha(findTF(slot0, "text"), 0)
+						LeanTween.moveY(slot0, 60, 1)
+						LeanTween.textAlpha(findTF(slot0, "text"), 1, 0.3)
+						LeanTween.textAlpha(findTF(slot0, "text"), 0, 0.5):setDelay(0.7):setOnComplete(System.Action(function ()
+							uv0.localPosition = Vector3(0, 0, 0)
+						end))
+					end(findTF(slot7, "heal"), slot6)
 				elseif slot6 < 0 then
 					LeanTween.delayedCall(0.6, System.Action(function ()
 						LeanTween.moveX(uv0, uv0.transform.localPosition.x, 0.05):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(4)
@@ -1208,26 +1189,27 @@ function slot0.updateStageFleet(slot0)
 
 				setSlider(slot9, 0, 10000, slot4)
 				setActive(findTF(slot2, "repairmask"), slot12)
+				setActive(findTF(slot2, "repairmask/broken"), slot4 == 0)
 				onButton(uv1, slot2:Find("repairmask"), function ()
 					uv0:emit(LevelUIConst.DISPLAY_REPAIR_WINDOW, uv1)
 				end, SFX_PANEL)
 
-				slot13 = findTF(slot2, "repairmask/icon").gameObject
+				slot14 = findTF(slot2, "repairmask/icon").gameObject
 
 				if not slot12 then
-					LeanTween.cancel(slot13)
-					setImageAlpha(slot13, 1)
+					LeanTween.cancel(slot14)
+					setImageAlpha(slot14, 1)
 				end
 
-				if slot12 and not LeanTween.isTweening(slot13) then
-					LeanTween.alpha(rtf(slot13), 0, 2):setLoopPingPong()
+				if slot12 and not LeanTween.isTweening(slot14) then
+					LeanTween.alpha(rtf(slot14), 0, 2):setLoopPingPong()
 				end
 
-				slot14 = GetOrAddComponent(slot2, "UILongPressTrigger").onLongPressed
+				slot15 = GetOrAddComponent(slot2, "UILongPressTrigger").onLongPressed
 
-				pg.DelegateInfo.Add(uv1, slot14)
-				slot14:RemoveAllListeners()
-				slot14:AddListener(function ()
+				pg.DelegateInfo.Add(uv1, slot15)
+				slot15:RemoveAllListeners()
+				slot15:AddListener(function ()
 					uv0:emit(LevelMediator2.ON_STAGE_SHIPINFO, {
 						shipId = uv1.id,
 						shipVOs = uv2
@@ -1250,10 +1232,8 @@ function slot0.updateSupportFleet(slot0)
 		setActive(slot2, true)
 		removeAllChildren(findTF(slot2, "show/ship_container"))
 
-		slot4 = findTF(slot2, "show/shiptpl")
-
 		for slot9, slot10 in pairs(slot1:getShips()) do
-			slot11 = cloneTplTo(slot4, slot3)
+			slot11 = cloneTplTo(findTF(slot2, "show/shiptpl"), slot3)
 
 			setActive(slot11, true)
 			updateShip(slot11, slot10)
@@ -1343,7 +1323,7 @@ function slot0.SwitchMissileBottomStagePanel(slot0)
 
 		slot2 = uv0.contextData.chapterVO.fleet
 
-		(function ()
+		function ()
 			uv0:emit(LevelMediator2.ON_OP, {
 				type = ChapterConst.OpStrategy,
 				id = uv1.id,
@@ -1351,7 +1331,7 @@ function slot0.SwitchMissileBottomStagePanel(slot0)
 				arg2 = uv2.row,
 				arg3 = uv2.column
 			})
-		end)()
+		end()
 	end, SFX_UI_CLICK)
 	onButton(slot0, slot0:findTF("cancel_button", slot0.missileStrikeRole), function ()
 		uv0:SwitchBottomStagePanel(false)
@@ -1369,10 +1349,9 @@ function slot0.SwitchAirSupportBottomStagePanel(slot0)
 			return
 		end
 
-		slot1 = uv0.contextData.chapterVO
-		slot2 = slot1:getChapterSupportFleet()
+		slot2 = uv0.contextData.chapterVO:getChapterSupportFleet()
 
-		(function ()
+		function ()
 			uv0:emit(LevelMediator2.ON_OP, {
 				type = ChapterConst.OpStrategy,
 				id = uv1.id,
@@ -1380,7 +1359,7 @@ function slot0.SwitchAirSupportBottomStagePanel(slot0)
 				arg2 = uv2.row,
 				arg3 = uv2.column
 			})
-		end)()
+		end()
 	end, SFX_UI_CLICK)
 	onButton(slot0, slot0:findTF("cancel_button", slot0.missileStrikeRole), function ()
 		uv0:SwitchBottomStagePanel(false)
@@ -1421,11 +1400,10 @@ end
 
 function slot0.ClickGridCellNormal(slot0, slot1)
 	slot2 = slot0.contextData.chapterVO
-	slot3 = slot2.fleet
 
 	if _.detect(slot2.fleets, function (slot0)
 		return slot0:getFleetType() == FleetType.Normal and slot0.line.row == uv0.row and slot0.line.column == uv0.column
-	end) and slot4:isValid() and slot4.id ~= slot3.id then
+	end) and slot4:isValid() and slot4.id ~= slot2.fleet.id then
 		slot0:emit(LevelMediator2.ON_OP, {
 			type = ChapterConst.OpSwitch,
 			id = slot4.id
@@ -1516,9 +1494,7 @@ function slot0.tryAutoAction(slot0, slot1)
 	end
 
 	if slot5 then
-		slot7 = slot2:isPlayingWithBombEnemy()
-
-		if not slot2:existOni() and not slot7 then
+		if not slot2:existOni() and not slot2:isPlayingWithBombEnemy() then
 			table.insert(slot4, function (slot0)
 				uv0:emit(LevelUIConst.DO_TRACKING, slot0)
 			end)
@@ -1596,7 +1572,7 @@ function slot0.tryAutoAction(slot0, slot1)
 			uv0:emit(LevelUIConst.FROZEN)
 
 			if getProxy(ChapterProxy):GetLastDefeatedEnemy(uv1.id) and (slot1.attachment ~= ChapterConst.AttachAmbush or ChapterConst.IsBossCell(slot1)) then
-				uv0.grid:PlayAttachmentEffect(slot1.line.row, slot1.line.column, "huoqiubaozha", Vector2.zero)
+				uv0.grid:PlayAttachmentEffect(slot1.line.row, slot1.line.column, ChapterConst.GetDestroyFX(slot1), Vector2.zero)
 			end
 
 			uv0:PopBar()
@@ -1604,13 +1580,13 @@ function slot0.tryAutoAction(slot0, slot1)
 			slot0()
 		end,
 		function (slot0)
-			if not (function ()
+			if not function ()
 				if not getProxy(ChapterProxy):GetLastDefeatedEnemy(uv0.id) then
 					return
 				end
 
 				return pg.expedition_data_template[slot0.attachmentId] and slot1.type == ChapterConst.ExpeditionTypeMulBoss
-			end)() then
+			end() then
 				return slot0()
 			end
 
@@ -1672,10 +1648,8 @@ function slot0.tryAutoAction(slot0, slot1)
 				return
 			end
 
-			slot1 = uv0
-
-			slot1:emit(LevelUIConst.UN_FROZEN)
-			(function ()
+			uv0:emit(LevelUIConst.UN_FROZEN)
+			function ()
 				if not getProxy(ChapterProxy):getActiveChapter(true) then
 					return
 				end
@@ -1686,7 +1660,7 @@ function slot0.tryAutoAction(slot0, slot1)
 				slot0:RecordLastDefeatedEnemy(slot2, nil)
 				slot0:extraFlagUpdated(slot2)
 				slot0:RemoveExtendChapterData(slot2, "FleetMoveDistance")
-			end)()
+			end()
 			slot0()
 		end,
 		function (slot0)
@@ -1706,8 +1680,7 @@ function slot0.tryAutoAction(slot0, slot1)
 end
 
 function slot0.tryPlayChapterStory(slot0, slot1)
-	slot2 = slot0.contextData.chapterVO
-	slot3 = slot2:getWaveCount()
+	slot3 = slot0.contextData.chapterVO:getWaveCount()
 
 	seriesAsync({
 		function (slot0)
@@ -1746,15 +1719,13 @@ function slot0.tryPlayChapterStory(slot0, slot1)
 end
 
 function slot0.TryEnterChapterStoryStage(slot0)
-	slot1 = slot0.contextData.chapterVO
-	slot2 = slot1:getWaveCount()
+	slot2 = slot0.contextData.chapterVO:getWaveCount()
 
 	seriesAsync({
 		function (slot0)
 			slot2 = uv0:getConfig("story_refresh") and slot1[uv1]
-			slot3 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(slot2)
 
-			if slot2 and type(slot2) == "number" and not uv0:IsRemaster() and not pg.NewStoryMgr.GetInstance():IsPlayed(slot3) then
+			if slot2 and type(slot2) == "number" and not uv0:IsRemaster() and not pg.NewStoryMgr.GetInstance():IsPlayed(pg.NewStoryMgr.GetInstance():StoryId2StoryName(slot2)) then
 				uv2:emit(LevelMediator2.ON_PERFORM_COMBAT, slot2, slot0)
 			else
 				slot0()
@@ -1762,9 +1733,8 @@ function slot0.TryEnterChapterStoryStage(slot0)
 		end,
 		function (slot0)
 			slot1 = uv0:getConfig("story_refresh_boss")
-			slot2 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(slot1)
 
-			if slot1 and type(slot1) == "number" and not uv0:IsRemaster() and uv0:IsFinalBossRefreshed() and not pg.NewStoryMgr.GetInstance():IsPlayed(slot2) then
+			if slot1 and type(slot1) == "number" and not uv0:IsRemaster() and uv0:IsFinalBossRefreshed() and not pg.NewStoryMgr.GetInstance():IsPlayed(pg.NewStoryMgr.GetInstance():StoryId2StoryName(slot1)) then
 				uv1:emit(LevelMediator2.ON_PERFORM_COMBAT, slot1, slot0)
 			else
 				slot0()
@@ -1877,7 +1847,7 @@ function slot0.tryAutoTrigger(slot0, slot1, slot2)
 		return
 	end
 
-	return (function ()
+	return function ()
 		if uv0:checkAnyInteractive() then
 			if not uv1 or uv0:IsAutoFight() then
 				triggerButton(uv2.funcBtn)
@@ -1901,7 +1871,7 @@ function slot0.tryAutoTrigger(slot0, slot1, slot2)
 				return true
 			end
 		end
-	end)()
+	end()
 end
 
 function slot0.DoBreakAction(slot0)
@@ -2204,14 +2174,12 @@ function slot0.Toast(slot0)
 	end
 
 	slot0.toastPanel = slot1.Class.New(slot0)
-	slot2 = slot0.toastPanel
 
-	slot2:Load()
+	slot0.toastPanel:Load()
 
 	slot0.toastPanel.contextData.settings = slot1
-	slot2 = slot0.toastPanel.buffer
 
-	slot2:Play(function ()
+	slot0.toastPanel.buffer:Play(function ()
 		uv0:Toast()
 	end)
 end

@@ -5,8 +5,7 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-	slot1 = slot1:Find("operate")
+	slot1 = slot0._tf:Find("operate")
 	slot0.ulist = UIItemList.New(slot1:Find("got/bottom/list"), slot1:Find("got/bottom/list/tpl"))
 	slot0.confirmBtn = slot1:Find("action/confirm")
 
@@ -23,9 +22,8 @@ function slot0.OnInit(slot0)
 	slot0.itemTF = slot1:Find("item/left/IconTpl")
 	slot0.nameTF = slot0:findTF("item/display_panel/name_container/name")
 	slot0.descTF = slot0:findTF("item/display_panel/desc/Text")
-	slot4 = slot0._tf
 
-	onButton(slot0, slot4:Find("bg"), function ()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 	onButton(slot0, slot0.cancelBtn, function ()
@@ -80,10 +78,7 @@ end
 
 function slot0.updateValue(slot0)
 	setText(slot0.valueText, slot0.count)
-
-	slot1 = slot0.ulist
-
-	slot1:each(function (slot0, slot1)
+	slot0.ulist:each(function (slot0, slot1)
 		if not isActive(slot1) then
 			return
 		end
@@ -119,7 +114,7 @@ function slot0.update(slot0, slot1)
 					uv0.selectedItem = uv2
 				end
 			end, SFX_PANEL)
-			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1].cfg.name)
+			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1]:getConfig("name"))
 
 			uv0.selectedItem = uv0.selectedItem or slot2
 		end

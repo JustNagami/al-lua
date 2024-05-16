@@ -16,15 +16,10 @@ function slot0.Init(slot0)
 end
 
 function slot0.AddListener(slot0)
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_DELIVER, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_DELIVER, function (slot0, slot1)
 		uv0:PlayDeliverAnim(slot1.status, slot1.pos, slot1.oreTF)
 	end)
-
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_PLAY_CONTAINER_HIT, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_PLAY_CONTAINER_HIT, function (slot0, slot1)
 		uv0:PlayHitAnim(slot1.status, slot1.pos, slot1.hitPos, slot1.oreTF)
 	end)
 end
@@ -65,32 +60,24 @@ function slot0.PlayHitAnim(slot0, slot1, slot2, slot3, slot4)
 		return
 	end
 
-	slot5 = slot0._tf
-	slot0.mainTF = slot5:Find("Container_" .. slot1 .. "/break")
+	slot0.mainTF = slot0._tf:Find("Container_" .. slot1 .. "/break")
 
 	setAnchoredPosition(slot0.mainTF, slot2)
 	setActive(slot0.mainTF, true)
 
-	slot5 = slot0.mainTF.parent
-	slot5 = slot5:Find("ore/pos")
+	slot5 = slot0.mainTF.parent:Find("ore/pos")
 
 	removeAllChildren(slot5)
 
 	slot0.orePosList = {}
-	slot6 = cloneTplTo(slot4, slot5)
-	slot0.oreTFs = slot6:Find("oreTF")
+	slot0.oreTFs = cloneTplTo(slot4, slot5):Find("oreTF")
 	slot0.hitPos = {
 		x = -slot3.x * uv0.moveRata[slot1],
 		y = -slot3.y * uv0.moveRata[slot1]
 	}
 
 	setAnchoredPosition(slot5, Vector2(slot2.x + slot0.hitPos.x, slot2.y + slot0.hitPos.y))
-
-	slot6 = slot0.mainTF
-	slot6 = slot6:Find("main/Image")
-	slot6 = slot6:GetComponent(typeof(Animator))
-
-	slot6:Play("Break")
+	slot0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Break")
 
 	slot0.breakTime = 0
 

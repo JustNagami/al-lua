@@ -43,9 +43,7 @@ function slot0.InitGameUI(slot0, slot1)
 		"left",
 		"up"
 	}) do
-		slot8 = slot0.rtJoyStick
-		slot8 = slot8:Find(slot7)
-		slot8 = slot8:GetComponent(typeof(EventTriggerListener))
+		slot8 = slot0.rtJoyStick:Find(slot7):GetComponent(typeof(EventTriggerListener))
 
 		slot8:AddPointDownFunc(function ()
 			uv0.cacheInput = uv1[uv2]
@@ -66,9 +64,7 @@ function slot0.InitGameUI(slot0, slot1)
 	slot0.rtSkillButton = slot1:Find("Controller/bottom/skill_button")
 
 	for slot6 = 0, 3 do
-		slot8 = slot0.rtSkillButton
-		slot8 = slot8:Find("Skill_" .. slot6)
-		slot8 = slot8:GetComponent(typeof(EventTriggerListener))
+		slot8 = slot0.rtSkillButton:Find("Skill_" .. slot6):GetComponent(typeof(EventTriggerListener))
 
 		slot8:AddPointDownFunc(function ()
 			uv0.inPress[uv1] = true
@@ -116,12 +112,14 @@ end
 function slot0.InitMapConfig(slot0, slot1)
 	slot0.pointRate = slot1.rate
 	slot0.config = NenjuuGameConfig.GetStageConfig("Spring23Level_" .. slot1.index)
-	slot2 = {}
+	slot2 = {
+		[slot7.name] = slot7
+	}
 	slot6 = "Spring23Game"
 	slot7 = "Spring23Level_" .. slot1.index
 
 	for slot6, slot7 in ipairs(pg.MiniGameTileMgr.GetInstance():getDataLayers(slot6, slot7)) do
-		slot2[slot7.name] = slot7
+		-- Nothing
 	end
 
 	slot0.timeCount = slot0.config.extra_time[1]
@@ -315,9 +313,7 @@ function slot0.ResetGame(slot0)
 		"effect",
 		"character"
 	}) do
-		slot7 = slot0.rtMainContent
-
-		eachChild(slot7:Find(slot5), function (slot0)
+		eachChild(slot0.rtMainContent:Find(slot5), function (slot0)
 			Destroy(slot0)
 		end)
 	end
@@ -408,8 +404,7 @@ end
 
 function slot0.UpdateSkillButtons(slot0)
 	for slot4, slot5 in ipairs(slot0.moveFuShun:CalcSkillCDs()) do
-		slot6 = slot0.rtSkillButton
-		slot6 = slot6:Find("Skill_" .. slot4 - 1)
+		slot6 = slot0.rtSkillButton:Find("Skill_" .. slot4 - 1)
 
 		eachChild(slot6:Find("icon"), function (slot0)
 			setActive(slot0, slot0.name == uv0.icon)
@@ -589,7 +584,6 @@ function slot0.BuildBomb(slot0, slot1)
 			slot11 = uv0[(uv1[slot1.dir] + slot10 + 2) % 4 + 1]
 
 			for slot15 = -slot6, slot6 - 1 do
-				slot2 = slot2 + 1
 				slot16 = {
 					slot6,
 					slot15
@@ -597,7 +591,7 @@ function slot0.BuildBomb(slot0, slot1)
 
 				if slot0:Moveable(slot1.pos + NewPos(slot11[1] * slot16[slot10 % 2 + 1], slot11[2] * slot16[(slot10 + 1) % 2 + 1]), false, true) then
 					table.insert(slot0.timeQueue, {
-						time = (slot2 - 1) * 0.015,
+						time = (slot2 + 1 - 1) * 0.015,
 						func = function ()
 							uv0:CreateTarget({
 								name = "Bomb",
@@ -701,11 +695,10 @@ function slot0.GetWayfindingMap(slot0, slot1, slot2)
 	end
 
 	slot0.dirtyMap = false
-	slot3 = {}
 	slot4 = slot0.moveFuShun.pos + slot0.moveFuShun:GetDirPos()
 
 	if slot2 and slot0:InRange(slot4) then
-		table.insert(slot3, slot4)
+		table.insert({}, slot4)
 	else
 		table.insert(slot3, slot0.moveFuShun.pos)
 	end
@@ -719,14 +712,12 @@ function slot0.GetWayfindingMap(slot0, slot1, slot2)
 	slot6 = 0
 
 	while slot6 < #slot3 do
-		slot8 = slot5[tostring(slot3[slot6 + 1])].value + 1
-
 		for slot12, slot13 in ipairs(uv0) do
 			if slot7 + NewPos(unpack(slot13)) == slot1 or slot0:Moveable(slot14, not slot2) then
 				if not slot5[tostring(slot14)] then
 					slot5[slot15] = {
 						pos = slot14,
-						value = slot8,
+						value = slot5[tostring(slot3[slot6 + 1])].value + 1,
 						last = slot7
 					}
 

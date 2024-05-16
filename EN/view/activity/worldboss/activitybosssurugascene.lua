@@ -5,9 +5,7 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.preload(slot0, slot1)
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetPrefab("ui/cysx_fk", "cysx_fk", true, function (slot0)
+	PoolMgr.GetInstance():GetPrefab("ui/cysx_fk", "cysx_fk", true, function (slot0)
 		uv0:ReturnPrefab("ui/cysx_fk", "cysx_fk", slot0)
 		uv1()
 	end)
@@ -22,10 +20,7 @@ end
 
 function slot0.didEnter(slot0)
 	uv0.super.didEnter(slot0)
-
-	slot1 = slot0.loader
-
-	slot1:GetPrefab("ui/cysx_fk", "cysx_fk", function (slot0)
+	slot0.loader:GetPrefab("ui/cysx_fk", "cysx_fk", function (slot0)
 		setParent(slot0, uv0.left)
 		setAnchoredPosition(slot0, Vector2(69, 295))
 		slot0.transform:SetAsFirstSibling()
@@ -46,10 +41,7 @@ function slot0.UpdateRank(slot0, slot1)
 end
 
 function slot0.UpdateDropItems(slot0)
-	slot1 = ipairs
-	slot2 = slot0.contextData.DisplayItems or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in ipairs(slot0.contextData.DisplayItems or {}) do
 		slot6 = slot0:findTF("milestone/item", slot0.barList[slot4])
 
 		updateDrop(slot6, {

@@ -33,10 +33,7 @@ end
 
 function slot0.Show(slot0, slot1, slot2)
 	uv0.super.Show(slot0)
-
-	slot3 = pg.UIMgr.GetInstance()
-
-	slot3:BlurPanel(slot0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 

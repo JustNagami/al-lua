@@ -84,10 +84,8 @@ function slot0.Update(slot0)
 	setText(slot0.powerIconTF:Find("info/Text"), i18n("world_map_level", slot8))
 	setText(slot0.powerCount, slot1:GetWorldPower())
 
-	slot4 = slot1:GetWorldMapBuffLevel()
-
 	for slot8 = 1, 3 do
-		setText(slot0.buffListTF:GetChild(slot8 - 1):Find("Text"), slot4[slot8] or 0)
+		setText(slot0.buffListTF:GetChild(slot8 - 1):Find("Text"), slot1:GetWorldMapBuffLevel()[slot8] or 0)
 	end
 
 	setText(slot0.stepCount, slot1.stepCount)

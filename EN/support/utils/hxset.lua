@@ -43,12 +43,10 @@ function slot0.init()
 				uv0.codeMode = true
 			end
 
-			slot2 = "Localization_skin = false"
-
 			if slot1.Length <= 1 then
 				slot3 = {
 					slot1[0],
-					slot2
+					"Localization_skin = false"
 				}
 			else
 				slot2 = slot1[1]
@@ -72,18 +70,15 @@ function slot0.calcLocalizationUse()
 		end
 
 		slot1 = pg.TimeMgr.GetInstance()
-		slot4 = PlayerPrefs.GetInt("localization_time_1_" .. getProxy(PlayerProxy):getData().id, 0)
 
-		if uv0.codeMode and not slot1.IsSameDay(slot1, slot4, slot1.GetServerTime(slot1)) then
+		if uv0.codeMode and not slot1:IsSameDay(PlayerPrefs.GetInt("localization_time_1_" .. getProxy(PlayerProxy):getData().id, 0), slot1:GetServerTime()) then
 			pg.m02:sendNotification(GAME.CHEATER_MARK, {
 				reason = CC_TYPE_99
 			})
 			PlayerPrefs.SetInt(slot3, slot1:GetServerTime())
 		end
 
-		slot6 = PlayerPrefs.GetInt("localization_time_2_" .. slot2, 0)
-
-		if uv0.antiSkinMode and not slot1.IsSameDay(slot1, slot6, slot1.GetServerTime(slot1)) then
+		if uv0.antiSkinMode and not slot1:IsSameDay(PlayerPrefs.GetInt("localization_time_2_" .. slot2, 0), slot1:GetServerTime()) then
 			pg.m02:sendNotification(GAME.CHEATER_MARK, {
 				reason = CC_TYPE_100
 			})
@@ -110,6 +105,7 @@ function slot0.isHXNation(slot0)
 		[Nation.DE] = true,
 		[Nation.CN] = true,
 		[Nation.ITA] = true,
+		[Nation.SN] = true,
 		[Nation.MNF] = true,
 		[Nation.META] = true
 	}

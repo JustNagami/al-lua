@@ -80,12 +80,11 @@ function slot0.load(slot0)
 			uv0:preload(slot0)
 		end,
 		function (slot0)
-			slot1 = PoolMgr.GetInstance()
+			uv0:LoadUIFromPool(uv1, function (slot0)
+				print("Loaded " .. uv0)
 
-			slot1:GetUI(uv0, true, function (slot0)
-				uv0 = slot0
+				uv1 = slot0
 
-				print("Loaded " .. uv1)
 				uv2()
 			end)
 		end
@@ -99,6 +98,10 @@ function slot0.load(slot0)
 
 		uv2:onUILoaded(uv0)
 	end)
+end
+
+function slot0.LoadUIFromPool(slot0, slot1, slot2)
+	PoolMgr.GetInstance():GetUI(slot1, true, slot2)
 end
 
 function slot0.getBGM(slot0, slot1)
@@ -291,9 +294,7 @@ function slot0.enter(slot0)
 	end
 
 	if slot0.animTF ~= nil then
-		slot4 = slot0.animTF:GetComponent(typeof(UIEventTrigger))
-
-		if slot0.animTF:GetComponent(typeof(Animation)) ~= nil and slot4 ~= nil then
+		if slot0.animTF:GetComponent(typeof(Animation)) ~= nil and slot0.animTF:GetComponent(typeof(UIEventTrigger)) ~= nil then
 			if slot3:get_Item("enter") == nil then
 				originalPrint("cound not found enter animation")
 			else
@@ -331,21 +332,19 @@ function slot0.exit(slot0)
 	slot0:StopBgm()
 	pg.DelegateInfo.Dispose(slot0)
 
-	function slot1()
-		uv0:willExit()
-		uv0:ShowOrHideResUI(false)
-		uv0:detach()
-		pg.NewGuideMgr.GetInstance():OnSceneExit({
-			view = uv0.__cname
-		})
-		pg.NewStoryMgr.GetInstance():OnSceneExit({
-			view = uv0.__cname
-		})
-		uv0:emit(uv1.DID_EXIT)
-	end
-
 	if not false then
-		slot1()
+		function ()
+			uv0:willExit()
+			uv0:ShowOrHideResUI(false)
+			uv0:detach()
+			pg.NewGuideMgr.GetInstance():OnSceneExit({
+				view = uv0.__cname
+			})
+			pg.NewStoryMgr.GetInstance():OnSceneExit({
+				view = uv0.__cname
+			})
+			uv0:emit(uv1.DID_EXIT)
+		end()
 	end
 end
 
@@ -369,11 +368,10 @@ function slot0.detach(slot0, slot1)
 	slot0:ClearTweens(false)
 
 	slot0._tf = nil
-	slot2 = PoolMgr.GetInstance()
 	slot3 = slot0:getUIName()
 
 	if slot0._go ~= nil and slot3 then
-		slot2:ReturnUI(slot3, slot0._go)
+		PoolMgr.GetInstance():ReturnUI(slot3, slot0._go)
 
 		slot0._go = nil
 	end

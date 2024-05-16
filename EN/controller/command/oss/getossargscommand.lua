@@ -2,17 +2,14 @@ slot0 = class("GetOSSArgsCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot4 = slot2.callback
 
 	if slot2.mode == 1 then
-		slot4({
+		slot2.callback({
 			OSS_ENDPOINT,
 			OSS_STS_URL
 		}, 0)
 	elseif slot3 == 2 then
-		slot5 = pg.ConnectionMgr.GetInstance()
-
-		slot5:Send(19103, {
+		pg.ConnectionMgr.GetInstance():Send(19103, {
 			typ = 0
 		}, 19104, function (slot0)
 			if slot0.result == 0 then

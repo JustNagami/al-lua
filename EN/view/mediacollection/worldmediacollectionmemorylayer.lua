@@ -84,9 +84,7 @@ function slot0.OnSelected(slot0)
 		slot4 = _.flatten(slot2:getConfig("config_data"))
 
 		if getProxy(TaskProxy):getTaskById(slot4[#slot4]) and not slot7:isFinish() then
-			slot8 = pg.NewStoryMgr.GetInstance()
-
-			slot8:Play("HOSHO8", function ()
+			pg.NewStoryMgr.GetInstance():Play("HOSHO8", function ()
 				uv0:emit(CollectionScene.ACTIVITY_OP, {
 					cmd = 2,
 					activity_id = uv1.id

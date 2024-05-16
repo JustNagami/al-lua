@@ -60,19 +60,16 @@ function slot0.TimeTrigger(slot0, slot1)
 		slot0.skillCenterPos = slot0.responder.reactorRyza.realPos
 	end
 
-	function slot2()
-		if uv0.responder.reactorRyza.hide then
-			return false
-		else
-			slot0 = uv0.responder.reactorRyza.realPos - uv0.skillCenterPos
-			slot1 = slot0.x * slot0.x < uv0.ImpackRange * uv0.ImpackRange / 4 and slot0.y * slot0.y < uv0.ImpackRange * uv0.ImpackRange / 4
-
-			return slot1
-		end
-	end
-
 	if slot0.impackCount > 0 then
-		if slot2() then
+		if function ()
+			if uv0.responder.reactorRyza.hide then
+				return false
+			else
+				slot0 = uv0.responder.reactorRyza.realPos - uv0.skillCenterPos
+
+				return slot0.x * slot0.x < uv0.ImpackRange * uv0.ImpackRange / 4 and slot0.y * slot0.y < uv0.ImpackRange * uv0.ImpackRange / 4
+			end
+		end() then
 			slot0.impackCD = slot0.impackCD - slot1
 
 			if slot0.impackCD <= 0 then

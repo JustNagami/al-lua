@@ -50,18 +50,10 @@ end
 function slot0.Init(slot0, slot1)
 	slot0._tf = slot0:NewGameObject()
 	slot0._tf.gameObject.name = slot0.__cname
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Image")
-	slot0.image = slot2:GetComponent(typeof(Image))
-	slot2 = slot0._tf
-	slot2 = slot2:Find("sub_Image")
-	slot0.subImage = slot2:GetComponent(typeof(Image))
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Tip")
-	slot0.tipTr = slot2:GetComponent(typeof(Image))
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Tip/Text")
-	slot0.tipTxt = slot2:GetComponent(typeof(Text))
+	slot0.image = slot0._tf:Find("Image"):GetComponent(typeof(Image))
+	slot0.subImage = slot0._tf:Find("sub_Image"):GetComponent(typeof(Image))
+	slot0.tipTr = slot0._tf:Find("Tip"):GetComponent(typeof(Image))
+	slot0.tipTxt = slot0._tf:Find("Tip/Text"):GetComponent(typeof(Text))
 
 	setActive(slot0._tf, true)
 

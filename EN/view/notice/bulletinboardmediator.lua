@@ -5,10 +5,7 @@ function slot0.register(slot0)
 	slot1 = getProxy(ServerNoticeProxy)
 
 	slot1:setStopNewTip()
-
-	slot3 = slot0.viewComponent
-
-	slot3:setNotices(slot1:getServerNotices(false))
+	slot0.viewComponent:setNotices(slot1:getServerNotices(false))
 	slot0:bind(slot0.SET_STOP_REMIND, function (slot0, slot1)
 		getProxy(ServerNoticeProxy):setStopRemind(slot1)
 	end)

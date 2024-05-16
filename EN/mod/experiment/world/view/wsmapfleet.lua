@@ -83,8 +83,7 @@ function slot0.Init(slot0)
 end
 
 function slot0.LoadSpine(slot0, slot1)
-	slot3 = slot0.fleet
-	slot4 = SpineRole.New(slot3:GetFlagShipVO())
+	slot4 = SpineRole.New(slot0.fleet:GetFlagShipVO())
 
 	slot4:Load(function ()
 		if uv0.modelType ~= WorldConst.ModelSpine then
@@ -107,7 +106,7 @@ function slot0.LoadSpine(slot0, slot1)
 		uv0.spineRole = uv1
 
 		uv2()
-	end, slot0.modelResAsync)
+	end, slot0.modelResAsync, slot4.ORBIT_KEY_SLG)
 end
 
 function slot0.UnloadSpine(slot0)
@@ -199,9 +198,7 @@ function slot0.UpdateAttaches(slot0)
 end
 
 function slot0.ClearAttaches(slot0)
-	slot2 = WPool
-
-	slot2:ReturnArray(slot0.attaches)
+	WPool:ReturnArray(slot0.attaches)
 
 	for slot5, slot6 in ipairs(_.map(slot0.attaches, function (slot0)
 		return slot0.transform

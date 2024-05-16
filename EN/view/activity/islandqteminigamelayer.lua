@@ -5,9 +5,7 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.init(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	eachChild(slot0._tf, function (slot0)
 		setActive(slot0, slot0.name == uv0.contextData.mark)
 
@@ -22,10 +20,9 @@ function slot0.didEnter(slot0)
 		Qgame1 = function ()
 			slot1 = math.random(3, 7)
 			slot2 = {}
-			slot3 = {}
 
 			for slot7 = uv0.rtGame:Find("content").childCount, 1, -1 do
-				table.insert(slot3, slot7)
+				table.insert({}, slot7)
 			end
 
 			slot4 = uv0.rtGame:Find("res")
@@ -35,11 +32,9 @@ function slot0.didEnter(slot0)
 
 				table.insert(slot2, slot9)
 
-				slot10 = cloneTplTo(slot4:Find(math.random(slot4.childCount)), slot0:GetChild(slot9 - 1))
-				slot11 = slot10:Find("Image")
-				slot12 = slot11:GetComponent(typeof(DftAniEvent))
+				slot11 = cloneTplTo(slot4:Find(math.random(slot4.childCount)), slot0:GetChild(slot9 - 1)):Find("Image")
 
-				slot12:SetEndEvent(function (slot0)
+				slot11:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
 					uv0 = uv0 - 1
 
 					table.removebyvalue(uv1, uv2)
@@ -60,13 +55,8 @@ function slot0.didEnter(slot0)
 				end, SFX_PANEL)
 			end
 
-			slot6 = uv0.rtGame
-
-			setText(slot6:Find("btn_hint/Text"), i18n("islandnode_tips2"))
-
-			slot7 = uv0.rtGame
-
-			onButton(uv0, slot7:Find("btn_hint"), function ()
+			setText(uv0.rtGame:Find("btn_hint/Text"), i18n("islandnode_tips2"))
+			onButton(uv0, uv0.rtGame:Find("btn_hint"), function ()
 				uv0.timer = Timer.New(function ()
 					if uv0 == 0 then
 						setText(uv1.rtGame:Find("btn_hint/Text"), i18n("islandnode_tips2"))
@@ -134,9 +124,7 @@ function slot0.didEnter(slot0)
 				end
 			end
 
-			slot10 = uv0.rtGame
-
-			onButton(uv0, slot10:Find("btn_l"), function ()
+			onButton(uv0, uv0.rtGame:Find("btn_l"), function ()
 				if uv0 == 1 then
 					uv0 = 2
 
@@ -149,10 +137,7 @@ function slot0.didEnter(slot0)
 
 				uv3()
 			end, SFX_PANEL)
-
-			slot10 = uv0.rtGame
-
-			onButton(uv0, slot10:Find("btn_r"), function ()
+			onButton(uv0, uv0.rtGame:Find("btn_r"), function ()
 				if uv0 == 1 then
 					uv0 = 2
 
@@ -165,10 +150,7 @@ function slot0.didEnter(slot0)
 
 				uv3()
 			end, SFX_PANEL)
-
-			slot10 = uv0.rtGame
-
-			onButton(uv0, slot10:Find("btn_back"), function ()
+			onButton(uv0, uv0.rtGame:Find("btn_back"), function ()
 				uv0:closeView()
 			end, SFX_CANCEL)
 
@@ -220,7 +202,6 @@ function slot0.didEnter(slot0)
 					1
 				}
 			}
-			slot2 = math.random(3)
 			slot3 = 3
 			slot4 = 0
 			slot5 = nil
@@ -309,7 +290,7 @@ function slot0.didEnter(slot0)
 						end
 					end
 				end)
-				SetAction(slot9[slot13], slot13 == slot2 and "normal2" or "normal1")
+				SetAction(slot9[slot13], slot13 == math.random(3) and "normal2" or "normal1")
 			end
 
 			setText(uv0.rtGame:Find("Image/Text"), i18n("islandnode_tips3"))
@@ -319,8 +300,7 @@ function slot0.didEnter(slot0)
 		Qgame4 = function ()
 			slot0 = 5
 			slot1 = 0
-			slot2 = uv0.rtGame
-			slot2 = slot2:Find("vine")
+			slot2 = uv0.rtGame:Find("vine")
 			slot3 = slot2:GetChild(math.random(slot2.childCount) - 1)
 
 			eachChild(slot2, function (slot0)
@@ -332,10 +312,7 @@ function slot0.didEnter(slot0)
 					uv1:finishGame(0)
 				end
 			end)
-
-			slot6 = uv0.rtGame
-
-			onButton(uv0, slot6:Find("btn"), function ()
+			onButton(uv0, uv0.rtGame:Find("btn"), function ()
 				if Time.realtimeSinceStartup - uv0 < 1 then
 					uv1 = uv1 - 1
 
@@ -355,26 +332,20 @@ function slot0.didEnter(slot0)
 			slot1 = 3
 			slot2 = 30
 			slot3 = 60
-			slot5 = uv0.rtGame
 
-			setLocalEulerAngles(slot5:Find("hitter/hit_prefect"), {
+			setLocalEulerAngles(uv0.rtGame:Find("hitter/hit_prefect"), {
 				z = slot2 / 2
 			})
 
-			slot4 = uv0.rtGame
-			slot4 = slot4:Find("hitter/hit_prefect")
-			slot4:GetComponent(typeof(Image)).fillAmount = slot2 / 360
+			uv0.rtGame:Find("hitter/hit_prefect"):GetComponent(typeof(Image)).fillAmount = slot2 / 360
 			slot5 = uv0.rtGame
 
 			setLocalEulerAngles(slot5:Find("hitter/hit_good"), {
 				z = slot3 / 2
 			})
 
-			slot4 = uv0.rtGame
-			slot4 = slot4:Find("hitter/hit_good")
-			slot4:GetComponent(typeof(Image)).fillAmount = slot3 / 360
-			slot4 = uv0.rtGame
-			slot4 = slot4:Find("char")
+			uv0.rtGame:Find("hitter/hit_good"):GetComponent(typeof(Image)).fillAmount = slot3 / 360
+			slot4 = uv0.rtGame:Find("char")
 
 			eachChild(slot4, function (slot0)
 				setActive(slot0, slot0 == uv0)

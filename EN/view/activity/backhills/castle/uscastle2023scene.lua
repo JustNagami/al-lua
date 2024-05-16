@@ -58,8 +58,7 @@ function slot0.init(slot0)
 		slot0["upper_" .. go(slot5).name] = slot5
 	end
 
-	slot1 = slot0._tf
-	slot0._SDPlace = slot1:Find("SDPlace")
+	slot0._SDPlace = slot0._tf:Find("SDPlace")
 	slot0.containers = {
 		slot0._SDPlace
 	}
@@ -152,12 +151,10 @@ function slot0.PlayerOneFirework(slot0)
 
 	table.removebyvalue(slot0.fireworksList, slot1)
 
-	slot4 = math.random(#uv0.SFX_LIST)
-
 	if slot0.fireworksTF:Find(uv0.EffectName[slot1]) then
 		setLocalPosition(slot3, slot0:GetFireworkPos())
 		setActive(slot3, true)
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0.SFX_LIST[slot4])
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0.SFX_LIST[math.random(#uv0.SFX_LIST)])
 		Timer.New(function ()
 			if uv0.fireworksList then
 				setActive(uv1, false)
@@ -165,9 +162,7 @@ function slot0.PlayerOneFirework(slot0)
 			end
 		end, uv0.EffectRecycleTime, 1):Start()
 	else
-		slot5 = slot0.loader
-
-		slot5:GetPrefab("ui/" .. slot2, "", function (slot0)
+		slot0.loader:GetPrefab("ui/" .. slot2, "", function (slot0)
 			pg.ViewUtils.SetSortingOrder(slot0, 1)
 
 			slot0.name = uv0

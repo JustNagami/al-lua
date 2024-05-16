@@ -59,10 +59,13 @@ function slot0.didEnter(slot0)
 		uv0:UpdateContent()
 	end, SFX_PANEL, SFX_CANCEL)
 
-	slot7 = LoadSprite(itemId2icon(pg.player_resource[pg.activity_event_worldboss[slot0.activity:getConfig("config_id")].ticket].itemid), "")
+	slot6 = LoadSprite(Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = pg.activity_event_worldboss[slot0.activity:getConfig("config_id")].ticket
+	}):getIcon(), "")
 
-	slot0.consumeText:AddSprite("ticket", slot7)
-	setImageSprite(slot0.panel:Find("ticket/Text/Icon"), slot7)
+	slot0.consumeText:AddSprite("ticket", slot6)
+	setImageSprite(slot0.panel:Find("ticket/Text/Icon"), slot6)
 	slot0._pageUtil:setNumUpdate(function (slot0)
 		uv0.contextData.battleTimes = slot0
 
@@ -78,10 +81,8 @@ function slot0.didEnter(slot0)
 end
 
 function slot0.UpdateContent(slot0)
-	slot10 = tostring(slot7)
-
 	if (slot0.contextData.useTicket and math.clamp(slot0.contextData.battleTimes - slot0.activity:GetStageBonus(slot0.contextData.stageId), 0, getProxy(PlayerProxy):getRawData():getResource(pg.activity_event_worldboss[slot0.activity:getConfig("config_id")].ticket)) or 0) > 0 then
-		slot10 = slot10 .. setColorStr("+" .. slot9, COLOR_GREEN)
+		slot10 = tostring(slot7) .. setColorStr("+" .. slot9, COLOR_GREEN)
 	end
 
 	setText(slot0.panel:Find("bonus/Number"), slot10)
@@ -93,10 +94,9 @@ function slot0.UpdateContent(slot0)
 	setToggleEnabled(slot0.panel:Find("ticket/checkbox"), slot11)
 
 	slot12 = slot0.contextData.oilCost * slot1
-	slot13 = i18n("multiple_sorties_cost1", slot12)
 
 	if getProxy(PlayerProxy):getRawData().oil < slot12 then
-		slot13 = string.gsub(slot13, "#92fc63", COLOR_RED)
+		slot13 = string.gsub(i18n("multiple_sorties_cost1", slot12), "#92fc63", COLOR_RED)
 	end
 
 	if slot9 > 0 then

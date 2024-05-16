@@ -38,10 +38,8 @@ end
 
 function slot0.GetSequence(slot0)
 	slot1 = {}
-	slot2 = ipairs
-	slot3 = slot0.sequence or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot0.sequence or {}) do
 		table.insert(slot1, {
 			slot6[1],
 			slot6[2]

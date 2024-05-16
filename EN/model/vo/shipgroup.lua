@@ -33,6 +33,10 @@ function slot0.IsMetaGroup(slot0)
 	return tobool(pg.ship_strengthen_meta[slot0])
 end
 
+function slot0.IsMotGroup(slot0)
+	return uv0.getDefaultShipConfig(slot0).nationality == Nation.MOT
+end
+
 slot0.STATE_LOCK = 0
 slot0.STATE_NOTGET = 1
 slot0.STATE_UNLOCK = 2
@@ -72,11 +76,10 @@ function slot0.getState(slot0, slot1, slot2)
 
 			assert(slot3, "code can not be nil" .. slot0)
 
-			slot5 = getProxy(ChapterProxy)
 			slot6 = nil
 
 			if slot3.redirect_id ~= 0 then
-				slot6 = slot5:getChapterById(slot4)
+				slot6 = getProxy(ChapterProxy):getChapterById(slot4)
 			end
 
 			if slot4 == 0 or slot6 and slot6:isClear() then
@@ -99,6 +102,7 @@ function slot0.Ctor(slot0, slot1)
 	slot0.maxIntimacy = slot1.intimacy_max
 	slot0.maxLV = slot1.lv_max
 	slot0.evaluation = nil
+	slot0.equipCodes = nil
 	slot0.lastReqStamp = 0
 	slot0.trans = false
 	slot0.remoulded = slot1.remoulded
@@ -135,10 +139,8 @@ function slot0.getNation(slot0)
 end
 
 function slot0.getRarity(slot0, slot1)
-	slot2 = slot0.shipConfig.rarity
-
 	if slot1 and slot0.trans then
-		slot2 = slot2 + 1
+		slot2 = slot0.shipConfig.rarity + 1
 	end
 
 	return slot2
@@ -189,16 +191,12 @@ end
 function slot0.getDisplayableSkinList(slot0)
 	slot1 = {}
 
-	function slot2(slot0)
-		return slot0.skin_type == ShipSkin.SKIN_TYPE_OLD or slot0.skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not getProxy(ShipSkinProxy):hasSkin(slot0.id)
-	end
-
-	function slot3(slot0)
-		return getProxy(ShipSkinProxy):InShowTime(slot0)
-	end
-
 	for slot7, slot8 in ipairs(pg.ship_skin_template.all) do
-		if pg.ship_skin_template[slot8].ship_group == slot0.id and slot9.no_showing ~= "1" and not slot2(slot9) and slot3(slot9.id) then
+		if pg.ship_skin_template[slot8].ship_group == slot0.id and slot9.no_showing ~= "1" and not function (slot0)
+			return slot0.skin_type == ShipSkin.SKIN_TYPE_OLD or slot0.skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not getProxy(ShipSkinProxy):hasSkin(slot0.id)
+		end(slot9) and function (slot0)
+			return getProxy(ShipSkinProxy):InShowTime(slot0)
+		end(slot9.id) then
 			table.insert(slot1, slot9)
 		end
 	end
@@ -361,6 +359,14 @@ end
 
 function slot0.rarity2bgPrintForGet(slot0, slot1, slot2)
 	return skinId2bgPrint(slot2 or slot0:GetSkin(slot1).id) or slot0:rarity2bgPrint(slot1)
+end
+
+function slot0.setEquipCodes(slot0, slot1)
+	slot0.equipCodes = slot1
+end
+
+function slot0.getEquipCodes(slot0)
+	return slot0.equipCodes
 end
 
 return slot0

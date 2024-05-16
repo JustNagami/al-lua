@@ -51,8 +51,7 @@ function slot0.IsWorking(slot0)
 end
 
 function slot0.WaitForFinish(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot7 = slot0.studentsPage
-	slot7 = slot7:GetCard(slot1)
+	slot7 = slot0.studentsPage:GetCard(slot1)
 
 	slot7:RemoveTimer()
 	slot0:DoAnimtion(slot7, slot3, slot4, slot5, function ()
@@ -64,10 +63,9 @@ function slot0.DisplayResult(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot6 = ""
 	slot8 = getProxy(BayProxy):RawGetShipById(slot3):getName()
 	slot9 = slot4:GetName()
-	slot6 = slot4.level < slot5.level and i18n("tactics_end_to_learn", slot8, slot9, slot2) .. i18n("tactics_skill_level_up", slot4.level, slot5.level) or i18n("tactics_end_to_learn", slot8, slot9, slot2)
 
 	if slot5:IsMaxLevel() then
-		slot0:HandleMaxLevel(slot1, slot7, slot6, slot8, slot9, slot2)
+		slot0:HandleMaxLevel(slot1, slot7, slot4.level < slot5.level and i18n("tactics_end_to_learn", slot8, slot9, slot2) .. i18n("tactics_skill_level_up", slot4.level, slot5.level) or i18n("tactics_end_to_learn", slot8, slot9, slot2), slot8, slot9, slot2)
 	else
 		slot0:WhetherToContinue(slot6, slot1, slot7, slot4.id)
 	end

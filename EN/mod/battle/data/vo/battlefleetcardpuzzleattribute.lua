@@ -53,10 +53,8 @@ function slot11.checkClamp(slot0, slot1)
 		return
 	end
 
-	slot2 = slot0._attrList[slot1]
-
 	if uv0.FleetAttrClamp[slot1] then
-		slot2 = math.max(slot2, slot0._attrList[slot3.min] or 0)
+		slot2 = math.max(slot0._attrList[slot1], slot0._attrList[slot3.min] or 0)
 
 		if slot0._attrList[slot3.max] then
 			slot2 = math.min(slot2, slot4) or slot2

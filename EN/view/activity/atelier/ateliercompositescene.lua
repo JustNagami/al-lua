@@ -280,33 +280,30 @@ end
 function slot0.FilterFormulas(slot0)
 	slot0.filterFormulas = {}
 	slot1 = slot0.contextData.filterType
-
-	function slot2(slot0)
-		if uv0 == uv1.FilterAll then
-			return true
-		end
-
-		return switch(slot0:GetType(), {
-			[uv2.TYPE.EQUIP] = function ()
-				return bit.band(uv0, 1) > 0
-			end,
-			[uv2.TYPE.ITEM] = function ()
-				return bit.band(uv0, 2) > 0
-			end,
-			[uv2.TYPE.TOOL] = function ()
-				return bit.band(uv0, 4) > 0
-			end,
-			[uv2.TYPE.OTHER] = function ()
-				return bit.band(uv0, 4) > 0
-			end
-		})
-	end
-
 	slot5 = slot0.activity
 	slot6 = slot5
 
 	for slot6, slot7 in ipairs(_.values(slot5.GetFormulas(slot6))) do
-		if slot2(slot7) and (not slot0.showOnlyComposite or slot7:IsAvaliable() and uv1.IsFormualCanComposite(slot7, slot0.activity)) then
+		if function (slot0)
+			if uv0 == uv1.FilterAll then
+				return true
+			end
+
+			return switch(slot0:GetType(), {
+				[uv2.TYPE.EQUIP] = function ()
+					return bit.band(uv0, 1) > 0
+				end,
+				[uv2.TYPE.ITEM] = function ()
+					return bit.band(uv0, 2) > 0
+				end,
+				[uv2.TYPE.TOOL] = function ()
+					return bit.band(uv0, 4) > 0
+				end,
+				[uv2.TYPE.OTHER] = function ()
+					return bit.band(uv0, 4) > 0
+				end
+			})
+		end(slot7) and (not slot0.showOnlyComposite or slot7:IsAvaliable() and uv1.IsFormualCanComposite(slot7, slot0.activity)) then
 			table.insert(slot0.filterFormulas, slot7)
 		end
 	end
@@ -410,16 +407,12 @@ function slot0.UpdateRyzaDrop(slot0, slot1, slot2, slot3)
 	setActive(slot1:Find("icon_bg/frame"), false)
 	setActive(slot1:Find("icon_bg/stars"), false)
 
-	slot4 = slot2.cfg.rarity
-
 	if slot2.type == DROP_TYPE_EQUIP or slot2.type == DROP_TYPE_EQUIPMENT_SKIN then
-		slot4 = slot4 - 1
+		slot4 = slot2:getConfig("rarity") - 1
 	end
 
-	slot5 = "icon_frame_" .. slot4
-
 	if slot3 then
-		slot5 = slot5 .. "_small"
+		slot5 = "icon_frame_" .. slot4 .. "_small"
 	end
 
 	slot0.loader:GetSpriteQuiet(uv0, slot5, slot1)
@@ -448,15 +441,11 @@ function slot0.ShowFormulaDetail(slot0, slot1)
 	slot0.painting:SetSiblingIndex(0)
 
 	if not slot0.nodePools then
-		slot4 = slot0.layerFormulaDetail
-		slot4 = slot0.layerFormulaDetail
-		slot4 = slot0.layerFormulaDetail
-		slot4 = slot0.layerFormulaDetail
 		slot0.nodePools = {
-			circle = uv0.New(slot4:Find("CircleNode").gameObject, 100),
-			hexagon = uv0.New(slot4:Find("HexagonNode").gameObject, 100),
-			anyHexagon = uv0.New(slot4:Find("AnyHexagonNode").gameObject, 100),
-			doubleHexagon = uv0.New(slot4:Find("DoubleHexagonNode").gameObject, 100)
+			circle = uv0.New(slot0.layerFormulaDetail:Find("CircleNode").gameObject, 100),
+			hexagon = uv0.New(slot0.layerFormulaDetail:Find("HexagonNode").gameObject, 100),
+			anyHexagon = uv0.New(slot0.layerFormulaDetail:Find("AnyHexagonNode").gameObject, 100),
+			doubleHexagon = uv0.New(slot0.layerFormulaDetail:Find("DoubleHexagonNode").gameObject, 100)
 		}
 
 		table.Foreach(slot0.nodePools, function (slot0, slot1)
@@ -536,9 +525,8 @@ slot9 = {
 function slot0.InitFormula(slot0, slot1)
 	slot0.contextData.formulaId = slot1:GetConfigID()
 	slot2 = slot0.layerFormulaOverlay:Find("Description")
-	slot3 = slot0.loader
 
-	slot3:GetSpriteQuiet(uv0, uv1[slot1:GetType()], slot2:Find("Type"))
+	slot0.loader:GetSpriteQuiet(uv0, uv1[slot1:GetType()], slot2:Find("Type"))
 	slot0:UpdateRyzaDrop(slot2:Find("Icon"), {
 		type = slot1:GetProduction()[1],
 		id = slot1:GetProduction()[2]
@@ -579,7 +567,7 @@ function slot0.InitFormula(slot0, slot1)
 	slot8 = slot6 * Vector2.New(math.cos(slot7), math.sin(slot7))
 	slot9 = slot6 * Vector2(0, 1)
 
-	(function (slot0, slot1)
+	function (slot0, slot1)
 		setAnchoredPosition(slot0.GO, slot1)
 
 		slot0.links = {}
@@ -603,7 +591,7 @@ function slot0.InitFormula(slot0, slot1)
 			uv7 = Vector2.Max(uv7, -slot6)
 			uv7 = Vector2.Max(uv7, slot6)
 		end)
-	end)(slot0.nodeList[1], Vector2.zero)
+	end(slot0.nodeList[1], Vector2.zero)
 	setSizeDelta(slot5, (Vector2.zero + Vector2.New(slot6, slot6)) * 2)
 	onButton(slot0, slot0.layerFormulaDetail:Find("Composite"), function ()
 		if not _.all(uv0.nodeList, function (slot0)
@@ -714,10 +702,8 @@ function slot0.InitFormula(slot0, slot1)
 				slot4 = AtelierMaterial.bindConfigTable()
 
 				function slot5(slot0)
-					slot1 = slot0.Data
-
 					for slot5, slot6 in ipairs(uv0.all) do
-						if (uv1[slot6] or uv2[slot6]) and slot7.count > 0 and slot7:IsNormal() and slot1:CanUseMaterial(slot7, uv3) then
+						if (uv1[slot6] or uv2[slot6]) and slot7.count > 0 and slot7:IsNormal() and slot0.Data:CanUseMaterial(slot7, uv3) then
 							uv4(slot7)
 							uv5()
 							uv6()
@@ -752,13 +738,13 @@ function slot0.InitFormula(slot0, slot1)
 			uv6:UpdateFormulaDetail()
 		end)
 
-		(function ()
+		function ()
 			if uv0 and coroutine.status(uv0) == "suspended" then
 				slot0, slot1 = coroutine.resume(uv0)
 
 				assert(slot0, debug.traceback(uv0, slot1))
 			end
-		end)()
+		end()
 	end, SFX_PANEL)
 	slot0:UpdateFormulaDetail()
 end
@@ -839,14 +825,13 @@ function slot0.UpdateNodeView(slot0, slot1)
 		setActive(uv0:Find("Links"):GetChild(slot0[1] - 1), true)
 	end)
 
-	slot4 = slot3:GetElementName()
 	slot5 = slot1.Lock
 
 	setActive(slot2:Find("Lock"), slot5)
 
 	if slot5 then
 		if slot3:GetType() ~= uv0.TYPE.ANY then
-			slot0.loader:GetSpriteQuiet(uv1, "element_" .. slot4, slot2:Find("Lock/Require/Icon"))
+			slot0.loader:GetSpriteQuiet(uv1, "element_" .. slot3:GetElementName(), slot2:Find("Lock/Require/Icon"))
 		end
 
 		setText(slot2:Find("Lock/Require/Text"), "X" .. slot3:GetLevel())
@@ -931,9 +916,7 @@ function slot0.UpdateNodeView(slot0, slot1)
 				slot3 = uv1[2]
 			end
 
-			slot4 = uv3.loader
-
-			slot4:GetPrefab("ui/" .. slot3, "", function (slot0)
+			uv3.loader:GetPrefab("ui/" .. slot3, "", function (slot0)
 				setParent(slot0, uv0:Find("Link"))
 				setAnchoredPosition(slot0, Vector2.New(0, -15))
 			end, slot2)
@@ -946,9 +929,7 @@ function slot0.UpdateNodeView(slot0, slot1)
 		slot8 = slot2:Find("Item")
 
 		if slot6 then
-			slot9 = slot0.loader
-
-			slot9:GetPrefab("ui/" .. uv5, "", function (slot0)
+			slot0.loader:GetPrefab("ui/" .. uv5, "", function (slot0)
 				setParent(slot0, uv0)
 				setAnchoredPosition(slot0, Vector2.zero)
 			end, slot2)
@@ -1078,9 +1059,7 @@ function slot0.DisPlayUnlockEffect(slot0, slot1)
 				slot0.prevLink[2].Change = true
 			end
 
-			slot2 = uv0.loader
-
-			table.insert(uv2, slot2:GetPrefab("ui/" .. uv1, "", function (slot0)
+			table.insert(uv2, uv0.loader:GetPrefab("ui/" .. uv1, "", function (slot0)
 				setParent(slot0, uv0)
 				setAnchoredPosition(slot0, Vector2.zero)
 			end))
@@ -1223,10 +1202,8 @@ function slot0.UpdateCandicateItem(slot0, slot1, slot2)
 end
 
 function slot0.UpdateRyzaItem(slot0, slot1, slot2, slot3)
-	slot4 = "icon_frame_" .. slot2:GetRarity()
-
 	if slot3 then
-		slot4 = slot4 .. "_small"
+		slot4 = "icon_frame_" .. slot2:GetRarity() .. "_small"
 	end
 
 	slot0.loader:GetSpriteQuiet(uv0, slot4, slot1)
@@ -1258,7 +1235,6 @@ function slot0.ShowCompositeConfirmWindow(slot0)
 
 	slot1 = 1
 	slot2 = {}
-	slot3 = {}
 
 	_.each(slot0.nodeList, function (slot0)
 		slot1 = slot0.Instance:GetConfigID()
@@ -1276,38 +1252,35 @@ function slot0.ShowCompositeConfirmWindow(slot0)
 	end, SFX_PANEL)
 
 	slot5 = slot0.activity:GetFormulas()[slot0.contextData.formulaId]:GetMaxLimit() ~= 1
-	slot6 = slot4:GetMaxLimit() > 0 and slot4:GetMaxLimit() - slot4:GetUsedCount() or 10000
 	slot7 = slot0.activity:GetItems()
 
-	for slot11, slot12 in pairs(slot3) do
-		slot6 = math.min(slot6, math.floor((slot7[slot11] and slot7[slot11].count or 0) / slot12))
+	for slot11, slot12 in pairs({}) do
+		slot6 = math.min(slot4:GetMaxLimit() > 0 and slot4:GetMaxLimit() - slot4:GetUsedCount() or 10000, math.floor((slot7[slot11] and slot7[slot11].count or 0) / slot12))
 	end
 
 	slot9 = {
 		1,
 		slot5 and slot6 or 1
 	}
-	slot10 = {
+	slot10 = Drop.New({
 		type = slot4:GetProduction()[1],
 		id = slot4:GetProduction()[2]
-	}
+	})
 
 	slot0:UpdateRyzaDrop(slot0.layerCompositeConfirm:Find("Window/Icon"), slot10)
 
-	slot13 = updateDropCfg(slot10).name
+	slot12 = slot10:getConfig("name")
 
 	setActive(slot0.layerCompositeConfirm:Find("Window/Counters"), slot5)
 
 	if slot5 then
-		slot15 = slot0.layerCompositeConfirm
-
-		setAnchoredPosition(slot15:Find("Window/Icon"), {
+		setAnchoredPosition(slot0.layerCompositeConfirm:Find("Window/Icon"), {
 			y = uv0
 		})
-		(function ()
+		function ()
 			setText(uv0:Find("Number"), uv1)
 			setText(uv2.layerCompositeConfirm:Find("Window/Text"), i18n("ryza_composite_confirm", uv3, uv1))
-		end)()
+		end()
 		onButton(slot0, slot11:Find("Plus"), function ()
 			uv0 = uv0 + 1
 			uv0 = math.clamp(uv0, uv1[1], uv1[2])
@@ -1351,7 +1324,7 @@ function slot0.ShowCompositeConfirmWindow(slot0)
 	setAnchoredPosition(slot0.layerCompositeConfirm:Find("Window/Icon"), {
 		y = uv1
 	})
-	setText(slot0.layerCompositeConfirm:Find("Window/Text"), i18n("ryza_composite_confirm_single", slot13, slot1))
+	setText(slot0.layerCompositeConfirm:Find("Window/Text"), i18n("ryza_composite_confirm_single", slot12, slot1))
 end
 
 function slot0.HideCompositeConfirmWindow(slot0)
@@ -1376,72 +1349,28 @@ function slot0.OnCompositeResult(slot0, slot1)
 
 	slot2 = 1.5
 	slot3 = 0.5
-	slot4 = slot0.loader
 
-	slot4:GetPrefab("ui/" .. uv0, "", function (slot0)
-		slot1 = pg.UIMgr.GetInstance()
-
-		slot1:OverlayPanel(tf(slot0), {
+	slot0.loader:GetPrefab("ui/" .. uv0, "", function (slot0)
+		pg.UIMgr.GetInstance():OverlayPanel(tf(slot0), {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 		setAnchoredPosition(slot0, Vector2.zero)
-
-		slot1 = uv0
-		slot1 = slot1:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0._tf, typeof(CanvasGroup)), 0, uv1)
-
-		slot1:setFrom(1)
-
-		slot1 = uv0
-		slot1 = slot1:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0.top, typeof(CanvasGroup)), 0, uv1)
-
-		slot1:setFrom(1)
-
-		slot1 = uv0
-		slot1 = slot1:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0.layerCompositeConfirm, typeof(CanvasGroup)), 0, uv1)
-
-		slot1:setFrom(1)
-
-		slot1 = uv0
-
-		slot1:managedTween(LeanTween.delayedCall, function ()
-			slot0 = uv0
-
-			slot0:HideCompositeConfirmWindow()
+		uv0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0._tf, typeof(CanvasGroup)), 0, uv1):setFrom(1)
+		uv0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0.top, typeof(CanvasGroup)), 0, uv1):setFrom(1)
+		uv0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0.layerCompositeConfirm, typeof(CanvasGroup)), 0, uv1):setFrom(1)
+		uv0:managedTween(LeanTween.delayedCall, function ()
+			uv0:HideCompositeConfirmWindow()
 			setCanvasGroupAlpha(uv0.layerCompositeConfirm, 1)
-
-			slot0 = uv0
-
-			slot0:CleanNodeInstance()
-
-			slot0 = uv0
-
-			slot0:ShowCompositeResult(uv1)
-
-			slot0 = uv0
-
-			slot0:DispalyChat({
+			uv0:CleanNodeInstance()
+			uv0:ShowCompositeResult(uv1)
+			uv0:DispalyChat({
 				"ryza_atellier10",
 				"ryza_atellier11"
 			})
-
-			slot0 = uv0
-			slot0 = slot0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0._tf, typeof(CanvasGroup)), 1, uv2)
-
-			slot0:setFrom(0)
-
-			slot0 = uv0
-			slot0 = slot0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0.top, typeof(CanvasGroup)), 1, uv2)
-
-			slot0:setFrom(0)
-
-			slot0 = uv0
-			slot0 = slot0:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(uv0.layerCompositeResult, typeof(CanvasGroup)), 1, uv2)
-
-			slot0:setFrom(0)
-
-			slot0 = uv0
-
-			slot0:managedTween(LeanTween.delayedCall, function ()
+			uv0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0._tf, typeof(CanvasGroup)), 1, uv2):setFrom(0)
+			uv0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(uv0.top, typeof(CanvasGroup)), 1, uv2):setFrom(0)
+			uv0:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(uv0.layerCompositeResult, typeof(CanvasGroup)), 1, uv2):setFrom(0)
+			uv0:managedTween(LeanTween.delayedCall, function ()
 				uv0:LoadingOff()
 				pg.UIMgr.GetInstance():UnOverlayPanel(tf(uv1), uv0._tf)
 				uv0.loader:ClearRequest("CompositeResult")
@@ -1457,7 +1386,7 @@ function slot0.ShowCompositeResult(slot0, slot1)
 	slot2 = slot1[1]
 
 	slot0:UpdateRyzaDrop(slot0.layerCompositeResult:Find("Window/Icon"), slot2)
-	setScrollText(slot0.layerCompositeResult:Find("Window/NameBG/Rect/Name"), getDropName(slot2))
+	setScrollText(slot0.layerCompositeResult:Find("Window/NameBG/Rect/Name"), slot2:getName())
 	setText(slot0.layerCompositeResult:Find("Window/CountBG/Text"), slot2.count)
 end
 
@@ -1529,15 +1458,10 @@ end
 
 function slot0.ShowMaterialsPreview(slot0)
 	setActive(slot0.layerMaterialsPreview, true)
+	pg.UIMgr.GetInstance():BlurPanel(slot0.layerMaterialsPreview)
 
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0.layerMaterialsPreview)
-
-	slot1 = slot0.activity
-	slot1 = slot1:GetItems()
-	slot2 = slot0.activity
-	slot2 = slot2:GetFormulas()[slot0.contextData.formulaId]
+	slot1 = slot0.activity:GetItems()
+	slot2 = slot0.activity:GetFormulas()[slot0.contextData.formulaId]
 	slot3 = AtelierMaterial.bindConfigTable()
 	slot6 = {}
 
@@ -1584,14 +1508,11 @@ function slot0.ShowMaterialsPreview(slot0)
 			return
 		end
 
-		slot1 = slot0.Data
-		slot2 = nil
-
 		for slot6, slot7 in ipairs(uv2.all) do
 			if (uv3[slot7] or uv4[slot7] or AtelierMaterial.New({
 				configId = slot7
-			})):IsNormal() and slot1:CanUseMaterial(slot8, uv5) then
-				slot2 = slot2 or slot7
+			})):IsNormal() and slot0.Data:CanUseMaterial(slot8, uv5) then
+				slot2 = nil or slot7
 
 				if slot8.count > 0 then
 					slot9 = AtelierMaterial.New({
@@ -1632,7 +1553,7 @@ function slot0.ShowMaterialsPreview(slot0)
 
 	table.sort({}, slot9)
 	table.sort({}, slot9)
-	(function ()
+	function ()
 		setActive(uv0.layerMaterialsPreview:Find("Frame/Scroll/Content/Owned/List").parent, #uv1 > 0)
 
 		if #uv1 == 0 then
@@ -1640,15 +1561,13 @@ function slot0.ShowMaterialsPreview(slot0)
 		end
 
 		table.Foreach(CustomIndexLayer.Clone2Full(slot0, #uv1), function (slot0, slot1)
-			slot3 = uv1
-
-			slot3:UpdateRyzaItem(slot1:Find("IconBG"), uv0[slot0], true)
+			uv1:UpdateRyzaItem(slot1:Find("IconBG"), uv0[slot0], true)
 			onButton(uv1, slot1, function ()
 				uv0:ShowItemDetail(uv1)
 			end, SFX_PANEL)
 		end)
-	end)()
-	(function ()
+	end()
+	function ()
 		setActive(uv0.layerMaterialsPreview:Find("Frame/Scroll/Content/Lack/List").parent, #uv1 > 0)
 
 		if #uv1 == 0 then
@@ -1656,14 +1575,12 @@ function slot0.ShowMaterialsPreview(slot0)
 		end
 
 		table.Foreach(CustomIndexLayer.Clone2Full(slot0, #uv1), function (slot0, slot1)
-			slot3 = uv1
-
-			slot3:UpdateRyzaItem(slot1:Find("IconBG"), uv0[slot0], true)
+			uv1:UpdateRyzaItem(slot1:Find("IconBG"), uv0[slot0], true)
 			onButton(uv1, slot1, function ()
 				uv0:ShowItemDetail(uv1)
 			end, SFX_PANEL)
 		end)
-	end)()
+	end()
 end
 
 function slot0.HideMaterialsPreview(slot0)
@@ -1714,10 +1631,7 @@ end
 function slot0.PlaySound(slot0, slot1, slot2)
 	if not slot0.playbackInfo or slot1 ~= slot0.prevCvPath or slot0.playbackInfo.channelPlayer == nil then
 		slot0:StopSound()
-
-		slot3 = pg.CriMgr.GetInstance()
-
-		slot3:PlaySoundEffect_V3(slot1, function (slot0)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot1, function (slot0)
 			if slot0 then
 				uv0.playbackInfo = slot0
 

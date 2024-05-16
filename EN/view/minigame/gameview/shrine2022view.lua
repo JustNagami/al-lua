@@ -276,11 +276,10 @@ function slot0.updateCardBuffTag(slot0)
 		setActive(slot0:findTF("Ship/Buff", slot5), false)
 	end
 
-	slot3 = slot0:getShipGameData():getConfig("config_data")[2]
 	slot4 = nil
 
 	for slot8, slot9 in ipairs(slot0.playerProxy:getData().buff_list) do
-		if table.indexof(slot3, slot9.id, 1) then
+		if table.indexof(slot0:getShipGameData():getConfig("config_data")[2], slot9.id, 1) then
 			if pg.TimeMgr.GetInstance():GetServerTime() < slot9.timestamp then
 				setActive(slot0:findTF("Ship/Buff", slot0.cardTFList[slot0:getCardIndexByShip(slot4)]), true)
 
@@ -303,11 +302,10 @@ function slot0.updateCommanderBuff(slot0, slot1)
 
 	slot0:PrintLog("刷新指挥官Buff")
 
-	slot4 = slot0:GetMGData():getConfig("config_data")[2]
 	slot5 = nil
 
 	for slot9, slot10 in ipairs(slot0.playerProxy:getData().buff_list) do
-		if table.indexof(slot4, slot10.id, 1) then
+		if table.indexof(slot0:GetMGData():getConfig("config_data")[2], slot10.id, 1) then
 			if pg.TimeMgr.GetInstance():GetServerTime() < slot10.timestamp then
 				setImageSprite(slot0.curBuffImg, slot0.curBuffSpriteList[slot5])
 				setActive(slot0.curBuffTF, true)
@@ -330,11 +328,7 @@ function slot0.updateCommanderBuff(slot0, slot1)
 			x = rtf(slot0.curBuffTF).localPosition.x,
 			y = 160
 		})
-
-		slot10 = slot0:managedTween(LeanTween.value, nil, go(slot0.curBuffTF), 0, 1, 0.5)
-		slot10 = slot10:setEase(LeanTweenType.easeOutBack)
-
-		slot10:setOnUpdate(System.Action_float(function (slot0)
+		slot0:managedTween(LeanTween.value, nil, go(slot0.curBuffTF), 0, 1, 0.5):setEase(LeanTweenType.easeOutBack):setOnUpdate(System.Action_float(function (slot0)
 			uv2.y = uv0 + (uv1 - uv0) * slot0
 
 			setAnchoredPosition(uv3.curBuffTF, uv2)
@@ -441,8 +435,7 @@ function slot0.openShipWordView(slot0, slot1)
 end
 
 function slot0.openFakeDrop(slot0, slot1)
-	slot2 = slot0:getShipGameData()
-	slot2 = slot2:getConfig("simple_config_data")
+	slot2 = slot0:getShipGameData():getConfig("simple_config_data")
 
 	LoadContextCommand.LoadLayerOnTopContext(Context.New({
 		mediator = AwardInfoMediator,
@@ -481,11 +474,10 @@ function slot0.isInitedShipGameData(slot0)
 end
 
 function slot0.isHaveCommanderBuff(slot0)
-	slot3 = slot0:GetMGData():getConfig("config_data")[2]
 	slot4 = nil
 
 	for slot8, slot9 in ipairs(slot0.playerProxy:getData().buff_list) do
-		if table.indexof(slot3, slot9.id, 1) then
+		if table.indexof(slot0:GetMGData():getConfig("config_data")[2], slot9.id, 1) then
 			if pg.TimeMgr.GetInstance():GetServerTime() < slot9.timestamp then
 				return slot4
 			else
@@ -543,10 +535,8 @@ function slot0.IsNeedShowTipWithoutActivityFinalReward()
 	slot2 = nil
 
 	if getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_3) then
-		slot5 = slot3:getConfig("config_data")[2]
-
 		for slot9, slot10 in ipairs(getProxy(PlayerProxy):getData().buff_list) do
-			if table.indexof(slot5, slot10.id, 1) then
+			if table.indexof(slot3:getConfig("config_data")[2], slot10.id, 1) then
 				if slot10.timestamp < pg.TimeMgr.GetInstance():GetServerTime() then
 					slot2 = nil
 				end
@@ -569,10 +559,8 @@ function slot0.IsNeedShowTipWithoutActivityFinalReward()
 	slot6 = nil
 
 	if getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5) then
-		slot9 = slot7:getConfig("config_data")[2]
-
 		for slot13, slot14 in ipairs(getProxy(PlayerProxy):getData().buff_list) do
-			if table.indexof(slot9, slot14.id, 1) then
+			if table.indexof(slot7:getConfig("config_data")[2], slot14.id, 1) then
 				if slot14.timestamp < pg.TimeMgr.GetInstance():GetServerTime() then
 					slot6 = nil
 				end

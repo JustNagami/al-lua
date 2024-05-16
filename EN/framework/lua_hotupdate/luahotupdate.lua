@@ -48,7 +48,7 @@ return {
 			print("count " .. slot6.Count)
 
 			for slot10 = 0, slot6.Count - 1 do
-				if string.match(slot6.get_Item(slot6, slot10), ".*\\(.[_a-zA-Z][_a-zA-Z0-9]*)%.lua") ~= nil then
+				if string.match(slot6:get_Item(slot10), ".*\\(.[_a-zA-Z][_a-zA-Z0-9]*)%.lua") ~= nil then
 					if uv1.FileMap[slot12] == nil then
 						uv1.FileMap[slot12] = {}
 					end
@@ -250,7 +250,6 @@ return {
 
 			setfenv(slot4, uv0.FakeENV)
 
-			slot5 = nil
 			uv0.ErrorHappen = false
 
 			xpcall(function ()
@@ -260,7 +259,7 @@ return {
 			if not uv0.ErrorHappen then
 				uv0.OldCode[slot0] = slot2
 
-				return true, slot5
+				return true, nil
 			else
 				collectgarbage("collect")
 
@@ -273,7 +272,7 @@ return {
 			[uv0] = true
 		}
 
-		(function (slot0)
+		function (slot0)
 			if type(slot0) ~= "function" and type(slot0) ~= "table" or uv0[slot0] or uv1.Protection[slot0] then
 				return
 			end
@@ -330,7 +329,7 @@ return {
 					slot0[slot7[1]] = nil
 				end
 			end
-		end)(_G)
+		end(_G)
 
 		slot2 = debug.getregistry()
 
@@ -395,7 +394,7 @@ return {
 	ResetENV = function (slot0, slot1, slot2, slot3)
 		slot4 = {}
 
-		(function (slot0, slot1)
+		function (slot0, slot1)
 			if not slot0 or uv0[slot0] then
 				return
 			end
@@ -418,7 +417,7 @@ return {
 					uv4(slot6, tostring(slot5), " HU.ResetENV ", uv2 .. "    ")
 				end
 			end
-		end)(slot0, slot1)
+		end(slot0, slot1)
 	end,
 	UpdateUpvalue = function (slot0, slot1, slot2, slot3, slot4)
 		uv0.DebugNofity(slot4 .. "HU.UpdateUpvalue", slot2, "  from:" .. slot3)

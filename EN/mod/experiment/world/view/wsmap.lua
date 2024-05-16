@@ -105,9 +105,7 @@ function slot0.Unload(slot0)
 end
 
 function slot0.InitPlane(slot0, slot1)
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetPrefab("world/object/world_plane", "world_plane", true, function (slot0)
+	PoolMgr.GetInstance():GetPrefab("world/object/world_plane", "world_plane", true, function (slot0)
 		uv0.transform = slot0.transform
 
 		setActive(uv0.transform, false)
@@ -260,10 +258,9 @@ function slot0.InitMap(slot0)
 end
 
 function slot0.DisposeMap(slot0)
-	slot1 = slot0.map
 	slot4 = slot0.onUpdateFleetFOV
 
-	slot1:RemoveListener(WorldMap.EventUpdateFleetFOV, slot4)
+	slot0.map:RemoveListener(WorldMap.EventUpdateFleetFOV, slot4)
 	_.each(slot0.wsCarryItems, function (slot0)
 		uv0:DisposeCarryItem(slot0)
 	end)
@@ -668,14 +665,13 @@ end
 
 function slot0.DisplayMoveRange(slot0)
 	slot0.displayRangeLines = {}
-	slot3 = 0
 
 	for slot7, slot8 in ipairs(nowWorld():GetMoveRange(slot0.map:GetFleet())) do
 		setImageAlpha(slot0:GetQuad(slot8.row, slot8.column).rtWalkQuad, math.pow(0.75, slot8.stay and slot8.stay - 1 or 0))
 		setLocalScale(slot9.rtWalkQuad, Vector3.zero)
 
 		slot10 = ManhattonDist(slot1, slot8)
-		slot3 = math.max(slot3, slot10)
+		slot3 = math.max(0, slot10)
 		slot0.displayRangeLines[slot10] = slot0.displayRangeLines[slot10] or {}
 
 		table.insert(slot0.displayRangeLines[slot10], {
@@ -804,8 +800,7 @@ function slot0.FlushFleets(slot0)
 	slot0:FlushEnemyFightingMark()
 	slot0:FlushTransportDisplay()
 
-	slot1 = slot0.map
-	slot1 = slot1:GetFleet()
+	slot1 = slot0.map:GetFleet()
 
 	_.each(slot0.wsMapFleets, function (slot0)
 		slot0:UpdateSelected(slot0.fleet == uv0)
@@ -813,8 +808,7 @@ function slot0.FlushFleets(slot0)
 end
 
 function slot0.FlushFleetRetreatBtn(slot0)
-	slot1 = slot0.map
-	slot1 = slot1:GetFleet()
+	slot1 = slot0.map:GetFleet()
 
 	_.each(slot0.wsMapFleets, function (slot0)
 		slot1 = slot0.fleet

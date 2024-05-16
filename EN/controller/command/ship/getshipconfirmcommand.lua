@@ -1,9 +1,7 @@
 slot0 = class("GetShipConfirmCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot2 = pg.ConnectionMgr.GetInstance()
-
-	slot2:Send(12045, {
+	pg.ConnectionMgr.GetInstance():Send(12045, {
 		type = 0
 	}, 12046, function (slot0)
 		if slot0.result == 0 then

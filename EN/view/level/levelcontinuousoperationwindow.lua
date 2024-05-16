@@ -50,9 +50,14 @@ function slot0.didEnter(slot0)
 
 		uv0:UpdateContent()
 	end)
-	slot0._pageUtil:setMaxNum(slot0.contextData.maxCount)
 
-	slot0.contextData.battleTimes = slot0.contextData.battleTimes or 1
+	slot3 = slot0.contextData.maxCount
+
+	slot0._pageUtil:setMaxNum(slot3)
+
+	if slot3 >= 0 then
+		slot0.contextData.battleTimes = math.min(slot3, slot0.contextData.battleTimes or 1)
+	end
 
 	slot0._pageUtil:setDefaultNum(slot0.contextData.battleTimes)
 	slot0:UpdateContent()
@@ -61,10 +66,9 @@ end
 
 function slot0.UpdateContent(slot0)
 	slot2 = slot0.contextData.extraRate
-	slot7 = slot0.contextData.useTicket and math.clamp(slot0.contextData.battleTimes - slot2.freeBonus, 0, slot2.extraCount) or 0
 
 	if slot0.contextData.useTicket then
-		setText(slot0.panel:Find("ticket/Number"), setColorStr(slot7, slot1 <= slot3 and COLOR_GREEN or COLOR_RED) .. "/" .. slot3)
+		setText(slot0.panel:Find("ticket/Number"), setColorStr(slot0.contextData.useTicket and math.clamp(slot0.contextData.battleTimes - slot2.freeBonus, 0, slot2.extraCount) or 0, slot1 <= slot3 and COLOR_GREEN or COLOR_RED) .. "/" .. slot3)
 	else
 		setText(slot0.panel:Find("ticket/Number"), slot3)
 	end
@@ -79,10 +83,9 @@ function slot0.UpdateContent(slot0)
 	end
 
 	slot9 = slot0.contextData.oilCost * (slot1 + (slot2.rate - 1) * slot6)
-	slot10 = i18n("multiple_sorties_cost1", slot9)
 
 	if getProxy(PlayerProxy):getRawData().oil < slot9 then
-		slot10 = string.gsub(slot10, "#92fc63", COLOR_RED)
+		slot10 = string.gsub(i18n("multiple_sorties_cost1", slot9), "#92fc63", COLOR_RED)
 	end
 
 	if slot6 > 0 then
@@ -90,9 +93,8 @@ function slot0.UpdateContent(slot0)
 	end
 
 	slot0.consumeText.text = slot10
-	slot14 = slot0.panel
 
-	onButton(slot0, slot14:Find("battle"), function ()
+	onButton(slot0, slot0.panel:Find("battle"), function ()
 		if uv1.oil < uv0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 

@@ -13,14 +13,13 @@ function slot0.execute(slot0, slot1)
 
 	slot5:setShipIds(slot6)
 
-	slot7 = {}
-
 	for slot11, slot12 in ipairs(slot3.furniture_id_list) do
 		slot13 = Furniture.New(slot12)
-		slot7[tonumber(slot13.id)] = slot13
 	end
 
-	slot5:SetFurnitures(slot7)
+	slot5:SetFurnitures({
+		[tonumber(slot13.id)] = slot13
+	})
 
 	for slot11 = 1, BackYardConst.MAX_FLOOR_CNT do
 		slot5:SetTheme(slot11, BackYardSelfThemeTemplate.New({
@@ -60,10 +59,8 @@ function slot0.execute(slot0, slot1)
 		}, slot12.floor))
 	end
 
-	slot8 = getProxy(DormProxy)
-
 	if slot4 then
-		slot8:addDorm(slot5)
+		getProxy(DormProxy):addDorm(slot5)
 	else
 		slot8.friendData = slot5
 	end

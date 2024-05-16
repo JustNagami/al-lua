@@ -4,7 +4,7 @@ return {
 		{
 			alpha = 0.5,
 			ui = {
-				path = "UICamera/Canvas/UIMain/BeachGuardGameUI(Clone)/ui/menuUI/btnGameBook",
+				path = "UICamera/Canvas/UIMain/BeachGuardGameUI(Clone)/ui/menuUI/ad/btnGameBook",
 				triggerType = {
 					1
 				},
@@ -22,8 +22,8 @@ return {
 				windowbg = "3",
 				posX = -680,
 				charPos = {
-					10,
-					-114
+					300,
+					0
 				},
 				charScale = {
 					-4,

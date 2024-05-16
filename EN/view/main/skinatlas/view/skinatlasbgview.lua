@@ -19,10 +19,8 @@ function slot0.Init(slot0, slot1, slot2, slot3)
 end
 
 function slot0.getShipBgPrint(slot0, slot1)
-	slot2 = slot0.ship
-
 	if not slot1 then
-		return slot2:rarity2bgPrintForGet()
+		return slot0.ship:rarity2bgPrintForGet()
 	else
 		return slot2:getShipBgPrint()
 	end
@@ -30,9 +28,8 @@ end
 
 function slot0.SetSpecailBg(slot0, slot1, slot2)
 	slot0.isloading = true
-	slot3 = pg.DynamicBgMgr.GetInstance()
 
-	slot3:LoadBg(slot0, slot1, slot0._tf.parent, slot0._tf, function (slot0)
+	pg.DynamicBgMgr.GetInstance():LoadBg(slot0, slot1, slot0._tf.parent, slot0._tf, function (slot0)
 		uv0.isSpecialBg = true
 		uv0.isloading = false
 		slot0.transform.localPosition = Vector3(0, 0, 200)

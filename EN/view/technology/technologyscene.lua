@@ -194,10 +194,9 @@ function slot0.updateSettingsBtn(slot0)
 	setActive(slot3, true)
 
 	slot8 = getProxy(TechnologyProxy)
-	slot10 = slot8:isOnCatchup()
 
 	if slot8:isOpenTargetCatchup() then
-		if not slot10 then
+		if not slot8:isOnCatchup() then
 			setActive(slot4, false)
 			setActive(slot1, true)
 		else
@@ -305,11 +304,9 @@ function slot0.initTechnologys(slot0)
 	slot0.lastButtonListener = slot0.lastButtonListener or {}
 
 	if not slot0.itemList then
-		slot3 = slot0.srcollView
-		slot0.itemList = UIItemList.New(slot0.srcollView, slot3:GetChild(0))
-		slot1 = slot0.itemList
+		slot0.itemList = UIItemList.New(slot0.srcollView, slot0.srcollView:GetChild(0))
 
-		slot1:make(function (slot0, slot1, slot2)
+		slot0.itemList:make(function (slot0, slot1, slot2)
 			slot1 = slot1 + 1
 
 			if slot0 == UIItemList.EventUpdate then
@@ -348,11 +345,9 @@ end
 
 function slot0.initQueue(slot0)
 	if not slot0.queueItemList then
-		slot3 = slot0.btnQueue
-		slot0.queueItemList = UIItemList.New(slot0.btnQueue, slot3:GetChild(0))
-		slot1 = slot0.queueItemList
+		slot0.queueItemList = UIItemList.New(slot0.btnQueue, slot0.btnQueue:GetChild(0))
 
-		slot1:make(function (slot0, slot1, slot2)
+		slot0.queueItemList:make(function (slot0, slot1, slot2)
 			slot1 = slot1 + 1
 
 			if slot0 == UIItemList.EventUpdate then
@@ -364,10 +359,12 @@ function slot0.initQueue(slot0)
 					uv0.queueTimer[slot1] = nil
 				end
 
-				slot3 = {}
+				slot3 = {
+					empty = true
+				}
 
 				if not uv0.technologyQueue[slot1] then
-					slot3.empty = true
+					-- Nothing
 				elseif pg.TimeMgr.GetInstance():GetServerTime() < slot4.time - slot4:getConfig("time") then
 					slot3.waiting = true
 				elseif slot5 < slot6 then
@@ -393,19 +390,15 @@ function slot0.initQueue(slot0)
 		end)
 	end
 
-	slot1 = slot0.queueItemList
-
-	slot1:align(TechnologyConst.QUEUE_TOTAL_COUNT)
+	slot0.queueItemList:align(TechnologyConst.QUEUE_TOTAL_COUNT)
 	onButton(slot0, slot0.btnQueue, function ()
 		uv0:setPage(uv1.PageQueue)
 	end, SFX_PANEL)
 
 	if not slot0.queueCardItemList then
-		slot3 = slot0.queueView
-		slot0.queueCardItemList = UIItemList.New(slot0.queueView, slot3:GetChild(0))
-		slot1 = slot0.queueCardItemList
+		slot0.queueCardItemList = UIItemList.New(slot0.queueView, slot0.queueView:GetChild(0))
 
-		slot1:make(function (slot0, slot1, slot2)
+		slot0.queueCardItemList:make(function (slot0, slot1, slot2)
 			slot1 = slot1 + 1
 
 			if slot0 == UIItemList.EventUpdate then
@@ -455,15 +448,15 @@ function slot0.onSelected(slot0, slot1, slot2)
 	end)
 
 	function slot4(slot0, slot1)
-		slot2 = {}
 		slot3 = slot0
-		slot4 = uv0[slot0].localPosition.x
 
 		for slot8, slot9 in ipairs(uv0) do
-			slot2[slot8] = uv0[slot8].localPosition.x - slot4
+			-- Nothing
 		end
 
-		for slot8, slot9 in ipairs(slot2) do
+		for slot8, slot9 in ipairs({
+			[slot8] = uv0[slot8].localPosition.x - uv0[slot0].localPosition.x
+		}) do
 			if slot9 ~= 0 and (slot2[slot3] == 0 or slot1 and (slot9 > 0 and slot2[slot3] > 0 and slot2[slot3] < slot9 or slot9 < 0 and (slot2[slot3] > 0 or slot2[slot3] < slot9)) or not slot1 and (slot9 < 0 and slot2[slot3] < 0 and slot9 < slot2[slot3] or slot9 > 0 and (slot2[slot3] < 0 or slot9 < slot2[slot3]))) then
 				slot3 = slot8
 			end
@@ -574,8 +567,7 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 	slot0:updateInfoVersionPickUp(slot1, slot4)
 
 	slot5 = slot4:getConfig("time")
-	slot6 = pg.TimeMgr.GetInstance()
-	slot6 = slot6:GetServerTime()
+	slot6 = pg.TimeMgr.GetInstance():GetServerTime()
 	slot7 = slot4.time
 
 	switch(slot3, {
@@ -586,14 +578,13 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 				uv0.cardtimer[uv1] = nil
 			end
 
-			slot1 = uv2:Find("frame/marks/Text")
 			GetComponent(uv2:Find("frame/marks/time"), "Shadow").effectColor = Color.New(unpack(uv3.rarityColor[uv4:getConfig("bg")][2]))
-			slot4 = {}
+			slot4 = {
+				blue = true
+			}
 
 			if uv5 <= 0 then
-				slot4.blue = true
-
-				setText(slot1, setColorStr(i18n("technology_detail"), slot2[1]))
+				setText(uv2:Find("frame/marks/Text"), setColorStr(i18n("technology_detail"), slot2[1]))
 				setText(slot0, pg.TimeMgr.GetInstance():DescCDTime(uv4:getConfig("time")))
 			elseif uv6 < uv5 - uv7 then
 				slot4.blue = true
@@ -633,9 +624,7 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 				setText(slot0, "00:00:00")
 			end
 
-			slot6 = uv2
-
-			eachChild(slot6:Find("frame/marks/line"), function (slot0)
+			eachChild(uv2:Find("frame/marks/line"), function (slot0)
 				setActive(slot0, uv0[slot0.name])
 			end)
 		end,
@@ -689,10 +678,8 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 			slot1 = UIItemList.New(uv0.itemContainer, uv0.itemTpl)
 
 			slot1:make(function (slot0, slot1, slot2)
-				slot1 = slot1 + 1
-
 				if slot0 == UIItemList.EventUpdate then
-					uv0:updateItem(slot2, uv1, uv2[slot1])
+					uv0:updateItem(slot2, uv1, uv2[slot1 + 1])
 					setActive(slot2:Find("check"), uv1:isActivate())
 					setActive(slot2:Find("icon_bg/count"), not uv1:isActivate())
 				end
@@ -717,10 +704,11 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 				uv0.extraTimer = nil
 			end
 
-			slot3 = {}
+			slot3 = {
+				start_btn = true
+			}
 
 			if uv2 <= 0 then
-				slot3.start_btn = true
 				uv0.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(uv3)
 			elseif uv4 < uv2 - uv3 then
 				slot3.stop_btn = true
@@ -750,14 +738,11 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 				uv0.timerTxt.text = "00:00:00"
 			end
 
-			slot5 = uv5
-
-			eachChild(slot5:Find("frame/btns"), function (slot0)
+			eachChild(uv5:Find("frame/btns"), function (slot0)
 				setActive(slot0, uv0[slot0.name])
 			end)
 
-			slot4 = uv5
-			slot4 = slot4:Find("frame/btns/start_btn")
+			slot4 = uv5:Find("frame/btns/start_btn")
 
 			onButton(uv0, slot4, function ()
 				if getProxy(TechnologyProxy):getActivateTechnology() then
@@ -783,14 +768,8 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 					})
 				end
 			end, SFX_PANEL)
-
-			slot7 = uv1
-
-			setButtonEnabled(slot4, slot7:hasResToStart())
-
-			slot5 = uv5
-
-			onButton(uv0, slot5:Find("frame/btns/stop_btn"), function ()
+			setButtonEnabled(slot4, uv1:hasResToStart())
+			onButton(uv0, uv5:Find("frame/btns/stop_btn"), function ()
 				if not uv0:isActivate() then
 					return
 				end
@@ -805,10 +784,7 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 					end
 				})
 			end, SFX_PANEL)
-
-			slot6 = uv5
-
-			onButton(uv0, slot6:Find("frame/btns/join_btn"), function ()
+			onButton(uv0, uv5:Find("frame/btns/join_btn"), function ()
 				if #uv0.technologyQueue == TechnologyConst.QUEUE_TOTAL_COUNT then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("technology_queue_full"))
 
@@ -825,16 +801,10 @@ function slot0.updateTechnologyTF(slot0, slot1, slot2, slot3)
 					end
 				})
 			end, SFX_PANEL)
-
-			slot7 = uv5
-
-			onButton(uv0, slot7:Find("frame/btns/lock_join_btn"), function ()
+			onButton(uv0, uv5:Find("frame/btns/lock_join_btn"), function ()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("technology_queue_in_mission_incomplete"))
 			end, SFX_PANEL)
-
-			slot8 = uv5
-
-			onButton(uv0, slot8:Find("frame/btns/finish_btn"), function ()
+			onButton(uv0, uv5:Find("frame/btns/finish_btn"), function ()
 				uv0:emit(TechnologyMediator.ON_FINISHED, {
 					id = uv1.id,
 					pool_id = uv1.poolId
@@ -897,22 +867,17 @@ function slot0.updateInfoVersionPickUp(slot0, slot1, slot2)
 end
 
 function slot0.updateItem(slot0, slot1, slot2, slot3)
-	slot4 = nil
-
-	updateDrop(slot1, Item.New({
-		type = slot3[1],
-		id = slot3[2]
+	updateDrop(slot1, setmetatable({
+		count = 0
+	}, {
+		__index = Drop.Create(slot3)
 	}))
 
 	if not IsNil(slot0:findTF("icon_bg/count", slot1)) then
-		slot6 = nil
-
-		setColorCount(slot5, (slot3[1] ~= DROP_TYPE_RESOURCE or slot0.player:getResById(slot3[2])) and getProxy(BagProxy):getItemCountById(slot4.id), slot3[3])
+		setColorCount(slot5, slot4:getOwnedCount(), slot4.count)
 	end
 
 	onButton(slot0, slot1, function ()
-		assert(pg.item_data_statistics[uv0.id], "item_data_statistics >>> " .. uv0.id)
-
 		if #(uv0:getConfig("display_icon") or {}) > 0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_ITEM_BOX,

@@ -624,10 +624,8 @@ function slot17(slot0, slot1, slot2)
 					slot3 = slot4 .. "_" .. slot6 .. "_" .. slot7
 				end
 			elseif slot8.type == uv4 then
-				slot3 = uv5
-
 				if slot8.skill_direct then
-					slot3 = slot3 .. "_" .. slot0:getDirectName(slot0.angle)
+					slot3 = uv5 .. "_" .. slot0:getDirectName(slot0.angle)
 				end
 			end
 
@@ -785,8 +783,6 @@ function slot0.step(slot0)
 	if slot0.effects and #slot0.effects > 0 then
 		for slot4 = #slot0.effects, 1, -1 do
 			slot5 = slot0.effects[slot4].tf
-			slot6 = slot0.effects[slot4].anim
-			slot7 = slot0.effects[slot4].animName
 			slot8 = slot0.effects[slot4].removeTime
 
 			if slot0.effects[slot4].time and slot0.effects[slot4].time > 0 then
@@ -797,7 +793,7 @@ function slot0.step(slot0)
 
 					setActive(slot5, false)
 					setActive(slot5, true)
-					slot6:Play(slot7)
+					slot0.effects[slot4].anim:Play(slot0.effects[slot4].animName)
 				end
 			elseif slot0.effects[slot4].removeTime and slot0.effects[slot4].removeTime > 0 then
 				slot0.effects[slot4].removeTime = slot0.effects[slot4].removeTime - LaunchBallGameVo.deltaTime
@@ -822,13 +818,12 @@ function slot0.eventCall(slot0, slot1, slot2)
 		if slot2 then
 			slot4 = nil
 			slot7 = GetComponent(findTF(findTF(slot0._topContent, "effect/" .. slot3.name), "ad/anim"), typeof(Animator))
-			slot8 = slot3.anim
 			slot9 = slot3.distance
 			slot10 = Vector2(0, 0)
 
 			if slot3.direct then
 				slot11, slot12 = slot0.player:getDirectName(slot0.player.angle)
-				slot8 = slot8 .. "_" .. slot11
+				slot8 = slot3.anim .. "_" .. slot11
 				slot6.anchoredPosition = Vector2(slot12[1] * slot9, slot12[2] * slot9)
 			end
 

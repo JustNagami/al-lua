@@ -20,10 +20,12 @@ function slot0.updateMainUI(slot0)
 		slot5 = math.min(slot1.usedtime + 1, slot1.usedtime + slot1.count)
 
 		for slot11 = 1, slot0.itemList.container.childCount do
-			slot12 = {}
+			slot12 = {
+				finish = true
+			}
 
 			if slot11 <= slot3 then
-				slot12.finish = true
+				-- Nothing
 			elseif slot11 > slot4 then
 				slot12.lock = true
 			end
@@ -100,11 +102,9 @@ function slot0.initPageUI(slot0)
 		slot0.itemList = UIItemList.New(slot4, slot4:GetChild(0))
 
 		slot0.itemList:make(function (slot0, slot1, slot2)
-			slot1 = slot1 + 1
-
 			if slot0 == UIItemList.EventUpdate then
 				slot3 = slot2:Find("IconTpl")
-				slot5, slot6, slot7 = unpack(uv0[slot1])
+				slot5, slot6, slot7 = unpack(uv0[slot1 + 1])
 
 				updateDrop(slot3, {
 					count = slot7,
@@ -124,26 +124,16 @@ function slot0.initPageUI(slot0)
 		slot0.itemList:align(#pg.mini_game[slot0:GetMGData().id].simple_config_data.drop)
 	end
 
-	slot3 = slot0.rtTitlePage
-	slot3 = slot3:Find("countdown")
-	slot4 = slot3:Find("bg/Image")
-	slot4 = slot4:GetComponent(typeof(DftAniEvent))
-
-	slot4:SetEndEvent(function ()
+	slot0.rtTitlePage:Find("countdown"):Find("bg/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		uv0:openUI()
 		uv0.gameController:StartGame()
 	end)
-
-	slot4 = slot0.rtTitlePage
-	slot4 = slot4:Find("pause")
-
-	onButton(slot0, slot4:Find("window/btn_confirm"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("pause"):Find("window/btn_confirm"), function ()
 		uv0:openUI()
 		uv0.gameController:ResumeGame()
 	end, SFX_CONFIRM)
 
-	slot5 = slot0.rtTitlePage
-	slot5 = slot5:Find("exit")
+	slot5 = slot0.rtTitlePage:Find("exit")
 
 	onButton(slot0, slot5:Find("window/btn_cancel"), function ()
 		uv0:openUI()
@@ -153,18 +143,13 @@ function slot0.initPageUI(slot0)
 		uv0:openUI()
 		uv0.gameController:EndGame()
 	end, SFX_CONFIRM)
-
-	slot6 = slot0.rtTitlePage
-	slot6 = slot6:Find("result")
-
-	onButton(slot0, slot6:Find("window/btn_finish"), function ()
+	onButton(slot0, slot0.rtTitlePage:Find("result"):Find("window/btn_finish"), function ()
 		uv0:openUI("main")
 	end, SFX_CONFIRM)
 end
 
 function slot0.initControllerUI(slot0)
-	slot1 = slot0._tf
-	slot1 = slot1:Find("Controller/top")
+	slot1 = slot0._tf:Find("Controller/top")
 
 	onButton(slot0, slot1:Find("btn_back"), function ()
 		uv0:openUI("exit")

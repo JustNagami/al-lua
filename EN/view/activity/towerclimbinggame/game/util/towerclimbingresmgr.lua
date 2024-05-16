@@ -8,9 +8,7 @@ function slot2(slot0)
 end
 
 function slot0.GetBlock(slot0, slot1)
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetUI(slot0, true, function (slot0)
+	PoolMgr.GetInstance():GetUI(slot0, true, function (slot0)
 		uv0(slot0)
 	end)
 end

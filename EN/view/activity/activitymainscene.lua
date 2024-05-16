@@ -2,6 +2,7 @@ slot0 = class("ActivityMainScene", import("..base.BaseUI"))
 slot0.LOCK_ACT_MAIN = "ActivityMainScene:LOCK_ACT_MAIN"
 slot0.UPDATE_ACTIVITY = "ActivityMainScene:UPDATE_ACTIVITY"
 slot0.GET_PAGE_BGM = "ActivityMainScene.GET_PAGE_BGM"
+slot0.FLUSH_TABS = "ActivityMainScene.FLUSH_TABS"
 
 function slot0.preload(slot0, slot1)
 	slot1()
@@ -48,18 +49,13 @@ function slot0.init(slot0)
 	slot0.windowList = {}
 	slot0.lockAll = slot0:findTF("blur_panel/lock_all")
 	slot0.awardWindow = AwardWindow.New(slot0._tf, slot0.event)
+	slot0.chargeTipWindow = ChargeTipWindow.New(slot0._tf, slot0.event)
 
 	setActive(slot0.tab, false)
 	setActive(slot0.lockAll, false)
 	setActive(slot0.permanentFinshMask, false)
-
-	slot2 = slot0.permanentFinshMask
-
-	setText(slot2:Find("piece/Text"), i18n("activity_permanent_tips2"))
-
-	slot3 = slot0.permanentFinshMask
-
-	onButton(slot0, slot3:Find("piece/arrow/Image"), function ()
+	setText(slot0.permanentFinshMask:Find("piece/Text"), i18n("activity_permanent_tips2"))
+	onButton(slot0, slot0.permanentFinshMask:Find("piece/arrow/Image"), function ()
 		uv0:emit(ActivityMediator.FINISH_ACTIVITY_PERMANENT)
 	end, SFX_PANEL)
 end
@@ -80,6 +76,9 @@ function slot0.didEnter(slot0)
 	end)
 	slot0:bind(uv0.GET_PAGE_BGM, function (slot0, slot1, slot2)
 		slot2.bgm = uv0:getBGM(slot1) or uv0:getBGM()
+	end)
+	slot0:bind(uv0.FLUSH_TABS, function ()
+		uv0:flushTabs()
 	end)
 end
 
@@ -247,9 +246,8 @@ end
 function slot0.flushTabs(slot0)
 	if not slot0.tabsList then
 		slot0.tabsList = UIItemList.New(slot0.tabs, slot0.tab)
-		slot1 = slot0.tabsList
 
-		slot1:make(function (slot0, slot1, slot2)
+		slot0.tabsList:make(function (slot0, slot1, slot2)
 			if slot0 == UIItemList.EventUpdate then
 				if uv0.pageDic[uv0.activities[slot1 + 1].id] ~= nil then
 					if slot3:getConfig("title_res_tag") then
@@ -320,9 +318,7 @@ end
 
 function slot0.getBonusWindow(slot0, slot1, slot2)
 	if not slot0:findTF(slot1) then
-		slot4 = PoolMgr.GetInstance()
-
-		slot4:GetUI("ActivitybonusWindow", true, function (slot0)
+		PoolMgr.GetInstance():GetUI("ActivitybonusWindow", true, function (slot0)
 			SetParent(slot0, uv0._tf, false)
 
 			slot0.name = uv1
@@ -355,9 +351,11 @@ function slot0.HideWindow(slot0, slot1)
 end
 
 function slot0.ShowAwardWindow(slot0, slot1, slot2, slot3)
-	if slot0.awardWindow then
-		slot0.awardWindow:ExecuteAction("Flush", slot1, slot2, slot3)
-	end
+	slot0.awardWindow:ExecuteAction("Flush", slot1, slot2, slot3)
+end
+
+function slot0.OnChargeSuccess(slot0, slot1)
+	slot0.chargeTipWindow:ExecuteAction("Show", slot1)
 end
 
 function slot0.willExit(slot0)
@@ -375,6 +373,12 @@ function slot0.willExit(slot0)
 		slot0.awardWindow:Destroy()
 
 		slot0.awardWindow = nil
+	end
+
+	if slot0.chargeTipWindow then
+		slot0.chargeTipWindow:Destroy()
+
+		slot0.chargeTipWindow = nil
 	end
 end
 

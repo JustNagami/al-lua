@@ -25,8 +25,7 @@ slot2 = {
 }
 
 function slot0.UpdateView(slot0, slot1, slot2)
-	slot3 = getProxy(ChapterProxy)
-	slot3 = slot3:GetLastDefeatedEnemy(slot1.id)
+	slot3 = getProxy(ChapterProxy):GetLastDefeatedEnemy(slot1.id)
 	slot6 = uv0[Mathf.Min(pg.gameset.doa_fever_count.key_value, slot1.defeatEnemies)]
 
 	seriesAsync({

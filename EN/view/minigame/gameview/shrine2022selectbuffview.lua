@@ -29,9 +29,7 @@ function slot0.initUI(slot0)
 	slot0.buffListCG = GetComponent(slot0.buffListTF, "CanvasGroup")
 
 	for slot4 = 1, 3 do
-		slot5 = slot0.buffListTF
-
-		onButton(slot0, slot5:GetChild(slot4 - 1), function ()
+		onButton(slot0, slot0.buffListTF:GetChild(slot4 - 1), function ()
 			if uv0.onSelectFunc then
 				uv0.onSelectFunc(uv1)
 			end

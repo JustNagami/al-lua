@@ -55,11 +55,9 @@ function slot0.Init(slot0, slot1)
 	end
 
 	seriesAsync(slot2, function ()
-		slot0 = 0
-
 		for slot4, slot5 in ipairs(uv0.list) do
 			if uv0.list[slot4 - 1] then
-				slot0 = slot0 + slot6.rect.height
+				slot0 = 0 + slot6.rect.height
 			end
 
 			setAnchoredPosition(slot5, {
@@ -74,11 +72,9 @@ function slot0.Init(slot0, slot1)
 end
 
 function slot0.DoMove(slot0, slot1)
-	slot2 = nil
-
 	for slot6, slot7 in ipairs(slot0.list) do
 		if slot7 then
-			slot2 = slot2 or slot6
+			slot2 = nil or slot6
 
 			setAnchoredPosition(slot7, {
 				y = getAnchoredPosition(slot7).y - slot1
@@ -138,9 +134,7 @@ end
 
 function slot0.LoadEffect(slot0, slot1, slot2)
 	if uv0.effects[tonumber(slot1)] then
-		slot4 = PoolMgr.GetInstance()
-
-		slot4:GetUI(slot3, true, function (slot0)
+		PoolMgr.GetInstance():GetUI(slot3, true, function (slot0)
 			if not uv0.list then
 				PoolMgr.GetInstance():ReturnUI(uv1, slot0)
 			else

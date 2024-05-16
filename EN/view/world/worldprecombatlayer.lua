@@ -26,8 +26,7 @@ function slot0.init(slot0)
 	setActive(slot0.strategyInfo, false)
 
 	slot0.mainGS = slot0.middle:Find("gear_score/main/Text")
-	slot1 = slot0.middle
-	slot0.vanguardGS = slot1:Find("gear_score/vanguard/Text")
+	slot0.vanguardGS = slot0.middle:Find("gear_score/vanguard/Text")
 
 	setText(slot0.mainGS, 0)
 	setText(slot0.vanguardGS, 0)
@@ -259,7 +258,7 @@ function slot0.UpdateInformationtab(slot0)
 
 		uv1()
 	end)
-	(function ()
+	function ()
 		for slot3 = 1, #uv0.dropitems do
 			setActive(uv0.dropitems[slot3]:Find("item_tpl"), uv1[slot3 + uv2] ~= nil)
 
@@ -270,7 +269,7 @@ function slot0.UpdateInformationtab(slot0)
 				}
 
 				updateDrop(slot4, slot6)
-				setScrollText(slot4:Find("ScrollMask/DropName"), slot6.cfg.name)
+				setScrollText(slot4:Find("ScrollMask/DropName"), slot6:getConfig("name"))
 				onButton(uv0, slot4, function ()
 					uv0:emit(uv1.ON_DROP, uv2)
 				end, SFX_PANEL)
@@ -279,7 +278,7 @@ function slot0.UpdateInformationtab(slot0)
 
 		setActive(uv0.dropleft, uv2 > 0)
 		setActive(uv0.dropright, #uv1 - uv2 > #uv0.dropitems)
-	end)()
+	end()
 
 	slot8 = nowWorld()
 	slot9 = ys.Battle.BattleFormulas
@@ -316,9 +315,7 @@ function slot0.UpdateInformationtab(slot0)
 		end
 	end
 
-	slot20 = slot0.informationtab
-
-	onButton(slot0, slot20:Find("target/bg"), function ()
+	onButton(slot0, slot0.informationtab:Find("target/bg"), function ()
 		slot0 = uv0.informationtab:Find("target/simple")
 		slot2 = go(slot0).activeSelf
 
@@ -328,9 +325,7 @@ function slot0.UpdateInformationtab(slot0)
 end
 
 function slot0.updateCharacters(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:LoadingOn()
+	pg.UIMgr.GetInstance():LoadingOn()
 	slot0:resetGrid(TeamType.Vanguard)
 	slot0:resetGrid(TeamType.Main)
 	slot0:loadAllCharacter(function ()
@@ -456,10 +451,8 @@ function slot0.loadAllCharacter(slot0, slot1)
 		setActive(slot7:Find("expbuff"), getProxy(ActivityProxy):getBuffShipList()[slot1:getGroupId()] ~= nil)
 
 		if slot18 then
-			slot22 = tostring(slot18 / 100)
-
 			if slot18 % 100 > 0 then
-				slot22 = slot22 .. "." .. tostring(slot21)
+				slot22 = tostring(slot18 / 100) .. "." .. tostring(slot21)
 			end
 
 			setText(slot19:Find("text"), string.format("EXP +%s%%", slot22))
@@ -469,9 +462,7 @@ function slot0.loadAllCharacter(slot0, slot1)
 	function slot4(slot0)
 		for slot6, slot7 in ipairs(uv0:getCurrentFleet():GetTeamShipVOs(slot0, false)) do
 			table.insert(uv1, function (slot0)
-				slot1 = SpineRole.New(uv0)
-
-				slot1:Load(function ()
+				SpineRole.New(uv0):Load(function ()
 					uv0(uv1, uv2, uv3, uv4)
 					onNextTick(uv5)
 				end)
@@ -504,12 +495,7 @@ function slot0.showEnergyDesc(slot0, slot1, slot2)
 	slot0.energyDescTF.position = slot1
 
 	setActive(slot0.energyDescTF, true)
-
-	slot3 = LeanTween.scale(slot0.energyDescTF, Vector3.zero, 0.2)
-	slot3 = slot3:setDelay(1)
-	slot3 = slot3:setFrom(Vector3.one)
-
-	slot3:setOnComplete(System.Action(function ()
+	LeanTween.scale(slot0.energyDescTF, Vector3.zero, 0.2):setDelay(1):setFrom(Vector3.one):setOnComplete(System.Action(function ()
 		uv0.energyDescTF.localScale = Vector3.one
 
 		setActive(uv0.energyDescTF, false)
@@ -590,9 +576,7 @@ function slot0.switchToShiftMode(slot0, slot1, slot2)
 		if slot8.model ~= slot1 then
 			LeanTween.moveLocalY(slot9, slot0.gridTFs[slot2][slot7].localPosition.y - 80, 0.5)
 
-			slot11 = tf(slot9)
-			slot11 = slot11:Find("mouseChild")
-			slot11 = slot11:GetComponent("EventTriggerListener")
+			slot11 = tf(slot9):Find("mouseChild"):GetComponent("EventTriggerListener")
 			slot0.eventTriggers[slot11] = true
 
 			slot11:AddPointEnterFunc(function ()
@@ -670,16 +654,14 @@ function slot0.enabledCharacter(slot0, slot1, slot2, slot3)
 			SetActive(slot4, true)
 		else
 			slot4 = GameObject("mouseChild")
-			slot7 = tf(slot4)
 
-			slot7:SetParent(tf(slot1))
+			tf(slot4):SetParent(tf(slot1))
 
 			tf(slot4).localPosition = Vector3.zero
-			slot5 = GetOrAddComponent(slot4, "ModelDrag")
 			slot6 = GetOrAddComponent(slot4, "EventTriggerListener")
 			slot0.eventTriggers[slot6] = true
 
-			slot5:Init()
+			GetOrAddComponent(slot4, "ModelDrag"):Init()
 
 			slot7 = slot4:GetComponent(typeof(RectTransform))
 			slot7.sizeDelta = Vector2(2.5, 2.5)
@@ -770,11 +752,10 @@ function slot0.willExit(slot0)
 end
 
 function slot0.Clone2Full(slot0, slot1)
-	slot2 = {}
 	slot3 = slot0:GetChild(0)
 
 	for slot8 = 0, slot0.childCount - 1 do
-		table.insert(slot2, slot0:GetChild(slot8))
+		table.insert({}, slot0:GetChild(slot8))
 	end
 
 	for slot8 = slot4, slot1 - 1 do

@@ -29,8 +29,7 @@ function slot0.Init(slot0)
 	slot0.itemContainer = findTF(slot0._tf, "items")
 	slot0.effectContainer = findTF(slot0._tf, "effects")
 	slot0.finger = findTF(slot0._tf, "finger")
-	slot1 = findTF(slot0._tf, "gear")
-	slot0.gearTr = slot1:GetComponent(typeof(Image))
+	slot0.gearTr = findTF(slot0._tf, "gear"):GetComponent(typeof(Image))
 	slot0.gearTrPos = slot0.gearTr.transform.localPosition.y
 	slot0.gearSps = {
 		[ValentineQteGameConst.OP_SCORE_GEAR_PERFECT] = GetSpriteFromAtlas("ui/valentineqtegame_atlas", "Perfect"),
@@ -93,14 +92,13 @@ function slot0.CountDown(slot0, slot1)
 			uv3()
 		end
 	end, 1, 3)
-	slot4 = slot0.countDownTimer
 
-	slot4:Start()
-	(function (slot0)
+	slot0.countDownTimer:Start()
+	function (slot0)
 		setActive(uv0.countDown1, slot0 == 3)
 		setActive(uv0.countDown2, slot0 == 2)
 		setActive(uv0.countDown3, slot0 == 1)
-	end)(1)
+	end(1)
 end
 
 function slot0.LoadEffects(slot0, slot1)
@@ -249,13 +247,8 @@ function slot0.StartGame(slot0)
 		slot0.handle = UpdateBeat:CreateListener(slot0.UpdateGame, slot0)
 	end
 
-	slot1 = UpdateBeat
-
-	slot1:AddListener(slot0.handle)
-
-	slot1 = slot0.char
-
-	slot1:SetAction("1", 0)
+	UpdateBeat:AddListener(slot0.handle)
+	slot0.char:SetAction("1", 0)
 	onButton(slot0, slot0.puaseBtn, function ()
 		if not uv0.puaseGameFlag then
 			uv0:PuaseGame()
@@ -287,9 +280,8 @@ function slot0.StartGame(slot0)
 	end, SFX_PANEL)
 
 	slot0.dragDelegate = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot1 = slot0.dragDelegate
 
-	slot1:AddPointDownFunc(function ()
+	slot0.dragDelegate:AddPointDownFunc(function ()
 		uv0.isClick = true
 
 		if uv0.opCdTime <= 0 and not uv0.puaseGameFlag then
@@ -322,11 +314,9 @@ function slot0.UpdateGame(slot0)
 end
 
 function slot0.CheckInteraction(slot0)
-	function slot1()
+	if not slot0.isInteraction and function ()
 		return uv0.time <= ValentineQteGameConst.OPEN_DOOR_TIME
-	end
-
-	if not slot0.isInteraction and slot1() then
+	end() then
 		slot0.isInteraction = true
 
 		slot0.refrigerator:SetActionCallBack(function (slot0)
@@ -378,10 +368,8 @@ function slot0.CheckAndGenItem(slot0)
 end
 
 function slot0.IsVaildItemPos(slot0, slot1)
-	slot2 = slot0.slider.sizeDelta.x + 80
-
 	for slot6, slot7 in ipairs(slot0.items) do
-		if not slot7:IsSufficientLength(slot1, slot2) then
+		if not slot7:IsSufficientLength(slot1, slot0.slider.sizeDelta.x + 80) then
 			return false
 		end
 	end
@@ -512,12 +500,10 @@ end
 
 function slot0.GearAnim(slot0)
 	slot0.gearTr.gameObject.transform.localPosition = Vector3(slot0.gearTr.gameObject.transform.localPosition.x, slot0.gearTrPos, 0)
-	slot1 = LeanTween.value(slot0.gearTr.gameObject, slot0.gearTrPos, slot0.gearTrPos + 50, 0.3)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		uv0.gearTr.gameObject.transform.localPosition = Vector3(uv0.gearTr.gameObject.transform.localPosition.x, slot0, 0)
-	end))
 
-	slot1:setOnComplete(System.Action(function ()
+	LeanTween.value(slot0.gearTr.gameObject, slot0.gearTrPos, slot0.gearTrPos + 50, 0.3):setOnUpdate(System.Action_float(function (slot0)
+		uv0.gearTr.gameObject.transform.localPosition = Vector3(uv0.gearTr.gameObject.transform.localPosition.x, slot0, 0)
+	end)):setOnComplete(System.Action(function ()
 		setActive(uv0.gearTr.gameObject, false)
 	end))
 end
@@ -558,12 +544,10 @@ end
 
 function slot0.PlayPickAnim(slot0, slot1, slot2)
 	slot3 = slot1._tf.localPosition.y
-	slot4 = LeanTween.value(slot1._go, slot3, slot3 + 70, 0.3)
-	slot4 = slot4:setOnUpdate(System.Action_float(function (slot0)
-		uv0._tf.localPosition = Vector3(uv0._tf.localPosition.x, slot0, 0)
-	end))
 
-	slot4:setOnComplete(System.Action(function ()
+	LeanTween.value(slot1._go, slot3, slot3 + 70, 0.3):setOnUpdate(System.Action_float(function (slot0)
+		uv0._tf.localPosition = Vector3(uv0._tf.localPosition.x, slot0, 0)
+	end)):setOnComplete(System.Action(function ()
 		slot0 = uv0.pickPool:Dequeue()
 
 		SetParent(slot0, uv0.effectContainer)
@@ -616,11 +600,8 @@ function slot0.GetScore(slot0, slot1, slot2)
 	slot5 = 0
 
 	for slot9, slot10 in ipairs(ValentineQteGameConst.COMBO_EXTRA_SCORE_RATIO) do
-		slot12 = slot10[2]
-		slot13 = slot10[3]
-
-		if slot10[1] <= slot2 and slot2 <= slot12 then
-			slot5 = slot13
+		if slot10[1] <= slot2 and slot2 <= slot10[2] then
+			slot5 = slot10[3]
 
 			break
 		end
@@ -651,9 +632,8 @@ function slot0.EndGame(slot0, slot1)
 
 	if slot1 then
 		slot0.statistics.Score = slot0.score
-		slot2 = slot0.resultWindow
 
-		slot2:Show(slot0.statistics, function ()
+		slot0.resultWindow:Show(slot0.statistics, function ()
 			uv0:Destroy()
 		end)
 	end

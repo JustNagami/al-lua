@@ -135,11 +135,10 @@ function slot0.getBGM(slot0)
 		return nil
 	end
 
-	slot2 = slot1.bgm
 	slot3 = slot1.special_bgm
 
 	if slot0.contextData.displayMode == uv0.DISPLAY.BATTLE then
-		return slot2
+		return slot1.bgm
 	elseif slot4 == uv0.DISPLAY.STORY then
 		return slot3
 	end
@@ -189,11 +188,9 @@ function slot0.UpdateView(slot0)
 			uv2:PlayStory(slot1, slot0)
 		end,
 		function (slot0)
-			slot1 = true
-
 			for slot5, slot6 in pairs(uv0.storyNodesDict) do
 				if slot6:GetStory() and slot7 ~= "" then
-					slot1 = slot1 and pg.NewStoryMgr.GetInstance():IsPlayed(slot7)
+					slot1 = true and pg.NewStoryMgr.GetInstance():IsPlayed(slot7)
 				end
 
 				if not slot1 then
@@ -278,24 +275,21 @@ slot2 = {
 }
 
 function slot0.UpdateStory(slot0)
-	slot1 = {}
-	slot2 = pg.NewStoryMgr.GetInstance()
 	slot3 = 1
 	slot4 = 2
 	slot5 = 3
-	slot6 = 0
-	slot7 = 0
 
 	for slot11, slot12 in pairs(slot0.storyNodesDict) do
-		slot1[slot11] = {}
 		slot14 = true
 
 		if slot12:GetStory() and slot13 ~= "" then
-			slot6 = slot6 + (slot2:IsPlayed(slot13) and 1 or 0)
-			slot7 = slot7 + 1
+			slot6 = 0 + (pg.NewStoryMgr.GetInstance():IsPlayed(slot13) and 1 or 0)
+			slot7 = 0 + 1
 		end
 
-		slot1[slot11].status = slot14 and slot5 or slot3
+		({
+			[slot11] = {}
+		})[slot11].status = slot14 and slot5 or slot3
 	end
 
 	slot10 = _.sort(_.values(slot0.storyNodesDict), function (slot0, slot1)
@@ -340,11 +334,8 @@ function slot0.UpdateStory(slot0)
 	setText(slot0._tf:Find("Story/PassLevel/Values"):GetChild(2), slot7)
 	slot0:ReturnLinks()
 	table.Foreach(slot0.storyNodesDict, function (slot0, slot1)
-		slot2 = uv0.nodes[slot1:GetIconName()].trans
-		slot3 = uv1[slot0].status == uv2
-
 		if slot1:GetType() == BossRushStoryNode.NODE_TYPE.NORMAL then
-			uv0.loader:GetSprite(uv0:GetAtalsName(), slot3 and "story_green_active" or "story_green", slot2:GetChild(0), true)
+			uv0.loader:GetSprite(uv0:GetAtalsName(), uv1[slot0].status == uv2 and "story_green_active" or "story_green", uv0.nodes[slot1:GetIconName()].trans:GetChild(0), true)
 		elseif slot4 == BossRushStoryNode.NODE_TYPE.EVENT then
 			setActive(slot2, uv3 < uv1[slot0].status)
 			uv0.loader:GetSprite(uv0:GetAtalsName(), slot3 and "story_yellow_active" or "story_yellow", slot2:GetChild(0), true)
@@ -367,7 +358,7 @@ function slot0.UpdateStory(slot0)
 
 		slot5 = slot1:GetActiveLink()
 
-		(function ()
+		function ()
 			if uv0 == 0 or uv1[uv0].status ~= uv2 then
 				return
 			end
@@ -383,7 +374,7 @@ function slot0.UpdateStory(slot0)
 			tf(slot2).sizeDelta = Vector2(Vector2.Magnitude(slot5), 2)
 			tf(slot2).anchoredPosition = slot3
 			tf(slot2).localRotation = Quaternion.FromToRotation(Vector3.right, slot5)
-		end)()
+		end()
 	end)
 	setActive(slot0.storyBar, false)
 	setActive(slot0.storyAward, tobool(slot0.storyTask))
@@ -424,8 +415,7 @@ function slot0.PlayStory(slot0, slot1, slot2)
 		return existCall(slot2)
 	end
 
-	slot3 = pg.NewStoryMgr.GetInstance()
-	slot4 = slot3:IsPlayed(slot1)
+	slot4 = pg.NewStoryMgr.GetInstance():IsPlayed(slot1)
 
 	seriesAsync({
 		function (slot0)
@@ -482,14 +472,14 @@ function slot0.resumeBubble(slot0)
 
 	slot1 = nil
 
-	(function ()
+	function ()
 		if uv0.ActionSequence[1] then
 			slot0(function ()
 				table.remove(uv0.ActionSequence, 1)
 				uv1()
 			end)
 		end
-	end)()
+	end()
 end
 
 function slot0.CleanBubbleMsgbox(slot0)

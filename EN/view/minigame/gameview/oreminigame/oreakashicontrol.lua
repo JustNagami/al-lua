@@ -33,19 +33,14 @@ function slot0.Init(slot0)
 end
 
 function slot0.AddListener(slot0)
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_DO_CARRY, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_DO_CARRY, function (slot0, slot1)
 		uv0.weight = uv0.weight + slot1.weight
 		uv0.point = uv0.point + slot1.point
 
 		uv0:CheckStatus()
 		uv0:AddOre(slot1.type)
 	end)
-
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_AKASHI_HIT, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_AKASHI_HIT, function (slot0, slot1)
 		if uv0.invincible then
 			return
 		end
@@ -55,13 +50,8 @@ function slot0.AddListener(slot0)
 end
 
 function slot0.AddDftAniEvent(slot0)
-	slot2 = slot0._tf
-
-	eachChild(slot2:Find("main"), function (slot0)
-		slot1 = slot0:Find("main/Image")
-		slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-		slot1:SetEndEvent(function ()
+	eachChild(slot0._tf:Find("main"), function (slot0)
+		slot0:Find("main/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 			if uv0.isDeliver then
 				uv0:ResetData()
 			else
@@ -72,13 +62,8 @@ function slot0.AddDftAniEvent(slot0)
 			end
 		end)
 	end)
-
-	slot2 = slot0._tf
-
-	eachChild(slot2:Find("effect"), function (slot0)
-		slot1 = slot0:GetComponent(typeof(DftAniEvent))
-
-		slot1:SetEndEvent(function ()
+	eachChild(slot0._tf:Find("effect"), function (slot0)
+		slot0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 			setActive(uv0, false)
 		end)
 	end)
@@ -112,9 +97,8 @@ function slot0.ResetStatus(slot0)
 	slot0:SetStatus(uv0.STATUS_NULL)
 
 	slot0.oreList = {}
-	slot2 = slot0._tf
 
-	eachChild(slot2:Find("main"), function (slot0)
+	eachChild(slot0._tf:Find("main"), function (slot0)
 		for slot4 = 1, 3 do
 			removeAllChildren(slot0:Find("ore/Image/" .. slot4 .. "/oreTF"))
 		end
@@ -183,10 +167,7 @@ function slot0.AddOre(slot0, slot1)
 	end
 
 	table.insert(slot0.oreList, slot1)
-
-	slot3 = slot0._tf
-
-	eachChild(slot3:Find("main"), function (slot0)
+	eachChild(slot0._tf:Find("main"), function (slot0)
 		if slot0.name == "N" and uv0.status ~= uv1.STATUS_CART then
 			return
 		end
@@ -228,9 +209,8 @@ end
 
 function slot0.SetStatus(slot0, slot1)
 	slot0.status = slot1
-	slot3 = slot0._tf
 
-	eachChild(slot3:Find("main"), function (slot0)
+	eachChild(slot0._tf:Find("main"), function (slot0)
 		setActive(slot0:Find("tool"), uv0.status ~= uv1.STATUS_NULL)
 		setActive(slot0:Find("ore"), uv0.status ~= uv1.STATUS_NULL)
 		eachChild(slot0:Find("ore/Image"), function (slot0)
@@ -243,9 +223,8 @@ end
 
 function slot0.SetAnimDir(slot0, slot1)
 	slot0.animDir = slot1
-	slot3 = slot0._tf
 
-	eachChild(slot3:Find("main"), function (slot0)
+	eachChild(slot0._tf:Find("main"), function (slot0)
 		if slot0.name == uv0.animDir then
 			setActive(slot0, true)
 
@@ -408,10 +387,9 @@ function slot0.UpdateAnim(slot0, slot1)
 			slot0.mainTF:Find("ore/Image"):GetComponent(typeof(Animator)):Play(slot5)
 
 			slot0.oreAnimName = slot5
-			slot7 = slot0.mainTF:Find("ore/Image/" .. slot0.status .. "/oreTF")
 
 			if not slot3 and uv0.oreAnimOffset[slot0.status][slot0.animDir] then
-				setAnchoredPosition(slot7, uv0.oreAnimOffset[slot0.status][slot0.animDir])
+				setAnchoredPosition(slot0.mainTF:Find("ore/Image/" .. slot0.status .. "/oreTF"), uv0.oreAnimOffset[slot0.status][slot0.animDir])
 			else
 				setAnchoredPosition(slot7, Vector2(0, 0))
 			end

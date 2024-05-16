@@ -57,9 +57,8 @@ function slot0.LoadL2dPainting(slot0, slot1)
 		parent = slot0.live2dContainer
 	})
 	slot4.shopPreView = true
-	slot5 = pg.UIMgr.GetInstance()
 
-	slot5:LoadingOn()
+	pg.UIMgr.GetInstance():LoadingOn()
 
 	slot5 = nil
 	slot5 = Live2D.New(slot4, function (slot0)

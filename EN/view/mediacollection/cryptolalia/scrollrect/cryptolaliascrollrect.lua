@@ -76,15 +76,10 @@ function slot0.SetUp(slot0)
 end
 
 function slot0.AddDrag(slot0)
-	slot1 = slot0.eventTriggerListener
-
-	slot1:AddBeginDragFunc(function (slot0, slot1)
+	slot0.eventTriggerListener:AddBeginDragFunc(function (slot0, slot1)
 		uv0.position = slot1.position
 	end)
-
-	slot1 = slot0.eventTriggerListener
-
-	slot1:AddDragEndFunc(function (slot0, slot1)
+	slot0.eventTriggerListener:AddDragEndFunc(function (slot0, slot1)
 		if not uv0.position then
 			return
 		end
@@ -128,16 +123,13 @@ function slot0.trigger(slot0, slot1)
 end
 
 function slot0.JumpToMid(slot0, slot1)
-	slot2 = math.abs(slot0.midIndex - slot1)
 	slot3 = slot0.midIndex - slot1 <= 0
 	slot4 = {}
 
-	for slot8 = 1, slot2 do
+	for slot8 = 1, math.abs(slot0.midIndex - slot1) do
 		table.insert(slot4, function (slot0)
-			slot1 = uv0 and uv1.midIndex + 1 or uv1.midIndex - 1
-
 			if uv2 == uv3 then
-				uv1:Step(uv1.midIndex - slot1, slot0)
+				uv1:Step(uv1.midIndex - (uv0 and uv1.midIndex + 1 or uv1.midIndex - 1), slot0)
 			else
 				uv1:Step(uv1.midIndex - slot1, onNextTick(slot0))
 			end
@@ -182,11 +174,7 @@ function slot0.Step1(slot0, slot1, slot2)
 	end
 
 	table.insert(slot3, function (slot0)
-		slot1 = uv0.animation
-		slot1 = slot1:Play(uv1)
-		slot1 = slot1:OnComplete(slot0)
-
-		slot1:OnTrigger(function ()
+		uv0.animation:Play(uv1):OnComplete(slot0):OnTrigger(function ()
 			if uv0.OnSelect then
 				uv0.OnSelect(uv1)
 			end
@@ -231,10 +219,7 @@ function slot0.Step(slot0, slot1, slot2)
 	end
 
 	table.insert(slot3, function (slot0)
-		slot1 = uv0.animation
-		slot1 = slot1:Play(uv1)
-		slot1 = slot1:OnComplete(slot0)
-		slot1 = slot1:OnUpdate(function (slot0)
+		uv0.animation:Play(uv1):OnComplete(slot0):OnUpdate(function (slot0)
 			for slot4, slot5 in ipairs(uv0.items) do
 				slot5:SetPosition(uv1[slot4] + slot0)
 			end
@@ -242,14 +227,11 @@ function slot0.Step(slot0, slot1, slot2)
 			if uv0.sinker then
 				uv0.sinker:SetPosition(uv2 + slot0)
 			end
-		end)
-		slot1 = slot1:OnLastUpdate(function ()
+		end):OnLastUpdate(function ()
 			for slot3, slot4 in ipairs(uv0.items) do
 				slot4:Refresh()
 			end
-		end)
-
-		slot1:OnTrigger(function ()
+		end):OnTrigger(function ()
 			if uv0.OnSelect then
 				uv0.OnSelect(uv1)
 			end

@@ -34,10 +34,7 @@ function slot0.execute(slot0, slot1)
 		table.remove(slot11)
 	end
 
-	slot18 = getProxy(PlayerProxy)
-
-	if slot18:getRawData().oil < (function ()
-		slot0 = 0
+	if getProxy(PlayerProxy):getRawData().oil < function ()
 		slot3 = uv0:GetOilLimit()
 		slot4 = pg.battle_cost_template[uv0:GetType() == BossRushSeriesData.TYPE.EXTRA and SYSTEM_BOSS_RUSH_EX or SYSTEM_BOSS_RUSH].oil_cost > 0
 
@@ -45,20 +42,16 @@ function slot0.execute(slot0, slot1)
 			slot2 = 0
 
 			if uv0 then
-				slot2 = slot0:GetCostSum().oil
-
 				if slot1 > 0 then
-					slot2 = math.min(slot1, slot2)
+					slot2 = math.min(slot1, slot0:GetCostSum().oil)
 				end
 			end
 
 			return slot2
 		end
 
-		slot6 = #uv0:GetExpeditionIds()
-
 		if uv1 == BossRushSeriesData.MODE.SINGLE then
-			slot0 = (slot0 + slot5(uv2[1], slot3[1]) + slot5(uv3, slot3[2])) * slot6
+			slot0 = (0 + slot5(uv2[1], slot3[1]) + slot5(uv3, slot3[2])) * #uv0:GetExpeditionIds()
 		else
 			slot0 = slot5(uv3, slot3[2]) * slot6
 
@@ -68,7 +61,7 @@ function slot0.execute(slot0, slot1)
 		end
 
 		return slot0
-	end)() + slot7:GetOilCost() then
+	end() + slot7:GetOilCost() then
 		if not ItemTipPanel.ShowOilBuyTip(slot16) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 		end
@@ -76,9 +69,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot18 = pg.ConnectionMgr.GetInstance()
-
-	slot18:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
 		activity_id = slot4,
 		arg1 = slot3,
@@ -98,14 +89,14 @@ function slot0.execute(slot0, slot1)
 				getProxy(PlayerProxy):updatePlayer(slot2)
 			end
 
-			(function ()
+			function ()
 				if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_EXTRA_BOSSRUSH_RANK) then
 					return
 				end
 
 				slot0:ResetLast()
 				getProxy(ActivityProxy):updateActivity(slot0)
-			end)()
+			end()
 			uv3:sendNotification(GAME.BOSSRUSH_TRACE_DONE, uv1)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))

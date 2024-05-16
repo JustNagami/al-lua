@@ -245,15 +245,11 @@ function slot0.initSort(slot0)
 end
 
 function slot0.initEquipments(slot0)
-	slot3 = slot0.equipmentView
-	slot0.equipmentRect = UIItemList.New(slot0.equipmentsGrid, slot3:Find("Template"))
-	slot1 = slot0.equipmentRect
+	slot0.equipmentRect = UIItemList.New(slot0.equipmentsGrid, slot0.equipmentView:Find("Template"))
 
-	slot1:make(function (slot0, slot1, slot2)
-		slot3 = go(slot2)
-
+	slot0.equipmentRect:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventInit then
-			uv0:InitSpWeapon(slot3)
+			uv0:InitSpWeapon(go(slot2))
 		elseif slot0 == UIItemList.EventUpdate then
 			uv0:UpdateSpWeapon(slot1, slot3)
 		elseif slot0 == UIItemList.EventExcess then
@@ -261,15 +257,11 @@ function slot0.initEquipments(slot0)
 		end
 	end)
 
-	slot3 = slot0.equipmentView
-	slot0.craftRect = UIItemList.New(slot0.craftsGrid, slot3:Find("Template"))
-	slot1 = slot0.craftRect
+	slot0.craftRect = UIItemList.New(slot0.craftsGrid, slot0.equipmentView:Find("Template"))
 
-	slot1:make(function (slot0, slot1, slot2)
-		slot3 = go(slot2)
-
+	slot0.craftRect:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventInit then
-			uv0:InitCraftItem(slot3)
+			uv0:InitCraftItem(go(slot2))
 		elseif slot0 == UIItemList.EventUpdate then
 			uv0:UpdateCraftItem(slot1, slot3)
 		elseif slot0 == UIItemList.EventExcess then
@@ -351,7 +343,7 @@ function slot0.filterEquipment(slot0)
 	GetSpriteFromAtlasAsync("ui/commonui_atlas", slot0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on", function (slot0)
 		setImageSprite(uv0.indexBtn, slot0, true)
 	end)
-	(function ()
+	function ()
 		uv0.loadEquipmentVOs = {}
 		slot0 = {}
 
@@ -372,9 +364,9 @@ function slot0.filterEquipment(slot0)
 		if uv0.contextData.qiutBtn then
 			table.insert(uv0.loadEquipmentVOs, 1, false)
 		end
-	end)()
+	end()
 	slot0:updateEquipmentCount()
-	(function ()
+	function ()
 		uv0.showCraftList = {}
 		slot0 = {}
 
@@ -391,7 +383,7 @@ function slot0.filterEquipment(slot0)
 		if uv1 then
 			table.sort(uv0.showCraftList, CompareFuncs(uv2.sortFunc(uv1, uv0.asc)))
 		end
-	end)()
+	end()
 	slot0:UpdateCraftCount()
 	setImageSprite(slot0:findTF("Image", slot0.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", slot0.contextData.sortData.spr), true)
 	setActive(slot0.sortImgAsc, slot0.asc)

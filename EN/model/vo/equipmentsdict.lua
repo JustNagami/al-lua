@@ -21,13 +21,14 @@ end
 function slot0.GetSameTypeInEquips(slot0, slot1)
 	slot2 = {}
 	slot3 = slot0.data
+	slot4 = Equipment.getConfigData(slot1)
 
-	while slot1 ~= nil do
-		if slot3[slot1] then
-			table.insertto(slot2, slot3[slot1])
+	while slot4 do
+		if slot3[slot4.id] then
+			table.insertto(slot2, slot3[slot4.id])
 		end
 
-		slot1 = pg.equip_data_template[slot1] and pg.equip_data_template[slot1].next
+		slot4 = slot4.next and Equipment.getConfigData(slot4.next)
 	end
 
 	return slot2
@@ -61,13 +62,11 @@ end
 
 function slot0.GetEquipTraceBack(slot0, slot1, slot2, slot3)
 	slot4 = slot0.data
-	slot2 = slot2 or {
-		slot1
-	}
-	slot3 = slot3 or {}
 
 	if #EquipmentProxy.GetTransformSources(slot1) == 0 then
-		table.insert(slot3, slot2)
+		table.insert(slot3 or {}, slot2 or {
+			slot1
+		})
 	end
 
 	for slot9, slot10 in ipairs(slot5) do
@@ -148,9 +147,7 @@ function slot0.AddEquipment(slot0, slot1)
 end
 
 function slot0.RemoveEquipment(slot0, slot1)
-	slot2 = slot0.data
-
-	if not slot1 or not slot2[slot1.id] then
+	if not slot1 or not slot0.data[slot1.id] then
 		return
 	end
 

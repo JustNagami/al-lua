@@ -239,9 +239,7 @@ end
 
 function slot0.LoadCounsellor(slot0, slot1, slot2)
 	if not slot0.counsellors[slot1] then
-		slot3 = ResourceMgr.Inst
-
-		slot3:getAssetAsync("guideitem/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("guideitem/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if IsNil(slot0) then
 				return
 			end
@@ -256,9 +254,7 @@ function slot0.LoadCounsellor(slot0, slot1, slot2)
 end
 
 function slot0.LoadDialogueWindow(slot0, slot1, slot2)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("guideitem/window_" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("guideitem/window_" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if IsNil(slot0) then
 			return
 		end
@@ -283,19 +279,20 @@ function slot0.HideDialogueWindows(slot0)
 	end
 end
 
-function slot2(slot0, slot1, slot2)
-	if slot2.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
-		slot0.uiDuplicator:Duplicate(slot1, {
+function slot2(slot0, slot1, slot2, slot3)
+	if slot3.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
+		slot0.uiDuplicator:Duplicate(slot2, {
 			clearAllEvent = true
 		})
-	elseif slot2.type == GuideStep.HIGH_TYPE_LINE then
-		slot3 = 15
-		slot4 = slot0._tf:InverseTransformPoint(slot1.position)
+	elseif slot3.type == GuideStep.HIGH_TYPE_LINE then
+		slot4 = slot1.isWorld and 15 or 55
+		slot5 = slot0._tf:InverseTransformPoint(slot2.position)
 
 		slot0.uiLoader:LoadHighLightArea({
-			position = Vector3(slot4.x, slot4.y, 0) + Vector3((slot1.pivot.x - 0.5) * slot3, (slot1.pivot.y - 0.5) * slot3, 0),
-			sizeDelta = Vector2(slot1.sizeDelta.x + slot3, slot1.sizeDelta.y + slot3),
-			pivot = slot1.pivot
+			position = Vector3(slot5.x, slot5.y, 0) + Vector3((slot2.pivot.x - 0.5) * slot4, (slot2.pivot.y - 0.5) * slot4, 0),
+			sizeDelta = Vector2(slot2.sizeDelta.x + slot4, slot2.sizeDelta.y + slot4),
+			pivot = slot2.pivot,
+			isWorld = slot1.isWorld
 		})
 	end
 end
@@ -311,17 +308,15 @@ function slot0.UpdateHighLight(slot0, slot1, slot2)
 
 	for slot8, slot9 in ipairs(slot3) do
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:SearchUI(uv1, function (slot0)
+			uv0:SearchUI(uv1, function (slot0)
 				if not slot0 then
 					pg.NewGuideMgr.GetInstance():Stop()
 
 					return
 				end
 
-				uv0(uv1, slot0, uv2)
-				uv3()
+				uv0(uv1, uv2, slot0, uv3)
+				uv4()
 			end)
 		end)
 	end
@@ -362,10 +357,7 @@ function slot0.RegisterEvent(slot0, slot1, slot2)
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[uv0.sceneName])
 			uv1()
 		elseif uv0:ShouldTriggerOtherTarget() then
-			slot0 = uv2
-			slot2 = uv0
-
-			slot0:SearchUI(slot2:GetOtherTriggerTarget(), function (slot0)
+			uv2:SearchUI(uv0:GetOtherTriggerTarget(), function (slot0)
 				triggerButton(slot0)
 				uv0()
 			end)
@@ -373,6 +365,10 @@ function slot0.RegisterEvent(slot0, slot1, slot2)
 			uv1()
 		end
 	end, SFX_PANEL)
+end
+
+function slot0.NextOne(slot0)
+	triggerButton(slot0._tf)
 end
 
 function slot0.HideCounsellors(slot0)

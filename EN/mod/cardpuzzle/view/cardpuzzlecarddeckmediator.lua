@@ -3,9 +3,7 @@ slot0.SHOW_CARD = "SHOW_CARD"
 slot0.CLOSE_LAYER = "CLOSE_LAYER"
 
 function slot0.register(slot0)
-	slot3 = slot0.viewComponent
-
-	slot3:SetCards(slot0.contextData.card, slot0.contextData.hand)
+	slot0.viewComponent:SetCards(slot0.contextData.card, slot0.contextData.hand)
 	slot0:bind(uv0.SHOW_CARD, function (slot0, slot1)
 		uv0:addSubLayers(Context.New({
 			mediator = CardPuzzleCardDetailMediator,

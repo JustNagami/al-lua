@@ -73,39 +73,33 @@ end
 function slot3.SingleFire(slot0, slot1, slot2, slot3)
 	slot0._tempEmitterList = {}
 
-	function slot4(slot0, slot1, slot2, slot3, slot4)
-		slot5, slot6 = uv0:SpwanAircraft(slot2)
-
-		uv1.Battle.BattleVariable.AddExempt(slot5:GetSpeedExemptKey(), slot5:GetIFF(), uv2.SPEED_FACTOR_FOCUS_CHARACTER)
-		slot5:AddCreateTimer(slot6, 1)
-
-		if uv0._debugRecordATKAircraft then
-			table.insert(uv0._debugRecordATKAircraft, slot5)
-		end
-	end
-
-	function slot5()
-		for slot3, slot4 in ipairs(uv0._tempEmitterList) do
-			if slot4:GetState() ~= slot4.STATE_STOP then
-				return
-			end
-		end
-
-		for slot3, slot4 in ipairs(uv0._tempEmitterList) do
-			slot4:Destroy()
-		end
-
-		uv0._tempEmitterList = nil
-
-		if uv1 then
-			uv1()
-		end
-	end
-
-	slot2 = slot2 or uv2.EMITTER_SHOTGUN
-
 	for slot9, slot10 in ipairs(slot0._tmpData.barrage_ID) do
-		slot0._tempEmitterList[#slot0._tempEmitterList + 1] = uv0.Battle[slot2].New(slot4, slot5, slot10)
+		slot0._tempEmitterList[#slot0._tempEmitterList + 1] = uv0.Battle[slot2 or uv2.EMITTER_SHOTGUN].New(function (slot0, slot1, slot2, slot3, slot4)
+			slot5, slot6 = uv0:SpwanAircraft(slot2)
+
+			uv1.Battle.BattleVariable.AddExempt(slot5:GetSpeedExemptKey(), slot5:GetIFF(), uv2.SPEED_FACTOR_FOCUS_CHARACTER)
+			slot5:AddCreateTimer(slot6, 1)
+
+			if uv0._debugRecordATKAircraft then
+				table.insert(uv0._debugRecordATKAircraft, slot5)
+			end
+		end, function ()
+			for slot3, slot4 in ipairs(uv0._tempEmitterList) do
+				if slot4:GetState() ~= slot4.STATE_STOP then
+					return
+				end
+			end
+
+			for slot3, slot4 in ipairs(uv0._tempEmitterList) do
+				slot4:Destroy()
+			end
+
+			uv0._tempEmitterList = nil
+
+			if uv1 then
+				uv1()
+			end
+		end, slot10)
 	end
 
 	for slot9, slot10 in ipairs(slot0._tempEmitterList) do

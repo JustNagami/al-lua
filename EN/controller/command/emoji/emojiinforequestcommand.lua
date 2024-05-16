@@ -2,9 +2,8 @@ slot0 = class("EmojiInfoRequestCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot3 = pg.ConnectionMgr.GetInstance()
 
-	slot3:Send(11601, {
+	pg.ConnectionMgr.GetInstance():Send(11601, {
 		type = 0
 	}, 11602, function (slot0)
 		if slot0.emoji_list then

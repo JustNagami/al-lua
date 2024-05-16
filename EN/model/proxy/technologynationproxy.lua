@@ -23,6 +23,54 @@ function slot0.register(slot0)
 		uv0:setTimer()
 		uv0:initSetableAttrAddition(slot0.techset_list)
 	end)
+
+	if IsUnityEditor then
+		slot1 = {
+			ShipType.FengFanM,
+			ShipType.FengFanS,
+			ShipType.FengFanV
+		}
+
+		function slot2(slot0)
+			if #uv0 ~= #slot0 then
+				return false
+			end
+
+			slot1 = {}
+			slot2 = {}
+
+			for slot6, slot7 in ipairs(uv0) do
+				slot1[slot7] = (slot1[slot7] or 0) + 1
+			end
+
+			for slot6, slot7 in ipairs(slot0) do
+				slot2[slot7] = (slot2[slot7] or 0) + 1
+			end
+
+			for slot6, slot7 in pairs(slot1) do
+				if slot2[slot6] ~= slot7 then
+					return false
+				end
+			end
+
+			return true
+		end
+
+		for slot6, slot7 in ipairs(pg.fleet_tech_ship_class.all) do
+			if pg.fleet_tech_ship_class[slot7].nation == Nation.MOT then
+				slot10 = pg.fleet_tech_ship_template[slot7]
+				slot12 = slot10.add_level_shiptype
+
+				if not slot2(slot10.add_get_shiptype) then
+					assert(false, "请检查fleet_tech_ship_class中的add_get_shiptype， ID：" .. slot7)
+				end
+
+				if not slot2(slot12) then
+					assert(false, "请检查fleet_tech_ship_class中的add_level_shiptype， ID：" .. slot7)
+				end
+			end
+		end
+	end
 end
 
 function slot0.flushData(slot0)
@@ -73,11 +121,7 @@ function slot0.shipGroupFilter(slot0)
 end
 
 function slot0.nationPointFilter(slot0)
-	slot0.nationToPoint = {}
-	slot0.nationToPointLog = {}
-	slot0.nationToPointLog2 = {}
-
-	for slot5, slot6 in ipairs({
+	slot1 = {
 		Nation.US,
 		Nation.EN,
 		Nation.JP,
@@ -89,7 +133,17 @@ function slot0.nationPointFilter(slot0)
 		Nation.MNF,
 		Nation.FR,
 		Nation.META
-	}) do
+	}
+
+	if not LOCK_TEC_MOT then
+		table.insert(slot1, Nation.MOT)
+	end
+
+	slot0.nationToPoint = {}
+	slot0.nationToPointLog = {}
+	slot0.nationToPointLog2 = {}
+
+	for slot5, slot6 in ipairs(slot1) do
 		slot0.nationToPoint[slot6] = 0
 		slot0.nationToPointLog[slot6] = {
 			{},
@@ -104,12 +158,10 @@ function slot0.nationPointFilter(slot0)
 			table.insert(slot0.nationToPointLog2[slot7], slot6)
 		end
 
-		slot10 = 0 + pg.fleet_tech_ship_template[slot8].pt_get
-
 		table.insert(slot0.nationToPointLog[slot7][1], slot8)
 
 		if slot6.maxLV and TechnologyConst.SHIP_LEVEL_FOR_BUFF <= slot6.maxLV then
-			slot10 = slot10 + slot9.pt_level
+			slot10 = 0 + pg.fleet_tech_ship_template[slot8].pt_get + slot9.pt_level
 
 			table.insert(slot0.nationToPointLog[slot7][2], slot8)
 		end
@@ -136,15 +188,13 @@ function slot0.calculateTecBuff(slot0)
 
 	for slot4, slot5 in ipairs(slot0.groupListInCount) do
 		slot6 = slot5.id
-		slot8 = pg.fleet_tech_ship_template[slot6].add_get_attr
-		slot9 = pg.fleet_tech_ship_template[slot6].add_get_value
 
 		for slot13, slot14 in ipairs(pg.fleet_tech_ship_template[slot6].add_get_shiptype) do
 			if not slot0.typeBuffList[slot14] then
 				slot0.typeBuffList[slot14] = {
 					{
-						slot8,
-						slot9
+						pg.fleet_tech_ship_template[slot6].add_get_attr,
+						pg.fleet_tech_ship_template[slot6].add_get_value
 					}
 				}
 				slot0.typeOrder[#slot0.typeOrder + 1] = slot14
@@ -157,15 +207,12 @@ function slot0.calculateTecBuff(slot0)
 		end
 
 		if TechnologyConst.SHIP_LEVEL_FOR_BUFF <= slot5.maxLV then
-			slot11 = pg.fleet_tech_ship_template[slot6].add_level_attr
-			slot12 = pg.fleet_tech_ship_template[slot6].add_level_value
-
 			for slot16, slot17 in ipairs(pg.fleet_tech_ship_template[slot6].add_level_shiptype) do
 				if not slot0.typeBuffList[slot17] then
 					slot0.typeBuffList[slot17] = {
 						{
-							slot11,
-							slot12
+							pg.fleet_tech_ship_template[slot6].add_level_attr,
+							pg.fleet_tech_ship_template[slot6].add_level_value
 						}
 					}
 					slot0.typeOrder[#slot0.typeOrder + 1] = slot17
@@ -182,15 +229,12 @@ function slot0.calculateTecBuff(slot0)
 	for slot4, slot5 in pairs(slot0.techList) do
 		if slot5.completeID ~= 0 then
 			for slot10, slot11 in ipairs(pg.fleet_tech_template[slot5.completeID].add) do
-				slot13 = slot11[2]
-				slot14 = slot11[3]
-
 				for slot18, slot19 in ipairs(slot11[1]) do
 					if not slot0.typeBuffList[slot19] then
 						slot0.typeBuffList[slot19] = {
 							{
-								slot13,
-								slot14
+								slot11[2],
+								slot11[3]
 							}
 						}
 						slot0.typeOrder[#slot0.typeOrder + 1] = slot19
@@ -215,10 +259,8 @@ function slot0.calculateTecBuff(slot0)
 		end
 
 		for slot9, slot10 in ipairs(slot5) do
-			slot12 = slot10[2]
-
 			if not slot0.typeAttrTable[slot4][slot10[1]] then
-				slot0.typeAttrTable[slot4][slot11] = slot12
+				slot0.typeAttrTable[slot4][slot11] = slot10[2]
 				slot0.typeAttrOrderTable[slot4][#slot0.typeAttrOrderTable[slot4] + 1] = slot11
 			else
 				slot0.typeAttrTable[slot4][slot11] = slot0.typeAttrTable[slot4][slot11] + slot12
@@ -240,12 +282,10 @@ end
 function slot0.setTimer(slot0)
 	for slot4, slot5 in pairs(slot0.techList) do
 		if slot5.studyID ~= 0 then
-			slot9 = pg.fleet_tech_group[slot4].techs[(table.indexof(pg.fleet_tech_group[slot4].techs, slot5.completeID, 1) or 0) + 1]
-
 			if slot5.finishTime < pg.TimeMgr.GetInstance():GetServerTime() then
 				slot0:sendNotification(GAME.FINISH_CAMP_TEC, {
 					tecID = slot4,
-					levelID = slot9
+					levelID = pg.fleet_tech_group[slot4].techs[(table.indexof(pg.fleet_tech_group[slot4].techs, slot5.completeID, 1) or 0) + 1]
 				})
 
 				return
@@ -392,10 +432,8 @@ function slot0.printNationPointLog(slot0)
 		print("----------------" .. slot4 .. slot9)
 
 		for slot9, slot10 in ipairs(slot5) do
-			slot11 = slot9 .. "    :"
-
 			for slot15, slot16 in ipairs(slot10) do
-				slot11 = slot11 .. "  " .. slot16
+				slot11 = slot9 .. "    :" .. "  " .. slot16
 			end
 
 			print(slot11)

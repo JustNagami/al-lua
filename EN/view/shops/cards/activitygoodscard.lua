@@ -72,22 +72,19 @@ function slot0.update(slot0, slot1, slot2, slot3, slot4)
 			end
 
 			setText(slot0.unexchangeTag:Find("sellout_tag_en"), slot10)
+			setActive(slot0.unexchangeTag, true)
 		end
 	end
 
-	if slot0.unexchangeTag then
-		setActive(slot0.unexchangeTag, slot6)
-	end
-
-	updateDrop(slot0.itemTF, {
+	updateDrop(slot0.itemTF, Drop.New({
 		type = slot1:getConfig("commodity_type"),
 		id = slot1:getConfig("commodity_id"),
 		count = slot1:getConfig("num")
-	})
+	}))
 	setActive(slot0.limitTimeSellTF, false)
 
 	if slot5 then
-		slot8, slot9 = slot0.goodsVO:CheckTimeLimit()
+		slot8, slot9, slot10 = slot0.goodsVO:CheckTimeLimit()
 
 		setActive(slot0.limitTimeSellTF, slot8 and slot9)
 
@@ -96,21 +93,23 @@ function slot0.update(slot0, slot1, slot2, slot3, slot4)
 			setActive(slot0.sellEndTag, true)
 			removeOnButton(slot0.mask)
 			onButton(slot0, slot0.mask, function ()
-				pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", getDropName(uv0)))
+				if uv0 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", uv1:getName()))
+				end
 			end, SFX_PANEL)
 		end
 	end
 
-	GetSpriteFromAtlasAsync(getDropIcon({
+	GetSpriteFromAtlasAsync(Drop.New({
 		type = slot1:getConfig("resource_category"),
 		id = slot1:getConfig("resource_type")
-	}), "", function (slot0)
+	}):getIcon(), "", function (slot0)
 		uv0.resIconTF.sprite = slot0
 	end)
 
 	slot0.countTF.text = slot1:getConfig("resource_num")
 
-	if string.match(getDropName(slot7) or "??", "(%d+)") then
+	if string.match(slot7:getName() or "??", "(%d+)") then
 		setText(slot0.nameTxt, shortenString(slot8, 5))
 	else
 		setText(slot0.nameTxt, shortenString(slot8, 6))
@@ -125,10 +124,9 @@ function slot0.update(slot0, slot1, slot2, slot3, slot4)
 	slot10 = uv0.Color[slot2] or uv0.DefaultColor
 	slot0.limitCountTF.color = slot3 or Color.New(unpack(slot10))
 	slot0.limitCountLabelTF.color = slot3 or Color.New(unpack(slot10))
-	slot4 = slot4 or Color.New(0, 0, 0, 1)
 
 	if GetComponent(slot0.limitCountTF, typeof(Outline)) then
-		setOutlineColor(slot0.limitCountTF, slot4)
+		setOutlineColor(slot0.limitCountTF, slot4 or Color.New(0, 0, 0, 1))
 	end
 
 	if GetComponent(slot0.limitCountLabelTF, typeof(Outline)) then
@@ -142,7 +140,6 @@ end
 
 function slot0.StaticUpdate(slot0, slot1, slot2, slot3)
 	slot4 = tf(slot0)
-	slot6 = findTF(slot4, "item/name_mask/name")
 	slot7 = findTF(slot4, "item/consume/contain/icon"):GetComponent(typeof(Image))
 
 	setActive(findTF(slot4, "item/discount"), false)
@@ -154,47 +151,38 @@ function slot0.StaticUpdate(slot0, slot1, slot2, slot3)
 	setActive(slot4:Find("mask"), not slot14)
 	setActive(slot4:Find("mask/tag/sellout_tag"), not slot14)
 
-	slot16 = {
+	slot16 = Drop.New({
 		type = slot1:getConfig("commodity_type"),
 		id = slot1:getConfig("commodity_id"),
 		count = slot1:getConfig("num")
-	}
+	})
 
 	updateDrop(findTF(slot4, "item"), slot16)
 
 	findTF(slot4, "item/consume/contain/Text"):GetComponent(typeof(Text)).text = slot1:getConfig("resource_num")
 
-	if string.match(slot16.cfg.name or "??", "(%d+)") then
-		setText(slot6, shortenString(slot17, 5))
+	if string.match(slot16:getConfig("name") or "??", "(%d+)") then
+		setText(findTF(slot4, "item/name_mask/name"), shortenString(slot17, 5))
 	else
 		setText(slot6, shortenString(slot17, 6))
 	end
 
-	slot18 = nil
-
-	if slot1:getConfig("resource_category") == DROP_TYPE_RESOURCE then
-		slot18 = GetSpriteFromAtlas(pg.item_data_statistics[id2ItemId(slot1:getConfig("resource_type"))].icon, "")
-	elseif slot19 == DROP_TYPE_ITEM then
-		slot18 = GetSpriteFromAtlas(pg.item_data_statistics[slot1:getConfig("resource_type")].icon, "")
-	end
-
-	slot7.sprite = slot18
+	slot7.sprite = GetSpriteFromAtlas(Drop.New({
+		type = slot1:getConfig("resource_category"),
+		id = slot1:getConfig("resource_type")
+	}):getIcon(), "")
 
 	if slot1:getConfig("num_limit") == 0 then
 		slot12.text = i18n("common_no_limit")
+	elseif slot16.type == DROP_TYPE_SKIN and not slot14 then
+		slot12.text = "0/" .. slot1:getConfig("num_limit")
 	else
-		slot20 = slot1:getConfig("num_limit")
-
-		if slot16.type == DROP_TYPE_SKIN and not slot14 then
-			slot12.text = "0/" .. slot20
-		else
-			slot12.text = slot20 - slot1.buyCount .. "/" .. slot20
-		end
+		slot12.text = slot19 - slot1.buyCount .. "/" .. slot19
 	end
 
-	slot20 = uv0.Color[slot2] or uv0.DefaultColor
-	slot12.color = slot3 or Color.New(slot20[1], slot20[2], slot20[3], 1)
-	slot13.color = slot3 or Color.New(slot20[1], slot20[2], slot20[3], 1)
+	slot19 = uv0.Color[slot2] or uv0.DefaultColor
+	slot12.color = slot3 or Color.New(slot19[1], slot19[2], slot19[3], 1)
+	slot13.color = slot3 or Color.New(slot19[1], slot19[2], slot19[3], 1)
 
 	if slot1:getConfig("num_limit") >= 99 then
 		slot13.text = i18n("shop_label_unlimt_cnt")

@@ -22,14 +22,11 @@ end
 function slot0.OnFirstFlush(slot0)
 	uv0.super.OnFirstFlush(slot0)
 
-	slot1 = slot0.activity
-	slot0.storyName = slot1:getConfig("config_client").performStory
-	slot1 = slot0.activity
-	slot0.activateStoryName = slot1:getConfig("config_client").activateStory
+	slot0.storyName = slot0.activity:getConfig("config_client").performStory
+	slot0.activateStoryName = slot0.activity:getConfig("config_client").activateStory
 	slot0.heartUIItemList = UIItemList.New(slot0.heartContainer, slot0.heartTpl)
-	slot1 = slot0.heartUIItemList
 
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.heartUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = slot1 + 1
 			slot2.name = slot3
@@ -141,20 +138,13 @@ function slot0.OnGetBtnClick(slot0)
 	end
 
 	table.insert(slot1, function (slot0)
-		slot1 = uv0.ptData
-		slot2 = uv0
-		slot2 = slot2:findTF(slot1:GetLevelProgress() .. "/Full", uv0.heartContainer)
+		slot2 = uv0:findTF(uv0.ptData:GetLevelProgress() .. "/Full", uv0.heartContainer)
 
 		setFillAmount(slot2, 0)
 		setActive(slot2, true)
-
-		slot3 = uv0
-		slot3 = slot3:managedTween(LeanTween.value, nil, go(slot2), 0, 1, uv1.FILL_ANI_TIME)
-		slot3 = slot3:setOnUpdate(System.Action_float(function (slot0)
+		uv0:managedTween(LeanTween.value, nil, go(slot2), 0, 1, uv1.FILL_ANI_TIME):setOnUpdate(System.Action_float(function (slot0)
 			setFillAmount(uv0, slot0)
-		end))
-
-		slot3:setOnComplete(System.Action(function ()
+		end)):setOnComplete(System.Action(function ()
 			uv0()
 		end))
 	end)

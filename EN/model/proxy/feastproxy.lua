@@ -131,11 +131,8 @@ function slot4(slot0, slot1, slot2, slot3)
 end
 
 function slot0.RandomShips(slot0, slot1, slot2)
-	slot3 = pg.activity_partyinvitation_template or {}
-	slot4 = {}
-
 	for slot8, slot9 in ipairs(slot1) do
-		table.insert(slot4, slot3[slot9].groupid)
+		table.insert({}, (pg.activity_partyinvitation_template or {})[slot9].groupid)
 	end
 
 	for slot9, slot10 in pairs(slot0:getRawData():GetFeastShipList()) do
@@ -229,20 +226,19 @@ function slot0.GetSubmittedTaskStories(slot0)
 	end
 
 	slot2 = slot1:getConfig("config_client")
-	slot4 = {}
 
 	for slot8, slot9 in ipairs({
 		slot2[8],
 		slot2[9]
 	}) do
-		slot10 = slot9[1]
-
 		if not pg.NewStoryMgr.GetInstance():IsPlayed(slot9[2]) then
-			slot4[slot10] = slot11
+			-- Nothing
 		end
 	end
 
-	return slot4
+	return {
+		[slot9[1]] = slot11
+	}
 end
 
 function slot0.ShouldTipPt(slot0)
@@ -254,10 +250,8 @@ function slot0.ShouldTipPt(slot0)
 end
 
 function slot0.ShouldTipFeastTask(slot0)
-	slot1 = getProxy(TaskProxy)
-
 	for slot6, slot7 in ipairs(slot0:GetTaskList()) do
-		if slot1:getTaskById(slot7) and slot8:isFinish() and not slot8:isReceive() then
+		if getProxy(TaskProxy):getTaskById(slot7) and slot8:isFinish() and not slot8:isReceive() then
 			return true
 		end
 	end
@@ -280,11 +274,9 @@ end
 function slot0.ShouldTipInvitation(slot0)
 	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 	slot2, slot3 = slot0:GetConsumeList()
-	slot4 = slot1:getVitemNumber(slot2)
-	slot5 = slot1:getVitemNumber(slot3)
 
 	for slot10, slot11 in ipairs(slot0.data:GetInvitedFeastShipList()) do
-		if not slot11:GotGift() and slot5 > 0 or not slot11:GotTicket() and slot4 > 0 then
+		if not slot11:GotGift() and slot1:getVitemNumber(slot3) > 0 or not slot11:GotTicket() and slot1:getVitemNumber(slot2) > 0 then
 			return true
 		end
 	end

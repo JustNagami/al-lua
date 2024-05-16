@@ -26,7 +26,7 @@ function slot0.PlayFuncsLink(slot0)
 	slot1 = false
 	slot2 = nil
 
-	(function (...)
+	function (...)
 		if uv0 then
 			table.remove(uv1._funcsLink, 1)
 		end
@@ -36,11 +36,11 @@ function slot0.PlayFuncsLink(slot0)
 		if uv1._funcsLink[1] then
 			slot0(uv2, ...)
 		end
-	end)()
+	end()
 end
 
 function slot0.OnDataSetting(slot0)
-	return uv0.super.OnDataSetting(slot0) or (function ()
+	return uv0.super.OnDataSetting(slot0) or function ()
 		if uv0.activity.data1 == 1 and uv0.activity.data3 == 1 then
 			uv0.activity.data3 = 0
 
@@ -51,7 +51,7 @@ function slot0.OnDataSetting(slot0)
 
 			return true
 		end
-	end)()
+	end()
 end
 
 function slot0.OnFirstFlush(slot0)
@@ -144,11 +144,8 @@ function slot0.OnUpdateFlush(slot0)
 		slot0.bgName = slot3
 	end
 
-	slot4 = slot0.activity.data2_list
-	slot5 = slot0.activity.data3_list
-
 	for slot9, slot10 in ipairs(slot0.items) do
-		slot12 = table.contains(slot4, slot0.keyList[slot9]) and 3 or table.contains(slot5, slot11) and 2 or 1
+		slot12 = table.contains(slot0.activity.data2_list, slot0.keyList[slot9]) and 3 or table.contains(slot0.activity.data3_list, slot11) and 2 or 1
 
 		onButton(slot0, slot10, function ()
 			if uv0 >= 3 then
@@ -192,8 +189,7 @@ function slot0.OnUpdateFlush(slot0)
 	setActive(slot0.bulin, slot1)
 
 	if slot0.activity.data1 == 1 then
-		slot6 = slot0.activity
-		slot6 = slot6:getConfig("config_client").popStory
+		slot6 = slot0.activity:getConfig("config_client").popStory
 
 		slot0:AddFunc(function (slot0)
 			pg.NewStoryMgr.GetInstance():Play(uv0, slot0)

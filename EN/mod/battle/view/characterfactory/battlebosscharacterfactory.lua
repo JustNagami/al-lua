@@ -33,10 +33,8 @@ function slot1.MakeCharacter(slot0)
 end
 
 function slot1.MakeBloodBar(slot0, slot1)
-	slot2 = slot0:GetSceneMediator()
-
 	if slot1:GetBossIndex() then
-		slot1:AddHPBar(slot2:InstantiateCharacterComponent(slot0.DUAL_BAR_NAME[slot3]))
+		slot1:AddHPBar(slot0:GetSceneMediator():InstantiateCharacterComponent(slot0.DUAL_BAR_NAME[slot3]))
 	else
 		slot1:AddHPBar(slot2:InstantiateCharacterComponent(slot0.HP_BAR_NAME), true)
 	end

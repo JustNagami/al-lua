@@ -365,24 +365,20 @@ function slot0.GetWorldPower(slot0)
 end
 
 function slot0.GetWorldRank(slot0)
-	slot1 = 0
-	slot3 = pg.gameset.world_level_correct.description
-
 	for slot7, slot8 in ipairs(underscore.map(slot0:GetNormalFleets(), function (slot0)
 		return slot0:GetLevelCount() / 6
 	end)) do
-		slot1 = slot1 + slot8 * slot3[slot7]
+		slot1 = 0 + slot8 * pg.gameset.world_level_correct.description[slot7]
 	end
 
 	if slot0:GetSubmarineFleet() then
 		slot1 = slot1 + slot4:GetLevelCount() / 3 * slot3[5]
 	end
 
-	slot1 = slot1 * slot0:GetWorldMapBuffAverageLevel()
 	slot5 = nil
 
 	for slot10, slot11 in ipairs(pg.gameset.world_suggest_level.description) do
-		if slot1 < slot11 then
+		if slot1 * slot0:GetWorldMapBuffAverageLevel() < slot11 then
 			break
 		else
 			slot5 = slot10
@@ -451,11 +447,9 @@ function slot0.IsRookie(slot0)
 end
 
 function slot0.EntranceToReplacementMapList(slot0, slot1)
-	slot2 = {}
-
 	for slot6, slot7 in ipairs(slot1.config.stage_chapter) do
 		if slot7[1] <= slot0:GetProgress() and slot0:GetProgress() <= slot7[2] then
-			table.insert(slot2, slot0:GetMap(slot7[3]))
+			table.insert({}, slot0:GetMap(slot7[3]))
 		end
 	end
 
@@ -603,17 +597,15 @@ function slot0.AnyUnachievedAchievement(slot0, slot1)
 end
 
 function slot0.GetFinishAchievements(slot0, slot1)
-	slot1 = slot1 or slot0.atlas:GetAchEntranceList()
 	slot2 = {}
 	slot3 = {}
 
-	for slot7, slot8 in ipairs(slot1) do
+	for slot7, slot8 in ipairs(slot1 or slot0.atlas:GetAchEntranceList()) do
 		slot9, slot10 = slot0:CountAchievements(slot8)
-		slot11 = slot0:GetMapAchieveStarDic(slot8.id)
 		slot12 = {}
 
 		for slot16, slot17 in ipairs(slot8:GetAchievementAwards()) do
-			if not slot11[slot17.star] and slot17.star <= slot9 + slot10 then
+			if not slot0:GetMapAchieveStarDic(slot8.id)[slot17.star] and slot17.star <= slot9 + slot10 then
 				table.insert(slot12, slot17.star)
 			end
 		end
@@ -634,11 +626,10 @@ function slot0.CountAchievements(slot0, slot1)
 	slot2 = 0
 	slot3 = 0
 	slot4 = 0
-	slot5 = slot1 and {
-		slot1
-	} or slot0.atlas:GetAchEntranceList()
 
-	for slot9, slot10 in ipairs(slot5) do
+	for slot9, slot10 in ipairs(slot1 and {
+		slot1
+	} or slot0.atlas:GetAchEntranceList()) do
 		for slot14, slot15 in ipairs(slot10.config.normal_target) do
 			slot2 = slot2 + (slot0.achievements[slot15] and slot0.achievements[slot15]:IsAchieved() and 1 or 0)
 		end
@@ -694,10 +685,7 @@ function slot0.BuildFormationIds(slot0)
 		end
 	end
 
-	slot4 = ipairs
-	slot5 = slot0:IsActivate() and slot0:GetFleets() or slot0:GetDefaultFleets()
-
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot0:IsActivate() and slot0:GetFleets() or slot0:GetDefaultFleets()) do
 		slot9 = slot8:GetFleetType()
 
 		if slot3[slot9] <= slot2[slot9] then
@@ -722,10 +710,8 @@ function slot0.BuildFormationIds(slot0)
 		end
 	end
 
-	slot6 = 0
-
 	for slot10, slot11 in pairs(slot1) do
-		slot6 = slot6 + #slot11
+		slot6 = 0 + #slot11
 	end
 
 	return slot4 and WorldConst.FleetExpansion or WorldConst.FleetRedeploy, slot1, slot6
@@ -821,10 +807,8 @@ function slot0.CompareRedeploy(slot0, slot1)
 end
 
 function slot0.IsSystemOpen(slot0, slot1)
-	slot2 = slot0:GetRealm()
-
 	for slot6, slot7 in ipairs(pg.world_stage_template.all) do
-		if pg.world_stage_template[slot7].stage_ui[1] == slot1 and (slot8.stage_ui[2] == 0 or slot8.stage_ui[2] == slot2) then
+		if pg.world_stage_template[slot7].stage_ui[1] == slot1 and (slot8.stage_ui[2] == 0 or slot8.stage_ui[2] == slot0:GetRealm()) then
 			return slot8.stage_key <= slot0:GetProgress()
 		end
 	end
@@ -907,10 +891,8 @@ end
 function slot0.RemoveBuff(slot0, slot1, slot2)
 	assert(slot1)
 
-	slot3 = slot0:GetGlobalBuff(slot1)
-
 	if slot2 then
-		slot3:AddFloor(slot2 * -1)
+		slot0:GetGlobalBuff(slot1):AddFloor(slot2 * -1)
 	else
 		slot0.globalBuffDic[slot1] = nil
 	end
@@ -977,10 +959,9 @@ function slot0.CheckAreaUnlock(slot0, slot1)
 end
 
 function slot0.CheckTaskLockMap(slot0)
-	slot1 = slot0.taskProxy
 	slot2 = slot0:GetActiveMap().gid
 
-	return _.any(slot1:getTaskVOs(), function (slot0)
+	return _.any(slot0.taskProxy:getTaskVOs(), function (slot0)
 		return slot0:isAlive() and slot0:IsLockMap() and _.any(slot0.config.task_target_map, function (slot0)
 			return slot0 == uv0
 		end)
@@ -1001,11 +982,9 @@ function slot0.ClearResetAward(slot0)
 end
 
 function slot0.GetTargetMapPressingCount(slot0, slot1)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot1) do
 		if slot0:GetMap(slot7).isPressing then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 	end
 
@@ -1023,10 +1002,8 @@ function slot0.GetAreaEntranceIds(slot0, slot1)
 end
 
 function slot0.CalcOrderCost(slot0, slot1)
-	slot2 = 0
-
 	if slot1 == WorldConst.OpReqRedeploy then
-		return World.CalcCDTimeCost(pg.gameset.world_fleet_redeploy_cost.description, slot0:GetReqCDTime(WorldConst.OpReqRedeploy), slot2)
+		return World.CalcCDTimeCost(pg.gameset.world_fleet_redeploy_cost.description, slot0:GetReqCDTime(WorldConst.OpReqRedeploy), 0)
 	elseif slot1 == WorldConst.OpReqMaintenance then
 		return pg.gameset.world_instruction_maintenance.description[1] * math.max(10000 - slot2, 0) / 10000
 	elseif slot1 == WorldConst.OpReqSub then
@@ -1045,11 +1022,9 @@ function slot0.CalcOrderCost(slot0, slot1)
 end
 
 function slot0.GetDisplayPressingCount(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0.atlas.pressingMapList) do
 		if slot0.atlas:GetMap(slot6):CheckMapPressingDisplay() then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 

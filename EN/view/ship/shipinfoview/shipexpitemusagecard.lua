@@ -3,11 +3,9 @@ slot0 = class("ShipExpItemUsageCard")
 function slot0.Ctor(slot0, slot1)
 	pg.DelegateInfo.New(slot0)
 
-	slot2 = slot1:Find("name")
-	slot0.nameTxt = slot2:GetComponent(typeof(Text))
+	slot0.nameTxt = slot1:Find("name"):GetComponent(typeof(Text))
 	slot0.itemTF = slot1:Find("item")
-	slot2 = slot1:Find("value/Text")
-	slot0.valueTxt = slot2:GetComponent(typeof(Text))
+	slot0.valueTxt = slot1:Find("value/Text"):GetComponent(typeof(Text))
 	slot0.value = 0
 
 	pressPersistTrigger(slot1:Find("m10"), 0.5, function (slot0)
@@ -37,7 +35,7 @@ function slot0.SetCallBack(slot0, slot1)
 end
 
 function slot0.GetItem(slot0, slot1)
-	return getProxy(BagProxy):getItemById(slot1) or Item.New({
+	return getProxy(BagProxy):getItemById(slot1) or Drop.New({
 		count = 0,
 		type = DROP_TYPE_ITEM,
 		id = slot1

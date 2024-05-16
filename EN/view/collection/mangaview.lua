@@ -140,11 +140,9 @@ function slot0.updateMangaTpl(slot0, slot1, slot2)
 		uv0:openMangaViewLayer(uv1)
 	end, SFX_PANEL)
 
-	slot18 = MangaConst.MANGA_PATH_PREFIX .. pg.cartoon[slot4].resource
-
 	if not IsNil(GetComponent(slot0:findTF("Content/Mask/Pic", slot3), "Image").sprite) then
 		if slot19.name ~= slot17 then
-			slot0.resLoader:LoadSprite(slot18, slot17, slot6, false)
+			slot0.resLoader:LoadSprite(MangaConst.MANGA_PATH_PREFIX .. pg.cartoon[slot4].resource, slot17, slot6, false)
 		end
 	else
 		slot0.resLoader:LoadSprite(slot18, slot17, slot6, false)
@@ -199,11 +197,10 @@ end
 
 function slot0.updateEmpty(slot0, slot1)
 	slot3 = slot0:findTF("Update", tf(slot1))
-	slot5 = slot0:findTF("Text", slot0:findTF("Btn", slot3))
 	slot7 = slot0:findTF("Slider", slot0:findTF("Progress", slot3))
 
 	if slot0.group.state == DownloadState.None then
-		setText(slot5, "None")
+		setText(slot0:findTF("Text", slot0:findTF("Btn", slot3)), "None")
 		setActive(slot4, true)
 		setActive(slot6, false)
 	elseif slot8 == DownloadState.Checking then
@@ -307,11 +304,10 @@ function slot0.initDownloadBtnPanel(slot0)
 end
 
 function slot0.updateDownloadBtnPanel(slot0)
-	slot2 = slot0:findTF("Text", slot0:findTF("Btn", slot0.downloadBtnPanel))
 	slot4 = slot0:findTF("Slider", slot0:findTF("Progress", slot0.downloadBtnPanel))
 
 	if slot0.group.state == DownloadState.None then
-		setText(slot2, "None")
+		setText(slot0:findTF("Text", slot0:findTF("Btn", slot0.downloadBtnPanel)), "None")
 		setActive(slot1, true)
 		setActive(slot3, false)
 	elseif slot5 == DownloadState.Checking then
@@ -447,11 +443,8 @@ function slot0.getMangaIDListForShow(slot0, slot1)
 
 	for slot6, slot7 in ipairs(pg.cartoon.all) do
 		if slot0:isMangaExist(slot7) then
-			slot8 = MangaConst.isMangaEverReadByID(slot7)
-			slot9 = MangaConst.isMangaLikeByID(slot7)
-
 			if slot0.isShowNotRead and slot0.isShowLike then
-				if not slot8 and slot9 then
+				if not MangaConst.isMangaEverReadByID(slot7) and MangaConst.isMangaLikeByID(slot7) then
 					table.insert(slot2, slot7)
 				end
 			elseif slot0.isShowNotRead and not slot0.isShowLike then

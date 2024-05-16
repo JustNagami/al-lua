@@ -150,9 +150,7 @@ function slot0.OnDeleteMember(slot0, slot1)
 end
 
 function slot0.OnAddMember(slot0, slot1)
-	slot3 = slot0.dynamicBg
-
-	slot3:AddShip(slot1:GetShip(), function ()
+	slot0.dynamicBg:AddShip(slot1:GetShip(), function ()
 	end)
 end
 
@@ -221,11 +219,10 @@ function slot0.UpdateBg(slot0)
 end
 
 function slot0.UpdateNotices(slot0, slot1)
-	slot2 = getProxy(GuildProxy)
 	slot3 = slot0.guildVO
 
 	if slot1 == uv0.NOTIFY_TYPE_ALL or slot1 == uv0.NOTIFY_TYPE_MAIN then
-		setActive(slot0.mainTip, slot2:ShouldShowMainTip())
+		setActive(slot0.mainTip, getProxy(GuildProxy):ShouldShowMainTip())
 	end
 
 	if slot1 == uv0.NOTIFY_TYPE_ALL or slot1 == uv0.NOTIFY_TYPE_APPLY then
@@ -275,8 +272,7 @@ function slot0.initToggles(slot0)
 	slot0.contextData.toggles = {}
 
 	for slot4, slot5 in ipairs(uv0.TOGGLE_TAG) do
-		slot7 = slot0.toggleRoot
-		slot0.contextData.toggles[slot5] = slot7:Find(slot5)
+		slot0.contextData.toggles[slot5] = slot0.toggleRoot:Find(slot5)
 
 		assert(slot0.contextData.toggles[slot5], "transform canot be nil" .. slot5)
 		onToggle(slot0, slot0.contextData.toggles[slot5], function (slot0)

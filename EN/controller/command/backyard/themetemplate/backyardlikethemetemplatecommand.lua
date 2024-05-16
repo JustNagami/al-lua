@@ -17,9 +17,7 @@ function slot0.execute(slot0, slot1)
 		uv1:sendNotification(GAME.BACKYARD_LIKE_THEME_TEMPLATE_DONE)
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(19121, {
+	pg.ConnectionMgr.GetInstance():Send(19121, {
 		theme_id = slot2.templateId,
 		upload_time = slot2.uploadTime
 	}, 19122, function (slot0)

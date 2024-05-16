@@ -45,10 +45,7 @@ function slot0.Show(slot0, slot1, slot2, slot3)
 end
 
 function slot0.LoadLine(slot0, slot1)
-	slot2 = slot0.activity
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("ui/" .. slot2:GetResorceName(slot0.id) .. "_puzzle_line", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. slot0.activity:GetResorceName(slot0.id) .. "_puzzle_line", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		slot1 = Object.Instantiate(slot0, uv0.lineTr)
 
 		eachChild(slot1, function (slot0)
@@ -126,10 +123,7 @@ function slot0.IsFinishAll(slot0)
 end
 
 function slot0.LoadPuzzle(slot0, slot1)
-	slot2 = slot0.activity
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("ui/" .. slot2:GetResorceName(slot0.id) .. "_puzzle", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. slot0.activity:GetResorceName(slot0.id) .. "_puzzle", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		slot1 = Object.Instantiate(slot0, uv0.frameTr)
 
 		uv0:HandlePuzzlePart(slot1.transform)
@@ -171,17 +165,13 @@ function slot0.RegisterEvent(slot0)
 		end
 
 		uv1 = 10
-		slot2 = uv0
 
-		slot2:BlinkSlots({
+		uv0:BlinkSlots({
 			slot0[math.random(1, #slot0)]
 		})
 		setActive(uv0.tipBtn, false)
 		setActive(uv0.tipGrayBtn, true)
-
-		slot2 = uv0
-
-		slot2:AddTimer(function ()
+		uv0:AddTimer(function ()
 			uv0 = 0
 
 			setActive(uv1.tipBtn, true)
@@ -222,13 +212,9 @@ function slot0.BlinkSlots(slot0, slot1, slot2)
 		slot10 = slot8:GetComponent(typeof(Image)).color
 
 		table.insert(slot3, function (slot0)
-			slot1 = LeanTween.value(uv0.gameObject, 0.5, 1, 0.3)
-			slot1 = slot1:setLoopPingPong(3)
-			slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
+			LeanTween.value(uv0.gameObject, 0.5, 1, 0.3):setLoopPingPong(3):setOnUpdate(System.Action_float(function (slot0)
 				uv0.color = Color.New(uv1.r, uv1.g, uv1.b, slot0)
-			end))
-
-			slot1:setOnComplete(System.Action(function ()
+			end)):setOnComplete(System.Action(function ()
 				uv0.color = Color.New(uv1.r, uv1.g, uv1.b, 0)
 
 				uv2()

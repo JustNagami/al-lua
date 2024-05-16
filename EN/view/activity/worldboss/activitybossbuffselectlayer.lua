@@ -90,13 +90,9 @@ function slot0.UpdateActiveBuffs(slot0)
 	slot0.activeBuffs = _.select(slot0.buffs, function (slot0)
 		return uv0.buffDatas[slot0].selected
 	end)
-	slot2 = slot0.activeBuffScrollComp
 
-	slot2:SetTotalCount(math.max(math.floor((#slot0.activeBuffs - 1) / 5) + 1, 4) * 5)
-
-	slot4 = slot0.activeBuffRect
-
-	setText(slot4:Find("PT/Text"), "+" .. Mathf.Round(_.reduce(slot0.activeBuffs, 0, function (slot0, slot1)
+	slot0.activeBuffScrollComp:SetTotalCount(math.max(math.floor((#slot0.activeBuffs - 1) / 5) + 1, 4) * 5)
+	setText(slot0.activeBuffRect:Find("PT/Text"), "+" .. Mathf.Round(_.reduce(slot0.activeBuffs, 0, function (slot0, slot1)
 		return slot0 + slot1:GetBonus()
 	end) * 100) .. "%")
 end

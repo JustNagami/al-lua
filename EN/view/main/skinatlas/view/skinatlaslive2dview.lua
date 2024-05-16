@@ -84,14 +84,12 @@ function slot0.TriggerEvent(slot0, slot1)
 		return
 	end
 
-	function slot3()
-	end
-
 	slot4, slot5, slot6, slot7, slot8, slot9 = ShipWordHelper.GetCvDataForShip(slot0.ship, slot0:GetEventConfig(slot1).dialog)
 
 	if not slot9 then
 		slot0.live2dChar:TriggerAction(slot2.action)
-		slot3()
+		function ()
+		end()
 	else
 		slot0.live2dChar:TriggerAction(slot2.action, nil, , slot3)
 	end

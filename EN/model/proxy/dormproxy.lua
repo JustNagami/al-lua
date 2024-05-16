@@ -61,18 +61,17 @@ function slot0.SetVisitorShip(slot0, slot1)
 end
 
 function slot0.getBackYardShips(slot0)
-	slot1 = {}
-	slot2 = getProxy(BayProxy)
-
 	for slot6, slot7 in ipairs(slot0.data.shipIds) do
-		if slot2:getShipById(slot7) then
-			slot1[slot8.id] = slot8
+		if getProxy(BayProxy):getShipById(slot7) then
+			-- Nothing
 		else
 			print("not found ship >>>", slot7)
 		end
 	end
 
-	return slot1
+	return {
+		[slot8.id] = slot8
+	}
 end
 
 function slot0.addShip(slot0, slot1)
@@ -96,15 +95,15 @@ function slot0.getShipById(slot0, slot1)
 end
 
 function slot0.getShipsByState(slot0, slot1)
-	slot3 = {}
-
 	for slot7, slot8 in pairs(slot0:getBackYardShips()) do
 		if slot8.state == slot1 then
-			slot3[slot8.id] = slot8
+			-- Nothing
 		end
 	end
 
-	return slot3
+	return {
+		[slot8.id] = slot8
+	}
 end
 
 function slot0.getTrainShipIds(slot0)
@@ -131,6 +130,21 @@ function slot0.addInimacyAndMoney(slot0, slot1, slot2, slot3)
 		intimacy = slot2,
 		money = slot3
 	})
+	slot0:updateDrom(slot0.data, BackYardConst.DORM_UPDATE_TYPE_SHIP)
+end
+
+function slot0.clearInimacyAndMoney(slot0, slot1)
+	if not getProxy(BayProxy):getShipById(slot1) then
+		return
+	end
+
+	slot3:addLikability(slot3.state_info_3)
+	getProxy(PlayerProxy):getRawData():addResources({
+		dormMoney = slot3.state_info_4
+	})
+	slot3:updateStateInfo34(0, 0)
+	slot2:updateShip(slot3)
+	slot0:updateDrom(slot0.data, BackYardConst.DORM_UPDATE_TYPE_SHIP)
 end
 
 function slot0.isLackOfFood(slot0)
@@ -138,10 +152,8 @@ function slot0.isLackOfFood(slot0)
 		return false
 	end
 
-	slot2 = slot0:getRestFood()
-
 	if not slot0.isLoadExp then
-		slot2 = slot2 - slot0.data.load_food
+		slot2 = slot0:getRestFood() - slot0.data.load_food
 	end
 
 	return slot2 <= 0
@@ -172,6 +184,18 @@ function slot0.AddFurnitrues(slot0, slot1)
 	end
 
 	slot0:updateDrom(slot0.data, BackYardConst.DORM_UPDATE_TYPE_FURNITURE)
+end
+
+function slot0.ClearNewFlag(slot0)
+	for slot5, slot6 in pairs(slot0.data:GetPurchasedFurnitures()) do
+		slot6:ClearNewFlag()
+	end
+end
+
+function slot0._ClearNewFlag(slot0, slot1)
+	if slot0.data:GetPurchasedFurnitures()[slot1] then
+		slot3:ClearNewFlag()
+	end
 end
 
 function slot0.addDorm(slot0, slot1)
@@ -246,11 +270,9 @@ function slot0.AddCustomThemeTemplate(slot0, slot1)
 end
 
 function slot0.GetUploadThemeTemplateCnt(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in pairs(slot0.customThemeTemplates) do
 		if slot6:IsPushed() then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 
@@ -332,12 +354,10 @@ function slot0.UpdateCollectionThemeTemplate(slot0, slot1)
 end
 
 function slot0.GetTemplateNewID(slot0)
-	slot1 = _.map(_.values(slot0.customThemeTemplates or {}), function (slot0)
-		return slot0:GetPos()
-	end)
-
 	for slot5 = 1, 10 do
-		if not table.contains(slot1, slot5) then
+		if not table.contains(_.map(_.values(slot0.customThemeTemplates or {}), function (slot0)
+			return slot0:GetPos()
+		end), slot5) then
 			return slot5
 		end
 	end
@@ -424,9 +444,9 @@ function slot0.GetTag7Furnitures(slot0)
 end
 
 function slot0.IsShowRedDot(slot0)
-	slot1 = getProxy(DormProxy)
+	slot3 = getProxy(DormProxy)
 
-	return slot1:isLackOfFood() or slot1:havePopEvent() or getProxy(SettingsProxy):IsTipNewTheme() or getProxy(SettingsProxy):IsTipNewGemFurniture()
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CourtYardMediator") and (slot3:isLackOfFood() or slot3:havePopEvent() or getProxy(SettingsProxy):IsTipNewTheme() or getProxy(SettingsProxy):IsTipNewGemFurniture())
 end
 
 return slot0

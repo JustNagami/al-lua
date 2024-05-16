@@ -33,9 +33,7 @@ function slot0.Set(slot0, slot1)
 		slot0:ResetCanvasOrder()
 	end
 
-	slot2 = slot0:GetLoader()
-
-	slot2:GetSpine(slot1, function (slot0)
+	slot0:GetLoader():GetSpine(slot1, function (slot0)
 		uv0.model = slot0
 		uv0.anim = slot0:GetComponent("SpineAnimUI")
 
@@ -52,10 +50,8 @@ function slot0.SetRoutine(slot0, slot1)
 	table.clear(slot0.group)
 
 	slot0.AnimIndex = nil
-	slot2 = ipairs
-	slot3 = slot1 or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1 or {}) do
 		slot0.group[slot5] = slot6
 	end
 

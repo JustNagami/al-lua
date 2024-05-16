@@ -32,16 +32,11 @@ function slot0.AddSpecialList(slot0, slot1)
 	slot2 = {}
 
 	if pg.gameset.activity_lottery_rewards then
-		slot3 = ipairs
-		slot4 = pg.gameset.activity_lottery_rewards.description or {}
+		for slot6, slot7 in ipairs(pg.gameset.activity_lottery_rewards.description or {}) do
+			slot8 = Drop.Create(slot7[2])
+			slot8.HasGot = table.contains(slot1.data3_list, slot7[1])
 
-		for slot6, slot7 in slot3(slot4) do
-			table.insert(slot2, {
-				type = slot7[2][1],
-				id = slot7[2][2],
-				count = slot7[2][3],
-				HasGot = table.contains(slot1.data3_list, slot7[1])
-			})
+			table.insert(slot2, slot8)
 		end
 	end
 
@@ -53,12 +48,10 @@ function slot0.HandleSpecialReach(slot0, slot1)
 		return
 	end
 
-	slot2 = _.reduce(slot1.data2_list, 0, function (slot0, slot1)
-		return slot0 + slot1
-	end)
-
 	for slot6, slot7 in ipairs(pg.gameset.activity_lottery_rewards.description) do
-		if slot7[1] <= slot2 and not table.contains(slot1.data3_list, slot7[1]) then
+		if slot7[1] <= _.reduce(slot1.data2_list, 0, function (slot0, slot1)
+			return slot0 + slot1
+		end) and not table.contains(slot1.data3_list, slot7[1]) then
 			slot0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
 				cmd = 2,
 				arg2 = 0,
@@ -93,9 +86,7 @@ function slot0.handleNotification(slot0, slot1)
 			slot0:HandleSpecialReach(slot4)
 		end
 	elseif slot2 == ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD then
-		slot4 = slot0.viewComponent
-
-		slot4:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
 			if uv0.shopType == 1 then
 				uv1.viewComponent:ShowShipWord(i18n("amusementpark_shop_success"))
 			elseif uv0.shopType == 2 then

@@ -53,11 +53,10 @@ end
 
 function slot0.SetAnimators(slot0, slot1)
 	slot3 = slot1[1][slot0.id] or slot2[1] or {}
-	slot4 = type(slot3) == "string" and {
-		slot3
-	} or slot3
 
-	for slot8, slot9 in ipairs(slot4) do
+	for slot8, slot9 in ipairs(type(slot3) == "string" and {
+		slot3
+	} or slot3) do
 		table.insert(slot0.animators, {
 			key = slot0.id .. "_" .. slot8,
 			value = slot9
@@ -120,13 +119,11 @@ function slot5(slot0)
 	slot1 = {}
 	slot2 = {}
 	slot3 = {}
-	slot4 = slot0.actions[1][2]
-	slot5 = slot0.actions[1][3]
 
 	for slot9, slot10 in ipairs(slot0.variedActions) do
 		table.insert(slot1, slot10[math.random(1, #slot10)])
-		table.insert(slot2, slot5)
-		table.insert(slot3, slot4)
+		table.insert(slot2, slot0.actions[1][3])
+		table.insert(slot3, slot0.actions[1][2])
 	end
 
 	return slot1, slot2, slot3

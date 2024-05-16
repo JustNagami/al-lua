@@ -82,6 +82,7 @@ pg.benefit_buff_template = setmetatable({
 		78,
 		79,
 		80,
+		81,
 		101,
 		102,
 		103,
@@ -603,7 +604,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "battle_buff",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -620,7 +621,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "battle_buff",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -637,7 +638,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "battle_buff",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -654,7 +655,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "battle_buff",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -671,7 +672,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "battle_buff",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -688,7 +689,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "battle_buff",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -705,7 +706,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "ship_battle_exp",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -722,7 +723,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "ship_battle_exp",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -739,7 +740,7 @@ pg.base.benefit_buff_template = {
 		benefit_type = "ship_battle_exp",
 		benefit_condition = {
 			"activity",
-			30746,
+			5308,
 			0
 		}
 	},
@@ -1512,6 +1513,19 @@ pg.base.benefit_buff_template = {
 			5142,
 			0
 		}
+	},
+	{
+		type_priority = 0,
+		name = "Warm Drink",
+		hide = 0,
+		max_time = 0,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "Increases the Mood recovery of shipgirls in the Dorm.",
+		benefit_effect = "1",
+		id = 81,
+		icon = "Props/60458",
+		benefit_type = "dorm_energy"
 	},
 	[101] = {
 		type_priority = 1,

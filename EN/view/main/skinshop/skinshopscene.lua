@@ -148,27 +148,16 @@ function slot0.didEnter(slot0)
 		slot0:JumpToSkinById(slot0.contextData.skinId)
 	end
 
-	slot3 = slot0.topTF
-
-	onButton(slot0, slot3:Find("back_btn"), function ()
+	onButton(slot0, slot0.topTF:Find("back_btn"), function ()
 		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
-
-	slot3 = slot0.bottomTF
-
-	onButton(slot0, slot3:Find("bg/atlas"), function ()
+	onButton(slot0, slot0.bottomTF:Find("bg/atlas"), function ()
 		uv0:emit(SkinShopMediator.ON_ATLAS)
 	end, SFX_PANEL)
-
-	slot3 = slot0.bottomTF
-
-	onButton(slot0, slot3:Find("bg/right_arr"), function ()
+	onButton(slot0, slot0.bottomTF:Find("bg/right_arr"), function ()
 		uv0:onNext()
 	end, SFX_PANEL)
-
-	slot3 = slot0.bottomTF
-
-	onButton(slot0, slot3:Find("bg/left_arr"), function ()
+	onButton(slot0, slot0.bottomTF:Find("bg/left_arr"), function ()
 		uv0:onPrev()
 	end, SFX_PANEL)
 
@@ -255,10 +244,7 @@ function slot0.JumpToSkinById(slot0, slot1)
 		return
 	end
 
-	slot4 = slot0.shipRect
-	slot5 = slot0.shipRect
-
-	slot5:ScrollTo(slot4:HeadIndexToValue(slot2 - 1))
+	slot0.shipRect:ScrollTo(slot0.shipRect:HeadIndexToValue(slot2 - 1))
 	onNextTick(function ()
 		for slot3, slot4 in pairs(uv0.cards) do
 			if slot4.goodsVO.id == uv1.id then
@@ -271,11 +257,8 @@ function slot0.JumpToSkinById(slot0, slot1)
 end
 
 function slot0.SwitchCharBg(slot0, slot1)
-	slot2 = slot0.furnBg
-	slot3 = slot0.charBg
-
 	if not slot1 then
-		if LeanTween.isTweening(go(slot2)) or LeanTween.isTweening(go(slot3)) then
+		if LeanTween.isTweening(go(slot0.furnBg)) or LeanTween.isTweening(go(slot0.charBg)) then
 			return
 		end
 	else
@@ -296,15 +279,11 @@ function slot0.SwitchCharBg(slot0, slot1)
 
 	slot8 = slot2:GetComponent(typeof(CanvasGroup)).alpha
 	slot9 = slot3:GetComponent(typeof(CanvasGroup)).alpha
-	slot12 = LeanTween.moveLocal(go(slot2), slot3.anchoredPosition3D, 0.3)
 
-	slot12:setOnComplete(System.Action(function ()
+	LeanTween.moveLocal(go(slot2), slot3.anchoredPosition3D, 0.3):setOnComplete(System.Action(function ()
 		uv0.alpha = uv1
 	end))
-
-	slot12 = LeanTween.moveLocal(go(slot3), slot2.anchoredPosition3D, 0.3)
-
-	slot12:setOnComplete(System.Action(function ()
+	LeanTween.moveLocal(go(slot3), slot2.anchoredPosition3D, 0.3):setOnComplete(System.Action(function ()
 		uv0.alpha = uv1
 
 		uv2()
@@ -326,7 +305,6 @@ function slot0.SwitchCharBg(slot0, slot1)
 end
 
 function slot0.initSkinPage(slot0)
-	slot1 = {}
 	slot0.countByIds = {}
 
 	for slot5, slot6 in ipairs(uv0.all) do
@@ -334,7 +312,7 @@ function slot0.initSkinPage(slot0)
 			if slot6 ~= uv1.PAGE_TRANS then
 				slot0.countByIds[slot6] = 0
 
-				table.insert(slot1, slot6)
+				table.insert({}, slot6)
 			end
 		end
 	end
@@ -357,11 +335,10 @@ function slot0.initSkinPage(slot0)
 	end
 
 	slot2 = slot0:findTF("toggles/mask/content", slot0.leftPanel)
-	slot3 = {}
 
 	for slot7, slot8 in ipairs(slot1) do
 		if slot0.countByIds[slot8] > 0 then
-			table.insert(slot3, slot8)
+			table.insert({}, slot8)
 		end
 	end
 
@@ -379,11 +356,10 @@ function slot0.initSkinPage(slot0)
 
 	slot0.mid = 4
 	slot0.pageTFs = {}
-	slot4 = slot2.parent:Find("0")
 	slot0.skinPageToggles = {}
 
 	for slot8, slot9 in ipairs(slot3) do
-		slot10 = cloneTplTo(slot4, slot2, slot9)
+		slot10 = cloneTplTo(slot2.parent:Find("0"), slot2, slot9)
 
 		setActive(slot10, true)
 
@@ -687,9 +663,8 @@ function slot0.LoadL2d(slot0, slot1)
 		parent = slot0.live2dContainer
 	})
 	slot4.shopPreView = true
-	slot5 = pg.UIMgr.GetInstance()
 
-	slot5:LoadingOn()
+	pg.UIMgr.GetInstance():LoadingOn()
 
 	slot0.live2dChar = Live2D.New(slot4, function (slot0)
 		uv0:recyclePainting()
@@ -717,9 +692,7 @@ function slot0.setBg(slot0, slot1, slot2, slot3)
 	end
 
 	if slot5 ~= slot4:rarity2bgPrintForGet() then
-		slot7 = pg.DynamicBgMgr.GetInstance()
-
-		slot7:LoadBg(slot0, slot5, slot0.bgRoot, slot0:GetCurBgTransform(), function (slot0)
+		pg.DynamicBgMgr.GetInstance():LoadBg(slot0, slot5, slot0.bgRoot, slot0:GetCurBgTransform(), function (slot0)
 		end, function (slot0)
 			uv0:AnimBg()
 		end)
@@ -751,11 +724,7 @@ function slot0.AnimBg(slot0)
 	LeanTween.cancel(go(slot0.bg1))
 	setActive(slot1, true)
 	slot1:SetAsLastSibling()
-
-	slot3 = LeanTween.alpha(slot1, 1, 0.8)
-	slot3 = slot3:setFrom(0)
-
-	slot3:setOnComplete(System.Action(function ()
+	LeanTween.alpha(slot1, 1, 0.8):setFrom(0):setOnComplete(System.Action(function ()
 		setImageAlpha(uv0, 1)
 		setImageAlpha(uv1, 0)
 	end))
@@ -819,38 +788,29 @@ function slot0.updateBuyBtn(slot0, slot1)
 		onButton(slot0, slot0.buyBtn, function ()
 			if uv0.type == Goods.TYPE_SKIN then
 				if uv1.showCardId == slot0.id then
-					slot2 = i18n("charge_scene_buy_confirm", slot0:GetPrice(), uv2.name)
-
 					if uv0:isDisCount() and slot0:IsItemDiscountType() then
-						slot2 = i18n("discount_coupon_tip", slot1, slot0:GetDiscountItem().name, uv2.name)
-					end
-
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = slot2,
-						onYes = function ()
-							if uv0 then
-								uv1:emit(SkinShopMediator.ON_SHOPPING_BY_ACT, uv2.id, 1)
-							else
-								uv1:emit(SkinShopMediator.ON_SHOPPING, uv2.id, 1)
+						uv1:emit(SkinShopMediator.ON_SHOPPING_BY_ACT, slot0.id, 1)
+					else
+						pg.MsgboxMgr.GetInstance():ShowMsgBox({
+							content = i18n("charge_scene_buy_confirm", slot0:GetPrice(), uv2.name),
+							onYes = function ()
+								uv0:emit(SkinShopMediator.ON_SHOPPING, uv1.id, 1)
 							end
-						end
-					})
+						})
+					end
+				else
+					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[9999])
 
 					return
 				end
-
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[9999])
-
-				return
 			end
 		end, SFX_PANEL)
 		onButton(slot0, slot0.activityBtn, function ()
 			slot0 = uv0
-			slot1 = slot0:getConfig("time")
 			slot2 = slot0:getConfig("activity")
 			slot3 = getProxy(ActivityProxy):getActivityById(slot2)
 
-			if slot2 == 0 and pg.TimeMgr.GetInstance():inTime(slot1) or slot3 and not slot3:isEnd() then
+			if slot2 == 0 and pg.TimeMgr.GetInstance():inTime(slot0:getConfig("time")) or slot3 and not slot3:isEnd() then
 				if slot0.type == Goods.TYPE_ACTIVITY then
 					uv1:emit(SkinShopMediator.GO_SHOPS_LAYER, slot0:getConfig("activity"))
 				elseif slot0.type == Goods.TYPE_ACTIVITY_EXTRA then
@@ -1038,13 +998,8 @@ function slot0.setPaintingPrefab(slot0, slot1, slot2, slot3, slot4)
 	end
 
 	if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot2)) then
-		slot8 = pg.UIMgr.GetInstance()
-
-		slot8:LoadingOn()
-
-		slot8 = PoolMgr.GetInstance()
-
-		slot8:GetPainting(slot2, true, function (slot0)
+		pg.UIMgr.GetInstance():LoadingOn()
+		PoolMgr.GetInstance():GetPainting(slot2, true, function (slot0)
 			pg.UIMgr.GetInstance():LoadingOff()
 			setParent(slot0, uv0, false)
 
@@ -1067,14 +1022,8 @@ end
 
 function slot0.loadChar(slot0, slot1, slot2)
 	slot0:recycleChar()
-
-	slot3 = pg.UIMgr.GetInstance()
-
-	slot3:LoadingOn()
-
-	slot3 = PoolMgr.GetInstance()
-
-	slot3:GetSpineChar(slot1, true, function (slot0)
+	pg.UIMgr.GetInstance():LoadingOn()
+	PoolMgr.GetInstance():GetSpineChar(slot1, true, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
 		uv0.modelTf = tf(slot0)
@@ -1151,9 +1100,7 @@ end
 
 function slot0.initShips(slot0)
 	slot0.cards = {}
-	slot1 = slot0.bottomTF
-	slot1 = slot1:Find("scroll")
-	slot0.shipRect = slot1:GetComponent("LScrollRect")
+	slot0.shipRect = slot0.bottomTF:Find("scroll"):GetComponent("LScrollRect")
 
 	function slot0.shipRect.onInitItem(slot0)
 		uv0.cards[slot0] = ShopSkinCard.New(slot0, uv0)
@@ -1205,10 +1152,9 @@ function slot0.onNext(slot0)
 		slot3 = math.min(slot1 + 1, #slot0.displays)
 		slot0.index = slot3
 		slot4 = nil
-		slot5 = slot0.displays[slot3]
 
 		for slot9, slot10 in pairs(slot0.cards) do
-			if slot10.goodsVO:getKey() == slot5:getKey() and slot10._tf.gameObject.name ~= "-1" then
+			if slot10.goodsVO:getKey() == slot0.displays[slot3]:getKey() and slot10._tf.gameObject.name ~= "-1" then
 				triggerButton(slot10._tf)
 
 				slot2 = true
@@ -1218,11 +1164,9 @@ function slot0.onNext(slot0)
 			end
 		end
 
-		function slot6()
+		if slot2 and function ()
 			return getBounds(uv0.card._tf).size.x < math.ceil(getBounds(uv1._tf):GetMax().x - getBounds(uv0.bottomTF:Find("scroll")):GetMax().x)
-		end
-
-		if slot2 and slot6() then
+		end() then
 			slot0.shipRect:SetNormalizedPosition(slot0.shipRect.value - (slot0.shipRect:HeadIndexToValue(slot3 - 1) - slot0.shipRect:HeadIndexToValue(slot3)), 0)
 		end
 	end
@@ -1247,10 +1191,9 @@ function slot0.onPrev(slot0)
 		slot2 = false
 		slot3 = math.max(slot1 - 1, 1)
 		slot0.index = slot3
-		slot4 = slot0.displays[slot3]
 
 		for slot8, slot9 in pairs(slot0.cards) do
-			if slot9.goodsVO:getKey() == slot4:getKey() and slot9._tf.gameObject.name ~= "-1" then
+			if slot9.goodsVO:getKey() == slot0.displays[slot3]:getKey() and slot9._tf.gameObject.name ~= "-1" then
 				triggerButton(slot9._tf)
 
 				slot2 = true
@@ -1259,11 +1202,9 @@ function slot0.onPrev(slot0)
 			end
 		end
 
-		function slot5()
+		if slot2 and function ()
 			return getBounds(uv0.bottomTF:Find("scroll/content")):GetMin().x < getBounds(uv0.bottomTF:Find("scroll")):GetMin().x and getBounds(uv0.card._tf):GetMin().x < slot0:GetMin().x
-		end
-
-		if slot2 and slot5() then
+		end() then
 			slot0.shipRect:SetNormalizedPosition(slot0.shipRect:HeadIndexToValue(slot3 - 1), 0)
 		end
 	end
@@ -1274,30 +1215,24 @@ function slot0.updateShipRect(slot0, slot1)
 
 	if slot0.contextData.pageId and slot0.shipRect then
 		slot0.displays = {}
-
-		function slot2(slot0)
-			return uv0.encoreSkinMap[slot0] == true
-		end
-
 		slot3 = {}
 
-		function slot4(slot0)
-			if #uv0 == 0 then
-				for slot4, slot5 in ipairs(uv1.skinGoodsVOs) do
-					if slot5:getConfig("genre") == ShopArgs.SkinShop then
-						uv0[slot5:getSkinId()] = true
-					end
-				end
-			end
-
-			return uv0[slot0] == true
-		end
-
 		for slot8, slot9 in ipairs(slot0.skinGoodsVOs) do
-			slot12 = uv0[slot9:getSkinId()].shop_type_id == 0 and 9999 or slot11
 			slot14 = slot0.contextData.pageId
 
-			if (slot9:getConfig("genre") == ShopArgs.SkinShopTimeLimit and slot14 == uv1.PAGE_TIME_LIMIT and slot4(slot10) or not slot13 and (slot14 == uv1.PAGE_ALL or slot12 == slot0.contextData.pageId) or not slot13 and slot14 == uv1.PAGE_ENCORE and slot2(slot9.id)) and slot0:MatchIndex(ShipSkin.New({
+			if (slot9:getConfig("genre") == ShopArgs.SkinShopTimeLimit and slot14 == uv1.PAGE_TIME_LIMIT and function (slot0)
+				if #uv0 == 0 then
+					for slot4, slot5 in ipairs(uv1.skinGoodsVOs) do
+						if slot5:getConfig("genre") == ShopArgs.SkinShop then
+							uv0[slot5:getSkinId()] = true
+						end
+					end
+				end
+
+				return uv0[slot0] == true
+			end(slot10) or not slot13 and (slot14 == uv1.PAGE_ALL or (uv0[slot9:getSkinId()].shop_type_id == 0 and 9999 or slot11) == slot0.contextData.pageId) or not slot13 and slot14 == uv1.PAGE_ENCORE and function (slot0)
+				return uv0.encoreSkinMap[slot0] == true
+			end(slot9.id)) and slot0:MatchIndex(ShipSkin.New({
 				id = slot10
 			})) and slot15:IsMatchKey(getInputText(slot0.inptuTr)) then
 				table.insert(slot0.displays, slot9)

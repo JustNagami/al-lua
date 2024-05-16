@@ -1,4 +1,5 @@
 slot0 = class("NewYearHotSpringShipSelectLayer", import("view.base.BaseUI"))
+slot1 = import(".NewYearHotSpringFormationCard")
 
 function slot0.getUIName(slot0)
 	return "NewYearHotSpringShipSelectUI"
@@ -48,10 +49,8 @@ function slot0.didEnter(slot0)
 end
 
 function slot0.UpdateSlots(slot0)
-	slot1 = slot0.activity
-
 	slot0:CleanCards()
-	_.each(_.range(1, slot1:GetTotalSlotCount()), function (slot0)
+	_.each(_.range(1, slot0.activity:GetTotalSlotCount()), function (slot0)
 		slot1 = uv0:GetShipIds()[slot0] or 0
 		slot2 = math.clamp(slot0 - uv0:GetSlotCount(), 0, 2)
 		slot3 = slot1 > 0 and getProxy(BayProxy):RawGetShipById(slot1)
@@ -86,14 +85,13 @@ function slot0.AddCard(slot0, slot1, slot2, slot3)
 
 			uv1:emit(NewYearHotSpringShipSelectMediator.LOOG_PRESS_SHIP, uv2, uv0)
 		end)
-		FormationCard.New(go(slot4)):update(slot3)
+		uv0.New(go(slot4)):update(slot3)
 
-		slot8 = slot3:getRecoverEnergyPoint() + slot0.activity:GetEnergyRecoverAddition()
 		slot9 = 0
 
 		if slot3.state == Ship.STATE_REST or slot3.state == Ship.STATE_TRAIN then
 			if slot3.state == Ship.STATE_TRAIN then
-				slot8 = slot8 + Ship.BACKYARD_1F_ENERGY_ADDITION
+				slot8 = slot3:getRecoverEnergyPoint() + slot0.activity:GetEnergyRecoverAddition() + Ship.BACKYARD_1F_ENERGY_ADDITION
 			elseif slot3.state == Ship.STATE_REST then
 				slot8 = slot8 + Ship.BACKYARD_2F_ENERGY_ADDITION
 			end

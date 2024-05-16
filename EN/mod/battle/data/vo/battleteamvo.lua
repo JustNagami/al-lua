@@ -63,10 +63,9 @@ end
 
 function slot6.refreshTeamFormation(slot0)
 	slot1 = 1
-	slot2 = #slot0._enemyList
 	slot3 = {}
 
-	while slot1 <= slot2 do
+	while slot1 <= #slot0._enemyList do
 		slot3[#slot3 + 1] = slot1
 		slot1 = slot1 + 1
 	end

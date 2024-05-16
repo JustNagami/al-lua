@@ -3117,6 +3117,48 @@ When the HP of a CV or CVL in your fleet falls below 20.0% as a result of DMG ta
 		desc_get_add = {},
 		desc_add = {}
 	},
+	[801081] = {
+		desc_get = "",
+		id = 801081,
+		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801082] = {
+		desc_get = "",
+		id = 801082,
+		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801121] = {
+		desc_get = "",
+		id = 801121,
+		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 3.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801122] = {
+		desc_get = "",
+		id = 801122,
+		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801191] = {
+		desc_get = "",
+		id = 801191,
+		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801192] = {
+		desc_get = "",
+		id = 801192,
+		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	},
 	all = {
 		3631,
 		4161,
@@ -3169,6 +3211,12 @@ When the HP of a CV or CVL in your fleet falls below 20.0% as a result of DMG ta
 		800951,
 		800952,
 		801051,
-		801052
+		801052,
+		801081,
+		801082,
+		801121,
+		801122,
+		801191,
+		801192
 	}
 }

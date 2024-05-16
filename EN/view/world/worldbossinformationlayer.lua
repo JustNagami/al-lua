@@ -49,8 +49,7 @@ function slot0.init(slot0)
 	slot2 = slot0.layer:Find("bossname")
 	slot0.bossnameText = slot2:Find("name"):GetComponent(typeof(Text))
 	slot0.bossNameBanner = slot2:Find("name/banner")
-	slot3 = slot0.bossNameBanner
-	slot0.bosslevel = slot3:Find("level")
+	slot0.bosslevel = slot0.bossNameBanner:Find("level")
 	slot0.bosslogos = {
 		slot2:Find("name/bosslogo_01"),
 		slot2:Find("name/bosslogo_02")
@@ -181,10 +180,8 @@ function slot0.UpdateHpbar(slot0)
 
 	setActive(slot0.hpbar:Find("rewards"), slot9 and #slot9 > 0)
 
-	slot10 = slot3
-
 	if slot1:IsPeriodEnemy() then
-		slot10 = math.min(slot10, nowWorld():GetHistoryLowestHP(slot1.id))
+		slot10 = math.min(slot3, nowWorld():GetHistoryLowestHP(slot1.id))
 	end
 
 	UIItemList.StaticAlign(slot6, slot6:GetChild(0), slot9 and #slot9 or 0, function (slot0, slot1, slot2)
@@ -276,7 +273,7 @@ function slot0.updateStageView(slot0)
 
 		uv1()
 	end)
-	(function ()
+	function ()
 		for slot3 = 1, #uv0.dropitems do
 			setActive(uv0.dropitems[slot3]:Find("item_tpl"), uv1[slot3 + uv2] ~= nil)
 
@@ -293,7 +290,7 @@ function slot0.updateStageView(slot0)
 
 		setActive(uv0.dropleft, uv2 > 0)
 		setActive(uv0.dropright, #uv1 - uv2 > #uv0.dropitems)
-	end)()
+	end()
 	setActive(slot0.awardBtn, slot5.phase_drop_display and #slot5.phase_drop_display > 0)
 	setActive(slot0.weaknesstext, pg.world_SLGbuff_data[slot1:GetWeaknessBuffId()] ~= nil)
 	setActive(slot0.weaknessbg, slot10 ~= nil)
@@ -305,7 +302,7 @@ function slot0.updateStageView(slot0)
 	setAnchoredPosition(slot0.attributeRoot, {
 		y = slot0.attributeRootAnchorY - (slot10 == nil and uv1 or 0)
 	})
-	(function ()
+	function ()
 		UIItemList.StaticAlign(uv2.AdditionBuffContainer, uv2.AdditionBuffContainer:GetChild(0), #_.filter(table.mergeArray(uv0:GetBuffList(), nowWorld():GetActiveMap():GetBuffList(WorldMap.FactionEnemy, uv0)), function (slot0)
 			return slot0.id ~= uv0
 		end), function (slot0, slot1, slot2)
@@ -322,8 +319,8 @@ function slot0.updateStageView(slot0)
 				setText(slot2:Find("desc"), slot3.config.desc)
 			end
 		end)
-	end)()
-	(function ()
+	end()
+	function ()
 		if not uv0.special_buff_display or #slot0 == 0 then
 			slot0 = nil
 		end
@@ -353,7 +350,7 @@ function slot0.updateStageView(slot0)
 				setText(slot2:Find("desc"), slot3.desc)
 			end
 		end)
-	end)()
+	end()
 	Canvas.ForceUpdateCanvases()
 
 	slot17 = slot0.buffListTF.sizeDelta
@@ -425,7 +422,7 @@ function slot0.updateStageView(slot0)
 	slot0.bg:GetComponent(typeof(Image)).enabled = true
 
 	setImageSprite(slot0.bg, GetSpriteFromAtlas("commonbg/" .. slot29, slot29))
-	(function ()
+	function ()
 		uv1.bossnameText.text = uv0.name
 		slot1 = false
 
@@ -446,7 +443,7 @@ function slot0.updateStageView(slot0)
 
 		uv1.loader:GetSprite("shiptype", ShipType.Type2BattlePrint(slot3.type), uv1.bossTypeIcon, true)
 		setText(uv1.bossArmorText, ArmorType.Type2Name(slot3.armor_type))
-	end)()
+	end()
 
 	slot31 = ys.Battle.BattleAttr.IsWorldMapRewardAttrWarning(slot21, slot22)
 
@@ -462,11 +459,9 @@ function slot0.updateStageView(slot0)
 		if slot4.icon_type == 1 then
 			slot0.loader:GetSprite("enemies/" .. slot4.icon, nil, slot0.bosssprite)
 		elseif slot32 == 2 then
-			slot33 = slot0.bosssprite
-			slot33:GetComponent(typeof(Image)).enabled = false
-			slot33 = slot0.loader
+			slot0.bosssprite:GetComponent(typeof(Image)).enabled = false
 
-			slot33:GetSpine(slot4.icon, function (slot0)
+			slot0.loader:GetSpine(slot4.icon, function (slot0)
 				slot1 = uv0.battle_spine_size * 0.01
 				slot0.transform.localScale = Vector3(slot1, slot1, 1)
 				slot0.transform.anchoredPosition = Vector3.New(0, -150, 0)

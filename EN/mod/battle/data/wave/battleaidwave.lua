@@ -21,10 +21,8 @@ end
 function slot2.DoWave(slot0)
 	uv0.super.DoWave(slot0)
 
-	slot1 = uv1.Battle.BattleDataProxy.GetInstance()
-
 	if slot0._killList ~= nil then
-		slot2 = slot1:GetFriendlyShipList()
+		slot2 = uv1.Battle.BattleDataProxy.GetInstance():GetFriendlyShipList()
 
 		for slot6, slot7 in ipairs(slot0._killList) do
 			for slot11, slot12 in pairs(slot2) do

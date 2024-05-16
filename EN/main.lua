@@ -48,17 +48,9 @@ if PLATFORM_CODE == PLATFORM_CHT and PLATFORM == 8 then
 	pg.SdkMgr.GetInstance():InitSDK()
 end
 
-slot0 = pg.TimeMgr.GetInstance()
-
-slot0:Init()
-
-slot0 = pg.TimeMgr.GetInstance()
-
-slot0:_SetServerTime_(VersionMgr.Inst.timestamp, VersionMgr.Inst.monday0oclockTimestamp, VersionMgr.Inst.realStartUpTimeWhenSetServerTime)
-
-slot0 = pg.PushNotificationMgr.GetInstance()
-
-slot0:Init()
+pg.TimeMgr.GetInstance():Init()
+pg.TimeMgr.GetInstance():_SetServerTime_(VersionMgr.Inst.timestamp, VersionMgr.Inst.monday0oclockTimestamp, VersionMgr.Inst.realStartUpTimeWhenSetServerTime)
+pg.PushNotificationMgr.GetInstance():Init()
 
 function OnApplicationPause(slot0)
 	originalPrint("OnApplicationPause: " .. tostring(slot0))
@@ -92,6 +84,10 @@ function OnApplicationExit()
 	end
 
 	if pg.NewGuideMgr.GetInstance():IsBusy() then
+		return
+	end
+
+	if pg.PerformMgr.GetInstance():IsRunning() then
 		return
 	end
 
@@ -280,6 +276,9 @@ seriesAsync({
 			end,
 			function (slot0)
 				pg.SceneAnimMgr.GetInstance():Init(slot0)
+			end,
+			function (slot0)
+				pg.PerformMgr.GetInstance():Init(slot0)
 			end
 		}, slot0)
 	end

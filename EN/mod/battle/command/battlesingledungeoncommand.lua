@@ -217,9 +217,7 @@ function slot3.onWillDie(slot0, slot1)
 		slot0._dataProxy:CalcBattleScoreWhenDead(slot2)
 	end
 
-	slot5 = slot0._dataProxy:IsThereBoss()
-
-	if slot2:IsBoss() and not slot5 then
+	if slot2:IsBoss() and not slot0._dataProxy:IsThereBoss() then
 		slot0._dataProxy:KillAllEnemy()
 	end
 end
@@ -235,11 +233,9 @@ function slot3.GetMaxRestHPRateBossRate(slot0)
 		end
 	end
 
-	slot2 = 0
-
 	for slot6, slot7 in pairs(slot0._dataProxy:GetUnitList()) do
 		if slot7:IsBoss() and slot7:IsAlive() then
-			slot2 = math.max(slot2, slot7:GetHPRate())
+			slot2 = math.max(0, slot7:GetHPRate())
 		end
 	end
 

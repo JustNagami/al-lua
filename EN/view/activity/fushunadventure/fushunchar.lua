@@ -9,10 +9,8 @@ slot6 = 6
 function slot0.Ctor(slot0, slot1)
 	slot0._go = slot1
 	slot0._tf = slot1.transform
-	slot2 = slot0._go
-	slot0.animator = slot2:GetComponent(typeof(Animator))
-	slot2 = slot0._go
-	slot0.animatorEvent = slot2:GetComponent(typeof(DftAniEvent))
+	slot0.animator = slot0._go:GetComponent(typeof(Animator))
+	slot0.animatorEvent = slot0._go:GetComponent(typeof(DftAniEvent))
 	slot0.contactFilter2D = UnityEngine.ContactFilter2D.New()
 	slot0.contactFilter2D.useTriggers = true
 	slot0.keys = {}
@@ -21,14 +19,10 @@ function slot0.Ctor(slot0, slot1)
 	slot0.harm = 0
 	slot0.energy = 0
 	slot0.exEnergyTarget = 100
-	slot2 = slot0._go
-	slot0.collider2D = slot2:GetComponent(typeof(UnityEngine.Collider2D))
-	slot2 = slot0._tf
-	slot2 = slot2:Find("effect")
-	slot0.effectCollider2D = slot2:GetComponent(typeof(UnityEngine.Collider2D))
-	slot2 = slot0.animatorEvent
+	slot0.collider2D = slot0._go:GetComponent(typeof(UnityEngine.Collider2D))
+	slot0.effectCollider2D = slot0._tf:Find("effect"):GetComponent(typeof(UnityEngine.Collider2D))
 
-	slot2:SetEndEvent(function ()
+	slot0.animatorEvent:SetEndEvent(function ()
 		if uv0.state == uv1 then
 			return
 		end

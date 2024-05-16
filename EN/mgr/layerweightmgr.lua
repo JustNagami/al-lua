@@ -120,13 +120,11 @@ function slot1.ClearBlurData(slot0, slot1)
 	end
 
 	if slot1.lockGlobalBlur then
-		slot3 = slot1.blurCamList
-
 		for slot7, slot8 in ipairs({
 			uv0.UIMgr.CameraUI,
 			uv0.UIMgr.CameraLevel
 		}) do
-			if table.contains(slot3, slot8) then
+			if table.contains(slot1.blurCamList, slot8) then
 				uv0.UIMgr.GetInstance():UnblurCamera(slot8, slot2)
 			end
 		end
@@ -148,7 +146,6 @@ function slot1.LayerSortHandler(slot0)
 	slot9 = nil
 	slot10 = 0
 	slot11 = 0
-	slot12 = #slot0.storeUIs
 
 	for slot16 = #slot0.storeUIs, 1, -1 do
 		slot17 = slot0.storeUIs[slot16]
@@ -163,7 +160,7 @@ function slot1.LayerSortHandler(slot0)
 		slot27 = slot17.blurCamList
 		slot28 = slot17.visible
 		slot29 = slot17.parent
-		slot30 = slot16 == slot12
+		slot30 = slot16 == #slot0.storeUIs
 
 		if slot17.type == LayerWeightConst.UI_TYPE_SYSTEM then
 			slot1 = true
@@ -179,22 +176,6 @@ function slot1.LayerSortHandler(slot0)
 			slot7 = slot26
 			slot8 = slot27
 			slot9 = slot17
-		end
-
-		function slot31()
-			uv0:ShowOrHideTF(uv1, true)
-
-			if uv2 ~= nil then
-				uv0:SetSpecificParent(uv1, uv2)
-			elseif uv3 == LayerWeightConst.OVERLAY_UI_TOP then
-				uv0:SetToOverlayParent(uv1, uv3)
-			else
-				uv0:SetToOverlayParent(uv1, uv3, uv4)
-			end
-
-			if uv5 and not uv6 and #uv7 > 0 then
-				table.insertto(uv8, uv7)
-			end
 		end
 
 		function slot32()
@@ -213,7 +194,21 @@ function slot1.LayerSortHandler(slot0)
 
 		if slot18 == LayerWeightConst.UI_TYPE_SUB then
 			if slot30 then
-				slot31()
+				function ()
+					uv0:ShowOrHideTF(uv1, true)
+
+					if uv2 ~= nil then
+						uv0:SetSpecificParent(uv1, uv2)
+					elseif uv3 == LayerWeightConst.OVERLAY_UI_TOP then
+						uv0:SetToOverlayParent(uv1, uv3)
+					else
+						uv0:SetToOverlayParent(uv1, uv3, uv4)
+					end
+
+					if uv5 and not uv6 and #uv7 > 0 then
+						table.insertto(uv8, uv7)
+					end
+				end()
 			elseif slot4 ~= nil and slot4 == slot23 then
 				slot31()
 			else

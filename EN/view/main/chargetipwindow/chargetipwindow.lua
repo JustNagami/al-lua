@@ -64,9 +64,7 @@ function slot0.LoadWindow(slot0, slot1, slot2)
 		return
 	end
 
-	slot4 = ResourceMgr.Inst
-
-	slot4:getAssetAsync("ui/" .. slot1 .. "TipWindow", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. slot1 .. "TipWindow", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		uv0.window[uv1] = Object.Instantiate(slot0, uv0.container).transform
 
 		uv2()
@@ -113,14 +111,20 @@ end
 function slot0.UpdateGiftPackage(slot0, slot1)
 	setText(slot1:Find("title"), i18n("chargetip_giftpackage"))
 
-	slot2 = slot0.chargeCommodity:GetDropItem()
+	slot3 = UIItemList.New(slot1:Find("list/content"), slot1:Find("list/content/award"))
 
-	updateDrop(slot1:Find("award"), {
-		type = slot2[1],
-		id = slot2[2],
-		count = slot2[3]
-	})
-	setActive(slot1:Find("award"), true)
+	slot3:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
+
+			updateDrop(slot2, {
+				type = slot3[1],
+				id = slot3[2],
+				count = slot3[3]
+			})
+		end
+	end)
+	slot3:align(#slot0.chargeCommodity:GetDropItem())
 	setActive(slot1:Find("icon"), false)
 	setAnchoredPosition(slot0.confirmBtn, {
 		y = -550

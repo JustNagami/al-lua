@@ -10,20 +10,6 @@ function slot4(...)
 end
 
 function slot5(slot0, slot1, slot2, slot3)
-	function slot5()
-		slot1 = nil
-
-		if uv0[uv1] and slot0 ~= "" then
-			for slot5, slot6 in ipairs(slot0) do
-				if slot6[1] <= uv2 then
-					slot1 = slot6[2]
-				end
-			end
-		end
-
-		return slot1
-	end
-
 	function slot6(slot0)
 		if uv0.main_ex and slot1 ~= "" then
 			slot2 = nil
@@ -42,22 +28,32 @@ function slot5(slot0, slot1, slot2, slot3)
 		return nil
 	end
 
-	function slot7()
-		if not string.split(uv0, "_")[2] then
-			return nil
-		end
-
-		if tonumber(slot1) - ShipWordHelper.GetMainSceneWordCnt(uv1) > 0 then
-			return uv2(slot3)
-		else
-			return uv3()
-		end
-	end
-
 	slot8 = nil
 
 	if uv0[slot0] then
-		slot8 = (not slot3 or not string.find(slot1, "main") or slot7()) and slot5()
+		slot8 = (not slot3 or not string.find(slot1, "main") or function ()
+			if not string.split(uv0, "_")[2] then
+				return nil
+			end
+
+			if tonumber(slot1) - ShipWordHelper.GetMainSceneWordCnt(uv1) > 0 then
+				return uv2(slot3)
+			else
+				return uv3()
+			end
+		end()) and function ()
+			slot1 = nil
+
+			if uv0[uv1] and slot0 ~= "" then
+				for slot5, slot6 in ipairs(slot0) do
+					if slot6[1] <= uv2 then
+						slot1 = slot6[2]
+					end
+				end
+			end
+
+			return slot1
+		end()
 	end
 
 	return slot8
@@ -88,32 +84,44 @@ function slot0.GetExpression(slot0, slot1, slot2, slot3)
 end
 
 function slot0.SetExpression(slot0, slot1, slot2, slot3, slot4)
-	slot5 = tf(slot0):Find("face")
+	return uv0.UpdateExpression(slot0, slot1, uv0.GetExpression(slot1, slot2, slot3, slot4))
+end
 
-	if not uv0.GetExpression(slot1, slot2, slot3, slot4) or slot6 == "" then
+function slot0.UpdateExpression(slot0, slot1, slot2)
+	if not tf(slot0):Find("face") then
+		return false, nil
+	end
+
+	slot4 = slot1
+
+	if (not slot2 or slot2 == "") and uv0.DefaultFaceless(string.gsub(slot1, "_n", "")) then
+		slot2 = uv0.GetDefaultFace(slot4)
+	end
+
+	if not slot2 or slot2 == "" then
+		setActive(slot3, false)
+
+		return false, nil
+	end
+
+	uv0._UpdateExpression(slot3, slot4, slot2)
+
+	return true, slot2
+end
+
+function slot0._UpdateExpression(slot0, slot1, slot2)
+	setImageSprite(slot0, GetSpriteFromAtlas("paintingface/" .. slot1, slot2))
+	setActive(slot0, true)
+
+	if findTF(slot0, "face_sub") then
+		slot5 = GetSpriteFromAtlas("paintingface/" .. slot1, slot2 .. "_sub")
+
+		setActive(slot4, slot5)
+
 		if slot5 then
-			setActive(slot5, false)
-		end
-
-		return false
-	end
-
-	if slot5 then
-		setImageSprite(slot5, GetSpriteFromAtlas("paintingface/" .. slot1, slot6))
-		setActive(slot5, true)
-
-		if findTF(slot5, "face_sub") then
-			slot9 = GetSpriteFromAtlas("paintingface/" .. slot1, slot6 .. "_sub")
-
-			setActive(slot8, slot9)
-
-			if slot9 then
-				setImageSprite(slot8, slot9)
-			end
+			setImageSprite(slot4, slot5)
 		end
 	end
-
-	return true
 end
 
 function slot0.DefaultFaceless(slot0)

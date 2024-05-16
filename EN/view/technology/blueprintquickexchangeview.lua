@@ -5,27 +5,21 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-	slot0.rtBg = slot1:Find("bg")
+	slot0.rtBg = slot0._tf:Find("bg")
 
 	onButton(slot0, slot0.rtBg, function ()
 		uv0:Hide()
 	end, SFX_CANCEL)
 
-	slot1 = slot0._tf
-	slot0.rtPreview = slot1:Find("window/preview/got")
-	slot1 = slot0.rtPreview
-	slot0.rtEmpty = slot1:Find("empty")
-	slot2 = slot0.rtEmpty
+	slot0.rtPreview = slot0._tf:Find("window/preview/got")
+	slot0.rtEmpty = slot0.rtPreview:Find("empty")
 
-	setText(slot2:Find("Text"), i18n("blueprint_exchange_empty_tip"))
+	setText(slot0.rtEmpty:Find("Text"), i18n("blueprint_exchange_empty_tip"))
 
-	slot1 = slot0.rtPreview
-	slot1 = slot1:Find("list")
+	slot1 = slot0.rtPreview:Find("list")
 	slot0.itemList = UIItemList.New(slot1, slot1:Find("item"))
-	slot2 = slot0.itemList
 
-	slot2:make(function (slot0, slot1, slot2)
+	slot0.itemList:make(function (slot0, slot1, slot2)
 		slot1 = slot1 + 1
 
 		if slot0 == UIItemList.EventUpdate then
@@ -37,7 +31,7 @@ function slot0.OnInit(slot0)
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
 			setText(slot2:Find("calc/value"), uv0.countList[slot1])
-			setScrollText(slot2:Find("name/Text"), slot3.cfg.name)
+			setScrollText(slot2:Find("name/Text"), slot3:getConfig("name"))
 			setText(slot2:Find("kc"), i18n("tec_tip_material_stock") .. ":" .. slot3.count)
 			pressPersistTrigger(slot2:Find("calc/plus"), 0.5, function (slot0)
 				if uv1.countList[uv2] < uv0.count and uv1.count + uv3 <= uv1.need then
@@ -75,60 +69,41 @@ function slot0.OnInit(slot0)
 			end)
 		end
 	end)
-
-	slot3 = slot0._tf
-
-	setText(slot3:Find("window/cancel_button/label"), i18n("word_cancel"))
-
-	slot4 = slot0._tf
-
-	onButton(slot0, slot4:Find("window/cancel_button"), function ()
+	setText(slot0._tf:Find("window/cancel_button/label"), i18n("word_cancel"))
+	onButton(slot0, slot0._tf:Find("window/cancel_button"), function ()
 		uv0:Hide()
 	end, SFX_CANCEL)
-
-	slot4 = slot0._tf
-
-	onButton(slot0, slot4:Find("window/confirm_button"), function ()
+	onButton(slot0, slot0._tf:Find("window/confirm_button"), function ()
 		if uv0.count <= 0 then
 			return
 		end
 
-		slot0 = pg.item_data_template
-		slot1 = {}
+		slot0 = {}
 
-		for slot5, slot6 in ipairs(uv0.displayList) do
-			if uv0.countList[slot5] > 0 then
-				table.insert(slot1, {
-					id = slot6.id,
-					count = uv0.countList[slot5],
-					arg = slot0[slot6.id].usage_arg[uv0.awardList[slot5].index]
+		for slot4, slot5 in ipairs(uv0.displayList) do
+			if uv0.countList[slot4] > 0 then
+				table.insert(slot0, {
+					id = slot5.id,
+					count = uv0.countList[slot4],
+					arg = Item.getConfigData(slot5.id).usage_arg[uv0.awardList[slot4].index]
 				})
 			end
 		end
 
-		uv0:emit(ShipBluePrintMediator.QUICK_EXCHAGE_BLUEPRINT, slot1)
+		uv0:emit(ShipBluePrintMediator.QUICK_EXCHAGE_BLUEPRINT, slot0)
 		uv0:Hide()
 	end, SFX_CANCEL)
 
-	slot2 = slot0._tf
-	slot0.rtResult = slot2:Find("window/result")
-	slot2 = slot0.rtResult
-	slot0.rtTarget = slot2:Find("target")
-	slot2 = slot0.rtResult
-	slot0.rtExchange = slot2:Find("exchange")
-	slot3 = slot0.rtExchange
+	slot0.rtResult = slot0._tf:Find("window/result")
+	slot0.rtTarget = slot0.rtResult:Find("target")
+	slot0.rtExchange = slot0.rtResult:Find("exchange")
 
-	setText(slot3:Find("bg/title"), i18n("blueprint_exchange_select_display"))
+	setText(slot0.rtExchange:Find("bg/title"), i18n("blueprint_exchange_select_display"))
 
-	slot2 = slot0.rtResult
-	slot0.toggleSwitch = slot2:Find("switch")
-	slot3 = slot0.toggleSwitch
+	slot0.toggleSwitch = slot0.rtResult:Find("switch")
 
-	setText(slot3:Find("front/Text_off"), i18n("show_design_demand_count"))
-
-	slot3 = slot0.toggleSwitch
-
-	setText(slot3:Find("front/Text_on"), i18n("show_fate_demand_count"))
+	setText(slot0.toggleSwitch:Find("front/Text_off"), i18n("show_design_demand_count"))
+	setText(slot0.toggleSwitch:Find("front/Text_on"), i18n("show_fate_demand_count"))
 	onToggle(slot0, slot0.toggleSwitch, function (slot0)
 		uv0.isSwitch = slot0
 
@@ -148,26 +123,24 @@ end
 
 function slot0.UpdateBlueprint(slot0, slot1)
 	slot0.blueprintVO = slot1
-	slot7 = "name"
 
-	changeToScrollText(slot0.rtResult:Find("title/Text"), Item.New({
+	changeToScrollText(slot0.rtResult:Find("title/Text"), Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = slot1:getItemId()
-	}):getConfig(slot7))
+	}):getName())
 
 	slot0.displayList = {}
 	slot0.awardList = {}
-	slot3 = getProxy(BagProxy)
 
 	for slot7, slot8 in ipairs(pg.gameset.general_blueprint_list.description) do
-		if slot3:getItemCountById(slot8) > 0 then
+		if getProxy(BagProxy):getItemCountById(slot8) > 0 then
 			slot10 = nil
-			slot14 = DROP_TYPE_ITEM
+			slot14 = "display_icon"
 
-			for slot14, slot15 in ipairs(updateDropCfg({
-				type = slot14,
+			for slot14, slot15 in ipairs(Drop.New({
+				type = DROP_TYPE_ITEM,
 				id = slot8
-			}).display_icon) do
+			}):getConfig(slot14)) do
 				if slot15[1] == DROP_TYPE_ITEM and slot15[2] == slot2.id then
 					slot10 = {
 						index = slot14,

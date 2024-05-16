@@ -9,9 +9,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot7 = pg.ConnectionMgr.GetInstance()
-
-	slot7:Send(60001, {
+	pg.ConnectionMgr.GetInstance():Send(60001, {
 		faction = slot2:getFaction(),
 		policy = slot2:getPolicy(),
 		name = slot3,

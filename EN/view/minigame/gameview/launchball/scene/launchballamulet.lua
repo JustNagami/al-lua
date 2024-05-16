@@ -465,10 +465,8 @@ function slot0.eventCall(slot0, slot1, slot2)
 	elseif slot1 == LaunchBallGameScene.FIRE_AMULET then
 		slot0:fireAmulet()
 	elseif slot1 == LaunchBallGameScene.RANDOM_FIRE then
-		slot4 = slot2.data
-
 		for slot8 = 1, slot2.num do
-			slot0:randomFireAmulet(slot4)
+			slot0:randomFireAmulet(slot2.data)
 		end
 	elseif slot1 == LaunchBallGameScene.CHANGE_AMULET then
 		if slot0.changeTime and LaunchBallGameVo.gameStepTime - slot0.changeTime < 1 then

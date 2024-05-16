@@ -90,10 +90,7 @@ function slot0.Update(slot0)
 end
 
 function slot0.RemoveTimers(slot0)
-	slot1 = pairs
-	slot2 = slot0.timers or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.timers or {}) do
 		slot5:Stop()
 	end
 

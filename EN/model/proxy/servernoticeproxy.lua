@@ -32,6 +32,64 @@ function slot0.register(slot0)
 	end)
 end
 
+function slot0.testData(slot0, slot1)
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "DEWENJUN layer test",
+		title_image = "<config type = 2 param = {'OTHERWORLD_MAP', {openTerminal = true,terminalPage = 2, testData = asddws}} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1301,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(1)
+	}))
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "DEWENJUN test",
+		title_image = "<config type = 2 param = {'OTHERWORLD_MAP'} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1302,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(2)
+	}))
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "URL test",
+		title_image = "<config type = 1 param = 'https://www.google.com' />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1303,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(3)
+	}))
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "URL test",
+		title_image = "<config type = 2 param = {'scene court yard', {OpenShop = true}} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1304,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(4)
+	}))
+	table.insert(slot1, ServerNotice.New({
+		btn_title = "URL test",
+		title_image = "<config type = 3 param = 5292 />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
+		id = 1305,
+		icon = 4,
+		time_des = "2018/08/23",
+		title = "test",
+		content = "",
+		tag_type = 1,
+		version = tostring(4)
+	}))
+end
+
 function slot0.getServerNotices(slot0, slot1)
 	slot2 = {}
 
@@ -48,10 +106,9 @@ function slot0.needAutoOpen(slot0)
 	slot1 = true
 
 	if PlayerPrefs.HasKey(uv0.KEY_STOP_REMIND) then
-		slot2 = PlayerPrefs.GetInt(uv0.KEY_STOP_REMIND)
 		slot3 = pg.TimeMgr.GetInstance()
 
-		if not slot0:hasNewNotice() and slot3:IsSameDay(slot2, slot3:GetServerTime()) then
+		if not slot0:hasNewNotice() and slot3:IsSameDay(PlayerPrefs.GetInt(uv0.KEY_STOP_REMIND), slot3:GetServerTime()) then
 			slot1 = false
 		end
 	elseif slot0.runtimeUniqueCode and slot0.runtimeUniqueCode == slot0:getUniqueCode() then

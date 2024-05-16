@@ -60,10 +60,8 @@ function slot0.didEnter(slot0)
 
 	table.Foreach(slot0.formulaFilterButtons, function (slot0, slot1)
 		onButton(uv0, slot1, function ()
-			slot0 = bit.lshift(1, uv0 - 1)
-
 			if uv1.contextData.filterType == uv2.FilterAll then
-				uv1.contextData.filterType = slot0
+				uv1.contextData.filterType = bit.lshift(1, uv0 - 1)
 			elseif uv1.contextData.filterType == slot0 then
 				uv1.contextData.filterType = uv2.FilterAll
 			else
@@ -146,20 +144,17 @@ function slot0.InitCounter(slot0, slot1, slot2, slot3, slot4)
 
 	slot2[2] = math.max(slot2[1], slot2[2])
 	slot5 = slot1
-	slot6 = slot0.layerFormulaDetail
-	slot6 = slot6:Find("Counters")
+	slot6 = slot0.layerFormulaDetail:Find("Counters")
 
 	assert(slot6)
-	(function ()
-		slot0 = uv0
-
+	function ()
 		if uv0 == 0 then
-			slot0 = setColorStr(slot0, "#f9c461")
+			slot0 = setColorStr(uv0, "#f9c461")
 		end
 
 		setText(uv1:Find("Number"), slot0)
 		uv2(uv0)
-	end)()
+	end()
 
 	slot8, slot0._rightRemoveTimer = pressPersistTrigger(slot6:Find("Plus"), 0.5, function (slot0)
 		uv0 = uv0 + 1
@@ -205,10 +200,7 @@ function slot0.InitCounter(slot0, slot1, slot2, slot3, slot4)
 
 		uv2()
 	end)
-
-	slot14 = slot0.layerFormulaDetail
-
-	onButton(slot0, slot14:Find("Composite"), function ()
+	onButton(slot0, slot0.layerFormulaDetail:Find("Composite"), function ()
 		existCall(uv0, uv1)
 	end, SFX_PANEL)
 end
@@ -315,22 +307,20 @@ function slot0.FilterFormulas(slot0)
 	slot1 = {}
 	slot2 = slot0.contextData.filterType
 
-	function slot3(slot0)
-		if uv0 == uv1.FilterAll then
-			return true
-		end
-
-		return switch(slot0:GetProduction()[1], {
-			[DROP_TYPE_WORKBENCH_DROP] = function ()
-				return bit.band(uv0, 1) > 0
-			end
-		}, function ()
-			return bit.band(uv0, 2) > 0
-		end)
-	end
-
 	for slot7, slot8 in ipairs(_.values(slot0.env.formulas)) do
-		if slot3(slot8) and (not slot0.showOnlyComposite or slot8:IsUnlock() and slot8:IsAvaliable() and _.all(slot8:GetMaterials(), function (slot0)
+		if function (slot0)
+			if uv0 == uv1.FilterAll then
+				return true
+			end
+
+			return switch(slot0:GetProduction()[1], {
+				[DROP_TYPE_WORKBENCH_DROP] = function ()
+					return bit.band(uv0, 1) > 0
+				end
+			}, function ()
+				return bit.band(uv0, 2) > 0
+			end)
+		end(slot8) and (not slot0.showOnlyComposite or slot8:IsUnlock() and slot8:IsAvaliable() and _.all(slot8:GetMaterials(), function (slot0)
 			slot1 = slot0[1]
 
 			return slot0[3] <= uv0.env.bagAct:getVitemNumber(slot0[2])
@@ -379,16 +369,15 @@ function slot0.UpdateFormulaDetail(slot0, slot1)
 
 	slot3 = slot2:GetProduction()
 
-	(function ()
+	function ()
 		slot0 = {
 			type = uv0[1],
 			id = uv0[2],
 			count = uv0[3]
 		}
-		slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH)
 
 		if uv1:GetMaxLimit() > 0 then
-			uv3 = slot2 - slot1:GetFormulaUseCount(uv2)
+			uv3 = slot2 - getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH):GetFormulaUseCount(uv2)
 		end
 
 		slot3 = uv4.layerFormulaDetail:Find("Icon")
@@ -405,15 +394,13 @@ function slot0.UpdateFormulaDetail(slot0, slot1)
 				uv1:emit(BaseUI.ON_DROP, uv0)
 			end
 		end)
-		setText(uv4.layerFormulaDetail:Find("Name"), slot0.cfg.name)
-	end)()
+		setText(uv4.layerFormulaDetail:Find("Name"), slot0:getConfig("name"))
+	end()
 
 	slot7 = 100
 	slot8 = slot0.env.bagAct
-	slot10 = slot0.layerFormulaDetail
-	slot11 = slot0.layerFormulaDetail
 
-	UIItemList.StaticAlign(slot10:Find("Materials"), slot11:Find("Materials/Item"), #slot2:GetMaterials(), function (slot0, slot1, slot2)
+	UIItemList.StaticAlign(slot0.layerFormulaDetail:Find("Materials"), slot0.layerFormulaDetail:Find("Materials/Item"), #slot2:GetMaterials(), function (slot0, slot1, slot2)
 		if slot0 ~= UIItemList.EventUpdate then
 			return
 		end
@@ -436,18 +423,13 @@ function slot0.UpdateFormulaDetail(slot0, slot1)
 			end
 		end)
 
-		slot7 = uv2:getVitemNumber(slot3[2])
-
 		if slot3[3] > 0 then
-			uv3 = math.min(uv3, math.floor(slot7 / slot6))
+			uv3 = math.min(uv3, math.floor(uv2:getVitemNumber(slot3[2]) / slot6))
 		end
 	end)
 
 	function slot9(slot0)
-		slot2 = uv0.layerFormulaDetail
-		slot3 = uv0.layerFormulaDetail
-
-		UIItemList.StaticAlign(slot2:Find("Materials"), slot3:Find("Materials/Item"), #uv1, function (slot0, slot1, slot2)
+		UIItemList.StaticAlign(uv0.layerFormulaDetail:Find("Materials"), uv0.layerFormulaDetail:Find("Materials/Item"), #uv1, function (slot0, slot1, slot2)
 			if slot0 ~= UIItemList.EventUpdate then
 				return
 			end
@@ -483,24 +465,22 @@ function slot0.RefreshData(slot0)
 	slot1 = {}
 	slot2 = nil
 
-	function slot3(slot0, slot1)
-		if uv0[slot0] then
-			return
-		end
-
-		uv0[slot0] = slot1
-		uv1 = uv1 or {}
-
-		_.each(_.select(uv2.listeners, function (slot0)
-			return table.contains(slot0.keys, uv0)
-		end), function (slot0)
-			uv0[slot0] = true
-		end)
-	end
-
 	for slot7, slot8 in pairs(slot0.env) do
 		if slot8 ~= slot0.lastEnv[slot7] then
-			slot3(slot7, slot8)
+			function (slot0, slot1)
+				if uv0[slot0] then
+					return
+				end
+
+				uv0[slot0] = slot1
+				uv1 = uv1 or {}
+
+				_.each(_.select(uv2.listeners, function (slot0)
+					return table.contains(slot0.keys, uv0)
+				end), function (slot0)
+					uv0[slot0] = true
+				end)
+			end(slot7, slot8)
 		end
 	end
 
@@ -541,16 +521,12 @@ function slot0.UpdateActivityDrop(slot0, slot1, slot2, slot3)
 	setActive(slot1:Find("icon_bg/frame"), false)
 	setActive(slot1:Find("icon_bg/stars"), false)
 
-	slot4 = slot2.cfg.rarity
-
 	if slot2.type == DROP_TYPE_EQUIP or slot2.type == DROP_TYPE_EQUIPMENT_SKIN then
-		slot4 = slot4 - 1
+		slot4 = slot2:getConfig("rarity") - 1
 	end
 
-	slot5 = "icon_frame_" .. slot4
-
 	if slot3 then
-		slot5 = slot5 .. "_small"
+		slot5 = "icon_frame_" .. slot4 .. "_small"
 	end
 
 	slot0.loader:GetSpriteQuiet(uv0, slot5, slot1)

@@ -5,31 +5,25 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-	slot1 = slot1:Find("operate")
+	slot1 = slot0._tf:Find("operate")
 	slot0.ulist = UIItemList.New(slot1:Find("got/bottom/list"), slot1:Find("got/bottom/list/tpl"))
 	slot0.confirmBtn = slot1:Find("actions/confirm")
-	slot3 = slot0.confirmBtn
 
-	setText(slot3:Find("Image"), i18n("text_confirm"))
+	setText(slot0.confirmBtn:Find("Image"), i18n("text_confirm"))
 
 	slot0.cancelBtn = slot1:Find("actions/cancel")
-	slot3 = slot0.cancelBtn
 
-	setText(slot3:Find("Image"), i18n("text_cancel"))
+	setText(slot0.cancelBtn:Find("Image"), i18n("text_cancel"))
 
 	slot0.rightArr = slot1:Find("calc/value_bg/add")
 	slot0.leftArr = slot1:Find("calc/value_bg/mius")
 	slot0.maxBtn = slot1:Find("calc/max")
 	slot0.valueText = slot1:Find("calc/value_bg/Text")
 	slot0.itemTF = slot1:Find("item")
-	slot2 = slot0.itemTF
-	slot0.nameTF = slot2:Find("display_panel/name_container/name/Text")
-	slot2 = slot0.itemTF
-	slot0.descTF = slot2:Find("display_panel/desc/Text")
-	slot4 = slot0._tf
+	slot0.nameTF = slot0.itemTF:Find("display_panel/name_container/name/Text")
+	slot0.descTF = slot0.itemTF:Find("display_panel/desc/Text")
 
-	onButton(slot0, slot4:Find("bg"), function ()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 	onButton(slot0, slot0.cancelBtn, function ()
@@ -67,21 +61,28 @@ function slot0.OnInit(slot0)
 			return
 		end
 
-		function slot0()
-			uv0:emit(EquipmentMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, uv0.itemVO:getTempCfgTable().usage_arg[uv0.selectedIndex])
-			uv0:Hide()
+		if uv0.itemVO:IsDoaSelectCharItem() then
+			table.insert({}, function (slot0)
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("doa_character_select_confirm", HXSet.hxLan(pg.ship_data_statistics[uv0.displayDrops[uv0.selectedIndex].id].name)),
+					onYes = slot0
+				})
+			end)
 		end
 
-		if uv0.itemVO:IsDoaSelectCharItem() then
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("doa_character_select_confirm", HXSet.hxLan(pg.ship_data_statistics[uv0.displayDrops[uv0.selectedIndex].id].name)),
-				onYes = function ()
-					uv0()
-				end
-			})
-		else
-			slot0()
+		if uv0.displayDrops[uv0.selectedIndex].type == DROP_TYPE_ITEM and uv0.displayDrops[uv0.selectedIndex]:getSubClass() and slot1:getConfig("type") == Item.SKIN_ASSIGNED_TYPE and slot1:IsAllSkinOwner() then
+			table.insert(slot0, function (slot0)
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("blackfriday_pack_select_skinall"),
+					onYes = slot0
+				})
+			end)
 		end
+
+		seriesAsync(slot0, function ()
+			uv0:emit(EquipmentMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, uv0.itemVO:getConfig("usage_arg")[uv0.selectedIndex])
+			uv0:Hide()
+		end)
 	end, SFX_PANEL)
 end
 
@@ -97,10 +98,7 @@ end
 
 function slot0.updateValue(slot0)
 	setText(slot0.valueText, slot0.count)
-
-	slot1 = slot0.ulist
-
-	slot1:each(function (slot0, slot1)
+	slot0.ulist:each(function (slot0, slot1)
 		if not isActive(slot1) then
 			return
 		end
@@ -119,11 +117,7 @@ function slot0.update(slot0, slot1)
 	slot0.selectedItem = nil
 	slot0.itemVO = slot1
 	slot0.displayDrops = underscore.map(slot1:getConfig("display_icon"), function (slot0)
-		return {
-			type = slot0[1],
-			id = slot0[2],
-			count = slot0[3]
-		}
+		return Drop.Create(slot0)
 	end)
 	slot2 = slot1:getConfig("time_limit") == 1
 
@@ -139,7 +133,7 @@ function slot0.update(slot0, slot1)
 				end
 			end, SFX_PANEL)
 			triggerToggle(slot2, false)
-			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1].cfg.name)
+			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1]:getConfig("name"))
 
 			uv0.selectedItem = uv0.selectedItem or slot2
 
@@ -154,11 +148,11 @@ function slot0.update(slot0, slot1)
 	triggerToggle(slot0.selectedItem, true)
 	slot0:updateValue()
 
-	slot3 = {
+	slot3 = Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = slot1.id,
 		count = slot1.count
-	}
+	})
 
 	updateDrop(slot0.itemTF:Find("left/IconTpl"), setmetatable({
 		count = 0
@@ -166,8 +160,23 @@ function slot0.update(slot0, slot1)
 		__index = slot3
 	}))
 	UpdateOwnDisplay(slot0.itemTF:Find("left/own"), slot3)
+
+	if underscore.any(slot0.displayDrops, function (slot0)
+		return slot0.type == DROP_TYPE_ITEM and slot0:getConfig("type") == Item.SKIN_ASSIGNED_TYPE
+	end) or slot3.type == DROP_TYPE_ITEM and slot3:getConfig("type") == Item.ASSIGNED_TYPE then
+		RegisterDetailButton(slot0, slot0.itemTF:Find("left/detail"), slot3)
+	else
+		removeOnButton(slot0.itemTF:Find("left/detail"))
+	end
+
 	setText(slot0.nameTF, slot1:getConfig("name"))
 	setText(slot0.descTF, slot1:getConfig("display"))
+end
+
+function slot0.OnDestroy(slot0)
+	if slot0:isShowing() then
+		slot0:Hide()
+	end
 end
 
 return slot0

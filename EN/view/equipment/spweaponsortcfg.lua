@@ -22,7 +22,7 @@ return {
 		}
 	},
 	getWeight = function (slot0, slot1)
-		return SpWeapon.bindConfigTable()[slot0.GetConfigID(slot0)][slot1]
+		return SpWeapon.bindConfigTable()[slot0:GetConfigID()][slot1]
 	end,
 	sortFunc = function (slot0, slot1)
 		slot2 = {}

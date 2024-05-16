@@ -118,8 +118,7 @@ end
 
 function slot0.InitBanner(slot0)
 	for slot5, slot6 in ipairs(getProxy(ShopsProxy):GetRecommendCommodities()) do
-		slot7 = slot0.bannerRect
-		slot7 = slot7:AddChild()
+		slot7 = slot0.bannerRect:AddChild()
 
 		uv0(slot0, slot7, slot6)
 		onButton(slot0, slot7, function ()

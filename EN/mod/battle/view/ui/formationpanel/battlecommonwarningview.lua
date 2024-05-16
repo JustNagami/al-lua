@@ -47,14 +47,13 @@ function slot3.GetCount(slot0)
 end
 
 function slot3.ActiveWarning(slot0, slot1)
-	slot2 = false
 	slot3 = #slot0._warningRequestTable
 
 	for slot7, slot8 in ipairs(slot0._warningRequestTable) do
 		if slot1 == slot8.type then
 			slot8.flag = true
 
-			if not slot2 then
+			if not false then
 				SetActive(slot8.tf, true)
 
 				slot3 = slot7
@@ -86,14 +85,12 @@ function slot3.DeactiveWarning(slot0, slot1)
 end
 
 function slot3.EditCustomWarning(slot0, slot1)
-	slot3 = slot1.key
-
 	if slot1.op == uv0.OP_ADD then
 		slot5 = uv1.Battle.BattleCustomWarningLabel.New(cloneTplTo(slot0._customWarningTpl, slot0._customWarningContainer))
 
 		slot5:ConfigData(slot1)
 
-		slot0._customWarningList[slot3] = slot5
+		slot0._customWarningList[slot1.key] = slot5
 	elseif slot2 == uv0.OP_REMOVE then
 		if slot0._customWarningList[slot3] then
 			slot4:SetExpire()

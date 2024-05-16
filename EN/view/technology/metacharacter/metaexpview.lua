@@ -47,13 +47,9 @@ function slot0.updateIconList(slot0)
 	slot0.gridLayoutGroupSC.constraintCount = #slot0:sortDataList(slot0.expInfoList or slot0.metaProxy:getMetaTacticsInfoOnEnd()) > 4 and 2 or 1
 
 	slot0.iconUIItemList:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			slot5 = uv0:findTF("LevelMaxText", slot2)
-			slot6 = uv0:findTF("ExpMaxText", slot2)
 			slot7 = uv0:findTF("Slider", slot2)
-			slot9 = uv1[slot1]
+			slot9 = uv1[slot1 + 1]
 			slot14 = slot9.isExpMax
 			slot15 = slot9.progressOld
 			slot16 = slot9.progressNew
@@ -65,8 +61,8 @@ function slot0.updateIconList(slot0)
 
 			if slot12 and slot13 then
 				setActive(slot4, false)
-				setActive(slot5, true)
-				setActive(slot6, false)
+				setActive(uv0:findTF("LevelMaxText", slot2), true)
+				setActive(uv0:findTF("ExpMaxText", slot2), false)
 			elseif slot14 then
 				setActive(slot4, false)
 				setActive(slot5, false)
@@ -104,15 +100,11 @@ function slot0.openPanel(slot0)
 	slot0.isAni = true
 
 	Canvas.ForceUpdateCanvases()
-
-	slot2 = LeanTween.value(go(slot0.panelTF), 0, slot0.panelTF.sizeDelta.x, 0.5)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot0.panelTF), 0, slot0.panelTF.sizeDelta.x, 0.5):setOnUpdate(System.Action_float(function (slot0)
 		setAnchoredPosition(uv0.panelTF, {
 			x = -slot0
 		})
-	end))
-
-	slot2:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		uv0.isAni = false
 	end))
 end
@@ -123,14 +115,12 @@ function slot0.closePanel(slot0)
 	end
 
 	slot0.isAni = true
-	slot2 = LeanTween.value(go(slot0.panelTF), -slot0.panelTF.sizeDelta.x, 0, 0.5)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
+
+	LeanTween.value(go(slot0.panelTF), -slot0.panelTF.sizeDelta.x, 0, 0.5):setOnUpdate(System.Action_float(function (slot0)
 		setAnchoredPosition(uv0.panelTF, {
 			x = slot0
 		})
-	end))
-
-	slot2:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		uv0.isAni = false
 
 		uv0:Destroy()

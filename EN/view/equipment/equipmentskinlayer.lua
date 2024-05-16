@@ -91,13 +91,10 @@ end
 function slot0.initReplace(slot0)
 	setActive(slot0.displayPanel, false)
 	setActive(slot0.replacePanel, true)
-
-	slot3 = slot0.contextData.skinId
-
 	slot0:updateSkinView(slot0.skinViewOnShipTF, slot0.shipVO:getEquipSkin(slot0.contextData.pos) or 0)
 
 	if slot0.contextData.oldShipInfo then
-		slot0:updateSkinView(slot0.skinViewTF, slot3, slot0.contextData.oldShipInfo)
+		slot0:updateSkinView(slot0.skinViewTF, slot0.contextData.skinId, slot0.contextData.oldShipInfo)
 	else
 		slot0:updateSkinView(slot0.skinViewTF, slot3)
 	end
@@ -133,10 +130,10 @@ function slot0.updateSkinView(slot0, slot1, slot2, slot3)
 		onButton(slot0, slot11, function ()
 			uv0:emit(EquipmentSkinMediator.ON_PREVIEW, uv1)
 		end, SFX_PANEL)
-		updateDrop(slot0:findTF("info/equip", slot1), {
+		updateDrop(slot0:findTF("info/equip", slot1), Drop.New({
 			type = DROP_TYPE_EQUIPMENT_SKIN,
 			id = slot2
-		})
+		}))
 
 		if slot0:findTF("info/head", slot1) then
 			setActive(slot12, slot3)

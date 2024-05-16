@@ -256,18 +256,19 @@ return {
 		return slot1[1] .. slot1[2]
 	end,
 	GetFourDirMark = function (slot0)
-		slot1 = {}
-		slot2 = slot0.y * slot0.y < slot0.x * slot0.x and {
+		slot1 = {
+			[slot6] = uv0[slot6][1]
+		}
+
+		for slot6, slot7 in ipairs(slot0.y * slot0.y < slot0.x * slot0.x and {
 			0,
 			slot0.x
 		} or {
 			slot0.y,
 			0
-		}
-
-		for slot6, slot7 in ipairs(slot2) do
+		}) do
 			if slot7 > 0 then
-				slot1[slot6] = uv0[slot6][1]
+				-- Nothing
 			elseif slot7 < 0 then
 				slot1[slot6] = uv0[slot6][2]
 			else

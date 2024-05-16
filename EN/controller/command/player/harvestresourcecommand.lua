@@ -3,11 +3,10 @@ slot0 = class("HarvestResourceCommand", pm.SimpleCommand)
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot3 = id2res(slot2)
-	slot5 = getProxy(PlayerProxy):getData()
 	slot6 = nil
 
 	if slot2 == 1 then
-		slot6 = slot5:getLevelMaxGold()
+		slot6 = getProxy(PlayerProxy):getData():getLevelMaxGold()
 	elseif slot2 == 2 then
 		slot6 = slot5:getLevelMaxOil()
 	else
@@ -20,9 +19,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot7 = pg.ConnectionMgr.GetInstance()
-
-	slot7:Send(11013, {
+	pg.ConnectionMgr.GetInstance():Send(11013, {
 		number = 0,
 		type = slot2
 	}, 11014, function (slot0)

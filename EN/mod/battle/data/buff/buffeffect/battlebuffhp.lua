@@ -42,12 +42,15 @@ function slot1.onBulletHit(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	slot4 = slot1:GetAttrByName("healingRate")
+	if not slot0:victimRequire(slot3.target, slot1) then
+		return
+	end
+
 	slot5 = slot3.target
 
 	if not slot0._weaponType then
 		if slot0._number > 0 then
-			slot6 = math.floor(slot6 * slot4)
+			slot6 = math.floor(slot6 * slot1:GetAttrByName("healingRate"))
 		end
 
 		slot5:UpdateHP(slot6, {

@@ -11,18 +11,14 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(61011, {
+	pg.ConnectionMgr.GetInstance():Send(61011, {
 		type = 0
 	}, 61012, function (slot0)
 		if slot0.result == 0 then
 			slot1 = uv0:getData()
 			slot2 = {}
-			slot3 = ipairs
-			slot4 = slot0.recommends or {}
 
-			for slot6, slot7 in slot3(slot4) do
+			for slot6, slot7 in ipairs(slot0.recommends or {}) do
 				if not slot2[slot7.user_id] then
 					slot2[slot7.user_id] = {}
 				end

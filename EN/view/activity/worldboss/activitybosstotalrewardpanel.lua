@@ -10,6 +10,8 @@ function slot0.init(slot0)
 	uv0.super.init(slot0)
 
 	slot0.itemList = slot0.boxView:Find("Content/ItemGrid2")
+
+	setText(slot0.window:Find("Fixed/top/bg/obtain/title"), i18n("autofight_rewards"))
 end
 
 function slot0.didEnter(slot0)
@@ -19,9 +21,7 @@ function slot0.didEnter(slot0)
 	})
 	slot0:UpdateView()
 
-	slot2 = PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0
-
-	if slot0.contextData.isAutoFight and slot2 then
+	if slot0.contextData.isAutoFight and PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0 then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_AUTO_BATTLE)
 		LuaHelper.Vibrate()
 	end
@@ -80,11 +80,9 @@ function slot0.UpdateView(slot0)
 		end
 	end
 
-	slot6 = {}
-
 	if not slot0.contextData.stopReason then
 		if slot0.contextData.isAutoFight then
-			table.insert(slot6, i18n("multiple_sorties_finish"))
+			table.insert({}, i18n("multiple_sorties_finish"))
 		else
 			table.insert(slot6, i18n("multiple_sorties_stop"))
 		end

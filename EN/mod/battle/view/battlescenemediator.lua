@@ -57,10 +57,9 @@ end
 
 function slot7.InitPopNumPool(slot0)
 	slot0._popNumMgr = uv0.Battle.BattlePopNumManager.GetInstance()
-	slot2 = slot0._state:GetUI()
 
 	if slot0._dataProxy:GetInitData().battleType == SYSTEM_DODGEM then
-		slot0._popNumMgr:InitialScorePool(slot2:findTF(slot1.CONTAINER_CHARACTER_HP .. "/container"))
+		slot0._popNumMgr:InitialScorePool(slot0._state:GetUI():findTF(slot1.CONTAINER_CHARACTER_HP .. "/container"))
 	else
 		slot0._popNumMgr:InitialBundlePool(slot2:findTF(slot1.CONTAINER_CHARACTER_HP .. "/container"))
 	end
@@ -208,10 +207,8 @@ function slot7.onAddUnit(slot0, slot1)
 end
 
 function slot7.onRemoveUnit(slot0, slot1)
-	slot3 = slot1.Data.deadReason
-
 	if slot0._characterList[slot1.Data.UID] then
-		slot4:GetFactory():RemoveCharacter(slot4, slot3)
+		slot4:GetFactory():RemoveCharacter(slot4, slot1.Data.deadReason)
 
 		slot0._characterList[slot2] = nil
 	end
@@ -285,10 +282,8 @@ function slot7.onAntiAirArea(slot0, slot1)
 end
 
 function slot7.onAntiAirOverload(slot0, slot1)
-	slot3 = slot0._antiAirAreaTF:Find("Quad"):GetComponent(typeof(Animator))
-
 	if slot1.Dispatcher:IsOverLoad() then
-		slot3.enabled = false
+		slot0._antiAirAreaTF:Find("Quad"):GetComponent(typeof(Animator)).enabled = false
 	else
 		slot3.enabled = true
 	end
@@ -377,11 +372,9 @@ function slot7.onUpdateMoveMark(slot0, slot1)
 end
 
 function slot7.onBoardClick(slot0, slot1)
-	slot4 = slot0._leftFleet:GetCardPuzzleComponent():GetTouchScreenPoint()
-
 	if slot1.Data.click == uv0.Battle.CardPuzzleBoardClicker.CLICK_STATE_CLICK then
 		slot0._clickMarkFxTF = slot0._fxPool:GetFX("kapai_weizhi").transform
-		slot0._clickMarkFxTF.position = slot4
+		slot0._clickMarkFxTF.position = slot0._leftFleet:GetCardPuzzleComponent():GetTouchScreenPoint()
 	elseif slot3 == uv0.Battle.CardPuzzleBoardClicker.CLICK_STATE_DRAG then
 		slot0._clickMarkFxTF.position = slot4
 	elseif slot3 == uv0.Battle.CardPuzzleBoardClicker.CLICK_STATE_RELEASE and slot0._clickMarkFxTF then
@@ -514,8 +507,6 @@ function slot7.onBulletTime(slot0, slot1)
 	slot3 = slot2.key
 
 	if slot2.speed then
-		slot5 = slot2.exemptUnit:GetUniqueID()
-
 		uv0.AppendIFFFactor(uv1.FOE_CODE, slot3, slot4)
 
 		slot9 = slot4
@@ -523,7 +514,7 @@ function slot7.onBulletTime(slot0, slot1)
 		uv0.AppendIFFFactor(uv1.FRIENDLY_CODE, slot3, slot9)
 
 		for slot9, slot10 in pairs(slot0._characterList) do
-			if slot9 == slot5 then
+			if slot9 == slot2.exemptUnit:GetUniqueID() then
 				slot10:SetAnimaSpeed(1 / slot4)
 
 				break
@@ -598,10 +589,8 @@ function slot7.updateCardAim(slot0)
 		})[1]
 
 		for slot11, slot12 in ipairs(slot6) do
-			slot13 = nil
-
 			for slot17, slot18 in ipairs(slot12) do
-				slot13 = uv0[slot18](slot7, nil, slot13)
+				slot13 = uv0[slot18](slot7, nil, nil)
 			end
 
 			for slot17, slot18 in ipairs(slot13) do
@@ -772,10 +761,8 @@ function slot7.AllBulletNeutralize(slot0)
 
 	slot0._antiAirArea:SetActive(false)
 
-	slot1 = 0
-
 	for slot5, slot6 in pairs(slot0._bulletList) do
-		slot1 = slot1 + 1
+		slot1 = 0 + 1
 
 		slot6:Neutrailze()
 	end

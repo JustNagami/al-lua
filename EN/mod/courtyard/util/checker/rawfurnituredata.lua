@@ -71,10 +71,8 @@ function slot0.LegalChild(slot0, slot1)
 	end
 
 	slot2 = {}
-	slot3 = pairs
-	slot4 = slot0.child or {}
 
-	for slot6, slot7 in slot3(slot4) do
+	for slot6, slot7 in pairs(slot0.child or {}) do
 		table.insert(slot2, slot6)
 	end
 

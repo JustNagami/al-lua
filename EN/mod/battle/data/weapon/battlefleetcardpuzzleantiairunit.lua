@@ -59,12 +59,11 @@ end
 function slot8.flush(slot0)
 	slot0._range = 0
 	slot0._interval = 0
-	slot1 = 0
 
 	for slot5, slot6 in pairs(slot0._crewUnitList) do
 		slot0._range = slot0._range + slot5:GetTemplate().AA_range
 		slot0._interval = slot0._interval + slot5:GetTemplate().AA_CD
-		slot1 = slot1 + 1
+		slot1 = 0 + 1
 	end
 
 	slot0._range = slot0._range / slot1
@@ -78,18 +77,17 @@ function slot8.Update(slot0)
 end
 
 function slot8.FilterTarget(slot0)
-	slot2 = {}
-	slot3 = slot0._host:GetIFF()
 	slot4 = 1
 
 	for slot8, slot9 in pairs(slot0._dataProxy:GetAircraftList()) do
-		if slot9:GetIFF() ~= slot3 and slot9:IsVisitable() then
-			slot2[slot4] = slot9
+		if slot9:GetIFF() ~= slot0._host:GetIFF() and slot9:IsVisitable() then
 			slot4 = slot4 + 1
 		end
 	end
 
-	return slot2
+	return {
+		[slot4] = slot9
+	}
 end
 
 function slot8.FilterRange(slot0, slot1)
@@ -107,11 +105,10 @@ function slot8.IsOutOfRange(slot0, slot1)
 end
 
 function slot8.CompareDistance(slot0, slot1)
-	slot2 = 999999
 	slot3 = nil
 
 	for slot7, slot8 in ipairs(slot1) do
-		if slot8:GetPosition().x < slot2 then
+		if slot8:GetPosition().x < 999999 then
 			slot3 = slot8
 			slot2 = slot8:GetPosition().x
 		end

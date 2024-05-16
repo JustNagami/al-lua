@@ -20,10 +20,9 @@ end
 
 function slot0.AddFurniture(slot0, slot1, slot2)
 	slot3 = slot0:GetAllFurniture()
-	slot4 = {}
 
 	for slot8, slot9 in pairs(slot1.child) do
-		slot4[slot8] = slot9
+		-- Nothing
 	end
 
 	slot5 = BackyardThemeFurniture.New({
@@ -32,7 +31,9 @@ function slot0.AddFurniture(slot0, slot1, slot2)
 		configId = slot1.configId,
 		position = Vector2(slot1.x, slot1.y),
 		dir = slot1.dir,
-		child = slot4,
+		child = {
+			[slot8] = slot9
+		},
 		parent = slot1.parent,
 		floor = slot2
 	})
@@ -108,10 +109,9 @@ function slot0.IsUsing(slot0, slot1)
 				return false, 2
 			end
 
-			slot12 = slot5[slot10.id] or {}
 			slot13 = false
 
-			for slot17, slot18 in ipairs(slot12) do
+			for slot17, slot18 in ipairs(slot5[slot10.id] or {}) do
 				if slot18:isSame(slot10) then
 					slot13 = true
 
@@ -133,8 +133,6 @@ function slot0.GetMissFurnitures(slot0, slot1)
 		return
 	end
 
-	slot3 = {}
-
 	function slot4(slot0, slot1)
 		for slot5, slot6 in ipairs(slot0) do
 			if not slot1[slot6.id] then
@@ -150,16 +148,9 @@ function slot0.GetMissFurnitures(slot0, slot1)
 	slot4(slot2, slot5)
 	slot4(slot1, {})
 
-	function slot7(slot0)
-		return {
-			count = 1,
-			name = pg.furniture_data_template[slot0].name
-		}
-	end
-
 	for slot11, slot12 in pairs(slot5) do
 		if not slot6[slot11] then
-			slot3[slot11] = slot7(slot11)
+			-- Nothing
 		elseif slot6[slot11] and slot6[slot11] < slot12 then
 			if not slot3[slot11] then
 				slot3[slot11] = slot7(slot11)
@@ -169,7 +160,14 @@ function slot0.GetMissFurnitures(slot0, slot1)
 		end
 	end
 
-	return slot3
+	return {
+		[slot11] = function (slot0)
+			return {
+				count = 1,
+				name = pg.furniture_data_template[slot0].name
+			}
+		end(slot11)
+	}
 end
 
 function slot0.getName(slot0)

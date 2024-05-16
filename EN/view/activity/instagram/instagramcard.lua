@@ -39,10 +39,8 @@ function slot0.LoadImage(slot0)
 	end
 
 	slot0.loading = true
-	slot1 = slot0.view
-	slot3 = slot0.instagram
 
-	slot1:SetImageByUrl(slot3:GetImage(), slot0.image, function ()
+	slot0.view:SetImageByUrl(slot0.instagram:GetImage(), slot0.image, function ()
 		uv0.loading = false
 
 		if uv0.needRefresh then

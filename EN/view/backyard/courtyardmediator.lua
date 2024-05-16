@@ -13,17 +13,19 @@ slot0.CLOSE_ADD_EXP = "CourtYardMediator:CLOSE_ADD_EXP"
 slot0.UN_LOCK_2FLOOR = "CourtYardMediator:UN_LOCK_2FLOOR"
 slot0.GO_THEME_TEMPLATE = "CourtYardMediator:GO_THEME_TEMPLATE"
 slot0.ON_ADD_VISITOR_SHIP = "CourtYardMediator:ON_ADD_VISITOR_SHIP"
+slot0.ONE_KEY = "CourtYardMediator:ONE_KEY"
 
 function slot0.register(slot0)
+	slot0:bind(uv0.ONE_KEY, function (slot0)
+		uv0:sendNotification(GAME.BACKYARD_ONE_KEY)
+	end)
 	slot0:bind(uv0.ON_ADD_VISITOR_SHIP, function (slot0)
-		function slot1(slot0)
-			if slot0 then
-				_courtyard:GetController():AddVisitorShip(slot0)
-			end
-		end
-
 		if getProxy(DormProxy):GetVisitorShip() then
-			slot1(slot3)
+			function (slot0)
+				if slot0 then
+					_courtyard:GetController():AddVisitorShip(slot0)
+				end
+			end(slot3)
 
 			return
 		end
@@ -88,17 +90,12 @@ function slot0.register(slot0)
 			return
 		end
 
-		getProxy(DormProxy).floor = slot1
-		uv0.contextData.floor = slot1
-
 		_courtyard:Dispose()
 
 		_courtyard = nil
 
 		gcAll()
-
-		_courtyard = CourtYardBridge.New(uv0:GenCourtYardData(slot1))
-
+		uv0.viewComponent:emit(uv1.SET_UP, slot1)
 		uv0.viewComponent:SwitchFloorDone()
 	end)
 	slot0:bind(uv0.FOLD, function (slot0, slot1)
@@ -123,6 +120,7 @@ function slot0.listNotificationInterests(slot0)
 		GAME.EXTEND_BACKYARD_AREA_DONE,
 		GAME.BACKYARD_ADD_MONEY_DONE,
 		GAME.BACKYARD_ADD_INTIMACY_DONE,
+		GAME.BACKYARD_ONE_KEY_DONE,
 		GAME.BACKYARD_SHIP_EXP_ADDED,
 		GAME.OPEN_BACKYARD_SHOP,
 		GAME.EXIT_SHIP_DONE,
@@ -220,6 +218,11 @@ function slot0.handleCourtyardNotification(slot0, slot1, slot2, slot3)
 		end
 	elseif slot1 == GAME.BACKYARD_ADD_INTIMACY_DONE then
 		_courtyard:GetController():ClearShipIntimacy(slot2.id)
+	elseif slot1 == GAME.BACKYARD_ONE_KEY_DONE then
+		for slot7, slot8 in ipairs(slot2.shipIds) do
+			_courtyard:GetController():ClearShipCoin(slot8)
+			_courtyard:GetController():ClearShipIntimacy(slot8)
+		end
 	elseif slot1 == GAME.EXTEND_BACKYARD_AREA_DONE then
 		_courtyard:GetController():LevelUp()
 	elseif slot1 == DormProxy.INIMACY_AND_MONEY_ADD then
@@ -252,10 +255,12 @@ function slot0.handleCourtyardNotification(slot0, slot1, slot2, slot3)
 		slot0.viewComponent:BlockEvents()
 	elseif slot1 == CourtYardEvent._DRAG_ITEM_END then
 		slot0.viewComponent:UnBlockEvents()
-	elseif slot1 == CourtYardEvent._TOUCH_SHIP and getProxy(TaskProxy):GetBackYardInterActionTask() then
-		pg.m02:sendNotification(GAME.UPDATE_TASK_PROGRESS, {
-			taskId = slot4.id
-		})
+	elseif slot1 == CourtYardEvent._TOUCH_SHIP and getProxy(TaskProxy):GetBackYardInterActionTaskList() and #slot4 > 0 then
+		for slot8, slot9 in ipairs(slot4) do
+			pg.m02:sendNotification(GAME.UPDATE_TASK_PROGRESS, {
+				taskId = slot9.id
+			})
+		end
 	end
 end
 
@@ -264,18 +269,13 @@ function slot0.SettleExp(slot0, slot1)
 		return
 	end
 
-	slot4 = getProxy(BayProxy)
-	slot5 = 0
-
 	for slot9, slot10 in ipairs(getProxy(DormProxy):getRawData().shipIds) do
-		if slot4:RawGetShipById(slot10) and slot11.state == Ship.STATE_TRAIN then
-			slot5 = slot5 + 1
+		if getProxy(BayProxy):RawGetShipById(slot10) and slot11.state == Ship.STATE_TRAIN then
+			slot5 = 0 + 1
 		end
 	end
 
-	slot6 = slot3.load_exp * slot5
-
-	if slot5 ~= 0 and (slot6 ~= 0 or slot3.food ~= 0) then
+	if slot5 ~= 0 and (slot3.load_exp * slot5 ~= 0 or slot3.food ~= 0) then
 		onNextTick(function ()
 			uv0:addSubLayers(Context.New({
 				mediator = BackYardSettlementMediator,
@@ -295,15 +295,17 @@ function slot0.OnExtend(slot0)
 	if getProxy(BagProxy):getItemCountById(ITEM_BACKYARD_AREA_EXTEND) <= 0 then
 		slot3 = pg.shop_template[getProxy(DormProxy):getRawData():GetExpandId()]
 
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("backyard_buyExtendItem_question", slot3.resource_num .. pg.item_data_statistics[id2ItemId(slot3.resource_type)].name),
+		_BackyardMsgBoxMgr:Show({
+			content = i18n("backyard_buyExtendItem_question", slot3.resource_num .. Drop.New({
+				type = DROP_TYPE_RESOURCE,
+				id = slot3.resource_type
+			}):getName()),
 			onYes = function ()
 				uv0:sendNotification(GAME.SHOPPING, {
 					count = 1,
 					id = uv1
 				})
-			end,
-			weight = LayerWeightConst.SECOND_LAYER
+			end
 		})
 
 		return
@@ -363,7 +365,8 @@ function slot0.GenCourtYardData(slot0, slot1)
 		storeyId = slot1,
 		style = slot4,
 		mapSize = slot5,
-		name = slot0.viewComponent:getUIName()
+		name = slot0.viewComponent:getUIName(),
+		core = pg.m02
 	}
 end
 

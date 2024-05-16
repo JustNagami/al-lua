@@ -37,9 +37,8 @@ function slot0.initUI(slot0)
 	slot0.tpl = slot0:findTF("StepTpl")
 	slot0.tplContainerTF = slot0:findTF("ScrollRect/Container")
 	slot0.stepUIIList = UIItemList.New(slot0.tplContainerTF, slot0.tpl)
-	slot3 = slot0.stepUIIList
 
-	slot3:make(function (slot0, slot1, slot2)
+	slot0.stepUIIList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:updateTpl(slot2, slot1 + 1)
 		end
@@ -104,7 +103,7 @@ function slot0.updateTpl(slot0, slot1, slot2)
 		removeOnButton(slot1)
 	end
 
-	setImageSprite(slot8, slot0.faceSpriteList[slot2 % 10])
+	setImageSprite(slot8, slot0.faceSpriteList[(slot2 - 1) % 10 + 1])
 end
 
 function slot0.updateTplList(slot0)
@@ -133,10 +132,6 @@ function slot0.ScrollPt(slot0, slot1, slot2, slot3)
 end
 
 function slot0.onStepClick(slot0, slot1)
-	function slot2()
-		pg.m02:sendNotification(GAME.REFLUX_GET_PT_AWARD)
-	end
-
 	slot3 = slot0:getAwardForShow(slot1)
 	slot3[1] = slot3.type
 	slot3[2] = slot3.id
@@ -150,7 +145,9 @@ function slot0.onStepClick(slot0, slot1)
 			type = MSGBOX_TYPE_ITEM_BOX,
 			content = i18n("award_max_warning"),
 			items = slot6,
-			onYes = slot2
+			onYes = function ()
+				pg.m02:sendNotification(GAME.REFLUX_GET_PT_AWARD)
+			end
 		})
 	else
 		slot2()
@@ -162,9 +159,7 @@ function slot0.getAwardForShow(slot0, slot1)
 	slot5 = nil
 
 	for slot9, slot10 in ipairs(pg.return_pt_template[slot1].level) do
-		slot12 = slot10[2]
-
-		if slot10[1] <= slot4 and slot4 <= slot12 then
+		if slot10[1] <= slot4 and slot4 <= slot10[2] then
 			slot5 = slot9
 		end
 	end

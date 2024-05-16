@@ -102,8 +102,7 @@ function slot0.InitGameUI(slot0)
 	slot0.btnAEffect = slot0.btnA:Find("effect")
 	slot0.btnBEffect = slot0.btnB:Find("effect")
 	slot0.btnAExEffect = slot0.btnA:Find("effect_ex")
-	slot2 = slot0.btnB
-	slot0.btnBExEffect = slot2:Find("effect_ex")
+	slot0.btnBExEffect = slot0.btnB:Find("effect_ex")
 	slot0.keys = {
 		findTF(slot1, "UI/keys/1"):GetComponent(typeof(Image)),
 		findTF(slot1, "UI/keys/2"):GetComponent(typeof(Image)),
@@ -160,11 +159,11 @@ function slot0.EnterAnimation(slot0, slot1)
 		end
 	end, 1, 3)
 
-	(function (slot0)
+	function (slot0)
 		for slot4, slot5 in ipairs(uv0.numbers) do
 			setActive(slot5, slot4 == slot0)
 		end
-	end)(1)
+	end(1)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(FushunAdventureGameConst.COUNT_DOWN_VOICE)
 	slot0.countdownTimer:Start()
 end
@@ -179,24 +178,22 @@ function slot0.ShowHelpWindow(slot0, slot1)
 end
 
 function slot0.DisplayKey(slot0)
-	function slot1(slot0, slot1)
-		slot2 = nil
-
-		if not slot1 or slot1 == "" then
-			slot2 = uv0.btnSprites[1]
-		elseif slot1 == "A" then
-			slot2 = uv0.btnSprites[2]
-		elseif slot1 == "B" then
-			slot2 = uv0.btnSprites[3]
-		end
-
-		if slot0.sprite ~= slot2 then
-			slot0.sprite = slot2
-		end
-	end
-
 	for slot5, slot6 in ipairs(slot0.keys) do
-		slot1(slot6, string.sub(slot0.key, slot5, slot5) or "")
+		function (slot0, slot1)
+			slot2 = nil
+
+			if not slot1 or slot1 == "" then
+				slot2 = uv0.btnSprites[1]
+			elseif slot1 == "A" then
+				slot2 = uv0.btnSprites[2]
+			elseif slot1 == "B" then
+				slot2 = uv0.btnSprites[3]
+			end
+
+			if slot0.sprite ~= slot2 then
+				slot0.sprite = slot2
+			end
+		end(slot6, string.sub(slot0.key, slot5, slot5) or "")
 	end
 end
 
@@ -260,9 +257,7 @@ function slot0.LoadScene(slot0, slot1)
 				setActive(uv0.gameUI, true)
 				slot0()
 			else
-				slot1 = uv0.fushunLoader
-
-				slot1:LoadPrefab("ui/FushunAdventureGame", "", function (slot0)
+				uv0.fushunLoader:LoadPrefab("ui/FushunAdventureGame", "", function (slot0)
 					uv0.gameUI = slot0
 
 					slot0.transform:SetParent(uv0._go.transform, false)
@@ -288,9 +283,7 @@ function slot0.LoadScene(slot0, slot1)
 					uv0:EnterAnimation(slot0)
 				end,
 				function (slot0)
-					slot1 = uv0.fushunLoader
-
-					slot1:LoadPrefab("FushunAdventure/fushun", "", function (slot0)
+					uv0.fushunLoader:LoadPrefab("FushunAdventure/fushun", "", function (slot0)
 						uv0.fushun = FushunChar.New(slot0)
 
 						uv0.fushun:SetPosition(FushunAdventureGameConst.FUSHUN_INIT_POSITION)
@@ -308,21 +301,17 @@ function slot0.EnterGame(slot0)
 		slot0.handle = UpdateBeat:CreateListener(slot0.UpdateGame, slot0)
 	end
 
-	slot1 = UpdateBeat
-
-	slot1:AddListener(slot0.handle)
+	UpdateBeat:AddListener(slot0.handle)
 
 	slot0.lightTF.sizeDelta = Vector2(FushunAdventureGameConst.FUSHUN_ATTACK_RANGE, slot0.lightTF.sizeDelta.y)
-	slot4 = slot0.fushun
-	slot0.lightTF.localPosition = Vector2(FushunAdventureGameConst.FUSHUN_ATTACK_DISTANCE + slot4:GetPosition().x, slot0.lightTF.localPosition.y)
+	slot0.lightTF.localPosition = Vector2(FushunAdventureGameConst.FUSHUN_ATTACK_DISTANCE + slot0.fushun:GetPosition().x, slot0.lightTF.localPosition.y)
 
 	slot0:SpawnEnemys()
 	slot0:RegisterEventListener()
 
 	slot0.key = ""
-	slot1 = slot0.fushun
 
-	slot1:SetOnAnimEnd(function ()
+	slot0.fushun:SetOnAnimEnd(function ()
 		uv0.key = ""
 
 		uv0:DisplayKey()
@@ -497,11 +486,7 @@ function slot0.ShakeScreen(slot0, slot1)
 		LeanTween.cancel(slot1)
 	end
 
-	slot2 = LeanTween.rotateAroundLocal(slot1, Vector3(0, 0, 1), FushunAdventureGameConst.SHAKE_RANGE, FushunAdventureGameConst.SHAKE_TIME)
-	slot2 = slot2:setLoopPingPong(FushunAdventureGameConst.SHAKE_LOOP_CNT)
-	slot2 = slot2:setFrom(-1 * FushunAdventureGameConst.SHAKE_RANGE)
-
-	slot2:setOnComplete(System.Action(function ()
+	LeanTween.rotateAroundLocal(slot1, Vector3(0, 0, 1), FushunAdventureGameConst.SHAKE_RANGE, FushunAdventureGameConst.SHAKE_TIME):setLoopPingPong(FushunAdventureGameConst.SHAKE_LOOP_CNT):setFrom(-1 * FushunAdventureGameConst.SHAKE_RANGE):setOnComplete(System.Action(function ()
 		uv0.transform.localEulerAngles = Vector3(0, 0, 0)
 	end))
 end
@@ -517,9 +502,7 @@ function slot0.SpawnEnemys(slot0)
 		slot2 = nil
 
 		for slot6, slot7 in ipairs(FushunAdventureGameConst.SPEED_ADDITION) do
-			slot9 = slot7[1][2]
-
-			if slot7[1][1] <= slot0 and slot0 <= slot9 then
+			if slot7[1][1] <= slot0 and slot0 <= slot7[1][2] then
 				slot2 = slot7
 
 				break
@@ -559,9 +542,7 @@ end
 
 function slot0.AddCombo(slot0, slot1)
 	if slot1 > 0 then
-		slot2 = slot0.fushunLoader
-
-		slot2:GetPrefab("UI/fushun_combo", "", function (slot0)
+		slot0.fushunLoader:GetPrefab("UI/fushun_combo", "", function (slot0)
 			if not uv0.fushunLoader then
 				Destroy(slot0)
 
@@ -603,17 +584,14 @@ function slot0.OnFushunAttack(slot0, slot1)
 	slot0:DisplayKey()
 
 	slot2 = {}
-	slot3 = slot0.fushun
 
 	for slot7, slot8 in ipairs(slot0.enemys) do
-		if not slot8:WillDeath() and slot8:GetPosition().x <= slot3:GetAttackPosition().x then
+		if not slot8:WillDeath() and slot8:GetPosition().x <= slot0.fushun:GetAttackPosition().x then
 			table.insert(slot2, slot7)
 		end
 	end
 
-	slot4 = slot0.fushun
-
-	slot4:TriggerAction(slot0.key, function ()
+	slot0.fushun:TriggerAction(slot0.key, function ()
 		if #uv0 == 0 then
 			uv1.fushun:Miss()
 		end
@@ -776,8 +754,7 @@ function slot0.AddDebugInput(slot0)
 end
 
 function slot0.RegisterEventListener(slot0)
-	slot1 = slot0.btnA
-	slot1 = slot1:GetComponent("EventTriggerListener")
+	slot1 = slot0.btnA:GetComponent("EventTriggerListener")
 
 	slot1:AddPointDownFunc(function ()
 		uv0:OnShowBtnEffect("A", true)
@@ -795,8 +772,7 @@ function slot0.RegisterEventListener(slot0)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(FushunAdventureGameConst.A_BTN_VOICE)
 	end)
 
-	slot2 = slot0.btnB
-	slot2 = slot2:GetComponent("EventTriggerListener")
+	slot2 = slot0.btnB:GetComponent("EventTriggerListener")
 
 	slot2:AddPointDownFunc(function ()
 		uv0:OnShowBtnEffect("B", true)
@@ -852,10 +828,7 @@ function slot0.ShowPauseMsgbox(slot0)
 	setActive(slot0.msgboxPanel, true)
 	setActive(slot0.pauseMsgboxWindow, true)
 	setActive(slot0.exitMsgboxWindow, false)
-
-	slot3 = slot0.pauseMsgboxWindow
-
-	onButton(slot0, slot3:Find("continue_btn"), function ()
+	onButton(slot0, slot0.pauseMsgboxWindow:Find("continue_btn"), function ()
 		uv0:ResumeGame()
 		uv0:HidePauseMsgbox()
 	end, SFX_PANEL)
@@ -871,17 +844,11 @@ function slot0.ShowExitMsgbox(slot0)
 	setActive(slot0.msgboxPanel, true)
 	setActive(slot0.pauseMsgboxWindow, false)
 	setActive(slot0.exitMsgboxWindow, true)
-
-	slot3 = slot0.exitMsgboxWindow
-
-	onButton(slot0, slot3:Find("cancel_btn"), function ()
+	onButton(slot0, slot0.exitMsgboxWindow:Find("cancel_btn"), function ()
 		uv0:ResumeGame()
 		uv0:HideExitMsgbox()
 	end, SFX_PANEL)
-
-	slot3 = slot0.exitMsgboxWindow
-
-	onButton(slot0, slot3:Find("confirm_btn"), function ()
+	onButton(slot0, slot0.exitMsgboxWindow:Find("confirm_btn"), function ()
 		uv0:HideExitMsgbox()
 
 		if uv0.OnShowResult then

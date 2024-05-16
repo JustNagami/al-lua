@@ -207,14 +207,9 @@ function slot0.initEvent(slot0)
 			return
 		end
 
-		slot0 = uv0
-
-		slot0:changeAnimeState(true)
+		uv0:changeAnimeState(true)
 		setActive(uv0.btnStart, true)
-
-		slot0 = uv0._event
-
-		slot0:emit(MonopolyWorldScene.ON_START, uv0.activity.id, function (slot0)
+		uv0._event:emit(MonopolyWorldScene.ON_START, uv0.activity.id, function (slot0)
 			if slot0 and slot0 > 0 then
 				uv0:showRollAnimated(slot0)
 			end
@@ -236,9 +231,7 @@ function slot0.initEvent(slot0)
 			return
 		end
 
-		slot0 = uv0
-
-		slot0:changeCharAction(uv1, 1, function ()
+		uv0:changeCharAction(uv1, 1, function ()
 			uv0:changeCharAction(uv1)
 		end)
 	end, SFX_PANEL)
@@ -248,16 +241,11 @@ function slot0.showRollAnimated(slot0, slot1)
 	seriesAsync({
 		function (slot0)
 			setActive(uv0.effectStart, true)
-
-			slot1 = GetComponent(findTF(uv0.btnStart, "anim"), typeof(Animator))
-
-			slot1:Play("start", -1, 0)
+			GetComponent(findTF(uv0.btnStart, "anim"), typeof(Animator)):Play("start", -1, 0)
 			LeanTween.delayedCall(1, System.Action(function ()
 				for slot3 = 1, 6 do
-					slot4 = findTF(uv0.btnStart, "num/" .. slot3)
-
 					if slot3 ~= uv1 then
-						setActive(slot4, false)
+						setActive(findTF(uv0.btnStart, "num/" .. slot3), false)
 					else
 						setActive(slot4, true)
 					end
@@ -322,9 +310,8 @@ function slot0.initMap(slot0)
 				slot15.localPosition = slot16
 				slot17 = pg.activity_event_monopoly_map[slot14].icon
 				findTF(slot15, "image"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/monopolyworldui_atlas", slot17)
-				slot19 = findTF(slot15, "image"):GetComponent(typeof(Image))
 
-				slot19:SetNativeSize()
+				findTF(slot15, "image"):GetComponent(typeof(Image)):SetNativeSize()
 				table.insert(slot0.mapCells, {
 					col = slot13,
 					row = slot6,
@@ -343,9 +330,7 @@ function slot0.initMap(slot0)
 end
 
 function slot0.initChar(slot0)
-	slot1 = PoolMgr.GetInstance()
-
-	slot1:GetSpineChar(uv0, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(uv0, true, function (slot0)
 		uv0.model = slot0
 		uv0.model.transform.localScale = Vector3.one
 		uv0.model.transform.localPosition = Vector3.zero
@@ -471,9 +456,7 @@ end
 
 function slot0.checkStep(slot0, slot1)
 	if slot0.step > 0 then
-		slot2 = slot0._event
-
-		slot2:emit(MonopolyWorldScene.ON_MOVE, slot0.activity.id, function (slot0, slot1, slot2)
+		slot0._event:emit(MonopolyWorldScene.ON_MOVE, slot0.activity.id, function (slot0, slot1, slot2)
 			uv0.step = slot0
 			uv0.lastPos = uv0.pos
 			uv0.pos = slot1[#slot1]
@@ -528,13 +511,12 @@ end
 function slot0.updataUI(slot0)
 	setText(slot0.labelLeftCount, slot0.leftCount)
 
-	slot1 = slot0.activity:getDataConfig("daily_time")
 	uv0 = uv1.icon
 
 	if slot0.turnCnt and slot0.turnCnt < #uv2 then
 		uv1 = pg.furniture_data_template[uv2[slot0.turnCnt + 1]]
 
-		setText(slot0.gameTipUI2, i18n(uv3, slot1, 1))
+		setText(slot0.gameTipUI2, i18n(uv3, slot0.activity:getDataConfig("daily_time"), 1))
 	else
 		setText(slot0.gameTipUI2, i18n(uv4, slot1))
 	end
@@ -614,10 +596,8 @@ end
 function slot0.getEffectTf(slot0, slot1, slot2)
 	for slot6 = 1, #uv0 do
 		if uv0[slot6].cell_type == slot1 then
-			slot8 = slot7.name
-
 			if not slot2 then
-				return findTF(slot0._tf, "mapContainer/effect/" .. slot8)
+				return findTF(slot0._tf, "mapContainer/effect/" .. slot7.name)
 			elseif slot2 == slot7.path_length then
 				return findTF(slot0._tf, "mapContainer/effect/" .. slot8)
 			end
@@ -635,9 +615,7 @@ function slot0.checkEffect(slot0, slot1)
 		seriesAsync({
 			function (slot0)
 				if uv0 then
-					slot1 = uv1
-
-					slot1:changeCharAction(uv0, 1, function ()
+					uv1:changeCharAction(uv0, 1, function ()
 						uv0:changeCharAction(uv1, 0, nil)
 						uv2()
 					end)
@@ -689,9 +667,7 @@ function slot0.checkEffect(slot0, slot1)
 end
 
 function slot0.triggerEfeect(slot0, slot1)
-	slot2 = slot0._event
-
-	slot2:emit(MonopolyWorldScene.ON_TRIGGER, slot0.activity.id, function (slot0, slot1)
+	slot0._event:emit(MonopolyWorldScene.ON_TRIGGER, slot0.activity.id, function (slot0, slot1)
 		if slot0 and #slot0 >= 0 then
 			uv0.effectId = slot1
 			uv0.lastPos = uv0.pos
@@ -701,8 +677,7 @@ function slot0.triggerEfeect(slot0, slot1)
 				print()
 			end
 
-			slot2 = uv0
-			slot2 = slot2:getEffectTf(uv1, #slot0)
+			slot2 = uv0:getEffectTf(uv1, #slot0)
 
 			seriesAsync({
 				function (slot0)
@@ -734,13 +709,9 @@ function slot0.triggerEfeect(slot0, slot1)
 end
 
 function slot0.changeBg(slot0)
-	slot1 = slot0.turnCnt and slot0.turnCnt % 5 + 1 or 1
-
 	for slot5 = 1, 5 do
-		slot8 = GetComponent(findTF(slot0._tf, "bg/img" .. slot5), typeof(Image)).color.a
-
-		if slot5 == slot1 then
-			if slot8 ~= 1 then
+		if slot5 == (slot0.turnCnt and slot0.turnCnt % 5 + 1 or 1) then
+			if GetComponent(findTF(slot0._tf, "bg/img" .. slot5), typeof(Image)).color.a ~= 1 then
 				LeanTween.alpha(slot6, 1, 0.5)
 			end
 		elseif slot8 ~= 0 then
@@ -754,9 +725,7 @@ function slot0.toMoveCar(slot0)
 		return
 	end
 
-	slot2 = math.abs(slot0.targetPosition.y - slot0.char.localPosition.y)
-
-	if math.abs(slot0.targetPosition.x - slot0.char.localPosition.x) <= 6.5 and slot2 <= 6.5 then
+	if math.abs(slot0.targetPosition.x - slot0.char.localPosition.x) <= 6.5 and math.abs(slot0.targetPosition.y - slot0.char.localPosition.y) <= 6.5 then
 		slot0.targetPosition = nil
 
 		if slot0.moveComplete then
@@ -830,17 +799,10 @@ function slot0.changeCharAction(slot0, slot1, slot2, slot3)
 	end
 
 	slot0.actionName = slot1
-	slot4 = slot0.anim
 
-	slot4:SetActionCallBack(nil)
-
-	slot4 = slot0.anim
-
-	slot4:SetAction(slot1, 0)
-
-	slot4 = slot0.anim
-
-	slot4:SetActionCallBack(function (slot0)
+	slot0.anim:SetActionCallBack(nil)
+	slot0.anim:SetAction(slot1, 0)
+	slot0.anim:SetActionCallBack(function (slot0)
 		if slot0 == "finish" then
 			if uv0 == 1 then
 				uv1.anim:SetActionCallBack(nil)

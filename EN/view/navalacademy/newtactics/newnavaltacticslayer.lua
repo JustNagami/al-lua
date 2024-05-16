@@ -147,9 +147,7 @@ function slot0.OnUpdateQuickFinishPanel(slot0)
 end
 
 function slot0.SetPainting(slot0)
-	slot1 = ResourceMgr.Inst
-
-	slot1:getAssetAsync("Clutter/class_painting", "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("Clutter/class_painting", "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		uv0.painting.sprite = slot0
 
 		uv0.painting:SetNativeSize()
@@ -158,17 +156,10 @@ end
 
 function slot0.ShowMetaShipSkill(slot0, slot1)
 	slot0.metaSkillPage = NavalTacticsMetaSkillsView.New(slot0._tf, slot0.event)
-	slot2 = slot0.metaSkillPage
 
-	slot2:Reset()
-
-	slot2 = slot0.metaSkillPage
-
-	slot2:Load()
-
-	slot2 = slot0.metaSkillPage
-
-	slot2:setData(slot1, function ()
+	slot0.metaSkillPage:Reset()
+	slot0.metaSkillPage:Load()
+	slot0.metaSkillPage:setData(slot1, function ()
 		uv0.inAddStudentProcess = false
 
 		uv0.metaSkillPage:Destroy()
@@ -199,7 +190,7 @@ end
 
 function slot0.StartLesson(slot0, slot1, slot2)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("tactics_lesson_start_tip", pg.item_data_statistics[slot1.lessonId].name, slot2:getName(), ShipSkill.New(slot2.skills[slot1:getSkillId(slot2)], slot2.id):GetName()),
+		content = i18n("tactics_lesson_start_tip", Item.getConfigData(slot1.lessonId).name, slot2:getName(), ShipSkill.New(slot2.skills[slot1:getSkillId(slot2)], slot2.id):GetName()),
 		onYes = function ()
 			if uv0:IsMaxLevel() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_max_level"))

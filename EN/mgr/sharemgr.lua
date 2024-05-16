@@ -96,9 +96,7 @@ function slot1.Share(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	slot4 = LuaHelper.GetCHPackageType()
-
-	if not IsUnityEditor and PLATFORM_CODE == PLATFORM_CH and slot4 ~= PACKAGE_TYPE_BILI then
+	if not IsUnityEditor and PLATFORM_CODE == PLATFORM_CH and LuaHelper.GetCHPackageType() ~= PACKAGE_TYPE_BILI then
 		uv0.TipsMgr.GetInstance():ShowTips("指挥官，当前平台不支持分享功能哦")
 
 		return
@@ -171,10 +169,8 @@ function slot1.Share(slot0, slot1, slot2, slot3)
 	SetParent(slot11, GameObject.Find(slot5.camera):GetComponent(typeof(Camera)).transform:GetChild(0), false)
 	slot11:SetAsLastSibling()
 
-	slot15 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32)
-
 	if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and uv0.SdkMgr.GetInstance():GetIsPlatform() then
-		uv0.SdkMgr.GetInstance():GameShare(slot5.description, slot0:TakeTexture(slot1, slot15, slot13))
+		uv0.SdkMgr.GetInstance():GameShare(slot5.description, slot0:TakeTexture(slot1, ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32), slot13))
 		uv0.UIMgr.GetInstance():LoadingOn()
 		onDelayTick(function ()
 			uv0.UIMgr.GetInstance():LoadingOff()

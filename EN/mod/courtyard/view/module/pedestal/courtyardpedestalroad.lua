@@ -14,14 +14,12 @@ function slot0.OnLoaded(slot0, slot1)
 	setAnchoredPosition(slot1, Vector3(0, uv0[slot0.level], 0))
 
 	if slot0.level ~= 4 then
-		slot4 = slot1.transform
-
-		onButton(slot0, slot4:Find("warn"), function ()
+		onButton(slot0, slot1.transform:Find("warn"), function ()
 			if CourtYardConst.MAX_STOREY_LEVEL + 1 == uv0.level then
 				return
 			end
 
-			if _courtyard:GetController():IsEditModeOrIsVisit() then
+			if uv0:IsEditModeOrIsVisit() then
 				return
 			end
 
@@ -32,7 +30,7 @@ function slot0.OnLoaded(slot0, slot1)
 				return
 			end
 
-			if _courtyard:GetController():IsEditModeOrIsVisit() then
+			if uv0:IsEditModeOrIsVisit() then
 				return
 			end
 

@@ -10,14 +10,12 @@ end
 function slot0.GetRawPutList(slot0)
 	slot0:CheckLevel()
 
-	slot1 = getProxy(DormProxy):getRawData().level
-
 	if not slot0.putInfo then
 		pcall(function ()
 			uv0 = require("GameCfg.backyardTheme.theme_" .. uv1.id)
 		end)
 
-		slot0.putInfo = _.select((nil or require("GameCfg.backyardTheme.theme_empty"))["furnitures_" .. slot1] or {}, function (slot0)
+		slot0.putInfo = _.select((nil or require("GameCfg.backyardTheme.theme_empty"))["furnitures_" .. getProxy(DormProxy):getRawData().level] or {}, function (slot0)
 			return pg.furniture_data_template[slot0.id]
 		end)
 	end
@@ -51,12 +49,11 @@ function slot0.GetWarpFurnitures(slot0)
 end
 
 function slot0.CheckData(slot0)
-	slot1 = getProxy(DormProxy):getRawData()
 	slot2 = {}
 	slot3 = {}
 
 	for slot7, slot8 in pairs(slot0.furnitruesByIds) do
-		if not slot1:IsPurchasedFurniture(slot8.configId) then
+		if not getProxy(DormProxy):getRawData():IsPurchasedFurniture(slot8.configId) then
 			if slot8.parent ~= 0 then
 				table.insert(slot3, {
 					pid = slot8.parent,

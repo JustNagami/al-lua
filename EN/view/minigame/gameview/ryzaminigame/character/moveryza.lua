@@ -127,9 +127,7 @@ function slot0.Hurt(slot0, slot1)
 end
 
 function slot0.AddItem(slot0, slot1)
-	slot2 = pg.CriMgr.GetInstance()
-
-	slot2:PlaySoundEffect_V3("ui-ryza-minigame-powerup")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-powerup")
 	switch(slot1, {
 		bomb = function ()
 			uv0.bomb = math.min(uv0.bomb + 1, 7)

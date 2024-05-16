@@ -2,11 +2,10 @@ slot0 = class("BuyFurnitureCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot4 = slot2.type
 	slot5 = getProxy(DormProxy)
 	slot7 = getProxy(PlayerProxy):getData()
 
-	if #slot2.furnitureIds == 0 or not slot4 then
+	if #slot2.furnitureIds == 0 or not slot2.type then
 		return
 	end
 
@@ -37,9 +36,7 @@ function slot0.execute(slot0, slot1)
 	end
 
 	function slot9()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(19006, {
+		pg.ConnectionMgr.GetInstance():Send(19006, {
 			furniture_id = uv0,
 			currency = uv1
 		}, 19007, function (slot0)
@@ -72,12 +69,21 @@ function slot0.execute(slot0, slot1)
 			}):getConfig("name")
 		end
 
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("charge_scene_buy_confirm", slot8, slot10),
-			onYes = function ()
-				uv0()
-			end
-		})
+		if _BackyardMsgBoxMgr then
+			_BackyardMsgBoxMgr:Show({
+				content = i18n("charge_scene_buy_confirm_backyard", slot8, slot10),
+				onYes = function ()
+					uv0()
+				end
+			})
+		else
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("charge_scene_buy_confirm", slot8, slot10),
+				onYes = function ()
+					uv0()
+				end
+			})
+		end
 	else
 		slot9()
 	end

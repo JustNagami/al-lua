@@ -28,27 +28,21 @@ function slot1.onAttach(slot0, slot1, slot2, slot3)
 end
 
 function slot1.onUpdate(slot0, slot1, slot2, slot3)
-	slot4 = slot3.timeStamp
-
-	if slot0._time and slot0._time < slot4 then
+	if slot0._time and slot0._time < slot3.timeStamp then
 		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.DESTRUCT)
 		slot0:DoDead(slot1)
-	else
-		slot5 = slot1:GetPosition()
-
-		if slot0._maxX and slot0._maxX <= slot5.x then
-			slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
-			slot0:DoDead(slot1)
-		elseif slot0._minX and slot5.x <= slot0._minX then
-			slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
-			slot0:DoDead(slot1)
-		elseif slot0._maxY and slot0._maxY <= slot5.z then
-			slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
-			slot0:DoDead(slot1)
-		elseif slot0._minY and slot5.z <= slot0._minY then
-			slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
-			slot0:DoDead(slot1)
-		end
+	elseif slot0._maxX and slot0._maxX <= slot1:GetPosition().x then
+		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
+		slot0:DoDead(slot1)
+	elseif slot0._minX and slot5.x <= slot0._minX then
+		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
+		slot0:DoDead(slot1)
+	elseif slot0._maxY and slot0._maxY <= slot5.z then
+		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
+		slot0:DoDead(slot1)
+	elseif slot0._minY and slot5.z <= slot0._minY then
+		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
+		slot0:DoDead(slot1)
 	end
 end
 

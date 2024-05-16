@@ -51,18 +51,12 @@ function slot0.Init(slot0, slot1)
 	slot0.oilAddBtn = findTF(slot0._go, "oil")
 	slot0.goldAddBtn = findTF(slot0._go, "gold")
 	slot0.gemAddBtn = findTF(slot0._go, "gem")
-	slot2 = findTF(slot0._go, "gold/gold_max_value")
-	slot0.goldMax = slot2:GetComponent(typeof(Text))
-	slot2 = findTF(slot0._go, "gold/gold_value")
-	slot0.goldValue = slot2:GetComponent(typeof(Text))
-	slot2 = findTF(slot0._go, "oil/oil_max_value")
-	slot0.oilMax = slot2:GetComponent(typeof(Text))
-	slot2 = findTF(slot0._go, "oil/oil_value")
-	slot0.oilValue = slot2:GetComponent(typeof(Text))
-	slot2 = findTF(slot0._go, "gem/gem_value")
-	slot0.gemValue = slot2:GetComponent(typeof(Text))
-	slot2 = slot0._go
-	slot0.animation = slot2:GetComponent(typeof(Animation))
+	slot0.goldMax = findTF(slot0._go, "gold/gold_max_value"):GetComponent(typeof(Text))
+	slot0.goldValue = findTF(slot0._go, "gold/gold_value"):GetComponent(typeof(Text))
+	slot0.oilMax = findTF(slot0._go, "oil/oil_max_value"):GetComponent(typeof(Text))
+	slot0.oilValue = findTF(slot0._go, "oil/oil_value"):GetComponent(typeof(Text))
+	slot0.gemValue = findTF(slot0._go, "gem/gem_value"):GetComponent(typeof(Text))
+	slot0.animation = slot0._go:GetComponent(typeof(Animation))
 	slot0.gemPos = slot0.gemAddBtn.anchoredPosition
 	slot0.oilPos = slot0.oilAddBtn.anchoredPosition
 
@@ -134,7 +128,7 @@ function slot0.Disable(slot0)
 		slot1.anim = false
 
 		slot0:Enable(slot1)
-	else
+	elseif slot0:IsLoaded() then
 		slot0.state = uv0
 
 		setActive(slot0._go, false)
@@ -179,22 +173,20 @@ end
 function slot0.ClickGem(slot0)
 	slot1 = slot0:GetPlayer()
 
-	function slot2()
-		if not pg.m02:hasMediator(ChargeMediator.__cname) then
-			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
-				wrap = ChargeScene.TYPE_DIAMOND
-			})
-		else
-			pg.m02:sendNotification(uv0.GO_MALL)
-		end
-	end
-
 	if PLATFORM_CODE == PLATFORM_JP then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			fontSize = 23,
 			yesText = "text_buy",
 			content = i18n("word_diamond_tip", slot1:getFreeGem(), slot1:getChargeGem(), slot1:getTotalGem()),
-			onYes = slot2,
+			onYes = function ()
+				if not pg.m02:hasMediator(ChargeMediator.__cname) then
+					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
+						wrap = ChargeScene.TYPE_DIAMOND
+					})
+				else
+					pg.m02:sendNotification(uv0.GO_MALL)
+				end
+			end,
 			alignment = TextAnchor.UpperLeft,
 			weight = LayerWeightConst.TOP_LAYER
 		})

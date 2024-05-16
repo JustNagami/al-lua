@@ -5,9 +5,7 @@ function slot0.Execute(slot0, slot1)
 
 	slot2:checkRemasterInfomation()
 
-	slot4 = slot2:getActiveChapter() and slot2:getMapById(slot3:getConfig("map"))
-
-	if slot3 and (not slot3:inWartime() or not slot4:isRemaster() and not slot3:inActTime()) then
+	if slot3 and (not slot3:inWartime() or not (slot2:getActiveChapter() and slot2:getMapById(slot3:getConfig("map"))):isRemaster() and not slot3:inActTime()) then
 		ChapterOpCommand.PrepareChapterRetreat(function ()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_timeout"))
 

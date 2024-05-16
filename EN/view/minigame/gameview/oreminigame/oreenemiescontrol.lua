@@ -10,9 +10,7 @@ function slot0.Ctor(slot0, slot1, slot2, slot3)
 end
 
 function slot0.AddListener(slot0)
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_ENEMY_DESTROY, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_ENEMY_DESTROY, function (slot0, slot1)
 		uv0.enemyList[slot1.roadID][slot1.index] = nil
 
 		uv0:ReturnEnemy(findTF(uv0.roadTFs[slot1.roadID], slot1.index), slot1.id)

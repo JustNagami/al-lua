@@ -52,10 +52,9 @@ end
 
 function slot0.GetGoodVOListByIndex(slot0, slot1, slot2)
 	slot1 = slot1 or uv0.GetActivity()
-	slot2 = slot2 or uv0.GetAllGoodVOList()
 	slot3 = {}
 
-	for slot7, slot8 in ipairs(slot2) do
+	for slot7, slot8 in ipairs(slot2 or uv0.GetAllGoodVOList()) do
 		if slot8:getUnlockIndex() == slot0 then
 			table.insert(slot3, slot8)
 		end

@@ -1,7 +1,7 @@
 slot0 = class("NewBattleResultDataExtender")
 
 function slot0.NeedCloseCamera(slot0)
-	return slot0 ~= SYSTEM_BOSS_RUSH and slot0 ~= SYSTEM_BOSS_RUSH_EX and slot0 ~= SYSTEM_ACT_BOSS and slot0 ~= SYSTEM_WORLD_BOSS
+	return slot0 ~= SYSTEM_BOSS_RUSH and slot0 ~= SYSTEM_BOSS_RUSH_EX and slot0 ~= SYSTEM_ACT_BOSS and slot0 ~= SYSTEM_WORLD_BOSS and slot0 ~= SYSTEM_BOSS_SINGLE
 end
 
 function slot0.NeedVibrate(slot0)
@@ -29,7 +29,7 @@ end
 function slot0.GetExpBuffs(slot0)
 	slot1 = nil
 
-	if slot0 == SYSTEM_SCENARIO or slot0 == SYSTEM_ROUTINE or slot0 == SYSTEM_ACT_BOSS or slot0 == SYSTEM_HP_SHARE_ACT_BOSS or slot0 == SYSTEM_SUB_ROUTINE or slot0 == SYSTEM_WORLD then
+	if slot0 == SYSTEM_SCENARIO or slot0 == SYSTEM_ROUTINE or slot0 == SYSTEM_ACT_BOSS or slot0 == SYSTEM_HP_SHARE_ACT_BOSS or slot0 == SYSTEM_SUB_ROUTINE or slot0 == SYSTEM_WORLD or slot0 == SYSTEM_BOSS_SINGLE then
 		slot1 = _.detect(BuffHelper.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF), function (slot0)
 			return slot0:getConfig("benefit_type") == "rookie_battle_exp"
 		end)
@@ -41,7 +41,7 @@ end
 function slot0.GetShipBuffs(slot0)
 	slot1 = nil
 
-	if slot0 == SYSTEM_SCENARIO or slot0 == SYSTEM_ROUTINE or slot0 == SYSTEM_ACT_BOSS or slot0 == SYSTEM_HP_SHARE_ACT_BOSS or slot0 == SYSTEM_SUB_ROUTINE or slot0 == SYSTEM_WORLD then
+	if slot0 == SYSTEM_SCENARIO or slot0 == SYSTEM_ROUTINE or slot0 == SYSTEM_ACT_BOSS or slot0 == SYSTEM_HP_SHARE_ACT_BOSS or slot0 == SYSTEM_SUB_ROUTINE or slot0 == SYSTEM_WORLD or slot0 == SYSTEM_BOSS_SINGLE then
 		slot1 = getProxy(ActivityProxy):getBuffShipList()
 	end
 
@@ -49,12 +49,11 @@ function slot0.GetShipBuffs(slot0)
 end
 
 function slot1()
-	slot0 = {}
 	slot2 = getProxy(ChapterProxy):getActiveChapter().fleet
 	slot4 = slot2[TeamType.Vanguard]
 
 	for slot8, slot9 in ipairs(slot2[TeamType.Main]) do
-		table.insert(slot0, slot9)
+		table.insert({}, slot9)
 	end
 
 	for slot8, slot9 in ipairs(slot4) do
@@ -73,12 +72,11 @@ function slot1()
 end
 
 function slot2()
-	slot0 = {}
 	slot3 = nowWorld():GetActiveMap():GetFleet()
 	slot5 = slot3:GetTeamShipVOs(TeamType.Vanguard, true)
 
 	for slot9, slot10 in ipairs(slot3:GetTeamShipVOs(TeamType.Main, true)) do
-		table.insert(slot0, slot10)
+		table.insert({}, slot10)
 	end
 
 	for slot9, slot10 in ipairs(slot5) do
@@ -110,10 +108,8 @@ function slot4(slot0)
 end
 
 function slot5()
-	slot0 = {}
-
 	for slot8, slot9 in ipairs(getProxy(GuildProxy):getRawData():GetActiveEvent():GetBossMission():GetMainFleet():GetShips()) do
-		table.insert(slot0, slot9.ship)
+		table.insert({}, slot9.ship)
 	end
 
 	for slot9, slot10 in ipairs(slot3:GetSubFleet():GetShips()) do
@@ -159,7 +155,7 @@ function slot0.GetNewMainShips(slot0)
 		slot2 = uv1()
 	elseif slot1 == SYSTEM_WORLD_BOSS then
 		slot2 = uv2(slot0)
-	elseif slot1 == SYSTEM_HP_SHARE_ACT_BOSS or slot1 == SYSTEM_ACT_BOSS or slot1 == SYSTEM_ACT_BOSS_SP or slot1 == SYSTEM_BOSS_EXPERIMENT then
+	elseif slot1 == SYSTEM_HP_SHARE_ACT_BOSS or slot1 == SYSTEM_ACT_BOSS or slot1 == SYSTEM_ACT_BOSS_SP or slot1 == SYSTEM_BOSS_EXPERIMENT or slot1 == SYSTEM_BOSS_SINGLE then
 		slot2 = uv3(slot0)
 	elseif slot1 == SYSTEM_GUILD then
 		slot2 = uv4()
@@ -175,13 +171,13 @@ function slot0.GetNewMainShips(slot0)
 		end
 	end
 
-	slot3 = {}
-
 	for slot7, slot8 in ipairs(slot2) do
-		slot3[slot8.id] = slot8
+		-- Nothing
 	end
 
-	return slot3
+	return {
+		[slot8.id] = slot8
+	}
 end
 
 return slot0

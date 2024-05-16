@@ -396,8 +396,7 @@ end
 
 function slot0.initItems(slot0)
 	slot0.isInitItems = true
-	slot1 = slot0.itemView
-	slot0.itemRect = slot1:GetComponent("LScrollRect")
+	slot0.itemRect = slot0.itemView:GetComponent("LScrollRect")
 
 	function slot0.itemRect.onInitItem(slot0)
 		uv0:initItem(slot0)
@@ -570,9 +569,7 @@ function slot0.PlayOpenBox(slot0, slot1, slot2)
 	end
 
 	if not slot0[slot1] then
-		slot5 = PoolMgr.GetInstance()
-
-		slot5:GetPrefab("ui/" .. string.lower(slot1), "", true, function (slot0)
+		PoolMgr.GetInstance():GetPrefab("ui/" .. string.lower(slot1), "", true, function (slot0)
 			slot0:SetActive(true)
 
 			uv0[uv1] = slot0
@@ -612,8 +609,7 @@ end
 
 function slot0.initEquipments(slot0)
 	slot0.isInitWeapons = true
-	slot1 = slot0.equipmentView
-	slot0.equipmentRect = slot1:GetComponent("LScrollRect")
+	slot0.equipmentRect = slot0.equipmentView:GetComponent("LScrollRect")
 
 	function slot0.equipmentRect.onInitItem(slot0)
 		uv0:initEquipment(slot0)
@@ -691,13 +687,12 @@ function slot0.filterEquipment(slot0)
 	table.clean(slot0.loadEquipmentVOs)
 
 	slot2 = slot0.loadEquipmentVOs
-	slot3 = table.mergeArray({}, {
-		slot0.contextData.indexDatas.equipPropertyIndex,
-		slot0.contextData.indexDatas.equipPropertyIndex2
-	}, true)
 
 	for slot7, slot8 in pairs(slot0.equipmentVOs) do
-		if (slot8.count > 0 or slot8.shipId) and not slot8.isSkin and IndexConst.filterEquipByType(slot8, slot0.contextData.indexDatas.typeIndex) and IndexConst.filterEquipByProperty(slot8, slot3) and IndexConst.filterEquipAmmo1(slot8, slot0.contextData.indexDatas.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(slot8, slot0.contextData.indexDatas.equipAmmoIndex2) and IndexConst.filterEquipByCamp(slot8, slot0.contextData.indexDatas.equipCampIndex) and IndexConst.filterEquipByRarity(slot8, slot0.contextData.indexDatas.rarityIndex) and IndexConst.filterEquipByExtra(slot8, slot0.contextData.indexDatas.extraIndex, slot0:GetShowBusyFlag()) then
+		if (not slot8.shipId or slot0:GetShowBusyFlag()) and not slot8.isSkin and IndexConst.filterEquipByType(slot8, slot0.contextData.indexDatas.typeIndex) and IndexConst.filterEquipByProperty(slot8, {
+			slot0.contextData.indexDatas.equipPropertyIndex,
+			slot0.contextData.indexDatas.equipPropertyIndex2
+		}) and IndexConst.filterEquipAmmo1(slot8, slot0.contextData.indexDatas.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(slot8, slot0.contextData.indexDatas.equipAmmoIndex2) and IndexConst.filterEquipByCamp(slot8, slot0.contextData.indexDatas.equipCampIndex) and IndexConst.filterEquipByRarity(slot8, slot0.contextData.indexDatas.rarityIndex) and IndexConst.filterEquipByExtra(slot8, slot0.contextData.indexDatas.extraIndex) then
 			table.insert(slot0.loadEquipmentVOs, slot8)
 		end
 	end
@@ -749,8 +744,7 @@ end
 
 function slot0.InitMaterials(slot0)
 	slot0.isInitMaterials = true
-	slot1 = slot0.materialtView
-	slot0.materialRect = slot1:GetComponent("LScrollRect")
+	slot0.materialRect = slot0.materialtView:GetComponent("LScrollRect")
 
 	function slot0.materialRect.onInitItem(slot0)
 		uv0:InitMaterial(slot0)

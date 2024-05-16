@@ -3860,10 +3860,8 @@ function slot0.GetGameUseTimes()
 end
 
 function slot0.GetGameRound()
-	slot0 = uv0.GetGameUseTimes()
-
 	if uv0.GetGameTimes() and slot1 > 0 then
-		return slot0 + 1
+		return uv0.GetGameUseTimes() + 1
 	else
 		return slot0
 	end

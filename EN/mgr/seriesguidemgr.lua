@@ -279,16 +279,14 @@ function slot0.compatibleOldPlayer(slot0)
 		return
 	end
 
-	function slot1()
-		slot1 = getProxy(PlayerProxy):getRawData()
-		slot1.guideIndex = uv0
-
-		uv1:setPlayer(slot1)
-		uv1:updateIndex(slot1.guideIndex)
-	end
-
 	if slot0.plevel >= 5 and slot0.pguideIndex < uv0 then
-		slot1()
+		function ()
+			slot1 = getProxy(PlayerProxy):getRawData()
+			slot1.guideIndex = uv0
+
+			uv1:setPlayer(slot1)
+			uv1:updateIndex(slot1.guideIndex)
+		end()
 
 		return
 	end

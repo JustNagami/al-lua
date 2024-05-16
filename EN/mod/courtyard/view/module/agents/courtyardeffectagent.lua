@@ -18,13 +18,8 @@ function slot0.EnableEffect(slot0, slot1)
 		return
 	end
 
-	slot2 = pg.UIMgr.GetInstance()
-
-	slot2:LoadingOn()
-
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetPrefab("ui/" .. slot1, slot1, true, function (slot0)
+	pg.UIMgr.GetInstance():LoadingOn()
+	PoolMgr.GetInstance():GetPrefab("ui/" .. slot1, slot1, true, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
 		if not uv0.effects or uv0.effects[uv1] then

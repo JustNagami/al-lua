@@ -53,10 +53,8 @@ function slot0.initPtData(slot0)
 	slot0.subPtDate = {}
 
 	for slot4, slot5 in ipairs(slot0.subActivities) do
-		slot6 = getProxy(ActivityProxy):getActivityById(slot5)
-
 		if slot0.subPtDate[slot5] then
-			slot0.subPtDate[slot5]:Update(slot6)
+			slot0.subPtDate[slot5]:Update(getProxy(ActivityProxy):getActivityById(slot5))
 		else
 			slot0.subPtDate[slot5] = ActivityPtData.New(slot6)
 		end
@@ -68,9 +66,8 @@ end
 function slot0.setPtActIndex(slot0)
 	slot0.curActIndex = slot0.lastSelectIndex
 	slot0.curSubActID = slot0.subActivities[slot0.curActIndex]
-	slot3 = slot0.subPtDate[slot0.subActivities[slot0.curActIndex == 1 and 2 or 1]]:CanGetAward()
 
-	if not slot0.subPtDate[slot0.curSubActID]:CanGetMorePt() or slot3 then
+	if not slot0.subPtDate[slot0.curSubActID]:CanGetMorePt() or slot0.subPtDate[slot0.subActivities[slot0.curActIndex == 1 and 2 or 1]]:CanGetAward() then
 		slot0.curActIndex = slot1
 		slot0.curSubActID = slot0.subActivities[slot0.curActIndex]
 
@@ -136,9 +133,8 @@ function slot0.OnFirstFlush(slot0)
 	end, SFX_PANEL)
 	onButton(slot0, slot0.getBtn, function ()
 		slot0 = {}
-		slot3 = getProxy(PlayerProxy):getData()
 
-		if uv0.subPtDate[uv0.curSubActID]:GetAward().type == DROP_TYPE_RESOURCE and slot1.id == PlayerConst.ResGold and slot3:GoldMax(slot1.count) then
+		if uv0.subPtDate[uv0.curSubActID]:GetAward().type == DROP_TYPE_RESOURCE and slot1.id == PlayerConst.ResGold and getProxy(PlayerProxy):getData():GoldMax(slot1.count) then
 			table.insert(slot0, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("gold_max_tip_title") .. i18n("award_max_warning"),
@@ -220,17 +216,11 @@ function slot0.OnFirstFlush(slot0)
 		end
 	end, SFX_PANEL)
 
-	slot1 = "ninghai_7"
 	slot2 = "pinghai_7"
 
 	if not slot0.model1 then
-		slot3 = pg.UIMgr.GetInstance()
-
-		slot3:LoadingOn()
-
-		slot3 = PoolMgr.GetInstance()
-
-		slot3:GetSpineChar(slot1, true, function (slot0)
+		pg.UIMgr.GetInstance():LoadingOn()
+		PoolMgr.GetInstance():GetSpineChar("ninghai_7", true, function (slot0)
 			pg.UIMgr.GetInstance():LoadingOff()
 
 			uv0.prefab1 = uv1
@@ -243,13 +233,8 @@ function slot0.OnFirstFlush(slot0)
 	end
 
 	if not slot0.model2 then
-		slot3 = pg.UIMgr.GetInstance()
-
-		slot3:LoadingOn()
-
-		slot3 = PoolMgr.GetInstance()
-
-		slot3:GetSpineChar(slot2, true, function (slot0)
+		pg.UIMgr.GetInstance():LoadingOn()
+		PoolMgr.GetInstance():GetSpineChar(slot2, true, function (slot0)
 			pg.UIMgr.GetInstance():LoadingOff()
 
 			uv0.prefab2 = uv1
@@ -276,10 +261,8 @@ end
 
 function slot0.OnUpdateFlush(slot0)
 	for slot4, slot5 in ipairs(slot0.subActivities) do
-		slot6 = getProxy(ActivityProxy):getActivityById(slot5)
-
 		if slot0.subPtDate[slot5] then
-			slot0.subPtDate[slot5]:Update(slot6)
+			slot0.subPtDate[slot5]:Update(getProxy(ActivityProxy):getActivityById(slot5))
 		else
 			slot0.subPtDate[slot5] = ActivityPtData.New(slot6)
 		end
@@ -481,22 +464,15 @@ end
 
 function slot0.autoFinishTask(slot0)
 	slot1 = 0.01
-	slot2 = 0.5
 
 	for slot6, slot7 in ipairs(slot0.finishItemList) do
 		slot8 = GetOrAddComponent(slot7, typeof(CanvasGroup))
 
 		slot0:managedTween(LeanTween.delayedCall, function ()
-			slot0 = uv0
-
-			slot0:SetAsFirstSibling()
-
-			slot0 = LeanTween.value(go(uv0), 1, 0, uv1)
-			slot0 = slot0:setOnUpdate(System.Action_float(function (slot0)
+			uv0:SetAsFirstSibling()
+			LeanTween.value(go(uv0), 1, 0, uv1):setOnUpdate(System.Action_float(function (slot0)
 				uv0.alpha = slot0
-			end))
-
-			slot0:setOnComplete(System.Action(function ()
+			end)):setOnComplete(System.Action(function ()
 				uv0.alpha = 1
 
 				setActive(uv1:findTF("finnal", uv2), true)
@@ -504,7 +480,7 @@ function slot0.autoFinishTask(slot0)
 			end))
 		end, slot1, nil)
 
-		slot1 = slot1 + slot2 + 0.1
+		slot1 = slot1 + 0.5 + 0.1
 	end
 
 	slot0:managedTween(LeanTween.delayedCall, function ()
@@ -587,10 +563,8 @@ function slot0.IsShowRed()
 	slot4 = {}
 
 	for slot8, slot9 in ipairs(slot0.config_client.ptActID) do
-		slot10 = getProxy(ActivityProxy):getActivityById(slot9)
-
 		if slot4[slot9] then
-			slot4[slot9]:Update(slot10)
+			slot4[slot9]:Update(getProxy(ActivityProxy):getActivityById(slot9))
 		else
 			slot4[slot9] = ActivityPtData.New(slot10)
 		end
@@ -598,20 +572,18 @@ function slot0.IsShowRed()
 
 	slot6 = getProxy(PlayerProxy):getRawData():getResource(slot1)
 	slot7 = getProxy(TaskProxy)
-	slot8 = {}
-	slot9 = 0
 
 	for slot13, slot14 in ipairs(slot3) do
 		if slot7:getTaskById(slot14) or slot7:getFinishTaskById(slot14) then
-			table.insert(slot8, slot15.id)
+			table.insert({}, slot15.id)
 
 			if slot15:getTaskStatus() == 0 then
-				slot9 = slot9 + 1
+				slot9 = 0 + 1
 			end
 		end
 	end
 
-	if (function ()
+	if function ()
 		slot0 = true
 
 		for slot4, slot5 in pairs(uv0) do
@@ -623,12 +595,10 @@ function slot0.IsShowRed()
 		end
 
 		return slot0
-	end)() then
+	end() then
 		return false
 	else
-		slot11 = uv0.canFinishTask(slot8, slot7) or uv0.canGetPtAward(slot4) or uv0.canAddProgress(slot6, slot4) or uv0.isNewTask(slot9)
-
-		return slot11
+		return uv0.canFinishTask(slot8, slot7) or uv0.canGetPtAward(slot4) or uv0.canAddProgress(slot6, slot4) or uv0.isNewTask(slot9)
 	end
 
 	return false

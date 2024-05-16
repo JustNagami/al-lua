@@ -20,7 +20,6 @@ function slot0.OnFirstFlush(slot0)
 		slot5 = slot0.config.front_drops[slot4]
 		slot7 = cloneTplTo(slot0.award, slot0.content, "award" .. tostring(slot4))
 		slot9 = slot0:findTF("btnAchieve", slot7)
-		slot10 = slot0:findTF("items", slot7)
 
 		setActive(slot0:findTF("item", slot7), false)
 
@@ -29,7 +28,7 @@ function slot0.OnFirstFlush(slot0)
 		GetImageSpriteFromAtlasAsync("ui/activityuipage/level_award_atlas", tostring(slot5[1]) .. ".png", slot15, true)
 
 		for slot15 = 2, #slot5 do
-			slot16 = cloneTplTo(slot11, slot10)
+			slot16 = cloneTplTo(slot11, slot0:findTF("items", slot7))
 			slot17 = slot5[slot15]
 
 			updateDrop(slot16, {

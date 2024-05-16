@@ -230,9 +230,7 @@ function slot9.ChangeSubmarineState(slot0, slot1, slot2)
 			slot7:ResetCurrent()
 		end
 
-		slot3 = slot0._submarineShiftVO:GetMax() - slot0._submarineShiftVO:GetCurrent()
-
-		if not slot0._submarineShiftVO:IsOverLoad() or uv0.SR_CONFIG.DIVE_CD >= slot3 then
+		if not slot0._submarineShiftVO:IsOverLoad() or uv0.SR_CONFIG.DIVE_CD >= slot0._submarineShiftVO:GetMax() - slot0._submarineShiftVO:GetCurrent() then
 			slot0._submarineShiftVO:SetMax(uv0.SR_CONFIG.DIVE_CD)
 			slot0._submarineShiftVO:ResetCurrent()
 		end

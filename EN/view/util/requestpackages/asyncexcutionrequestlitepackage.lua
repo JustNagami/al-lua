@@ -48,7 +48,7 @@ function slot0.Excute(slot0)
 
 	slot1 = nil
 
-	(function (...)
+	function (...)
 		if uv0.stopped then
 			return
 		end
@@ -62,7 +62,7 @@ function slot0.Excute(slot0)
 		uv0.ready = nil
 
 		table.remove(uv0.funcs, 1)(uv1, ...)
-	end)()
+	end()
 end
 
 return slot0

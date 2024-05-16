@@ -141,6 +141,10 @@ function slot0.Survey(slot0, slot1)
 	slot0:Call("Survey", slot1)
 end
 
+function slot0.IsHuaweiPackage(slot0)
+	return PLATFORM_CODE == PLATFORM_CH and slot0:Get("IsHuaweiPackage")
+end
+
 function slot0.IsAUPackage(slot0)
 	return PLATFORM_CODE == PLATFORM_JP and slot0:GetChannelUID() == "2"
 end
@@ -487,11 +491,9 @@ function slot0.GetDeviceId(slot0)
 end
 
 function InLoginScene()
-	function slot0()
+	if pg.SdkMgr.GetInstance():IsInLoginScene() and not function ()
 		return getProxy(UserProxy):GetLoginedFlag()
-	end
-
-	if pg.SdkMgr.GetInstance():IsInLoginScene() and not slot0() then
+	end() then
 		return true
 	end
 

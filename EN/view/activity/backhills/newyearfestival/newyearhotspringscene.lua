@@ -21,8 +21,7 @@ function slot0.init(slot0)
 		uv0.slotShipPos[slot0] = slot1
 	end)
 
-	slot3 = slot0.scrollRect
-	slot0.poolItems = _.map(_.range(slot3:Find("Pool").childCount), function (slot0)
+	slot0.poolItems = _.map(_.range(slot0.scrollRect:Find("Pool").childCount), function (slot0)
 		return uv0.scrollRect:Find("Pool"):GetChild(slot0 - 1)
 	end)
 
@@ -177,10 +176,8 @@ function slot0.InitSlots(slot0)
 			uv1()
 		end, SFX_PANEL)
 
-		slot3 = pg.UIMgr.GetInstance().uiCamera
-		slot3 = slot3:GetComponent(typeof(Camera))
-		slot4 = uv0.scrollRect
-		slot4 = slot4:Find("Pool")
+		slot3 = pg.UIMgr.GetInstance().uiCamera:GetComponent(typeof(Camera))
+		slot4 = uv0.scrollRect:Find("Pool")
 		slot5 = GetComponent(slot1:Find("Ship/Click"), "EventTriggerListener")
 
 		slot5:AddBeginDragFunc(function ()
@@ -220,14 +217,12 @@ function slot0.InitSlots(slot0)
 
 			setParent(uv1, uv3, true)
 
-			function slot4()
-				if uv0._lastDragBeginPosition ~= nil then
-					uv1.anchoredPosition = uv0._lastDragBeginPosition
-				end
-			end
-
 			if uv0._forceDropCharacter then
-				slot4()
+				function ()
+					if uv0._lastDragBeginPosition ~= nil then
+						uv1.anchoredPosition = uv0._lastDragBeginPosition
+					end
+				end()
 
 				return
 			end

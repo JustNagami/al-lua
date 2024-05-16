@@ -21,10 +21,8 @@ function slot2.onTrigger(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	slot5 = true
-
 	for slot9, slot10 in ipairs(slot0:getTargetList(slot1, slot0._guardTargetFilter, slot0._tempData.arg_list)) do
-		slot5 = slot5 and uv0.IsCloak(slot10)
+		slot5 = true and uv0.IsCloak(slot10)
 	end
 
 	if not slot5 and not slot0._tauntActive then

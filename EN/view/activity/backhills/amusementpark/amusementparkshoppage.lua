@@ -14,8 +14,7 @@ function slot0.init(slot0)
 
 	slot0.chat = slot0._tf:Find("Box/Bubble")
 	slot0.chatText = slot0.chat:Find("BubbleText")
-	slot1 = slot0._tf
-	slot0.chatClick = slot1:Find("Box/BubbleClick")
+	slot0.chatClick = slot0._tf:Find("Box/BubbleClick")
 	slot0.chatActive = false
 	slot0.pollText = {
 		i18n("amusementpark_shop_carousel1"),
@@ -59,9 +58,12 @@ function slot0.didEnter(slot0)
 		uv0:SetActiveBubble(not uv0.chatActive)
 	end)
 
-	slot3 = pg.item_data_statistics[id2ItemId(slot0.shop:getResId())] and slot2.icon
+	slot2 = Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = slot0.shop:getResId()
+	}):getIcon()
 
-	slot0.contentText:AddSprite(slot3, LoadSprite(slot3, ""))
+	slot0.contentText:AddSprite(slot2, LoadSprite(slot2, ""))
 	slot0:UpdateView()
 	slot0:ShowEnterMsg()
 	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
@@ -126,7 +128,6 @@ function slot0.UpdateGoods(slot0)
 		end
 
 		setActive(slot2:Find("mask"), slot3.HasGot)
-		updateDropCfg(slot3)
 		onButton(uv0, slot2, function ()
 			uv0:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
@@ -140,10 +141,10 @@ function slot0.CheckRes(slot0, slot1, slot2)
 		return false
 	end
 
-	if GetOwnedDropCount({
+	if ({
 		type = slot1:getConfig("resource_category"),
 		id = slot1:getConfig("resource_type")
-	}) < slot1:getConfig("resource_num") * slot2 then
+	}):getOwnedCount() < slot1:getConfig("resource_num") * slot2 then
 		slot0:ShowMsgbox({
 			useGO = true,
 			content = i18n("amusementpark_shop_exchange"),
@@ -174,13 +175,10 @@ function slot0.OnClickCommodity(slot0, slot1, slot2)
 		return
 	end
 
-	slot3 = {
+	slot0:Purchase(slot1, 1, Drop.New({
 		id = slot1:getConfig("commodity_id"),
 		type = slot1:getConfig("commodity_type")
-	}
-
-	updateDropCfg(slot3)
-	slot0:Purchase(slot1, 1, slot3.cfg.name, slot2)
+	}):getConfig("name"), slot2)
 end
 
 function slot0.OnPurchase(slot0, slot1, slot2)
@@ -208,20 +206,14 @@ function slot0.SetActiveBubble(slot0, slot1, slot2)
 
 	LeanTween.cancel(go(slot0.chat))
 
-	slot3 = 0.3
 	slot0.chatActive = tobool(slot1)
 
 	if slot1 then
 		setActive(slot0.chat, true)
-		LeanTween.scale(slot0.chat.gameObject, Vector3.New(1, 1, 1), slot3):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack)
+		LeanTween.scale(slot0.chat.gameObject, Vector3.New(1, 1, 1), 0.3):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack)
 	else
 		setActive(slot0.chat, true)
-
-		slot4 = LeanTween.scale(slot0.chat.gameObject, Vector3.New(0, 0, 0), slot3)
-		slot4 = slot4:setFrom(Vector3.New(1, 1, 1))
-		slot4 = slot4:setEase(LeanTweenType.easeOutBack)
-
-		slot4:setOnComplete(System.Action(function ()
+		LeanTween.scale(slot0.chat.gameObject, Vector3.New(0, 0, 0), slot3):setFrom(Vector3.New(1, 1, 1)):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function ()
 			setActive(uv0.chat, false)
 		end))
 	end
@@ -275,12 +267,10 @@ function slot0.GetActivityShopTip()
 
 	for slot6, slot7 in ipairs(pg.activity_shop_template.all) do
 		if slot1.id == slot2[slot7].activity then
-			slot12 = slot10.resource_num <= GetOwnedDropCount({
+			if (slot2[slot7].num_limit == 0 or (table.indexof(slot1.data1_list, slot7) and slot1.data2_list[slot8] or 0) < slot10.num_limit) and slot10.resource_num <= Drop.New({
 				type = slot10.resource_category,
 				id = slot10.resource_type
-			})
-
-			if (slot2[slot7].num_limit == 0 or (table.indexof(slot1.data1_list, slot7) and slot1.data2_list[slot8] or 0) < slot10.num_limit) and slot12 then
+			}):getOwnedCount() then
 				return true
 			end
 		end

@@ -85,10 +85,8 @@ function slot3.GetTarget(slot0)
 		return {}
 	end
 
-	slot1 = nil
-
 	for slot5, slot6 in ipairs(slot0._targetChoise) do
-		slot1 = uv0.Battle.BattleTargetChoise[slot6](slot0._caster, slot0._tempData.arg_list, slot1)
+		slot1 = uv0.Battle.BattleTargetChoise[slot6](slot0._caster, slot0._tempData.arg_list, nil)
 	end
 
 	return slot1

@@ -43,9 +43,7 @@ function slot11(slot0, slot1, slot2)
 		return
 	end
 
-	slot5 = pg.OSSMgr.GetInstance()
-
-	slot5:GetTexture2D(uv2(slot0), uv1(slot0), false, uv3, uv4, function (slot0, slot1)
+	pg.OSSMgr.GetInstance():GetTexture2D(uv2(slot0), uv1(slot0), false, uv3, uv4, function (slot0, slot1)
 		if slot0 and slot1 then
 			uv0(slot1)
 		else
@@ -61,9 +59,7 @@ function slot12(slot0, slot1, slot2)
 		return
 	end
 
-	slot5 = pg.OSSMgr.GetInstance()
-
-	slot5:GetTexture2D(uv2(slot0), uv1(slot0), true, uv3, uv4, function (slot0, slot1)
+	pg.OSSMgr.GetInstance():GetTexture2D(uv2(slot0), uv1(slot0), true, uv3, uv4, function (slot0, slot1)
 		if slot0 and slot1 and uv0 == uv1(uv2) then
 			uv3(slot1)
 		else
@@ -140,20 +136,18 @@ function slot15(slot0)
 end
 
 function slot16(slot0, slot1, slot2)
-	function slot3(slot0)
-		if slot0 then
-			uv0.CheckCache()
-			table.insert(uv0.caches, {
-				name = uv1,
-				asset = slot0
-			})
-		end
-
-		uv2(slot0)
-	end
-
 	if not slot1 or slot1 == "" then
-		slot3(nil)
+		function (slot0)
+			if slot0 then
+				uv0.CheckCache()
+				table.insert(uv0.caches, {
+					name = uv1,
+					asset = slot0
+				})
+			end
+
+			uv2(slot0)
+		end(nil)
 	elseif uv0.FileExists(slot0) and slot1 == uv1(uv2(slot0)) then
 		uv3(slot0, slot1, slot3)
 	else

@@ -5,10 +5,7 @@ function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody()
 
 	print("34003 meta pt award send:", slot3.groupID, slot3.targetCount)
-
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(34003, {
+	pg.ConnectionMgr.GetInstance():Send(34003, {
 		group_id = slot3.groupID,
 		target_pt = slot3.targetCount
 	}, 34004, function (slot0)

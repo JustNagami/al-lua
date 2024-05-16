@@ -10,10 +10,7 @@ function slot0.Update(slot0)
 	if IsNil(slot0.go) then
 		slot0:PrepareBase("antiAir")
 		assert(pg.land_based_template[slot1.attachmentId], "land_based_template not exist: " .. slot1.attachmentId)
-
-		slot3 = slot0:GetLoader()
-
-		slot3:GetPrefab("leveluiview/Tpl_AntiAirGun", "Tpl_AntiAirGun", function (slot0)
+		slot0:GetLoader():GetPrefab("leveluiview/Tpl_AntiAirGun", "Tpl_AntiAirGun", function (slot0)
 			setParent(slot0, uv0.tf)
 
 			tf(slot0).anchoredPosition3D = Vector3(0, 10, 0)
@@ -21,10 +18,7 @@ function slot0.Update(slot0)
 
 			uv0:Update()
 		end)
-
-		slot3 = slot0:GetLoader()
-
-		slot3:GetPrefab("leveluiview/Tpl_AntiAirGunArea", "Tpl_AntiAirGunArea", function (slot0)
+		slot0:GetLoader():GetPrefab("leveluiview/Tpl_AntiAirGunArea", "Tpl_AntiAirGunArea", function (slot0)
 			setParent(slot0, uv0.grid.restrictMap)
 
 			slot0.name = "chapter_cell_mark_" .. uv1.row .. "_" .. uv1.column .. "#AntiAirGunArea"

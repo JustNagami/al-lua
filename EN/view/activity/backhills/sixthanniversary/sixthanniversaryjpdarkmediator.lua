@@ -23,10 +23,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
-		if slot3.id == ActivityConst.MINIGAME_ZUMA then
+		if slot1:getBody().id == ActivityConst.MINIGAME_ZUMA then
 			slot0.viewComponent:UpdateLevels()
 			slot0.viewComponent:UpdateCount()
 		end

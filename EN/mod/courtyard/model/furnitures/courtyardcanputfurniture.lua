@@ -1,10 +1,10 @@
 slot0 = class("CourtYardCanPutFurniture", import(".CourtYardFurniture"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
 	slot0.childs = {}
-	slot0.placeableArea = CourtYardFurniturePlaceableArea.New(slot0, Vector4(35, 35, 0, 0))
+	slot0.placeableArea = CourtYardFurniturePlaceableArea.New(slot1, slot0, Vector4(35, 35, 0, 0))
 end
 
 function slot0.GetPlaceableArea(slot0)
@@ -72,8 +72,6 @@ function slot0.AreaWithInfo(slot0, slot1, slot2, slot3, slot4)
 end
 
 function slot0.SetPosition(slot0, slot1)
-	slot2 = slot0:GetPosition()
-
 	uv0.super.SetPosition(slot0, slot1)
 
 	slot3 = {}
@@ -84,7 +82,7 @@ function slot0.SetPosition(slot0, slot1)
 		slot0:RemoveChild(slot8)
 		table.insert(slot3, {
 			slot8,
-			slot1 + slot8:GetPosition() - slot2
+			slot1 + slot8:GetPosition() - slot0:GetPosition()
 		})
 	end
 
@@ -95,21 +93,18 @@ function slot0.SetPosition(slot0, slot1)
 end
 
 function slot0.Rotate(slot0)
-	slot1 = slot0:GetPosition()
-
 	uv0.super.Rotate(slot0)
 
-	slot2 = slot0:GetPosition()
 	slot3 = {}
 
 	for slot7 = #slot0.childs, 1, -1 do
 		slot8 = slot0.childs[slot7]
-		slot9 = slot8:GetPosition() - slot1
+		slot9 = slot8:GetPosition() - slot0:GetPosition()
 
 		slot0:RemoveChild(slot8)
 		table.insert(slot3, {
 			slot8,
-			slot2 + Vector2(slot9.y, slot9.x)
+			slot0:GetPosition() + Vector2(slot9.y, slot9.x)
 		})
 	end
 
@@ -138,14 +133,14 @@ end
 
 function slot0.ToTable(slot0)
 	slot1 = uv0.super.ToTable(slot0)
-	slot2 = {}
-	slot3 = slot0:GetPosition()
 
 	for slot7, slot8 in ipairs(slot0.childs) do
-		slot2[slot8.id] = slot8:GetPosition() - slot3
+		-- Nothing
 	end
 
-	slot1.child = slot2
+	slot1.child = {
+		[slot8.id] = slot8:GetPosition() - slot0:GetPosition()
+	}
 
 	return slot1
 end

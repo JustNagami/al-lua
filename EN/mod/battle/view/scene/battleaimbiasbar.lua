@@ -57,10 +57,8 @@ function slot1.UpdateAimBiasProgress(slot0)
 	slot3 = slot1 - uv0.WARNING_VALUE
 
 	if not slot0._lockBlock then
-		slot4 = slot2 < 0
-
 		if slot2 * slot0._cacheSpeed <= 0 then
-			setActive(slot0._recovery, slot4)
+			setActive(slot0._recovery, slot2 < 0)
 		end
 
 		if not slot0._hostile then
@@ -89,4 +87,8 @@ function slot1.Dispose(slot0)
 	slot0._warning = nil
 	slot0._lock = nil
 	slot0._aimBiasBarGO = nil
+end
+
+function slot1.GetGO(slot0)
+	return slot0._aimBiasBarGO
 end

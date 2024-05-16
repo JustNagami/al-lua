@@ -35,7 +35,6 @@ end
 
 function slot0.applyTo(slot0, slot1, slot2)
 	if not slot2 then
-		slot3 = 0
 		slot4 = 0
 
 		if #slot0.cellFlagUpdates > 0 then
@@ -49,7 +48,7 @@ function slot0.applyTo(slot0, slot1, slot2)
 				uv0:updateChapterCell(slot1)
 			end)
 
-			slot3 = bit.bor(slot3, ChapterConst.DirtyCellFlag)
+			slot3 = bit.bor(0, ChapterConst.DirtyCellFlag)
 		end
 
 		if #slot0.cellUpdates > 0 then
@@ -103,9 +102,7 @@ function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
 				return slot0()
 			end
 
-			slot1 = uv1.viewComponent
-
-			slot1:doPlayAnim("MissileStrikeBar", function (slot0)
+			uv1.viewComponent:doPlayAnim("MissileStrikeBar", function (slot0)
 				setActive(slot0, false)
 				uv0()
 			end)

@@ -32,10 +32,9 @@ function slot0.Ctor(slot0, slot1)
 
 	slot0.config = uv0[slot0.configId]
 	slot0.new = slot1.new or 0
-	slot2 = nowWorld()
 
 	if slot0.config.complete_condition == WorldConst.TaskTypeSubmitItem then
-		slot0:updateProgress(slot2:GetInventoryProxy():GetItemCount(slot0.config.complete_parameter[1]))
+		slot0:updateProgress(nowWorld():GetInventoryProxy():GetItemCount(slot0.config.complete_parameter[1]))
 	elseif slot0.config.complete_condition == WorldConst.TaskTypePressingMap then
 		slot0:updateProgress(slot2:GetTargetMapPressingCount(slot0.config.complete_parameter))
 	end

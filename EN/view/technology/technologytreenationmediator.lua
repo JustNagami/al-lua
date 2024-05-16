@@ -33,11 +33,9 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == TechnologyConst.START_TEC_BTN_SUCCESS then
 		slot0.viewComponent:updateTecListData()
-		slot0.viewComponent:updateTecItem(slot3)
+		slot0.viewComponent:updateTecItem(slot1:getBody())
 	elseif slot2 == TechnologyConst.FINISH_TEC_SUCCESS then
 		slot0.viewComponent:updateTecListData()
 		slot0.viewComponent:updateTecItem(slot3)

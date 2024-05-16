@@ -23,9 +23,7 @@ function slot0.execute(slot0, slot1)
 	end
 
 	if slot3 == PowerRank.TYPE_MILITARY_RANK then
-		slot7 = pg.ConnectionMgr.GetInstance()
-
-		slot7:Send(18006, {
+		pg.ConnectionMgr.GetInstance():Send(18006, {
 			type = 0
 		}, 18007, function (slot0)
 			slot1 = {}
@@ -65,9 +63,7 @@ function slot0.execute(slot0, slot1)
 				return
 			end
 
-			slot2 = pg.ConnectionMgr.GetInstance()
-
-			slot2:Send(18201, {
+			pg.ConnectionMgr.GetInstance():Send(18201, {
 				page = slot0,
 				type = uv3,
 				act_id = uv4 or 0
@@ -83,9 +79,7 @@ function slot0.execute(slot0, slot1)
 		slot9 = nil
 
 		function slot10(slot0)
-			slot1 = pg.ConnectionMgr.GetInstance()
-
-			slot1:Send(18203, {
+			pg.ConnectionMgr.GetInstance():Send(18203, {
 				type = uv0,
 				act_id = uv1 or 0
 			}, 18204, function (slot0)
@@ -147,13 +141,13 @@ function slot0.execute(slot0, slot1)
 		seriesAsync(slot11, function ()
 			if #uv0 > 0 and uv1 then
 				slot0 = {}
-				slot1 = {}
+				slot1 = {
+					[slot8] = 1
+				}
 
 				function slot2(slot0)
-					slot2 = 0
-
 					for slot6 = 1, table.indexof(uv0, slot0) - 1 do
-						slot2 = slot2 + uv1[uv0[slot6]]
+						slot2 = 0 + uv1[uv0[slot6]]
 					end
 
 					return slot2 + 1
@@ -162,8 +156,6 @@ function slot0.execute(slot0, slot1)
 				for slot6, slot7 in ipairs(uv0) do
 					if not table.contains(slot0, slot7.power) then
 						table.insert(slot0, slot8)
-
-						slot1[slot8] = 1
 					else
 						slot1[slot8] = slot1[slot8] + 1
 					end

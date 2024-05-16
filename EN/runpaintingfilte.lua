@@ -12,16 +12,14 @@ function slot0.GetStandardTimeConfig(slot0)
 		end
 	end
 
-	function slot3(slot0)
-		for slot4, slot5 in ipairs(slot0) do
-			if type(slot5) == "table" and type(slot5[1]) == "string" and type(slot5[2]) == "table" then
-				uv0(slot5)
-			end
-		end
-	end
-
 	if #slot0 == 2 and type(slot0[1][1]) == "string" and type(slot0[2][1]) == "string" then
-		slot3(slot0)
+		function (slot0)
+			for slot4, slot5 in ipairs(slot0) do
+				if type(slot5) == "table" and type(slot5[1]) == "string" and type(slot5[2]) == "table" then
+					uv0(slot5)
+				end
+			end
+		end(slot0)
 	else
 		slot2(slot0)
 	end
@@ -31,10 +29,8 @@ end
 
 function slot0.IsTwoTimeCross(slot0, slot1)
 	slot2 = pg.TimeMgr.GetInstance()
-	slot3 = slot2:parseTimeFromConfig(slot0[1])
-	slot6 = slot2:parseTimeFromConfig(slot1[2])
 
-	if slot2:parseTimeFromConfig(slot0[2]) <= slot2:parseTimeFromConfig(slot1[1]) or slot6 <= slot3 then
+	if slot2:parseTimeFromConfig(slot0[2]) <= slot2:parseTimeFromConfig(slot1[1]) or slot2:parseTimeFromConfig(slot1[2]) <= slot2:parseTimeFromConfig(slot0[1]) then
 		return false
 	else
 		return true
@@ -183,7 +179,13 @@ function slot0.GetCreateExchangeShipConfigIDList()
 		11
 	}) do
 		for slot11, slot12 in ipairs(uv0.GetBuildActIDList()) do
-			table.insert(slot0, pg.ship_data_create_exchange[slot12].exchange_ship_id)
+			if pg.ship_data_create_exchange[slot12] then
+				for slot16, slot17 in ipairs(pg.ship_data_create_exchange[slot12].exchange_ship_id) do
+					if not table.contains(slot0, slot17) then
+						table.insert(slot0, slot17)
+					end
+				end
+			end
 		end
 	end
 
@@ -295,6 +297,10 @@ function SpecialFilteForChange()
 		slot2(slot7)
 	end
 
+	for slot9, slot10 in ipairs(pg.secretary_special_ship.all) do
+		uv2(slot0, pg.secretary_special_ship[slot10].prefab)
+	end
+
 	return table.concat(slot0, ";")
 end
 
@@ -305,11 +311,11 @@ function SpecialFilteForConst()
 		end
 	end
 
-	(function (slot0)
+	function (slot0)
 		for slot4, slot5 in ipairs(slot0) do
 			uv0(uv1, slot5)
 		end
-	end)(pg.painting_filte_config.skin_id_list)
+	end(pg.painting_filte_config.skin_id_list)
 
 	return table.concat({}, ";")
 end

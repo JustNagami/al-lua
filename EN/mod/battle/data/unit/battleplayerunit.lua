@@ -31,8 +31,9 @@ end
 
 function slot7.IsSpectre(slot0)
 	slot1 = nil
+	slot1 = (slot0:GetAttr()[uv0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY] == nil or slot0:GetAttrByName(slot2)) and uv1.PLAYER_DEFAULT
 
-	return ((slot0:GetAttr()[uv0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY] == nil or slot0:GetAttrByName(slot2)) and uv1.PLAYER_DEFAULT) <= uv1.SPECTRE_UNIT_TYPE
+	return slot1 <= uv1.SPECTRE_UNIT_TYPE, slot1
 end
 
 function slot7.InitCurrentHP(slot0, slot1)
@@ -196,11 +197,8 @@ function slot7.setWeapon(slot0, slot1)
 			slot8[#slot8 + 1] = slot13
 		end
 
-		slot9 = 20
-		slot10 = 1
-
 		for slot14, slot15 in ipairs(slot8) do
-			slot0:AddAutoWeapon(uv1.CreateWeaponUnit(slot15, slot0, slot10, slot9))
+			slot0:AddAutoWeapon(uv1.CreateWeaponUnit(slot15, slot0, 1, 20))
 		end
 	end
 end
@@ -322,10 +320,8 @@ function slot7.RemoveWeaponByLabel(slot0, slot1)
 	slot2 = nil
 
 	for slot6, slot7 in ipairs(slot0._totalWeapon) do
-		slot8 = true
-
 		for slot12, slot13 in ipairs(slot1) do
-			slot8 = slot8 and table.contains(slot7:GetEquipmentLabel(), slot13)
+			slot8 = true and table.contains(slot7:GetEquipmentLabel(), slot13)
 		end
 
 		if slot8 then
@@ -445,14 +441,14 @@ function slot7.LeaderSetting(slot0)
 end
 
 function slot7.UpdateHP(slot0, slot1, slot2, slot3, slot4)
-	uv0.super.UpdateHP(slot0, slot1, slot2, slot3, slot4)
+	slot5 = uv0.super.UpdateHP(slot0, slot1, slot2, slot3, slot4)
 
 	if slot0._warningValue and slot0._currentHP < slot0._warningValue and not isHeal then
 		slot0._warningValue = nil
-		slot6 = "hp_warning"
+		slot7 = "hp_warning"
 
-		slot0:DispatchVoice(slot6)
-		slot0:DispatchChat(uv1.GetWords(slot0:GetSkinID(), slot6, slot0:GetIntimacy()), 2.5, slot6)
+		slot0:DispatchVoice(slot7)
+		slot0:DispatchChat(uv1.GetWords(slot0:GetSkinID(), slot7, slot0:GetIntimacy()), 2.5, slot7)
 	end
 
 	if slot0._mainUnitWarningValue and slot0._currentHP < slot0._mainUnitWarningValue and slot0._currentHP > 0 and not isHeal then
@@ -460,6 +456,8 @@ function slot7.UpdateHP(slot0, slot1, slot2, slot3, slot4)
 
 		pg.TipsMgr.GetInstance():ShowTips(i18n("battle_main_emergent", slot0:GetShipName()))
 	end
+
+	return slot5
 end
 
 function slot7.SetMainFleetUnit(slot0)

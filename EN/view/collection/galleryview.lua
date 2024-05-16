@@ -204,9 +204,8 @@ function slot0.initCardListPanel(slot0)
 		if uv0:getPicConfigForShowByIndex(slot0 + 1) then
 			slot4 = slot3.id
 			slot5, slot6 = nil
-			slot6 = uv0:isPicExist(slot4)
 
-			if uv0:getPicStateByID(slot4) == GalleryConst.CardStates.Unlocked and slot6 then
+			if uv0:getPicStateByID(slot4) == GalleryConst.CardStates.Unlocked and uv0:isPicExist(slot4) then
 				uv0:updatePicImg(slot2)
 				uv0:openPicPanel()
 			end
@@ -298,11 +297,10 @@ function slot0.initDownBtnPanel(slot0)
 end
 
 function slot0.updateDownBtnPanel(slot0)
-	slot2 = slot0:findTF("Text", slot0:findTF("Btn", slot0.updatePanel))
 	slot4 = slot0:findTF("Slider", slot0:findTF("Progress", slot0.updatePanel))
 
 	if slot0.manager.state == DownloadState.None then
-		setText(slot2, "None")
+		setText(slot0:findTF("Text", slot0:findTF("Btn", slot0.updatePanel)), "None")
 		setActive(slot1, true)
 		setActive(slot3, false)
 	elseif slot5 == DownloadState.Checking then
@@ -379,9 +377,8 @@ function slot0.initPicPanel(slot0)
 
 		while slot0 > 1 do
 			slot3 = uv0:getPicConfigForShowByIndex(slot0 - 1).id
-			slot5 = uv0:getPicStateByID(slot3)
 
-			if uv0:isPicExist(slot3) and slot5 == GalleryConst.CardStates.Unlocked then
+			if uv0:isPicExist(slot3) and uv0:getPicStateByID(slot3) == GalleryConst.CardStates.Unlocked then
 				slot1 = slot0
 
 				break
@@ -403,9 +400,8 @@ function slot0.initPicPanel(slot0)
 
 		while slot0 < #uv0.picForShowConfigList do
 			slot3 = uv0:getPicConfigForShowByIndex(slot0 + 1).id
-			slot5 = uv0:getPicStateByID(slot3)
 
-			if uv0:isPicExist(slot3) and slot5 == GalleryConst.CardStates.Unlocked then
+			if uv0:isPicExist(slot3) and uv0:getPicStateByID(slot3) == GalleryConst.CardStates.Unlocked then
 				slot1 = slot0
 
 				break
@@ -424,10 +420,8 @@ function slot0.initPicPanel(slot0)
 			return
 		end
 
-		slot2 = uv0:getPicConfigForShowByIndex(uv0.curMiddleDataIndex).id
-
 		if (slot0 == true and 0 or 1) == 0 then
-			if uv0.appreciateProxy:isLikedByPicID(slot2) then
+			if uv0.appreciateProxy:isLikedByPicID(uv0:getPicConfigForShowByIndex(uv0.curMiddleDataIndex).id) then
 				return
 			else
 				pg.m02:sendNotification(GAME.APPRECIATE_GALLERY_LIKE, {
@@ -479,9 +473,7 @@ function slot0.switchPicImg(slot0, slot1)
 end
 
 function slot0.openPicPanel(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0.picPanel, false, {
+	pg.UIMgr.GetInstance():BlurPanel(slot0.picPanel, false, {
 		groupName = LayerWeightConst.GROUP_COLLECTION
 	})
 
@@ -489,16 +481,12 @@ function slot0.openPicPanel(slot0)
 	slot0.picPanel.offsetMin = slot0._tf.parent.offsetMin
 
 	setActive(slot0.picPanel, true)
-
-	slot1 = LeanTween.value(go(slot0.picTopContainer), 0, 1, 0.3)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot0.picTopContainer), 0, 1, 0.3):setOnUpdate(System.Action_float(function (slot0)
 		setLocalScale(uv0.picTopContainer, {
 			x = slot0,
 			y = slot0
 		})
-	end))
-
-	slot1:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		setLocalScale(uv0.picTopContainer, {
 			x = 1,
 			y = 1
@@ -515,15 +503,12 @@ function slot0.closePicPanel(slot0, slot1)
 	end
 
 	if isActive(slot0.picPanel) then
-		slot2 = LeanTween.value(go(slot0.picTopContainer), 1, 0, 0.3)
-		slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
+		LeanTween.value(go(slot0.picTopContainer), 1, 0, 0.3):setOnUpdate(System.Action_float(function (slot0)
 			setLocalScale(uv0.picTopContainer, {
 				x = slot0,
 				y = slot0
 			})
-		end))
-
-		slot2:setOnComplete(System.Action(function ()
+		end)):setOnComplete(System.Action(function ()
 			setLocalScale(uv0.picTopContainer, {
 				x = 0,
 				y = 0
@@ -576,7 +561,6 @@ function slot0.tryShowTipMsgBox(slot0)
 end
 
 function slot0.cardUpdate(slot0, slot1, slot2)
-	slot5 = slot0:findTF("SelectBtn", slot2)
 	slot6 = slot0:findTF("BlackMask", slot2)
 	slot8 = slot0:findTF("DownloadBtn", slot6)
 	slot9 = slot0:findTF("LockImg", slot6)
@@ -594,13 +578,12 @@ function slot0.cardUpdate(slot0, slot1, slot2)
 
 	slot16 = slot13.id
 	slot17, slot18 = nil
-	slot18 = slot0:isPicExist(slot16)
 
 	if slot0:getPicStateByID(slot16) == GalleryConst.CardStates.DirectShow then
 		print("is impossible to go to this, something wrong")
 
-		if slot18 then
-			setActive(slot5, true)
+		if slot0:isPicExist(slot16) then
+			setActive(slot0:findTF("SelectBtn", slot2), true)
 			setActive(slot6, false)
 		else
 			setActive(slot5, false)
@@ -707,11 +690,10 @@ end
 
 function slot0.updateEmptyCard(slot0, slot1)
 	slot3 = slot0:findTF("Update", slot0:findTF("BlackMask", slot1))
-	slot5 = slot0:findTF("Text", slot0:findTF("Btn", slot3))
 	slot7 = slot0:findTF("Slider", slot0:findTF("Progress", slot3))
 
 	if slot0.manager.state == DownloadState.None then
-		setText(slot5, "None")
+		setText(slot0:findTF("Text", slot0:findTF("Btn", slot3)), "None")
 		setActive(slot4, true)
 		setActive(slot6, false)
 	elseif slot8 == DownloadState.Checking then
@@ -816,14 +798,12 @@ function slot0.filtePicForShow(slot0)
 
 	for slot5, slot6 in ipairs(pg.gallery_config.all) do
 		if slot0:isPicExist(slot6) then
-			slot7 = slot0.appreciateProxy:getSinglePicConfigByID(slot6)
-
 			if slot0.appreciateProxy:isPicNeedUnlockByID(slot6) then
 				if not slot0.appreciateProxy:isPicUnlockedByID(slot6) then
 					slot10, slot11 = slot0.appreciateProxy:isPicUnlockableByID(slot6)
 
 					if slot10 then
-						slot1[#slot1 + 1] = slot7
+						slot1[#slot1 + 1] = slot0.appreciateProxy:getSinglePicConfigByID(slot6)
 					elseif slot11 then
 						slot1[#slot1 + 1] = slot7
 					end

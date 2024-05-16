@@ -8,10 +8,12 @@ end
 function slot0.update(slot0, slot1, slot2)
 	slot0.id = slot1
 	slot0.configId = slot0.id
-	slot3 = {}
+	slot3 = {
+		[slot8.shop_id] = slot8.count
+	}
 
 	for slot7, slot8 in ipairs(slot2) do
-		slot3[slot8.shop_id] = slot8.count
+		-- Nothing
 	end
 
 	slot0.goods = {}

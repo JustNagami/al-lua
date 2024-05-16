@@ -92,10 +92,7 @@ function slot0.handleNotification(slot0, slot1)
 		slot0.viewComponent:updateItem()
 	else
 		if slot2 == GAME.GET_SHIP_DONE then
-			slot4 = getProxy(BuildShipProxy)
-			slot5 = slot0.viewComponent
-
-			slot5:setProjectList(slot4:getData())
+			slot0.viewComponent:setProjectList(getProxy(BuildShipProxy):getData())
 
 			slot5 = slot0.viewComponent
 
@@ -109,23 +106,15 @@ function slot0.handleNotification(slot0, slot1)
 					if uv0:getSkipBatchBuildFlag() and not uv1.virgin and uv1:getRarity() < 4 then
 						slot0()
 					else
-						slot2 = uv2
-						slot3 = slot2
-						slot2 = slot2.addSubLayers
-						slot4 = Context.New
-						slot5 = {
+						uv2:addSubLayers(Context.New({
 							mediator = NewShipMediator,
-							viewComponent = NewShipLayer
-						}
-						slot6 = {
-							ship = uv1
-						}
-						slot7 = not slot1 and uv3 < #uv4.ships
-						slot6.canSkipBatch = slot7
-						slot5.data = slot6
-						slot5.onRemoved = slot0
-
-						slot2(slot3, slot4(slot5))
+							viewComponent = NewShipLayer,
+							data = {
+								ship = uv1,
+								canSkipBatch = not slot1 and uv3 < #uv4.ships
+							},
+							onRemoved = slot0
+						}))
 					end
 				end)
 			end

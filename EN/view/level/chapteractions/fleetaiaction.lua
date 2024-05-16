@@ -133,19 +133,15 @@ function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
 			slot10 = slot5:findCommanderBySkillId(slot8)
 
 			assert(slot10, "command can not find by skill id: " .. slot8)
-
-			slot11 = slot2.viewComponent
-
-			slot11:doPlayCommander(slot10, function ()
+			slot2.viewComponent:doPlayCommander(slot10, function ()
 				if uv0:GetType() == FleetSkill.TypeAirStrikeDodge then
 					uv1.viewComponent:easeAvoid(uv1.viewComponent.grid.cellFleets[uv2.id].tf.position, uv3)
 
 					return
 				elseif uv0:GetType() == FleetSkill.TypeAttack then
-					slot0 = uv0
 					slot1 = nil
 
-					switch(slot0:GetArgs()[1], {
+					switch(uv0:GetArgs()[1], {
 						airfight = function ()
 							uv0 = "AirStrikeUI"
 						end,
@@ -157,11 +153,7 @@ function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
 						end
 					})
 					assert(slot1)
-
-					slot2 = uv1.viewComponent
-					slot4 = uv4
-
-					slot2:doPlayStrikeAnim(slot4:getStrikeAnimShip(uv2, slot1), slot1, function ()
+					uv1.viewComponent:doPlayStrikeAnim(uv4:getStrikeAnimShip(uv2, slot1), slot1, function ()
 						uv0.viewComponent:strikeEnemy(uv1.target, uv2, uv3)
 					end)
 

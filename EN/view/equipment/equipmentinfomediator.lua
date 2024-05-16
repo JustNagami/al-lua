@@ -23,10 +23,6 @@ function slot0.register(slot0)
 		slot0.viewComponent.fromEquipmentView = true
 	end
 
-	slot3 = getProxy(BagProxy)
-	slot4 = slot0.viewComponent
-
-	slot4:setRevertItem(slot3:getItemById(Item.REVERT_EQUIPMENT_ID))
 	slot0:bind(uv0.ON_DESTROY, function (slot0, slot1)
 		uv0:sendNotification(GAME.DESTROY_EQUIPMENTS, {
 			equipments = {
@@ -76,9 +72,7 @@ function slot0.register(slot0)
 		uv0.viewComponent:emit(BaseUI.ON_CLOSE)
 	end)
 	slot0:bind(uv0.ON_INTENSIFY, function (slot0)
-		slot1 = uv0
-
-		slot1:addSubLayers(Context.New({
+		uv0:addSubLayers(Context.New({
 			mediator = EquipUpgradeMediator,
 			viewComponent = EquipUpgradeLayer,
 			data = {
@@ -92,10 +86,12 @@ function slot0.register(slot0)
 	end)
 	slot0:bind(uv0.ON_CHANGE, function (slot0)
 		slot1 = getProxy(BayProxy)
-		slot5 = slot1:getEquipsInShips(slot1:getShipById(uv0.contextData.shipId), uv0.contextData.pos)
+		slot5 = slot1:getEquipsInShips(function (slot0, slot1)
+			return uv0.id ~= slot1 and not uv0:isForbiddenAtPos(slot0, uv1.contextData.pos)
+		end)
 
 		for slot9, slot10 in ipairs(getProxy(EquipmentProxy):getEquipments(true)) do
-			if not slot2:isForbiddenAtPos(slot10, uv0.contextData.pos) then
+			if not slot1:getShipById(uv0.contextData.shipId):isForbiddenAtPos(slot10, uv0.contextData.pos) then
 				table.insert(slot5, slot10)
 			end
 		end
@@ -134,14 +130,14 @@ function slot0.register(slot0)
 	if slot0.contextData.equipment then
 		slot0.viewComponent:setEquipment(slot0.contextData.equipment)
 	else
-		slot6 = getProxy(EquipmentProxy):getEquipmentById(slot0.contextData.equipmentId) or slot5 and slot5 > 0 and Equipment.New({
-			id = slot5
-		}) or nil
-
-		slot0.viewComponent:setEquipment(slot6)
+		slot0.viewComponent:setEquipment(getProxy(EquipmentProxy):getEquipmentById(slot0.contextData.equipmentId) or slot4 and slot4 > 0 and Equipment.New({
+			id = slot4
+		}) or nil)
 	end
 
-	slot0.viewComponent:setShip(getProxy(BayProxy):getShipById(slot0.contextData.shipId), slot0.contextData.oldShipId and slot4:getShipById(slot0.contextData.oldShipId) or nil)
+	slot3 = getProxy(BayProxy)
+
+	slot0.viewComponent:setShip(slot0.contextData.shipVO or slot3:getShipById(slot0.contextData.shipId), slot0.contextData.oldShipId and slot3:getShipById(slot0.contextData.oldShipId) or nil)
 	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 end
 

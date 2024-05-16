@@ -136,10 +136,8 @@ function slot2.Cancel(slot0)
 end
 
 function slot2.ReloadBoost(slot0, slot1)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot0._reloadBoostList) do
-		slot2 = slot2 + slot7
+		slot2 = 0 + slot7
 	end
 
 	slot4 = pg.TimeMgr.GetInstance():GetCombatTime() - slot0._jammingTime - slot0._CDstartTime

@@ -16,10 +16,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.MEMORYBOOK_UNLOCK_DONE then
-		slot0.viewComponent:updateAfterSubmit(slot3)
+		slot0.viewComponent:updateAfterSubmit(slot1:getBody())
 	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
 		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PUZZLA then
 			slot0.viewComponent:UpdateActivity()

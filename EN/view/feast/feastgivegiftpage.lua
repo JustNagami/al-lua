@@ -113,9 +113,8 @@ end
 
 function slot0.LoadChar(slot0, slot1, slot2)
 	slot3 = slot1:GetPrefab()
-	slot4 = PoolMgr.GetInstance()
 
-	slot4:GetPrefab("feastChar/" .. slot3, slot3, true, function (slot0)
+	PoolMgr.GetInstance():GetPrefab("feastChar/" .. slot3, slot3, true, function (slot0)
 		if uv0.exited then
 			PoolMgr.GetInstance():ReturnPrefab("feastChar/" .. uv1, uv1, slot0)
 
@@ -158,12 +157,10 @@ function slot0.UpdateGiftState(slot0, slot1, slot2)
 			uv0:UpdateContent(uv1:GetDialogueForGift(), 4, slot0)
 		end,
 		function (slot0)
-			slot1 = uv0.loadedChar.spineAnimUI
-
 			if not uv1:GotGift() then
 				setActive(uv0.giftTr, true)
 				uv0:AddGiftEvent()
-				slot1:SetAction("activity_wait", 0)
+				uv0.loadedChar.spineAnimUI:SetAction("activity_wait", 0)
 			else
 				setActive(uv0.giftTr, false)
 				slot1:SetActionCallBack(function (slot0)

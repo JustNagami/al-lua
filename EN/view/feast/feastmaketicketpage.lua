@@ -69,17 +69,13 @@ function slot0.Show(slot0, slot1)
 end
 
 function slot0.LoadPuzzleRes(slot0, slot1, slot2)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("FeastPuzzle/" .. slot1, slot1, typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("FeastPuzzle/" .. slot1, slot1, typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited then
 			return
 		end
 
-		slot4 = uv0._tf
-		uv0.puzzleGo = Object.Instantiate(slot0, slot4:Find("container"))
-		slot2 = uv0.puzzleGo.transform
-		uv0.rect = slot2:Find("nodes")
+		uv0.puzzleGo = Object.Instantiate(slot0, uv0._tf:Find("container"))
+		uv0.rect = uv0.puzzleGo.transform:Find("nodes")
 		uv0.items = {}
 
 		eachChild(uv0.rect, function (slot0)
@@ -101,8 +97,7 @@ function slot0.InitPuzzle(slot0, slot1)
 	slot0.dragging = false
 
 	for slot5, slot6 in ipairs(slot0.items) do
-		slot7 = slot6.tr
-		slot7 = slot7:GetComponent(typeof(EventTriggerListener))
+		slot7 = slot6.tr:GetComponent(typeof(EventTriggerListener))
 		slot8 = Vector3.zero
 
 		slot7:AddBeginDragFunc(function (slot0, slot1)
@@ -237,9 +232,8 @@ end
 
 function slot0.ShowDesc(slot0, slot1)
 	slot0.isShowDesc = true
-	slot2 = pg.UIMgr.GetInstance()
 
-	slot2:BlurPanel(slot0.descTr)
+	pg.UIMgr.GetInstance():BlurPanel(slot0.descTr)
 	setActive(slot0.descTr, true)
 
 	slot0.descNode = Object.Instantiate(slot1.tr.gameObject, slot0.descTr)

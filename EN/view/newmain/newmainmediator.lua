@@ -85,9 +85,20 @@ function slot0.register(slot0)
 		uv0:sendNotification(GAME.GO_SCENE, slot1, slot2)
 	end)
 	slot0:bind(uv0.GO_SNAPSHOT, function (slot0)
+		slot1 = uv0.viewComponent.iconView.ship
+		slot2 = slot1.skinId
+		slot3 = uv0.viewComponent.paintingView:IsLive2DState()
+		slot4 = nil
+
+		if isa(slot1, VirtualEducateCharShip) then
+			slot4 = slot1.educateCharId
+			slot3 = false
+		end
+
 		uv0:sendNotification(GAME.GO_SCENE, SCENE.SNAPSHOT, {
-			skinId = uv0.viewComponent.iconView.ship.skinId,
-			live2d = uv0.viewComponent.paintingView:IsLive2DState(),
+			skinId = slot2,
+			live2d = slot3,
+			tbId = slot4,
 			propose = uv0.viewComponent.iconView.propose
 		})
 	end)
@@ -105,8 +116,8 @@ function slot0.register(slot0)
 	end)
 	slot0:bind(uv0.OPEN_NOTICE, function (slot0)
 		uv0:addSubLayers(Context.New({
-			mediator = BulletinBoardMediator,
-			viewComponent = BulletinBoardLayer
+			mediator = NewBulletinBoardMediator,
+			viewComponent = NewBulletinBoardLayer
 		}))
 	end)
 	slot0:bind(uv0.OPEN_COMMISION, function (slot0)
@@ -153,7 +164,8 @@ function slot0.listNotificationInterests(slot0)
 		uv0.REFRESH_VIEW,
 		GAME.CONFIRM_GET_SHIP,
 		GAME.WILL_LOGOUT,
-		GAME.GET_FEAST_DATA_DONE
+		GAME.GET_FEAST_DATA_DONE,
+		GAME.FETCH_VOTE_INFO_DONE
 	}
 
 	for slot5, slot6 in pairs(pg.redDotHelper:GetNotifyType()) do
@@ -169,11 +181,10 @@ end
 
 function slot0.handleNotification(slot0, slot1)
 	slot2 = slot1:getName()
-	slot3 = slot1:getBody()
 
 	pg.redDotHelper:Notify(slot2)
 
-	if PERMISSION_GRANTED == slot2 and slot3 == ANDROID_CAMERA_PERMISSION then
+	if PERMISSION_GRANTED == slot2 and slot1:getBody() == ANDROID_CAMERA_PERMISSION then
 		slot0.viewComponent:emit(uv0.GO_SNAPSHOT)
 	elseif PERMISSION_REJECT == slot2 and slot3 == ANDROID_CAMERA_PERMISSION then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -206,9 +217,7 @@ function slot0.handleNotification(slot0, slot1)
 	elseif slot2 == TaskProxy.TASK_ADDED then
 		slot0.viewComponent:emit(NewMainScene.ON_STOP_PAITING_VOICE)
 	elseif slot2 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
-		slot4 = MainTechnologySequence.New()
-
-		slot4:Execute(function ()
+		MainTechnologySequence.New():Execute(function ()
 		end)
 	elseif slot2 == MiniGameProxy.ON_HUB_DATA_UPDATE or slot2 == GAME.SEND_MINI_GAME_OP_DONE then
 		slot0.viewComponent:emit(NewMainScene.ON_ACT_BTN_UPDATE)
@@ -231,7 +240,7 @@ function slot0.handleNotification(slot0, slot1)
 		}))
 	elseif slot2 == GAME.WILL_LOGOUT then
 		slot0.viewComponent:OnLogOut()
-	elseif slot2 == GAME.GET_FEAST_DATA_DONE then
+	elseif slot2 == GAME.GET_FEAST_DATA_DONE or slot2 == GAME.FETCH_VOTE_INFO_DONE then
 		slot0.viewComponent:emit(NewMainScene.ON_ACT_BTN_UPDATE)
 	end
 end

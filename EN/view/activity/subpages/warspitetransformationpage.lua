@@ -29,8 +29,7 @@ function slot0.OnDataSetting(slot0)
 end
 
 function slot0.OnFirstFlush(slot0)
-	slot1 = slot0.activity
-	slot2 = slot1:getConfig("config_client")[2]
+	slot2 = slot0.activity:getConfig("config_client")[2]
 	slot3 = {
 		type = slot2[1],
 		id = slot2[2],
@@ -70,13 +69,12 @@ end
 function slot0.OnUpdateFlush(slot0)
 	slot1 = slot0.activity
 	slot2 = pg.TimeMgr.GetInstance()
-	slot3 = slot2:DiffDay(slot1.data1, slot2:GetServerTime()) + 1
 
 	setActive(findTF(slot0.mainAward, "get"), slot1.data4 > 0)
 
 	for slot7 = 1, 7 do
 		setActive(findTF(slot0.subAwards[slot7], "get"), slot7 <= slot1.data2)
-		setActive(findTF(slot8, "lock"), slot3 < slot7)
+		setActive(findTF(slot8, "lock"), slot2:DiffDay(slot1.data1, slot2:GetServerTime()) + 1 < slot7)
 	end
 
 	setText(slot0.step, slot1.data2)

@@ -3,8 +3,7 @@ slot0 = class("CatteryFlowerView")
 function slot0.Ctor(slot0, slot1)
 	slot0._go = slot1
 	slot0._tf = slot1.transform
-	slot2 = slot0._tf
-	slot0.default = slot2:Find("1")
+	slot0.default = slot0._tf:Find("1")
 	slot0.levels = {
 		slot0._tf:Find("2"),
 		slot0._tf:Find("3"),
@@ -14,13 +13,10 @@ function slot0.Ctor(slot0, slot1)
 end
 
 function slot0.Update(slot0, slot1)
-	slot2 = slot1:GetCleanLevel()
-	slot3 = true
-
 	for slot7, slot8 in pairs(slot0.levels) do
-		setActive(slot8, slot2 == slot7)
+		setActive(slot8, slot1:GetCleanLevel() == slot7)
 
-		if slot3 and slot9 then
+		if true and slot9 then
 			slot3 = false
 		end
 	end

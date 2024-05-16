@@ -8,10 +8,7 @@ end
 
 function slot0.OnFirstFlush(slot0)
 	setActive(slot0.item, false)
-
-	slot1 = slot0.itemList
-
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.itemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventInit then
 			slot4 = uv0.config.front_drops[slot1 + 1]
 

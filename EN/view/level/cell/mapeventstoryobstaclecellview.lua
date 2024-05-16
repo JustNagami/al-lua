@@ -17,9 +17,7 @@ function slot0.Update(slot0)
 
 			slot0.assetName = slot3
 		else
-			slot4 = slot0:GetLoader()
-
-			slot4:GetPrefab("ui/" .. slot3, slot3, function (slot0)
+			slot0:GetLoader():GetPrefab("ui/" .. slot3, slot3, function (slot0)
 				setParent(slot0, uv0.tf)
 				uv0:ResetCanvasOrder()
 
@@ -31,9 +29,7 @@ function slot0.Update(slot0)
 	slot5 = pg.map_event_template[slot1.attachmentId]
 
 	if not (slot1.flag == ChapterConst.CellFlagTriggerActive) and slot5 and slot5.animation and not slot0.disappearAnim and slot5.animation and #slot6 > 0 then
-		slot7 = slot0:GetLoader()
-
-		slot7:GetPrefab("ui/" .. slot6, slot6, function (slot0)
+		slot0:GetLoader():GetPrefab("ui/" .. slot6, slot6, function (slot0)
 			setParent(slot0.transform, uv0.tf, false)
 			uv0:ResetCanvasOrder()
 

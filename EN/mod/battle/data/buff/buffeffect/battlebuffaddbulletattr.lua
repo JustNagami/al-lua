@@ -74,12 +74,8 @@ function slot1.onTorpedoBulletBang(slot0, slot1, slot2, slot3)
 end
 
 function slot1.displacementConvert(slot0, slot1)
-	slot3 = slot1._bullet:GetCurrentDistance()
-	slot4 = slot0._displacementConvert.base
-	slot6 = slot0._displacementConvert.max
-
 	if slot0._displacementConvert.rate > 0 then
-		slot0._number = math.min(math.max(slot3 - slot4, 0) * slot5, slot6)
+		slot0._number = math.min(math.max(slot1._bullet:GetCurrentDistance() - slot0._displacementConvert.base, 0) * slot5, slot0._displacementConvert.max)
 	elseif slot5 < 0 then
 		slot0._number = math.min(math.max(0, slot6 + (slot3 - slot4) * slot5), slot6)
 	elseif slot5 == 0 then

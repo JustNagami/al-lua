@@ -8,11 +8,10 @@ function slot0.execute(slot0, slot1)
 	end
 
 	slot6 = #slot5.equipments
-	slot7 = 0
 
 	for slot11, slot12 in pairs(slot5.equipments) do
 		if slot12 then
-			slot7 = slot7 + 1
+			slot7 = 0 + 1
 		end
 	end
 
@@ -22,10 +21,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot11 = getProxy(EquipmentProxy):GetSpWeaponCapacity()
-	slot12 = getProxy(EquipmentProxy):GetSpWeaponCount()
-
-	if slot5:GetSpWeapon() and slot11 <= slot12 then
+	if slot5:GetSpWeapon() and getProxy(EquipmentProxy):GetSpWeaponCapacity() <= getProxy(EquipmentProxy):GetSpWeaponCount() then
 		NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), OpenSpWeaponPage, gotoChargeScene)
 
 		return
@@ -57,9 +53,7 @@ function slot0.fun(slot0, slot1, slot2, slot3, slot4)
 		return
 	end
 
-	slot7 = pg.ConnectionMgr.GetInstance()
-
-	slot7:Send(12006, {
+	pg.ConnectionMgr.GetInstance():Send(12006, {
 		equip_id = 0,
 		type = 0,
 		ship_id = slot1.id,

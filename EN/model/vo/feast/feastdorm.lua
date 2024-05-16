@@ -88,12 +88,11 @@ end
 
 function slot0.GetPutFurnitureList(slot0, slot1)
 	slot2 = {}
-	slot5 = FeastThemeTemplate.New({
+
+	for slot9, slot10 in pairs(FeastThemeTemplate.New({
 		id = -1,
 		furniture_put_list = require("GameCfg.backyardTheme.theme_feast").furnitures or {}
-	}, 1, slot0:GetMapSize()) and slot4:GetAllFurniture() or {}
-
-	for slot9, slot10 in pairs(slot5) do
+	}, 1, slot0:GetMapSize()) and slot4:GetAllFurniture() or {}) do
 		table.insert(slot2, slot10)
 	end
 

@@ -1,4 +1,5 @@
 slot0 = class("BackYardDecorationFurniturePage", import(".BackYardDecorationBasePage"))
+slot0.SELECTED_FURNITRUE = "BackYardDecorationFurniturePage:SELECTED_FURNITRUE"
 
 function slot1(slot0)
 	if not uv0.PageTypeList then
@@ -10,7 +11,8 @@ function slot1(slot0)
 			3,
 			4,
 			5,
-			6
+			6,
+			8
 		}
 	end
 
@@ -24,19 +26,34 @@ end
 function slot0.OnFurnitureUpdated(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.cards) do
 		if slot6.furniture:getConfig("id") == slot1:getConfig("id") then
-			slot6:Flush(slot1, slot0:GetPutCntByConfigId(slot0.dorm, slot1:getConfig("id")))
+			slot7, slot8 = slot0:GetPutCntByConfigId(slot0.dorm, slot1:getConfig("id"))
+
+			slot6:Flush(slot1, slot7, slot8)
 		end
 	end
 end
 
 function slot0.GetPutCntByConfigId(slot0, slot1, slot2)
-	slot3 = 0
+	slot4 = {}
 
-	for slot7, slot8 in pairs(slot1:GetThemeList()) do
-		slot3 = slot3 + slot8:GetSameFurnitureCnt(slot2)
+	for slot8, slot9 in pairs(slot1:GetThemeList()) do
+		slot10 = slot9:GetSameFurnitureCnt(slot2)
+		slot3 = 0 + slot10
+
+		if slot10 > 0 then
+			table.insert(slot4, slot8)
+		end
 	end
 
-	return slot3
+	slot5 = 0
+
+	if #slot4 > 1 then
+		slot5 = getProxy(DormProxy).floor
+	elseif #slot4 == 1 then
+		slot5 = slot4[1]
+	end
+
+	return slot3, slot5
 end
 
 function slot0.OnDisplayList(slot0)
@@ -47,20 +64,26 @@ end
 
 function slot0.SortDisplays(slot0)
 	if not slot0.contextData.filterPanel:GetLoaded() then
-		slot1 = {}
+		slot1 = {
+			[slot6.id] = slot6:GetOwnCnt() <= slot0:GetPutCntByConfigId(slot0.dorm, slot6.configId) and 0 or 1
+		}
 
 		for slot5, slot6 in ipairs(slot0.displays) do
-			slot1[slot6.id] = slot6:GetOwnCnt() <= slot0:GetPutCntByConfigId(slot0.dorm, slot6.configId) and 0 or 1
+			-- Nothing
 		end
 
 		slot2 = slot0.orderMode
 
 		table.sort(slot0.displays, function (slot0, slot1)
 			if uv0[slot0.id] == uv0[slot1.id] then
-				if uv1 == BackYardDecorationFilterPanel.ORDER_MODE_ASC then
-					return slot0.id < slot1.id
-				elseif uv1 == BackYardDecorationFilterPanel.ORDER_MODE_DASC then
-					return slot1.id < slot0.id
+				if (slot0.newFlag and 1 or 0) == (slot1.newFlag and 1 or 0) then
+					if uv1 == BackYardDecorationFilterPanel.ORDER_MODE_ASC then
+						return slot0.id < slot1.id
+					elseif uv1 == BackYardDecorationFilterPanel.ORDER_MODE_DASC then
+						return slot1.id < slot0.id
+					end
+				else
+					return slot5 < slot4
 				end
 			else
 				return slot2 < slot3
@@ -85,8 +108,14 @@ function slot0.change2ScrPos(slot0, slot1)
 end
 
 function slot0.OnLoaded(slot0)
-	slot1 = slot0._tf
-	slot0.scrollRect = slot1:GetComponent("LScrollRect")
+	slot0:bind(BackYardDecorationPutlistPage.SELECTED_FURNITRUE, function ()
+		uv0:ClearMark()
+	end)
+	slot0:bind(BackYardDecrationLayer.INNER_SELECTED_FURNITRUE, function (slot0, slot1)
+		uv0:Selected(slot1)
+	end)
+
+	slot0.scrollRect = slot0._tf:GetComponent("LScrollRect")
 
 	function slot1()
 		if uv0.timer then
@@ -110,10 +139,9 @@ function slot0.OnLoaded(slot0)
 			slot8 = slot7._bg
 			slot9 = slot7._tf.localPosition.x
 			slot10 = slot7._tf.localPosition.y
-			slot11 = Vector2(slot9 + slot8.rect.width / 2, slot10 + slot8.rect.height / 2)
 			slot12 = Vector2(slot9 + slot8.rect.width / 2, slot10 - slot8.rect.height / 2)
 
-			if Vector2(slot9 - slot8.rect.width / 2, slot10 - slot8.rect.height / 2).x < slot1.x and slot1.x < slot12.x and slot12.y < slot1.y and slot1.y < slot11.y then
+			if Vector2(slot9 - slot8.rect.width / 2, slot10 - slot8.rect.height / 2).x < slot1.x and slot1.x < slot12.x and slot12.y < slot1.y and slot1.y < Vector2(slot9 + slot8.rect.width / 2, slot10 + slot8.rect.height / 2).y then
 				slot2 = slot7
 
 				break
@@ -141,9 +169,7 @@ function slot0.OnLoaded(slot0)
 		uv0()
 
 		if uv1.lock then
-			slot2 = uv1.contextData.furnitureDescMsgBox
-
-			slot2:ExecuteAction("Hide")
+			uv1.contextData.furnitureDescMsgBox:ExecuteAction("Hide")
 			onNextTick(function ()
 				uv0.lock = false
 			end)
@@ -156,9 +182,37 @@ function slot0.OnLoaded(slot0)
 				uv1:emit(BackYardDecorationMediator.REMOVE_PAPER, slot3.furniture)
 			elseif slot3 and not slot3:HasMask() then
 				uv1:emit(BackYardDecorationMediator.ADD_FURNITURE, Clone(slot3.furniture))
+			elseif slot3 and slot3:HasMask() then
+				uv1:ClearMark()
+
+				uv1.selectedId = slot3.furniture.id
+
+				slot3:UpdateMark(uv1.selectedId)
+				uv1:emit(BackYardDecorationMediator.ON_SELECTED_FURNITRUE, slot3.furniture.id)
+				uv1:emit(uv3.SELECTED_FURNITRUE)
 			end
 		end
 	end)
+end
+
+function slot0.ClearMark(slot0)
+	for slot4, slot5 in pairs(slot0.cards) do
+		slot5:UpdateMark(-1)
+	end
+
+	slot0.selectedId = nil
+end
+
+function slot0.Selected(slot0, slot1)
+	slot0:ClearMark()
+
+	for slot5, slot6 in pairs(slot0.cards) do
+		if slot6.furniture.id == slot1 then
+			slot6:UpdateMark(slot1)
+		end
+	end
+
+	slot0.selectedId = slot1
 end
 
 function slot0.OnInitItem(slot0, slot1)
@@ -172,19 +226,21 @@ function slot0.OnUpdateItem(slot0, slot1, slot2)
 		slot3 = slot0.cards[slot2]
 	end
 
-	slot4 = slot0.lastDiaplys[slot1 + 1]
+	if not slot0.lastDiaplys[slot1 + 1] then
+		return
+	end
 
-	slot3:Update(slot4, slot0:GetPutCntByConfigId(slot0.dorm, slot4:getConfig("id")))
+	slot10, slot11 = slot0:GetPutCntByConfigId(slot0.dorm, slot4:getConfig("id"))
+
+	slot3:Update(slot4, slot10, slot11, slot0.selectedId or -1)
+	slot3:PlayEnterAnimation()
 end
 
 function slot0.GetDisplays(slot0)
 	slot1 = {}
-	slot2 = slot0.dorm:GetPurchasedFurnitures()
-	slot5 = ipairs
-	slot6 = pg.furniture_data_template.get_id_list_by_tag[uv0(slot0.pageType)] or {}
 
-	for slot8, slot9 in slot5(slot6) do
-		if slot2[slot9] then
+	for slot8, slot9 in ipairs(pg.furniture_data_template.get_id_list_by_tag[uv0(slot0.pageType)] or {}) do
+		if slot0.dorm:GetPurchasedFurnitures()[slot9] then
 			table.insert(slot1, slot10)
 		end
 	end
@@ -225,10 +281,7 @@ function slot0.OnDestroy(slot0)
 		slot0.timer = nil
 	end
 
-	slot1 = pairs
-	slot2 = slot0.cards or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.cards or {}) do
 		slot5:Dispose()
 	end
 

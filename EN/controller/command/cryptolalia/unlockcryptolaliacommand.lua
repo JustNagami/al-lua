@@ -2,12 +2,11 @@ slot0 = class("UnlockCryptolaliaCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot3 = slot2.id
 	slot4 = slot2.costType
 	slot7 = nil
 
 	for slot11, slot12 in ipairs(getProxy(PlayerProxy):getRawData():GetCryptolaliaList()) do
-		if slot12.id == slot3 then
+		if slot12.id == slot2.id then
 			slot7 = slot12
 
 			break
@@ -38,9 +37,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot10 = pg.ConnectionMgr.GetInstance()
-
-	slot10:Send(16205, {
+	pg.ConnectionMgr.GetInstance():Send(16205, {
 		id = slot3,
 		cost_type = slot4
 	}, 16206, function (slot0)

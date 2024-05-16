@@ -40,10 +40,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0:getViewComponent():UpdatePlayer(slot3)
+		slot0:getViewComponent():UpdatePlayer(slot1:getBody())
 	elseif slot2 == BagProxy.ITEM_UPDATED then
 		if slot0.stopUpdateView then
 			return

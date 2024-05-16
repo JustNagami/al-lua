@@ -44,9 +44,7 @@ function slot0.TeleportCellByPortalWithCameraMove(slot0, slot1, slot2, slot3, sl
 			uv0 = slot0
 		end,
 		function (slot0)
-			slot1 = uv0
-
-			slot1:TeleportFleetByPortal(uv1, uv2, function ()
+			uv0:TeleportFleetByPortal(uv1, uv2, function ()
 				uv0:focusOnCell(uv1.line, uv2)
 			end, slot0)
 		end
@@ -55,9 +53,8 @@ end
 
 function slot0.TeleportFleetByPortal(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot0.contextData.chapterVO
-	slot7 = slot2[2]
 
-	if not slot2[1] or not slot7 then
+	if not slot2[1] or not slot2[2] then
 		slot4()
 
 		return
@@ -106,24 +103,20 @@ function slot0.focusOnCell(slot0, slot1, slot2)
 end
 
 function slot0.cameraFocus(slot0, slot1, slot2)
-	slot5 = slot0._tf
-	slot5 = slot5:Find(ChapterConst.PlaneName)
+	slot5 = slot0._tf:Find(ChapterConst.PlaneName)
 
 	assert(slot5, "plane not exist.")
 	LeanTween.cancel(slot0._tf.gameObject, true)
 
-	slot6 = slot0._tf.parent
-	slot6 = slot6:InverseTransformVector(slot1 - slot5.position)
+	slot6 = slot0._tf.parent:InverseTransformVector(slot1 - slot5.position)
 	slot6.x = slot6.x + slot5.localPosition.x
 	slot6.y = slot6.y + slot5.localPosition.y - slot5.localPosition.z * math.tan(math.pi / 180 * slot0.contextData.chapterVO.theme.angle)
 	slot6.x = math.clamp(-slot6.x, slot0.leftBound, slot0.rightBound)
 	slot6.y = math.clamp(-slot6.y, slot0.bottomBound, slot0.topBound)
 	slot6.z = 0
 	slot0.dragTrigger.enabled = false
-	slot7 = LeanTween.moveLocal(slot0._tf.gameObject, slot6, 0.4)
-	slot7 = slot7:setEase(LeanTweenType.easeInOutSine)
 
-	slot7:setOnComplete(System.Action(function ()
+	LeanTween.moveLocal(slot0._tf.gameObject, slot6, 0.4):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function ()
 		if uv0.exited then
 			return
 		end
@@ -189,17 +182,13 @@ function slot0.shakeCell(slot0, slot1, slot2)
 end
 
 function slot0.PlayShellFx(slot0, slot1, slot2)
-	slot4 = slot0.cellRoot
-	slot4 = slot4:Find(ChapterCell.Line2Name(slot1.row, slot1.column))
-	slot5 = slot4:Find(ChapterConst.ChildAttachment)
+	slot5 = slot0.cellRoot:Find(ChapterCell.Line2Name(slot1.row, slot1.column)):Find(ChapterConst.ChildAttachment)
 	slot6 = slot1.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityUpperEffect
 	slot7 = nil
 
 	seriesAsync({
 		function (slot0)
-			slot1 = uv0.loader
-
-			slot1:GetPrefab("effect/ATdun_full_SLG", "ATdun_full_SLG", function (slot0)
+			uv0.loader:GetPrefab("effect/ATdun_full_SLG", "ATdun_full_SLG", function (slot0)
 				setParent(slot0, uv0)
 				pg.ViewUtils.SetSortingOrder(slot0, uv1)
 
@@ -223,17 +212,13 @@ function slot0.PlayShellFx(slot0, slot1, slot2)
 end
 
 function slot0.PlayMissileExplodAnim(slot0, slot1, slot2)
-	slot4 = slot0.cellRoot
-	slot4 = slot4:Find(ChapterCell.Line2Name(slot1.row, slot1.column))
-	slot5 = slot4:Find(ChapterConst.ChildAttachment)
+	slot5 = slot0.cellRoot:Find(ChapterCell.Line2Name(slot1.row, slot1.column)):Find(ChapterConst.ChildAttachment)
 	slot6 = slot1.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityAttachment
 	slot7, slot8, slot9 = nil
 
 	parallelAsync({
 		function (slot0)
-			slot1 = uv0.loader
-
-			slot1:GetPrefab("effect/dexiv4_SLG_missile", "dexiv4_SLG_missile", function (slot0)
+			uv0.loader:GetPrefab("effect/dexiv4_SLG_missile", "dexiv4_SLG_missile", function (slot0)
 				setParent(slot0, uv0)
 				setActive(slot0, false)
 				pg.ViewUtils.SetSortingOrder(slot0, uv1)
@@ -244,9 +229,7 @@ function slot0.PlayMissileExplodAnim(slot0, slot1, slot2)
 			end)
 		end,
 		function (slot0)
-			slot1 = uv0.loader
-
-			slot1:GetPrefab("effect/ShellHitBlue", "ShellHitBlue", function (slot0)
+			uv0.loader:GetPrefab("effect/ShellHitBlue", "ShellHitBlue", function (slot0)
 				setParent(slot0, uv0)
 				setActive(slot0, false)
 				pg.ViewUtils.SetSortingOrder(slot0, uv1)
@@ -272,19 +255,14 @@ function slot0.PlayMissileExplodAnim(slot0, slot1, slot2)
 			end,
 			function (slot0)
 				uv0.tweens[uv1] = nil
-				slot1 = uv0.loader
 
-				slot1:ReturnPrefab(uv2)
+				uv0.loader:ReturnPrefab(uv2)
 
 				uv2 = nil
 
 				setActive(uv3, true)
 				setLocalScale(uv3, Vector3.one)
-
-				slot1 = go(uv3)
-				slot1 = slot1:GetComponent(typeof(ParticleSystemEvent))
-
-				slot1:SetEndEvent(function (slot0)
+				go(uv3):GetComponent(typeof(ParticleSystemEvent)):SetEndEvent(function (slot0)
 					uv0:SetEndEvent(nil)
 					uv1.loader:ReturnPrefab(uv2)
 
@@ -312,9 +290,7 @@ function slot0.PlayAttachmentEffect(slot0, slot1, slot2, slot3, slot4, slot5)
 end
 
 function slot0.PlayParticleSystem(slot0, slot1, slot2, slot3, slot4)
-	slot5 = slot0.loader
-
-	slot5:GetPrefab("effect/" .. slot1, slot1, function (slot0)
+	slot0.loader:GetPrefab("effect/" .. slot1, slot1, function (slot0)
 		setParent(slot0, uv0)
 
 		if uv1 then

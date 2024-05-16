@@ -25,11 +25,10 @@ function slot0.initData(slot0)
 end
 
 function slot0.initUI(slot0)
-	slot1 = slot0:findTF("DayImg")
 	slot0.daySpriteList = {}
 
 	for slot5 = 0, slot0.totalSignCount - 1 do
-		table.insert(slot0.daySpriteList, getImageSprite(slot1:GetChild(slot5)))
+		table.insert(slot0.daySpriteList, getImageSprite(slot0:findTF("DayImg"):GetChild(slot5)))
 	end
 
 	slot0.dayTpl = slot0:findTF("DayTpl")
@@ -43,15 +42,14 @@ function slot0.initUI(slot0)
 			slot6 = uv0:findTF("DayImg", slot2)
 			slot7 = uv0:findTF("Got", slot2)
 			slot8 = uv0:findTF("GotMask", slot2)
-			slot10 = uv0.dayAwardList[slot1 + 1]
 
 			for slot14, slot15 in ipairs({
 				uv0:findTF("Item1/Icon", slot2),
 				uv0:findTF("Item2/Icon", slot2),
 				uv0:findTF("Item3/Icon", slot2)
 			}) do
-				if slot10[slot14].type ~= DROP_TYPE_SHIP then
-					setImageSprite(slot15, LoadSprite(getDropIcon(slot16)))
+				if uv0.dayAwardList[slot1 + 1][slot14].type ~= DROP_TYPE_SHIP then
+					setImageSprite(slot15, LoadSprite(slot16:getIcon()))
 				else
 					setImageSprite(slot15, LoadSprite("QIcon/" .. Ship.New({
 						configId = slot16.id
@@ -92,11 +90,7 @@ function slot0.getAllAwardList(slot0)
 		slot12 = {}
 
 		for slot17, slot18 in ipairs(slot8.award_display[slot0:getLevelIndex(slot2, slot8.level)]) do
-			table.insert(slot12, {
-				type = slot18[1],
-				id = slot18[2],
-				count = slot18[3]
-			})
+			table.insert(slot12, Drop.Create(slot18))
 		end
 
 		table.insert(slot1, slot12)
@@ -107,9 +101,7 @@ end
 
 function slot0.getLevelIndex(slot0, slot1, slot2)
 	for slot6, slot7 in ipairs(slot2) do
-		slot9 = slot7[2]
-
-		if slot7[1] <= slot1 and slot1 <= slot9 then
+		if slot7[1] <= slot1 and slot1 <= slot7[2] then
 			return slot6
 		end
 	end

@@ -47,20 +47,14 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK then
-		slot0.viewComponent:emit(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, slot3)
+		slot0.viewComponent:emit(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, slot1:getBody())
 	elseif slot2 == GAME.SUBMIT_AVATAR_TASK_DONE then
-		slot4 = slot0.viewComponent
-
-		slot4:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
 			existCall(uv0.callback)
 
-			slot0 = getProxy(ActivityProxy)
-			slot0 = slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
-			slot3 = getProxy(ActivityTaskProxy)
-			slot3 = slot3:getTaskVOsByActId(slot0:GetConfigID())
+			slot0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+			slot3 = getProxy(ActivityTaskProxy):getTaskVOsByActId(slot0:GetConfigID())
 
 			if _.all(slot0:GetUnlockTaskIds(), function (slot0)
 				return _.detect(uv0, function (slot0)

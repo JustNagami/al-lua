@@ -342,14 +342,15 @@ function slot22.Lerp(slot0, slot1, slot2)
 		w = 1,
 		z = 0,
 		x = 0,
-		y = 0
+		y = 0,
+		x = slot0.x + slot2 * (-slot1.x - slot0.x),
+		y = slot0.y + slot2 * (-slot1.y - slot0.y),
+		z = slot0.z + slot2 * (-slot1.z - slot0.z),
+		w = slot0.w + slot2 * (-slot1.w - slot0.w)
 	}
 
 	if uv1.Dot(slot0, slot1) < 0 then
-		slot3.x = slot0.x + slot2 * (-slot1.x - slot0.x)
-		slot3.y = slot0.y + slot2 * (-slot1.y - slot0.y)
-		slot3.z = slot0.z + slot2 * (-slot1.z - slot0.z)
-		slot3.w = slot0.w + slot2 * (-slot1.w - slot0.w)
+		-- Nothing
 	else
 		slot3.x = slot0.x + (slot1.x - slot0.x) * slot2
 		slot3.y = slot0.y + (slot1.y - slot0.y) * slot2

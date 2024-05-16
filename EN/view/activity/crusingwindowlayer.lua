@@ -5,10 +5,7 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.preload(slot0, slot1)
-	slot2 = getProxy(ActivityProxy)
-	slot2 = slot2:getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
-
-	GetSpriteFromAtlasAsync("crusingwindow/" .. slot2:getConfig("config_client").map_name, "", function (slot0)
+	GetSpriteFromAtlasAsync("crusingwindow/" .. getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING):getConfig("config_client").map_name, "", function (slot0)
 		uv0.windowSprite = slot0
 
 		uv1()
@@ -25,10 +22,8 @@ function slot0.init(slot0)
 	slot0.itemList = UIItemList.New(slot0.itemContent, slot0.itemContent:GetChild(0))
 
 	slot0.itemList:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			slot4, slot5, slot6 = unpack(uv0[slot1])
+			slot4, slot5, slot6 = unpack(uv0[slot1 + 1])
 
 			updateDrop(slot2, {
 				count = slot6,
@@ -44,9 +39,7 @@ function slot0.init(slot0)
 end
 
 function slot0.didEnter(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 	onButton(slot0, slot0.rtBg, function ()

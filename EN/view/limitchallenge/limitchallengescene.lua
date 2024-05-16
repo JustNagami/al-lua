@@ -125,15 +125,13 @@ function slot0.addListener(slot0)
 	end, SFX_PANEL)
 
 	slot0.iconUIItemList = UIItemList.New(slot0.iconContainer, slot0.iconTpl)
-	slot1 = slot0.iconUIItemList
 
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.iconUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = uv0:findTF("Icon", slot2)
 
 			if uv0.descList[slot1 + 1] ~= false then
-				slot5 = uv0
-				slot5, slot6 = slot5:getBuffIconPath(uv1.GetChallengeIDByLevel(uv0.curLevel), slot1)
+				slot5, slot6 = uv0:getBuffIconPath(uv1.GetChallengeIDByLevel(uv0.curLevel), slot1)
 
 				setImageSprite(slot3, LoadSprite(slot5, slot6))
 
@@ -165,15 +163,14 @@ end
 function slot0.updateDebug(slot0)
 	slot9 = tostring(uv0.GetChallengeIDByLevel(slot0.curLevel))
 	slot10 = tostring
-	slot5 = string.format([[
+
+	for slot9, slot10 in ipairs(slot0.levelList) do
+		slot5 = string.format([[
  月份: %s 
  选择难度: %s 
  选择挑战ID: %s 
  选择关卡ID: %s 
-]], tostring(slot0.curMonth), tostring(slot0.curLevel), slot9, slot10(uv0.GetStageIDByLevel(slot0.curLevel)))
-
-	for slot9, slot10 in ipairs(slot0.levelList) do
-		slot5 = slot5 .. (" 难度" .. slot10 .. "奖励:" .. (slot0.proxy:isAwardedByChallengeID(LimitChallengeConst.GetChallengeIDByLevel(slot10)) and "已领取" or "未领取") .. "\n")
+]], tostring(slot0.curMonth), tostring(slot0.curLevel), slot9, slot10(uv0.GetStageIDByLevel(slot0.curLevel))) .. (" 难度" .. slot10 .. "奖励:" .. (slot0.proxy:isAwardedByChallengeID(LimitChallengeConst.GetChallengeIDByLevel(slot10)) and "已领取" or "未领取") .. "\n")
 	end
 
 	for slot9, slot10 in ipairs(slot0.levelList) do
@@ -184,10 +181,8 @@ function slot0.updateDebug(slot0)
 end
 
 function slot0.updateToggleList(slot0)
-	slot1 = slot0:getHigestUnlockLevel()
-
 	for slot5, slot6 in ipairs(slot0.levelToggleLockList) do
-		slot7 = slot1 < slot5
+		slot7 = slot0:getHigestUnlockLevel() < slot5
 
 		setActive(slot6, slot7)
 		setActive(slot0.levelToggleList[slot5], not slot7)
@@ -243,10 +238,8 @@ function slot0.updateBossImg(slot0)
 
 	setImageSprite(slot0.startBtn, LoadSprite("limitchallenge/btn/" .. slot7, slot13), true)
 
-	slot9 = "%d_level_%d_selected"
-
 	for slot13, slot14 in ipairs(slot0.levelList) do
-		slot15 = string.format(slot9, slot2.button_style, slot14)
+		slot15 = string.format("%d_level_%d_selected", slot2.button_style, slot14)
 
 		setImageSprite(slot0:findTF("Selected", slot0.levelToggleList[slot14]), LoadSprite("limitchallenge/btn/" .. slot15, slot15), true)
 	end

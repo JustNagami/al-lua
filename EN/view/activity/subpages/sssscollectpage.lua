@@ -21,9 +21,7 @@ function slot0.OnFirstFlush(slot0)
 	if slot0.furnitureThemeBtn and slot1.furniture_theme_link then
 		removeOnButton(slot0.furnitureThemeBtn)
 		onButton(slot0, slot0.furnitureThemeBtn, function ()
-			slot0 = uv0
-
-			slot0:PlayClickEffect(uv0.furnitureThemeBtn, function ()
+			uv0:PlayClickEffect(uv0.furnitureThemeBtn, function ()
 				uv0:DoSkip(uv1.furniture_theme_link[1], uv1.furniture_theme_link[2])
 			end)
 		end, SFX_PANEL)
@@ -32,9 +30,7 @@ function slot0.OnFirstFlush(slot0)
 	if slot0.medalBtn and slot1.medal_link then
 		removeOnButton(slot0.medalBtn)
 		onButton(slot0, slot0.medalBtn, function ()
-			slot0 = uv0
-
-			slot0:PlayClickEffect(uv0.furnitureThemeBtn, function ()
+			uv0:PlayClickEffect(uv0.furnitureThemeBtn, function ()
 				uv0:DoSkip(uv1.medal_link[1], uv1.medal_link[2])
 			end)
 		end, SFX_PANEL)

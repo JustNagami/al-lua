@@ -22,9 +22,7 @@ function slot0.loadSigns(slot0, slot1, slot2)
 
 	for slot8, slot9 in ipairs(slot1:GetSignList()) do
 		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:LoadSignRes(uv1, function (slot0)
+			uv0:LoadSignRes(uv1, function (slot0)
 				table.insert(uv0.signTrs, slot0)
 				uv1()
 			end)
@@ -35,9 +33,7 @@ function slot0.loadSigns(slot0, slot1, slot2)
 end
 
 function slot0.LoadSignRes(slot0, slot1, slot2)
-	slot3 = slot0.uiLoader
-
-	slot3:Load(slot1.signName, function (slot0)
+	slot0.uiLoader:Load(slot1.signName, function (slot0)
 		if uv0.atlasName and uv0.fileName then
 			setImageSprite(findTF(slot0, "shadow"), LoadSprite(uv0.atlasName, uv0.fileName), true)
 		end

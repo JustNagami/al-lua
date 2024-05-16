@@ -60,10 +60,8 @@ function slot0.register(slot0)
 		uv0:sendNotification(GAME.CHANGE_SCENE, SCENE.SKINSHOP)
 	end)
 	slot0:bind(uv0.GO_MALL, function (slot0, slot1)
-		slot2 = getProxy(ContextProxy)
-
 		if uv0.contextData.fromMediatorName == ChargeMediator.__cname then
-			slot2:getContextByMediator(ChargeMediator):extendData({
+			getProxy(ContextProxy):getContextByMediator(ChargeMediator):extendData({
 				wrap = slot1
 			})
 			uv0.viewComponent:closeView()
@@ -132,17 +130,16 @@ function slot0.register(slot0)
 	end)
 	slot0:bind(uv0.ON_ESKIN_PREVIEW, function (slot0, slot1)
 		slot2 = pg.equip_skin_template[slot1]
-		slot3 = Ship.New({
-			id = slot2.ship_config_id,
-			configId = slot2.ship_config_id,
-			skin_id = slot2.ship_skin_id
-		})
 		slot4 = {}
 
 		if slot2.ship_skin_id ~= 0 then
 			slot4 = {
 				equipSkinId = 0,
-				shipVO = slot3,
+				shipVO = Ship.New({
+					id = slot2.ship_config_id,
+					configId = slot2.ship_config_id,
+					skin_id = slot2.ship_skin_id
+				}),
 				weaponIds = {},
 				weight = uv0.contextData.weight and uv0.contextData.weight + 1
 			}
@@ -201,10 +198,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:SetPlayer(slot3)
+		slot0.viewComponent:SetPlayer(slot1:getBody())
 	elseif slot2 == ShopsProxy.SHOPPINGSTREET_UPDATE then
 		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_SHOP_STREET, slot3.shopStreet)
 	elseif slot2 == GAME.SHOPPING_DONE then

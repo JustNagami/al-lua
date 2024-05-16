@@ -68,21 +68,17 @@ function slot0.GetShowMonthCardTag()
 end
 
 function slot0.TryShowMonthCardTipPanel(slot0)
-	function slot1()
-		if uv0 then
-			uv0()
-		end
-	end
-
 	if uv0.GetMonthCardEndDate() == 0 then
-		slot1()
+		function ()
+			if uv0 then
+				uv0()
+			end
+		end()
 
 		return
 	end
 
-	slot4 = uv0.GetMonthCardTipDate()
-
-	if pg.TimeMgr.GetInstance():GetServerTime() >= slot2 - 259200 and slot4 < slot2 - 259200 then
+	if pg.TimeMgr.GetInstance():GetServerTime() >= slot2 - 259200 and uv0.GetMonthCardTipDate() < slot2 - 259200 then
 		uv0.SetMonthCardTipDate(slot3)
 
 		slot5 = pg.TimeMgr.GetInstance():STimeDescS(math.min(slot3, slot2), "*t")

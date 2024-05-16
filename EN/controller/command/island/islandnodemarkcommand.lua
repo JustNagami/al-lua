@@ -2,9 +2,8 @@ slot0 = class("IslandNodeMarkCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot3 = pg.ConnectionMgr.GetInstance()
 
-	slot3:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 2,
 		activity_id = slot2.act_id,
 		arg1 = slot2.node_id

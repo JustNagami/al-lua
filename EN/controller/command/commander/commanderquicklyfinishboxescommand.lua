@@ -2,9 +2,8 @@ slot0 = class("CommanderQuicklyFinishBoxesCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot6 = pg.ConnectionMgr.GetInstance()
 
-	slot6:Send(25037, {
+	pg.ConnectionMgr.GetInstance():Send(25037, {
 		item_cnt = slot2.itemCnt,
 		finish_cnt = slot2.finishCnt,
 		affect_cnt = slot2.affectCnt

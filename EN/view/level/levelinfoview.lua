@@ -166,22 +166,12 @@ function slot0.set(slot0, slot1, slot2)
 		end
 
 		setWidgetText(slot0.progress, i18n("levelScene_threat_to_rule_out", ": "))
-
-		slot12 = LeanTween.value(go(slot0.progress), 0, slot0.chapter.progress, 0.5)
-		slot12 = slot12:setDelay(0.15)
-
-		table.insert(slot0.delayTween, slot12:setOnUpdate(System.Action_float(function (slot0)
+		table.insert(slot0.delayTween, LeanTween.value(go(slot0.progress), 0, slot0.chapter.progress, 0.5):setDelay(0.15):setOnUpdate(System.Action_float(function (slot0)
 			setSlider(uv0.progress, 0, 100, slot0)
 			setText(uv0.txProgress, math.floor(slot0) .. "%")
 		end)).uniqueId)
-
-		slot10 = slot0.achieveList
-
-		slot10:align(#slot0.chapter.achieves)
-
-		slot10 = slot0.achieveList
-
-		slot10:each(function (slot0, slot1)
+		slot0.achieveList:align(#slot0.chapter.achieves)
+		slot0.achieveList:each(function (slot0, slot1)
 			slot3 = ChapterConst.IsAchieved(uv0.chapter.achieves[slot0 + 1])
 
 			table.insert(uv0.delayTween, LeanTween.delayedCall(0.15 + (slot0 + 1) * 0.15, System.Action(function ()
@@ -297,10 +287,8 @@ function slot0.set(slot0, slot1, slot2)
 			return
 		end
 
-		slot0 = i18n("level_risk_level_desc", uv0:getChapterState()) .. i18n("level_risk_level_mitigation_rate", uv0:getRemainPassCount(), uv0:getMitigationRate())
-
 		if uv1:getMapType() == Map.ELITE then
-			slot0 = slot0 .. "\n" .. i18n("level_diffcult_chapter_state_safety")
+			slot0 = i18n("level_risk_level_desc", uv0:getChapterState()) .. i18n("level_risk_level_mitigation_rate", uv0:getRemainPassCount(), uv0:getMitigationRate()) .. "\n" .. i18n("level_diffcult_chapter_state_safety")
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -360,25 +348,15 @@ end
 
 function slot0.updateDrop(slot0, slot1, slot2, slot3)
 	if slot1 == UIItemList.EventUpdate then
-		slot4 = slot0.awards[slot2 + 1]
-
-		updateDrop(slot3, {
-			type = slot4[1],
-			id = slot4[2],
-			count = slot4[3]
-		})
+		updateDrop(slot3, Drop.Create(slot0.awards[slot2 + 1]))
 		onButton(slot0, slot3, function ()
-			slot1 = {
+			if ({
 				[99.0] = true
-			}
-
-			if pg.item_data_statistics[uv0[2]] and slot1[slot0.type] then
-				slot3 = uv1
-
-				slot3:emit(LevelMediator2.GET_CHAPTER_DROP_SHIP_LIST, uv1.chapter.id, function (slot0)
+			})[uv0:getConfig("type")] then
+				uv1:emit(LevelMediator2.GET_CHAPTER_DROP_SHIP_LIST, uv1.chapter.id, function (slot0)
 					slot2 = {}
 
-					for slot6, slot7 in ipairs(uv0.display_icon) do
+					for slot6, slot7 in ipairs(uv0:getConfig("display_icon")) do
 						slot9 = slot7[2]
 						slot2[#slot2 + 1] = {
 							type = slot8,
@@ -390,12 +368,12 @@ function slot0.updateDrop(slot0, slot1, slot2, slot3)
 					uv1:emit(BaseUI.ON_DROP_LIST, {
 						item2Row = true,
 						itemList = slot2,
-						content = uv0.display
+						content = uv0:getConfig("display")
 					})
 					uv1:initTestShowDrop(uv0, Clone(slot2))
 				end)
 			else
-				uv1:emit(BaseUI.ON_DROP, uv2)
+				uv1:emit(BaseUI.ON_DROP, uv0)
 			end
 		end, SFX_PANEL)
 	end
@@ -411,10 +389,19 @@ function slot0.getChapterAwards(slot0)
 		end
 	end
 
-	slot5 = {}
-	slot6 = {}
+	slot4 = {
+		slot1:getConfig("boss_expedition_id"),
+		slot1:getConfig("ai_expedition_list")
+	}
 
-	function slot7(slot0)
+	if slot1:getPlayType() == ChapterConst.TypeMultiStageBoss then
+		table.insert(slot4, pg.chapter_model_multistageboss[slot1.id].boss_expedition_id)
+	end
+
+	slot6 = {}
+	slot7 = {}
+
+	function slot8(slot0)
 		for slot4, slot5 in ipairs(uv0) do
 			if slot5 == slot0 then
 				return false
@@ -424,33 +411,30 @@ function slot0.getChapterAwards(slot0)
 		return true
 	end
 
-	for slot11, slot12 in ipairs(_.flatten({
-		slot1:getConfig("boss_expedition_id"),
-		slot1:getConfig("ai_expedition_list")
-	})) do
-		if checkExist(pg.expedition_activity_template[slot12], {
+	for slot12, slot13 in ipairs(_.flatten(slot4)) do
+		if checkExist(pg.expedition_activity_template[slot13], {
 			"pt_drop_display"
-		}) and type(slot13) == "table" then
-			for slot17, slot18 in ipairs(slot13) do
-				if slot7(slot18[2]) then
-					table.insert(slot5, slot18[2])
+		}) and type(slot14) == "table" then
+			for slot18, slot19 in ipairs(slot14) do
+				if slot8(slot19[2]) then
+					table.insert(slot6, slot19[2])
 
-					slot6[slot18[2]] = {}
+					slot7[slot19[2]] = {}
 				end
 
-				slot6[slot18[2]][slot18[1]] = true
+				slot7[slot19[2]][slot19[1]] = true
 			end
 		end
 	end
 
-	slot8 = getProxy(ActivityProxy)
+	slot9 = getProxy(ActivityProxy)
 
-	for slot12 = #slot5, 1, -1 do
-		for slot16, slot17 in pairs(slot6[slot5[slot12]]) do
-			if slot8:getActivityById(slot16) and not slot18:isEnd() then
+	for slot13 = #slot6, 1, -1 do
+		for slot17, slot18 in pairs(slot7[slot6[slot13]]) do
+			if slot9:getActivityById(slot17) and not slot19:isEnd() then
 				table.insert(slot2, 1, {
 					2,
-					id2ItemId(slot5[slot12])
+					id2ItemId(slot6[slot13])
 				})
 
 				break
@@ -485,7 +469,7 @@ function slot0.initTestShowDrop(slot0, slot1, slot2)
 			uv1:emit(BaseUI.ON_DROP_LIST, {
 				item2Row = true,
 				itemList = uv0,
-				content = uv2.display
+				content = uv2:getConfig("display")
 			})
 		end)
 	end

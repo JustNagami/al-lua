@@ -1,15 +1,11 @@
 slot0 = class("GetSeasonInfoCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot2 = pg.ConnectionMgr.GetInstance()
-
-	slot2:Send(18001, {
+	pg.ConnectionMgr.GetInstance():Send(18001, {
 		type = 0
 	}, 18002, function (slot0)
-		slot1 = SeasonInfo.New(slot0)
-
 		if getProxy(MilitaryExerciseProxy):getData() then
-			slot2:updateSeasonInfo(slot1)
+			slot2:updateSeasonInfo(SeasonInfo.New(slot0))
 		else
 			slot2:addSeasonInfo(slot1)
 		end

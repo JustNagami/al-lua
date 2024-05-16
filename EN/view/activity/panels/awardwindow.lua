@@ -20,10 +20,7 @@ function slot0.OnInit(slot0)
 	onButton(slot0, slot0.closeBtn, function ()
 		uv0:Hide()
 	end, SFX_PANEL)
-
-	slot1 = slot0.uiItemList
-
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.uiItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:UpdateItem(slot1, slot2)
 		end

@@ -13,15 +13,10 @@ function slot0.GetTitleEn(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("private"), function ()
+	onButton(slot0, slot0._tf:Find("private"), function ()
 		pg.SdkMgr.GetInstance():ShowPrivate()
 	end, SFX_PANEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("licence"), function ()
+	onButton(slot0, slot0._tf:Find("licence"), function ()
 		pg.SdkMgr.GetInstance():ShowLicence()
 	end, SFX_PANEL)
 end

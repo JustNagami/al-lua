@@ -62,7 +62,7 @@ function slot0.UpdateView(slot0)
 
 	slot8 = 0
 
-	(function ()
+	function ()
 		uv0.loader:GetSpriteQuiet(uv0:GetAtlasPath(), uv1, uv2:Find("Title/LevelBefore"), true)
 
 		slot1 = CommonBuff.New({
@@ -81,8 +81,8 @@ function slot0.UpdateView(slot0)
 		setText(uv2:Find("Progress2/1/Value"), string.sub(slot2[2], slot8, #slot2[2]))
 
 		uv4 = tonumber(slot1:getConfig("benefit_effect"))
-	end)()
-	(function ()
+	end()
+	function ()
 		if uv1 <= uv0 then
 			return
 		end
@@ -106,8 +106,8 @@ function slot0.UpdateView(slot0)
 		setText(uv3:Find("Progress2/2/Desc"), slot10)
 		setText(uv3:Find("Progress2/2/Value"), string.sub(slot3[2], slot9, #slot3[2]))
 		setActive(uv3:Find("Progress2/2/Up"), uv5 < tonumber(slot2:getConfig("benefit_effect")))
-	end)()
-	(function ()
+	end()
+	function ()
 		if uv1 <= uv0 then
 			return
 		end
@@ -144,7 +144,7 @@ function slot0.UpdateView(slot0)
 
 			uv1.isLackMat = uv1.isLackMat or slot8
 		end)
-	end)()
+	end()
 end
 
 slot1 = "ui/AtelierCommonUI_atlas"
@@ -156,16 +156,12 @@ function slot0.UpdateActivityDrop(slot0, slot1, slot2, slot3)
 	setActive(slot1:Find("icon_bg/frame"), false)
 	setActive(slot1:Find("icon_bg/stars"), false)
 
-	slot4 = slot2.cfg.rarity
-
 	if slot2.type == DROP_TYPE_EQUIP or slot2.type == DROP_TYPE_EQUIPMENT_SKIN then
-		slot4 = slot4 - 1
+		slot4 = slot2:getConfig("rarity") - 1
 	end
 
-	slot5 = "icon_frame_" .. slot4
-
 	if slot3 then
-		slot5 = slot5 .. "_small"
+		slot5 = "icon_frame_" .. slot4 .. "_small"
 	end
 
 	slot0.loader:GetSpriteQuiet(uv0, slot5, slot1)

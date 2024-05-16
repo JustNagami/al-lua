@@ -1,9 +1,7 @@
 slot0 = class("RemasterInfoRequestCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot2 = pg.ConnectionMgr.GetInstance()
-
-	slot2:Send(13505, {
+	pg.ConnectionMgr.GetInstance():Send(13505, {
 		type = 0
 	}, 13506, function (slot0)
 		slot1 = getProxy(ChapterProxy).remasterInfo

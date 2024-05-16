@@ -49,9 +49,8 @@ end
 function slot0.UpdateGoods(slot0, slot1)
 	if slot0.goods ~= slot1 then
 		slot0.goods = slot1
-		slot3 = nowWorld():GetAtlas()
 
-		slot3:UpdatePortMark(slot0.id, #underscore.filter(slot0.goods, function (slot0)
+		nowWorld():GetAtlas():UpdatePortMark(slot0.id, #underscore.filter(slot0.goods, function (slot0)
 			return slot0.count > 0
 		end) > 0)
 		slot0:DispatchEvent(uv0.EventUpdateGoods)

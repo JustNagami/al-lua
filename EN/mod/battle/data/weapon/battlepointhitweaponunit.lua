@@ -29,11 +29,10 @@ end
 function slot4.createMajorEmitter(slot0, slot1, slot2)
 	uv1.super.createMajorEmitter(slot0, slot1, slot2, uv1.EMITTER_NORMAL, function (slot0, slot1, slot2, slot3)
 		slot4, slot5 = nil
-		slot6 = uv0._emitBulletIDList[uv1]
 
 		if uv0._strikePoint then
 			slot5 = uv0._strikePoint
-			slot4 = uv0:SpawnPointBullet(slot6, uv0._strikePoint)
+			slot4 = uv0:SpawnPointBullet(uv0._emitBulletIDList[uv1], uv0._strikePoint)
 		else
 			slot7 = uv0._lockList[1]
 			slot4 = uv0:Spawn(slot6, slot7, uv0.INTERNAL)
@@ -283,10 +282,8 @@ function slot4.QuickCoolDown(slot0)
 end
 
 function slot4.ReloadBoost(slot0, slot1)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot0._reloadBoostList) do
-		slot2 = slot2 + slot7
+		slot2 = 0 + slot7
 	end
 
 	slot4 = pg.TimeMgr.GetInstance():GetCombatTime() - slot0._jammingTime - slot0._CDstartTime

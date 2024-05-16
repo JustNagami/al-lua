@@ -16,18 +16,15 @@ slot9 = {
 				return uv0(slot0.func, uv1, slot0.obj, ...)
 			end
 		else
-			slot1 = {
-				len = select("#", ...),
-				...
-			}
+			slot1 = packEx(...)
 
 			if slot0.obj == nil then
 				return uv0(function ()
-					uv0.func(unpack(uv1, 1, uv1.len))
+					uv0.func(unpackEx(uv1))
 				end, uv1)
 			else
 				return uv0(function ()
-					uv0.func(uv0.obj, unpack(uv1, 1, uv1.len))
+					uv0.func(uv0.obj, unpackEx(uv1))
 				end, uv1)
 			end
 		end
@@ -71,8 +68,6 @@ slot13 = {
 function slot13.Add(slot0, slot1, slot2)
 	uv0(slot1)
 
-	slot1 = (not slot0.keepSafe or uv1(slot1, slot2)) and uv2(uv1(slot1, slot2), slot2)
-
 	if slot0.lock then
 		table.insert(slot0.opList, function ()
 			uv0.list:pushnode(uv1)
@@ -82,7 +77,7 @@ function slot13.Add(slot0, slot1, slot2)
 			_prev = 0,
 			_next = 0,
 			removed = true,
-			value = slot1
+			value = (not slot0.keepSafe or uv1(slot1, slot2)) and uv2(uv1(slot1, slot2), slot2)
 		}
 	else
 		return slot0.list:push(slot1)

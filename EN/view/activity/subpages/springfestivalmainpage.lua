@@ -19,8 +19,7 @@ slot3 = 3.5
 function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 
-	slot1 = slot0._tf
-	slot0.rtPrint = slot1:Find("AD/print")
+	slot0.rtPrint = slot0._tf:Find("AD/print")
 	slot0.prints = {
 		slot0.rtPrint:Find("front"),
 		slot0.rtPrint:Find("back")
@@ -29,10 +28,7 @@ end
 
 function slot0.OnFirstFlush(slot0)
 	uv0.super.OnFirstFlush(slot0)
-
-	slot3 = slot0.btnList
-
-	onButton(slot0, slot3:Find("mountain"), function ()
+	onButton(slot0, slot0.btnList:Find("mountain"), function ()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SPRING_FESTIVAL_BACKHILL_2023)
 	end, SFX_PANEL)
 

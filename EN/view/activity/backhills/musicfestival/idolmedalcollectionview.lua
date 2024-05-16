@@ -55,11 +55,10 @@ function slot0.findUI(slot0)
 	}
 	slot7 = slot2
 	slot0.medalItemList[3] = slot0:findTF("Medal3", slot7)
-	slot3 = slot0:findTF("SwitchBtnList", slot1)
 	slot0.switchBtnList = {}
 
 	for slot7 = 1, 5 do
-		slot0.switchBtnList[slot7] = slot0:findTF("Button" .. slot7, slot3)
+		slot0.switchBtnList[slot7] = slot0:findTF("Button" .. slot7, slot0:findTF("SwitchBtnList", slot1))
 	end
 end
 
@@ -170,13 +169,9 @@ function slot0.UpdateActivity(slot0)
 end
 
 function slot0.caculateActivatable(slot0, slot1)
-	slot3 = 0
-
 	for slot7, slot8 in ipairs(slot0.pageIDList[slot1]) do
-		slot10 = table.contains(slot0.activatableIDList, slot8)
-
-		if not table.contains(slot0.activeIDList, slot8) and slot10 then
-			slot3 = slot3 + 1
+		if not table.contains(slot0.activeIDList, slot8) and table.contains(slot0.activatableIDList, slot8) then
+			slot3 = 0 + 1
 		end
 	end
 

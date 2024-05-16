@@ -60,6 +60,10 @@ function slot0.RefreshFreeBuildActivity(slot0)
 	slot0.poolsPage:UpdateTicket()
 end
 
+function slot0.RefreshRegularExchangeCount(slot0)
+	slot0.poolsPage:RefreshRegularExchangeCount()
+end
+
 function slot0.init(slot0)
 	Input.multiTouchEnabled = false
 	slot0.blurPanel = slot0:findTF("blur_panel")
@@ -81,9 +85,7 @@ function slot0.init(slot0)
 end
 
 function slot0.didEnter(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:OverlayPanel(slot0.blurPanel, {
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.blurPanel, {
 		groupName = LayerWeightConst.GROUP_BUILDSHIPSCENE
 	})
 	onButton(slot0, slot0.backBtn, function ()
@@ -91,9 +93,8 @@ function slot0.didEnter(slot0)
 	end, SFX_CANCEL)
 
 	slot1 = slot0:findTF("adapt/left_length/stamp", slot0.blurPanel)
-	slot4 = getProxy(TaskProxy)
 
-	setActive(slot1, slot4:mingshiTouchFlagEnabled())
+	setActive(slot1, getProxy(TaskProxy):mingshiTouchFlagEnabled())
 
 	function slot5()
 		getProxy(TaskProxy):dealMingshiTouchFlag(11)
@@ -133,17 +134,14 @@ function slot0.didEnter(slot0)
 	end
 
 	triggerToggle(slot0.toggles[slot4], true)
-
-	slot5 = PoolMgr.GetInstance()
-
-	slot5:GetUI("al_bg01", true, function (slot0)
+	PoolMgr.GetInstance():GetUI("al_bg01", true, function (slot0)
 		slot0:SetActive(true)
 		setParent(slot0, uv0._tf)
 		slot0.transform:SetAsFirstSibling()
 	end)
 	TagTipHelper.SetFreeBuildMark()
 
-	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, 6, slot0.blurPanel)
+	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, slot0.blurPanel)
 end
 
 function slot0.checkPage(slot0)

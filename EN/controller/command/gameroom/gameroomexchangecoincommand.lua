@@ -3,9 +3,8 @@ slot0 = class("GameRoomExchangeCoinCommand", pm.SimpleCommand)
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.price
-	slot5 = pg.ConnectionMgr.GetInstance()
 
-	slot5:Send(26124, {
+	pg.ConnectionMgr.GetInstance():Send(26124, {
 		times = slot2.times
 	}, 26125, function (slot0)
 		if slot0.result == 0 then

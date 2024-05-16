@@ -7,9 +7,7 @@ function slot0.execute(slot0, slot1)
 		slot4 = PLATFORM_LOCAL
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(11508, {
+	pg.ConnectionMgr.GetInstance():Send(11508, {
 		key = slot3,
 		platform = slot4
 	}, 11509, function (slot0)

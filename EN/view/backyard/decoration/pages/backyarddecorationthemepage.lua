@@ -7,7 +7,7 @@ end
 function slot0.OnLoaded(slot0)
 	uv0.super.OnLoaded(slot0)
 
-	slot0.msgbox = BackYardDecorationMsgBox.New(slot0._parentTf.parent.parent.parent, slot0.event, slot0.contextData)
+	slot0.msgbox = BackYardDecorationMsgBox.New(slot0._parentTf.parent.parent.parent.parent.parent, slot0.event, slot0.contextData)
 	slot0.refreshList = {}
 end
 
@@ -17,10 +17,9 @@ end
 
 function slot0.InitList(slot0)
 	slot0.displays = {}
-	slot1 = slot0.dorm:GetPurchasedFurnitures()
 
 	for slot6, slot7 in ipairs(getProxy(DormProxy):GetSystemThemes()) do
-		if slot7:IsPurchased(slot1) then
+		if slot7:IsPurchased(slot0.dorm:GetPurchasedFurnitures()) then
 			table.insert(slot0.displays, slot7)
 		end
 	end
@@ -45,25 +44,45 @@ function slot0.InitList(slot0)
 	slot0:SortDisplays()
 end
 
-function slot1(slot0, slot1, slot2)
-	if (slot0.isEmpty and 0 or 1) == (slot1.isEmpty and 0 or 1) then
-		if (slot0:IsSystem() and 0 or 1) == (slot1:IsSystem() and 0 or 1) then
+function slot1(slot0, slot1)
+	if (slot0.isEmpty and 1 or 0) == (slot1.isEmpty and 1 or 0) then
+		if (slot0:IsSystem() and 1 or 0) == (slot1:IsSystem() and 1 or 0) then
 			if slot0.order == slot1.order then
 				return slot1.id < slot0.id
 			else
 				return slot1.order < slot0.order
 			end
 		else
-			return slot5 < slot6
+			return slot4 < slot5
 		end
 	else
-		return slot4 < slot3
+		return slot3 < slot2
+	end
+end
+
+function slot2(slot0, slot1)
+	if (slot0.isEmpty and 1 or 0) == (slot1.isEmpty and 1 or 0) then
+		if (slot0:IsSystem() and 1 or 0) == (slot1:IsSystem() and 1 or 0) then
+			if slot0.order == slot1.order then
+				return slot0.id < slot1.id
+			else
+				return slot0.order < slot1.order
+			end
+		else
+			return slot5 < slot4
+		end
+	else
+		return slot3 < slot2
 	end
 end
 
 function slot0.SortDisplays(slot0)
 	table.sort(slot0.displays, function (slot0, slot1)
-		return uv0(slot0, slot1, uv1.orderMode)
+		if uv0.orderMode == BackYardDecorationFilterPanel.ORDER_MODE_ASC then
+			return uv1(slot0, slot1)
+		else
+			return uv2(slot0, slot1)
+		end
 	end)
 	slot0:SetTotalCount()
 end
@@ -148,10 +167,7 @@ end
 function slot0.OnDestroy(slot0)
 	slot0.msgbox:Destroy()
 
-	slot1 = pairs
-	slot2 = slot0.cards or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.cards or {}) do
 		slot5:Dispose()
 	end
 

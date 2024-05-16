@@ -36,9 +36,7 @@ function slot0.RegisterEvent(slot0)
 	end)
 	onButton(slot0, slot0.closeBtn, function ()
 		if uv0.rawdata.state > 0 then
-			slot0 = pg.SecondaryPWDMgr.GetInstance()
-
-			slot0:ChangeSetting({}, function ()
+			pg.SecondaryPWDMgr.GetInstance():ChangeSetting({}, function ()
 				uv0:UpdateBtnState()
 			end)
 		end
@@ -46,9 +44,7 @@ function slot0.RegisterEvent(slot0)
 	onButton(slot0, slot0.openBtn, function ()
 		if uv0.rawdata.state <= 0 then
 			function slot0()
-				slot0 = pg.SecondaryPWDMgr.GetInstance()
-
-				slot0:SetPassword(function ()
+				pg.SecondaryPWDMgr.GetInstance():SetPassword(function ()
 					uv0:UpdateBtnState()
 				end)
 			end

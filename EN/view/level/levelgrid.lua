@@ -88,9 +88,7 @@ function slot0.AddEdgePool(slot0, slot1, slot2, slot3, slot4, slot5)
 				return
 			end
 
-			slot1 = uv1.loader
-
-			slot1:LoadReference(uv2, uv0, typeof(Sprite), function (slot0)
+			uv1.loader:LoadReference(uv2, uv0, typeof(Sprite), function (slot0)
 				uv0 = slot0
 
 				uv1()
@@ -103,24 +101,20 @@ function slot0.AddEdgePool(slot0, slot1, slot2, slot3, slot4, slot5)
 				return
 			end
 
-			slot1 = uv1.loader
-
-			slot1:LoadReference(uv2, uv0, typeof(Material), function (slot0)
+			uv1.loader:LoadReference(uv2, uv0, typeof(Material), function (slot0)
 				uv0 = slot0
 
 				uv1()
 			end)
 		end
 	}, function ()
-		function slot0(slot0)
-			go(slot0):GetComponent(typeof(Image)).enabled = true
-			slot1.color = type(uv0) == "table" and Color.New(unpack(uv0)) or Color.white
-			slot1.sprite = uv1 and uv2 or nil
-			slot1.material = uv3 and uv4 or nil
-		end
-
 		if uv5.edgePools[uv6].prefab then
-			slot0(slot1.prefab)
+			function (slot0)
+				go(slot0):GetComponent(typeof(Image)).enabled = true
+				slot1.color = type(uv0) == "table" and Color.New(unpack(uv0)) or Color.white
+				slot1.sprite = uv1 and uv2 or nil
+				slot1.material = uv3 and uv4 or nil
+			end(slot1.prefab)
 		end
 
 		if slot1.items then
@@ -303,8 +297,7 @@ function slot0.initDrag(slot0)
 	slot7 = math.deg2Rad * slot5.angle
 	slot9 = Vector3(slot5.offsetx, slot5.offsety, slot5.offsetz) + uv0.MapDefaultPos
 	slot1 = slot1 * math.clamp((slot6 - Vector3.Dot(Vector3(0, -math.sin(slot7), -math.cos(slot7)), slot9)) / slot6, 0, 1)
-	slot11 = slot0.plane
-	slot12 = slot11:Find("display").anchoredPosition
+	slot12 = slot0.plane:Find("display").anchoredPosition
 	slot13 = uv1 - slot9.x - slot12.x
 	slot14 = uv0.MapDefaultPos.y - slot9.y - slot12.y
 	slot15, slot16, slot17, slot18 = slot4:getDragExtend()
@@ -315,9 +308,8 @@ function slot0.initDrag(slot0)
 	slot0._tf.sizeDelta = Vector2(slot2 * 2, slot3 * 2)
 	slot0.dragTrigger = GetOrAddComponent(slot0._tf, "EventTriggerListener")
 	slot0.dragTrigger.enabled = true
-	slot19 = slot0.dragTrigger
 
-	slot19:AddDragFunc(function (slot0, slot1)
+	slot0.dragTrigger:AddDragFunc(function (slot0, slot1)
 		slot2 = uv0._tf.anchoredPosition
 		slot2.x = math.clamp(slot2.x + slot1.delta.x * uv1.x, uv0.leftBound, uv0.rightBound)
 		slot2.y = math.clamp(slot2.y + slot1.delta.y * uv1.y / math.cos(uv2), uv0.bottomBound, uv0.topBound)
@@ -362,9 +354,7 @@ function slot0.initPlane(slot0)
 				return
 			end
 
-			slot11 = slot0.loader
-
-			slot11:GetPrefab("effect/" .. slot9, slot9, function (slot0)
+			slot0.loader:GetPrefab("effect/" .. slot9, slot9, function (slot0)
 				setParent(slot0, uv0.UIFXList)
 
 				if uv1.offset then
@@ -491,21 +481,19 @@ end
 
 function slot0.getPoisonTex(slot0)
 	slot2 = slot0:findTF("plane/display")
-	slot5 = math.floor(256 / (slot2.sizeDelta.x / slot2.sizeDelta.y))
 	slot6 = nil
 
 	if slot0.preChapterId ~= slot0.contextData.chapterVO.id then
-		slot0.maskTexture = UnityEngine.Texture2D.New(slot4, slot5)
+		slot0.maskTexture = UnityEngine.Texture2D.New(slot4, math.floor(256 / (slot2.sizeDelta.x / slot2.sizeDelta.y)))
 		slot0.preChapterId = slot1.id
 	else
 		slot6 = slot0.maskTexture
 	end
 
 	slot7 = {}
-	slot8 = slot1:getPoisonArea(slot4 / slot2.sizeDelta.x)
 
 	if slot0.poisonRectDir == nil then
-		slot7 = slot8
+		slot7 = slot1:getPoisonArea(slot4 / slot2.sizeDelta.x)
 	else
 		for slot12, slot13 in pairs(slot8) do
 			if slot0.poisonRectDir[slot12] == nil then
@@ -514,16 +502,14 @@ function slot0.getPoisonTex(slot0)
 		end
 	end
 
-	function slot9(slot0)
-		for slot4 = slot0.x, slot0.w + slot0.x do
-			for slot8 = slot0.y, slot0.h + slot0.y do
-				uv0:SetPixel(slot4, slot8, Color.New(1, 1, 1, 0))
-			end
-		end
-	end
-
 	for slot13, slot14 in pairs(slot7) do
-		slot9(slot14)
+		function (slot0)
+			for slot4 = slot0.x, slot0.w + slot0.x do
+				for slot8 = slot0.y, slot0.h + slot0.y do
+					uv0:SetPixel(slot4, slot8, Color.New(1, 1, 1, 0))
+				end
+			end
+		end(slot14)
 	end
 
 	slot6:Apply()
@@ -613,11 +599,10 @@ function slot0.RefreshFleetCells(slot0, slot1)
 		return
 	end
 
-	slot2 = slot0.contextData.chapterVO
 	slot3 = {}
 
 	for slot7, slot8 in pairs(slot0.cellFleets) do
-		if not slot2:getFleetById(slot7) then
+		if not slot0.contextData.chapterVO:getFleetById(slot7) then
 			table.insert(slot3, slot7)
 		end
 	end
@@ -775,7 +760,7 @@ function slot0.updateFleet(slot0, slot1, slot2)
 					end
 
 					if uv1 then
-						(function ()
+						function ()
 							for slot4, slot5 in ipairs({
 								{
 									1,
@@ -810,7 +795,7 @@ function slot0.updateFleet(slot0, slot1, slot2)
 							pg.TipsMgr.GetInstance():ShowTips(i18n("no_way_to_escape"))
 
 							return true
-						end)()
+						end()
 					else
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
 							content = i18n("levelScene_who_to_retreat", uv4.name),
@@ -829,18 +814,15 @@ function slot0.updateFleet(slot0, slot1, slot2)
 			setActive(slot4.tfAmmo, not slot12)
 
 			slot21, slot22 = slot3:getFleetAmmo(slot5)
-			slot23 = slot22 .. "/" .. slot21
 
 			if slot22 == 0 then
-				slot23 = setColorStr(slot23, COLOR_RED)
+				slot23 = setColorStr(slot22 .. "/" .. slot21, COLOR_RED)
 			end
 
 			setText(slot4.tfAmmoText, slot23)
 
 			if slot10 or slot12 then
-				slot24 = slot3:getChampion(slot6.row, slot6.column)
-
-				if slot10 and slot11 == ChapterConst.AttachChampion and slot24:getPoolType() == ChapterConst.TemplateChampion then
+				if slot10 and slot11 == ChapterConst.AttachChampion and slot3:getChampion(slot6.row, slot6.column):getPoolType() == ChapterConst.TemplateChampion then
 					slot4.tfArrow.anchoredPosition = Vector2(0, 180)
 					slot4.tfAmmo.anchoredPosition = Vector2(60, 100)
 				else
@@ -871,10 +853,9 @@ function slot0.updateFleet(slot0, slot1, slot2)
 			setActive(slot4.tfAmmo, not slot9)
 
 			slot11, slot12 = slot3:getFleetAmmo(slot5)
-			slot13 = slot12 .. "/" .. slot11
 
 			if slot12 == 0 then
-				slot13 = setColorStr(slot13, COLOR_RED)
+				slot13 = setColorStr(slot12 .. "/" .. slot11, COLOR_RED)
 			end
 
 			setText(slot4.tfAmmoText, slot13)
@@ -912,12 +893,10 @@ end
 
 function slot0.updateTargetArrow(slot0, slot1)
 	slot2 = slot0.contextData.chapterVO
-	slot4 = slot0.cellRoot
-	slot5 = slot0.arrowTarget
 
-	slot5:SetParent(slot4:Find(ChapterCell.Line2Name(slot1.row, slot1.column)))
+	slot0.arrowTarget:SetParent(slot0.cellRoot:Find(ChapterCell.Line2Name(slot1.row, slot1.column)))
 
-	slot6, slot7 = (function ()
+	slot6, slot7 = function ()
 		slot0, slot1 = uv0:existEnemy(ChapterConst.SubjectPlayer, uv1.row, uv1.column)
 
 		if not slot0 then
@@ -937,7 +916,7 @@ function slot0.updateTargetArrow(slot0, slot1)
 
 			return pg.expedition_data_template[slot2.attachmentId].icon_type == 2, slot3.scale / 100
 		end
-	end)()
+	end()
 
 	if slot6 then
 		slot0.arrowTarget.localPosition = Vector3(0, 20 + 80 * slot7, -80 * slot7)
@@ -1119,23 +1098,19 @@ end
 function slot0.initCell(slot0, slot1, slot2)
 	if slot0.contextData.chapterVO:getChapterCell(slot1, slot2) then
 		slot5 = slot3.theme.cellSize
-		slot6 = ChapterCell.Line2QuadName(slot1, slot2)
 		slot7 = nil
 
 		if slot4:IsWalkable() then
-			slot8 = PoolMgr.GetInstance()
-
-			slot8:GetPrefab("chapter/cell_quad", "", false, function (slot0)
+			PoolMgr.GetInstance():GetPrefab("chapter/cell_quad", "", false, function (slot0)
 				uv0 = slot0.transform
 			end)
 
-			slot7.name = slot6
+			slot7.name = ChapterCell.Line2QuadName(slot1, slot2)
 
 			slot7:SetParent(slot0.quadRoot, false)
 
 			slot7.sizeDelta = slot5
-			slot8 = slot3.theme
-			slot7.anchoredPosition = slot8:GetLinePosition(slot1, slot2)
+			slot7.anchoredPosition = slot3.theme:GetLinePosition(slot1, slot2)
 
 			slot7:SetAsLastSibling()
 			onButton(slot0, slot7, function ()
@@ -1341,10 +1316,9 @@ function slot0.updateExtraAttachments(slot0)
 		slot8 = slot7.row
 		slot9 = slot7.column
 		slot11 = slot0.cellRoot:Find(slot6):Find(ChapterConst.ChildAttachment)
-		slot12 = pg.map_event_template[slot7.attachmentId]
 		slot14 = nil
 
-		if slot7.data == ChapterConst.StoryTrigger and slot12.c_type ~= ChapterConst.EvtType_AdditionalFloor then
+		if slot7.data == ChapterConst.StoryTrigger and pg.map_event_template[slot7.attachmentId].c_type ~= ChapterConst.EvtType_AdditionalFloor then
 			slot14 = MapEventStoryTriggerCellView
 		end
 
@@ -1379,7 +1353,6 @@ function slot0.updateAttachment(slot0, slot1, slot2)
 
 	slot7 = slot0.cellRoot:Find(ChapterCell.Line2Name(slot1, slot2)):Find(ChapterConst.ChildAttachment)
 	slot8 = nil
-	slot9 = {}
 
 	if ChapterConst.IsEnemyAttach(slot4.attachment) then
 		assert(pg.expedition_data_template[slot4.attachmentId], "expedition_data_template not exist: " .. slot4.attachmentId)
@@ -1387,8 +1360,6 @@ function slot0.updateAttachment(slot0, slot1, slot2)
 		if slot4.flag == ChapterConst.CellFlagDisabled then
 			if slot4.attachment ~= ChapterConst.AttachAmbush then
 				slot8 = EnemyDeadCellView
-				slot9.chapter = slot3
-				slot9.config = slot10
 			end
 		elseif slot4.flag == ChapterConst.CellFlagActive then
 			slot8 = slot10.icon_type == 1 and StaticEggCellView or StaticChampionCellView
@@ -1435,7 +1406,7 @@ function slot0.updateAttachment(slot0, slot1, slot2)
 	elseif slot4.attachment == ChapterConst.AttachBarrier then
 		slot8 = AttachmentBarrierCell
 	elseif slot4.attachment == ChapterConst.AttachNone then
-		slot9.fadeAnim = (function ()
+		slot9.fadeAnim = function ()
 			if not uv0.attachmentCells[uv1] then
 				return
 			end
@@ -1449,10 +1420,13 @@ function slot0.updateAttachment(slot0, slot1, slot2)
 			end
 
 			return pg.expedition_data_template[slot1.attachmentId].dungeon_id == 0
-		end)()
+		end()
 	end
 
-	if slot9.fadeAnim then
+	if ({
+		chapter = slot3,
+		config = slot10
+	}).fadeAnim then
 		slot0:PlayAttachmentEffect(slot1, slot2, "miwuxiaosan")
 	end
 
@@ -1549,10 +1523,9 @@ function slot0.InitWallDirection(slot0, slot1, slot2)
 		slot12 = WallCell.New(slot5, slot6, bit.band(slot2, ChapterConst.ForbiddenRow) > 0, slot11)
 		slot12.girdParent = slot0
 		slot0.walls[slot9] = slot12
-		slot10 = slot12
 
 		if slot3.wallAssets[slot1.row .. "_" .. slot1.column] then
-			slot10.WallPrefabs = slot13
+			slot12.WallPrefabs = slot13
 		end
 	end
 
@@ -1638,62 +1611,59 @@ function slot0.updateQuadBase(slot0)
 
 	slot0:killPresentTws()
 
-	function slot3(slot0)
-		if not slot0 or not slot0:IsWalkable() then
-			return
-		end
-
-		slot1 = slot0.row
-		slot2 = slot0.column
-		slot4 = uv0.quadRoot:Find(ChapterCell.Line2QuadName(slot1, slot2))
-		slot4.localScale = Vector3.one
-		slot5 = slot4:Find("grid"):GetComponent(typeof(Image))
-
-		if uv1:getChampion(slot1, slot2) and slot6.flag == ChapterConst.CellFlagActive and slot6.trait ~= ChapterConst.TraitLurk and uv1:getChampionVisibility(slot6) and not uv1:existFleet(FleetType.Transport, slot1, slot2) then
-			uv0:startQuadTween(slot3, slot4)
-			setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy"))
-			setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy_grid"))
-
-			slot5.material = uv0.material_Add
-
-			return
-		end
-
-		if uv1:GetRawChapterAttachemnt(slot1, slot2) and uv1:getQuadCellPic(slot7) then
-			uv0:startQuadTween(slot3, slot4)
-			setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", slot8))
-
-			return
-		end
-
-		if uv1:getChapterCell(slot1, slot2) and uv1:getQuadCellPic(slot0) then
-			uv0:startQuadTween(slot3, slot4)
-
-			if slot9 == "cell_enemy" then
-				setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy_grid"))
-
-				slot5.material = uv0.material_Add
-			else
-				setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid"))
-
-				slot5.material = nil
+	for slot7, slot8 in pairs(slot1.cells) do
+		function (slot0)
+			if not slot0 or not slot0:IsWalkable() then
+				return
 			end
 
-			setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", slot9))
+			slot1 = slot0.row
+			slot2 = slot0.column
+			slot4 = uv0.quadRoot:Find(ChapterCell.Line2QuadName(slot1, slot2))
+			slot4.localScale = Vector3.one
 
-			return
-		end
+			if uv1:getChampion(slot1, slot2) and slot6.flag == ChapterConst.CellFlagActive and slot6.trait ~= ChapterConst.TraitLurk and uv1:getChampionVisibility(slot6) and not uv1:existFleet(FleetType.Transport, slot1, slot2) then
+				uv0:startQuadTween(slot3, slot4)
+				setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy"))
+				setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy_grid"))
 
-		uv0:cancelQuadTween(slot3, slot4)
-		setImageAlpha(slot4, ChapterConst.CellEaseOutAlpha)
-		setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_normal"))
-		setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid"))
+				slot4:Find("grid"):GetComponent(typeof(Image)).material = uv0.material_Add
 
-		slot5.material = nil
-	end
+				return
+			end
 
-	for slot7, slot8 in pairs(slot1.cells) do
-		slot3(slot8)
+			if uv1:GetRawChapterAttachemnt(slot1, slot2) and uv1:getQuadCellPic(slot7) then
+				uv0:startQuadTween(slot3, slot4)
+				setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", slot8))
+
+				return
+			end
+
+			if uv1:getChapterCell(slot1, slot2) and uv1:getQuadCellPic(slot0) then
+				uv0:startQuadTween(slot3, slot4)
+
+				if slot9 == "cell_enemy" then
+					setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy_grid"))
+
+					slot5.material = uv0.material_Add
+				else
+					setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid"))
+
+					slot5.material = nil
+				end
+
+				setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", slot9))
+
+				return
+			end
+
+			uv0:cancelQuadTween(slot3, slot4)
+			setImageAlpha(slot4, ChapterConst.CellEaseOutAlpha)
+			setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_normal"))
+			setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid"))
+
+			slot5.material = nil
+		end(slot8)
 	end
 
 	if slot1:isPlayingWithBombEnemy() then
@@ -1830,7 +1800,7 @@ function slot0.OnBarrierSetting(slot0, slot1)
 		return
 	end
 
-	(function (slot0, slot1)
+	function (slot0, slot1)
 		newChapterVO = uv0.contextData.chapterVO
 
 		if not newChapterVO:existBarrier(slot0, slot1) and newChapterVO.modelCount <= 0 then
@@ -1843,7 +1813,7 @@ function slot0.OnBarrierSetting(slot0, slot1)
 			arg1 = slot0,
 			arg2 = slot1
 		})
-	end)(slot1.row, slot1.column)
+	end(slot1.row, slot1.column)
 end
 
 function slot0.PrepareSubTeleport(slot0)
@@ -1956,9 +1926,7 @@ end
 
 function slot0.ShowMissileAimingMarks(slot0, slot1)
 	_.each(slot1, function (slot0)
-		slot1 = uv0.loader
-
-		slot1:GetPrefabBYGroup("ui/miaozhun02", "miaozhun02", function (slot0)
+		uv0.loader:GetPrefabBYGroup("ui/miaozhun02", "miaozhun02", function (slot0)
 			setParent(slot0, uv0.restrictMap)
 
 			slot3 = uv0.contextData.chapterVO.theme:GetLinePosition(uv1.row, uv1.column)
@@ -1973,9 +1941,7 @@ function slot0.HideMissileAimingMarks(slot0)
 end
 
 function slot0.ShowMissileAimingMark(slot0, slot1)
-	slot2 = slot0.loader
-
-	slot2:GetPrefab("ui/miaozhun02", "miaozhun02", function (slot0)
+	slot0.loader:GetPrefab("ui/miaozhun02", "miaozhun02", function (slot0)
 		setParent(slot0, uv0.restrictMap)
 
 		slot2 = uv0.contextData.chapterVO.theme:GetLinePosition(uv1.row, uv1.column)
@@ -1996,9 +1962,7 @@ function slot0.OnMissileAiming(slot0, slot1)
 end
 
 function slot0.ShowAirSupportAimingMark(slot0, slot1)
-	slot2 = slot0.loader
-
-	slot2:GetPrefab("ui/miaozhun03", "miaozhun03", function (slot0)
+	slot0.loader:GetPrefab("ui/miaozhun03", "miaozhun03", function (slot0)
 		setParent(slot0, uv0.restrictMap)
 
 		slot2 = uv0.contextData.chapterVO.theme:GetLinePosition(uv1.row - 0.5, uv1.column)
@@ -2024,8 +1988,7 @@ function slot0.ShowAirExpelAimingMark(slot0)
 	end
 
 	slot2 = slot1.source
-	slot4 = slot0.cellRoot
-	slot4 = slot4:Find(ChapterCell.Line2Name(slot2.row, slot2.column))
+	slot4 = slot0.cellRoot:Find(ChapterCell.Line2Name(slot2.row, slot2.column))
 
 	function slot5(slot0, slot1)
 		setParent(slot0, uv0)
@@ -2039,18 +2002,12 @@ function slot0.ShowAirExpelAimingMark(slot0)
 		tf(slot0).localEulerAngles = Vector3(-uv1.contextData.chapterVO.theme.angle, 0, 0)
 	end
 
-	slot6 = slot0.loader
-
-	slot6:GetPrefabBYGroup("leveluiview/tpl_airsupportmark", "tpl_airsupportmark", function (slot0)
+	slot0.loader:GetPrefabBYGroup("leveluiview/tpl_airsupportmark", "tpl_airsupportmark", function (slot0)
 		uv0(slot0, true)
 	end, "AirExpelAimingMark")
-
-	slot6 = slot0.loader
-
-	slot6:GetPrefabBYGroup("leveluiview/tpl_airsupportdirection", "tpl_airsupportdirection", function (slot0)
+	slot0.loader:GetPrefabBYGroup("leveluiview/tpl_airsupportdirection", "tpl_airsupportdirection", function (slot0)
 		uv0(slot0)
 
-		slot1 = uv1.contextData.chapterVO
 		slot2 = {
 			{
 				-1,
@@ -2071,7 +2028,7 @@ function slot0.ShowAirExpelAimingMark(slot0)
 		}
 
 		for slot6 = 1, 4 do
-			setActive(tf(slot0):Find(slot6), uv2 and slot1:considerAsStayPoint(ChapterConst.SubjectChampion, uv3.row + slot2[slot6][1], uv3.column + slot2[slot6][2]))
+			setActive(tf(slot0):Find(slot6), uv2 and uv1.contextData.chapterVO:considerAsStayPoint(ChapterConst.SubjectChampion, uv3.row + slot2[slot6][1], uv3.column + slot2[slot6][2]))
 		end
 	end, "AirExpelAimingMark")
 end
@@ -2118,9 +2075,7 @@ function slot0.OnAirExpelSelect(slot0, slot1)
 	elseif not slot2:considerAsStayPoint(ChapterConst.SubjectChampion, slot1.row, slot1.column) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("levelscene_airexpel_outrange"))
 	else
-		slot9 = slot1
-
-		if not slot0.airSupportTarget.source or not slot9 then
+		if not slot0.airSupportTarget.source or not slot1 then
 			return
 		end
 
@@ -2290,26 +2245,19 @@ end
 
 function slot0.moveChampion(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot0.contextData.chapterVO
-	slot7 = slot0.cellChampions[slot1]
-
-	function slot8(slot0)
-	end
-
-	function slot9(slot0)
-	end
-
-	function slot10()
-		if uv0.GetRotatePivot then
-			uv1.rotation = uv0:GetRotatePivot().transform.localRotation
-		end
-
-		if uv2 then
-			uv2()
-		end
-	end
 
 	if slot5:getChampionVisibility(slot5.champions[slot1]) then
-		slot0:moveCellView(slot7, slot2, slot3, slot8, slot9, slot10)
+		slot0:moveCellView(slot0.cellChampions[slot1], slot2, slot3, function (slot0)
+		end, function (slot0)
+		end, function ()
+			if uv0.GetRotatePivot then
+				uv1.rotation = uv0:GetRotatePivot().transform.localRotation
+			end
+
+			if uv2 then
+				uv2()
+			end
+		end)
 	else
 		slot7:RefreshLinePosition(slot5, slot2[#slot2])
 		slot10()
@@ -2392,13 +2340,13 @@ function slot0.moveCellView(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 		uv0:unfrozen()
 	end)
 
-	(function ()
+	function ()
 		if uv0 and coroutine.status(uv0) == "suspended" then
 			slot0, slot1 = coroutine.resume(uv0)
 
 			assert(slot0, debug.traceback(uv0, slot1))
 		end
-	end)()
+	end()
 end
 
 function slot0.moveStep(slot0, slot1, slot2, slot3, slot4, slot5)
@@ -2424,13 +2372,10 @@ function slot0.moveStep(slot0, slot1, slot2, slot3, slot4, slot5)
 	end
 
 	slot10 = slot1.tf.localPosition
-	slot11 = slot6.theme
-	slot11 = slot11:GetLinePosition(slot2.row, slot2.column)
+	slot11 = slot6.theme:GetLinePosition(slot2.row, slot2.column)
 	slot12 = 0
-	slot13 = LeanTween.value(slot1.go, 0, 1, ChapterConst.ShipStepDuration * slot7)
-	slot13 = slot13:setOnComplete(System.Action(slot5))
 
-	slot13:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(slot1.go, 0, 1, ChapterConst.ShipStepDuration * slot7):setOnComplete(System.Action(slot5)):setOnUpdate(System.Action_float(function (slot0)
 		uv0.tf.localPosition = Vector3.Lerp(uv1, uv2, slot0)
 
 		if uv3 <= 0.5 and slot0 > 0.5 then
@@ -2506,14 +2451,13 @@ slot5 = {
 }
 
 function slot0.AddCellEdge(slot0, slot1, slot2, ...)
-	slot3 = 0
 	slot4 = 1
 
 	for slot8 = 1, 4 do
 		if not _.any(slot1, function (slot0)
 			return slot0.row == uv0.row + uv1[uv2][1] and slot0.column == uv0.column + uv1[uv2][2]
 		end) then
-			slot3 = bit.bor(slot3, slot4)
+			slot3 = bit.bor(0, slot4)
 		end
 
 		slot4 = slot4 * 2
@@ -2621,8 +2565,7 @@ function slot0.ShowTargetHuntingRange(slot0, slot1)
 	slot0:hideQuadMark(ChapterConst.MarkHuntingRange)
 	slot0:ClearEdges("SubmarineHunting")
 
-	slot2 = slot0.contextData.chapterVO
-	slot3 = slot2:GetSubmarineFleet()
+	slot3 = slot0.contextData.chapterVO:GetSubmarineFleet()
 	slot4 = _.filter(slot3:getHuntingRange(slot1), function (slot0)
 		return uv0:getChapterCell(slot0.row, slot0.column) and slot1:IsWalkable()
 	end)
@@ -2689,9 +2632,7 @@ function slot0.ShowAnyQuadMark(slot0, slot1, slot2, slot3, slot4, slot5, slot6, 
 			slot0.markQuads[slot2] = slot0.markQuads[slot2] or {}
 
 			if not slot0.markQuads[slot2][ChapterCell.Line2MarkName(slot13.row, slot13.column, slot2)] then
-				slot17 = PoolMgr.GetInstance()
-
-				slot17:GetPrefab("chapter/cell_quad_mark", "", false, function (slot0)
+				PoolMgr.GetInstance():GetPrefab("chapter/cell_quad_mark", "", false, function (slot0)
 					uv0 = slot0.transform
 					uv1.markQuads[uv2][uv3] = uv0
 				end)
@@ -2815,11 +2756,9 @@ function slot0.ClearEdges(slot0, slot1)
 
 	for slot5, slot6 in pairs(slot0.cellEdges) do
 		if not slot1 or slot1 == slot5 then
-			slot7 = slot0:GetEdgePool(slot5)
-
 			for slot11, slot12 in pairs(slot6) do
 				slot0:cancelMarkTween(slot11, slot12)
-				slot7:Enqueue(go(slot12), false)
+				slot0:GetEdgePool(slot5):Enqueue(go(slot12), false)
 			end
 
 			slot0.cellEdges[slot5] = nil
@@ -2883,10 +2822,8 @@ function slot0.CreateOutlines(slot0, slot1, slot2, slot3, slot4, slot5)
 end
 
 function slot0.CreateOutlineCorners(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = slot0.contextData.chapterVO
-
 	for slot10, slot11 in pairs(slot1) do
-		slot13 = slot6.theme:GetLinePosition(slot11.row + uv0[slot11.corner][1] * 0.5, slot11.column + uv0[slot11.corner][2] * 0.5)
+		slot13 = slot0.contextData.chapterVO.theme:GetLinePosition(slot11.row + uv0[slot11.corner][1] * 0.5, slot11.column + uv0[slot11.corner][2] * 0.5)
 
 		assert(slot5, "Missing key, Please PM Programmer")
 

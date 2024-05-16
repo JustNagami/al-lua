@@ -135,10 +135,8 @@ function slot0.register(slot0)
 		uv0:OnSelectShips(slot1, slot2, slot3)
 	end)
 	slot0:bind(uv0.ON_GET_FORMATION, function (slot0, slot1)
-		slot4 = {}
-
 		if getProxy(GuildProxy):getRawData():GetActiveEvent() then
-			table.insert(slot4, function (slot0)
+			table.insert({}, function (slot0)
 				uv0.viewComponent:emit(uv1.ON_GET_ALL_ASSULT_FLEET, slot0)
 			end)
 		end
@@ -227,10 +225,8 @@ function slot0.SelectBossBattleCommander(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	slot6 = slot5:GetBossMission()
-
 	if not slot0.contextData.editBossFleet[slot1] then
-		slot0.contextData.editBossFleet[slot1] = Clone(slot6:GetFleetByIndex(slot1))
+		slot0.contextData.editBossFleet[slot1] = Clone(slot5:GetBossMission():GetFleetByIndex(slot1))
 	end
 
 	slot8 = slot0.contextData.editBossFleet[slot1]:getCommanders()
@@ -240,10 +236,10 @@ function slot0.SelectBossBattleCommander(slot0, slot1, slot2, slot3)
 		table.insert(slot9, slot3.id)
 	end
 
-	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 		maxCount = 1,
-		mode = CommandRoomScene.MODE_SELECT,
-		fleetType = CommandRoomScene.FLEET_TYPE_GUILDBOSS,
+		mode = CommanderCatScene.MODE_SELECT,
+		fleetType = CommanderCatScene.FLEET_TYPE_GUILDBOSS,
 		activeCommander = slot3,
 		ignoredIds = slot9,
 		fleets = slot0.contextData.editBossFleet,
@@ -328,29 +324,25 @@ function slot0.RecommShipsForBossBattle(slot0, slot1)
 		return
 	end
 
-	slot8 = slot7:GetBossMission()
-
 	if not slot0.contextData.editBossFleet[slot1] then
-		slot0.contextData.editBossFleet[slot1] = Clone(slot8:GetFleetByIndex(slot1))
+		slot0.contextData.editBossFleet[slot1] = Clone(slot7:GetBossMission():GetFleetByIndex(slot1))
 	end
 
 	slot0.contextData.editBossFleet[slot1]:RemoveAll()
-
-	function slot10(slot0, slot1)
-		if slot0 == TeamType.Main then
-			table.insert(uv0, slot1)
-		elseif slot0 == TeamType.Vanguard then
-			table.insert(uv1, slot1)
-		elseif slot0 == TeamType.Submarine then
-			table.insert(uv2, slot1)
-		end
-	end
 
 	for slot15, slot16 in pairs(getProxy(BayProxy):getData()) do
 		if not pg.ShipFlagMgr.GetInstance():GetShipFlag(slot16.id, "inEvent") and not slot16:isActivityNpc() then
 			slot16.id = GuildAssaultFleet.GetVirtualId(slot6.id, slot16.id)
 
-			slot10(slot16:getTeamType(), {
+			function (slot0, slot1)
+				if slot0 == TeamType.Main then
+					table.insert(uv0, slot1)
+				elseif slot0 == TeamType.Vanguard then
+					table.insert(uv1, slot1)
+				elseif slot0 == TeamType.Submarine then
+					table.insert(uv2, slot1)
+				end
+			end(slot16:getTeamType(), {
 				power = slot16:getShipCombatPower(),
 				id = slot16.id
 			})
@@ -474,10 +466,8 @@ function slot0.SelectBossBattleShip(slot0, slot1, slot2, slot3)
 		table.insert(slot4, GuildAssaultShip.ConverteFromShip(slot19))
 	end
 
-	slot15 = {}
-
 	if slot3 then
-		table.insert(slot15, slot3.ship.id)
+		table.insert({}, slot3.ship.id)
 	end
 
 	for slot19, slot20 in ipairs(slot9:GetShipIds()) do
@@ -548,9 +538,7 @@ function slot0.OnSelectShips(slot0, slot1, slot2, slot3)
 		ignoredIds = slot7,
 		onShip = function (slot0, slot1, slot2)
 			for slot6, slot7 in pairs(uv0) do
-				slot8 = GuildAssaultFleet.GetRealId(slot7.id)
-
-				if slot6 ~= uv1 and slot8 == slot0.id then
+				if slot6 ~= uv1 and GuildAssaultFleet.GetRealId(slot7.id) == slot0.id then
 					return false, i18n("guild_fleet_exist_same_kind_ship")
 				end
 			end
@@ -582,9 +570,7 @@ function slot0.OnCheckMissionShip(slot0, slot1, slot2)
 		return false, i18n("common_npc_formation_tip")
 	end
 
-	slot13 = slot8:GetMissionById(slot0)
-
-	if _.any(slot13:GetMyShips(), function (slot0)
+	if _.any(slot8:GetMissionById(slot0):GetMyShips(), function (slot0)
 		return uv0[slot0] and uv0[slot0]:isSameKind(uv1)
 	end) then
 		return false, i18n("guild_event_exist_same_kind_ship")
@@ -674,12 +660,10 @@ function slot0.OnComanderOP(slot0, slot1)
 			slot0.contextData.editBossFleet[slot4.id] = Clone(slot4)
 		end
 
-		slot5 = slot0.contextData.editBossFleet[slot4.id]
-
 		if slot2.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
 			slot6 = getProxy(GuildProxy):getData():GetActiveEvent():GetBossMission()
 
-			slot5:ClearCommanders()
+			slot0.contextData.editBossFleet[slot4.id]:ClearCommanders()
 
 			slot9 = {}
 
@@ -730,10 +714,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:SetPlayer(slot3)
+		slot0.viewComponent:SetPlayer(slot1:getBody())
 	elseif slot2 == GuildProxy.GUILD_UPDATED then
 		slot0.viewComponent:UpdateGuild(slot3)
 	elseif slot2 == GAME.GUILD_ACTIVE_EVENT_DONE then

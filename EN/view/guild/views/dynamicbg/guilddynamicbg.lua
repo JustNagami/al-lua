@@ -108,9 +108,7 @@ function slot0.InitFurnitures(slot0, slot1)
 
 	for slot8, slot9 in ipairs(uv0.furnitures) do
 		table.insert(slot3, function (slot0)
-			slot1 = ResourceMgr.Inst
-
-			slot1:getAssetAsync("furnitrues/guild/" .. uv0.name, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			ResourceMgr.Inst:getAssetAsync("furnitrues/guild/" .. uv0.name, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 				uv1(uv2, Object.Instantiate(slot0, uv0.pathContainer), uv3)
 			end), true, true)
 		end)
@@ -161,10 +159,7 @@ function slot0.AddShip(slot0, slot1, slot2)
 	end
 
 	slot5:Lock()
-
-	slot6 = PoolMgr.GetInstance()
-
-	slot6:GetSpineChar(slot4, true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(slot4, true, function (slot0)
 		if IsNil(uv0.nameTF) then
 			return
 		end
@@ -195,10 +190,8 @@ function slot0.ExitShip(slot0, slot1)
 end
 
 function slot0.SortScene(slot0)
-	slot1 = {}
-
 	for slot5, slot6 in pairs(slot0.ships) do
-		table.insert(slot1, {
+		table.insert({}, {
 			obj = slot6,
 			position = slot6.grid.position
 		})
@@ -250,11 +243,11 @@ function slot0.Dispose(slot0)
 end
 
 function slot0.AddGridDebugView(slot0)
-	slot1 = {}
+	slot1 = {
+		[slot5] = {}
+	}
 
 	for slot5, slot6 in pairs(slot0.path) do
-		slot1[slot5] = {}
-
 		for slot10, slot11 in pairs(slot6) do
 			slot12 = GameObject.New()
 

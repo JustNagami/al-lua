@@ -45,7 +45,7 @@ function slot0.bindEvent(slot0)
 		uv0:refreshEdit(slot1)
 	end)
 	slot0:bind(uv0.REMOVE_SHIP, function (slot0, slot1, slot2)
-		(function (slot0, slot1)
+		function (slot0, slot1)
 			if not slot0:canRemove(slot1) then
 				slot2, slot3 = slot0:getShipPos(slot1)
 
@@ -57,7 +57,7 @@ function slot0.bindEvent(slot0)
 			slot0:removeShip(slot1)
 
 			return true
-		end)(slot2, slot1)
+		end(slot2, slot1)
 		uv0:refreshEdit(slot2)
 	end)
 	slot0:bind(uv0.OPEN_SHIP_INFO, function (slot0, slot1, slot2)
@@ -113,9 +113,7 @@ function slot0.bindEvent(slot0)
 		})
 	end)
 	slot0:bind(uv0.ON_START, function (slot0, slot1)
-		slot2 = uv0.viewComponent
-
-		slot2:emit(uv1.ON_UPDATE_CUSTOM_FLEET)
+		uv0.viewComponent:emit(uv1.ON_UPDATE_CUSTOM_FLEET)
 		seriesAsync({
 			function (slot0)
 				for slot4 = 1, #uv0.contextData.fleets - 1 do
@@ -237,8 +235,7 @@ function slot0.bindEvent(slot0)
 			data = {
 				system = uv0.contextData.system,
 				maxCount = pg.gameset.series_enemy_multiple_limit.key_value,
-				oilCost = (function ()
-					slot0 = 0
+				oilCost = function ()
 					slot3 = uv0:GetOilLimit()
 					slot4 = pg.battle_cost_template[uv0:GetType() == BossRushSeriesData.TYPE.EXTRA and SYSTEM_BOSS_RUSH_EX or SYSTEM_BOSS_RUSH].oil_cost > 0
 
@@ -246,20 +243,16 @@ function slot0.bindEvent(slot0)
 						slot2 = 0
 
 						if uv0 then
-							slot2 = slot0:GetCostSum().oil
-
 							if slot1 > 0 then
-								slot2 = math.min(slot1, slot2)
+								slot2 = math.min(slot1, slot0:GetCostSum().oil)
 							end
 						end
 
 						return slot2
 					end
 
-					slot6 = #uv0:GetExpeditionIds()
-
 					if uv1 == BossRushSeriesData.MODE.SINGLE then
-						slot0 = (slot0 + slot5(uv2[1], slot3[1]) + slot5(uv3, slot3[2])) * slot6
+						slot0 = (0 + slot5(uv2[1], slot3[1]) + slot5(uv3, slot3[2])) * #uv0:GetExpeditionIds()
 					else
 						slot0 = slot5(uv3, slot3[2]) * slot6
 
@@ -269,7 +262,7 @@ function slot0.bindEvent(slot0)
 					end
 
 					return slot0
-				end)()
+				end()
 			}
 		}))
 	end)
@@ -336,10 +329,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot1:getBody())
 	elseif slot2 == GAME.BEGIN_STAGE_ERRO then
 		if slot3 == 3 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({

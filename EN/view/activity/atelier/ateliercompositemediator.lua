@@ -32,10 +32,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.COMPOSITE_ATELIER_RECIPE_DONE then
-		slot0.viewComponent:OnCompositeResult(slot3)
+		slot0.viewComponent:OnCompositeResult(slot1:getBody())
 	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
 		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK then
 			slot0.viewComponent:SetActivity(slot3)

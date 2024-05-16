@@ -37,10 +37,8 @@ function slot0.init(slot0)
 	table.insert(slot0._loadingRequest, LoadPrefabRequestPackage.New("ui/" .. slot1, slot1, function (slot0)
 		setParent(slot0, uv0._map)
 
-		slot2 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder
-
 		for slot7 = 0, slot0:GetComponentsInChildren(typeof(Renderer)).Length - 1 do
-			slot3[slot7].sortingOrder = slot2 + 1
+			slot3[slot7].sortingOrder = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder + 1
 		end
 	end):Start())
 end
@@ -140,7 +138,7 @@ function slot0.UpdateView(slot0)
 	setActive(slot0.btn_actskin:Find("tip"), slot1:getActivityById(ActivityConst.MUSIC_CHUIXUE7DAY_ID) and not slot5:isEnd() and slot5:readyToAchieve())
 	setActive(slot0.btn_ins:Find("tip"), getProxy(InstagramProxy):ShouldShowTip())
 	setActive(slot0.screen:Find("tip"), IdolPTPage.NeedTip())
-	setActive(slot0.foutain:Find("tip"), Activity.isHaveActivableMedal())
+	setActive(slot0.foutain:Find("tip"), uv0.MedalTip())
 	setActive(slot0.stage:Find("tip"), getProxy(MiniGameProxy):GetHubByHubId(slot0.HUB_ID).count > 0)
 end
 
@@ -150,10 +148,8 @@ function slot0.InitFacility(slot0, slot1, slot2)
 end
 
 function slot0.getStudents(slot0)
-	slot1 = {}
-
 	if not getProxy(ActivityProxy):getActivityById(ActivityConst.MUSIC_FESTIVAL_ID) then
-		return slot1
+		return {}
 	end
 
 	if slot3:getConfig("config_client") and slot4.stage_off_ship then
@@ -289,6 +285,10 @@ function slot0.TryPlayStory(slot0)
 	if "TIANHOUYUYI2" then
 		pg.NewStoryMgr.GetInstance():Play(slot1)
 	end
+end
+
+function slot0.MedalTip()
+	return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA))
 end
 
 function slot0.willExit(slot0)

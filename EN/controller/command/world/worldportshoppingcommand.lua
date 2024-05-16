@@ -9,15 +9,13 @@ function slot0.execute(slot0, slot1)
 
 	slot4 = slot3.moneyItem
 
-	if GetOwnedDropCount(slot4) < slot4.count then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", updateDropCfg(slot4).name))
+	if slot4:getOwnedCount() < slot4.count then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", slot4:getName()))
 
 		return
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(33403, {
+	pg.ConnectionMgr.GetInstance():Send(33403, {
 		count = 1,
 		shop_type = 1,
 		shop_id = slot3.id
@@ -28,9 +26,8 @@ function slot0.execute(slot0, slot1)
 
 			slot1 = nowWorld()
 			slot2 = slot1:GetActiveMap():GetPort()
-			slot4 = slot1:GetAtlas()
 
-			slot4:UpdatePortMark(slot2.id, #underscore.filter(slot2.goods, function (slot0)
+			slot1:GetAtlas():UpdatePortMark(slot2.id, #underscore.filter(slot2.goods, function (slot0)
 				return slot0.count > 0
 			end) > 0)
 			uv2:sendNotification(GAME.WORLD_PORT_SHOPPING_DONE, {

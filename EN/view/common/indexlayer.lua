@@ -93,19 +93,17 @@ function slot0.didEnter(slot0)
 end
 
 function slot0.initDisplays(slot0)
-	slot1 = {
-		"sort",
-		"index",
-		"camp",
-		"rarity",
-		"extra",
-		"equipSkinSort",
-		"equipSkinIndex",
-		"equipSkinTheme"
-	}
-
 	for slot5, slot6 in ipairs(slot0.displayTFs) do
-		slot7 = tobool(slot0.contextData.display[slot1[slot5]])
+		slot7 = tobool(slot0.contextData.display[({
+			"sort",
+			"index",
+			"camp",
+			"rarity",
+			"extra",
+			"equipSkinSort",
+			"equipSkinIndex",
+			"equipSkinTheme"
+		})[slot5]])
 
 		setActive(slot6, slot7)
 
@@ -155,10 +153,9 @@ function slot0.initEquipSkinSort(slot0)
 end
 
 function slot0.updateEquipSkinSort(slot0)
-	slot1 = slot0.displayList[IndexConst.DisplayEquipSkinSort]
 	slot2 = slot0.typeList[IndexConst.DisplayEquipSkinSort]
 
-	slot1:each(function (slot0, slot1)
+	slot0.displayList[IndexConst.DisplayEquipSkinSort]:each(function (slot0, slot1)
 		slot3 = findTF(slot1, "Image")
 
 		setImageSprite(slot1, uv0.contextData.equipSkinSort == uv1[slot0 + 1] and uv0.yellowSprite or uv0.greySprite)
@@ -196,10 +193,9 @@ function slot0.initEquipSkinIndex(slot0)
 end
 
 function slot0.updateEquipSkinIndex(slot0)
-	slot1 = slot0.displayList[IndexConst.DisplayEquipSkinIndex]
 	slot2 = slot0.typeList[IndexConst.DisplayEquipSkinIndex]
 
-	slot1:each(function (slot0, slot1)
+	slot0.displayList[IndexConst.DisplayEquipSkinIndex]:each(function (slot0, slot1)
 		slot4 = findTF(slot1, "Image")
 
 		setImageSprite(slot1, bit.band(uv1.contextData.equipSkinIndex, bit.lshift(1, uv0[slot0 + 1])) > 0 and uv1.yellowSprite or uv1.greySprite)
@@ -237,10 +233,9 @@ function slot0.initEquipSkinTheme(slot0)
 end
 
 function slot0.updateEquipSkinTheme(slot0)
-	slot1 = slot0.displayList[IndexConst.DisplayEquipSkinTheme]
 	slot2 = slot0.typeList[IndexConst.DisplayEquipSkinTheme]
 
-	slot1:each(function (slot0, slot1)
+	slot0.displayList[IndexConst.DisplayEquipSkinTheme]:each(function (slot0, slot1)
 		slot5 = findTF(slot1, "Image")
 
 		setImageSprite(slot1, string.find(IndexConst.StrAnd(uv1.contextData.equipSkinTheme, IndexConst.StrLShift("1", uv0[slot0 + 1])), "1") ~= nil and uv1.yellowSprite or uv1.greySprite)

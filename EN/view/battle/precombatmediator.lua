@@ -162,10 +162,8 @@ function slot0.bindEvent(slot0)
 		slot0 = 0
 
 		for slot4, slot5 in ipairs(uv0.contextData.fleets) do
-			slot6 = slot5:GetCostSum().oil
-
 			if uv0.contextData.costLimit[slot4 == 1 and 1 or 2] > 0 then
-				slot6 = math.min(slot6, slot8)
+				slot6 = math.min(slot5:GetCostSum().oil, slot8)
 			end
 
 			slot0 = slot0 + slot6
@@ -239,10 +237,8 @@ function slot0.commitEdit(slot0, slot1)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("ship_formationMediaror_trash_warning", slot3.defaultName),
 			onYes = function ()
-				slot1 = getProxy(BayProxy):getRawData()
-
 				for slot6 = #uv0.ships, 1, -1 do
-					uv0:removeShip(slot1[slot2[slot6]])
+					uv0:removeShip(getProxy(BayProxy):getRawData()[slot2[slot6]])
 				end
 
 				if uv0.id == FleetProxy.PVP_FLEET_ID then
@@ -282,10 +278,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot1:getBody())
 	elseif slot2 == PlayerProxy.UPDATED then
 		slot0.viewComponent:SetPlayerInfo(getProxy(PlayerProxy):getData())
 	elseif slot2 == GAME.BEGIN_STAGE_ERRO then

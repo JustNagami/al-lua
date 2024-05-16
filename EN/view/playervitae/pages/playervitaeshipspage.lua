@@ -4,9 +4,42 @@ slot2 = 2
 slot3 = 3
 slot4 = 1
 slot0.RANDOM_FLAG_SHIP_PAGE = 2
+slot0.EDUCATE_CHAR_SLOT_ID = 6
 slot0.ON_BEGIN_DRAG_CARD = "PlayerVitaeShipsPage:ON_BEGIN_DRAG_CARD"
 slot0.ON_DRAGING_CARD = "PlayerVitaeShipsPage:ON_DRAGING_CARD"
 slot0.ON_DRAG_END_CARD = "PlayerVitaeShipsPage:ON_DRAG_END_CARD"
+
+function slot0.GetSlotIndexList()
+	slot0, slot1 = uv0.GetSlotMaxCnt()
+
+	for slot6 = 1, slot1 do
+		table.insert({}, slot6)
+	end
+
+	if uv0.GetEducateCharSlotMaxCnt() > 0 then
+		table.insert(slot2, uv0.EDUCATE_CHAR_SLOT_ID)
+	end
+
+	return slot2
+end
+
+function slot0.GetAllUnlockSlotCnt()
+	slot0, slot1 = uv0.GetSlotMaxCnt()
+
+	return slot1 + uv0.GetEducateCharSlotMaxCnt()
+end
+
+function slot0.GetEducateCharSlotMaxCnt()
+	if LOCK_EDUCATE_SYSTEM then
+		return 0
+	end
+
+	if getProxy(PlayerProxy):getRawData():ExistEducateChar() or getProxy(EducateProxy):IsUnlockSecretary() then
+		return 1
+	else
+		return 0
+	end
+end
 
 function slot0.GetSlotMaxCnt()
 	slot0 = pg.gameset.secretary_group_unlock.description
@@ -60,16 +93,42 @@ function slot0.OnLoaded(slot0)
 	slot0.nativeBtn = slot0:findTF("native_setting_btn")
 	slot0.nativeBtnOn = slot0.nativeBtn:Find("on")
 	slot0.nativeBtnOff = slot0.nativeBtn:Find("off")
+	slot0.educateCharTr = slot0:findTF("educate_char")
+	slot0.educateCharSettingList = UIItemList.New(slot0:findTF("educate_char/shipCard/settings/panel"), slot0:findTF("educate_char/shipCard/settings/panel/tpl"))
+	slot0.educateCharSettingBtn = slot0:findTF("educate_char/shipCard/settings/tpl")
+	slot0.educateCharTrTip = slot0.educateCharTr:Find("tip")
+
+	if LOCK_EDUCATE_SYSTEM then
+		setActive(slot0.educateCharTr, false)
+		setAnchoredPosition(slot0.cardContainer, {
+			x = 0
+		})
+		setAnchoredPosition(slot0:findTF("flagship"), {
+			x = -720
+		})
+		setAnchoredPosition(slot0:findTF("zs"), {
+			x = 763
+		})
+		setAnchoredPosition(slot0:findTF("line"), {
+			x = 740
+		})
+	end
+
+	slot0.educateCharCards = {
+		[uv0] = PlayerVitaeEducateShipCard.New(slot0:findTF("educate_char/shipCard"), slot0.event),
+		[uv1] = PlayerVitaeEducateAddCard.New(slot0:findTF("educate_char/addCard"), slot0.event),
+		[uv2] = PlayerVitaeEducateLockCard.New(slot0:findTF("educate_char/lockCard"), slot0.event)
+	}
 	slot0.tip = slot0:findTF("tip"):GetComponent(typeof(Text))
 	slot0.flagShipMark = slot0:findTF("flagship")
 
-	slot0:bind(uv0.ON_BEGIN_DRAG_CARD, function (slot0, slot1)
+	slot0:bind(uv3.ON_BEGIN_DRAG_CARD, function (slot0, slot1)
 		uv0:OnBeginDragCard(slot1)
 	end)
-	slot0:bind(uv0.ON_DRAGING_CARD, function (slot0, slot1)
+	slot0:bind(uv3.ON_DRAGING_CARD, function (slot0, slot1)
 		uv0:OnDragingCard(slot1)
 	end)
-	slot0:bind(uv0.ON_DRAG_END_CARD, function (slot0)
+	slot0:bind(uv3.ON_DRAG_END_CARD, function (slot0)
 		uv0:OnEndDragCard()
 	end)
 	setText(slot0.nativeBtnOn:Find("Text"), i18n("random_ship_before"))
@@ -133,14 +192,12 @@ end
 function slot0.OnEndDragCard(slot0)
 	slot0.displayCards[slot0.dragIndex]._tf.localPosition = slot0.displayPos[slot0.dragIndex]
 	slot3 = {}
-	slot4 = getProxy(PlayerProxy):getRawData()
-	slot5 = false
 
 	for slot9, slot10 in pairs(slot0.displayCards) do
 		slot10:EnableDrag()
 		table.insert(slot3, slot10.displayShip.id)
 
-		if not slot5 and slot4.characters[#slot3] ~= slot10.displayShip.id then
+		if not false and getProxy(PlayerProxy):getRawData().characters[#slot3] ~= slot10.displayShip.id then
 			slot5 = true
 		end
 	end
@@ -179,17 +236,16 @@ function slot0.OnInit(slot0)
 		uv1:EditCards(uv0)
 		uv2()
 	end, SFX_PANEL)
-	(function ()
+	function ()
 		setAnchoredPosition(uv0.settingBtnSlider, {
 			x = ({
 				68,
 				-68
 			})[uv1 and 1 or 2]
 		})
-	end)()
+	end()
 
-	slot3 = getProxy(SettingsProxy)
-	slot0.randomFlag = slot3:IsOpenRandomFlagShip()
+	slot0.randomFlag = getProxy(SettingsProxy):IsOpenRandomFlagShip()
 	slot0.nativeFlag = false
 
 	onButton(slot0, slot0.randomBtn, function ()
@@ -218,7 +274,7 @@ function slot0.OnInit(slot0)
 		pg.TipsMgr.GetInstance():ShowTips(uv0.randomFlag and i18n("random_ship_on") or i18n("random_ship_off"))
 		uv0:emit(PlayerVitaeMediator.ON_SWITCH_RANDOM_FLAG_SHIP_BTN, uv0.randomFlag)
 	end, SFX_PANEL)
-	(function ()
+	function ()
 		setAnchoredPosition(uv0.randomBtnSlider, {
 			x = ({
 				68,
@@ -231,14 +287,14 @@ function slot0.OnInit(slot0)
 		if uv0.randomFlag and uv1 then
 			triggerButton(uv0.settingBtn)
 		end
-	end)()
+	end()
 	onButton(slot0, slot0.nativeBtn, function ()
 		uv0.nativeFlag = not uv0.nativeFlag
 
 		uv1()
 		uv0:SwitchToPage(uv0.nativeFlag and uv2 or uv3)
 	end, SFX_PANEL)
-	(function ()
+	function ()
 		setActive(uv0.nativeBtnOn, uv0.nativeFlag)
 		setActive(uv0.nativeBtnOff, not uv0.nativeFlag)
 		setActive(uv0.flagShipMark, not uv0.randomFlag or uv0.nativeFlag)
@@ -246,7 +302,10 @@ function slot0.OnInit(slot0)
 		if uv1 then
 			triggerButton(uv0.settingBtn)
 		end
-	end)()
+	end()
+	onButton(slot0, slot0.educateCharSettingBtn, function ()
+		setActive(uv0.educateCharSettingList.container, not isActive(uv0.educateCharSettingList.container))
+	end, SFX_PANEL)
 	onButton(slot0, slot0.settingSeceneBtn, function ()
 		uv0.contextData.showSelectCharacters = true
 
@@ -271,7 +330,70 @@ function slot0.Update(slot0)
 	slot2 = nil
 
 	slot0:SwitchToPage(slot0.randomFlag and slot0.nativeFlag and uv0 or getProxy(SettingsProxy):IsOpenRandomFlagShip() and uv1 or uv0)
+	slot0:UpdateEducateChar()
 	slot0:Show()
+end
+
+function slot0.UpdateEducateChar(slot0)
+	slot0:UpdateEducateCharSettings()
+	slot0:UpdateEducateSlot()
+	slot0:UpdateEducateCharTrTip()
+end
+
+function slot0.UpdateEducateCharTrTip(slot0)
+	setActive(slot0.educateCharTrTip, getProxy(SettingsProxy):ShouldEducateCharTip())
+end
+
+function slot6()
+	if uv0.GetEducateCharSlotMaxCnt() <= 0 then
+		return uv1
+	end
+
+	if getProxy(PlayerProxy):getRawData():ExistEducateChar() then
+		return uv2
+	end
+
+	return uv3
+end
+
+function slot0.UpdateEducateSlot(slot0)
+	slot2 = nil
+
+	for slot6, slot7 in pairs(slot0.educateCharCards) do
+		slot8 = slot6 == uv0()
+
+		slot7:ShowOrHide(slot8)
+
+		if slot8 then
+			slot2 = slot7
+		end
+	end
+
+	slot2:Flush()
+end
+
+function slot0.UpdateEducateCharSettings(slot0)
+	slot1 = getProxy(SettingsProxy)
+
+	slot0.educateCharSettingList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			setText(slot2:Find("Text"), i18n("flagship_display_mode_" .. uv0[slot1 + 1]))
+			onButton(uv1, slot2, function ()
+				uv0:SetFlagShipDisplayMode(uv1)
+				uv2()
+				setActive(uv3.educateCharSettingList.container, false)
+			end, SFX_PANEL)
+			setActive(slot2:Find("line"), slot1 + 1 ~= #uv0)
+		end
+	end)
+	slot0.educateCharSettingList:align(#{
+		FlAG_SHIP_DISPLAY_ONLY_SHIP,
+		FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR,
+		FlAG_SHIP_DISPLAY_ALL
+	})
+	function ()
+		setText(uv1.educateCharSettingBtn:Find("Text"), i18n("flagship_display_mode_" .. uv0:GetFlagShipDisplayMode()))
+	end()
 end
 
 function slot0.SwitchToPage(slot0, slot1)
@@ -317,7 +439,6 @@ function slot0.UpdateCards(slot0, slot1, slot2, slot3)
 end
 
 function slot0.UpdateTypeCards(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot7 = {}
 	slot8 = slot0.cards[slot3]
 
 	function slot9(slot0)
@@ -332,7 +453,7 @@ function slot0.UpdateTypeCards(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	end
 
 	for slot13 = 1, slot4 do
-		table.insert(slot7, function (slot0)
+		table.insert({}, function (slot0)
 			if uv0.exited then
 				return
 			end
@@ -378,12 +499,10 @@ function slot0.EditCards(slot0, slot1)
 end
 
 function slot0.EditCardsForRandom(slot0, slot1)
-	slot2 = {}
-
 	for slot7, slot8 in ipairs(slot0.cards[uv0]) do
 		if isActive(slot8._tf) then
 			if not slot1 then
-				slot2[slot8.slotIndex] = slot8:GetRandomFlagValue()
+				-- Nothing
 			end
 
 			slot8:EditCardForRandom(slot1)
@@ -392,7 +511,9 @@ function slot0.EditCardsForRandom(slot0, slot1)
 
 	slot0.IsOpenEditForRandom = slot1
 
-	if #slot2 > 0 then
+	if #{
+		[slot8.slotIndex] = slot8:GetRandomFlagValue()
+	} > 0 then
 		slot0:SaveRandomSettings(slot2)
 	end
 
@@ -404,11 +525,9 @@ function slot0.EditCardsForRandom(slot0, slot1)
 end
 
 function slot0.SaveRandomSettings(slot0, slot1)
-	slot2 = getProxy(PlayerProxy):getRawData()
-
 	for slot6 = 1, slot0.max do
 		if not slot1[slot6] then
-			slot1[slot6] = slot2:RawGetRandomShipAndSkinValueInpos(slot6)
+			slot1[slot6] = getProxy(PlayerProxy):getRawData():RawGetRandomShipAndSkinValueInpos(slot6)
 		end
 	end
 

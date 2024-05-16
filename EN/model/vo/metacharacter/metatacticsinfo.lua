@@ -61,9 +61,7 @@ slot0.States = {
 }
 
 function slot0.getTacticsStateForShow(slot0)
-	slot3 = getProxy(BayProxy):getShipById(slot0.shipID) and slot2:isAllMetaSkillLevelMax() or false
-
-	if not slot0:isAnyLearning() and not slot3 then
+	if not slot0:isAnyLearning() and not (getProxy(BayProxy):getShipById(slot0.shipID) and slot2:isAllMetaSkillLevelMax() or false) then
 		return uv0.States.LearnAble
 	elseif slot1 then
 		if getProxy(BayProxy):getShipById(slot0.shipID):isSkillLevelMax(slot0.curSkillID) then

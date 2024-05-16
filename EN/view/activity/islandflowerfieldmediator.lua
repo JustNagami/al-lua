@@ -2,10 +2,7 @@ slot0 = class("IslandFlowerFieldMediator", import("..base.ContextMediator"))
 slot0.GET_FLOWER_AWARD = "IslandFlowerFieldMediator.GET_FLOWER_AWARD"
 
 function slot0.register(slot0)
-	slot1 = getProxy(ActivityProxy)
-	slot2 = slot0.viewComponent
-
-	slot2:setActivity(slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_FLOWER_FIELD))
+	slot0.viewComponent:setActivity(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FLOWER_FIELD))
 	slot0:bind(uv0.GET_FLOWER_AWARD, function (slot0, slot1)
 		uv0:sendNotification(GAME.ISLAND_FLOWER_GET, {
 			act_id = uv1.id,

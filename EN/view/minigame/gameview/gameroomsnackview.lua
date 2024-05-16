@@ -30,16 +30,11 @@ function slot0.addListener(slot0)
 end
 
 function slot0.updateSDModel(slot0)
-	slot1 = getProxy(PlayerProxy)
-	slot2 = slot1:getData()
+	slot2 = getProxy(PlayerProxy):getData()
 	slot3 = getProxy(BayProxy)
-	slot5 = pg.UIMgr.GetInstance()
 
-	slot5:LoadingOn()
-
-	slot5 = PoolMgr.GetInstance()
-
-	slot5:GetSpineChar("Z28", true, function (slot0)
+	pg.UIMgr.GetInstance():LoadingOn()
+	PoolMgr.GetInstance():GetSpineChar("Z28", true, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
 		uv0.prefab = uv1
@@ -52,20 +47,17 @@ function slot0.updateSDModel(slot0)
 end
 
 function slot0.updateSelectedList(slot0, slot1)
-	slot1 = slot1 or {}
-
 	for slot5 = 1, uv0.Order_Num do
 		slot6 = slot0.selectedContainer:GetChild(slot5 - 1)
 		slot8 = slot0:findTF("Full", slot6)
-		slot9 = slot0:findTF("SnackImg", slot8)
 		slot0.selectedTFList[slot5] = slot6
-		slot10 = slot1[slot5]
+		slot10 = (slot1 or {})[slot5]
 
 		setActive(slot8, slot10)
 		setActive(slot0:findTF("Empty", slot6), not slot10)
 
 		if slot10 then
-			setImageSprite(slot9, GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "snack_" .. slot10))
+			setImageSprite(slot0:findTF("SnackImg", slot8), GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "snack_" .. slot10))
 		end
 	end
 end
@@ -84,10 +76,8 @@ end
 
 function slot0.updateSelectedOrderTag(slot0, slot1)
 	for slot5, slot6 in pairs(slot0.selectedSnackTFList) do
-		slot7 = slot0:findTF("SelectedTag", slot6)
-
 		if slot1 then
-			setActive(slot7, false)
+			setActive(slot0:findTF("SelectedTag", slot6), false)
 		else
 			setImageSprite(slot7, GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "order_" .. table.indexof(slot0.selectedIDList, slot5, 1)))
 		end

@@ -3,9 +3,10 @@ slot1 = 0
 slot2 = 1
 slot3 = 2
 
-function slot0.Ctor(slot0, slot1)
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.poolMgr = slot1
 	slot0.state = uv0
-	slot0.callback = slot1
+	slot0.callback = slot2
 	slot0.rollBacks = {}
 end
 
@@ -41,35 +42,27 @@ function slot0.Work(slot0, slot1, slot2)
 	end
 
 	slot0.state = uv0
-	slot3 = slot1._tf
 	slot0.module = slot1
-
-	function slot4()
-		if uv0:IsExit() then
-			uv1:FinishWork(false)
-		else
-			uv0:Init(uv2)
-			uv1:FinishWork(true)
-		end
-	end
-
-	function slot5()
-		uv0:OnIconLoaed()
-	end
-
 	slot0.rollBacks = {}
 
 	if slot2:IsSpine() then
-		slot0:LoadSpine(slot3, slot2, slot4, slot5)
+		slot0:LoadSpine(slot1._tf, slot2, function ()
+			if uv0:IsExit() then
+				uv1:FinishWork(false)
+			else
+				uv0:Init(uv2)
+				uv1:FinishWork(true)
+			end
+		end, function ()
+			uv0:OnIconLoaed()
+		end)
 	else
 		slot0:Load(slot3, slot2, slot4, slot5)
 	end
 end
 
 function slot4(slot0, slot1, slot2, slot3)
-	slot4 = ResourceMgr.Inst
-
-	slot4:getAssetAsync("furnitrues/" .. slot2:GetPicture(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("furnitrues/" .. slot2:GetPicture(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
 			uv0:OnStop()
 
@@ -94,9 +87,7 @@ function slot5(slot0, slot1, slot2, slot3)
 
 	for slot9, slot10 in pairs(slot2:GetMaskNames()) do
 		table.insert(slot5, function (slot0)
-			slot1 = ResourceMgr.Inst
-
-			slot1:getAssetAsync("furnitrues/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			ResourceMgr.Inst:getAssetAsync("furnitrues/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 				if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
 					uv0:OnStop()
 
@@ -119,10 +110,8 @@ function slot5(slot0, slot1, slot2, slot3)
 end
 
 function slot6(slot0, slot1, slot2, slot3)
-	slot5 = _courtyard:GetView().poolRoot:Find("mask")
-
 	for slot9, slot10 in pairs(slot2:GetBodyMasks()) do
-		slot11 = slot0:CloneTplTo(slot5, slot1:Find("interaction"), "body_mask" .. slot9)
+		slot11 = slot0:CloneTplTo(slot0.poolMgr.root:Find("mask"), slot1:Find("interaction"), "body_mask" .. slot9)
 		slot11.anchoredPosition = slot10.offset
 		slot11.sizeDelta = slot10.size
 
@@ -142,9 +131,7 @@ function slot7(slot0, slot1, slot2, slot3)
 			return
 		end
 
-		slot6 = ResourceMgr.Inst
-
-		slot6:getAssetAsync("furnitrues/" .. slot5, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		ResourceMgr.Inst:getAssetAsync("furnitrues/" .. slot5, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 			if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
 				uv0:OnStop()
 
@@ -164,10 +151,7 @@ function slot7(slot0, slot1, slot2, slot3)
 end
 
 function slot8(slot0, slot1, slot2, slot3)
-	slot4 = slot2:GetFirstSlot()
-	slot5 = ResourceMgr.Inst
-
-	slot5:getAssetAsync("sfurniture/" .. slot4:GetName(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("sfurniture/" .. slot2:GetFirstSlot():GetName(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
 			uv0:OnStop()
 
@@ -191,9 +175,7 @@ function slot9(slot0, slot1, slot2, slot3)
 
 	for slot9, slot10 in ipairs(slot2:GetMaskNames()) do
 		table.insert(slot5, function (slot0)
-			slot1 = ResourceMgr.Inst
-
-			slot1:getAssetAsync("sfurniture/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			ResourceMgr.Inst:getAssetAsync("sfurniture/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 				if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
 					uv0:OnStop()
 
@@ -215,7 +197,7 @@ end
 
 function slot10(slot0, slot1, slot2, slot3)
 	if slot2:GetAnimatorMask() then
-		slot6 = slot0:CloneTplTo(_courtyard:GetView().poolRoot:Find("mask"), slot1:Find("interaction"), "animtor_mask")
+		slot6 = slot0:CloneTplTo(slot0.poolMgr.root:Find("mask"), slot1:Find("interaction"), "animtor_mask")
 		slot6.sizeDelta = slot4.size
 
 		setAnchoredPosition(slot6, slot4.offset)
@@ -228,9 +210,7 @@ function slot10(slot0, slot1, slot2, slot3)
 		slot12 = slot10.value
 
 		table.insert(slot5, function (slot0)
-			slot1 = ResourceMgr.Inst
-
-			slot1:getAssetAsync("sfurniture/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			ResourceMgr.Inst:getAssetAsync("sfurniture/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 				if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
 					uv0:OnStop()
 

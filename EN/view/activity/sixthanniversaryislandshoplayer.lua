@@ -17,23 +17,18 @@ function slot0.setPlayer(slot0, slot1)
 end
 
 function slot0.init(slot0)
-	slot1 = pg.UIMgr.GetInstance()
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 
-	slot1:BlurPanel(slot0._tf)
-
-	slot1 = slot0._tf
-	slot1 = slot1:Find("main")
+	slot1 = slot0._tf:Find("main")
 
 	setText(slot1:Find("time/Text"), i18n("islandshop_tips1"))
 
 	slot0.rtTime = slot1:Find("time/Text_2")
 	slot0.rtRes = slot1:Find("tpl")
-	slot2 = slot0._tf
-	slot2 = slot2:Find("main/view/content")
+	slot2 = slot0._tf:Find("main/view/content")
 	slot0.goodsItemList = UIItemList.New(slot2, slot2:Find("goods"))
-	slot3 = slot0.goodsItemList
 
-	slot3:make(function (slot0, slot1, slot2)
+	slot0.goodsItemList:make(function (slot0, slot1, slot2)
 		slot1 = slot1 + 1
 
 		if slot0 == UIItemList.EventUpdate then
@@ -45,16 +40,10 @@ function slot0.init(slot0)
 			uv0:updateGoodsCard(slot2, uv0.goodsList[slot1])
 		end
 	end)
-
-	slot5 = slot0._tf
-
-	onButton(slot0, slot5:Find("bg"), function ()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:closeView()
 	end, SFX_CANCEL)
-
-	slot5 = slot0._tf
-
-	onButton(slot0, slot5:Find("main/btn_back"), function ()
+	onButton(slot0, slot0._tf:Find("main/btn_back"), function ()
 		uv0:closeView()
 	end, SFX_CANCEL)
 end
@@ -73,12 +62,12 @@ function slot0.updateGoodsCard(slot0, slot1, slot2)
 		count = slot2:getConfig("num")
 	})
 	onNextTick(function ()
-		changeToScrollText(uv0:Find("Text"), uv1.cfg.name)
+		changeToScrollText(uv0:Find("Text"), uv1:getConfig("name"))
 	end)
-	GetImageSpriteFromAtlasAsync(getDropIcon({
+	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = slot2:getConfig("resource_category"),
 		id = slot2:getConfig("resource_type")
-	}), "", slot1:Find("res_icon"))
+	}):getIcon(), "", slot1:Find("res_icon"))
 	setText(slot1:Find("btn_pay/cost"), slot2:getConfig("resource_num"))
 	setText(slot1:Find("btn_unable/cost"), slot2:getConfig("resource_num"))
 

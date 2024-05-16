@@ -9,30 +9,19 @@ function slot0.init(slot0)
 end
 
 function slot0.didEnter(slot0)
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("BG"), function ()
+	onButton(slot0, slot0._tf:Find("BG"), function ()
 		uv0:onBackPressed()
 	end)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("Content/Cancel"), function ()
+	onButton(slot0, slot0._tf:Find("Content/Cancel"), function ()
 		uv0:onBackPressed()
 	end, SFX_CANCEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("Content/Submit"), function ()
+	onButton(slot0, slot0._tf:Find("Content/Submit"), function ()
 		uv0:emit(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK)
 	end, SFX_CONFIRM)
 
 	slot1 = slot0.contextData.task
-	slot4 = slot0._tf
-	slot5 = slot0._tf
-	slot5 = slot5:Find("Content/Icons")
 
-	UIItemList.StaticAlign(slot4:Find("Content/Icons"), slot5:GetChild(0), #{
+	UIItemList.StaticAlign(slot0._tf:Find("Content/Icons"), slot0._tf:Find("Content/Icons"):GetChild(0), #{
 		{
 			type = tonumber(slot1:getConfig("target_id")),
 			id = tonumber(slot1:getConfig("target_id_2")),

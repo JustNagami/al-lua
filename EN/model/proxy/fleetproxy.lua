@@ -216,25 +216,23 @@ function slot0.getAllShipIds(slot0, slot1)
 end
 
 function slot0.getFirstFleetShipCount(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0.data[1].ships) do
-		slot1 = slot1 + 1
+		slot1 = 0 + 1
 	end
 
 	return slot1
 end
 
 function slot0.GetRegularFleets(slot0)
-	slot1 = {}
-
 	for slot5, slot6 in pairs(slot0.data) do
 		if slot6:isRegularFleet() then
-			slot1[slot5] = Clone(slot6)
+			-- Nothing
 		end
 	end
 
-	return slot1
+	return {
+		[slot5] = Clone(slot6)
+	}
 end
 
 function slot0.inPvPFleet(slot0, slot1)
@@ -329,30 +327,25 @@ function slot0.addActivityFleet(slot0, slot1, slot2)
 	slot5 = getProxy(BayProxy)
 	slot6, slot7 = nil
 
-	function slot8()
-		if uv0 then
-			return uv0
-		end
-
-		slot0 = uv1
-		uv0 = _.map(slot0:GetActiveSeriesIds(), function (slot0)
-			return table.lastof(BossRushSeriesData.New({
-				id = slot0,
-				actId = uv0.id
-			}):GetFleetIds())
-		end)
-
-		return uv0
-	end
-
-	slot9 = pg.activity_template[slot3]
-
 	for slot13, slot14 in ipairs(slot2) do
-		slot15 = CreateShell(slot14)
+		if pg.activity_template[slot3].type == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+			CreateShell(slot14).fleetType = table.contains(function ()
+				if uv0 then
+					return uv0
+				end
 
-		if slot9.type == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
-			slot15.fleetType = table.contains(slot8(), slot14.id) and FleetType.Submarine or FleetType.Normal
+				uv0 = _.map(uv1:GetActiveSeriesIds(), function (slot0)
+					return table.lastof(BossRushSeriesData.New({
+						id = slot0,
+						actId = uv0.id
+					}):GetFleetIds())
+				end)
+
+				return uv0
+			end(), slot14.id) and FleetType.Submarine or FleetType.Normal
 		elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
+			slot15.fleetType = Fleet.SUBMARINE_FLEET_ID <= slot14.id and FleetType.Submarine or FleetType.Normal
+		elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
 			slot15.fleetType = Fleet.SUBMARINE_FLEET_ID <= slot14.id and FleetType.Submarine or FleetType.Normal
 		else
 			slot15.fleetType = Fleet.isSubmarineFleet({
@@ -385,6 +378,9 @@ function slot0.addActivityFleet(slot0, slot1, slot2)
 		slot10 = 0
 		slot11 = 0
 	elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+		slot10 = 0
+		slot11 = 0
+	elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
 		slot10 = 0
 		slot11 = 0
 	end
@@ -473,18 +469,16 @@ function slot0.recommendActivityFleet(slot0, slot1, slot2)
 	slot4 = slot0:getActivityFleets()[slot1][slot2]
 	slot5 = getProxy(BayProxy)
 
-	function slot6(slot0, slot1)
-		slot7 = slot1
-		slot8 = uv2
-
-		for slot7, slot8 in ipairs(uv0:getActivityRecommendShips(TeamType.GetShipTypeListFromTeam(slot0), uv1.ships, slot7, slot8)) do
-			uv1:insertShip(slot8, nil, slot0)
-		end
-	end
-
 	if Fleet.SUBMARINE_FLEET_ID <= slot2 then
 		if not slot4:isFull() then
-			slot6(TeamType.Submarine, TeamType.SubmarineMax - #slot4.subShips)
+			function (slot0, slot1)
+				slot7 = slot1
+				slot8 = uv2
+
+				for slot7, slot8 in ipairs(uv0:getActivityRecommendShips(TeamType.GetShipTypeListFromTeam(slot0), uv1.ships, slot7, slot8)) do
+					uv1:insertShip(slot8, nil, slot0)
+				end
+			end(TeamType.Submarine, TeamType.SubmarineMax - #slot4.subShips)
 		end
 	else
 		slot8 = TeamType.MainMax - #slot4.mainShips
@@ -505,13 +499,11 @@ function slot0.GetBossRushFleets(slot0, slot1, slot2)
 	slot4 = slot0:getActivityFleets()[slot1]
 
 	table.Foreach(slot2, function (slot0, slot1)
-		slot2 = slot0 == #uv0
-
 		if not uv1[slot1] then
 			uv1[slot1] = TypedFleet.New({
 				id = slot1,
 				ship_list = {},
-				fleetType = slot2 and FleetType.Submarine or FleetType.Normal
+				fleetType = slot0 == #uv0 and FleetType.Submarine or FleetType.Normal
 			})
 		end
 

@@ -30,10 +30,8 @@ function slot0.OnFirstFlush(slot0)
 end
 
 function slot0.FlushMarks(slot0, slot1)
-	slot4 = slot1.usedtime + slot1.count
-
 	for slot8, slot9 in ipairs(slot0.markTrs) do
-		setActive(slot9, slot8 <= slot4)
+		setActive(slot9, slot8 <= slot1.usedtime + slot1.count)
 		setActive(slot9:Find("finish"), slot8 <= slot2)
 	end
 end

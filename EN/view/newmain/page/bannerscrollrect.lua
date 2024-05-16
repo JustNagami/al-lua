@@ -101,9 +101,8 @@ end
 function slot0.AddDrag(slot0)
 	slot1 = 0
 	slot2 = nil
-	slot3 = slot0.dragEvent
 
-	slot3:AddBeginDragFunc(function (slot0, slot1)
+	slot0.dragEvent:AddBeginDragFunc(function (slot0, slot1)
 		if uv0.animating then
 			return
 		end
@@ -113,20 +112,14 @@ function slot0.AddDrag(slot0)
 		uv1 = slot1.position.x
 		uv2 = uv0.container.localPosition
 	end)
-
-	slot3 = slot0.dragEvent
-
-	slot3:AddDragFunc(function (slot0, slot1)
+	slot0.dragEvent:AddDragFunc(function (slot0, slot1)
 		if uv0.animating then
 			return
 		end
 
 		uv0.container.localPosition = Vector3(uv2.x + (slot1.position.x - uv1) * 0.5, uv2.y, 0)
 	end)
-
-	slot3 = slot0.dragEvent
-
-	slot3:AddDragEndFunc(function (slot0, slot1)
+	slot0.dragEvent:AddDragEndFunc(function (slot0, slot1)
 		if uv0.animating then
 			return
 		end

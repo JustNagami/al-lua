@@ -6,16 +6,13 @@ function slot0.execute(slot0, slot1)
 			ranks = slot5
 		})
 	else
-		slot6 = pg.ConnectionMgr.GetInstance()
-
-		slot6:Send(61037, {
+		pg.ConnectionMgr.GetInstance():Send(61037, {
 			id = slot3
 		}, 61038, function (slot0)
-			slot1 = uv0:getRawData()
 			slot2 = {}
 
 			for slot6, slot7 in ipairs(slot0.list) do
-				if slot1:getMemberById(slot7.user_id) then
+				if uv0:getRawData():getMemberById(slot7.user_id) then
 					table.insert(slot2, {
 						name = slot8.name,
 						damage = slot7.damage

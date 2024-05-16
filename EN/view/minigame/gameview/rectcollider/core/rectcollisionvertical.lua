@@ -18,14 +18,10 @@ function slot0.DescendSlope(slot0, slot1, slot2)
 
 		if slot8 and not slot10 or not slot8 and slot10 then
 			slot12 = true
-		else
-			slot14 = Vector3.Angle(slot11.normal, Vector3.up)
-
-			if Vector3.Angle(slot9.normal, Vector3.up) <= slot1.config.maxSlopeAngle and slot1.config.maxSlopeAngle < slot14 then
-				slot12 = true
-			elseif slot1.config.maxSlopeAngle < slot13 and slot14 <= slot1.config.maxSlopeAngle then
-				slot12 = true
-			end
+		elseif Vector3.Angle(slot9.normal, Vector3.up) <= slot1.config.maxSlopeAngle and slot1.config.maxSlopeAngle < Vector3.Angle(slot11.normal, Vector3.up) then
+			slot12 = true
+		elseif slot1.config.maxSlopeAngle < slot13 and slot14 <= slot1.config.maxSlopeAngle then
+			slot12 = true
 		end
 
 		if slot12 then
@@ -51,10 +47,8 @@ end
 
 function slot0.slideDownMaxSlope(slot0, slot1, slot2)
 	if slot0 and slot1.y ~= 0 and slot2.config.maxSlopeAngle < Vector3.Angle(slot0.normal, Vector3.up) then
-		slot4 = Mathf.Sign(slot1.y)
-
 		if Mathf.Abs(slot1.y) > slot2.config.downMaxSlopeSpeed * Time.deltaTime then
-			slot1.y = slot2.config.downMaxSlopeSpeed * Time.deltaTime * slot4
+			slot1.y = slot2.config.downMaxSlopeSpeed * Time.deltaTime * Mathf.Sign(slot1.y)
 		end
 
 		slot1.x = Mathf.Sign(slot0.normal.x) * (Mathf.Abs(slot1.y) - slot0.distance) / Mathf.Tan(slot3 * Mathf.Deg2Rad)
@@ -65,8 +59,6 @@ function slot0.slideDownMaxSlope(slot0, slot1, slot2)
 end
 
 function slot0.VerticalCollisions(slot0, slot1, slot2)
-	slot4 = Mathf.Sign(slot0.y) == 1 and uv0.directUp or uv0.directDown
-	slot5 = Mathf.Abs(slot0.y) + slot2.skinWidth * 2
 	slot6 = Vector3(0, 0, 0)
 	slot7 = slot3 == -1 and slot2.bottomLeft or slot2.topLeft
 
@@ -74,7 +66,7 @@ function slot0.VerticalCollisions(slot0, slot1, slot2)
 		slot6.x = slot7.x + slot2.verticalRaySpacing * (slot11 - 1) + slot0.x
 		slot6.y = slot7.y
 		slot6.z = slot7.z
-		slot12, slot13 = Physics.Raycast(slot6, slot4, nil, slot5, slot1.layerMask)
+		slot12, slot13 = Physics.Raycast(slot6, Mathf.Sign(slot0.y) == 1 and uv0.directUp or uv0.directDown, nil, Mathf.Abs(slot0.y) + slot2.skinWidth * 2, slot1.layerMask)
 		slot14 = false
 		slot15 = false
 

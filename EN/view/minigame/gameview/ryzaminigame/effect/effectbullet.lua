@@ -87,17 +87,6 @@ function slot0.TimeTrigger(slot0, slot1)
 end
 
 function slot0.GetCollideRange(slot0)
-	slot1 = {
-		{
-			-0.1875,
-			0.1875
-		},
-		{
-			-0.1875,
-			0.1875
-		}
-	}
-
 	if slot0.dir.x < 0 then
 		slot1[1] = {
 			-0.5,
@@ -123,7 +112,16 @@ function slot0.GetCollideRange(slot0)
 	end
 
 	return {
-		slot1
+		{
+			{
+				-0.1875,
+				0.1875
+			},
+			{
+				-0.1875,
+				0.1875
+			}
+		}
 	}
 end
 

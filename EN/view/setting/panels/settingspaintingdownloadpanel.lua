@@ -40,9 +40,7 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.OnUpdate(slot0)
-	slot1 = getProxy(SettingsProxy):GetPaintingDownloadPrefs()
-
-	if IsUnityEditor and slot1 == uv0.None then
+	if IsUnityEditor and getProxy(SettingsProxy):GetPaintingDownloadPrefs() == uv0.None then
 		slot1 = uv0.Max
 
 		return

@@ -18,11 +18,10 @@ function slot1.DoWave(slot0)
 	uv0.super.DoWave(slot0)
 
 	slot1 = true
-	slot2 = false
 
 	if uv1.Battle.BattleDataProxy.GetInstance():GetInitData().battleType == SYSTEM_SCENARIO then
 		if getProxy(ChapterProxy):getActiveChapter(true) then
-			slot2 = slot4:IsAutoFight() or slot2
+			slot2 = slot4:IsAutoFight() or false
 		end
 
 		if slot0._param.progress then

@@ -175,11 +175,10 @@ function slot1.verifyValidData(slot0)
 	slot0.validFileNameArrMap = {}
 
 	for slot4, slot5 in ipairs(slot0.dataList) do
-		slot6 = slot5.groupName
 		slot8 = nil
 
 		if slot5.fileNameList and #slot7 > 0 then
-			slot8 = GroupHelper.CreateArrByLuaFileList(slot6, slot7)
+			slot8 = GroupHelper.CreateArrByLuaFileList(slot5.groupName, slot7)
 		end
 
 		if slot8 and slot8.Length > 0 then

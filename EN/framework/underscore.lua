@@ -116,10 +116,8 @@ function slot0.funcs.reject(slot0, slot1)
 end
 
 function slot0.funcs.all(slot0, slot1)
-	slot1 = slot1 or uv0.identity
-
 	for slot5 in uv0.iter(slot0) do
-		if not slot1(slot5) then
+		if not slot1 or uv0.identity(slot5) then
 			return false
 		end
 	end
@@ -128,10 +126,8 @@ function slot0.funcs.all(slot0, slot1)
 end
 
 function slot0.funcs.any(slot0, slot1)
-	slot1 = slot1 or uv0.identity
-
 	for slot5 in uv0.iter(slot0) do
-		if slot1(slot5) then
+		if slot1 or uv0.identity(slot5) then
 			return true
 		end
 	end
@@ -150,13 +146,10 @@ function slot0.funcs.include(slot0, slot1)
 end
 
 function slot0.funcs.invoke(slot0, slot1, ...)
-	slot2 = {
-		len = select("#", ...),
-		...
-	}
+	slot2 = packEx(...)
 
 	uv0.funcs.each(slot0, function (slot0)
-		slot0[uv0](slot0, unpack(uv1, 1, uv1.len))
+		slot0[uv0](slot0, unpackEx(uv1))
 	end)
 
 	return slot0
@@ -236,21 +229,19 @@ function slot0.funcs.first(slot0, slot1)
 	if slot1 == nil then
 		return slot0[1]
 	else
-		slot2 = {}
-
 		for slot6 = 1, math.min(slot1, #slot0) do
-			slot2[slot6] = slot0[slot6]
 		end
 
-		return slot2
+		return {
+			[slot6] = slot0[slot6]
+		}
 	end
 end
 
 function slot0.funcs.rest(slot0, slot1)
-	slot1 = slot1 or 2
 	slot2 = {}
 
-	for slot6 = slot1, #slot0 do
+	for slot6 = slot1 or 2, #slot0 do
 		slot2[#slot2 + 1] = slot0[slot6]
 	end
 
@@ -357,10 +348,8 @@ function slot0.funcs.is_equal(slot0, slot1, slot2)
 		return slot0 == slot1
 	end
 
-	slot6 = uv0.funcs.is_equal
-
 	for slot10, slot11 in pairs(slot0) do
-		if slot1[slot10] == nil or not slot6(slot11, slot12, slot2) then
+		if slot1[slot10] == nil or not uv0.funcs.is_equal(slot11, slot12, slot2) then
 			return false
 		end
 	end
@@ -420,7 +409,7 @@ slot0.funcs.head = slot0.funcs.first
 slot0.funcs.tail = slot0.funcs.rest
 slot0.funcs.contains = slot0.funcs.include
 
-(function ()
+function ()
 	function slot0(slot0)
 		slot1 = false
 
@@ -447,6 +436,6 @@ slot0.funcs.contains = slot0.funcs.include
 			return uv1(uv2(slot1, ...), slot2)
 		end
 	end
-end)()
+end()
 
 return slot0:new()

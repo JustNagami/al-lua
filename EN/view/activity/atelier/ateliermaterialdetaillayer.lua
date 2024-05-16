@@ -24,25 +24,12 @@ end
 
 function slot0.UpdateItemDetail(slot0)
 	slot1 = slot0.contextData.material
-	slot4 = slot0.layerItemDetail
 
-	slot0:UpdateRyzaItem(slot4:Find("Window/IconBG"), slot1)
-
-	slot3 = slot0.layerItemDetail
-
-	setText(slot3:Find("Window/Name"), slot1:GetName())
-
-	slot3 = slot0.layerItemDetail
-
-	setText(slot3:Find("Window/Description/Text"), slot1:GetDesc())
-
-	slot4 = slot0.layerItemDetail
-
-	setText(slot4:Find("Window/Source"), slot1:GetSource()[1])
-
-	slot5 = slot0.layerItemDetail
-
-	onButton(slot0, slot5:Find("Window/Go"), function ()
+	slot0:UpdateRyzaItem(slot0.layerItemDetail:Find("Window/IconBG"), slot1)
+	setText(slot0.layerItemDetail:Find("Window/Name"), slot1:GetName())
+	setText(slot0.layerItemDetail:Find("Window/Description/Text"), slot1:GetDesc())
+	setText(slot0.layerItemDetail:Find("Window/Source"), slot1:GetSource()[1])
+	onButton(slot0, slot0.layerItemDetail:Find("Window/Go"), function ()
 		if uv0.chapterid then
 			slot2, slot3 = getProxy(ChapterProxy):getMapById(getProxy(ChapterProxy):getChapterById(uv0.chapterid):getConfig("map")):isUnlock()
 
@@ -100,10 +87,8 @@ end
 slot1 = "ui/AtelierCommonUI_atlas"
 
 function slot0.UpdateRyzaItem(slot0, slot1, slot2, slot3)
-	slot4 = "icon_frame_" .. slot2:GetRarity()
-
 	if slot3 then
-		slot4 = slot4 .. "_small"
+		slot4 = "icon_frame_" .. slot2:GetRarity() .. "_small"
 	end
 
 	slot0.loader:GetSpriteQuiet(uv0, slot4, slot1)

@@ -93,10 +93,8 @@ function slot0.GetDesc(slot0)
 
 	assert(slot2, slot0.pid)
 
-	slot3 = slot1[slot0.pid].effect_args
-
 	if slot2 == 0 then
-		return GuildConst.GET_TECHNOLOGY_GROUP_DESC(slot3, slot1[slot0.pid].num, slot1[slot0.pid].num)
+		return GuildConst.GET_TECHNOLOGY_GROUP_DESC(slot1[slot0.pid].effect_args, slot1[slot0.pid].num, slot1[slot0.pid].num)
 	else
 		return GuildConst.GET_TECHNOLOGY_GROUP_DESC(slot3, slot1[slot0.pid].num, slot1[slot2].num)
 	end

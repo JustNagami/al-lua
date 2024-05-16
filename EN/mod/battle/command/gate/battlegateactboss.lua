@@ -11,8 +11,6 @@ function slot0.Entrance(slot0, slot1)
 	slot3 = slot0.totalBattleTimes
 	slot7 = pg.activity_event_worldboss[getProxy(ActivityProxy):getActivityById(slot0.actId):getConfig("config_id")]
 	slot8 = getProxy(PlayerProxy)
-	slot9 = getProxy(BayProxy)
-	slot10 = getProxy(FleetProxy)
 	slot12 = pg.battle_cost_template[SYSTEM_ACT_BOSS].oil_cost > 0
 	slot13 = {}
 	slot14 = 0
@@ -21,21 +19,18 @@ function slot0.Entrance(slot0, slot1)
 	slot17 = 0
 	slot18 = slot0.stageId
 
-	for slot25, slot26 in ipairs(slot9:getSortShipsByFleet(slot10:getActivityFleets()[slot4][slot0.mainFleetId])) do
+	for slot25, slot26 in ipairs(getProxy(BayProxy):getSortShipsByFleet(getProxy(FleetProxy):getActivityFleets()[slot4][slot0.mainFleetId])) do
 		slot13[#slot13 + 1] = slot26.id
 	end
 
 	slot15 = slot20:getStartCost().oil
-	slot17 = slot20:GetCostSum().oil
 	slot24 = slot7.use_oil_limit[slot19]
 
 	if slot5:IsOilLimit(slot18) and slot24[1] > 0 then
-		slot17 = math.min(slot17, slot24[1])
+		slot17 = math.min(slot20:GetCostSum().oil, slot24[1])
 	end
 
-	slot26 = slot8:getData()
-
-	if slot12 and slot26.oil < slot17 then
+	if slot12 and slot8:getData().oil < slot17 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
@@ -55,17 +50,13 @@ function slot0.Entrance(slot0, slot1)
 		end
 
 		if uv3.enter_energy_cost > 0 then
-			slot1 = pg.gameset.battle_consume_energy.key_value
-
 			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(slot1)
+				slot6:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
 				uv5:updateShip(slot6)
 			end
 		end
 
-		slot1 = uv6
-
-		slot1:updatePlayer(uv1)
+		uv6:updatePlayer(uv1)
 		uv13:sendNotification(GAME.BEGIN_STAGE_DONE, {
 			mainFleetId = uv7,
 			actId = uv8,
@@ -91,12 +82,10 @@ function slot0.Exit(slot0, slot1)
 	slot17 = {}
 	slot18 = pg.battle_cost_template[SYSTEM_ACT_BOSS].oil_cost > 0
 
-	(function (slot0, slot1)
+	function (slot0, slot1)
 		if uv0 then
-			slot2 = slot0:getEndCost().oil
-
 			if slot1 > 0 then
-				slot2 = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot2)
+				slot2 = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot0:getEndCost().oil)
 			end
 
 			uv1 = uv1 + slot2
@@ -104,7 +93,7 @@ function slot0.Exit(slot0, slot1)
 
 		table.insertto(uv2, uv3:getSortShipsByFleet(slot0))
 		table.insertto(uv4, slot0.commanderIds)
-	end)(getProxy(FleetProxy):getActivityFleets()[slot0.actId][slot0.mainFleetId], slot6:IsOilLimit(slot0.stageId) and pg.activity_event_worldboss[slot6:getConfig("config_id")].use_oil_limit[slot0.mainFleetId][1] or 0)
+	end(getProxy(FleetProxy):getActivityFleets()[slot0.actId][slot0.mainFleetId], slot6:IsOilLimit(slot0.stageId) and pg.activity_event_worldboss[slot6:getConfig("config_id")].use_oil_limit[slot0.mainFleetId][1] or 0)
 
 	if slot0.statistics.submarineAid then
 		if slot12[slot0.mainFleetId + 10] then
@@ -130,9 +119,9 @@ function slot0.Exit(slot0, slot1)
 		slot5 = nil
 
 		if slot3 then
-			slot5 = (function ()
+			slot5 = function ()
 				return getProxy(ActivityProxy):getActivityById(uv0.actId).data1KeyValueList[1][uv0.stageId] == 1 and slot0.data1KeyValueList[2][slot1] <= 0
-			end)()
+			end()
 
 			uv0:sendNotification(GAME.ACT_BOSS_NORMAL_UPDATE, {
 				stageId = uv1.stageId
@@ -151,10 +140,8 @@ function slot0.Exit(slot0, slot1)
 		}
 
 		if PlayerConst.CanDropItem(slot1) then
-			slot7 = {}
-
 			for slot11, slot12 in ipairs(slot1) do
-				table.insert(slot7, slot12)
+				table.insert({}, slot12)
 			end
 
 			for slot11, slot12 in ipairs(slot2) do

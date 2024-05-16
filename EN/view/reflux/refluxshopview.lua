@@ -115,16 +115,14 @@ end
 
 function slot0.updateItem(slot0, slot1, slot2)
 	slot3 = slot0:findTF("Frame", slot1)
-	slot4 = slot0:findTF("Icon", slot1)
-	slot7 = slot2.id or slot2[2]
 
 	setText(slot0:findTF("Count", slot1), slot2.count or slot2[3])
 
 	if (slot2.type or slot2[1]) ~= DROP_TYPE_SHIP then
-		setImageSprite(slot4, LoadSprite(getDropIcon({
+		setImageSprite(slot0:findTF("Icon", slot1), LoadSprite(Drop.New({
 			type = slot6,
-			id = slot7
-		})))
+			id = slot2.id or slot2[2]
+		}):getIcon()))
 	else
 		setImageSprite(slot4, LoadSprite("QIcon/" .. Ship.New({
 			configId = slot7
@@ -161,17 +159,15 @@ function slot0.updatePack(slot0, slot1, slot2, slot3)
 	slot4, slot5 = nil
 
 	if slot3 ~= uv0.GiftPackType.Money then
-		slot5 = pg.item_data_statistics[slot2:getConfig("effect_args")[1]]
+		slot5 = Item.getConfigData(slot2:getConfig("effect_args")[1])
 	end
 
 	slot7 = nil
 
 	setImageSprite(slot0:findTF("PackIcon", slot1), LoadSprite(slot3 == uv0.GiftPackType.Money and "chargeicon/" .. slot2:getConfig("picture") or slot5.icon), true)
 
-	slot8 = slot0:findTF("PackName", slot1)
-
 	if slot3 == uv0.GiftPackType.Money then
-		setText(slot8, slot2:getConfig("name_display"))
+		setText(slot0:findTF("PackName", slot1), slot2:getConfig("name_display"))
 	else
 		setText(slot8, slot5.name)
 	end
@@ -186,34 +182,27 @@ function slot0.updatePack(slot0, slot1, slot2, slot3)
 	end)
 	slot11:align(#((slot3 ~= uv0.GiftPackType.Money or slot2:getConfig("display")) and slot5.display_icon))
 
-	slot12 = slot0:findTF("DescFrame/Text", slot1)
-
 	if slot3 == uv0.GiftPackType.Money then
-		setText(slot12, slot2:getConfig("descrip"))
+		setText(slot0:findTF("DescFrame/Text", slot1), slot2:getConfig("descrip"))
 	else
 		setText(slot12, slot5.display)
 	end
 
-	slot14 = slot0:findTF("Text", slot0:findTF("TimeLimit", slot1))
-
 	if slot3 ~= uv0.GiftPackType.Money and slot0:isHaveNextPack(uv0.GiftPackTypeName[slot3]) and not slot0:isBuyEver(slot2.id) then
 		setActive(slot13, true)
-		slot0:updatePackTimeLimit(slot14, slot3)
+		slot0:updatePackTimeLimit(slot0:findTF("Text", slot0:findTF("TimeLimit", slot1)), slot3)
 	else
 		setActive(slot13, false)
 	end
 
 	setActive(slot0:findTF("MoneyTag", slot1), slot3 == uv0.GiftPackType.Money)
 
-	slot17 = slot0:findTF("Price/IconMoney", slot1)
-	slot18 = slot0:findTF("Price/Icon", slot1)
 	slot19 = slot0:findTF("Price/Icon/Res", slot1)
-	slot20 = slot0:findTF("Price/Text", slot1)
 
 	if slot3 == uv0.GiftPackType.Money then
-		setActive(slot17, true)
-		setActive(slot18, false)
-		setText(slot20, slot2:getConfig("money"))
+		setActive(slot0:findTF("Price/IconMoney", slot1), true)
+		setActive(slot0:findTF("Price/Icon", slot1), false)
+		setText(slot0:findTF("Price/Text", slot1), slot2:getConfig("money"))
 	else
 		setActive(slot17, false)
 		setActive(slot18, true)
@@ -235,14 +224,12 @@ function slot0.updatePack(slot0, slot1, slot2, slot3)
 	setActive(slot0:findTF("Mask", slot1), slot22)
 
 	if slot22 then
-		slot23 = slot0:findTF("NextTime", slot21)
 		slot24 = slot0:findTF("Text", slot21)
-		slot25 = slot0:findTF("Sellout", slot21)
 
 		if slot0:isHaveNextPack(uv0.GiftPackTypeName[slot3]) then
-			setActive(slot23, true)
+			setActive(slot0:findTF("NextTime", slot21), true)
 			setActive(slot24, true)
-			setActive(slot25, false)
+			setActive(slot0:findTF("Sellout", slot21), false)
 			slot0:updatePackNextTime(slot24, slot3)
 		else
 			setActive(slot23, false)
@@ -343,14 +330,11 @@ function slot0.getCurDay(slot0)
 end
 
 function slot0.getLevelIndex(slot0, slot1)
-	slot2 = slot1 or slot0:getCurDay()
 	slot4 = slot0.refluxProxy.returnLV
 	slot5 = nil
 
-	for slot9, slot10 in ipairs(pg.return_giftpack_template[slot2].level) do
-		slot12 = slot10[2]
-
-		if slot10[1] <= slot4 and slot4 <= slot12 then
+	for slot9, slot10 in ipairs(pg.return_giftpack_template[slot1 or slot0:getCurDay()].level) do
+		if slot10[1] <= slot4 and slot4 <= slot10[2] then
 			return slot9
 		end
 	end
@@ -361,10 +345,9 @@ function slot0.getCurDayGiftPackIDByType(slot0, slot1, slot2)
 		return false
 	end
 
-	slot4 = pg.return_giftpack_template[slot3][slot1]
 	slot5 = slot3
 
-	while slot4 == "" and slot5 > 1 do
+	while pg.return_giftpack_template[slot3][slot1] == "" and slot5 > 1 do
 		slot4 = pg.return_giftpack_template[slot5 - 1][slot1]
 	end
 
@@ -391,10 +374,9 @@ function slot0.getNextGiftPackDayByType(slot0, slot1, slot2)
 	end
 
 	slot3 = slot3 + 1
-	slot4 = pg.return_giftpack_template[slot3][slot1]
 	slot5 = slot3
 
-	while slot4 == "" and slot5 > 1 and slot5 <= #pg.return_giftpack_template.all do
+	while pg.return_giftpack_template[slot3][slot1] == "" and slot5 > 1 and slot5 <= #pg.return_giftpack_template.all do
 		slot4 = pg.return_giftpack_template[slot5][slot1]
 		slot5 = slot5 + 1
 	end
@@ -430,11 +412,7 @@ function slot0.confirm(slot0, slot1)
 
 		if slot1:isMonthCard() or slot1:isGiftBox() or slot1:isItemBox() or slot1:isPassItem() then
 			slot5 = underscore.map(slot1:getConfig("extra_service_item"), function (slot0)
-				return {
-					type = slot0[1],
-					id = slot0[2],
-					count = slot0[3]
-				}
+				return Drop.Create(slot0)
 			end)
 			slot6 = nil
 
@@ -442,35 +420,30 @@ function slot0.confirm(slot0, slot1)
 				slot7 = slot1:getConfig("sub_display")
 				slot8 = slot7[1]
 				slot9 = pg.battlepass_event_pt[slot8].pt
-				slot6 = {
+				slot6 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = pg.battlepass_event_pt[slot8].pt,
 					count = slot7[2]
-				}
+				})
 				slot5 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot8].drop_client_pay, function (slot0)
-					return {
-						type = slot0[1],
-						id = slot0[2],
-						count = slot0[3]
-					}
+					return Drop.Create(slot0)
 				end))
 			end
 
-			slot7 = slot1:getConfig("gem") + slot1:getConfig("extra_gem")
 			slot8 = nil
 
 			if slot1:isMonthCard() then
-				slot8 = {
-					id = 4,
-					type = 1,
-					count = slot7
-				}
-			elseif slot7 > 0 then
-				table.insert(slot5, {
-					id = 4,
-					type = 1,
-					count = slot7
+				slot8 = Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
+					count = slot1:getConfig("gem") + slot1:getConfig("extra_gem")
 				})
+			elseif slot7 > 0 then
+				table.insert(slot5, Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = PlayerConst.ResDiamond,
+					count = slot7
+				}))
 			end
 
 			slot9, slot10 = nil
@@ -534,13 +507,9 @@ function slot0.confirm(slot0, slot1)
 	else
 		slot2 = {}
 
-		if type(pg.item_data_statistics[slot1:getConfig("effect_args")[1]].display_icon) == "table" then
+		if type(Item.getConfigData(slot1:getConfig("effect_args")[1]).display_icon) == "table" then
 			for slot9, slot10 in ipairs(slot5) do
-				table.insert(slot2, {
-					type = slot10[1],
-					id = slot10[2],
-					count = slot10[3]
-				})
+				table.insert(slot2, Drop.Create(slot10))
 			end
 		end
 

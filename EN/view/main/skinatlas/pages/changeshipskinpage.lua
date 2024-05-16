@@ -105,9 +105,7 @@ function slot0.Sort(slot0, slot1, slot2)
 end
 
 function slot0.GetShips(slot0, slot1)
-	slot4 = getProxy(BayProxy)
-	slot6 = slot0.skin
-	slot4 = slot4:_findShipsByGroup(slot6:getConfig("ship_group"), slot1:IsTransSkin(), slot1:IsProposeSkin())
+	slot4 = getProxy(BayProxy):_findShipsByGroup(slot0.skin:getConfig("ship_group"), slot1:IsTransSkin(), slot1:IsProposeSkin())
 
 	table.sort(slot4, function (slot0, slot1)
 		return uv0:Sort(slot0, slot1)

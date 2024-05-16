@@ -148,9 +148,7 @@ function slot0.initEvent(slot0)
 			LeanTween.cancel(go(uv0.cellPos))
 		end
 
-		slot0 = uv0
-
-		slot0:changeCharAction(uv1, 1, function ()
+		uv0:changeCharAction(uv1, 1, function ()
 			uv0:changeCharAction(uv1)
 		end)
 	end, SFX_PANEL)
@@ -198,10 +196,7 @@ function slot0.start(slot0)
 	end
 
 	slot0:changeAnimeState(true)
-
-	slot1 = slot0._event
-
-	slot1:emit(Monopoly3thRePage.ON_START, slot0.activity.id, function (slot0)
+	slot0._event:emit(Monopoly3thRePage.ON_START, slot0.activity.id, function (slot0)
 		if slot0 and slot0 > 0 then
 			uv0.step = slot0
 
@@ -221,16 +216,11 @@ function slot0.checkPlayerRandomMove(slot0)
 		slot4 = 0
 
 		slot0:changeCharAction(uv0, 0, nil)
-
-		slot5 = LeanTween.value(go(slot0.cellPos), 0, 300 * slot1, slot1 * 2)
-		slot5 = slot5:setEase(LeanTweenType.linear)
-		slot5 = slot5:setOnUpdate(System.Action_float(function (slot0)
+		LeanTween.value(go(slot0.cellPos), 0, 300 * slot1, slot1 * 2):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function (slot0)
 			uv0:updateMap(slot0 - uv1)
 
 			uv1 = slot0
-		end))
-
-		slot5:setOnComplete(System.Action(function ()
+		end)):setOnComplete(System.Action(function ()
 			uv0:changeCharAction(uv1, 0, nil)
 		end))
 
@@ -275,9 +265,7 @@ function slot0.changeAnimeState(slot0, slot1, slot2)
 	end
 
 	if not slot1 and not slot0.autoFlag and slot2 then
-		slot3 = slot0._event
-
-		slot3:emit(Monopoly3thRePage.ON_STOP, nil, function ()
+		slot0._event:emit(Monopoly3thRePage.ON_STOP, nil, function ()
 		end)
 	end
 end
@@ -321,9 +309,7 @@ end
 
 function slot0.checkLastBonus(slot0)
 	if (not slot0.lastBonusFlag or slot0.lastBonusFlag == 0) and slot0.useCount and slot0.lastBonusTimes <= slot0.useCount then
-		slot1 = slot0._event
-
-		slot1:emit(Monopoly3thRePage.MONOPOLY_OP_LAST, slot0.activity.id, function (slot0)
+		slot0._event:emit(Monopoly3thRePage.MONOPOLY_OP_LAST, slot0.activity.id, function (slot0)
 			uv0.lastBonusFlag = 1
 
 			setActive(findTF(uv0.labelDropShip, "get"), false)
@@ -375,9 +361,7 @@ end
 
 function slot0.checkStep(slot0, slot1)
 	if slot0.step > 0 then
-		slot2 = slot0._event
-
-		slot2:emit(Monopoly3thRePage.ON_MOVE, slot0.activity.id, function (slot0, slot1, slot2)
+		slot0._event:emit(Monopoly3thRePage.ON_MOVE, slot0.activity.id, function (slot0, slot1, slot2)
 			uv0.step = slot0
 			uv0.pos = slot1[#slot1]
 			uv0.effectId = slot2
@@ -447,9 +431,7 @@ function slot0.checkEffect(slot0, slot1)
 		seriesAsync({
 			function (slot0)
 				if uv0 then
-					slot1 = uv1
-
-					slot1:changeCharAction(uv0, 1, function ()
+					uv1:changeCharAction(uv0, 1, function ()
 						uv0:changeCharAction(uv1, 0, nil)
 						uv2()
 					end)
@@ -481,9 +463,7 @@ function slot0.checkEffect(slot0, slot1)
 end
 
 function slot0.triggerEfect(slot0, slot1)
-	slot2 = slot0._event
-
-	slot2:emit(Monopoly3thRePage.ON_TRIGGER, slot0.activity.id, function (slot0, slot1)
+	slot0._event:emit(Monopoly3thRePage.ON_TRIGGER, slot0.activity.id, function (slot0, slot1)
 		if slot0 and #slot0 >= 0 then
 			uv0.effectId = slot1
 			uv0.pos = slot0[#slot0]
@@ -524,15 +504,11 @@ function slot0.moveCharWithPaths(slot0, slot1, slot2, slot3)
 			LeanTween.cancel(go(uv2.cellPos))
 		end
 
-		slot6 = LeanTween.value(go(uv2.cellPos), 0, slot2, slot1)
-		slot6 = slot6:setEase(LeanTweenType.linear)
-		slot6 = slot6:setOnUpdate(System.Action_float(function (slot0)
+		LeanTween.value(go(uv2.cellPos), 0, slot2, slot1):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function (slot0)
 			uv0:updateMap(slot0 - uv1)
 
 			uv1 = slot0
-		end))
-
-		slot6:setOnComplete(System.Action(function ()
+		end)):setOnComplete(System.Action(function ()
 			uv0()
 		end))
 	end)
@@ -566,11 +542,9 @@ function slot0.updateMap(slot0, slot1)
 	end
 
 	for slot5 = 1, #slot0.groundChildsList do
-		slot6 = slot0.groundMoveRate[slot5]
-
 		for slot11 = #slot0.groundChildsList[slot5], 1, -1 do
 			slot12 = slot7[slot11]
-			slot12.anchoredPosition = Vector3(slot12.anchoredPosition.x - slot1 * slot6, slot12.anchoredPosition.y, slot12.anchoredPosition.z)
+			slot12.anchoredPosition = Vector3(slot12.anchoredPosition.x - slot1 * slot0.groundMoveRate[slot5], slot12.anchoredPosition.y, slot12.anchoredPosition.z)
 		end
 	end
 
@@ -594,17 +568,10 @@ function slot0.changeCharAction(slot0, slot1, slot2, slot3)
 	end
 
 	slot0.actionName = slot1
-	slot4 = slot0.anim
 
-	slot4:SetActionCallBack(nil)
-
-	slot4 = slot0.anim
-
-	slot4:SetAction(slot1, 0)
-
-	slot4 = slot0.anim
-
-	slot4:SetActionCallBack(function (slot0)
+	slot0.anim:SetActionCallBack(nil)
+	slot0.anim:SetAction(slot1, 0)
+	slot0.anim:SetActionCallBack(function (slot0)
 		if slot0 == "finish" then
 			if uv0 == 1 then
 				uv1.anim:SetActionCallBack(nil)

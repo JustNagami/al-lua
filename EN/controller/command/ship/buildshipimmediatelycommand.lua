@@ -20,9 +20,7 @@ function slot0.execute(slot0, slot1)
 		slot4 = underscore.slice(slot4, 1, slot7)
 	end
 
-	slot8 = pg.ConnectionMgr.GetInstance()
-
-	slot8:Send(12008, {
+	pg.ConnectionMgr.GetInstance():Send(12008, {
 		type = slot3,
 		pos_list = slot4
 	}, 12009, function (slot0)

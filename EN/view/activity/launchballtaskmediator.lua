@@ -43,16 +43,12 @@ function slot0.handleNotification(slot0, slot1)
 			slot0.submit = slot0.submit - 1
 
 			if slot0.submit == 0 then
-				slot4 = slot0.viewComponent
-
-				slot4:emit(BaseUI.ON_ACHIEVE, slot0.awards, function ()
+				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot0.awards, function ()
 					uv0.viewComponent:updateTasks()
 				end)
 			end
 		else
-			slot4 = slot0.viewComponent
-
-			slot4:emit(BaseUI.ON_ACHIEVE, slot3, function ()
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3, function ()
 				uv0.viewComponent:updateTasks()
 			end)
 		end

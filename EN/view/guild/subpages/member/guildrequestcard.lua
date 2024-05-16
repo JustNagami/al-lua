@@ -41,9 +41,7 @@ function slot0.Update(slot0, slot1)
 	end)
 
 	if pg.ship_data_statistics[slot1.player.icon] then
-		slot6 = slot1.player
-
-		LoadSpriteAsync("qicon/" .. slot6:getPainting(), function (slot0)
+		LoadSpriteAsync("qicon/" .. slot1.player:getPainting(), function (slot0)
 			uv0.iconTF.sprite = slot0
 		end)
 

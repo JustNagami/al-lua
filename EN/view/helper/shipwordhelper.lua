@@ -91,13 +91,12 @@ function slot14(slot0, slot1, slot2, slot3)
 end
 
 function slot15(slot0, slot1, slot2)
-	slot1 = slot1 or 0
 	slot3 = nil
 
 	for slot7, slot8 in ipairs(slot0) do
 		slot10 = slot8[2]
 
-		if slot8[1] <= slot1 then
+		if slot8[1] <= (slot1 or 0) then
 			slot3 = slot8
 
 			break
@@ -129,9 +128,8 @@ end
 
 function slot17(slot0)
 	slot1 = pg.ship_skin_words[slot0]
-	slot3 = PlayerPrefs.GetInt(CV_LANGUAGE_KEY .. uv0[slot0].ship_group)
 
-	if PLATFORM_CODE == PLATFORM_CH and (slot0 == 407010 or slot0 == 407020 or slot0 == 204010 or slot0 == 204040 or slot0 == 9704040 or slot0 == 303120 or slot0 == 305070 or slot0 == 307020) and slot3 == 2 then
+	if PLATFORM_CODE == PLATFORM_CH and (slot0 == 407010 or slot0 == 407020 or slot0 == 204010 or slot0 == 204040 or slot0 == 9704040 or slot0 == 303120 or slot0 == 305070 or slot0 == 307020) and PlayerPrefs.GetInt(CV_LANGUAGE_KEY .. uv0[slot0].ship_group) == 2 then
 		PlayerPrefs.SetInt(CV_LANGUAGE_KEY .. slot2, 1)
 		PlayerPrefs.Save()
 
@@ -146,10 +144,8 @@ function slot0.GetLanguageSetting(slot0)
 end
 
 function slot18(slot0, slot1, slot2)
-	slot3 = "event:/cv/" .. slot1 .. "/" .. slot0
-
 	if slot2 then
-		slot3 = slot3 .. "_" .. slot2
+		slot3 = "event:/cv/" .. slot1 .. "/" .. slot0 .. "_" .. slot2
 	end
 
 	return slot3
@@ -160,9 +156,9 @@ function slot19(slot0, slot1)
 		return -1
 	end
 
-	if (function (slot0)
+	if function (slot0)
 		return uv0 == 2 and slot0.voice_key_2 >= 0 and slot0.voice_key_2 or slot0.voice_key
-	end)(slot2) == 0 or slot4 == -2 then
+	end(slot2) == 0 or slot4 == -2 then
 		slot4 = slot3(uv0[uv1(slot1)])
 	end
 
@@ -454,11 +450,10 @@ function slot0.GetCvDataForShip(slot0, slot1)
 		return nil
 	end
 
-	slot2 = slot0:getCVIntimacy()
 	slot4, slot5, slot6, slot7, slot8, slot9 = nil
 
 	if string.split(slot1, "_")[1] == "main" then
-		slot4, slot6, slot5 = ShipWordHelper.GetWordAndCV(slot0.skinId, slot3[1], tonumber(slot3[2]), nil, slot2)
+		slot4, slot6, slot5 = ShipWordHelper.GetWordAndCV(slot0.skinId, slot3[1], tonumber(slot3[2]), nil, slot0:getCVIntimacy())
 		slot7 = ShipWordHelper.GetL2dCvCalibrate(slot0.skinId, slot3[1], tonumber(slot3[2]))
 		slot8 = ShipWordHelper.GetL2dSoundEffect(slot0.skinId, slot3[1], tonumber(slot3[2]))
 	else

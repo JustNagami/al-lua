@@ -50,7 +50,7 @@ function slot0.initData(slot0)
 	slot0.expDict = {}
 
 	for slot4, slot5 in ipairs(slot0.bookIDList) do
-		slot0.expDict[slot5] = tonumber(pg.item_data_template[slot5].usage_arg)
+		slot0.expDict[slot5] = tonumber(Item.getConfigData(slot5).usage_arg)
 	end
 end
 
@@ -92,10 +92,8 @@ function slot0.addListener(slot0)
 		uv0:updateAfterModifyUseCount()
 	end, SFX_PANEL)
 	onButton(slot0, slot0.confirmBtn, function ()
-		slot0 = 0
-
 		for slot4, slot5 in ipairs(uv0.bookIDList) do
-			slot0 = slot0 + uv0.useCountDict[slot5]
+			slot0 = 0 + uv0.useCountDict[slot5]
 		end
 
 		if slot0 <= 0 then
@@ -170,7 +168,7 @@ function slot0.updateTpl(slot0, slot1, slot2)
 		slot12 = "0"
 	end
 
-	updateDrop(slot3, Item.New({
+	updateDrop(slot3, Drop.New({
 		id = slot10,
 		type = DROP_TYPE_ITEM,
 		count = slot12
@@ -236,7 +234,7 @@ function slot0.updateAfterUse(slot0)
 end
 
 function slot0.getBookItem(slot0, slot1)
-	return slot0.bagProxy:getItemById(slot1) or Item.New({
+	return slot0.bagProxy:getItemById(slot1) or Drop.New({
 		count = 0,
 		type = DROP_TYPE_ITEM,
 		id = slot1
@@ -263,11 +261,10 @@ function slot0.tryModifyUseCount(slot0, slot1, slot2)
 	if slot2 < 0 then
 		slot0.useCountDict[slot1] = math.clamp(slot4 + slot2, 0, slot3)
 	else
-		slot6 = slot0.expDict[slot1]
 		slot7 = 0
 
 		for slot11 = 0, math.min(slot3, slot2) do
-			if not slot0:preCalcExpOverFlow(slot7 * slot6, 0) and (slot5 <= slot11 or slot3 <= slot4 + slot7) then
+			if not slot0:preCalcExpOverFlow(slot7 * slot0.expDict[slot1], 0) and (slot5 <= slot11 or slot3 <= slot4 + slot7) then
 				break
 			end
 		end
@@ -280,14 +277,12 @@ function slot0.getLevelTotalExp(slot0, slot1)
 	slot2 = slot0.skillID
 	slot3 = slot0.bayProxy:getShipById(slot0.shipID)
 	slot4 = pg.skill_data_template[slot2].max_level
-	slot6 = 0
 
 	for slot10, slot11 in ipairs(pg.ship_meta_skilltask.get_id_list_by_skill_ID[slot2]) do
 		slot12 = pg.ship_meta_skilltask[slot11]
-		slot14 = slot12.need_exp
 
 		if slot12.level < slot1 then
-			slot6 = slot6 + slot14
+			slot6 = 0 + slot12.need_exp
 		end
 	end
 
@@ -301,10 +296,8 @@ function slot0.getCurLevelExp(slot0)
 end
 
 function slot0.calcAwardExp(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0.bookIDList) do
-		slot1 = slot1 + slot0.useCountDict[slot6] * slot0.expDict[slot6]
+		slot1 = 0 + slot0.useCountDict[slot6] * slot0.expDict[slot6]
 	end
 
 	return slot1
@@ -312,12 +305,11 @@ end
 
 function slot0.calcLevelWithAwardExp(slot0, slot1)
 	slot3 = slot0:getCurLevelExp() + slot1
-	slot6 = 1
 
 	for slot10, slot11 in ipairs(pg.ship_meta_skilltask.get_id_list_by_skill_ID[slot0.skillID]) do
 		if pg.ship_meta_skilltask[slot11].need_exp <= slot3 then
 			slot3 = slot3 - slot12
-			slot6 = slot6 + 1
+			slot6 = 1 + 1
 		else
 			break
 		end
@@ -361,12 +353,8 @@ function slot0.oneStep(slot0)
 	end)
 
 	for slot5, slot6 in ipairs(slot1) do
-		slot7 = slot0:getBookItem(slot6)
-		slot8 = slot0.expDict[slot6]
-		slot9 = slot5 + 1 > #slot1 and 0 or slot0.expDict[slot1[slot5 + 1]]
-
-		for slot13 = 1, slot7.count do
-			if slot5 < #slot1 and slot0:preCalcExpOverFlow(slot8, slot9) then
+		for slot13 = 1, slot0:getBookItem(slot6).count do
+			if slot5 < #slot1 and slot0:preCalcExpOverFlow(slot0.expDict[slot6], slot5 + 1 > #slot1 and 0 or slot0.expDict[slot1[slot5 + 1]]) then
 				break
 			else
 				slot0.useCountDict[slot6] = slot0.useCountDict[slot6] + 1

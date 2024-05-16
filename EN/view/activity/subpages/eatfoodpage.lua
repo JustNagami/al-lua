@@ -23,12 +23,7 @@ function slot0.OnInit(slot0)
 	}
 	slot0.helpBtn = slot0:findTF("AD/help")
 	slot0.goBtn = slot0:findTF("AD/go")
-	slot1 = pg.mini_game_hub[uv0].reward_display
-	slot2 = Item.New({
-		type = slot1[1],
-		id = slot1[2],
-		count = slot1[3]
-	})
+	slot2 = Drop.Create(pg.mini_game_hub[uv0].reward_display)
 
 	onButton(slot0, slot0:findTF("AD/btnFinalAward"), function ()
 		uv0:emit(BaseUI.ON_DROP, uv1)
@@ -61,10 +56,9 @@ end
 function slot0.UpdateSigned(slot0)
 	slot1 = slot0.data:getConfig("reward_need")
 	slot3 = slot0.ultimate == 0
-	slot4 = slot0.usedtime + slot0.count
 
 	for slot8, slot9 in ipairs(slot0.icons) do
-		slot11 = slot8 <= slot4
+		slot11 = slot8 <= slot0.usedtime + slot0.count
 
 		setActive(slot0.icons[slot8], false)
 		setActive(slot0.locks[slot8], false)

@@ -57,6 +57,14 @@ function slot3.GetNextBubbleStamp(slot0)
 	end
 end
 
+function slot3.SetForceExpose(slot0, slot1)
+	slot0._forceExpose = slot1
+end
+
+function slot3.GetForceExpose(slot0)
+	return slot0._forceExpose
+end
+
 function slot3.FlashBubbleStamp(slot0, slot1)
 	slot0._bubbleTimpStamp = slot1 + slot0._bubbleInterval
 end
@@ -213,6 +221,10 @@ end
 
 function slot3.GetTarget(slot0)
 	return slot0._target
+end
+
+function slot3.GetCurrentState(slot0)
+	return slot0._currentState
 end
 
 function slot3.GetCurrentStateName(slot0)

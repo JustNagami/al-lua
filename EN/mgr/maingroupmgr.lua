@@ -48,10 +48,8 @@ function slot0.SetTotalCount(slot0)
 end
 
 function slot0.GetTotalSize(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(uv0.GroupNameList) do
-		slot1 = slot1 + GroupHelper.GetGroupSize(slot6)
+		slot1 = 0 + GroupHelper.GetGroupSize(slot6)
 	end
 
 	return slot1

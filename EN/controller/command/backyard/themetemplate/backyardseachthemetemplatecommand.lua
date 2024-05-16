@@ -32,9 +32,7 @@ function slot0.execute(slot0, slot1)
 		uv0:sendNotification(GAME.BACKYARD_SEARCH_THEME_TEMPLATE_ERRO)
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(19113, {
+	pg.ConnectionMgr.GetInstance():Send(19113, {
 		theme_id = slot3
 	}, 19114, function (slot0)
 		if slot0.result == 0 then

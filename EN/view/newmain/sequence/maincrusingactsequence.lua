@@ -33,10 +33,9 @@ function slot0.ShowWindow(slot0, slot1)
 end
 
 function slot0.CheckCrusingAct(slot0, slot1, slot2)
-	slot3 = PlayerPrefs.GetInt(string.format("crusing_%d_last_time", slot1.id), 3)
 	slot4 = slot1.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-	if #slot1:GetCrusingUnreceiveAward() > 0 and math.floor(slot4 / 86400) < slot3 then
+	if #slot1:GetCrusingUnreceiveAward() > 0 and math.floor(slot4 / 86400) < PlayerPrefs.GetInt(string.format("crusing_%d_last_time", slot1.id), 3) then
 		PlayerPrefs.SetInt(string.format("crusing_%d_last_time", slot1.id), math.floor(slot4 / 86400))
 		slot0:ShowMsg(slot5, slot4, slot2)
 	else

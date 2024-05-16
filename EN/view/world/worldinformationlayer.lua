@@ -154,10 +154,8 @@ function slot0.UpdateTaskTpl(slot0, slot1, slot2)
 	setActive(slot7, slot2:getState() == WorldTask.STATE_ONGOING)
 	setActive(slot8, slot9 == WorldTask.STATE_FINISHED)
 
-	slot10 = slot1:Find("extend_panel")
-
 	if #slot2.config.rare_task_icon > 0 then
-		GetImageSpriteFromAtlasAsync("shipyardicon/" .. slot11, "", slot10:Find("card"), true)
+		GetImageSpriteFromAtlasAsync("shipyardicon/" .. slot11, "", slot1:Find("extend_panel"):Find("card"), true)
 	else
 		GetImageSpriteFromAtlasAsync("ui/worldinformationui_atlas", "nobody", slot10:Find("card"), true)
 	end

@@ -78,19 +78,15 @@ function slot0.WriteBackOnExitBattleResult(slot0, slot1, slot2)
 			mode = slot2
 		})
 	else
-		slot4 = slot3:IsFinish()
-
 		slot3:updateLevelForward()
 
-		if slot3:getMode() == ChallengeProxy.MODE_INFINITE and slot4 then
+		if slot3:getMode() == ChallengeProxy.MODE_INFINITE and slot3:IsFinish() then
 			slot3:setInfiniteDungeonIDListByLevel()
 		end
 	end
 
-	slot4 = slot0:getChallengeInfo()
-
 	if not slot0:userSeaonExpire(slot3:getMode()) then
-		slot4:checkRecord(slot3)
+		slot0:getChallengeInfo():checkRecord(slot3)
 	end
 end
 

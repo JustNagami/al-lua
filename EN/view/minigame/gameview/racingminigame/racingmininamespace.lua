@@ -1,5 +1,3 @@
-slot0 = {}
-
 for slot5, slot6 in ipairs({
 	function ()
 		slot0 = class("Object")
@@ -279,12 +277,10 @@ for slot5, slot6 in ipairs({
 
 			slot0.controller = slot3
 			slot0.isTriggered = false
-			slot4 = slot1:Find("GameObject")
 			slot7 = SpineAnimUI
-			slot0.comSpineAnim = slot4:GetComponent(typeof(slot7))
-			slot4 = slot0.comSpineAnim
+			slot0.comSpineAnim = slot1:Find("GameObject"):GetComponent(typeof(slot7))
 
-			slot4:SetActionCallBack(function (slot0)
+			slot0.comSpineAnim:SetActionCallBack(function (slot0)
 				if slot0 == "finish" then
 					uv0:ActionCallback()
 				end
@@ -421,7 +417,8 @@ for slot5, slot6 in ipairs({
 	end
 }) do
 	slot7 = slot6()
-	slot0[slot7.__cname] = slot7
 end
 
-return slot0
+return {
+	[slot7.__cname] = slot7
+}

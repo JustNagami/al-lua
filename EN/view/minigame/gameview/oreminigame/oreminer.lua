@@ -10,28 +10,19 @@ function slot0.Ctor(slot0, slot1, slot2, slot3)
 end
 
 function slot0.AddListener(slot0)
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_ORE_EF_MINED, function (slot0, slot1)
+	slot0.binder:bind(OreGameConfig.EVENT_ORE_EF_MINED, function (slot0, slot1)
 		uv0:PlayEFMined(slot1.index)
 	end)
 end
 
 function slot0.AddDftAniEvent(slot0)
-	slot1 = findTF(slot0._tf, "Image")
-	slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-	slot1:SetTriggerEvent(function ()
+	findTF(slot0._tf, "Image"):GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function ()
 		uv0.binder:emit(OreGameConfig.EVENT_ORE_NEW, {
 			index = uv0.index,
 			pos = uv0._tf.parent.anchoredPosition
 		})
 	end)
-
-	slot1 = findTF(slot0._tf, "EF")
-	slot1 = slot1:GetComponent(typeof(DftAniEvent))
-
-	slot1:SetEndEvent(function ()
+	findTF(slot0._tf, "EF"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		setActive(findTF(uv0._tf, "EF"), false)
 	end)
 end

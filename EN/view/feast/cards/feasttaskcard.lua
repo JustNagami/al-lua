@@ -11,8 +11,7 @@ function slot0.Ctor(slot0, slot1, slot2)
 	slot0.uilist = UIItemList.New(slot0._tf:Find("awards"), slot0._tf:Find("awards/award"))
 	slot0.getBtn = slot0._tf:Find("btns/get")
 	slot0.gotBtn = slot0._tf:Find("btns/got")
-	slot3 = slot0._tf
-	slot0.goBtn = slot3:Find("btns/go")
+	slot0.goBtn = slot0._tf:Find("btns/go")
 	slot0.sprites = {
 		GetSpriteFromAtlas("ui/feasttask_atlas", "t_frame_1"),
 		GetSpriteFromAtlas("ui/feasttask_atlas", "t_frame_2")

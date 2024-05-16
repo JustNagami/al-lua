@@ -41,8 +41,7 @@ function slot0.init(slot0)
 		slot0["upper_" .. go(slot5).name] = slot5
 	end
 
-	slot1 = slot0._tf
-	slot0._SDPlace = slot1:Find("SDPlace")
+	slot0._SDPlace = slot0._tf:Find("SDPlace")
 	slot0.containers = {
 		slot0._SDPlace
 	}
@@ -75,10 +74,7 @@ function slot0.didEnter(slot0)
 				}
 			}))
 		end)
-
-		slot8 = slot0._map
-
-		eachChild(slot8:Find(slot6), function (slot0)
+		eachChild(slot0._map:Find(slot6), function (slot0)
 			GetComponent(slot0, typeof(Image)).alphaHitTestMinimumThreshold = 0.5
 
 			setActive(slot0, false)
@@ -130,9 +126,7 @@ function slot0.RegisterDataResponse(slot0)
 	slot0.Respones:SetRawData("view", slot0)
 
 	for slot5, slot6 in ipairs(_.values(slot0.Buildings)) do
-		slot7 = slot0.Respones
-
-		slot7:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot6
 		}, function (slot0, slot1)
@@ -160,27 +154,21 @@ function slot0.RegisterDataResponse(slot0)
 		end)
 	end
 
-	slot2 = slot0.Respones
-
-	slot2:AddRawListener(_.values(slot0.Buildings), function (...)
-		slot0 = 0
-		slot1 = {
-			...
-		}
-
+	slot0.Respones:AddRawListener(_.values(slot0.Buildings), function (...)
 		for slot5 = 1, table.getCount(uv0.Buildings) do
-			slot0 = slot0 + (slot1[slot5] or 1)
+			slot0 = 0 + (({
+				...
+			})[slot5] or 1)
 		end
 
 		uv0.Respones.sceneLevel = math.floor(slot0 / 4)
 	end)
 
-	slot2 = slot0.Respones
 	slot6 = {
 		useOldRef = true
 	}
 
-	slot2:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"sceneLevel",
 		"view"
 	}, function (slot0, slot1, slot2, slot3)
@@ -221,9 +209,7 @@ function slot0.RegisterDataResponse(slot0)
 	table.insertto(slot2, slot1)
 
 	for slot6, slot7 in ipairs(slot2) do
-		slot8 = slot0.Respones
-
-		slot8:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot7 .. "Tip"
 		}, function (slot0, slot1)
@@ -236,9 +222,8 @@ function slot0.RegisterDataResponse(slot0)
 	end
 
 	slot0.Respones.hubData = {}
-	slot3 = slot0.Respones
 
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"hubData"
 	}, function (slot0, slot1)
@@ -246,10 +231,7 @@ function slot0.RegisterDataResponse(slot0)
 	end, {
 		strict = true
 	})
-
-	slot3 = slot0.Respones
-
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"materialCount"
 	}, function (slot0, slot1)
@@ -258,8 +240,7 @@ function slot0.RegisterDataResponse(slot0)
 end
 
 function slot0.PlayStory()
-	slot0 = getProxy(ActivityProxy)
-	slot0 = slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
+	slot0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
 	slot1 = slot0:GetTotalBuildingLevel()
 
 	table.SerialIpairsAsync({
@@ -287,15 +268,15 @@ function slot0.UpdateView(slot0)
 	end
 
 	slot0.Respones.craftTip = slot0.Respones.craftTip or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH):HasAvaliableFormula() and getProxy(SettingsProxy):IsTipWorkbenchDaily()
-	slot0.Respones.bigmapTip = tobool((function ()
+	slot0.Respones.bigmapTip = tobool(function ()
 		return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND))
-	end)())
-	slot0.Respones.taskboardTip = tobool((function ()
+	end())
+	slot0.Respones.taskboardTip = tobool(function ()
 		return getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.ISLAND_TASK_ID)
-	end)())
-	slot0.Respones.giftmakeTip = tobool((function ()
+	end())
+	slot0.Respones.giftmakeTip = tobool(function ()
 		return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SCULPTURE))
-	end)())
+	end())
 end
 
 function slot0.CalculateSceneLevel(slot0)
@@ -313,9 +294,9 @@ end
 
 function slot0.IsShowMainTip(slot0)
 	if slot0 and not slot0:isEnd() then
-		return (function ()
+		return function ()
 			return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND))
-		end)() or (function ()
+		end() or function ()
 			for slot4, slot5 in ipairs(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2):GetBuildingIds()) do
 				if AnniversaryIsland2023Scene.UpdateBuildingTip(nil, slot0, slot5) then
 					return true
@@ -325,11 +306,11 @@ function slot0.IsShowMainTip(slot0)
 			if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH):HasAvaliableFormula() and getProxy(SettingsProxy):IsTipWorkbenchDaily() then
 				return true
 			end
-		end)() or (function ()
+		end() or function ()
 			return getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.ISLAND_TASK_ID)
-		end)() or (function ()
+		end() or function ()
 			return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SCULPTURE))
-		end)()
+		end()
 	end
 end
 

@@ -27,18 +27,9 @@ function slot0.register(slot0)
 		slot4[slot3.EdittingFleet.id] = slot3.EdittingFleet
 	end
 
-	slot5 = slot0.viewComponent
-
-	slot5:SetFleets(slot4)
-
-	slot5 = getProxy(PlayerProxy)
-	slot7 = slot0.viewComponent
-
-	slot7:SetPlayerInfo(slot5:getData())
-
-	slot7 = slot0.viewComponent
-
-	slot7:SetCurrentFleet(FleetProxy.PVP_FLEET_ID)
+	slot0.viewComponent:SetFleets(slot4)
+	slot0.viewComponent:SetPlayerInfo(getProxy(PlayerProxy):getData())
+	slot0.viewComponent:SetCurrentFleet(FleetProxy.PVP_FLEET_ID)
 	slot0:bind(uv0.ON_CHANGE_FLEET, function (slot0, slot1)
 		uv0:changeFleet(slot1)
 	end)
@@ -174,10 +165,8 @@ function slot0.commitEdit(slot0, slot1)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("ship_formationMediaror_trash_warning", slot3.defaultName),
 			onYes = function ()
-				slot1 = getProxy(BayProxy):getRawData()
-
 				for slot6 = #uv0.ships, 1, -1 do
-					uv0:removeShip(slot1[slot2[slot6]])
+					uv0:removeShip(getProxy(BayProxy):getRawData()[slot2[slot6]])
 				end
 
 				if uv0.id == FleetProxy.PVP_FLEET_ID then
@@ -214,10 +203,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot1:getBody())
 	elseif slot2 == PlayerProxy.UPDATED then
 		slot0.viewComponent:SetPlayerInfo(getProxy(PlayerProxy):getData())
 	elseif slot2 == GAME.BEGIN_STAGE_ERRO and slot3 == 3 then
@@ -262,10 +249,8 @@ function slot0.getDockCallbackFuncsForExercise(slot0, slot1, slot2, slot3)
 			uv1:removeShip(slot1)
 		end
 
-		slot4 = {}
-
 		if uv2 and slot3 > 0 then
-			table.insert(slot4, {
+			table.insert({}, {
 				slot3,
 				uv2
 			})

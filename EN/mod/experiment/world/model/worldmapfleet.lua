@@ -37,18 +37,17 @@ function slot0.DebugPrint(slot0)
 	end), ", "), slot0.damageLevel, table.concat(_.map(slot0:GetBuffList(), function (slot0)
 		return slot0.id .. "#" .. slot0:GetFloor()
 	end), ", "))
-	slot6 = {
-		[TeamType.Main] = "主力",
-		[TeamType.Vanguard] = "先锋",
-		[TeamType.Submarine] = "潜艇"
-	}
 	slot7 = {}
 	slot11 = true
 
 	for slot11, slot12 in ipairs(slot0:GetShips(slot11)) do
 		slot13 = WorldConst.FetchShipVO(slot12.id)
 
-		table.insert(slot7, string.format("\t\t[%s] [id: %s] [config_id: %s] [%s] [hp: %s%%] [buff: %s]" .. " <material=underline c=#A9F548 event=ShipProperty args=%s><color=#A9F548>属性</color></material>", slot13:getName(), slot13.id, slot13.configId, slot6[slot13:getTeamType()], slot12.hpRant / 100, table.concat(_.map(slot12:GetBuffList(), function (slot0)
+		table.insert(slot7, string.format("\t\t[%s] [id: %s] [config_id: %s] [%s] [hp: %s%%] [buff: %s]" .. " <material=underline c=#A9F548 event=ShipProperty args=%s><color=#A9F548>属性</color></material>", slot13:getName(), slot13.id, slot13.configId, ({
+			[TeamType.Main] = "主力",
+			[TeamType.Vanguard] = "先锋",
+			[TeamType.Submarine] = "潜艇"
+		})[slot13:getTeamType()], slot12.hpRant / 100, table.concat(_.map(slot12:GetBuffList(), function (slot0)
 			return slot0.id .. "#" .. slot0:GetFloor()
 		end), ", "), slot13.id))
 	end
@@ -74,10 +73,8 @@ function slot0.Setup(slot0, slot1)
 	end))
 
 	slot0.commanderIds = {}
-	slot3 = ipairs
-	slot4 = slot1.commander_list or {}
 
-	for slot6, slot7 in slot3(slot4) do
+	for slot6, slot7 in ipairs(slot1.commander_list or {}) do
 		slot0.commanderIds[slot7.pos] = slot7.id
 	end
 
@@ -164,11 +161,8 @@ function slot0.GetPropertiesSum(slot0)
 end
 
 function slot0.GetGearScoreSum(slot0, slot1)
-	slot2 = 0
-	slot3 = slot1 and slot0:GetTeamShipVOs(slot1) or slot0:GetShipVOs()
-
-	for slot7, slot8 in ipairs(slot3) do
-		slot2 = slot2 + slot8:getShipCombatPower()
+	for slot7, slot8 in ipairs(slot1 and slot0:GetTeamShipVOs(slot1) or slot0:GetShipVOs()) do
+		slot2 = 0 + slot8:getShipCombatPower()
 	end
 
 	return slot2
@@ -298,10 +292,8 @@ function slot0.RepairSubmarine(slot0)
 end
 
 function slot0.GetSpeed(slot0)
-	slot1 = pg.gameset.world_move_initial_step.key_value
-
 	if #slot0:GetBuffsByTrap(WorldBuff.TrapVortex) > 0 then
-		slot1 = math.min(slot1, 1)
+		slot1 = math.min(pg.gameset.world_move_initial_step.key_value, 1)
 	end
 
 	slot5 = WorldBuff.TrapCripple
@@ -314,22 +306,20 @@ function slot0.GetSpeed(slot0)
 end
 
 function slot0.GetStepDurationRate(slot0)
-	slot1 = 1
 	slot5 = WorldBuff.TrapCripple
 
 	for slot5, slot6 in ipairs(slot0:GetBuffsByTrap(slot5)) do
-		slot1 = math.min(slot1, slot6:GetTrapParams()[3] / 100)
+		slot1 = math.min(1, slot6:GetTrapParams()[3] / 100)
 	end
 
 	return 1 / slot1
 end
 
 function slot0.GetFOVRange(slot0)
-	slot1 = 1
 	slot5 = WorldBuff.TrapCripple
 
 	for slot5, slot6 in ipairs(slot0:GetBuffsByTrap(slot5)) do
-		slot1 = math.min(slot1, slot6:GetTrapParams()[1] / 100)
+		slot1 = math.min(1, slot6:GetTrapParams()[1] / 100)
 	end
 
 	return math.floor(WorldConst.GetFOVRadius() * slot1)
@@ -450,12 +440,11 @@ end
 function slot0.UpdateBuffs(slot0, slot1)
 	if slot0.buffs ~= slot1 then
 		if not nowWorld().isAutoFight then
-			slot3 = slot2:GetActiveMap()
 			slot7 = slot1
 
 			for slot7, slot8 in pairs(WorldConst.CompareBuffs(slot0.buffs, slot7).add) do
 				if #slot8.config.trap_lua > 0 then
-					slot3:AddPhaseDisplay({
+					slot2:GetActiveMap():AddPhaseDisplay({
 						story = slot8.config.trap_lua
 					})
 				end
@@ -499,10 +488,12 @@ function slot0.GetBuffFxList(slot0)
 end
 
 function slot0.GetWatchingBuff(slot0)
-	slot1 = {}
+	slot1 = {
+		[slot6] = true
+	}
 
 	for slot5, slot6 in ipairs(pg.gameset.world_sairenbuff_fleeticon.description) do
-		slot1[slot6] = true
+		-- Nothing
 	end
 
 	for slot5, slot6 in ipairs(slot0:GetBuffList()) do
@@ -533,11 +524,10 @@ function slot0.getDefeatCount(slot0)
 end
 
 function slot0.getMapAura(slot0)
-	slot1 = {}
 	slot5 = true
 
 	for slot5, slot6 in ipairs(slot0:GetShips(slot5)) do
-		slot1 = table.mergeArray(slot1, slot6:GetImportWorldShipVO():getMapAuras())
+		slot1 = table.mergeArray({}, slot6:GetImportWorldShipVO():getMapAuras())
 	end
 
 	return slot1
@@ -602,10 +592,8 @@ function slot0.getCommandersAddition(slot0)
 	slot1 = {}
 
 	for slot5, slot6 in pairs(CommanderConst.PROPERTIES) do
-		slot7 = 0
-
 		for slot11, slot12 in pairs(slot0:getCommanders()) do
-			slot7 = slot7 + slot12:getAbilitysAddition()[slot6]
+			slot7 = 0 + slot12:getAbilitysAddition()[slot6]
 		end
 
 		if slot7 > 0 then
@@ -733,10 +721,8 @@ function slot0.GetRarityState(slot0)
 end
 
 function slot0.GetSalvageScoreRarity(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0.catSalvageList) do
-		slot1 = slot1 + pg.world_catsearch_node[slot6].score
+		slot1 = 0 + pg.world_catsearch_node[slot6].score
 	end
 
 	slot2 = nil

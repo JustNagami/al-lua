@@ -1,7 +1,5 @@
 function table.indexof(slot0, slot1, slot2)
-	slot3 = slot2 or 1
-
-	for slot6 = slot3, #slot0 do
+	for slot6 = slot2 or 1, #slot0 do
 		if slot0[slot6] == slot1 then
 			return slot6
 		end
@@ -23,9 +21,8 @@ end
 function table.removebyvalue(slot0, slot1, slot2)
 	slot3 = 0
 	slot4 = 1
-	slot5 = #slot0
 
-	while slot4 <= slot5 do
+	while slot4 <= #slot0 do
 		if slot0[slot4] == slot1 then
 			table.remove(slot0, slot4)
 
@@ -153,7 +150,7 @@ function table.SerialIpairsAsync(slot0, slot1, slot2)
 	slot5, slot0, slot3 = ipairs(slot0)
 	slot6 = nil
 
-	(function ()
+	function ()
 		uv0, uv1 = uv2(uv3, uv0)
 
 		if uv0 == nil then
@@ -163,7 +160,7 @@ function table.SerialIpairsAsync(slot0, slot1, slot2)
 		else
 			uv5(uv0, uv1, uv6)
 		end
-	end)()
+	end()
 end
 
 function table.ParallelIpairsAsync(slot0, slot1, slot2)
@@ -216,10 +213,8 @@ function table.Checkout(slot0, slot1)
 end
 
 function table.getCount(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in pairs(slot0) do
-		slot1 = slot1 + 1
+		slot1 = 0 + 1
 	end
 
 	return slot1
@@ -267,13 +262,13 @@ function table.shallowCopy(slot0)
 		return slot0
 	end
 
-	slot1 = {}
-
 	for slot5, slot6 in pairs(slot0) do
-		slot1[slot5] = slot6
+		-- Nothing
 	end
 
-	return slot1
+	return {
+		[slot5] = slot6
+	}
 end
 
 function table.getIndex(slot0, slot1)
@@ -284,25 +279,14 @@ function table.getIndex(slot0, slot1)
 	end
 end
 
-function table.packParams(...)
-	return {
-		len = select("#", ...),
-		...
-	}
-end
-
-function table.unpackParams(slot0)
-	return unpack(slot0, 1, slot0.len)
-end
-
 function table.map(slot0, slot1)
-	slot2 = {}
-
 	for slot6, slot7 in pairs(slot0) do
-		slot2[slot6] = slot1(slot7)
+		-- Nothing
 	end
 
-	return slot2
+	return {
+		[slot6] = slot1(slot7)
+	}
 end
 
 function table.lastof(slot0)

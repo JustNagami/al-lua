@@ -18,13 +18,12 @@ slot0.TYPES = {
 	ACT_RETURN = 16,
 	COMMANDER = 10,
 	RYZA_TASK = 21,
-	ISLAND = 22,
-	EVENT = 15,
-	SERVER = 12,
 	BLUEPRINT = 14,
 	BUILD = 4,
+	SERVER = 12,
+	ISLAND = 22,
 	ACT_NEWBIE = 17,
-	VOTE_OREDER = 18,
+	EVENT = 15,
 	ATTIRE = 6,
 	FRIEND = 8,
 	NEW_SERVER = 20,
@@ -65,7 +64,7 @@ function slot0.BindConditions(slot0)
 		return getProxy(GuildProxy):ShouldShowTip()
 	end)
 	slot0:BindCondition(uv0.TYPES.ATTIRE, function ()
-		return getProxy(AttireProxy):IsShowRedDot()
+		return getProxy(AttireProxy):IsShowRedDot() or getProxy(SettingsProxy):ShouldEducateCharTip()
 	end)
 	slot0:BindCondition(uv0.TYPES.COLLECTION, function ()
 		return getProxy(CollectionProxy):hasFinish() or getProxy(AppreciateProxy):isGalleryHaveNewRes() or getProxy(AppreciateProxy):isMusicHaveNewRes() or getProxy(AppreciateProxy):isMangaHaveNewRes()
@@ -81,10 +80,8 @@ function slot0.BindConditions(slot0)
 			return false
 		end
 
-		slot0 = getProxy(CommanderProxy):IsFinishAllBox()
-
 		if not LOCK_CATTERY then
-			return slot0 or getProxy(CommanderProxy):AnyCatteryExistOP() or getProxy(CommanderProxy):AnyCatteryCanUse()
+			return getProxy(CommanderProxy):IsFinishAllBox() or getProxy(CommanderProxy):AnyCatteryExistOP() or getProxy(CommanderProxy):AnyCatteryCanUse()
 		else
 			return slot0
 		end
@@ -112,9 +109,6 @@ function slot0.BindConditions(slot0)
 		slot2, slot3 = TrainingCampScene.isTecActOn()
 
 		return slot1 or slot3
-	end)
-	slot0:BindCondition(uv0.TYPES.VOTE_OREDER, function ()
-		return getProxy(VoteProxy):GetOrderBook()
 	end)
 	slot0:BindCondition(uv0.TYPES.MEMORY_REVIEW, function ()
 		if getProxy(PlayerProxy):getRawData() then
@@ -203,10 +197,8 @@ end
 
 function slot0.NotifyAll(slot0, slot1)
 	uv0.cache = {}
-	slot2 = ipairs
-	slot3 = slot0.nodeList[slot1] or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot0.nodeList[slot1] or {}) do
 		slot6:SetData(uv1(slot0, slot6:GetTypes()))
 	end
 

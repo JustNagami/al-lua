@@ -63,12 +63,10 @@ function slot0.handleNotification(slot0, slot1)
 		slot0:sendNotification(GAME.GO_BACK)
 	elseif slot2 == NewBattleResultMediator.SET_SKIP_FLAG then
 		if slot3 then
-			slot4 = getProxy(ActivityProxy)
-
-			slot4:UseContinuousTime()
+			getProxy(ActivityProxy):UseContinuousTime()
 			existCall(slot0.viewComponent.HideConfirmPanel, slot0.viewComponent)
 
-			if not (function ()
+			if not function ()
 				if not getProxy(ActivityProxy):GetContinuousTime() or slot0 <= 0 then
 					return
 				end
@@ -77,16 +75,13 @@ function slot0.handleNotification(slot0, slot1)
 					return
 				end
 
-				slot2 = uv0.contextData.seriesData
 				slot3 = uv0.contextData.system
 				slot4 = uv0.contextData.seriesData.mode
-				slot5 = slot2:GetFleets()
+				slot5 = uv0.contextData.seriesData:GetFleets()
 				slot6 = slot5[#slot5]
 				slot7 = _.slice(slot5, 1, #slot5 - 1)
-				slot10 = getProxy(PlayerProxy)
 
-				if slot10:getRawData().oil < (function ()
-					slot0 = 0
+				if getProxy(PlayerProxy):getRawData().oil < function ()
 					slot2 = uv1:GetOilLimit()
 					slot3 = pg.battle_cost_template[uv0].oil_cost > 0
 
@@ -94,20 +89,16 @@ function slot0.handleNotification(slot0, slot1)
 						slot2 = 0
 
 						if uv0 then
-							slot2 = slot0:GetCostSum().oil
-
 							if slot1 > 0 then
-								slot2 = math.min(slot1, slot2)
+								slot2 = math.min(slot1, slot0:GetCostSum().oil)
 							end
 						end
 
 						return slot2
 					end
 
-					slot5 = #uv1:GetExpeditionIds()
-
 					if uv2 == BossRushSeriesData.MODE.SINGLE then
-						slot0 = (slot0 + slot4(uv3[1], slot2[1]) + slot4(uv4, slot2[2])) * slot5
+						slot0 = (0 + slot4(uv3[1], slot2[1]) + slot4(uv4, slot2[2])) * #uv1:GetExpeditionIds()
 					else
 						slot0 = slot4(uv4, slot2[2]) * slot5
 
@@ -117,7 +108,7 @@ function slot0.handleNotification(slot0, slot1)
 					end
 
 					return slot0
-				end)() then
+				end() then
 					return
 				end
 
@@ -130,7 +121,7 @@ function slot0.handleNotification(slot0, slot1)
 				end
 
 				return true
-			end)() then
+			end() then
 				getProxy(ActivityProxy):AddBossRushAwards(slot0.contextData.awards)
 				slot0:ShowTotalAward(getProxy(ActivityProxy):PopBossRushAwards())
 

@@ -48,10 +48,7 @@ function slot0.register(slot0)
 			uv0:addExpiredTimer(slot6)
 		end
 
-		slot1 = ipairs
-		slot2 = slot0.chat_frame_list or {}
-
-		for slot4, slot5 in slot1(slot2) do
+		for slot4, slot5 in ipairs(slot0.chat_frame_list or {}) do
 			slot6 = uv0.data.chatFrames[slot5.id]
 
 			slot6:updateData(slot5)
@@ -63,28 +60,27 @@ function slot0.register(slot0)
 	if uv2 then
 		slot0.timer = Timer.New(function ()
 			slot0 = {}
-			slot1 = {
-				101,
-				102,
-				201,
-				301
-			}
 
 			for slot5 = 1, 5 do
-				slot7 = Item.New({
+				slot7 = Drop.New({
 					count = 1,
 					type = slot5 % 2 == 0 and DROP_TYPE_ICON_FRAME or DROP_TYPE_CHAT_FRAME,
-					id = slot1[math.random(1, 4)]
+					id = ({
+						101,
+						102,
+						201,
+						301
+					})[math.random(1, 4)]
 				})
 
 				uv0:sendNotification(GAME.ADD_ITEM, slot7)
 				table.insert(slot0, slot7)
 			end
 
-			table.insert(slot0, Item.New({
-				id = 1,
+			table.insert(slot0, Drop.New({
 				count = 1000,
-				type = 1
+				type = DROP_TYPE_RESOURCE,
+				id = PlayerConst.ResGold
 			}))
 			uv0:sendNotification(GAME.ACT_NEW_PT_DONE, {
 				awards = slot0
@@ -222,27 +218,25 @@ function slot0.needTip(slot0)
 	slot1 = {}
 	slot2 = slot0:getDataAndTrophys()
 
-	function slot4(slot0)
-		slot1 = false
-
-		for slot5, slot6 in pairs(slot0) do
-			if slot6:isNew() then
-				slot1 = true
-
-				break
-			end
-		end
-
-		return slot1
-	end
-
 	for slot8, slot9 in ipairs({
 		slot2.iconFrames,
 		slot2.chatFrames,
 		slot2.trophys
 	}) do
 		if slot8 == 1 or slot8 == 2 then
-			table.insert(slot1, slot4(slot9))
+			table.insert(slot1, function (slot0)
+				slot1 = false
+
+				for slot5, slot6 in pairs(slot0) do
+					if slot6:isNew() then
+						slot1 = true
+
+						break
+					end
+				end
+
+				return slot1
+			end(slot9))
 		else
 			table.insert(slot1, false)
 		end

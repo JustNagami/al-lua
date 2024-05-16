@@ -23,13 +23,9 @@ function slot0.Load(slot0)
 	end
 
 	slot0._state = uv0.STATES.LOADING
-	slot1 = pg.UIMgr.GetInstance()
 
-	slot1:LoadingOn()
-
-	slot1 = PoolMgr.GetInstance()
-
-	slot1:GetUI(slot0:getUIName(), true, function (slot0)
+	pg.UIMgr.GetInstance():LoadingOn()
+	PoolMgr.GetInstance():GetUI(slot0:getUIName(), true, function (slot0)
 		if uv0._state == uv1.STATES.DESTROY then
 			pg.UIMgr.GetInstance():LoadingOff()
 			uv2:ReturnUI(uv0:getUIName(), slot0)
@@ -84,11 +80,10 @@ function slot0.Destroy(slot0)
 	slot0:OnDestroy()
 
 	slot0._tf = nil
-	slot1 = PoolMgr.GetInstance()
 	slot2 = slot0:getUIName()
 
 	if slot0._go ~= nil and slot2 then
-		slot1:ReturnUI(slot2, slot0._go)
+		PoolMgr.GetInstance():ReturnUI(slot2, slot0._go)
 
 		slot0._go = nil
 	end
@@ -127,10 +122,7 @@ end
 function slot0.CallbackInvoke(slot0, slot1, ...)
 	slot0._funcQueue[#slot0._funcQueue + 1] = {
 		func = slot1,
-		params = {
-			len = select("#", ...),
-			...
-		}
+		params = packEx(...)
 	}
 
 	slot0:HandleFuncQueue()

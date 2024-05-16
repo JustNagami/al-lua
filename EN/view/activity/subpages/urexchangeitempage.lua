@@ -6,8 +6,7 @@ function slot0.OnInit(slot0)
 	slot0.battleBtn = slot0:findTF("AD/battle")
 	slot0.taskBtn = slot0:findTF("AD/task")
 	slot0.progress = slot0:findTF("AD/progress/Image")
-	slot1 = slot0:findTF("AD/Text")
-	slot0.progressTxt = slot1:GetComponent(typeof(Text))
+	slot0.progressTxt = slot0:findTF("AD/Text"):GetComponent(typeof(Text))
 	slot0.itemTF = slot0:findTF("AD/item")
 	slot0.helpBtn = slot0:findTF("AD/help")
 	slot0.moreBtn = slot0:findTF("AD/more")
@@ -53,11 +52,11 @@ function slot0.OnFirstFlush(slot0)
 	slot0.progressTxt.text = slot4 .. "/" .. slot3
 
 	setFillAmount(slot0.progress, slot4 / slot3)
-	updateDrop(slot0.itemTF, {
+	updateDrop(slot0.itemTF, Drop.New({
 		count = 0,
-		type = 2,
+		type = DROP_TYPE_ITEM,
 		id = slot2
-	})
+	}))
 	setActive(slot0.exchangeTip, NotifyTipHelper.ShouldShowUrTip())
 end
 

@@ -46,18 +46,13 @@ function slot0.init(slot0)
 	slot0.backBtn = slot0:findTF("back")
 	slot0.helpBtn = slot0:findTF("help")
 	slot0.awardBtn = slot0:findTF("award")
-	slot1 = slot0:findTF("award/Text")
-	slot0.awardTxt = slot1:GetComponent(typeof(Text))
+	slot0.awardTxt = slot0:findTF("award/Text"):GetComponent(typeof(Text))
 	slot0.ore = slot0:findTF("ore")
-	slot1 = slot0:findTF("ore/icon")
-	slot0.oreIcon = slot1:GetComponent(typeof(Image))
-	slot1 = slot0:findTF("ore/Text")
-	slot0.oreTxt = slot1:GetComponent(typeof(Text))
+	slot0.oreIcon = slot0:findTF("ore/icon"):GetComponent(typeof(Image))
+	slot0.oreTxt = slot0:findTF("ore/Text"):GetComponent(typeof(Text))
 	slot0.feather = slot0:findTF("feather")
-	slot1 = slot0:findTF("feather/icon")
-	slot0.featherIcon = slot1:GetComponent(typeof(Image))
-	slot1 = slot0:findTF("feather/Text")
-	slot0.featherTxt = slot1:GetComponent(typeof(Text))
+	slot0.featherIcon = slot0:findTF("feather/icon"):GetComponent(typeof(Image))
+	slot0.featherTxt = slot0:findTF("feather/Text"):GetComponent(typeof(Text))
 	slot0.tpl = slot0:findTF("frame/content/tpl")
 
 	setActive(slot0.tpl, false)
@@ -75,9 +70,7 @@ function slot0.init(slot0)
 	Input.multiTouchEnabled = false
 
 	slot0:bind(uv0.OPEN_GRATITUDE_PAGE, function (slot0, slot1)
-		slot2 = uv0.gratitudePage
-
-		slot2:ExecuteAction("Show", slot1, uv0.activity, function ()
+		uv0.gratitudePage:ExecuteAction("Show", slot1, uv0.activity, function ()
 			if uv0.presentedPage and uv0.presentedPage:GetLoaded() then
 				uv0.presentedPage:Hide()
 			end
@@ -213,9 +206,7 @@ function slot0.EnterDrawLinePage(slot0, slot1)
 end
 
 function slot0.EnterPresentedPage(slot0, slot1)
-	slot2 = slot0.presentedPage
-
-	slot2:ExecuteAction("Show", slot1, slot0.activity, function ()
+	slot0.presentedPage:ExecuteAction("Show", slot1, slot0.activity, function ()
 		if uv0.puzzlePage and uv0.puzzlePage:GetLoaded() then
 			uv0.puzzlePage:Hide()
 		end
@@ -223,9 +214,7 @@ function slot0.EnterPresentedPage(slot0, slot1)
 end
 
 function slot0.EnterPuzzlePage(slot0, slot1)
-	slot2 = slot0.puzzlePage
-
-	slot2:ExecuteAction("Show", slot1, slot0.activity, function ()
+	slot0.puzzlePage:ExecuteAction("Show", slot1, slot0.activity, function ()
 		if uv0.drawLinePage and uv0.drawLinePage:GetLoaded() then
 			uv0.drawLinePage:Hide()
 		end

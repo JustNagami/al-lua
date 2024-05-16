@@ -66,12 +66,8 @@ end
 function slot0.addListener(slot0)
 	onButton(slot0, slot0.closeBtn, function ()
 		if uv0:isChanged() then
-			slot3 = uv0
-
-			slot3:openSaveBox(function ()
-				slot0 = uv0
-
-				slot0:save(function ()
+			uv0:openSaveBox(function ()
+				uv0:save(function ()
 					uv0:closeView()
 				end)
 			end, function ()
@@ -84,12 +80,8 @@ function slot0.addListener(slot0)
 	end, SFX_CANCEL)
 	onButton(slot0, slot0.backBGTF, function ()
 		if uv0:isChanged() then
-			slot3 = uv0
-
-			slot3:openSaveBox(function ()
-				slot0 = uv0
-
-				slot0:save(function ()
+			uv0:openSaveBox(function ()
+				uv0:save(function ()
 					uv0:closeView()
 				end)
 			end, function ()
@@ -100,18 +92,12 @@ function slot0.addListener(slot0)
 			uv0:closeView()
 		end
 	end, SFX_CANCEL)
-
-	slot1 = slot0.typeUIItemList
-
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.typeUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:updateTypeTF(slot1 + 1, slot2)
 		end
 	end)
-
-	slot1 = slot0.attrUIItemList
-
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.attrUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:updateAttrTF(slot1 + 1, slot2)
 		end
@@ -126,9 +112,7 @@ function slot0.addListener(slot0)
 	end, SFX_PANEL)
 	onButton(slot0, slot0.saveBtn, function ()
 		if uv0:isChanged() then
-			slot1 = uv0
-
-			slot1:save(function ()
+			uv0:save(function ()
 				uv0:clearCacheMap()
 
 				uv0.curAdditionMap = uv0.tecNationProxy:getSetableAttrAddition()
@@ -143,19 +127,12 @@ function slot0.updateTypeTF(slot0, slot1, slot2)
 
 	setText(slot0:findTF("TypeNameUnSelect", slot2), slot7)
 	setText(slot0:findTF("TypeNameSelected", slot2), slot7)
-
-	slot8 = slot0.resLoader
-
-	slot8:GetSprite("ShipType", "buffitem_tec_" .. slot6, slot0:findTF("TypeImg", slot2), false)
+	slot0.resLoader:GetSprite("ShipType", "buffitem_tec_" .. slot6, slot0:findTF("TypeImg", slot2), false)
 	onToggle(slot0, slot2, function (slot0)
 		if slot0 and uv0.curType ~= uv1 then
 			if uv0:isChanged() then
-				slot4 = uv0
-
-				slot4:openSaveBox(function ()
-					slot0 = uv0
-
-					slot0:save(function ()
+				uv0:openSaveBox(function ()
+					uv0:save(function ()
 						uv0:clearCacheMap()
 
 						uv0.curAdditionMap = uv0.tecNationProxy:getSetableAttrAddition()

@@ -294,10 +294,9 @@ function slot36(slot0, slot1, slot2)
 			end
 
 			slot1 = "boom"
-			slot1 = slot0.currentDirectType == uv0 and slot1 .. "_left" or slot1 .. "_right"
 
 			if slot0.ghostFlag then
-				slot1 = slot1 .. "_ghost"
+				slot1 = (slot0.currentDirectType == uv0 and slot1 .. "_left" or slot1 .. "_right") .. "_ghost"
 			end
 
 			slot0:PlayAniamtion(slot1, function ()
@@ -314,10 +313,9 @@ function slot36(slot0, slot1, slot2)
 			end
 
 			slot2 = "fail"
-			slot2 = slot0.currentDirectType == uv0 and slot2 .. "_left" or slot2 .. "_right"
 
 			if slot1 == uv1 then
-				slot2 = slot2 .. "_miss"
+				slot2 = (slot0.currentDirectType == uv0 and slot2 .. "_left" or slot2 .. "_right") .. "_miss"
 			elseif slot1 == uv2 then
 				slot2 = slot2 .. "_boom"
 			end
@@ -654,10 +652,9 @@ function slot37(slot0, slot1)
 		end,
 		changeRemind = function (slot0, slot1)
 			slot0.remindFlag = slot1
-			slot2 = GetComponent(slot0.useLightTf, typeof(Animator))
 
 			if slot1 and isActive(findTF(slot0.useLightTf, "light")) then
-				slot2:Play("useLightRemind", -1, 0)
+				GetComponent(slot0.useLightTf, typeof(Animator)):Play("useLightRemind", -1, 0)
 			else
 				slot2:Play("useLightIdle", -1, 0)
 			end
@@ -908,12 +905,11 @@ function slot40(slot0, slot1)
 		setItemData = function (slot0, slot1, slot2)
 			slot3 = slot1.tf
 			slot4 = findTF(slot3, "candy")
-			slot5 = findTF(slot3, "boom")
 			slot1.score = 0
 
 			if slot2 == uv0 then
 				setActive(slot4, true)
-				setActive(slot5, false)
+				setActive(findTF(slot3, "boom"), false)
 
 				slot6 = math.random(uv1[1], uv1[2])
 				slot7 = GetComponent(findTF(slot4, "img"), typeof(Animator))
@@ -1086,10 +1082,9 @@ function slot41(slot0, slot1, slot2)
 			slot7 = slot3.width
 			slot8 = slot3.height
 			slot10 = slot2.y
-			slot11 = slot4.width
 			slot12 = slot4.height
 
-			if slot2.x <= slot1.x and slot5 >= slot9 + slot11 then
+			if slot2.x <= slot1.x and slot5 >= slot9 + slot4.width then
 				return false
 			elseif slot5 <= slot9 and slot9 >= slot5 + slot7 then
 				return false
@@ -1304,9 +1299,8 @@ function slot43(slot0, slot1, slot2)
 				slot0.lightGhost = tf(instantiate(slot0.tplGhost))
 				slot0.lightGhost.name = "lightGhost"
 				slot0.lightAnimator = GetComponent(findTF(slot0.lightGhost, "char"), typeof(Animator))
-				slot2 = GetComponent(findTF(slot0.lightGhost, "char"), typeof(DftAniEvent))
 
-				slot2:SetEndEvent(function ()
+				GetComponent(findTF(slot0.lightGhost, "char"), typeof(DftAniEvent)):SetEndEvent(function ()
 					setActive(uv0.lightGhost, false)
 				end)
 				setParent(slot0.lightGhost, slot0.scene)
@@ -1348,10 +1342,8 @@ function slot44(slot0, slot1)
 			slot0:changeEyeShow(true)
 		end,
 		step = function (slot0)
-			slot2 = (uv0.anchoredPosition.x - uv1[1] - slot0.centerX) / slot0.halfRnage * uv2
-
 			for slot6 = 1, #slot0.eyes do
-				setAnchoredPosition(findTF(slot0.eyes[slot6], "img"), Vector3(slot2, 0, 0))
+				setAnchoredPosition(findTF(slot0.eyes[slot6], "img"), Vector3((uv0.anchoredPosition.x - uv1[1] - slot0.centerX) / slot0.halfRnage * uv2, 0, 0))
 			end
 		end,
 		gameOver = function (slot0)
@@ -1497,20 +1489,14 @@ function slot0.initData(slot0)
 		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 	end
 
-	slot1 = UpdateBeat
-
-	slot1:AddListener(slot0.handle)
+	UpdateBeat:AddListener(slot0.handle)
 
 	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
 	slot0.countDft = GetComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
-	slot1 = slot0.countDft
 
-	slot1:SetTriggerEvent(function ()
+	slot0.countDft:SetTriggerEvent(function ()
 	end)
-
-	slot1 = slot0.countDft
-
-	slot1:SetEndEvent(function ()
+	slot0.countDft:SetEndEvent(function ()
 		setActive(uv0.countUI, false)
 		uv0:gameStart()
 	end)
@@ -1716,9 +1702,7 @@ function slot0.onUseLight(slot0, slot1)
 		return
 	end
 
-	slot2 = slot0.charactor
-
-	slot2:playLight(function (slot0)
+	slot0.charactor:playLight(function (slot0)
 		if slot0 and uv0 == uv1 then
 			uv2.ghostChildController:createGhostLight(function (slot0)
 				if slot0 then

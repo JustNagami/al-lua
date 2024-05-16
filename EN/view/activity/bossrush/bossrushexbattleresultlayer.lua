@@ -34,18 +34,18 @@ function slot0.didEnter(slot0)
 		setText(slot4, i18n("series_enemy_score") .. " ")
 
 		uv2 = uv2 + uv1[slot0]
-		slot7 = (function ()
+		slot7 = function ()
 			if not uv0[uv1] then
 				return
 			end
 
-			if not (function ()
+			if not function ()
 				if uv0.mvp ~= 0 then
 					return uv0.mvp
 				end
 
 				return uv0.newShips[1] and uv0.newShips[1].id or nil
-			end)() then
+			end() then
 				return
 			end
 
@@ -54,7 +54,7 @@ function slot0.didEnter(slot0)
 			end
 
 			return slot3:getPainting()
-		end)() or "changdao"
+		end() or "changdao"
 
 		uv0:setPainting(slot5, slot7)
 		table.insert(uv0.retPaintings, {
@@ -92,9 +92,7 @@ function slot0.willExit(slot0)
 end
 
 function slot0.loadUI(slot0)
-	slot1 = PoolMgr.GetInstance()
-
-	slot1:GetUI("ShareUI", false, function (slot0)
+	PoolMgr.GetInstance():GetUI("ShareUI", false, function (slot0)
 		slot1 = slot0.transform
 
 		setParent(slot1, uv0._tf)

@@ -7,7 +7,7 @@ return {
 			end,
 			args = function (slot0)
 				if getProxy(ChapterProxy):getActiveChapter() then
-					slot0.switchToMap(slot0)
+					slot0:switchToMap()
 				end
 
 				return _.any(getProxy(BayProxy):getShips(), function (slot0)

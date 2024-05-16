@@ -44,10 +44,8 @@ function slot0.execute(slot0, slot1)
 end
 
 function slot0.GetMilitaryShop(slot0, slot1)
-	slot2 = {}
-
 	if not slot0.shopsProxy:getMeritorousShop() then
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			uv0:sendNotification(GAME.GET_MILITARY_SHOP, {
 				callback = slot0
 			})
@@ -68,10 +66,8 @@ function slot0.GetMilitaryShop(slot0, slot1)
 end
 
 function slot0.GetStressShop(slot0, slot1)
-	slot2 = {}
-
 	if not slot0.shopsProxy:getShopStreet() then
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			uv0:sendNotification(GAME.GET_SHOPSTREET, {
 				callback = slot0
 			})
@@ -98,10 +94,8 @@ function slot0.GetGuildShop(slot0, slot1)
 		return
 	end
 
-	slot2 = {}
-
 	if not slot0.shopsProxy:getGuildShop() then
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			uv0:sendNotification(GAME.GET_GUILD_SHOP, {
 				type = GuildConst.GET_SHOP,
 				callback = slot0
@@ -155,10 +149,8 @@ function slot0.GetFragmentShop(slot0, slot1)
 end
 
 function slot0.GetActivityShops(slot0, slot1)
-	slot2 = {}
-
 	if not slot0.shopsProxy:getActivityShops() or #slot3 == 0 then
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			uv0:sendNotification(GAME.GET_ACTIVITY_SHOP, {
 				callback = slot0
 			})
@@ -177,8 +169,7 @@ function slot0.GetActivityShops(slot0, slot1)
 				table.insert(uv0.shopList[NewShopsScene.TYPE_ACTIVITY], slot6)
 			end
 
-			slot2 = getProxy(ActivityProxy)
-			slot2 = slot2:getRawData()
+			slot2 = getProxy(ActivityProxy):getRawData()
 
 			table.sort(uv0.shopList[NewShopsScene.TYPE_ACTIVITY], CompareFuncs({
 				function (slot0)
@@ -193,10 +184,8 @@ function slot0.GetActivityShops(slot0, slot1)
 end
 
 function slot0.GetMetaShops(slot0, slot1)
-	slot2 = {}
-
 	if not slot0.shopsProxy:GetMetaShop() then
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			for slot5, slot6 in ipairs(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP)) do
 				if slot6 and not slot6:isEnd() and slot6:getConfig("config_id") == 1 then
 					uv0.shopsProxy:AddMetaShop(MetaShop.New(slot6))
@@ -226,10 +215,8 @@ function slot0.GetMetaShops(slot0, slot1)
 end
 
 function slot0.GetMedalShops(slot0, slot1)
-	slot2 = {}
-
 	if not slot0.shopsProxy:GetMedalShop() then
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			uv0:sendNotification(GAME.GET_MEDALSHOP, {
 				callback = slot0
 			})
@@ -261,10 +248,8 @@ function slot0.GetMiniShops(slot0, slot1)
 		return
 	end
 
-	slot2 = {}
-
 	if not slot0.shopsProxy:getMiniShop() then
-		table.insert(slot2, function (slot0)
+		table.insert({}, function (slot0)
 			uv0:sendNotification(GAME.GET_MINI_GAME_SHOP, {
 				callback = slot0
 			})

@@ -9,12 +9,8 @@ function slot0.InTimeRiver(slot0)
 end
 
 function slot0.InitUI(slot0, slot1)
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Image")
-	slot3 = slot0._tf
-	slot3 = slot3:Find("Image")
-	slot0.comAnimator = slot3:GetComponent(typeof(Animator))
-	slot3 = slot2:GetComponent(typeof(DftAniEvent))
+	slot0.comAnimator = slot0._tf:Find("Image"):GetComponent(typeof(Animator))
+	slot3 = slot0._tf:Find("Image"):GetComponent(typeof(DftAniEvent))
 
 	slot3:SetTriggerEvent(function ()
 		uv0.waterTime = uv1.waterTime or 4

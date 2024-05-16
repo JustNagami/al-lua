@@ -20,21 +20,14 @@ function slot0.Update(slot0)
 		slot0:PrepareBase("story_" .. slot1.row .. "_" .. slot1.column .. "_" .. slot1.attachmentId)
 		setAnchoredPosition(slot0.tf, Vector2(0, 30))
 
-		slot8 = LeanTween.moveY(rtf(slot0.go), 40, 1.5)
-		slot8 = slot8:setEase(LeanTweenType.easeInOutSine)
-		slot0.attachTw = slot8:setLoopPingPong()
-		slot8 = slot0:GetLoader()
+		slot0.attachTw = LeanTween.moveY(rtf(slot0.go), 40, 1.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 
-		slot8:GetPrefab("leveluiview/tpl_box", "tpl_box", function (slot0)
+		slot0:GetLoader():GetPrefab("leveluiview/tpl_box", "tpl_box", function (slot0)
 			slot0.name = uv0
 
 			setParent(slot0, uv1.tf)
 			setAnchoredPosition(slot0, Vector2.zero)
-
-			slot1 = uv1
-			slot1 = slot1:GetLoader()
-
-			slot1:GetPrefab("boxprefab/" .. uv0, uv0, function (slot0)
+			uv1:GetLoader():GetPrefab("boxprefab/" .. uv0, uv0, function (slot0)
 				setParent(slot0, tf(uv0):Find("icon"))
 			end)
 		end)

@@ -10,11 +10,10 @@ end
 
 function slot0.GetContributionPoint(slot0)
 	slot1 = slot0.contextData
-	slot3 = pg.activity_event_worldboss[pg.activity_template[slot1.actId].config_id].damage_resource
 	slot4 = 0
 
 	for slot8, slot9 in ipairs(slot1.drops) do
-		if slot9.configId == slot3 then
+		if slot9.configId == pg.activity_event_worldboss[pg.activity_template[slot1.actId].config_id].damage_resource then
 			slot4 = slot9.count
 		end
 	end

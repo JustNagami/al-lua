@@ -106,12 +106,10 @@ end
 function slot0.PlaceItem(slot0, slot1)
 	slot2 = slot1.maxX
 	slot3 = slot1.maxY
-	slot4 = slot1.posX
-	slot5 = slot1.posY
 	slot0.dependInfo[slot1] = {}
 
 	for slot10, slot11 in ipairs(slot0.allItems) do
-		if slot4 <= slot11.maxX and slot5 <= slot11.maxY then
+		if slot1.posX <= slot11.maxX and slot1.posY <= slot11.maxY then
 			slot6[#slot6 + 1] = slot11
 		elseif slot11.posX <= slot2 and slot11.posY <= slot3 then
 			table.insert(slot0.dependInfo[slot11], slot1)
@@ -168,15 +166,13 @@ end
 function slot0.RemoveItem(slot0, slot1)
 	slot2 = slot1.posX
 	slot3 = slot1.posY
-	slot4 = slot1.maxX
-	slot5 = slot1.maxY
 
 	table.removebyvalue(slot0.allItems, slot1)
 
 	slot0.dependInfo[slot1] = nil
 
 	for slot10, slot11 in ipairs(slot0.allItems) do
-		if slot11.posX <= slot4 and slot11.posY <= slot5 then
+		if slot11.posX <= slot1.maxX and slot11.posY <= slot1.maxY then
 			table.removebyvalue(slot6[slot11], slot1)
 		end
 	end

@@ -39,10 +39,8 @@ function slot0.initData(slot0)
 	end
 
 	slot0.goodVOShowList = {}
-	slot2 = ChargeConst.getBuyCount(slot0.chargedList, slot0.highGoodVO.id)
-	slot3 = ChargeConst.getBuyCount(slot0.chargedList, slot0.upGoodVO.id)
 
-	if ChargeConst.getBuyCount(slot0.chargedList, slot0.normalGoodVO.id) == 0 and slot2 == 0 and slot3 == 0 then
+	if ChargeConst.getBuyCount(slot0.chargedList, slot0.normalGoodVO.id) == 0 and ChargeConst.getBuyCount(slot0.chargedList, slot0.highGoodVO.id) == 0 and ChargeConst.getBuyCount(slot0.chargedList, slot0.upGoodVO.id) == 0 then
 		table.insert(slot0.goodVOShowList, slot0.normalGoodVO)
 		table.insert(slot0.goodVOShowList, slot0.highGoodVO)
 	elseif slot1 > 0 and slot2 == 0 and slot3 == 0 then
@@ -66,9 +64,8 @@ function slot0.findUI(slot0)
 	slot0.giftTpl = slot0:findTF("GiftTpl")
 	slot0.giftContainer = slot0:findTF("List")
 	slot0.giftUIItemList = UIItemList.New(slot0.giftContainer, slot0.giftTpl)
-	slot4 = slot0.giftUIItemList
 
-	slot4:make(function (slot0, slot1, slot2)
+	slot0.giftUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:updateGiftTF(slot2, uv0.goodVOShowList[slot1 + 1])
 		end
@@ -129,11 +126,7 @@ function slot0.updateGiftTF(slot0, slot1, slot2)
 	slot23 = "display"
 
 	for slot23, slot24 in ipairs(slot2:getConfig(slot23)) do
-		table.insert(slot19, {
-			type = slot24[1],
-			id = slot24[2],
-			count = slot24[3]
-		})
+		table.insert(slot19, Drop.Create(slot24))
 	end
 
 	slot20 = UIItemList.New(slot13, slot0.itemTpl)
@@ -147,7 +140,7 @@ function slot0.updateGiftTF(slot0, slot1, slot2)
 			onButton(uv0, slot4, function ()
 				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-			setScrollText(uv0:findTF("TextMask/Text", slot2), getDropName(slot6))
+			setScrollText(uv0:findTF("TextMask/Text", slot2), slot6:getName())
 		end
 	end)
 	slot20:align(#slot19)

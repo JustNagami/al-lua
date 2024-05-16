@@ -6,10 +6,7 @@ function slot0.execute(slot0, slot1)
 	slot4 = slot2.skillID
 
 	print("63309 skill levelup", tostring(slot3), tostring(slot4))
-
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(63309, {
+	pg.ConnectionMgr.GetInstance():Send(63309, {
 		ship_id = slot3,
 		skill_id = slot4
 	}, 63310, function (slot0)

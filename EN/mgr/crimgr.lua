@@ -125,6 +125,8 @@ function slot1.CheckFModeEvent(slot0, slot1, slot2, slot3)
 		return
 	end
 
+	slot4, slot5 = nil
+
 	string.gsub(slot1, "event:/cv/(.+)/(.+)", function (slot0, slot1)
 		uv0 = "cv-" .. slot0 .. (tobool(ShipWordHelper.CVBattleKey[string.gsub(slot1, "_%w+", "")]) and "-battle" or "")
 		uv1 = slot1
@@ -133,8 +135,18 @@ function slot1.CheckFModeEvent(slot0, slot1, slot2, slot3)
 		uv0 = "tb-" .. slot0
 		uv1 = slot1
 	end)
+	string.gsub(slot1, "event:/educate/(.+)/(.+)", function (slot0, slot1)
+		uv0 = "educate-" .. slot0
+		uv1 = slot1
+	end)
 
-	if nil and slot5 then
+	if string.find(slot1, "event:/educate%-cv/") then
+		slot6 = string.split(slot1, "/")
+		slot5 = slot6[#slot6]
+		slot4 = slot6[#slot6 - 1]
+	end
+
+	if slot4 and slot5 then
 		slot2(slot4, slot5)
 	else
 		slot3(string.gsub(string.gsub(slot1, "event:/(battle)/(.+)", "%1-%2"), "event:/(ui)/(.+)", "%1-%2"))
@@ -216,12 +228,10 @@ end
 
 function slot1.LateCvHandler(slot0)
 	for slot4, slot5 in ipairs(slot0.cvCacheDataList) do
-		slot6 = slot5[1]
-		slot7 = slot5[2]
 		slot8 = slot5[3]
 
 		if slot4 == 1 then
-			slot0.criInst:PlayVoice(slot7, CriWareMgr.CRI_FADE_TYPE.NONE, slot6, function (slot0)
+			slot0.criInst:PlayVoice(slot5[2], CriWareMgr.CRI_FADE_TYPE.NONE, slot5[1], function (slot0)
 				if uv0 ~= nil then
 					uv0(slot0)
 				end

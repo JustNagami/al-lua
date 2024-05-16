@@ -14,15 +14,12 @@ end
 function slot0.Load(slot0)
 	slot0.state = uv0
 	slot0.parentTF = pg.NewStoryMgr.GetInstance().frontTr
-	slot1 = ResourceMgr.Inst
 
-	slot1:getAssetAsync("ui/NewStoryRecordUI", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		slot1 = Object.Instantiate(slot0, uv0.parentTF)
-
+	ResourceMgr.Inst:getAssetAsync("ui/NewStoryRecordUI", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0:IsLoading() then
 			uv0.state = uv1
 
-			uv0:Init(slot1)
+			uv0:Init(Object.Instantiate(slot0, uv0.parentTF))
 		end
 	end), true, true)
 end
@@ -45,8 +42,7 @@ function slot0.Init(slot0, slot1)
 	slot0.pageAnim = slot0._tf:GetComponent(typeof(Animation))
 	slot0.pageAniEvent = slot0._tf:GetComponent(typeof(DftAniEvent))
 	slot0.container = slot0._tf:Find("content")
-	slot2 = slot0._tf
-	slot0.tpl = slot2:Find("content/tpl")
+	slot0.tpl = slot0._tf:Find("content/tpl")
 	slot0.cg = GetOrAddComponent(slot0._tf, typeof(CanvasGroup))
 	slot0.tplPools = {
 		slot0.tpl
@@ -56,7 +52,7 @@ function slot0.Init(slot0, slot1)
 	slot0.contentSizeFitter = slot0._tf:Find("content"):GetComponent(typeof(ContentSizeFitter))
 
 	onButton(nil, slot0.closeBtn, function ()
-		triggerButton(pg.NewStoryMgr.GetInstance().recordBtn)
+		uv0:Hide()
 	end, SFX_PANEL)
 	slot0.pageAniEvent:SetEndEvent(function ()
 		uv0:OnHide()
@@ -64,8 +60,31 @@ function slot0.Init(slot0, slot1)
 
 	slot0.state = uv0
 
-	slot0:UpdateList()
-	slot0:BlurPanel()
+	slot0:UpdateAll()
+end
+
+function slot0.UpdateAll(slot0)
+	slot0.cg.blocksRaycasts = false
+
+	seriesAsync({
+		function (slot0)
+			uv0.cg.alpha = 0
+
+			uv0:UpdateList(slot0)
+		end,
+		function (slot0)
+			onNextTick(slot0)
+		end,
+		function (slot0)
+			uv0.cg.alpha = 1
+
+			uv0:PlayAnimation(slot0)
+		end
+	}, function ()
+		uv0.cg.blocksRaycasts = true
+
+		uv0:BlurPanel()
+	end)
 end
 
 function slot8(slot0)
@@ -74,8 +93,7 @@ function slot8(slot0)
 
 	slot0.state = uv0
 
-	slot0:UpdateList()
-	slot0:BlurPanel()
+	slot0:UpdateAll()
 end
 
 function slot0.Show(slot0, slot1)
@@ -116,21 +134,20 @@ function slot10(slot0, slot1)
 	end
 end
 
-function slot0.UpdateList(slot0)
+function slot0.UpdateList(slot0, slot1)
 	if not slot0:IsShowing() then
 		return
 	end
 
-	slot0.cg.blocksRaycasts = false
-	slot2 = {}
-	slot3 = 1
+	slot3 = {}
+	slot4 = 1
 	slot0.usingTpls = {}
-	slot4 = #slot0.displays < uv0 and #slot1 or uv0
+	slot5 = #slot0.displays < uv0 and #slot2 or uv0
 
-	for slot8, slot9 in ipairs(slot1) do
-		slot10 = #slot1
+	for slot9, slot10 in ipairs(slot2) do
+		slot11 = #slot2
 
-		table.insert(slot2, function (slot0)
+		table.insert(slot3, function (slot0)
 			slot1, slot2 = uv0(uv1)
 
 			if not slot2 then
@@ -149,11 +166,9 @@ function slot0.UpdateList(slot0)
 				slot0()
 			end
 
-			slot3 = slot1:GetComponent(typeof(Animation))
-
 			if uv4 + uv5 <= uv6 then
 				setActive(slot1, true)
-				slot3:Play("anim_storyrecordUI_tql_reset")
+				slot1:GetComponent(typeof(Animation)):Play("anim_storyrecordUI_tql_reset")
 			else
 				GetOrAddComponent(slot1, typeof(CanvasGroup)).alpha = 0
 
@@ -162,7 +177,7 @@ function slot0.UpdateList(slot0)
 		end)
 	end
 
-	table.insert(slot2, function (slot0)
+	table.insert(slot3, function (slot0)
 		onDelayTick(function ()
 			uv0.contentSizeFitter.enabled = false
 			uv0.contentSizeFitter.enabled = true
@@ -171,22 +186,23 @@ function slot0.UpdateList(slot0)
 			uv1()
 		end, 0.05)
 	end)
+	seriesAsync(slot3, slot1)
+end
 
-	for slot8 = 1, slot4 do
-		table.insert(slot2, function (slot0)
-			slot2 = uv0.usingTpls[#uv0.usingTpls - uv1 + uv2]
-			slot3 = slot2:GetComponent(typeof(Animation))
+function slot0.PlayAnimation(slot0, slot1)
+	slot4 = {}
 
-			slot3:Play("anim_storyrecordUI_tpl_in")
+	for slot8 = 1, #slot0.displays < uv0 and #slot2 or uv0 do
+		table.insert(slot4, function (slot0)
+			uv0.usingTpls[#uv0.usingTpls - uv1 + uv2]:GetComponent(typeof(Animation)):Play("anim_storyrecordUI_tpl_in")
 			onDelayTick(function ()
 				uv0()
 			end, 0.033)
 		end)
 	end
 
-	seriesAsync(slot2, function ()
-		uv0.cg.blocksRaycasts = true
-	end)
+	seriesAsync(slot4)
+	slot1()
 end
 
 function slot0.UpdateRecord(slot0, slot1, slot2)

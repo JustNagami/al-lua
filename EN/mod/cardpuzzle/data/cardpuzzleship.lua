@@ -58,10 +58,7 @@ function slot0.Ctor(slot0, slot1)
 	slot0.equipments = {}
 
 	if slot1.equip_info_list then
-		slot2 = ipairs
-		slot3 = slot1.equip_info_list or {}
-
-		for slot5, slot6 in slot2(slot3) do
+		for slot5, slot6 in ipairs(slot1.equip_info_list or {}) do
 			slot0.equipments[slot5] = slot6.id > 0 and Equipment.New({
 				count = 1,
 				id = slot6.id,
@@ -75,10 +72,8 @@ function slot0.Ctor(slot0, slot1)
 	end
 
 	slot0.skills = {}
-	slot2 = ipairs
-	slot3 = slot1.skill_id_list or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1.skill_id_list or {}) do
 		slot0:updateSkill(slot6)
 	end
 
@@ -100,7 +95,7 @@ function slot0.getActiveEquipments(slot0)
 	for slot5 = #Clone(slot0.equipments), 1, -1 do
 		if slot1[slot5] then
 			for slot10 = 1, slot5 - 1 do
-				if slot1[slot10] and slot6.config.equip_limit ~= 0 and slot11.config.equip_limit == slot6.config.equip_limit then
+				if slot1[slot10] and slot6:getConfig("equip_limit") ~= 0 and slot11:getConfig("equip_limit") == slot6:getConfig("equip_limit") then
 					slot1[slot5] = false
 				end
 			end
@@ -195,10 +190,12 @@ end
 function slot0.getBaseProperties(slot0)
 	assert(slot0:getConfigTable(), "配置表没有这艘船" .. slot0.configId)
 
-	slot2 = {}
+	slot2 = {
+		[slot7] = slot1[slot7]
+	}
 
 	for slot6, slot7 in ipairs(uv0.PROPERTIES) do
-		slot2[slot7] = slot1[slot7]
+		-- Nothing
 	end
 
 	for slot6, slot7 in ipairs(uv0.DIVE_PROPERTIES) do
@@ -213,10 +210,12 @@ function slot0.getBaseProperties(slot0)
 end
 
 function slot0.getGiftProperties(slot0, slot1)
-	slot2 = {}
+	slot2 = {
+		[slot7] = 0
+	}
 
 	for slot6, slot7 in ipairs(uv0.PROPERTIES) do
-		slot2[slot7] = 0
+		-- Nothing
 	end
 
 	for slot6, slot7 in ipairs(uv0.DIVE_PROPERTIES) do
@@ -242,11 +241,10 @@ end
 
 function slot0.getProperties(slot0, slot1)
 	slot2 = slot0:getShipProperties()
-	slot3 = slot0:getGiftProperties(slot1)
 
 	for slot7, slot8 in ipairs(uv0.PROPERTIES) do
 		if slot8 == AttributeType.Speed then
-			slot2[slot8] = slot2[slot8] + slot3[slot8]
+			slot2[slot8] = slot2[slot8] + slot0:getGiftProperties(slot1)[slot8]
 		else
 			slot2[slot8] = calcFloor(slot2[slot8] + slot3[slot8])
 		end
@@ -278,25 +276,23 @@ function slot0.getTriggerSkills(slot0)
 end
 
 function slot0.GetEquipmentSkills(slot0)
-	slot1 = {}
-
 	for slot6, slot7 in ipairs(slot0:getActiveEquipments()) do
-		if slot7 and slot7.config.skill_id[1] then
-			slot1[slot8] = {
-				level = 1,
-				id = slot8
-			}
+		if slot7 and slot7:getConfig("skill_id")[1] then
+			-- Nothing
 		end
 	end
 
-	return slot1
+	return {
+		[slot8] = {
+			level = 1,
+			id = slot8
+		}
+	}
 end
 
 function slot0.getAllSkills(slot0)
-	slot1 = Clone(slot0.skills)
-
 	for slot5, slot6 in pairs(slot0:GetEquipmentSkills()) do
-		slot1[slot5] = slot6
+		Clone(slot0.skills)[slot5] = slot6
 	end
 
 	for slot5, slot6 in pairs(slot0:getTriggerSkills()) do
@@ -323,11 +319,10 @@ function slot0.getTeamType(slot0)
 end
 
 function slot0.getMaxConfigId(slot0)
-	slot1 = pg.ship_data_template
 	slot2 = nil
 
 	for slot6 = 4, 1, -1 do
-		if slot1[tonumber(slot0.groupId .. slot6)] then
+		if pg.ship_data_template[tonumber(slot0.groupId .. slot6)] then
 			slot2 = slot7
 
 			break
@@ -354,7 +349,6 @@ end
 function slot0.getSkillList(slot0)
 	slot1 = pg.ship_data_template[slot0.configId]
 	slot2 = Clone(slot1.buff_list_display)
-	slot3 = Clone(slot1.buff_list)
 	slot5 = 0
 
 	if pg.ship_data_trans[slot0.groupId] and slot4.skill_id ~= 0 then
@@ -362,7 +356,7 @@ function slot0.getSkillList(slot0)
 		slot7 = pg.transform_data_template[slot6]
 
 		if slot0.transforms[slot6] and slot7.skill_id ~= 0 then
-			table.insert(slot3, slot7.skill_id)
+			table.insert(Clone(slot1.buff_list), slot7.skill_id)
 		end
 	end
 

@@ -5,10 +5,8 @@ function slot0.getUIName(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-	slot0.listTF = slot1:Find("window/bg/awards/awardList")
-	slot1 = slot0._tf
-	slot0.closeBtn = slot1:Find("window/top/btnBack")
+	slot0.listTF = slot0._tf:Find("window/bg/awards/awardList")
+	slot0.closeBtn = slot0._tf:Find("window/top/btnBack")
 	slot0.winCondtitle = slot0:findTF("window/bg/winCond/title/text")
 
 	setText(slot0.winCondtitle, i18n("text_win_condition"))
@@ -81,10 +79,9 @@ function slot0.UpdateList(slot0, slot1, slot2, slot3, slot4)
 
 	for slot10 = 1, #slot3 do
 		slot11 = slot0.listTF:GetChild(slot5[slot10])
-		slot12 = tostring(slot2[slot10] - 1)
 
 		if slot2[slot10] - 1 ~= slot2[slot10 + 1] then
-			slot12 = tostring(slot2[slot10 + 1]) .. "-" .. slot12
+			slot12 = tostring(slot2[slot10 + 1]) .. "-" .. tostring(slot2[slot10] - 1)
 		end
 
 		setText(slot11:Find("text"), slot12)
@@ -94,10 +91,7 @@ function slot0.UpdateList(slot0, slot1, slot2, slot3, slot4)
 		onButton(slot0, slot11:Find("award"), function ()
 			uv0:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
-
-		slot6 = slot6 or slot2[slot10 + 1] <= slot4
-
-		setActive(slot11:Find("mask"), not (not slot6 and slot2[slot10 + 1] <= slot4))
+		setActive(slot11:Find("mask"), not (not (slot6 or slot2[slot10 + 1] <= slot4) and slot2[slot10 + 1] <= slot4))
 	end
 end
 

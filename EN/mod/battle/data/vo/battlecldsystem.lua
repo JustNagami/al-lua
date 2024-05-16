@@ -70,10 +70,9 @@ function slot7.UpdateShipCldTree(slot0, slot1)
 	slot2 = slot1:GetSpeed()
 	slot3 = slot1:GetCldBox()
 	slot4 = nil
-	slot5 = not uv0.IsUnitCldImmune(slot1)
 
 	if slot1:GetIFF() == slot0._foeCode then
-		if slot5 then
+		if not uv0.IsUnitCldImmune(slot1) then
 			if slot1:GetCldData().FriendlyCld then
 				slot1:GetCldData().distList = {}
 
@@ -149,11 +148,10 @@ end
 
 function slot7.surfaceFilterCount(slot0, slot1)
 	slot2 = slot0:GetCldData()
-	slot3 = 0
 
 	for slot8 = 1, #slot1 do
 		if slot1[slot8].data.Active == true and slot9.UID ~= slot0:GetUniqueID() and slot2.IFF ~= slot9.IFF and slot2.Surface == slot9.Surface then
-			slot3 = slot3 + 1
+			slot3 = 0 + 1
 		end
 	end
 
@@ -186,15 +184,12 @@ end
 function slot7.UpdateBulletCld(slot0, slot1)
 	slot3 = slot1:GetCldBox()
 	slot4 = slot1:GetCldData().IFF
-	slot5, slot6 = nil
 
 	if slot1:GetEffectField() == uv0.BulletField.SURFACE then
 		slot7 = slot0:getBulletCldShipList(slot1, slot4 == slot0._foeCode and slot0._shipTree or slot0._foeShipTree)
 
 		if slot1:IsIndiscriminate() then
-			slot8 = slot6 == slot0._shipTree and slot0._foeShipTree or slot0._shipTree
-
-			for slot13, slot14 in ipairs(slot0:getBulletCldShipList(slot1, slot8)) do
+			for slot13, slot14 in ipairs(slot0:getBulletCldShipList(slot1, nil == slot0._shipTree and slot0._foeShipTree or slot0._shipTree)) do
 				table.insert(slot7, slot14)
 			end
 		end
@@ -266,9 +261,7 @@ function slot7.UpdateAOECld(slot0, slot1)
 		slot7 = slot0:getAreaCldShipList(slot1, slot1:OpponentAffected() == (slot1:GetCldData().IFF == slot0._foeCode) and slot0._shipTree or slot0._foeShipTree)
 
 		if slot1:GetIndiscriminate() then
-			slot12 = slot11 == slot0._shipTree and slot0._foeShipTree or slot0._shipTree
-
-			for slot17, slot18 in ipairs(slot0:getAreaCldShipList(slot1, slot12)) do
+			for slot17, slot18 in ipairs(slot0:getAreaCldShipList(slot1, slot11 == slot0._shipTree and slot0._foeShipTree or slot0._shipTree)) do
 				table.insert(slot7, slot18)
 			end
 		end
@@ -298,10 +291,8 @@ function slot7.getAreaCldShipList(slot0, slot1, slot2)
 	if slot1:GetAreaType() == uv0.AreaType.COLUMN or slot1:GetAnchorPointAlignment() == Vector3.zero then
 		slot3 = slot2:GetCldList(slot1:GetCldBox(), uv1)
 	else
-		slot6 = slot1:GetAngle() * math.deg2Rad
-
 		if slot1:GetCldData().IFF == slot0._foeCode then
-			slot6 = slot6 + math.pi
+			slot6 = slot1:GetAngle() * math.deg2Rad + math.pi
 		end
 
 		slot3 = slot2:GetCldListGradient(slot6, slot1:GetHeight(), slot1:GetWidth(), slot1:GetPosition())
@@ -333,11 +324,8 @@ end
 function slot7.HandleAreaCldWithAircraft(slot0, slot1, slot2)
 	slot1:ClearCLDList()
 
-	slot3 = slot1:GetCldData()
-	slot4 = slot1:OpponentAffected()
-
 	for slot9 = 1, #slot2 do
-		if slot4 == (slot2[slot9].data.IFF ~= slot3.IFF) then
+		if slot1:OpponentAffected() == (slot2[slot9].data.IFF ~= slot1:GetCldData().IFF) then
 			slot1:AppendCldObj(slot10)
 		end
 	end

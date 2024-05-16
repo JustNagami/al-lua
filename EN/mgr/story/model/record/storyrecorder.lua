@@ -38,15 +38,13 @@ function slot0.Convert(slot0)
 end
 
 function slot5(slot0)
-	slot2 = slot0
-
 	for slot6, slot7 in ipairs({
 		"<size=%d+>",
 		"</size>",
 		"<color=%w+>",
 		"</color>"
 	}) do
-		slot2 = string.gsub(slot2, slot7, "")
+		slot2 = string.gsub(slot0, slot7, "")
 	end
 
 	return slot2
@@ -79,9 +77,9 @@ function slot0.CollectDialogueContent(slot0, slot1, slot2)
 	table.insert(slot1, {
 		icon = slot3,
 		name = slot4,
-		nameColor = (function ()
+		nameColor = function ()
 			return uv1 and uv2 or uv0:GetNameColor() or uv3
-		end)(),
+		end(),
 		list = {
 			setColorStr(uv2(slot2:GetContent()), slot6 and uv0 or uv3)
 		},
@@ -89,11 +87,10 @@ function slot0.CollectDialogueContent(slot0, slot1, slot2)
 	})
 
 	if slot2:ExistOption() then
-		slot9 = slot2:GetSelectedBranchCode()
 		slot10 = {}
 
 		for slot14, slot15 in ipairs(slot2:GetOptions()) do
-			table.insert(slot10, setColorStr("[ " .. uv2(slot15[1]) .. " ]", slot15[2] == slot9 and uv0 or uv4))
+			table.insert(slot10, setColorStr("[ " .. uv2(slot15[1]) .. " ]", slot15[2] == slot2:GetSelectedBranchCode() and uv0 or uv4))
 		end
 
 		table.insert(slot1, {

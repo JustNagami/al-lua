@@ -276,12 +276,10 @@ function slot2.SubRoutineButton(slot0)
 end
 
 function slot2.AirFightButton(slot0)
-	slot1 = {
-		9
-	}
-
 	for slot5, slot6 in ipairs(slot0._skillBtnList) do
-		slot7 = table.indexof(slot1, slot5)
+		slot7 = table.indexof({
+			9
+		}, slot5)
 
 		slot6:SetActive(slot7)
 

@@ -24,9 +24,7 @@ end
 
 function slot0.LoadExtraEffects(slot0, slot1)
 	if slot1 and #slot1 > 0 then
-		slot3 = slot0:GetLoader()
-
-		slot3:LoadPrefab("effect/" .. slot1, slot1, function (slot0)
+		slot0:GetLoader():LoadPrefab("effect/" .. slot1, slot1, function (slot0)
 			uv0._extraEffectList[uv1] = slot0
 
 			setParent(slot0, uv0.tf, false)
@@ -43,11 +41,9 @@ function slot0.RefreshEnemyTplIcons(slot0, slot1, slot2)
 		return
 	end
 
-	slot4 = {}
-
 	if slot1.icon_type == 1 then
 		if ChapterConst.EnemySize[slot1.type] == 1 or not ChapterConst.EnemySize[slot6] then
-			table.insert(slot4, "xiao")
+			table.insert({}, "xiao")
 		elseif ChapterConst.EnemySize[slot6] == 2 then
 			table.insert(slot4, "zhong")
 		elseif ChapterConst.EnemySize[slot6] == 3 then

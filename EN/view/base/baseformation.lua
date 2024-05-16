@@ -55,6 +55,10 @@ function slot0.AddEndDrag(slot0, slot1)
 	slot0._endDrag = slot1
 end
 
+function slot0.AddCheckBeginDrag(slot0, slot1)
+	slot0._checkBeginDrag = slot1
+end
+
 function slot0.AddShiftOnly(slot0, slot1)
 	slot0._shiftOnly = slot1
 end
@@ -65,6 +69,10 @@ end
 
 function slot0.AddCheckRemove(slot0, slot1)
 	slot0._checkRemove = slot1
+end
+
+function slot0.AddCheckSwitch(slot0, slot1)
+	slot0._checkSwitch = slot1
 end
 
 function slot0.AddSwitchToDisplayMode(slot0, slot1)
@@ -118,7 +126,6 @@ function slot0.LoadAllCharacter(slot0)
 			return
 		end
 
-		slot4 = uv0._shipVOs[slot1]
 		slot5 = tf(Instantiate(uv0._heroInfoTpl))
 
 		slot5:SetParent(uv0._heroContainer, false)
@@ -130,7 +137,7 @@ function slot0.LoadAllCharacter(slot0)
 		slot0.modelRoot.transform:SetAsFirstSibling()
 
 		if uv0._heroInfoModifyCb ~= nil then
-			uv0._heroInfoModifyCb(slot5, slot4, slot0)
+			uv0._heroInfoModifyCb(slot5, uv0._shipVOs[slot1], slot0)
 		end
 
 		slot6 = uv0:GenCharInfo(slot5, slot0)
@@ -159,16 +166,20 @@ function slot0.LoadAllCharacter(slot0)
 				return
 			end
 
-			uv0._modelDrag = uv1.modelRoot
-			uv0._currentDragDelegate = uv2
+			if uv0._checkBeginDrag and not uv0._checkBeginDrag(uv1, uv2, uv0._currentFleetVO) then
+				return
+			end
 
-			LeanTween.cancel(uv1.modelRoot)
-			uv3:SetAsLastSibling()
-			uv0:SwitchToShiftMode(uv3, uv4)
-			uv1:SetAction("tuozhuai")
+			uv0._modelDrag = uv3.modelRoot
+			uv0._currentDragDelegate = uv4
+
+			LeanTween.cancel(uv3.modelRoot)
+			uv5:SetAsLastSibling()
+			uv0:SwitchToShiftMode(uv5, uv2)
+			uv3:SetAction("tuozhuai")
 
 			if uv0._beginDrag then
-				uv0._beginDrag(uv3)
+				uv0._beginDrag(uv5)
 			end
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_HOME_DRAG)
@@ -191,45 +202,41 @@ function slot0.LoadAllCharacter(slot0)
 
 			uv1:SetAction("stand")
 
-			function slot3()
-				uv0:SwitchToDisplayMode()
-				uv0:SortSiblingIndex()
-
-				if uv0._shiftOnly ~= nil then
-					uv0._shiftOnly(uv0._currentFleetVO)
-				end
-			end
-
 			if uv0._forceDropCharacter then
-				slot3()
+				function ()
+					uv0:SwitchToDisplayMode()
+					uv0:SortSiblingIndex()
+
+					if uv0._shiftOnly ~= nil then
+						uv0._shiftOnly(uv0._currentFleetVO)
+					end
+				end()
 
 				return
-			end
-
-			function slot4()
-				for slot3, slot4 in ipairs(uv0) do
-					if slot4.heroInfoTF == uv1 then
-						slot4.spineRole:Dispose()
-						uv1.gameObject:Destroy()
-						table.remove(uv0, slot3)
-
-						break
-					end
-				end
-
-				uv2:SwitchToDisplayMode()
-				uv2:SortSiblingIndex()
-
-				if uv2._removeShip ~= nil then
-					uv2._removeShip(uv3, uv2._currentFleetVO)
-				end
 			end
 
 			slot5, slot6 = uv0:GetShipPos(uv0._currentFleetVO, uv4)
 
 			if slot1.position.x < UnityEngine.Screen.width * 0.15 or slot1.position.x > UnityEngine.Screen.width * 0.87 or slot1.position.y < UnityEngine.Screen.height * 0.18 or slot1.position.y > UnityEngine.Screen.height * 0.7 then
 				if uv0._checkRemove ~= nil then
-					uv0._checkRemove(slot3, slot4, uv4, uv0._currentFleetVO, slot6)
+					uv0._checkRemove(slot3, function ()
+						for slot3, slot4 in ipairs(uv0) do
+							if slot4.heroInfoTF == uv1 then
+								slot4.spineRole:Dispose()
+								uv1.gameObject:Destroy()
+								table.remove(uv0, slot3)
+
+								break
+							end
+						end
+
+						uv2:SwitchToDisplayMode()
+						uv2:SortSiblingIndex()
+
+						if uv2._removeShip ~= nil then
+							uv2._removeShip(uv3, uv2._currentFleetVO)
+						end
+					end, uv4, uv0._currentFleetVO, slot6)
 				end
 			else
 				slot3()
@@ -249,10 +256,12 @@ function slot0.LoadAllCharacter(slot0)
 	function slot3(slot0, slot1)
 		for slot5, slot6 in ipairs(slot0) do
 			table.insert(uv0, function (slot0)
-				SpineRole.New(uv0._shipVOs[uv1]):Load(function ()
+				slot1 = SpineRole.New(uv0._shipVOs[uv1])
+
+				slot1:Load(function ()
 					uv0(uv1, uv2, uv3, uv4)
 					uv5()
-				end)
+				end, nil, slot1.ORBIT_KEY_UI)
 			end)
 		end
 	end
@@ -264,9 +273,7 @@ function slot0.LoadAllCharacter(slot0)
 		slot3(slot0._currentFleetVO:getTeamByName(TeamType.Submarine), TeamType.Submarine)
 	end
 
-	slot5 = pg.UIMgr.GetInstance()
-
-	slot5:LoadingOn()
+	pg.UIMgr.GetInstance():LoadingOn()
 	parallelAsync(slot2, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
@@ -318,6 +325,7 @@ function slot0.SetCharacterPos(slot0, slot1, slot2, slot3)
 	LeanTween.moveY(rtf(slot6), 0, 0.5):setDelay(0.5)
 	SetActive(slot7:Find("shadow"), true)
 	slot5:SetAction("stand")
+	slot5:resumeRole()
 end
 
 function slot0.ResetGrid(slot0, slot1, slot2)
@@ -337,8 +345,7 @@ function slot0.ResetGrid(slot0, slot1, slot2)
 	end
 
 	if #slot3 < 3 then
-		slot6 = slot4[slot5 + 1]
-		slot7 = slot6:Find("tip")
+		slot7 = slot4[slot5 + 1]:Find("tip")
 		slot7:GetComponent("Button").enabled = true
 
 		onButton(slot0, slot7, function ()
@@ -391,7 +398,18 @@ function slot0.SwitchToShiftMode(slot0, slot1, slot2)
 			slot14:AddPointEnterFunc(function ()
 				for slot3, slot4 in ipairs(uv0) do
 					if slot4.heroInfoTF == uv1 then
-						uv2:Shift(uv2._shiftIndex, slot3, uv3)
+						seriesAsync({
+							function (slot0)
+								if not uv0._checkSwitch then
+									return slot0()
+								end
+
+								uv0._checkSwitch(slot0, uv0._shiftIndex, uv1, uv0._currentFleetVO, uv2)
+							end,
+							function (slot0)
+								uv0:Shift(uv0._shiftIndex, uv1, uv2)
+							end
+						})
 
 						break
 					end
@@ -532,8 +550,7 @@ function slot0.SortSiblingIndex(slot0)
 end
 
 function slot0.UpdateGridVisibility(slot0)
-	slot1 = slot0._currentFleetVO
-	slot1 = slot1:getFleetType()
+	slot1 = slot0._currentFleetVO:getFleetType()
 
 	_.each(slot0._gridTFs[TeamType.Main], function (slot0)
 		setActive(slot0, uv0 == FleetType.Normal)

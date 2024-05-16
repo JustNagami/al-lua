@@ -1,18 +1,12 @@
 slot0 = class("NewNavalTacticsShipCard", import(".NewNavalTacticsBaseCard"))
 
 function slot0.OnInit(slot0)
-	slot1 = findTF(slot0._tf, "skill/name_Text")
-	slot0.skillNameTxt = slot1:GetComponent(typeof(Text))
-	slot1 = findTF(slot0._tf, "skill/icon")
-	slot0.skillIcon = slot1:GetComponent(typeof(Image))
-	slot1 = findTF(slot0._tf, "skill/exp")
-	slot0.skillExpSlider = slot1:GetComponent(typeof(Slider))
-	slot1 = findTF(slot0._tf, "skill/level")
-	slot0.skillLevelTxt = slot1:GetComponent(typeof(Text))
-	slot1 = findTF(slot0._tf, "skill/next")
-	slot0.skillNextExp = slot1:GetComponent(typeof(Text))
-	slot1 = findTF(slot0._tf, "timer_Text")
-	slot0.timeTxt = slot1:GetComponent(typeof(Text))
+	slot0.skillNameTxt = findTF(slot0._tf, "skill/name_Text"):GetComponent(typeof(Text))
+	slot0.skillIcon = findTF(slot0._tf, "skill/icon"):GetComponent(typeof(Image))
+	slot0.skillExpSlider = findTF(slot0._tf, "skill/exp"):GetComponent(typeof(Slider))
+	slot0.skillLevelTxt = findTF(slot0._tf, "skill/level"):GetComponent(typeof(Text))
+	slot0.skillNextExp = findTF(slot0._tf, "skill/next"):GetComponent(typeof(Text))
+	slot0.timeTxt = findTF(slot0._tf, "timer_Text"):GetComponent(typeof(Text))
 	slot0.cancelBtn = findTF(slot0._tf, "cancel_btn")
 	slot0.quickFinishBtn = findTF(slot0._tf, "quick_finish_btn")
 
@@ -33,9 +27,7 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.LoadShipCard(slot0)
-	slot1 = ResourceMgr.Inst
-
-	slot1:getAssetAsync("template/shipcardtpl", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	ResourceMgr.Inst:getAssetAsync("template/shipcardtpl", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		slot1 = Object.Instantiate(slot0, uv0._tf)
 		slot1.transform.localScale = Vector3(1.28, 1.28, 1)
 		slot1.transform.localPosition = Vector3(0, 251, 0)
@@ -167,18 +159,13 @@ function slot0.Curr2One(slot0, slot1, slot2)
 	slot3 = slot1:GetNextLevelExp()
 	slot4 = slot1.exp / slot3
 	slot5 = 1 - slot4
-	slot6 = LeanTween.value(slot0.skillExpSlider.gameObject, slot4, 1, slot5)
 
-	slot6:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(slot0.skillExpSlider.gameObject, slot4, 1, slot5):setOnUpdate(System.Action_float(function (slot0)
 		uv0.skillExpSlider.value = slot0
 	end))
-
-	slot6 = LeanTween.value(slot0.skillNextExp.gameObject, slot1.exp, slot3, slot5 + 0.001)
-	slot6 = slot6:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(slot0.skillNextExp.gameObject, slot1.exp, slot3, slot5 + 0.001):setOnUpdate(System.Action_float(function (slot0)
 		uv0.skillNextExp.text = math.ceil(slot0) .. "/" .. uv1
-	end))
-
-	slot6:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		uv0.skillLevelTxt.text = uv1.level + 1
 
 		uv2()
@@ -192,31 +179,24 @@ function slot0.Zero2One(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	function slot5(slot0)
-		slot1 = 0.3
-		slot2 = LeanTween.value(uv0.skillExpSlider.gameObject, 0, 1, slot1)
-
-		slot2:setOnUpdate(System.Action_float(function (slot0)
-			uv0.skillExpSlider.value = slot0
-		end))
-
-		slot3 = LeanTween.value(uv0.skillNextExp.gameObject, 0, ShipSkill.StaticGetNextLevelExp(uv1), slot1 + 0.001)
-		slot3 = slot3:setOnUpdate(System.Action_float(function (slot0)
-			uv0.skillNextExp.text = math.ceil(slot0) .. "/" .. uv1
-		end))
-
-		slot3:setOnComplete(System.Action(function ()
-			uv0.skillLevelTxt.text = uv1 + 1
-			uv1 = uv1 + 1
-
-			uv2()
-		end))
-	end
-
 	slot6 = {}
 
 	for slot10 = 1, slot2.level - slot1.level - 1 do
-		table.insert(slot6, slot5)
+		table.insert(slot6, function (slot0)
+			slot1 = 0.3
+
+			LeanTween.value(uv0.skillExpSlider.gameObject, 0, 1, slot1):setOnUpdate(System.Action_float(function (slot0)
+				uv0.skillExpSlider.value = slot0
+			end))
+			LeanTween.value(uv0.skillNextExp.gameObject, 0, ShipSkill.StaticGetNextLevelExp(uv1), slot1 + 0.001):setOnUpdate(System.Action_float(function (slot0)
+				uv0.skillNextExp.text = math.ceil(slot0) .. "/" .. uv1
+			end)):setOnComplete(System.Action(function ()
+				uv0.skillLevelTxt.text = uv1 + 1
+				uv1 = uv1 + 1
+
+				uv2()
+			end))
+		end)
 	end
 
 	seriesAsync(slot6, slot3)

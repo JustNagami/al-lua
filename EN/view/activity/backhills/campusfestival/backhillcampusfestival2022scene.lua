@@ -36,8 +36,7 @@ function slot0.init(slot0)
 
 	setActive(slot0.map_Decoration, false)
 
-	slot1 = slot0._map
-	slot0._SDPlace = slot1:Find("SDPlace")
+	slot0._SDPlace = slot0._map:Find("SDPlace")
 	slot0.containers = {
 		slot0._SDPlace
 	}
@@ -115,9 +114,7 @@ function slot0.RegisterDataResponse(slot0)
 	slot0.Respones:SetRawData("view", slot0)
 
 	for slot5, slot6 in ipairs(_.values(slot0.Buildings)) do
-		slot7 = slot0.Respones
-
-		slot7:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot6
 		}, function (slot0, slot1)
@@ -135,9 +132,7 @@ function slot0.RegisterDataResponse(slot0)
 		end)
 	end
 
-	slot2 = slot0.Respones
-
-	slot2:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"stage"
 	}, function (slot0, slot1)
@@ -152,9 +147,7 @@ function slot0.RegisterDataResponse(slot0)
 	table.insertto(slot2, slot1)
 
 	for slot6, slot7 in ipairs(slot2) do
-		slot8 = slot0.Respones
-
-		slot8:AddRawListener({
+		slot0.Respones:AddRawListener({
 			"view",
 			slot7 .. "Tip"
 		}, function (slot0, slot1)
@@ -167,9 +160,8 @@ function slot0.RegisterDataResponse(slot0)
 	end
 
 	slot0.Respones.hubData = {}
-	slot3 = slot0.Respones
 
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"hubData"
 	}, function (slot0, slot1)
@@ -177,10 +169,7 @@ function slot0.RegisterDataResponse(slot0)
 	end, {
 		strict = true
 	})
-
-	slot3 = slot0.Respones
-
-	slot3:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"materialCount"
 	}, function (slot0, slot1)
@@ -201,19 +190,19 @@ function slot0.UpdateView(slot0)
 	end))
 
 	slot0.Respones.materialCount = slot1.data1KeyValueList[1][next(slot1.data1KeyValueList[1])] or 0
-	slot0.Respones.cakeshopTip = tobool((function ()
+	slot0.Respones.cakeshopTip = tobool(function ()
 		return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_CAKEMAKING)
-	end)())
+	end())
 
 	slot0:UpdateHubData(getProxy(MiniGameProxy):GetHubByHubId(getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_CAKEMAKING):getConfig("config_id")))
 
-	slot0.Respones.shujvhuiguTip = tobool((function ()
+	slot0.Respones.shujvhuiguTip = tobool(function ()
 		if PLATFORM_CODE ~= PLATFORM_JP then
 			return
 		end
 
 		return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY))
-	end)())
+	end())
 end
 
 function slot0.UpdateHubData(slot0, slot1)
@@ -225,17 +214,17 @@ function slot0.UpdateHubData(slot0, slot1)
 end
 
 function slot0.IsShowMainTip(slot0)
-	return (function ()
+	return function ()
 		return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_CAKEMAKING)
-	end)() or (function ()
+	end() or function ()
 		return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF))
-	end)() or (function ()
+	end() or function ()
 		if PLATFORM_CODE ~= PLATFORM_JP then
 			return
 		end
 
 		return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY))
-	end)()
+	end()
 end
 
 function slot0.willExit(slot0)

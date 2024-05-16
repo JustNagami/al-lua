@@ -6,8 +6,7 @@ function slot0.Ctor(slot0, slot1)
 	slot0.usingTr = findTF(slot0._tf, "using")
 	slot0.unavailableTr = findTF(slot0._tf, "unavailable")
 	slot0.icon = findTF(slot0._tf, "mask/icon"):GetComponent(typeof(Image))
-	slot2 = findTF(slot0._tf, "name/Text")
-	slot0.name = slot2:GetComponent(typeof(Text))
+	slot0.name = findTF(slot0._tf, "name/Text"):GetComponent(typeof(Text))
 	slot0.tags = {
 		findTF(slot0._tf, "tags/icon")
 	}

@@ -14,15 +14,14 @@ function slot0.Entrance(slot0, slot1)
 		})
 	}
 	slot6 = slot3.deck
-	slot7 = {}
 
 	for slot11, slot12 in ipairs(slot3.relic) do
-		table.insert(slot7, CardPuzzleGift.New({
+		table.insert({}, CardPuzzleGift.New({
 			configId = slot12
 		}))
 	end
 
-	(function (slot0)
+	function (slot0)
 		uv5:sendNotification(GAME.BEGIN_STAGE_DONE, {
 			hp = 1,
 			cardPuzzleFleet = uv0,
@@ -33,7 +32,7 @@ function slot0.Entrance(slot0, slot1)
 			system = SYSTEM_CARDPUZZLE,
 			puzzleCombatID = uv4
 		})
-	end)()
+	end()
 end
 
 function slot0.Exit(slot0, slot1)

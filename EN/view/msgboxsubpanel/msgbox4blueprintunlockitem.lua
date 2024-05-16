@@ -38,10 +38,8 @@ function slot0.OnRefresh(slot0, slot1)
 	slot8 = UIItemList.New(slot7, slot7:GetChild(0))
 
 	slot8:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			slot3, slot4, slot5 = unpack(uv0[slot1])
+			slot3, slot4, slot5 = unpack(uv0[slot1 + 1])
 
 			updateDrop(slot2:Find("IconTpl"), {
 				type = slot3,

@@ -77,13 +77,13 @@ function slot0.UpdateParent(slot0, slot1)
 end
 
 function slot0.UpdateChildList(slot0, slot1)
-	slot2 = {}
-
 	for slot6, slot7 in pairs(slot1) do
-		slot2[slot6] = slot7
+		-- Nothing
 	end
 
-	slot0:SetChildList(slot2)
+	slot0:SetChildList({
+		[slot6] = slot7
+	})
 end
 
 function slot0.UpdateFloor(slot0, slot1)

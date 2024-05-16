@@ -11,9 +11,8 @@ end
 
 function slot0.OnInit(slot0)
 	slot0.cards = {}
-	slot1 = slot0.itemList
 
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.itemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			uv0:UpdateDonateTask(slot2, uv0.displays[slot1 + 1])
 		end
@@ -45,13 +44,8 @@ function slot0.UpdateDonateTask(slot0, slot1, slot2)
 	onButton(slot0, slot5.commitBtn, function ()
 		slot1 = uv0.dtask:getCommitItem()
 
-		updateDropCfg({
-			type = slot1[1],
-			id = slot1[2],
-			count = slot1[3]
-		})
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
-			content = i18n("guild_donate_tip", slot2.cfg.name, slot1[3], slot3, uv0:GetResCntByAward(slot1) < slot1[3] and "#FF5C5CFF" or "#92FC63FF"),
+			content = i18n("guild_donate_tip", Drop.Create(slot1):getConfig("name"), slot1[3], slot3, uv0:GetResCntByAward(slot1) < slot1[3] and "#FF5C5CFF" or "#92FC63FF"),
 			onYes = function ()
 				uv0:emit(PublicGuildMainMediator.ON_COMMIT, uv1.id)
 			end

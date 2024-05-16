@@ -18,11 +18,10 @@ function slot4.CreateBullet(slot0, slot1, slot2, slot3, slot4, slot5)
 		return
 	end
 
-	slot7 = slot6:GetUniqueID()
 	slot9 = nil
 
 	if table.contains(uv0, slot6:GetUnitType()) then
-		slot9 = uv1.GetSceneMediator():GetAircraft(slot7)
+		slot9 = uv1.GetSceneMediator():GetAircraft(slot6:GetUniqueID())
 	elseif table.contains(uv2, slot8) then
 		slot9 = uv1.GetSceneMediator():GetCharacter(slot7)
 	end

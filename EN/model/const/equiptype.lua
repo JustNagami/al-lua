@@ -160,7 +160,7 @@ function slot0.type2Tag(slot0)
 end
 
 function slot0.getCompareGroup(slot0)
-	return pg.equip_data_by_type[pg.equip_data_template[slot0].type].compare_group
+	return pg.equip_data_by_type[Equipment.getConfigData(slot0).type].compare_group
 end
 
 function slot0.type2Title(slot0, slot1)
@@ -285,10 +285,8 @@ function slot9(slot0)
 end
 
 function slot0.Types2Title(slot0, slot1)
-	slot3 = pg.ship_data_template[slot1]["equip_" .. slot0]
-
 	if slot0 == 1 then
-		return uv0(slot3)
+		return uv0(pg.ship_data_template[slot1]["equip_" .. slot0])
 	elseif slot0 == 2 then
 		return uv1(slot3, slot2.equip_1)
 	elseif slot0 == 3 then

@@ -322,15 +322,11 @@ function slot0.ReadyPoint(slot0)
 			slot0:EndGame(slot0.myPoint - slot0.otherPoint)
 		else
 			slot0.nextCountdown = DOAPPGameConfig.NEXT_ROUND_COUNTDOWN
-			slot2 = slot0.rtPointShow
 
-			eachChild(slot2:Find("left"), function (slot0)
+			eachChild(slot0.rtPointShow:Find("left"), function (slot0)
 				setActive(slot0, slot0.name == tostring(uv0.myPoint))
 			end)
-
-			slot2 = slot0.rtPointShow
-
-			eachChild(slot2:Find("right"), function (slot0)
+			eachChild(slot0.rtPointShow:Find("right"), function (slot0)
 				setActive(slot0, slot0.name == tostring(uv0.otherPoint))
 			end)
 			setActive(slot0.rtPointShow, true)
@@ -367,15 +363,10 @@ function slot0.ResetGame(slot0)
 		slot0.rtOtherTarget = nil
 	end
 
-	slot2 = slot0.rtViewport
-
-	setAnchoredPosition(slot2:Find("MainContent"), {
+	setAnchoredPosition(slot0.rtViewport:Find("MainContent"), {
 		x = 0
 	})
-
-	slot2 = slot0.rtViewport
-
-	eachChild(slot2:Find("MainContent/bg"), function (slot0)
+	eachChild(slot0.rtViewport:Find("MainContent/bg"), function (slot0)
 		setAnchoredPosition(slot0, {
 			x = 0
 		})
@@ -512,20 +503,18 @@ function slot0.OnTimer(slot0, slot1)
 	end
 
 	if not slot0.blockMoveBg then
-		function slot2(slot0, slot1)
-			setAnchoredPosition(slot0, {
-				x = math.clamp(slot2 + (uv0.deltaMove - slot0.anchoredPosition.x / slot1 > 0 and 1 or -1) * uv1 / DOAPPGameConfig.BG_MOVE_TIME, unpack(slot2 < uv0.deltaMove and {
-					slot2,
-					uv0.deltaMove
-				} or {
-					uv0.deltaMove,
-					slot2
-				})) * slot1
-			})
-		end
-
 		if slot0.rtViewport:Find("MainContent").anchoredPosition.x ~= slot0.deltaMove * DOAPPGameConfig.BG_DISTANCE then
-			slot2(slot3, -1 * DOAPPGameConfig.BG_DISTANCE)
+			function (slot0, slot1)
+				setAnchoredPosition(slot0, {
+					x = math.clamp(slot2 + (uv0.deltaMove - slot0.anchoredPosition.x / slot1 > 0 and 1 or -1) * uv1 / DOAPPGameConfig.BG_MOVE_TIME, unpack(slot2 < uv0.deltaMove and {
+						slot2,
+						uv0.deltaMove
+					} or {
+						uv0.deltaMove,
+						slot2
+					})) * slot1
+				})
+			end(slot3, -1 * DOAPPGameConfig.BG_DISTANCE)
 
 			for slot9 = 1, slot3:Find("bg").childCount - 1 do
 				slot2(slot4:GetChild(slot9 - 1), (slot9 - slot5) * DOAPPGameConfig.BG_DISTANCE)

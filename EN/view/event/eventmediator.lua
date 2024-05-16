@@ -10,7 +10,7 @@ function slot0.register(slot0)
 		slot7 = false
 		slot8 = false
 
-		(function (slot0)
+		function (slot0)
 			for slot4, slot5 in ipairs(uv0) do
 				if slot0[slot5] then
 					slot7, slot8 = ShipStatus.ShipStatusConflict("inEvent", slot6)
@@ -39,7 +39,7 @@ function slot0.register(slot0)
 			uv6:updateEventList(true)
 
 			uv4.selectedEvent = nil
-		end)(slot4:getRawData())
+		end(slot4:getRawData())
 	end)
 	slot0:bind(EventConst.EVENT_LIST_UPDATE, function (slot0)
 		uv0:updateEventList(true)
@@ -212,10 +212,8 @@ function slot0.getDockCallbackFuncs(slot0)
 			return slot3, slot4
 		end
 
-		slot5 = getProxy(BayProxy)
-
 		for slot9, slot10 in ipairs(slot2) do
-			if slot0:isSameKind(slot5:getShipById(slot10)) then
+			if slot0:isSameKind(getProxy(BayProxy):getShipById(slot10)) then
 				return false, i18n("ship_formationMediator_changeNameError_sameShip")
 			end
 		end

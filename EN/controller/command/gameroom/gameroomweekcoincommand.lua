@@ -2,9 +2,8 @@ slot0 = class("GameRoomWeekCoinCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
-	slot3 = pg.ConnectionMgr.GetInstance()
 
-	slot3:Send(26122, {
+	pg.ConnectionMgr.GetInstance():Send(26122, {
 		type = 0
 	}, 26123, function (slot0)
 		slot1 = nil

@@ -62,18 +62,18 @@ function slot0.Ctor(slot0, slot1)
 	slot0.skinNum = slot1.skin_num
 	slot0.skinShipNum = slot1.skin_ship_num
 	slot0.skinId = 0
-	slot11 = {}
+	slot11 = {
+		[slot16:getSkinId()] = true
+	}
 
 	for slot15, slot16 in ipairs(getProxy(ShipSkinProxy):GetShopShowingSkins()) do
 		if slot16.buyCount > 0 then
-			slot11[slot16:getSkinId()] = true
+			-- Nothing
 		end
 	end
 
-	slot12 = getProxy(BayProxy)
-
 	for slot16, slot17 in ipairs(getProxy(PlayerProxy):getRawData().characters) do
-		if slot12:getShipById(slot17) and slot11[slot18.skinId] then
+		if getProxy(BayProxy):getShipById(slot17) and slot11[slot18.skinId] then
 			slot0.skinId = slot18.skinId
 
 			break

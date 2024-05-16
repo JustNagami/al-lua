@@ -133,10 +133,8 @@ function slot0.handleNotification(slot0, slot1)
 			_courtyard:GetController():ExitAllShip()
 
 			slot7 = {}
-			slot8 = ipairs
-			slot9 = slot3.ships or {}
 
-			for slot11, slot12 in slot8(slot9) do
+			for slot11, slot12 in ipairs(slot3.ships or {}) do
 				table.insert(slot7, function (slot0)
 					_courtyard:GetController():AddShip(uv0)
 					onNextTick(slot0)
@@ -170,15 +168,11 @@ function slot0.handleNotification(slot0, slot1)
 			slot0.viewComponent:emit(FeastScene.ON_ACT_UPDATE)
 		end
 	elseif slot2 == GAME.SUBMIT_TASK_DONE then
-		slot5 = slot0.viewComponent
-
-		slot5:emit(BaseUI.ON_ACHIEVE, slot3, function ()
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3, function ()
 			getProxy(FeastProxy):HandleTaskStories(uv0)
 		end)
 	elseif slot2 == GAME.ACT_NEW_PT_DONE then
-		slot5 = slot0.viewComponent
-
-		slot5:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
 		end)
 	end
 end

@@ -4,10 +4,7 @@ function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 
 	print("")
-
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Send(26128, {
+	pg.ConnectionMgr.GetInstance():Send(26128, {
 		type = 0
 	}, 26129, function (slot0)
 		if slot0.result == 0 then

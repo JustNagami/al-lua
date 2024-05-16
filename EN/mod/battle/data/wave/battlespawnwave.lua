@@ -79,21 +79,18 @@ function slot1.DoWave(slot0)
 		end
 	end
 
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0._sapwnData) do
 		if slot6.bossData then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 
-	slot2 = 0
 	slot3 = 0
 
 	for slot7, slot8 in ipairs(slot0._sapwnData) do
 		if math.random() <= (slot8.chance or 1) then
 			if slot8.bossData and slot1 > 1 then
-				slot8.bossData.bossCount = slot2 + 1
+				slot8.bossData.bossCount = 0 + 1
 			end
 
 			if slot8.delay + slot3 <= 0 then
@@ -262,13 +259,12 @@ function slot1.onWaveUnitDie(slot0, slot1)
 		end
 	end
 
-	slot5 = 0
 	slot6 = 0
 
 	for slot10, slot11 in pairs(slot0._monsterList) do
 		if slot11:IsAlive() == false then
 			if not slot11:IsReinforcement() then
-				slot5 = slot5 + 1
+				slot5 = 0 + 1
 			end
 		else
 			slot6 = slot6 + 1

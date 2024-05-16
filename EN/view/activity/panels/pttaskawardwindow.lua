@@ -15,11 +15,10 @@ function slot1(slot0)
 		end
 	end
 
-	slot3 = getProxy(TaskProxy)
 	slot4 = nil
 
 	for slot8 = #_.flatten(slot0.tasklist), 1, -1 do
-		if slot3:getFinishTaskById(slot1[slot8]) and slot10:isReceive() then
+		if getProxy(TaskProxy):getFinishTaskById(slot1[slot8]) and slot10:isReceive() then
 			slot4 = slot9
 		end
 	end

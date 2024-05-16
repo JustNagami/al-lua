@@ -19,9 +19,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot7 = pg.ConnectionMgr.GetInstance()
-
-	slot7:Send(62002, {
+	pg.ConnectionMgr.GetInstance():Send(62002, {
 		id = slot3
 	}, 62003, function (slot0)
 		if slot0.result == 0 then
@@ -44,18 +42,11 @@ function slot0.execute(slot0, slot1)
 				guildCoin = slot4
 			})
 			slot2:updatePlayer(slot3)
-
-			slot5 = uv1:getCommitItem()
-
-			uv2:sendNotification(GAME.CONSUME_ITEM, Item.New({
-				id = slot5[2],
-				type = slot5[1],
-				count = slot5[3]
-			}))
+			uv2:sendNotification(GAME.CONSUME_ITEM, Drop.Create(uv1:getCommitItem()))
 
 			slot6 = {}
 
-			table.insert(slot6, Item.New({
+			table.insert(slot6, Drop.New({
 				type = DROP_TYPE_RESOURCE,
 				id = PlayerConst.ResGuildCoin,
 				count = slot4

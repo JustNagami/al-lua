@@ -13,15 +13,13 @@ function slot0.execute(slot0, slot1)
 	slot5 = slot3:GetPriceInfo()
 	slot5.count = slot5.count * slot4
 
-	if GetOwnedDropCount(slot5) < slot5.count then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", updateDropCfg(slot5).name))
+	if slot5:getOwnedCount() < slot5.count then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", slot5:getName()))
 
 		return
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(33403, {
+	pg.ConnectionMgr.GetInstance():Send(33403, {
 		shop_type = 2,
 		shop_id = slot3.id,
 		count = slot4

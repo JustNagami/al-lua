@@ -7,9 +7,7 @@ return {
 				return false
 			end
 
-			slot1 = ActivityPtData.New(slot0)
-
-			if not slot0.isEnd(slot0) and slot1.isInBuffTime(slot1) then
+			if not slot0:isEnd() and ActivityPtData.New(slot0):isInBuffTime() then
 				return true
 			end
 

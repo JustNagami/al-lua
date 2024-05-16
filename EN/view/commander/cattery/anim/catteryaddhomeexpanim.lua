@@ -69,11 +69,9 @@ function slot0.DoUpgradeAnim(slot0, slot1, slot2)
 	slot8 = slot1.exp / slot1:GetNextLevelExp()
 
 	slot0:AddExpAnim(slot6, 1, slot5, slot3, slot3, function ()
-		slot2 = uv1
-		uv0.levelTxt.text = "LV." .. slot2:GetLevel()
-		slot0 = uv0
+		uv0.levelTxt.text = "LV." .. uv1:GetLevel()
 
-		slot0:AddExpAnim(0, uv2, 0, uv1.exp, uv3, function ()
+		uv0:AddExpAnim(0, uv2, 0, uv1.exp, uv3, function ()
 			uv0:IfIsMaxLevel(uv1, uv2)
 		end)
 	end)
@@ -187,13 +185,9 @@ end
 
 function slot0.AdditionAnim(slot0, slot1, slot2)
 	setActive(slot0.addition, true)
-
-	slot3 = LeanTween.value(go(slot0.addition), slot0.animRiseH, slot0.animRiseH + 25, slot1)
-	slot3 = slot3:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot0.addition), slot0.animRiseH, slot0.animRiseH + 25, slot1):setOnUpdate(System.Action_float(function (slot0)
 		uv0.addition.localPosition = Vector3(uv0.addition.localPosition.x, slot0, 0)
-	end))
-
-	slot3:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		setActive(uv0.addition, false)
 		uv1()
 

@@ -95,14 +95,12 @@ function slot0.OnInit(slot0)
 		table.insert(slot0.coupletBottomWords, slot5)
 	end
 
-	slot1 = GameObject.Find("UICamera")
-	slot0._uiCamera = slot1:GetComponent(typeof(Camera))
+	slot0._uiCamera = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
 	slot0.timer = Timer.New(function ()
 		uv0:onTimer()
 	end, 2, -1)
-	slot1 = slot0.timer
 
-	slot1:Start()
+	slot0.timer:Start()
 	onButton(slot0, slot0.btnConfirm, function ()
 		uv0:finishCouplete()
 	end)
@@ -144,14 +142,10 @@ function slot0.OnInit(slot0)
 		})
 		uv0:showTips(i18n(uv1), true)
 	end, SFX_PANEL)
-
-	slot1 = Ship.New({
+	PoolMgr.GetInstance():GetSpineChar(Ship.New({
 		configId = 502011,
 		skin_id = 502010
-	})
-	slot3 = PoolMgr.GetInstance()
-
-	slot3:GetSpineChar(slot1:getPrefab(), true, function (slot0)
+	}):getPrefab(), true, function (slot0)
 		uv0.model = slot0
 		uv0.model.transform.localScale = Vector3(0.7, 0.7, 0.7)
 		uv0.model.transform.localPosition = Vector3.zero
@@ -475,10 +469,8 @@ end
 
 function slot0.getWordByPosition(slot0, slot1)
 	if math.abs(slot0.coupletBottomContents:InverseTransformPoint(slot1).x) < uv0 / 2 then
-		slot3 = math.floor(math.abs((slot2.y - uv1 / 2) / uv1)) + 1
-
 		for slot7 = 1, #slot0.coupletBottomWords do
-			if slot0.coupletBottomWords[slot7].swapIndex == slot3 then
+			if slot0.coupletBottomWords[slot7].swapIndex == math.floor(math.abs((slot2.y - uv1 / 2) / uv1)) + 1 then
 				return slot0.coupletBottomWords[slot7]
 			end
 		end
@@ -496,12 +488,9 @@ function slot0.tweenWord(slot0, slot1)
 		LeanTween.cancel(go(slot1.tf))
 	end
 
-	slot4 = LeanTween.value(go(slot1.tf), slot1.tf.anchoredPosition.y, slot3.y, 0.1)
-	slot4 = slot4:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(go(slot1.tf), slot1.tf.anchoredPosition.y, slot3.y, 0.1):setOnUpdate(System.Action_float(function (slot0)
 		uv0.tf.anchoredPosition = Vector2(uv0.tf.anchoredPosition.x, slot0)
-	end))
-
-	slot4:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		slot0 = false
 		slot2 = uv0.coupletDatas[uv0.coupletIndex].repeated_jp
 

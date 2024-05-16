@@ -31,8 +31,7 @@ function slot0.InitUI(slot0)
 		slot1:Find("Info/Modes/Multiple")
 	}
 	slot0.extraAwardTF = slot0._tf:Find("Panel/Reward/Normal/Mode")
-	slot2 = slot0._tf
-	slot0.sonarRangeContainer = slot2:Find("Panel/Fleet/SonarRange")
+	slot0.sonarRangeContainer = slot0._tf:Find("Panel/Fleet/SonarRange")
 	slot0.sonarRangeTexts = {
 		slot0._tf:Find("Panel/Fleet/SonarRange/Values"):GetChild(0),
 		slot0._tf:Find("Panel/Fleet/SonarRange/Values"):GetChild(1)
@@ -116,9 +115,7 @@ function slot0.didEnter(slot0)
 					return
 				end
 
-				slot1 = uv0
-
-				slot1:emit(BossRushFleetSelectMediator.ON_SWITCH_MODE, uv1)
+				uv0:emit(BossRushFleetSelectMediator.ON_SWITCH_MODE, uv1)
 				table.Foreach(uv0.fleetIndexToggles, function (slot0, slot1)
 					triggerToggle(slot1, slot0 == uv0.contextData.fleetIndex)
 				end)
@@ -207,8 +204,7 @@ function slot0.didEnter(slot0)
 	setActive(slot0._tf:Find("Panel/Reward/EX"), slot11)
 
 	if not slot11 then
-		slot12 = slot0._tf
-		slot12 = slot12:Find("Panel/Reward/Normal/Base/Items")
+		slot12 = slot0._tf:Find("Panel/Reward/Normal/Base/Items")
 
 		UIItemList.StaticAlign(slot12, slot12:GetChild(0), #slot10(slot1:GetPassAwards()), function (slot0, slot1, slot2)
 			if slot0 ~= UIItemList.EventUpdate then
@@ -226,8 +222,7 @@ function slot0.didEnter(slot0)
 			end, SFX_PANEL)
 		end)
 
-		slot14 = slot0.extraAwardTF
-		slot14 = slot14:Find("Items")
+		slot14 = slot0.extraAwardTF:Find("Items")
 
 		UIItemList.StaticAlign(slot14, slot14:GetChild(0), #slot10(slot1:GetAdditionalAwards()), function (slot0, slot1, slot2)
 			if slot0 ~= UIItemList.EventUpdate then
@@ -257,7 +252,7 @@ slot2 = {
 }
 
 function slot0.ShowDropDetail(slot0, slot1)
-	if pg.item_data_statistics[slot1.id] and uv0[slot2.type] then
+	if Item.getConfigData(slot1.id) and uv0[slot2.type] then
 		slot4 = {}
 
 		for slot8, slot9 in ipairs(slot2.display_icon) do
@@ -297,14 +292,13 @@ function slot0.setHardShipVOs(slot0, slot1)
 end
 
 function slot0.initAddButton(slot0, slot1, slot2, slot3)
-	slot6 = {}
-	slot7 = {}
+	slot6 = {
+		[slot0.shipVOs[slot12]] = true
+	}
 
 	for slot11, slot12 in ipairs(slot0.contextData.fleets[slot3]:getShipIds()) do
-		slot6[slot0.shipVOs[slot12]] = true
-
 		if slot2 == slot0.shipVOs[slot12]:getTeamType() then
-			table.insert(slot7, slot12)
+			table.insert({}, slot12)
 		end
 	end
 
@@ -341,9 +335,7 @@ function slot0.initAddButton(slot0, slot1, slot2, slot3)
 		GetOrAddComponent(slot4, typeof(UILongPressTrigger)).onLongPressed:RemoveAllListeners()
 
 		if slot3 then
-			slot6 = slot5.onLongPressed
-
-			slot6:AddListener(function ()
+			slot5.onLongPressed:AddListener(function ()
 				uv0:emit(BossRushFleetSelectMediator.ON_FLEET_SHIPINFO, {
 					shipId = uv1.id,
 					shipVOs = uv2
@@ -458,13 +450,13 @@ function slot0.updateEliteFleets(slot0)
 		setText(slot0.rtCostLimit:Find("Text"), string.format("%s(%d)", i18n(slot4 and "formationScene_use_oil_limit_submarine" or "formationScene_use_oil_limit_surface"), slot4 and slot11[2] or slot11[1]))
 	end
 
-	setActive(slot0.extraAwardTF, slot0.contextData.mode == BossRushSeriesData.MODE.MULTIPLE and #(function (slot0)
+	setActive(slot0.extraAwardTF, slot0.contextData.mode == BossRushSeriesData.MODE.MULTIPLE and #function (slot0)
 		if type(slot0) ~= "table" then
 			return {}
 		end
 
 		return slot0
-	end)(slot1:GetAdditionalAwards()) > 0)
+	end(slot1:GetAdditionalAwards()) > 0)
 
 	slot15 = slot0._tf:Find("Panel/Info/Boss")
 
@@ -481,12 +473,10 @@ function slot0.updateEliteFleets(slot0)
 end
 
 function slot0.initCommander(slot0, slot1, slot2)
-	slot3 = slot1:GetRawCommanderIds()
-
 	for slot7 = 1, 2 do
 		slot9 = nil
 
-		if slot3[slot7] then
+		if slot1:GetRawCommanderIds()[slot7] then
 			slot9 = getProxy(CommanderProxy):getCommanderById(slot8)
 		end
 

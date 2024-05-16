@@ -192,16 +192,12 @@ function slot0.PlayerOneFirework(slot0)
 		end, uv0.DelayPop, nil)
 	end
 
-	slot3 = math.random(#uv0.SFX_LIST)
-
 	if slot0.fireworksTF:Find(tostring(slot0.fireworks[slot0.index])) then
 		setLocalPosition(slot2, slot0:GetFireworkPos())
 		setActive(slot2, true)
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0.SFX_LIST[slot3])
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0.SFX_LIST[math.random(#uv0.SFX_LIST)])
 	else
-		slot4 = slot0.loader
-
-		slot4:GetPrefab("ui/" .. uv0.Id2EffectName[slot1], "", function (slot0)
+		slot0.loader:GetPrefab("ui/" .. uv0.Id2EffectName[slot1], "", function (slot0)
 			pg.ViewUtils.SetSortingOrder(slot0, 1)
 
 			slot0.name = uv0

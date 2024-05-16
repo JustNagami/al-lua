@@ -45,11 +45,10 @@ function slot0.Switch(slot0, slot1)
 		slot0.phases,
 		slot0.titles
 	}) do
-		slot8, slot9 = unpack(slot7)
+		slot9, slot8 = unpack(slot7)
 
 		if slot1 then
-			slot9 = slot8
-			slot8 = slot9
+			-- Nothing
 		end
 
 		LeanTween.cancel(go(slot8))

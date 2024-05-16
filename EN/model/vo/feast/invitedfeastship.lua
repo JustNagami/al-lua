@@ -21,10 +21,7 @@ function slot0.FindFeastConfigIdByGroupId(slot0, slot1)
 
 	assert(slot2)
 
-	slot4 = ipairs
-	slot5 = slot2:getConfig("config_data")[3] or {}
-
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot2:getConfig("config_data")[3] or {}) do
 		if pg.activity_partyinvitation_template[slot8].groupid == slot1 then
 			return slot8
 		end

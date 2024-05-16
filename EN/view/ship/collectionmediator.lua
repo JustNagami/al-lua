@@ -59,10 +59,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == CollectionProxy.AWARDS_UPDATE then
-		slot0.viewComponent:setAwards(slot3)
+		slot0.viewComponent:setAwards(slot1:getBody())
 	elseif slot2 == GAME.COLLECT_GET_AWARD_DONE then
 		slot0.viewComponent:sortDisplay()
 		slot0.viewComponent:updateCollectNotices(slot0.collectionProxy:hasFinish())

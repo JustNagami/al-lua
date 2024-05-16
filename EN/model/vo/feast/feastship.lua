@@ -30,10 +30,8 @@ function slot0.SetSkinId(slot0, slot1)
 end
 
 function slot0.FilterSkinId(slot0, slot1)
-	slot2 = {}
-
 	for slot6, slot7 in ipairs(slot1) do
-		if ShipSkin.GetShopTypeIdBySkinId(slot7.id, slot2) == 7 then
+		if ShipSkin.GetShopTypeIdBySkinId(slot7.id, {}) == 7 then
 			return slot7.id
 		end
 	end

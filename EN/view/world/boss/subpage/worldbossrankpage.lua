@@ -55,11 +55,10 @@ function slot0.UpdateRanks(slot0, slot1)
 		end
 	end
 
-	slot2 = getProxy(PlayerProxy):getRawData().id
 	slot3 = nil
 
 	for slot7, slot8 in ipairs(slot1) do
-		if slot8.id == slot2 then
+		if slot8.id == getProxy(PlayerProxy):getRawData().id then
 			slot8.number = slot7
 
 			break

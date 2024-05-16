@@ -3,15 +3,12 @@ slot0 = class("ItemUnlockBluePrintCommand", pm.SimpleCommand)
 function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.itemId
-	slot7 = getProxy(BagProxy)
 
-	if not getProxy(TechnologyProxy):getBluePrintById(slot2.id) or not slot7:getItemCountById(slot4) then
+	if not getProxy(TechnologyProxy):getBluePrintById(slot2.id) or not getProxy(BagProxy):getItemCountById(slot4) then
 		return
 	end
 
-	slot8 = pg.ConnectionMgr.GetInstance()
-
-	slot8:Send(63214, {
+	pg.ConnectionMgr.GetInstance():Send(63214, {
 		group = slot3,
 		itemid = slot4
 	}, 63215, function (slot0)

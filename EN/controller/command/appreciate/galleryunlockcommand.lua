@@ -4,11 +4,10 @@ function slot0.execute(slot0, slot1)
 	slot2 = slot1:getBody()
 	slot4 = slot2.unlockCBFunc
 	slot6 = getProxy(BagProxy)
-	slot8 = getProxy(PlayerProxy):getData()
 
 	for slot13, slot14 in pairs(getProxy(AppreciateProxy):getPicUnlockMaterialByID(slot2.picID)) do
 		if slot14.type == DROP_TYPE_RESOURCE then
-			if slot8:getResById(slot14.id) < slot14.count then
+			if getProxy(PlayerProxy):getData():getResById(slot14.id) < slot14.count then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
@@ -20,9 +19,7 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	slot10 = pg.ConnectionMgr.GetInstance()
-
-	slot10:Send(17501, {
+	pg.ConnectionMgr.GetInstance():Send(17501, {
 		id = slot3
 	}, 17502, function (slot0)
 		if slot0.result == 0 then

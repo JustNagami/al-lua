@@ -87,10 +87,8 @@ function slot2.FreshActionKeyOffset(slot0, slot1)
 end
 
 function slot2.GetActionName(slot0, slot1)
-	slot2 = uv0.MOVE
-
 	if slot1:ActionKeyOffset() then
-		slot2 = slot2 .. slot3
+		slot2 = uv0.MOVE .. slot3
 	end
 
 	return slot2

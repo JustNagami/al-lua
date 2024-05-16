@@ -15,8 +15,7 @@ function slot0.SetUI(slot0, slot1)
 	slot0.monsterNian = slot0:findTF("AD/monster")
 	slot0.fushun = slot0:findTF("AD/fushun")
 	slot0.hpTF = slot0:findTF("AD/hp"):GetComponent(typeof(Slider))
-	slot2 = slot0:findTF("AD/attack_count/Text")
-	slot0.attackCntTF = slot2:GetComponent(typeof(Text))
+	slot0.attackCntTF = slot0:findTF("AD/attack_count/Text"):GetComponent(typeof(Text))
 	slot0.actions = slot0:findTF("AD/actions")
 	slot0.actionKeys = {
 		slot0.actions:Find("content/1"),
@@ -41,16 +40,9 @@ end
 
 function slot0.StartCurtainUp(slot0, slot1)
 	setActive(slot0.curtainTF, true)
-
-	slot2 = LeanTween.color(slot0.curtainTF, Color.white, uv0)
-	slot2 = slot2:setFromColor(Color.black)
-
-	slot2:setOnComplete(System.Action(function ()
+	LeanTween.color(slot0.curtainTF, Color.white, uv0):setFromColor(Color.black):setOnComplete(System.Action(function ()
 		setActive(uv0.startLabel, true)
-
-		slot0 = blinkAni(uv0.startLabel, uv1, 2)
-
-		slot0:setOnComplete(System.Action(function ()
+		blinkAni(uv0.startLabel, uv1, 2):setOnComplete(System.Action(function ()
 			LeanTween.alpha(uv0.curtainTF, 0, uv1):setFrom(1)
 			LeanTween.alpha(uv0.startLabel, 0, uv1):setFrom(1):setOnComplete(System.Action(uv2))
 		end))
@@ -107,12 +99,9 @@ function slot0.OnMonsterHpUpdate(slot0, slot1)
 end
 
 function slot0.OnUIHpUpdate(slot0, slot1, slot2, slot3)
-	slot6 = LeanTween.value(slot0.hpTF.gameObject, slot0.hpTF.value, slot1 / slot2, 0.3)
-	slot6 = slot6:setOnUpdate(System.Action_float(function (slot0)
+	LeanTween.value(slot0.hpTF.gameObject, slot0.hpTF.value, slot1 / slot2, 0.3):setOnUpdate(System.Action_float(function (slot0)
 		uv0.hpTF.value = slot0
-	end))
-
-	slot6:setOnComplete(System.Action(function ()
+	end)):setOnComplete(System.Action(function ()
 		if uv0 then
 			uv0()
 		end

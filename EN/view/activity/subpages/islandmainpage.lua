@@ -56,9 +56,7 @@ end
 function slot0.OnUpdateFlush(slot0)
 	for slot5, slot6 in pairs({
 		shop = function ()
-			slot1 = getProxy(ActivityProxy)
-
-			return underscore.detect(slot1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function (slot0)
+			return underscore.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function (slot0)
 				return slot0:getConfig("config_id") == 3
 			end)
 		end,

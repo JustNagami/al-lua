@@ -103,14 +103,9 @@ function slot0.CommonInit(slot0)
 end
 
 function slot0.Register(slot0)
-	slot1 = slot0._formationLogic
-
-	slot1:AddLoadComplete(function ()
+	slot0._formationLogic:AddLoadComplete(function ()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddHeroInfoModify(function (slot0, slot1)
+	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1)
 		setAnchoredPosition(slot0, {
 			x = 0,
 			y = 0
@@ -145,47 +140,26 @@ function slot0.Register(slot0)
 		setText(findTF(slot2, "frame/lv_contain/lv"), slot1.level)
 		setActive(slot2:Find("expbuff"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddLongPress(function (slot0, slot1, slot2, slot3)
+	slot0._formationLogic:AddLongPress(function (slot0, slot1, slot2, slot3)
 		uv0:emit(BossRushPreCombatMediator.OPEN_SHIP_INFO, slot1.id, slot2)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddBeginDrag(function (slot0)
+	slot0._formationLogic:AddBeginDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), false)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddEndDrag(function (slot0)
+	slot0._formationLogic:AddEndDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), true)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddClick(function (slot0, slot1, slot2)
+	slot0._formationLogic:AddClick(function (slot0, slot1, slot2)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_CLICK)
 		uv0:emit(BossRushPreCombatMediator.CHANGE_FLEET_SHIP, slot0, slot2, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddShiftOnly(function (slot0)
+	slot0._formationLogic:AddShiftOnly(function (slot0)
 		uv0:emit(BossRushPreCombatMediator.CHANGE_FLEET_SHIPS_ORDER, slot0)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddRemoveShip(function (slot0, slot1)
+	slot0._formationLogic:AddRemoveShip(function (slot0, slot1)
 		uv0:emit(BossRushPreCombatMediator.REMOVE_SHIP, slot0, slot1)
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
+	slot0._formationLogic:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
 		if not slot3:canRemove(slot2) then
 			slot5, slot6 = slot3:getShipPos(slot2)
 
@@ -201,28 +175,16 @@ function slot0.Register(slot0)
 			})
 		end
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToDisplayMode(function ()
+	slot0._formationLogic:AddSwitchToDisplayMode(function ()
 		uv0:SetFleetStepper()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToShiftMode(function ()
+	slot0._formationLogic:AddSwitchToShiftMode(function ()
 		uv0:SetFleetStepper()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddSwitchToPreviewMode(function ()
+	slot0._formationLogic:AddSwitchToPreviewMode(function ()
 		uv0:SetFleetStepper()
 	end)
-
-	slot1 = slot0._formationLogic
-
-	slot1:AddGridTipClick(function (slot0, slot1)
+	slot0._formationLogic:AddGridTipClick(function (slot0, slot1)
 		uv0:emit(BossRushPreCombatMediator.CHANGE_FLEET_SHIP, nil, uv0._currentFleetVO, slot0)
 	end)
 end
@@ -250,10 +212,8 @@ function slot0.SetStageIds(slot0, slot1)
 		if checkExist(pg.expedition_activity_template[slot1], {
 			"pt_drop_display"
 		}) and type(slot4) == "table" then
-			slot5 = getProxy(ActivityProxy)
-
 			for slot9 = #slot4, 1, -1 do
-				if slot5:getActivityById(slot4[slot9][1]) and not slot10:isEnd() then
+				if getProxy(ActivityProxy):getActivityById(slot4[slot9][1]) and not slot10:isEnd() then
 					table.insert(slot3, 1, {
 						2,
 						id2ItemId(slot4[slot9][2])
@@ -266,15 +226,6 @@ function slot0.SetStageIds(slot0, slot1)
 
 		if slot0 > 1 then
 			return
-		end
-
-		function slot5(slot0, slot1)
-			if type(slot0) == "table" then
-				setActive(slot1, true)
-				setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
-			else
-				setActive(slot1, false)
-			end
 		end
 
 		slot6 = {
@@ -290,7 +241,14 @@ function slot0.SetStageIds(slot0, slot1)
 			slot2.objective_3
 		}) do
 			if type(slot13) ~= "string" then
-				slot5(slot13, slot6[slot8])
+				function (slot0, slot1)
+					if type(slot0) == "table" then
+						setActive(slot1, true)
+						setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
+					else
+						setActive(slot1, false)
+					end
+				end(slot13, slot6[slot8])
 
 				slot8 = slot8 + 1
 			end
@@ -304,7 +262,7 @@ function slot0.SetStageIds(slot0, slot1)
 	slot3 = {}
 
 	for slot7, slot8 in ipairs({}) do
-		if (function ()
+		if function ()
 			for slot3, slot4 in ipairs(uv0) do
 				if uv1[1] == slot4[1] and uv1[2] == slot4[2] then
 					return false
@@ -312,7 +270,7 @@ function slot0.SetStageIds(slot0, slot1)
 			end
 
 			return true
-		end)() then
+		end() then
 			table.insert(slot3, slot8)
 		end
 	end
@@ -325,7 +283,7 @@ function slot0.SetStageIds(slot0, slot1)
 			type = slot8[1]
 		})
 		onButton(slot0, slot9, function ()
-			if pg.item_data_statistics[uv0[2]] and uv1[slot0.type] then
+			if Item.getConfigData(uv0[2]) and uv1[slot0.type] then
 				slot2 = {}
 
 				for slot6, slot7 in ipairs(slot0.display_icon) do
@@ -466,7 +424,7 @@ function slot0.didEnter(slot0)
 	slot1 = getProxy(ActivityProxy):getActivityById(slot0.contextData.actId)
 	slot2 = slot0.contextData.seriesData
 
-	(function ()
+	function ()
 		slot0 = uv0:GetType() == BossRushSeriesData.TYPE.NORMAL
 
 		setActive(uv1._continuousBtn, slot0)
@@ -491,7 +449,7 @@ function slot0.didEnter(slot0)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("multiple_sorties_locked_tip"))
 			end
 		end, SFX_PANEL)
-	end)()
+	end()
 
 	slot5 = slot2:GetBossIcons()
 	slot6 = slot0._tf:Find("middle/Boss")
@@ -555,8 +513,7 @@ function slot0.displayFleetInfo(slot0)
 	slot10 = slot9[#slot9]
 	slot11 = _.slice(slot9, 1, #slot9 - 1)
 	slot12 = slot0.contextData.mode
-	slot15 = (function ()
-		slot0 = 0
+	slot15 = function ()
 		slot2 = uv1:GetOilLimit()
 		slot3 = pg.battle_cost_template[uv0].oil_cost > 0
 
@@ -564,20 +521,16 @@ function slot0.displayFleetInfo(slot0)
 			slot2 = 0
 
 			if uv0 then
-				slot2 = slot0:GetCostSum().oil
-
 				if slot1 > 0 then
-					uv1 = uv1 and math.min(slot1, slot2) < slot1
+					uv1 = uv1 and math.min(slot1, slot0:GetCostSum().oil) < slot1
 				end
 			end
 
 			return slot2
 		end
 
-		slot5 = #uv1:GetExpeditionIds()
-
 		if uv3 == BossRushSeriesData.MODE.SINGLE then
-			slot0 = (slot0 + slot4(uv4[1], slot2[1]) + slot4(uv5, slot2[2])) * slot5
+			slot0 = (0 + slot4(uv4[1], slot2[1]) + slot4(uv5, slot2[2])) * #uv1:GetExpeditionIds()
 		else
 			slot0 = slot4(uv5, slot2[2]) * slot5
 
@@ -587,42 +540,36 @@ function slot0.displayFleetInfo(slot0)
 		end
 
 		return slot0
-	end)()
-
-	function slot16()
-		slot0 = 0
-		slot2 = uv1:GetOilLimit()
-		slot3 = pg.battle_cost_template[uv0].oil_cost > 0
-
-		function slot4(slot0, slot1)
-			slot2 = 0
-
-			if uv0 then
-				slot2 = slot0:GetCostSum().oil
-			end
-
-			return slot2
-		end
-
-		slot5 = #uv1:GetExpeditionIds()
-
-		if uv2 == BossRushSeriesData.MODE.SINGLE then
-			slot0 = (slot0 + slot4(uv3[1], slot2[1]) + slot4(uv4, slot2[2])) * slot5
-		else
-			slot0 = slot4(uv4, slot2[2]) * slot5
-
-			_.each(uv3, function (slot0)
-				uv0 = uv0 + uv1(slot0, uv2[1])
-			end)
-		end
-
-		return slot0
-	end
-
+	end()
 	slot17 = 0
 
 	if false then
-		slot17 = slot16()
+		slot17 = function ()
+			slot2 = uv1:GetOilLimit()
+			slot3 = pg.battle_cost_template[uv0].oil_cost > 0
+
+			function slot4(slot0, slot1)
+				slot2 = 0
+
+				if uv0 then
+					slot2 = slot0:GetCostSum().oil
+				end
+
+				return slot2
+			end
+
+			if uv2 == BossRushSeriesData.MODE.SINGLE then
+				slot0 = (0 + slot4(uv3[1], slot2[1]) + slot4(uv4, slot2[2])) * #uv1:GetExpeditionIds()
+			else
+				slot0 = slot4(uv4, slot2[2]) * slot5
+
+				_.each(uv3, function (slot0)
+					uv0 = uv0 + uv1(slot0, uv2[1])
+				end)
+			end
+
+			return slot0
+		end()
 	end
 
 	uv0.tweenNumText(slot0._costText, slot15)

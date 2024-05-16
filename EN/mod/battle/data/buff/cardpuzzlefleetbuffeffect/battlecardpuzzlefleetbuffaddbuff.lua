@@ -22,11 +22,8 @@ function slot1.SetArgs(slot0, slot1, slot2)
 end
 
 function slot1.onTrigger(slot0)
-	slot1 = {}
-	slot2 = slot0._targetParam
-
 	for slot6, slot7 in ipairs(slot0._targetFilter) do
-		slot1 = uv0.Battle.BattleTargetChoise[slot7](slot0._caster, slot2, slot1)
+		slot1 = uv0.Battle.BattleTargetChoise[slot7](slot0._caster, slot0._targetParam, {})
 	end
 
 	for slot6, slot7 in ipairs(slot1) do

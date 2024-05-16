@@ -21,13 +21,12 @@ function slot0.InjectPublic(slot0, slot1, slot2)
 			slot0:AddSprite("shiptype" .. slot7, GetSpriteFromAtlas("shiptype", shipType2print(slot10.type)))
 
 			slot3 = string.gsub(slot3, "shipcolor" .. slot7, ShipRarity.Rarity2HexColor(slot10.rarity))
-			slot9 = slot10.name
 
 			if slot2 then
 				slot14 = false
 
 				if PLATFORM_CODE == PLATFORM_JP then
-					slot14, slot9 = contentWrap(slot9, 18, 1.65)
+					slot14, slot9 = contentWrap(slot10.name, 18, 1.65)
 				end
 
 				if slot14 then
@@ -35,7 +34,7 @@ function slot0.InjectPublic(slot0, slot1, slot2)
 				end
 			end
 		else
-			slot9 = (slot8.type ~= PublicArg.TypeEquipId or pg.equip_data_statistics[slot8.int].name) and (slot8.type ~= PublicArg.TypeItemId or pg.item_data_statistics[slot8.int].name) and (slot8.type ~= PublicArg.TypeNums or slot8.int) and (slot8.type ~= PublicArg.TypeWorldBoss or slot8.string) and slot8.string
+			slot9 = (slot8.type ~= PublicArg.TypeEquipId or pg.equip_data_statistics[slot8.int].name) and (slot8.type ~= PublicArg.TypeItemId or Item.getConfigData(slot8.int).name) and (slot8.type ~= PublicArg.TypeNums or slot8.int) and (slot8.type ~= PublicArg.TypeWorldBoss or slot8.string) and slot8.string
 		end
 
 		slot3 = string.gsub(slot3, "$" .. slot7, slot9)
@@ -237,23 +236,17 @@ function slot0.GetAllTypeChatMessages(slot0, slot1)
 		end)
 	end
 
-	slot5 = getProxy(FriendProxy)
-
-	_.each(slot5:getCacheMsgList(), function (slot0)
+	_.each(getProxy(FriendProxy):getCacheMsgList(), function (slot0)
 		table.insert(uv0, slot0)
 	end)
 
-	slot6 = _(slot2)
-	slot6 = slot6:chain()
-	slot6 = slot6:filter(function (slot0)
-		return not uv0:isInBlackList(slot0.playerId)
-	end)
-	slot6 = slot6:sort(function (slot0, slot1)
-		return slot0.timestamp < slot1.timestamp
-	end)
 	slot6 = NotificationLayer.ChannelBits.recv
 	slot7 = bit.lshift(1, ChatConst.ChannelAll)
-	slot2 = _.filter(slot6:value(), function (slot0)
+	slot2 = _.filter(_(slot2):chain():filter(function (slot0)
+		return not uv0:isInBlackList(slot0.playerId)
+	end):sort(function (slot0, slot1)
+		return slot0.timestamp < slot1.timestamp
+	end):value(), function (slot0)
 		return uv0 == uv1 or bit.band(uv0, bit.lshift(1, slot0.type)) > 0
 	end)
 

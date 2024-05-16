@@ -6,10 +6,8 @@ function slot0.Ctor(slot0, slot1)
 	slot0:updateShips(slot1.ships)
 
 	slot0.commanderList = {}
-	slot2 = ipairs
-	slot3 = slot1.commanders or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1.commanders or {}) do
 		slot0.commanderList[slot6.pos] = Commander.New(slot6.commanderinfo)
 	end
 
@@ -108,12 +106,11 @@ end
 
 function slot0.switchShip(slot0, slot1, slot2, slot3)
 	slot4 = slot0:getShipsByTeam(slot1, false)
-	slot5 = slot4[slot2].id
 	slot6 = slot4[slot3].id
 	slot7, slot8, slot9, slot10 = nil
 
 	for slot14, slot15 in pairs(slot0.ships) do
-		if slot14 == slot5 then
+		if slot14 == slot4[slot2].id then
 			slot8 = table.indexof(slot0[slot15:getTeamType()], slot15)
 		end
 

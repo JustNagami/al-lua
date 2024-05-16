@@ -1,24 +1,19 @@
 slot0 = class("NewDuelResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
 function slot0.UpdatePlayer(slot0)
-	slot1 = getProxy(PlayerProxy)
-	slot1 = slot1:getRawData()
-	slot0.playerName.text = slot1:GetName()
-	slot2 = getProxy(MilitaryExerciseProxy)
-	slot2 = slot2:getSeasonInfo()
+	slot0.playerName.text = getProxy(PlayerProxy):getRawData():GetName()
+	slot2 = getProxy(MilitaryExerciseProxy):getSeasonInfo()
 	slot4, slot5 = SeasonInfo.getNextMilitaryRank(slot2.score, slot2.rank)
 	slot0.playerLv.text = SeasonInfo.getMilitaryRank(slot2.score, slot2.rank).name
 	slot0.playerExpLabel.text = i18n("word_rankScore")
 
-	function slot6()
-		uv0.playerExp.text = "+" .. NewBattleResultUtil.GetSeasonScoreOffset(uv0.contextData.oldRank, uv1)
-		uv0.playerExpBar.fillAmount = uv1.score / uv2
-	end
-
 	if not slot0.contextData.autoSkipFlag then
 		slot0.duelAniamtion = NewBattleResultDuelAniamtion.New(slot0.playerExp, slot0.playerExpBar, slot5, slot0.contextData.oldRank, slot2)
 
-		slot0.duelAniamtion:SetUp(slot6)
+		slot0.duelAniamtion:SetUp(function ()
+			uv0.playerExp.text = "+" .. NewBattleResultUtil.GetSeasonScoreOffset(uv0.contextData.oldRank, uv1)
+			uv0.playerExpBar.fillAmount = uv1.score / uv2
+		end)
 	else
 		slot6()
 	end

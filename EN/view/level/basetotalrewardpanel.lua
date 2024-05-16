@@ -27,9 +27,8 @@ end
 
 function slot0.UpdateView(slot0)
 	slot1 = slot0.contextData
-	slot4 = slot0._tf
 
-	onButton(slot0, slot4:Find("BG"), function ()
+	onButton(slot0, slot0._tf:Find("BG"), function ()
 		existCall(uv0.onClose)
 		uv1:closeView()
 	end)

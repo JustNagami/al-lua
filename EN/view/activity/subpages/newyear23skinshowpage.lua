@@ -19,12 +19,11 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.OnDataSetting(slot0)
-	slot1 = pg.TimeMgr.GetInstance()
 	slot0.showList = {}
 	slot5 = "config_client"
 
 	for slot5, slot6 in ipairs(slot0.activity:getConfig(slot5).display_link) do
-		if slot6[2] == 0 or slot1:inTime(pg.shop_template[slot6[2]].time) then
+		if slot6[2] == 0 or pg.TimeMgr.GetInstance():inTime(pg.shop_template[slot6[2]].time) then
 			table.insert(slot0.showList, math.random(#slot0.showList + 1), slot6[1])
 		end
 	end
@@ -71,9 +70,7 @@ function slot0.DelayCall(slot0)
 		setImageAlpha(uv0.rtFront, 1)
 		setImageSprite(uv0.rtBg, uv0.nextSprite)
 
-		slot1 = LeanTween.alpha(uv0.rtFront, 0, 0.5)
-		slot1 = slot1:setEase(LeanTweenType.easeOutSine)
-		uv0.uniqueId = slot1:setOnComplete(System.Action(function ()
+		uv0.uniqueId = LeanTween.alpha(uv0.rtFront, 0, 0.5):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function ()
 			uv0:DelayCall()
 		end)).uniqueId
 	end)

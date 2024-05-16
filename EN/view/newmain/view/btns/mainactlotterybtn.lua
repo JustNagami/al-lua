@@ -9,12 +9,10 @@ function slot0.GetActivityID(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot1 = getProxy(ActivityProxy)
-	slot1 = slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
+	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 	slot2 = slot1:getAwardInfos()
-	slot6 = slot0._tf
 
-	setActive(slot6:Find("Tip"), _.any(slot1:getConfig("config_data"), function (slot0)
+	setActive(slot0._tf:Find("Tip"), _.any(slot1:getConfig("config_data"), function (slot0)
 		slot2 = ActivityItemPool.New({
 			id = slot0,
 			awards = uv0[slot0]

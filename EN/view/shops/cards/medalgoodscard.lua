@@ -59,10 +59,9 @@ function slot0.Init(slot0)
 	setImageSprite(slot0.itemIconBgTF, GetSpriteFromAtlas("weaponframes", "bg" .. slot2))
 	setImageColor(slot0.itemIconFrameTF, shipRarity2FrameColor(slot2 + 1))
 
-	slot3 = slot0.goods:getConfig("is_ship")
 	slot4 = slot0.goods:getConfig("goods")
 
-	if slot0.groupMark and slot3 == 1 and #slot4 == 1 then
+	if slot0.groupMark and slot0.goods:getConfig("is_ship") == 1 and #slot4 == 1 then
 		if pg.ship_data_template[slot4[1]].group_type and slot7 > 0 then
 			setActive(slot0.groupMark, not getProxy(CollectionProxy):getShipGroup(slot7))
 		else

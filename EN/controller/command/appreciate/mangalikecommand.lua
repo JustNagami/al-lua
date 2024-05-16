@@ -7,10 +7,7 @@ function slot0.execute(slot0, slot1)
 	slot6 = getProxy(AppreciateProxy)
 
 	print("17511 Send Manga ID", slot3)
-
-	slot7 = pg.ConnectionMgr.GetInstance()
-
-	slot7:Send(17511, {
+	pg.ConnectionMgr.GetInstance():Send(17511, {
 		id = slot3,
 		action = slot2.action
 	}, 17512, function (slot0)

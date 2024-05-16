@@ -16,10 +16,8 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
 		uv0:setCurNum(slot1)
 	end, nil, true, true, 0.1, SFX_PANEL)
 	slot7, slot0._rightRemoveTimer = pressPersistTrigger(slot0._rightBtn, 0.5, function (slot0)
-		slot1 = uv0._curNum + uv0._addNum
-
 		if uv0._maxNum < 0 then
-			uv0:setCurNum(slot1)
+			uv0:setCurNum(uv0._curNum + uv0._addNum)
 		else
 			if uv0._maxNum < slot1 then
 				slot1 = uv0._maxNum or slot1

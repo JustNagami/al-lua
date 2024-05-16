@@ -28,10 +28,9 @@ end
 
 function slot4.init(slot0)
 	slot0._allPool = {}
-	slot1 = uv0.GetInstance():GetPopSkin()
 
 	if slot0._score then
-		slot0._allPool[uv0.POP_SCORE] = slot0:generateTempPool(uv0.POP_SCORE, slot0._container, slot1, 1)
+		slot0._allPool[uv0.POP_SCORE] = slot0:generateTempPool(uv0.POP_SCORE, slot0._container, uv0.GetInstance():GetPopSkin(), 1)
 	else
 		slot0._allPool[uv0.POP_COMMON] = slot0:generateTempPool(uv0.POP_COMMON, slot0._container, slot1, 1)
 		slot0._allPool[uv0.POP_CT_EXPLO] = slot0:generateTempPool(uv0.POP_CT_EXPLO, slot0._container, slot1, 0)

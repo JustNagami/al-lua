@@ -21,10 +21,8 @@ function slot0.init(slot0)
 	slot0.taskGroupItemList = UIItemList.New(slot2, slot2:Find("tpl"))
 
 	slot0.taskGroupItemList:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
 		if slot0 == UIItemList.EventUpdate then
-			uv0:updateTaskGroup(slot2, uv0.tempTaskGroup[slot1])
+			uv0:updateTaskGroup(slot2, uv0.tempTaskGroup[slot1 + 1])
 		end
 	end)
 
@@ -32,9 +30,7 @@ function slot0.init(slot0)
 end
 
 function slot0.didEnter(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	onButton(slot0, slot0.rtBg, function ()
 		uv0:emit(CrusingTaskMediator.ON_EXIT)
 		uv0:closeView()
@@ -137,10 +133,10 @@ function slot0.didEnter(slot0)
 	end
 
 	slot0:updatePhaseInfo()
-	LoadImageSpriteAtlasAsync(getDropIcon({
+	LoadImageSpriteAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = slot0.ptId
-	}), "", slot0.sliderPt:Find("icon"), true)
+	}):getIcon(), "", slot0.sliderPt:Find("icon"), true)
 	onButton(slot0, slot0.itemQuick, function ()
 		uv0:emit(uv1.ON_DROP, {
 			count = 1,
@@ -148,10 +144,10 @@ function slot0.didEnter(slot0)
 			id = Item.QUICK_TASK_PASS_TICKET_ID
 		})
 	end, SFX_PANEL)
-	LoadImageSpriteAtlasAsync(getDropIcon({
+	LoadImageSpriteAtlasAsync(Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = Item.QUICK_TASK_PASS_TICKET_ID
-	}), "", slot0.itemQuick:Find("icon"), true)
+	}):getIcon(), "", slot0.itemQuick:Find("icon"), true)
 	onButton(slot0, slot0.itemQuick:Find("plus"), function ()
 		shoppingBatch(61017, {
 			id = Item.QUICK_TASK_PASS_TICKET_ID
@@ -173,14 +169,13 @@ function slot0.setActivity(slot0, slot1)
 	end
 
 	slot0.taskGroupList = {}
-	slot2 = math.floor((pg.TimeMgr.GetInstance():GetServerTime() - slot1:getStartTime()) / 86400) + 1
 	slot6 = "config_data"
 
 	for slot6, slot7 in ipairs(slot1:getConfig(slot6)) do
 		slot8 = pg.battlepass_task_group[slot7]
 		slot0.taskGroupList[slot8.group_mask] = {
 			task_group = slot8.task_group,
-			isLock = slot2 < slot8.time
+			isLock = slot1:getNDay() < slot8.time
 		}
 	end
 end
@@ -265,10 +260,8 @@ function slot0.updateTaskGroup(slot0, slot1, slot2)
 		slot7 = UIItemList.New(slot6, slot6:Find("extend_tpl"))
 
 		slot7:make(function (slot0, slot1, slot2)
-			slot1 = slot1 + 1
-
 			if slot0 == UIItemList.EventUpdate then
-				uv0:updateTaskDisplay(slot2, uv1[slot1])
+				uv0:updateTaskDisplay(slot2, uv1[slot1 + 1])
 			end
 		end)
 		slot7:align(#slot4)

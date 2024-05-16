@@ -3,9 +3,7 @@ slot0 = class("ChapterAirSupportAIAction", import(".ChapterMissileExplodeAction"
 function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
 	seriesAsync({
 		function (slot0)
-			slot1 = uv0.viewComponent
-
-			slot1:doPlayAnim("AirStrikeBar", function (slot0)
+			uv0.viewComponent:doPlayAnim("AirStrikeBar", function (slot0)
 				setActive(slot0, false)
 				uv0()
 			end)

@@ -13,10 +13,7 @@ function slot0.Ctor(slot0, slot1)
 		slot0.technologys[slot5] = PublicGuildTechnology.New(slot7)
 	end
 
-	slot2 = ipairs
-	slot3 = slot1.technologys or {}
-
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1.technologys or {}) do
 		slot0.technologyGroups[uv0[slot6.id].group]:update(slot6)
 	end
 
@@ -26,19 +23,14 @@ end
 function slot0.InitUser(slot0, slot1)
 	slot0.donateCount = slot1.donate_count
 	slot0.donateTasks = {}
-	slot2 = ipairs
-	slot3 = slot1.donate_tasks or {}
 
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1.donate_tasks or {}) do
 		table.insert(slot0.donateTasks, GuildDonateTask.New({
 			id = slot6
 		}))
 	end
 
-	slot2 = ipairs
-	slot3 = slot1.tech_id or {}
-
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1.tech_id or {}) do
 		slot7 = uv0[slot6].group
 
 		slot0.technologys[slot7]:Update(slot6, slot0.technologyGroups[slot7])

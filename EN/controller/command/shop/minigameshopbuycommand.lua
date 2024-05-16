@@ -2,15 +2,12 @@ slot0 = class("MiniGameShopBuyCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot3 = slot1:getBody() and slot2.callback
-	slot6 = pg.gameroom_shop_template[slot2.id]
-	slot7 = 0
-	slot8 = 0
 
 	for slot12, slot13 in ipairs(slot2.list) do
 		slot14 = slot13.id
 		slot15 = slot13.num
-		slot8 = slot8 + slot15
-		slot7 = slot7 + slot6.price * slot15
+		slot8 = 0 + slot15
+		slot7 = 0 + pg.gameroom_shop_template[slot2.id].price * slot15
 	end
 
 	if getProxy(GameRoomProxy):getTicket() < slot7 then
@@ -26,9 +23,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot10 = pg.ConnectionMgr.GetInstance()
-
-	slot10:Send(26152, {
+	pg.ConnectionMgr.GetInstance():Send(26152, {
 		goodsid = slot4,
 		selected = slot5
 	}, 26153, function (slot0)

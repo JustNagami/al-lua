@@ -59,16 +59,13 @@ function slot0.findUI(slot0)
 	slot2 = slot0:findTF("PacketPanel")
 	slot0.countText = slot0:findTF("Count/CountText", slot2)
 	slot0.packetTFList = {}
-	slot3 = slot0:findTF("ContainerBehide", slot2)
 
 	for slot7 = 1, 5 do
-		table.insert(slot0.packetTFList, slot3:GetChild(slot7 - 1))
+		table.insert(slot0.packetTFList, slot0:findTF("ContainerBehide", slot2):GetChild(slot7 - 1))
 	end
 
-	slot4 = slot0:findTF("ContainerFront", slot2)
-
 	for slot8 = 1, 5 do
-		table.insert(slot0.packetTFList, slot4:GetChild(slot8 - 1))
+		table.insert(slot0.packetTFList, slot0:findTF("ContainerFront", slot2):GetChild(slot8 - 1))
 	end
 
 	slot5 = slot0:findTF("AwardPanel")

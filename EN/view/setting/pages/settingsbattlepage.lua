@@ -102,7 +102,6 @@ function slot0.InitInterfaceComponents(slot0)
 
 	slot0:InitInterfaceComponent(slot0.skillBtn4, slot0.eventSkillBtn4, slot7, uv9, slot2[4])
 
-	slot3 = slot0:GetScale()
 	slot0.components = {
 		slot0.topArea,
 		slot0.stick,
@@ -113,7 +112,7 @@ function slot0.InitInterfaceComponents(slot0)
 	}
 
 	for slot7 = 2, #slot0.components do
-		setLocalScale(slot0.components[slot7], slot3)
+		setLocalScale(slot0.components[slot7], slot0:GetScale())
 	end
 
 	slot0:EditModeEnabled(false)
@@ -199,11 +198,13 @@ end
 function slot0.CheckInterfaceIntersect(slot0)
 	slot1 = {}
 	slot2 = false
-	slot3 = {}
+	slot3 = {
+		[slot9] = uv0(slot9:Find("rect"))
+	}
 	slot4 = uv0(slot0.interface)
 
 	for slot8, slot9 in ipairs(slot0.components) do
-		slot3[slot9] = uv0(slot9:Find("rect"))
+		-- Nothing
 	end
 
 	for slot8, slot9 in ipairs(slot0.components) do
@@ -214,19 +215,15 @@ function slot0.CheckInterfaceIntersect(slot0)
 		end
 
 		if slot8 > 1 then
-			slot11 = Vector2.New(slot3[slot9].xMax, slot3[slot9].yMax)
-
-			if not slot4:Contains(Vector2.New(slot3[slot9].xMin, slot3[slot9].yMin)) or not slot4:Contains(slot11) then
+			if not slot4:Contains(Vector2.New(slot3[slot9].xMin, slot3[slot9].yMin)) or not slot4:Contains(Vector2.New(slot3[slot9].xMax, slot3[slot9].yMax)) then
 				slot1[slot9] = true
 			end
 		end
 	end
 
 	for slot8, slot9 in ipairs(slot0.components) do
-		slot10 = findTF(slot9, "rect"):GetComponent(typeof(Image))
-
 		if slot1[slot9] then
-			slot10.color = uv1.CLD_RED
+			findTF(slot9, "rect"):GetComponent(typeof(Image)).color = uv1.CLD_RED
 			slot2 = true
 		else
 			slot10.color = uv1.DEFAULT_GREY

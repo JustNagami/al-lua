@@ -96,13 +96,12 @@ function slot0.initData(slot0)
 	if slot0.displayDatas and #slot0.displayDatas then
 		for slot5 = 1, #slot0.displayDatas do
 			slot6 = slot0.displayDatas[slot5]
-			slot7 = slot6[1]
 
 			if slot6[2] and slot8 ~= 0 then
 				slot10, slot11 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[slot8].time)
 
 				if not slot10 then
-					table.insert(slot1, slot7)
+					table.insert(slot1, slot6[1])
 				end
 			end
 		end

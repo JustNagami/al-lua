@@ -325,10 +325,9 @@ end
 
 function slot0.SavaCacheShips(slot0, slot1, slot2)
 	slot3 = slot0:BossId2FleetKey(slot1)
-	slot5 = ""
 
 	for slot9, slot10 in ipairs(slot2:getShipIds()) do
-		slot5 = slot5 .. slot10 .. "|"
+		slot5 = "" .. slot10 .. "|"
 	end
 
 	PlayerPrefs.SetString(slot3 .. getProxy(PlayerProxy):getRawData().id, slot5)
@@ -366,13 +365,12 @@ function slot0.BalanceMaxBossCnt(slot0)
 	slot2 = {}
 	slot3 = {}
 	slot4 = {}
-	slot5 = {}
 
 	for slot9, slot10 in pairs(slot0.cacheBosses) do
 		slot11 = slot10:GetType()
 
 		if slot10:isDeath() or slot10:IsExpired() then
-			table.insert(slot5, slot10)
+			table.insert({}, slot10)
 		elseif slot11 == WorldBoss.BOSS_TYPE_FRIEND then
 			table.insert(slot4, slot10)
 		elseif slot11 == WorldBoss.BOSS_TYPE_GUILD then
@@ -603,10 +601,7 @@ end
 function slot0.Dispose(slot0)
 	uv0.super.Dispose(slot0)
 
-	slot1 = pairs
-	slot2 = slot0.timers or {}
-
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.timers or {}) do
 		slot5:Stop()
 	end
 
@@ -614,13 +609,13 @@ function slot0.Dispose(slot0)
 end
 
 function slot0.NeedTip(slot0)
-	return (function ()
+	return function ()
 		if uv0.boss and uv0.boss:isDeath() and not uv0.boss:IsExpired() and not uv0.boss:ShouldWaitForResult() then
 			return true
 		end
 
 		return false
-	end)()
+	end()
 end
 
 function slot0.UpdatedUnlockProgress(slot0, slot1, slot2)
@@ -683,21 +678,19 @@ function slot0.IsNeedSupport()
 		return
 	end
 
-	return true, math.min(slot0, slot1[2])
+	return true
 end
 
 function slot0.GetSupportValue()
-	slot0, slot1 = WorldBossProxy.IsNeedSupport()
-
-	if not slot0 then
+	if not WorldBossProxy.IsNeedSupport() then
 		return
 	end
 
-	slot2 = pg.gameset.world_metaboss_supportattack.description
+	slot1 = pg.gameset.world_metaboss_supportattack.description
 
-	assert(slot2[3], "Missing WorldBoss SupportAttack Buff")
+	assert(slot1[6], "Missing WorldBoss SupportAttack Buff")
 
-	return true, slot1, slot2[3]
+	return true, 0, slot1[6]
 end
 
 return slot0

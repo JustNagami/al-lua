@@ -1,9 +1,7 @@
 slot0 = class("BackYardShopFilterPanel", import("...Decoration.panles.BackYardDecorationFilterPanel"))
 
 function slot0.SortForDecorate(slot0, slot1, slot2)
-	slot3 = slot2[1]
 	slot4 = slot2[2]
-	slot5 = slot2[3]
 
 	function slot6(slot0)
 		if slot0:getConfig("new") == -1 then
@@ -58,8 +56,8 @@ function slot0.SortForDecorate(slot0, slot1, slot2)
 	end
 
 	if (slot0:canPurchase() and 1 or 0) == (slot1:canPurchase() and 1 or 0) then
-		if slot3 == uv0.SORT_MODE.BY_DEFAULT then
-			return uv0["SortByDefault" .. slot5](slot0, slot1)
+		if slot2[1] == uv0.SORT_MODE.BY_DEFAULT then
+			return uv0["SortByDefault" .. slot2[3]](slot0, slot1)
 		elseif slot3 == uv0.SORT_MODE.BY_FUNC then
 			return uv0.SORT_BY_FUNC(slot0, slot1, slot4, slot5, function ()
 				return uv0["SortByDefault" .. uv1](uv2, uv3)

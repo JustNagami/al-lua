@@ -17,7 +17,7 @@ function slot0.execute(slot0, slot1)
 
 	slot8 = slot7:GetMaterials()
 
-	if not (function ()
+	if not function ()
 		if not uv0:IsUnlock() then
 			return
 		end
@@ -33,8 +33,7 @@ function slot0.execute(slot0, slot1)
 			return
 		end
 
-		slot3 = getProxy(ActivityProxy)
-		slot3 = slot3:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+		slot3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 
 		if not _.all(uv2, function (slot0)
 			assert(DROP_TYPE_USE_ACTIVITY_DROP < slot0[1])
@@ -47,13 +46,11 @@ function slot0.execute(slot0, slot1)
 		end
 
 		return true
-	end)() then
+	end() then
 		return
 	end
 
-	slot10 = pg.ConnectionMgr.GetInstance()
-
-	slot10:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
 		activity_id = slot4,
 		arg1 = slot5,

@@ -10,13 +10,9 @@ function slot0.OnInit(slot0)
 end
 
 function slot0.OnFirstFlush(slot0)
-	slot2 = {}
-	slot3 = ipairs
-	slot4 = slot0.activity:getData1List() or {}
-
-	for slot6, slot7 in slot3(slot4) do
+	for slot6, slot7 in ipairs(slot0.activity:getData1List() or {}) do
 		assert(slot7 - 59800 > 0, "puzzlaIndex should more than zero" .. slot7)
-		table.insert(slot2, slot8)
+		table.insert({}, slot8)
 	end
 
 	slot3 = {}
@@ -34,11 +30,10 @@ function slot0.OnFirstFlush(slot0)
 			return
 		end
 
-		slot2 = slot1:getConfig("config_data")
 		slot3 = false
 
 		for slot7, slot8 in pairs(slot0) do
-			if _.any(_.flatten(slot2), function (slot0)
+			if _.any(_.flatten(slot1:getConfig("config_data")), function (slot0)
 				return slot0 == uv0.id
 			end) then
 				slot3 = true

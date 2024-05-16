@@ -299,15 +299,13 @@ function slot0.loadMv(slot0)
 	end
 
 	slot0.isLoading = true
-	slot2 = PoolMgr.GetInstance()
 
-	slot2:GetUI("paocha" .. slot0.mvIndex, true, function (slot0)
+	PoolMgr.GetInstance():GetUI("paocha" .. slot0.mvIndex, true, function (slot0)
 		uv0.mvGo = slot0
 		uv0.mvName = uv1
 		uv0.mvManaCpkUI = GetComponent(findTF(uv0.mvGo, "video/cpk"), typeof(CriManaCpkUI))
-		slot1 = uv0.mvManaCpkUI
 
-		slot1:SetPlayEndHandler(System.Action(function ()
+		uv0.mvManaCpkUI:SetPlayEndHandler(System.Action(function ()
 			uv0:mvComplete()
 
 			if uv0.playHandle then

@@ -5,6 +5,7 @@ function slot0.onInit(slot0)
 	slot0._active = true
 	slot0._weight = 1
 	slot0._scriptTime = nil
+	slot0._name = "FuShunMovementScript"
 end
 
 function slot0.onStep(slot0)
@@ -32,10 +33,9 @@ end
 function slot0.onTrigger(slot0)
 	if Application.isEditor and slot0._triggerKey == KeyCode.A or slot0._triggerKey == KeyCode.D then
 		slot1 = slot0._keyInfo:getKeyCode(KeyCode.A)
-		slot2 = slot0._keyInfo:getKeyCode(KeyCode.D)
 
 		if slot0._triggerKey == KeyCode.A then
-			slot0._collisionInfo.playerInput.x = slot0._triggerStatus and -1 or slot2 and 1 or 0
+			slot0._collisionInfo.playerInput.x = slot0._triggerStatus and -1 or slot0._keyInfo:getKeyCode(KeyCode.D) and 1 or 0
 		elseif slot0._triggerKey == KeyCode.D then
 			slot0._collisionInfo.playerInput.x = slot0._triggerStatus and 1 or slot1 and -1 or 0
 		end

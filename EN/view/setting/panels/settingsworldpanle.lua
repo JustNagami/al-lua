@@ -58,25 +58,22 @@ end
 
 function slot0.InitWorldBossProgressTipSettings(slot0)
 	slot3 = getProxy(SettingsProxy):GetWorldBossProgressTipFlag()
-
-	function slot4(slot0, slot1)
-		onToggle(uv1, slot1, function (slot0)
-			if slot0 then
-				getProxy(SettingsProxy):WorldBossProgressTipFlag(uv0)
-			end
-		end, SFX_PANEL)
-
-		if tostring(uv0[slot0]) == uv2 then
-			triggerToggle(slot1, true)
-		end
-	end
-
 	slot10 = "world_boss_progress_tip_title"
 
 	slot0.worldbossProgressTip:Find("notify_tpl"):Find("mask/Text"):GetComponent("ScrollText"):SetText(i18n(slot10))
 
 	for slot10 = 1, #slot0:GetWorldBossProgressTipConfig() do
-		slot4(slot10, slot5:Find(tostring(slot10)))
+		function (slot0, slot1)
+			onToggle(uv1, slot1, function (slot0)
+				if slot0 then
+					getProxy(SettingsProxy):WorldBossProgressTipFlag(uv0)
+				end
+			end, SFX_PANEL)
+
+			if tostring(uv0[slot0]) == uv2 then
+				triggerToggle(slot1, true)
+			end
+		end(slot10, slot5:Find(tostring(slot10)))
 	end
 
 	onButton(slot0, slot5:Find("mask/Text"), function ()

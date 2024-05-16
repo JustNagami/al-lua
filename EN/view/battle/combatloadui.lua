@@ -50,13 +50,15 @@ function slot0.Preload(slot0)
 	slot2 = getProxy(BayProxy)
 
 	if slot0.contextData.system == SYSTEM_DEBUG then
-		slot3 = {}
+		slot3 = {
+			[slot11.configId] = slot11
+		}
 		slot5 = getProxy(FleetProxy):getFleetById(slot0.contextData.mainFleetId)
 
 		assert(slot5)
 
 		for slot10, slot11 in ipairs(slot2:getShipsByFleet(slot5)) do
-			slot3[slot11.configId] = slot11
+			-- Nothing
 		end
 
 		slot7 = slot4:getFleetById(11)
@@ -195,7 +197,7 @@ function slot0.Preload(slot0)
 				uv0.addCommanderBuffRes(slot18)
 				uv0.addChapterBuffRes(slot17)
 			end
-		elseif slot0.contextData.system == SYSTEM_HP_SHARE_ACT_BOSS or slot0.contextData.system == SYSTEM_ACT_BOSS or slot0.contextData.system == SYSTEM_ACT_BOSS_SP or slot0.contextData.system == SYSTEM_BOSS_EXPERIMENT then
+		elseif slot0.contextData.system == SYSTEM_HP_SHARE_ACT_BOSS or slot0.contextData.system == SYSTEM_ACT_BOSS or slot0.contextData.system == SYSTEM_ACT_BOSS_SP or slot0.contextData.system == SYSTEM_BOSS_EXPERIMENT or slot0.contextData.system == SYSTEM_BOSS_SINGLE then
 			if getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId] then
 				for slot12, slot13 in ipairs(slot7.ships) do
 					table.insert(slot3, slot2:getShipById(slot13))
@@ -213,13 +215,15 @@ function slot0.Preload(slot0)
 			end
 
 			if slot0.contextData.system == SYSTEM_ACT_BOSS_SP then
-				slot9 = getProxy(ActivityProxy)
-
-				uv0.addChapterBuffRes(_.map(slot9:GetActivityBossRuntime(slot0.contextData.actId).buffIds, function (slot0)
+				uv0.addChapterBuffRes(_.map(getProxy(ActivityProxy):GetActivityBossRuntime(slot0.contextData.actId).buffIds, function (slot0)
 					return ActivityBossBuff.New({
 						configId = slot0
 					}):GetBuffID()
 				end))
+			end
+
+			if slot0.contextData.system == SYSTEM_BOSS_SINGLE then
+				uv0.addChapterBuffRes(getProxy(ActivityProxy):getActivityById(slot0.contextData.actId):GetBuffIdsByStageId(slot0.contextData.stageId))
 			end
 		elseif slot0.contextData.system == SYSTEM_BOSS_RUSH or slot0.contextData.system == SYSTEM_BOSS_RUSH_EX then
 			slot6 = getProxy(ActivityProxy):getActivityById(slot0.contextData.actId):GetSeriesData()
@@ -546,10 +550,9 @@ function slot0.Preload(slot0)
 		end
 	end
 
-	slot3 = pg.expedition_data_template[slot0.contextData.stageId]
 	slot4 = nil
 
-	if slot0.contextData.system == SYSTEM_WORLD and slot3.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
+	if slot0.contextData.system == SYSTEM_WORLD and pg.expedition_data_template[slot0.contextData.stageId].difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
 		slot1:AddPreloadResource(slot1.GetMapResource(nowWorld():GetActiveMap().config.expedition_map_id))
 	else
 		for slot8, slot9 in ipairs(slot3.map_id) do
@@ -572,9 +575,8 @@ function slot0.Preload(slot0)
 	end
 
 	slot9 = 0
-	slot11 = pg.UIMgr.GetInstance()
 
-	setActive(slot11:GetMainCamera(), true)
+	setActive(pg.UIMgr.GetInstance():GetMainCamera(), true)
 
 	slot9 = slot1:StartPreload(function ()
 		SetActive(uv0._loadingAnima, false)

@@ -18,7 +18,7 @@ function slot0.register(slot0)
 	slot0.ships = getProxy(BayProxy):getRawData()
 
 	slot0.viewComponent:SetShips(slot0.ships)
-	slot0.viewComponent:SetOpenCommander(pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommandRoomMediator") and not LOCK_COMMANDER)
+	slot0.viewComponent:SetOpenCommander(pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator") and not LOCK_COMMANDER)
 
 	slot3 = _.map({
 		FleetProxy.CHALLENGE_FLEET_ID,
@@ -96,9 +96,7 @@ function slot0.bindEvent(slot0)
 	end)
 	slot0:bind(uv0.ON_UPDATE_CUSTOM_FLEET, function (slot0)
 		_.each(uv0.contextData.fleets, function (slot0)
-			slot1 = uv0
-
-			slot1:sendNotification(GAME.UPDATE_FLEET, {
+			uv0:sendNotification(GAME.UPDATE_FLEET, {
 				fleet = slot0
 			})
 
@@ -117,9 +115,7 @@ function slot0.bindEvent(slot0)
 		end)
 	end)
 	slot0:bind(uv0.ON_START, function (slot0)
-		slot1 = uv0.viewComponent
-
-		slot1:emit(uv1.ON_UPDATE_CUSTOM_FLEET)
+		uv0.viewComponent:emit(uv1.ON_UPDATE_CUSTOM_FLEET)
 		seriesAsync({
 			function (slot0)
 				for slot4 = 1, #uv0.contextData.fleets - 1 do
@@ -267,10 +263,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot1:getBody())
 	elseif slot2 == GAME.BEGIN_STAGE_ERRO and slot3 == 3 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
@@ -339,10 +333,10 @@ function slot0.onSelectCommander(slot0, slot1, slot2)
 	end)
 
 	assert(slot3)
-	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDROOM, {
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 		maxCount = 1,
-		mode = CommandRoomScene.MODE_SELECT,
-		fleetType = CommandRoomScene.FLEET_TYPE_LIMIT_CHALLENGE,
+		mode = CommanderCatScene.MODE_SELECT,
+		fleetType = CommanderCatScene.FLEET_TYPE_LIMIT_CHALLENGE,
 		activeCommander = slot3:getCommanderByPos(slot1),
 		ignoredIds = {},
 		onCommander = function (slot0)

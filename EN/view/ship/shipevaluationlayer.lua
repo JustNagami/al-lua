@@ -167,8 +167,6 @@ function slot0.flushEva(slot0)
 		end
 	end
 
-	slot3 = getProxy(PlayerProxy):getRawData():IsOpenShipEvaluationImpeach()
-
 	for slot7 = 1, #slot2 do
 		slot8 = nil
 		slot8 = (not slot2[slot7].hot or cloneTplTo(slot0.hotTpl, slot0.hotContent)) and cloneTplTo(slot0.commonTpl, slot0.commonContent)
@@ -198,7 +196,7 @@ function slot0.flushEva(slot0)
 			uv0:openImpeachPanel(uv1.id)
 		end, SFX_PANEL)
 		SetActive(slot8:Find("bg/zan_bg/down"), not defaultValue(LOCK_DOWNVOTE, true))
-		setActive(slot8:Find("bg/zan_bg/impeach"), slot3)
+		setActive(slot8:Find("bg/zan_bg/impeach"), getProxy(PlayerProxy):getRawData():IsOpenShipEvaluationImpeach())
 	end
 
 	slot4 = 1
@@ -221,20 +219,14 @@ end
 slot1 = 3
 
 function slot0.initImpeachPanel(slot0)
-	slot1 = slot0._tf
-	slot0.impackPanel = slot1:Find("impeachPanel")
-	slot2 = slot0.impackPanel
+	slot0.impackPanel = slot0._tf:Find("impeachPanel")
 
-	setText(slot2:Find("window/top/bg/impeach/title"), i18n("report_sent_title"))
-
-	slot3 = slot0.impackPanel
-
-	onButton(slot0, slot3:Find("window/top/btnBack"), function ()
+	setText(slot0.impackPanel:Find("window/top/bg/impeach/title"), i18n("report_sent_title"))
+	onButton(slot0, slot0.impackPanel:Find("window/top/btnBack"), function ()
 		uv0:onBackPressed()
 	end, SFX_CANCEL)
 
-	slot1 = slot0.impackPanel
-	slot1 = slot1:Find("window/msg_panel/content")
+	slot1 = slot0.impackPanel:Find("window/msg_panel/content")
 
 	setText(slot1:Find("title"), i18n("report_sent_desc"))
 
@@ -262,10 +254,7 @@ function slot0.initImpeachPanel(slot0)
 	onInputChanged(slot0, slot1:Find("other/field/input"), function ()
 		Canvas.ForceUpdateCanvases()
 	end)
-
-	slot6 = slot0.impackPanel
-
-	onButton(slot0, slot6:Find("window/button_container/button"), function ()
+	onButton(slot0, slot0.impackPanel:Find("window/button_container/button"), function ()
 		if uv0.impeachOption == "other" then
 			if string.len(getInputText(uv1)) > 0 then
 				uv0:emit(uv2.EVENT_IMPEACH, uv0.targetEvaId, i18n("report_type_other") .. ":" .. slot0)

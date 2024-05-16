@@ -69,14 +69,13 @@ function slot0.updateForMonthTF(slot0, slot1, slot2)
 	slot7 = slot0.monthTF:Find("ItemIconList")
 	slot8 = slot0.monthTF:Find("Mask")
 	slot9 = slot0.monthTF:Find("Mask/LimitText")
-	slot10 = slot0.monthTF:Find("Price/Icon")
 
 	setText(slot0.monthTF:Find("Tip/Text"), i18n("monthly_card_tip"))
 	setText(slot0.monthTF:Find("ResCountText"), "x" .. slot1:getConfig("gem") + slot1:getConfig("extra_gem"))
 	setText(slot0.monthTF:Find("Price/Text"), slot1:getConfig("money"))
 
 	if PLATFORM_CODE == PLATFORM_CHT then
-		setActive(slot10, not slot1:IsLocalPrice())
+		setActive(slot0.monthTF:Find("Price/Icon"), not slot1:IsLocalPrice())
 	end
 
 	if #slot1:getConfig("display") == 0 then
@@ -114,13 +113,9 @@ function slot0.updateForMonthTF(slot0, slot1, slot2)
 	end
 
 	slot14 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
-	slot16 = slot0.monthTF
 
-	setActive(slot16:Find("monthcard_tag"), slot14)
-
-	slot16 = slot0.monthTF
-
-	setActive(slot16:Find("NewTag"), not slot14)
+	setActive(slot0.monthTF:Find("monthcard_tag"), slot14)
+	setActive(slot0.monthTF:Find("NewTag"), not slot14)
 	onButton(slot0.parentContext, slot3, function ()
 		triggerButton(uv0.tr)
 	end, SFX_PANEL)

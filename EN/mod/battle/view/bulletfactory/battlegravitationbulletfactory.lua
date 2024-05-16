@@ -23,19 +23,21 @@ function slot1.onBulletHitFunc(slot0, slot1, slot2)
 
 	uv1.Battle.PlayBattleSFX(slot7:GetHitSFX())
 
-	slot12 = slot7:GetTemplate().extra_param.buff_id
+	slot11 = slot7:GetTemplate().extra_param
+	slot12 = slot11.buff_id
+	slot13 = slot11.buff_level or 1
 
 	uv0.GetDataProxy():SpawnLastingColumnArea(slot7:GetEffectField(), slot7:GetIFF(), pg.Tool.FilterY(slot7:GetPosition():Clone()), slot5.range, slot5.time, function (slot0)
 		if uv0:CanDealDamage() then
 			for slot4, slot5 in ipairs(slot0) do
 				if slot5.Active then
-					uv1:GetSceneMediator():GetCharacter(slot5.UID):GetUnitData():AddBuff(uv2.Battle.BattleBuffUnit.New(uv3))
+					uv1:GetSceneMediator():GetCharacter(slot5.UID):GetUnitData():AddBuff(uv2.Battle.BattleBuffUnit.New(uv3, uv4))
 
-					if not uv4.noIntervalDMG then
-						uv5:HandleDamage(uv0, slot6)
+					if not uv5.noIntervalDMG then
+						uv6:HandleDamage(uv0, slot6)
 					end
 
-					if pg.Tool.FilterY(uv6 - slot6:GetPosition()).magnitude < (uv4.force or 0.1) then
+					if pg.Tool.FilterY(uv7 - slot6:GetPosition()).magnitude < (uv5.force or 0.1) then
 						slot6:SetUncontrollableSpeed(slot9, 0.001, 1e-06)
 					else
 						slot6:SetUncontrollableSpeed(slot9, slot8, 1e-07)
@@ -59,10 +61,9 @@ function slot1.onBulletHitFunc(slot0, slot1, slot2)
 		for slot6, slot7 in ipairs(slot0) do
 			if slot7.Active then
 				slot9 = false
-				slot10 = uv1:GetSceneMediator():GetCharacter(slot7.UID):GetUnitData():GetCurrentOxyState()
 
 				for slot14, slot15 in ipairs(uv2) do
-					if slot10 == slot15 then
+					if uv1:GetSceneMediator():GetCharacter(slot7.UID):GetUnitData():GetCurrentOxyState() == slot15 then
 						slot9 = true
 					end
 				end
@@ -71,10 +72,8 @@ function slot1.onBulletHitFunc(slot0, slot1, slot2)
 					uv3:HandleDirectDamage(slot8, slot1, uv4)
 
 					if slot8:IsAlive() then
-						slot11 = pg.Tool.FilterY(slot8:GetPosition() - uv5)
-
 						if slot2 ~= false then
-							slot8:SetUncontrollableSpeed(slot11, 1, 0.2, 6)
+							slot8:SetUncontrollableSpeed(pg.Tool.FilterY(slot8:GetPosition() - uv5), 1, 0.2, 6)
 						end
 
 						slot8:RemoveBuff(uv6)

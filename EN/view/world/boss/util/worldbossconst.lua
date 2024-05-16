@@ -140,7 +140,6 @@ end
 
 function slot0.GetCurrBossItemInfo()
 	slot0, slot1, slot2, slot3 = WorldBossConst.GetCurrBossItemCapacity()
-	slot6 = string.split(i18n("world_boss_item_info"), "|")[2]
 
 	for slot10, slot11 in ipairs({
 		slot1,
@@ -148,7 +147,7 @@ function slot0.GetCurrBossItemInfo()
 		slot0,
 		slot3
 	}) do
-		slot6 = string.gsub(slot6, "$" .. slot10, slot11)
+		slot6 = string.gsub(string.split(i18n("world_boss_item_info"), "|")[2], "$" .. slot10, slot11)
 	end
 
 	return {
@@ -163,7 +162,6 @@ end
 
 function slot0.GetAchieveBossItemInfo()
 	slot0, slot1, slot2, slot3 = WorldBossConst.GetAchieveBossItemCapacity()
-	slot6 = string.split(i18n("world_past_boss_item_info"), "|")[2]
 
 	for slot10, slot11 in ipairs({
 		slot1,
@@ -171,7 +169,7 @@ function slot0.GetAchieveBossItemInfo()
 		slot0,
 		slot3
 	}) do
-		slot6 = string.gsub(slot6, "$" .. slot10, slot11)
+		slot6 = string.gsub(string.split(i18n("world_past_boss_item_info"), "|")[2], "$" .. slot10, slot11)
 	end
 
 	return {
@@ -233,11 +231,10 @@ function slot0.GetAutoBattleCnt()
 end
 
 function slot0.GetAutoBattleOilConsume()
-	slot3 = 0
 	slot4 = nowWorld():GetBossProxy():GetSelfBoss().fightCount
 
 	for slot8 = slot4 + 1, slot4 + uv0.GetAutoBattleCnt() do
-		slot3 = slot3 + WorldBossConst.GetBossOilConsume(slot8)
+		slot3 = 0 + WorldBossConst.GetBossOilConsume(slot8)
 	end
 
 	return slot3

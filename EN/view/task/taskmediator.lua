@@ -38,7 +38,7 @@ function slot0.register(slot0)
 				mediator = EquipmentInfoMediator,
 				viewComponent = EquipmentInfoLayer,
 				data = {
-					equipmentId = slot1.cfg.id,
+					equipmentId = slot1:getConfig("id"),
 					type = EquipmentInfoMediator.TYPE_DISPLAY,
 					onRemoved = slot2,
 					LayerWeightMgr_weight = LayerWeightConst.THIRD_LAYER
@@ -49,7 +49,7 @@ function slot0.register(slot0)
 				mediator = SpWeaponInfoMediator,
 				viewComponent = SpWeaponInfoLayer,
 				data = {
-					spWeaponConfigId = slot1.cfg.id,
+					spWeaponConfigId = slot1:getConfig("id"),
 					type = SpWeaponInfoLayer.TYPE_DISPLAY,
 					onRemoved = slot2,
 					LayerWeightMgr_weight = LayerWeightConst.THIRD_LAYER
@@ -97,11 +97,9 @@ function slot0.register(slot0)
 end
 
 function slot0.SetTaskVOs(slot0)
-	slot3 = getProxy(BagProxy)
-
 	for slot7, slot8 in pairs(getProxy(TaskProxy):getData()) do
 		if slot8:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
-			slot8.progress = slot3:getItemCountById(tonumber(tonumber(slot8:getConfig("target_id"))))
+			slot8.progress = getProxy(BagProxy):getItemCountById(tonumber(tonumber(slot8:getConfig("target_id"))))
 		elseif slot8:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
 			slot8.progress = getProxy(ActivityProxy):getVirtualItemNumber(tonumber(slot8:getConfig("target_id")))
 		end
@@ -112,17 +110,16 @@ end
 
 function slot0.enterLevel(slot0, slot1)
 	if getProxy(ChapterProxy):getChapterById(slot1) then
-		slot4 = {
-			mapIdx = slot3:getConfig("map")
-		}
-
 		if slot3.active then
-			slot4.chapterId = slot3.id
+			-- Nothing
 		else
 			slot4.openChapterId = slot1
 		end
 
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot4)
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+			mapIdx = slot3:getConfig("map"),
+			chapterId = slot3.id
+		})
 	end
 end
 
@@ -181,18 +178,15 @@ function slot0.handleNotification(slot0, slot1)
 			slot4 = slot1:getType()
 			slot5 = getProxy(TaskProxy)
 			slot0.viewComponent.onShowAwards = true
-			slot6 = slot0.viewComponent
 
-			slot6:emit(BaseUI.ON_ACHIEVE, slot3, function ()
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3, function ()
 				uv0.viewComponent.onShowAwards = nil
 
 				uv0:accepetActivityTask()
 				uv0.viewComponent:updateOneStepBtn()
 
-				slot0 = {}
-
 				for slot4, slot5 in ipairs(uv1) do
-					table.insert(slot0, function (slot0)
+					table.insert({}, function (slot0)
 						uv0:PlayStoryForTaskAct(uv1, slot0)
 					end)
 				end
@@ -220,40 +214,32 @@ function slot0.handleNotification(slot0, slot1)
 		elseif slot2 == TaskProxy.WEEK_TASKS_ADDED or slot2 == TaskProxy.WEEK_TASKS_DELETED or slot2 == TaskProxy.WEEK_TASK_UPDATED then
 			slot0.viewComponent:RefreshWeekTaskPage()
 		elseif slot2 == GAME.SUBMIT_WEEK_TASK_DONE then
-			slot4 = slot0.viewComponent
-
-			slot4:RefreshWeekTaskPageBefore(slot3.id)
-
-			function slot4()
-				uv0.viewComponent:RefreshWeekTaskPage()
-			end
+			slot0.viewComponent:RefreshWeekTaskPageBefore(slot3.id)
 
 			if #slot3.awards > 0 then
-				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot4)
+				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
+					uv0.viewComponent:RefreshWeekTaskPage()
+				end)
 			else
 				slot4()
 			end
 		elseif slot2 == GAME.SUBMIT_WEEK_TASK_PROGRESS_DONE then
-			function slot4()
-				uv0.viewComponent:RefreshWeekTaskProgress()
-			end
-
 			if #slot3.awards > 0 then
-				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot4)
+				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
+					uv0.viewComponent:RefreshWeekTaskProgress()
+				end)
 			else
 				slot4()
 			end
 		elseif slot2 == GAME.SUBMIT_AVATAR_TASK_DONE then
-			function slot4()
-				uv0.viewComponent:refreshPage()
-
-				if uv1.callback then
-					uv1.callback()
-				end
-			end
-
 			if #slot3.awards > 0 then
-				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot4)
+				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
+					uv0.viewComponent:refreshPage()
+
+					if uv1.callback then
+						uv1.callback()
+					end
+				end)
 			else
 				slot4()
 			end

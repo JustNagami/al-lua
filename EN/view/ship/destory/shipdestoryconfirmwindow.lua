@@ -36,10 +36,7 @@ function slot0.OnInit(slot0)
 	onButton(slot0, slot0.confirmBtn, function ()
 		uv0:Confirm()
 	end, SFX_PANEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bg"), function ()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
 		uv0:Hide()
 	end, SFX_PANEL)
 	onButton(slot0, slot0.closeBtn, function ()
@@ -93,18 +90,10 @@ function slot0.ShowEliteTag(slot0, slot1, slot2)
 	slot0.ships = slot1
 
 	if #slot0.ships > 5 then
-		slot4 = slot0._tf
+		setActive(slot0._tf:Find("window/content/ships"), true)
+		setActive(slot0._tf:Find("window/content/ships_single"), false)
 
-		setActive(slot4:Find("window/content/ships"), true)
-
-		slot4 = slot0._tf
-
-		setActive(slot4:Find("window/content/ships_single"), false)
-
-		slot3 = slot0._tf
-		slot3 = slot3:Find("window/content/ships/content")
-
-		slot3:GetComponent("LScrollRect").onUpdateItem = function (slot0, slot1)
+		slot0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect").onUpdateItem = function (slot0, slot1)
 			updateShip(tf(slot1), uv0.ships[slot0 + 1])
 		end
 
@@ -131,10 +120,9 @@ end
 
 function slot0.Updatelayout(slot0)
 	slot2 = slot0.highLevelShips
-	slot3 = {}
 
 	if #slot0.eliteShips > 0 then
-		table.insert(slot3, i18n("destroy_high_rarity_tip"))
+		table.insert({}, i18n("destroy_high_rarity_tip"))
 	end
 
 	if #slot2 > 0 then
@@ -173,18 +161,10 @@ function slot0.UpdateShips(slot0)
 	slot0.ships = slot3
 
 	if #slot0.ships > 5 then
-		slot5 = slot0._tf
+		setActive(slot0._tf:Find("window/content/ships"), true)
+		setActive(slot0._tf:Find("window/content/ships_single"), false)
 
-		setActive(slot5:Find("window/content/ships"), true)
-
-		slot5 = slot0._tf
-
-		setActive(slot5:Find("window/content/ships_single"), false)
-
-		slot4 = slot0._tf
-		slot4 = slot4:Find("window/content/ships/content")
-
-		slot4:GetComponent("LScrollRect").onUpdateItem = function (slot0, slot1)
+		slot0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect").onUpdateItem = function (slot0, slot1)
 			updateShip(tf(slot1), uv0.ships[slot0 + 1])
 		end
 

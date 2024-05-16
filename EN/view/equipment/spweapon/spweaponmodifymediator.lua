@@ -36,10 +36,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.REFORGE_SPWEAPON_DONE then
-		slot0.viewComponent:SetSpweaponVO(slot3)
+		slot0.viewComponent:SetSpweaponVO(slot1:getBody())
 		slot0.viewComponent:ResetMaterialMask()
 		slot0.viewComponent:UpdateView()
 	elseif slot2 == GAME.CONFIRM_REFORGE_SPWEAPON_DONE then

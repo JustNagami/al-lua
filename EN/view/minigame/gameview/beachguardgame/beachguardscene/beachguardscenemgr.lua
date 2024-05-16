@@ -103,13 +103,9 @@ function slot1(slot0, slot1, slot2)
 
 			for slot5 = #slot0.enemys, 1, -1 do
 				if not slot0.enemys[slot5]:getTarget() then
-					slot8 = slot6:getPointWorld()
-					slot9 = slot6:getPos()
-					slot11 = false
-
 					for slot15, slot16 in ipairs(slot0:getCharLine(slot6:getLineIndex())) do
-						if slot16:checkCollider(slot8, slot9) then
-							if slot11 then
+						if slot16:checkCollider(slot6:getPointWorld(), slot6:getPos()) then
+							if false then
 								-- Nothing
 							end
 
@@ -127,11 +123,10 @@ function slot1(slot0, slot1, slot2)
 
 			for slot5 = 1, #slot0.chars do
 				slot6 = slot0.chars[slot5]
-				slot7 = slot6:getSkillDistance() * BeachGuardConst.part_width
 				slot12 = slot6
 
 				for slot12, slot13 in ipairs(slot0:getCanHitChar(slot6:getLineIndex(), slot6.getCamp(slot12))) do
-					if slot13:getPos().x - slot6:getPos().x > 0 and slot14 < slot7 then
+					if slot13:getPos().x - slot6:getPos().x > 0 and slot14 < slot6:getSkillDistance() * BeachGuardConst.part_width then
 						slot6:setTarget(slot13)
 					end
 				end
@@ -225,9 +220,7 @@ function slot1(slot0, slot1, slot2)
 			table.insert(slot0.enemys, slot4)
 		end,
 		sortChar = function (slot0)
-			slot1 = #slot0.chars + #slot0.enemys
-
-			if not slot0.sorts or #slot0.sorts ~= slot1 then
+			if not slot0.sorts or #slot0.sorts ~= #slot0.chars + #slot0.enemys then
 				slot0.sorts = {}
 
 				for slot5 = 1, #slot0.chars do
@@ -287,11 +280,10 @@ function slot2(slot0, slot1)
 			end
 		end,
 		setMapData = function (slot0, slot1)
-			slot2 = slot1.line
 			slot0.activeLines = {}
 
 			for slot6 = 1, #slot0.lines do
-				if table.contains(slot2, slot0.lines[slot6]:getIndex()) then
+				if table.contains(slot1.line, slot0.lines[slot6]:getIndex()) then
 					slot7:active(true)
 					table.insert(slot0.activeLines, slot7)
 				else
@@ -363,9 +355,7 @@ function slot2(slot0, slot1)
 
 				slot0.preCharGrid:prechar(slot4)
 
-				slot7 = slot0.preCharGrid:getIndex()
-
-				if slot0.preCharGrid:getLineIndex() and slot7 then
+				if slot0.preCharGrid:getLineIndex() and slot0.preCharGrid:getIndex() then
 					for slot12 = 1, BeachGuardConst.chars[slot4].distance do
 						if slot0:getGridByIndex(slot6, slot7 + slot12) then
 							slot13:preDistance()
@@ -664,26 +654,26 @@ function slot4(slot0, slot1)
 			return slot0.finishCreate
 		end,
 		createData = function (slot0, slot1)
-			slot2 = {}
 			slot3 = slot1.create
 			slot4 = slot1.time
 			slot5 = slot1.stop
 			slot7 = slot1.comming
 
 			if slot1.step then
-				slot2.loop = true
-				slot2.stepTime = 0
+				-- Nothing
 			else
 				slot2.loop = false
 			end
 
-			slot2.create = slot3
-			slot2.time = slot4
-			slot2.stop = slot5
-			slot2.step = slot6
-			slot2.comming = slot7
-
-			return slot2
+			return {
+				loop = true,
+				stepTime = 0,
+				create = slot3,
+				time = slot4,
+				stop = slot5,
+				step = slot6,
+				comming = slot7
+			}
 		end,
 		addEnemyData = function (slot0, slot1)
 			slot2 = slot1.create
@@ -760,7 +750,6 @@ function slot5(slot0, slot1)
 			if slot8.type == BeachGuardConst.bullet_type_range then
 				slot9 = slot8.config
 				slot10 = slot9.next
-				slot11 = slot9.range
 				slot14 = nil
 				slot14 = (not slot4.target or slot4.target:getPos()) and slot0.effectFrontTf:InverseTransformPoint(slot3)
 
@@ -769,12 +758,10 @@ function slot5(slot0, slot1)
 					slot6 - 1,
 					slot6
 				}, slot7 == 1 and 2 or 1) and #slot13 > 0 then
-					slot15 = slot11 * BeachGuardConst.part_width
-
 					for slot19 = 1, #slot13 do
 						slot20 = slot13[slot19]
 
-						if (not slot4.target or slot4.target ~= slot20) and math.abs(slot14.x - slot20:getPos().x) < slot15 then
+						if (not slot4.target or slot4.target ~= slot20) and math.abs(slot14.x - slot20:getPos().x) < slot9.range * BeachGuardConst.part_width then
 							slot22 = Clone(slot4)
 							slot22.target = slot20
 
@@ -804,23 +791,19 @@ function slot5(slot0, slot1)
 					slot15 = slot14.type
 					slot17 = slot14.bound
 					slot18 = slot4.useChar
-					slot19 = slot4.target
 
 					if slot14.trigger == BeachGuardConst.buff_trigger_other then
-						slot19:addBuff(slot14)
+						slot4.target:addBuff(slot14)
 					elseif slot16 == BeachGuardConst.buff_trigger_self then
 						slot18:addBuff(slot14)
 
 						if slot17 and slot17 ~= nil then
 							slot20 = slot4.useChar:getCamp()
-							slot22 = slot4.useChar:getGridIndex()
 
-							if slot4.useChar:getLineIndex() and slot22 then
+							if slot4.useChar:getLineIndex() and slot4.useChar:getGridIndex() then
 								for slot27, slot28 in ipairs(slot0.charCtrl:getCharByCamp(slot20)) do
 									if slot28 ~= slot18 then
-										slot30 = slot28:getLineIndex()
-
-										if math.abs(slot28:getGridIndex() - slot22) <= slot17[1] and math.abs(slot30 - slot21) <= slot17[2] then
+										if math.abs(slot28:getGridIndex() - slot22) <= slot17[1] and math.abs(slot28:getLineIndex() - slot21) <= slot17[2] then
 											slot28:addBuff(slot14)
 										end
 									end
@@ -837,11 +820,8 @@ function slot5(slot0, slot1)
 		end,
 		addDamageByDisperse = function (slot0, slot1, slot2, slot3, slot4, slot5)
 			if slot0.charCtrl:getLineCampChars(slot1, slot3) and #slot6 > 0 then
-				slot7 = slot2 * BeachGuardConst.part_width
-				slot8 = slot5.target:getPos()
-
 				for slot12 = 1, #slot6 do
-					if math.abs(slot8.x - slot6[slot12]:getPos().x) < slot7 then
+					if math.abs(slot5.target:getPos().x - slot6[slot12]:getPos().x) < slot2 * BeachGuardConst.part_width then
 						slot16 = Clone(slot5)
 						slot16.target = slot13
 
@@ -898,11 +878,9 @@ function slot5(slot0, slot1)
 			for slot6 = 1, #slot0.skillCtrl:getBullets() do
 				slot7 = slot2[slot6]
 				slot8 = slot7.useData
-				slot11 = slot7.tf.position
-				slot13 = false
 
 				for slot17, slot18 in ipairs(slot0.charCtrl:getCanHitChar(slot8.line, slot8.camp)) do
-					if not slot13 and slot18:inBulletBound() and slot18:checkBulletCollider(slot11) then
+					if not false and slot18:inBulletBound() and slot18:checkBulletCollider(slot7.tf.position) then
 						slot13 = true
 						slot7.hit = true
 						slot8.target = slot18

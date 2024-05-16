@@ -41,16 +41,9 @@ function slot0.SkipToReFluxActivity(slot0)
 end
 
 function slot0.SkipToTechnology(slot0)
-	slot1 = getProxy(PlayerProxy):getRawData().level
-
-	if not LOCK_TECHNOLOGY and pg.SystemOpenMgr.GetInstance():isOpenSystem(slot1, "TechnologyMediator") and not pg.NewStoryMgr.GetInstance():IsPlayed("FANGAN1") then
-		slot2 = pg.m02
-
-		slot2:sendNotification(GAME.GO_SCENE, SCENE.SELTECHNOLOGY)
-
-		slot2 = pg.NewStoryMgr.GetInstance()
-
-		slot2:Play("FANGAN1", function ()
+	if not LOCK_TECHNOLOGY and pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "TechnologyMediator") and not pg.NewStoryMgr.GetInstance():IsPlayed("FANGAN1") then
+		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SELTECHNOLOGY)
+		pg.NewStoryMgr.GetInstance():Play("FANGAN1", function ()
 		end, true)
 
 		return false

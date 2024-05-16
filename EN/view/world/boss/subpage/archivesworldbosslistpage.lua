@@ -87,9 +87,7 @@ function slot0.OnInit(slot0)
 		uv0:OnUpdateAwardItem(slot0, slot1)
 	end
 
-	slot1 = slot0.awardScrollrect.onValueChanged
-
-	slot1:AddListener(function (slot0)
+	slot0.awardScrollrect.onValueChanged:AddListener(function (slot0)
 		setActive(uv0.awardArrTr, slot0.x < 0.97)
 	end)
 
@@ -115,9 +113,8 @@ function slot0.Filter(slot0, slot1)
 	for slot7, slot8 in pairs(WorldBossConst.GetAchieveBossList()) do
 		slot9 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(slot8.meta_id)
 		slot10 = slot9:getMetaProgressPTState()
-		slot11 = not slot9.metaPtData:CanGetNextAward()
 
-		if slot1 == uv0 and slot11 then
+		if slot1 == uv0 and not slot9.metaPtData:CanGetNextAward() then
 			table.insert(slot0.displays, {
 				id = slot8.id,
 				progress = slot9
@@ -274,7 +271,6 @@ function slot0.UpdateAwards(slot0, slot1)
 end
 
 function slot0.getOneStepPTAwardLevelAndCount(slot0, slot1)
-	slot2 = slot1.metaPtData:GetResProgress()
 	slot4 = slot1:getStoryIndexList()
 	slot5 = slot1.unlockPTLevel
 	slot6 = 0
@@ -283,7 +279,7 @@ function slot0.getOneStepPTAwardLevelAndCount(slot0, slot1)
 		slot11 = false
 		slot12 = false
 
-		if slot3[slot10] <= slot2 then
+		if slot3[slot10] <= slot1.metaPtData:GetResProgress() then
 			slot11 = true
 		end
 
@@ -344,10 +340,8 @@ function slot0.OnDestroy(slot0)
 	end
 
 	slot0.cards = nil
-	slot1 = pairs
-	slot2 = slot0.awardCards or {}
 
-	for slot4, slot5 in slot1(slot2) do
+	for slot4, slot5 in pairs(slot0.awardCards or {}) do
 		slot5:Dispose()
 	end
 

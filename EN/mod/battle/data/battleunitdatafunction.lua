@@ -99,22 +99,18 @@ function slot33.CreateBattleUnitData(slot0, slot1, slot2, slot3, slot4, slot5, s
 					torpedoAmmo = 0,
 					skin = slot19.skin
 				}
+			elseif not slot13 or slot18 <= slot13 or #uv2.GetWeaponDataFromID(slot19.id).weapon_id then
+				slot14[#slot14 + 1] = {
+					equipment = uv2.GetWeaponDataFromID(slot19.id),
+					skin = slot19.skin,
+					torpedoAmmo = slot19.equipmentInfo and slot19.equipmentInfo:getConfig("torpedo_ammo") or 0
+				}
 			else
-				slot20 = slot19.equipmentInfo and slot19.equipmentInfo.config.torpedo_ammo or 0
-
-				if not slot13 or slot18 <= slot13 or #uv2.GetWeaponDataFromID(slot19.id).weapon_id then
-					slot14[#slot14 + 1] = {
-						equipment = uv2.GetWeaponDataFromID(slot19.id),
-						skin = slot19.skin,
-						torpedoAmmo = slot20
-					}
-				else
-					slot14[#slot14 + 1] = {
-						equipment = false,
-						skin = slot19.skin,
-						torpedoAmmo = slot20
-					}
-				end
+				slot14[#slot14 + 1] = {
+					equipment = false,
+					skin = slot19.skin,
+					torpedoAmmo = slot20
+				}
 			end
 		end
 	end
@@ -126,9 +122,7 @@ function slot33.CreateBattleUnitData(slot0, slot1, slot2, slot3, slot4, slot5, s
 end
 
 function slot33.InitUnitSkill(slot0, slot1, slot2)
-	slot3 = slot0.skills or {}
-
-	for slot7, slot8 in pairs(slot3) do
+	for slot7, slot8 in pairs(slot0.skills or {}) do
 		slot1:AddBuff(uv0.Battle.BattleBuffUnit.New(slot8.id, slot8.level, slot1))
 	end
 end
@@ -166,13 +160,9 @@ end
 
 function slot33.AttachWeather(slot0, slot1)
 	if table.contains(slot1, uv0.WEATHER.NIGHT) then
-		slot2 = slot0:GetTemplate().type
-
 		if slot0:GetFleetVO() then
-			slot3 = slot0:GetFleetVO()
-
-			if table.contains(TeamType.VanguardShipType, slot2) then
-				slot4 = slot3:GetFleetBias()
+			if table.contains(TeamType.VanguardShipType, slot0:GetTemplate().type) then
+				slot4 = slot0:GetFleetVO():GetFleetBias()
 
 				slot4:ConfigMinRange(uv1.AIM_BIAS_MIN_RANGE_SCOUT[slot4:GetCrewCount() + 1])
 				slot4:AppendCrew(slot0)
@@ -235,10 +225,9 @@ function slot33.InitEquipSkill(slot0, slot1, slot2)
 end
 
 function slot33.InitCommanderSkill(slot0, slot1, slot2)
-	slot0 = slot0 or {}
 	slot3 = uv0.Battle.BattleState.GetInstance():GetBattleType()
 
-	for slot7, slot8 in pairs(slot0) do
+	for slot7, slot8 in pairs(slot0 or {}) do
 		slot10 = false
 
 		if uv0.Battle.BattleDataFunction.GetBuffTemplate(slot8.id, slot8.level).limit then
@@ -350,17 +339,14 @@ end
 
 function slot33.CreateAllInStrike(slot0)
 	slot3 = 0
-	slot4 = {}
 
 	for slot8, slot9 in ipairs(uv0.GetPlayerShipModelFromID(slot0:GetTemplateID()).airassist_time) do
-		slot10 = uv1.Battle.BattleAllInStrike.New(slot9)
-
-		slot10:SetHost(slot0)
-
-		slot4[slot8] = slot10
+		uv1.Battle.BattleAllInStrike.New(slot9):SetHost(slot0)
 	end
 
-	return slot4
+	return {
+		[slot8] = slot10
+	}
 end
 
 function slot33.ExpandAllinStrike(slot0)
@@ -548,9 +534,17 @@ function slot33.GetSpecificEnemyList(slot0, slot1)
 	return slot5
 end
 
+function slot33.GetMetaBossTemplate(slot0)
+	return uv0[slot0]
+end
+
+function slot33.GetMetaBossLevelTemplate(slot0, slot1)
+	return uv1[uv0.GetMetaBossTemplate(slot0).boss_level_id + slot1 - 1]
+end
+
 function slot33.GetSpecificWorldJointEnemyList(slot0, slot1, slot2)
 	return {
-		pg.world_boss_level[uv0[slot1].boss_level_id + slot2 - 1].enemy_id
+		uv0.GetMetaBossLevelTemplate(slot1, slot2).enemy_id
 	}
 end
 
@@ -612,16 +606,16 @@ function slot33.SkillTranform(slot0, slot1)
 end
 
 function slot33.GenerateHiddenBuff(slot0)
-	slot2 = {}
-
 	for slot6, slot7 in ipairs(uv0.GetPlayerShipModelFromID(slot0).hide_buff_list) do
-		slot2[slot7] = {
+		-- Nothing
+	end
+
+	return {
+		[slot7] = {
 			level = 1,
 			id = slot7
 		}
-	end
-
-	return slot2
+	}
 end
 
 function slot33.GetDivingFilter(slot0)

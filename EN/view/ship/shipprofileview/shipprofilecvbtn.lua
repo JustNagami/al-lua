@@ -62,14 +62,10 @@ function slot0.Init(slot0, slot1, slot2, slot3, slot4)
 end
 
 function slot0.Update(slot0)
-	slot2 = slot0.voice.unlock_condition[1] < 0
-	slot3 = slot0.wordData.textContent == nil or slot0.wordData.textContent == "nil" or slot0.wordData.textContent == ""
-
 	if not slot0.isLive2d then
-		slot2 = slot2 or slot3
+		slot2 = slot0.voice.unlock_condition[1] < 0 or (slot0.wordData.textContent == nil or slot0.wordData.textContent == "nil" or slot0.wordData.textContent == "")
 	else
-		slot4 = slot1.l2d_action:match("^" .. ShipWordHelper.WORD_TYPE_MAIN .. "_")
-		slot2 = slot2 or slot3 and slot4
+		slot2 = slot2 or slot3 and slot1.l2d_action:match("^" .. ShipWordHelper.WORD_TYPE_MAIN .. "_")
 	end
 
 	setActive(slot0._tf, not slot2)
@@ -99,6 +95,10 @@ end
 
 function slot0.L2dHasEvent(slot0)
 	return slot0.l2dEventFlag
+end
+
+function slot0.isEx(slot0)
+	return false
 end
 
 function slot0.Destroy(slot0)

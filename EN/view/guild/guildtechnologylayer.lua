@@ -15,10 +15,7 @@ end
 
 function slot0.didEnter(slot0)
 	slot0:UpdatePainting()
-
-	slot1 = slot0.technologyPage
-
-	slot1:ExecuteAction("SetUp", slot0.guildVO)
+	slot0.technologyPage:ExecuteAction("SetUp", slot0.guildVO)
 	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,

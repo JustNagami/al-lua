@@ -76,27 +76,21 @@ function slot0.init(slot0)
 end
 
 function slot0.Register(slot0)
-	slot1 = getProxy(ActivityProxy)
-	slot1 = slot1:getBuffShipList()
-	slot2 = slot0.formationLogic
+	slot1 = getProxy(ActivityProxy):getBuffShipList()
 
-	slot2:AddLoadComplete(function ()
+	slot0.formationLogic:AddLoadComplete(function ()
 		uv0:displayFleetInfo()
 		pg.UIMgr.GetInstance():LoadingOff()
 	end)
-
-	slot2 = slot0.formationLogic
-
-	slot2:AddHeroInfoModify(function (slot0, slot1, slot2)
+	slot0.formationLogic:AddHeroInfoModify(function (slot0, slot1, slot2)
 		slot3 = WorldConst.FetchWorldShip(slot1.id)
 		slot4 = slot1:getConfigTable()
 		slot5 = pg.ship_data_template[slot1.configId]
 		slot6 = findTF(slot0, "info")
-		slot7 = findTF(slot6, "stars")
 		slot8 = findTF(slot6, "energy")
 
 		for slot13 = 1, slot1:getStar() do
-			cloneTplTo(uv0.starTpl, slot7)
+			cloneTplTo(uv0.starTpl, findTF(slot6, "stars"))
 		end
 
 		slot11 = findTF(slot6, "energy")
@@ -115,10 +109,8 @@ function slot0.Register(slot0)
 		setActive(slot6:Find("expbuff"), uv1[slot1:getGroupId()] ~= nil)
 
 		if slot12 then
-			slot16 = tostring(slot12 / 100)
-
 			if slot12 % 100 > 0 then
-				slot16 = slot16 .. "." .. tostring(slot15)
+				slot16 = tostring(slot12 / 100) .. "." .. tostring(slot15)
 			end
 
 			setText(slot13:Find("text"), string.format("EXP +%s%%", slot16))
@@ -142,29 +134,17 @@ function slot0.Register(slot0)
 		setSlider(slot16, 0, 10000, slot3.hpRant)
 		setActive(slot16:Find("broken"), slot3:IsBroken())
 	end)
-
-	slot2 = slot0.formationLogic
-
-	slot2:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
+	slot0.formationLogic:AddCheckRemove(function (slot0, slot1, slot2, slot3, slot4)
 		slot0()
 	end)
-
-	slot2 = slot0.formationLogic
-
-	slot2:AddLongPress(function (slot0, slot1, slot2)
+	slot0.formationLogic:AddLongPress(function (slot0, slot1, slot2)
 		uv0:emit(WorldDetailMediator.OnShipInfo, slot1.id)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_PANEL)
 	end)
-
-	slot2 = slot0.formationLogic
-
-	slot2:AddBeginDrag(function (slot0)
+	slot0.formationLogic:AddBeginDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), false)
 	end)
-
-	slot2 = slot0.formationLogic
-
-	slot2:AddEndDrag(function (slot0)
+	slot0.formationLogic:AddEndDrag(function (slot0)
 		SetActive(findTF(slot0, "info"), true)
 	end)
 end
@@ -417,10 +397,8 @@ function slot0.initAttrFrame(slot0)
 		[TeamType.Submarine] = slot2[TeamType.Submarine]
 	}) do
 		if #slot0.cards[slot7] == 0 then
-			slot10 = slot0:findTF(slot7 .. "/list", slot0.attrFrame)
-
 			for slot14 = 1, 3 do
-				table.insert(slot9, FormationDetailCard.New(cloneTplTo(slot0.cardTpl, slot10).gameObject))
+				table.insert(slot9, FormationDetailCard.New(cloneTplTo(slot0.cardTpl, slot0:findTF(slot7 .. "/list", slot0.attrFrame)).gameObject))
 			end
 
 			slot3 = true
@@ -520,10 +498,8 @@ function slot0.attachOnCardButton(slot0, slot1, slot2)
 
 	if slot1.shipVO then
 		slot4 = slot0.cards[slot2]
-		slot5 = slot1.tr.parent
-		slot5 = slot5:GetComponent("ContentSizeFitter")
-		slot6 = slot1.tr.parent
-		slot6 = slot6:GetComponent("HorizontalLayoutGroup")
+		slot5 = slot1.tr.parent:GetComponent("ContentSizeFitter")
+		slot6 = slot1.tr.parent:GetComponent("HorizontalLayoutGroup")
 		slot7 = slot1.tr.rect.width * 0.5
 		slot8 = {}
 
@@ -583,15 +559,11 @@ function slot0.attachOnCardButton(slot0, slot1, slot2)
 				return
 			end
 
-			slot3 = LeanTween.value(uv1.go, uv1.tr.anchoredPosition.x, uv2[uv0.shiftIndex].x, math.min(math.abs(uv1.tr.anchoredPosition.x - uv2[uv0.shiftIndex].x) / 200, 1) * 0.3)
-			slot3 = slot3:setEase(LeanTweenType.easeOutCubic)
-			slot3 = slot3:setOnUpdate(System.Action_float(function (slot0)
+			LeanTween.value(uv1.go, uv1.tr.anchoredPosition.x, uv2[uv0.shiftIndex].x, math.min(math.abs(uv1.tr.anchoredPosition.x - uv2[uv0.shiftIndex].x) / 200, 1) * 0.3):setEase(LeanTweenType.easeOutCubic):setOnUpdate(System.Action_float(function (slot0)
 				slot1 = uv0.tr.anchoredPosition
 				slot1.x = slot0
 				uv0.tr.anchoredPosition = slot1
-			end))
-
-			slot3:setOnComplete(System.Action(function ()
+			end)):setOnComplete(System.Action(function ()
 				uv0.enabled = true
 				uv1.enabled = true
 				uv2.shiftIndex = nil

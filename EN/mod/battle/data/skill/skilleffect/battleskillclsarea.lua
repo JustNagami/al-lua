@@ -98,10 +98,8 @@ function slot4.doCLS(slot0, slot1)
 			return
 		end
 
-		slot7 = 0
-
 		for slot11, slot12 in ipairs(slot5) do
-			slot7 = slot7 + slot12:GetAttrByName("formulaLevel")
+			slot7 = 0 + slot12:GetAttrByName("formulaLevel")
 		end
 
 		slot8 = slot0._damageParamA + math.floor(slot7 / slot6) * slot0._damageParamB
@@ -132,15 +130,11 @@ function slot4.doCLS(slot0, slot1)
 end
 
 function slot4.generateArea(slot0, slot1, slot2, slot3, slot4, slot5)
-	function slot6()
-	end
-
-	slot7 = uv0.Battle.BattleDataProxy.GetInstance()
-	slot8 = slot1:GetIFF()
 	slot9 = nil
 
 	if slot0._range then
-		slot9 = slot7:SpawnLastingColumnArea(slot2, slot8, slot1:GetPosition(), slot0._range, slot0._lifeTime, slot3, slot6, false, slot5, slot4)
+		slot9 = uv0.Battle.BattleDataProxy.GetInstance():SpawnLastingColumnArea(slot2, slot1:GetIFF(), slot1:GetPosition(), slot0._range, slot0._lifeTime, slot3, function ()
+		end, false, slot5, slot4)
 	else
 		slot9 = slot7:SpawnLastingCubeArea(slot2, slot8, slot1:GetPosition(), slot0._width, slot0._height, slot0._lifeTime, slot3, slot6, false, slot5, slot4)
 

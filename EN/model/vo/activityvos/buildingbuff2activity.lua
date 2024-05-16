@@ -17,20 +17,16 @@ function slot0.GetBuildingIds(slot0)
 end
 
 function slot0.GetTotalBuildingLevel(slot0)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot0:GetBuildingIds()) do
-		slot2 = slot2 + slot0:GetBuildingLevel(slot7)
+		slot2 = 0 + slot0:GetBuildingLevel(slot7)
 	end
 
 	return math.floor(slot2 / #slot1)
 end
 
 function slot0.GetBuildingLevelSum(slot0)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot0:GetBuildingIds()) do
-		slot2 = slot2 + slot0:GetBuildingLevel(slot7) - 1
+		slot2 = 0 + slot0:GetBuildingLevel(slot7) - 1
 	end
 
 	return slot2

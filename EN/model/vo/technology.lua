@@ -65,11 +65,10 @@ function slot0.finishCondition(slot0)
 end
 
 function slot0.hasResToStart(slot0)
-	slot2 = getProxy(PlayerProxy):getData()
 	slot3 = getProxy(BagProxy)
 
 	for slot7, slot8 in ipairs(slot0:getConfig("consume")) do
-		if slot8[1] == DROP_TYPE_RESOURCE and slot2:getResById(slot8[2]) < slot8[3] then
+		if slot8[1] == DROP_TYPE_RESOURCE and getProxy(PlayerProxy):getData():getResById(slot8[2]) < slot8[3] then
 			return false, i18n("common_no_resource")
 		elseif slot8[1] == DROP_TYPE_ITEM and slot3:getItemCountById(slot8[2]) < slot8[3] then
 			return false, i18n("common_no_item_1")

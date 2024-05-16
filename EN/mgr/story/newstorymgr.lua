@@ -124,13 +124,13 @@ function slot0.IsPlayed(slot0, slot1, slot2)
 end
 
 function slot14(slot0)
-	slot1 = {}
-
 	for slot5, slot6 in pairs(slot0) do
-		slot1[slot6] = slot5
+		-- Nothing
 	end
 
-	return slot1
+	return {
+		[slot6] = slot5
+	}
 end
 
 function slot0.StoryName2StoryId(slot0, slot1)
@@ -239,7 +239,8 @@ function slot0.Init(slot0, slot1)
 			DialogueStoryPlayer.New(slot0),
 			BgStoryPlayer.New(slot0),
 			CarouselPlayer.New(slot0),
-			VedioStoryPlayer.New(slot0)
+			VedioStoryPlayer.New(slot0),
+			CastStoryPlayer.New(slot0)
 		}
 		uv0.setSpeedPanel = StorySetSpeedPanel.New(uv0._tf)
 		uv0.recordPanel = NewStoryRecordPanel.New()
@@ -264,7 +265,7 @@ function slot0.Play(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 	if #slot0.playQueue == 1 then
 		slot7 = nil
 
-		(function ()
+		function ()
 			if #uv0.playQueue == 0 then
 				return
 			end
@@ -279,7 +280,7 @@ function slot0.Play(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 				table.remove(uv1.playQueue, 1)
 				uv2()
 			end, uv2, uv3, uv4, uv5)
-		end)()
+		end()
 	end
 end
 
@@ -365,18 +366,16 @@ function slot0.SoloPlay(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 
 	slot7 = 1
 
-	function slot8(slot0, slot1)
-		uv0 = uv0 - 1
-
-		if uv1 and uv0 == 0 then
-			onNextTick(function ()
-				uv0(uv1, uv2)
-			end)
-		end
-	end
-
 	if not uv1(slot1) then
-		slot8(false)
+		function (slot0, slot1)
+			uv0 = uv0 - 1
+
+			if uv1 and uv0 == 0 then
+				onNextTick(function ()
+					uv0(uv1, uv2)
+				end)
+			end
+		end(false)
 		uv0("not exist story file")
 
 		return nil
@@ -407,9 +406,11 @@ function slot0.SoloPlay(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 			uv0:CheckResDownload(uv0.storyScript, slot0)
 		end,
 		function (slot0)
+			originalPrint("start load story window...")
 			uv0:CheckAndLoadDialogue(uv0.storyScript, slot0)
 		end
 	}, function ()
+		originalPrint("enter story...")
 		uv0:OnStart()
 
 		slot0 = {}
@@ -417,6 +418,8 @@ function slot0.SoloPlay(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
 
 		for slot4, slot5 in ipairs(uv0.storyScript.steps) do
 			table.insert(slot0, function (slot0)
+				pg.m02:sendNotification(GAME.STORY_NEXT)
+
 				slot1 = uv0.players[uv1:GetMode()]
 				uv0.currPlayer = slot1
 
@@ -476,6 +479,7 @@ end
 
 function slot0.RegistSkipBtn(slot0)
 	function slot1()
+		uv0:TrackingSkip()
 		uv0.storyScript:SkipAll()
 		uv0.currPlayer:NextOneImmediately()
 	end
@@ -547,16 +551,12 @@ function slot0.RegistAutoBtn(slot0)
 end
 
 function slot0.RegistRecordBtn(slot0)
-	slot1 = false
-
 	onButton(slot0, slot0.recordBtn, function ()
 		if uv0.storyScript:GetAutoPlayFlag() then
 			return
 		end
 
-		uv1 = not uv1
-
-		uv0.recordPanel[uv1 and "Show" or "Hide"](uv0.recordPanel, uv0.recorder)
+		uv0.recordPanel.Show(uv0.recordPanel, uv0.recorder)
 	end, SFX_PANEL)
 end
 
@@ -605,6 +605,7 @@ function slot0.OnStart(slot0)
 
 	slot0.state = uv0
 
+	slot0:TrackingStart()
 	pg.m02:sendNotification(GAME.STORY_BEGIN, slot0.storyScript:GetName())
 
 	slot4 = {
@@ -629,6 +630,28 @@ function slot0.OnStart(slot0)
 	slot0:RegistSkipBtn()
 	slot0:RegistAutoBtn()
 	slot0:RegistRecordBtn()
+end
+
+function slot0.TrackingStart(slot0)
+	slot0.trackFlag = false
+
+	if not slot0.storyScript then
+		return
+	end
+
+	if not slot0:GetPlayedFlag(slot0:StoryName2StoryId(slot0.storyScript:GetName())) then
+		TrackConst.StoryStart(slot1)
+
+		slot0.trackFlag = true
+	end
+end
+
+function slot0.TrackingSkip(slot0)
+	if not slot0.trackFlag or not slot0.storyScript then
+		return
+	end
+
+	TrackConst.StorySkip(slot0:StoryName2StoryId(slot0.storyScript:GetName()))
 end
 
 function slot0.UpdateAutoBtn(slot0)
@@ -679,9 +702,7 @@ function slot0.Clear(slot0)
 		pg.MsgboxMgr:GetInstance():hide()
 	end
 
-	slot1 = pg.CriMgr.GetInstance():getBGMVolume()
-
-	if slot0.bgmVolumeValue and slot0.bgmVolumeValue ~= slot1 then
+	if slot0.bgmVolumeValue and slot0.bgmVolumeValue ~= pg.CriMgr.GetInstance():getBGMVolume() then
 		pg.CriMgr.GetInstance():setBGMVolume(slot0.bgmVolumeValue)
 	end
 
@@ -699,19 +720,17 @@ function slot0.OnEnd(slot0, slot1)
 
 			slot0:Play(slot2, slot1)
 		else
-			slot3 = slot0.storyScript:GetBranchCode()
 			slot0.storyScript = nil
 
 			if slot1 then
-				slot1(true, slot3)
+				slot1(true, slot0.storyScript:GetBranchCode())
 			end
 		end
 	else
 		slot0.state = uv2
-		slot2 = slot0.storyScript:GetBranchCode()
 
 		if slot1 then
-			slot1(true, slot2)
+			slot1(true, slot0.storyScript:GetBranchCode())
 		end
 	end
 end
@@ -779,17 +798,6 @@ function slot0.Quit(slot0)
 end
 
 function slot0.Fix(slot0)
-	slot4 = {
-		10020,
-		10021,
-		10022,
-		10023,
-		10024,
-		10025,
-		10026,
-		10027
-	}
-
 	if getProxy(PlayerProxy):getRawData():GetRegisterTime() <= pg.TimeMgr.GetInstance():parseTimeFromConfig({
 		{
 			2021,
@@ -802,7 +810,16 @@ function slot0.Fix(slot0)
 			0
 		}
 	}) then
-		_.each(slot4, function (slot0)
+		_.each({
+			10020,
+			10021,
+			10022,
+			10023,
+			10024,
+			10025,
+			10026,
+			10027
+		}, function (slot0)
 			uv0.playedList[slot0] = true
 		end)
 	end
@@ -825,14 +842,10 @@ function slot0.Fix(slot0)
 	end
 
 	if getProxy(ActivityProxy):getActivityById(ActivityConst.JYHZ_ACTIVITY_ID) and not slot9:isEnd() then
-		slot11 = nil
-
 		for slot15 = #_.flatten(slot9:getConfig("config_data")), 1, -1 do
 			if pg.task_data_template[slot10[slot15]].story_id and #slot16 > 0 then
-				slot17 = slot0:IsPlayed(slot16)
-
-				if slot11 then
-					if not slot17 then
+				if nil then
+					if not slot0:IsPlayed(slot16) then
 						slot0.playedList[slot16] = true
 					end
 				elseif slot17 then

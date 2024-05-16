@@ -10,9 +10,7 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
-	if slot1:getName() == TechnologyConst.SET_TEC_ATTR_ADDITION_FINISH and slot3.onSuccess then
+	if slot1:getName() == TechnologyConst.SET_TEC_ATTR_ADDITION_FINISH and slot1:getBody().onSuccess then
 		slot4()
 	end
 end

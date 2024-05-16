@@ -31,7 +31,7 @@ function slot0.IsLoaded(slot0)
 	return slot0.state == uv0
 end
 
-function slot0.Load(slot0, slot1, slot2)
+function slot0.Load(slot0, slot1)
 	slot0.isPuase = false
 	slot0.isExited = false
 	slot0.state = uv0
@@ -41,7 +41,7 @@ function slot0.Load(slot0, slot1, slot2)
 	slot0:OnLoad(function ()
 		uv0.state = uv1
 
-		if uv2 then
+		if uv0.triggerWhenLoaded then
 			uv0:TriggerEventAtFirstTime()
 		end
 
@@ -58,6 +58,19 @@ function slot0.Unload(slot0)
 	slot0.cvLoader:Stop()
 	slot0:RemoveTimer()
 	slot0:OnUnload()
+
+	slot0.paintingName = nil
+end
+
+function slot0.UnloadOnlyPainting(slot0)
+	slot0.state = uv0
+
+	removeOnButton(slot0.container)
+	slot0.longPressEvent:RemoveAllListeners()
+	slot0:RemoveTimer()
+	slot0:OnUnload()
+
+	slot0.paintingName = nil
 end
 
 function slot0.InitClickEvent(slot0)
@@ -65,14 +78,8 @@ function slot0.InitClickEvent(slot0)
 		uv0:OnClick()
 		uv0:TriggerPersonalTask(uv0.ship.groupId)
 	end)
-
-	slot1 = slot0.longPressEvent
-
-	slot1:RemoveAllListeners()
-
-	slot1 = slot0.longPressEvent
-
-	slot1:AddListener(function ()
+	slot0.longPressEvent:RemoveAllListeners()
+	slot0.longPressEvent:AddListener(function ()
 		if getProxy(ContextProxy):getCurrentContext().viewComponent.__cname == "NewMainScene" then
 			uv0:OnLongPress()
 		end
@@ -84,21 +91,27 @@ function slot0.TriggerPersonalTask(slot0, slot1)
 		return
 	end
 
-	if getProxy(TaskProxy):GetFlagShipInterActionTask() then
-		pg.m02:sendNotification(GAME.UPDATE_TASK_PROGRESS, {
-			taskId = slot3.id
-		})
-	end
+	slot0:TriggerInterActionTask()
 
-	for slot7, slot8 in ipairs(pg.task_data_trigger.all) do
-		if pg.task_data_trigger[slot8].group_id == slot1 then
-			if not slot2:getFinishTaskById(slot9.task_id) then
-				slot0:CheckStoryDownload(slot10, function ()
+	for slot6, slot7 in ipairs(pg.task_data_trigger.all) do
+		if pg.task_data_trigger[slot7].group_id == slot1 then
+			if not getProxy(TaskProxy):getFinishTaskById(slot8.task_id) then
+				slot0:CheckStoryDownload(slot9, function ()
 					pg.m02:sendNotification(GAME.TRIGGER_TASK, uv0)
 				end)
 
 				break
 			end
+		end
+	end
+end
+
+function slot0.TriggerInterActionTask(slot0)
+	if getProxy(TaskProxy):GetFlagShipInterActionTaskList() and #slot2 > 0 then
+		for slot6, slot7 in ipairs(slot2) do
+			pg.m02:sendNotification(GAME.UPDATE_TASK_PROGRESS, {
+				taskId = slot7.id
+			})
 		end
 	end
 end
@@ -119,11 +132,9 @@ function slot0.CheckStoryDownload(slot0, slot1, slot2)
 		slot4 = slot4 + 1
 	end
 
-	slot5 = pg.NewStoryMgr.GetInstance()
-
 	PaintingConst.PaintingDownload({
 		isShowBox = true,
-		paintingNameList = _.map(slot5:GetStoryPaintingsByNameList(slot3), function (slot0)
+		paintingNameList = _.map(pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(slot3), function (slot0)
 			return "painting/" .. slot0
 		end),
 		finishFunc = slot2
@@ -131,13 +142,23 @@ function slot0.CheckStoryDownload(slot0, slot1, slot2)
 end
 
 function slot0.TriggerEventAtFirstTime(slot0)
-	function slot1(slot0)
-		uv0:_TriggerEvent(slot0)
+	if not slot0:IsLoaded() then
+		slot0.triggerWhenLoaded = true
+
+		return
 	end
 
+	slot0.triggerWhenLoaded = false
+
+	slot0:OnFirstTimeTriggerEvent()
+end
+
+function slot0.OnFirstTimeTriggerEvent(slot0)
 	if getProxy(PlayerProxy):getFlag("login") then
 		getProxy(PlayerProxy):setFlag("login", nil)
-		slot1("event_login")
+		function (slot0)
+			uv0:_TriggerEvent(slot0)
+		end("event_login")
 	elseif getProxy(PlayerProxy):getFlag("battle") then
 		getProxy(PlayerProxy):setFlag("battle", nil)
 		slot1("home")
@@ -196,10 +217,16 @@ function slot0.OnEndChatting(slot0)
 	slot0.chatting = false
 end
 
+function slot0.GetWordAndCv(slot0, slot1, slot2)
+	slot3, slot4, slot5, slot6, slot7, slot8 = ShipWordHelper.GetCvDataForShip(slot0.ship, slot2)
+
+	return slot3, slot4, slot5, slot6, slot7, slot8
+end
+
 function slot0.DisplayWord(slot0, slot1)
 	slot0:OnStartChatting()
 
-	slot2, slot3, slot4, slot5, slot6, slot7 = ShipWordHelper.GetCvDataForShip(slot0.ship, slot1)
+	slot2, slot3, slot4, slot5, slot6, slot7 = slot0:GetWordAndCv(slot0.ship, slot1)
 
 	if not slot4 or slot4 == nil or slot4 == "" or slot4 == "nil" then
 		slot0:OnEndChatting()
@@ -215,11 +242,11 @@ function slot0.DisplayWord(slot0, slot1)
 
 	slot0:AdjustChatPosition()
 	slot0:OnDisplayWorld(slot1)
-	slot0:RegistChatSkipAction(slot1)
+	slot0:RegisterChatSkipAction(slot1)
 	slot0:PlayCvAndAnimation(slot6, slot5, slot3)
 end
 
-function slot0.RegistChatSkipAction(slot0, slot1)
+function slot0.RegisterChatSkipAction(slot0, slot1)
 	removeOnButton(slot0.chatTf)
 	onButton(slot0, slot0.chatTf, function ()
 		if uv0 == "mission_complete" or uv0 == "mission" then
@@ -249,9 +276,7 @@ function slot0.PlayCvAndAnimation(slot0, slot1, slot2, slot3)
 				return
 			end
 
-			slot1 = uv1
-
-			slot1:PlayCV(uv2, uv3, uv0, function (slot0)
+			uv1:PlayCV(uv2, uv3, uv0, function (slot0)
 				uv0 = slot0
 
 				uv1()
@@ -261,13 +286,16 @@ function slot0.PlayCvAndAnimation(slot0, slot1, slot2, slot3)
 			uv0:StartChatAnimtion(uv1, slot0)
 		end
 	}, function ()
-		uv0:TriggerNextEventAuto()
 		uv0:OnDisplayWordEnd()
 	end)
 end
 
+function slot0.OnDisplayWordEnd(slot0)
+	slot0:TriggerNextEventAuto()
+end
+
 function slot0.PlayCV(slot0, slot1, slot2, slot3, slot4)
-	slot0.cvLoader:Load(slot0.ship, slot3, 0, slot4)
+	slot0.cvLoader:Load(pg.CriMgr.GetCVBankName(ShipWordHelper.RawGetCVKey(slot0.ship.skinId)), slot3, 0, slot4)
 end
 
 function slot0.AdjustChatPosition(slot0)
@@ -312,10 +340,8 @@ function slot0.OnStopVoice(slot0)
 end
 
 function slot0.CollectIdleEvents(slot0, slot1)
-	slot2 = {}
-
 	if getProxy(EventProxy):hasFinishState() and slot1 ~= "event_complete" then
-		table.insert(slot2, "event_complete")
+		table.insert({}, "event_complete")
 	else
 		if getProxy(TaskProxy):getCanReceiveCount() > 0 and slot1 ~= "mission_complete" then
 			table.insert(slot2, "mission_complete")
@@ -326,10 +352,8 @@ function slot0.CollectIdleEvents(slot0, slot1)
 		end
 
 		if #slot2 == 0 then
-			slot2 = uv0.filterAssistantEvents(Clone(uv0.IdleEvents), slot0.ship.skinId, slot0.ship:getCVIntimacy())
-
 			if getProxy(TaskProxy):getNotFinishCount() and getProxy(TaskProxy):getNotFinishCount() > 0 and slot1 ~= "mission" then
-				table.insert(slot2, "mission")
+				table.insert(uv0.filterAssistantEvents(Clone(uv0.IdleEvents), slot0.ship.skinId, slot0.ship:getCVIntimacy()), "mission")
 			end
 		end
 	end
@@ -375,9 +399,7 @@ function slot0.Fold(slot0, slot1, slot2)
 	slot0:RemoveMoveTimer()
 
 	if slot1 and slot2 > 0 then
-		slot3 = LeanTween.value(slot0.container.gameObject, 0, 1, slot2)
-
-		slot3:setOnUpdate(System.Action_float(function (slot0)
+		LeanTween.value(slot0.container.gameObject, 0, 1, slot2):setOnUpdate(System.Action_float(function (slot0)
 			uv0.chatTf.localPosition = Vector3(uv0:GetCenterPos().x, -190, 0)
 		end))
 	end
@@ -435,6 +457,10 @@ function slot0.Resume(slot0)
 end
 
 function slot0.updateShip(slot0, slot1)
+	if slot1 and slot0.ship.id == slot1.id then
+		slot0.ship = slot1
+	end
+
 	slot0:OnUpdateShip(slot1)
 end
 
@@ -453,6 +479,7 @@ function slot0.Dispose(slot0)
 	slot0.cvLoader:Dispose()
 
 	slot0.cvLoader = nil
+	slot0.triggerWhenLoaded = false
 
 	slot0:RemoveTimer()
 	slot0:RemoveMoveTimer()
@@ -478,9 +505,6 @@ function slot0.OnTriggerEventAuto(slot0)
 end
 
 function slot0.OnDisplayWorld(slot0, slot1)
-end
-
-function slot0.OnDisplayWordEnd(slot0)
 end
 
 function slot0.OnFold(slot0, slot1)

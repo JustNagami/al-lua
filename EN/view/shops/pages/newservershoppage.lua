@@ -6,8 +6,7 @@ end
 
 function slot0.OnLoaded(slot0)
 	slot0.scrollrect = slot0:findTF("scrollView"):GetComponent("LScrollRect")
-	slot1 = slot0:findTF("res_pt/Text")
-	slot0.resTxt = slot1:GetComponent(typeof(Text))
+	slot0.resTxt = slot0:findTF("res_pt/Text"):GetComponent(typeof(Text))
 	slot0.resIcon = slot0:findTF("res_pt/icon")
 	slot0.pagefooters = {
 		slot0:findTF("pagefooter/tpl")
@@ -26,7 +25,10 @@ function slot0.UpdateRes(slot0)
 	if not slot0.isInitResIcon then
 		slot0.isInitResIcon = true
 
-		GetImageSpriteFromAtlasAsync(pg.item_data_statistics[id2ItemId(slot1)].icon, "", slot0.resIcon)
+		GetImageSpriteFromAtlasAsync(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = slot1
+		}):getIcon(), "", slot0.resIcon)
 	end
 end
 
@@ -67,9 +69,8 @@ function slot0.OnClickCard(slot0, slot1)
 		slot0.purchasePage:ExecuteAction("Show", slot2)
 	else
 		slot5 = nil
-		slot5 = (slot2:getConfig("goods_purchase_limit") ~= 1 and slot2:getConfig("type") ~= 4 or slot0.singleWindow) and slot0.multiWindow
 
-		slot5:ExecuteAction("Open", slot2, function (slot0, slot1, slot2)
+		((slot2:getConfig("goods_purchase_limit") ~= 1 and slot2:getConfig("type") ~= 4 or slot0.singleWindow) and slot0.multiWindow):ExecuteAction("Open", slot2, function (slot0, slot1, slot2)
 			if not slot0:CanPurchase() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
@@ -171,9 +172,7 @@ function slot0.UpdatePageFooter(slot0, slot1, slot2)
 		slot6:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/newservershopui_atlas", "p" .. slot2 .. "_l")
 	end
 
-	slot9 = slot0.shop
-
-	setActive(slot6, not slot9:IsOpenPhase(slot2))
+	setActive(slot6, not slot0.shop:IsOpenPhase(slot2))
 	setActive(slot1:Find("tip"), slot0:isPhaseTip(slot2))
 	slot0:OnSwitch(slot1, function ()
 		return uv0.openIndex ~= uv1

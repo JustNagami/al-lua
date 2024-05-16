@@ -6,10 +6,9 @@ function Clone_Copy(slot0, slot1)
 	end
 
 	slot1[slot0] = {}
-	slot3 = type(slot0) == "table" and slot0.__ctype == 2
 
 	for slot7, slot8 in pairs(slot0) do
-		if slot3 and slot7 == "class" then
+		if type(slot0) == "table" and slot0.__ctype == 2 and slot7 == "class" then
 			slot2[slot7] = slot8
 		else
 			slot2[Clone_Copy(slot7, slot1)] = Clone_Copy(slot8, slot1)
@@ -60,7 +59,7 @@ function class(slot0, slot1)
 
 			slot0.class = uv0
 
-			slot0.Ctor(slot0, ...)
+			slot0:Ctor(...)
 
 			return slot0
 		end
@@ -200,10 +199,8 @@ function tostringex(slot0, slot1)
 			return "\t{ ... }"
 		end
 
-		slot4 = ""
-
 		for slot8, slot9 in pairs(slot0) do
-			slot4 = slot4 .. "\n\t" .. slot2 .. tostring(slot8) .. ":" .. tostringex(slot9, slot1 + 1)
+			slot4 = "" .. "\n\t" .. slot2 .. tostring(slot8) .. ":" .. tostringex(slot9, slot1 + 1)
 		end
 
 		if slot4 == "" then

@@ -31,10 +31,9 @@ end
 function slot0.metaShip2Res(slot0)
 	slot4 = getProxy(BayProxy):getMetaShipByGroupId(MetaCharacterConst.GetMetaShipGroupIDByConfigID(slot0)):getMetaCharacter():getSpecialMaterialInfoToMaxStar()
 	slot9 = nil
-	slot9 = (not (slot4.count <= getProxy(BagProxy):getItemCountById(slot4.itemID)) or pg.ship_transform[slot1].common_item) and pg.ship_transform[slot1].exclusive_item
 	slot10 = {}
 
-	for slot14, slot15 in ipairs(slot9) do
+	for slot14, slot15 in ipairs((not (slot4.count <= getProxy(BagProxy):getItemCountById(slot4.itemID)) or pg.ship_transform[slot1].common_item) and pg.ship_transform[slot1].exclusive_item) do
 		table.insert(slot10, {
 			type = slot15[1],
 			id = slot15[2],
@@ -51,6 +50,8 @@ end
 
 function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)
+
+	slot0.educateCharacter = slot1.child_display or 0
 
 	if slot0.character then
 		if type(slot2) == "number" then
@@ -92,31 +93,19 @@ function slot0.Ctor(slot0, slot1)
 	slot3 = getProxy(AppreciateProxy)
 
 	if slot1.appreciation then
-		slot4 = ipairs
-		slot5 = slot1.appreciation.gallerys or {}
-
-		for slot7, slot8 in slot4(slot5) do
+		for slot7, slot8 in ipairs(slot1.appreciation.gallerys or {}) do
 			slot3:addPicIDToUnlockList(slot8)
 		end
 
-		slot4 = ipairs
-		slot5 = slot1.appreciation.musics or {}
-
-		for slot7, slot8 in slot4(slot5) do
+		for slot7, slot8 in ipairs(slot1.appreciation.musics or {}) do
 			slot3:addMusicIDToUnlockList(slot8)
 		end
 
-		slot4 = ipairs
-		slot5 = slot1.appreciation.favor_gallerys or {}
-
-		for slot7, slot8 in slot4(slot5) do
+		for slot7, slot8 in ipairs(slot1.appreciation.favor_gallerys or {}) do
 			slot3:addPicIDToLikeList(slot8)
 		end
 
-		slot4 = ipairs
-		slot5 = slot1.appreciation.favor_musics or {}
-
-		for slot7, slot8 in slot4(slot5) do
+		for slot7, slot8 in ipairs(slot1.appreciation.favor_musics or {}) do
 			slot3:addMusicIDToLikeList(slot8)
 		end
 
@@ -138,27 +127,21 @@ function slot0.Ctor(slot0, slot1)
 	end
 
 	slot0.cdList = {}
-	slot4 = ipairs
-	slot5 = slot1.cd_list or {}
 
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot1.cd_list or {}) do
 		slot0.cdList[slot8.key] = slot8.timestamp
 	end
 
 	slot0.commonFlagList = {}
-	slot4 = ipairs
-	slot5 = slot1.flag_list or {}
 
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot1.flag_list or {}) do
 		slot0.commonFlagList[slot8] = true
 	end
 
 	slot0.registerTime = slot1.register_time
 	slot0.vipCards = {}
-	slot4 = ipairs
-	slot5 = slot1.card_list or {}
 
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot1.card_list or {}) do
 		slot9 = VipCard.New(slot8)
 		slot0.vipCards[slot9.id] = slot9
 	end
@@ -173,18 +156,14 @@ function slot0.Ctor(slot0, slot1)
 	slot0.chatMsgBanTime = slot1.chat_msg_ban_time or 0
 	slot0.randomShipMode = slot1.random_ship_mode or 0
 	slot0.customRandomShips = {}
-	slot4 = ipairs
-	slot5 = slot1.random_ship_list or {}
 
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot1.random_ship_list or {}) do
 		table.insert(slot0.customRandomShips, slot8)
 	end
 
 	slot0.buildShipNotification = {}
-	slot4 = ipairs
-	slot5 = slot1.taking_ship_list or {}
 
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot1.taking_ship_list or {}) do
 		table.insert(slot0.buildShipNotification, {
 			uid = slot8.uid,
 			new = slot8.isnew == 1
@@ -193,10 +172,8 @@ function slot0.Ctor(slot0, slot1)
 
 	slot0.proposeShipId = slot1.marry_ship
 	slot0.unlockCryptolaliaList = {}
-	slot4 = ipairs
-	slot5 = slot1.soundstory or {}
 
-	for slot7, slot8 in slot4(slot5) do
+	for slot7, slot8 in ipairs(slot1.soundstory or {}) do
 		table.insert(slot0.unlockCryptolaliaList, slot8)
 	end
 
@@ -287,10 +264,7 @@ function slot0.updateResources(slot0, slot1)
 		end
 	end
 
-	slot2 = ipairs
-	slot3 = slot1 or {}
-
-	for slot5, slot6 in slot2(slot3) do
+	for slot5, slot6 in ipairs(slot1 or {}) do
 		slot7 = id2res(slot6.type)
 
 		assert(slot7, "resource type erro>>>>>" .. slot6.type)
@@ -320,11 +294,10 @@ end
 function slot0.getChargeLevel(slot0)
 	slot1 = pg.pay_level_award
 	slot2 = slot1.all[1]
-	slot3 = slot1.all[#slot1.all]
 
 	for slot7, slot8 in ipairs(slot1.all) do
 		if slot1[slot8].exp <= slot0.chargeExp then
-			slot2 = math.min(slot8 + 1, slot3)
+			slot2 = math.min(slot8 + 1, slot1.all[#slot1.all])
 		end
 	end
 
@@ -632,70 +605,116 @@ function slot0.GetFlagShip(slot0)
 	return (not slot1:IsOpenRandomFlagShip() or slot0:GetRandomFlagShip(slot2)) and slot0:GetNativeFlagShip(slot2)
 end
 
+function slot5(slot0)
+	slot1 = {}
+	slot2 = {}
+
+	if getProxy(SettingsProxy):GetFlagShipDisplayMode() == FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR and not getProxy(PlayerProxy):getRawData():ExistEducateChar() then
+		getProxy(SettingsProxy):SetFlagShipDisplayMode(FlAG_SHIP_DISPLAY_ALL)
+	end
+
+	if slot3 ~= FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR then
+		for slot9, slot10 in ipairs(slot0) do
+			slot1[slot9] = defaultValue(getProxy(BayProxy):RawGetShipById(slot10), false)
+
+			table.insert(slot2, slot9)
+		end
+	end
+
+	if slot4 and slot3 ~= FlAG_SHIP_DISPLAY_ONLY_SHIP then
+		table.insert(slot2, PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID)
+
+		slot1[PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID] = VirtualEducateCharShip.New(getProxy(PlayerProxy):getRawData():GetEducateCharacter())
+	end
+
+	return slot1, slot2
+end
+
 function slot0.GetNativeFlagShip(slot0, slot1)
-	slot2 = getProxy(SettingsProxy)
+	slot2, slot3 = uv0(slot0.characters)
 
 	if getProxy(PlayerProxy):getFlag("battle") then
-		slot2:setCurrentSecretaryIndex(math.random(#slot0.characters))
+		slot5 = math.random(#slot3)
+		slot1 = slot3[slot5]
+
+		getProxy(SettingsProxy):setCurrentSecretaryIndex(slot5)
 	end
 
-	if not getProxy(BayProxy):RawGetShipById(slot0.characters[slot1]) then
+	if not slot2[slot1] and table.indexof(PlayerVitaeShipsPage.GetSlotIndexList(), slot1) and slot7 > 0 then
+		for slot11 = slot7 + 1, #slot6 do
+			if slot2[slot6[slot11]] then
+				slot4:setCurrentSecretaryIndex(slot11)
+
+				break
+			end
+		end
+	end
+
+	if not slot5 then
 		slot1 = 1
 
-		slot2:setCurrentSecretaryIndex(slot1)
+		slot4:setCurrentSecretaryIndex(slot1)
 
-		slot3 = getProxy(BayProxy):RawGetShipById(slot0.characters[slot1])
+		slot5 = slot2[slot1]
 	end
 
-	return slot3
+	return slot5
 end
 
 function slot0.GetRandomFlagShip(slot0, slot1)
-	slot3 = getProxy(SettingsProxy):GetRandomFlagShipList()
+	slot4, slot5 = uv0(getProxy(SettingsProxy):GetRandomFlagShipList())
 
 	if getProxy(PlayerProxy):getFlag("battle") then
-		slot2:setCurrentSecretaryIndex(math.random(#slot3))
+		slot6 = math.random(#slot5)
+		slot1 = slot5[slot6]
+
+		slot2:setCurrentSecretaryIndex(slot6)
 	end
 
-	if not getProxy(BayProxy):RawGetShipById(slot3[slot1]) then
-		slot5 = {}
+	if not slot4[slot1] and table.indexof(PlayerVitaeShipsPage.GetSlotIndexList(), slot1) and slot8 > 0 then
+		for slot12 = slot8 + 1, #slot7 do
+			if slot4[slot7[slot12]] then
+				slot2:setCurrentSecretaryIndex(slot12)
 
-		for slot9, slot10 in ipairs(slot3) do
-			if getProxy(BayProxy):RawGetShipById(slot10) then
-				table.insert(slot5, slot9)
+				break
+			end
+		end
+	end
+
+	if not slot6 then
+		slot7 = {}
+
+		for slot11, slot12 in pairs(slot4) do
+			if slot12 then
+				table.insert(slot7, slot11)
 			end
 		end
 
-		if #slot5 > 0 then
-			slot6 = slot5[math.random(1, #slot5)]
-			slot4 = getProxy(BayProxy):RawGetShipById(slot3[slot6])
-			slot1 = slot6
+		if #slot7 > 0 then
+			slot1 = slot7[math.random(1, #slot7)]
+			slot6 = slot4[slot1]
 
-			slot2:setCurrentSecretaryIndex(slot6)
+			if table.indexof(slot5, slot1) then
+				slot2:setCurrentSecretaryIndex(slot8)
+			end
 		end
 	end
 
-	if not slot4 then
+	if not slot6 then
 		slot1 = 1
 
 		slot2:setCurrentSecretaryIndex(slot1)
 
-		slot4 = getProxy(BayProxy):RawGetShipById(slot0.characters[slot1])
+		slot6 = slot4[slot1]
 	end
 
-	return slot4
+	return slot6
 end
 
 function slot0.GetNextFlagShip(slot0)
-	slot1 = getProxy(SettingsProxy):rotateCurrentSecretaryIndex()
+	getProxy(SettingsProxy):rotateCurrentSecretaryIndex()
 
-	if getProxy(SettingsProxy):IsOpenRandomFlagShip() then
-		rawShip = slot0:GetRandomFlagShip(slot1)
-	else
-		rawShip = slot0:GetNativeFlagShip(slot1)
-	end
-
-	return rawShip
+	return slot0:GetFlagShip()
 end
 
 function slot0.IsOpenShipEvaluationImpeach(slot0)
@@ -758,10 +777,12 @@ end
 
 function slot0.GetCryptolaliaList(slot0)
 	slot1 = {}
-	slot2 = {}
+	slot2 = {
+		[slot8] = true
+	}
 
 	for slot7, slot8 in ipairs(slot0.unlockCryptolaliaList) do
-		slot2[slot8] = true
+		-- Nothing
 	end
 
 	for slot7, slot8 in ipairs(pg.soundstory_template.all) do
@@ -793,6 +814,18 @@ function slot0.ExistCryptolalia(slot0, slot1)
 	end
 
 	return false
+end
+
+function slot0.ExistEducateChar(slot0)
+	return slot0.educateCharacter > 0
+end
+
+function slot0.GetEducateCharacter(slot0)
+	return slot0.educateCharacter
+end
+
+function slot0.SetEducateCharacter(slot0, slot1)
+	slot0.educateCharacter = slot1
 end
 
 return slot0

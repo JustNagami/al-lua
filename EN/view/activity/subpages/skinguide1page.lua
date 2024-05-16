@@ -110,11 +110,9 @@ function slot0.selectedChange(slot0, slot1)
 end
 
 function slot0.OnUpdateFlush(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0.taskList) do
 		if slot0.taskProxy:getFinishTaskById(slot6) ~= nil then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 		end
 	end
 

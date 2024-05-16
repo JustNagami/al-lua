@@ -8,8 +8,7 @@ end
 
 function slot0.initData(slot0)
 	slot0.picManager = BundleWizard.Inst:GetGroupMgr("GALLERY_PIC")
-	slot1 = BundleWizard.Inst
-	slot0.musicManager = slot1:GetGroupMgr("GALLERY_BGM")
+	slot0.musicManager = BundleWizard.Inst:GetGroupMgr("GALLERY_BGM")
 	slot0.reForVer = PathMgr.MD5Result
 	slot0.galleryPicUnLockIDLIst = {}
 	slot0.galleryPicExistStateTable = {}
@@ -112,11 +111,9 @@ function slot0.getMusicRunData(slot0, slot1)
 end
 
 function slot0.isPicNeedUnlockByID(slot0, slot1)
-	slot2 = slot0:getPicUnlockMaterialByID(slot1)
-
 	if slot0:getSinglePicConfigByID(slot1) then
 		if slot3.unlock_level[1] == 1 and slot4[2] == 0 then
-			if #slot2 == 0 then
+			if #slot0:getPicUnlockMaterialByID(slot1) == 0 then
 				return false
 			else
 				return true
@@ -130,11 +127,9 @@ function slot0.isPicNeedUnlockByID(slot0, slot1)
 end
 
 function slot0.isMusicNeedUnlockByID(slot0, slot1)
-	slot2 = slot0:getMusicUnlockMaterialByID(slot1)
-
 	if slot0:getSingleMusicConfigByID(slot1) then
 		if slot3.unlock_level[1] == 1 and slot4[2] == 0 then
-			if #slot2 == 0 then
+			if #slot0:getMusicUnlockMaterialByID(slot1) == 0 then
 				return false
 			else
 				return true
@@ -314,13 +309,11 @@ function slot0.isMusicUnlockedByID(slot0, slot1)
 end
 
 function slot0.isPicUnlockableByID(slot0, slot1)
-	slot3 = getProxy(PlayerProxy):getData().level
-
 	if slot0:getSinglePicConfigByID(slot1) then
 		slot5 = slot4.unlock_level
 		slot7 = slot5[2]
 
-		if slot5[1] <= slot3 then
+		if slot5[1] <= getProxy(PlayerProxy):getData().level then
 			return true
 		elseif slot7 == GalleryConst.Still_Show_On_Lock then
 			return false, true
@@ -331,13 +324,11 @@ function slot0.isPicUnlockableByID(slot0, slot1)
 end
 
 function slot0.isMusicUnlockableByID(slot0, slot1)
-	slot3 = getProxy(PlayerProxy):getData().level
-
 	if slot0:getSingleMusicConfigByID(slot1) then
 		slot5 = slot4.unlock_level
 		slot7 = slot5[2]
 
-		if slot5[1] <= slot3 then
+		if slot5[1] <= getProxy(PlayerProxy):getData().level then
 			return true
 		elseif slot7 == MusicCollectionConst.Still_Show_On_Lock then
 			return false, true

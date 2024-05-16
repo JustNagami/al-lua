@@ -3,13 +3,12 @@ slot0 = pg
 slot0.Tool = class("Tool")
 
 function slot0.Tool.Seq(slot0)
-	slot1 = {}
-
 	for slot5 = 1, slot0 do
-		slot1[slot5] = slot5
 	end
 
-	return slot1
+	return {
+		[slot5] = slot5
+	}
 end
 
 function slot0.Tool.Swap(slot0, slot1, slot2)
@@ -18,19 +17,17 @@ function slot0.Tool.Swap(slot0, slot1, slot2)
 end
 
 function slot0.Tool.RandomMN(slot0, slot1)
-	slot2 = {}
 	slot4 = #uv0.Tool.Seq(slot0)
 
 	for slot8 = 1, slot1 do
-		slot9 = math.random(slot4)
-		slot2[slot8] = slot3[slot9]
-
-		uv0.Tool.Swap(slot3, slot9, slot4)
+		uv0.Tool.Swap(slot3, math.random(slot4), slot4)
 
 		slot4 = slot4 - 1
 	end
 
-	return slot2
+	return {
+		[slot8] = slot3[slot9]
+	}
 end
 
 function slot0.Tool.FilterY(slot0)
@@ -89,13 +86,10 @@ function slot0.Tool.GetShortName(slot0, slot1, slot2)
 	end
 
 	if slot1 < slot7 then
-		slot8 = ""
-		slot9 = 0
-
 		for slot13 = 1, #slot5 do
-			slot8 = slot8 .. slot5[slot13]
+			slot8 = "" .. slot5[slot13]
 
-			if slot2 <= slot9 + slot4[slot13] then
+			if slot2 <= 0 + slot4[slot13] then
 				break
 			end
 		end

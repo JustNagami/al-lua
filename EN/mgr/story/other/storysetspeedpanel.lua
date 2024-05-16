@@ -29,8 +29,7 @@ function slot0.Ctor(slot0, slot1)
 	slot0.speedBtn = findTF(slot0._tf, "front/btns/btns/speed")
 	slot0.speedImg = slot0.speedBtn:Find("Text"):GetComponent(typeof(Image))
 	slot0.speedAnim = slot0.speedBtn:GetComponent(typeof(Animation))
-	slot2 = slot0.speedBtn
-	slot0.speedAniEvent = slot2:GetComponent(typeof(DftAniEvent))
+	slot0.speedAniEvent = slot0.speedBtn:GetComponent(typeof(DftAniEvent))
 	slot0.speedPanel = findTF(slot0._tf, "front/speed_panel")
 	slot0.speedList = {
 		slot0.speedPanel:Find("adpter/frame/content/0.5"),

@@ -153,10 +153,11 @@ function slot9.PlayFX(slot0, slot1, slot2)
 	}))
 end
 
-function slot9.SwitchShader(slot0, slot1, slot2)
+function slot9.SwitchShader(slot0, slot1, slot2, slot3)
 	slot0:DispatchEvent(uv0.Event.New(uv1.SWITCH_SHADER, {
 		shader = slot1,
-		color = slot2
+		color = slot2,
+		args = slot3
 	}))
 end
 
@@ -182,26 +183,32 @@ function slot9.UpdateHP(slot0, slot1, slot2)
 		return 0
 	end
 
-	slot5 = slot2.isMiss
-	slot6 = slot2.isCri
 	slot8 = slot2.isShare
-	slot9 = slot2.attr
-	slot10 = slot2.damageReason
 	slot11 = slot2.font
 	slot12 = slot2.cldPos
 	slot13 = slot2.incorrupt
-	slot14 = slot1
+	slot14 = nil
 
 	if not slot2.isHeal then
 		slot15 = {
 			damage = -slot1,
 			isShare = slot8,
-			miss = slot5,
-			cri = slot6,
+			miss = slot2.isMiss,
+			cri = slot2.isCri,
 			damageSrc = slot2.srcID,
-			damageAttr = slot9,
-			damageReason = slot10
+			damageAttr = slot2.attr,
+			damageReason = slot2.damageReason
 		}
+
+		if not slot8 then
+			slot0:TriggerBuff(uv0.BuffEffectType.ON_BEFORE_TAKE_DAMAGE, slot15)
+
+			if slot15.capFlag then
+				slot0:TriggerBuff(uv0.BuffEffectType.ON_DAMAGE_FIX, slot15)
+			end
+		end
+
+		slot14 = -slot15.damage
 
 		slot0:TriggerBuff(uv0.BuffEffectType.ON_TAKE_DAMAGE, slot15)
 
@@ -221,6 +228,7 @@ function slot9.UpdateHP(slot0, slot1, slot2)
 			return 0
 		end
 	else
+		slot14 = slot1
 		slot15 = {
 			damage = slot1,
 			isHeal = slot7,
@@ -242,25 +250,23 @@ function slot9.UpdateHP(slot0, slot1, slot2)
 
 	slot0:SetCurrentHP(slot15)
 
-	slot17 = {
+	if slot12 and not slot12:EqualZero() then
+		slot18 = slot0:GetPosition()
+		slot19 = slot0:GetBoxSize().x
+		slot22 = slot12:Clone()
+		slot22.x = Mathf.Clamp(slot22.x, slot18.x - slot19, slot18.x + slot19)
+	end
+
+	slot0:UpdateHPAction({
 		preShieldHP = slot14,
 		dHP = slot1,
 		validDHP = slot15 - slot0._currentHP,
 		isMiss = slot5,
 		isCri = slot6,
 		isHeal = slot7,
-		font = slot11
-	}
-
-	if slot12 and not slot12:EqualZero() then
-		slot18 = slot0:GetPosition()
-		slot19 = slot0:GetBoxSize().x
-		slot22 = slot12:Clone()
-		slot22.x = Mathf.Clamp(slot22.x, slot18.x - slot19, slot18.x + slot19)
-		slot17.posOffset = slot18 - slot22
-	end
-
-	slot0:UpdateHPAction(slot17)
+		font = slot11,
+		posOffset = slot18 - slot22
+	})
 
 	if not slot0:IsAlive() and slot4 then
 		slot0:SetDeathReason(slot2.damageReason)
@@ -291,7 +297,7 @@ function slot9.DeacActionClear(slot0)
 	slot0._aliveState = false
 
 	uv0.Spirit(slot0)
-	uv0.Whosyourdaddy(slot0)
+	uv0.AppendInvincible(slot0)
 	slot0:DeadActionEvent()
 end
 
@@ -573,9 +579,8 @@ function slot9.RemoveAutoWeapon(slot0, slot1)
 	slot0._weaponQueue:RemoveWeapon(slot1)
 
 	slot2 = 1
-	slot3 = #slot0._autoWeaponList
 
-	while slot2 <= slot3 do
+	while slot2 <= #slot0._autoWeaponList do
 		if slot0._autoWeaponList[slot2] == slot1 then
 			slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_WEAPON, {
 				weapon = slot1
@@ -890,6 +895,10 @@ function slot9.Boost(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0._move:SetForceMove(slot1, slot2, slot3, slot4, slot5)
 end
 
+function slot9.ActiveUnstoppable(slot0, slot1)
+	slot0._move:ActiveUnstoppable(slot1)
+end
+
 function slot9.SetImmuneCommonBulletCLD(slot0)
 	slot0._immuneCommonBulletCLD = true
 end
@@ -1112,10 +1121,8 @@ function slot9.StateChange(slot0, slot1, slot2)
 end
 
 function slot9.UpdateAction(slot0)
-	slot1 = slot0:GetSpeed().x * slot0._IFF
-
 	if slot0._oxyState and slot0._oxyState:GetCurrentDiveState() == uv0.OXY_STATE.DIVE then
-		if slot1 >= 0 then
+		if slot0:GetSpeed().x * slot0._IFF >= 0 then
 			slot0._unitState:ChangeState(uv1.STATE_DIVE)
 		else
 			slot0._unitState:ChangeState(uv1.STATE_DIVELEFT)
@@ -1199,6 +1206,10 @@ end
 
 function slot9.GetTemplate(slot0)
 	return nil
+end
+
+function slot9.GetTemplateValue(slot0, slot1)
+	return slot0:GetTemplate()[slot1]
 end
 
 function slot9.GetUniqueID(slot0)
@@ -1401,10 +1412,9 @@ end
 
 function slot9.InitCldComponent(slot0)
 	slot1 = slot0:GetTemplate().cld_box
-	slot3 = slot0:GetTemplate().cld_offset[1]
 
 	if slot0:GetDirection() == uv0.UnitDir.LEFT then
-		slot3 = slot3 * -1
+		slot3 = slot0:GetTemplate().cld_offset[1] * -1
 	end
 
 	slot0._cldComponent = uv1.Battle.BattleCubeCldComponent.New(slot1[1], slot1[2], slot1[3], slot3, slot2[3] + slot1[3] / 2)
@@ -1427,11 +1437,14 @@ function slot9.InitOxygen(slot0)
 	slot0._currentOxy = slot0:GetAttrByName("oxyMax")
 	slot0._oxyRecovery = slot0:GetAttrByName("oxyRecovery")
 	slot0._oxyRecoveryBench = slot0:GetAttrByName("oxyRecoveryBench")
+	slot0._oxyRecoverySurface = slot0:GetAttrByName("oxyRecoverySurface")
 	slot0._oxyConsume = slot0:GetAttrByName("oxyCost")
 	slot0._oxyState = uv0.Battle.OxyState.New(slot0)
 
 	slot0._oxyState:OnDiveState()
 	slot0:ConfigBubbleFX()
+
+	return slot0._oxyState
 end
 
 function slot9.UpdateOxygen(slot0, slot1)
@@ -1453,7 +1466,7 @@ end
 
 function slot9.OxyRecover(slot0, slot1)
 	slot2 = nil
-	slot0._currentOxy = math.min(slot0._maxOxy, slot0._currentOxy + ((not slot1 or slot0._oxyRecoveryBench) and slot0._oxyRecovery) * (pg.TimeMgr.GetInstance():GetCombatTime() - slot0._lastOxyUpdateStamp))
+	slot0._currentOxy = math.min(slot0._maxOxy, slot0._currentOxy + ((slot1 ~= uv0.Battle.OxyState.STATE_FREE_BENCH or slot0._oxyRecoveryBench) and (slot1 ~= uv0.Battle.OxyState.STATE_FREE_FLOAT or slot0._oxyRecovery) and slot0._oxyRecoverySurface) * (pg.TimeMgr.GetInstance():GetCombatTime() - slot0._lastOxyUpdateStamp))
 end
 
 function slot9.OxyConsume(slot0)
@@ -1552,6 +1565,10 @@ function slot9.GetDiveDetected(slot0)
 	return slot0:GetDiveInvisible() and (slot0._exposedOverTimeStamp or slot0._exposedToSnoar)
 end
 
+function slot9.GetForceExpose(slot0)
+	return slot0._oxyState and slot0._oxyState:GetForceExpose()
+end
+
 function slot9.dispatchDetectedTrigger(slot0)
 	if slot0:GetDiveDetected() then
 		slot0:TriggerBuff(uv0.BuffEffectType.ON_SUB_DETECTED, {})
@@ -1607,7 +1624,13 @@ function slot9.GetAntiSubState(slot0)
 end
 
 function slot9.UpdateBlindInvisibleBySpectre(slot0)
-	slot0:SetBlindInvisible(slot0:IsSpectre())
+	slot1, slot2 = slot0:IsSpectre()
+
+	if slot2 <= uv0.SPECTRE_UNIT_TYPE and slot2 ~= uv0.VISIBLE_SPECTRE_UNIT_TYPE then
+		slot0:SetBlindInvisible(true)
+	else
+		slot0:SetBlindInvisible(false)
+	end
 end
 
 function slot9.SetBlindInvisible(slot0, slot1)

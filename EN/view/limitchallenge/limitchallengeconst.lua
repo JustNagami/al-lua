@@ -96,10 +96,8 @@ function slot0.IsShowRedPoint()
 	if uv0.GetRedPointMonth() == uv0.GetCurMonth() then
 		return false
 	else
-		slot2 = getProxy(LimitChallengeProxy)
-
 		for slot7, slot8 in ipairs(uv0.GetCurMonthConfig().stage) do
-			if not slot2:isAwardedByChallengeID(slot8) then
+			if not getProxy(LimitChallengeProxy):isAwardedByChallengeID(slot8) then
 				return true
 			end
 		end

@@ -39,12 +39,11 @@ end
 function slot1(slot0, slot1)
 	slot3 = slot0.aabb
 	slot4 = slot1.aabb
-	slot6 = math.abs(slot3[2][2] - slot3[1][2]) / 2 + math.abs(slot4[2][2] - slot4[1][2]) / 2
 
 	if ({
 		x = math.abs(slot1.pos.x - slot0.pos.x),
 		y = math.abs(slot1.pos.y - slot0.pos.y)
-	}).x < math.abs(slot3[2][1] - slot3[1][1]) / 2 + math.abs(slot4[2][1] - slot4[1][1]) / 2 and slot2.y < slot6 then
+	}).x < math.abs(slot3[2][1] - slot3[1][1]) / 2 + math.abs(slot4[2][1] - slot4[1][1]) / 2 and slot2.y < math.abs(slot3[2][2] - slot3[1][2]) / 2 + math.abs(slot4[2][2] - slot4[1][2]) / 2 then
 		return true
 	end
 
@@ -73,12 +72,10 @@ end
 function slot0.GetCarryOreTarget(slot0)
 	slot1, slot2 = nil
 	slot3 = OreGameConfig.CARRY_RADIUS
-	slot4 = OreGameConfig.CARRY_LOOKAT_RADIUS
-	slot5 = slot0.akashiControl:GetAnimDirLabel()
 	slot6 = slot0.akashiControl:GetCollisionInfo().pos
 
 	for slot10, slot11 in pairs(slot0.oreMap) do
-		if uv0(slot5, slot6, slot11:GetCollisionInfo().pos) and Vector2.Distance(slot6, slot12) <= slot4 and (not slot2 or slot13 <= slot2) then
+		if uv0(slot0.akashiControl:GetAnimDirLabel(), slot6, slot11:GetCollisionInfo().pos) and Vector2.Distance(slot6, slot12) <= OreGameConfig.CARRY_LOOKAT_RADIUS and (not slot2 or slot13 <= slot2) then
 			slot2 = slot13
 			slot1 = slot10
 		end

@@ -87,14 +87,12 @@ function slot4.HSVToRGB(slot0, slot1, slot2, slot3)
 	slot7 = slot0 * 6
 	slot8 = uv1.Floor(slot7)
 	slot9 = slot7 - slot8
-	slot10 = slot6 * (1 - slot5)
-	slot11 = slot6 * (1 - slot5 * slot9)
 	slot12 = slot6 * (1 - slot5 * (1 - slot9))
 
 	if slot8 + 1 == 0 then
 		slot4.r = slot6
-		slot4.g = slot10
-		slot4.b = slot11
+		slot4.g = slot6 * (1 - slot5)
+		slot4.b = slot6 * (1 - slot5 * slot9)
 	elseif slot14 == 1 then
 		slot4.r = slot6
 		slot4.g = slot12
@@ -173,17 +171,17 @@ function slot4.GrayScale(slot0)
 end
 
 function slot4.NewHex(slot0)
-	slot1 = {}
-
 	for slot5 = 1, 4 do
 		if slot5 + slot5 > #slot0 then
-			slot1[slot5] = 1
+			-- Nothing
 		else
 			slot1[slot5] = tonumber(string.sub(slot0, slot5 + slot5 - 1, slot5 + slot5), 16) / 255
 		end
 	end
 
-	return uv0.New(unpack(slot1))
+	return uv0.New(unpack({
+		[slot5] = 1
+	}))
 end
 
 function slot4.ToHex(slot0, slot1)

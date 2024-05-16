@@ -9,25 +9,17 @@ function slot0.setActivity(slot0, slot1)
 end
 
 function slot0.init(slot0)
-	slot1 = pg.UIMgr.GetInstance()
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 
-	slot1:BlurPanel(slot0._tf)
-
-	slot1 = slot0._tf
-	slot1 = slot1:Find("Text")
+	slot1 = slot0._tf:Find("Text")
 
 	setText(slot1, i18n("islandnode_tips6"))
-
-	slot2 = slot1:GetComponent(typeof(DftAniEvent))
-
-	slot2:SetEndEvent(function ()
+	slot1:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
 		setActive(uv0, false)
 	end)
 
-	slot2 = slot0._tf
-	slot0.rtChars = slot2:Find("chars")
-	slot2 = slot0.rtChars
-	slot0.rtShip = slot2:GetChild(math.random(slot0.rtChars.childCount) - 1)
+	slot0.rtChars = slot0._tf:Find("chars")
+	slot0.rtShip = slot0.rtChars:GetChild(math.random(slot0.rtChars.childCount) - 1)
 	slot0.contextData.shipConfigId = tonumber(slot0.rtShip.name)
 
 	eachChild(slot0.rtChars, function (slot0)
@@ -36,20 +28,16 @@ function slot0.init(slot0)
 
 	slot0.fieldList = {}
 	slot0.posList = {}
-	slot3 = slot0._tf
 
-	eachChild(slot3:Find("field"), function (slot0)
+	eachChild(slot0._tf:Find("field"), function (slot0)
 		eachChild(slot0, function (slot0)
 			table.insert(uv0.fieldList, slot0)
 			table.insert(uv0.posList, uv0.rtChars:InverseTransformPoint(slot0.position))
 		end)
 	end)
 
-	slot2 = slot0._tf
-	slot0.rtField = slot2:Find("field")
-	slot2 = slot0._tf
-	slot0.rtBtnGet = slot2:Find("btn_get")
-	slot4 = slot0._tf
+	slot0.rtField = slot0._tf:Find("field")
+	slot0.rtBtnGet = slot0._tf:Find("btn_get")
 
 	function slot5()
 		uv0:closeView()
@@ -57,15 +45,13 @@ function slot0.init(slot0)
 
 	slot6 = SFX_CANCEL
 
-	onButton(slot0, slot4:Find("btn_back"), slot5, slot6)
+	onButton(slot0, slot0._tf:Find("btn_back"), slot5, slot6)
 
 	for slot5, slot6 in ipairs({
 		"click",
 		"click_lock"
 	}) do
-		slot9 = slot0.rtBtnGet
-
-		onButton(slot0, slot9:Find(slot6), function ()
+		onButton(slot0, slot0.rtBtnGet:Find(slot6), function ()
 			if uv0.timer then
 				setActive(uv1, true)
 

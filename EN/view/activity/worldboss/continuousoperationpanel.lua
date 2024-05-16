@@ -64,12 +64,9 @@ end
 
 function slot0.AnimatingSlider(slot0)
 	setActive(slot0.slider, true)
-
-	slot1 = slot0:managedTween(LeanTween.value, function ()
+	slot0:managedTween(LeanTween.value, function ()
 		uv0:emit(ContinuousOperationMediator.ON_REENTER)
-	end, go(slot0.slider), 1, 0, 5)
-
-	slot1:setOnUpdate(System.Action_float(function (slot0)
+	end, go(slot0.slider), 1, 0, 5):setOnUpdate(System.Action_float(function (slot0)
 		setSlider(uv0.slider, 0, 1, slot0)
 	end))
 end

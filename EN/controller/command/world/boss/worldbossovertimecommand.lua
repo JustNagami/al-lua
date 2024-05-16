@@ -9,9 +9,7 @@ function slot0.execute(slot0, slot1)
 				bossId = slot5.id
 			})
 		else
-			slot6 = pg.ConnectionMgr.GetInstance()
-
-			slot6:Send(34513, {
+			pg.ConnectionMgr.GetInstance():Send(34513, {
 				type = 0
 			}, 34514, function (slot0)
 				if slot0.result == 0 then

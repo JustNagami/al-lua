@@ -25,12 +25,10 @@ function slot0.OnFlush(slot0)
 end
 
 function slot0.UpdateListItem(slot0, slot1, slot2, slot3)
-	slot5 = slot3:Find("unlock/name_bg")
-
 	if slot2 then
 		slot0:UpdateStudent(slot4, slot3)
 
-		slot5.sizeDelta = Vector2(267, 45)
+		slot3:Find("unlock/name_bg").sizeDelta = Vector2(267, 45)
 	else
 		slot0:UpdateEmpty(slot3)
 

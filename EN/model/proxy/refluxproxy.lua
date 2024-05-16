@@ -61,9 +61,8 @@ end
 function slot0.isCanSign(slot0)
 	if slot0:isActive() and not slot0.autoActionForbidden then
 		slot1 = pg.TimeMgr.GetInstance()
-		slot6 = slot1:IsSameDay(slot1:GetServerTime(), slot0.signLastTimestamp)
 
-		if slot0.signCount < #pg.return_sign_template.all and not slot6 then
+		if slot0.signCount < #pg.return_sign_template.all and not slot1:IsSameDay(slot1:GetServerTime(), slot0.signLastTimestamp) then
 			return true
 		end
 	end

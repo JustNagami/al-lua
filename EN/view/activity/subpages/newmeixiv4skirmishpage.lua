@@ -48,12 +48,10 @@ function slot0.SetCurIndex(slot0)
 	slot0.curTaskIndex = 1
 
 	for slot4, slot5 in ipairs(slot0.taskList) do
-		slot8 = slot0.taskProxy:getTaskById(slot0.taskList[slot4 + 1]) or slot0.taskProxy:getFinishTaskById(slot7)
-
 		if (slot0.taskProxy:getTaskById(slot5) or slot0.taskProxy:getFinishTaskById(slot5)) and slot6:getTaskStatus() == 2 then
 			slot0.curTaskIndex = slot0.curTaskIndex + 1
 
-			if not slot7 or not slot8 then
+			if not slot7 or not (slot0.taskProxy:getTaskById(slot0.taskList[slot4 + 1]) or slot0.taskProxy:getFinishTaskById(slot7)) then
 				slot0.curTaskIndex = slot0.curTaskIndex - 1
 			end
 		end
@@ -113,16 +111,10 @@ function slot0.IsShowRed()
 		return 0
 	end
 
-	slot5 = 1
-
 	for slot9, slot10 in ipairs(slot3) do
-		slot13 = slot0:getTaskById(slot3[slot9 + 1]) or slot0:getFinishTaskById(slot12)
-
 		if (slot0:getTaskById(slot10) or slot0:getFinishTaskById(slot10)) and slot11:getTaskStatus() == 2 then
-			slot5 = slot5 + 1
-
-			if not slot12 or not slot13 then
-				slot5 = slot5 - 1
+			if not slot12 or not (slot0:getTaskById(slot3[slot9 + 1]) or slot0:getFinishTaskById(slot12)) then
+				slot5 = 1 + 1 - 1
 			end
 		end
 	end

@@ -44,13 +44,8 @@ function slot0.UpdateChapterName(slot0)
 end
 
 function slot0.LoadChallengeRes(slot0, slot1)
-	slot3 = slot0.bgTr
-
-	setActive(slot3:Find("ResultEffect/Tips"), false)
-
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("BattleResultItems/Challenge", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+	setActive(slot0.bgTr:Find("ResultEffect/Tips"), false)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Challenge", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 		if uv0.exited or IsNil(slot0) then
 			if uv1 then
 				uv1()

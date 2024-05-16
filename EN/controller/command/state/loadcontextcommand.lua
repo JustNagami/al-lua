@@ -15,17 +15,15 @@ end
 
 function slot0.loadNext(slot0)
 	if #uv0.queue > 0 then
-		function slot2()
-			if uv0.callback then
-				uv0.callback()
-			end
-
-			table.remove(uv1.queue, 1)
-			uv2:loadNext()
-		end
-
 		if uv0.queue[1].type == LOAD_TYPE_SCENE then
-			slot0:loadScene(slot1.context, slot1.prevContext, slot1.isBack, slot2)
+			slot0:loadScene(slot1.context, slot1.prevContext, slot1.isBack, function ()
+				if uv0.callback then
+					uv0.callback()
+				end
+
+				table.remove(uv1.queue, 1)
+				uv2:loadNext()
+			end)
 		elseif slot1.type == LOAD_TYPE_LAYER then
 			slot0:loadLayer(slot1.context, slot1.parentContext, slot1.removeContexts, slot2)
 		else
@@ -142,9 +140,7 @@ function slot0.loadLayer(slot0, slot1, slot2, slot3, slot4)
 
 			if uv0 ~= nil then
 				table.ParallelIpairsAsync(uv0, function (slot0, slot1, slot2)
-					slot3 = uv0
-
-					slot3:removeLayerMediator(uv1.facade, slot1, function (slot0)
+					uv0:removeLayerMediator(uv1.facade, slot1, function (slot0)
 						uv0 = uv0 or {}
 
 						table.insertto(uv0, slot0)
@@ -156,15 +152,10 @@ function slot0.loadLayer(slot0, slot1, slot2, slot3, slot4)
 			end
 		end,
 		function (slot0)
-			slot1 = uv0
-
-			_.each(slot1:GetHierarchy(), function (slot0)
+			_.each(uv0:GetHierarchy(), function (slot0)
 				pg.PoolMgr.GetInstance():BuildUIPlural(slot0.viewComponent.getUIName())
 			end)
-
-			slot2 = uv1
-
-			slot2:prepareLayer(uv2.facade, uv3, uv0, function (slot0)
+			uv1:prepareLayer(uv2.facade, uv3, uv0, function (slot0)
 				for slot4, slot5 in ipairs(slot0) do
 					table.insert(uv0, slot5)
 				end
@@ -175,9 +166,7 @@ function slot0.loadLayer(slot0, slot1, slot2, slot3, slot4)
 		function (slot0)
 			if uv0 then
 				table.SerialIpairsAsync(uv0, function (slot0, slot1, slot2)
-					slot3 = uv0
-
-					slot3:remove(slot1.mediator, function ()
+					uv0:remove(slot1.mediator, function ()
 						uv0.context:onContextRemoved()
 						uv1()
 					end)

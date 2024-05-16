@@ -34,29 +34,20 @@ end
 
 function slot0.OnFirstFlush(slot0)
 	setText(slot0.countText, math.clamp(slot0.playCount, 0, uv0.MAX_COUNT))
-
-	slot2 = slot0.progressUIItemList
-
-	slot2:make(function (slot0, slot1, slot2)
+	slot0.progressUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0:findTF("Achieve", slot2)
-			slot4 = uv0:findTF("Unlock", slot2)
-
 			setActive(uv0:findTF("Lock", slot2), slot1 + 1 > uv0.curDay)
 
 			if slot1 <= uv0.curDay then
-				setActive(slot3, slot1 <= uv1)
-				setActive(slot4, uv1 < slot1)
+				setActive(uv0:findTF("Achieve", slot2), slot1 <= uv1)
+				setActive(uv0:findTF("Unlock", slot2), uv1 < slot1)
 			else
 				setActive(slot3, false)
 				setActive(slot4, true)
 			end
 		end
 	end)
-
-	slot2 = slot0.progressUIItemList
-
-	slot2:align(uv0.MAX_COUNT)
+	slot0.progressUIItemList:align(uv0.MAX_COUNT)
 	onButton(slot0, slot0.getBtn, function ()
 		if uv1.MAX_COUNT <= uv0.curDay and uv1.MAX_COUNT <= uv0.playCount and uv0.isAchieved <= 0 then
 			uv0:emit(ActivityMediator.EVENT_OPERATION, {
@@ -78,10 +69,9 @@ function slot0.OnFirstFlush(slot0)
 
 	slot2 = {}
 	slot3 = pg.NewStoryMgr.GetInstance()
-	slot4 = math.clamp(slot0.playCount, 0, uv0.MAX_COUNT)
 
 	for slot8 = 1, uv0.MAX_COUNT do
-		if slot0.storyIDTable[slot8] and slot8 <= slot0.curDay and slot8 <= slot4 then
+		if slot0.storyIDTable[slot8] and slot8 <= slot0.curDay and slot8 <= math.clamp(slot0.playCount, 0, uv0.MAX_COUNT) then
 			table.insert(slot2, function (slot0)
 				uv0:Play(uv1, slot0)
 			end)

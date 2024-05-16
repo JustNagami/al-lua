@@ -27,8 +27,7 @@ function slot0.init(slot0)
 		slot0["upper_" .. go(slot5).name] = slot5
 	end
 
-	slot1 = slot0._tf
-	slot0._SDPlace = slot1:Find("SDPlace")
+	slot0._SDPlace = slot0._tf:Find("SDPlace")
 	slot0.containers = {
 		slot0._SDPlace
 	}

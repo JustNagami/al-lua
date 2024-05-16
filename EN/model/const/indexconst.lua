@@ -1,20 +1,16 @@
 slot0 = class("IndexConst")
 
 function slot0.Flags2Bits(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0) do
-		slot1 = bit.bor(slot1, bit.lshift(1, slot6))
+		slot1 = bit.bor(0, bit.lshift(1, slot6))
 	end
 
 	return slot1
 end
 
 function slot0.FlagRange2Bits(slot0, slot1)
-	slot2 = 0
-
 	for slot6 = slot0, slot1 do
-		slot2 = bit.bor(slot2, bit.lshift(1, slot6))
+		slot2 = bit.bor(0, bit.lshift(1, slot6))
 	end
 
 	return slot2
@@ -22,14 +18,13 @@ end
 
 function slot0.ToggleBits(slot0, slot1, slot2, slot3)
 	slot4 = slot0
-	slot5 = bit.lshift(1, slot3)
 
 	if slot2 then
 		slot7 = _.reduce(slot1, 0, function (slot0, slot1)
 			return slot0 + (slot1 ~= uv0 and bit.lshift(1, slot1) or 0)
 		end)
 
-		if slot5 == bit.lshift(1, slot2) then
+		if bit.lshift(1, slot3) == bit.lshift(1, slot2) then
 			slot4 = slot6
 		else
 			if bit.band(slot4, slot6) > 0 then
@@ -79,10 +74,8 @@ function slot0.StrAnd(slot0, slot1)
 		slot2 = string.sub(slot4, slot10, slot10) == "1" and string.sub(slot3, slot5 - slot6 + slot10, slot5 - slot6 + slot10) == "1" and slot2 .. "1" or slot2 .. "1" .. "0"
 	end
 
-	slot7 = ""
-
 	for slot11 = 1, slot5 - slot6 do
-		slot7 = slot7 .. "0"
+		slot7 = "" .. "0"
 	end
 
 	return slot7 .. slot2
@@ -102,20 +95,16 @@ function slot0.StrOr(slot0, slot1)
 end
 
 function slot0.Flags2Str(slot0)
-	slot1 = ""
-
 	for slot5, slot6 in ipairs(slot0) do
-		slot1 = uv0.StrOr(slot1, uv0.StrLShift("1", slot6))
+		slot1 = uv0.StrOr("", uv0.StrLShift("1", slot6))
 	end
 
 	return slot1
 end
 
 function slot0.FlagRange2Str(slot0, slot1)
-	slot2 = ""
-
 	for slot6 = slot0, slot1 do
-		slot2 = uv0.StrOr(slot2, uv0.StrLShift("1", slot6))
+		slot2 = uv0.StrOr("", uv0.StrLShift("1", slot6))
 	end
 
 	return slot2
@@ -127,11 +116,10 @@ function slot0.ToggleStr(slot0, slot1, slot2, slot3)
 
 	if slot2 then
 		slot6 = uv0.StrLShift("1", slot2)
-		slot7 = ""
 
 		for slot11, slot12 in ipairs(slot1) do
 			if slot12 ~= slot2 then
-				slot7 = uv0.StrOr(slot7, uv0.StrLShift("1", slot12))
+				slot7 = uv0.StrOr("", uv0.StrLShift("1", slot12))
 			end
 		end
 
@@ -149,10 +137,8 @@ function slot0.ToggleStr(slot0, slot1, slot2, slot3)
 end
 
 function slot0.BitAll(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0) do
-		slot1 = bit.bor(slot6, slot1)
+		slot1 = bit.bor(slot6, 0)
 	end
 
 	return slot1
@@ -192,7 +178,7 @@ function slot0.filterEquipByType(slot0, slot1)
 	end
 
 	for slot5 = 2, #EquipmentSortCfg.index do
-		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 and table.contains(EquipmentSortCfg.index[slot5].types, slot0.config.type) then
+		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 and table.contains(EquipmentSortCfg.index[slot5].types, slot0:getConfig("type")) then
 			return true
 		end
 	end
@@ -325,10 +311,8 @@ slot0.EquipPropertyNames = {
 }
 
 function slot0.filterEquipByProperty(slot0, slot1)
-	slot2 = {}
-
 	if slot0:getConfig("attribute_1") then
-		table.insert(slot2, slot0:getConfig("attribute_1"))
+		table.insert({}, slot0:getConfig("attribute_1"))
 	end
 
 	if slot0:getConfig("attribute_2") then
@@ -339,18 +323,14 @@ function slot0.filterEquipByProperty(slot0, slot1)
 		table.insert(slot2, slot0:getConfig("attribute_3"))
 	end
 
-	slot3 = 0
-
 	for slot7, slot8 in ipairs(slot1) do
 		if not slot8 or slot8 == uv0.EquipPropertyAll then
-			slot3 = slot3 + 1
+			slot3 = 0 + 1
 		else
 			for slot12 = 2, #EquipmentSortCfg.propertyIndex do
 				if bit.band(bit.lshift(1, slot12 - 2), slot8) > 0 then
-					slot14 = EquipmentSortCfg.propertyIndex[slot12].types
-
 					for slot18 = #slot2, 1, -1 do
-						if table.contains(slot14, slot2[slot18]) then
+						if table.contains(EquipmentSortCfg.propertyIndex[slot12].types, slot2[slot18]) then
 							slot3 = slot3 + 1
 
 							table.remove(slot2, slot18)
@@ -462,7 +442,7 @@ function slot0.filterEquipByRarity(slot0, slot1)
 		return true
 	end
 
-	return bit.band(bit.lshift(1, math.max(slot0.config.rarity - 2, 0)), slot1) > 0
+	return bit.band(bit.lshift(1, math.max(slot0:getConfig("rarity") - 2, 0)), slot1) > 0
 end
 
 slot0.EquipmentExtraNames = {
@@ -484,22 +464,16 @@ slot4 = slot0.EquipmentExtraNone
 
 table.insert(slot0.EquipmentExtraIndexs, 1, slot4)
 
-function slot0.filterEquipByExtra(slot0, slot1, slot2)
-	slot1 = slot1 or 0
-
-	if not slot2 and slot0.shipId then
+function slot0.filterEquipByExtra(slot0, slot1)
+	if bit.band(slot1 or 0, uv0.EquipmentExtraEquiping) > 0 and not slot0.shipId then
 		return false
 	end
 
-	if bit.band(slot1, uv0.EquipmentExtraEquiping) > 0 and not slot0.shipId then
+	if bit.band(slot1, uv0.EquipmentExtraStrengthen) > 0 and (not pg.equip_data_template[slot0.id] or not slot2.next or slot2.next == 0) then
 		return false
 	end
 
-	if bit.band(slot1, uv0.EquipmentExtraStrengthen) > 0 and (not pg.equip_data_template[slot0.id] or not slot3.next or slot3.next == 0) then
-		return false
-	end
-
-	if bit.band(slot1, uv0.EquipmentExtraTransform) > 0 and (not EquipmentProxy.EquipTransformTargetDict[Equipment.GetEquipRootStatic(slot0.id)] or not slot3.targets) then
+	if bit.band(slot1, uv0.EquipmentExtraTransform) > 0 and (not EquipmentProxy.EquipTransformTargetDict[Equipment.GetEquipRootStatic(slot0.id)] or not slot2.targets) then
 		return false
 	end
 
@@ -603,11 +577,10 @@ function slot0.filterEquipSkinByTheme(slot0, slot1)
 		return true
 	end
 
-	slot2 = pg.equip_skin_template
 	slot3 = pg.equip_skin_theme_template
 
 	if slot0.count > 0 and slot0.isSkin then
-		slot5 = slot2[slot0.id].themeid
+		slot5 = pg.equip_skin_template[slot0.id].themeid
 		slot6 = nil
 
 		for slot10, slot11 in ipairs(uv0.EquipSkinThemeTypes) do
@@ -684,8 +657,9 @@ slot0.SpWeaponRarityIndexs = {
 	slot0.SpWeaponRarity3
 }
 slot0.SpWeaponRarityAll = slot0.BitAll(slot0.SpWeaponRarityIndexs)
+slot4 = slot0.SpWeaponRarityAll
 
-table.insert(slot0.SpWeaponRarityIndexs, 1, slot0.SpWeaponRarityAll)
+table.insert(slot0.SpWeaponRarityIndexs, 1, slot4)
 
 function slot0.filterSpWeaponByRarity(slot0, slot1)
 	if not slot1 or slot1 == uv0.SpWeaponRarityAll then
@@ -693,6 +667,32 @@ function slot0.filterSpWeaponByRarity(slot0, slot1)
 	end
 
 	return bit.band(bit.lshift(1, math.max(slot0:GetRarity() - 2, 0)), slot1) > 0
+end
+
+slot0.LABEL_COUNT = 9
+slot0.ECodeLabelNames = {}
+slot0.ECodeLabelIndexs = {}
+
+for slot4 = 1, slot0.LABEL_COUNT do
+	table.insert(slot0.ECodeLabelNames, "equip_share_label_" .. slot4)
+	table.insert(slot0.ECodeLabelIndexs, bit.lshift(1, slot4 - 1))
+end
+
+table.insert(slot0.ECodeLabelNames, 1, "index_all")
+table.insert(slot0.ECodeLabelIndexs, 1, slot0.BitAll(slot0.ECodeLabelIndexs))
+
+function slot0.filterEquipCodeByLable(slot0, slot1)
+	if not slot1 or slot1 == uv0 then
+		return true
+	end
+
+	for slot5, slot6 in ipairs(slot0:GetLabels()) do
+		if bit.band(bit.lshift(1, slot6 - 1), slot1) > 0 then
+			return true
+		end
+	end
+
+	return false
 end
 
 return slot0

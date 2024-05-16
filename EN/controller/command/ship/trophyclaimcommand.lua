@@ -2,9 +2,8 @@ slot0 = class("TrophyClaimCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
 	slot4 = getProxy(CollectionProxy)
-	slot5 = pg.ConnectionMgr.GetInstance()
 
-	slot5:Send(17301, {
+	pg.ConnectionMgr.GetInstance():Send(17301, {
 		id = slot1:getBody().trophyID
 	}, 17302, function (slot0)
 		if slot0.result == 0 then

@@ -140,9 +140,7 @@ function slot0.showHelpWindow(slot0, slot1)
 	setActive(slot0._helpPanel:Find("btn_blueprint"), slot1.show_blueprint)
 
 	if slot1.show_blueprint then
-		slot4 = slot0._helpPanel
-
-		onButton(slot0, slot4:Find("btn_blueprint"), function ()
+		onButton(slot0, slot0._helpPanel:Find("btn_blueprint"), function ()
 			uv0:hide()
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPBLUEPRINT, {
 				shipGroupId = uv1.show_blueprint
@@ -334,8 +332,6 @@ function slot0.commonSetting(slot0, slot1)
 	slot8 = slot0.settings.hideYes or false
 	slot10 = slot0.settings.onYes or function ()
 	end
-	slot11 = slot0.settings.onNo or function ()
-	end
 
 	onButton(slot0, tf(slot0._go):Find("bg"), function ()
 		if uv0.settings.onClose then
@@ -354,7 +350,8 @@ function slot0.commonSetting(slot0, slot1)
 		slot12 = slot0:createBtn({
 			text = slot0.settings.noText or uv0.TEXT_CANCEL,
 			btnType = slot0.settings.noBtnType or uv0.BUTTON_GRAY,
-			onCallback = slot11,
+			onCallback = slot0.settings.onNo or function ()
+			end,
 			sound = slot1.noSound or SFX_CANCEL
 		})
 	end
@@ -404,9 +401,8 @@ function slot0.commonSetting(slot0, slot1)
 
 	slot14 = slot0.settings.title or uv0.TITLE_INFORMATION
 	slot15 = 0
-	slot16 = slot0._titleList.transform.childCount
 
-	while slot15 < slot16 do
+	while slot15 < slot0._titleList.transform.childCount do
 		slot17 = slot0._titleList.transform:GetChild(slot15)
 
 		SetActive(slot17, slot17.name == slot14)

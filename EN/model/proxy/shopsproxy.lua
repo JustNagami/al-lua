@@ -410,23 +410,20 @@ function slot0.ShouldRefreshChargeList(slot0)
 end
 
 function slot0.GetRecommendCommodities(slot0)
-	slot2 = slot0:GetNormalList()
-	slot3 = slot0:GetNormalGroupList()
-
-	if not slot0:getChargedList() or not slot2 or not slot3 then
+	if not slot0:getChargedList() or not slot0:GetNormalList() or not slot0:GetNormalGroupList() then
 		return {}
 	end
 
 	slot4 = {}
 
 	for slot8, slot9 in ipairs(pg.recommend_shop.all) do
-		if RecommendCommodity.New({
+		if pg.TimeMgr.GetInstance():inTime(pg.recommend_shop[slot9].time) and RecommendCommodity.New({
 			id = slot9,
 			chargedList = slot1,
 			normalList = slot2,
 			normalGroupList = slot3
 		}):CanShow() then
-			table.insert(slot4, slot10)
+			table.insert(slot4, slot11)
 		end
 	end
 
@@ -435,6 +432,22 @@ function slot0.GetRecommendCommodities(slot0)
 	end)
 
 	return slot4
+end
+
+function slot0.GetGiftCommodity(slot0, slot1, slot2)
+	if Goods.Create({
+		shop_id = slot1
+	}, slot2):isChargeType() then
+		slot3:updateBuyCount(ChargeConst.getBuyCount(slot0.chargeList, slot3.id))
+	else
+		slot3:updateBuyCount(ChargeConst.getBuyCount(slot0.normalList, slot3.id))
+
+		if (slot3:getConfig("group") or 0) > 0 then
+			slot3:updateGroupCount(ChargeConst.getGroupLimit(slot0.normalGroupList, slot5))
+		end
+	end
+
+	return slot3
 end
 
 return slot0

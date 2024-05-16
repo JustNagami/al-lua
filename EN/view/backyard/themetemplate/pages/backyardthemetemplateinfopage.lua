@@ -1,5 +1,9 @@
 slot0 = class("BackYardThemeTemplateInfoPage", import("...Shop.pages.BackYardThemeInfoPage"))
 
+function slot0.getUIName(slot0)
+	return "BackYardTemplateInfoPage"
+end
+
 function slot0.OnInit(slot0)
 	uv0.super.OnInit(slot0)
 	onButton(slot0, slot0.purchaseBtn, function ()
@@ -7,9 +11,8 @@ function slot0.OnInit(slot0)
 	end, SFX_PANEL)
 	setActive(slot0.icon, false)
 
-	slot0.iconRaw = slot0:findTF("icon/Image_raw"):GetComponent(typeof(RawImage))
+	slot0.iconRaw = slot0:findTF("frame/icon/Image_raw"):GetComponent(typeof(RawImage))
 
-	setActive(slot0:findTF("number"), false)
 	setActive(slot0.leftArrBtn, false)
 	setActive(slot0.rightArrBtn, false)
 end
@@ -41,11 +44,10 @@ end
 
 function slot0.InitFurnitureList(slot0)
 	slot0.displays = {}
-	slot2 = slot0.dorm:GetPurchasedFurnitures()
 
 	for slot6, slot7 in pairs(slot0.template:GetFurnitureCnt()) do
 		if pg.furniture_data_template[slot6] then
-			table.insert(slot0.displays, slot2[slot6] or Furniture.New({
+			table.insert(slot0.displays, slot0.dorm:GetPurchasedFurnitures()[slot6] or Furniture.New({
 				id = slot6
 			}))
 		end
@@ -78,7 +80,6 @@ end
 function slot0.UpdateThemeInfo(slot0)
 	slot1 = slot0.template
 	slot0.nameTxt.text = slot1:GetName()
-	slot0.enNameTxt.text = "FURNITURE"
 
 	setActive(slot0.iconRaw.gameObject, false)
 	BackYardThemeTempalteUtil.GetTexture(slot1:GetTextureName(), slot1:GetImageMd5(), function (slot0)
@@ -99,11 +100,9 @@ function slot0.UpdatePurchaseBtn(slot0)
 	slot3 = false
 
 	for slot7, slot8 in pairs(slot0.template:GetFurnitureCnt()) do
-		slot10 = slot0.dorm:GetOwnFurnitureCount(slot7)
-
 		if Furniture.New({
 			id = slot7
-		}):inTime() and slot9:canPurchaseByDormMoeny() and slot10 < slot8 then
+		}):inTime() and slot9:canPurchaseByDormMoeny() and slot0.dorm:GetOwnFurnitureCount(slot7) < slot8 then
 			slot3 = true
 
 			break

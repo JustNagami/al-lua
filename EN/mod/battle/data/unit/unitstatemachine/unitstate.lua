@@ -189,10 +189,8 @@ function slot0.Battle.UnitState.OnSkillEndState(slot0)
 end
 
 function slot0.Battle.UnitState.ChangeToMoveState(slot0)
-	slot1 = slot0:GetTarget():GetSpeed().x
-
 	if slot0:GetTarget():GetOxyState() and slot2:GetCurrentDiveState() == uv0.OXY_STATE.DIVE then
-		if slot1 >= 0 then
+		if slot0:GetTarget():GetSpeed().x >= 0 then
 			slot0:OnDiveState()
 		else
 			slot0:OnDiveLeftState()

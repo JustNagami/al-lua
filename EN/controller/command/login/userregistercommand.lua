@@ -12,13 +12,8 @@ function slot0.execute(slot0, slot1)
 	end
 
 	originalPrint("connect to gateway - " .. NetConst.GATEWAY_HOST .. ":" .. NetConst.GATEWAY_PORT)
-
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Connect(NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT, function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(10001, {
+	pg.ConnectionMgr.GetInstance():Connect(NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT, function ()
+		pg.ConnectionMgr.GetInstance():Send(10001, {
 			account = uv0.arg1,
 			password = uv0.arg2,
 			mail_box = uv0.arg3

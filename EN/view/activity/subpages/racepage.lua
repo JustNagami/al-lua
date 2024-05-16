@@ -165,13 +165,12 @@ function slot0.updateRankFaceTf(slot0, slot1, slot2, slot3)
 	end
 
 	slot4 = pg.ship_data_statistics[slot2.icon]
-	slot5 = Ship.New({
+
+	LoadSpriteAsync("qicon/" .. Ship.New({
 		configId = slot2.icon,
 		skin_id = slot2.skinId,
 		propose = slot2.proposeTime
-	})
-
-	LoadSpriteAsync("qicon/" .. slot5:getPainting(), function (slot0)
+	}):getPainting(), function (slot0)
 		uv0:Find("mask/icon"):GetComponent(typeof(Image)).sprite = slot0
 	end)
 end

@@ -19,6 +19,7 @@ function slot0.register(slot0)
 
 	if slot0.gameRoomId and slot0.gameRoomId > 0 then
 		slot0.gameRoomData = pg.game_room_template[slot0.gameRoomId]
+		slot0.gameRoonCoinCount = 0
 
 		slot0.viewComponent:setGameRoomData(slot0.gameRoomData)
 	end
@@ -54,7 +55,7 @@ function slot0.register(slot0)
 end
 
 function slot0.onUIAvalible(slot0)
-	if slot0.gameRoomData then
+	if slot0.gameRoomData and slot0.gameRoomData.add_base > 0 then
 		slot0:loadCoinLayer()
 	end
 end
@@ -90,10 +91,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == MiniGameProxy.ON_HUB_DATA_UPDATE then
-		slot0.viewComponent:SetMGHubData(slot3)
+		slot0.viewComponent:SetMGHubData(slot1:getBody())
 	elseif slot2 == GAME.SEND_MINI_GAME_OP_DONE then
 		seriesAsync({
 			function (slot0)

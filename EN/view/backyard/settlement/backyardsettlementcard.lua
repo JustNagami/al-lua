@@ -18,9 +18,8 @@ end
 function slot0.UpdateInfo(slot0, slot1)
 	slot0.additionText.text = "EXP+" .. 0
 	slot0.levelText.text = "LEVEL" .. slot1.level
-	slot2 = slot0.nameTxt
 
-	slot2:SetText(slot1:getName())
+	slot0.nameTxt:SetText(slot1:getName())
 	LoadSpriteAtlasAsync("HeroHrzIcon/" .. slot1:getPainting(), "", function (slot0)
 		if uv0.exited then
 			return
@@ -41,10 +40,8 @@ function slot0.DoAnimation(slot0, slot1, slot2, slot3)
 		uv0.additionText.text = "EXP+" .. math.floor(slot0)
 	end)
 
-	slot7 = math.max(slot3:getLevelExpConfig().exp, 0.001)
-
 	if slot5 > 0 then
-		slot0:DoLevelUpAnimation(slot2.exp, math.max(slot2:getLevelExpConfig().exp, 0.001), slot3.exp, slot7, slot3.level, slot5, slot4)
+		slot0:DoLevelUpAnimation(slot2.exp, math.max(slot2:getLevelExpConfig().exp, 0.001), slot3.exp, math.max(slot3:getLevelExpConfig().exp, 0.001), slot3.level, slot5, slot4)
 	else
 		TweenValue(slot0.slider, 0, slot3.exp / slot7, slot4, 0, function (slot0)
 			uv0:SetSliderValue(uv0.slider, slot0)

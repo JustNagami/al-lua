@@ -153,10 +153,8 @@ end
 
 function slot5.addInitFX(slot0, slot1)
 	if uv0.Battle.BattleDataFunction.GetBuffTemplate(slot1).init_effect and slot2.init_effect ~= "" then
-		slot3 = slot2.init_effect
-
 		if slot2.skin_adapt then
-			slot3 = uv1.SkinAdaptFXID(slot3, slot0._owner:GetUnitData():GetSkinID())
+			slot3 = uv1.SkinAdaptFXID(slot2.init_effect, slot0._owner:GetUnitData():GetSkinID())
 		end
 
 		slot0._owner:AddFX(slot3)
@@ -179,9 +177,8 @@ function slot5.addLastFX(slot0, slot1)
 
 		if slot2.last_effect_cld_scale or slot2.last_effect_cld_angle then
 			slot5 = nil
-			slot6 = slot2[buffLv] or slot2.effect_list
 
-			for slot10, slot11 in ipairs(slot6) do
+			for slot10, slot11 in ipairs(slot2[buffLv] or slot2.effect_list) do
 				if slot11.arg_list.cld_data then
 					slot5 = slot11
 

@@ -241,11 +241,9 @@ function slot0.addListener(slot0)
 				return
 			end
 
-			slot2 = uv0:getCurMetaProgressVO():getShip()
-
 			if uv0.curPageIndex == uv1 and slot0 == false then
 				uv0:enterMenuPage(false)
-				uv0:emit(uv2.PAGES_EVENTS[uv1], slot2.id, false)
+				uv0:emit(uv2.PAGES_EVENTS[uv1], uv0:getCurMetaProgressVO():getShip().id, false)
 			end
 
 			if uv0.curPageIndex ~= uv1 and slot0 == true then
@@ -282,9 +280,8 @@ end
 
 function slot0.initBannerList(slot0)
 	slot0.scrollUIItemList = UIItemList.New(slot0.bannerContainer, slot0.bannerTpl)
-	slot1 = slot0.scrollUIItemList
 
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.scrollUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			table.insert(uv0.bannerTFList, slot2)
 			uv0:updateBannerTF(uv0.metaProgressVOList[slot1 + 1], slot2, slot1 + 1)
@@ -363,8 +360,6 @@ function slot0.updateBannerTF(slot0, slot1, slot2, slot3)
 		setActive(slot8, slot9)
 
 		slot10 = slot1:isPtType()
-		slot11 = slot1:isPassType()
-		slot12 = slot1:isBuildType()
 
 		if not slot9 then
 			slot13 = slot0:findTF("Empty/ActType", slot5)
@@ -372,8 +367,8 @@ function slot0.updateBannerTF(slot0, slot1, slot2, slot3)
 			slot15 = slot0:findTF("Empty/PassType", slot5)
 
 			setActive(slot13, slot10)
-			setActive(slot14, slot12)
-			setActive(slot15, slot11)
+			setActive(slot14, slot1:isBuildType())
+			setActive(slot15, slot1:isPassType())
 
 			slot16, slot17 = slot1:getBannerPathAndName()
 			slot18 = LoadSprite(slot16, slot17)
@@ -458,10 +453,9 @@ end
 
 function slot0.changeBannerOnClick(slot0, slot1, slot2)
 	slot3 = slot1:GetComponent("LayoutElement")
-	slot4 = slot0:findTF("ForScale", slot1)
 
 	if slot2 == true then
-		setLocalScale(slot4, uv0.SCALE_ON_PITCH)
+		setLocalScale(slot0:findTF("ForScale", slot1), uv0.SCALE_ON_PITCH)
 
 		slot3.preferredWidth = 338.3
 		slot3.preferredHeight = 102
@@ -671,8 +665,7 @@ function slot0.updatePTPanel(slot0, slot1)
 
 	if slot3 > 0 and not slot1 then
 		if slot11 == MetaProgress.STATE_CAN_AWARD or slot11 == MetaProgress.STATE_LESS_PT then
-			slot13 = slot0:managedTween(LeanTween.value, nil, go(slot0.ptPanel), 0, slot3, math.min(slot3, 1))
-			slot13 = slot13:setOnUpdate(System.Action_float(function (slot0)
+			slot0:managedTween(LeanTween.value, nil, go(slot0.ptPanel), 0, slot3, math.min(slot3, 1)):setOnUpdate(System.Action_float(function (slot0)
 				setFillAmount(uv0.ptProgressImg, slot0)
 				setActive(uv0.ptProgressScaleLine, slot0 < 1)
 
@@ -686,9 +679,7 @@ function slot0.updatePTPanel(slot0, slot1)
 				setText(uv0.ptProgressWhiteLeftNumText, slot2)
 				setText(uv0.ptProgressRedRightNumText, slot4)
 				setText(uv0.ptProgressWhiteRightNumText, slot4)
-			end))
-
-			slot13:setOnComplete(System.Action(function ()
+			end)):setOnComplete(System.Action(function ()
 				setFillAmount(uv0.ptProgressImg, uv1)
 				setActive(uv0.ptProgressScaleLine, uv1 < 1)
 
@@ -732,13 +723,11 @@ function slot0.updateRedPoints(slot0)
 	setActive(slot0:findTF("Finish", slot0.energyBtn), not MetaCharacterConst.filteMetaEnergyAble(slot1))
 	setActive(slot0:findTF("Finish", slot0.tacticsBtn), not MetaCharacterConst.filteMetaTacticsAble(slot1))
 
-	slot8 = MetaCharacterConst.isMetaTacticsRedTag(slot2)
-
 	if slot1.metaShipVO then
 		setActive(slot0:findTF("Tag", slot0.tacticsBtn), false)
 		setActive(slot0:findTF("Learnable", slot0.tacticsBtn), slot0.metaCharacterProxy:getMetaTacticsInfoByShipID(slot9.id):getTacticsStateForShow() == MetaTacticsInfo.States.LearnAble)
 		setActive(slot0:findTF("Learning", slot0.tacticsBtn), slot10 == MetaTacticsInfo.States.Learning)
-		setActive(slot0:findTF("LearnFinish", slot0.tacticsBtn), slot10 == MetaTacticsInfo.States.LearnFinished and slot8)
+		setActive(slot0:findTF("LearnFinish", slot0.tacticsBtn), slot10 == MetaTacticsInfo.States.LearnFinished and MetaCharacterConst.isMetaTacticsRedTag(slot2))
 	else
 		setActive(slot0:findTF("Tag", slot0.tacticsBtn), false)
 		setActive(slot0:findTF("Learnable", slot0.tacticsBtn), false)
@@ -773,10 +762,8 @@ function slot0.updateRedPoints(slot0)
 	setActive(slot0:findTF(slot19, slot20), slot14)
 
 	for slot19, slot20 in ipairs(slot0.metaProgressVOList) do
-		slot22 = slot0:findTF("ForScale/RedPoint", slot0.bannerTFList[slot19])
-
 		if slot20 then
-			setActive(slot22, MetaCharacterConst.isMetaBannerRedPoint(slot20.id))
+			setActive(slot0:findTF("ForScale/RedPoint", slot0.bannerTFList[slot19]), MetaCharacterConst.isMetaBannerRedPoint(slot20.id))
 		else
 			setActive(slot22, false)
 		end
@@ -805,11 +792,7 @@ end
 
 function slot0.backFromRepair(slot0)
 	setActive(slot0.menuPanel, false)
-
-	slot1 = slot0:managedTween(LeanTween.alpha, nil, slot0.shipImg, 1, 0.3)
-	slot1 = slot1:setFrom(0)
-
-	slot1:setOnComplete(System.Action(function ()
+	slot0:managedTween(LeanTween.alpha, nil, slot0.shipImg, 1, 0.3):setFrom(0):setOnComplete(System.Action(function ()
 		setActive(uv0.menuPanel, true)
 		setActive(uv0.hidePanel, true)
 	end))
@@ -817,11 +800,7 @@ end
 
 function slot0.backFromNotRepair(slot0)
 	setActive(slot0.menuPanel, false)
-
-	slot5 = slot0:managedTween(LeanTween.moveX, nil, rtf(slot0.shipImg), MetaCharacterConst.UIConfig[slot0:getCurMetaProgressVO().id][1], 0.3)
-	slot5 = slot5:setFrom(-250)
-
-	slot5:setOnComplete(System.Action(function ()
+	slot0:managedTween(LeanTween.moveX, nil, rtf(slot0.shipImg), MetaCharacterConst.UIConfig[slot0:getCurMetaProgressVO().id][1], 0.3):setFrom(-250):setOnComplete(System.Action(function ()
 		setActive(uv0.menuPanel, true)
 		setActive(uv0.hidePanel, true)
 	end))
@@ -829,11 +808,10 @@ end
 
 function slot0.autoOpenFunc(slot0)
 	if slot0.contextData.autoOpenShipConfigID then
-		slot1 = MetaCharacterConst.GetMetaShipGroupIDByConfigID(slot0.contextData.autoOpenShipConfigID)
 		slot3 = 0
 
 		for slot7, slot8 in ipairs(slot0:getMetaProgressListForShow()) do
-			if slot8 and slot8.id == slot1 then
+			if slot8 and slot8.id == MetaCharacterConst.GetMetaShipGroupIDByConfigID(slot0.contextData.autoOpenShipConfigID) then
 				triggerButton(slot0.bannerTFList[slot7])
 
 				slot0.contextData.autoOpenShipConfigID = nil
@@ -954,10 +932,7 @@ function slot0.getMetaProgressListForShow(slot0)
 	slot3, slot4, slot5 = nil
 
 	for slot9, slot10 in ipairs(slot0.metaCharacterProxy:getMetaProgressVOList()) do
-		slot12 = MetaCharacterConst.filteMetaByRarity(slot10, slot0.indexDatas.rarityIndex)
-		slot13 = MetaCharacterConst.filteMetaExtra(slot10, slot0.indexDatas.extraIndex)
-
-		if MetaCharacterConst.filteMetaByType(slot10, slot0.indexDatas.typeIndex) and slot12 and slot13 and slot10:isShow() then
+		if MetaCharacterConst.filteMetaByType(slot10, slot0.indexDatas.typeIndex) and MetaCharacterConst.filteMetaByRarity(slot10, slot0.indexDatas.rarityIndex) and MetaCharacterConst.filteMetaExtra(slot10, slot0.indexDatas.extraIndex) and slot10:isShow() then
 			if slot10:isPtType() and slot10:isInAct() then
 				slot3 = slot10
 			elseif slot10:isPassType() and slot10:isInAct() then
@@ -989,10 +964,7 @@ function slot0.filteMetaProgressList(slot0)
 	slot2 = {}
 
 	for slot6, slot7 in ipairs(slot0:getMetaProgressListForShow()) do
-		slot9 = MetaCharacterConst.filteMetaByRarity(slot7, slot0.indexDatas.rarityIndex)
-		slot10 = MetaCharacterConst.filteMetaExtra(slot7, slot0.indexDatas.extraIndex)
-
-		if MetaCharacterConst.filteMetaByType(slot7, slot0.indexDatas.typeIndex) and slot9 and slot10 then
+		if MetaCharacterConst.filteMetaByType(slot7, slot0.indexDatas.typeIndex) and MetaCharacterConst.filteMetaByRarity(slot7, slot0.indexDatas.rarityIndex) and MetaCharacterConst.filteMetaExtra(slot7, slot0.indexDatas.extraIndex) then
 			table.insert(slot2, slot7)
 		end
 	end
@@ -1002,7 +974,6 @@ end
 
 function slot0.getOneStepPTAwardLevelAndCount(slot0)
 	slot1 = slot0:getCurMetaProgressVO()
-	slot2 = slot1.metaPtData:GetResProgress()
 	slot3 = slot1.metaPtData.targets
 	slot4 = slot1:getStoryIndexList()
 	slot6 = 0
@@ -1011,7 +982,7 @@ function slot0.getOneStepPTAwardLevelAndCount(slot0)
 		slot11 = false
 		slot12 = false
 
-		if slot3[slot10] <= slot2 then
+		if slot3[slot10] <= slot1.metaPtData:GetResProgress() then
 			slot11 = true
 		end
 

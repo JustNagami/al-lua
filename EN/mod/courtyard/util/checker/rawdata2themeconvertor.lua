@@ -20,19 +20,18 @@ end
 
 function slot2(slot0, slot1)
 	slot2 = (slot0.shipId or 0) == 1
-	slot3 = {}
-	slot4 = ipairs
-	slot5 = slot0.child or {}
 
-	for slot7, slot8 in slot4(slot5) do
-		slot3[tonumber(slot8.id)] = Vector2(slot8.x, slot8.y)
+	for slot7, slot8 in ipairs(slot0.child or {}) do
+		-- Nothing
 	end
 
 	return BackyardThemeFurniture.New({
 		id = tonumber(slot0.id),
 		position = Vector2(slot0.x, slot0.y),
 		dir = slot0.dir,
-		child = slot3,
+		child = {
+			[tonumber(slot8.id)] = Vector2(slot8.x, slot8.y)
+		},
 		parent = tonumber(slot0.parent),
 		floor = slot1,
 		isNewStyle = slot2
@@ -84,26 +83,25 @@ function slot5(slot0, slot1, slot2, slot3, slot4)
 end
 
 function slot0.GenFurnitures(slot0, slot1)
-	slot2 = slot1.floor
 	slot3 = slot1.mapSize
 	slot4 = slot1.skipCheck
 	slot5 = {}
 
 	for slot9, slot10 in ipairs(slot1.furniture_put_list) do
-		table.insert(slot5, uv0(slot10, slot2))
+		table.insert(slot5, uv0(slot10, slot1.floor))
 	end
 
 	for slot9, slot10 in ipairs(slot5) do
 		if slot10:AnyChild() then
-			slot11 = {}
-
 			for slot15, slot16 in pairs(slot10:GetChildList()) do
 				if uv1(slot5, slot15, slot10.configId, slot10:GetPosition(), slot16) then
-					slot11[uv2(slot15, slot17.configId, slot17.isNewStyle)] = slot16
+					-- Nothing
 				end
 			end
 
-			slot10:SetChildList(slot11)
+			slot10:SetChildList({
+				[uv2(slot15, slot17.configId, slot17.isNewStyle)] = slot16
+			})
 		end
 	end
 
@@ -134,11 +132,13 @@ function slot0.GenFurnitures(slot0, slot1)
 		end
 	end
 
-	slot8 = {}
+	slot8 = {
+		[slot13.id] = true
+	}
 
 	for slot12, slot13 in ipairs(slot7) do
 		if slot13:HasParent() then
-			slot8[slot13.id] = true
+			-- Nothing
 		end
 	end
 
@@ -174,10 +174,12 @@ function slot0.GenFurnitures(slot0, slot1)
 		end
 	end
 
-	slot10 = {}
+	slot10 = {
+		[slot15.id] = slot15
+	}
 
 	for slot14, slot15 in ipairs(slot7) do
-		slot10[slot15.id] = slot15
+		-- Nothing
 	end
 
 	if not slot4 then

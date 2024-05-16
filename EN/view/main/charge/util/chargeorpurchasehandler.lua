@@ -10,9 +10,7 @@ function slot0.ChargeOrPurchaseAsyn(slot0, slot1, slot2)
 
 	seriesAsync({
 		function (slot0)
-			slot1 = uv0
-
-			slot1:FetchFirstChargeIds(uv1, function (slot0)
+			uv0:FetchFirstChargeIds(uv1, function (slot0)
 				uv0 = slot0
 
 				uv1()
@@ -32,13 +30,11 @@ function slot0.FetchFirstChargeIds(slot0, slot1, slot2)
 		return
 	end
 
-	function slot4()
-		uv1(uv0:getFirstChargeList())
-	end
-
 	if getProxy(ShopsProxy):ShouldRefreshChargeList() then
 		pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
-			callback = slot4
+			callback = function ()
+				uv1(uv0:getFirstChargeList())
+			end
 		})
 	else
 		slot4()
@@ -60,7 +56,7 @@ end
 function slot0.PurchaseItem(slot0, slot1)
 	assert(slot1:getDropInfo().type == DROP_TYPE_ITEM)
 
-	slot3 = pg.item_data_statistics[slot2.id]
+	slot3 = Item.getConfigData(slot2.id)
 
 	slot0:ShowMsgBox({
 		isMonthCard = false,

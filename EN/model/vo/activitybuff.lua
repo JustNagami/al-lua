@@ -42,7 +42,7 @@ function slot0.isActivate(slot0)
 				slot1 = true
 			end
 		else
-			slot1 = (function ()
+			slot1 = function ()
 				if uv0:getConfig("benefit_condition")[1] == "lv" then
 					return uv1(getProxy(PlayerProxy):getRawData().level, slot0[2], slot0[3])
 				elseif slot0[1] == "activity" then
@@ -58,7 +58,7 @@ function slot0.isActivate(slot0)
 				if slot0 == "" then
 					return true
 				end
-			end)() or false
+			end() or false
 		end
 	end
 
@@ -73,9 +73,7 @@ function slot0.isAddedBuff(slot0)
 	slot1 = true
 
 	if getProxy(ActivityProxy):getActivityById(slot0.activityId) and not slot3:isEnd() and slot0:getConfig("benefit_condition")[1] == "pt" then
-		slot7 = slot4[4]
-
-		if slot4[3] > (getProxy(PlayerProxy):getData()[pg.player_resource[slot4[2]].name] or 0) or slot9 >= slot7 then
+		if slot4[3] > (getProxy(PlayerProxy):getData()[pg.player_resource[slot4[2]].name] or 0) or slot9 >= slot4[4] then
 			slot1 = false
 		end
 	end

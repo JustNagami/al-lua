@@ -117,10 +117,8 @@ function slot15(slot0, slot1)
 end
 
 function slot16(slot0, slot1, slot2)
-	slot3 = uv0(slot1, "w")
-
 	if slot0.type == "c" then
-		slot3:write(string.format([[
+		uv0(slot1, "w"):write(string.format([[
 #ifdef _cplusplus
 extern "C"
 #endif
@@ -134,12 +132,10 @@ const unsigned char %s%s[] = {
 	end
 
 	slot4 = {}
-	slot5 = 0
-	slot6 = 0
 
 	for slot10 = 1, #slot2 do
-		if slot6 + #tostring(string.byte(slot2, slot10)) + 1 > 78 then
-			slot3:write(table.concat(slot4, ",", 1, slot5), ",\n")
+		if 0 + #tostring(string.byte(slot2, slot10)) + 1 > 78 then
+			slot3:write(table.concat(slot4, ",", 1, 0), ",\n")
 
 			slot6 = #slot11 + 1
 			slot5 = 0
@@ -238,14 +234,12 @@ typedef struct {
 		end
 	end
 
-	slot11 = slot3.new(slot5 and "ELF64obj" or "ELF32obj").hdr
-
 	if slot0.os == "bsd" or slot0.os == "other" then
 		slot12 = assert(io.open("/bin/ls", "rb"))
 
 		slot12:close()
 		slot3.copy(slot10, slot12:read(9), 9)
-		uv2(slot11.emagic[0] == 127, "no support for writing native object files")
+		uv2(slot3.new(slot5 and "ELF64obj" or "ELF32obj").hdr.emagic[0] == 127, "no support for writing native object files")
 	else
 		slot11.emagic = "ELF"
 		slot11.eosabi = ({
@@ -378,11 +372,10 @@ typedef struct {
 } PEobj;
 ]])
 
-	slot4 = uv0 .. slot0.modname
 	slot5 = false
 
 	if slot0.arch == "x86" then
-		slot4 = "_" .. slot4
+		slot4 = "_" .. (uv0 .. slot0.modname)
 	elseif slot0.arch == "x64" then
 		slot5 = true
 	end
@@ -568,9 +561,9 @@ typedef struct {
 	end
 
 	slot10 = uv2.bswap
-	slot12 = (function (slot0, slot1)
+	slot12 = function (slot0, slot1)
 		return uv0.band(slot0 + slot1 - 1, -slot1)
-	end)(slot3.offsetof(slot3.new(slot8), "space") + #slot4 + 2, slot7)
+	end(slot3.offsetof(slot3.new(slot8), "space") + #slot4 + 2, slot7)
 	slot13 = ({
 		x86 = {
 			7

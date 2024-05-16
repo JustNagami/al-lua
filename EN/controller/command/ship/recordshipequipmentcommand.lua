@@ -48,31 +48,26 @@ function slot0.execute(slot0, slot1)
 		slot7:updateShip(slot8)
 	elseif slot5 == 2 then
 		slot11 = getProxy(EquipmentProxy)
-		slot13 = slot10[slot4]
 
 		if #Clone(slot8.equipmentRecords[slot4]) == 0 or _.all(slot12, function (slot0)
 			return slot0 == -1
-		end) and slot13 == nil then
+		end) and slot10[slot4] == nil then
 			return
 		end
 
-		function slot14(slot0, slot1)
-			if uv0[slot0] and uv0[slot0].id == slot1 then
-				return true
-			end
-
-			return false
-		end
-
-		slot15 = {}
-
 		for slot19, slot20 in ipairs(slot12) do
-			if slot20 ~= -1 and (not slot11:getEquipmentById(slot20) or slot21.count <= 0) and not slot14(slot19, slot20) and pg.equip_data_statistics[slot20] then
+			if slot20 ~= -1 and (not slot11:getEquipmentById(slot20) or slot21.count <= 0) and not function (slot0, slot1)
+				if uv0[slot0] and uv0[slot0].id == slot1 then
+					return true
+				end
+
+				return false
+			end(slot19, slot20) then
 				slot12[slot19] = slot11:getSameTypeEquipmentId(Equipment.New({
 					id = slot20
 				})) or 0
 
-				table.insert(slot15, string.format("<color=%s>%s+%s</color>", uv0[slot22.config.rarity - 1], slot22.config.name, slot22.config.level - 1))
+				table.insert({}, string.format("<color=%s>%s+%s</color>", uv0[slot22.config.rarity - 1], slot22.config.name, slot22.config.level - 1))
 			end
 		end
 

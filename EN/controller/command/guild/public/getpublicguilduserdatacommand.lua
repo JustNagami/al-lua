@@ -17,9 +17,7 @@ function slot0.execute(slot0, slot1)
 end
 
 function slot0.CreatePublicGuild(slot0, slot1)
-	slot2 = pg.ConnectionMgr.GetInstance()
-
-	slot2:Send(62100, {
+	pg.ConnectionMgr.GetInstance():Send(62100, {
 		type = 0
 	}, 62101, function (slot0)
 		getProxy(GuildProxy):AddPublicGuild(PublicGuild.New(slot0))
@@ -28,9 +26,7 @@ function slot0.CreatePublicGuild(slot0, slot1)
 end
 
 function slot0.InitPublicGuild(slot0, slot1)
-	slot2 = pg.ConnectionMgr.GetInstance()
-
-	slot2:Send(60102, {
+	pg.ConnectionMgr.GetInstance():Send(60102, {
 		type = 0
 	}, 60103, function (slot0)
 		getProxy(GuildProxy):GetPublicGuild():InitUser(slot0.user_info)

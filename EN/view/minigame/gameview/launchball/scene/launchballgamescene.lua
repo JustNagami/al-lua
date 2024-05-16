@@ -58,9 +58,8 @@ function slot0.Ctor(slot0, slot1, slot2)
 	slot0.enemyContent = findTF(slot0.contentMid, "enemy")
 	slot0.lineContent = findTF(slot0.contentMid, "line")
 	slot0.joyStick = LaunchBallGameJoyStick.New(findTF(slot0.contentTop, "joyStick"))
-	slot3 = slot0.joyStick
 
-	slot3:setActiveCallback(function (slot0)
+	slot0.joyStick:setActiveCallback(function (slot0)
 		uv0:joystickActive(slot0)
 	end)
 
@@ -79,13 +78,12 @@ function slot0.Ctor(slot0, slot1, slot2)
 		end
 	end
 
-	slot4 = Clone(LaunchBallGameConst.map_data[LaunchBallGameVo.gameRoundData.map].map)
 	slot6 = findTF(slot0.contentTop, "bg")
 
 	for slot10 = 0, findTF(slot0.contentBack, "bg").childCount - 1 do
 		slot11 = slot5:GetChild(slot10)
 
-		setActive(slot11, slot11.name == slot4)
+		setActive(slot11, slot11.name == Clone(LaunchBallGameConst.map_data[LaunchBallGameVo.gameRoundData.map].map))
 	end
 
 	for slot10 = 0, slot6.childCount - 1 do
@@ -182,9 +180,8 @@ function slot0.step(slot0)
 
 	for slot7 = #slot0.launchBallAmulet:getButterfly(), 1, -1 do
 		slot8 = slot3[slot7]
-		slot9 = slot8.tf
 
-		if not slot8.removeFlag and not slot8.removeTime and slot0.launchBallEnemy:checkPositionIn(slot9.position) then
+		if not slot8.removeFlag and not slot8.removeTime and slot0.launchBallEnemy:checkPositionIn(slot8.tf.position) then
 			slot8.removeTime = 0.2
 			slot8.speed.x = 0
 			slot8.speed.y = 0
@@ -203,10 +200,9 @@ function slot0.step(slot0)
 
 		if not slot0.pointerColor then
 			slot4 = LaunchBallGameVo.amulet.color
-			slot5 = uv0[LaunchBallGameVo.amulet.color].tpl
 
 			for slot9 = 0, slot0.pointerContent.childCount - 1 do
-				if slot0.pointerContent:GetChild(slot9).name == slot5 then
+				if slot0.pointerContent:GetChild(slot9).name == uv0[LaunchBallGameVo.amulet.color].tpl then
 					slot0.anglePointer = slot10
 				end
 
@@ -215,9 +211,7 @@ function slot0.step(slot0)
 		end
 
 		if slot0.pointerTime > 0.3 and LaunchBallGameVo.joyStickData.active then
-			slot5 = LaunchBallGameVo.joyStickData.rad
-
-			if LaunchBallGameVo.joyStickData.angle and slot5 then
+			if LaunchBallGameVo.joyStickData.angle and LaunchBallGameVo.joyStickData.rad then
 				slot0.pointerRotation.z = slot4 + uv1
 				slot0.anglePointer.localEulerAngles = slot0.pointerRotation
 

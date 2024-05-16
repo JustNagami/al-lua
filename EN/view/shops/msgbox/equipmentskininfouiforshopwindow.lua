@@ -21,16 +21,10 @@ function slot0.OnInit(slot0)
 	onButton(slot0, slot0._tf, function ()
 		uv0:Hide()
 	end, SOUND_BACK)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("display/top/btnBack"), function ()
+	onButton(slot0, slot0._tf:Find("display/top/btnBack"), function ()
 		uv0:Hide()
 	end, SFX_CANCEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("display/actions/cancel"), function ()
+	onButton(slot0, slot0._tf:Find("display/actions/cancel"), function ()
 		uv0:Hide()
 	end, SFX_CANCEL)
 end
@@ -45,10 +39,8 @@ end
 
 function slot0.Open(slot0, slot1, slot2)
 	onButton(slot0, slot0.confirmBtn, function ()
-		slot0 = pg.equip_skin_template[uv0].name
-
 		if uv1 then
-			uv1(uv2, 1, slot0)
+			uv1(uv2, 1, pg.equip_skin_template[uv0].name)
 		end
 
 		uv3:Hide()

@@ -16,9 +16,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot7 = pg.ConnectionMgr.GetInstance()
-
-	slot7:Send(20005, {
+	pg.ConnectionMgr.GetInstance():Send(20005, {
 		id = slot6.id,
 		choice_award = {}
 	}, 20006, function (slot0)
@@ -26,10 +24,10 @@ function slot0.execute(slot0, slot1)
 			slot1 = {}
 
 			for slot5, slot6 in ipairs(slot0.award_list) do
-				table.insert(slot1, Item.New({
+				table.insert(slot1, Drop.New({
 					type = slot6.type,
 					id = slot6.id,
-					count = slot6.number or slot6.count
+					count = slot6.number
 				}))
 			end
 

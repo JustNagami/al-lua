@@ -38,10 +38,8 @@ end
 function slot0.UpdateView(slot0, slot1)
 	slot0:Show()
 
-	slot2 = slot1:GetHP()
-
 	if slot1:IsPeriodEnemy() then
-		slot2 = math.min(slot2, nowWorld():GetHistoryLowestHP(slot1.id))
+		slot2 = math.min(slot1:GetHP(), nowWorld():GetHistoryLowestHP(slot1.id))
 	end
 
 	slot5 = pg.world_expedition_data[slot1:GetBattleStageId()] and slot4.phase_drop_display

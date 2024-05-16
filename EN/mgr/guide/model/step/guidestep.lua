@@ -22,6 +22,11 @@ function slot0.Ctor(slot0, slot1)
 	slot0.spriteUI = slot0:GenSpriteSearchData(slot1.spriteui)
 	slot0.sceneName = slot1.style and slot1.style.scene
 	slot0.otherTriggerTarget = slot1.style and slot1.style.trigger
+	slot0.isWorld = defaultValue(slot1.isWorld, true)
+end
+
+function slot0.UpdateIsWorld(slot0, slot1)
+	slot0.isWorld = slot1
 end
 
 function slot0.IsMatchWithCode(slot0, slot1)
@@ -68,21 +73,21 @@ function slot0.GetDialogueType(slot0)
 	return slot0.styleData.mode
 end
 
-function slot1(slot0)
-	slot1 = "char"
+function slot1(slot0, slot1)
+	slot2 = "char"
 
-	if slot0.char and slot0.char == 1 then
-		slot1 = "char_world"
-	elseif slot0.char and slot0.char == "amazon" then
-		slot1 = "amazon"
+	if slot1.char and slot1.char == 1 then
+		slot2 = slot0.isWorld and "char_world" or "char_world1"
+	elseif slot1.char and slot1.char == "amazon" then
+		slot2 = "char_amazon"
 	end
 
-	return slot1
+	return slot2
 end
 
 function slot2(slot0, slot1)
 	if slot1.charPos then
-		return Vector2(slot1.charPos[0], slot1.charPos[1])
+		return Vector2(slot1.charPos[1], slot1.charPos[2])
 	elseif slot1.dir == 1 then
 		return slot1.mode == uv0.DIALOGUE_BLUE and Vector2(-400, -170) or Vector2(-350, 0)
 	else
@@ -106,14 +111,14 @@ function slot0.GenStyleData(slot0, slot1)
 		mode = slot1.mode,
 		text = HXSet.hxLan(slot1.text or ""),
 		counsellor = {
-			name = uv0(slot1),
+			name = uv0(slot0, slot1),
 			position = uv1(slot0, slot1),
 			scale = uv2(slot1)
 		},
 		scale = slot1.dir == 1 and Vector3(1, 1, 1) or Vector3(-1, 1, 1),
 		position = Vector2(slot1.posX or 0, slot1.posY or 0),
 		handPosition = slot1.handPos and Vector3(slot1.handPos.x, slot1.handPos.y, 0) or Vector3(-267, -96, 0),
-		handAngle = slot1.handPos and Vector3(0, 0, handPos.w or 0) or Vector3(0, 0, 0)
+		handAngle = slot1.handPos and Vector3(0, 0, slot1.handPos.w or 0) or Vector3(0, 0, 0)
 	}
 end
 
@@ -122,20 +127,20 @@ function slot0.GetStyleData(slot0)
 end
 
 function slot0.GenHighLightData(slot0, slot1)
-	function slot2(slot0)
-		slot1 = uv0:GenSearchData(slot0)
-		slot1.type = slot0.lineMode or uv1.HIGH_TYPE_GAMEOBJECT
-
-		return slot1
-	end
-
-	slot3 = {}
-
 	if slot1 and slot1.ui then
-		table.insert(slot3, slot2(slot1.ui))
+		table.insert({}, function (slot0)
+			slot1 = uv0:GenSearchData(slot0)
+			slot1.type = slot0.lineMode or uv1.HIGH_TYPE_GAMEOBJECT
+
+			return slot1
+		end(slot1.ui))
 	elseif slot1 and slot1.uiset then
 		for slot7, slot8 in ipairs(slot1.uiset) do
 			table.insert(slot3, slot2(slot8))
+		end
+	elseif slot1 and slot1.uiFunc then
+		for slot8, slot9 in ipairs(slot1.uiFunc()) do
+			table.insert(slot3, slot2(slot9))
 		end
 	end
 

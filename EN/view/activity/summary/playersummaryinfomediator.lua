@@ -24,10 +24,8 @@ function slot0.listNotificationInterests(slot0)
 end
 
 function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-
 	if slot1:getName() == GAME.GET_PLAYER_SUMMARY_INFO_DONE then
-		slot0.viewComponent:setSummaryInfo(slot3)
+		slot0.viewComponent:setSummaryInfo(slot1:getBody())
 		slot0.viewComponent:initSummaryInfo()
 	end
 end

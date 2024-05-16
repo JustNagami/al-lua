@@ -116,10 +116,7 @@ function slot0.initUI(slot0)
 
 		uv0:closeSelf()
 	end, SFX_PANEL)
-
-	slot1 = slot0.cardUIItemList
-
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.cardUIItemList:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
 			slot3 = slot1 + 1
 			slot4 = "cardselect_" .. slot3

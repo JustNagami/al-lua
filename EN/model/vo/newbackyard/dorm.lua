@@ -2,6 +2,9 @@ slot0 = class("Dorm", import("..BaseVO"))
 slot0.MAX_FLOOR = 2
 slot0.MAX_LEVEL = 4
 slot0.DORM_2_FLOOR_COMFORTABLE_ADDITION = 20
+slot0.COMFORTABLE_LEVEL_1 = 1
+slot0.COMFORTABLE_LEVEL_2 = 2
+slot0.COMFORTABLE_LEVEL_3 = 3
 
 function slot0.Ctor(slot0, slot1)
 	slot0.configId = slot1.id or slot1.lv
@@ -30,10 +33,8 @@ function slot0.Ctor(slot0, slot1)
 end
 
 function slot0.GetExpandId(slot0)
-	slot1 = slot0.level - 1
-
 	for slot5, slot6 in ipairs(slot0.expandIds) do
-		if slot0.shopCfg[slot6].limit_args[1][2] == slot1 then
+		if slot0.shopCfg[slot6].limit_args[1][2] == slot0.level - 1 then
 			return slot6
 		end
 	end
@@ -104,17 +105,12 @@ function slot0.getComfortable(slot0, slot1)
 	end
 
 	for slot8, slot9 in pairs(slot0.furnitures) do
-		slot10 = slot9.count or 1
-
-		for slot14 = 1, slot10 do
+		for slot14 = 1, slot9.count or 1 do
 			slot4(slot9)
 		end
 	end
 
-	slot5 = pairs
-	slot6 = slot1 or {}
-
-	for slot8, slot9 in slot5(slot6) do
+	for slot8, slot9 in pairs(slot1 or {}) do
 		slot4(slot9)
 	end
 
@@ -128,13 +124,33 @@ function slot0.getComfortable(slot0, slot1)
 		end
 	end
 
-	slot2 = slot2 + (slot0.level - 1) * 10
-
 	if slot0:isUnlockFloor(2) then
-		slot2 = slot2 + uv0.DORM_2_FLOOR_COMFORTABLE_ADDITION
+		slot2 = slot2 + (slot0.level - 1) * 10 + uv0.DORM_2_FLOOR_COMFORTABLE_ADDITION
 	end
 
 	return slot2
+end
+
+function slot0.GetComfortableLevel(slot0, slot1)
+	if slot1 < 30 then
+		return uv0.COMFORTABLE_LEVEL_1
+	elseif slot1 >= 30 and slot1 < 68 then
+		return uv0.COMFORTABLE_LEVEL_2
+	else
+		return uv0.COMFORTABLE_LEVEL_3
+	end
+end
+
+function slot0._GetComfortableLevel(slot0)
+	return slot0:GetComfortableLevel(slot0:getComfortable())
+end
+
+function slot0.GetComfortableColor(slot0, slot1)
+	return ({
+		Color.New(0.9490196, 0.772549, 0.772549, 1),
+		Color.New(0.9882353, 0.9333333, 0.7647059, 1),
+		Color.New(0.8588235, 0.9490196, 0.772549, 1)
+	})[slot1]
 end
 
 function slot0.increaseTrainPos(slot0)
@@ -207,11 +223,9 @@ function slot0.deleteShip(slot0, slot1)
 end
 
 function slot0.GetStateShipCnt(slot0, slot1)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot0.shipIds) do
 		if getProxy(BayProxy):RawGetShipById(slot7).state == slot1 then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 	end
 
@@ -231,15 +245,15 @@ function slot0.GetStateShips(slot0, slot1)
 end
 
 function slot0.GetStateShipsById(slot0, slot1)
-	slot2 = {}
-
 	for slot6, slot7 in ipairs(slot0.shipIds) do
 		if getProxy(BayProxy):RawGetShipById(slot7).state == slot1 then
-			slot2[slot8.id] = slot8
+			-- Nothing
 		end
 	end
 
-	return slot2
+	return {
+		[slot8.id] = slot8
+	}
 end
 
 function slot0.GetNonStateShips(slot0, slot1)
@@ -255,18 +269,27 @@ function slot0.GetNonStateShips(slot0, slot1)
 end
 
 function slot0.GetShips(slot0)
-	slot1 = {}
-	slot2 = getProxy(BayProxy)
-
 	for slot6, slot7 in ipairs(slot0.shipIds) do
-		if slot2:RawGetShipById(slot7) then
-			slot1[slot8.id] = slot8
+		if getProxy(BayProxy):RawGetShipById(slot7) then
+			-- Nothing
 		else
 			print("not found ship >>>", slot7)
 		end
 	end
 
-	return slot1
+	return {
+		[slot8.id] = slot8
+	}
+end
+
+function slot0.AnyShipExistIntimacyOrMoney(slot0)
+	for slot5, slot6 in pairs(slot0:GetShips()) do
+		if slot6.state_info_3 > 0 or slot6.state_info_4 > 0 then
+			return true
+		end
+	end
+
+	return false
 end
 
 function slot0.GetThemeList(slot0, slot1)
@@ -299,6 +322,8 @@ end
 
 function slot0.AddFurniture(slot0, slot1)
 	if not slot0.furnitures[slot1.id] then
+		slot1:MarkNew()
+
 		slot0.furnitures[slot1.id] = slot1
 	else
 		slot2 = slot0.furnitures[slot1.id]
@@ -321,9 +346,8 @@ end
 
 function slot0.GetPutFurnitureList(slot0, slot1)
 	slot2 = {}
-	slot4 = slot0:GetTheme(slot1) and slot3:GetAllFurniture() or {}
 
-	for slot8, slot9 in pairs(slot4) do
+	for slot8, slot9 in pairs(slot0:GetTheme(slot1) and slot3:GetAllFurniture() or {}) do
 		table.insert(slot2, slot9)
 	end
 
@@ -334,13 +358,12 @@ end
 
 function slot0.GetPutShipList(slot0, slot1)
 	slot2 = {}
-	slot4 = ({
-		Ship.STATE_TRAIN,
-		Ship.STATE_REST
-	})[slot1]
 
 	for slot8, slot9 in pairs(slot0:GetShips()) do
-		if slot9.state == slot4 then
+		if slot9.state == ({
+			Ship.STATE_TRAIN,
+			Ship.STATE_REST
+		})[slot1] then
 			table.insert(slot2, slot9)
 		end
 	end

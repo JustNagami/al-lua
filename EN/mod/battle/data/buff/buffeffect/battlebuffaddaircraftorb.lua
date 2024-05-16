@@ -19,13 +19,11 @@ function slot1.onAircraftCreate(slot0, slot1, slot2, slot3)
 		return
 	end
 
-	slot4 = {
-		buffID = slot0._buffID,
-		rant = slot0._rant,
-		level = slot0._level
-	}
-
 	for slot10, slot11 in ipairs(slot3.aircraft:GetWeapon()) do
-		slot11:SetBulletOrbData(slot4)
+		slot11:SetBulletOrbData({
+			buffID = slot0._buffID,
+			rant = slot0._rant,
+			level = slot0._level
+		})
 	end
 end

@@ -28,31 +28,30 @@ end
 function slot0.OnSelShips(slot0, slot1, slot2)
 	slot3 = getProxy(DormProxy):getRawData()
 	slot4, slot5, slot6 = slot0:GetSelectedShips(slot3, slot1, slot2)
-	slot7 = {
-		callbackQuit = true,
-		selectedMax = slot0:GetMaxSel(slot3, slot1),
-		quitTeam = slot2 ~= nil,
-		ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
-			isActivityNpc = true
-		}),
-		selectedIds = slot6,
-		preView = slot0.viewComponent.__cname,
-		hideTagFlags = ShipStatus.TAG_HIDE_BACKYARD,
-		blockTagFlags = ShipStatus.TAG_BLOCK_BACKYARD,
-		onShip = function (slot0, slot1, slot2)
-			return uv0:OnShip(uv1, slot0, slot1, slot2)
-		end,
-		onSelected = function (slot0, slot1)
-			uv0:OnSelected(uv1, uv2, slot0, function ()
-				uv0:sendNotification(uv1.UPDATE_SHIPS)
-				uv2()
-			end)
-		end,
-		priorEquipUpShipIDList = {}
-	}
 
 	for slot11, slot12 in pairs(slot4) do
-		table.insert(slot7.priorEquipUpShipIDList, slot12)
+		table.insert(({
+			callbackQuit = true,
+			selectedMax = slot0:GetMaxSel(slot3, slot1),
+			quitTeam = slot2 ~= nil,
+			ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
+				isActivityNpc = true
+			}),
+			selectedIds = slot6,
+			preView = slot0.viewComponent.__cname,
+			hideTagFlags = ShipStatus.TAG_HIDE_BACKYARD,
+			blockTagFlags = ShipStatus.TAG_BLOCK_BACKYARD,
+			onShip = function (slot0, slot1, slot2)
+				return uv0:OnShip(uv1, slot0, slot1, slot2)
+			end,
+			onSelected = function (slot0, slot1)
+				uv0:OnSelected(uv1, uv2, slot0, function ()
+					uv0:sendNotification(uv1.UPDATE_SHIPS)
+					uv2()
+				end)
+			end,
+			priorEquipUpShipIDList = {}
+		}).priorEquipUpShipIDList, slot12)
 	end
 
 	for slot11, slot12 in pairs(slot5) do
@@ -83,7 +82,6 @@ function slot0.GetMaxSel(slot0, slot1, slot2)
 end
 
 function slot0.GetSelectedShips(slot0, slot1, slot2, slot3)
-	slot4 = slot3 and slot3.id or -1
 	slot5 = {}
 	slot6 = {}
 	slot7 = {}
@@ -92,7 +90,7 @@ function slot0.GetSelectedShips(slot0, slot1, slot2, slot3)
 		if getProxy(BayProxy):RawGetShipById(slot12).state == slot2 then
 			table.insert(slot5, slot13.id)
 
-			if slot13.id ~= slot4 then
+			if slot13.id ~= (slot3 and slot3.id or -1) then
 				table.insert(slot7, slot13.id)
 			end
 		else
@@ -139,11 +137,9 @@ function slot0.OnSelected(slot0, slot1, slot2, slot3, slot4)
 		return
 	end
 
-	slot6 = {}
-
 	for slot10, slot11 in pairs(slot5) do
 		if not table.contains(slot3, slot10) then
-			table.insert(slot6, function (slot0)
+			table.insert({}, function (slot0)
 				uv0:sendNotification(GAME.EXIT_SHIP, {
 					shipId = uv1,
 					callback = slot0

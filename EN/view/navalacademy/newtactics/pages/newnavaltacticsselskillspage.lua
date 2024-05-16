@@ -8,8 +8,7 @@ function slot0.OnLoaded(slot0)
 	slot0.confrimBtn = slot0:findTF("frame/confirm_btn")
 	slot0.skillTpl = slot0:findTF("frame/skill_container/content/skill")
 	slot0.emptyTpl = slot0:findTF("frame/skill_container/content/empty")
-	slot1 = slot0:findTF("frame/skill_container/content")
-	slot0.toggleGroup = slot1:GetComponent(typeof(ToggleGroup))
+	slot0.toggleGroup = slot0:findTF("frame/skill_container/content"):GetComponent(typeof(ToggleGroup))
 	slot0.skillCards = {
 		NewNavalTacticsSkillCard.New(slot0.skillTpl)
 	}
@@ -127,9 +126,7 @@ function slot0.UpdateSkill(slot0, slot1, slot2)
 		slot0.skillCards[slot1] = NewNavalTacticsSkillCard.New(Object.Instantiate(slot0.skillTpl, slot0.skillTpl.parent))
 	end
 
-	slot4 = slot3._tf
-
-	slot4:SetSiblingIndex(slot1 - 1)
+	slot3._tf:SetSiblingIndex(slot1 - 1)
 	slot3:Enable()
 	slot3:Update(slot2)
 	onToggle(slot0, slot3._tf, function (slot0)

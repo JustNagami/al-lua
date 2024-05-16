@@ -153,41 +153,28 @@ function slot0.updateTaskList(slot0)
 end
 
 function slot0.updateTaskTpl(slot0, slot1, slot2)
-	slot9 = slot0:findTF("Info/AwardInfo/Award/Tag/Get", slot1)
-	slot10 = slot0:findTF("Info/AwardInfo/Award/Tag/Got", slot1)
-	slot11 = slot0:findTF("GotMask", slot1)
-
 	setText(slot0:findTF("Target/IndexText", slot1), slot2)
 
 	slot12 = slot0.curMetaProgressVO.metaPtData.targets[slot2]
 
 	setText(slot0:findTF("PT/Count/NumText", slot1), slot12)
+	setImageSprite(slot0:findTF("PT/Icon", slot1), LoadSprite(slot0.curMetaProgressVO:getPtIconPath()))
 
-	slot16 = slot0.curMetaProgressVO
+	slot13 = Drop.Create(slot0.curMetaProgressVO.metaPtData.dropList[slot2])
 
-	setImageSprite(slot0:findTF("PT/Icon", slot1), LoadSprite(slot16:getPtIconPath()))
-
-	slot13 = slot0.curMetaProgressVO.metaPtData.dropList[slot2]
-	slot14 = {
-		type = slot13[1],
-		id = slot13[2],
-		count = slot13[3]
-	}
-
-	updateDrop(slot0:findTF("Info/AwardInfo/Award/Item", slot1), slot14, {
+	updateDrop(slot0:findTF("Info/AwardInfo/Award/Item", slot1), slot13, {
 		hideName = true
 	})
 	onButton(slot0, slot0:findTF("Info/AwardInfo/Award", slot1), function ()
 		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
-	updateDropCfg(slot14)
-	setText(slot0:findTF("Info/AwardInfo/NameMask/NameText", slot1), shortenString(slot14.cfg.name, 6))
+	setText(slot0:findTF("Info/AwardInfo/NameMask/NameText", slot1), shortenString(slot13:getConfig("name"), 6))
 	setText(slot0:findTF("Info/AwardInfo/SynProgressText", slot1), math.round(slot12 / slot0.curMetaProgressVO.unlockPTNum * 100) .. "%")
 
 	if slot2 < slot0.curMetaProgressVO.metaPtData.level + 1 then
-		setActive(slot10, true)
-		setActive(slot9, false)
-		setActive(slot11, true)
+		setActive(slot0:findTF("Info/AwardInfo/Award/Tag/Got", slot1), true)
+		setActive(slot0:findTF("Info/AwardInfo/Award/Tag/Get", slot1), false)
+		setActive(slot0:findTF("GotMask", slot1), true)
 		setGray(slot1, true, true)
 	else
 		if slot0.curMetaProgressVO.metaPtData.count < slot12 then
@@ -253,7 +240,6 @@ end
 
 function slot0.getOneStepPTAwardLevelAndCount(slot0)
 	slot1 = slot0.curMetaProgressVO
-	slot2 = slot1.metaPtData:GetResProgress()
 	slot4 = slot1:getStoryIndexList()
 	slot5 = slot1.unlockPTLevel
 	slot6 = 0
@@ -262,7 +248,7 @@ function slot0.getOneStepPTAwardLevelAndCount(slot0)
 		slot11 = false
 		slot12 = false
 
-		if slot3[slot10] <= slot2 then
+		if slot3[slot10] <= slot1.metaPtData:GetResProgress() then
 			slot11 = true
 		end
 

@@ -241,10 +241,8 @@ function slot6.QuickCoolDown(slot0)
 end
 
 function slot6.ReloadBoost(slot0, slot1)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot0._reloadBoostList) do
-		slot2 = slot2 + slot7
+		slot2 = 0 + slot7
 	end
 
 	slot4 = pg.TimeMgr.GetInstance():GetCombatTime() - slot0._jammingTime - slot0._CDstartTime
@@ -261,10 +259,8 @@ function slot6.AppendReloadBoost(slot0, slot1)
 end
 
 function slot6.GetReloadFinishTimeStamp(slot0)
-	slot1 = 0
-
 	for slot5, slot6 in ipairs(slot0._reloadBoostList) do
-		slot1 = slot1 + slot6
+		slot1 = 0 + slot6
 	end
 
 	return slot0._reloadRequire + slot0._CDstartTime + slot0._jammingTime + slot1

@@ -318,6 +318,14 @@ pg.skill_data_template = setmetatable({
 		60480,
 		60490,
 		60500,
+		60510,
+		60520,
+		60530,
+		60540,
+		60550,
+		60560,
+		60570,
+		60580,
 		7000,
 		9010,
 		9020,
@@ -1073,6 +1081,52 @@ pg.skill_data_template = setmetatable({
 		17400,
 		17410,
 		17420,
+		17450,
+		17460,
+		17470,
+		17480,
+		17500,
+		17510,
+		17520,
+		17530,
+		17540,
+		17550,
+		17560,
+		17570,
+		17580,
+		17590,
+		17600,
+		17610,
+		17620,
+		17630,
+		17640,
+		17650,
+		17660,
+		17670,
+		17680,
+		17690,
+		17700,
+		17730,
+		17740,
+		17750,
+		17760,
+		17770,
+		17780,
+		17790,
+		17800,
+		17810,
+		17820,
+		17830,
+		17840,
+		17850,
+		17860,
+		17870,
+		17920,
+		17930,
+		17880,
+		17890,
+		17900,
+		17910,
 		18010,
 		18040,
 		18050,
@@ -1093,6 +1147,8 @@ pg.skill_data_template = setmetatable({
 		18320,
 		18340,
 		18350,
+		18380,
+		18400,
 		18440,
 		18460,
 		18500,
@@ -1357,6 +1413,12 @@ pg.skill_data_template = setmetatable({
 		23512,
 		24011,
 		24012,
+		24031,
+		24032,
+		24041,
+		24042,
+		24061,
+		24062,
 		24111,
 		24112,
 		24121,
@@ -1365,6 +1427,8 @@ pg.skill_data_template = setmetatable({
 		24132,
 		24141,
 		24142,
+		24151,
+		24152,
 		25011,
 		25012,
 		25021,
@@ -1637,6 +1701,20 @@ pg.skill_data_template = setmetatable({
 		30172,
 		30181,
 		30182,
+		30191,
+		30192,
+		30201,
+		30202,
+		30211,
+		30212,
+		30221,
+		30222,
+		30231,
+		30232,
+		30241,
+		30242,
+		30251,
+		30252,
 		101010,
 		101020,
 		101030,
@@ -2018,6 +2096,32 @@ pg.skill_data_template = setmetatable({
 		801052,
 		801055,
 		801057,
+		801060,
+		801070,
+		801081,
+		801082,
+		801085,
+		801087,
+		801090,
+		801100,
+		801110,
+		801121,
+		801122,
+		801125,
+		801127,
+		801130,
+		801140,
+		801150,
+		801161,
+		801162,
+		801165,
+		801167,
+		801170,
+		801180,
+		801191,
+		801192,
+		801195,
+		801197,
 		901010,
 		901020,
 		902010,
@@ -2087,6 +2191,16 @@ pg.skill_data_template = setmetatable({
 		1017210,
 		1012620,
 		1011940,
+		1012160,
+		1010480,
+		1010490,
+		1011370,
+		1010750,
+		1012940,
+		1005080,
+		1013000,
+		1010980,
+		1010660,
 		1090010,
 		1090020,
 		1090030,
@@ -2108,7 +2222,10 @@ pg.skill_data_template = setmetatable({
 		1090190,
 		1090200,
 		1090210,
-		1090220
+		1090220,
+		1090230,
+		1090240,
+		1090250
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -11850,6 +11967,118 @@ pg.base.skill_data_template = {
 		type = 0,
 		max_level = 0,
 		desc = "When equipped by Princeton: 8s after her airstrike finishes loading, launches an interceptive airstrike.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60510] = {
+		desc_get = "",
+		name = "Huan Ch'ang's Fishing Rod",
+		id = 60510,
+		type = 0,
+		max_level = 0,
+		desc = "When equipped by Huan Ch'ang: 15s after the battle starts, throws a fishing tackle forward, creating a special area that lasts 10s. Ships within this area take 5.0% less DMG from the enemy.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60520] = {
+		desc_get = "",
+		name = "Cross Brooch",
+		id = 60520,
+		type = 0,
+		max_level = 0,
+		desc = "When equipped by a Vanguard ship: if your Flagship is a Vichya Dominion BB or BC, when your Flagship fires her Main Guns: fires an additional special barrage.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60530] = {
+		desc_get = "",
+		name = "Ascension Box",
+		id = 60530,
+		type = 0,
+		max_level = 0,
+		desc = "If your Flagship is a BB, BC, or BBV: decreases that ship's Main Gun Spread Angle by 2.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60540] = {
+		desc_get = "",
+		name = "RPG Adventure Interface",
+		id = 60540,
+		type = 0,
+		max_level = 0,
+		desc = "Grants a strange power during battle.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60550] = {
+		desc_get = "",
+		name = "Echoes of Relinquished Time",
+		id = 60550,
+		type = 0,
+		max_level = 0,
+		desc = "When equipped to Akagi: increases this ship's DMG dealt by 12.0%; the first time this ship launches an airstrike during battle: increases her Detection Gauge value by an additional 50; 45 seconds after the battle starts, this ship loses 300 HP, and her Detection Gauge value will be reset to 0.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60560] = {
+		desc_get = "",
+		name = "Harmony μ Ticket",
+		id = 60560,
+		type = 0,
+		max_level = 0,
+		desc = "Changes the BGM when equipped. If multiple gear which change the BGM are equipped at the same time, the one in effect will be chosen randomly.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60570] = {
+		desc_get = "",
+		name = "Alizarin Support Towel",
+		id = 60570,
+		type = 0,
+		max_level = 0,
+		desc = "When the battle starts: the ship equipping this gear gains 3.0% increased FP, TRP, AVI, and RLD for 15s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60580] = {
+		desc_get = "",
+		name = "Cyanidin Support Towel",
+		id = 60580,
+		type = 0,
+		max_level = 0,
+		desc = "When the battle starts: deploys a barrier (lasts 15s) that can negate DMG equal to 2.0% max HP of the ship equipping this gear.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -85186,7 +85415,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		id = 17310,
 		type = 3,
 		max_level = 10,
-		desc = "When the battle starts, if this ship has Eagle Union gear or weapons equipped: gains a $1 special anti-air barrage and decreases this ship's DMG taken from aircraft by $2.\nFor every 2 enemy aircraft shot down within your fleet's Anti-Air Gun range: increases this ship's AA by $3 (can be stacked up to 3 times) and this ship gains 1 stack of Motivation.\nWhen a total of 9 enemy aircraft have been shot down within your fleet's Anti-Air Gun Range: increases the recovery speed of your Main Fleet Eagle Union ships' Detection Gauge by 1 until the battle ends; once per battle, if your Flagship is an Eagle Union ship, also sets that ship's Detection Gauge value to 0 after 10s.",
+		desc = "When the battle starts, if this ship has Eagle Union gear or weapons equipped: gains a $1 special AA gun and decreases this ship's DMG taken from aircraft by $2.\nFor every 2 enemy aircraft shot down within your fleet's Anti-Air Range: increases this ship's AA by $3 (can be stacked up to 3 times) and this ship gains 1 stack of Motivation.\nWhen a total of 9 enemy aircraft have been shot down within your fleet's Anti-Air Range: increases the recovery speed of your Main Fleet Eagle Union ships' Detection Gauge by 1 until the battle ends; once per battle, if your Flagship is an Eagle Union ship, also sets that ship's Detection Gauge value to 0 after 10s.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -86432,6 +86661,5348 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 				},
 				{
 					"10.0%"
+				}
+			}
+		}
+	},
+	[17450] = {
+		desc_get = "",
+		name = "For All Things, Benefits Bestowed",
+		id = 17450,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's EVA by $1. When the battle starts, if there are other Dragon Empery ships in your fleet: increases all your ships' DMG dealt by $2 and increases your Dragon Empery ships' DMG dealt by a further $2.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"1.0%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.4%"
+				},
+				{
+					"1.4%",
+					"+0.4%"
+				},
+				{
+					"1.8%",
+					"+0.4%"
+				},
+				{
+					"2.2%",
+					"+0.4%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	},
+	[17460] = {
+		desc_get = "",
+		name = "For Safe Returns, Schemes Shaped",
+		id = 17460,
+		type = 2,
+		max_level = 10,
+		desc = "Every 8s: 50.0% chance to fire a $1 special barrage; if this barrage does not activate, instead increases this ship's FP and TRP by $2 (barrage DMG is based on the skill's level; buff can stack up to 3 times). \nOnce per battle, when this ship's HP falls below 30.0% as a result of DMG taken: restores $2 of this ship's max HP and deploys a barrier (lasts 15s) equal to $2 of this ship's max HP.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[17470] = {
+		desc_get = "",
+		name = "Lady Yuen's Grand \"Adventure\"",
+		id = 17470,
+		type = 3,
+		max_level = 10,
+		desc = "10s after the battle starts and every 15s after that: goes on an Adventure for 5s. Depending on the result of the Adventure, applies 1 buff to a random ship in your fleet for 8s and a debuff to 1 random enemy for 8s. Once per battle, if the Adventure fails, or if this ship's HP falls below 50.0% as a result of DMG taken: increases this ship's SPD by 5 and Evasion Rate by $2 and decreases her DMG taken by $1 until the battle ends.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"5.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.4%"
+				},
+				{
+					"1.4%",
+					"+0.4%"
+				},
+				{
+					"1.8%",
+					"+0.4%"
+				},
+				{
+					"2.2%",
+					"+0.4%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.5"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	},
+	[17480] = {
+		desc_get = "",
+		name = "Inkscape of Dancing Clouds",
+		id = 17480,
+		type = 1,
+		max_level = 10,
+		desc = "When the battle starts: increases this ship's TRP by $1 and, if there is another Dragon Empery ship in your fleet, increases this ship's DMG dealt by $2. Every 20s: fires a $3 special barrage (DMG is based on the skill's level; if there is any non-DD Dragon Empery ship in your fleet, this barrage is improved).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17500] = {
+		desc_get = "",
+		name = "Unfettered Freedom",
+		id = 17500,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's AVI by $1. When this ship launches an airstrike: launches an additional $2 airstrike with aircraft and monochrome shells. Hits scored by these monochrome shells count as hits toward this ship's Star-Studded Formation skill.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17510] = {
+		desc_get = "",
+		name = "Dragon's Dance",
+		id = 17510,
+		type = 1,
+		max_level = 10,
+		desc = "Every 3s: performs a $1 special attack (DMG is based on the skill's level and this ship's TRP stat). Every 5 times this attack hits an enemy: restores 3.0% HP for the ship in your fleet with the lowest percentage HP remaining (can activate up to 3 times per battle).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17520] = {
+		desc_get = "",
+		name = "Delectable Delicacies",
+		id = 17520,
+		type = 3,
+		max_level = 10,
+		desc = "1s after this ship fires her torpedoes: fires another wave of torpedoes (the torpedoes fired are the same as this ship's equipped torpedoes). Increases this ship's TRP and EVA by $1 and decreases her DMG taken by $2.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			}
+		}
+	},
+	[17530] = {
+		desc_get = "",
+		name = "Tiger Thrasher!",
+		id = 17530,
+		type = 1,
+		max_level = 10,
+		desc = "Every 1s: performs a $1 special attack (DMG is based on the skill's level and this ship's FP stat). Every 5 times this attack hits an enemy: increases this ship's FP by $2 (can be stacked up to 3 times).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.5%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.5%",
+					"+0.3%"
+				},
+				{
+					"1.8%",
+					"+0.3%"
+				},
+				{
+					"2.1%",
+					"+0.4%"
+				},
+				{
+					"2.5%",
+					"+0.3%"
+				},
+				{
+					"2.8%",
+					"+0.3%"
+				},
+				{
+					"3.1%",
+					"+0.4%"
+				},
+				{
+					"3.5%",
+					"+0.4%"
+				},
+				{
+					"3.9%",
+					"+0.4%"
+				},
+				{
+					"4.3%",
+					"+0.7%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	},
+	[17540] = {
+		desc_get = "",
+		name = "Gourmet Delivery!",
+		id = 17540,
+		type = 2,
+		max_level = 10,
+		desc = "1s after this ship fires her torpedoes: fires another wave of torpedoes (the torpedoes fired are the same as this ship's equipped torpedoes). Increases this ship's SPD and EVA by $1 and decreases her DMG taken by $2.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			}
+		}
+	},
+	[17550] = {
+		desc_get = "",
+		name = "Xuanwu's Tenacity",
+		id = 17550,
+		type = 1,
+		max_level = 10,
+		desc = "Provides 1 Missile Strike charge. Decreases the duration this ship Burns by 3s and decreases her Burn DMG taken by $1. Every 15s: fires a $2 special barrage (DMG is based on the skill's level) and deploys a shield (lasts 6s) around the frontmost ship in your Vanguard that can negate up to 6 enemy shells.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17560] = {
+		desc_get = "",
+		name = "United As One+",
+		id = 17560,
+		type = 3,
+		max_level = 10,
+		desc = "When sortied in a full fleet with 6 ships: increases this ship's FP and RLD by $1 and TRP and EVA by $2.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"25.0%"
+			},
+			{
+				"4.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.2%"
+				},
+				{
+					"11.2%",
+					"+1.2%"
+				},
+				{
+					"12.4%",
+					"+1.6%"
+				},
+				{
+					"14.0%",
+					"+1.5%"
+				},
+				{
+					"15.5%",
+					"+1.5%"
+				},
+				{
+					"17.0%",
+					"+2.0%"
+				},
+				{
+					"19.0%",
+					"+1.8%"
+				},
+				{
+					"20.8%",
+					"+1.8%"
+				},
+				{
+					"22.6%",
+					"+2.4%"
+				},
+				{
+					"25.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+0.4%"
+				},
+				{
+					"4.4%",
+					"+0.4%"
+				},
+				{
+					"4.8%",
+					"+0.7%"
+				},
+				{
+					"5.5%",
+					"+0.6%"
+				},
+				{
+					"6.1%",
+					"+0.6%"
+				},
+				{
+					"6.7%",
+					"+0.8%"
+				},
+				{
+					"7.5%",
+					"+0.7%"
+				},
+				{
+					"8.2%",
+					"+0.7%"
+				},
+				{
+					"8.9%",
+					"+1.1%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[17570] = {
+		desc_get = "",
+		name = "From Information Into Insight",
+		id = 17570,
+		type = 3,
+		max_level = 10,
+		desc = "When the battle starts: performs Strategic Divination and applies a buff to either your Vanguard or Main Fleet: \nIf your Vanguard is chosen, applies one of the following buffs at random: 1) Increases FP, TRP, and RLD by $1; 2) Decreases DMG taken from enemies by $2. \nIf your Main Fleet is chosen, applies one of the following buffs at random: 1) Increases FP, AVI, and ACC by $1; 2) Increases AA by $2 and decreases DMG taken from enemies by $1.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"3.5%",
+				"8.0%"
+			},
+			{
+				"4.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[17580] = {
+		desc_get = "",
+		name = "Always Prepared, Always Vigiliant",
+		id = 17580,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's RLD by $1. This ship ignores the penalties of the Out of Ammo debuff. Every 15s: $2 chance to fire a $3 special barrage (DMG is based on the skill's level; if when the battle starts there is another Dragon Empery ship in your fleet, sets this barrage's activation chance to $4).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"4.0%",
+				"10.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"50.0%",
+				"100.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"4.0%",
+					"+0.4%"
+				},
+				{
+					"4.4%",
+					"+0.4%"
+				},
+				{
+					"4.8%",
+					"+0.7%"
+				},
+				{
+					"5.5%",
+					"+0.6%"
+				},
+				{
+					"6.1%",
+					"+0.6%"
+				},
+				{
+					"6.7%",
+					"+0.8%"
+				},
+				{
+					"7.5%",
+					"+0.7%"
+				},
+				{
+					"8.2%",
+					"+0.7%"
+				},
+				{
+					"8.9%",
+					"+1.1%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"50.0%",
+					"+5.0%"
+				},
+				{
+					"55.0%",
+					"+5.0%"
+				},
+				{
+					"60.0%",
+					"+5.0%"
+				},
+				{
+					"65.0%",
+					"+5.0%"
+				},
+				{
+					"70.0%",
+					"+5.0%"
+				},
+				{
+					"75.0%",
+					"+5.0%"
+				},
+				{
+					"80.0%",
+					"+5.0%"
+				},
+				{
+					"85.0%",
+					"+5.0%"
+				},
+				{
+					"90.0%",
+					"+10.0%"
+				},
+				{
+					"100%"
+				}
+			}
+		}
+	},
+	[17590] = {
+		desc_get = "",
+		name = "Sublimation, to Sunder All Storms",
+		id = 17590,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship finishes loading her Main Guns: $1 chance to fire a $2 special barrage (DMG is based on the skill's level). Inflicts the following effects for 6s to enemies hit by this barrage: 1) Decreases SPD by 40.0%; 2) Increases DMG taken by 8.0%; 3) When Sovetsky Soyuz attacks the enemy, increases her Crit Rate by $3.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"70.0%",
+				"100.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"70.0%",
+					"+3.3%"
+				},
+				{
+					"73.3%",
+					"+3.3%"
+				},
+				{
+					"76.6%",
+					"+3.3%"
+				},
+				{
+					"79.9%",
+					"+3.3%"
+				},
+				{
+					"83.2%",
+					"+3.3%"
+				},
+				{
+					"86.5%",
+					"+3.3%"
+				},
+				{
+					"89.8%",
+					"+3.3%"
+				},
+				{
+					"93.1%",
+					"+3.3%"
+				},
+				{
+					"96.4%",
+					"+3.6%"
+				},
+				{
+					"100%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[17600] = {
+		desc_get = "",
+		name = "Irradiance, to Extol Solidarity's Glory",
+		id = 17600,
+		type = 3,
+		max_level = 10,
+		desc = "When the battle starts: increases your Northern Parliament ships' FP, TRP, and AVI by $1. While this ship is afloat and there are 2 CVs/CVLs in your Main Fleet: increases your Main Fleet's ACC by $2 and your CVs' and CVLs' DMG dealt by $2; if there are 2 or more BBs, BCs, or BBVs in your Main Fleet: increases this ship's Crit Rate, RLD, and DMG dealt by $2.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[17610] = {
+		desc_get = "",
+		name = "Adamantine, the Walls of Forts Impregnable",
+		id = 17610,
+		type = 2,
+		max_level = 10,
+		desc = "When there are other Northern Parliament ships in your fleet: decreases your Northern Parliament ships' Burn DMG taken by $3. During a sortie, when another fleet is battling and this ship is afloat: 18s after that fleet's battle starts, fires a $4 special supporting barrage (DMG is based on the skill's level). Decreases the Crit Rate of torpedoes hitting this ship by $1 and decreases their DMG by $2.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17620] = {
+		desc_get = "",
+		name = "The Strength of Gentle Sunlight",
+		id = 17620,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's FP by $1. While this ship is afloat: every 10s, every ship in your Vanguard recovers 1.0% of their max HP. The first time this recovery effect activates: also increases this ship's DMG dealt by $2 until the battle ends.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"4.5%",
+				"12.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"4.5%",
+					"+0.7%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+0.7%"
+				},
+				{
+					"7.7%",
+					"+0.8%"
+				},
+				{
+					"8.5%",
+					"+1.0%"
+				},
+				{
+					"9.5%",
+					"+0.7%"
+				},
+				{
+					"10.2%",
+					"+0.8%"
+				},
+				{
+					"11.0%",
+					"+1.0%"
+				},
+				{
+					"12.0%"
+				}
+			}
+		}
+	},
+	[17630] = {
+		desc_get = "",
+		name = "Firepower Overload!",
+		id = 17630,
+		type = 1,
+		max_level = 10,
+		desc = "When the battle starts, if there is another Northern Parliament ship in your fleet: gains the buff Max Firepower; every 20s, $1 chance to increase this ship's FP by $2 for 10s. Every 10s: 70.0% chance to fire a $3 special barrage (DMG is based on the skill's level)$4.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"30.0%",
+				"60.0%"
+			},
+			{
+				"20.0%",
+				"40.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"",
+				", if this barrage sinks an enemy ship, fires this barrage again (up to 2 activations possible within 5s)"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"30.0%",
+					"+3.3%"
+				},
+				{
+					"33.3%",
+					"+3.3%"
+				},
+				{
+					"36.6%",
+					"+3.3%"
+				},
+				{
+					"39.9%",
+					"+3.3%"
+				},
+				{
+					"43.2%",
+					"+3.3%"
+				},
+				{
+					"46.5%",
+					"+3.3%"
+				},
+				{
+					"49.8%",
+					"+3.3%"
+				},
+				{
+					"53.1%",
+					"+3.3%"
+				},
+				{
+					"56.4%",
+					"+3.6%"
+				},
+				{
+					"60.0%"
+				}
+			},
+			{
+				{
+					"20.0%",
+					"+2.2%"
+				},
+				{
+					"22.2%",
+					"+2.2%"
+				},
+				{
+					"24.4%",
+					"+2.2%"
+				},
+				{
+					"26.6%",
+					"+2.2%"
+				},
+				{
+					"28.8%",
+					"+2.2%"
+				},
+				{
+					"31.0%",
+					"+2.2%"
+				},
+				{
+					"33.2%",
+					"+2.2%"
+				},
+				{
+					"35.4%",
+					"+2.2%"
+				},
+				{
+					"37.6%",
+					"+2.4%"
+				},
+				{
+					"40.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					", if this barrage sinks an enemy ship, fires this barrage again (up to 2 activations possible within 5s)"
+				}
+			}
+		}
+	},
+	[17640] = {
+		desc_get = "",
+		name = "苏维埃同盟跨队BUFFID占用",
+		id = 17640,
+		type = 3,
+		max_level = 10,
+		desc = "苏维埃同盟跨队BUFFID占用",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[17650] = {
+		desc_get = "",
+		name = "Oathbound Chains",
+		id = 17650,
+		type = 1,
+		max_level = 10,
+		desc = "When the battle starts: increases this ship's FP by $1. When this ship's Main Guns hit an enemy: $2 chance to, for 8s, decrease that enemy's SPD by 15.0% and increase your Gangut-class BBs' and your Northern Parliament Vanguard ships' DMG dealt by $3.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"4.5%",
+				"12.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70%"
+				}
+			},
+			{
+				{
+					"4.5%",
+					"+0.7%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+0.7%"
+				},
+				{
+					"7.7%",
+					"+0.8%"
+				},
+				{
+					"8.5%",
+					"+1.0%"
+				},
+				{
+					"9.5%",
+					"+0.7%"
+				},
+				{
+					"10.2%",
+					"+0.8%"
+				},
+				{
+					"11.0%",
+					"+1.0%"
+				},
+				{
+					"12.0%"
+				}
+			}
+		}
+	},
+	[17660] = {
+		desc_get = "",
+		name = "Protecting Links",
+		id = 17660,
+		type = 2,
+		max_level = 10,
+		desc = "During battle, while this ship is afloat: increases your Northern Parliament ships' EVA by $1 and decreases all your other Northern Parliament ships' Burn DMG taken by $2. When this ship takes DMG: fires a $3 special barrage and, for 10s, decreases your Northern Parliament ships' DMG taken by 10.0% (barrage DMG is based on the skill's level; 20s cooldown between activations).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17670] = {
+		desc_get = "",
+		name = "Creative Burst",
+		id = 17670,
+		type = 1,
+		max_level = 10,
+		desc = "Every 18s: $1 chance to fire a $2 special barrage (DMG is based on the skill's level). When this barrage hits an enemy: for 8s, decreases that enemy's ACC by $3 and increases their DMG taken from this ship by $4.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"30.0%",
+				"60.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"4.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"30.0%",
+					"+3.3%"
+				},
+				{
+					"33.3%",
+					"+3.3%"
+				},
+				{
+					"36.6%",
+					"+3.3%"
+				},
+				{
+					"39.9%",
+					"+3.3%"
+				},
+				{
+					"43.2%",
+					"+3.3%"
+				},
+				{
+					"46.5%",
+					"+3.3%"
+				},
+				{
+					"49.8%",
+					"+3.3%"
+				},
+				{
+					"53.1%",
+					"+3.3%"
+				},
+				{
+					"56.4%",
+					"+3.6%"
+				},
+				{
+					"60.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[17680] = {
+		desc_get = "",
+		name = "Undeniable Rip-Roaring Spirit",
+		id = 17680,
+		type = 2,
+		max_level = 10,
+		desc = "Increases this ship's AA by $1. After this ship has fired her Main Guns 15 times: for 5s, decreases this ship's SPD by 3; once this effect ends, decreases this ship's DMG taken by $2 until the battle ends.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"4.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+0.4%"
+				},
+				{
+					"4.4%",
+					"+0.4%"
+				},
+				{
+					"4.8%",
+					"+0.7%"
+				},
+				{
+					"5.5%",
+					"+0.6%"
+				},
+				{
+					"6.1%",
+					"+0.6%"
+				},
+				{
+					"6.7%",
+					"+0.8%"
+				},
+				{
+					"7.5%",
+					"+0.7%"
+				},
+				{
+					"8.2%",
+					"+0.7%"
+				},
+				{
+					"8.9%",
+					"+1.1%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[17690] = {
+		desc_get = "",
+		name = "Service Mode",
+		id = 17690,
+		type = 3,
+		max_level = 10,
+		desc = "When the battle starts, if your Flagship is a CV or CVL: fires a $1 special barrage when your Flagship launches an airstrike (DMG is based on the skill's level). Decreases this ship's DMG taken by $2 and, once per battle, when this ship has taken DMG equal to 25.0% of her max HP: restores $3 of her max HP.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"3.5%",
+				"8.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			}
+		}
+	},
+	[17700] = {
+		desc_get = "",
+		name = "Slayer Mode",
+		id = 17700,
+		type = 1,
+		max_level = 10,
+		desc = "Every 3 times this ship fires her Main Guns: $1 chance to increase this ship's FP, TRP, ACC, and EVA by $2 for 10s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"15.0%",
+				"25.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.1%"
+				},
+				{
+					"16.1%",
+					"+1.1%"
+				},
+				{
+					"17.2%",
+					"+1.1%"
+				},
+				{
+					"18.3%",
+					"+1.1%"
+				},
+				{
+					"19.4%",
+					"+1.1%"
+				},
+				{
+					"20.5%",
+					"+1.1%"
+				},
+				{
+					"21.6%",
+					"+1.1%"
+				},
+				{
+					"22.7%",
+					"+1.1%"
+				},
+				{
+					"23.8%",
+					"+1.2%"
+				},
+				{
+					"25.0%"
+				}
+			}
+		}
+	},
+	[17730] = {
+		desc_get = "",
+		name = "It's Cleaning Time!",
+		id = 17730,
+		type = 1,
+		max_level = 10,
+		desc = "Every 20 times this ship fires her Main Guns: fires a $1 special barrage (DMG is based on the skill's level). The first time this barrage fires: increases this ship's Main Gun Crit Rate by $2; the second time it fires: increases this ship's Main Gun Crit DMG by $2; both of these effects last until the battle ends. Every 2 times this barrage fires: performs a $1 special slashing attack (range is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[17740] = {
+		desc_get = "",
+		name = "Every Last Speck!",
+		id = 17740,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's FP and TRP by $1. Every 15s: $2 chance to increase a random enemy's DMG taken from this ship by $3 (prioritizes humanoid enemies) and performs a sonar scan, revealing enemy SSs; both these effects last 8s. If these two effects do not activate: instead decreases this ship's DMG taken by $3 for 8s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"4.5%",
+				"12.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"4.5%",
+					"+0.7%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+0.7%"
+				},
+				{
+					"7.7%",
+					"+0.8%"
+				},
+				{
+					"8.5%",
+					"+1.0%"
+				},
+				{
+					"9.5%",
+					"+0.7%"
+				},
+				{
+					"10.2%",
+					"+0.8%"
+				},
+				{
+					"11.0%",
+					"+1.0%"
+				},
+				{
+					"12.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[17750] = {
+		desc_get = "",
+		name = "Inverted Harmony",
+		id = 17750,
+		type = 2,
+		max_level = 10,
+		desc = "When the battle starts: deploys a shield (lasts $1s) that can negate up to 5 enemy torpedoes, increases this ship's Evasion Rate by $2, and gives this ship the Harmony buff. \nWhen the battle starts, if there are 3 ships afloat in your Vanguard and this ship is in the frontmost position, when this ship fires her Main Guns: performs Tuning. If Tuning succeeds, the rearmost ship in your Vanguard gains the Harmony buff; if Tuning fails: the center ship in your Vanguard recovers 1.5% of her max HP. \nInitially Tuning has a 25.0% chance to succeed, and when it fails, the probability that it will succeed next time increases by 25.0%. When Tuning succeeds, it will not be performed again for the rest of the battle.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0",
+				"10.0"
+			},
+			{
+				"1.5%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0",
+					"+0.5"
+				},
+				{
+					"5.5",
+					"+0.5"
+				},
+				{
+					"6.0",
+					"+0.5"
+				},
+				{
+					"6.5",
+					"+0.5"
+				},
+				{
+					"7.0",
+					"+0.5"
+				},
+				{
+					"7.5",
+					"+0.5"
+				},
+				{
+					"8.0",
+					"+0.5"
+				},
+				{
+					"8.5",
+					"+0.5"
+				},
+				{
+					"9.0",
+					"+1"
+				},
+				{
+					"10.0"
+				}
+			},
+			{
+				{
+					"1.5%",
+					"+0.3%"
+				},
+				{
+					"1.8%",
+					"+0.3%"
+				},
+				{
+					"2.1%",
+					"+0.4%"
+				},
+				{
+					"2.5%",
+					"+0.3%"
+				},
+				{
+					"2.8%",
+					"+0.3%"
+				},
+				{
+					"3.1%",
+					"+0.4%"
+				},
+				{
+					"3.5%",
+					"+0.4%"
+				},
+				{
+					"3.9%",
+					"+0.4%"
+				},
+				{
+					"4.3%",
+					"+0.7%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	},
+	[17760] = {
+		desc_get = "",
+		name = "Victory's Consonance",
+		id = 17760,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's FP and EVA by $1. When this ship fires her Main Guns: all allies with the Harmony buff fire a $2 special barrage (DMG is based on the skill's level and the FP stat of the ship firing the barrage).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17770] = {
+		desc_get = "",
+		name = "The Performance Begins!",
+		id = 17770,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's EVA by $1. Every 20s: this ship loses 5.0% of her max HP and increases your Vanguard's FP, TRP, and ACC by $1 for 10s; when a ship in your Vanguard sinks an enemy while under this buff, restores 1.0% of Prinz Eugen µ's HP and increases her Crit Rate by $2 until the battle ends (can be stacked up to 3 times).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"3.5%",
+				"8.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			}
+		}
+	},
+	[17780] = {
+		desc_get = "",
+		name = "Crimson Song",
+		id = 17780,
+		type = 1,
+		max_level = 10,
+		desc = "Every 5 times this ship's Main Guns hit an enemy: increases this ship's DMG dealt by $1 until the battle ends (can be stacked up to 3 times). Every 15s: $2 chance to fire a $3 special barrage (DMG is based on the skill's level; if this ship's HP is at 75.0% or below when the barrage fires, the barrage is improved).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"3.5%",
+				"8.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17790] = {
+		desc_get = "",
+		name = "Suppressive Fire Order",
+		id = 17790,
+		type = 3,
+		max_level = 10,
+		desc = "When the battle starts: increases your Vanguard's FP by $1. When the fleet this ship is in has the Adequate Ammo buff: increases this ship's DMG dealt by $2. When this ship fires a wave of torpedoes: fires a $3 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+0.9%"
+				},
+				{
+					"5.9%",
+					"+0.9%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+0.9%"
+				},
+				{
+					"8.9%",
+					"+0.9%"
+				},
+				{
+					"9.8%",
+					"+1.2%"
+				},
+				{
+					"11.0%",
+					"+1.2%"
+				},
+				{
+					"12.2%",
+					"+1.2%"
+				},
+				{
+					"13.4%",
+					"+1.6%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17800] = {
+		desc_get = "",
+		name = "Fit to Serve!",
+		id = 17800,
+		type = 2,
+		max_level = 10,
+		desc = "When the battle starts: decreases this ship's torpedo DMG taken by $1. Once per battle, when this ship's HP falls below 50.0% as a result of DMG taken: deploys a barrier that can negate up to $2 of this ship's max HP in DMG.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"2.0%",
+				"7.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"2.0%",
+					"+0.5%"
+				},
+				{
+					"2.5%",
+					"+0.5%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%"
+				}
+			}
+		}
+	},
+	[17810] = {
+		desc_get = "",
+		name = "Royal Lady of Rock 'n' Roll",
+		id = 17810,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's AVI by $1. When the battle starts, if there are 3 or more µ ships in your fleet: immediately loads this ship's first airstrike.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[17820] = {
+		desc_get = "",
+		name = "Listen Up!",
+		id = 17820,
+		type = 3,
+		max_level = 10,
+		desc = "When this ship sinks an enemy: $1 chance to set all enemies' SPD to 0 for $2s, after which their SPD returns to normal over 2s (10s cooldown between activations).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"50.0%",
+				"80.0%"
+			},
+			{
+				"1.0",
+				"2.0"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"50.0%",
+					"+3.3%"
+				},
+				{
+					"53.3%",
+					"+3.3%"
+				},
+				{
+					"56.6%",
+					"+3.3%"
+				},
+				{
+					"59.9%",
+					"+3.3%"
+				},
+				{
+					"63.2%",
+					"+3.3%"
+				},
+				{
+					"66.5%",
+					"+3.3%"
+				},
+				{
+					"69.8%",
+					"+3.3%"
+				},
+				{
+					"73.1%",
+					"+3.3%"
+				},
+				{
+					"76.4%",
+					"+3.6%"
+				},
+				{
+					"80%"
+				}
+			},
+			{
+				{
+					"1.0",
+					"+0.1"
+				},
+				{
+					"1.1",
+					"+0.1"
+				},
+				{
+					"1.2",
+					"+0.1"
+				},
+				{
+					"1.3",
+					"+0.1"
+				},
+				{
+					"1.4",
+					"+0.1"
+				},
+				{
+					"1.5",
+					"+0.1"
+				},
+				{
+					"1.6",
+					"+0.1"
+				},
+				{
+					"1.7",
+					"+0.1"
+				},
+				{
+					"1.8",
+					"+0.2"
+				},
+				{
+					"2.0"
+				}
+			}
+		}
+	},
+	[17830] = {
+		desc_get = "",
+		name = "Perfect Curtain Call",
+		id = 17830,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship attacks an enemy with 25.0% HP remaining or less, increases that instance of DMG dealt by $1. Every 20s: $3 chance to fire a $2 special barrage.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"70.0%",
+				"100.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"70.0%",
+					"+3.3%"
+				},
+				{
+					"73.3%",
+					"+3.3%"
+				},
+				{
+					"76.6%",
+					"+3.3%"
+				},
+				{
+					"79.9%",
+					"+3.3%"
+				},
+				{
+					"83.2%",
+					"+3.3%"
+				},
+				{
+					"86.5%",
+					"+3.3%"
+				},
+				{
+					"89.8%",
+					"+3.3%"
+				},
+				{
+					"93.1%",
+					"+3.3%"
+				},
+				{
+					"96.4%",
+					"+3.6%"
+				},
+				{
+					"100%"
+				}
+			}
+		}
+	},
+	[17840] = {
+		desc_get = "",
+		name = "Alizarin Melody",
+		id = 17840,
+		type = 2,
+		max_level = 10,
+		desc = "Increases this ship's AA and EVA by $1 for each µ ship in your fleet (stacks up to 3 times). When the battle starts, and every 20s: deploys a shield (lasts 8s) that can negate up to 3 enemy torpedoes; while this shield is active, increases this ship's FP and TRP by $2; when this shield expires or is destroyed: increases this ship's Evasion Rate by $3 until the shield becomes active again.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"4.0%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+0.3%"
+				},
+				{
+					"1.3%",
+					"+0.3%"
+				},
+				{
+					"1.6%",
+					"+0.4%"
+				},
+				{
+					"2.0%",
+					"+0.3%"
+				},
+				{
+					"2.3%",
+					"+0.3%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.3%"
+				},
+				{
+					"3.3%",
+					"+0.3%"
+				},
+				{
+					"3.6%",
+					"+0.4%"
+				},
+				{
+					"4.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[17850] = {
+		desc_get = "",
+		name = "Resonant Fortissimo",
+		id = 17850,
+		type = 3,
+		max_level = 10,
+		desc = "Every 20s: fires a $2 special barrage (DMG is based on the skill's level) and increases all enemies' torpedo DMG taken by $1 for 8s. When this barrage hits an enemy: 70.0% chance to inflict a special Burn ailment (lasts 9s). If this ship has Sakura Empire gear equipped: activates this skill's primary effect 5s after the battle starts.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"20.0%",
+				"40.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"20.0%",
+					"+2.2%"
+				},
+				{
+					"22.2%",
+					"+2.2%"
+				},
+				{
+					"24.4%",
+					"+2.2%"
+				},
+				{
+					"26.6%",
+					"+2.2%"
+				},
+				{
+					"28.8%",
+					"+2.2%"
+				},
+				{
+					"31.0%",
+					"+2.2%"
+				},
+				{
+					"33.2%",
+					"+2.2%"
+				},
+				{
+					"35.4%",
+					"+2.2%"
+				},
+				{
+					"37.6%",
+					"+2.4%"
+				},
+				{
+					"40.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17860] = {
+		desc_get = "",
+		name = "Sky-Blue Reverie",
+		id = 17860,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's FP by $1 and SPD by 3. Every 20s: $2 chance to fire a $3 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"13.0%",
+				"25.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"13.0%",
+					"+1.3%"
+				},
+				{
+					"14.3%",
+					"+1.3%"
+				},
+				{
+					"15.6%",
+					"+1.4%"
+				},
+				{
+					"17.0%",
+					"+1.3%"
+				},
+				{
+					"18.3%",
+					"+1.3%"
+				},
+				{
+					"19.6%",
+					"+1.4%"
+				},
+				{
+					"21.0%",
+					"+1.3%"
+				},
+				{
+					"22.3%",
+					"+1.3%"
+				},
+				{
+					"23.6%",
+					"+1.4%"
+				},
+				{
+					"25.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17870] = {
+		desc_get = "",
+		name = "Loving Song of Support",
+		id = 17870,
+		type = 2,
+		max_level = 10,
+		desc = "Increases this ship's EVA and AA by $1. When the torpedoes fired by this ship's \"Sky-Blue Reverie\" barrage hit an enemy: a random ship in your Vanguard recovers $2 of her max HP. When the torpedoes fired by ship's \"All Out Assault\" skill hit an enemy: a random ship in your Main Fleet recovers 1.0% of her max HP.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.5%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.5%",
+					"+0.3%"
+				},
+				{
+					"1.8%",
+					"+0.3%"
+				},
+				{
+					"2.1%",
+					"+0.4%"
+				},
+				{
+					"2.5%",
+					"+0.3%"
+				},
+				{
+					"2.8%",
+					"+0.3%"
+				},
+				{
+					"3.1%",
+					"+0.4%"
+				},
+				{
+					"3.5%",
+					"+0.4%"
+				},
+				{
+					"3.9%",
+					"+0.4%"
+				},
+				{
+					"4.3%",
+					"+0.7%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	},
+	[17920] = {
+		desc_get = "",
+		name = "Dreaming Butterfly",
+		id = 17920,
+		type = 1,
+		max_level = 10,
+		desc = "Every 15s: fires a $1 special barrage (DMG is based on the skill's level and this ship's AVI stat) that decreases the AA of enemies hit by 3.0% until the battle ends (does not stack).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17930] = {
+		desc_get = "",
+		name = "Sleepo Beepo",
+		id = 17930,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's AVI by $1 and decreases this ship's DMG taken by $2. When the battle starts, if there is no DD in your Vanguard: removes this DMG reduction buff after this ship launches her second airstrike.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"8.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"8.0%",
+					"+1.2%"
+				},
+				{
+					"9.2%",
+					"+1.2%"
+				},
+				{
+					"10.4%",
+					"+1.6%"
+				},
+				{
+					"12.0%",
+					"+1.2%"
+				},
+				{
+					"13.2%",
+					"+1.2%"
+				},
+				{
+					"14.4%",
+					"+1.6%"
+				},
+				{
+					"16.0%",
+					"+1.2%"
+				},
+				{
+					"17.2%",
+					"+1.2%"
+				},
+				{
+					"18.4%",
+					"+1.6%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
+	[17880] = {
+		desc_get = "",
+		name = "Upon an Elegant Stage",
+		id = 17880,
+		type = 1,
+		max_level = 10,
+		desc = "When the battle starts, if there are other µ ships in your fleet: increases your µ ships' FP and ACC by $1; if there are none, instead decreases this ship's DMG taken by $2. When this ship fires her Main Guns: $3 chance to fire a $4 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"5.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+0.4%"
+				},
+				{
+					"1.4%",
+					"+0.4%"
+				},
+				{
+					"1.8%",
+					"+0.4%"
+				},
+				{
+					"2.2%",
+					"+0.4%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.5"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[17890] = {
+		desc_get = "",
+		name = "Rising Passion!",
+		id = 17890,
+		type = 3,
+		max_level = 10,
+		desc = "When this ship fires her Main Guns: decreases this ship's Main Gun reload time by 10.0% (stacks up to 20.0%) and increases your Vanguard's FP and EVA by $1 for 10s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"2.0%",
+				"7.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"2.0%",
+					"+0.5%"
+				},
+				{
+					"2.5%",
+					"+0.5%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%"
+				}
+			}
+		}
+	},
+	[17900] = {
+		desc_get = "",
+		name = "Masked Workaholic",
+		id = 17900,
+		type = 1,
+		max_level = 10,
+		desc = "Every 15s: fires a $1 special barrage (DMG is based on the skill's level) and increases this ship's ACC by $2 (can be stacked up to 3 times).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[17910] = {
+		desc_get = "",
+		name = "Perfect Dazzling Stage",
+		id = 17910,
+		type = 3,
+		max_level = 10,
+		desc = "Increases your Vanguard's RLD by $1. Every $2s: every ship in your Vanguard recovers 1.0% of her max HP.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"30",
+				"15"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"30",
+					"-1"
+				},
+				{
+					"29",
+					"-1"
+				},
+				{
+					"28",
+					"-1"
+				},
+				{
+					"27",
+					"-1"
+				},
+				{
+					"26",
+					"-2"
+				},
+				{
+					"24",
+					"-2"
+				},
+				{
+					"22",
+					"-2"
+				},
+				{
+					"20",
+					"-2"
+				},
+				{
+					"18",
+					"-3"
+				},
+				{
+					"15"
 				}
 			}
 		}
@@ -88549,6 +94120,209 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 				},
 				{
 					"Lv.10"
+				}
+			}
+		}
+	},
+	[18380] = {
+		desc_get = "",
+		name = "Sky-Rending Retribution+",
+		id = 18380,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship launches an airstrike: $1 chance to launch an additional $2 special airstrike+ (DMG increased; DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"50.0%",
+				"100.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"50.0%",
+					"+5.0%"
+				},
+				{
+					"55.0%",
+					"+5.0%"
+				},
+				{
+					"60.0%",
+					"+5.0%"
+				},
+				{
+					"65.0%",
+					"+5.0%"
+				},
+				{
+					"70.0%",
+					"+5.0%"
+				},
+				{
+					"75.0%",
+					"+5.0%"
+				},
+				{
+					"80.0%",
+					"+5.0%"
+				},
+				{
+					"85.0%",
+					"+5.0%"
+				},
+				{
+					"90.0%",
+					"+10.0%"
+				},
+				{
+					"100%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[18400] = {
+		desc_get = "",
+		name = "The Great One's Shadow+",
+		id = 18400,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's AVI, AA, and ACC by $1. When the battle starts, if this ship has Sakura Empire aircraft equipped, or if there is another Sakura Empire ship in your fleet: increases all of this ship's weapon efficiencies by $2.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
 				}
 			}
 		}
@@ -99769,6 +105543,90 @@ One of the following two effects apply based on what type of weapon this ship ha
 		desc_get_add = {},
 		desc_add = {}
 	},
+	[24031] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 24031,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Lung Wu once every 15 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[24032] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 24032,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Lung Wu once every 10 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[24041] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 24041,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Hu Pen once every 15 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[24042] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 24042,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Hu Pen once every 10 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[24061] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 24061,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Fei Yuen once every 15 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[24062] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 24062,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Fei Yuen once every 10 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
 	[24111] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -99874,6 +105732,34 @@ One of the following two effects apply based on what type of weapon this ship ha
 		type = 1,
 		max_level = 1,
 		desc = "Activates All Out Assault II: Hai Tien-class once every 16 times the Secondary Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[24151] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 24151,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Chi An once every 18 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[24152] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 24152,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Chi An once every 12 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -102359,7 +108245,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		id = 29681,
 		type = 1,
 		max_level = 1,
-		desc = "Activates EX Barrage - Kirov I every 12 times the Main /Guns are fired.",
+		desc = "Activates EX Barrage - Kirov I every 12 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -102373,7 +108259,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		id = 29682,
 		type = 1,
 		max_level = 1,
-		desc = "Activates EX Barrage - Kirov II every 8 times the Main /Guns are fired.",
+		desc = "Activates EX Barrage - Kirov II every 8 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -103690,6 +109576,202 @@ One of the following two effects apply based on what type of weapon this ship ha
 		type = 1,
 		max_level = 1,
 		desc = "Activates All Out Assault II: Flasher immediately after entering the battle.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30191] = {
+		desc_get = "",
+		name = "All Out Assault III",
+		id = 30191,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault III: An Shan-class once every 16 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30192] = {
+		desc_get = "",
+		name = "All Out Assault III",
+		id = 30192,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault III: An Shan-class when this ship launches a Missile Strike.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30201] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 30201,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Ognevoy once every 15 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30202] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 30202,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Ognevoy once every 10 times the Main Guns are fired, and with a 50.0% chance, increases this ship's FP by 20.0% for 10s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30211] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 30211,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Nubian once every 24 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30212] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 30212,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Nubian once every 16 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30221] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 30221,
+		type = 1,
+		max_level = 1,
+		desc = "When the battle starts, if there are other µ ships in your fleet: increases this ship's Main Gun efficiency by 5.0%. Every 9 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30222] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 30222,
+		type = 1,
+		max_level = 1,
+		desc = "When the battle starts, if there are other µ ships in your fleet: increases this ship's Main Gun efficiency by 15.0%. Every 6 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30231] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 30231,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Noshiro μ once every 12 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30232] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 30232,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Noshiro μ once every 8 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30241] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 30241,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Le Téméraire μ once every 15 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30242] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 30242,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Le Téméraire μ once every 10 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30251] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 30251,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Boise μ once every 15 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[30252] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 30252,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Boise μ once every 10 times the Main Guns are fired.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -128827,6 +134909,1268 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		desc_get_add = {},
 		desc_add = {}
 	},
+	[801060] = {
+		desc_get = "",
+		name = "Endless Night",
+		id = 801060,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's FP and TRP by $1. Every 20s: $2 chance to fire a $3 special barrage (DMG is based on the skill's level) and decrease the reload time of this ship's torpedoes by $4s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1",
+				"5"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1"
+				},
+				{
+					"1"
+				},
+				{
+					"2"
+				},
+				{
+					"2"
+				},
+				{
+					"3"
+				},
+				{
+					"3"
+				},
+				{
+					"4"
+				},
+				{
+					"4"
+				},
+				{
+					"4"
+				},
+				{
+					"5"
+				}
+			}
+		}
+	},
+	[801070] = {
+		desc_get = "",
+		name = "War Without Cease",
+		id = 801070,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship sinks an enemy: increases this ship's ACC by $1 until the battle ends (can be stacked up to 5 times). \nWhen this ship's torpedoes finish loading: increases this ship's Crit Rate by $2 for each enemy on the battlefield (lasts 12s; can stack up to 5 times).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"4.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+0.3%"
+				},
+				{
+					"1.3%",
+					"+0.3%"
+				},
+				{
+					"1.6%",
+					"+0.4%"
+				},
+				{
+					"2.0%",
+					"+0.3%"
+				},
+				{
+					"2.3%",
+					"+0.3%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.3%"
+				},
+				{
+					"3.3%",
+					"+0.3%"
+				},
+				{
+					"3.6%",
+					"+0.4%"
+				},
+				{
+					"4.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[801081] = {
+		desc_get = "",
+		name = "Ashen Might - Kimberly",
+		id = 801081,
+		type = 1,
+		max_level = 1,
+		desc = "Every 15 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51.0] = 801085
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801082] = {
+		desc_get = "",
+		name = "Ashen Might - Kimberly",
+		id = 801082,
+		type = 1,
+		max_level = 1,
+		desc = "Every 10 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51.0] = 801087
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801085] = {
+		desc_get = "",
+		name = "Ashen Might - Kimberly",
+		id = 801085,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
+		system_transform = {
+			[51.0] = 801085
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801087] = {
+		desc_get = "",
+		name = "Ashen Might - Kimberly",
+		id = 801087,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
+		system_transform = {
+			[51.0] = 801087
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801090] = {
+		desc_get = "",
+		name = "Shattered Solidarity",
+		id = 801090,
+		type = 1,
+		max_level = 10,
+		desc = "Every 12 times this ship fires her Main Guns: fires a $1 special barrage (DMG is based on the skill's level). Increases this ship's DMG dealt (up to $2) the lower her current HP is.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
+	[801100] = {
+		desc_get = "",
+		name = "Undying Light of the Imperiya",
+		id = 801100,
+		type = 2,
+		max_level = 10,
+		desc = "When this ship takes DMG: 15.0% chance to gain the buff Glory of the Past for $1s. While under this buff: increases this ship's FP and TRP by $2 and this ship evades all attacks. 20s cooldown between activations.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0",
+				"10.0"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0",
+					"+0.5"
+				},
+				{
+					"5.5",
+					"+0.5"
+				},
+				{
+					"6.0",
+					"+0.5"
+				},
+				{
+					"6.5",
+					"+0.5"
+				},
+				{
+					"7.0",
+					"+0.5"
+				},
+				{
+					"7.5",
+					"+0.5"
+				},
+				{
+					"8.0",
+					"+0.5"
+				},
+				{
+					"8.5",
+					"+0.5"
+				},
+				{
+					"9.0",
+					"+1"
+				},
+				{
+					"10.0"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
+	[801110] = {
+		desc_get = "",
+		name = "Intertwining Memories",
+		id = 801110,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's FP and ACC by $1. Every 20s: for 10s, decreases the SPD all enemies within 55 units of this ship by 20.0%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	},
+	[801121] = {
+		desc_get = "",
+		name = "Flickering Light - Pamiat' Merkuria",
+		id = 801121,
+		type = 1,
+		max_level = 1,
+		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage.",
+		system_transform = {
+			[51.0] = 801125
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801122] = {
+		desc_get = "",
+		name = "Flickering Light - Pamiat' Merkuria II",
+		id = 801122,
+		type = 1,
+		max_level = 1,
+		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage.",
+		system_transform = {
+			[51.0] = 801127
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801125] = {
+		desc_get = "",
+		name = "Flickering Light - Pamiat' Merkuria",
+		id = 801125,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 3.0%.",
+		system_transform = {
+			[51.0] = 801125
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801127] = {
+		desc_get = "",
+		name = "Flickering Light - Pamiat' Merkuria II",
+		id = 801127,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
+		system_transform = {
+			[51.0] = 801127
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801130] = {
+		desc_get = "",
+		name = "My Phantoms",
+		id = 801130,
+		type = 3,
+		max_level = 10,
+		desc = "When the battle starts: summons $1 Phantoms of Rodney on the battlefield that attack enemies (the Phantoms inherit some of this ship's stats; the amount of stats inherited is based on the skill's level). Every 12s: all present Rodneys fire a $1 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801140] = {
+		desc_get = "",
+		name = "Rodney's Prayer",
+		id = 801140,
+		type = 3,
+		max_level = 10,
+		desc = "When the battle starts: increases this ship's FP, AA, and RLD by $1. When one of this ship's Phantoms is sunk: increases this ship's DMG dealt by $2 until the battle ends (can be stacked up to 2 times).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"3.5%",
+				"8.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			}
+		}
+	},
+	[801150] = {
+		desc_get = "",
+		name = "Demise's Arrival",
+		id = 801150,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship fires her Main Guns: $1 chance to fire a $2 special barrage (DMG is based on the skill's level). When one of this ship's Phantoms is sunk: recovers 5.0% of this ship's max HP.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"50.0%",
+				"80.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"50.0%",
+					"+3.3%"
+				},
+				{
+					"53.3%",
+					"+3.3%"
+				},
+				{
+					"56.6%",
+					"+3.3%"
+				},
+				{
+					"59.9%",
+					"+3.3%"
+				},
+				{
+					"63.2%",
+					"+3.3%"
+				},
+				{
+					"66.5%",
+					"+3.3%"
+				},
+				{
+					"69.8%",
+					"+3.3%"
+				},
+				{
+					"73.1%",
+					"+3.3%"
+				},
+				{
+					"76.4%",
+					"+3.6%"
+				},
+				{
+					"80.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801161] = {
+		desc_get = "",
+		name = "Framework of Logic - Rodney",
+		id = 801161,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
+		system_transform = {
+			[51.0] = 801165
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801162] = {
+		desc_get = "",
+		name = "Framework of Logic - Rodney",
+		id = 801162,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
+		system_transform = {
+			[51.0] = 801167
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801165] = {
+		desc_get = "",
+		name = "Framework of Logic - Rodney",
+		id = 801165,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
+		system_transform = {
+			[51.0] = 801165
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801167] = {
+		desc_get = "",
+		name = "Framework of Logic - Rodney",
+		id = 801167,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
+		system_transform = {
+			[51.0] = 801167
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801170] = {
+		desc_get = "",
+		name = "Neverending Night's Kiss",
+		id = 801170,
+		type = 1,
+		max_level = 10,
+		desc = "Every 15 times this ship's Main Guns hit the same enemy: inflicts the Neverending Night's Kiss status on that enemy, increasing this ship's DMG dealt to them by $1. Increases this ship's torpedo Crit Rate by $2. When this ship's torpedoes hit an enemy with the Neverending Night's Kiss status: restores this ship's HP equal to $3 of that hit's DMG and removes the Neverending Night's Kiss status.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.5%",
+				"6.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"3.5%",
+				"8.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.5%",
+					"+0.5%"
+				},
+				{
+					"2.0%",
+					"+0.5%"
+				},
+				{
+					"2.5%",
+					"+0.5%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			}
+		}
+	},
+	[801180] = {
+		desc_get = "",
+		name = "Everlasting Flowers",
+		id = 801180,
+		type = 1,
+		max_level = 10,
+		desc = "Every 20s: fires a $1 special barrage. This barrage always deals Crit DMG against enemies with the Neverending Night's Kiss status, then removes the status.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801191] = {
+		desc_get = "",
+		name = "Ashen Might - Vampire",
+		id = 801191,
+		type = 1,
+		max_level = 1,
+		desc = "Every 15 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51.0] = 801195
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801192] = {
+		desc_get = "",
+		name = "Ashen Might - Vampire",
+		id = 801192,
+		type = 1,
+		max_level = 1,
+		desc = "Every 10 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51.0] = 801197
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801195] = {
+		desc_get = "",
+		name = "Ashen Might - Vampire",
+		id = 801195,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
+		system_transform = {
+			[51.0] = 801195
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801197] = {
+		desc_get = "",
+		name = "Ashen Might - Vampire",
+		id = 801197,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
+		system_transform = {
+			[51.0] = 801197
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
 	[901010] = {
 		desc_get = "",
 		name = "Slash Attack - Spread",
@@ -134230,6 +141574,1194 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 			}
 		}
 	},
+	[1012160] = {
+		desc_get = "",
+		name = "The Glory of the Never-Setting Sun+",
+		id = 1012160,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's DMG dealt to Sakura Empire, Iron Blood, Sardegna Empire, and Siren ships by $1. If there is another Royal Navy ship in your fleet: increases this ship's FP, RLD, EVA, and AA by $2; if there is no other Royal Navy ship, this ship's \"Armament Optimization\" skill does not need her to equip the Quadruple 356mm Main Gun for the effect to work.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"4.0%",
+				"10.0%"
+			},
+			{
+				"4.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+1.6%"
+				},
+				{
+					"5.6%",
+					"+1.6%"
+				},
+				{
+					"7.2%",
+					"+1.6%"
+				},
+				{
+					"8.8%",
+					"+1.6%"
+				},
+				{
+					"10.4%",
+					"+1.6%"
+				},
+				{
+					"12.0%",
+					"+2.0%"
+				},
+				{
+					"14.0%",
+					"+2.0%"
+				},
+				{
+					"16.0%",
+					"+2.0%"
+				},
+				{
+					"18.0%",
+					"+2.0%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
+	[1010480] = {
+		desc_get = "",
+		name = "Sisterly Bond+",
+		id = 1010480,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's Main Gun efficiency by $1. Upgrades this ship's All Out Assault skill to level III and decreases its shot requirement to 4. When sortied with Ping Hai: increases this ship's FP by $1. When sortied with Yat Sen and while this ship is not in the rearmost position of your Vanguard: increases this ship's DMG dealt by $2 and upgrades her All Out Assault skill to level IV, but decreases her Evasion Rate by 10.0%",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"15.0%",
+				"35.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"15.0%",
+					"+2.2%"
+				},
+				{
+					"17.2%",
+					"+2.2%"
+				},
+				{
+					"19.4%",
+					"+2.2%"
+				},
+				{
+					"21.6%",
+					"+2.2%"
+				},
+				{
+					"23.8%",
+					"+2.2%"
+				},
+				{
+					"26.0%",
+					"+2.2%"
+				},
+				{
+					"28.2%",
+					"+2.2%"
+				},
+				{
+					"30.4%",
+					"+2.2%"
+				},
+				{
+					"32.6%",
+					"+2.4%"
+				},
+				{
+					"35.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[1010490] = {
+		desc_get = "",
+		name = "Sisterly Bond+",
+		id = 1010490,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's Main Gun efficiency by $1. Upgrades this ship's All Out Assault skill to level III and decreases its shot requirement to 4. When sortied with Ning Hai: increases this ship's FP by $1. When sortied with Yat Sen and while this ship is not in the frontmost position of your Vanguard: increases this ship's DMG dealt by $2 and upgrades her All Out Assault skill to level IV, but decreases her Evasion Rate by 10.0%",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"15.0%",
+				"35.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"15.0%",
+					"+2.2%"
+				},
+				{
+					"17.2%",
+					"+2.2%"
+				},
+				{
+					"19.4%",
+					"+2.2%"
+				},
+				{
+					"21.6%",
+					"+2.2%"
+				},
+				{
+					"23.8%",
+					"+2.2%"
+				},
+				{
+					"26.0%",
+					"+2.2%"
+				},
+				{
+					"28.2%",
+					"+2.2%"
+				},
+				{
+					"30.4%",
+					"+2.2%"
+				},
+				{
+					"32.6%",
+					"+2.4%"
+				},
+				{
+					"35.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[1011370] = {
+		desc_get = "",
+		name = "Fatal Perforation+",
+		id = 1011370,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this boat's TRP and ACC by $2. 8s after entering the battle: fires a torpedo barrage that can pierce through enemies once (barrage DMG and pattern are based on the skill's level; enemies penetrated by the torpedoes still suffer DMG). When this boat retreats from the battle: fires a $1 special barrage (DMG is based on the skill's level and this boat's TRP stat).",
+		system_transform = {
+			[11.0] = 3500
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"4.5%",
+				"12.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"4.5%",
+					"+0.8%"
+				},
+				{
+					"5.3%",
+					"+0.8%"
+				},
+				{
+					"6.1%",
+					"+0.9%"
+				},
+				{
+					"7.0%",
+					"+0.8%"
+				},
+				{
+					"7.8%",
+					"+0.8%"
+				},
+				{
+					"8.6%",
+					"+0.9%"
+				},
+				{
+					"9.5%",
+					"+0.8%"
+				},
+				{
+					"10.3%",
+					"+0.8%"
+				},
+				{
+					"11.1%",
+					"+0.9%"
+				},
+				{
+					"12.0%"
+				}
+			}
+		}
+	},
+	[1010750] = {
+		desc_get = "",
+		name = "The Nick+",
+		id = 1010750,
+		type = 2,
+		max_level = 10,
+		desc = "When this ship fires her Main Guns: 5.0% chance to increase this ship's EVA and DMG dealt by $1 and decrease her aircraft DMG taken by $1 for 8s; additionally, decreases the SPD of a random enemy by $2 for 8s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"16.0%",
+				"40.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"16.0%",
+					"+2.4%"
+				},
+				{
+					"18.4%",
+					"+2.4%"
+				},
+				{
+					"20.8%",
+					"+3.2%"
+				},
+				{
+					"24.0%",
+					"+2.4%"
+				},
+				{
+					"26.4%",
+					"+2.4%"
+				},
+				{
+					"28.8%",
+					"+3.2%"
+				},
+				{
+					"32.0%",
+					"+2.4%"
+				},
+				{
+					"34.4%",
+					"+2.4%"
+				},
+				{
+					"36.8%",
+					"+3.2%"
+				},
+				{
+					"40.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[1012940] = {
+		desc_get = "",
+		name = "For the Queen+",
+		id = 1012940,
+		type = 3,
+		max_level = 10,
+		desc = "When the battle starts, for each Royal Navy ship in your fleet: increases this ship's FP, AA, and RLD by $1 (can be stacked up to 2 times; when the max stack is reached: improves this ship's All Out Assault skill). When sortied with Queen Elizabeth: increases Queen Elizabeth's FP, ACC, RLD, and EVA by $2 and increases her and this ship's Main Gun Crit Rate by $3.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"2.5%",
+				"7.0%"
+			},
+			{
+				"5.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"2.5%",
+					"+0.5%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.6%"
+				},
+				{
+					"6.6%",
+					"+1.6%"
+				},
+				{
+					"8.2%",
+					"+1.8%"
+				},
+				{
+					"10.0%",
+					"+1.6%"
+				},
+				{
+					"11.6%",
+					"+1.6%"
+				},
+				{
+					"13.2%",
+					"+1.8%"
+				},
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.8%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
+	[1005080] = {
+		desc_get = "",
+		name = "Chevalier's Sabre+",
+		id = 1005080,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's TRP by $1 and, every 15s: fires a $2 special barrage (DMG is based on the skill's level). If your Vanguard consists of only Iris Libre and/or Vichya Dominion ships, every 20s: 75.0% chance to increase your fleet's DMG dealt by $3 for 10s (does not stack with the same effect).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"25.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+2.2%"
+				},
+				{
+					"7.2%",
+					"+2.2%"
+				},
+				{
+					"9.4%",
+					"+2.2%"
+				},
+				{
+					"11.6%",
+					"+2.2%"
+				},
+				{
+					"13.8%",
+					"+2.2%"
+				},
+				{
+					"16.0%",
+					"+2.2%"
+				},
+				{
+					"18.2%",
+					"+2.2%"
+				},
+				{
+					"20.4%",
+					"+2.2%"
+				},
+				{
+					"22.6%",
+					"+2.4%"
+				},
+				{
+					"25.0%"
+				}
+			}
+		}
+	},
+	[1013000] = {
+		desc_get = "",
+		name = "Cavalier of the Ether+",
+		id = 1013000,
+		type = 1,
+		max_level = 10,
+		desc = "Once guaranteed 3s after the battle starts, and with a $1 chance every 15s: fires a $2 improved special barrage (DMG is based on the skill's level) that inflicts the Cavalier's Fire and Ice ailment to enemies hit for 6s. When a ship in your Vanguard hits an enemy with this ailment, her DMG dealt is increased by $3.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.6%"
+				},
+				{
+					"6.6%",
+					"+1.6%"
+				},
+				{
+					"8.2%",
+					"+1.8%"
+				},
+				{
+					"10.0%",
+					"+1.6%"
+				},
+				{
+					"11.6%",
+					"+1.6%"
+				},
+				{
+					"13.2%",
+					"+1.8%"
+				},
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.8%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
+	[1010980] = {
+		desc_get = "",
+		name = "AA Protection+",
+		id = 1010980,
+		type = 3,
+		max_level = 10,
+		desc = "While this ship is afloat: decreases your Main Fleet's DMG taken from aircraft by $1. When a ship in your fleet attacks with a Long Range AA Gun: every ship in your Vanguard recovers $2 of their max HP and this ship fires a $3 special barrage (DMG is based on the skill's level; 10s cooldown between activations).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5%",
+				"15%"
+			},
+			{
+				"1.0%",
+				"5.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.4%"
+				},
+				{
+					"1.4%",
+					"+0.4%"
+				},
+				{
+					"1.8%",
+					"+0.4%"
+				},
+				{
+					"2.2%",
+					"+0.4%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[1010660] = {
+		desc_get = "",
+		name = "Sniper+",
+		id = 1010660,
+		type = 1,
+		max_level = 10,
+		desc = "Every $1s: fires a $2 barrage that deals guaranteed Crit DMG to a random enemy, then fires this same barrage from your Flagship (barrage DMG is based on the skill's level and Scharnhorst's and your Flagship's FP stat, respectively; your Detection Gauge is not affected by this barrage).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {
+			{
+				{
+					"35",
+					"-2"
+				},
+				{
+					"33",
+					"-2"
+				},
+				{
+					"31",
+					"-2"
+				},
+				{
+					"29",
+					"-2"
+				},
+				{
+					"27",
+					"-2"
+				},
+				{
+					"25",
+					"-2"
+				},
+				{
+					"23",
+					"-2"
+				},
+				{
+					"21",
+					"-3"
+				},
+				{
+					"18",
+					"-3"
+				},
+				{
+					"15"
+				}
+			},
+			{
+				{
+					"Common"
+				},
+				{
+					"Common"
+				},
+				{
+					"Common"
+				},
+				{
+					"Common"
+				},
+				{
+					"Common"
+				},
+				{
+					"AP"
+				},
+				{
+					"AP"
+				},
+				{
+					"AP"
+				},
+				{
+					"AP"
+				},
+				{
+					"AP"
+				}
+			}
+		}
+	},
 	[1090010] = {
 		desc_get = "",
 		name = "Fleet Carrier - Glorious",
@@ -136746,6 +145278,441 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		type = 3,
 		max_level = 10,
 		desc = "Increases your Vanguard's RLD by $1 (does not stack with the same skill). Every 20s: fires a $2 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5%",
+				"15%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[1090230] = {
+		desc_get = "",
+		name = "Piercing Shells - Z18",
+		id = 1090230,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's DMG with AP ammo by $1 and increases her Main Gun efficiency by $2. Every 20s: increases this ship's FP by $3 for 10s and fires a $4 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"15.0%",
+				"25.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"15.0%",
+					"+1.1%"
+				},
+				{
+					"16.1%",
+					"+1.1%"
+				},
+				{
+					"17.2%",
+					"+1.1%"
+				},
+				{
+					"18.3%",
+					"+1.1%"
+				},
+				{
+					"19.4%",
+					"+1.1%"
+				},
+				{
+					"20.5%",
+					"+1.1%"
+				},
+				{
+					"21.6%",
+					"+1.1%"
+				},
+				{
+					"22.7%",
+					"+1.1%"
+				},
+				{
+					"23.8%",
+					"+1.2%"
+				},
+				{
+					"25.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[1090240] = {
+		desc_get = "",
+		name = "Torpedo Squadron - Sendai",
+		id = 1090240,
+		type = 3,
+		max_level = 10,
+		desc = "During battle, every 5 times this ship takes DMG: decreases this ship's DMG taken by $2 until the battle ends (can be stacked up to 2 times). Once per battle, when this ship's HP falls below 35.0% as a result of DMG taken: restores $3 of this ship's max HP. While this ship is afloat: increases your DDs' and CLs' TRP and RLD by $1.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"3.0%",
+				"15.0%"
+			},
+			{
+				"4.0%",
+				"10.0%"
+			},
+			{
+				"3.5%",
+				"8.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"3.0%",
+					"+0.8%"
+				},
+				{
+					"3.8%",
+					"+0.8%"
+				},
+				{
+					"4.6%",
+					"+1.0%"
+				},
+				{
+					"5.6%",
+					"+1.2%"
+				},
+				{
+					"6.8%",
+					"+1.2%"
+				},
+				{
+					"8.0%",
+					"+1.5%"
+				},
+				{
+					"9.5%",
+					"+1.5%"
+				},
+				{
+					"11.0%",
+					"+2.0%"
+				},
+				{
+					"13.0%",
+					"+2.0%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			}
+		}
+	},
+	[1090250] = {
+		desc_get = "",
+		name = "Torpedo Command - Comet",
+		id = 1090250,
+		type = 3,
+		max_level = 10,
+		desc = "Increases all your DDs' TRP by $1 (does not stack with the skill \"Torpedo Command\"). When this ship fires her Main Guns: fires a $2 special barrage (DMG is based on the skill's level and this ship's TRP stat).",
 		system_transform = {},
 		world_death_mark = {
 			1

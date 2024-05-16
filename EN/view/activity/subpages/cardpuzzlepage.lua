@@ -88,10 +88,8 @@ function slot0.CheckAward(slot0)
 		return nil
 	end
 
-	slot1 = #slot0.finishList
-
 	for slot5, slot6 in ipairs(slot0.awardList) do
-		if not table.contains(slot0.gotList, slot6[1]) and slot6[1] <= slot1 then
+		if not table.contains(slot0.gotList, slot6[1]) and slot6[1] <= #slot0.finishList then
 			return slot6[1]
 		end
 	end
@@ -128,10 +126,9 @@ function slot0.UpdateEveryDayTip(slot0)
 	end
 
 	slot1, slot2 = slot0:GetCurLevel()
-	slot3 = slot0:findTF("tip", slot0.items:GetChild(slot2 - 1))
 
 	if PlayerPrefs.GetInt("DAY_TIP_" .. slot0.activity.id .. "_" .. getProxy(PlayerProxy):getData().id .. "_" .. slot0.activity:getDayIndex()) == 0 then
-		setActive(slot3, true)
+		setActive(slot0:findTF("tip", slot0.items:GetChild(slot2 - 1)), true)
 		PlayerPrefs.SetInt(slot5, 1)
 	else
 		setActive(slot3, false)

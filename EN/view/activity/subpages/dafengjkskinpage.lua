@@ -18,17 +18,13 @@ end
 
 function slot0.OnFirstFlush(slot0)
 	setActive(slot0.item, false)
-
-	slot1 = slot0.itemList
-
-	slot1:make(function (slot0, slot1, slot2)
+	slot0.itemList:make(function (slot0, slot1, slot2)
 		assert(uv0.taskProxy:getTaskById(uv0.taskList[slot1 + 1]) or uv0.taskProxy:getFinishTaskById(slot3), "without this task by id: " .. slot3)
 
 		if slot0 == UIItemList.EventInit then
-			slot5 = uv0
 			slot6 = slot4:getConfig("award_display")[1]
 
-			updateDrop(slot5:findTF("item", slot2), {
+			updateDrop(uv0:findTF("item", slot2), {
 				type = slot6[1],
 				id = slot6[2],
 				count = slot6[3]
@@ -52,7 +48,6 @@ function slot0.OnFirstFlush(slot0)
 end
 
 function slot0.OnUpdateFlush(slot0)
-	slot1 = 0
 	slot2 = 0
 
 	for slot6, slot7 in ipairs(slot0.taskList) do
@@ -61,7 +56,7 @@ function slot0.OnUpdateFlush(slot0)
 		assert(slot8, "without this task by id: " .. slot7)
 
 		if slot8:getTaskStatus() == 1 then
-			slot1 = slot1 + 1
+			slot1 = 0 + 1
 
 			if not slot0.submitVO then
 				slot0.submitVO = slot8

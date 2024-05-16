@@ -5,12 +5,10 @@ function slot0.register(slot0)
 		uv0:OnSelShips(slot1, slot2)
 	end)
 
-	slot1 = getProxy(ActivityProxy)
-	slot1 = slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
 	slot0.activity = slot1
-	slot2 = slot0.viewComponent
 
-	slot2:SetActivity(slot1)
+	slot0.viewComponent:SetActivity(slot1)
 	slot0:bind(uv0.OPEN_INFO, function ()
 		uv0:addSubLayers(Context.New({
 			mediator = AnniversaryIslandSpringShipSelectMediator,
@@ -23,11 +21,9 @@ function slot0.register(slot0)
 end
 
 function slot0.OnSelected(slot0, slot1, slot2, slot3)
-	slot5 = slot0.activity
-	slot4 = Clone(slot5:GetShipIds())
-	slot7 = slot0.activity
+	slot4 = Clone(slot0.activity:GetShipIds())
 
-	_.each(_.range(slot7:GetSlotCount()), function (slot0)
+	_.each(_.range(slot0.activity:GetSlotCount()), function (slot0)
 		uv0[slot0] = uv0[slot0] or 0
 	end)
 
@@ -78,8 +74,7 @@ function slot0.OnSelected(slot0, slot1, slot2, slot3)
 		end)
 	end
 
-	slot7 = slot0.activity
-	slot7 = slot7:GetShipIds()
+	slot7 = slot0.activity:GetShipIds()
 
 	table.Foreach(slot4, function (slot0, slot1)
 		if (uv0[slot0] or 0) ~= slot1 then

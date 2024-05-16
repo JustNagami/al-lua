@@ -18,9 +18,8 @@ function slot0.FuDaiTagTip(slot0)
 			end)
 
 			slot3 = pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1.time[1])
-			slot4 = PlayerPrefs.GetInt("Ever_Enter_Mall_", 0)
 
-			if not (slot0[uv0[1].id] ~= nil) and slot4 < slot3 then
+			if not (slot0[uv0[1].id] ~= nil) and PlayerPrefs.GetInt("Ever_Enter_Mall_", 0) < slot3 then
 				uv1.FudaiTime = slot3
 
 				triggerToggle(uv2, true)
@@ -110,15 +109,13 @@ end
 function slot0.FreeBuildTicketTip(slot0, slot1)
 	if getProxy(ActivityProxy):IsShowFreeBuildMark(false) then
 		setActive(slot0, true)
-		LoadImageSpriteAtlasAsync(getDropIcon({
+		LoadImageSpriteAtlasAsync(Drop.New({
 			type = DROP_TYPE_VITEM,
 			id = slot3:getConfig("config_client")[1]
-		}), "", slot0:Find("Image"))
-
-		slot4 = tostring(slot3.data1)
+		}):getIcon(), "", slot0:Find("Image"))
 
 		if slot3.data1 < 10 then
-			slot4 = slot4 .. " "
+			slot4 = tostring(slot3.data1) .. " "
 		end
 
 		setText(slot0:Find("Text"), i18n("build_ticket_expire_warning", slot4))
@@ -130,22 +127,21 @@ function slot0.FreeBuildTicketTip(slot0, slot1)
 end
 
 function slot0.TecShipGiftTip(slot0)
-	slot1 = {
-		2001,
-		2002,
-		2003,
-		2004,
-		2005,
-		2006,
-		2007,
-		2008
-	}
 	slot4 = 30 <= getProxy(PlayerProxy):getData().level
 	slot5 = PlayerPrefs.GetInt("Tec_Ship_Gift_Enter_Tag", 0) > 0
 	slot6 = false
 
 	for slot10, slot11 in ipairs(pg.pay_data_display.all) do
-		if table.contains(slot1, slot11) then
+		if table.contains({
+			2001,
+			2002,
+			2003,
+			2004,
+			2005,
+			2006,
+			2007,
+			2008
+		}, slot11) then
 			slot6 = true
 
 			break

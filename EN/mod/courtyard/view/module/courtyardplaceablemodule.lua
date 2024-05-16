@@ -13,7 +13,7 @@ function slot0.Ctor(slot0, slot1, slot2)
 	slot0.pudding = false
 	slot0.completion = false
 	slot0.cg = slot0._tf:GetComponent(typeof(CanvasGroup))
-	slot0.rect = _courtyard:GetView():GetRect()
+	slot0.rect = slot0:GetView():GetRect()
 	slot0.floor = slot0.rect:Find("floor")
 	slot0.wall = slot0.rect:Find("wall")
 	slot0.mat = slot0.rect:Find("carpet")
@@ -40,7 +40,7 @@ function slot0.OnIconLoaed(slot0)
 end
 
 function slot0.OnInit(slot0)
-	slot0.dragAgent = CourtYardDragAgent.New(slot0)
+	slot0.dragAgent = CourtYardDragAgent.New(slot0, slot0:GetView():GetRect())
 	slot0.completion = true
 end
 
@@ -87,13 +87,9 @@ function slot0.PuddingAnim(slot0)
 	slot2 = slot0._tf.localScale.y
 	slot0.normalY = slot2
 	slot0.normalX = slot1
-	slot3 = LeanTween.scale(rtf(slot0._tf), Vector3(slot1 + 0.2, slot2 + 0.2, 1), 0.2)
-	slot3 = slot3:setFrom(0)
 
-	slot3:setOnComplete(System.Action(function ()
-		slot0 = LeanTween.scale(rtf(uv0._tf), Vector3(uv1, uv2, 1), 0.1)
-
-		slot0:setOnComplete(System.Action(function ()
+	LeanTween.scale(rtf(slot0._tf), Vector3(slot1 + 0.2, slot2 + 0.2, 1), 0.2):setFrom(0):setOnComplete(System.Action(function ()
+		LeanTween.scale(rtf(uv0._tf), Vector3(uv1, uv2, 1), 0.1):setOnComplete(System.Action(function ()
 			uv0.doPuddingAniming = false
 		end))
 	end))

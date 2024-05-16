@@ -1,9 +1,7 @@
 slot0 = class("WorldFleetRedeployCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Send(33409, slot1:getBody(), 33410, function (slot0)
+	pg.ConnectionMgr.GetInstance():Send(33409, slot1:getBody(), 33410, function (slot0)
 		if slot0.result == 0 then
 			slot2 = nowWorld()
 

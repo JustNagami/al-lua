@@ -32,23 +32,19 @@ function AiriGoLogin(slot0)
 end
 
 function AiriLogin(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:LoadingOff()
-
-	function slot1()
-		pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
-			user = User.New({
-				type = 1,
-				arg1 = PLATFORM_AIRIJP,
-				arg2 = uv0.UID,
-				arg3 = uv0.ACCESS_TOKEN
-			})
-		})
-	end
+	pg.UIMgr.GetInstance():LoadingOff()
 
 	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
-		slot1()
+		function ()
+			pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
+				user = User.New({
+					type = 1,
+					arg1 = PLATFORM_AIRIJP,
+					arg2 = uv0.UID,
+					arg3 = uv0.ACCESS_TOKEN
+				})
+			})
+		end()
 
 		uv0.isCache = true
 	else
@@ -156,9 +152,7 @@ function OnAppPauseForSDK(slot0)
 end
 
 function AccountDeleteResult(slot0, slot1, slot2, slot3, slot4)
-	slot5 = pg.UIMgr.GetInstance()
-
-	slot5:LoadingOff()
+	pg.UIMgr.GetInstance():LoadingOff()
 
 	if uv0.AiriResultCodeHandler({
 		ToInt = function ()
@@ -185,9 +179,7 @@ function AccountDeleteResult(slot0, slot1, slot2, slot3, slot4)
 end
 
 function AccountRebornResult(slot0, slot1)
-	slot2 = pg.UIMgr.GetInstance()
-
-	slot2:LoadingOff()
+	pg.UIMgr.GetInstance():LoadingOff()
 
 	if uv0.AiriResultCodeHandler({
 		ToInt = function ()
@@ -196,6 +188,10 @@ function AccountRebornResult(slot0, slot1)
 	}) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("tip_account_del_reborn"))
 	end
+end
+
+function OnYoStarMessageReceivedRespone(slot0, slot1, slot2, slot3)
+	warning("OnYoStarMessageReceivedRespone")
 end
 
 return {
@@ -529,9 +525,7 @@ return {
 	end,
 	ON_AIRI_LOADING = false,
 	SetAiriTimeout = function ()
-		slot0 = pg.UIMgr.GetInstance()
-
-		slot0:LoadingOn()
+		pg.UIMgr.GetInstance():LoadingOn()
 
 		uv0.ON_AIRI_LOADING = true
 

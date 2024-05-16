@@ -74,6 +74,7 @@ slot0.ShipIndexData = {
 		}
 	}
 }
+slot0.SHIPCOLLECTION_INDEX = 1
 slot0.MANGA_INDEX = 4
 slot0.GALLERY_INDEX = 5
 slot0.MUSIC_INDEX = 6
@@ -239,9 +240,8 @@ function slot0.didEnter(slot0)
 	end, SFX_PANEL)
 
 	slot1 = slot0:findTF("stamp", slot0.top)
-	slot4 = getProxy(TaskProxy)
 
-	setActive(slot1, slot4:mingshiTouchFlagEnabled())
+	setActive(slot1, getProxy(TaskProxy):mingshiTouchFlagEnabled())
 
 	function slot5()
 		getProxy(TaskProxy):dealMingshiTouchFlag(8)
@@ -258,8 +258,16 @@ function slot0.didEnter(slot0)
 			onToggle(slot0, slot6, function (slot0)
 				if slot0 then
 					if uv0.contextData.toggle ~= uv1 then
-						if uv0.contextData.toggle == 1 and uv0.contextData.cardToggle == 1 then
-							uv0.contextData.cardScrollValue = uv0.cardList.value
+						if uv0.contextData.toggle == uv2.SHIPCOLLECTION_INDEX then
+							setActive(uv0.helpBtn, false)
+
+							if uv0.bulinTip then
+								uv0.bulinTip.buffer:Hide()
+							end
+
+							if uv0.contextData.cardToggle == 1 then
+								uv0.contextData.cardScrollValue = uv0.cardList.value
+							end
 						end
 
 						uv0.contextData.toggle = uv1
@@ -270,11 +278,19 @@ function slot0.didEnter(slot0)
 						end
 					end
 
-					setActive(uv0.helpBtn, uv1 == 1)
+					if uv1 == uv2.SHIPCOLLECTION_INDEX then
+						setActive(uv0.helpBtn, true)
 
-					if uv1 == 1 and not getProxy(SettingsProxy):IsShowCollectionHelp() then
-						triggerButton(uv0.helpBtn)
-						slot1:SetCollectionHelpFlag(true)
+						if not getProxy(SettingsProxy):IsShowCollectionHelp() then
+							triggerButton(uv0.helpBtn)
+							slot1:SetCollectionHelpFlag(true)
+						end
+
+						if uv0.bulinTip then
+							uv0.bulinTip.buffer:Show()
+						else
+							uv0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(uv0, uv0:findTF("main"))
+						end
 					end
 
 					if uv1 ~= uv2.MUSIC_INDEX then
@@ -344,10 +360,7 @@ function slot0.didEnter(slot0)
 	end
 
 	slot0:calFavoriteRate()
-
-	slot4 = pg.UIMgr.GetInstance()
-
-	slot4:OverlayPanelPB(slot0.blurPanel, {
+	pg.UIMgr.GetInstance():OverlayPanelPB(slot0.blurPanel, {
 		groupName = LayerWeightConst.GROUP_COLLECTION
 	})
 	onButton(slot0, slot0.bonusPanel, function ()
@@ -460,20 +473,19 @@ function slot0.onInitCard(slot0, slot1)
 end
 
 function slot0.showObtain(slot0, slot1, slot2)
-	slot3 = {
-		type = MSGBOX_TYPE_OBTAIN,
-		shipId = slot2,
-		list = slot1,
-		mediatorName = CollectionMediator.__cname
-	}
-
 	if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
-		slot3.unknown_small = true
+		-- Nothing
 	end
 
 	slot0.contextData.cardScrollValue = slot0.cardList.value
 
-	pg.MsgboxMgr.GetInstance():ShowMsgBox(slot3)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox({
+		type = MSGBOX_TYPE_OBTAIN,
+		shipId = slot2,
+		list = slot1,
+		mediatorName = CollectionMediator.__cname,
+		unknown_small = true
+	})
 end
 
 function slot0.skipIn(slot0, slot1, slot2)
@@ -573,10 +585,9 @@ function slot0.sortDisplay(slot0)
 	end)
 
 	slot1 = 0
-	slot2 = slot0.contextData.displayGroupId
 
 	for slot6, slot7 in ipairs(slot0.favoriteVOs) do
-		if slot7:containShipGroup(slot2) then
+		if slot7:containShipGroup(slot0.contextData.displayGroupId) then
 			slot1 = slot6
 
 			break
@@ -589,8 +600,7 @@ end
 function slot0.initDisplayPanel(slot0)
 	if not slot0.isInitDisplay then
 		slot0.isInitDisplay = true
-		slot1 = slot0:findTF("main/list_display")
-		slot0.displayRect = slot1:GetComponent("LScrollRect")
+		slot0.displayRect = slot0:findTF("main/list_display"):GetComponent("LScrollRect")
 		slot0.displayRect.decelerationRate = 0.07
 
 		function slot0.displayRect.onInitItem(slot0)
@@ -657,7 +667,6 @@ function slot0.openBonus(slot0, slot1)
 	setActive(slot0.bonusPanel, true)
 
 	slot0.boundName.text = slot1:getConfig("name")
-	slot2 = slot1:getConfig("award_display")
 
 	for slot7, slot8 in ipairs(slot1:getConfig("level")) do
 		slot10 = findTF(slot0.bonusPanel, "frame/awards/award" .. slot7)
@@ -670,7 +679,7 @@ function slot0.openBonus(slot0, slot1)
 		setActive(findTF(slot10, "item_tpl/icon_bg"), slot11 ~= Favorite.STATE_LOCK)
 		setActive(findTF(slot10, "item_tpl/bg"), slot11 ~= Favorite.STATE_LOCK)
 
-		if slot2[slot7] then
+		if slot1:getConfig("award_display")[slot7] then
 			slot12 = {
 				count = 0,
 				type = slot9[1],
@@ -744,9 +753,7 @@ function slot0.initMemoryPanel(slot0)
 		slot4 = _.flatten(slot2:getConfig("config_data"))
 
 		if getProxy(TaskProxy):getTaskById(slot4[#slot4]) and not slot7:isFinish() then
-			slot8 = pg.NewStoryMgr.GetInstance()
-
-			slot8:Play("HOSHO8", function ()
+			pg.NewStoryMgr.GetInstance():Play("HOSHO8", function ()
 				uv0:emit(CollectionScene.ACTIVITY_OP, {
 					cmd = 2,
 					activity_id = uv1.id
@@ -831,10 +838,7 @@ function slot0.playMemory(slot0, slot1)
 		end
 
 		setActive(slot0.memoryMask, true)
-
-		slot3 = pg.NewStoryMgr.GetInstance()
-
-		slot3:Play(slot1.story, function ()
+		pg.NewStoryMgr.GetInstance():Play(slot1.story, function ()
 			setActive(uv0.memoryMask, false)
 		end, true)
 	elseif slot1.type == 2 then
@@ -862,6 +866,12 @@ function slot0.memoryFilter(slot0)
 end
 
 function slot0.willExit(slot0)
+	if slot0.bulinTip then
+		slot0.bulinTip:Destroy()
+
+		slot0.bulinTip = nil
+	end
+
 	if slot0.tweens then
 		cancelTweens(slot0.tweens)
 	end

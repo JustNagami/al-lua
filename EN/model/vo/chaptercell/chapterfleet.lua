@@ -102,10 +102,9 @@ end
 
 function slot0.updateCommanders(slot0, slot1)
 	slot0.commanders = {}
-	slot2 = getProxy(CommanderProxy)
 
 	for slot6, slot7 in ipairs(slot1) do
-		if slot2:getCommanderById(slot7.id) then
+		if getProxy(CommanderProxy):getCommanderById(slot7.id) then
 			slot0.commanders[slot7.pos] = slot9
 		end
 	end
@@ -147,11 +146,34 @@ function slot0.updateShips(slot0, slot1)
 	_.each(slot1 or {}, function (slot0)
 		if uv0:fetchShipVO(slot0.id) then
 			slot1.hpRant = slot0.hp_rant
-			slot1.strategies = Clone(slot0.strategies)
 			uv0.ships[slot1.id] = slot1
 
 			table.insert(uv0[slot1:getTeamType()], slot1)
 		end
+	end)
+	slot0:ResortShips()
+end
+
+function slot0.ResortShips(slot0)
+	_.each({
+		TeamType.Vanguard,
+		TeamType.Main,
+		TeamType.Submarine
+	}, function (slot0)
+		slot1 = uv0[slot0]
+		slot2 = {}
+
+		table.Ipars(slot1, function (slot0, slot1)
+			uv0[slot1] = slot0
+		end)
+		table.sort(slot1, CompareFuncs({
+			function (slot0)
+				return slot0.hpRant > 0 and 0 or 1
+			end,
+			function (slot0)
+				return uv0[slot0]
+			end
+		}))
 	end)
 end
 
@@ -171,7 +193,6 @@ function slot0.flushShips(slot0)
 	for slot7, slot8 in ipairs(_.keys(slot0.ships)) do
 		if slot0:fetchShipVO(slot8) then
 			slot9.hpRant = slot0.ships[slot8].hpRant
-			slot9.strategies = slot0.ships[slot8].strategies
 		end
 
 		slot0.ships[slot8] = slot9
@@ -206,16 +227,8 @@ function slot0.updateShipHp(slot0, slot1, slot2)
 	if slot0.ships[slot1] then
 		slot3.hpChange = slot2 - slot3.hpRant
 		slot3.hpRant = slot2
-	end
-end
 
-function slot0.updateShipStg(slot0, slot1, slot2, slot3)
-	if slot0.ships[slot1] then
-		_.each(slot4.strategies, function (slot0)
-			if slot0.id == uv0 then
-				slot0.count = uv1
-			end
-		end)
+		slot0:ResortShips()
 	end
 end
 
@@ -271,6 +284,8 @@ function slot0.containsShip(slot0, slot1)
 end
 
 function slot0.replaceShip(slot0, slot1, slot2)
+	errorMsg("ChapterFleet replaceShip function used")
+
 	if slot0.ships[slot1] and not slot0.ships[slot2.id] then
 		slot3 = slot0.ships[slot1]
 
@@ -280,7 +295,6 @@ function slot0.replaceShip(slot0, slot1, slot2)
 					slot0:removeShip(slot1)
 				else
 					slot4.hpRant = slot2.hp_rant
-					slot4.strategies = Clone(slot2.strategies)
 					slot0.ships[slot1] = nil
 					slot0.ships[slot4.id] = slot4
 
@@ -300,19 +314,24 @@ function slot0.replaceShip(slot0, slot1, slot2)
 end
 
 function slot0.addShip(slot0, slot1)
+	errorMsg("ChapterFleet addShip function used")
+
 	if not slot0.ships[slot1.id] and slot0:fetchShipVO(slot1.id) then
 		slot2.hpRant = slot1.hp_rant
-		slot2.strategies = Clone(slot1.strategies)
 
 		if #slot0[slot2:getTeamType()] < 3 then
 			table.insert(slot3, slot2)
 
 			slot0.ships[slot2.id] = slot2
+
+			slot0:ResortShips()
 		end
 	end
 end
 
 function slot0.removeShip(slot0, slot1)
+	errorMsg("ChapterFleet removeShip function used")
+
 	slot0.ships[slot1] = nil
 
 	for slot6 = 1, #{
@@ -330,12 +349,11 @@ end
 
 function slot0.switchShip(slot0, slot1, slot2, slot3)
 	slot4 = slot0:getShipsByTeam(slot1, false)
-	slot5 = slot4[slot2].id
 	slot6 = slot4[slot3].id
 	slot7, slot8, slot9, slot10 = nil
 
 	for slot14, slot15 in pairs(slot0.ships) do
-		if slot14 == slot5 then
+		if slot14 == slot4[slot2].id then
 			slot8 = table.indexof(slot0[slot15:getTeamType()], slot15)
 		end
 
@@ -451,7 +469,7 @@ function slot0.getEquipAmbushRateReduce(slot0)
 	for slot5, slot6 in pairs(slot0.ships) do
 		for slot10, slot11 in pairs(slot6:getActiveEquipments()) do
 			if slot11 then
-				slot1 = math.max(slot1, slot11.config.equip_parameters.ambush_extra or 0)
+				slot1 = math.max(slot1, slot11:getConfig("equip_parameters").ambush_extra or 0)
 			end
 		end
 	end
@@ -465,7 +483,7 @@ function slot0.getEquipDodgeRateUp(slot0)
 	for slot5, slot6 in pairs(slot0.ships) do
 		for slot10, slot11 in pairs(slot6:getActiveEquipments()) do
 			if slot11 then
-				slot1 = math.max(slot1, slot11.config.equip_parameters.avoid_extra or 0)
+				slot1 = math.max(slot1, slot11:getConfig("equip_parameters").avoid_extra or 0)
 			end
 		end
 	end
@@ -718,13 +736,6 @@ function slot0.getSummonCost(slot0)
 	end)
 end
 
-function slot0.DealDMG2Ships(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.ships) do
-		slot6.hpRant = math.clamp(slot6.hpRant - slot1, 0, 10000)
-		slot6.hpChange = (slot6.hpChange or 0) + slot6.hpRant - slot6.hpRant
-	end
-end
-
 function slot0.getMapAura(slot0)
 	slot1 = {}
 
@@ -796,11 +807,10 @@ function slot0.findCommanderBySkillId(slot0, slot1)
 end
 
 function slot0.getFleetAirDominanceValue(slot0)
-	slot1 = 0
 	slot5 = false
 
 	for slot5, slot6 in ipairs(slot0:getShips(slot5)) do
-		slot1 = slot1 + calcAirDominanceValue(slot6, slot0:getCommanders())
+		slot1 = 0 + calcAirDominanceValue(slot6, slot0:getCommanders())
 	end
 
 	return slot1

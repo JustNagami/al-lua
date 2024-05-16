@@ -26,9 +26,6 @@ function slot0.Update(slot0, slot1, slot2)
 	slot0.memberVO = slot1
 
 	slot0:Clear()
-
-	slot3 = pg.ship_data_statistics[slot1.icon]
-
 	LoadSpriteAsync("qicon/" .. Ship.New({
 		configId = slot1.icon,
 		skin_id = slot1.skinId,
@@ -54,7 +51,7 @@ function slot0.Update(slot0, slot1, slot2)
 
 	slot0.dutyTF.sprite = GetSpriteFromAtlas("dutyicon", slot1.duty)
 
-	for slot11 = slot0.starsTF.childCount, slot3.star - 1 do
+	for slot11 = slot0.starsTF.childCount, pg.ship_data_statistics[slot1.icon].star - 1 do
 		cloneTplTo(slot0.starTF, slot0.starsTF)
 	end
 

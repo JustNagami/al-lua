@@ -50,10 +50,7 @@ function slot0.register(slot0)
 	end)
 
 	if slot0.contextData.shipId then
-		slot1 = getProxy(BayProxy)
-		slot2 = slot0.viewComponent
-
-		slot2:setShip(slot1:getShipById(slot0.contextData.shipId))
+		slot0.viewComponent:setShip(getProxy(BayProxy):getShipById(slot0.contextData.shipId))
 		slot0:bind(uv0.ON_SELECT, function (slot0, slot1)
 			uv1:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
 				equipmentVOs = ShipMainMediator:getEquipmentSkins(uv0, slot1),

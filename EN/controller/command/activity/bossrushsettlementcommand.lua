@@ -1,9 +1,7 @@
 slot0 = class("BossRushSettlementCommand", pm.SimpleCommand)
 
 function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
-
-	slot3:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 2,
 		activity_id = slot1.body.actId
 	}, 11203, function (slot0)
@@ -30,20 +28,16 @@ function slot0.execute(slot0, slot1)
 				slot2:AddFinalResults(slot5)
 			end
 
-			slot6 = getProxy(ActivityProxy)
-
-			slot6:updateActivity(slot1)
+			getProxy(ActivityProxy):updateActivity(slot1)
 			seriesAsync({
 				function (slot0)
-					slot1 = {
-						seriesData = uv0,
-						activityId = uv1.actId,
-						awards = uv2,
-						callback = slot0
-					}
-
 					if uv1.callback then
-						uv1.callback(slot1)
+						uv1.callback({
+							seriesData = uv0,
+							activityId = uv1.actId,
+							awards = uv2,
+							callback = slot0
+						})
 					else
 						uv3:sendNotification(GAME.BOSSRUSH_SETTLE_DONE, slot1)
 					end
@@ -122,7 +116,9 @@ function slot0.ConcludeEXP(slot0, slot1, slot2)
 end
 
 function slot0.addShipsExp(slot0, slot1)
-	slot2 = {}
+	slot2 = {
+		[slot10] = Clone(slot14)
+	}
 	slot3 = {}
 	slot4 = getProxy(BayProxy)
 
@@ -132,7 +128,6 @@ function slot0.addShipsExp(slot0, slot1)
 		slot12 = slot9.intimacy
 		slot13 = slot9.energy
 		slot14 = slot4:getShipById(slot10)
-		slot2[slot10] = Clone(slot14)
 		slot2[slot10].expAdd = slot11
 
 		slot14:addExp(slot11, slot1)
@@ -158,48 +153,40 @@ function slot0.addShipsExp(slot0, slot1)
 end
 
 function slot0.GenerateCommanderExp(slot0)
-	slot1 = {}
-	slot2 = {}
+	slot1 = {
+		[slot9] = Clone(slot11)
+	}
 	slot3 = getProxy(CommanderProxy)
 
 	for slot7, slot8 in ipairs(slot0) do
 		slot9 = slot8.commander_id
 		slot11 = slot3:getCommanderById(slot9)
-		slot1[slot9] = Clone(slot11)
 		slot1[slot9].expAdd = slot8.exp
 
 		slot11:addExp(slot8.exp)
-
-		slot2[slot9] = Clone(slot11)
-
 		slot3:updateCommander(slot11)
 	end
 
-	return slot1, slot2
+	return slot1, {
+		[slot9] = Clone(slot11)
+	}
 end
 
 function slot0.GeneralLoot(slot0)
-	slot1 = {}
-	slot2 = {}
+	for slot5, slot6 in pairs({
+		drops = slot0.drop_info,
+		extraDrops = slot0.extra_drop_info
+	}) do
+		slot1[slot5] = PlayerConst.addTranDrop(slot6)
 
-	function slot3(slot0, slot1)
-		for slot5, slot6 in ipairs(slot0) do
-			slot7 = Item.New(slot6)
-
-			table.insert(slot1, slot7)
-
-			if slot7.type == DROP_TYPE_SHIP then
-				slot7.virgin = getProxy(CollectionProxy) and slot9.shipGroups[pg.ship_data_template[slot7.id].group_type] == nil
+		underscore.each(slot1[slot5], function (slot0)
+			if slot0.type == DROP_TYPE_SHIP then
+				slot0.virgin = getProxy(CollectionProxy) and slot2.shipGroups[pg.ship_data_template[slot0.id].group_type] == nil
 			end
-
-			pg.m02:sendNotification(GAME.ADD_ITEM, slot7)
-		end
+		end)
 	end
 
-	slot3(slot0.drop_info, slot1)
-	slot3(slot0.extra_drop_info, slot2)
-
-	return slot1, slot2
+	return slot1.drops, slot1.extraDrops
 end
 
 function slot0.GeneralPlayerCosume(slot0, slot1, slot2, slot3)

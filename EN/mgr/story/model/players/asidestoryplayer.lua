@@ -143,9 +143,8 @@ function slot0.UpdateLayoutPaddingAndSpacing(slot0, slot1, slot2)
 
 		if slot4 then
 			slot10.top, slot10.bottom, slot10.left, slot10.right = slot1:GetPadding()
-			slot10 = UnityEngine.RectOffset.New()
 			slot0.padding = slot5.padding
-			slot5.padding = slot10
+			slot5.padding = UnityEngine.RectOffset.New()
 		end
 	end
 end
@@ -184,10 +183,8 @@ function slot0.OnWillClear(slot0, slot1, slot2, slot3)
 end
 
 function slot0.ResetPaddingAndSpacing(slot0, slot1, slot2, slot3)
-	slot4 = slot1:GetComponent(typeof(UnityEngine.UI.HorizontalOrVerticalLayoutGroup))
-
 	if slot2 then
-		slot4.padding = slot2
+		slot1:GetComponent(typeof(UnityEngine.UI.HorizontalOrVerticalLayoutGroup)).padding = slot2
 	end
 
 	if slot3 then

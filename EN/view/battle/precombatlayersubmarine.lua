@@ -162,9 +162,7 @@ function slot0.didEnter(slot0)
 		slot0._formationLogic:SwitchToPreviewMode()
 	end
 
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 	setActive(slot0._autoToggle, false)
 	setActive(slot0._autoSubToggle, false)
 	onNextTick(function ()

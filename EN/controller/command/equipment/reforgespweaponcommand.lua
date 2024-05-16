@@ -7,7 +7,7 @@ function slot0.execute(slot0, slot1)
 	slot6 = getProxy(PlayerProxy)
 	slot7 = 0
 
-	if not (function ()
+	if not function ()
 		slot0, slot1 = EquipmentProxy.StaticGetSpWeapon(uv0, uv1)
 
 		if not _.all(slot0:GetAttributeOptions(), function (slot0)
@@ -36,13 +36,11 @@ function slot0.execute(slot0, slot1)
 		end
 
 		return true
-	end)() then
+	end() then
 		return
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
-
-	slot9:Send(14205, {
+	pg.ConnectionMgr.GetInstance():Send(14205, {
 		ship_id = slot4,
 		spweapon_id = slot3
 	}, 14206, function (slot0)

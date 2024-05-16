@@ -5,9 +5,7 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		activity_id = slot2.activity_id,
 		cmd = slot2.cmd,
 		arg1 = slot2.arg1,
@@ -15,14 +13,12 @@ function slot0.execute(slot0, slot1)
 		arg_list = {}
 	}, 11203, function (slot0)
 		if slot0.result == 0 then
-			slot1 = PlayerConst.addTranDrop(slot0.award_list)
-
 			if uv0.cmd == ActivityConst.MONOPOLY_OP_AWARD then
 				uv1.data2_list[2] = uv1.data2_list[2] + 1
 
 				uv2:updateActivity(uv1)
 				uv3:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
-					awards = slot1
+					awards = PlayerConst.addTranDrop(slot0.award_list)
 				})
 			else
 				if slot2 == ActivityConst.MONOPOLY_OP_LAST then
@@ -42,13 +38,12 @@ function slot0.execute(slot0, slot1)
 				end
 
 				slot3 = {}
-				slot4 = ""
 
 				for slot8, slot9 in ipairs(slot0.number) do
 					if slot8 > 2 then
 						table.insert(slot3, slot9)
 
-						slot4 = slot4 .. "-" .. slot9
+						slot4 = "" .. "-" .. slot9
 					end
 				end
 
@@ -65,10 +60,9 @@ function slot0.execute(slot0, slot1)
 					uv1.data1_list[2] = uv1.data1_list[2] + 1
 					slot9 = uv1:getDataConfig("effective_times") or 0
 					slot10 = nil
-					slot10 = (slot9 == 0 or math.min(uv1.data1_list[2], slot9)) and uv1.data1_list[2]
 
 					if uv1:getDataConfig("reward_time") > 0 then
-						uv1.data2_list[1] = math.floor(slot10 / slot8)
+						uv1.data2_list[1] = math.floor(((slot9 == 0 or math.min(uv1.data1_list[2], slot9)) and uv1.data1_list[2]) / slot8)
 					else
 						uv1.data2_list[1] = 0
 					end

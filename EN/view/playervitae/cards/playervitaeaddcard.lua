@@ -1,12 +1,9 @@
 slot0 = class("PlayerVitaeAddCard", import(".PlayerVitaeBaseCard"))
 
 function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-	slot0.line1 = slot1:Find("line1")
-	slot1 = slot0._tf
-	slot0.line2 = slot1:Find("line2")
-	slot1 = slot0._tf
-	slot0.txt = slot1:Find("Text")
+	slot0.line1 = slot0._tf:Find("line1")
+	slot0.line2 = slot0._tf:Find("line2")
+	slot0.txt = slot0._tf:Find("Text")
 
 	onButton(slot0, slot0._tf, function ()
 		if uv0.inEdit then

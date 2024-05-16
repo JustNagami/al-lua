@@ -45,8 +45,7 @@ function slot0.OnInit(slot0)
 		end
 	end, SFX_PANEL)
 
-	slot1 = slot0._tf
-	slot1 = slot1:GetComponent(typeof(PinchZoom))
+	slot1 = slot0._tf:GetComponent(typeof(PinchZoom))
 
 	onButton(slot0, slot0._tf, function ()
 		if uv0.processing then
@@ -143,18 +142,15 @@ function slot0.Flush(slot0, slot1, slot2)
 end
 
 function slot0.UpdateMain(slot0, slot1)
-	slot2 = 0
-
 	for slot6, slot7 in ipairs(slot0.btns) do
 		if slot7:IsActive(slot1) then
-			slot2 = slot2 + 1
+			slot2 = 0 + 1
 		end
 
 		slot7:Update(slot8, slot2, slot1)
 	end
 
-	slot4 = slot0.skin
-	slot0.nameTxt.text = slot4:getConfig("name")
+	slot0.nameTxt.text = slot0.skin:getConfig("name")
 	slot0.shipnameTxt.text = slot1:getName()
 	slot0.loading = true
 
@@ -194,12 +190,12 @@ function slot0.InitL2D(slot0, slot1, slot2)
 	slot0:ClearPainting(slot1)
 
 	slot0.live2d = SkinAtlasLive2dView.New(slot1, slot0.live2dContainer, slot2)
+
+	slot0.live2d.live2dChar:changeTriggerFlag(false)
 end
 
 function slot0.UpdateChar(slot0, slot1, slot2)
-	slot4 = PoolMgr.GetInstance()
-
-	slot4:GetSpineChar(slot1:getPrefab(), true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(slot1:getPrefab(), true, function (slot0)
 		uv0.modelTf = tf(slot0)
 		uv0.modelTf.localScale = Vector3(0.9, 0.9, 1)
 		uv0.modelTf.localPosition = Vector3(0, -135, 0)
